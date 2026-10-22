@@ -74,10 +74,17 @@ retains the original Batch, forcing mask, menu maps, full register/witness
 table and plan. Distinct rows use the same plan. It does not construct a
 SourceModel, choose a target piece, add legal actions or authenticate input.
 
-The next family adapter must retain the complete requested original row order,
-same menus/common response embedding and exact target-piece predicates.
-It must join the actual evaluated LAW/readout identity and both physical
-source/action coverage directions before interpreting a quantified result.
+bind_rows now retains the complete SUPPLIED original row registry in literal
+order, including Some(false), and checks each exact stored mask. It rejects row
+aliases and menu/observer/dimension mismatch. All batches use the same plan and
+immutable menu slice; the lift budget is cumulative across the whole binding.
+Zero supplied rows remain representable with the explicit common menu carrier.
+This is registry coverage, not proof that the registry covers every requested
+physical action. SourceModel.base order is row, menu, then outcome.
+
+The next family adapter still needs exact target-piece predicates, the actual
+evaluated LAW/readout identity and both physical source/action coverage
+directions before interpreting a quantified result.
 The previously supplied SourceTransfer, game, horizon and padding receivers
 remain conditional on those exact premises.
 
@@ -103,3 +110,23 @@ No native/Cargo/Lake/CI/QE/model/emitter/control suite ran. The actual
 original-owner encrypted controller/recipient/frame/sequence/transport and
 transitive first-writer hooks remain UNBOUND. No profile/whitelist change,
 old held/consumed replay, local Git, phone source artifact or new worker.
+
+## Existing canonical and observer suppliers reused
+
+The complete peer source checkpoint5fdd3666 was read together with the existing
+FiniteSourceSnapshot, EffectiveSourceEnumeration and SourceFiniteProjection
+bodies. Canonicalizing dead fields preserves every selected view through
+admittedCode/decode_encode_selectedView; this does not require a bijection onto
+all admitted Codes. Native graph/array/tree/DFS validation and total coefficient
+fibre refinement are still proofs to provide, including zero on absent rows.
+Conditional SourceValid allows arbitrary vertex registers; once-drawn natural
+initialization remains a separate supplier.
+
+The original no_copy_unranked_forest4936fb21 handles empty Copy. The separate
+original_empty_panel_forest handles an empty selected panel on a larger Copy
+carrier. one_live_unranked_forest a3f28f51 retains Nonempty Copy for completed
+singleton output, and full_prune in that same body identifies full-carrier
+pruning with the original ordered tree. These are existing source declarations,
+not new checked proof cases. A global relabelling used only in the final observer
+needs exact quotient-compatible observer/Copy/menu correspondence; it does not
+by itself require a new whole-process copy-permutation theorem.

@@ -3,7 +3,8 @@
 //! not preservation of the calibrated CHART cell or a physical admission proof.
 #![forbid(unsafe_code)]
 
-use crate::{cell_calendar::CellCalendar, word_readout::Batch, Predicate, Relation};
+use crate::{cell_calendar::CellCalendar, word_readout::{Batch, Menu}, Predicate, Relation};
+use std::collections::BTreeSet;
 use parity_solver::{polynomial::Polynomial, q, Rational,
     source_population::Location, source_word::Variable};
 
@@ -69,14 +70,20 @@ impl<'a> FixedCalendarFamilyPlan<'a> {
     /// prefix and every zero polynomial. No independent slot fit is allowed.
     pub fn lift_batch<'p>(&'p self, batch: &'p Batch<'a>)
         -> Result<LiftedReadout<'p, 'a>> {
+        let mut units = 0usize;
+        self.lift_batch_with_units(batch, &mut units)
+    }
+
+    fn lift_batch_with_units<'p>(&'p self, batch: &'p Batch<'a>,
+        units: &mut usize) -> Result<LiftedReadout<'p, 'a>> {
         if !std::ptr::eq(batch.word().calendar(), self.calendar)
             || batch.word().table().variables() != self.word_variables.as_slice() {
             return Err(Error::Invalid("SURVIVAL_DIFFERENT_WORD_OR_CALENDAR"));
         }
-        let mut units = bounded_add(0, batch.blocks().len(), "units", self.limits.units)?;
+        *units = bounded_add(*units, batch.blocks().len(), "units", self.limits.units)?;
         let mut blocks = Vec::with_capacity(batch.blocks().len());
         for block in batch.blocks() {
-            units = bounded_add(units, block.len(), "units", self.limits.units)?;
+            *units = bounded_add(*units, block.len(), "units", self.limits.units)?;
             let mut lifted = Vec::with_capacity(block.len());
             for polynomial in block {
                 if polynomial.dimension != self.word_to_parameter.len() {
@@ -87,12 +94,12 @@ impl<'a> FixedCalendarFamilyPlan<'a> {
                     if powers.len() != polynomial.dimension {
                         return Err(Error::Invalid("SURVIVAL_WORD_EXPONENT_ARITY"));
                     }
-                    units = bounded_add(units, self.dimension, "units", self.limits.units)?;
+                    *units = bounded_add(*units, self.dimension, "units", self.limits.units)?;
                     rational(coefficient, self.limits)?;
                     let bits = coefficient.numer().bits().max(coefficient.denom().bits());
                     let integer_bytes = usize::try_from(bits).map_err(|_|
                         unknown("units", None, self.limits.units))? / 4 + 2;
-                    units = bounded_add(units, integer_bytes, "units", self.limits.units)?;
+                    *units = bounded_add(*units, integer_bytes, "units", self.limits.units)?;
                     if coefficient == &q(0,1) {
                         return Err(Error::Invalid("SURVIVAL_WORD_ZERO_TERM"));
                     }
@@ -114,6 +121,51 @@ impl<'a> FixedCalendarFamilyPlan<'a> {
         }
         Ok(LiftedReadout { plan: self, original: batch, blocks })
     }
+
+    /// Binds EVERY supplied original forcing row in its literal order to the
+    /// same plan and immutable menus, with a cumulative lifting budget.
+    /// Coverage here means the supplied row registry, not all physical actions.
+    pub fn bind_rows<'p>(&'p self, rows: &'p [Vec<Option<bool>>],
+        batches: &'p [&'p Batch<'a>], menus: &'p [Menu])
+        -> Result<BoundFamilyRows<'p, 'a>> {
+        if rows.len() != batches.len() {
+            return Err(Error::Invalid("SURVIVAL_ORIGINAL_ROW_COVERAGE"));
+        }
+        let hybrids = self.calendar.calendar_request().context.source.hybrids.len();
+        let mut units = bounded_add(0, rows.len(), "units", self.limits.units)?;
+        let mut unique = BTreeSet::new();
+        for row in rows {
+            units = bounded_add(units, row.len(), "units", self.limits.units)?;
+            if row.len() != hybrids || !unique.insert(row.clone()) {
+                return Err(Error::Invalid("SURVIVAL_ORIGINAL_ROW_ARITY_OR_ALIAS"));
+            }
+        }
+        let observer = batches.first().map(|batch| batch.observer());
+        let mut base_observations = 0usize;
+        for menu in menus {
+            if menu.readout.outcome_count == 0 {
+                return Err(Error::Invalid("SURVIVAL_EMPTY_MENU_OUTCOMES"));
+            }
+            units = bounded_add(units, 1, "units", self.limits.units)?;
+            base_observations = bounded_add(base_observations, menu.readout.outcome_count,
+                "units", self.limits.units)?;
+        }
+        if base_observations == 0 {
+            return Err(Error::Invalid("SURVIVAL_EMPTY_BASE_OBSERVATIONS"));
+        }
+        let mut readouts = Vec::with_capacity(rows.len());
+        for (row, batch) in rows.iter().zip(batches.iter().copied()) {
+            if batch.word().table().mask() != row.as_slice()
+                || !std::ptr::eq(batch.menus(), menus) || Some(batch.observer()) != observer
+                || batch.blocks().len() != menus.len()
+                || batch.blocks().iter().zip(menus).any(|(block, menu)|
+                    block.len() != menu.readout.outcome_count) {
+                return Err(Error::Invalid("SURVIVAL_ORIGINAL_ROW_OR_MENU_BINDING"));
+            }
+            readouts.push(self.lift_batch_with_units(batch, &mut units)?);
+        }
+        Ok(BoundFamilyRows { plan: self, rows, menus, readouts, base_observations })
+    }
 }
 /// Retains the exact forcing mask, full word, menu maps and calendar through
 /// the original Batch. It is not a SourceModel or a source-coverage certificate.
@@ -127,6 +179,26 @@ impl<'p, 'a> LiftedReadout<'p, 'a> {
     pub fn plan(&self) -> &FixedCalendarFamilyPlan<'a> { self.plan }
     pub fn original(&self) -> &Batch<'a> { self.original }
     pub fn blocks(&self) -> &[Vec<Polynomial>] { &self.blocks }
+}
+
+
+/// Row-major original forcing records, menu blocks, then outcome coordinates.
+/// All source parameters and the constant prefix are shared; different rows
+/// are NOT separately fitted. No target/source/action coverage proof is added.
+#[derive(Debug)]
+pub struct BoundFamilyRows<'p, 'a> {
+    plan: &'p FixedCalendarFamilyPlan<'a>,
+    rows: &'p [Vec<Option<bool>>],
+    menus: &'p [Menu],
+    readouts: Vec<LiftedReadout<'p, 'a>>,
+    base_observations: usize,
+}
+impl<'p, 'a> BoundFamilyRows<'p, 'a> {
+    pub fn plan(&self) -> &FixedCalendarFamilyPlan<'a> { self.plan }
+    pub fn rows(&self) -> &[Vec<Option<bool>>] { self.rows }
+    pub fn menus(&self) -> &[Menu] { self.menus }
+    pub fn readouts(&self) -> &[LiftedReadout<'p, 'a>] { &self.readouts }
+    pub fn base_observations(&self) -> usize { self.base_observations }
 }
 
 fn unknown(field: &'static str, required: Option<usize>, cap: usize) -> Error {
