@@ -1230,3 +1230,9 @@ pub mod law_table_inlet;
 /// Controlled full-word composition; natural register and forced pulses stay distinct.
 #[path = "g7_controlled_word.rs"]
 pub mod controlled_word;
+
+/// Original supplied-cell rows and vector to one existing calendar/word bank.
+#[path = "cell_row_export.rs"]
+pub mod cell_rows;
+#[path = "g7_cell_calendar.rs"]
+pub mod cell_calendar;

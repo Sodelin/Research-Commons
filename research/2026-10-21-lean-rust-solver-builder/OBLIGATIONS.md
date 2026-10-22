@@ -117,3 +117,11 @@ forced transition substitution, and complete selected views remain retained.
 All native/Lean refinement, physical calendar/readout/whole-bank and complete
 coverage obligations remain open. Inherited caps are preserved; no new native
 compile or control run is accepted under the writer hold.
+
+The literal two-tip Code use-site has eight selected hosted audits, conditional
+on the actual supplied wire checker premise; no particular x/native origin is
+asserted. The cell_calendar source composition now preserves original emitted
+rows/vector through one generated calendar and controlled-word bank. The first
+native join is canonical Snapshot/selected-view/coefficient encoding into the
+EXISTING concrete stepRows theorem; root/completion, physical readout, coverage,
+AST/QE/selector/result authentication and actual writer admission remain open.

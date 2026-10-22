@@ -163,3 +163,11 @@ literal witnesses. It specializes only forced transition coordinates. It keeps
 the inherited four-copy/full-bank profile and explicit all-result refusal.
 See native/G7-CONTROLLED-WORD-CONTRACT.md and its source review; no new compiler,
 control suite, physical source claim or runtime admission is supplied.
+
+The retained literal two-tip Code receiver now contributes eight attributed
+hosted complete-type audits. Exact original declarations exclude all five
+fixture evaluations; no particular native witness is asserted. The new pure
+cell_calendar path owns original CHART bytes/rows and a supplied vector,
+checks every original row, then reuses the same vector through the calendar
+and controlled-word providers. All new native code remains uncompiled and
+unexecuted. See native/G7-CELL-CALENDAR-CONTRACT.md and the two new reviews.
