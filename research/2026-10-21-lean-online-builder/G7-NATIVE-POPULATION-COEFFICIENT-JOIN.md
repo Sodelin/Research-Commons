@@ -199,11 +199,20 @@ external imports and removing only original import/empty lines still gives
 bytes and an884200B projection. These numbers already exceed the unchanged
 Node client's262144B source limit before the two new proposals or audits.
 [The closure inventory](G7-POPULATION-CERTIFICATE-CLOSURE.json) retains every
-module identity and exact projection hash. No oversized check was attempted.
-A smaller justified proof projection, verified installed imports or separately
-admitted compilation would be needed; this is not a global impossibility claim.
+module identity and exact projection hash. Those were the normal-client limits
+at this earlier source review. The later separate 1 MiB client has now submitted
+the complete population-certificate context; all five attempts remain UNVERIFIED.
+[The full-context record](FULL-CONTEXT-VERIFICATION.json) preserves each source,
+client and terminal disposition. No native or full-import acceptance follows.
 The exporter's4MiB rendered-source default is a separate bound and cannot
 serve as admission to the existing hosted lane.
+
+Both retained completed-calendar and parallel-epoch component certificates match
+all 92 original dependency pins. The original population law is OLD/REUSE; the
+supplied-table caller and its captured native-input/result binding remain the
+integration work. This particular-table route covers every admitted Code under
+its actual Boolean check and CoLocated input. Encoded-image membership is not
+an additional premise; that older support theorem serves other refinement work.
 
 First unresolved use-site: an actual immutable generated literal and checked
 import/source-validity/co-location/coefficient targets, bound to the original

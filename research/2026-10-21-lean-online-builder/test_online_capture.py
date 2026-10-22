@@ -29,7 +29,8 @@ def stream(report=REPORT, exit_code=0):
 
 
 class CaptureTests(unittest.TestCase):
-    def run_case(self, raw=None, after=SNAPSHOT, seal_error=None, case='test'):
+    def run_case(self, raw=None, after=SNAPSHOT, seal_error=None, case='test',
+                 process_timeout=130):
         records = []
         def seal(_codec, _digest, payload):
             records.append(capture.strict_json(payload))
@@ -39,12 +40,34 @@ class CaptureTests(unittest.TestCase):
                     'ciphertext_bytes': 1, 'ciphertext_sha256': 'test'}
         with patch.object(capture, 'verify_codec'), \
                 patch.object(capture, 'packet_snapshot', side_effect=[SNAPSHOT, after]), \
-                patch.object(capture, 'capture_process', return_value=raw or stream()), \
+                patch.object(capture, 'capture_process', return_value=raw or stream()) as child, \
                 patch.object(capture, 'seal_record', side_effect=seal), \
                 contextlib.redirect_stdout(io.StringIO()) as out:
             code = capture.run_case(Path('/packet'), case, 'source.lean', AUDITS,
-                'entry.mjs', 'core.mjs', Path('/existing/codec'), 'digest', 'runner.py')
+                'entry.mjs', 'core.mjs', Path('/existing/codec'), 'digest', 'runner.py',
+                process_timeout=process_timeout)
+            self.assertEqual(child.call_args.kwargs['timeout'], process_timeout)
         return code, capture.strict_json(out.getvalue()), records
+
+    def test_explicit_full_context_parent_budget_is_retained(self):
+        code, result, records = self.run_case(process_timeout=370)
+        self.assertEqual(code, 0)
+        self.assertEqual(result['status'], capture.PASS)
+        self.assertEqual(records[0]['process_timeout_seconds'], 370)
+
+    def test_invalid_parent_budget_refuses_before_child_or_codec(self):
+        for budget in [0, 371, True, float('inf'), '370']:
+            with self.subTest(budget=budget), patch.object(capture, 'capture_process') as child, \
+                    patch.object(capture, 'verify_codec') as codec, \
+                    contextlib.redirect_stdout(io.StringIO()) as out:
+                code = capture.run_case(Path('/packet'), 'test', 'source.lean', AUDITS,
+                    'entry.mjs', 'core.mjs', Path('/existing/codec'), 'digest', 'runner.py',
+                    process_timeout=budget)
+                self.assertEqual(code, 2)
+                self.assertEqual(capture.strict_json(out.getvalue())['reason'],
+                                 'PARENT_CAPTURE_BUDGET_REFUSED')
+                child.assert_not_called()
+                codec.assert_not_called()
 
     def test_timeout_preserves_partial_pipes(self):
         error = subprocess.TimeoutExpired(['child'], 130,

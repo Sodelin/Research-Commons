@@ -20,6 +20,14 @@ the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
 G5 retain inherited acceptance. G6/G7 retain accepted hand characterizations
 with incomplete formal/native assembly. General G3/G4 remain open.
 
+The [full population-certificate verification route](FULL-POPULATION-CONTEXT.md)
+retains the complete source/PMF interfaces instead of reducing the theorem to a
+small pure-polynomial projection. All five complete-context attempts are
+UNVERIFIED; exact limits, API/library variants and retained errors are explicit.
+The changed public transport route passed its existing probe with normal exit
+and encrypted readback. [The verification record](FULL-CONTEXT-VERIFICATION.json)
+keeps that infrastructure result separate from mathematical acceptance.
+
 ## Actual hosted checks
 
 [CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains32 bounded follow-on
@@ -68,9 +76,10 @@ The actual native state/key/panel and total coefficient relations remain open.
 The new particular-table certificate and
 [sparse-row composition proposal](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
 retain exact finite support, duplicates and zero-on-absence semantics at SOURCE
-ONLY level. Their full contexts remain unelaborated and outside778. The
-certificate's unmodified original closure already exceeds the current hosted
-single-document limit; no oversized or native check was attempted.
+ONLY level. Their full contexts remain unverified and outside778. The original
+closure exceeds the normal client's 256 KiB source guard. A separate 1 MiB
+client submitted the complete certificate context; its latest attempt reached
+the 300-second deadline with pending declarations. No native check occurred.
 
 ## Original source context
 
@@ -111,7 +120,8 @@ python3 -B check_online.py --case two \
 ```
 
 Both public drivers now use the shared [capture/recovery helper](ONLINE-CAPTURE-RECOVERY.md).
-Twelve offline regressions pass. Actual launcher integration checks cover the
+Fourteen offline regressions pass, including the two bounded parent-deadline
+controls added for the separate full-context route. Actual launcher integration checks cover the
 existing six-audit power domain, a rejected false proof and the original
 transport probe. The new finite-target dispatch additionally passed its eleven
 audits through the public launcher. The corrected pure coefficient dispatch
@@ -121,7 +131,8 @@ and verified encrypted readback.
 Exact tested source hashes and encrypted-capture digests are retained in
 [the integration evidence](ONLINE-RUNNER-INTEGRATION.json). These add no
 mathematical case. Component checks use the existing report-drain wrapper;
-both Node protocol/acceptance clients remain unchanged. Timeouts and abnormal
+the original Node clients remain unchanged, while the separate full-context
+variant has an exact reversible patch map. Timeouts and abnormal
 exits cannot pass. No new identity, key export, local compiler or model API
 is involved, and a refused record binding has no plaintext fallback.
 

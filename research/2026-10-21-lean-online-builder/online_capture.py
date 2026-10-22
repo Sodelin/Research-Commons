@@ -158,13 +158,17 @@ def seal_record(codec, expected, payload):
         raise CaptureRefused('ENCRYPTED_READBACK_UNCONFIRMED') from None
 
 
-def run_case(root, case, source, audits, entry, core, codec, codec_sha256, runner):
+def run_case(root, case, source, audits, entry, core, codec, codec_sha256, runner,
+             *, process_timeout=130):
     """Seal original bytes before emitting a small, fixed-field projection."""
     try:
+        if type(process_timeout) is not int or not 1 <= process_timeout <= 370:
+            raise CaptureRefused('PARENT_CAPTURE_BUDGET_REFUSED')
         verify_codec(codec, codec_sha256)
         required = [source, entry, core, runner, 'online_capture.py']
         before = packet_snapshot(root, required)
-        capture = capture_process(['node', str(root / entry), str(root / source), *audits])
+        capture = capture_process(['node', str(root / entry), str(root / source), *audits],
+                                  timeout=process_timeout)
         try:
             after = packet_snapshot(root, required)
         except Exception:
@@ -176,6 +180,7 @@ def run_case(root, case, source, audits, entry, core, codec, codec_sha256, runne
             'source_inventory_before': before, 'source_inventory_after': after,
             'identity_unchanged': unchanged, 'client_exit': capture['exit'],
             'capture_failure': capture['failure'], 'status': status, 'reason': reason,
+            'process_timeout_seconds': process_timeout,
             'original_stdout_base64': base64.b64encode(capture['stdout']).decode(),
             'original_stderr_base64': base64.b64encode(capture['stderr']).decode()}
         complete = True

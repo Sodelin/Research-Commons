@@ -17,10 +17,11 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | G6 | Accepted finite-profile, shared-source robust certification characterization; existing ordered cell/wire receivers recovered | Source-faithful approximation/images/statistics and integrated formal/native acceptance |
 | G7 | Accepted complete-registry, finite-unranked exact-design characterization; general raw-calendar supplier recovered | Concrete census/admission, whole-history/QE/policy execution and native refinement |
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
-| P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
+| P1 | Scoped finite-statistical hosted checks; full-class owner problem remains separate | Original full scientific gates stay with its owner |
+| P5 | Attributed completed original hand-proof counterexample; bounded operator/integral checks remain separate | Independent/full formal validation is unperformed, without reopening the completed hand-proof goal |
 
-The latest prepared native context contains **777 modules / 5,918,543 source
-bytes**:754 originals and23 owned/import variants, with the physical sparse
+The latest prepared native context contains **778 modules / 5,922,316 source
+bytes**:755 originals and23 owned/import variants, with the physical sparse
 supplier present once. All preceding548 entries are unchanged. The additions
 are221 original dependencies of the retained G1/G2/G5 endpoints, the two
 checked path-budget/game components, conditional source transfer, response
@@ -100,3 +101,10 @@ For a free history, a false continuation becomes semantic loss only after
 ConstantsWellDefined and LegalHistory hold at those exact values. A physical
 transcript additionally needs ReachableHistory. Disabled action fibres and
 cap/transport UNKNOWN are not budget-loss certificates.
+
+The full original population dependencies also have retained complete component
+build/audit evidence at exact matching source pins; see
+RETAINED-POPULATION-COMPONENT-SUCCESSORS.json. The separate supplied-table
+certificate has a new full-context verification path in FULL-POPULATION-CONTEXT.md.
+Its current complete attempts remain UNVERIFIED; the32 accepted bounded hosted
+cases are unchanged. A larger client input limit is not a theorem or native permit.
