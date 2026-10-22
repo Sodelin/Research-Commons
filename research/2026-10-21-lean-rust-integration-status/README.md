@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[8a96bb01](https://github.com/Sodelin/Research-Commons/tree/8a96bb015b6cb88df196d6897b5437344a09238b/research/2026-10-21-lean-rust-solver-builder).
+[535f7b9c](https://github.com/Sodelin/Research-Commons/tree/535f7b9c0db9a54abb196b3aadf1da7cc4b1e44a/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -135,3 +135,16 @@ two baseball tasks; none was reactivated or reassigned here.
 
 No local Git, phone project artifact/build, new chat/subagent, model test,
 old held-job replay or canonical code/profile/whitelist change occurred.
+
+The source frontend now emits guarded assertion queries: valid constants,
+legal history and optional mathematical reachability are conjoined with the
+requested winning/losing/terminal/action claim. IssuedAssertion retains the
+exact immutable input and document. FALSE remains inconclusive. This new Rust
+addition is UNCOMPILED/UNEXECUTED; it has no inherited Lean AST acceptance.
+
+The peer's finite region budget and free-history horizon components add four
+plus six attributed hosted audits. Exact complete projections/submissions and
+all selected types were reviewed. Native state/AST/prefix and actual source
+premises stay open. Latest source inventory771/5891078B preserves all prior548
+entries and adds retained G1/BOTH G2/full-timed G5 roots. It is source preparation,
+not full imports/object acceptance or an encrypted-controller grant.
