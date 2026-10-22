@@ -134,3 +134,26 @@ After admission, extend the EXISTING population/provider verification group
 with empty Copy, four-copy ordered grafts, exact graph/sample mismatch,
 duplicate destinations, altered/omitted/foreign coefficients and render/bit/
 profile exhaustion. None of these staged checks was executed.
+
+## Exact full-epoch order and panel map retained
+
+The complete peer source review559dba6b and complete existing
+FullEpochSupport188177cf body were read and rehashed. Use fullRows_actual with
+the EXPLICIT native original edge-occurrence list followed by one ancestral
+none, plus ActiveIn. No equality with FinEnum.toList(Option E) is assumed.
+This concerns an individual physical epoch; global calendar phase order is
+unchanged and still needs its original relation.
+
+For panel composition retain RestrictedPanel.copies as the actual bijection
+from local Fin indices onto the WHOLE outer ancestor-closed panel. Its sample
+and every genealogy leaf must follow that map. Arbitrary global observer labels
+are a separate injection and cannot replace it. The new exporter certifies a
+local Context/Snapshot/Table candidate; it does not capture or prove that
+outer panel relation merely by retaining those primitive inputs.
+
+The existing SparseWordComposition.actual_followRows/evaluated_original_word
+route accepts total per-step evaluated fibres at one fixed physical bank,
+including closed transition gamma. It need not impose independent slot
+variables. The full epoch state/panel/key/representative correspondence must
+still be supplied before that route applies. No new pass or native execution
+is inferred from this source reuse.
