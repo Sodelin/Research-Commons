@@ -126,3 +126,63 @@ authenticated runtime results remain open. The original-owner encrypted native
 controller and transitive first writers remain UNBOUND. The hosted case count
 stays28 and source selection stays775; this review adds neither a proof case
 nor a native module, API, execution permit or new test suite.
+
+## Completed and empty-copy final observers
+
+The subsequent COMPLETE12642B native/g7_word_readout.rs at Rust PR2 commit
+2157e3105cb207ef7667a02d5e7541c45825dbf5 was read and authenticated:
+SHA2566c260c139294431acf42d905d8f808ad112cd1b2861af24531a50ffcc94563b2,
+Git blobdcece4caadcea4cc222ee14c1dca64c948a4408d. Its COMPLETE5188B contract
+has SHA256ae385d8c9b31cf2e3f97a6383ff992b927e97e2bd655e499b8d563e18cbc84f4.
+This remains source review only; both new Rust components are uncompiled and
+unexecuted, including their inherited provider and renderer refinements.
+
+The Batch retains one owning WordTable for every menu. Each row's complete
+selected view is checked against its supplied snapshot witness. The completed
+observer requires nonempty copies, the completed terminal and one original
+ancestral-root live tree. The separate empty-copy observer requires empty copies
+and FullView, with empty live/genealogy/population fields. Both retain the original
+register mixture behind the final observation. Every occurring terminal must map
+to an outcome, each menu has its own exact polynomial mass check, and any failed
+menu or resource bound aborts the entire Batch. Their concatenation is a base
+response vector, not one PMF or an automatically legal action.
+
+Local rooted/split keys use local Copy positions. Global keys first apply the
+supplied injective original Copy labels and then canonicalize the tree. The
+global split complement uses the exact sorted label universe, with full leaf
+coverage checked; it does not reuse0..m as an arbitrary global universe. The
+bounded original canonical_tree/unordered_forest and law::split_string source
+sections were inspected for that comparison. No label/empty-terminal mismatch
+was found in this scope. No renderer or quotient theorem was newly checked.
+
+Two closer existing formal receivers make the intended distinction precise:
+
+- SourceCompletedUnrankedTree.one_live_unranked_forest, in4396B/source
+  a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b, takes
+  Nonempty Copy, the actual Valid invariant and live.card=1, and produces a
+  singleton unranked forest with a well-labelled tree and all original copies.
+- SourceUnrankedAllPanels.no_copy_unranked_forest, in2887B/source
+  4936fb211505d9c5961256ba4f1a4c63db0065c7c94ccadf3fcd67a320f270c3, states
+
+      [IsEmpty Copy] -> sourceUnrankedForest s Finset.univ = empty.
+
+  The same module's original_empty_panel_forest handles keep=empty on a larger
+  carrier. These are existing source statements, not new hosted audits. The
+  complete two bodies and the14270B original observer body1ee53650 were read.
+
+For the empty-copy FullView branch, the existing finite-word
+ControlledWordPolynomial.actual_controlled_word_polynomial has no Nonempty Copy
+premise in its source declaration. Compose the actual finite-word row law with
+the above constant empty-forest observer and PMF.map_const. Do not apply the
+nonempty completed-tree receiver or confuse this with zero response dimension.
+The native-to-source coefficient and state maps remain required before that
+composition licenses native output.
+
+ActualExactLawResponses accepts observe:Finset(UnrankedTree Copy)->Obs. A label
+map used only in that final observer need not first become a new source-process
+copy-permutation theorem. It still needs an exact well-defined observer on the
+child-swap quotient, actual original Copy/menu identity and the authorized
+rooted or root-suppressed topology readout. The native least-label canonicalizer
+and string keys do not supply those proofs merely by normalization or mass1.
+The source provider is still evaluated at one shared physical point; this
+review introduces no independently free slot-survival cube or new source family.
