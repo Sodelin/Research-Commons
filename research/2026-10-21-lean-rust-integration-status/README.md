@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[9ac0df5a](https://github.com/Sodelin/Research-Commons/tree/9ac0df5ad585c7736a27803178cd9b8157f58eed/research/2026-10-21-lean-rust-solver-builder).
+[432d4dc5](https://github.com/Sodelin/Research-Commons/tree/432d4dc5788f8cb8859f627a7aa56787b630e5d7/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -81,10 +81,14 @@ mathematical laws, physical readouts and estimates retain distinct provenance.
 The existing source census, whole-forest polynomial compiler, exact-history
 QE/CAD providers and typed G7 rank/resource strategy were recovered before
 new implementation. G7-POLICY-REUSE.md retains their exact source/scope. The
-next pure Rust frontend will compile the same H/W quantified game for the
-existing real-QE provider, with general-channel horizon D=card(Row*Obs) and
-original positive-support PATH costs. A formula is not an executable selected
-policy; effective selection, lower certificates and full frontier remain open.
+first pure Rust frontend now authors that H/W quantified game for the existing
+real-QE provider, including free exact histories and next-action fibres. It
+reuses exact Polynomial/Rational types, general-channel D=card(Row*Obs) and
+original positive-support PATH costs. Constant existence/uniqueness is a
+separate prerequisite. Limits return UNKNOWN. The library/Cargo proposal is
+UNCOMPILED/UNEXECUTED; ten semantic controls are a future plan only. A formula
+is not an executable selected policy: source supply, AST refinement, effective
+selection, lower certificates and full frontier remain open.
 
 NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
 Automatic triggers are removed and the manual job is literal-false. The quiet
