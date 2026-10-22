@@ -10,4 +10,5 @@ require mathlib from git
 
 lean_lib RestrictedCausalSource where
   roots := #[`SelectedWalkReduction, `CanonicalSelectionProfile, `SelectedSourceProfile,
-    `SelectedAncestry, `SelectedProfileSeparation, `CanonicalLatentRoots]
+    `SelectedAncestry, `SelectedProfileSeparation, `CanonicalLatentRoots,
+    `CanonicalFiniteBounds]
