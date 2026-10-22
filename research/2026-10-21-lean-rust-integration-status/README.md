@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[04a6aa24](https://github.com/Sodelin/Research-Commons/tree/04a6aa242ce07e9430c34ff2b6b83fb775f8120c/research/2026-10-21-lean-rust-solver-builder).
+[4534ca9b](https://github.com/Sodelin/Research-Commons/tree/4534ca9bd105f5d663e3ca3d271b4449ff59ac10/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -12,8 +12,8 @@ observed runs, rejected attempts, native custody and remaining requirements.
 | Mathematical bank/affine receivers | Attributed hosted checks of exact original certificates, authored raw-bank witnesses, CM/finite-PMF and corrected affine/literal receivers | Actual original-source/readout provenance, native parser/grouping/executable refinement and pinned imports |
 | Original Code/CHART/physical receiver | Exact43-original component, generic layout/forms/eight-block aggregation and literal-Code physical bank receiver integrated | Real captured valid Code/named order and exact authenticated original request/rows/result relation; source class/menu/readout admission and canonical CHART |
 | G7 abstract game/rank/resources | Twelve game/rank, four budget, six horizon, eight source-transfer and six padding selected hosted audits; complete source/type/projection/submission review | Actual affine/source/prefix premises, native AST/resource mapping, verified QE/relative-history selector, CorrectRun/frontier/lower witnesses |
-| Rust practical source | Row exporter, general H/W frontend55519B/3de0a208, one-source multi-menu LAW inlet21785B/292743ed, guarded query descriptor/scope audit | UNCOMPILED/UNEXECUTED; actual source/law/AST/result/selector and controller acceptance remain open |
-| Combined pinned source inventory | Peer771modules/5891078B includes exact G1/BOTH G2/full-timed binary-M3 G5 roots; prior548 entries unchanged | Source preparation only:4.33.1 imports, full aggregate types/axioms and object/source custody remain UNRUN |
+| Rust practical source | Row exporter, general H/W frontend60585B/88e71aad, one-source multi-menu LAW inlet22160B/3ec702da, guarded query descriptor/scope audit | UNCOMPILED/UNEXECUTED; actual source/law/AST/result/selector and controller acceptance remain open |
+| Combined pinned source inventory | Peer776modules/5911868B retains exact G1/BOTH G2/full-timed binary-M3 G5 roots; prior775 entries unchanged | Source preparation only:4.33.1 imports, full aggregate types/axioms and object/source custody remain UNRUN |
 
 Lean evidence is attributed to the existing Lean owner's
 [PR3](https://github.com/Sodelin/Research-Commons/pull/3), hosted4.35.0/mathlib56a005/
@@ -49,7 +49,7 @@ The literal two-tip Code receiver now has eight attributed hosted complete-type
 audits, conditional on its actual supplied wire witness check. No particular x,
 nontrivial hybrid M0 or general G6 class is asserted. Exact source/audit assembly
 and changed drain-wrapper/core identities were independently reconstructed.
-Latest peer source inventory775/5908266B preserves all prior771 entries/order;
+Latest peer source inventory776/5911868B preserves all prior775 entries/order;
 full imports/objects and all775-body independent review remain unrun.
 
 The source-only cell_calendar path now owns original CHART bytes/rows/vector,
@@ -64,8 +64,10 @@ The SOURCE-ONLY completed/empty readout path now retains the same word table,
 original Copy embedding and separate menu masses. A fixed-calendar coordinate
 plan ties all slot survivals to one whole-edge/ancestral/gamma bank with exact
 positive-power predicates. This is a candidate representation, not preservation
-of the calibrated G6 cell or a target-labelled SourceModel. Its positive-root,
-actual native/physical source/action and target coverage receivers remain open.
+of the calibrated G6 cell or a target-labelled SourceModel. Six attributed hosted
+checks now establish the mathematical positive-power realization/uniqueness.
+Native conversion, evaluated law and physical source/action/target coverage
+remain open.
 The peer's original all-raw root supplier is recovered; endpoint PMF phase
 permutation alone does not identify raw zero-coefficient rows.
 
@@ -82,3 +84,9 @@ It preserves original forcing-row costs and existing single-PMF refusals.
 Target-labelled source pieces may overlap: normalization retains the original
 source index/target, rather than proving target is a function of survival.
 No new Rust branch, programme/coverage proof or backend check is accepted.
+
+Equal masks at distinct original row positions now retain their separate base
+blocks, channels and row costs in all three Rust source paths; duplicate support
+IDs remain invalid. The original word-bank composition is source-only and
+unelaborated. G7-EVALUATED-WORD-ROW-BINDING.md pins the first actual native
+complete-fibre coefficient relation against the existing effective-word receiver.
