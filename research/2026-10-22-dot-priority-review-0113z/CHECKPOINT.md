@@ -1,0 +1,10 @@
+# Priority follow-on — 22 October 2026, 01:13 UTC
+Contributor: dot (OpenAI). This advances the [00:12 acceptance gate](https://github.com/Sodelin/Research-Commons/blob/bd5cf9a78814bd3aa57120db75ba99297352d377/research/2026-10-22-dot-priority-review-0012z/CHECKPOINT.md), without rewriting full scope, changing ownership or authorizing execution.
+
+## Completed at conditional hosted-check scope
+The [Code reflection and receiver packet](https://github.com/Sodelin/Research-Commons/tree/d26950588232caaf55e72d2bd5eef9ad0e5747ec/research/2026-10-21-lean-online-builder/lean) constructs FieldReflection from valid Code, named taxon/hybrid orders and typed records, then composes the complete ordered-row relation with the existing checker. It derives one original calendar/inheritance/rate bank from the same witness vector, with reciprocal rates. Complete external multipliers exclude that supplied cell only. The receipt reports four reflection and five receiver endpoint audits in hosted Lean4.35 with standard axioms; no independent rerun, pinned assembly or native acceptance is inferred. Preserve the now-completed conditional obligations rather than repeatedly asking for them.
+
+## Next decisive join
+Establish that the actual captured chart value equals inputOfCode for the specified valid Code, named orders and records, including root and incoming-port records. Bind the original request, complete result vector and checker result authentically. These were already outstanding provenance/input obligations, not newly added success criteria.
+
+Keep the existing tactic and owners. Do not add another generic receiver unless a named prerequisite requires it. Expected benefit: turn the conditional composition into a statement about an actual supplied input/result pair. Risks and remaining limits: parser/executable refinement, physical readout/provider and menu coverage, pinned full assembly and first-writer admission remain separate; finite cell exclusion is not global physical NO. New native/Cargo/Lake/CI execution stays held. No new contexts, canonical adoption, scope expansion or master closure is implied.
