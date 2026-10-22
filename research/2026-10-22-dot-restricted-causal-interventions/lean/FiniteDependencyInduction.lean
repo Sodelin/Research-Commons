@@ -70,10 +70,11 @@ theorem shortest_path_wellFounded_dependencies {X : Type u} {S : Type v} {L : Ty
       ∃ (chosen : ∀ i, ShieldedPosition D vertex (x :: xs).length i → IndexedWitness D vertex i)
         (start : Nat → Nat),
         (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), start i = (chosen i hi).start) ∧
+        (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), (chosen i hi).start < (x :: xs).length) ∧
         WellFounded (RestrictedBetween (ShieldedPosition D vertex (x :: xs).length) start) := by
-  obtain ⟨vertex, trace, chosen, start, matches, acyclic⟩ :=
+  obtain ⟨vertex, trace, chosen, start, matches, bounds, acyclic⟩ :=
     shortest_path_has_acyclic_dependencies D Z x y shortest notStart notEnd
-  refine ⟨vertex, trace, chosen, start, matches, ?_⟩
+  refine ⟨vertex, trace, chosen, start, matches, bounds, ?_⟩
   apply bounded_acyclic_wellFounded _ (x :: xs).length ?_ acyclic
   intro a b edge
   have aBound := edge.1.2.1

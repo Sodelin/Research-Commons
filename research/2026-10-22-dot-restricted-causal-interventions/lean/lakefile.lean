@@ -33,4 +33,5 @@ lean_lib RestrictedCausalSource where
     `LiteralMAGInducingChains, `DiscriminatingIntervalGeometry,
     `IndexedDiscriminatingSections, `ReversedPositionTrace,
     `MinimalPathOrderDependencies, `FiniteDependencyInduction,
-    `DiscriminatingStatusTransport]
+    `DiscriminatingStatusTransport, `IndexedPrefixColliders,
+    `ShortestPathStatusInvariance]

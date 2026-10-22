@@ -51,7 +51,7 @@ theorem shortest_shielded_position_indexed {X : Type u} {S : Type v} {L : Type w
     (trace : Trace vertex 0 (x :: xs)) (notStart : ¬ Z x) (notEnd : ¬ Z y)
     (i : Nat) (lower : 0 < i) (upper : i + 1 < (x :: xs).length)
     (chord : Adjacent (mag D) (vertex (i - 1)) (vertex (i + 1))) :
-    Nonempty (IndexedWitness D vertex i) := by
+    ∃ indexed : IndexedWitness D vertex i, indexed.start < (x :: xs).length := by
   obtain ⟨front, back, equation⟩ := trace_three_section vertex (x :: xs) 0 trace i lower
     (by simpa only [Nat.zero_add] using upper)
   rcases shortest_shielded_triple_discriminated (mag D) (mag_ancestral_laws D) (mag_single_edges D)
@@ -67,7 +67,8 @@ theorem shortest_shielded_position_indexed {X : Type u} {S : Type v} {L : Type w
       trace_injective vertex (x :: xs) 0 trace shortest.1.2.1
         (offset + w.parents.length + 1) i (by omega) (by simpa only [Nat.zero_add] using centerBound)
         (by omega) (by simp only [Nat.zero_add]; omega) label
-    exact ⟨sameIndex ▸ indexed⟩
+    cases sameIndex
+    exact ⟨indexed, by rw [start]; omega⟩
   · obtain ⟨w, occurs⟩ := right
     obtain ⟨center, indexed, finishBelow, centerBelow, startBound, label⟩ :=
       index_reverse_occurrence D vertex w (x :: xs) trace occurs
@@ -76,7 +77,8 @@ theorem shortest_shielded_position_indexed {X : Type u} {S : Type v} {L : Type w
       trace_injective vertex (x :: xs) 0 trace shortest.1.2.1 center i
         (by omega) (by simpa only [Nat.zero_add] using centerBound)
         (by omega) (by simp only [Nat.zero_add]; omega) label
-    exact ⟨sameIndex ▸ indexed⟩
+    cases sameIndex
+    exact ⟨indexed, startBound⟩
 
 def ShieldedPosition {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (vertex : Nat → X) (size i : Nat) : Prop :=
@@ -93,18 +95,24 @@ theorem shortest_path_dependency_system {X : Type u} {S : Type v} {L : Type w}
     ∃ (chosen : ∀ i, ShieldedPosition D vertex (x :: xs).length i → IndexedWitness D vertex i)
       (start : Nat → Nat),
       (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), start i = (chosen i hi).start) ∧
+      (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), (chosen i hi).start < (x :: xs).length) ∧
       (∀ a vertices, Route (RestrictedBetween (ShieldedPosition D vertex (x :: xs).length) start)
         a vertices a → vertices = []) := by
   classical
   let chosen : ∀ i, ShieldedPosition D vertex (x :: xs).length i → IndexedWitness D vertex i :=
-    fun i hi => Classical.choice (shortest_shielded_position_indexed D vertex Z x y shortest trace
+    fun i hi => Classical.choose (shortest_shielded_position_indexed D vertex Z x y shortest trace
+      notStart notEnd i hi.1 hi.2.1 hi.2.2)
+  have bounds : ∀ i (hi : ShieldedPosition D vertex (x :: xs).length i),
+      (chosen i hi).start < (x :: xs).length := by
+    intro i hi
+    exact Classical.choose_spec (shortest_shielded_position_indexed D vertex Z x y shortest trace
       notStart notEnd i hi.1 hi.2.1 hi.2.2)
   let start : Nat → Nat := fun i =>
     if hi : ShieldedPosition D vertex (x :: xs).length i then (chosen i hi).start else i
   have matches : ∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), start i = (chosen i hi).start := by
     intro i hi
     simp only [start, dif_pos hi]
-  exact ⟨chosen, start, matches,
+  exact ⟨chosen, start, matches, bounds,
     indexed_dependencies_acyclic D vertex (ShieldedPosition D vertex (x :: xs).length) chosen start matches⟩
 
 /-- No indexing oracle remains: the total position function and all actual
@@ -116,6 +124,7 @@ theorem shortest_path_has_acyclic_dependencies {X : Type u} {S : Type v} {L : Ty
       ∃ (chosen : ∀ i, ShieldedPosition D vertex (x :: xs).length i → IndexedWitness D vertex i)
         (start : Nat → Nat),
         (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), start i = (chosen i hi).start) ∧
+        (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), (chosen i hi).start < (x :: xs).length) ∧
         (∀ a vertices, Route (RestrictedBetween (ShieldedPosition D vertex (x :: xs).length) start)
           a vertices a → vertices = []) := by
   let vertex := vertexAt x (x :: xs)
