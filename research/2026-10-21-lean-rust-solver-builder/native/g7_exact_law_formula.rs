@@ -1240,3 +1240,8 @@ pub mod cell_calendar;
 /// Explicit completed unranked menus on the same captured cell/word bank.
 #[path = "g7_word_readout.rs"]
 pub mod word_readout;
+
+
+/// Correlated fixed-calendar survival coordinates; no physical coverage assumed.
+#[path = "g7_correlated_survival.rs"]
+pub mod correlated_survival;

@@ -178,3 +178,9 @@ Local and original global Copy labels are explicit; global split complements
 use the actual label universe. Every menu retains its own mass1 block. This
 supplied-point forward source remains uncompiled/unexecuted and supplies no
 independent slot cube or complete quantified source family.
+
+The SOURCE-ONLY fixed-calendar survival plan now ties every slot to one whole-edge/
+ancestral/gamma bank using exact positive-power predicates and reindexes the same
+bound readout Batch. It does not preserve a calibrated G6 cell, choose target
+pieces, construct a SourceModel or prove native/physical source coverage. See
+[native/G7-CORRELATED-SURVIVAL-CONTRACT.md](native/G7-CORRELATED-SURVIVAL-CONTRACT.md).
