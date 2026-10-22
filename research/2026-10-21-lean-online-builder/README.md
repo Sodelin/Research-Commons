@@ -42,6 +42,13 @@ recovers341 required declarations across20 modules for the same physical row
 endpoints. Exact command extraction is now checked with the actual certificate
 caller; the old metadata and original population mathematics are reused.
 
+The [RAM proof-source route](ONLINE-MEMORY-SOURCE.md) now encrypts the exact
+caller-owned document before piping it to the unchanged hosted client and
+links encrypted result recovery to that request. All28 mocked regressions
+pass; the existing108KB physical context passed and a false proof was
+rejected through this changed route. These integration controls add no
+mathematical case or native-origin/import permission.
+
 ## Actual hosted checks
 
 [CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains35 bounded follow-on
