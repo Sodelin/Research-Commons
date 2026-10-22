@@ -1,6 +1,6 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 08:39 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 09:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
 
 The complete mathematical theorem and its independently scoped hand review are in `POLYTOMY-REFINEMENT-COMPLEXITY.md` and `POLYTOMY-REVIEW-20261022-0712Z.md`. The new `PolytomyReductionModel.lean` does not replace them with a weaker target and does not claim to have verified them.
 
@@ -53,9 +53,11 @@ The further companion `PolytomyFrontierInterface.lean` proposes an explicit cut/
 
 `PolytomyBlockRealization.lean` further proposes a canonical tagged-range ordering/sorting formula, preservation of observed block sets, mixedness, distinct cells and polynomial-size bounds, and an exact adapter for alternative fixed binary block realizations. Its final `full_canonical_frontier_carta_reduction` retains arbitrary cut-certified binary cell trees and compatible labels under the actual D_lambda. The source uses each realization's own fixed cost and does not infer labeled-tree isomorphism from matching type sets. For the specific distinct-leaf, unit-weight combs, enumeration changes do not change C0; the dependency audit explicitly corrects its earlier overstatement on this point.
 
+The independent representation is now also proposed in `PolytomyCladeRepresentation.lean`. It defines cell-clade preservation without a graft witness, proves binary same-cell refinement forces rooted isomorphism, extracts a genuine whole-block frontier, proves exact-once block enumeration and connects the entire actual-D_lambda reduction through `full_standard_canonical_carta_reduction`. `POLYTOMY-CLADE-FRONTIER-BRIDGE.md` supplies the complete hand derivation and identifies the prior standard refinement convention. These terms remain unelaborated and do not supply a graph-edge-contraction datatype or a polynomial-machine certificate.
+
 1. All proposed terms need authorized elaboration and kernel checking. Hand inspection of source APIs is not execution evidence. There may be syntax, implicit-argument, simplifier or tactic issues.
 2. The newly proposed distinct-cell, mixed-descendant and D_lambda adapter terms require elaboration and checking. Their semantic conventions are explicit in `PolytomyStarSemantics.lean`; there is no accepted kernel verification.
-3. The new cut/frontier equivalence must be elaborated. An independent graph-edge-contraction or clade-preservation representation is still not defined and connected in the source; the hand argument is recorded in the dependency audit.
+3. The new independent cell-clade representation and full cut/frontier equivalence must be elaborated. A separate graph-edge-contraction datatype and kernel proof connecting it to the standard cell-clade convention are still not supplied; the complete hand equivalence is recorded with primary-source attribution.
 4. Finite encoded inputs, polynomial construction/time/bit-size bounds, and a polynomial NP certificate checker remain to be formalized. Classical MSSC NP-hardness must enter through a precise, attributed complexity interface. The finite decision equivalence alone is not a formal NP-hardness theorem. The canonical output-realization adapter is now proposed, but its terms are unelaborated and its finite sorting formula is not a certified encoded polynomial constructor. Pinned polynomial-Turing-machine composition is marked `proof_wanted`, and ordinary `ManyOneReducible` is not a substitute for polynomial-time reducibility. The hand encoding note now explicitly rejects huge invalid binary dimensions using input-length-bounded checks before construction loops.
 5. The separate full-DAG subset dynamic program still needs its own formal semantics, correctness induction, and operation/bit-cost bounds.
 
