@@ -12,16 +12,19 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 
 | Component | Evidence retained here | Remaining boundary |
 | --- | --- | --- |
-| G1/G2/G5 | Original accepted source/contracts, including timed and unranked G2 and full timed binary M3 | Coherent native dependency/object recovery; no duplicate theorem reconstruction |
+| G1/G2/G5 | Exact retained roots/dependency closures now SOURCE prepared, including timed/unranked G2 and full timed binary M3 | Native imports/aggregate/object custody; no duplicate theorem reconstruction |
 | G3/G4 | Original master standards plus explicitly scoped source/hand components | All-input source acquisition/NO coverage and original legal-menu unknown-rival forcing |
 | G6 | Accepted finite-profile, shared-source robust certification characterization; existing ordered cell/wire receivers recovered | Source-faithful approximation/images/statistics and integrated formal/native acceptance |
 | G7 | Accepted complete-registry, finite-unranked exact-design characterization; general raw-calendar supplier recovered | Concrete census/admission, whole-history/QE/policy execution and native refinement |
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **547 modules / 4,539,033 source
-bytes**, with the physical sparse supplier present once and explicit import-only
-variants. All selected source hashes and dependency order are recorded. No
+The latest prepared native context contains **770 modules / 5,882,555 source
+bytes**:754 originals and16 owned/import variants, with the physical sparse
+supplier present once. All preceding548 entries are unchanged. The additions
+are221 original dependencies of the retained G1/G2/G5 endpoints and the checked
+finite path-budget bridge. All selected source hashes and dependency order were
+verified; [the exact roots](MASTER-SOURCE-ASSEMBLY.md) are pinned separately. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
 has occurred. Hosted checks use Lean4.35.0/mathlib56a005; the native proposal is
 the distinct Lean4.33.1/mathlib0df444 context.
@@ -55,13 +58,15 @@ Code relation and additional class premises remain concrete use-site
 obligations. [The generic coordinate layout](ORDERED-BANK-LAYOUT.md) is now
 hosted checked. The original-Code wrapper now passes a complete43-original-plus-
 two-owned component check with two explicit hosted API variants, as recorded in
-[ADMISSION-COMPONENT.md](ADMISSION-COMPONENT.md). Captured Code validity, native
-imports and exact ordered-row emission remain separate requirements.
+[ADMISSION-COMPONENT.md](ADMISSION-COMPONENT.md). Captured Code validity/origin
+and native imports remain separate requirements. Universal ordered emission and
+original coefficient lengths for the supplied typed Code are now proved.
 
 [The form reflection](G6-NATIVE-FIELD-REFLECTION.md) now has four actual hosted
 audits against exact projections of the existing CHART and typed row definitions.
-It preserves the value-level primitive rows; the aggregate original-source
-emission, parser/executable refinement and full native import check remain open.
+It preserves the value-level primitive rows. The later aggregate/Code map and
+physical receiver compose those fields through all eight ordered blocks.
+Captured parser values, executable refinement and full native imports stay open.
 
 Supplied mathematical-law and matrix hashes identify values. They do not
 authenticate physical measurements, establish error/confidence contracts or
@@ -78,3 +83,12 @@ finite-Code construction of the field relation, complete original lists,
 ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
+
+There are24 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+complete retained G7 game/rank component and finite path-budget union bridge
+are checked at their stated hosted scope. Neither supplies a QE backend,
+selected policy, original-source instantiation or AST/executable refinement.
+For a free history, a false continuation becomes semantic loss only after
+ConstantsWellDefined and LegalHistory hold at those exact values. A physical
+transcript additionally needs ReachableHistory. Disabled action fibres and
+cap/transport UNKNOWN are not budget-loss certificates.

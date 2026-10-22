@@ -1574,6 +1574,72 @@
       "warning_count": 3,
       "warning_dispositions": "Three benign unused-variable/style warnings; no errors, sorry/unsafe warnings or nonstandard selected axioms.",
       "scope": "Complete retained abstract game and rank-compression bodies, one explicit proof-only hosted API repair, imports hoisted. Affine response, finite-dimensional base, pointwise totality and deletion-closed legality remain real premises. Not actual source instantiation, effective QE/selection, native refinement or pinned import/object acceptance."
+    },
+    {
+      "case": "g7_finite_path_budget_union_bridge",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineG7FinitePathBudgetBridge.lean",
+      "source_sha256": "1b52d64139d9fc7d33558e36c96fd355dcb1ed434ae76a8cc16b7d77d7db1a6d",
+      "submitted_source_sha256": "f10e364bba4df89051ac4b58582bbd324e809e7a4062e894eee8baab0992ee27",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.next_action_legal_deletion' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.extension_call_bound",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.extension_call_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {small large : List.{u_1} A}\n  (h : @List.Sublist.{u_1} A small large)\n  (hf :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites large) :\n  @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³ inst✝⁴\n    support sites regions budget allowedRows allowedSites small"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {small large : List.{u_1} A}\n  (h : @List.Sublist.{u_1} A small large) (a : A)\n  (ha :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a large)) :\n  @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³ inst✝⁴\n    support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a small)"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.extension_call_bound",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.extension_call_bound.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {past future : List.{u_1} A}\n  (hsub : @List.Sublist.{u_1} A past future)\n  (hf :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites future) :\n  @LE.le.{0} Nat instLENat (@List.length.{u_1} A future)\n    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) (@List.length.{u_1} A past)\n      (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n        inst✝⁴ support sites regions budget allowedRows allowedSites past))"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) (past : List.{u_1} A)\n  (hz :\n    @Eq.{1} Nat\n      (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n        inst✝⁴ support sites regions budget allowedRows allowedSites past)\n      (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n  (a : A) :\n  Not\n    (@Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a past))"
+        }
+      ],
+      "client": "online_lean_quiet.mjs",
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "warning_count": 7,
+      "warning_dispositions": "Benign unused-variable/style warnings; no errors, sorry/unsafe warnings or nonstandard selected axioms.",
+      "scope": "Semantic finite union of existing path budgets, optional allowed original row/site sets, physical legality deletion and maximum remaining-call bound. Not BTreeSet/AST/parser/native refinement or source/action admission."
     }
   ]
 }

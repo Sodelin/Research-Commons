@@ -14,6 +14,11 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-path-budget': ('lean/OnlineG7FinitePathBudgetBridge.lean', [
+        'Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed',
+        'Astra.G7FinitePathBudgetBridge.next_action_legal_deletion',
+        'Astra.G7FinitePathBudgetBridge.extension_call_bound',
+        'Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action']),
     'g7-game': ('lean/OnlineG7ExactLawGame.lean', [
         'GProgram.G7.ExactLawResourceGame.consistent_extend',
         'GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal',

@@ -1,103 +1,79 @@
-# Combined physical, PMF, CM and certificate source context
+# Combined retained-root and physical source context
 
-Actual source preparation verified ALL548 module bodies,4543496B. The original
-533-module transitive closure is selected from the exact current/connected
-graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
-G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
-gridWeight and shared-configuration readout helpers are in the SAME proposed
-context as CMFinitePMF and the checked bank/certificate receivers.
+The current SOURCE ONLY preparation contains770 modules /5,882,555 bytes:
+754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
+plus16 explicitly owned modules or import-only variants. Every selected source
+body, byte count and internal topological order was verified. Module names and
+hashes have no aliases. All preceding548 entries are unchanged;221 original
+dependencies add the exact retained G1/G2/G5 closures, and one owned module adds
+the finite path-budget bridge.
 
-The fifteen explicit additional modules are CMFoundations, RationalBankMoments,
-CMRationalBank, CMFinitePMF, the original certificate kernel, both original
-generated certificates, both unchanged authored bank witnesses, and
-NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection/NativeCellAggregateReflection.
-Source counts are build inputs, not endpoint acceptance or an accepted545
-release. The generic layout and bounded form correspondence were
-hosted checked; the original-Code use-site now has a complete hosted admission-component check, while pinned native imports remain uncompiled.
+Graph231767B/SHA256
+65d8b39f1de2694d127c8badf3e8a8591a41fb4ca06cf21aefc3073a5a45c12d.
+Selection164983B/SHA256
+13dc7a6c0d289dac87a0018c75f9f1851d57bc8b7aeb54e3ebdec439b31a28ab.
 
-The two import-only variants are:
+## Selected roots and additions
 
-- CMFoundations imports original G4ActualSparseCertificateExistence instead
-  of extracted CMSparseSupplier. Original2806B SHA256
-  f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945;
-  variant SHA256173f00d1871656a016bc4593bae06030914dc161985d3b6df0aa89d667164073.
-  Its entire mathematical body stays unchanged. The7467B theoretical segment
-  used by CM's sparse supplier is byte-identical in the extracted and original
-  physical source. This is source correspondence, not a new import check.
-- RationalBankMoments changes only Mathlib.Basic.Real.Basic to the pinned
-  Mathlib.Data.Real.Basic import, variant SHA256
+Original physical roots cover G7 raw calendar/carrier/family suppliers, G6
+rational/whole-edge/ordered-cell consumers, G4 whole-profile PMF helpers, G7
+finite admission and the existing GParity.Chart emitter. Added retained roots
+are G1FullOriginalClassMasterAndSharpness,
+UnifiedLean.Source.SourceUnrankedAllPanels, G2TimedOutputForgetting and
+G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
+scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
+not rerun an accepted build.
+
+The16 additions are four CM/rational wrappers; the original certificate kernel;
+two unchanged original generated certificates; two unchanged authored bank
+witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
+NativeCellFormReflection, NativeCellAggregateReflection,
+OriginalCodeChartReflection, OriginalCodeChartReceiver and
+G7FinitePathBudgetBridge. No replacement source or affine engine is introduced.
+
+Only two import variants are selected:
+
+- CMFoundations changes CMSparseSupplier to the original
+  G4ActualSparseCertificateExistence import. Its mathematical body is unchanged.
+  Original SHA f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945;
+  variant173f00d1871656a016bc4593bae06030914dc161985d3b6df0aa89d667164073.
+- RationalBankMoments changes Mathlib.Basic.Real.Basic to the pinned
+  Mathlib.Data.Real.Basic import. Variant SHA
   3c6889a5a7581974d786a66d975ac43a6e9d9bb2194ad64a433898ce8071a4b8.
 
-CMSparseSupplier is absent from the entire proposed graph. No duplicated
-generic grouping or differently named physical law substitutes for the original
-definitions. The graph is topological; all source hashes are verified, with
-no byte-identical module aliases. SOURCE-SINK-BOUNDARY.json records the bounded
-lexical source scan. It is not transitive writer coverage or a runtime proof.
+CMSparseSupplier is absent from the whole graph. The actual7467B theoretical
+segment used by CM is byte-identical in extracted and original physical source.
+This is source correspondence, not import elaboration. The admission-component
+hosted API variants and G7 game proof-only repair are NOT substituted into the
+pinned originals here.
 
-The exact original builder/audit and Lean4.33.1/mathlib0df444 pins are retained.
-No compiler/toolchain/cache/object/native job was invoked. The mandatory OUTER
-entrypoint sh start_new_context.sh refuses before ANY Lake invocation while
-the real writer/controller binding is UNBOUND. The Lake target error is only
-secondary; see ../PRELAKE-ADMISSION.md. Neither was executed.
+## Preparation and admission
 
-The preparer is a source snapshot using the existing phone completion-record
-module, not a deployed Linux writer. Preparing a context does not supply its
-toolchain objects, native import/aggregate acceptance, original source/readout
-admission, effective arbitrary-real moments or parser/binary refinement. The
-older held prefix and consumed CM jobs are not used as this context's evidence.
-
-The full original dependency graph is an explicit --graph input, not bundled
-again here: source path research/2026-10-12-dot-accepted-connected-union1613-1737z/DEPENDENCY-GRAPH.json
-at the original commit, SHA256
+The preparer accepts the original graph through --graph, the published packet
+through --packet-root, and --include-accepted-masters to select this expanded
+closure. The original graph is at
+research/2026-10-12-dot-accepted-connected-union1613-1737z/DEPENDENCY-GRAPH.json,
+Commons1138a5, SHA256
 768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13,
-Git blob f6c7afd5ee3ef57966077c243ca5b3d55199966d. --packet-root selects these
-published owned sources. The preparer reuses already available authenticated
-source bodies or reads each missing body at its immutable source-store hash.
+Gitblob f6c7afd5ee3ef57966077c243ca5b3d55199966d. The union of target names is
+not asserted to be one accepted1614-module release. Only current/connected
+source variants are selected.
 
-The later addition selects the EXISTING G6NaturalCellOrderedCompiler plus its
-six original dependencies, retaining the same CM wrapper and certificate bodies.
-G6-ORDERED-CELL-RECEIVER.md at the packet root records the exact list-emission,
-dimension, witness and contradiction-to-supplied-cell boundaries. The previous
-534-module selection remains in the immutable parent source history; it is not
-mislabelled as having included this later root.
+Already authenticated SOURCE bodies are reused; missing bodies are read at
+immutable content-addressed paths and checked before source persistence.
+No historical objects, prefix jobs, CM receipts or local Git operations are
+used. The original builder/audit and Lean4.33.1/mathlib0df444 pins are retained.
+No compiler, full-import elaboration, Lake/Cargo/CI or native process ran.
 
-The next ONE-module addition is the EXISTING G7OriginalAdmission. Its generic
-finite-code BinaryValid/RegistryValid/CutChild deciders, sourceOfValid and
-decoded original registry reuse the already selected census/encoding/reachability
-dependencies. G7-RAW-SOURCE-DECODER.md at the packet root identifies the precise
-request/Code/layout/emission binding and the separate planar-G7 admission gap.
-The earlier540-module snapshot remains immutable at7094ed81.
+The mandatory OUTER start_new_context.sh is byte-identical to the quiet558B
+refusal source, SHA66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3.
+It was NOT invoked. Actual owner/controller encrypted first-writer binding
+remains UNBOUND before the first Lake invocation; the in-target error is only
+secondary. See ../PRELAKE-ADMISSION.md. SOURCE-SINK-BOUNDARY.json is a bounded
+lexical source/dependency inventory, not transitive runtime enforcement.
 
-The later two owned layout modules retain the exact native AGE/edge/ancestral/
-hybrid order and use the original decoder's registry. Both bank witness roots
-remain selected explicitly. The prior541-module source snapshot remains
-immutable atba7ee06c; ORDERED-BANK-LAYOUT.md records the distinct hosted check
-and source-only use-site scopes.
-
-The later original GParity.Chart root and owned NativeCellFormReflection add
-one existing value-level CHART emitter and its checked primitive correspondence.
-No replacement compiler or parser is introduced. G6TwoTipChartFixture was read
-as an existing bounded row-reflection supplier, but its five #eval commands
-remain excluded and unexecuted. G6-NATIVE-FIELD-REFLECTION.md records the exact
-remaining general ordered-emission premise and the bounded projection scope.
-
-The latest revision changes only the owned OriginalCodeBankLayout import/type
-spelling (2726B/SHA9a8cb563); all other544 module entries remain unchanged.
-ADMISSION-COMPONENT.md at the packet root records its complete43-original-plus-
-two-owned hosted check, including both explicit hosted API variants. Those
-variants are NOT selected into this pinned native source context.
-
-The latest addition is NativeCellAggregateReflection, giving546 modules/
-4530839B. Every prior545 module entry is unchanged. Its four selected hosted
-audits prove ordered emission, coefficient lengths and hemit under explicit
-individual field/order relations. Captured-request instantiation and the
-complete pinned native import/object check remain open.
-
-The latest Code-to-CHART forward-map addition gives547 modules/4539033B.
-Every prior546 entry is unchanged. G7-CODE-CHART-REFLECTION.md records its
-actual bounded hosted check and the exact captured-byte/value relation that
-still needs a receiver. Native execution and full imports remain unrun.
-
-The current Code/CHART physical-receiver addition gives548 modules/4543496B;
-every prior547 entry is unchanged. G6-CODE-CHART-RECEIVER.md records the bounded
-hosted five-audit result, not full pinned imports or native acceptance.
+The previous548-module/4,543,496B selection remains in immutable source history.
+Its graph00d22f30 and selection1898edab are unchanged ancestors of this source
+proposal. Hosted selected-declaration checks remain distinct from pinned full
+imports, native/source-object custody, captured request origin and actual
+physical source/readout/provider admission.
