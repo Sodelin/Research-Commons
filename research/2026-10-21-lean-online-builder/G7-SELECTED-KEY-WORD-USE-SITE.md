@@ -36,6 +36,11 @@ is not discharged by a particular table or by choosing empty rows at an
 unqueried refusal. This is the first precise composition-premise gap after
 the primitive decoding/fibre relation.
 
+The [checked queried-support row receiver](G7-SUCCESSFUL-TRACE-ROWS.md) now
+supplies the generic ONE-step algebra for that local route. Actual native
+decoding, queried certificates, prefix initialization and compression remain
+its use-site premises; a whole actual word instance is still open.
+
 The existing `polynomial_epochRows_representative_independent` handles all
 source-valid representatives of the same full view. Its proof identifies
 the single-epoch polynomial by independently positive rates at time1, then

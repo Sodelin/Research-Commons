@@ -16,7 +16,7 @@ with incomplete formal/native assembly. General G3/G4 remain open.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains31 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains32 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -34,6 +34,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | Correlated slot domain | Positive rates, rational-time power/exponential equivalence and unique shared slot bank; six selected audits | [Power domain](G7-CORRELATED-POWER-DOMAIN.md) |
 | Guarded terminal targets | Same-label stop, all different-target exclusions, shared constants, reachable uniqueness and conditional physical transfer; eleven selected audits | [Terminal receiver](G7-FINITE-TARGET-RECEIVER.md) |
 | Fixed response carrier | Active order, zero-padding/Fin0 and universal game reply quantifier; six selected audits | [Response padding](G7-PADDED-RESPONSE-CARRIER.md) |
+| Successful queried rows | Conditional identities on actual entering support, complete output fibres and exact compression; three selected audits | [Trace rows](G7-SUCCESSFUL-TRACE-ROWS.md) |
 | Pure coefficient comparison | Exact finite rational sums, absent exponents and polynomial equality; three selected audits with rejected original retained | [Coefficient projection](G7-PURE-COEFFICIENT-PROJECTION.md) |
 | Finite laws and certificates | Shared-law moments, PMF/pushforward, grouped rational banks, original certificate roots, affine receiver and exact literals | [PMF](CM-FINITE-PMF.md), [Affine](AFFINE-CERTIFICATES.md), [Literals](AFFINE-LITERALS.md) |
 | P1/P5/G4 support | Explicit finite product/threshold laws, ordered operator algebra/integrals and finite interpolation/determinant statements | [Selected statements](CHECKED-FOLLOWONS.json) |
@@ -108,7 +109,8 @@ Twelve offline regressions pass. Actual launcher integration checks cover the
 existing six-audit power domain, a rejected false proof and the original
 transport probe. The new finite-target dispatch additionally passed its eleven
 audits through the public launcher. The corrected pure coefficient dispatch
-also passed its three audits. Each dated check has normal child exit
+also passed its three audits. The queried-support trace-row entry passed its
+three audits with zero warnings. Each dated check has normal child exit
 and verified encrypted readback.
 Exact tested source hashes and encrypted-capture digests are retained in
 [the integration evidence](ONLINE-RUNNER-INTEGRATION.json). These add no

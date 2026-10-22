@@ -2412,6 +2412,66 @@
       "client_identity_unchanged": true,
       "client_exit": 0,
       "scope": "Pure rational-polynomial coefficient sums over the finite union of both exponent supports, including duplicates and absent coefficients. A proof-only hosted repair; no Code/source validity, destination support/Table soundness, actual population law, native emitter/parser/result origin or full imported certificate context."
+    },
+    {
+      "case": "successful_queried_support_fibre_composition",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/proposals/G7SuccessfulTraceRows.lean",
+      "source_bytes": 4093,
+      "source_sha256": "744555a8ecd37e7f0c0e71e733b897d623d2fee16f1e9bb8a3620d9bd740cfbb",
+      "submitted_source_sha256": "46951f47b47abfc9be870b19e4f0ca0da8bd077dedbf21513996f3f44cd94763",
+      "printed_types": [
+        {
+          "name": "Astra.G7SuccessfulTraceRows.fibre_bind",
+          "printed_type": "Astra.G7SuccessfulTraceRows.fibre_bind.{u_1, u_2, u_3} {A : Type u_1} {K : Type u_2} {C : Type u_3}\n  [DecidableEq.{u_2 + 1} K] [Semiring.{u_3} C] (key : A → K) (rows : Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C)\n  (next : A → Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C) (b : K) :\n  @Eq.{u_3 + 1} C\n    (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n      (@Astra.G7SuccessfulTraceRows.bindRows.{u_1, u_3} A C inst✝¹ rows next) b)\n    (@List.sum.{u_3} C (@Distrib.toAdd.{u_3} C (@instDistribOfSemiring.{u_3} C inst✝¹))\n      (@MulZeroClass.toZero.{u_3} C (@instMulZeroClassOfSemiring.{u_3} C inst✝¹))\n      (@List.map.{max u_1 u_3, u_3} (Prod.{u_1, u_3} A C) C\n        (fun a =>\n          @HMul.hMul.{u_3, u_3, u_3} C C C\n            (@instHMul.{u_3} C (@Distrib.toMul.{u_3} C (@instDistribOfSemiring.{u_3} C inst✝¹)))\n            (@Prod.snd.{u_1, u_3} A C a)\n            (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n              (next (@Prod.fst.{u_1, u_3} A C a)) b))\n        rows))",
+          "printed_type_sha256": "86e9aabe6ed02f183bf6a1c332555e0c6e6dd9719b023dd69af286f8bdfaf159"
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.queried_bind_matrix",
+          "printed_type": "Astra.G7SuccessfulTraceRows.queried_bind_matrix.{u_1, u_2, u_3} {A : Type u_1} {K : Type u_2} {C : Type u_3}\n  [DecidableEq.{u_2 + 1} K] [Semiring.{u_3} C] [Fintype.{u_2} K] (key : A → K)\n  (rows : Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C) (next : A → Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C)\n  (table : K → K → C)\n  (hqueried :\n    ∀ (a : Prod.{u_1, u_3} A C),\n      @Membership.mem.{max u_1 u_3, max u_1 u_3} (Prod.{u_1, u_3} A C) (Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C)\n          (@List.instMembership.{max u_1 u_3} (Prod.{u_1, u_3} A C)) rows a →\n        ∀ (b : K),\n          @Eq.{u_3 + 1} C\n            (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n              (next (@Prod.fst.{u_1, u_3} A C a)) b)\n            (table (key (@Prod.fst.{u_1, u_3} A C a)) b))\n  (b : K) :\n  @Eq.{u_3 + 1} C\n    (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n      (@Astra.G7SuccessfulTraceRows.bindRows.{u_1, u_3} A C inst✝¹ rows next) b)\n    (∑ k,\n      @HMul.hMul.{u_3, u_3, u_3} C C C\n        (@instHMul.{u_3} C (@Distrib.toMul.{u_3} C (@instDistribOfSemiring.{u_3} C inst✝¹)))\n        (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key rows k) (table k b))",
+          "printed_type_sha256": "1a57f67560c89a0688b59890789a3d1cb32e86fbd9e879559868453ce6d1ce75"
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.compressed_step",
+          "printed_type": "Astra.G7SuccessfulTraceRows.compressed_step.{u_1, u_2, u_3} {A : Type u_1} {K : Type u_2} {C : Type u_3}\n  [DecidableEq.{u_2 + 1} K] [Semiring.{u_3} C] [Fintype.{u_2} K] (key : A → K)\n  (rows compressed : Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C)\n  (next : A → Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C) (table : K → K → C) (prefixWeights : K → C)\n  (hqueried :\n    ∀ (a : Prod.{u_1, u_3} A C),\n      @Membership.mem.{max u_1 u_3, max u_1 u_3} (Prod.{u_1, u_3} A C) (Astra.G7SuccessfulTraceRows.Rows.{u_1, u_3} A C)\n          (@List.instMembership.{max u_1 u_3} (Prod.{u_1, u_3} A C)) rows a →\n        ∀ (b : K),\n          @Eq.{u_3 + 1} C\n            (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n              (next (@Prod.fst.{u_1, u_3} A C a)) b)\n            (table (key (@Prod.fst.{u_1, u_3} A C a)) b))\n  (hprefix :\n    ∀ (k : K),\n      @Eq.{u_3 + 1} C (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key rows k)\n        (prefixWeights k))\n  (hcompressed :\n    ∀ (b : K),\n      @Eq.{u_3 + 1} C (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key compressed b)\n        (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key\n          (@Astra.G7SuccessfulTraceRows.bindRows.{u_1, u_3} A C inst✝¹ rows next) b))\n  (b : K) :\n  @Eq.{u_3 + 1} C (@Astra.G7SuccessfulTraceRows.fibre.{u_1, u_2, u_3} A K C inst✝ inst✝¹ key compressed b)\n    (∑ k,\n      @HMul.hMul.{u_3, u_3, u_3} C C C\n        (@instHMul.{u_3} C (@Distrib.toMul.{u_3} C (@instDistribOfSemiring.{u_3} C inst✝¹))) (prefixWeights k)\n        (table k b))",
+          "printed_type_sha256": "6e047c57fae332288de34e23241974384e28207b066f6e0870691507304d04f6"
+        }
+      ],
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.G7SuccessfulTraceRows.fibre_bind",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.fibre_bind' depends on axioms: [propext]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.queried_bind_matrix",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.queried_bind_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.compressed_step",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.compressed_step' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "warning_count": 0,
+      "client": "online_lean_drain.mjs",
+      "client_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "client_exit": 0,
+      "scope": "Generic semiring row fibre algebra. Conditional coefficient identity is required only for actual entering list members, for every output key. Compression and prefix require exact complete fibre identities. No native state/key/polynomial/map or Result refinement, initialization/full-word trace instance, actual population/completion/readout or physical source/action coverage."
     }
   ]
 }

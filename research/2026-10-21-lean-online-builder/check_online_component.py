@@ -7,6 +7,10 @@ from online_capture import run_case
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-trace-rows': ('lean/proposals/G7SuccessfulTraceRows.lean', [
+        'Astra.G7SuccessfulTraceRows.fibre_bind',
+        'Astra.G7SuccessfulTraceRows.queried_bind_matrix',
+        'Astra.G7SuccessfulTraceRows.compressed_step']),
     'population-coefficients': ('lean/proposals/PopulationCoefficientProjection.lean', [
         'Astra.NativePopulationTableCertificate.polynomial_coefficient',
         'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent',

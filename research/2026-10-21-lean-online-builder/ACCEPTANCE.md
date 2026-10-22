@@ -87,7 +87,7 @@ ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
 
-There are31 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+There are32 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
 complete retained G7 game/rank component, finite path-budget union bridge and
 exact free-history game-horizon composition are checked at their hosted scope.
 Conditional two-sided source transfer also preserves Winning and the SAME valid

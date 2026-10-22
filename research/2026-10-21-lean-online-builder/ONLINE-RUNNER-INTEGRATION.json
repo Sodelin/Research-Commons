@@ -333,6 +333,60 @@
       "record_encoding": "json",
       "finished_utc": "2026-10-22T06:39:06.161Z",
       "scope": "Actual newly added dispatch integration of the same three pure coefficient endpoints. No additional mathematical case or full population law."
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "ba26db6df001e011963e569cc02676c3025a30a83f9e54cf4d758d1723477b16",
+      "case": "g7-trace-rows",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "71cdc13eaf5d2bd8e828d82bad3587e8bea0e5da399643015290372c2adab69e",
+      "source": "lean/proposals/G7SuccessfulTraceRows.lean",
+      "source_bytes": 4093,
+      "source_sha256": "744555a8ecd37e7f0c0e71e733b897d623d2fee16f1e9bb8a3620d9bd740cfbb",
+      "submitted_source_sha256": "46951f47b47abfc9be870b19e4f0ca0da8bd077dedbf21513996f3f44cd94763",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.G7SuccessfulTraceRows.fibre_bind",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.fibre_bind' depends on axioms: [propext]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.queried_bind_matrix",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.queried_bind_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.compressed_step",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.compressed_step' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 0,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 81492,
+      "encrypted_capture_sha256": "dce1e9cd665e8c3491e1c4b13921cf7304669f5b140f6ce6d43a545757d300c2",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:52:45.554Z",
+      "scope": "Actual new queried-row dispatch integration of the same three generic endpoints; no additional mathematical case or native refinement."
     }
   ],
   "new_theorem_case_count": 0,
