@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[0874c13e](https://github.com/Sodelin/Research-Commons/tree/0874c13e2b71a88154ac2bc8a7cb033965213fc0/research/2026-10-21-lean-rust-solver-builder).
+[d44d4276](https://github.com/Sodelin/Research-Commons/tree/d44d4276f8e17542a0aaed327f7e20751a7037f5/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -12,7 +12,7 @@ observed runs, rejected attempts, native custody and remaining requirements.
 | Mathematical bank/affine receivers | Attributed hosted checks of exact original certificates, authored raw-bank witnesses, CM/finite-PMF and corrected affine/literal receivers | Actual original-source/readout provenance, native parser/grouping/executable refinement and pinned imports |
 | Original Code/CHART/physical receiver | Exact43-original component, generic layout/forms/eight-block aggregation and literal-Code physical bank receiver integrated | Real captured valid Code/named order and exact authenticated original request/rows/result relation; source class/menu/readout admission and canonical CHART |
 | G7 abstract game/rank/resources | Twelve game/rank, four budget, six horizon, eight source-transfer and six padding selected hosted audits; complete source/type/projection/submission review | Actual affine/source/prefix premises, native AST/resource mapping, verified QE/relative-history selector, CorrectRun/frontier/lower witnesses |
-| Rust practical source | Row exporter, general H/W frontend60659B/b04da15a, one-source multi-menu LAW inlet22160B/3ec702da, guarded query descriptor/scope audit | UNCOMPILED/UNEXECUTED; actual source/law/AST/result/selector and controller acceptance remain open |
+| Rust practical source | Row exporter, general H/W frontend60719B/8841858b, one-source multi-menu LAW inlet22160B/3ec702da, guarded query descriptor/scope audit | UNCOMPILED/UNEXECUTED; actual source/law/AST/result/selector and controller acceptance remain open |
 | Combined pinned source inventory | Peer776modules/5911868B retains exact G1/BOTH G2/full-timed binary-M3 G5 roots; prior775 entries unchanged | Source preparation only:4.33.1 imports, full aggregate types/axioms and object/source custody remain UNRUN |
 
 Lean evidence is attributed to the existing Lean owner's
@@ -63,8 +63,8 @@ coverage/AST/QE/result or runtime admission is inferred.
 The SOURCE-ONLY completed/empty readout path now retains the same word table,
 original Copy embedding and separate menu masses. A fixed-calendar coordinate
 plan ties all slot survivals to one whole-edge/ancestral/gamma bank with exact
-positive-power predicates. This is a candidate representation, not preservation
-of the calibrated G6 cell or a target-labelled SourceModel. Six attributed hosted
+positive-power predicates. The plan does not preserve the calibrated G6 cell. Its new supplied-family
+assembler constructs a mathematical SourceModel from retained provided data. Six attributed hosted
 checks now establish the mathematical positive-power realization/uniqueness.
 Native conversion, evaluated law and physical source/action/target coverage
 remain open.
@@ -74,8 +74,8 @@ permutation alone does not identify raw zero-coefficient rows.
 The coordinate plan also binds every supplied forcing record to its exact mask
 and shared immutable menu carrier, using one cumulative lifting budget. Empty
 supplied row registries remain representable. This checks the supplied registry;
-physical legal-action coverage and target-labelled SourceModel construction
-remain separate. Existing canonical-state/empty/singleton observer suppliers
+physical source/target/action coverage remains separate from the now-authored
+mathematical SourceModel assembly. Existing canonical-state/empty/singleton observer suppliers
 are reused without a new proof case or state enumerator.
 
 The source-only menu-aware measurement now derives row*menu*channel
@@ -98,3 +98,16 @@ renders typed graph/snapshot/coefficient proof targets in RAM. Neither source
 was compiled, and no document was rendered/checked. The original engine stays
 unchanged; exact full-epoch population order, outer panel map, total fibres,
 word/readout and origin remain separate obligations.
+
+The supplied-family assembler now connects retained providers to the existing
+Problem with ONE parameter bank across all positional row/menu/history blocks.
+Restrictions conjoin with the original power/gamma domain; overlapping pieces
+with different targets remain distinct. It reuses the original validator and
+compiler. The8706B source is uncompiled/unexecuted; target-labelled physical
+coverage, native law/AST refinement and selector/result acceptance remain open.
+
+The peer's public capture helper/companions have a complete source-linked review.
+Twelve mock regressions and three actual existing-case launcher checks are
+attributed to the Lean owner. Normal exits, exact source/audits and encrypted
+readback precede acceptance; timeout bytes remain recoverable. There was no
+independent run here, new mathematical case or native-controller admission.
