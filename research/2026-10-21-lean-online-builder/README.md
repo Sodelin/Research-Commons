@@ -1,13 +1,19 @@
 # Lean components and original-source assembly
 
-This packet contains actual hosted Lean checks and a separately prepared,
-uncompiled native source context. The current source context contains **777
-modules / 5,918,543 bytes**:754 original modules and23 explicitly owned modules
-or import variants. Every selected body and internal dependency order was
-verified. All preceding548 entries are unchanged. Additions comprise221
-original dependencies of the retained G1/G2/G5 endpoints, the two checked
-path-budget/game components, conditional two-sided source transfer and the
-zero-padded response carrier, plus the retained two-tip declaration projection and concrete Code receiver, followed by the correlated positive-power domain and guarded terminal target receiver.
+The current uncompiled source context contains **778 modules / 5,922,316 bytes**:
+755 unchanged original modules and23 explicitly owned modules or import variants.
+The latest source correction adds only the retained G7EncodedMergerSupport. All
+preceding777 entries, their relative dependency order and125 external names are
+unchanged. Every selected body and internal order was verified.
+
+The [prior-solution audit](PRIOR-SOLUTION-AUDIT.md) removes duplicate literal-state,
+encoded-support, transition/admission-factory and generic bind-helper work from
+the active queue. The [ongoing preflight](PRIOR-SOLUTION-PREFLIGHT.json) requires
+an exact predecessor/successor comparison before further derivation, implementation
+or execution. Existing fixtures, coefficient/word laws and historical native
+builds are reused at their original evidence level. The recently checked generic
+trace rows are supporting verification of retained fibre algebra. They are not
+a new original mathematical frontier.
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and [the ledger](ACCEPTANCE-LEDGER.json) preserve
 the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
@@ -51,7 +57,7 @@ even when some partial audits were clean.
 The separate [physical word-bank proposal](G7-PHYSICAL-POWER-WORD-SPECIALIZATION.md)
 composes the power-domain component with original WordVariable/wordEval and
 the existing controlled-word supplier at SOURCE ONLY level. Its complete
-imports are unelaborated; it adds no hosted case and is not selected in777.
+imports are unelaborated; it adds no hosted case and is not selected in778.
 
 The [native primitive-row review](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
 pins the existing population recurrence/support and both coefficient/physical
@@ -62,7 +68,7 @@ The actual native state/key/panel and total coefficient relations remain open.
 The new particular-table certificate and
 [sparse-row composition proposal](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
 retain exact finite support, duplicates and zero-on-absence semantics at SOURCE
-ONLY level. Their full contexts remain unelaborated and outside777. The
+ONLY level. Their full contexts remain unelaborated and outside778. The
 certificate's unmodified original closure already exceeds the current hosted
 single-document limit; no oversized or native check was attempted.
 
@@ -75,8 +81,8 @@ and Code receiver roots. CMSparseSupplier is absent; the original physical
 supplier occurs once. Only the two declared CM/Real import variants are selected.
 Hosted proof API variants remain separate.
 
-Graph SHA256:9e5fd81569c08edc566d48e8853ff38c0a058d65af2d326b09690e667ef0b454.
-Selection SHA256:68cd26c843d5792c47a310cc9221d288d0a89e09a1172af7311665dc66ca33b8.
+Graph SHA256:e3c299e538b6d956d5562243140d246246f121edcacc1c1bea9bd23bbb18811c.
+Selection SHA256:f9f4845b86c4af93653d8661862fb2fac1ccc98fd3536b8b903e45a9c4702433.
 This is a source-only proposal for Lean4.33.1/mathlib0df444a3. No full-import
 elaboration, compiler, Lake/Cargo/CI run or object-custody acceptance occurred.
 The [external import catalog](native/physical-pmf/EXTERNAL-IMPORT-SOURCE-PRESENCE.json)

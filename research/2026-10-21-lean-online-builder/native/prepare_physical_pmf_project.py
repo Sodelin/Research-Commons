@@ -22,7 +22,8 @@ ROOT = HERE.parent
 PHYSICAL_ROOTS = ['G7RawCalendarRoot', 'G7OriginalCarrierCoverage',
     'G7OriginalFamilyCalendarNormalization', 'G6RationalNaturalCellWitness',
     'G6OriginalWholeEdgeChartConsumer', 'G4WholeProfileDetermination',
-    'G6NaturalCellOrderedCompiler', 'G7OriginalAdmission', 'GParity.Chart']
+    'G6NaturalCellOrderedCompiler', 'G7OriginalAdmission', 'GParity.Chart',
+    'G7EncodedMergerSupport']
 ACCEPTED_MASTER_ROOTS = ['G1FullOriginalClassMasterAndSharpness',
     'UnifiedLean.Source.SourceUnrankedAllPanels', 'G2TimedOutputForgetting',
     'G5M3NormalizedClusterSplitIdentification']
@@ -222,7 +223,7 @@ def main():
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
-    receipt,_ = seal({'action':'LEAN-NEW-MASTER-AND-TARGET-SOURCE-CONTEXT-PREPARE-20261022-r30',
+    receipt,_ = seal({'action':'LEAN-PRIOR-SOLUTION-ENCODED-SUPPORT-REUSE-20261022-r34',
         'source_graph_sha256':hashlib.sha256((destination/'DEPENDENCY-GRAPH.json').read_bytes()).hexdigest(),
         'source_selection_sha256':hashlib.sha256((destination/'SOURCE-SELECTION.json').read_bytes()).hexdigest(),
         'modules_source_verified':len(rows),'source_bytes':sum(row['bytes'] for row in rows),

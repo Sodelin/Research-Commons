@@ -1,20 +1,20 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains777 modules /5,918,543 bytes:
-754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
+The current SOURCE ONLY preparation contains778 modules /5,922,316 bytes:
+755 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
 plus23 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
 dependencies add the exact retained G1/G2/G5 closures. Six further components
 are the checked path-budget bridge, game-horizon composition, conditional
 source transfer, response padding, safe retained two-tip declaration projection
-and concrete Code receiver, followed by the correlated positive-power domain and guarded terminal target receiver. Every immediate776-module predecessor entry and
+and concrete Code receiver, followed by the correlated positive-power domain and guarded terminal target receiver. Every immediate777-module predecessor entry and
 its relative dependency order are unchanged.
 
-Graph234052B/SHA256
-9e5fd81569c08edc566d48e8853ff38c0a058d65af2d326b09690e667ef0b454.
-Selection166551B/SHA256
-68cd26c843d5792c47a310cc9221d288d0a89e09a1172af7311665dc66ca33b8.
+Graph234334B/SHA256
+e3c299e538b6d956d5562243140d246246f121edcacc1c1bea9bd23bbb18811c.
+Selection166756B/SHA256
+f9f4845b86c4af93653d8661862fb2fac1ccc98fd3536b8b903e45a9c4702433.
 
 EXTERNAL-IMPORT-SOURCE-PRESENCE.json separately catalogs all125 direct imports
 outside this exact graph. All122 Mathlib paths occur in the NONTRUNCATED actual
@@ -23,7 +23,7 @@ Its lean-toolchain is4.33.1; the3 direct Lean core files were retrieved and
 Git-blob rehashed at release commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6.
 No direct path is missing. The power-domain and terminal-target modules import only names
 already in that catalog; all125 external names and upstream path identities
-remain unchanged. Catalog metadata identifies the new777-module graph. This
+remain unchanged. Catalog metadata identifies the new778-module graph. This
 establishes no declaration API, transitive dependency, installed package,
 import elaboration or object custody.
 
@@ -102,3 +102,15 @@ network, key or output writer. The existing record owner captures its returned
 metadata in RAM and encrypts before record persistence. It checks source body
 hashes, dependency order and unchanged parent entries; this supplies no runtime
 encryption mediation or native admission.
+
+## Prior-solution correction
+
+Only unchanged G7EncodedMergerSupport was added after the mandatory audit.
+It supplies destinations_encoded, coefficients_zero_of_not_encoded and the
+canonical live/dead fields GIVEN encoded input. The previous777 source
+entries and125 external names are unchanged. Source/byte/order integrity
+was checked; this is not a fresh kernel result, complete import check or
+source-object acceptance. The original population/word fixture producers
+remain unselected and unexecuted. Full comparison and removed duplicate work
+are in ../../PRIOR-SOLUTION-AUDIT.md; redacted integrity evidence is in
+ENCODED-SUPPORT-REUSE-VERIFICATION.json.
