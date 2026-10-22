@@ -57,6 +57,11 @@ Graph SHA256:eba9d6284d27c8e7e3ff825ce5ace6e25b307f2566be3226503f9ca79d887b35.
 Selection SHA256:b38dc772c451de8eec50942f573c2029233890925e30661b7e3115ccdf6c3b9c.
 This is a source-only proposal for Lean4.33.1/mathlib0df444a3. No full-import
 elaboration, compiler, Lake/Cargo/CI run or object-custody acceptance occurred.
+The [external import catalog](native/physical-pmf/EXTERNAL-IMPORT-SOURCE-PRESENCE.json)
+matches all125 direct external paths at those pinned upstream revisions:
+122 Mathlib modules and3 Lean core modules. It checks source-path presence,
+with no missing direct path; declaration APIs, transitive imports, installed
+sources and objects remain unverified by that catalog.
 
 The quiet outer launcher remains unexecuted and refuses before the first Lake
 invocation. Actual original-owner encrypted writer/controller/recipient/frame/

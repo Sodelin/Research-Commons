@@ -16,6 +16,16 @@ eba9d6284d27c8e7e3ff825ce5ace6e25b307f2566be3226503f9ca79d887b35.
 Selection166101B/SHA256
 b38dc772c451de8eec50942f573c2029233890925e30661b7e3115ccdf6c3b9c.
 
+EXTERNAL-IMPORT-SOURCE-PRESENCE.json separately catalogs all125 direct imports
+outside this exact graph. All122 Mathlib paths occur in the NONTRUNCATED actual
+root tree f18edc0401eb2459e5241329743eb8626fdff148 of the pinned0df444a3 commit.
+Its lean-toolchain is4.33.1; the3 direct Lean core files were retrieved and
+Git-blob rehashed at release commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6.
+No direct path is missing. This source-presence check changes no selected
+module and establishes no declaration API, transitive dependency, installed
+package, import elaboration or object custody. The775 graph/selection hashes
+above remain unchanged.
+
 ## Selected roots and additions
 
 Original physical roots cover G7 raw calendar/carrier/family suppliers, G6
