@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[8d169932](https://github.com/Sodelin/Research-Commons/tree/8d1699327966896d989f829307016cbafbb29699/research/2026-10-21-lean-rust-solver-builder).
+[a4afd826](https://github.com/Sodelin/Research-Commons/tree/a4afd82611e683701f3c9431a75762876a1e0434/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -97,6 +97,20 @@ separate prerequisite. Limits return UNKNOWN. The library/Cargo proposal is
 UNCOMPILED/UNEXECUTED; ten semantic controls are a future plan only. A formula
 is not an executable selected policy: source supply, AST refinement, effective
 selection, lower certificates and full frontier remain open.
+
+The bounded LAW inlet is now source-implemented without editing the inherited
+joint-frontier engine. Every original forcing row and sampling/readout menu
+stays in ONE source model with the SAME parameter bank. It preserves exact
+parent specialization, literal menu offsets and all-or-nothing family errors.
+Several menu-law blocks are not a PMF and require explicit actual affine
+programme maps. The inherited4-sample/32-bank caps and full source/controlled-law
+refinement remain open. Both Rust modules remain uncompiled/unexecuted.
+
+At an open history, a FALSE continuation supports loss only after constants
+and LegalHistory are true at the exact free values. Reachability is additionally
+required for an actual physical transcript. A false/disabled action fibre is
+never itself budget loss; homogeneity may permit stopping. The backend/result
+consumer enforcing those interpretation gates is still required.
 
 NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
 Automatic triggers are removed and the manual job is literal-false. The quiet
