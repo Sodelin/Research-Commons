@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[29237b71](https://github.com/Sodelin/Research-Commons/tree/29237b716cf4da99b4f212cb67e800f8f71b6ce1/research/2026-10-21-lean-rust-solver-builder).
+[1b0f210d](https://github.com/Sodelin/Research-Commons/tree/1b0f210d042f7879c786f0a0f6eb5e15734fbbf0/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -68,3 +68,10 @@ of the calibrated G6 cell or a target-labelled SourceModel. Its positive-root,
 actual native/physical source/action and target coverage receivers remain open.
 The peer's original all-raw root supplier is recovered; endpoint PMF phase
 permutation alone does not identify raw zero-coefficient rows.
+
+The coordinate plan also binds every supplied forcing record to its exact mask
+and shared immutable menu carrier, using one cumulative lifting budget. Empty
+supplied row registries remain representable. This checks the supplied registry;
+physical legal-action coverage and target-labelled SourceModel construction
+remain separate. Existing canonical-state/empty/singleton observer suppliers
+are reused without a new proof case or state enumerator.
