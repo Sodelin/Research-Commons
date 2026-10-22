@@ -111,8 +111,21 @@ def OpenImageClaim {V : Type u} {S : Type w}
     [Fintype V] [DecidableEq V] [Fintype S] [Nonempty S]
     (N : Network V (Fin 2)) (W : V → V → ℝ)
     (H : Subgroup (Equiv.Perm S)) : Prop :=
-  GraphAdmitted N → WeightsAdmitted N W →
+  1 < Fintype.card S → GraphAdmitted N → WeightsAdmitted N W →
     openImage N W H = {P | PositiveInvariantPair H P}
+
+/-- Strong constructive reverse direction, retaining a strictly positive root.
+    This also supplies the positive-root-distribution variant. UNPROVED. -/
+def OpenRealizationClaim {V : Type u} {S : Type w}
+    [Fintype V] [DecidableEq V] [Fintype S] [Nonempty S]
+    (N : Network V (Fin 2)) (W : V → V → ℝ)
+    (H : Subgroup (Equiv.Perm S)) : Prop :=
+  1 < Fintype.card S → GraphAdmitted N → WeightsAdmitted N W →
+    ∀ P, PositiveInvariantPair H P →
+      ∃ (π : S → ℝ) (M : V → V → Mat S),
+        (∀ i, 0 < π i) ∧ RootAdmitted H π ∧
+        (∀ u v, N.edge u v = true → OpenTransition H (M u v)) ∧
+        pairLaw N π W M = P
 
 def rootedFork : Network (Fin 3) (Fin 2) where
   root := 0
@@ -136,7 +149,7 @@ def RootForkContextClaim {V : Type u} {S : Type w} {Z : Type v}
     [Fintype V] [DecidableEq V] [Fintype S] [Nonempty S] [Fintype Z]
     (N : Network V (Fin 2)) (W : V → V → ℝ)
     (H : Subgroup (Equiv.Perm S)) (Q : S → S → Z → ℝ) : Prop :=
-  GraphAdmitted N → WeightsAdmitted N W → ContextAdmitted Q →
+  1 < Fintype.card S → GraphAdmitted N → WeightsAdmitted N W → ContextAdmitted Q →
     Set.image (fun P => context P Q) (openImage N W H) =
     Set.image (fun P => context P Q) (openImage rootedFork forkWeights H)
 
@@ -276,6 +289,51 @@ def CT3ForkStrictInclusionClaim : Prop :=
     effectiveImage twoReticulationBlob halfWeights CT3Strict ∧
   effectiveImage rootedFork forkWeights CT3Strict ≠
     effectiveImage twoReticulationBlob halfWeights CT3Strict
+
+def CT2ForkImageClaim : Prop :=
+  effectiveImage rootedFork forkWeights CT2PositiveEntries =
+    {K | CT2PositiveEntries K}
+
+def CT3ForkImageClaim : Prop :=
+  effectiveImage rootedFork forkWeights CT3Strict = {K | CT3Strict K}
+
+def CT3RealizationClaim {V : Type u} [Fintype V] [DecidableEq V]
+    (N : Network V (Fin 2)) (W : V → V → ℝ) : Prop :=
+  GraphAdmitted N → WeightsAdmitted N W →
+    {K | CT3Strict K} ⊆ effectiveImage N W CT3Strict
+
+def ct2BoundaryMatrix : Mat DNA :=
+  fun i j =>
+    if j - i = 0 then 9 / 16 else
+    if j - i = (1, 1) then 1 / 16 else 3 / 16
+
+def ct3MixtureMatrix : Mat DNA :=
+  fun i j =>
+    if j - i = 0 then 511 / 1000 else
+    if j - i = (1, 1) then 61 / 1000 else 214 / 1000
+
+/-- Full leaf-observable source exclusion, not just a port mismatch. -/
+def QuartetSourceExclusionClaim (T : Mat DNA → Prop) (target : Mat DNA) : Prop :=
+  ∀ (α β : ℝ) (M : Fin 7 → Mat DNA) (B : Fin 4 → Mat DNA),
+    0 < α → α < 1 → 0 < β → β < 1 →
+    (∀ e, T (M e)) → (∀ e, T (B e)) →
+    quartetLaw (semidirectedCore α β M) B ≠
+      quartetLaw target (fun _ => jcMatrix (1 / 2))
+
+/-- Excludes all effective comparison edges, allowing arbitrary pendants. -/
+def QuartetEdgeExclusionClaim (T : Mat DNA → Prop) (target : Mat DNA) : Prop :=
+  ∀ (K : Mat DNA) (B : Fin 4 → Mat DNA),
+    T K → (∀ e, T (B e)) →
+    quartetLaw K B ≠ quartetLaw target (fun _ => jcMatrix (1 / 2))
+
+def CT2ObservableBoundaryClaim : Prop :=
+  CT2PositiveEntries ct2BoundaryMatrix ∧
+  ct2BoundaryMatrix ∈ effectiveImage rootedFork forkWeights CT2PositiveEntries ∧
+  QuartetSourceExclusionClaim CT2PositiveEntries ct2BoundaryMatrix
+
+def CT3ObservableMixtureClaim : Prop :=
+  ct3MixtureMatrix ∈ effectiveImage twoReticulationBlob halfWeights CT3Strict ∧
+  QuartetEdgeExclusionClaim CT3Strict ct3MixtureMatrix
 
 /-- An elementary consequence of equality, NOT a proof of any image claim. -/
 theorem context_congr {S : Type w} {Z : Type v} [Fintype S]
