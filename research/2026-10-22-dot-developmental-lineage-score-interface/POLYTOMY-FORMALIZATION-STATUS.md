@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 22:57 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 23:16 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued ORIGINAL legal-node mask SOURCE, 23:16 UTC
+
+Four OPTIONAL UNELABORATED modules repair the prior spurious-suffix boundary without changing the independent target. A same-grammar mask parser marks exactly real node tokens and never unary-field bits. Its selected suffixes are exactly real subtree views, whose leaf lists are the existing scanClades. An actual fixed three-stack/five-label program physically logs those mask bits with all-word failure cleanup. The general time bound charges 3L+q+length(accumulator)+3; the actual singleton start takes at most 3L+5. Caller embedding preserves outside data/frame, and actual paid reversing transfer yields an exact forward mask in at most 4L+6, with pending/reverse work clean.
+
+POLYTOMY-LEGAL-NODE-MASK.md gives the hand proof, original-clade connection, pinned API readings and remaining full-chain obligations. The next layer remains actual bounded replay, finite cell fields, target guard, uniqueness/set equality, all supplied fixed clades and original score/budget. No constructor-origin promise, fixed-comb shape, source-solution witness, host parser oracle or natural-valued finite control is introduced.
+
+This is still not VerifierMachineWitness or kernel evidence. The separately proposed constructor, encoded-source hardness, complete verifier composition/time/cleanup, transitive dependency/kernel checks, arbitrary-DAG and biological scopes retain their stated limits. No execution, new independent review or novelty claim.
 
 ## Continued ORIGINAL independent verifier parsing SOURCE, 22:57 UTC
 

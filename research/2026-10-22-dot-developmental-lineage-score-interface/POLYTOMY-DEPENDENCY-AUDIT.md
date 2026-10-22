@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 23:16 UTC: exact legal-node mask and actual logging/restoration
+
+Four OPTIONAL UNELABORATED modules give an all-word original-grammar mask, exact actual-node suffix/clade enumeration, a fixed three-stack/five-label physical logger, caller-preserving operational embedding and actual paid forward-order restoration. The proposed 3L+q+length(accumulator)+3 bound includes malformed-field and prior-accumulator cleanup; the singleton entry is 3L+5 and the restored forward mask is 4L+6. Prefix fuel and tree structures occur only in the specification/proof, not finite control. Each private boundary and outside caller frame is retained.
+
+Fresh read-only Lean v4.33.1 source verified flatMap_cons in Init/Data/List/Basic.lean and replicate_one, replicate_succ', reverse_replicate, replicate_append_replicate in Init/Data/List/Lemmas.lean. The guessed name replicate_add was not used. Existing pinned mathlib EvalsToInTime.trans and proof-side embedding/transfer/composition interfaces remain unchanged. Textual delimiter and placeholder screening is not a Lean parser, compilation, execution, full axiom audit or verified build. No research runtime, compiler, test or CI ran.
+
+The physical mask repairs the parseable-suffix shortcut but is only one component. Actual bounded node replay, typed cell validation, independent target guard, every fixed-tree clade, uniqueness/set equality, original distinct-type score, complete verifier time/cleanup, compatible source hardness and kernel/dependency closure remain open. No canonical-origin/source-witness restriction, arbitrary-DAG closure or biological identifiability claim is added; no previous review is transferred to these new terms.
+
 ## Continuation, 22:57 UTC: original arbitrary-tree parser and caller realization
 
 Four OPTIONAL UNELABORATED modules give the exact two-unary-field raw grammar on arbitrary binary trees, a five-label/two-Boolean-stack syntax machine, caller-preserving operational embedding and a byte-exact reuse of the existing forward frame parser for the ORIGINAL pair convention. The forest proof charges a physical pending count q in 2L+q+2; the singleton entry actually creates its slot and takes at most 2L+4. Neither fuel nor decoded naturals occur in finite control. All caller-external stacks and caller frame survive the embedding; pending and private scratch are clean on both paths.
