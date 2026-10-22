@@ -165,3 +165,16 @@ or execution budget exhaustion is not a budget-NO certificate.
 There is no authenticated backend result consumer or effective selector in
 this packet. No new native/Cargo/Lake/CI/QE/model execution, writer admission,
 key/recipient export, owner retry or canonical profile change is introduced.
+
+The integrated hosted G7ExactLawSourceTransfer and G7PaddedResponseCarrier
+sources now supply the conditional same-point/game and padding lemmas above.
+Their eight plus six selected complete types and exact source/submitted-audit
+projections are reviewed in evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json.
+This is attributed peer checking, not a Rust AST proof or provider factory.
+
+Representation uses the SAME action, response and resource carriers. Its
+legal_iff/update_eq fields are genuine obligations. A native case menu must
+cover every legal action in the requested original problem before a losing
+result excludes its full strategy class; a restricted menu cannot establish
+loss for a larger action universe. A transferred current-history ambiguity
+pair is not one fixed obstruction against every possible future policy.

@@ -148,3 +148,10 @@ Four budget and six free-history horizon selected hosted audits are integrated
 under lean/hosted435, with complete types and exact source/audit reconstruction
 in evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json. The actual native resource/AST
 mapping, valid prefix, source/affine providers and pinned imports remain open.
+
+The conditional source-transfer and padded-response suppliers are now integrated:
+eight plus six selected hosted audits, with exact complete types/projections
+in evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json. The actual native provider,
+case/menu coverage and AST instantiation remain open. Same-carrier legality
+does not prove that a restricted case menu covers a larger original action
+universe; original losing-budget claims retain that coverage requirement.
