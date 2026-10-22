@@ -90,3 +90,43 @@ The entire certificate retains the4MiB frame bound (constant12; check392).
 Preserve exact rationals and the original framing; do not round, truncate or
 route this derived matrix through the raw AFFINE codec. A transport/resource
 refusal supplies no source-level mathematical NO or native admission.
+
+## Exact result binding and separate transport limits
+
+The original checker recompiles the same captured chart and matches its full
+canonical request/BANK/MATRIX/cap prefix before reading a decision. SAT binds
+the complete dimension-sized assignment and row-sized EVAL vector, checks all
+original rows AND the direct chart interpretation, and recomputes every EVAL.
+UNSAT binds the complete row-sized multiplier vector, checks nonnegativity,
+zero combined coefficients and the original negative-bound/positive-strict
+condition, then recomputes BOUND/STRICT. Its later nonzero strict-weight test
+agrees with positivity because the earlier checker already rejected negatives.
+UNKNOWN is not accepted as a certificate. These are source comparisons, not
+native execution/refinement or source/readout admission.
+
+The4MiB certificate bound is enforced by protocol::check. CHART execute356-370
+has no final output-length gate; LAW's separate gate326-330 must not be assumed
+to protect CHART. No overflowing execution was run or established here. Keep
+the exact original resource/refusal outcome; do not infer successful bounded
+production from the checker limit or the projected-row cap.
+
+A conservative SOURCE/ARITHMETIC bound does cover the raw request plus original
+compiled matrix prefix: each original coefficient is0,+/-1 or +/-one input
+endpoint; a bound is0/1, an input rational or a difference of two fixed cuts.
+Input256bit rationals give coefficient tokens<=514 ASCII characters using the
+loose decimal_digits<=bit_count bound. Fixed-cut differences have numerator
+<=513bits/denominator<=512bits, hence tokens<=1027characters. With32columns,
+128rows,65536request bytes and4096fixed-prefix allowance, the total is at most
+2,311,040bytes, below4MiB. This is an UNFORMALIZED deduction from the original
+eight row blocks, NOT a Lean theorem, executed experiment or bound on projected
+weights, the chosen witness, EVAL vector or final certificate.
+
+The unchanged unified runtime and MCP request_json envelope each admit only
+262144 UTF8 bytes, including literal JSON escaping and fields. The bridge's
+runtime-result-file cap is8MiB. None overrides the direct RC1 request65536/
+certificate4MiB limits, and canonical native_bridge still accepts only AFFINE
+and LAW. Larger direct results do not become usable check requests by naming
+the outer task. The exact source pins/call sites and remaining boundaries are
+recorded in evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json under
+native_request_matrix_certificate_binding. No runtime/API/whitelist or writer
+admission was changed.
