@@ -1,6 +1,6 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 09:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 09:30 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
 
 The complete mathematical theorem and its independently scoped hand review are in `POLYTOMY-REFINEMENT-COMPLEXITY.md` and `POLYTOMY-REVIEW-20261022-0712Z.md`. The new `PolytomyReductionModel.lean` does not replace them with a weaker target and does not claim to have verified them.
 
@@ -62,6 +62,14 @@ The independent representation is now also proposed in `PolytomyCladeRepresentat
 5. The separate full-DAG subset dynamic program still needs its own formal semantics, correctness induction, and operation/bit-cost bounds.
 
 These gaps are not hidden assumptions of the proposed finite reduction theorem; they are additional obligations before claiming the full external complexity result formally verified. The complete mathematical proof remains the independently hand-reviewed artifact, not a Lean certificate.
+
+## Upstream exact-cover bridge and external dependency continuation
+
+`PolytomyExactCoverBridge.lean` now adds proposed proof terms reducing ordinary exact cover by triples to the genuine MSSC first-cover objective, then composing with the entire independently defined cell-clade/actual-D_lambda chain. Its final `full_exactTripleCover_carta_reduction` still quantifies over every admissible binary refinement and compatible label assignment. The target is not replaced by a disjoint-triple or caterpillar-only decision problem. `POLYTOMY-EXACT-COVER-BRIDGE.md` supplies the full threshold argument: for N=3q the minimum possible first-cover cost is 3q(q+1)/2, attained exactly when the ordering starts with a q-set exact cover. The source uses the equivalent finite sum of prefix capacity bounds rather than requiring a separate closed-form division identity.
+
+This shortens the possible imported source-hardness obligation from MSSC to classical X3C. It does not provide an encoded X3C-hardness theorem or any polynomial machine/checker evidence. All source is still unelaborated. The original Feige-Lovasz-Tetali hardness route and its hand review remain unchanged.
+
+`POLYTOMY-EXTERNAL-COMPLEXITY-AUDIT.md` records a read-only discovery of an alternative concrete mathlib-TM2 composition and SAT-completeness development, including retrieved pre-existing pinned external CI/axiom-log evidence. Its toolchain differs and its source has no selected license, so nothing was copied, installed, imported or run. Two other candidate frameworks have additional model/interface limitations. This corrects no claim of ours that the missing infrastructure was globally unavailable: the preceding audit explicitly made only a pinned-source finding. The remaining gap is an uncompleted and unverified whole-chain integration, constructor, checker and hardness interface. External SAT CI is not our Carta verification.
 
 ## Pinned read-only API audit
 
