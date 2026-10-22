@@ -22,4 +22,4 @@ lean_lib RestrictedCausalSource where
     `FiniteSelectedMAGDecision, `ExplicitProfileDecoding, `ComputableCanonicalLabels,
     `FiniteTranscriptDecoder, `MarginalIndicatorAncestry, `RefinedObservedSeparator,
     `PartialObservedQueryFamily, `RefinedIndicatorSeparator, `PartialIndicatorQueryFamily,
-    `CommonObservedMAG, `DiscriminatingSeparatorStatus]
+    `CommonObservedMAG, `DiscriminatingSeparatorStatus, `InducingEndpointMarks]
