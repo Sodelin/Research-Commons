@@ -19,4 +19,4 @@ lean_lib RestrictedCausalSource where
     `OriginalIndicatorProjection, `OriginalCanonicalSourceAdapter,
     `EndpointColliderActivation, `InducingPathSeparation, `LiteralSelectedMAG,
     `SelectedMAGValidity, `FiniteOriginalTargetImage, `FiniteGraphDecisions,
-    `FiniteSelectedMAGDecision, `ExplicitProfileDecoding]
+    `FiniteSelectedMAGDecision, `ExplicitProfileDecoding, `ComputableCanonicalLabels]
