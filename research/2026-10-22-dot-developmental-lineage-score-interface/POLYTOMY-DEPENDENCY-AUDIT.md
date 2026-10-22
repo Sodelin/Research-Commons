@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 20:13 UTC: genuine multiport adapters and original leaf/cost routines
+
+Six OPTIONAL UNELABORATED modules use actual inspected Embedding.stmt/runs/liftStacks_eq and Transfer.stmt/runs rather than the unsupported use of single-port Program.call for a multiport caller. The same pinned proof-side sources were reread; Lean's pinned List.reverse_replicate and List.length_tail statements were checked read-only. Private stack/control boundaries and arbitrary outside caller data are explicit. Actual original token/prefix bytes and incremental original combTailCost invariant are retained, not a replacement scoring objective.
+
+No new dependency was installed and no source was executed, compiled or independently reviewed. The full original canonical membership/enumeration/arithmetic/serializer/controller and standalone downstream machine remain, as do independent verifier, closed encoded hardness and all transitive axiom/toolchain/kernel checks. Original actual-D_lambda/all-refinement and biological/general-DAG scope are unchanged. Source-only components do not establish a build certificate or a closed complexity theorem.
+
 ## Continuation, 19:47 UTC: complete original internal validator routine source
 
 Six OPTIONAL UNELABORATED modules join actual physical original-N cap/count creation, guarded destructive declared-count equality, original complete-input strict-range parsing, failure-safe mass/cleanup and the actual descending coverage loop. The proposed all-input validator bound is 17L^4+44L^3+63L^2+90L+55, with original bytes preserved and all scan/query tapes clean. It returns exactly the original normalized-record guard, including N=0 and malformed cases, not a new source language.

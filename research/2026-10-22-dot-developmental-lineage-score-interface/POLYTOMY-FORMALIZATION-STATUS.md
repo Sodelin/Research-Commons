@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 19:47 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 20:13 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued actual original leaf/cost and multiport components, 20:13 UTC
+
+Six OPTIONAL UNELABORATED modules supply actual arbitrary-multiport embedding with exact transition-count and outside-stack preservation, a control-preserving extra-tape validator adapter, original unary leaf-token writing, incremental ORIGINAL combTailCost accumulation, an explicit injective seven-port accepted-leaf body and actual q-1 false-prefix emission with counter cleanup. The full hand derivation is POLYTOMY-ACTUAL-CANONICAL-LEAF-COMPONENTS.md. These terms use physical counters and real copy/transfer instructions, not unbounded Nat control or a hidden membership oracle.
+
+The integrated accepted-leaf bound is 3|remaining|+3|type|+3|block|+16; finishing the comb prefix costs q-1+2. Actual row-specific membership, descending type/block controllers, original arithmetic/binary headers and standalone constructor cleanup/packaging remain OPEN. Independent checker, closed encoded hardness and every compatibility/axiom/kernel check also remain. No runtime, certificate, new review, novelty, full formal NP-completeness or biological/general-DAG closure. Original complete reduction endpoint retained.
 
 ## Continued COMPLETE original internal validator routine SOURCE, 19:47 UTC
 
