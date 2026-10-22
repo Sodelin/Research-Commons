@@ -22,19 +22,22 @@ with incomplete formal/native assembly. General G3/G4 remain open.
 
 The [full population-certificate verification route](FULL-POPULATION-CONTEXT.md)
 retains the complete source/PMF interfaces instead of reducing the theorem to a
-small pure-polynomial projection. All five complete-context attempts are
-UNVERIFIED; exact limits, API/library variants and retained errors are explicit.
+small pure-polynomial projection. The original five complete-module attempts
+remain UNVERIFIED at their exact revisions. The later
+[scoped physical context](SCOPED-POPULATION-CONTEXT.md) **passed all four audits**
+in a99,274-byte document, retaining the same actual source definitions and
+physical conclusion. Exact limits, API/library variants and retained errors are explicit.
 The changed public transport route passed its existing probe with normal exit
 and encrypted readback. [The verification record](FULL-CONTEXT-VERIFICATION.json)
 keeps that infrastructure result separate from mathematical acceptance.
 The [retained compiler dependency review](POPULATION-DECLARATION-DEPENDENCY-REVIEW.json)
 recovers341 required declarations across20 modules for the same physical row
-endpoints. Source-command extraction remains open; this is reused old metadata,
-not a new proof or permission to replace full module bodies.
+endpoints. Exact command extraction is now checked with the actual certificate
+caller; the old metadata and original population mathematics are reused.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains32 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains33 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -54,6 +57,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | Fixed response carrier | Active order, zero-padding/Fin0 and universal game reply quantifier; six selected audits | [Response padding](G7-PADDED-RESPONSE-CARRIER.md) |
 | Successful queried rows | Conditional identities on actual entering support, complete output fibres and exact compression; three selected audits | [Trace rows](G7-SUCCESSFUL-TRACE-ROWS.md) |
 | Pure coefficient comparison | Exact finite rational sums, absent exponents and polynomial equality; three selected audits with rejected original retained | [Coefficient projection](G7-PURE-COEFFICIENT-PROJECTION.md) |
+| Actual population-table certificate | Complete admitted-Code fibres, duplicate aggregation, zero on absence and the same positive-rate/nonnegative-time source kernel; four complete types/axiom audits | [Physical certificate](SCOPED-POPULATION-CONTEXT.md) |
 | Finite laws and certificates | Shared-law moments, PMF/pushforward, grouped rational banks, original certificate roots, affine receiver and exact literals | [PMF](CM-FINITE-PMF.md), [Affine](AFFINE-CERTIFICATES.md), [Literals](AFFINE-LITERALS.md) |
 | P1/P5/G4 support | Explicit finite product/threshold laws, ordered operator algebra/integrals and finite interpolation/determinant statements | [Selected statements](CHECKED-FOLLOWONS.json) |
 
@@ -80,10 +84,11 @@ The actual native state/key/panel and total coefficient relations remain open.
 The new particular-table certificate and
 [sparse-row composition proposal](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
 retain exact finite support, duplicates and zero-on-absence semantics at SOURCE
-ONLY level. Their full contexts remain unverified and outside778. The original
-closure exceeds the normal client's 256 KiB source guard. A separate 1 MiB
-client submitted the complete certificate context; its latest attempt reached
-the 300-second deadline with pending declarations. No native check occurred.
+ONLY level for actual native instances. The generic certificate context is now
+hosted checked; the sparse-row composition proposal and full native imports
+remain unverified and outside778. The old module closure exceeds the normal
+client's256KiB source guard. Dependency-preserving command extraction checks
+the same physical certificate in99,274bytes. No native check occurred.
 
 ## Original source context
 

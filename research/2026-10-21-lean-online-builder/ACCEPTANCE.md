@@ -88,7 +88,7 @@ ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
 
-There are32 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+There are33 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
 complete retained G7 game/rank component, finite path-budget union bridge and
 exact free-history game-horizon composition are checked at their hosted scope.
 Conditional two-sided source transfer also preserves Winning and the SAME valid
@@ -106,5 +106,10 @@ The full original population dependencies also have retained complete component
 build/audit evidence at exact matching source pins; see
 RETAINED-POPULATION-COMPONENT-SUCCESSORS.json. The separate supplied-table
 certificate has a new full-context verification path in FULL-POPULATION-CONTEXT.md.
-Its current complete attempts remain UNVERIFIED; the32 accepted bounded hosted
-cases are unchanged. A larger client input limit is not a theorem or native permit.
+The old complete-module attempts remain UNVERIFIED. The later exact scoped
+physical certificate document passed all four complete audits; see
+SCOPED-POPULATION-CONTEXT-VERIFICATION.json. Its actual kernel/Code/rate
+definitions and original quantifiers are retained, with no extra Encoded-image
+premise. The generic library pass supplies no particular native table/check,
+authenticated input/result or pinned import/object acceptance. A larger client
+input limit is not a theorem or native permit.

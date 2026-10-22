@@ -4,8 +4,11 @@ This is a complete-source interface review, not a new compiler, kernel,
 native run or executable refinement. Exact source identities and reading
 scopes are in G7-PRIMITIVE-COEFFICIENT-SOURCE-REVIEW.json. The historical
 draft/fresh-audit status of the original formal bodies remains unchanged.
-All original formal suppliers in this review are selected in the776-module
-SOURCE context; the later certificate/row proposals below are not selected.
+All original formal suppliers in this review are selected in the current778-module
+SOURCE context; the later certificate/row proposals below are not selected there.
+The generic physical population certificate is now hosted checked in its exact
+scoped source context. Its particular native instance and sparse-row composition
+remain separate, as detailed below.
 
 ## Lower population supplier already exists
 
@@ -161,8 +164,11 @@ The later Rust source return at0874c13e supplies a concrete particular-table
 route. The COMPLETE6083B
 [NativePopulationTableCertificate.lean](lean/proposals/NativePopulationTableCertificate.lean),
 15076B native exporter and9281B contract were independently read, SHA256 and
-Git-blob checked. The Lean body is retained byte-identically. All remain
-UNELABORATED/UNCOMPILED/UNEXECUTED; no generated document or Boolean check was run.
+Git-blob checked. The original Lean body is retained byte-identically. The native
+exporter remains UNCOMPILED/UNEXECUTED; no particular native document or Boolean
+table check ran. The later generic physical source/caller context passed the
+hosted checker with the explicit existing coefficient-proof API variant and
+NNReal caller scope; full pinned native import acceptance is not inferred.
 
 The finite comparison has the right source-level scope: rational coefficient
 sums are compared at the union of both exponent supports, and destinations
@@ -190,7 +196,8 @@ the SAME population coordinate. `checked_sparseRows_actual` gives the intended
 total evaluated row fibre at the SAME rates/time, including zero on absence.
 It requires the actual finite check to equal true; no probability-law equality
 is inserted as a premise. Its COMPLETE imported context is also UNELABORATED.
-Neither source is selected in776 or counted as a checked case.
+Neither proposal is selected in778. The generic certificate now has its separate
+checked context; the sparse-row composition itself remains UNELABORATED.
 
 There is a concrete current-lane limit. The authenticated original dependency
 closure for the certificate alone has92 modules/643093 source bytes. Hoisting

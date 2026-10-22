@@ -2472,6 +2472,75 @@
       "client_identity_unchanged": true,
       "client_exit": 0,
       "scope": "Generic semiring row fibre algebra. Conditional coefficient identity is required only for actual entering list members, for every output key. Compression and prefix require exact complete fibre identities. No native state/key/polynomial/map or Result refinement, initialization/full-word trace instance, actual population/completion/readout or physical source/action coverage."
+    },
+    {
+      "case": "scoped-population-certificate",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270"
+      },
+      "source": "lean/scoped-context/PopulationTableCertificate.lean",
+      "source_sha256": "801504467b7bf1440bdf9ab4d9d052790724605541838223956e4367d2842d35",
+      "submitted_source_sha256": "c3c34c6bd5b327d4139c826db3bb92f7b754b54b75f4c3e252521cebee109c89",
+      "selected_theorem_audits": [
+        {
+          "name": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients",
+          "standard_axioms_only": true,
+          "messages": [
+            "'GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem",
+          "standard_axioms_only": true,
+          "messages": [
+            "'GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.check_sound",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checked_actual_population",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.checked_actual_population' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients",
+          "printed_type": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients.{u_1, u_2, u_3, u_4} {V : Type u_1}\n  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]\n  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X]\n  [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E] [FinEnum.{u_3 + 1} Copy]\n  (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³) {sample : Copy → X}\n  (s d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (@UnifiedLean.Source.NativePairClockLaw.pairRate.{u_2} E r i)) ↑t))\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n        (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n          inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s d)))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+          "printed_type_sha256": "248b06ff6a069626b3b6cfca901eb7ef67f652d42944567e5e4180b0182e93fa"
+        },
+        {
+          "name": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem",
+          "printed_type": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem.{u_1, u_2, u_3, u_4} {V : Type u_1}\n  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]\n  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X]\n  [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E] [FinEnum.{u_3 + 1} Copy]\n  (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³) {sample : Copy → X} (fuel : Nat)\n  (s d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (hd :\n    d ∉\n      @GProgram.G7.EffectiveCoefficientSupport.destinations.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝\n        inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s) :\n  @Eq.{1} (@Polynomial.{0} Rat Rat.semiring)\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n        inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s d))\n    (@OfNat.ofNat.{0} (@Polynomial.{0} Rat Rat.semiring) (nat_lit 0)\n      (@Zero.toOfNat0.{0} (@Polynomial.{0} Rat Rat.semiring) (@Polynomial.instZero.{0} Rat Rat.semiring)))",
+          "printed_type_sha256": "60dbc34b567ffdfb9d9fa87956b8af4e0891b6fa30be2c899893e13195d69314"
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.check_sound",
+          "printed_type": "Astra.NativePopulationTableCertificate.check_sound.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2} {Copy : Type u_3}\n  {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X} (fuel : Nat)\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample) :\n  @Eq.{1} (@Polynomial.{0} Rat Rat.semiring)\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² N sample rows d))\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n        inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s d))",
+          "printed_type_sha256": "67a6ecfcd33c44a871da3721ef7126c884e54ae7e087b0065c3a7b5af5e371ad"
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checked_actual_population",
+          "printed_type": "Astra.NativePopulationTableCertificate.checked_actual_population.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy]\n  [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X}\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (@UnifiedLean.Source.NativePairClockLaw.pairRate.{u_2} E r i)) ↑t))\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n        (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝\n          inst✝¹ inst✝⁶ inst✝² N sample rows d)))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+          "printed_type_sha256": "a5bb0f6923fb4411a597605acd72f34b108f3712bbcdc60afce7593c69f8f5a0"
+        }
+      ],
+      "classification": "Formal verification/integration of the original population mathematics and supplied-table caller; not a new mathematical discovery.",
+      "scope": "Generic actual original single-population row with arbitrary finite admitted carriers, duplicate aggregation, zero on absence, Boolean check, actual CoLocated, same positive rates and nonnegative time. No Encoded-image premise or desired-row identity.",
+      "verification": "SCOPED-POPULATION-CONTEXT-VERIFICATION.json",
+      "revisions": "SCOPED-POPULATION-CONTEXT-REVISIONS.json",
+      "native_lake_or_object_custody": false
     }
   ]
 }

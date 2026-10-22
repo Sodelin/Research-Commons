@@ -1,5 +1,11 @@
 # Complete population-certificate context: verification path
 
+The later [scoped physical context](SCOPED-POPULATION-CONTEXT.md) now checks the
+SAME generic actual-population endpoint successfully in99,274bytes, using the
+retained compiler dependency records and exact original source commands. All
+four complete audits passed. The older complete-module attempts below keep
+their exact UNVERIFIED dispositions; they are not retroactively promoted.
+
 The current full-context source retains the actual original source and PMF definitions and the supplied-table checker. It has 643740 UTF-8 bytes, SHA256 b6f842d241cf1c59d9e9047d3ddf7864fb2b385fe1445f451730f292585f9348. It covers 92 retained dependencies: 91 complete bodies are inlined and the original borrowed FinEnum dependency is bound to the exact reviewed mathlib56a005 standard-library module. The full original-native selection stays unchanged.
 
 This is an engineering verification of existing mathematics and a separately authored certificate caller. Both historical completed-calendar and parallel-epoch certificates already cover the exact 92 original module pins. Their complete aggregate/owned-audit records are retained; the earlier coefficient-smoke target remains incomplete. See RETAINED-POPULATION-COMPONENT-SUCCESSORS.json. Recovery or a new service check is not a new discovery of the original population law.
@@ -94,6 +100,14 @@ The old compiler records give341 transitive owned declarations across20 modules
 for the SAME two endpoints. The pending first-mark declaration is outside that
 closure; the actual SourceEpochRenewal first-jump theorem is inside it.
 Keeping whole bodies instead expands to65 modules and reintroduces first-mark.
-A declaration-preserving source extraction must therefore retain exact command,
-instance and deriving scopes; no such new document or check is claimed yet.
+The dependency graph alone did not supply a declaration-preserving source
+extraction with its exact command, instance and deriving scopes.
 POPULATION-DECLARATION-DEPENDENCY-REVIEW.json records the full selected references.
+
+Subsequent update: that exact scoped source extraction is now checked. The first
+scoped revision exposed the caller's missing NNReal notation scope and was
+REJECTED. Adding only open scoped NNReal before the unchanged caller gave the
+successful99,274-byte document. The original92-module preparation also lacks
+that explicit caller scope; a future whole-module attempt must bind it rather
+than treat its old unverified source as accepted. The new scoped pass preserves
+the full physical theorem without rederiving old first-mark/race results.

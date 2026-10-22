@@ -11,17 +11,24 @@ from online_capture import run_case
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--case', choices=['population-certificate', 'probe'], required=True)
+    parser.add_argument('--case', choices=['population-certificate',
+        'scoped-population-certificate', 'probe'], required=True)
     parser.add_argument('--record-codec', type=Path, required=True)
     parser.add_argument('--codec-sha256', required=True)
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
-    source, audits = (
-        ('lean/OnlineTransportProbe.lean', ['online_transport_probe'])
-        if args.case == 'probe' else
-        ('lean/full-context/PopulationTableCertificate.lean',
-         ['Astra.NativePopulationTableCertificate.check_sound',
-          'Astra.NativePopulationTableCertificate.checked_actual_population']))
+    cases = {
+        'probe': ('lean/OnlineTransportProbe.lean', ['online_transport_probe']),
+        'population-certificate': ('lean/full-context/PopulationTableCertificate.lean',
+            ['Astra.NativePopulationTableCertificate.check_sound',
+             'Astra.NativePopulationTableCertificate.checked_actual_population']),
+        'scoped-population-certificate': ('lean/scoped-context/PopulationTableCertificate.lean',
+            ['GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients',
+             'GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem',
+             'Astra.NativePopulationTableCertificate.check_sound',
+             'Astra.NativePopulationTableCertificate.checked_actual_population']),
+    }
+    source, audits = cases[args.case]
     return run_case(root, args.case, source, audits,
         'online_lean_full_context_drain.mjs', 'online_lean_full_context.mjs',
         args.record_codec, args.codec_sha256, Path(__file__).name,
