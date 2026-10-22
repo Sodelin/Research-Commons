@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 19:21 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 19:34 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued actual complete-input replay and coverage, 19:34 UTC
+
+Six OPTIONAL UNELABORATED modules now fix the finite scan layout, join actual replay/header/rows, prove exact original readNormalizedSource observation after a real suffix check, and unconditionally clear all scan tapes using all-path mass bounds. A membership body physically copies the remaining query count into the cap, resets a finite found flag, executes the whole clean scan and returns its exact verdict. Body bound for C<=L is 17L^3+27L^2+36L+46, with original record and query counter preserved.
+
+The concrete outer countdown now performs descending queries N-1,...,0 without Nat control or a free increment. Exact returned bit is incomingSuccess AND all original normalized memberships below N. Every body contract is concretely discharged; final unconditional counter cleanup covers early failures. Supplied-count coverage time is N(B(L)+3)+L+4. `POLYTOMY-ACTUAL-REPLAY-AND-COVERAGE.md` gives the complete hand derivation and six-file scope.
+
+Original whole validity is not yet claimed: the first actual range/declared-m/syntax pass and physical initialization count=N remain to join. N=0 is explicitly vacuous, so it cannot bypass that first pass. Original canonical constructor/serializer, independent verifier, closed encoded hardness and every compatibility/axiom/kernel check remain open. No runtime, certificate, new coordinating review, novelty or biological/general-DAG closure. Original actual-D_lambda/full-refinement endpoint unchanged.
 
 ## Continued actual original unary rows visitor, 19:21 UTC
 

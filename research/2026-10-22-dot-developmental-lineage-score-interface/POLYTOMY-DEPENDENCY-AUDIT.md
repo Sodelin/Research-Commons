@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 19:34 UTC: full replay/suffix/cleanup and actual bounded coverage
+
+Six OPTIONAL UNELABORATED sources join fixed finite ports, actual copy/header/rows, exact original complete-input syntax observation, unconditional all-path scan cleanup, actual physical query-copy membership body, a concretely instantiated descending physical countdown, exact range-conjunction semantics and final early-failure counter cleanup. The body bound is 17L^3+27L^2+36L+46 for physical C<=L, and full supplied-count coverage is quartic. No free query/input oracle or Nat control is used.
+
+Pinned Lean List all_append/tail_replicate and range membership source were inspected read-only; no new library installation or execution. Actual first-pass range/declared-m/syntax validation and query-count creation remain, including the explicit N=0 incoming-validity issue. Whole canonical constructor/serializer, independent verifier, closed encoded hardness and all toolchain/axiom/kernel checks remain. Lexical placeholder scanning is not a build/certificate. No new review acceptance, novelty or changed biological/general-DAG scope.
+
 ## Continuation, 19:21 UTC: actual nested unary rows and predicate folds
 
 Nine OPTIONAL UNELABORATED modules supply an actual identifier visitor with copied subtraction and failure-safe finite predicate update, generic invariant-sensitive counted-fold observation, concrete inner and outer body contracts, complete original nested unary rows parsing with real saved-count copy, exact membership/range fold meanings and all-path failed-counter bounds. Whole rows-section bound: 7CL^2+10L^3+27L^2+16L+10. Physical query and all clean/alias entry conditions remain explicit; no Nat control or free record/query oracle is introduced.
