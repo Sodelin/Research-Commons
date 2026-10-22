@@ -18,6 +18,12 @@ with an exact current23-module guard;755 original cache misses cannot silently
 compile. All16 RAM regressions and complete source preparation pass. The actual
 native loader remains uninvoked under the unchanged writer hold.
 
+The [exact native admission gap](NATIVE-FIRST-WRITER-GAP.md) now names the
+pre-construction writers and existing codec/policy interfaces. The actual
+original-owner Linux controller and transitive hooks remain unsupplied;
+source/receipt recovery does not release that boundary. The next native action
+requires actual owner binding evidence, not another wrapper or old-job replay.
+
 The [prior-solution audit](PRIOR-SOLUTION-AUDIT.md) removes duplicate literal-state,
 encoded-support, transition/admission-factory and generic bind-helper work from
 the active queue. The [ongoing preflight](PRIOR-SOLUTION-PREFLIGHT.json) requires
