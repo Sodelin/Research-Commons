@@ -32,4 +32,4 @@ lean_lib RestrictedCausalSource where
     `ActivePathReversal, `VertexDiscriminatingSections, `IntervalDependency,
     `LiteralMAGInducingChains, `DiscriminatingIntervalGeometry,
     `IndexedDiscriminatingSections, `ReversedPositionTrace,
-    `MinimalPathOrderDependencies]
+    `MinimalPathOrderDependencies, `FiniteDependencyInduction]

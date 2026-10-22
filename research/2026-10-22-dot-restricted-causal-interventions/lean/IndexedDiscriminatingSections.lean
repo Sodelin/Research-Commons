@@ -17,10 +17,6 @@ open DiscriminatingIntervalGeometry
 
 universe u v w
 
-def Trace {X : Type u} (vertex : Nat → X) : Nat → List X → Prop
-  | _, [] => True
-  | offset, x :: xs => vertex offset = x ∧ Trace vertex (offset + 1) xs
-
 theorem trace_append {X : Type u} (vertex : Nat → X) (front back : List X) (offset : Nat) :
     Trace vertex offset (front ++ back) ↔
       Trace vertex offset front ∧ Trace vertex (offset + front.length) back := by
@@ -144,9 +140,13 @@ theorem index_forward_witness {X : Type u} {S : Type v} {L : Type w}
     nonadjacent := by simpa only [finishTrace] using w.nonadjacent }
   refine ⟨{ start := offset, before := offset + w.parents.length,
     finish := offset + w.parents.length + 2, orientation := ?_,
-    witness := actual, start_vertex := startTrace.symm, parents := ?_, colliders := ?_ },
+    witness := actual, start_vertex := startTrace.symm, position_trace := ?_,
+    span := ?_, parents := ?_, colliders := ?_ },
     rfl, rfl, rfl, terminalTrace⟩
   · exact Or.inl ⟨by omega, rfl, by omega⟩
+  · refine Or.inl ⟨by omega, ?_⟩
+    simpa only [actual, DiscriminatingWitness.vertices, finishTrace] using trace
+  · exact ⟨fun _ => rfl, fun impossible => by omega⟩
   · intro i interior
     have lower : offset < i := by rcases interior with h | h <;> omega
     have upper : i < offset + (w.parents ++ [w.terminal]).length := by

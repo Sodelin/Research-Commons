@@ -12,11 +12,22 @@ constructing these data from the contiguous list witness remains explicit
 downstream work. No acyclicity or MAG-equivalence field is assumed.
 -/
 
+namespace RestrictedCausal.IndexedDiscriminatingSections
+
+universe u
+
+def Trace {X : Type u} (vertex : Nat → X) : Nat → List X → Prop
+  | _, [] => True
+  | offset, x :: xs => vertex offset = x ∧ Trace vertex (offset + 1) xs
+
+end RestrictedCausal.IndexedDiscriminatingSections
+
 namespace RestrictedCausal.DiscriminatingIntervalGeometry
 
 open SelectedWalk CanonicalSelection LatentRoots OriginalProjection HPLTarget
 open InducingSeparation DiscriminatingStatus VertexActivePaths
 open LiteralMAGInducingChains IntervalDependency
+open IndexedDiscriminatingSections (Trace)
 
 universe u v w
 
@@ -35,6 +46,11 @@ structure IndexedWitness {X : Type u} {S : Type v} {L : Type w}
     (center < start ∧ before = center + 1 ∧ finish + 1 = center)
   witness : DiscriminatingWitness (mag D) (vertex before) (vertex center) (vertex finish)
   start_vertex : witness.start = vertex start
+  position_trace :
+    (start < center ∧ Trace vertex start witness.vertices) ∨
+    (center < start ∧ Trace (fun i => vertex (start - i)) 0 witness.vertices)
+  span : (start < center → center = start + witness.parents.length + 1) ∧
+    (center < start → start = center + witness.parents.length + 1)
   parents : ∀ i, Interior start center i → Directed (mag D) (vertex i) (vertex finish)
   colliders : ∀ i, Interior start center i →
     Collider (mag D) (vertex (i - 1)) (vertex i) (vertex (i + 1))

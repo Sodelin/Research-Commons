@@ -125,10 +125,28 @@ theorem reverse_forward_indexed {X : Type u} {S : Type v} {L : Type w}
     ∃ reversed : IndexedWitness D vertex (size - 1 - center),
       reversed.start = size - 1 - w.start ∧ reversed.before = size - 1 - w.before ∧
       reversed.finish = size - 1 - w.finish := by
+  have oldTrace : Trace (ReverseVertex vertex size) w.start w.witness.vertices := by
+    rcases w.position_trace with left | right
+    · exact left.2
+    · omega
+  have shifted : Trace (fun i => ReverseVertex vertex size (i + w.start)) 0 w.witness.vertices :=
+    (trace_shift (ReverseVertex vertex size) w.witness.vertices 0 w.start).mpr
+      (by simpa only [Nat.zero_add] using oldTrace)
+  have sameFunction : (fun i => ReverseVertex vertex size (i + w.start)) =
+      (fun i => vertex (size - 1 - w.start - i)) := by
+    funext i
+    unfold ReverseVertex
+    congr 1
+    omega
+  rw [sameFunction] at shifted
   refine ⟨{ start := size - 1 - w.start, before := size - 1 - w.before,
     finish := size - 1 - w.finish, orientation := ?_, witness := w.witness,
-    start_vertex := w.start_vertex, parents := ?_, colliders := ?_ }, rfl, rfl, rfl⟩
+    start_vertex := w.start_vertex, position_trace := ?_,
+    span := ?_, parents := ?_, colliders := ?_ }, rfl, rfl, rfl⟩
   · exact Or.inr ⟨by omega, by omega, by omega⟩
+  · exact Or.inr ⟨by omega, shifted⟩
+  · have oldSpan := w.span.1 forward.1
+    exact ⟨fun impossible => by omega, fun _ => by omega⟩
   · intro i interior
     have inside : size - 1 - center < i ∧ i < size - 1 - w.start := by
       rcases interior with h | h <;> omega
