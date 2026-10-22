@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 18:46 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 19:00 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued faithful record replay and physical headers, 19:00 UTC
+
+Four OPTIONAL UNELABORATED sources now supply actual arbitrary-bit faithful copy/restore, a forward duplicate in 3M+3 steps, failure-absorbing physical unary scalar extraction, exact true-tag/N/m/K header parsing and their real composition. `PolytomyFaithfulWordCopy.lean`, `PolytomyGuardedUnaryField.lean`, `PolytomyInternalHeaderCaller.lean` and `PolytomyCopiedHeaderCaller.lean` preserve the original record under explicit nonaliasing, give true-only scalar values and exact untouched row suffix, and bound every scalar/source length on failure. Joined copy/header time is 9M+16. `POLYTOMY-FAITHFUL-RECORD-COPY-AND-HEADERS.md` records the proof and assumptions.
+
+The tag begins a new scan attempt, while individual fields absorb prior failure; this distinction is explicit. Copy-stage port safety alone does not ensure final record/temp preservation if aliased with scalar outputs, so separate preservation conditions are retained. Header success is NOT complete row syntax, validity or complete-input success. Next is the actual nested unary row visitor with finite found/range flags and physical counters, ensuring comparison-false does not become parse failure. Whole original downstream constructor/serializer, independent checker, encoded hardness and all kernel/dependency checks remain open. No runtime, certificate, new review, novelty or biological/general-DAG closure.
 
 ## Continued original downstream arithmetic/validation, 18:46 UTC
 

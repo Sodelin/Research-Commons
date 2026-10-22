@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 19:00 UTC: faithful record replay and physical header values
+
+Four OPTIONAL UNELABORATED modules supply actual arbitrary-Bool copy/restore and forward duplication, guarded fresh unary scalar reads, an actual tag/three-header routine with exact physical values/suffix and all-path bounds, and real copy/header sequential composition. False record bits are preserved, unlike a unary tally copy. Header/copy alias conditions are separated correctly. The joined bound is 9M+16; no input oracle, Nat control, provided scalar or full-validity premise is used.
+
+Only prior inspected actual proof-side APIs and own proposals are used. No new installed dependency, execution, certificate, coordinating review or novelty claim. Actual nested row traversal, comparison-versus-parse-failure control, bounded coverage/canonical constructor/serialization and the independent checker remain, along with closed encoded hardness and every compatibility/axiom/kernel check. Original full actual-D_lambda endpoint and biological/general-DAG scope remain unchanged.
+
 ## Continuation, 18:46 UTC: original downstream arithmetic and validator rewrite
 
 Five OPTIONAL UNELABORATED sources give actual unary product/subtraction with consumed-operand semantics, underflow cleanup and actual copy/swap/restore preserving callers. Both originals survive only because the physical copy steps are included. Product bound is 3CD+3C+12D+12; comparison with all-data restoration is bounded by 7C+7D+14. These are actual component Routine claims, not an unbounded arithmetic oracle or a whole downstream constructor witness.
