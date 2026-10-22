@@ -148,3 +148,9 @@ supplied original Row IDs, that requires its actual action/update transport.
 This implementation preserves the original positional carrier and performs no
 silent cost quotient. Earlier mask-alias rejection was a safe coverage restriction,
 not a demonstrated wrong successful law.
+
+The exact original WordVariable/rate/wordEval specialization is now a5979B
+SOURCE-ONLY peer proposal at b65ff185, not an elaborated theorem. See
+G7-EVALUATED-WORD-ROW-BINDING.md for the complete-fibre conditional-row relation
+and the already-existing effective step/word receiver. No new step oracle is
+needed and no native correspondence has thereby been proved.
