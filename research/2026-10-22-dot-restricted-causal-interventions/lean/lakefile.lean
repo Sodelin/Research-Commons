@@ -13,4 +13,5 @@ lean_lib RestrictedCausalSource where
     `SelectedAncestry, `SelectedProfileSeparation, `CanonicalLatentRoots,
     `CanonicalFiniteBounds, `FiniteProfileRegistry, `CanonicalRootSeparation,
     `MarkedGraphEquivalence, `CommonIndicatorRoots, `CommonSelectedIndicatorSource,
-    `OriginalLatentProjection]
+    `OriginalLatentProjection, `OriginalProjectionAncestry,
+    `GeneralActiveWalkReduction, `OriginalProjectionLifting]
