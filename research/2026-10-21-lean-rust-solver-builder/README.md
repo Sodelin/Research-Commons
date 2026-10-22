@@ -171,3 +171,10 @@ cell_calendar path owns original CHART bytes/rows and a supplied vector,
 checks every original row, then reuses the same vector through the calendar
 and controlled-word providers. All new native code remains uncompiled and
 unexecuted. See native/G7-CELL-CALENDAR-CONTRACT.md and the two new reviews.
+
+The word_readout source composition now reuses the original completed-forest
+projection for explicit rooted/unrooted menus on ONE retained cell/word result.
+Local and original global Copy labels are explicit; global split complements
+use the actual label universe. Every menu retains its own mass1 block. This
+supplied-point forward source remains uncompiled/unexecuted and supplies no
+independent slot cube or complete quantified source family.
