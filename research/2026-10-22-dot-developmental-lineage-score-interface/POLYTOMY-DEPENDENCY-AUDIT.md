@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 16:05 UTC: complete-source call accounting, not a cost-model substitution
+
+`PolytomySourceReaderCallBound.lean` supplies ordinary counted-parser definitions with exact erasure to the ORIGINAL complete saturated source parser. Generic successful-span/failure-potential composition proves <=L+1 primitive unary/numeric reader invocations on ALL L-bit words, and <=L on successful complete parses. The arbitrary-count list induction covers malformed attempts rather than using only bounds on validated records.
+
+This charge is expressly not a TM2 step. Loop dispatch, stack tallies, data copying/storage, cap creation and cleanup still require actual programs and operational bounds. The previous numeric routine's real cost can bound each of its calls, but neither this accounting theorem nor that subroutine alone supplies a whole parser/constructor/verifier. No new external dependency, execution, coordinating review or certificate occurred. All source is UNELABORATED; whole original actual-D_lambda/all-refinement semantics and the remaining upstream/kernel obligations are unchanged.
+
 ## Addendum, 15:52 UTC: actual numeric-frame caller composition
 
 `PolytomyNumericFrameCaller.lean` imports the existing OPTIONAL frame-caller integration and uses inspected actual Embedding.runs/RoutineComposition.seq_executes at the licensed Lax218471 pin. It supplies a two-label restoring cap copier, a concrete decoder-core caller embedding, exact clean boundaries and the full sequential routine. Dependent sum alphabets are explicitly matched to the source API. Flags, suffix, original unary cap, outside stacks/control and scratch/private cleanup are all included, with the bivariate bound 6LC+8L+3C+8 and an outer-input-length nested-call corollary.

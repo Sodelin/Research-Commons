@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 15:52 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 16:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest all-input full-source reader-call bound, 16:05 UTC
+
+`PolytomySourceReaderCallBound.lean` instruments the ORIGINAL complete nested saturated source parser, retaining exact first-projection equality on every input. A consumed-input potential composes through every numeric/unary reader, arbitrary item count, inner row list, outer list and all three headers. It proves at most L+1 primitive reader INVOCATIONS on every L-bit word, including malformed counts/frames, failed parses and trailing garbage; successful complete parses use at most L. No validated/canonical-source promise is used. `POLYTOMY-SOURCE-READER-CALL-BOUND.md` supplies the complete hand proof.
+
+These charges are reader calls, NOT TM2 transitions. They do not count loop dispatch, stack-counter work, copying, record storage, cap construction or cleanup, and therefore do not instantiate the complete nested-parser machine. Exact parser erasure and the complete original actual-D_lambda/all-refinement/output-size/independent-certificate endpoint remain explicit. Actual nested source/target programs, validators/row/arithmetic/output assembly, independent clade checking, complete operational bounds, closed compatible encoded hardness and every kernel check remain open. All terms are UNELABORATED; no runtime, new review acceptance or novelty claim.
 
 ## Latest actual capped numeric-frame caller composition, 15:52 UTC
 
