@@ -2,7 +2,7 @@
 
 A portable research package built from the canonical claim registry in reuse and dependency order. Completed results are reused; unresolved questions retain their exact statements and obligations.
 
-The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The current checked Lean library combines the retained1,613-module graph with34 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
+The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The current checked Lean library combines the retained1,613-module graph with36 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
 
 ## Build on a development host
 
@@ -23,7 +23,7 @@ cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
 
-The current coherent library at [3b70210d](https://github.com/Sodelin/Research-Commons/commit/3b70210ded071bbefb58ff70a7b70687b15f2429) **passed**:1,647 source modules plus registry/aggregate, and the complete104,755-declaration/94,531-theorem owned audit. It found zero owned axioms, nonstandard rows or missing modules. All75 Rust tests passed in the same [Linux run](https://github.com/Sodelin/Research-Commons/actions/runs/40003057044). [Current library receipt](integration/coherent-library-verification.json). Its larger14-caller job remains incomplete after hosted shutdown during the hybrid word.
+The checked coherent library at [3b90ffa3](https://github.com/Sodelin/Research-Commons/commit/3b90ffa34188f631ff7a08bf43f92f883acf3ee0) **passed**:1,649 source modules plus registry/aggregate, and the complete104,850-declaration/94,569-theorem owned audit. It found zero owned axioms, nonstandard rows or missing modules. All81 Rust tests passed in the same [Linux run](https://github.com/Sodelin/Research-Commons/actions/runs/40011993974). [Exact library receipt](integration/coherent-library-verification-v2.json). The larger14-caller sequence remains incomplete after hosted shutdown during the unchanged hybrid word; library acceptance and actual caller acceptance are separate.
 
 The earlier [67ef70da](https://github.com/Sodelin/Research-Commons/commit/67ef70da6fe13bce5e43faf028f864b33c2d56e7) baseline passed all eleven Rust-generated proof documents and its complete1,638-source library/audit. [Earlier full receipt](integration/full-profile-verification.json). These are source-specific results.
 
@@ -97,6 +97,8 @@ The Rust `check-exports` interface rejects missing dependencies, revalidates sou
 
 Whole-word/raw-root/completion/readout refinements, full physical source/target/action coverage, exact AST/history/QE/selector/result origin and the other claim applications remain. Open claims require checked statements; empirical/software records require evidence interfaces. Missing formal/native work does not reopen completed hand mathematics. The strict full-package gate remains incomplete.
 
-The evidence update changes only records and integration status metadata; executable Rust and Lean bodies are byte-identical to the checked source. It uses GitHub's documented skip marker to avoid repeating the same checks. This adds no CI PASS at the evidence-only head; every receipt names its actual checked source. New source work resumes normal CI.
+Accepted records always name their actual checked source; a documentation-only publication does not create a fresh CI result. Earlier sources and rejected/UNKNOWN caller history remain retained.
 
-The next source adds a candidate checked primitive cache for the SAME larger hybrid word. `word-cache-certificate independent/common` emits bounded source modules; `check-word-callers` checks the entire bundle through `ResearchCommons.Integration.WordCache`. Primitive rows, original initialization and final total coefficients each require their checks. Original direct emission remains available. This new path is pending its own current verification and does not inherit literal acceptance from the generic Word or completion receipts. [Exact reuse/scope](integration/WORD-CACHE-PREFLIGHT.md).
+The current `word-cache-certificate independent/common` path emits bounded source modules for the SAME larger hybrid word. `check-word-callers` checks the entire bundle through `ResearchCommons.Integration.WordCache`. Source3b90ffa3's generic175-source cache context and5308/3142 owned audit passed; its actual caller still interrupted at the first interval primitive. [Generic cache receipt](integration/word-cache-core-verification.json).
+
+The active9f3f3466 candidate reuses the existing `fullRows` law for a checked complete active population list, with the existing single-epoch polynomial uniqueness theorem. Every cache input proves `ActiveIn`; all original coordinates, full selected keys/registers, operations, initial/final checks and fallback remain. Its generic target now compiles and the actual bundle is under verification. BOTH entire same3-copy words and the final owned audit remain required. Original direct emission stays available. No literal acceptance follows from the generic or completion receipts. [Exact reuse/scope](integration/WORD-CACHE-PREFLIGHT.md).
