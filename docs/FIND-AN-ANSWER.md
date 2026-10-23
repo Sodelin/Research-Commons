@@ -1,6 +1,6 @@
 # Find an answer in Research Commons
 
-Generated from the existing canonical claim register at `6366c491d6971abacc94dce9124c6b9c154b113e` (1.6-sequence-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 84 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `dab10581a1252a0deaf2d3713ae95e3712af251b` (1.8-genome-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 93 selected cards and is not exhaustive.
 
 Begin with the question you need answered. Each link opens the exact claim, assumptions, proof/review sources and remaining obligation. You do not need to reconstruct commit history.
 
@@ -24,6 +24,7 @@ Origin is taken from the canonical card. This table does not assert a new histor
 | [**CB-SEQ-002**](CLAIM-BOARD.md#cb-seq-002) · [Original source](https://doi.org/10.1016/j.tcs.2021.08.016). Frid–Laborde–Peltomäki, preprint Conjecture 17 / published Conjecture 2. | No. The specified non-regularity statement has a reviewed all-length computer-assisted proof. | This is not a complete formula or a solution to the separate Fibonacci question. |
 | [**CB-SEQ-003**](CLAIM-BOARD.md#cb-seq-003) · [Original source](https://arxiv.org/html/2310.15064v3). Source-posed direction in Shallit–Shur–Zorcic, Power-free complementary binary morphisms. | Throughout the specified range, every positive length except 3 and 6 is possible. | It does not classify every substitution or cover the lower threshold range. |
 | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) · [Exact published-question correspondence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/SOURCE-RESULT-LEDGER.md); [Holtgrefe et al., primary prior work and section 6 questions](https://link.springer.com/article/10.1007/s11538-025-01549-4). The source-result ledger matches the multiple-blob and level-three circularity/support questions in Holtgrefe et al., Theorem 4.7 and section 6, retaining the published structural hypotheses. The arbitrary-finite-level conclusion is a stronger project result. | Yes, for the stated planar galled class: the original NANUQ distance is circular and its positive splits are exactly the displayed splits, at every finite level. | This does not recover every graph detail, apply to arbitrary networks, or prove a complete DNA inference pipeline. |
+| [**CB-GENOME-002**](CLAIM-BOARD.md#cb-genome-002) · [Classical model, attribution and exact-law scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/README.md). Formalization of the known Allman–Degnan–Rhodes three-taxon law and elementary finite-evidence/stability consequences; the separately written statistical bound is a standard application of Hoeffding. | The exact non-collapsed three-taxon law identifies the relationship. With positive noise, every finite sample fits every label with positive probability; an error smaller than half the probability gap preserves the correct answer. | The taxa are already designated. This neither discovers species boundaries nor guarantees certainty from finitely many observed genes. |
 
 ## Browse by the question
 
@@ -266,13 +267,47 @@ Origin is taken from the canonical card. This table does not assert a new histor
 | [**CB-SOFTSCI-004**](CLAIM-BOARD.md#cb-softsci-004) · Can a combined comparison point in the opposite direction from every separate context? | Yes. Checked positive counts favor one group in both strata and the other after pooling. Use a transparent exact example to show why an aggregate comparison needs its context and weighting assumptions. | Proved; archived Lean check recorded |
 | [**CB-SOFTSCI-005**](CLAIM-BOARD.md#cb-softsci-005) · Does the specified observation record distinguish the safe and dangerous states? | The fixed avoidance path produces identical complete records in both states, so every deterministic classifier fails on one. The specified approach path distinguishes the two. Inspect and reuse a precisely checked connection between a published model's selected tables and its information limitation. | Proved; archived Lean check recorded |
 
+### Feedback models
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-FEEDBACK-001**](CLAIM-BOARD.md#cb-feedback-001) · When do recurring links between reproductive communities determine long-run ancestry? | Under strong local mixing and no lineage extinction, an infinite group has the identical-ancestors property (IAP) exactly when all but finitely many members lie in one recurrent strongly connected component. Classify the stated ancestry property and construct connected, ancestry-convex component tails without confusing recurring contact with a measured species boundary. | Proved by hand; named historical Lean scope checked |
+| [**CB-FEEDBACK-002**](CLAIM-BOARD.md#cb-feedback-002) · Does persistent cultural difference necessarily preserve a neutral genetic difference? | No. The stated majority-of-three cultural dynamics can remain polarized while a positively bounded residual exchange makes the neutral-marker difference decay geometrically. Separate persistence of one type of difference from persistence of another in a fully specified coupled recurrence. | Proved by hand; named historical Lean scope checked |
+| [**CB-FEEDBACK-003**](CLAIM-BOARD.md#cb-feedback-003) · Can changing affinities indefinitely prevent fixation under constant positive selection in the specified model? | Not when the initial favored-type odds bound holds. A quantitative bound shrinks at every generation, even for arbitrary admissible affinity sequences. Obtain an explicit uniform decay rate for the unfavored cultural frequency along the actual source recursion. | Proved by hand; named historical Lean scope checked |
+| [**CB-FEEDBACK-004**](CLAIM-BOARD.md#cb-feedback-004) · Can finite population sampling reverse which of two mechanisms appears to make a stronger marker barrier? | Yes, in the stated exact two-deme example: pure induction has the larger finite-population barrier, while the matched deterministic genetic model has the larger barrier. Use a fully specified counterexample to avoid transferring an ordering from deterministic dynamics to one finite sampling model. | Proved by hand; historical Lean components checked with stated receipt limit |
+| [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) · Can a positive marker-barrier statistic coexist with the identical-ancestors property in the very same population process? | Yes, for the explicitly constructed process. The same random draws produce both the marker path and parent graph, whose whole-history identical-ancestors property (IAP) holds almost surely. Connect the declared marker calculation to an actual ancestry process, instead of choosing an unrelated graph or leaving the infinite-process connection pending. | Proved by hand; named historical Lean scope checked |
+
+### Genome ancestry
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-GENOME-001**](CLAIM-BOARD.md#cb-genome-001) · Does a finite genome-ancestry graph determine whether its whole infinite completion is specieslike? | No. Every admitted finite graph has two compatible infinite completions with opposite answers, despite preserving all its old edges and ancestry paths. Identify which assumptions about admissible futures are needed before finite ancestry evidence can justify a future-inclusive conclusion. | Proved; archived Lean check recorded |
+
+### Genomic inference
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-GENOME-002**](CLAIM-BOARD.md#cb-genome-002) · How can an exact probability law identify a relationship while finite observations remain uncertain? | The exact non-collapsed three-taxon law identifies the relationship. With positive noise, every finite sample fits every label with positive probability; an error smaller than half the probability gap preserves the correct answer. Keep ideal-law identification, uncertainty from finite data and robustness of estimated probabilities separate. | Proved; archived Lean check recorded |
+
+### Genome ownership
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-GENOME-003**](CLAIM-BOARD.md#cb-genome-003) · What remains undetermined if every realized copy transmission is known but the pairing of copies into organisms is missing? | The same complete copy history can have opposite long-term organism-ancestry properties. In the constructed family, exactly characterized ownership samples resolve that ambiguity. Specify which individual-association records are essential and distinguish informative infinite records from finite evidence. | Proved; archived Lean check recorded |
+
+### Pedigree observations
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-GENOME-004**](CLAIM-BOARD.md#cb-genome-004) · When do observed symbol matches recover sampled families, and does collecting more blocks always add information? | The stated independent-block model has an exact recovery probability. Repeated correlated blocks can have every correct one-block marginal yet provide no additional recovery gain. Use a precise finite-observation benchmark and check whether an independence assumption really supports the claimed benefit of more data. | Proved; archived Lean check recorded |
+
 ## Missing from this map
 
-- This is 84 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 93 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
-- Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
+- Selected September Samuel/all-level/query, feedback and G01–G05 genome/ownership results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
 - Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims.

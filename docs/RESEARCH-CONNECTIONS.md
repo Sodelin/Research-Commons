@@ -1,6 +1,6 @@
 # Research connections: what depends on what
 
-Generated from the existing canonical claim register at `6366c491d6971abacc94dce9124c6b9c154b113e` (1.6-sequence-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 84 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `dab10581a1252a0deaf2d3713ae95e3712af251b` (1.8-genome-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 93 selected cards and is not exhaustive.
 
 Directions below follow the canonical register: the source card names a supplier/connection. The relationship type is part of the result. Do not promote a candidate or common idea into a proved implication.
 
@@ -51,6 +51,7 @@ A named mathematical supplier is actually used after its assumptions are met.
 | [**CB-SOFTSCI-004**](CLAIM-BOARD.md#cb-softsci-004) | [**CB-SOFTSCI-001**](CLAIM-BOARD.md#cb-softsci-001) | Two of the eight declarations directly reuse the identification and postprocessing results indexed in CB-SOFTSCI-001; they do not add two distinct discoveries. |
 | [**CB-SEQ-005**](CLAIM-BOARD.md#cb-seq-005) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness. |
 | [**CB-SEQ-007**](CLAIM-BOARD.md#cb-seq-007) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | Uses the exact graph-to-height digit recurrence, not a fitted recurrence or the unrelated arithmetic-progression formulas. |
+| [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) | [**CB-FEEDBACK-004**](CLAIM-BOARD.md#cb-feedback-004) | Reuses the checked finite marker kernel and frozen RI=3/7 statistic, then proves its same-draw count/parent realization; does not reuse the deterministic common-limit argument. |
 
 ## same principle
 
@@ -85,6 +86,11 @@ A related idea or method only; not a theorem dependency.
 | [**CB-SEQ-010**](CLAIM-BOARD.md#cb-seq-010) | [**CB-SEQ-009**](CLAIM-BOARD.md#cb-seq-009) | Uses the same grouped-word family and phase structure, but this card concerns factor counts rather than recovery of an unknown grouping parameter. |
 | [**CB-SEQ-011**](CLAIM-BOARD.md#cb-seq-011) | [**CB-SEQ-010**](CLAIM-BOARD.md#cb-seq-010) | Both compare factor complexity, but their families differ: Thue–Morse is maximal within the selected-digit family, not within all grouped tau_n words. |
 | [**CB-SEQ-012**](CLAIM-BOARD.md#cb-seq-012) | [**CB-SEQ-006**](CLAIM-BOARD.md#cb-seq-006) | Both expose a finite-prefix/infinite-realization gap, in different graph/arithmetic models; neither theorem is used as a proof supplier of the other. |
+| [**CB-FEEDBACK-001**](CLAIM-BOARD.md#cb-feedback-001) | [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) | Both discuss the identical-ancestors property, but the later actual-law result uses an extinction-permitting synchronization bridge rather than this theorem's no-extinction premise. |
+| [**CB-FEEDBACK-002**](CLAIM-BOARD.md#cb-feedback-002) | [**CB-FEEDBACK-001**](CLAIM-BOARD.md#cb-feedback-001) | Both separate phenotype/frequency patterns from ancestry conclusions; this frequency model is not a proved instantiation of the recurrent-pedigree theorem. |
+| [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) | [**CB-FEEDBACK-001**](CLAIM-BOARD.md#cb-feedback-001) | Both concern the identical-ancestors property, but this actual-law proof uses extinction-permitting synchronization, not B01's no-extinction premise. |
+| [**CB-GENOME-003**](CLAIM-BOARD.md#cb-genome-003) | [**CB-GENOME-001**](CLAIM-BOARD.md#cb-genome-001) | Both expose missing information for a future-inclusive target, but arbitrary finite-source completion and fixed complete infinite-source ownership have different quantifiers; neither is silently substituted for the other. |
+| [**CB-GENOME-004**](CLAIM-BOARD.md#cb-genome-004) | [**CB-GENOME-003**](CLAIM-BOARD.md#cb-genome-003) | A complementary finite-observation control with a different explicitly supplied stochastic law; it neither provides the ownership oracle nor establishes infinite-IAP identification. |
 
 ## Reading scientific completion beside implementation
 

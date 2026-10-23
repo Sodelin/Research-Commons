@@ -82,6 +82,12 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   $('reset').click();$('topic').value='Sequences';$('sort').value='subjective_reuse';$('topic').dispatchEvent(new dom.window.Event('change'));
   assert($('ranking-note').textContent.includes('newer/unranked'));
  });
+ await t.test('historical component receipts retain exact process-exit and written/formal boundaries',()=>{
+  $('reset').click();location.hash='CB-FEEDBACK-004';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
+  assert($('detail').textContent.includes('exit was not retrieved'));
+  assert($('detail').textContent.includes('written/reviewed, not formally proved'));
+  assert($('detail').textContent.includes('kernel checked components with recorded exit limit'));
+ });
  await t.test('offline latest-source failure preserves a usable source snapshot',async()=>{
   $('reset').click();location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   offline=true;$('refresh').click();await wait(()=>$('freshness').textContent.includes('Showing the verified bundled snapshot'));
