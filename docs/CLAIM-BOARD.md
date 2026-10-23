@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.10-population-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.11-alexander-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -46,7 +46,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Population/stateful-certificate source recovery — 23 October 2026, 10:23 UTC:** four existing groups cover Samuel T04–T06 and T08–T10, preserving all 97 prior claim objects. They separate the [sharp permanent-gender cap-two threshold](#cb-population-001), [critical-tail rigidity and exact port encoding](#cb-population-002), [full-language pruning versus avoidance-only repair](#cb-population-003), and [one synthetic three-state CA certificate separation](#cb-population-004). Full-schedule periodicity is an additional hypothesis, not a consequence of finite ports. Archived formal receipts are not new runs; the canonical-port converse is written-only. These are recovered mathematical results, not four new discoveries, empirical biology or a Life-like speed result. The dated 75-card ranking is unchanged and these additions have not been ranked.
 
-This register contains **101 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Alexander source recovery — 23 October 2026, 10:29 UTC:** three existing groups cover Samuel A01–A04, preserving all 101 earlier claim objects: [countable-host nonuniversality with exact parents](#cb-alexander-002), [classical matching-state certificates and rank transport](#cb-alexander-003), and [maximal clusters under one fixed real founder window](#cb-alexander-004). The countable-host result does not preserve the uniform child cap of [CB-ALEXANDER-001](#cb-alexander-001). Terminal cloning and complete blow-up are different constructions. The October 2 novelty correction credits classical rank/pruning methods without undoing their checked mathematics. Founder-window existence includes an actual seed and all same-window competitors. Historical proof/hosted receipts are recovered, not rerun; no new discovery, biological validation or subjective-rank change is claimed.
+
+This register contains **104 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -168,6 +170,9 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-POPULATION-002](#cb-population-002) | Critical populations have exact tail structure and finite-frontier descriptions | Proved; archived Lean check recorded |
 | [CB-POPULATION-003](#cb-population-003) | Pruning preserves every infinite word; boundary repair preserves avoidance | Proved; archived Lean check recorded |
 | [CB-POPULATION-004](#cb-population-004) | One synthetic cellular automaton exposes the cost of forgetting state | Proved; archived Lean check recorded |
+| [CB-ALEXANDER-002](#cb-alexander-002) | No countable list of hosts contains all the stated avoiding populations | Proved; archived Lean check recorded |
+| [CB-ALEXANDER-003](#cb-alexander-003) | Matching states either continue forever or have an exact finite height | Proved; archived Lean check recorded |
+| [CB-ALEXANDER-004](#cb-alexander-004) | Every organism belongs to a maximal cluster under a fixed founder window | Proved; archived Lean check recorded |
 
 ## Claim cards
 
@@ -5261,5 +5266,182 @@ No theorem-transfer dependency is asserted by this card.
 - [October source map](https://github.com/Sodelin/Research-Commons/blob/d32d85ea056360d66fa7cde76094bc824f24702f/docs/OCTOBER-2026-RESEARCH-MAP.md).
 
 No new theorem, compiler execution or empirical experiment was performed to generate this board. Counts describe catalogue coverage, not the number of novel discoveries.
+
+
+
+<a id="cb-alexander-002"></a>
+### No countable list of hosts contains all the stated avoiding populations
+**CB-ALEXANDER-002 · Alexander structures · countable-host nonuniversality**
+
+**Question:** Could a countable catalogue of host populations contain every population that avoids a fixed infinite label pattern?
+
+**What we learned:** No. From any such avoiding population, one can construct another that escapes every host on the list, even with exactly one parent of each label and any finite global allowance for stretching edges.
+
+**What it lets someone do:** Rule out a precise universal-catalogue proposal while retaining the original population conditions, actual roots and fixed-pattern avoidance.
+
+**What we cannot conclude:** This construction does not preserve a fixed bound on children, forbid terminal individuals or exclude noninjective or arbitrarily stretched maps.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Fix an actual Alexander population P avoiding an infinite label word s. For every countable family of actual population hosts U_j, there is one positive finite-fibre terminal clone Q of a one-parent-per-label selection of P such that Q avoids s, its actual roots are canonically equivalent to P's, and every nonroot has exactly one incoming parent of every label. Every infinite word realized by Q is realized by P. For every j, every finite global stretch L and every injective map Q→U_j, some source edge does not map to an undirected host path of length at most L. Hosts need not avoid s or have exact parent counts. The actual population assumptions are infinitude, real chronological birthdates with finite birth sublevels, finitely many roots and children per vertex, functional edge labels and parent coverage at each nonroot. Parent selection can shrink the original language; terminal cloning preserves the selected language exactly. For an already exact-parent P, cloning preserves the whole original language. There is no uniform child cap, no terminal-free condition and no uncountable-host or unbounded-stretch conclusion.
+
+**Origin.** published open problem. Alexander's 2013 Biologically unavoidable sequences, §6, explicitly asks about universal avoiding populations. This is a negative answer under the specified injective, finite-global-stretch convention, not every possible interpretation of the open-ended question.
+
+**Prior work.** Classical locally finite graph nonuniversality and local-growth diagonalization retain de Bruijn/Rado attribution through the accessible Lehner discussion in the bounded source audit. Cherlin–Shelah's embedding conventions are distinguished. No claim is made to invent the general diagonal principle or establish worldwide priority for the population-specific strengthening.
+
+**Our contribution and attribution.** The existing 29 September 2026 human-directed Codex package supplies the actual population adapter, parent selection and terminal-clone construction preserving exact incoming counts, roots and the selected language while defeating a prescribed countable family. This card recovers that completed result; it is not the October uniform-child-cap construction.
+
+**Evidence, kept separate:**
+
+- **Hand:** The full embedding audit and later publication source-correspondence audit were read, together with both actual universal/terminal-clone proof modules. They retain the exact-parent, root, language and stretch boundaries. These are recorded internal AI reviews, not independent human/external peer review or a fresh whole-transitive proof audit.
+- **Formal:** Lean 4.33.1 with Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 records 10 reused GenericUniversalAvoiders and 16 TerminalCloneAvoiders selected reports, all compiler exits zero and only standard foundational axioms. The strongest source endpoint is avoiding_no_countable_exact_parent_family_from_any_population, with separate canonical root equivalence. Hosted audit checks the byte-identical reused original and the terminal module; source fidelity remains a separate reviewed axis.
+- **Execution:** The recorded local Lean 4.33.1 receipts and raw selected-endpoint logs were read. Fresh read-only hosted metadata confirms run 36631876391 succeeded at 1592b89731d10fc49019ff22cf2f93c7bc799118; the actual workflow/audit contracts and identical selected proof blobs at recovery pin e2502c82 were checked. No compiler, build, scientific execution or new theorem validation occurred during this recovery.
+- **Empirical:** An exact theorem in a stated infinite labelled-graph model. No measured biological data, validated species classifier or demonstrated population mechanism is asserted.
+
+**Novelty:** Unresolved for the exact population-specific strengthening. Classical methods are credited; proof checking and source recovery do not establish novelty.
+
+**Separate downstream work (does not reopen this result):** The fixed balanced-child-cap branch is already separately completed at CB-ALEXANDER-001 and must be reused, not reopened. Terminal-free populations, different embedding relations and uncountable host classes are different questions; no new result about them is claimed here.
+
+**Proof, review and related source links:**
+
+- [Complete universal-avoider statement and limitations](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/RESULTS.md) (proof or status).
+- [Generic population, finite-ball and countable-host proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/embedding/GenericUniversalAvoiders.lean) (proof source).
+- [Exact-parent selection and terminal-clone endpoint](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/embedding/TerminalCloneAvoiders.lean) (proof source).
+- [Independent internal embedding audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/embedding/audit.md) (hand review).
+- [Bounded primary-literature comparison](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/literature/evidence-map.md) (prior work).
+- [Pinned seven-module source and compiler-log manifest](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/verification-manifest.json) (formal receipt).
+- [Successful integrated hosted audit at 1592b897](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/actions/runs/36631876391) (formal receipt).
+- [Source-question, statement and bounded prior-work audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md) (hand review).
+- [Alexander's original §6 questions, version 2](https://arxiv.org/html/1212.0186v2#S6) (prior work).
+
+**Typed connections:**
+
+- [CB-ALEXANDER-001](#cb-alexander-001), same principle: Both exclude universal hosts, but the existing October card preserves a uniform balanced child cap and treats one host in that class; this countable-host construction has no uniform child cap. Neither exact contract substitutes for the other.
+
+**Stable key:** alexander.COUNTABLE_HOST_OBSTRUCTION. **Aliases:** Samuel A01.
+
+</details>
+
+
+<a id="cb-alexander-003"></a>
+### Matching states either continue forever or have an exact finite height
+**CB-ALEXANDER-003 · Alexander structures · classical certificates and matching heights**
+
+**Question:** What exactly separates an infinite pattern-matching continuation from one that must stop?
+
+**What we learned:** Classical rank and pruning methods give an exact answer on reachable states. Under finite branching, every state either continues forever or has an attained longest continuation; complete finite duplication preserves the corresponding finite heights.
+
+**What it lets someone do:** Use an exact source-specific certificate and identify information that matching heights retain or omit, without inventing a new rank theory.
+
+**What we cannot conclude:** This is not a terminating decision procedure for arbitrary infinite inputs, a rank hierarchy distinguishing every avoiding population or an established new ordinal theorem.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For a labelled graph and fixed infinite word s, use reachable vertex/phase states (v,k) witnessed by a path spelling the first k letters. Avoidance is equivalent to well-foundedness of forward continuation and to a decreasing ordinal certificate, without a finite-branching premise. With finite per-label children, natural certificates suffice; states surviving all finite successor-pruning rounds form exactly the infinite-continuation core and the greatest successor fixed point. Its complement is forward closed and well-founded. Each such mortal state has a pointwise least natural height h, equal to an attained maximum number of further matching edges, survives precisely n≤h and is removed at h+1; other states may realize the word, so global avoidance is not assumed for this dichotomy. A phase-zero state survives iff its start realizes the full target. A separate complete positive finite-fibre blow-up preserves and reflects reachable phases and every finite continuation length, and transports least attained natural heights through the actual projection. Its avoiding-population endpoint derives the needed hypotheses. This complete blow-up is not terminal cloning and need not preserve exact parent counts. The written composition with countable-host obstruction and written live-core/infinite-tail transport are not separately named combined Lean endpoints.
+
+**Origin.** classical prior. Source-specific formalization and application of well-founded ordinal ranks, finite-branching continuation, greatest fixed points and attained heights. Alexander's 2013 §6 ordinal-characterization question is genuine, but its presence does not establish that this classical instantiation is a novel theorem.
+
+**Prior work.** Standard well-founded rank machinery, König-type finite branching and fixed-point/pruning theory supply the methods; GenericOrdinalCertificate explicitly uses Mathlib ordinal ranks. The complete-blow-up projection is analyzed at the actual reachable-state interface rather than credited as new general rank theory.
+
+**Our contribution and attribution.** The existing 29 September 2026 package formalizes the exact reachable-state criterion, the live/mortal dichotomy without global avoidance, and corresponding finite-height transport. It exposes the difference between the artificial history-tree superroot and actual matching-state heights, and between complete blow-ups and exact-parent terminal clones.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete generic scope and ordinal audits, publication correspondence audit and all five direct certificate/pruning/mortal/transport modules were read. The October 2 correction is retained rather than replacing it with the older AI-discovered metadata. No new whole-transitive proof acceptance or external human peer review is claimed.
+- **Formal:** Five named modules have 8 generic-certificate, 3 ordinal-certificate, 10 pruning, 9 mortal-rank and 7 blow-up selected reports under Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. Raw logs report only standard axioms and saved receipts exit zero. Successful hosted audit uses the same selected proof blobs, including byte-identical reused originals. These 37 reports are supporting inventory, not separate discoveries; generic live-core transport and the combined host-obstruction corollary are not separately named formal endpoints.
+- **Execution:** The recorded local Lean 4.33.1 receipts and raw selected-endpoint logs were read. Fresh read-only hosted metadata confirms run 36631876391 succeeded at 1592b89731d10fc49019ff22cf2f93c7bc799118; the actual workflow/audit contracts and identical selected proof blobs at recovery pin e2502c82 were checked. No compiler, build, scientific execution or new theorem validation occurred during this recovery.
+- **Empirical:** An exact theorem in a stated infinite labelled-graph model. No measured biological data, validated species classifier or demonstrated population mechanism is asserted.
+
+**Novelty:** The 2 October 2026, 19:34 UTC VibeMathed correction states that a distinct new theorem beyond source-specific classical formalization was not established and asks for eligibility reassessment. It does not allege an incorrect Lean proof, request withdrawal or remove verification. No mathematical novelty is asserted by this recovery.
+
+**Separate downstream work (does not reopen this result):** Historical novelty and catalogue eligibility remain distinct assessments. A terminating algorithm for arbitrary infinite inputs, richer rank classification or a construction combining terminal cloning's exact-parent property with all-copy rank preservation would require different results; none is implied here. Missing formalization of the explicitly written auxiliary corollaries does not reopen their written mathematics.
+
+**Proof, review and related source links:**
+
+- [Generic finite certificate and attained height](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericCertificate.lean) (proof source).
+- [Classical ordinal-certificate equivalence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericOrdinalCertificate.lean) (proof source).
+- [Exact surviving core](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericPruning.lean) (proof source).
+- [Mortal-region least attained ranks](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericMortalRank.lean) (proof source).
+- [Complete-blow-up finite-height transport](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/ordinal-audit/BlowUpRankInvariance.lean) (proof source).
+- [Generic proof and definition scope review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/literature/new-proof-scope-review.md) (hand review).
+- [Ordinal/history distinction and transport audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/ordinal-audit/audit.md) (hand review).
+- [Pinned seven-module source and compiler-log manifest](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/verification-manifest.json) (formal receipt).
+- [Successful integrated hosted audit at 1592b897](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/actions/runs/36631876391) (formal receipt).
+- [Source-question, statement and bounded prior-work audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md) (hand review).
+- [October 2 classical-formalization novelty correction](https://vibemathed.com/problem/ordinal-certificates-and-exact-pruning-characterize-sequence-realization) (prior work).
+
+**Typed connections:**
+
+- [CB-ALEXANDER-002](#cb-alexander-002), same principle: The transport result accompanies the nonuniversality programme, but complete blow-ups and terminal clones have different preservation properties. Exact-parent terminal cloning is not asserted to preserve every copy's height.
+- [CB-SEQ-004](#cb-seq-004), same principle: Concrete Thue–Morse height formulas and this generic certificate/core theorem concern related matching states but are not the same theorem or a claimed new dependency.
+
+**Stable key:** alexander.MATCHING_CORE_RANK_TRANSPORT. **Aliases:** Samuel A02; Samuel A03.
+
+</details>
+
+
+<a id="cb-alexander-004"></a>
+### Every organism belongs to a maximal cluster under a fixed founder window
+**CB-ALEXANDER-004 · Alexander structures · fixed-window maximal clusters**
+
+**Question:** Can a maximal ancestry cluster exist without requiring one common ancestor?
+
+**What we learned:** Yes, under the stated graph and cluster conditions, a fixed real window containing all founder birthdates gives a complete existence theorem through every organism.
+
+**What it lets someone do:** Replace a common-ancestor constraint with a precisely defined founding-window condition in this mathematical maximality problem.
+
+**What we cannot conclude:** It does not produce a unique species partition, an algorithm for finding clusters or evidence that the condition is biologically adequate.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let organism identifiers be Nat, with real birthdates, strictly chronological parent edges, finite strict real birth sublevels and finite children. Tied birthdates are allowed; identifiers need not be chronological and no finite-root premise is required. For a nonempty set S, founders are its members with no strict ancestor in S, not necessarily ambient roots, and m(S) is its attained earliest birthdate. Fix one real duration Δ. The admissible sets are nonempty, induced-undirected connected, ancestrally convex, satisfy IAP and reflection, and have every founder born by m(S)+Δ. IAP means each member has either finitely many descendants or finitely many non-descendants in S; reflection means every member with infinitely many ambient descendants has infinitely many descendants in S. Every admissible set extends to an inclusion-maximal set in this same class with the same Δ. For every Δ≥0 and every original organism v, such a maximal set containing v exists. The proof supplies the actual seed and transports all competitors back to the original graph and literal dates. This is constrained maximality, not maximality among all specieslike sets. The written coeval-two-founder example shows the window need not imply common ancestry; it is not a separately registered Lean endpoint.
+
+**Origin.** published open problem. Alexander's Specieslike clusters based on identical ancestor points (2026), §6 immediately after Theorem 13, requests alternative sufficient constraints, particularly without common ancestry. This answers a precise mathematical subquestion, not the broader request for demonstrated biological plausibility.
+
+**Prior work.** Alexander's common-ancestor/reflection existence theorem and seed method, together with classical Zorn and finite-branching arguments, retain attribution. The recovered extension substitutes a common real founder window while retaining reflection, convexity, IAP and explicit connectivity. Historical priority is not established by source recovery.
+
+**Our contribution and attribution.** The existing 25 September 2026 human-directed Codex package proves the actual per-organism seed, finite-founder directed-union control and constrained maximal extension on the original real-birthdate graph, including ties and all same-window competitors. It is a complete theorem, not merely Zorn maximality conditional on an unproved seed.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete theorem note, all eight direct founder-window proof modules and later source-question/statement audit were read. The separate maximal-specieslike audit is used only to distinguish constrained from unrestricted maximality, not as a substitute for a new full founder-proof review. No new whole-transitive or human/external peer review is asserted.
+- **Formal:** The 25 September frozen founder packet records eight modules and 50 selected endpoints with Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and only standard axioms. Its historical aggregate count 151 is superseded by the later 274-endpoint/61-module real audit; all eight source hashes and all 50 founder axiom lists match. The hosted manifest imports all eight modules and prints those endpoints, including RealSpeciesTheorem.every_vertex_in_maximal_real_window; all eight blobs are unchanged at the recovery pin. The written non-CA example is not an extra formal endpoint.
+- **Execution:** The recorded local Lean 4.33.1 receipts and raw selected-endpoint logs were read. Fresh read-only hosted metadata confirms run 36631876391 succeeded at 1592b89731d10fc49019ff22cf2f93c7bc799118; the actual workflow/audit contracts and identical selected proof blobs at recovery pin e2502c82 were checked. No compiler, build, scientific execution or new theorem validation occurred during this recovery.
+- **Empirical:** An exact theorem in a stated infinite labelled-graph model. No measured biological data, validated species classifier or demonstrated population mechanism is asserted.
+
+**Novelty:** Unresolved for the exact fixed-window extension. Source correspondence, recorded formal checking and recovery do not establish worldwide novelty or biological applicability.
+
+**Separate downstream work (does not reopen this result):** Unconstrained maximality, uniqueness, a species partition, an effective construction, arbitrary-carrier formal generalization and biological admission are outside this theorem. They must not be treated as missing premises of its already completed Nat-identifier, literal-real-date, same-window conclusion.
+
+**Proof, review and related source links:**
+
+- [Complete real founder-window theorem and boundaries](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/REAL-FOUNDER-WINDOW-THEOREM.md) (proof or status).
+- [Actual original-graph final theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/RealSpeciesTheorem.lean) (proof source).
+- [Actual per-organism seed construction](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/SpeciesSeed.lean) (proof source).
+- [Directed-union IAP supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/DirectedIAP.lean) (proof source).
+- [Original dates, ties and founder-window predicates](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/RealFounderWindow.lean) (proof source).
+- [Frozen eight-module and 50-endpoint founder receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/founder-window-packet.json) (formal receipt).
+- [Later real-library audit retaining the founder theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/real-audit.json) (formal receipt).
+- [Successful integrated hosted audit at 1592b897](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/actions/runs/36631876391) (formal receipt).
+- [Source-question, statement and bounded prior-work audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md) (hand review).
+- [Alexander's 2026 §6 non-common-ancestor question](https://arxiv.org/html/2602.05274v1#S6) (prior work).
+
+**Typed connections:**
+
+- [CB-GENOME-001](#cb-genome-001), same principle: Both use Alexander's future-inclusive ancestry vocabulary. The finite-graph observation obstruction does not prove or contradict this constrained infinite-cluster existence theorem.
+- [CB-FEEDBACK-001](#cb-feedback-001), same principle: Recurrent-component IAP classification uses different source assumptions and does not duplicate fixed-window maximal-cluster existence.
+
+**Stable key:** alexander.REAL_FOUNDER_WINDOW. **Aliases:** Samuel A04.
+
+</details>
 
 

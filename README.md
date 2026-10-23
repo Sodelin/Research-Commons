@@ -12,7 +12,7 @@ Research outside this repository is included through the [cross-repository sourc
 
 ## Claim board and completed-work audit — 23 October 2026
 
-Read the [plain-language claim board](docs/CLAIM-BOARD.md): 101 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
+Read the [plain-language claim board](docs/CLAIM-BOARD.md): 104 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
 
 **Sequence source recovery — 23 October 2026:** existing [all-start/phase and finite-edit results](docs/CLAIM-BOARD.md#cb-seq-004), [grouped and selected-digit pattern classifications](docs/CLAIM-BOARD.md#cb-seq-009), and the [fixed Thue–Morse Collatz-code obstruction](docs/CLAIM-BOARD.md#cb-seq-012) are now indexed with their original sources and exact evidence levels. These nine groups recover prior work; they are not nine newly claimed discoveries.
 
@@ -23,6 +23,8 @@ Read the [plain-language claim board](docs/CLAIM-BOARD.md): 101 separately scope
 **Controlled-state and memory source recovery — 23 October 2026:** four existing groups now cover [exact predictive summaries](docs/CLAIM-BOARD.md#cb-memory-001), [predecessor-restoring splits](docs/CLAIM-BOARD.md#cb-memory-002), [full adaptive stochastic records](docs/CLAIM-BOARD.md#cb-memory-003), and [sharp rare-event testing](docs/CLAIM-BOARD.md#cb-memory-004). Later historical formal receipts supersede earlier pending labels for the exact deterministic and countably supported stochastic results. Calibration is proved on paper, with source-reported review, not Lean. The imported genome-completion result is cross-linked rather than counted again. These are mathematical archival recoveries, not claims about consciousness or empirical memory; subjective ranks are unchanged.
 
 **Population/stateful-certificate source recovery — 23 October 2026:** four existing groups now cover the [sharp fixed-gender cap-two threshold](docs/CLAIM-BOARD.md#cb-population-001), [critical-tail structure and exact port encoding](docs/CLAIM-BOARD.md#cb-population-002), [language-preserving pruning versus avoidance-only repair](docs/CLAIM-BOARD.md#cb-population-003), and [one synthetic three-state CA certificate separation](docs/CLAIM-BOARD.md#cb-population-004). Periodicity remains a separate port-schedule hypothesis; repair may destroy connectedness. Historical formal evidence is recovered, not rerun. No new discovery, empirical population claim, Life-like result or subjective-rank change is asserted.
+
+**Alexander source recovery — 23 October 2026:** three existing groups now distinguish [countable-host nonuniversality with exact parents](docs/CLAIM-BOARD.md#cb-alexander-002), [classical matching-state certificates and rank transport](docs/CLAIM-BOARD.md#cb-alexander-003), and [actual-seed maximal clusters with a fixed real founder window](docs/CLAIM-BOARD.md#cb-alexander-004). The earlier balanced-child-cap theorem remains separate; terminal cloning is not complete blow-up. The October 2 classical-method novelty correction and same-window maximality limits are explicit. These are recovered completed results and recorded formal evidence, not new discoveries, empirical species classifications or a change to the dated subjective ranking.
 
 ## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
 
@@ -145,5 +147,6 @@ The separate Zettelkasten is retired and superseded by Commons. [Retirement deci
 ## Shared Mission and Vision
 
 Vision: **Lossless Compression**. Mission: **Modular Maps**. Read the [shared statement and exact boundaries](docs/MISSION-AND-VISION.md); this direction changes no permissions, scientific targets or verification status.
+
 
 
