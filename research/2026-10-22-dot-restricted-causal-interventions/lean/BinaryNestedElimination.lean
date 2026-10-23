@@ -94,7 +94,7 @@ theorem eliminate_clamped (C : Finset V) (base : Assignment V)
   | nil => intro _; rfl
   | cons vertex rest ih =>
       intro outside
-      have vertexOutside := outside vertex (List.mem_cons_self _ _)
+      have vertexOutside := outside vertex List.mem_cons_self
       have restOutside : ∀ v ∈ rest, v ∉ C :=
         fun v member => outside v (List.mem_cons_of_mem _ member)
       have firstStep : sumAt vertex (fun w => f (clampCondition C base w)) =

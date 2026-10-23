@@ -49,7 +49,7 @@ theorem separated_by_no_first_neighbor {V : Type u} (G : MarkedGraph V) (laws : 
   | nil => exact different rfl
   | cons step rest =>
       obtain ⟨ma, mb, edge, _, _⟩ := step
-      exact noNeighbor _ ma mb edge (support _ (List.mem_cons_of_mem _ (List.mem_cons_self _ _)))
+      exact noNeighbor _ ma mb edge (support _ (List.mem_cons_of_mem _ List.mem_cons_self))
 
 theorem separated_by_conditioned_first_tails {V : Type u} (G : MarkedGraph V)
     (laws : MixedLaws G) (C A : V → Prop) (closed : BackwardClosed G A)
@@ -64,7 +64,7 @@ theorem separated_by_conditioned_first_tails {V : Type u} (G : MarkedGraph V)
   | @cons p next q rest step tail =>
       obtain ⟨ma, mb, edge, incoming, _⟩ := step
       have facts := neighbors next.vertex ma mb edge
-        (support next (List.mem_cons_of_mem _ (List.mem_cons_self _ _)))
+        (support next (List.mem_cons_of_mem _ List.mem_cons_self))
       cases tail with
       | nil => exact yOutside facts.1
       | cons nextStep remaining =>

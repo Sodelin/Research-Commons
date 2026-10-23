@@ -74,7 +74,7 @@ theorem collect_valid {S : Type uS} {A : Type uA} {Q : Type uQ} {I : Type uI}
   | nil =>
       apply terminal r h
       exact ⟨fun _ member => member, fun _ _ => rfl,
-        fun _ member => False.elim (List.not_mem_nil _ member), by simp⟩
+        fun _ member => False.elim (List.not_mem_nil member), by simp⟩
   | cons first rest ih =>
       have noFirst : first ∉ rest := (List.nodup_cons.mp unique).1
       have uniqueRest : rest.Nodup := (List.nodup_cons.mp unique).2
@@ -83,7 +83,7 @@ theorem collect_valid {S : Type uS} {A : Type uA} {Q : Type uQ} {I : Type uI}
         ∀ answer, Valid (budgetExperiment admitted target response allowed)
           (collect rest action finish (writeReply r first answer) ((action first, answer) :: h))
           ((action first, answer) :: h) ((n + (first :: rest).length) - 1)
-      refine ⟨⟨positive, legal first (List.mem_cons_self _ _)⟩, ?_⟩
+      refine ⟨⟨positive, legal first List.mem_cons_self⟩, ?_⟩
       intro answer
       have remaining : (n + (first :: rest).length) - 1 = n + rest.length := by
         simp only [List.length_cons]
@@ -100,7 +100,7 @@ theorem collect_valid {S : Type uS} {A : Type uA} {Q : Type uQ} {I : Type uI}
         have neq : i ≠ first := by
           intro same
           subst i
-          exact absent (List.mem_cons_self _ _)
+          exact absent List.mem_cons_self
         have notRest : i ∉ rest := fun member => absent (List.mem_cons_of_mem _ member)
         exact (facts.outside i notRest).trans (writeReply_other r first i answer neq)
       · intro i member
@@ -109,7 +109,7 @@ theorem collect_valid {S : Type uS} {A : Type uA} {Q : Type uQ} {I : Type uI}
           have unchanged := facts.outside first noFirst
           rw [writeReply_same] at unchanged
           rw [unchanged]
-          exact facts.retained _ (List.mem_cons_self _ _)
+          exact facts.retained _ List.mem_cons_self
         · exact facts.answered i later
       · have size := facts.length
         simp only [List.length_cons] at size ⊢

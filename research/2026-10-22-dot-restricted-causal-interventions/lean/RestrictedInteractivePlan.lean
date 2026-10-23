@@ -195,7 +195,7 @@ theorem effectiveRestrictedPlan_identifies_exact_response {X : Type u} [LinearOr
     run (sourceGame T source response) (effectiveRestrictedPlan T) s = classTarget T (source s) := by
   apply valid_run_identifies (sourceGame T source response) (effectiveRestrictedPlan T) [] (coordinateBudget T)
   · exact effectiveRestrictedPlan_valid T source response exactResponse
-  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil _ member)⟩
+  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil member)⟩
 
 /-- The original source class, not just the registry. The same single D
 generates each actual response in run. The exact class-target semantics
@@ -205,14 +205,14 @@ theorem effectiveRestrictedPlan_identifies_original {X : Type u} [LinearOrder X]
     run (originalGame T) (effectiveRestrictedPlan T) D = classTarget T D := by
   apply valid_run_identifies (originalGame T) (effectiveRestrictedPlan T) [] (coordinateBudget T)
   · exact effectiveRestrictedPlan_valid T id (fun E a => graphicalReply E a) (original_response_exact T)
-  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil _ member)⟩
+  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil member)⟩
 
 theorem effectiveRestrictedPlan_identifies_registry {X : Type u} [LinearOrder X] [Fintype X]
     (T : X → Prop) [DecidablePred T] (c : RegistryCode X) :
     run (registryGame T) (effectiveRestrictedPlan T) c = classTarget T (codeSource c) := by
   apply valid_run_identifies (registryGame T) (effectiveRestrictedPlan T) [] (coordinateBudget T)
   · exact effectiveRestrictedPlan_valid T codeSource (fun c a => codeAnswer c a) (registry_response_exact T)
-  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil _ member)⟩
+  · exact ⟨True.intro, fun _ member => False.elim (List.not_mem_nil member)⟩
 
 /-- Expanded final target contract. E is one ORIGINAL finite source across
 the baseline and all available interventions, before its full marked TCM

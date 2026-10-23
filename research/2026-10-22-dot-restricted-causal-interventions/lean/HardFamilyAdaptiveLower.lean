@@ -57,7 +57,7 @@ theorem run_eq_of_agree_on_executed {S : Type uS} {A : Type uA} {Q : Type uQ}
   induction plan with
   | stop q => rfl
   | ask action next ih =>
-      have first := agree action (List.mem_cons_self _ _)
+      have first := agree action List.mem_cons_self
       simp only [run, first]
       apply ih (E.response baseline action)
       intro later member
@@ -162,9 +162,9 @@ theorem no_short_physical_plan {k u n budget : Nat} [LinearOrder (Labels k u)]
     exact physical_responses_agree_off_index q action (untouched action member)
   have runs := run_eq_of_agree_on_executed E plan base (physicalSource (some q)) agreement
   have baseCorrect := valid_run_identifies E plan [] budget valid base
-    ⟨True.intro, fun _ member => (List.not_mem_nil _ member).elim⟩
+    ⟨True.intro, fun _ member => (List.not_mem_nil member).elim⟩
   have rivalCorrect := valid_run_identifies E plan [] budget valid (physicalSource (some q))
-    ⟨True.intro, fun _ member => (List.not_mem_nil _ member).elim⟩
+    ⟨True.intro, fun _ member => (List.not_mem_nil member).elim⟩
   have same := baseCorrect.symm.trans (runs.symm.trans rivalCorrect)
   exact baseline_class_ne_rival nonemptyTargets q same
 

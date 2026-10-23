@@ -59,17 +59,17 @@ theorem readIndex_correct {u : Nat} (items : List (Index u)) (reply : Index u �
   | nil =>
       cases source with
       | none => rfl
-      | some q => exact (List.not_mem_nil q (covered q rfl)).elim
+      | some q => exact (List.not_mem_nil (covered q rfl)).elim
   | cons q tail ih =>
       by_cases yes : reply q = true
       · rw [readIndex, if_pos yes]
-        exact ((signals q (List.mem_cons_self _ _)).mp yes).symm
+        exact ((signals q List.mem_cons_self).mp yes).symm
       · rw [readIndex, if_neg yes]
         apply ih
         · intro r same
           rcases List.mem_cons.mp (covered r same) with equal | member
           · subst r
-            exact (yes ((signals q (List.mem_cons_self _ _)).mpr same)).elim
+            exact (yes ((signals q List.mem_cons_self).mpr same)).elim
           · exact member
         · intro r member
           exact signals r (List.mem_cons_of_mem _ member)
@@ -122,9 +122,9 @@ theorem no_short_promised_plan {k u n budget : Nat} [LinearOrder (Labels k u)]
     exact physical_responses_agree_off_index q action (untouched action member)
   have runs := run_eq_of_agree_on_executed E plan none (some q) agreement
   have baseCorrect := valid_run_identifies E plan [] budget valid none
-    ⟨True.intro, fun _ member => (List.not_mem_nil _ member).elim⟩
+    ⟨True.intro, fun _ member => (List.not_mem_nil member).elim⟩
   have rivalCorrect := valid_run_identifies E plan [] budget valid (some q)
-    ⟨True.intro, fun _ member => (List.not_mem_nil _ member).elim⟩
+    ⟨True.intro, fun _ member => (List.not_mem_nil member).elim⟩
   exact baseline_class_ne_rival nonemptyTargets q
     (baseCorrect.symm.trans (runs.symm.trans rivalCorrect))
 
