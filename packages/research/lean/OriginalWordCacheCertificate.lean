@@ -497,6 +497,7 @@ theorem checked_stage_value (N : RootedBinary V E X) (sample : Copy → X)
   rw [eval_polynomial, eval_polynomial] at hev
   apply hev.symm.trans
   rw [value_read_bindRows]
+  dsimp only [x]
   simp_rw [cached_step_value N sample H common encode decode hleft cache op _ b r gamma dur]
   rw [sum_partition current (fun row => project N Finset.univ row.1)
     (fun row => value row.2 x)
@@ -537,7 +538,7 @@ theorem checked_stages_value (N : RootedBinary V E X) (sample : Copy → X)
       have heq := ih stage.rows
         (law.bind (selectedProgramStep N r Finset.univ
           (instantiateGamma N H gamma common dur stage.operation))) hnext hrest
-      simpa only [finalStageRows, List.map_cons, selectedProgram, PMF.bind_assoc] using heq
+      simpa only [finalStageRows, List.map_cons, selectedProgram, PMF.bind_bind] using heq
 
 /-- Complete same-source natural word through checked literal prefixes.
 Every primitive and every complete intermediate/final coefficient check is
