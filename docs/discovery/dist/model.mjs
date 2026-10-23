@@ -113,7 +113,7 @@ export function literatureSources(c) {
   for(const a of c.accepted_artifacts??[]){const url=safeLink(a.url);if(['prior_work','historical_problem_statement'].includes(a.role)&&url)candidates.push({...a,url});}
   const seen=new Set();return candidates.filter(a=>{if(seen.has(a.url))return false;seen.add(a.url);return true;});
 }
-export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null) {
+export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null,assessments=[]) {
   return {claim_id:c.id, question:c.plain_language.question, mathematical_status:c.mathematical_status,
     exact_scope:c.exact_statement_and_scope, completion_evidence:c.accepted_artifacts,
     formal_status:c.evidence.formal, execution_status:c.evidence.execution,
@@ -122,7 +122,7 @@ export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null) {
     provenance:{origin:c.origin,prior_work:c.prior_work,literature_sources:literatureSources(c),contribution:c.our_contribution,novelty:c.novelty_status},
     registry_source:meta, reader_evidence_joins:joins.filter(j=>j.claim_ids.includes(c.id)),
     subjective_reuse:ranking?{entry:ranking.entries.find(e=>e.claim_id===c.id)??null,author:ranking.author,dated_utc:ranking.dated_utc,
-      purpose:ranking.purpose,source:rankingSource,unranked_means:'No rank supplied in this dated overlay, not low importance or incomplete mathematics.'}:null,
+      purpose:ranking.purpose,source:rankingSource,later_assessments:validateAssessments(assessments),unranked_means:'No rank supplied in this dated overlay, not low importance or incomplete mathematics.'}:null,
     before_new_work:['Read the actual accepted sources and later corrections, not only this summary.',
       'Match the proposed statement, quantifiers, observations and assumptions to this exact scope.',
       'Reuse completed mathematics. Missing formalization does not reopen a hand proof.',
@@ -149,6 +149,15 @@ export function validateRanking(ranking){
   if(ranking?.subjective!==true||!Array.isArray(ranking.entries))throw Error('Unsupported subjective source overlay.');
   if(ranking.entries.some(entry=>entry.source_url&&!safeLink(entry.source_url)))throw Error('Unsafe subjective source link.');
   return ranking;
+}
+export function validateAssessments(notes){
+  if(!Array.isArray(notes))throw Error('Unsupported authored assessment sources.');
+  for(const n of notes){
+    if(n.subjective!==true||!Number.isSafeInteger(n.source_count)||n.source_count<1||!Number.isFinite(Date.parse(n.dated_utc))||
+      !['title','author','scope'].every(k=>typeof n[k]==='string'&&n[k])||!safeLink(n.source_url)||
+      !/^https:\/\/github\.com\/Sodelin\/[^/]+\/blob\/[a-f0-9]{40}\/.+\.md$/.test(safeLink(n.source_url)))throw Error('Invalid dated subjective assessment source.');
+  }
+  return notes;
 }
 export function safeLink(url) {
   try {

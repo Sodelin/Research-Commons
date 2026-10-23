@@ -34,6 +34,7 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   [...$('detail').querySelectorAll('button')].find(x=>x.textContent==='Copy agent reuse record').click();
   await wait(()=>copied.startsWith('{'));const packet=JSON.parse(copied);
   assert.equal(packet.claim_id,'CB-PHYS-P5-004');assert.equal(packet.completion.mathematical_claim_complete,true);assert.equal(packet.completion.proof_derivation_required,false);assert.equal(packet.registry_source.commit,docs['source.json'].commit);
+  assert.equal(packet.subjective_reuse.later_assessments[0].source_count,110);
  });
  await t.test('published-question filter works across the actual source data',async()=>{
   $('reset').click();$('origin').value='published_open_problem';$('origin').dispatchEvent(new dom.window.Event('change'));
@@ -55,6 +56,14 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   $('reset').click();document.querySelector('[data-mode="reuse"]').click();assert.equal($('reuse-guide').hidden,false);
   location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   assert($('detail').textContent.includes('Exact native first-writer gap'));
+ });
+ await t.test('later subjective note and external G3 suppliers are reachable without a new ranking or master closure',()=>{
+  assert([...$('ranking-note').querySelectorAll('a')].some(a=>a.href.endsWith('/docs/SUBJECTIVE-REUSE-UPDATE-110.md')));
+  assert($('ranking-note').textContent.includes('Supplements the historical 75-card JSON'));
+  location.hash='CB-G3-004';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
+  assert($('detail').textContent.includes('Total all-input G3 recognition remains OPEN'));
+  assert([...$('detail').querySelectorAll('a')].some(a=>a.href.endsWith('/INDEPENDENT-COMPLETED-SUPPORT-REVIEW.md')));
+  assert($('detail').textContent.includes('outside the frozen 58-note recovery'));
  });
  await t.test('G7 declaration supplier is visible and exported with its whole-history and native exclusions',async()=>{
   location.hash='CB-G7-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
@@ -80,6 +89,13 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   await wait(()=>document.querySelector('.source-hit')?.textContent.includes('G3-SUPPLIED-WORD-ADMISSION'));
   assert(document.querySelector('.source-hit').textContent.includes('formal receiver gap'));
   assert(!document.querySelector('.source-hit').querySelector('button'));
+ });
+ await t.test('global authored assessment search renders its date and subjective scope without claim bindings',async()=>{
+  $('reset').click();$('search').value='subjective reuse update';$('search').dispatchEvent(new dom.window.Event('input'));
+  await wait(()=>document.querySelector('.source-hit a[href$="/SUBJECTIVE-REUSE-UPDATE-110.md"]'));
+  const hit=document.querySelector('.source-hit a[href$="/SUBJECTIVE-REUSE-UPDATE-110.md"]').closest('.source-hit');
+  assert(hit.textContent.includes('Dated subjective assessment'));assert(hit.textContent.includes('110-card scope'));
+  assert(hit.textContent.includes('Not objective importance'));assert(!hit.querySelector('button'));
  });
  await t.test('archive search loads wider paths and leaves unknown scientific status explicit',async()=>{
   $('reset').click();[...document.querySelectorAll('button')].find(b=>b.textContent==='Load wider archive search').click();
