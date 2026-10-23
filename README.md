@@ -12,7 +12,7 @@ Research outside this repository is included through the [cross-repository sourc
 
 ## Claim board and completed-work audit — 23 October 2026
 
-Read the [plain-language claim board](docs/CLAIM-BOARD.md): 106 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
+Read the [plain-language claim board](docs/CLAIM-BOARD.md): 110 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
 
 **Sequence source recovery — 23 October 2026:** existing [all-start/phase and finite-edit results](docs/CLAIM-BOARD.md#cb-seq-004), [grouped and selected-digit pattern classifications](docs/CLAIM-BOARD.md#cb-seq-009), and the [fixed Thue–Morse Collatz-code obstruction](docs/CLAIM-BOARD.md#cb-seq-012) are now indexed with their original sources and exact evidence levels. These nine groups recover prior work; they are not nine newly claimed discoveries.
 
@@ -29,6 +29,8 @@ Read the [plain-language claim board](docs/CLAIM-BOARD.md): 106 separately scope
 **Wong marked-history source recovery — 23 October 2026:** one existing [continuous Big-ARG construction](docs/CLAIM-BOARD.md#cb-wong-001) now ties actual recorded splits, mergers and dates to the proved count/time law, adaptive choices and almost-sure finite stopping. All twelve source/provider bodies match their final historical verification hashes. This is not the discrete-link or Little-ARG process, a full real-time generator theorem, empirical validation or a certified simulator. Historical checks and completed source repairs are recovered, not rerun or counted as new discoveries; subjective ranks remain unchanged.
 
 **Cross-Scale conceptual source recovery — 23 October 2026:** one [attributed question/proposal](docs/CLAIM-BOARD.md#cb-crossscale-001) now distinguishes Nolan's publicly documented motivating hypothesis from the assistant's mathematical interpretation and fourteen source-backed directions. The conceptual documents are complete, but evaluation against ordinary execution and auditing under matched budgets is only proposed, not performed. This card does not launch an empirical project or claim an effectiveness theorem; completed BIO-1 exact-query and BIO-3 matched finite-comparison results remain separately linked. No new discovery or subjective-rank change is claimed.
+
+**Transfer and fixed-exchange source recovery — 23 October 2026:** four existing groups now separate [statistical simulation and answer recovery](docs/CLAIM-BOARD.md#cb-transfer-001), [sharp whole-history error](docs/CLAIM-BOARD.md#cb-transfer-002), [exact certification of one returned simulator](docs/CLAIM-BOARD.md#cb-transfer-003), and [preparation-dependent finite-population limits](docs/CLAIM-BOARD.md#cb-feedback-006). Classical methods, exact source/continuity/cover assumptions and the still-separate microscopic/formal adapter remain explicit. No new proof, execution, empirical validation or subjective-rank change is claimed.
 
 ## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
 
@@ -151,6 +153,7 @@ The separate Zettelkasten is retired and superseded by Commons. [Retirement deci
 ## Shared Mission and Vision
 
 Vision: **Lossless Compression**. Mission: **Modular Maps**. Read the [shared statement and exact boundaries](docs/MISSION-AND-VISION.md); this direction changes no permissions, scientific targets or verification status.
+
 
 
 

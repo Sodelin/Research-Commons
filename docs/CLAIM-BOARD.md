@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.13-crossscale-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.14-transfer-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -50,7 +50,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Wong marked-history source recovery — 23 October 2026, 10:47 UTC:** one existing [continuous Big-ARG history construction](#cb-wong-001) is now indexed, preserving all 104 prior claim objects. The actual stored history carries the proved count-and-time law, adaptive mark choices and almost-sure finite absorption. All twelve source/provider bodies match their final historical verification hashes. Continuous cuts are not the discrete-link or Little-ARG model; the result is not a full real-time generator theorem, expected-growth formula, empirical validation or executable simulator certification. The final dated-output/support repairs supersede older pending labels. Historical checks are recorded, not rerun; this is one recovered group, not a new discovery or a change to the dated 75-card ranking.
 
-This register contains **106 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Transfer and fixed-exchange source recovery — 23 October 2026, 11:10 UTC:** four existing groups are now indexed, preserving all 106 prior claim objects and card blocks: [statistical comparison and measurable recovery](#cb-transfer-001), [sharp whole-history error and continuity](#cb-transfer-002), [exact certification of one returned simulator](#cb-transfer-003), and [fixed-exchange preparation/limit boundaries](#cb-feedback-006). Classical antecedents retain attribution. The approximate-memory source/formal adapter is not supplied merely by the accepted path bound; ordinary kernels, abstract transitions and different feedback preparations remain separate. Archived checks are recorded, not rerun. These are recovered completed results, not four new discoveries; the dated 75-card ranking remains unchanged and these additions are not ranked.
+
+This register contains **110 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -179,6 +181,11 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-WONG-001](#cb-wong-001) | A continuous recombination model records valid histories and stops almost surely | Proved; archived Lean check recorded |
 
 | [CB-CROSSSCALE-001](#cb-crossscale-001) | Can a research process discover a more useful question before solving the wrong one? | Conceptual documentation complete; evaluation proposed, not performed |
+
+| [CB-TRANSFER-001](#cb-transfer-001) | When one experiment can simulate another, and when that recovers an answer | Proved (not Lean formalized) |
+| [CB-TRANSFER-002](#cb-transfer-002) | Small local errors have an exact whole-history cost | Proved (not Lean formalized) |
+| [CB-TRANSFER-003](#cb-transfer-003) | A small exact checker can certify one simulator over a whole covered parameter class | Proved (not Lean formalized) |
+| [CB-FEEDBACK-006](#cb-feedback-006) | Preparation and order of limits change a finite-population marker assay | Proved (not Lean formalized) |
 
 ## Claim cards
 
@@ -5590,3 +5597,226 @@ This card records a completed conceptual analysis and an **unadopted empirical p
 **Stable key:** crossscale.MISSED_SCOPE_AND_OBSERVABLE_TARGET_GENERATION. **Aliases:** Nolan's cross-scale/shadow hypothesis; Missed-scope and target-generation proposal; Consolidated theory package, 30 September 2026.
 
 </details>
+
+<a id="cb-transfer-001"></a>
+### When one experiment can simulate another, and when that recovers an answer
+**CB-TRANSFER-001 · Statistical transfer · classical comparison and measurable recovery**
+
+**Question:** When can the same randomized rule turn one experiment's observations into another's, without knowing the hidden parameter?
+
+**What we learned:** There are precise complete criteria, but an abstract comparison need not give a measurable simulator, and reproducing a law is not automatically recovering a hidden answer.
+
+**What it lets someone do:** Check the exact shared-kernel and measurable-recovery obligations, with quantitative decision-error bounds and explicit counterexamples to overbroad transfer claims.
+
+**What we cannot conclude:** This does not reconstruct every original sample, discover scientific correspondences, produce an efficient sampler or establish empirical usefulness.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For an arbitrary nonempty parameter set, arbitrary measurable source X, one common probability or sigma-finite measure dominating the entire source family, and nonempty standard-Borel target Y, one parameter-independent ordinary Markov kernel attains the minimum uniform TV deficiency. Its value equals the supremal finite-prior, finite-action, [0,1]-loss Bayes-risk disadvantage; that same kernel transfers all measurable bounded decisions with loss-range times TV error. Separately, classical abstract L-space comparison permits nondominated experiments and generalized decisions, but not automatic ordinary realization: a non-Borel parameter-to-binary-label assignment has abstract deficiency zero and ordinary deficiency exactly 1/2. On arbitrary nonempty measurable X,Y, prescribed-error ordinary kernel existence is equivalent to one positive unital linear operator into actual bounded measurable functions with pointwise continuity from above and the stated bounded-test inequalities; unrestricted attainment is not asserted. For a nonempty standard-Borel answer space, exact Dirac-target randomized recovery is equivalent to one measurable deterministic decoder. Common source domination allows only countably many distinct exactly recovered answers; the written interface also gives multiway/two-point TV lower bounds and the fixed-finite-IID rare-mechanism obstruction. These are distinct declared categories, not one assumption-free theorem.
+
+**Origin.** classical prior. Blackwell–Le Cam comparison and measurable representation/recovery are established mathematics. The programme contributes an explicit proof and boundary audit, rather than claiming to have solved a new universal scientific-transfer problem.
+
+**Prior work.** Le Cam (1964), especially Theorem 3 and Proposition 19, supplies the abstract comparison and dominated ordinary-realization lineage; Sion minimax, Riesz/Radon representation and standard-Borel facts are explicit prerequisites. The prior ledger records Khan–Yu–Zhang 2024/2025 and retrieval limits. Fibre/quotient and testing principles are classical; no exhaustive priority claim.
+
+**Our contribution and attribution.** The 30 September package supplies full written proofs with a single simultaneous kernel, explicit representation and norm-convention repairs, measurable answer-recovery interfaces, and sharp countercontrols. It preserves the difference between established theory, computable implementation and admitted scientific application.
+
+**Evidence, kept separate:**
+
+- **Hand:** Each actual proof has a named recorded internal AI review. The abstract review relies on the author's recorded original-page inspection for Le Cam source fidelity; the dominated theorem also has an explicit full proof. This recovery reads those records without claiming new external peer acceptance.
+- **Formal:** No Lean or other kernel verification of these complete measurable/infinite-dimensional theorems is asserted.
+- **Execution:** The general characterization rests on written proofs, not finite experiments. No scientific runtime or compiler was invoked in this recovery.
+- **Empirical:** A theorem about supplied experiments and requested answers; no real scientific correspondence or empirical efficacy is inferred.
+
+**Novelty:** Classical methods retain their attribution. This is recovery of completed proof/implementation work, not a new discovery or a worldwide historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** An actual application must identify its source/target laws, parameter correspondence and intervention semantics. Ordinary existence does not supply computation, cost or physical implementation. The original biological programme's later completed G1/G6/G7 results remain completed; this generic packet neither substitutes for their adapters nor closes G3/G4. No unrestricted finite-prior-to-ordinary-kernel implication is claimed.
+
+**Proof, review and related source links:**
+
+- [Full dominated standard-Borel comparison proof](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/dominated.md) (proof or status).
+- [Independent full-scope dominated proof review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-dominated.md) (hand review).
+- [Abstract transition, ordinary-kernel counterexample and prior-source audit](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/abstract-bridge.md) (proof or status).
+- [Abstract comparison review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-abstract-bridge.md) (hand review).
+- [Arbitrary-measurable ordinary representation iff](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/arbitrary-measurable.md) (proof or status).
+- [Arbitrary-measurable representation review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-arbitrary-measurable.md) (hand review).
+- [Hidden-answer recovery and information obstructions](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/scientific-interface.md) (proof or status).
+- [Hidden-answer interface review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-scientific-interface.md) (hand review).
+- [Primary comparison-theory attribution and retrieval limits](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/PRIOR.md) (prior work).
+- [Le Cam's original comparison paper](https://doi.org/10.1214/aoms/1177700372) (prior work).
+
+**Connections:**
+
+- [CB-MEMORY-001](#cb-memory-001) (same principle): The deterministic exact quotient is already mapped. It is an established related factorization principle, not the ordinary statistical-kernel comparison theorem.
+- [CB-MEMORY-004](#cb-memory-004) (same principle): The known-rate rare-event test is a concrete testing result. Do not recard it as a new instance of the general TV recovery obstruction.
+
+**Stable key:** september.TRANSFER.STATISTICAL_COMPARISON_AND_RECOVERY. **Aliases:** GENERAL-TRANSFER-01 measurable/abstract closure; Dominated standard-Borel statistical comparison.
+
+</details>
+
+
+<a id="cb-transfer-002"></a>
+### Small local errors have an exact whole-history cost
+**CB-TRANSFER-002 · Stochastic transfer · complete paths and all-state guarantees**
+
+**Question:** How much can small conditional errors change an entire observation history?
+
+**What we learned:** The sharp bound is one minus the product of the stepwise agreement budgets. Even a small fixed error at every step can make infinite histories completely distinguishable.
+
+**What it lets someone do:** Reuse a proved finite- and infinite-history error bound once the actual conditional laws and information interface are matched.
+
+**What we cannot conclude:** Separate one-time marginals, incompatible prefix simulators or a local fitted error estimate do not meet the theorem's assumptions.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For specified consistent sequential probability laws on a countable product of nonempty standard-Borel spaces, with arbitrary parameter set, equal full path laws are equivalent to equal initial laws and equal next-step conditional measures almost everywhere under the common reachable-prefix law at each time. For approximate comparison assume initial TV at most epsilon_0 and versions of the next-step kernels uniformly within epsilon_j at every history, for every parameter. With e_j=min(1,epsilon_j), prefix TV is at most 1−product(j=0..n)(1−e_j), and whole-path TV is at most 1−product(j>=0)(1−e_j); the bounds are attained for every budget sequence. Whole-path TV equals the supremum of prefix TVs. Separately, one fixed ordinary kernel's a.e. uniform TV bound extends to every parameter on a topological parameter space with full-support Borel prior, source expectations continuous for every bounded measurable test (setwise continuity), and target expectations continuous for bounded continuous tests on a Polish target (weak continuity). This second theorem starts with a fixed simulator bound, not one successful prior decision comparison.
+
+**Origin.** classical prior. Classical kernel/common-submeasure and continuity mechanisms are proved with explicit all-history and all-parameter contracts; no new probability principle or named published-open-problem solution is claimed.
+
+**Prior work.** Kernel contraction, common submeasures, sequential extension, Radon/TV characterization and uniqueness from finite cylinders are classical. Khan–Yu–Zhang's 2024 continuity discussion motivated the fixed-kernel check; the source does not claim a full-text identity with that paper.
+
+**Our contribution and attribution.** The original package gives the exact path-law criterion, sharp multiplicative bound, complete cylinder-to-infinite-path passage and omission counterexamples, alongside a precise same-kernel a.e.-to-all-state upgrade. This restores the completed hand supplier instead of treating later mechanization as missing mathematics.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original revised review checks exact conditional-law equivalence, all-history quantifiers, the common-submeasure recurrence, infinite-path passage, sharpness and both continuity omissions. The related finite-PMF review is scoped separately; this card does not claim a newly accepted microscopic/formal adapter.
+- **Formal:** No Lean proof of this full path/continuity result is supplied. The historical exact PMF checks on CB-MEMORY-003 do not verify its reserved approximate composition.
+- **Execution:** Sharpness and all-horizon conclusions are written proofs, not extrapolations from simulated paths. Nothing was rerun.
+- **Empirical:** Specified mathematical conditional laws are premises. No fitted system, biological mechanism or empirical controller has been validated.
+
+**Novelty:** Classical methods retain their attribution. This is recovery of completed proof/implementation work, not a new discovery or a worldwide historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** CB-MEMORY-003's finite approximate target uses the same numerical bound 1−(1−delta)(1−epsilon)^n and already has a reviewed sharpness argument, but starts from microscopic K, encoding q, reduced L and factored adaptive policies. It needs the actual conditional-mixture/policy identification and source-level/formal composition; the exact PMF Lean receipt does not certify that adapter. Finite-transcript representation and TV implementation remain unmechanized. This is one quantitative result family, not a second discovery for its finite version. Arbitrary-carrier exact PMFs are not automatically a standard-Borel infinite-path construction; continuous marked-process, controller-memory and scientific interfaces remain separate.
+
+**Proof, review and related source links:**
+
+- [Complete sharp path and all-state proof](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/continuity-and-paths.md) (proof or status).
+- [Revised full proof review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-continuity-and-paths.md) (hand review).
+- [Related finite microscopic-PMF approximate target, different source interface](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC.md) (proof or status).
+- [Exact PMF and reserved approximate-gate review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC-SCOPE-REVIEW.md) (hand review).
+
+**Connections:**
+
+- [CB-MEMORY-003](#cb-memory-003) (candidate connection): Already accepted quantitative supplier for its reserved finite approximate target, not a completed formal source adapter. At a retained history the fine process must use the actual posterior mixture of pushed K rows and the same conditional policy; arbitrary fibre representatives or unconditional action frequencies are insufficient. Do not count a second copy of the bound.
+
+**Stable key:** september.TRANSFER.SHARP_PATH_AND_ALL_STATE. **Aliases:** GENERAL-TRANSFER-01 continuity and whole paths; Sharp multiplicative conditional-TV accumulation.
+
+</details>
+
+
+<a id="cb-transfer-003"></a>
+### A small exact checker can certify one simulator over a whole covered parameter class
+**CB-TRANSFER-003 · Statistical transfer · proof-carrying finite certificates**
+
+**Question:** Can a numerical proposal receive an exact guarantee beyond the few parameter points used to fit it?
+
+**What we learned:** Yes, with a genuine parameter cover, valid continuity bounds and simultaneous law-error certificates. Exact arithmetic checks one shared simulator and both sides of a whole-class error interval.
+
+**What it lets someone do:** Accept a certified bound, exhibit a decision disadvantage, or abstain instead of treating a numerical solver's status as proof.
+
+**What we cannot conclude:** The checker cannot validate its own scientific laws, cover, continuity bounds or sampling provenance, and its safe fallback need not be accurate.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let Theta be nonempty compact metric with a supplied finite r-cover, finite nonempty source/target alphabets, valid TV envelopes omega_P(r),omega_Q(r) for every distance at most r, and simultaneous certified grid-law errors rho_P,rho_Q. One rational stochastic kernel K and exact feasible primal/dual witnesses L<=d_hat<=U, where U is K's actual estimated-grid error, certify max(0,L−rho)<=delta<=min(1,U+rho+omega_P(r)+omega_Q(r)), rho=rho_P+rho_Q. The actual returned K has that uniform upper error for every theta, not merely the optimum or fitted grid. A positive L−rho supplies a finite-prior decision-disadvantage witness. Fixed-stage within-law IID samples admit the stated simultaneous Hoeffding error budget, without requiring independence across law blocks, at cost 2mN observations. Effective refinement with shrinking cover/law/optimization errors converges and resolves strict thresholds, but equality and exact zero need not stop. SciPy only proposes witnesses; rational repair and exact feasibility/objective evaluation certify them. A uniform-kernel/zero-dual fallback is valid but may remain loose.
+
+**Origin.** project posed. A concrete certifying implementation and full-class proof under explicit effective access assumptions, using established statistical comparison, optimization and concentration mathematics.
+
+**Prior work.** Blackwell–Le Cam finite-experiment comparison, LP duality, TV contraction, finite covering and Hoeffding concentration are established. The original packet explicitly declines historical novelty for the theorem packaging.
+
+**Our contribution and attribution.** The 30 September implementation separates numerical candidate generation from exact rational proof checking, carries external cover/error premises explicitly, and gives a certified global interval for the actual returned shared kernel, with confidence/refinement/abstention boundaries.
+
+**Evidence, kept separate:**
+
+- **Hand:** Separate full mathematical and implementation reviews accept the exact conditional certificate, one returned kernel, dual signs, confidence and boundary/refinement statements. Recovery read the actual proof, code and receipts, not a new full proof review.
+- **Formal:** No Lean or proof-assistant verification is claimed. Exact rational certificate checking is not kernel verification of the complete theorem.
+- **Execution:** The publication receipt pins packet 64080751ca56eb58efd250a403ed9f9ab97868c7, 27 exact remote readbacks, and clean example/fallback reconstruction with zero exits. Recorded independent controls include direction, three-answer, permutation, off-grid, malformed-input and 384 rational-radius checks. The source and stored results were read without rerunning them.
+- **Empirical:** Analytical fixtures and arithmetic confidence budgets are not an actual IID sampling experiment or validation of scientific source laws.
+
+**Novelty:** Classical methods retain their attribution. This is recovery of completed proof/implementation work, not a new discovery or a worldwide historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** The declared cover, modulus envelopes, parameter-law access and actual within-law IID provenance are not verified from input tables. Adaptive reuse needs its own simultaneous/anytime argument or valid fresh-block/stage allocation. A changing Dirac-valued label cannot have a vanishing target TV modulus across its boundary. Scientific model admission, physical sampling, useful runtime/cover sizes, complete formalization and unrestricted infinite-alphabet transfer are separate. No general G3/G4 or empirical closure follows.
+
+**Proof, review and related source links:**
+
+- [Full compact certificate theorem and computational contract](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate.md) (proof or status).
+- [Independent complete mathematical review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate-proof-review.md) (hand review).
+- [Independent implementation and control review](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-compact-certificate.md) (execution review).
+- [Exact rational arithmetic checker](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact_certificate.py) (proof source).
+- [Archived analytical fixtures and corruption controls](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate-verification.json) (execution review).
+- [Immutable publication and clean reconstruction replay](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/PUBLICATION-VERIFICATION.json) (execution review).
+- [Original source-hash manifest](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/manifest.json) (proof or status).
+
+**Connections:**
+
+- [CB-TRANSFER-001](#cb-transfer-001) (same principle): The implementation uses classical finite statistical-comparison ideas, with its own explicit exact primal/dual proof. It does not make the broader ordinary-kernel existence theorem automatically computable.
+- [CB-G6-001](#cb-g6-001) (same principle): Both distinguish valid certificates from unsupported answers, but G6 has a different biological source/target and closure-fibre contract. No source adapter or empirical pipeline is implied.
+
+**Stable key:** september.TRANSFER.COMPACT_EXACT_CERTIFICATE. **Aliases:** GENERAL-TRANSFER-01 compact finite-alphabet certificate; compact-transfer-certificate-v1.
+
+</details>
+
+
+<a id="cb-feedback-006"></a>
+### Preparation and order of limits change a finite-population marker assay
+**CB-FEEDBACK-006 · Feedback models · fixed-exchange finite-population endpoints**
+
+**Question:** Do a finite population, its preparation and the order of limits change what a marker-barrier assay means?
+
+**What we learned:** Yes. Genetic long burn-in eventually removes the selected background in this finite model, while a properly prepared reset regime has an exact all-N barrier formula; two diversity limits disagree.
+
+**What it lets someone do:** Distinguish genuine finite-model endpoint results from artifacts of initialization, lifecycle order or taking an infinite-population approximation first.
+
+**What we cannot conclude:** This is not a universal epigenetic advantage, a population-size monotonicity result, an all-N version of the N=1 weighted kernel, or measured speciation evidence.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Two demes have N>=2 diploids each and exchange exactly k uniformly selected individuals each way, 1<=k<N, m=k/N. Soft additive viability has 0<=s<1; independent gamete/offspring draws allow repeated parents and selfing, recombination lies in [0,1/2], and the declared order is exchange, viability, recombinant mating, then epimutation. One direction's k migrants receive the marker after exchange and before selection; B0=m/2 and R=1−E[B_T]/B0 uses unconditional global marker frequency. A positive two-generation accessibility bound gives geometric fixation/loss tails for a nonmutating allele. At fixed finite N and genetic mu=0, selected-background burn-in L→infinity makes the marker barrier tend to zero uniformly over subsequent horizons, including terminal fixation. Complete reset mu=1/2,phi=1 from a locally reset-compatible selected background before the pulse gives R=s(1−m)/(1−ms) for every admitted N,k, recombination and T>=1, including terminal; mirrored initialization or an unmarked reset generation supplies that preparation. This is N-independence at fixed m, not fixed k. At mu=0 from mirrored pure initialization and fixed rational m along compatible k=Nm census sizes, H=2*pbar*(1−pbar) has iterated limits 0 when finite-N long burn-in is first and 1/2 when infinite-census limit is first. H is global allelic diversity, not heterozygote frequency, and no corresponding RI limit interchange theorem is claimed. A phase-aware full intermediate-family finite kernel is specified with binomial(N+9,9)^2 states, but not executed or classified.
+
+**Origin.** project posed. An explicitly chosen fixed-count finite extension of the published deterministic epigenetic lifecycle and marker assay. The paper does not supply these stochastic sampling choices.
+
+**Prior work.** Planidin et al. (2025) supplies the deterministic two-locus lifecycle/assay; Greenspoon (2022) already studies finite stochastic epigenetic models under a different contract. Absorption, martingales and finite-time laws of large numbers are classical. No first-finite-model or exhaustive novelty claim.
+
+**Our contribution and attribution.** The original packet proves the all-N fixed-exchange endpoint formula, uniform genetic burn-in consequence and explicit noncommuting diversity limits, retaining corrected preparation/order assumptions and independently checked finite endpoint controls.
+
+**Evidence, kept separate:**
+
+- **Hand:** Two recorded reviewers checked source correspondence, accessibility, martingales, limits and the full-family specification. Their corrections made reset preparation, global-diversity terminology and lifecycle order explicit. This recovery read the complete proof/review pair, not a new external peer review.
+- **Formal:** No Lean proof of the all-N claims is supplied. The later N=1 feedback formal components do not verify this different finite kernel.
+- **Execution:** Independent rational verifier and historical coordinator replay at N=2,k=1,s=1/3 cover three 36-state endpoint projections, stochastic rows, absorption, exact martingales/linear residuals and preparation/order controls. These finite checks are not an all-N machine proof, full intermediate-family computation or new rerun.
+- **Empirical:** The stochastic extension has not been fitted to empirical populations; endpoint algebra does not establish real-world speciation or a general epigenetic advantage.
+
+**Novelty:** Classical methods retain their attribution. This is recovery of completed proof/implementation work, not a new discovery or a worldwide historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** Full intermediate two-locus implementation, general matched sign regions, useful finite burn-in windows, size-dependent bounds and empirical adequacy are not established by these endpoint proofs. The geometric accessibility bound is not a realistic timescale. Globally EE initialization at L=0 or resetting before selection gives a different endpoint (zero); preparation/order cannot be dropped. Cases k=0,k=N,s=1 are excluded. Historical structural/query pending labels in the same packet do not reopen later completed NANUQ/G1/G6/G7 results.
+
+**Proof, review and related source links:**
+
+- [Exact finite-population model and all-N proofs](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/PROOF.md) (proof or status).
+- [Two scoped hand reviews and historical exact-run receipt](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/REVIEW.md) (hand review).
+- [Prior papers, source correspondence and retrieval limits](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/EVIDENCE.md) (prior work).
+- [Archived 36-state endpoint results and countercontrols](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/exact_results.json) (execution review).
+- [Declared bounded exact endpoint verifier](https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/exact_check.py) (proof source).
+- [Planidin et al., published deterministic source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12440623/) (prior work).
+- [Greenspoon's earlier finite stochastic epigenetic modelling](https://doi.org/10.1111/evo.14494) (prior work).
+
+**Connections:**
+
+- [CB-FEEDBACK-004](#cb-feedback-004) (same principle): Related assay, different source: B04 has N=1 weighted migration pools and a specific finite/deterministic reversal. Fixed integer exchange with 0<k<N excludes N=1; neither theorem is silently substituted for the other.
+- [CB-FEEDBACK-005](#cb-feedback-005) (same principle): B06's shared Fin14 parent/marker law and almost-sure ancestry theorem are a separate two-adult construction. This fixed-exchange packet supplies neither that shared-draw realization nor an all-N B06 theorem.
+
+**Stable key:** september.FEEDBACK.FIXED_EXCHANGE_ENDPOINTS_AND_LIMITS. **Aliases:** 30 September stepchange finite-population endpoints; Fixed-count all-N marker assay.
+
+</details>
+
