@@ -64,7 +64,7 @@ fn descendant_proof(context:&Context,population:Location)->Result<String,Error> 
      out.push_str(&format!(r#"        have step{position} : N.graph.DReach {a} {b} := by
           have literal : N.graph.DReach (N.graph.source {occurrence}) (N.graph.target {occurrence}) :=
             Relation.ReflTransGen.single ⟨{occurrence}, rfl, rfl⟩
-          simpa only [edge_sources_exact, edge_targets_exact] using literal
+          simpa [edge_sources_exact, edge_targets_exact] using literal
 "#));
     }
     if edges.is_empty(){out.push_str("        exact Relation.ReflTransGen.refl\n");}

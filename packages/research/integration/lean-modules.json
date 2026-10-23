@@ -328,7 +328,7 @@
     {
       "module": "ResearchCommons.Menu.FiniteForcing",
       "path": "lean/ResearchCommons/Menu/FiniteForcing.lean",
-      "sha256": "24d65f8ebb5a5e4d8b8b8d37776bedf2d1457662f64c879da64d811d9d4deee5",
+      "sha256": "c3207dde61e2371e5a6c27fbb6ad2e18d35f850f42f13eafc2a840fdc2edb430",
       "imports": [
         "Mathlib.RingTheory.Polynomial.Basic",
         "Mathlib.Data.Real.Basic",
@@ -340,6 +340,56 @@
         "accepted_hand_sha256": "740dd199d40599729bf70bf5c9e2360e223747bfcaae99fcad881049e4c8a294",
         "selected_current_context_verified": false,
         "scope": "Original seed and finite same-point polynomial chart coverage remain explicit. Original-source size/count/physical compiler instantiation and effective stopping are not supplied."
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.E8SCFG2RootEventDecoder",
+      "path": "lean/UnifiedLean/Source/E8SCFG2RootEventDecoder.lean",
+      "sha256": "7756cac41707ad6109db681d4758ad9f1f2556227984c2df6d8fc21605b81e22",
+      "imports": [
+        "UnifiedLean.Source.E8PaperGammaAdmission",
+        "E8SCFG2ProviderBoundaryContract",
+        "Mathlib.Data.List.OfFn"
+      ],
+      "provenance": {
+        "role": "Unchanged completed conditional schema root-event decoder",
+        "source_commit": "7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68",
+        "original_path": "research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2RootEventDecoder.lean",
+        "git_blob": "0d603b2814c58a9b1cc4564d1140f34edcef7634",
+        "selected_current_context_verified": false
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.E8SCFG2BEOwnership",
+      "path": "lean/UnifiedLean/Source/E8SCFG2BEOwnership.lean",
+      "sha256": "0927703d009a87ed53c3ab3a68c0b104cac0637fca0d752f6a731fea870187bb",
+      "imports": [
+        "UnifiedLean.Source.E8SCFG2RootEventDecoder",
+        "E8SCFG2ProviderBoundaryContract"
+      ],
+      "provenance": {
+        "role": "Unchanged completed BE ownership conditional proof",
+        "source_commit": "7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68",
+        "original_path": "research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2BEOwnership.lean",
+        "git_blob": "7d522545834b1c5dde5a76d95d79dca55384ed67",
+        "selected_current_context_verified": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.RNA",
+      "path": "lean/ResearchCommons/Claims/RNA.lean",
+      "sha256": "980239ccffde06093f5813229c999f58bf63b0e5d2e9e83f157b160819ecd774",
+      "imports": [
+        "E8DeterministicTopKCertificate",
+        "E8CertificateStability",
+        "E8ExactResidualMass",
+        "E8GridTracebackBridge",
+        "UnifiedLean.Source.E8SCFG2BEOwnership"
+      ],
+      "provenance": {
+        "role": "Typed exports retaining completed RNA004/005/006 literal premises",
+        "proof_derivation": false,
+        "selected_current_context_verified": false
       }
     }
   ]

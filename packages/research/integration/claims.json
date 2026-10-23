@@ -5265,9 +5265,17 @@
       "claim_id": "CB-RNA-004",
       "reuse_rank": null,
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "source_binding",
+        "module": "ResearchCommons.Claims.RNA",
+        "declarations": [
+          "ResearchCommons.Claims.RNA.interval_top_k",
+          "ResearchCommons.Claims.RNA.anytime_top_k",
+          "ResearchCommons.Claims.RNA.discrepancy_top_k",
+          "ResearchCommons.Claims.RNA.strict_gap_certificate",
+          "ResearchCommons.Claims.RNA.residual_top_k",
+          "ResearchCommons.Claims.RNA.residual_conservation"
+        ],
+        "scope": "Conditional deterministic ordering and exact finite residual statements; actual interval events, numerical mass bounds, sampler and source admission remain explicit."
       },
       "rust": {
         "state": "pending_binding",
@@ -5335,6 +5343,253 @@
         }
       ],
       "obligation": "None for the stated conditional ordering, stability and finite-residual theorems. Establishing their actual sampling, numerical, class-mass and RNA-source premises is separate downstream work, not an unproved part of these implications."
+    },
+    {
+      "claim_id": "CB-RNA-005",
+      "reuse_rank": null,
+      "lean": {
+        "state": "source_binding",
+        "module": "ResearchCommons.Claims.RNA",
+        "declarations": [
+          "ResearchCommons.Claims.RNA.source_event_coordinates",
+          "ResearchCommons.Claims.RNA.local_schema_root_bound",
+          "ResearchCommons.Claims.RNA.bounded_root_events",
+          "ResearchCommons.Claims.RNA.be_root_ownership"
+        ],
+        "scope": "Literal local SchemaTree bounds and BE origin ownership; no generated-list/execution admission, partner involution or actual traceback factory is supplied."
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-RNA-001",
+          "detail": "The represented scanner/partner relation and normalized root-carrier exclusion are already completed. Their identification with actual C++ contexts and their complete operational composition with these schema trees remain separate; no parser proof is repeated here.",
+          "relation_type": "candidate_connection"
+        },
+        {
+          "claim_id": "CB-RNA-002",
+          "detail": "The decoder uses Gamma's SourceEvent datatype, but this does not invoke or instantiate its conditional class-law theorem. Actual source support, physical weights and output/classifier admission remain necessary.",
+          "relation_type": "candidate_connection"
+        },
+        {
+          "claim_id": "CB-RNA-003",
+          "detail": "Both reuse the exact child-normalization interface. The schema right-bound lemma is not the interpreter's strictly earlier-child condition, so no full interpreter admission or already completed executable join is asserted.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Exact bounded root-event decoder body",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2RootEventDecoder.lean"
+        },
+        {
+          "label": "Exact BE ownership proof from primitive local origins",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2BEOwnership.lean"
+        },
+        {
+          "label": "Full 17-family/57-rule source-child boundary supplier",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/Imported/E8SCFG2ProviderBoundaryContract.lean"
+        },
+        {
+          "label": "Reused valid-active-child normalization supplier",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean"
+        },
+        {
+          "label": "Decoder register with dated pending-to-accepted 278 update",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8-ROOT-DECODER-REGISTER.md"
+        },
+        {
+          "label": "BE ownership contract and historical outside 278 boundary",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8-BE-OWNERSHIP-REGISTER.md"
+        },
+        {
+          "label": "Independent exact BE source and origin-fidelity acceptance",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/INDEPENDENT-BE-OWNERSHIP-REVIEW.md"
+        },
+        {
+          "label": "Exact independent BE review/check identities",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/EXACT-BE-OWNERSHIP-REVIEW-CHECK.json"
+        },
+        {
+          "label": "Decoder historical component receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2RootEventDecoder-COMPONENT-RECEIPT.json"
+        },
+        {
+          "label": "BE historical component receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2BEOwnership-COMPONENT-RECEIPT.json"
+        },
+        {
+          "label": "Later 316 selected closure, unchanged source and rebuilt-object hashes",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/guard.json"
+        },
+        {
+          "label": "Later 316 source freeze identities",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/FREEZE.json"
+        },
+        {
+          "label": "Later 316 all-owned-declaration audit receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/all-declarations/receipt.json"
+        },
+        {
+          "label": "Inspected 316 public detailed-table availability boundary",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/DETAILED-REPORTS-PENDING.json"
+        },
+        {
+          "label": "Already-completed represented scanner/partner relation, not a new claim here",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scaffold-source-1441z/README.md"
+        }
+      ],
+      "obligation": "None for the two exact completed conditional schema conclusions. Actual generated/executed trace admission, numerical implementation and broader RNA-model claims are separate downstream obligations, not missing proofs of these statements."
+    },
+    {
+      "claim_id": "CB-RNA-006",
+      "reuse_rank": null,
+      "lean": {
+        "state": "source_binding",
+        "module": "ResearchCommons.Claims.RNA",
+        "declarations": [
+          "ResearchCommons.Claims.RNA.midpoint_branch_tv",
+          "ResearchCommons.Claims.RNA.continuous_branch",
+          "ResearchCommons.Claims.RNA.midpoint_trace_error",
+          "ResearchCommons.Claims.RNA.midpoint_class_error"
+        ],
+        "scope": "Preserves global positivity for every state and natural depth and the exact whole-trace equivalence. Fresh conditional-uniform input and actual continuation/source/readout remain prerequisites; supported-root positivity is not substituted."
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-TRANSFER-002",
+          "detail": "The sharper general full-history TV theorem already indexes the classical error-composition principle. The present source is a separate exact selector-to-production-to-class formal chain, not a new generic TV theorem or a formal import of TRANSFER002.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-RNA-002",
+          "detail": "Supported-root Gamma ideal sampling is complete at its own scope. Its positive-support equivalence and root positivity do not instantiate this older wrapper's global positivity and whole-trace equivalence; the supported-grid/source adapter is separate.",
+          "relation_type": "candidate_connection"
+        },
+        {
+          "claim_id": "CB-RNA-003",
+          "detail": "The completed ordered interpreter is an adjacent weight supplier, not proof that an executed sampler has the required finite continuation carrier, conditional random input or whole-trace/output equivalence.",
+          "relation_type": "candidate_connection"
+        },
+        {
+          "claim_id": "CB-RNA-004",
+          "detail": "After actual source admission, a verified class-law discrepancy can supply certificate error widening. The grid theorem alone does not prove all-time coverage, selected-class SUM, discovery or termination.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Strict-prefix selector and exact positive branch fibers",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8StrictPrefixSelector.lean"
+        },
+        {
+          "label": "Actual continuous-uniform selector law",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8UniformPrefixLaw.lean"
+        },
+        {
+          "label": "Observable pushforward retaining repeated labels",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8ObservablePrefixLaw.lean"
+        },
+        {
+          "label": "Exact N-point midpoint counting and cumulative bounds",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointGridLaw.lean"
+        },
+        {
+          "label": "Branch-table TV bound from internal boundaries",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointGridTV.lean"
+        },
+        {
+          "label": "Finite trace weight and globally positive partition law",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8FiniteTracebackLaw.lean"
+        },
+        {
+          "label": "Common-continuation finite-trace error composition",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8TracebackErrorComposition.lean"
+        },
+        {
+          "label": "Normalized production kernel from actual selector counts",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointProductionKernel.lean"
+        },
+        {
+          "label": "Whole-trace weighted-class grid endpoint",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8GridTracebackBridge.lean"
+        },
+        {
+          "label": "Main exact source/compiler/import manifest",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/SOURCE-AND-COMPILE-MANIFEST.json"
+        },
+        {
+          "label": "Original grid statement and explicit source boundaries",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/README.md"
+        },
+        {
+          "label": "Named local call-rank decreases, not complete fuel",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8TracebackCallRanks.lean"
+        },
+        {
+          "label": "Sample_V-only guarded integer-pair/slot bound",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8SourceVBranchBound.lean"
+        },
+        {
+          "label": "Adjacent exact source/compiler manifest",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/SOURCE-AND-COMPILE-MANIFEST.json"
+        },
+        {
+          "label": "Supported-root ideal law, reused from RNA002",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8SupportedTracebackLaw.lean"
+        },
+        {
+          "label": "Later scope explicitly retains the grid/Gamma interface",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary"
+        },
+        {
+          "label": "Claim-by-claim classical-prior and implementation audit",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-originality-residual-audit-0831z/E8-CLAIM-BY-CLAIM-ORIGINALITY.md"
+        }
+      ],
+      "obligation": "None for the exact conditional selector, finite-grid and finite-trace/class error statements or the stated local integer bounds. Actual program and supported-grid/Gamma instantiation are separate downstream work."
     }
   ],
   "registry_commit": "d71ea2f3c2f9d1dedb80fcf97c3c27e9fcb4ea90",

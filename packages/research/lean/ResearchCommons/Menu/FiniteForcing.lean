@@ -37,8 +37,10 @@ theorem finite_original_polynomial_equations
     apply Submodule.span_le.mpr
     intro polynomial member
     change evaluate polynomial = 0
-    rw [← index_exact ⟨polynomial, member⟩]
-    exact agrees _ (Finset.mem_image.mpr ⟨⟨polynomial, member⟩, by simp, rfl⟩)
+    calc
+      evaluate polynomial = evaluate (equation (original ⟨polynomial, member⟩)) :=
+        congrArg evaluate (index_exact ⟨polynomial, member⟩).symm
+      _ = 0 := agrees _ (Finset.mem_image.mpr ⟨⟨polynomial, member⟩, by simp, rfl⟩)
   exact killed (Submodule.subset_span (Set.mem_range_self q))
 
 /-- The same finite ORIGINAL coordinate subset forces an entire polynomial

@@ -1,4 +1,4 @@
--- Registry metadata only; not proofs of the claims.
+// Registry metadata only; not proofs of the claims.
 namespace ResearchCommons.Registry
 def claimIDs : List String := [
   "CB-G1-001",
@@ -116,7 +116,9 @@ def claimIDs : List String := [
   "CB-RNA-002",
   "CB-WONG-004",
   "CB-RNA-003",
-  "CB-RNA-004"
+  "CB-RNA-004",
+  "CB-RNA-005",
+  "CB-RNA-006"
 ]
-theorem claim_count : claimIDs.length = 116 := by decide
+theorem claim_count : claimIDs.length = 118 := by decide
 end ResearchCommons.Registry

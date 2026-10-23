@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 116-claim registry. The subjective reuse overlay orders 75 claims; the remaining 41 are included without invented rankings.
+This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 118-claim registry. The subjective reuse overlay orders 75 claims; the remaining 43 are included without invented rankings.
 
 ## Actual code
 
@@ -29,17 +29,17 @@ The strict coverage command intentionally exits2 until every required integratio
 
 The source-only state of the retained G7 Rust proposal is preserved in its original comments. Fresh package compiler/test results must be recorded separately. G7 queries do not run a QE provider, authenticate transcripts or manufacture physical source coverage. The affine engine's finite matrix decision is not unrestricted G3 source NO.
 
-This initial package does not yet claim all116 mathematical statements formalized. The strict gate prevents that false conclusion. Original unresolved questions and empirical-only records require their appropriate statement/data interfaces; they are not fabricated theorems. See GOAL.md and source-lock.json for scope/provenance.
+This initial package does not yet claim all118 mathematical statements formalized. The strict gate prevents that false conclusion. Original unresolved questions and empirical-only records require their appropriate statement/data interfaces; they are not fabricated theorems. See GOAL.md and source-lock.json for scope/provenance.
 
-The package now pins canonical registry d71ea2f (116 cards, board1.17). The 23 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
+The package now pins canonical registry 447e188 (118 cards, board1.18). The 25 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
 
 Generate the actual exact-arithmetic caller example with `cargo run --locked -p research-commons-runtime --bin cm-certificate`. The Linux workflow elaborates that emitted source after building the theorem modules. This tests a literal caller; it does not prove every native grouping implementation or physical-source adapter correct.
 
 The second certificate caller reuses the retained strict affine solver and both existing Lean checkers. `cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat` emits the weak-boundary rational witness; `-- unsat` emits the complete nonnegative original-row multiplier certificate for the strict boundary. Duplicate row positions stay distinct. The emitted proofs establish real feasibility/infeasibility of that supplied matrix, not original graph admission or a universal native refinement. A rendering/resource refusal produces no negative theorem.
 
-For rapid independent certificate verification, `cargo run --locked -p research-commons-package -- prepare-certificates`, then run `lake update` and `lake exe cache get` inside `certificates`, followed by `cargo run --locked -p research-commons-package -- build-certificates` from the package root. This separate source/object context uses the unchanged abstract CM component and retained affine checkers. It compiles the emitted proofs and audits all selected core/caller declarations. It does not certify the full1613-module physical profile or all116 claim bindings; those retain their separate build/gate.
+For rapid independent certificate verification, `cargo run --locked -p research-commons-package -- prepare-certificates`, then run `lake update` and `lake exe cache get` inside `certificates`, followed by `cargo run --locked -p research-commons-package -- build-certificates` from the package root. This separate source/object context uses the unchanged abstract CM component and retained affine checkers. It compiles the emitted proofs and audits all selected core/caller declarations. It does not certify the full1613-module physical profile or all118 claim bindings; those retain their separate build/gate.
 
-Actual end-to-end caller verification passed at source7898af0a/run39947518267: all three Rust-generated proof documents compiled in Lean4.33.1, and the selected core/export/caller owned-axiom audit passed. Rust had44 passing tests. See integration/certificate-verification.json for exact source hashes and limits. The full-library build and whole116-claim integration remain separate and incomplete.
+Actual end-to-end caller verification passed at source7898af0a/run39947518267: all three Rust-generated proof documents compiled in Lean4.33.1, and the selected core/export/caller owned-axiom audit passed. Rust had44 passing tests. See integration/certificate-verification.json for exact source hashes and limits. The full-library build and whole118-claim integration remain separate and incomplete.
 
 The integration gate follows each canonical claim kind. Open questions need checked formal statements/obligation bindings; empirical/software records need checked evidence interfaces. Neither is converted into a fabricated proved theorem. Labels without actual module/declaration and verification records cannot close a row.
 
@@ -51,7 +51,7 @@ For subsequent hosted builds, `build --reuse-retained` reuses only original immu
 
 To use your own original request, pipe an RC1 CHART into `cargo run --locked -p research-commons-runtime --bin source-certificate -- --stdin MySource`. The CLI reads at most the original65536-byte request frame, retains it in memory, and writes the complete proof document to stdout only after successful capture/solve/render. The document includes literal BinaryValid, RegistryValid and CutChild obligations; actual acceptance requires compiling that whole document against OriginalCodeChartReceiver and auditing its declarations. A source render or native decision is never a Lean PASS. No new on-phone application is created.
 
-The latest checked package revision has57 passing Rust tests, including actual stdin/refusal journeys. Both existing CM/affine callers and the original-source tree/parallel/negative callers have actual Lean verification. The complete-library and per-claim gates remain separate; no all116-claim closure is claimed.
+The latest checked package revision has61 passing Rust tests, including actual stdin/refusal journeys. Both existing CM/affine callers and the original-source tree/parallel/negative callers have actual Lean verification. The complete-library and per-claim gates remain separate; no all118-claim closure is claimed.
 
 The next G7 module reuses the complete retained NativePopulationTableCertificate proposal against G7EffectiveCoefficientSupport. Its exact finite coefficient checker and total zero-on-absence argument are already authored; no recurrence/transition oracle is recreated. `build --reuse-retained --target NativePopulationTableCertificate` followed by `audit-target NativePopulationTableCertificate` checks that complete dependency context. This is a new integration check, not yet accepted or a verified particular native table. See integration/POPULATION-CERTIFICATE-PREFLIGHT.md.
 
@@ -62,3 +62,5 @@ Actual generic population certificate checking passed at078ca7a7/run39961206384:
 The next reuse-ranked formal component is CB-G4-004's accepted finite-selection algebra. ResearchCommons.Menu.FiniteForcing reuses Mathlib's finite-variable Noetherian theorem, selects only original authorized indices, and retains the original seed plus ONE-point/all-response finite-chart coverage premise. Its own target/audit check is pending. The physical actual-size/shape/compiler instantiation remains a distinct required binding, so the claim row is explicitly partial and no effective stopping algorithm is inferred.
 
 Population proof emission now uses the existing forest-validity check plus explicit checked original-edge paths/rooted-source reachability for ancestry. `population-certificate path` exercises a nontrivial descendant path on the same original graph/bank; edge/ancestral cases are retained. This is a proof-carrying input adapter whose emitted obligations still require Lean acceptance. It changes no native probability engine or raw coefficient convention.
+
+The RNA integration reuses the original deterministic top-k/residual, exact midpoint branch/trace/class and schema root/BE proofs. `build --reuse-retained --target ResearchCommons.Claims.RNA` followed by `audit-target ResearchCommons.Claims.RNA` checks their complete actual dependency closure. The schema bodies are unchanged; the grid wrapper retains positivity for EVERY state/depth, and schema trees do not grant actual generated/executed trace admission. Current bindings remain source-only until this fresh check, and Rust applications remain separate.
