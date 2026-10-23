@@ -37,12 +37,13 @@ const indexes=new WeakMap();
 const STOP=new Set(['a','an','the','is','are','was','were','can','could','do','does','did','we','our','what','which','how','of','for','to','and','in','on','with','this','that','it']);
 function indexFor(claims) {
   if(indexes.has(claims)) return indexes.get(claims);
-  const index=new MiniSearch({idField:'id', fields:['id','title','question','answer','scope','context'],
+  const index=new MiniSearch({idField:'id', fields:['id','title','question','answer','scope','context','downstream'],
     processTerm:t=>{const w=words(t);return STOP.has(w)?null:w;}});
   index.addAll(claims.map(c=>({id:c.id,title:c.title,question:c.plain_language.question,
     answer:c.plain_language.what_we_learned,scope:c.exact_statement_and_scope,
+    downstream:c.separate_downstream_or_validation_work??'',
     context:[c.programme,c.plain_language.what_it_lets_someone_do,c.plain_language.what_cannot_conclude,
-      c.prior_work,c.our_contribution,c.remaining_obligation,JSON.stringify(c.aliases)].join(' ')})));
+      c.prior_work,c.our_contribution,c.remaining_obligation,c.completion?.display??'',JSON.stringify(c.aliases)].join(' ')})));
   indexes.set(claims,index); return index;
 }
 export function search(claims, f={}) {

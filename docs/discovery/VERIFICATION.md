@@ -1,3 +1,9 @@
+# Current downstream-search correction
+
+The Lean gateway accepted the scope of the original THREE reading joins through PR3 comment6360790022. That was source review, not an independently rerun UI or scientific test. Its schema consumer finding identified the original projection omissions. f488882 corrected packet/rendering; this successor also indexes downstream work and the completion display in the SAME search module.
+
+Final current run:21 passing records (13 model checks,7 DOM journey subtests,enclosing group). New regressions verify a downstream-only search hit preserves mathematical completion and cannot enter the open-mathematics filter, and historical schema1.0 packets/search still work with explicit null completion/downstream fields. Earlier19/17-record results below remain historical rather than being summed. No proof/model/native Lean job.
+
 # Discovery reader verification
 
 ## Current schema1.1 integration,23October2026
