@@ -251,6 +251,30 @@ Both modules and their transitive graph/probability/game imports remain
 vector-endpoint or within-regime CI extensions and an affine-rank presentation
 are not silently substituted for the current action language.
 
+## v52–v53 parser repair and full-upper hand acceptance
+
+The [pinned identifier repair](../PINNED-KEYWORD-REPAIR-20261023.md) records
+105 source-only module edits at `aa57b6e8d46e06a185baf1951129f0ea3789a787`,
+with exact occurrence/capture checks and no compiler run. The original v51
+inventory is preserved; [the v52 inventory](../V52-THEOREM-ROOT-IMPORT-INVENTORY.json)
+pins the current blobs and expands each of the four root closures.
+
+The [cumulative independent coordinating AI hand review](../CAUSAL-FULL-UPPER-CUMULATIVE-HAND-REVIEW-20261023.md)
+accepts the intended mathematics of `original_selected_binary_upper` at
+`3b70c8c`, after reading all 132 local root bodies. It is not human/external
+peer review, an exhaustive API check, parser/type acceptance or Lean/kernel
+verification, and does not automatically certify the lexical derivative.
+The specific earlier mathematical-review gaps in D2, selected-MAG/common-source
+preservation, closest paths, refined families and paid-policy composition
+are reconciled in that receipt. The exact source class, strong faithfulness,
+one common registry, full marked target and indexed B remain unchanged.
+
+The older list below remains an elaboration/integration checklist, not a
+claim that its local mathematical suppliers are still unread. No lower-bound,
+novelty, sample-complexity, hard-intervention, polynomial-decoder-time or
+G3/G4 biological-master acceptance follows. All Lean source is still
+**UNELABORATED**.
+
 ## Remaining exact full-claim dependencies (updated)
 
 1. Elaborate and check original arbitrary-size DAG projection and the composed common-source adapter (A1–A4/B1/B9). Genuine DAG source data, route-based latent projection, projected mixed laws/acyclicity, selection heads, exact selected-graph extraction, full-profile membership, two-way retained ancestry, both original/projected active-path directions and original-source root-augmentation commutation now have source proofs. The latent-collider case uses concrete conditioned-descendant detours and retained-only splicing. Equating this internal route representation with a separate library representation is not substituted for the direct semantics theorem; any such library port requires its own explicit equivalence.

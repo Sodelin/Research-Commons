@@ -1,0 +1,2241 @@
+{
+  "title": "Restricted causal v52 immutable theorem-root import inventory",
+  "author": "dot (OpenAI)",
+  "date_utc": "2026-10-23",
+  "status": "SOURCE-ONLY UNELABORATED. Static file/import inventory, not proof validation, compilation, or a transitive axiom audit.",
+  "source_repository": "Sodelin/Research-Commons",
+  "source_commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
+  "source_directory": "research/2026-10-22-dot-restricted-causal-interventions/lean",
+  "lean_version": "4.33.1",
+  "lean_source_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "roots": {
+    "BinaryPhysicalGame": {
+      "local": 132,
+      "directExternal": 41
+    },
+    "HardFamilyExactGame": {
+      "local": 143,
+      "directExternal": 41
+    },
+    "HardFamilyRandomizedLower": {
+      "local": 145,
+      "directExternal": 45
+    },
+    "EmptyInterventionTarget": {
+      "local": 133,
+      "directExternal": 41
+    }
+  },
+  "union_counts": {
+    "local_modules": 145,
+    "direct_mathlib_imports": 45
+  },
+  "checks": {
+    "immutable_local_file_blobs_match_directory": true,
+    "local_import_cycles": [],
+    "missing_local_imports": [],
+    "direct_mathlib_module_files_found_at_pin": 45,
+    "immutable_v52_directory_blobs_match": true,
+    "all_local_import_lines_unchanged_from_v51": true
+  },
+  "method": "The earlier immutable v51 source inventory read every local source and each direct pinned Mathlib module. For v52, all105 changed source files received exact content/blob readbacks; this continuation compared every145 closure-member blob with the immutable aa57 directory, parsed every current local source import line, and verified those imports are unchanged from v51. Root closures are expanded explicitly. Unchanged-file contents are retained by matching immutable Git blob identity, not asserted newly reread. This is provenance/dependency bookkeeping, not syntax, elaboration, truth, transitive-axiom or Mathlib-closure verification.",
+  "local_modules": [
+    {
+      "module": "ActivationBranchDistances",
+      "path": "ActivationBranchDistances.lean",
+      "blob_sha": "6d3bb876026c5475cbb0c4b8ba858bb7a12460e1",
+      "imports": [
+        "ColliderMinimalActivePaths",
+        "ClosestFirstArrowGeometry"
+      ]
+    },
+    {
+      "module": "ActivationBranchPairExclusion",
+      "path": "ActivationBranchPairExclusion.lean",
+      "blob_sha": "20d19b82f4c83b8a8c4c67ea94c52a76785e52ae",
+      "imports": [
+        "ActivationBranchPairSplice"
+      ]
+    },
+    {
+      "module": "ActivationBranchPairSplice",
+      "path": "ActivationBranchPairSplice.lean",
+      "blob_sha": "5f627f993739ffe536aa46b94dd693484566776d",
+      "imports": [
+        "ActivationMainPathExclusion"
+      ]
+    },
+    {
+      "module": "ActivationMainPathExclusion",
+      "path": "ActivationMainPathExclusion.lean",
+      "blob_sha": "9b085d3f7df27ffdc29e8c48e84968593a236871",
+      "imports": [
+        "ColliderMinimumReversal"
+      ]
+    },
+    {
+      "module": "ActivePathReversal",
+      "path": "ActivePathReversal.lean",
+      "blob_sha": "70cd15b714e2328a9c21919889c7c767cbedea4d",
+      "imports": [
+        "DiscriminatingSectionExtraction"
+      ]
+    },
+    {
+      "module": "AncestralShortcutGeometry",
+      "path": "AncestralShortcutGeometry.lean",
+      "blob_sha": "17ce9197761fbcb37c7f3c89f166def7951c524a",
+      "imports": [
+        "MinimalActivePaths"
+      ]
+    },
+    {
+      "module": "BinaryActivationFamily",
+      "path": "BinaryActivationFamily.lean",
+      "blob_sha": "fefe98f1a804f248c15db329d3662e9b597a281d",
+      "imports": [
+        "BinaryTraceIncidence"
+      ]
+    },
+    {
+      "module": "BinaryActivePathMinor",
+      "path": "BinaryActivePathMinor.lean",
+      "blob_sha": "214c58b2771fb4dbcea71f8b0d5dc64d448aa104",
+      "imports": [
+        "BinaryWitnessCircuit"
+      ]
+    },
+    {
+      "module": "BinaryAncestralElimination",
+      "path": "BinaryAncestralElimination.lean",
+      "blob_sha": "b719f07265b5b19ad6618c8a6782c12efd497ebb",
+      "imports": [
+        "BinarySelectedInvarianceIdentity",
+        "BinaryAncestralMoralConnection"
+      ]
+    },
+    {
+      "module": "BinaryAncestralMarginal",
+      "path": "BinaryAncestralMarginal.lean",
+      "blob_sha": "801625cf3b0485c02b6b42fa1586c065ee641231",
+      "imports": [
+        "BinaryAssignmentElimination"
+      ]
+    },
+    {
+      "module": "BinaryAncestralMoralConnection",
+      "path": "BinaryAncestralMoralConnection.lean",
+      "blob_sha": "353d368d6d08f1a3dc6171b8f749b476bc1586c2",
+      "imports": [
+        "BinaryTrekDecomposition"
+      ]
+    },
+    {
+      "module": "BinaryAssignmentElimination",
+      "path": "BinaryAssignmentElimination.lean",
+      "blob_sha": "3244bec72df4a6336ad621758f4a2fd30ef5b9e0",
+      "imports": [
+        "BinaryAncestralElimination",
+        "Mathlib.Algebra.BigOperators.Group.List.Basic"
+      ]
+    },
+    {
+      "module": "BinaryBoundaryCircuit",
+      "path": "BinaryBoundaryCircuit.lean",
+      "blob_sha": "875518b0230022c162c49e3549904ba2e5c917e2",
+      "imports": [
+        "BinaryCPTPolynomials",
+        "Mathlib.Tactic.NormNum"
+      ]
+    },
+    {
+      "module": "BinaryCircuitMinor",
+      "path": "BinaryCircuitMinor.lean",
+      "blob_sha": "5a732bcbb7007ef1ee08fda3f323b3f5eed8c0ce",
+      "imports": [
+        "BinaryBoundaryCircuit"
+      ]
+    },
+    {
+      "module": "BinaryCommonFaithfulSource",
+      "path": "BinaryCommonFaithfulSource.lean",
+      "blob_sha": "cfb89080eb9e2ce5fe96611706c1d58208a40793",
+      "imports": [
+        "BinaryGlobalMarkov",
+        "BinaryCommonPositiveMinorFamily"
+      ]
+    },
+    {
+      "module": "BinaryCommonPositiveMinorFamily",
+      "path": "BinaryCommonPositiveMinorFamily.lean",
+      "blob_sha": "ca2ba9c71574a3fa4f6dfb0b99bf1b07310d4c88",
+      "imports": [
+        "BinarySharedMechanismRegistry",
+        "Mathlib.Data.Fintype.Powerset"
+      ]
+    },
+    {
+      "module": "BinaryConditionalIndependenceAlgebra",
+      "path": "BinaryConditionalIndependenceAlgebra.lean",
+      "blob_sha": "92528e3e163625bd44f18a2a5a565c4a6516cc07",
+      "imports": [
+        "BinaryIndicatorLawFactorization",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    {
+      "module": "BinaryCPTPolynomials",
+      "path": "BinaryCPTPolynomials.lean",
+      "blob_sha": "b5811834056b433d3839efaa3f0ad202c4d899af",
+      "imports": [
+        "RationalPolynomialAvoidance",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Sigma",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+      ]
+    },
+    {
+      "module": "BinaryFactorElimination",
+      "path": "BinaryFactorElimination.lean",
+      "blob_sha": "6fadaa53abf4193969b7bdad4d5433806cb8aeef",
+      "imports": [
+        "BinaryAncestralMarginal"
+      ]
+    },
+    {
+      "module": "BinaryFaithfulInvariance",
+      "path": "BinaryFaithfulInvariance.lean",
+      "blob_sha": "5ef2058b6693ccf046c5890d291569a970f6dc83",
+      "imports": [
+        "BinarySelectedProbabilityLaw"
+      ]
+    },
+    {
+      "module": "BinaryGlobalMarkov",
+      "path": "BinaryGlobalMarkov.lean",
+      "blob_sha": "dda2e5e7ae27b8ae50b62ea111c3f64acd322b5c",
+      "imports": [
+        "BinaryNestedElimination",
+        "Mathlib.Data.Finset.Dedup"
+      ]
+    },
+    {
+      "module": "BinaryIndicatorLawFactorization",
+      "path": "BinaryIndicatorLawFactorization.lean",
+      "blob_sha": "ee808eacd557198d3958a88d00340d378d6502ee",
+      "imports": [
+        "BinarySharedMechanismRegistry",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Data.Fintype.BigOperators"
+      ]
+    },
+    {
+      "module": "BinaryMoralFactorization",
+      "path": "BinaryMoralFactorization.lean",
+      "blob_sha": "cef8657b5725d89ac6afc485e46ee71db5c75a32",
+      "imports": [
+        "BinaryFactorElimination"
+      ]
+    },
+    {
+      "module": "BinaryNestedElimination",
+      "path": "BinaryNestedElimination.lean",
+      "blob_sha": "cbfa9854469eb4ddccb39d2d876ee2612f5342db",
+      "imports": [
+        "BinaryMoralFactorization"
+      ]
+    },
+    {
+      "module": "BinaryOriginalSourceLabels",
+      "path": "BinaryOriginalSourceLabels.lean",
+      "blob_sha": "2be2c6d9857ec8429b6eccc191e9d6e6e66e7842",
+      "imports": [
+        "BinaryFaithfulInvariance",
+        "RestrictedInteractivePlan"
+      ]
+    },
+    {
+      "module": "BinaryPathConstraintPropagation",
+      "path": "BinaryPathConstraintPropagation.lean",
+      "blob_sha": "3114459316d70ef9a21f10733421451d264852b3",
+      "imports": [
+        "BinaryCircuitMinor",
+        "FiniteDAGRank"
+      ]
+    },
+    {
+      "module": "BinaryPhysicalGame",
+      "path": "BinaryPhysicalGame.lean",
+      "blob_sha": "a1f860bc12bbf91fc1ef51542f599a6e42438ed5",
+      "imports": [
+        "BinaryPhysicalOracle",
+        "RestrictedQueryBudgetBound"
+      ]
+    },
+    {
+      "module": "BinaryPhysicalOracle",
+      "path": "BinaryPhysicalOracle.lean",
+      "blob_sha": "13bbf275f005baed3a1070b94d88fc23d7ed0e39",
+      "imports": [
+        "BinaryOriginalSourceLabels",
+        "BinarySelectionQuerySemantics"
+      ]
+    },
+    {
+      "module": "BinarySelectedInvarianceIdentity",
+      "path": "BinarySelectedInvarianceIdentity.lean",
+      "blob_sha": "d55452d60915a9d733ee6210839beea67e5bcc77",
+      "imports": [
+        "BinaryConditionalIndependenceAlgebra"
+      ]
+    },
+    {
+      "module": "BinarySelectedProbabilityLaw",
+      "path": "BinarySelectedProbabilityLaw.lean",
+      "blob_sha": "a784325c221e6ab96309262756f7a71822256d98",
+      "imports": [
+        "BinaryCommonFaithfulSource",
+        "Mathlib.Algebra.BigOperators.Field"
+      ]
+    },
+    {
+      "module": "BinarySelectionQuerySemantics",
+      "path": "BinarySelectionQuerySemantics.lean",
+      "blob_sha": "74eed9a218651bbb9a480887c02e7c1905743072",
+      "imports": [
+        "BinarySelectedProbabilityLaw"
+      ]
+    },
+    {
+      "module": "BinarySelectionSinkComplement",
+      "path": "BinarySelectionSinkComplement.lean",
+      "blob_sha": "c9ee87508c61bca305a5db47a812343d7eb00a50",
+      "imports": [
+        "BinaryActivePathMinor",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    {
+      "module": "BinarySharedMechanismRegistry",
+      "path": "BinarySharedMechanismRegistry.lean",
+      "blob_sha": "7048a75b1a07efaa2f0accce4a9d52b06d691cdb",
+      "imports": [
+        "BinarySelectionSinkComplement",
+        "Mathlib.Algebra.MvPolynomial.Rename"
+      ]
+    },
+    {
+      "module": "BinaryTraceIncidence",
+      "path": "BinaryTraceIncidence.lean",
+      "blob_sha": "876a01879fa010bb3cf80869fbb9c5c61cd80f4c",
+      "imports": [
+        "BinaryPathConstraintPropagation"
+      ]
+    },
+    {
+      "module": "BinaryTrekDecomposition",
+      "path": "BinaryTrekDecomposition.lean",
+      "blob_sha": "61fa60ef7b226fd7da2b75a3e7bfea76ed421ca3",
+      "imports": [
+        "ActivationBranchPairExclusion"
+      ]
+    },
+    {
+      "module": "BinaryWitnessCircuit",
+      "path": "BinaryWitnessCircuit.lean",
+      "blob_sha": "b51951678863a4b1ba854e4ec7b0ced7c3a208c1",
+      "imports": [
+        "BinaryActivationFamily"
+      ]
+    },
+    {
+      "module": "CanonicalFiniteBounds",
+      "path": "CanonicalFiniteBounds.lean",
+      "blob_sha": "3a3a4e28e37ad71767b6cc329a19a88c4351d77b",
+      "imports": [
+        "CanonicalLatentRoots",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.Order.Basic"
+      ]
+    },
+    {
+      "module": "CanonicalLatentRoots",
+      "path": "CanonicalLatentRoots.lean",
+      "blob_sha": "8488768c216016c12616ce42039f25b3a9b3cb4f",
+      "imports": [
+        "SelectedProfileSeparation"
+      ]
+    },
+    {
+      "module": "CanonicalRootSeparation",
+      "path": "CanonicalRootSeparation.lean",
+      "blob_sha": "0cebca00a8db9b6d73ee7b935db3c767f1d69f3c",
+      "imports": [
+        "FiniteProfileRegistry"
+      ]
+    },
+    {
+      "module": "CanonicalSelectionProfile",
+      "path": "CanonicalSelectionProfile.lean",
+      "blob_sha": "9f48fbd2c27d89336eff4ddac22088bbfb5cb469",
+      "imports": [
+        "SelectedWalkReduction",
+        "Mathlib.Order.Defs.LinearOrder"
+      ]
+    },
+    {
+      "module": "ClosedColliderWalks",
+      "path": "ClosedColliderWalks.lean",
+      "blob_sha": "a516bcb6d8a963f94cb38d489b92667bf1697bb7",
+      "imports": [
+        "ObservedMAGAncestry"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrow",
+      "path": "ClosestFirstArrow.lean",
+      "blob_sha": "3809f1ec014a7506a1b0eb5f203ee96308e07c7a",
+      "imports": [
+        "ClosestFirstArrowArms"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowArms",
+      "path": "ClosestFirstArrowArms.lean",
+      "blob_sha": "7d4d489f4c283bfb286565e8f651454924d3fcd6",
+      "imports": [
+        "ClosestFirstArrowContradiction"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowBoundary",
+      "path": "ClosestFirstArrowBoundary.lean",
+      "blob_sha": "269102fd07f82ac2d2c943ab7278aa725a76a952",
+      "imports": [
+        "ClosestFirstArrowGeometry"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowContradiction",
+      "path": "ClosestFirstArrowContradiction.lean",
+      "blob_sha": "f6dba8cb21c8c817109a5fde14f7683905b49b3c",
+      "imports": [
+        "ClosestFirstArrowIncidence"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowFlank",
+      "path": "ClosestFirstArrowFlank.lean",
+      "blob_sha": "8f5224c6898b8317b006fa235256d5758ef512a1",
+      "imports": [
+        "ClosestFirstArrowBoundary"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowGeometry",
+      "path": "ClosestFirstArrowGeometry.lean",
+      "blob_sha": "a6838a085b950c5940c6c1faca6c8e6966a23692",
+      "imports": [
+        "MinimumDirectedPathTransfer"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowIncidence",
+      "path": "ClosestFirstArrowIncidence.lean",
+      "blob_sha": "0d582a6adbdcdbc1103bc75dba7663a8aaa2b38f",
+      "imports": [
+        "ClosestFirstArrowPotential"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowPotential",
+      "path": "ClosestFirstArrowPotential.lean",
+      "blob_sha": "1c1eda75500d1725a45491ed14bda6f7e7502786",
+      "imports": [
+        "ClosestFirstArrowSplice"
+      ]
+    },
+    {
+      "module": "ClosestFirstArrowSplice",
+      "path": "ClosestFirstArrowSplice.lean",
+      "blob_sha": "cbf916f06ed7d927f5a7c617964e57eaefd6fdf9",
+      "imports": [
+        "ClosestFirstArrowFlank"
+      ]
+    },
+    {
+      "module": "ClosestPathAncestry",
+      "path": "ClosestPathAncestry.lean",
+      "blob_sha": "da364e96ac77613ec1d24a3083003427b66214da",
+      "imports": [
+        "ClosestFirstArrow"
+      ]
+    },
+    {
+      "module": "ColliderMinimalActivePaths",
+      "path": "ColliderMinimalActivePaths.lean",
+      "blob_sha": "734d58d8b330afefd8967a210a78b48973a09e07",
+      "imports": [
+        "MinimalActivePaths"
+      ]
+    },
+    {
+      "module": "ColliderMinimumReversal",
+      "path": "ColliderMinimumReversal.lean",
+      "blob_sha": "26d56c729b8999b6d06526194219134a3d5bedf6",
+      "imports": [
+        "DirectedBranchSplices"
+      ]
+    },
+    {
+      "module": "ColliderSpliceCosts",
+      "path": "ColliderSpliceCosts.lean",
+      "blob_sha": "fe9cd8b691d86f83da9dc4d724a257da0d863b42",
+      "imports": [
+        "SafeDirectedBranches"
+      ]
+    },
+    {
+      "module": "CommonDiscriminatingParents",
+      "path": "CommonDiscriminatingParents.lean",
+      "blob_sha": "2ccb9a9d7d7e7995bc7bf66dfdd5df0f19a5fc83",
+      "imports": [
+        "OriginalMAGConnection"
+      ]
+    },
+    {
+      "module": "CommonIndicatorRoots",
+      "path": "CommonIndicatorRoots.lean",
+      "blob_sha": "68a48813d72840f139a43534f744528ff72d14fc",
+      "imports": [
+        "MarkedGraphEquivalence",
+        "Mathlib.Order.WithBot"
+      ]
+    },
+    {
+      "module": "CommonObservedMAG",
+      "path": "CommonObservedMAG.lean",
+      "blob_sha": "c46433bf53cca653ac50356c424656001a4080ec",
+      "imports": [
+        "PartialIndicatorQueryFamily"
+      ]
+    },
+    {
+      "module": "CommonSelectedIndicatorSource",
+      "path": "CommonSelectedIndicatorSource.lean",
+      "blob_sha": "6ca54bfbacce36fd8d09cbae4c157d93e03b17d5",
+      "imports": [
+        "CommonIndicatorRoots"
+      ]
+    },
+    {
+      "module": "ComputableCanonicalLabels",
+      "path": "ComputableCanonicalLabels.lean",
+      "blob_sha": "821fa5f8a99c077052150707073dc01b666bdb92",
+      "imports": [
+        "ExplicitProfileDecoding",
+        "Mathlib.Data.Prod.Lex",
+        "Mathlib.Data.Sum.Order"
+      ]
+    },
+    {
+      "module": "ConditionedEdgeWalks",
+      "path": "ConditionedEdgeWalks.lean",
+      "blob_sha": "388a6b9482ee69a97695a453e7b60b52fe6a38b8",
+      "imports": [
+        "MarkedActiveWalks"
+      ]
+    },
+    {
+      "module": "DirectedBranchSplices",
+      "path": "DirectedBranchSplices.lean",
+      "blob_sha": "dbba92fea3bc0ee64459627e962b8999d0186b06",
+      "imports": [
+        "ColliderSpliceCosts"
+      ]
+    },
+    {
+      "module": "DiscriminatingIntervalGeometry",
+      "path": "DiscriminatingIntervalGeometry.lean",
+      "blob_sha": "67938d90197929a21cec0bcd34277db79d000641",
+      "imports": [
+        "LiteralMAGInducingChains"
+      ]
+    },
+    {
+      "module": "DiscriminatingSectionExtraction",
+      "path": "DiscriminatingSectionExtraction.lean",
+      "blob_sha": "61b52f15e0ce99823ec41e402917ddd2630799df",
+      "imports": [
+        "MinimalPathChord"
+      ]
+    },
+    {
+      "module": "DiscriminatingSeparatorStatus",
+      "path": "DiscriminatingSeparatorStatus.lean",
+      "blob_sha": "ea4e435254a1914708144730b1e81a0402a30175",
+      "imports": [
+        "CommonObservedMAG"
+      ]
+    },
+    {
+      "module": "DiscriminatingStatusTransport",
+      "path": "DiscriminatingStatusTransport.lean",
+      "blob_sha": "649801b837b25dcc0c38763c341ad12119044da8",
+      "imports": [
+        "FiniteDependencyInduction"
+      ]
+    },
+    {
+      "module": "EffectiveQueryEnumeration",
+      "path": "EffectiveQueryEnumeration.lean",
+      "blob_sha": "11861e72a5f891db95d5607404f11f37e8f1b7e1",
+      "imports": [
+        "RestrictedBudgetAndHonesty",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.List.Lex"
+      ]
+    },
+    {
+      "module": "EmptyInterventionTarget",
+      "path": "EmptyInterventionTarget.lean",
+      "blob_sha": "4c0204d721ea4d297be69905d031c7118f1faff1",
+      "imports": [
+        "BinaryPhysicalGame"
+      ]
+    },
+    {
+      "module": "EndpointColliderActivation",
+      "path": "EndpointColliderActivation.lean",
+      "blob_sha": "ede95691448c73dd55200dcbed8aa7e669b2fd11",
+      "imports": [
+        "OriginalCanonicalSourceAdapter"
+      ]
+    },
+    {
+      "module": "ExplicitProfileDecoding",
+      "path": "ExplicitProfileDecoding.lean",
+      "blob_sha": "20a24ada3189d6e95458e86ff9cf6794cd8c597a",
+      "imports": [
+        "FiniteSelectedMAGDecision"
+      ]
+    },
+    {
+      "module": "FiniteDAGRank",
+      "path": "FiniteDAGRank.lean",
+      "blob_sha": "df70d9073bcb25ec3cd1cbbdd1d63a14da31b751",
+      "imports": [
+        "BinaryTrekDecomposition",
+        "Mathlib.Data.Fintype.Card"
+      ]
+    },
+    {
+      "module": "FiniteDependencyInduction",
+      "path": "FiniteDependencyInduction.lean",
+      "blob_sha": "e398aa80679cbfacef274e0d75d72ef81936c9d3",
+      "imports": [
+        "MinimalPathOrderDependencies",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Data.Fintype.Pigeonhole"
+      ]
+    },
+    {
+      "module": "FiniteGraphDecisions",
+      "path": "FiniteGraphDecisions.lean",
+      "blob_sha": "784c2f5239a5c3e8e55f1771402447b207dbe6e9",
+      "imports": [
+        "FiniteOriginalTargetImage",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.OfMap"
+      ]
+    },
+    {
+      "module": "FiniteOriginalTargetImage",
+      "path": "FiniteOriginalTargetImage.lean",
+      "blob_sha": "bb119e1658feaad3e0881203d92b18c4548be9b9",
+      "imports": [
+        "SelectedMAGValidity",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Card"
+      ]
+    },
+    {
+      "module": "FiniteProfileRegistry",
+      "path": "FiniteProfileRegistry.lean",
+      "blob_sha": "79b515cf785ebdd33a99b0005f10facc43852263",
+      "imports": [
+        "CanonicalFiniteBounds",
+        "Mathlib.Data.Fintype.BigOperators"
+      ]
+    },
+    {
+      "module": "FiniteQueryPlan",
+      "path": "FiniteQueryPlan.lean",
+      "blob_sha": "1f612533320469a428494876d879b74f0262ce96",
+      "imports": [
+        "G7ResourceGamePort"
+      ]
+    },
+    {
+      "module": "FiniteSelectedMAGDecision",
+      "path": "FiniteSelectedMAGDecision.lean",
+      "blob_sha": "90c6e9c4c5a7c7d2d6624daf7c18165008475de4",
+      "imports": [
+        "FiniteGraphDecisions"
+      ]
+    },
+    {
+      "module": "FiniteTranscriptDecoder",
+      "path": "FiniteTranscriptDecoder.lean",
+      "blob_sha": "4132a5403ba907eb3a09a61916ba3791ff7def68",
+      "imports": [
+        "ComputableCanonicalLabels"
+      ]
+    },
+    {
+      "module": "FullClassQueryGame",
+      "path": "FullClassQueryGame.lean",
+      "blob_sha": "21884c155c400d526db81dd2387e338b530b88c5",
+      "imports": [
+        "EffectiveQueryEnumeration",
+        "FiniteQueryPlan"
+      ]
+    },
+    {
+      "module": "G7ResourceGamePort",
+      "path": "G7ResourceGamePort.lean",
+      "blob_sha": "cbbe02ff343a9ee08057465d9caff223aaece07b",
+      "imports": [
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Tactic"
+      ]
+    },
+    {
+      "module": "GeneralActiveWalkReduction",
+      "path": "GeneralActiveWalkReduction.lean",
+      "blob_sha": "34d1c250ab6dab553376e5189da4468ebf6bf180",
+      "imports": [
+        "OriginalProjectionAncestry"
+      ]
+    },
+    {
+      "module": "HardFamilyActionSignature",
+      "path": "HardFamilyActionSignature.lean",
+      "blob_sha": "0dceb04eb315f2a1e4a2bcfe444c90367cd92b8c",
+      "imports": [
+        "HardFamilyOriginalSources"
+      ]
+    },
+    {
+      "module": "HardFamilyActivePaths",
+      "path": "HardFamilyActivePaths.lean",
+      "blob_sha": "0e694c3285ead075bfe942df92e9c03173696696",
+      "imports": [
+        "HardFamilyGraphs"
+      ]
+    },
+    {
+      "module": "HardFamilyAdaptiveLower",
+      "path": "HardFamilyAdaptiveLower.lean",
+      "blob_sha": "63d9ff1a58758b70307d8da47fe87524dd788cfe",
+      "imports": [
+        "HardFamilyIndexCount"
+      ]
+    },
+    {
+      "module": "HardFamilyExactGame",
+      "path": "HardFamilyExactGame.lean",
+      "blob_sha": "c1f1abfb7b090f8e785c9bfef3a4bd91a248ae10",
+      "imports": [
+        "HardFamilyAdaptiveLower"
+      ]
+    },
+    {
+      "module": "HardFamilyFullTarget",
+      "path": "HardFamilyFullTarget.lean",
+      "blob_sha": "a53750522a1a2d02bc65d18d1e853780466c11a5",
+      "imports": [
+        "HardFamilyActionSignature",
+        "EmptyInterventionTarget"
+      ]
+    },
+    {
+      "module": "HardFamilyGraphs",
+      "path": "HardFamilyGraphs.lean",
+      "blob_sha": "4017a470a7fbc19812e7f334049f0dc3a1803ed5",
+      "imports": [
+        "BinaryPhysicalGame"
+      ]
+    },
+    {
+      "module": "HardFamilyIndexCount",
+      "path": "HardFamilyIndexCount.lean",
+      "blob_sha": "104bd7e6040ab736200eefac511092884e1e4273",
+      "imports": [
+        "HardFamilyFullTarget",
+        "Mathlib.Data.Fintype.Card"
+      ]
+    },
+    {
+      "module": "HardFamilyIndicatorSignature",
+      "path": "HardFamilyIndicatorSignature.lean",
+      "blob_sha": "295fefef35b9746989a343770ec68cd2a3074c25",
+      "imports": [
+        "HardFamilyObservedSignature"
+      ]
+    },
+    {
+      "module": "HardFamilyObservedSignature",
+      "path": "HardFamilyObservedSignature.lean",
+      "blob_sha": "7a67628e060461b7cde2fe53e7987edf80d928e9",
+      "imports": [
+        "HardFamilyActivePaths"
+      ]
+    },
+    {
+      "module": "HardFamilyOriginalSources",
+      "path": "HardFamilyOriginalSources.lean",
+      "blob_sha": "0a3fb0b06f538657c80d65b0109387bfcedef6cb",
+      "imports": [
+        "HardFamilyIndicatorSignature"
+      ]
+    },
+    {
+      "module": "HardFamilyRandomizedLower",
+      "path": "HardFamilyRandomizedLower.lean",
+      "blob_sha": "2168096ccd1c1922be3d25afd3560177cafe6efa",
+      "imports": [
+        "HardFamilyUnboundedRuns",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Add",
+        "Mathlib.MeasureTheory.Measure.Typeclasses.Probability"
+      ]
+    },
+    {
+      "module": "HardFamilyUnboundedRuns",
+      "path": "HardFamilyUnboundedRuns.lean",
+      "blob_sha": "dddc56373df044864c01add72bfb79bb7d614db8",
+      "imports": [
+        "HardFamilyExactGame",
+        "Mathlib.Data.Nat.Find"
+      ]
+    },
+    {
+      "module": "IndexedDiscriminatingSections",
+      "path": "IndexedDiscriminatingSections.lean",
+      "blob_sha": "cbb38c4effef9c0ff5bac2da8c6cb3217de3b78b",
+      "imports": [
+        "DiscriminatingIntervalGeometry"
+      ]
+    },
+    {
+      "module": "IndexedPrefixColliders",
+      "path": "IndexedPrefixColliders.lean",
+      "blob_sha": "629cff2c869bbf8ed0b66dc1433549485cd6f161",
+      "imports": [
+        "DiscriminatingStatusTransport"
+      ]
+    },
+    {
+      "module": "InducingEndpointMarks",
+      "path": "InducingEndpointMarks.lean",
+      "blob_sha": "44e35a62907146085ce31aba94b533eac17d402a",
+      "imports": [
+        "DiscriminatingSeparatorStatus"
+      ]
+    },
+    {
+      "module": "InducingPathSeparation",
+      "path": "InducingPathSeparation.lean",
+      "blob_sha": "de12415c902de62bff073eef0845c5217b401def",
+      "imports": [
+        "EndpointColliderActivation"
+      ]
+    },
+    {
+      "module": "IntervalDependency",
+      "path": "IntervalDependency.lean",
+      "blob_sha": "582e34cb50cac3a9e8dfdc1593f9c97bfc72927f",
+      "imports": [
+        "VertexDiscriminatingSections"
+      ]
+    },
+    {
+      "module": "LatentColliderDetours",
+      "path": "LatentColliderDetours.lean",
+      "blob_sha": "563da4973aa63e6ab4f0a8f9ca31888b5f1c34bc",
+      "imports": [
+        "OriginalProjectionLifting"
+      ]
+    },
+    {
+      "module": "LiteralMAGInducingChains",
+      "path": "LiteralMAGInducingChains.lean",
+      "blob_sha": "e5037c23809f1b80e8eaa709d46a26c69d42c9e2",
+      "imports": [
+        "IntervalDependency",
+        "WeakInducingEdges"
+      ]
+    },
+    {
+      "module": "LiteralSelectedMAG",
+      "path": "LiteralSelectedMAG.lean",
+      "blob_sha": "d9c65eb346300ad1529750b1c8a308974e3e36bd",
+      "imports": [
+        "InducingPathSeparation"
+      ]
+    },
+    {
+      "module": "MAGMaximality",
+      "path": "MAGMaximality.lean",
+      "blob_sha": "ba0b816e2a48dc8d7a4f28b028e857c14b3d7d64",
+      "imports": [
+        "MAGPathLifting"
+      ]
+    },
+    {
+      "module": "MAGPathLifting",
+      "path": "MAGPathLifting.lean",
+      "blob_sha": "8e738b4f859888202ac90932b01153fa49557e37",
+      "imports": [
+        "ConditionedEdgeWalks"
+      ]
+    },
+    {
+      "module": "MarginalIndicatorAncestry",
+      "path": "MarginalIndicatorAncestry.lean",
+      "blob_sha": "5e17ef3617b81e4600226abe78aaadc06ba088d8",
+      "imports": [
+        "SelectedMAGValidity"
+      ]
+    },
+    {
+      "module": "MarkedActiveWalks",
+      "path": "MarkedActiveWalks.lean",
+      "blob_sha": "3f531c6dbdf3eb093a5800f2681ab5d63feb57e9",
+      "imports": [
+        "InducingEndpointMarks"
+      ]
+    },
+    {
+      "module": "MarkedGraphEquivalence",
+      "path": "MarkedGraphEquivalence.lean",
+      "blob_sha": "91508fa7a09aa9d7198ba63aaab7c9903a54075f",
+      "imports": [
+        "CanonicalRootSeparation"
+      ]
+    },
+    {
+      "module": "MinimalActivePaths",
+      "path": "MinimalActivePaths.lean",
+      "blob_sha": "df7275c5138979d67c64c4e885b977c9021fb71b",
+      "imports": [
+        "VertexActivePaths"
+      ]
+    },
+    {
+      "module": "MinimalPathChord",
+      "path": "MinimalPathChord.lean",
+      "blob_sha": "339a229c24ae6e95bcd260f333cadd98eeb3cf9d",
+      "imports": [
+        "AncestralShortcutGeometry"
+      ]
+    },
+    {
+      "module": "MinimalPathOrderDependencies",
+      "path": "MinimalPathOrderDependencies.lean",
+      "blob_sha": "0f97ad7bc060c3dc2908e592ae282abddbc6bf37",
+      "imports": [
+        "ReversedPositionTrace"
+      ]
+    },
+    {
+      "module": "MinimumDirectedPathTransfer",
+      "path": "MinimumDirectedPathTransfer.lean",
+      "blob_sha": "3b15157ec35ce0952f4a1918b77e5718b72bdfe4",
+      "imports": [
+        "ShortestPathStatusInvariance"
+      ]
+    },
+    {
+      "module": "ObservedMAGAncestry",
+      "path": "ObservedMAGAncestry.lean",
+      "blob_sha": "cae58ef3df04efb9411c52d44aea63296ddadedb",
+      "imports": [
+        "MAGMaximality"
+      ]
+    },
+    {
+      "module": "OrderedFamilyAgreement",
+      "path": "OrderedFamilyAgreement.lean",
+      "blob_sha": "e4b1a8042dba282972344b88c75a2ea59ed7fec2",
+      "imports": [
+        "RestrictedQueryActions"
+      ]
+    },
+    {
+      "module": "OriginalCanonicalSourceAdapter",
+      "path": "OriginalCanonicalSourceAdapter.lean",
+      "blob_sha": "6ac251050c0ab494cfc0f45911e0565b4e707c07",
+      "imports": [
+        "OriginalIndicatorProjection"
+      ]
+    },
+    {
+      "module": "OriginalIndicatorProjection",
+      "path": "OriginalIndicatorProjection.lean",
+      "blob_sha": "e2f7290522d8932dd457c3a1a5a46268d1a2d165",
+      "imports": [
+        "OriginalProjectionContraction"
+      ]
+    },
+    {
+      "module": "OriginalLatentProjection",
+      "path": "OriginalLatentProjection.lean",
+      "blob_sha": "ef7d282de4981a77a170e5b9d967e4b1936ec71d",
+      "imports": [
+        "CommonSelectedIndicatorSource"
+      ]
+    },
+    {
+      "module": "OriginalMAGConnection",
+      "path": "OriginalMAGConnection.lean",
+      "blob_sha": "2947b71bd0a7c9ad2d5b85894c6919e0f9898d2e",
+      "imports": [
+        "WeakRouteNormalization"
+      ]
+    },
+    {
+      "module": "OriginalProjectionAncestry",
+      "path": "OriginalProjectionAncestry.lean",
+      "blob_sha": "a9d08f12976a24dc477dbaec85aa965abaad7f49",
+      "imports": [
+        "OriginalLatentProjection"
+      ]
+    },
+    {
+      "module": "OriginalProjectionContraction",
+      "path": "OriginalProjectionContraction.lean",
+      "blob_sha": "ebda4669c75173405634a2216d088d4ea9ff5a8e",
+      "imports": [
+        "ReadyRetainedNormalization"
+      ]
+    },
+    {
+      "module": "OriginalProjectionLifting",
+      "path": "OriginalProjectionLifting.lean",
+      "blob_sha": "68fae45dc80c7715ad192050a68efb2df2c803aa",
+      "imports": [
+        "GeneralActiveWalkReduction"
+      ]
+    },
+    {
+      "module": "OriginalWeakConnection",
+      "path": "OriginalWeakConnection.lean",
+      "blob_sha": "e332bfef87c314e0e7c93f34a814fe616a7c88e4",
+      "imports": [
+        "WeakInducingEdges"
+      ]
+    },
+    {
+      "module": "PartialIndicatorQueryFamily",
+      "path": "PartialIndicatorQueryFamily.lean",
+      "blob_sha": "a5f83469df9aa57d61bf83bd6e83ae3b7c22e5cf",
+      "imports": [
+        "RefinedIndicatorSeparator"
+      ]
+    },
+    {
+      "module": "PartialObservedQueryFamily",
+      "path": "PartialObservedQueryFamily.lean",
+      "blob_sha": "085f03b5aec08a7b98a0036cf09b26aad5894410",
+      "imports": [
+        "RefinedObservedSeparator",
+        "Mathlib.Data.Fintype.BigOperators"
+      ]
+    },
+    {
+      "module": "RationalPolynomialAvoidance",
+      "path": "RationalPolynomialAvoidance.lean",
+      "blob_sha": "7bdf6dffab122223ffadb38d00e43af37de93e5b",
+      "imports": [
+        "Mathlib.Algebra.MvPolynomial.Funext",
+        "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Order.Interval.Set.Infinite"
+      ]
+    },
+    {
+      "module": "ReadyRetainedNormalization",
+      "path": "ReadyRetainedNormalization.lean",
+      "blob_sha": "39a2139bb11501a4c448d9c01d884382cf36de0d",
+      "imports": [
+        "LatentColliderDetours"
+      ]
+    },
+    {
+      "module": "RefinedIndicatorSeparator",
+      "path": "RefinedIndicatorSeparator.lean",
+      "blob_sha": "75e9cd90bef50d46ac3155f7627440fc5121f796",
+      "imports": [
+        "PartialObservedQueryFamily",
+        "FiniteOriginalTargetImage"
+      ]
+    },
+    {
+      "module": "RefinedObservedSeparator",
+      "path": "RefinedObservedSeparator.lean",
+      "blob_sha": "8fa4d5772e20f2e065dd034e8a5d6d6bfc73c061",
+      "imports": [
+        "MarginalIndicatorAncestry"
+      ]
+    },
+    {
+      "module": "RestrictedBudgetAndHonesty",
+      "path": "RestrictedBudgetAndHonesty.lean",
+      "blob_sha": "c739757b8f691d0416a3a595766721f9d373c49e",
+      "imports": [
+        "TwoPhaseRestrictedHistory"
+      ]
+    },
+    {
+      "module": "RestrictedFamilyCertificate",
+      "path": "RestrictedFamilyCertificate.lean",
+      "blob_sha": "e712a8fafbd404c25c0952e58d2cadf13700fc7f",
+      "imports": [
+        "SharedSeparatorMEC"
+      ]
+    },
+    {
+      "module": "RestrictedHistoryCompleteness",
+      "path": "RestrictedHistoryCompleteness.lean",
+      "blob_sha": "5393839e7cc0cb05b4a6fdd5ff05df12d7f7fa12",
+      "imports": [
+        "OrderedFamilyAgreement"
+      ]
+    },
+    {
+      "module": "RestrictedInteractivePlan",
+      "path": "RestrictedInteractivePlan.lean",
+      "blob_sha": "4bc6680542b9b3aa49afe41a028308cf5134f2e9",
+      "imports": [
+        "FullClassQueryGame"
+      ]
+    },
+    {
+      "module": "RestrictedQueryActions",
+      "path": "RestrictedQueryActions.lean",
+      "blob_sha": "57ac09714ac29dd34de220440f8c60ef7ce5db31",
+      "imports": [
+        "RestrictedFamilyCertificate",
+        "FiniteTranscriptDecoder"
+      ]
+    },
+    {
+      "module": "RestrictedQueryBudgetBound",
+      "path": "RestrictedQueryBudgetBound.lean",
+      "blob_sha": "25dc3d18220503106a408b3122c8dc3d4c5af3b8",
+      "imports": [
+        "RestrictedInteractivePlan",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset"
+      ]
+    },
+    {
+      "module": "ReversedPositionTrace",
+      "path": "ReversedPositionTrace.lean",
+      "blob_sha": "6db91cb6eb170004d8082db008fe9821d2821f98",
+      "imports": [
+        "IndexedDiscriminatingSections"
+      ]
+    },
+    {
+      "module": "SafeDirectedBranches",
+      "path": "SafeDirectedBranches.lean",
+      "blob_sha": "9e94cb1d205f38f7b16b8ca0457079422101cdab",
+      "imports": [
+        "ActivationBranchDistances"
+      ]
+    },
+    {
+      "module": "SelectedAncestry",
+      "path": "SelectedAncestry.lean",
+      "blob_sha": "81f21f37ae7d2192f2167133575548e719dd0417",
+      "imports": [
+        "SelectedSourceProfile"
+      ]
+    },
+    {
+      "module": "SelectedMAGValidity",
+      "path": "SelectedMAGValidity.lean",
+      "blob_sha": "c75bca6354e990131026a50ca1fe84f612ab65f9",
+      "imports": [
+        "LiteralSelectedMAG"
+      ]
+    },
+    {
+      "module": "SelectedProfileSeparation",
+      "path": "SelectedProfileSeparation.lean",
+      "blob_sha": "558ac518279f8be56cb45529d0d67aaf13d1f231",
+      "imports": [
+        "SelectedAncestry"
+      ]
+    },
+    {
+      "module": "SelectedSourceProfile",
+      "path": "SelectedSourceProfile.lean",
+      "blob_sha": "f28d275af4df69d3e87c5386d7eb7521c445991b",
+      "imports": [
+        "CanonicalSelectionProfile"
+      ]
+    },
+    {
+      "module": "SelectedWalkReduction",
+      "path": "SelectedWalkReduction.lean",
+      "blob_sha": "4e40727c5d23831843cc331a498cc1b0706dca72",
+      "imports": [
+        "Mathlib.Data.List.Nodup"
+      ]
+    },
+    {
+      "module": "SharedSeparatorMEC",
+      "path": "SharedSeparatorMEC.lean",
+      "blob_sha": "638a1607ef752dc1f8202d17c0b3952a32a851e7",
+      "imports": [
+        "ClosestPathAncestry"
+      ]
+    },
+    {
+      "module": "ShortestPathStatusInvariance",
+      "path": "ShortestPathStatusInvariance.lean",
+      "blob_sha": "0ce4aefd3cf68085be5fd5c3745a0b2552511daf",
+      "imports": [
+        "IndexedPrefixColliders"
+      ]
+    },
+    {
+      "module": "TwoPhaseRestrictedHistory",
+      "path": "TwoPhaseRestrictedHistory.lean",
+      "blob_sha": "3c2da9468d9f1c77e31606a14841c75aadf62871",
+      "imports": [
+        "RestrictedHistoryCompleteness",
+        "Mathlib.Data.Finset.Dedup",
+        "Mathlib.Data.Fintype.Sigma"
+      ]
+    },
+    {
+      "module": "VertexActivePaths",
+      "path": "VertexActivePaths.lean",
+      "blob_sha": "ed33793cbc60a709f006fcb9b58cbaa741dafac3",
+      "imports": [
+        "CommonDiscriminatingParents"
+      ]
+    },
+    {
+      "module": "VertexDiscriminatingSections",
+      "path": "VertexDiscriminatingSections.lean",
+      "blob_sha": "79d5ab11233c7d5d10f558e1a3c00505476f43ad",
+      "imports": [
+        "ActivePathReversal"
+      ]
+    },
+    {
+      "module": "WeakInducingEdges",
+      "path": "WeakInducingEdges.lean",
+      "blob_sha": "39c627ac31c13e0d96cc33fe6d8cdd972ebd965c",
+      "imports": [
+        "ClosedColliderWalks"
+      ]
+    },
+    {
+      "module": "WeakRouteNormalization",
+      "path": "WeakRouteNormalization.lean",
+      "blob_sha": "f725569ec291c0be66d0bf268853247bb9cecb31",
+      "imports": [
+        "OriginalWeakConnection"
+      ]
+    }
+  ],
+  "direct_mathlib_imports": [
+    {
+      "module": "Mathlib.Algebra.BigOperators.Field",
+      "path": "Mathlib/Algebra/BigOperators/Field.lean",
+      "blob_sha": "f9f0df582b7ef695526ee9c0d6909e01013c02aa"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.List.Basic",
+      "path": "Mathlib/Algebra/BigOperators/Group/List/Basic.lean",
+      "blob_sha": "525adfce9ad64922cf64efad06d518341695f3e0"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+      "path": "Mathlib/Algebra/BigOperators/GroupWithZero/Finset.lean",
+      "blob_sha": "ea97561f2066028c15a7813227b2775e4273f4d7"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Option",
+      "path": "Mathlib/Algebra/BigOperators/Option.lean",
+      "blob_sha": "4a80f4a7dcf056801dc92a8287ea31e042ed6641"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "path": "Mathlib/Algebra/BigOperators/Ring/Finset.lean",
+      "blob_sha": "cdd6f7f559520a37ac4bb25734ca70c2a8bddf8c"
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Funext",
+      "path": "Mathlib/Algebra/MvPolynomial/Funext.lean",
+      "blob_sha": "edac9370c37edfce33e7b71efe70e2b541ef8ad8"
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+      "path": "Mathlib/Algebra/MvPolynomial/NoZeroDivisors.lean",
+      "blob_sha": "9edb22e301b5cb2e42cfb983e7fba8102dab8b90"
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Rename",
+      "path": "Mathlib/Algebra/MvPolynomial/Rename.lean",
+      "blob_sha": "7b6c1a1a887fd1f3f9184ec1c2ee57348cea5f5e"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "path": "Mathlib/Algebra/Order/BigOperators/Group/Finset.lean",
+      "blob_sha": "3745e5cb7ff4b16ad6532357837698f4bf54c4a8"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "path": "Mathlib/Algebra/Order/BigOperators/GroupWithZero/Finset.lean",
+      "blob_sha": "5aaad7f42e9161d267b11043b5fab9df2505370a"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Field.Rat",
+      "path": "Mathlib/Algebra/Order/Field/Rat.lean",
+      "blob_sha": "87a40c2d7e250e0e4c200fb8a927e31c6b1287b4"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Card",
+      "path": "Mathlib/Data/Finset/Card.lean",
+      "blob_sha": "4e5dc19df677dc5a9aa4a46067990ce08624547d"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Dedup",
+      "path": "Mathlib/Data/Finset/Dedup.lean",
+      "blob_sha": "a56e20fb4412712f261addb3b26ce0131bad5c6f"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Filter",
+      "path": "Mathlib/Data/Finset/Filter.lean",
+      "blob_sha": "084546dfff857a35cd68402be31a2b7529417f19"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Image",
+      "path": "Mathlib/Data/Finset/Image.lean",
+      "blob_sha": "1d13014ff477693433a581557008801edd1787f3"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Sort",
+      "path": "Mathlib/Data/Finset/Sort.lean",
+      "blob_sha": "739519ada9a00f41e86b668a426321f840edd930"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Union",
+      "path": "Mathlib/Data/Finset/Union.lean",
+      "blob_sha": "00913b1f297c024a7bacc610f11b8d24be260ded"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.BigOperators",
+      "path": "Mathlib/Data/Fintype/BigOperators.lean",
+      "blob_sha": "cbf19a0177656e09af2bf6d87ab2a8a672895817"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Card",
+      "path": "Mathlib/Data/Fintype/Card.lean",
+      "blob_sha": "882bcfa5829eca220faf26d0bee76bf2f055558f"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.OfMap",
+      "path": "Mathlib/Data/Fintype/OfMap.lean",
+      "blob_sha": "30f53d2f7f648b05bd877274c0345859539fa5bb"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Option",
+      "path": "Mathlib/Data/Fintype/Option.lean",
+      "blob_sha": "9c26723393dcda881ee72ee86f0a2cf5cda3008b"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Pi",
+      "path": "Mathlib/Data/Fintype/Pi.lean",
+      "blob_sha": "e04e7d7d844da2b960d0c667fb22115d5730debf"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Pigeonhole",
+      "path": "Mathlib/Data/Fintype/Pigeonhole.lean",
+      "blob_sha": "19ebeb40518e099dc572d5b3b627ce2f62c0745a"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Powerset",
+      "path": "Mathlib/Data/Fintype/Powerset.lean",
+      "blob_sha": "24ae705d64e036c959cfa6fc3593128ba56e6f7c"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Prod",
+      "path": "Mathlib/Data/Fintype/Prod.lean",
+      "blob_sha": "d385ab7979e8606c24b846ad0a2d2288157291a3"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Sigma",
+      "path": "Mathlib/Data/Fintype/Sigma.lean",
+      "blob_sha": "bad625b1368190b03a88ece60202ba63a53edeec"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Sum",
+      "path": "Mathlib/Data/Fintype/Sum.lean",
+      "blob_sha": "f81e74ea2f2cfcf2c82f3f6629743c4c2e9a19e0"
+    },
+    {
+      "module": "Mathlib.Data.List.Basic",
+      "path": "Mathlib/Data/List/Basic.lean",
+      "blob_sha": "3e4a92e1a882c202d73c4f7066151a926a7fe4cc"
+    },
+    {
+      "module": "Mathlib.Data.List.Lex",
+      "path": "Mathlib/Data/List/Lex.lean",
+      "blob_sha": "499633688330dcb641b953cef5a376c13f9662d0"
+    },
+    {
+      "module": "Mathlib.Data.List.Nodup",
+      "path": "Mathlib/Data/List/Nodup.lean",
+      "blob_sha": "6679355bbc2fbf1b709053d0ff5be65bbd483ed3"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "path": "Mathlib/Data/Nat/Choose/Basic.lean",
+      "blob_sha": "1cd090d71c8175e5f2071d939d30394b4c56d9de"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Find",
+      "path": "Mathlib/Data/Nat/Find.lean",
+      "blob_sha": "1a61e465b21bd939100fed36612b5ab9a028b564"
+    },
+    {
+      "module": "Mathlib.Data.Prod.Lex",
+      "path": "Mathlib/Data/Prod/Lex.lean",
+      "blob_sha": "dee018f50a0c4178ebce81dade6dbd2107a6d1b7"
+    },
+    {
+      "module": "Mathlib.Data.Sum.Order",
+      "path": "Mathlib/Data/Sum/Order.lean",
+      "blob_sha": "828e1281302620c1c8b430a1f40e20163fd94e0e"
+    },
+    {
+      "module": "Mathlib.Data.Sym.Card",
+      "path": "Mathlib/Data/Sym/Card.lean",
+      "blob_sha": "6858fdc88e0403de0557141db5fd040f94b9bf5c"
+    },
+    {
+      "module": "Mathlib.MeasureTheory.Integral.Lebesgue.Add",
+      "path": "Mathlib/MeasureTheory/Integral/Lebesgue/Add.lean",
+      "blob_sha": "0fba96a44726e29b24d4fbac6506dd28f9fc5eca"
+    },
+    {
+      "module": "Mathlib.MeasureTheory.Measure.Typeclasses.Probability",
+      "path": "Mathlib/MeasureTheory/Measure/Typeclasses/Probability.lean",
+      "blob_sha": "7e9ed301634d09077d2544d1dd69559191a7eb0c"
+    },
+    {
+      "module": "Mathlib.Order.Basic",
+      "path": "Mathlib/Order/Basic.lean",
+      "blob_sha": "8d2b62def97f62a7b1abdef76d528eca8e1bdf65"
+    },
+    {
+      "module": "Mathlib.Order.Defs.LinearOrder",
+      "path": "Mathlib/Order/Defs/LinearOrder.lean",
+      "blob_sha": "added074b7379107102edad41bac7d46fcd3b9f9"
+    },
+    {
+      "module": "Mathlib.Order.Interval.Set.Infinite",
+      "path": "Mathlib/Order/Interval/Set/Infinite.lean",
+      "blob_sha": "53b12688a0359cac88d8d0783708e2a21225add1"
+    },
+    {
+      "module": "Mathlib.Order.WellFounded",
+      "path": "Mathlib/Order/WellFounded.lean",
+      "blob_sha": "9aec1f0dfcf2a0764b1ae735f5d71167003e7124"
+    },
+    {
+      "module": "Mathlib.Order.WithBot",
+      "path": "Mathlib/Order/WithBot.lean",
+      "blob_sha": "330fe865bdd45f57b53eae43347a7d2cbe105adf"
+    },
+    {
+      "module": "Mathlib.Tactic",
+      "path": "Mathlib/Tactic.lean",
+      "blob_sha": "32e81e1659ee120f8e716c0e905e6683656e0a63"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum",
+      "path": "Mathlib/Tactic/NormNum.lean",
+      "blob_sha": "7a839bb5977144ed76659766bc6df8ca25d27ba6"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring",
+      "path": "Mathlib/Tactic/Ring.lean",
+      "blob_sha": "a0dab621a2ef7cf31047a5144a31a5fcde10b1ee"
+    }
+  ],
+  "root_closures": {
+    "BinaryPhysicalGame": {
+      "local_modules": [
+        "ActivationBranchDistances",
+        "ActivationBranchPairExclusion",
+        "ActivationBranchPairSplice",
+        "ActivationMainPathExclusion",
+        "ActivePathReversal",
+        "AncestralShortcutGeometry",
+        "BinaryActivationFamily",
+        "BinaryActivePathMinor",
+        "BinaryAncestralElimination",
+        "BinaryAncestralMarginal",
+        "BinaryAncestralMoralConnection",
+        "BinaryAssignmentElimination",
+        "BinaryBoundaryCircuit",
+        "BinaryCPTPolynomials",
+        "BinaryCircuitMinor",
+        "BinaryCommonFaithfulSource",
+        "BinaryCommonPositiveMinorFamily",
+        "BinaryConditionalIndependenceAlgebra",
+        "BinaryFactorElimination",
+        "BinaryFaithfulInvariance",
+        "BinaryGlobalMarkov",
+        "BinaryIndicatorLawFactorization",
+        "BinaryMoralFactorization",
+        "BinaryNestedElimination",
+        "BinaryOriginalSourceLabels",
+        "BinaryPathConstraintPropagation",
+        "BinaryPhysicalGame",
+        "BinaryPhysicalOracle",
+        "BinarySelectedInvarianceIdentity",
+        "BinarySelectedProbabilityLaw",
+        "BinarySelectionQuerySemantics",
+        "BinarySelectionSinkComplement",
+        "BinarySharedMechanismRegistry",
+        "BinaryTraceIncidence",
+        "BinaryTrekDecomposition",
+        "BinaryWitnessCircuit",
+        "CanonicalFiniteBounds",
+        "CanonicalLatentRoots",
+        "CanonicalRootSeparation",
+        "CanonicalSelectionProfile",
+        "ClosedColliderWalks",
+        "ClosestFirstArrow",
+        "ClosestFirstArrowArms",
+        "ClosestFirstArrowBoundary",
+        "ClosestFirstArrowContradiction",
+        "ClosestFirstArrowFlank",
+        "ClosestFirstArrowGeometry",
+        "ClosestFirstArrowIncidence",
+        "ClosestFirstArrowPotential",
+        "ClosestFirstArrowSplice",
+        "ClosestPathAncestry",
+        "ColliderMinimalActivePaths",
+        "ColliderMinimumReversal",
+        "ColliderSpliceCosts",
+        "CommonDiscriminatingParents",
+        "CommonIndicatorRoots",
+        "CommonObservedMAG",
+        "CommonSelectedIndicatorSource",
+        "ComputableCanonicalLabels",
+        "ConditionedEdgeWalks",
+        "DirectedBranchSplices",
+        "DiscriminatingIntervalGeometry",
+        "DiscriminatingSectionExtraction",
+        "DiscriminatingSeparatorStatus",
+        "DiscriminatingStatusTransport",
+        "EffectiveQueryEnumeration",
+        "EndpointColliderActivation",
+        "ExplicitProfileDecoding",
+        "FiniteDAGRank",
+        "FiniteDependencyInduction",
+        "FiniteGraphDecisions",
+        "FiniteOriginalTargetImage",
+        "FiniteProfileRegistry",
+        "FiniteQueryPlan",
+        "FiniteSelectedMAGDecision",
+        "FiniteTranscriptDecoder",
+        "FullClassQueryGame",
+        "G7ResourceGamePort",
+        "GeneralActiveWalkReduction",
+        "IndexedDiscriminatingSections",
+        "IndexedPrefixColliders",
+        "InducingEndpointMarks",
+        "InducingPathSeparation",
+        "IntervalDependency",
+        "LatentColliderDetours",
+        "LiteralMAGInducingChains",
+        "LiteralSelectedMAG",
+        "MAGMaximality",
+        "MAGPathLifting",
+        "MarginalIndicatorAncestry",
+        "MarkedActiveWalks",
+        "MarkedGraphEquivalence",
+        "MinimalActivePaths",
+        "MinimalPathChord",
+        "MinimalPathOrderDependencies",
+        "MinimumDirectedPathTransfer",
+        "ObservedMAGAncestry",
+        "OrderedFamilyAgreement",
+        "OriginalCanonicalSourceAdapter",
+        "OriginalIndicatorProjection",
+        "OriginalLatentProjection",
+        "OriginalMAGConnection",
+        "OriginalProjectionAncestry",
+        "OriginalProjectionContraction",
+        "OriginalProjectionLifting",
+        "OriginalWeakConnection",
+        "PartialIndicatorQueryFamily",
+        "PartialObservedQueryFamily",
+        "RationalPolynomialAvoidance",
+        "ReadyRetainedNormalization",
+        "RefinedIndicatorSeparator",
+        "RefinedObservedSeparator",
+        "RestrictedBudgetAndHonesty",
+        "RestrictedFamilyCertificate",
+        "RestrictedHistoryCompleteness",
+        "RestrictedInteractivePlan",
+        "RestrictedQueryActions",
+        "RestrictedQueryBudgetBound",
+        "ReversedPositionTrace",
+        "SafeDirectedBranches",
+        "SelectedAncestry",
+        "SelectedMAGValidity",
+        "SelectedProfileSeparation",
+        "SelectedSourceProfile",
+        "SelectedWalkReduction",
+        "SharedSeparatorMEC",
+        "ShortestPathStatusInvariance",
+        "TwoPhaseRestrictedHistory",
+        "VertexActivePaths",
+        "VertexDiscriminatingSections",
+        "WeakInducingEdges",
+        "WeakRouteNormalization"
+      ],
+      "direct_mathlib_imports": [
+        "Mathlib.Algebra.BigOperators.Field",
+        "Mathlib.Algebra.BigOperators.Group.List.Basic",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Algebra.MvPolynomial.Funext",
+        "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+        "Mathlib.Algebra.MvPolynomial.Rename",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Dedup",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.OfMap",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Pigeonhole",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sigma",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Lex",
+        "Mathlib.Data.List.Nodup",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Prod.Lex",
+        "Mathlib.Data.Sum.Order",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Interval.Set.Infinite",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Order.WithBot",
+        "Mathlib.Tactic",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "HardFamilyExactGame": {
+      "local_modules": [
+        "ActivationBranchDistances",
+        "ActivationBranchPairExclusion",
+        "ActivationBranchPairSplice",
+        "ActivationMainPathExclusion",
+        "ActivePathReversal",
+        "AncestralShortcutGeometry",
+        "BinaryActivationFamily",
+        "BinaryActivePathMinor",
+        "BinaryAncestralElimination",
+        "BinaryAncestralMarginal",
+        "BinaryAncestralMoralConnection",
+        "BinaryAssignmentElimination",
+        "BinaryBoundaryCircuit",
+        "BinaryCPTPolynomials",
+        "BinaryCircuitMinor",
+        "BinaryCommonFaithfulSource",
+        "BinaryCommonPositiveMinorFamily",
+        "BinaryConditionalIndependenceAlgebra",
+        "BinaryFactorElimination",
+        "BinaryFaithfulInvariance",
+        "BinaryGlobalMarkov",
+        "BinaryIndicatorLawFactorization",
+        "BinaryMoralFactorization",
+        "BinaryNestedElimination",
+        "BinaryOriginalSourceLabels",
+        "BinaryPathConstraintPropagation",
+        "BinaryPhysicalGame",
+        "BinaryPhysicalOracle",
+        "BinarySelectedInvarianceIdentity",
+        "BinarySelectedProbabilityLaw",
+        "BinarySelectionQuerySemantics",
+        "BinarySelectionSinkComplement",
+        "BinarySharedMechanismRegistry",
+        "BinaryTraceIncidence",
+        "BinaryTrekDecomposition",
+        "BinaryWitnessCircuit",
+        "CanonicalFiniteBounds",
+        "CanonicalLatentRoots",
+        "CanonicalRootSeparation",
+        "CanonicalSelectionProfile",
+        "ClosedColliderWalks",
+        "ClosestFirstArrow",
+        "ClosestFirstArrowArms",
+        "ClosestFirstArrowBoundary",
+        "ClosestFirstArrowContradiction",
+        "ClosestFirstArrowFlank",
+        "ClosestFirstArrowGeometry",
+        "ClosestFirstArrowIncidence",
+        "ClosestFirstArrowPotential",
+        "ClosestFirstArrowSplice",
+        "ClosestPathAncestry",
+        "ColliderMinimalActivePaths",
+        "ColliderMinimumReversal",
+        "ColliderSpliceCosts",
+        "CommonDiscriminatingParents",
+        "CommonIndicatorRoots",
+        "CommonObservedMAG",
+        "CommonSelectedIndicatorSource",
+        "ComputableCanonicalLabels",
+        "ConditionedEdgeWalks",
+        "DirectedBranchSplices",
+        "DiscriminatingIntervalGeometry",
+        "DiscriminatingSectionExtraction",
+        "DiscriminatingSeparatorStatus",
+        "DiscriminatingStatusTransport",
+        "EffectiveQueryEnumeration",
+        "EmptyInterventionTarget",
+        "EndpointColliderActivation",
+        "ExplicitProfileDecoding",
+        "FiniteDAGRank",
+        "FiniteDependencyInduction",
+        "FiniteGraphDecisions",
+        "FiniteOriginalTargetImage",
+        "FiniteProfileRegistry",
+        "FiniteQueryPlan",
+        "FiniteSelectedMAGDecision",
+        "FiniteTranscriptDecoder",
+        "FullClassQueryGame",
+        "G7ResourceGamePort",
+        "GeneralActiveWalkReduction",
+        "HardFamilyActionSignature",
+        "HardFamilyActivePaths",
+        "HardFamilyAdaptiveLower",
+        "HardFamilyExactGame",
+        "HardFamilyFullTarget",
+        "HardFamilyGraphs",
+        "HardFamilyIndexCount",
+        "HardFamilyIndicatorSignature",
+        "HardFamilyObservedSignature",
+        "HardFamilyOriginalSources",
+        "IndexedDiscriminatingSections",
+        "IndexedPrefixColliders",
+        "InducingEndpointMarks",
+        "InducingPathSeparation",
+        "IntervalDependency",
+        "LatentColliderDetours",
+        "LiteralMAGInducingChains",
+        "LiteralSelectedMAG",
+        "MAGMaximality",
+        "MAGPathLifting",
+        "MarginalIndicatorAncestry",
+        "MarkedActiveWalks",
+        "MarkedGraphEquivalence",
+        "MinimalActivePaths",
+        "MinimalPathChord",
+        "MinimalPathOrderDependencies",
+        "MinimumDirectedPathTransfer",
+        "ObservedMAGAncestry",
+        "OrderedFamilyAgreement",
+        "OriginalCanonicalSourceAdapter",
+        "OriginalIndicatorProjection",
+        "OriginalLatentProjection",
+        "OriginalMAGConnection",
+        "OriginalProjectionAncestry",
+        "OriginalProjectionContraction",
+        "OriginalProjectionLifting",
+        "OriginalWeakConnection",
+        "PartialIndicatorQueryFamily",
+        "PartialObservedQueryFamily",
+        "RationalPolynomialAvoidance",
+        "ReadyRetainedNormalization",
+        "RefinedIndicatorSeparator",
+        "RefinedObservedSeparator",
+        "RestrictedBudgetAndHonesty",
+        "RestrictedFamilyCertificate",
+        "RestrictedHistoryCompleteness",
+        "RestrictedInteractivePlan",
+        "RestrictedQueryActions",
+        "RestrictedQueryBudgetBound",
+        "ReversedPositionTrace",
+        "SafeDirectedBranches",
+        "SelectedAncestry",
+        "SelectedMAGValidity",
+        "SelectedProfileSeparation",
+        "SelectedSourceProfile",
+        "SelectedWalkReduction",
+        "SharedSeparatorMEC",
+        "ShortestPathStatusInvariance",
+        "TwoPhaseRestrictedHistory",
+        "VertexActivePaths",
+        "VertexDiscriminatingSections",
+        "WeakInducingEdges",
+        "WeakRouteNormalization"
+      ],
+      "direct_mathlib_imports": [
+        "Mathlib.Algebra.BigOperators.Field",
+        "Mathlib.Algebra.BigOperators.Group.List.Basic",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Algebra.MvPolynomial.Funext",
+        "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+        "Mathlib.Algebra.MvPolynomial.Rename",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Dedup",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.OfMap",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Pigeonhole",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sigma",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Lex",
+        "Mathlib.Data.List.Nodup",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Prod.Lex",
+        "Mathlib.Data.Sum.Order",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Interval.Set.Infinite",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Order.WithBot",
+        "Mathlib.Tactic",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "HardFamilyRandomizedLower": {
+      "local_modules": [
+        "ActivationBranchDistances",
+        "ActivationBranchPairExclusion",
+        "ActivationBranchPairSplice",
+        "ActivationMainPathExclusion",
+        "ActivePathReversal",
+        "AncestralShortcutGeometry",
+        "BinaryActivationFamily",
+        "BinaryActivePathMinor",
+        "BinaryAncestralElimination",
+        "BinaryAncestralMarginal",
+        "BinaryAncestralMoralConnection",
+        "BinaryAssignmentElimination",
+        "BinaryBoundaryCircuit",
+        "BinaryCPTPolynomials",
+        "BinaryCircuitMinor",
+        "BinaryCommonFaithfulSource",
+        "BinaryCommonPositiveMinorFamily",
+        "BinaryConditionalIndependenceAlgebra",
+        "BinaryFactorElimination",
+        "BinaryFaithfulInvariance",
+        "BinaryGlobalMarkov",
+        "BinaryIndicatorLawFactorization",
+        "BinaryMoralFactorization",
+        "BinaryNestedElimination",
+        "BinaryOriginalSourceLabels",
+        "BinaryPathConstraintPropagation",
+        "BinaryPhysicalGame",
+        "BinaryPhysicalOracle",
+        "BinarySelectedInvarianceIdentity",
+        "BinarySelectedProbabilityLaw",
+        "BinarySelectionQuerySemantics",
+        "BinarySelectionSinkComplement",
+        "BinarySharedMechanismRegistry",
+        "BinaryTraceIncidence",
+        "BinaryTrekDecomposition",
+        "BinaryWitnessCircuit",
+        "CanonicalFiniteBounds",
+        "CanonicalLatentRoots",
+        "CanonicalRootSeparation",
+        "CanonicalSelectionProfile",
+        "ClosedColliderWalks",
+        "ClosestFirstArrow",
+        "ClosestFirstArrowArms",
+        "ClosestFirstArrowBoundary",
+        "ClosestFirstArrowContradiction",
+        "ClosestFirstArrowFlank",
+        "ClosestFirstArrowGeometry",
+        "ClosestFirstArrowIncidence",
+        "ClosestFirstArrowPotential",
+        "ClosestFirstArrowSplice",
+        "ClosestPathAncestry",
+        "ColliderMinimalActivePaths",
+        "ColliderMinimumReversal",
+        "ColliderSpliceCosts",
+        "CommonDiscriminatingParents",
+        "CommonIndicatorRoots",
+        "CommonObservedMAG",
+        "CommonSelectedIndicatorSource",
+        "ComputableCanonicalLabels",
+        "ConditionedEdgeWalks",
+        "DirectedBranchSplices",
+        "DiscriminatingIntervalGeometry",
+        "DiscriminatingSectionExtraction",
+        "DiscriminatingSeparatorStatus",
+        "DiscriminatingStatusTransport",
+        "EffectiveQueryEnumeration",
+        "EmptyInterventionTarget",
+        "EndpointColliderActivation",
+        "ExplicitProfileDecoding",
+        "FiniteDAGRank",
+        "FiniteDependencyInduction",
+        "FiniteGraphDecisions",
+        "FiniteOriginalTargetImage",
+        "FiniteProfileRegistry",
+        "FiniteQueryPlan",
+        "FiniteSelectedMAGDecision",
+        "FiniteTranscriptDecoder",
+        "FullClassQueryGame",
+        "G7ResourceGamePort",
+        "GeneralActiveWalkReduction",
+        "HardFamilyActionSignature",
+        "HardFamilyActivePaths",
+        "HardFamilyAdaptiveLower",
+        "HardFamilyExactGame",
+        "HardFamilyFullTarget",
+        "HardFamilyGraphs",
+        "HardFamilyIndexCount",
+        "HardFamilyIndicatorSignature",
+        "HardFamilyObservedSignature",
+        "HardFamilyOriginalSources",
+        "HardFamilyRandomizedLower",
+        "HardFamilyUnboundedRuns",
+        "IndexedDiscriminatingSections",
+        "IndexedPrefixColliders",
+        "InducingEndpointMarks",
+        "InducingPathSeparation",
+        "IntervalDependency",
+        "LatentColliderDetours",
+        "LiteralMAGInducingChains",
+        "LiteralSelectedMAG",
+        "MAGMaximality",
+        "MAGPathLifting",
+        "MarginalIndicatorAncestry",
+        "MarkedActiveWalks",
+        "MarkedGraphEquivalence",
+        "MinimalActivePaths",
+        "MinimalPathChord",
+        "MinimalPathOrderDependencies",
+        "MinimumDirectedPathTransfer",
+        "ObservedMAGAncestry",
+        "OrderedFamilyAgreement",
+        "OriginalCanonicalSourceAdapter",
+        "OriginalIndicatorProjection",
+        "OriginalLatentProjection",
+        "OriginalMAGConnection",
+        "OriginalProjectionAncestry",
+        "OriginalProjectionContraction",
+        "OriginalProjectionLifting",
+        "OriginalWeakConnection",
+        "PartialIndicatorQueryFamily",
+        "PartialObservedQueryFamily",
+        "RationalPolynomialAvoidance",
+        "ReadyRetainedNormalization",
+        "RefinedIndicatorSeparator",
+        "RefinedObservedSeparator",
+        "RestrictedBudgetAndHonesty",
+        "RestrictedFamilyCertificate",
+        "RestrictedHistoryCompleteness",
+        "RestrictedInteractivePlan",
+        "RestrictedQueryActions",
+        "RestrictedQueryBudgetBound",
+        "ReversedPositionTrace",
+        "SafeDirectedBranches",
+        "SelectedAncestry",
+        "SelectedMAGValidity",
+        "SelectedProfileSeparation",
+        "SelectedSourceProfile",
+        "SelectedWalkReduction",
+        "SharedSeparatorMEC",
+        "ShortestPathStatusInvariance",
+        "TwoPhaseRestrictedHistory",
+        "VertexActivePaths",
+        "VertexDiscriminatingSections",
+        "WeakInducingEdges",
+        "WeakRouteNormalization"
+      ],
+      "direct_mathlib_imports": [
+        "Mathlib.Algebra.BigOperators.Field",
+        "Mathlib.Algebra.BigOperators.Group.List.Basic",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.MvPolynomial.Funext",
+        "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+        "Mathlib.Algebra.MvPolynomial.Rename",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Dedup",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.OfMap",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Pigeonhole",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sigma",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Lex",
+        "Mathlib.Data.List.Nodup",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Nat.Find",
+        "Mathlib.Data.Prod.Lex",
+        "Mathlib.Data.Sum.Order",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Add",
+        "Mathlib.MeasureTheory.Measure.Typeclasses.Probability",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Interval.Set.Infinite",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Order.WithBot",
+        "Mathlib.Tactic",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "EmptyInterventionTarget": {
+      "local_modules": [
+        "ActivationBranchDistances",
+        "ActivationBranchPairExclusion",
+        "ActivationBranchPairSplice",
+        "ActivationMainPathExclusion",
+        "ActivePathReversal",
+        "AncestralShortcutGeometry",
+        "BinaryActivationFamily",
+        "BinaryActivePathMinor",
+        "BinaryAncestralElimination",
+        "BinaryAncestralMarginal",
+        "BinaryAncestralMoralConnection",
+        "BinaryAssignmentElimination",
+        "BinaryBoundaryCircuit",
+        "BinaryCPTPolynomials",
+        "BinaryCircuitMinor",
+        "BinaryCommonFaithfulSource",
+        "BinaryCommonPositiveMinorFamily",
+        "BinaryConditionalIndependenceAlgebra",
+        "BinaryFactorElimination",
+        "BinaryFaithfulInvariance",
+        "BinaryGlobalMarkov",
+        "BinaryIndicatorLawFactorization",
+        "BinaryMoralFactorization",
+        "BinaryNestedElimination",
+        "BinaryOriginalSourceLabels",
+        "BinaryPathConstraintPropagation",
+        "BinaryPhysicalGame",
+        "BinaryPhysicalOracle",
+        "BinarySelectedInvarianceIdentity",
+        "BinarySelectedProbabilityLaw",
+        "BinarySelectionQuerySemantics",
+        "BinarySelectionSinkComplement",
+        "BinarySharedMechanismRegistry",
+        "BinaryTraceIncidence",
+        "BinaryTrekDecomposition",
+        "BinaryWitnessCircuit",
+        "CanonicalFiniteBounds",
+        "CanonicalLatentRoots",
+        "CanonicalRootSeparation",
+        "CanonicalSelectionProfile",
+        "ClosedColliderWalks",
+        "ClosestFirstArrow",
+        "ClosestFirstArrowArms",
+        "ClosestFirstArrowBoundary",
+        "ClosestFirstArrowContradiction",
+        "ClosestFirstArrowFlank",
+        "ClosestFirstArrowGeometry",
+        "ClosestFirstArrowIncidence",
+        "ClosestFirstArrowPotential",
+        "ClosestFirstArrowSplice",
+        "ClosestPathAncestry",
+        "ColliderMinimalActivePaths",
+        "ColliderMinimumReversal",
+        "ColliderSpliceCosts",
+        "CommonDiscriminatingParents",
+        "CommonIndicatorRoots",
+        "CommonObservedMAG",
+        "CommonSelectedIndicatorSource",
+        "ComputableCanonicalLabels",
+        "ConditionedEdgeWalks",
+        "DirectedBranchSplices",
+        "DiscriminatingIntervalGeometry",
+        "DiscriminatingSectionExtraction",
+        "DiscriminatingSeparatorStatus",
+        "DiscriminatingStatusTransport",
+        "EffectiveQueryEnumeration",
+        "EmptyInterventionTarget",
+        "EndpointColliderActivation",
+        "ExplicitProfileDecoding",
+        "FiniteDAGRank",
+        "FiniteDependencyInduction",
+        "FiniteGraphDecisions",
+        "FiniteOriginalTargetImage",
+        "FiniteProfileRegistry",
+        "FiniteQueryPlan",
+        "FiniteSelectedMAGDecision",
+        "FiniteTranscriptDecoder",
+        "FullClassQueryGame",
+        "G7ResourceGamePort",
+        "GeneralActiveWalkReduction",
+        "IndexedDiscriminatingSections",
+        "IndexedPrefixColliders",
+        "InducingEndpointMarks",
+        "InducingPathSeparation",
+        "IntervalDependency",
+        "LatentColliderDetours",
+        "LiteralMAGInducingChains",
+        "LiteralSelectedMAG",
+        "MAGMaximality",
+        "MAGPathLifting",
+        "MarginalIndicatorAncestry",
+        "MarkedActiveWalks",
+        "MarkedGraphEquivalence",
+        "MinimalActivePaths",
+        "MinimalPathChord",
+        "MinimalPathOrderDependencies",
+        "MinimumDirectedPathTransfer",
+        "ObservedMAGAncestry",
+        "OrderedFamilyAgreement",
+        "OriginalCanonicalSourceAdapter",
+        "OriginalIndicatorProjection",
+        "OriginalLatentProjection",
+        "OriginalMAGConnection",
+        "OriginalProjectionAncestry",
+        "OriginalProjectionContraction",
+        "OriginalProjectionLifting",
+        "OriginalWeakConnection",
+        "PartialIndicatorQueryFamily",
+        "PartialObservedQueryFamily",
+        "RationalPolynomialAvoidance",
+        "ReadyRetainedNormalization",
+        "RefinedIndicatorSeparator",
+        "RefinedObservedSeparator",
+        "RestrictedBudgetAndHonesty",
+        "RestrictedFamilyCertificate",
+        "RestrictedHistoryCompleteness",
+        "RestrictedInteractivePlan",
+        "RestrictedQueryActions",
+        "RestrictedQueryBudgetBound",
+        "ReversedPositionTrace",
+        "SafeDirectedBranches",
+        "SelectedAncestry",
+        "SelectedMAGValidity",
+        "SelectedProfileSeparation",
+        "SelectedSourceProfile",
+        "SelectedWalkReduction",
+        "SharedSeparatorMEC",
+        "ShortestPathStatusInvariance",
+        "TwoPhaseRestrictedHistory",
+        "VertexActivePaths",
+        "VertexDiscriminatingSections",
+        "WeakInducingEdges",
+        "WeakRouteNormalization"
+      ],
+      "direct_mathlib_imports": [
+        "Mathlib.Algebra.BigOperators.Field",
+        "Mathlib.Algebra.BigOperators.Group.List.Basic",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Algebra.MvPolynomial.Funext",
+        "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
+        "Mathlib.Algebra.MvPolynomial.Rename",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Dedup",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.OfMap",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Pigeonhole",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sigma",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Lex",
+        "Mathlib.Data.List.Nodup",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Prod.Lex",
+        "Mathlib.Data.Sum.Order",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Interval.Set.Infinite",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Order.WithBot",
+        "Mathlib.Tactic",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ]
+    }
+  },
+  "baseline_inventory_commit": "0efc07fae3ee680fd3fc59f897f10ccb8cf10c52"
+}

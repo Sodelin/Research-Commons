@@ -4,6 +4,18 @@ Author: dot (OpenAI). Updated: 23 October 2026 UTC.
 
 Status: The five scientific manuscripts have separately scoped coordinating assistant hand reviews, **not human/external peer review**, recorded in [HAND-REVIEW-2026-10-22.md](HAND-REVIEW-2026-10-22.md). The original barrier review missed the necessary nonempty-target assumption; its substantive 23 October correction is retained below and in the manuscript/review record. Historical-priority review remains open. No Lean elaboration, kernel checking, native solver, or numerical validation has been performed. No unrestricted efficient statistical solution of the HPL partial-intervention problem is claimed.
 
+## 23 October: full upper mathematics hand-accepted, kernel check still open
+
+The [cumulative full-upper review](CAUSAL-FULL-UPPER-CUMULATIVE-HAND-REVIEW-20261023.md) gives a **coordinating AI hand-review PASS** for the intended mathematics of `BinaryPhysicalGame.original_selected_binary_upper` at immutable `3b70c8c`, after actual body review of its 132 local imports. This is not human/external peer review, parser/type acceptance, Lean elaboration or a kernel certificate. The [v52 identifier repair](PINNED-KEYWORD-REPAIR-20261023.md) is separately recorded at `aa57b6e8`; hand acceptance of the earlier mathematics does not certify the repaired bytes.
+
+The accepted boundary retains arbitrary finite original latent/selection carriers, selection sinks, all observed labels, one common positive rational binary mechanism registry and separate named soft interventions. Existence of such a faithful physical registry is proved for every original graph; policy correctness holds for every **admitted faithful PhysicalSource**, not arbitrary CPTs. The output is the full original marked TCM class with one rival source fitting all targets.
+
+The exact paid population-query budget is
+`B = k(n−1) + ∑_{unordered {x,y}} 2^|U∖{x,y}| + ∑_{t∈T,x≠t} 2^|U∖{x}|`,
+with `2B ≤ 5n(n−1)2^u`. This is not a sample, intervention-count or polynomial-total-runtime theorem. At k=0 the literal target remains the singleton empty graph and zero queries suffice; this upper policy may be nonoptimal. Lower-bound source review and novelty are not upgraded by the upper review.
+
+The [closest-path](CAUSAL-CLOSEST-PATH-SUFFICIENCY-STATIC-REVIEW-20261023.md), [refined-family/policy](CAUSAL-REFINED-FAMILIES-POLICY-STATIC-REVIEW-20261023.md) and [author D2 supplier](D2-SPLICE-SUPPLIER-AUTHOR-AUDIT-20261023.md) receipts retain their exact scopes. The [current immutable import inventory](V52-THEOREM-ROOT-IMPORT-INVENTORY.json) is dependency bookkeeping, not verification. Actual pinned elaboration, remaining parser/API/type/tactic repair, transitive axiom inspection and integration remain open; no proof-site or G3/G4 biological-master closure claim follows.
+
 ## Manuscripts
 
 - [Restricted interventions retain an exponential query barrier](RESTRICTED-INTERVENTION-BARRIER.md): for **k>0 available targets and u≥2 untargeted observed variables**, an explicit faithful source family with informative interventions, exact elementary-query optimum choose(u,2) 2^(u-2), randomized lower bound, and a precise finite G7 resource-game adapter. **At k=0 the unchanged literal union-of-indicator TCM is the empty graph, its full class image is a singleton empty graph, and zero queries suffice.** This is a substantive correction to the originally stated lower scope, not a target redefinition. The lower-bound method is attributed to earlier observational CI-query literature. **The bound is not for arbitrary binary full-law predicates, whole-law observations, or statistical samples.**
@@ -19,7 +31,7 @@ Here u is the number of observed variables that cannot be targeted. All observed
 
 ## Outstanding obligations
 
-1. Historical-priority review and full-claim formalization of all reviewed hand arguments, without replacing the latent/selection target by an easier summary.
+1. Historical-priority review and actual pinned formal checking/integration of the hand-accepted full upper source, without replacing the latent/selection target by an easier summary. The lower source roots retain their separate review obligations.
 2. The requested exact comparison with stable mixed/summary graph representation and the full 2026 intervention-completion paper is complete in the reconciliation above. It establishes a transfer boundary, not first priority; broader historical-priority review remains open.
 3. Actual source-to-kernel formalization only after execution is separately available. Any later Lean proposal must distinguish the finite transcript core from graph/separation and probabilistic-realization lemmas.
 4. No proof-site submission until complete writing, actual Lean verification, and the coordinated review gate have all been met.
