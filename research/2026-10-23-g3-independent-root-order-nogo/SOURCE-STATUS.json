@@ -1,0 +1,135 @@
+{
+  "schema": "research-source-status-v1",
+  "stable_key": "G3-ARITH-INDEP-ROOT-ORDER-NOGO-01",
+  "title": "Independent reciprocal-root order is recursively enumerable complete",
+  "authored_utc_date": "2026-10-23",
+  "owner": "existing G3 source owner",
+  "mathematical_status": "PROVED BY HAND (not Lean formalized)",
+  "proof": {
+    "file": "PROOF.md",
+    "local_source": "G3-INDEPENDENT-ROOT-ORDER-UNDECIDABILITY.md",
+    "bytes": 16205,
+    "git_blob": "9238ac47e752f19694bcb0aad83b40f23c8f07ca",
+    "sha256": "6c6efef4a01fc978f9b22b7c3484857f8e20b25cfb4dc3353a5b72a3ca0f1628"
+  },
+  "decision_problem": {
+    "base": "1/2, fixed",
+    "root": "r_n=(1/2)^(1/n), unique positive real root",
+    "input": "integer polynomial Q in finitely many variables",
+    "quantifier": "exists independently chosen positive integers n_1,...,n_k",
+    "comparison": "Q(r_n1,...,r_nk)>0; one strict inequality",
+    "same_vector_across_occurrences": true,
+    "counts_may_coincide": true
+  },
+  "completed_claims": [
+    "The stated arithmetic problem is recursively enumerable complete.",
+    "Undecidability persists for some fixed finite number K of count variables and fixed finite polynomial degree bound D; no optimized K,D are asserted.",
+    "No total input-computable one-witness count bound defined on NO inputs also exists for this unrestricted problem.",
+    "No sound complete effectively checkable finite NO certificate system exists for all its NO instances."
+  ],
+  "mechanism": {
+    "classical_input": "Davis-Putnam-Robinson-Matiyasevich / integral Diophantine feasibility",
+    "rational_coordinate": "A(x)=(1+x)/(2(1-x))",
+    "analytic_coordinate": "f(t)=A(exp(-log(2)/t)); derivative tends to a=1/log(2) with O(t^-2) error",
+    "successor": "5/4 < f(s)-f(t) < 7/4 iff s=t+1 for positive integer indices",
+    "integer_variables": "v_i=n_i-t, recovered up to a controlled small error by V_i=(f(n_i)-f(t))/(f(t+1)-f(t))",
+    "input_constants": "d>=max(2,degree(P)); H=1+sum(abs(coefficients(P))); B=max(64,d*H*2^(d+7))",
+    "single_inequality": "An integer polynomial is obtained from one sum-of-squares penalty inequality by clearing denominators positive on the root domain.",
+    "false_witness_controls": [
+      "h=0 gives F<=0",
+      "the penalty forces t>B",
+      "the range penalty forces n_i>t/2",
+      "negative v_i are permitted and covered by the oriented-integral bound",
+      "the polynomial value differs from the integer P(v) by less than 1/16",
+      "all input coefficients remain integers; log(2) is used only in the proof"
+    ],
+    "proof_outputs": "Effective many-one reduction and finite witness existence, not an executed Diophantine solver."
+  },
+  "evidence_axes": {
+    "author_hand_proof": "complete, self-audited",
+    "independent_correctness_review": "not performed",
+    "lean_or_other_formalization": "not performed",
+    "symbolic_or_numerical_control": "not run",
+    "scientific_source_tuple": "not generated",
+    "qe_or_root_order_solver": "not run",
+    "native_cargo_lake_ci_model_execution": "not run",
+    "source_publication": "verified separately in the delivery ledger",
+    "recipient_adoption": "not established by this source packet"
+  },
+  "actual_prior_comparison": {
+    "retained_pin": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+    "predecessor": {
+      "path": "handoffs/2026-10-16-codex-g3-unreviewed-source-copy-001/INPUT-RADICAL-BOUND-AND-FULL-SOURCE-TEST-03.md",
+      "sha256": "97987236e5c6f5429d2f597ff1ebd5b34dac7078ff56515122483524a5ad968e",
+      "delta": "Completed exact reciprocal equality obstruction does not decide order."
+    },
+    "later_review": {
+      "path": "research/2026-10-16-dot-g3-radical-review-0055z/REVIEW.md",
+      "sha256": "179b0a86bdbc37816f971cf5fe072c0258071e47a5c205ae85c0852897468af4"
+    },
+    "later_retuned_type_successor": {
+      "path": "handoffs/2026-10-16-codex-g3-primitive-multiplicity-increment-005/ONE-TYPE-BOUNDEDNESS-AND-PRIMITIVE-MULTIPLICITIES-07.md",
+      "sha256": "5c5cd7e670d670d528d0a8414ec39748e37db467e84c4d1b18f25b20056f9916",
+      "delta": "Moving physical types and large presentations do not classify this arithmetic language or refute a minimum source bound."
+    },
+    "independent_equality": {
+      "commit": "42be58afec08d7f0bea16f0883006d3c9a85f54c",
+      "sha256": "d55eb70efa9b5e6b2f52f4c68c44caeb9724b31e7cf16cde0f3cf605414af978",
+      "status": "Completed; only ZERO/NONZERO, not order."
+    },
+    "common_count_order": {
+      "commit": "719b8340a0fd72aa18678353c8dbd5a39e42f91f",
+      "sha256": "0a705a550b062879b02f78d38fd379ddd48be9b4c29fe1eee6ce3fbd58b40b5b",
+      "status": "Completed equivalence with HOM-LOG-ZERO; not an independent-count result."
+    },
+    "fixed_rational_readout_screen": {
+      "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g3-impossibility/nonlinear-counter-lifts/RATIONAL-REPETITION-COUNT-SCREEN.md",
+      "bytes": 6915,
+      "sha256": "a21c138332f51f5db48d58374d5745a83b4e896bf585da161729c90761322bd9",
+      "git_blob": "1d863aae43d00c6edd8d44ea87555b0df345cca2",
+      "read_scope": "Complete body read before derivation; it explicitly leaves cutpoint languages and varying banks outside its exact fixed-word readout exclusion."
+    },
+    "local_archives": "Matching claim/formula/undecidability aliases searched in retained authored audit/continuation archives before network provider lookup.",
+    "scope_of_novelty_check": "Bounded retained-source comparison; no worldwide priority or exhaustive-absence claim."
+  },
+  "classical_primary_sources": [
+    {
+      "url": "https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf",
+      "citation": "Martin Davis, American Mathematical Monthly 80 (1973), 233-269",
+      "actual_read_scope": "Introduction integral undecidability/positive-to-integer conversion and Section 8, Theorem 8.1 plus displayed short equivalence proof; not a review of all 38 pages.",
+      "use": "Classical DPRM input and fixed universal Diophantine polynomial."
+    },
+    {
+      "url": "https://arxiv.org/abs/0906.4972",
+      "citation": "Philipp Hieronymi, v2, 2009; Proc. Amer. Math. Soc. 138 (2010), 2163-2168",
+      "actual_read_scope": "Abstract only.",
+      "use": "Established discrete-set arithmetic-definability context only; no existential/single-inequality consequence is inferred from that abstract."
+    }
+  ],
+  "scope_exclusions": [
+    "Not a proof that original G3 is undecidable.",
+    "No source-complete all-core backward implication enforces this arithmetic encoding on every fitting original source.",
+    "No unbounded fresh-position parameter synchronization or fixed alphabet is introduced.",
+    "No new original legal observation, chronology/calendar tie or refreshed COMMON register is supplied.",
+    "The common-denominator order problem and homogeneous-log zero problem are not proved undecidable here.",
+    "The completed independent ZERO/NONZERO decision and supplied one-type COMMON algorithm remain unchanged.",
+    "Bounded counts and any individual supplied count tuple remain exactly decidable.",
+    "A properly source-restricted count-order fragment may still be decidable.",
+    "No full G3/G4 endpoint or formal/native integration is closed by this packet."
+  ],
+  "original_goal": {
+    "key": "CB-G3-004",
+    "status": "active and mathematically unresolved",
+    "requirement": "Total exact original finite-source recognition including terminating NO across all unknown finite sizes/cores; one admitted source, IDs and one physical bank across all rows on YES.",
+    "next_action": "Study the actual source-derived count-order restriction, preserving the missing all-source converse; do not propose a total unrestricted independent-root order backend."
+  },
+  "preservation": {
+    "local_git_writes": 0,
+    "subagents": 0,
+    "new_chats": 0,
+    "scientific_or_native_jobs": 0,
+    "owners_unchanged": true,
+    "held_used_unknown_history_preserved": true,
+    "privacy": "Existing one-identity encrypted runtime route; this is authored source/status."
+  }
+}
