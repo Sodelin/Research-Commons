@@ -315,8 +315,8 @@ global normal versus relative-face recognition.
 
 ## Conditional count: completed hand/Lean consumer, stronger application separate
 
-[Exact reuse and route correction](ZERO-SCORE-REUSE.md),8840B/SHA256
-`b0ac2af1e24e97551e7c7d38e29e856b8a170415d42b66435e58ade2a489505c`.
+[Exact reuse and route correction](ZERO-SCORE-REUSE.md),9536B/SHA256
+`992a7269c6e9b5fb49ad7a8b7333d5fadec66c6ca0c48134a53fef49d7db56d6`.
 This is recovery/integration of OLD solved results, not new mathematics.
 
 The9October whole-fibre zero-score criterion and INDEPENDENT-survival
@@ -333,6 +333,8 @@ actual equal-arm semantics, exact nonnegative weighted-zero scores, uniform
 weak moduli, a same-source survival floor and physical length identities.
 Its p is the interaction g(1-g), not natural parent0 g/native gamma=1-g.
 These premises are not supplied by kernel checking or a numeric ceiling.
+The inherited finite-core/source-path reduction is already proved; coverage
+by THIS score family is the different unacquired general application.
 
 Do NOT turn a universal literal all-presentation provider into a new G3
 requirement. The accepted7580B same-source paired control ALREADY has one

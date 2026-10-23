@@ -5,6 +5,10 @@ correction, not new mathematics, a new full attack or a new checking job.**
 Original G3 remains active. Its required bound is on ONE witness, defined
 on NO inputs too; it need not bound every equivalent presentation.
 
+Scope clarification of the initial8840-byte note preserved at commit
+7259d7eee821e904bbdf328113a89971d35499f2: inherited source/path coverage
+and coverage by this PARTICULAR score family must remain distinct.
+
 ## What is already complete
 
 The old [whole-fibre zero-score criterion](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-reviewed-guard-boundaries-1615z/g3/WHOLE-FIBRE-ZERO-SCORE-CRITERION.md)
@@ -69,6 +73,14 @@ The missing general provider is not supplied by the compiler pass. The
 upstream hand proof ALSO explicitly treats general coverage/production as
 a hypothesis. Thus this is not an already completed general G3 proof held
 up only by Lean or a missing implementation constructor.
+
+Do not reopen the inherited finite-core/source-path correspondence: that
+is already a completed hand supplier. The distinct unacquired general
+step here is complete input-effective coverage by THIS score/modulus/floor
+family with fixed piece data. An absent Lean instantiation is a formal
+integration gap; it is not evidence that the inherited source reduction
+is mathematically unfinished. Neither gap becomes a new original G3
+requirement, since this certificate is only sufficient.
 
 Parameter binding matters: the certificate's p is g*(1-g), not natural
 parent0 probability g. This is explicit in the hand proof and explains
