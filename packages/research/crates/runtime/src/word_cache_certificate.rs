@@ -11,7 +11,7 @@ pub struct Limits {
  pub modules:usize,pub entries:usize,pub source_bytes:usize,pub total_bytes:usize,
 }
 impl Default for Limits {
- fn default()->Self{Self{modules:512,entries:256,source_bytes:262144,total_bytes:16*1024*1024}}
+ fn default()->Self{Self{modules:8192,entries:4096,source_bytes:262144,total_bytes:16*1024*1024}}
 }
 #[derive(Debug,PartialEq,Eq)]
 pub enum Error {

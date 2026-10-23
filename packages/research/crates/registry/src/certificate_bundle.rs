@@ -12,7 +12,7 @@ pub fn decode(bytes:&[u8],expected:&str)->Result<Vec<(String,Vec<u8>)>>{
   return Err("proof bundle identity/unchecked-origin fields".into());
  }
  let rows=value["modules"].as_array().ok_or("missing bundle modules")?;
- if rows.is_empty()||rows.len()>512{return Err("proof bundle module count".into());}
+ if rows.is_empty()||rows.len()>8192{return Err("proof bundle module count".into());}
  let mut names=BTreeSet::new();let mut result=Vec::new();let mut total=0usize;
  for row in rows{
   let name=row["module"].as_str().ok_or("missing bundle module")?;
