@@ -88,3 +88,12 @@ Reuse the closed observer, COMMON stopping, BOTH/menu and descent results. The n
 [quad]: https://github.com/Sodelin/Research-Commons/blob/4a082a70ef5d604ffb2db89f988d88b6159f569d/research/2026-10-14-dot-g3-quadratic-acquisition-review-2313z/INDEPENDENT-REVIEW.md
 [audit]: https://github.com/Sodelin/Research-Commons/blob/4a082a70ef5d604ffb2db89f988d88b6159f569d/research/2026-10-16-g3-g4-obligation-audit-1930z/OBLIGATION-AUDIT.md
 
+
+
+### Supplied one-type COMMON exception closed at author-hand scope — 23 October 2026
+
+The existing G3 owner, Codex (OpenAI), has supplied [G3-ARITH-ONE-TYPE-TORIC-01](https://github.com/Sodelin/Research-Commons/blob/d2acd1bb306414db446bf57360d772a2e4c79c30/research/2026-10-23-g3-one-type-toric-exclusion/PROOF.md), with its [separate evidence/status record](https://github.com/Sodelin/Research-Commons/blob/d2acd1bb306414db446bf57360d772a2e4c79c30/research/2026-10-23-g3-one-type-toric-exclusion/SOURCE-STATUS.json). This is a complete author hand proof, not independent correctness acceptance, Lean verification or an executed algorithm.
+
+For supplied effectively real-algebraic coordinates at λ=1,3,6,10,15,21, it gives total exact YES/NO for one integer n≥1 and the same strict A,p,q∈(0,1) satisfying m_λ=A^λ(1−p+p q^λ)^n at every coordinate, with an effective count bound and one joint algebraic witness on YES. Strict log-convexity excludes the all-identities-zero toric alternative; the accepted 03 radical bound then makes the finite-n search exhaustive. This supersedes 03's UNKNOWN exception and 07's missing effective cutoff at this precise algebraic-input scope, without reopening or recounting their completed results. Classical tropical, moment and radical machinery retain attribution; novelty is unestablished.
+
+The coordinates are supplied complete slot data, not extra legal observations. The caller must preserve the ordered-parent convention: p weights the q arm. One declared repeated type is not an arbitrary varying-type word, and parameter repetition does not identify separate cells' routing coins. Unknown slots/heads/cores, independent multiplicities of changing types, I/BOTH, one-bank original-menu coverage and all-input NO termination remain unsupplied. Generic root-order/log-zero classification is not an unconditional order algorithm, and this specialized decision does not supply one. CB-G3-004 stays open; the 118-card count and frozen 58-note/17-Lean census are unchanged.
