@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.7-feedback-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.8-genome-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -40,7 +40,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Feedback source recovery — 23 October 2026, 09:52 UTC:** five existing Samuel B01–B06 groups are now indexed, preserving all 84 prior claim objects. The identical-ancestors property (IAP) means that each member has finitely many descendants or finitely many non-descendants in the stated set. The [same-draw completion](#cb-feedback-005) supersedes its finite precursor's pending list; the [ranking-reversal card](#cb-feedback-004) retains the exact historical build and written-only proof boundaries. These are mathematical model results, not empirical speciation claims or five new discoveries. The dated 75-card subjective ranking remains unchanged; the nine sequence and five feedback additions are not ranked.
 
-This register contains **89 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Genome/ownership source recovery — 23 October 2026, 10:00 UTC:** four existing groups cover Samuel G01–G05, preserving all 89 earlier claim objects. They separate [finite ancestry versus unrestricted infinite completion](#cb-genome-001), the [classical three-taxon control](#cb-genome-002), [missing diploid ownership and exact informative sampling](#cb-genome-003), and [independent-block family recovery versus matching correlated marginals](#cb-genome-004). These are recovered completed mathematical results with scoped historical formal receipts, not new discoveries or validated biological classifiers. The ownership sampling criterion consumes a whole infinite record unless the stated switch bound is supplied. Existing subjective ranks are unchanged; these four have not been globally ranked.
+
+This register contains **93 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -147,6 +149,11 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-FEEDBACK-003](#cb-feedback-003) | Positive selection defeats arbitrary admitted affinity changes in one source recursion | Proved by hand; named historical Lean scope checked |
 | [CB-FEEDBACK-004](#cb-feedback-004) | Finite sampling reverses a matched deterministic marker-barrier ranking | Proved by hand; historical Lean components checked with stated receipt limit |
 | [CB-FEEDBACK-005](#cb-feedback-005) | One shared random process joins a marker barrier to almost-sure ancestry mixing | Proved by hand; named historical Lean scope checked |
+
+| [CB-GENOME-001](#cb-genome-001) | A finite ancestry graph does not determine its infinite population's specieslike status | Proved; archived Lean check recorded |
+| [CB-GENOME-002](#cb-genome-002) | Exact laws identify three-taxon relationships, but finite samples do not give certainty | Proved; archived Lean check recorded |
+| [CB-GENOME-003](#cb-genome-003) | Missing diploid ownership can change long-term ancestry; informative samples are characterized exactly | Proved; archived Lean check recorded |
+| [CB-GENOME-004](#cb-genome-004) | Independent inheritance blocks have an exact recovery probability; matching marginals do not suffice | Proved; archived Lean check recorded |
 
 ## Claim cards
 
@@ -4557,6 +4564,219 @@ No theorem-transfer dependency is asserted by this card.
 
 </details>
 
+<a id="cb-genome-001"></a>
+### A finite ancestry graph does not determine its infinite population's specieslike status
+**CB-GENOME-001 · Genome ancestry · infinite-completion limits**
+
+**Question:** Does a finite genome-ancestry graph determine whether its whole infinite completion is specieslike?
+
+**What we learned:** No. Every admitted finite graph has two compatible infinite completions with opposite answers, despite preserving all its old edges and ancestry paths.
+
+**What it lets someone do:** Identify which assumptions about admissible futures are needed before finite ancestry evidence can justify a future-inclusive conclusion.
+
+**What we cannot conclude:** This is not a universal impossibility theorem for DNA inference or biological species identification.
+
+**Kind:** counterexample. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Every finite Wong-model gARG embeds injectively in two connected infinite graph completions preserving and reflecting all old edges and ancestry paths. Both meet the declared date/local-finiteness/root conditions; one whole population is inspecies and maximal specieslike, while the other fails IAP. Here IAP means that each member has finitely many descendants or finitely many non-descendants within the stated set. Therefore no verdict based only on the finite graph is correct for every such completion. Abstract topology completions, not extension of future interval annotations, a genome-to-organism owner map, equal DNA probability laws, or a universal species-inference impossibility.
+
+**Origin.** project posed. The 25 September 2026 genomic-identification note extracts a source-faithful consequence of the existing finite-history completion construction. It is not a claimed author-designated external open problem.
+
+**Prior work.** 25 September 2026 note; elementary decoder corollary of the existing completion theorem, using Wong's representation and Alexander's predicates; no independent novelty claimed.
+
+**Our contribution and attribution.** The existing Samuel package connects every actual finite gARG to explicit opposite infinite graph completions and extracts the exact no-verdict consequence. The elementary inverse-map obstruction is not claimed as a new general principle.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original completion and corollary sources, source-bound scope note and archived endpoint receipt were read. No fresh whole-import mathematical audit or human/external peer review is claimed.
+- **Formal:** Archived local Lean 4.33.1 verification.json records exit code zero and the three named FiniteGenomeIdentifiability endpoints with only propext, Classical.choice and Quot.sound. The imported WongAlexander completion supplier is separately preserved at its recorded source pin. This recovery read the corollary and supplier bodies but did not rerun their transitive closure.
+- **Execution:** Historical compiler and selected-axiom evidence is linked, with exact source and receipt pins. No build, finite-control rerun or scientific execution occurred during this recovery; no universal native refinement is claimed.
+- **Empirical:** A theorem about specified observations and mathematical models, not measured genetic data, a validated species classifier or an experimentally established inheritance law.
+
+**Novelty:** No independent historical-priority claim. The source credits established methods and model predecessors; formal correctness and corpus recovery do not establish novelty.
+
+**Separate downstream work (does not reopen this result):** Future interval-annotation extension, an organism-owner map, a specified genetic observation law and justified biological continuation constraints are distinct additional problems. This completed topology-completion obstruction must not be re-proved as if those applications were its missing premises.
+
+**Proof, review and related source links:**
+
+- [Complete finite-gARG scope and interpretation](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/README.md) (proof or status).
+- [Actual no-decoder corollary](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/FiniteGenomeIdentifiability.lean) (proof source).
+- [Finite-gARG embedding and completion supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongAlexander.lean) (proof source).
+- [Explicit join/fork completion proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/FiniteHistoryCompletion.lean) (proof source).
+- [Archived selected endpoint receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/verification.json) (formal receipt).
+
+**Stable key:** genome.FINITE_COMPLETION. **Aliases:** Samuel G01.
+
+</details>
+
+
+<a id="cb-genome-002"></a>
+### Exact laws identify three-taxon relationships, but finite samples do not give certainty
+**CB-GENOME-002 · Genomic inference · known three-taxon control**
+
+**Question:** How can an exact probability law identify a relationship while finite observations remain uncertain?
+
+**What we learned:** The exact non-collapsed three-taxon law identifies the relationship. With positive noise, every finite sample fits every label with positive probability; an error smaller than half the probability gap preserves the correct answer.
+
+**What it lets someone do:** Keep ideal-law identification, uncertainty from finite data and robustness of estimated probabilities separate.
+
+**What we cannot conclude:** The taxa are already designated. This neither discovers species boundaries nor guarantees certainty from finitely many observed genes.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For the prescribed law P(s)=1−2c/3 and P(g≠s)=c/3, 0≤c<1 identifies both the rooted label and c; c=1 collapses the labels. For 0<c≤1 every finite ordered sample has positive product mass under every label, precluding a uniformly certain finite decoder. An estimate with coordinate error ε and 2ε<1−c retains the correct strict maximizer; the half-gap boundary is sharp. The singleton-mass adverse witness has mass at least (c/3)^n, not a formally measured total error lower bound. Three preassigned taxa and a prescribed rooted gene-tree law; no coalescent derivation, raw-DNA decoding, species delimitation or aggregate error measure is formalized. The separate Hoeffding bound min(1,2exp(−n(1−c)^2/2)) is a standard written derivation, not a Lean endpoint.
+
+**Origin.** classical prior. Formalization of the known Allman–Degnan–Rhodes three-taxon law and elementary finite-evidence/stability consequences; the separately written statistical bound is a standard application of Hoeffding.
+
+**Prior work.** Allman–Degnan–Rhodes's classical three-taxon coalescent formula and Hoeffding's inequality retain credit; the project expressly makes no mathematical or biological novelty claim.
+
+**Our contribution and attribution.** The original 25 September package formalizes conditional exact-law identification and the sharp deterministic half-gap boundary, while exposing finite-sample support overlap. This card recovers a completed known-model formalization, not new biological or statistical theory.
+
+**Evidence, kept separate:**
+
+- **Hand:** Both exact-law and finite-evidence Lean bodies and their complete scope notes were read. The project explicitly identifies the classical formula and standard statistical deductions as known mathematics; no new novelty or whole-process proof review is asserted.
+- **Formal:** Archived Lean 4.33.1 evidence contains six printed exact-law endpoints and eight selected finite-evidence endpoints; the latter receipt is dated 2026-09-25T11:16:46.5925867Z and declares Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. Only standard foundational axioms are recorded. The stochastic-process derivation, aggregate error measure and Hoeffding tail bound are not among these formal endpoints.
+- **Execution:** Historical compiler and selected-axiom evidence is linked, with exact source and receipt pins. No build, finite-control rerun or scientific execution occurred during this recovery; no universal native refinement is claimed.
+- **Empirical:** A theorem about specified observations and mathematical models, not measured genetic data, a validated species classifier or an experimentally established inheritance law.
+
+**Novelty:** Known classical model and elementary deductions formalized; no mathematical or biological novelty claimed.
+
+**Separate downstream work (does not reopen this result):** The coalescent derivation and exponential parameter bridge, empirical gene-tree reconstruction and dependence/model checks are outside this formalization. The standard written Hoeffding bound is separate from the checked deterministic and singleton-mass statements.
+
+**Proof, review and related source links:**
+
+- [Classical model, attribution and exact-law scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/README.md) (prior work).
+- [Exact-law proof source](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/ThreeTaxonIdentifiability.lean) (proof source).
+- [Archived six exact-law axiom reports](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/validation.txt) (formal receipt).
+- [Finite-evidence theorem and separate written tail bound](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/FORMAL-SCOPE.md) (proof or status).
+- [Finite-evidence proof source](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/ThreeTaxonFiniteEvidence.lean) (proof source).
+- [Archived eight-endpoint finite-evidence receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/verification.json) (formal receipt).
+
+**Stable key:** genome.THREE_TAXON_CONTROL. **Aliases:** Samuel G02.
+
+</details>
+
+
+<a id="cb-genome-003"></a>
+### Missing diploid ownership can change long-term ancestry; informative samples are characterized exactly
+**CB-GENOME-003 · Genome ownership · ambiguity and informative sampling**
+
+**Question:** What remains undetermined if every realized copy transmission is known but the pairing of copies into organisms is missing?
+
+**What we learned:** The same complete copy history can have opposite long-term organism-ancestry properties. In the constructed family, exactly characterized ownership samples resolve that ambiguity.
+
+**What it lets someone do:** Specify which individual-association records are essential and distinguish informative infinite records from finite evidence.
+
+**What we cannot conclude:** The result is not about every pedigree, noisy DNA observations or identical stochastic likelihoods. The infinite-record decoder is not a terminating decision algorithm.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** One fixed eight-lane infinite transmission graph admits, after every prescribed finite mixing-prefix length, two diploid owner schedules with opposite whole-population IAP/specieslike/inspecies status. IAP means that each member has finitely many descendants or finitely many non-descendants within the population. Both have four founders, four organisms per generation, exactly two copies per organism, two distinct parents per nonfounder and two children per organism, weak connectivity and real generation dates; every organism edge is exactly witnessed by transmission. In this mixing/delayed-splitting family, the noiseless lane-0/lane-3 co-ownership record on a fixed mask identifies IAP iff the sampled odd generations are unbounded. Even complete ownership at every even generation fails. With a supplied even upper bound B≥2 on switch times, identification is equivalent to sampling an odd generation after B, and one query at B+1 suffices. Any prescribed prefix length of this mixing history, not every possible ownership prefix. Same realized history is not equality of stochastic likelihoods. No biological law or positive probability for the entire infinite construction, no generic pedigree decoder, no noisy/adaptive sampling and no inference of owner labels from phasing. Exact image edges need not lift organism paths. Infinite-record decoder is set-theoretic, not a uniformly terminating algorithm.
+
+**Origin.** project posed. The 27 September 2026 constrained diploid counterexample and its same-family static-sampling continuation were formulated within the existing genome-to-organism observation programme. General pedigree ambiguity and monitoring distinctions are established predecessors.
+
+**Prior work.** 27 September 2026 construction and sampling continuation. Genetic/genealogical distinctions, pairing and pedigree nonidentifiability are prior work. Thatte's potential-parent representation and Kirkpatrick's stochastic-likelihood nonidentifiability have different contracts. Bounded prior review found no exact combined match; worldwide priority remains unestablished. G04 is an elementary sharp deduction from G03, not a separate general monitoring principle.
+
+**Our contribution and attribution.** The original construction makes the omitted-ownership obstruction hold under exact transmission-edge images, diploid fibres, biparental degree/sex constraints, arbitrary mixing-prefix lengths and opposite actual Alexander predicates. The continuation characterizes all static sampling masks and the supplied-bound one-query case within precisely that family. These are grouped because G04 directly reuses G03, not counted as unrelated discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original independent internal construction review supplies the all-generation mathematical argument; the later sampling review accepts the actual query, missingness, all-mask quantifiers and bounded-family condition. Final source/receipt successors close the older finite-gARG mapping gate. This recovery read all three G03 modules and the G04 module, without issuing a new transitive or external peer-review certificate.
+- **Formal:** The G03 receipt dated 2026-09-27T05:35:21.269315Z records a fresh 31-project-module rebuild and 77 public theorem reports; source identity is by listed per-file SHA256, not merely its pre-replay commit. G04's 2026-09-27T05:50:33.874472Z clean-commit gate at c071d4b895b8fe979211b68ac30240f8833e707d covers five modules and 15 new plus five reused endpoints. Both pin Lean 4.33.1/Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and standard axioms. These are overlapping scoped receipts, not 97 independent results or one combined ARG replay.
+- **Execution:** Historical compiler and selected-axiom evidence is linked, with exact source and receipt pins. No build, finite-control rerun or scientific execution occurred during this recovery; no universal native refinement is claimed.
+- **Empirical:** A theorem about specified observations and mathematical models, not measured genetic data, a validated species classifier or an experimentally established inheritance law.
+
+**Novelty:** The recorded bounded primary-source comparison found no exact combined predecessor; worldwide priority remains unestablished. General ownership ambiguity and finite/infinite monitoring principles are prior mathematics.
+
+**Separate downstream work (does not reopen this result):** No noisy/adaptive pedigree theorem, equality of genetic likelihoods or positive-probability realization under a biological reproduction law is supplied. Justifying ownership provenance, arbitrary schedules or a switch bound requires separate evidence. The exact infinite-record criterion is complete and does not promise a uniformly terminating decoder.
+
+**Proof, review and related source links:**
+
+- [Complete ownership construction and exact source maps](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/README.md) (proof or status).
+- [Actual ownership proof source](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingCore.lean) (proof source).
+- [Actual finite-gARG truncation proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingGARG.lean) (proof source).
+- [Finite-gARG and real-date adapter](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingBridge.lean) (proof source).
+- [Independent internal construction review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PAIRING-FALSIFICATION.md) (hand review).
+- [Bounded ownership prior-work comparison](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PAIRING-PRIOR-ART.md) (prior work).
+- [Archived 31-module and 77-theorem ownership receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/verification/PROOF-RECEIPT.json) (formal receipt).
+- [Exact static-sampling criterion and bounded corollary](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/README.md) (proof or status).
+- [Actual sampling proof source](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PairingObservation.lean) (proof source).
+- [Independent internal final sampling review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/INDEPENDENT-REVIEW.md) (hand review).
+- [Archived exact-commit sampling receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/verification/RESULT.json) (formal receipt).
+
+**Stable key:** genome.OWNERSHIP_AND_SAMPLING. **Aliases:** Samuel G03; Samuel G04.
+
+**Typed connections:**
+
+- [CB-GENOME-001](#cb-genome-001): same principle. Both expose missing information for a future-inclusive target, but arbitrary finite-source completion and fixed complete infinite-source ownership have different quantifiers; neither is silently substituted for the other.
+
+</details>
+
+
+<a id="cb-genome-004"></a>
+### Independent inheritance blocks have an exact recovery probability; matching marginals do not suffice
+**CB-GENOME-004 · Pedigree observations · exact recovery and dependence**
+
+**Question:** When do observed symbol matches recover sampled families, and does collecting more blocks always add information?
+
+**What we learned:** The stated independent-block model has an exact recovery probability. Repeated correlated blocks can have every correct one-block marginal yet provide no additional recovery gain.
+
+**What it lets someone do:** Use a precise finite-observation benchmark and check whether an independence assumption really supports the claimed benefit of more data.
+
+**What we cannot conclude:** This does not recover arbitrary pedigrees, prove the full multigeneration REC-GEN theorem, or make ordinary DNA letters unique parent identifiers.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** With disjoint parental pairs, per-block distinct parent symbols, exact observations and independent fair child/block copying, connect children sharing a symbol in any block. For B≥1 and nonempty family sizes m_i, exact partition recovery has probability ∏_i[1−(2^(m_i−1)−1)2^(−B(m_i−1))]. The estimator uses only observed symbols. A correlated law repeating each child's one fair bit across all blocks retains each full one-block marginal but leaves one-family success at 2^(1−m), independently of positive B. Pathwise, adding blocks cannot spoil a correct recovery even without independence. The formal notation uses m_i=n_i+1 and includes singleton families and the empty family collection by the product convention. Not full multigeneration REC-GEN, estimator optimality, ordinary DNA-symbol collision handling, a continuous ARG-to-block-law coupling, or infinite IAP/species inference. The formal observed-output theorem uses a finite measurable alphabet. The repeated-law formal endpoint is one-family. Written pair-event distribution identifiability, union/error bounds and couple-vertex construction have separately stated non-Lean status.
+
+**Origin.** project posed. A fixed one-generation specialization of the cited independent founder-block model, followed by an explicit dependence control. It does not claim to solve the source's full multigeneration REC-GEN theorem.
+
+**Prior work.** A one-generation specialization motivated by Kim–Mossel–Ramnarayan–Turner's block model, with an elementary component-estimator improvement over the incoming all-three-sharing control. Sources explicitly claim no novelty or first formalization; Mossel–Vulakh simulation work remains prior, not reproduced here.
+
+**Our contribution and attribution.** The original specialization replaces its incoming all-three-sharing control with an observed connected-component estimator, proves its exact finite-family probability, and constructs an actual correlated law with unchanged complete one-block marginals. It retains the written/formal boundaries and expressly makes no novelty claim.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original independent mathematical review accepts the complement/count/product, pair-event and dependence arguments; the later semantic review checks all six mathematical modules' observation/model contracts. This recovery read the complete written theorem and final Recovery/Dependence bodies, not all remaining module bodies. No fresh whole-closure acceptance or human peer review is claimed.
+- **Formal:** Archived exact-clean-commit PASS at ae0beee8d04e32c45f28d2f465b924d6816c82a5, dated 2026-09-27T05:23:06.127917Z, covers seven project modules and 31 selected declarations with Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and only standard axioms. The observed-output theorem assumes a finite measurable symbol alphabet; the repeated-block formal endpoint is one-family. The written distribution-identifiability, union/error bounds and explicit couple-vertex construction are not additional Lean endpoints.
+- **Execution:** Historical compiler and selected-axiom evidence is linked, with exact source and receipt pins. No build, finite-control rerun or scientific execution occurred during this recovery; no universal native refinement is claimed.
+- **Empirical:** A theorem about specified observations and mathematical models, not measured genetic data, a validated species classifier or an experimentally established inheritance law.
+
+**Novelty:** No independent historical-priority claim. The source credits established methods and model predecessors; formal correctness and corpus recovery do not establish novelty.
+
+**Separate downstream work (does not reopen this result):** A Wong continuous-ARG-to-independent-block law, realistic linkage/mutation/errors/shared parents, full REC-GEN, infinite Alexander transfer and verified executable complexity are outside scope. Existing written distribution-identifiability and coupling corollaries are complete written deductions but not Lean endpoints here; missing formalization does not reopen their mathematics.
+
+**Proof, review and related source links:**
+
+- [Final observed-family statement and limits](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/README.md) (proof or status).
+- [Complete written derivation and separately scoped corollaries](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/source/written-precursor/RECOVERY-THEOREM.md) (proof or status).
+- [Written-proof independent internal review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/source/written-precursor/REVIEW.md) (hand review).
+- [Final semantic/source review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/STATEMENT-REVIEW.md) (hand review).
+- [Actual observed-output recovery proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PedigreeBlockRecovery.lean) (proof source).
+- [Actual full-marginal dependence counterexample](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PedigreeBlockDependence.lean) (proof source).
+- [Exact claim-by-claim formal/written ledger](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/LEDGER.json) (proof or status).
+- [Archived seven-module and 31-endpoint exact-commit receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/verification/RESULT.json) (formal receipt).
+
+**Stable key:** genome.SAMPLED_FAMILY_RECOVERY. **Aliases:** Samuel G05.
+
+**Typed connections:**
+
+- [CB-GENOME-003](#cb-genome-003): same principle. A complementary finite-observation control with a different explicitly supplied stochastic law; it neither provides the ownership oracle nor establishes infinite-IAP identification.
+
+</details>
+
 ## What the connection labels mean
 
 - **Proved adapter:** a proved link that preserves the needed assumptions and observations. Its hand/formal evidence level still matters.
@@ -4570,11 +4790,11 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 89 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 93 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
-- Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
+- Selected September Samuel/all-level/query, feedback and G01–G05 genome/ownership results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
 - Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims.
@@ -4587,3 +4807,4 @@ No theorem-transfer dependency is asserted by this card.
 - [October source map](https://github.com/Sodelin/Research-Commons/blob/d32d85ea056360d66fa7cde76094bc824f24702f/docs/OCTOBER-2026-RESEARCH-MAP.md).
 
 No new theorem, compiler execution or empirical experiment was performed to generate this board. Counts describe catalogue coverage, not the number of novel discoveries.
+
