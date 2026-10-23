@@ -25,8 +25,8 @@ The full per-claim gate remains incomplete and exits2 until every required bindi
 
 ## Verified package evidence
 
-- **94 Rust tests passed** at[source47e28fc6/run40037276532](https://github.com/Sodelin/Research-Commons/actions/runs/40037276532). The current dependent alignment renderer correction still requires its fresh caller check.
-- **23 scoped claim mappings/115 actual Lean declaration names and owners passed**, with the complete922-source export context and22102-declaration/14808-theorem owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v7.json). These are scoped components where stated, not115 complete scientific endpoints.
+- **94 Rust tests passed** at[source9278a34a/run40040953328](https://github.com/Sodelin/Research-Commons/actions/runs/40040953328).
+- **23 scoped claim mappings/115 actual Lean declaration names and owners passed**, with the complete922-source export context and22102-declaration/14808-theorem owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v8.json). These are scoped components where stated, not115 complete scientific endpoints.
 - The latest accepted **complete library** is source47e28fc6:1,654 sources plus generated roots,105031 declarations/94667 theorems audited. The later18-caller sequence rejected the alignment data renderer. [Library receipt](integration/coherent-library-verification-v5.json). This does not accept that caller sequence or either entire larger word.
 - The earlier source67ef70da passed its complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Historical acceptance does not transfer automatically to changed code.
 
@@ -39,6 +39,7 @@ Each path below produced a complete proof document from Rust output and passed L
 | Caller | Checked input and conclusion | Evidence |
 | --- | --- | --- |
 | `cm-certificate` | Grouped rational positive laws; literal sparse-moment separation | [CM/affine](integration/certificate-verification.json) |
+| `alignment-certificate coherent/incoherent` | ENTIRE supplied rational coherent-parameter filters, EVERY map and omission, SAME adjacent-layer ties | [Alignment](integration/msci-alignment-verification.json) |
 | `jc69-certificate` | All16 actual four-base branch probabilities/row sums, SAME returned finite normalized-clock time | [JC branch](integration/jc69-branch-verification.json) |
 | `moment-signature-certificate` | Complete seven-coordinate signature of one three-atom law; total masses against EVERY finite positive rival, then every further moment | [Signature](integration/moment-signature-verification-v3.json), [exact input](examples/PositiveMomentSignature.lean) |
 | `affine-certificate sat/unsat` | Ordered rational matrix; real witness or full external-multiplier exclusion | [CM/affine](integration/certificate-verification.json) |
@@ -80,7 +81,7 @@ cargo run --locked -p research-commons-runtime --bin alignment-certificate -- co
 cargo run --locked -p research-commons-runtime --bin alignment-certificate -- incoherent
 ```
 
-The generic Lean filter equations/types passed. Its original literal renderer rejected Prop-to-Type elimination; the corrected computational Fin.cases renderer awaits fresh BOTH-case/whole-result audits. [Exact rejection](integration/alignment-component-rejection.json) · [reuse comparison](integration/MSCI-ALIGNMENT-REUSE-PREFLIGHT.md). Structural array checks do not supply full canonical source admission, actual nested-forest observability or the whole classification theorem. JC branch checking also does not supply the full timed-tree/locus/source equivalence.
+The generic Lean filter equations/types AND BOTH complete actual filter results passed, including every omitted map and the full22133/14830 caller owned audit. Computational dependent arrays, explicit Fin indices and trusted kernel reduction repaired the earlier rejected renderers. [Exact accepted results](integration/msci-alignment-verification.json). [Exact rejection](integration/alignment-component-rejection.json) · [reuse comparison](integration/MSCI-ALIGNMENT-REUSE-PREFLIGHT.md). Structural array checks do not supply full canonical source admission, actual nested-forest observability or the whole classification theorem. JC branch checking also does not supply the full timed-tree/locus/source equivalence.
 
 ## Independent verification targets
 

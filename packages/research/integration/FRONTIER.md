@@ -1,18 +1,20 @@
 # Current integration frontier
 
-Canonical447e188def18d91133260f14baf9bdc8ffd5b4df remains118 cards,75 reuse-rated/43 unranked. Git-tree identity was rechecked23:16UTC and still matches Gitblobebe7a376. Completed hand mathematics stays complete; formal/native integration remains its separate work.
+Canonical447e188def18d91133260f14baf9bdc8ffd5b4df remains118 cards,75 reuse-rated/43 unranked. Git-tree identity rechecked23:16UTC still matches Gitblobebe7a376. Completed hand mathematics stays complete; formal/native integration remains separate.
 
-Accepted actual source47e28fc6/run40037276532:
-- Full library job120699927827:1654 sources +2roots,105031 declarations/94667 theorems, zero owned axioms/nonstandard rows/missing modules. Exact coherent-library-verification-v5.json.
-- Export job120699928162:922-source selected context,23 SCOPED mappings/115 real names and owning modules,22102/14808 owned audit.95 claims are still unnamed. Exact claim-export-verification-v7.json.
-- SEPARATE complete JC branch caller passed all16 literal probabilities/row sums, SAME returned finite clock and22113/14816 owned audit. jc69-branch-verification.json. Actual full timed-tree/locus/source/channel/epoch/recurrence/reconstruction remains separate.
-- The later SEPARATE alignment literal caller rejected Prop-to-Type data rendering; both complete actual filters are unaccepted. The native exact filter algorithm passed Rust tests; the renderer now uses computational Fin.cases. alignment-component-rejection.json.
-- Full18-caller job stopped at that same alignment case before the word; full18/BOTH-word acceptance is not supplied by the library result.94 Rust tests passed at that exact source.
+Accepted CURRENT export/caller source9278a34a/run40040953328/job120711863660:
+- Complete922-source selected context;23 SCOPED mappings/115 exact names and actual owners;22102 declarations/14808 theorems, ZERO owned axioms/nonstandard rows/missing modules.95 claims remain unnamed. claim-export-verification-v8.json.
+- Actual complete positive target signature/all-finite-positive-rival consumer passed again, with22118/14820 owned audit.
+- ALL16 actual JC branch probabilities/row sums at ONE SAME returned finite clock passed, with22113/14816 complete caller owned audit. jc69-branch-verification.json. Whole timed-tree/locus/source/channel/epoch/recurrence/reconstruction remains separate.
+- BOTH ENTIRE actual coherent rational parameter filters passed, including EVERY map/omission, initial/root labels and adjacent-layer ties; complete22133/14830 caller audit. msci-alignment-verification.json. Full canonical source admission, actual nested-forest observability/global metric-law classification and universal native refinement remain separate.
+-94 Rust tests passed at that exact source. Earlier renderer/reducer rejections remain in alignment-component-rejection.json, not relabelled as accepted attempts.
 
-The prior source65 full library acceptance remains separately pinned in coherent-library-verification-v4.json. Its later staged word rejected Stage0's missing bindRows namespace after every supplied primitive. The emitter now uses the existing declaration's fully qualified name, retaining all original source/Copy/operations/register/full keys/bank. word-stage-literal-rejection.json.
+Latest accepted FULL LIBRARY source47e28fc6/run40037276532/job120699927827:1654 sources +2roots,105031 declarations/94667 theorems, zero owned audit rejects. coherent-library-verification-v5.json. Its LATER18-caller sequence rejected the old alignment renderer. The source9278a34a dedicated caller results now repair that component; they do not retroactively accept the old whole sequence.
 
-Active corrected SAME3-copy/BOTH-mode word: run40036711843/job120698085315. Preserve it without restart/cancellation. A fresh corrected alignment/export/full check follows the actual renderer change. No smaller point, alternative source class, desired-law premise or refreshed register is selected.
+The prior source65 library acceptance remains in coherent-library-verification-v4.json. Its later staged word rejected Stage0's missing bindRows namespace after every supplied primitive. The emitter now qualifies that existing declaration, preserving original source/Copy/operations/register/full keys/bank. word-stage-literal-rejection.json.
 
-Next concrete actions: consume corrected whole alignment/caller results; recover/retain the actual corrected word result and complete current full18-caller audit. Continue the actual whole MSCI original timed-output/channel/locus/Feynman and canonical-source/nested-observation joins, reusing the accepted hand sources. Next high-reuse formal/application items include discrete ExactQuery001 rank10, all-level NANUQ002 rank11 and G4-006 rank14. The discrete query result is NOT an alias of the continuous original-ID G7 game.
+ACTIVE actual SAME3-copy/BOTH-mode word: run40036711843/job120698085315. ACTIVE current full18-caller: run40040953328/job120711863617. Preserve both; consume actual terminal results without restart/cancellation or smaller points. No entire larger word or full18-caller acceptance is claimed yet.
+
+Next actions: recover/retain those corrected whole-word/current full results and repair only exact blockers. Continue actual whole MSCI original timed-output/channel/locus/Feynman and canonical-source/nested-observation joins, reusing accepted hand sources. Next high-reuse items include discrete ExactQuery001 rank10, all-level NANUQ002 rank11 and G4-006 rank14. The discrete query result is NOT an alias of the continuous original-ID G7 game.
 
 Before new implementation, read actual predecessor AND later successor, compare original quantifiers/interfaces and remove duplicate work. Generic proofs, particular native certificates, source/target/action coverage, parser/native/AST/raw-root/readout refinement and actual relative-history QE/selector/result origin retain distinct scopes. Full118 integration intentionally remains incomplete. Private/model/held/USED/UNKNOWN stops and original owners persist; phone deployment is outside this goal and the unrelated private writer remains UNBOUND.
