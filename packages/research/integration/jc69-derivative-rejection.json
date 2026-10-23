@@ -27,5 +27,16 @@
   },
   "repair": "Use the pinned HasDerivAt.exp receiver directly and rewrite only explicit scalar derivative arithmetic; no statement, probability, alphabet, clock or source premise changes.",
   "new_complete_check_required": true,
-  "prior_accepted_scope_retained": true
+  "prior_accepted_scope_retained": true,
+  "successor_rejection": {
+    "source": "407772bb4dbb11e09f76d3cdbc08ba4951b5db15",
+    "run_id": 40035516503,
+    "job_id": 120694079062,
+    "lines": [
+      162,
+      166
+    ],
+    "reason": "HasDerivAt from the pinned div_const lemma carries different scalar additive/module instance paths; whole receiver rejected",
+    "repair": "Explicit convert hd using1, every resulting instance/function equality must close by rfl."
+  }
 }

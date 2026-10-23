@@ -159,11 +159,13 @@ theorem normalized_generator (a b : Base) :
         (he.const_mul (3 : ℝ))).div_const 4
     have hnum : ((0 : ℝ) + 3 * (-(4/3 : ℝ))) / 4 = -1 := by norm_num
     rw [hnum] at hd
-    simpa only [probability, if_pos h] using hd
+    simp only [probability, if_pos h]
+    convert hd using 1 <;> rfl
   · have hd := ((hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub he).div_const 4
     have hnum : ((0 : ℝ) - (-(4/3 : ℝ))) / 4 = 1/3 := by norm_num
     rw [hnum] at hd
-    simpa only [probability, if_neg h] using hd
+    simp only [probability, if_neg h]
+    convert hd using 1 <;> rfl
 
 /-- Two conditionally independent branches from ONE uniform ancestral base.
 This is the explicit common-root sum, not a product of separate genealogies. -/
