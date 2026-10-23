@@ -250,7 +250,7 @@ They may be positive, zero or negative; n_i itself remains positive.
 
 Since f'>1 on [1,infinity), integration gives
 
-    |v_i| <= |f(n_i)-f(t)| = h|V_i| < 2|V_i|.
+    |v_i| <= |f(n_i)-f(t)| = h|V_i| <= 2|V_i|.
 
 Hence (11), d>=2 and u<2t give
 
