@@ -140,7 +140,7 @@ theorem checked_population_rows_value (N : RootedBinary V E X) {sample : Copy �
       · ext d
         simp
       · intro d _
-        rfl
+        by_cases hd : projection N Finset.univ d = b <;> simp [hd]
 
 /-- An interval can reuse the existing complete active-panel row or, when
 ACTUAL input colocation is proved, the existing scalar population checker. -/
