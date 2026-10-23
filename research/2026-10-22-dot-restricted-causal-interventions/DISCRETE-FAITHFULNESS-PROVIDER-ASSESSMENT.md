@@ -8,6 +8,8 @@ Status: source-inspected provider assessment and an unelaborated algebraic proof
 
 No inspected formal provider closes D1–D6 for the existing selected, binary, shared-mechanism source class. The decisive missing supplier is **binary DAG atomic completeness in the form of a nonzero CI-minor polynomial for every d-connection**. This is a classical mathematical theorem, not a newly discovered open mathematical problem. A citation to its proof is not an actual Lean import.
 
+Subsequent progress: [the explicit binary active-path witness argument](BINARY-ACTIVE-PATH-WITNESS-CANDIDATE.md) now supplies a complete hand proof of this nonzero-minor statement, with a scoped coordinating assistant mathematical review. It proves the disjoint activation-branch reduction and the fair-bit/XOR/copy masses, including r=0 and a separate selection-sink relabeling. The actual full Lean supplier remains unfinished; this update is not D1–D6 completion or a new novelty claim.
+
 The graph-level policy remains the v45 exact-oracle-conditional source candidate. Its target is the full marked HPL TCM class on all observed variables, over arbitrary finite latent/selection sources and one common source for the whole history. Neither a skeleton nor independently realizable indicator slices replace that target. The present assessment does not alter the reviewed hand proof of selected faithful realizability. It identifies its outstanding formal dependency.
 
 ## 1. Minimal missing statement, not a stronger oracle
