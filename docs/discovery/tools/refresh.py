@@ -22,4 +22,13 @@ if __name__ == '__main__':
             'source_updated_utc':data['updated_utc'],'retrieved_utc':datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
             'claim_count':len(data['claims']),'canonical_author':data['contributor']}
     (ROOT/'dist/source.json').write_text(json.dumps(meta,indent=2)+'\n')
+    overlay = api('/contents/docs/subjective-reuse-ranking.json?ref='+commit)
+    overlay_raw = base64.b64decode(overlay['content'])
+    ranking = json.loads(overlay_raw)
+    if ranking.get('subjective') is not True or not isinstance(ranking.get('entries'),list):
+        raise ValueError('Refuse an unsupported subjective overlay')
+    (ROOT/'dist/subjective-reuse-ranking.json').write_bytes(overlay_raw)
+    (ROOT/'dist/ranking-source.json').write_text(json.dumps({'repository':REPO,'commit':commit,
+        'path':'docs/subjective-reuse-ranking.json','git_blob':overlay['sha'],
+        'sha256':hashlib.sha256(overlay_raw).hexdigest()},indent=2)+'\n')
     print(f"Canonical {len(data['claims'])}-claim source pinned at {commit}")

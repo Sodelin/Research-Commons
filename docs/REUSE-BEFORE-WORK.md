@@ -17,6 +17,7 @@ node docs/discovery/tools/query.mjs --query 'independent routing' --refresh
 node docs/discovery/tools/query.mjs --query 'CB-G6-001'
 node docs/discovery/tools/query.mjs --origin published_open_problem
 node docs/discovery/tools/query.mjs --sources --query 'calibrated decoder'
+node docs/discovery/tools/query.mjs --archive --query 'calendar metric'
 ```
 
 The `--sources` option searches inside the bundled immutable public evidence bodies, returning pinned source links, excerpt, roles, hashes and claim bindings. It is a selected corpus, not the full archive or a new acceptance decision. The browser exposes the same evidence search on demand.

@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import {rea
 import {JSDOM} from 'jsdom';
 const root=new URL('../dist/',import.meta.url);
 const html=await readFile(new URL('index.html',root),'utf8');
-const docs={};for(const name of ['claims.json','source.json','reading-joins.json','source-corpus.json'])docs[name]=JSON.parse(await readFile(new URL(name,root)));
+const docs={};for(const name of ['claims.json','source.json','reading-joins.json','source-corpus.json','archive-catalog.json','subjective-reuse-ranking.json','ranking-source.json'])docs[name]=JSON.parse(await readFile(new URL(name,root)));
 const wait=async fn=>{for(let i=0;i<80;i++){if(fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail('Reader did not reach the expected DOM state.');};
 test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-source recovery',async t=>{
  const dom=new JSDOM(html,{url:'https://reader.test/?q=quantum#CB-PHYS-P5-004',pretendToBeVisual:true});
@@ -58,7 +58,29 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   await wait(()=>location.search.includes('calibrated'));
   assert(document.querySelector('.source-hit a').href.includes('/blob/'));
   assert(document.querySelector('.source-results').textContent.includes('Source hits do not establish acceptance'));
-  document.querySelector('.source-hit button').click();assert($('detail').textContent.includes('CB-G7-001'));
+  [...document.querySelectorAll('.source-hit button')].find(b=>b.textContent.includes('CB-G7-001')).click();assert($('detail').textContent.includes('CB-G7-001'));
+ });
+ await t.test('recovered component lookup renders literal scope/review without inventing master acceptance',async()=>{
+  $('reset').click();$('search').value='G3-SUPPLIED-WORD-ADMISSION';$('search').dispatchEvent(new dom.window.Event('input'));
+  await wait(()=>document.querySelector('.source-hit')?.textContent.includes('G3-SUPPLIED-WORD-ADMISSION'));
+  assert(document.querySelector('.source-hit').textContent.includes('formal receiver gap'));
+  assert(!document.querySelector('.source-hit').querySelector('button'));
+ });
+ await t.test('archive search loads wider paths and leaves unknown scientific status explicit',async()=>{
+  $('reset').click();[...document.querySelectorAll('button')].find(b=>b.textContent==='Load wider archive search').click();
+  await wait(()=>document.querySelector('.archive-hit'));
+  $('search').value='calendar metric';$('search').dispatchEvent(new dom.window.Event('input'));
+  await wait(()=>location.search.includes('calendar'));
+  assert(document.querySelector('.archive-hit a').href.includes('/blob/'));
+  assert(document.querySelector('.archive-hit').textContent.includes('status unverified'));
+ });
+ await t.test('combined claim/review filters and dated subjective ordering keep unranked entries distinct',()=>{
+  $('reset').click();$('kind').value='theorem';$('review').value='accepted_scoped_hand_review';$('sort').value='subjective_reuse';$('kind').dispatchEvent(new dom.window.Event('change'));
+  assert(document.querySelector('.claim').textContent.includes('CB-G6-001'));
+  assert($('ranking-note').textContent.includes('not an importance'));
+  assert(location.search.includes('review='));
+  $('reset').click();$('topic').value='Sequences';$('sort').value='subjective_reuse';$('topic').dispatchEvent(new dom.window.Event('change'));
+  assert($('ranking-note').textContent.includes('newer/unranked'));
  });
  await t.test('offline latest-source failure preserves a usable source snapshot',async()=>{
   $('reset').click();location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));

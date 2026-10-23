@@ -64,9 +64,20 @@ export function search(claims, f={}) {
     if (f.topic && topic(c)!==f.topic) return false;
     if (f.status && bucket(c)!==f.status) return false;
     if (f.origin && c.origin.category!==f.origin) return false;
+    if (f.programme && c.programme!==f.programme) return false;
+    if (f.kind && c.claim_kind!==f.kind) return false;
+    if (f.review && (c.completion?.independent_review??'not_recorded')!==f.review) return false;
+    if (f.formal_status && c.evidence.formal.status!==f.formal_status) return false;
+    if (f.novelty && c.novelty_status!==f.novelty) return false;
     if (f.formal==='checked' && !/^kernel_checked|^accepted_selected_formal_chain/.test(c.evidence.formal.status)) return false;
     return true;
   });
+}
+export function sortClaims(claims,sort,ranking){
+  if(!sort||sort==='relevance')return claims;
+  if(sort!=='subjective_reuse')throw Error('Unknown claim ordering');
+  const ranks=new Map((ranking?.entries??[]).map(e=>[e.claim_id,e.rank]));
+  return [...claims].sort((a,b)=>(ranks.get(a.id)??Infinity)-(ranks.get(b.id)??Infinity));
 }
 export function neighbors(claims, id) {
   const c=claims.find(x=>x.id===id);
@@ -80,7 +91,7 @@ export function literatureSources(c) {
   for(const a of c.accepted_artifacts??[])if(['prior_work','historical_problem_statement'].includes(a.role)&&safeLink(a.url))candidates.push({...a});
   const seen=new Set();return candidates.filter(a=>{if(seen.has(a.url))return false;seen.add(a.url);return true;});
 }
-export function reusePacket(c, meta, joins=[]) {
+export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null) {
   return {claim_id:c.id, question:c.plain_language.question, mathematical_status:c.mathematical_status,
     exact_scope:c.exact_statement_and_scope, completion_evidence:c.accepted_artifacts,
     formal_status:c.evidence.formal, execution_status:c.evidence.execution,
@@ -88,6 +99,8 @@ export function reusePacket(c, meta, joins=[]) {
     separate_downstream_or_validation_work:c.separate_downstream_or_validation_work??null, dependencies:c.dependencies,
     provenance:{origin:c.origin,prior_work:c.prior_work,literature_sources:literatureSources(c),contribution:c.our_contribution,novelty:c.novelty_status},
     registry_source:meta, reader_evidence_joins:joins.filter(j=>j.claim_ids.includes(c.id)),
+    subjective_reuse:ranking?{entry:ranking.entries.find(e=>e.claim_id===c.id)??null,author:ranking.author,dated_utc:ranking.dated_utc,
+      purpose:ranking.purpose,source:rankingSource,unranked_means:'No rank supplied in this dated overlay, not low importance or incomplete mathematics.'}:null,
     before_new_work:['Read the actual accepted sources and later corrections, not only this summary.',
       'Match the proposed statement, quantifiers, observations and assumptions to this exact scope.',
       'Reuse completed mathematics. Missing formalization does not reopen a hand proof.',
