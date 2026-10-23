@@ -39,4 +39,7 @@ lean_lib RestrictedCausalSource where
     `ClosestFirstArrowFlank, `ClosestFirstArrowSplice,
     `ClosestFirstArrowPotential, `ClosestFirstArrowIncidence,
     `ClosestFirstArrowContradiction, `ClosestFirstArrowArms,
-    `ClosestFirstArrow, `ClosestPathAncestry, `SharedSeparatorMEC]
+    `ClosestFirstArrow, `ClosestPathAncestry, `SharedSeparatorMEC,
+    `RestrictedFamilyCertificate, `RestrictedQueryActions,
+    `OrderedFamilyAgreement, `RestrictedHistoryCompleteness,
+    `TwoPhaseRestrictedHistory, `RestrictedBudgetAndHonesty]
