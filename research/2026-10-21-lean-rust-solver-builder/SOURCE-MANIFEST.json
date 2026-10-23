@@ -1,0 +1,1916 @@
+{
+  "schema": "online_solver_proposal_source_manifest_v1",
+  "status": "PRIOR_ACTUAL_EXECUTION_WITH_PLAINTEXT_RECORD_LIMITATION;NEW_EXECUTION_HELD_FOR_ENCRYPTED_WRITER",
+  "base_commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+  "branch": "codex/lean-rust-builder-20261021",
+  "owner_scope": "research/2026-10-21-lean-rust-solver-builder",
+  "canonical_source_changed": false,
+  "local_git_written": false,
+  "subagents_created": false,
+  "source_pins": [
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/rust/src/main.rs",
+      "git_blob": "baa4a73018c2fbb195a4dc68d312862fc54f2185",
+      "sha256": "c95189327d4d497c6536998a3451a31d69370049db7ca177d230aa3fc35b5e60"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/certificates.py",
+      "git_blob": "b697d18ed90a4558662211e8c899e04ed33be4ef",
+      "sha256": "ce6ba92566e5ee009ca565476744db65555160f0e4a7d32b70ee07505b57f0b3"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/emit_lean.py",
+      "git_blob": "6e5a3f0d9949669f77f5780f2e66dcc18758e570",
+      "sha256": "27264a92409966415094b902df8226e7a86f305c0cef148325c7f6f60795ae37"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean",
+      "git_blob": "bdb5472d06592cad4ad6511d7bb893cbac7cac99",
+      "sha256": "1f35f9e11cef727b27ed30230a390ada2a32dfc50733ea0d4cb172fb7c053266"
+    },
+    {
+      "path": ".github/workflows/rust-support-proposal.yml",
+      "sha256": "2f243acba0c7dda3779290624107c449b823f2feff8936fc72fea73b26583a3b"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "git_blob": "a62eae2b78eb1c7ba207de13cd5b6fa2a257542a",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/test_native.py",
+      "git_blob": "656d6075f45c5ebc21e82fc266d504e8a58cbf4f",
+      "sha256": "436648856f099719420a3d3dc63e26282243830fdee29f604207af0e07892aec"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/test_certificates.py",
+      "git_blob": "c2923be56d035a12377d46f0a74f04bb974886b6",
+      "sha256": "94df62e9a801de7a0776c05bd3d226c64a3e97677bdd3f9c3333408759298be4"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+    },
+    {
+      "path": "applications/research-solver-interop/server.py",
+      "sha256": "8779dd29002166956e890f822997ad98c5b9081533446200484ec92b5ac510df"
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628"
+    },
+    {
+      "path": "applications/research-solver-interop/SOURCE-PINS.json",
+      "sha256": "5fbef49e81257a244baba67fd8b6e84d82905b993077bddcc885e1332f9b1c02"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+    }
+  ],
+  "files": [
+    {
+      "path": "affine_codec.py",
+      "utf8_bytes": 14092,
+      "sha256": "f0b1c45b909cdac5062784820970c456c182f4dedb8f603065f22383c29711fe"
+    },
+    {
+      "path": "AFFINE-LEAN-INTERFACE.md",
+      "utf8_bytes": 4627,
+      "sha256": "193a789a9a0bf6a5f13b0433027cb3523142e579c58668cdd7a33e1e118ee8da"
+    },
+    {
+      "path": "AFFINE-REUSE.md",
+      "utf8_bytes": 2406,
+      "sha256": "036b998bd2feb566470c57499a0aedf0886b3d7ec530b24e243b9865c5e3e00f"
+    },
+    {
+      "path": "bank_codec.py",
+      "utf8_bytes": 10778,
+      "sha256": "b6f6ee5b00aa93b26ed2691b0fc2494fba419b1ef6bd5d330e9358caaa238db7"
+    },
+    {
+      "path": "bank_lean.template",
+      "utf8_bytes": 2446,
+      "sha256": "dc5c4f7bfdb23d53889ae896b67ffe3630586655036fec8cfea57b7c80ea4361"
+    },
+    {
+      "path": "BANK-INTERFACE.md",
+      "utf8_bytes": 8167,
+      "sha256": "f6f7f5f676f1071bbda230c5f6358ca270d6039f61f17da8c19016cb19ade6e2"
+    },
+    {
+      "path": "CARGO-FIRST-WRITER-REVIEW.md",
+      "utf8_bytes": 2854,
+      "sha256": "8977f448e91c7a4e859359c7da1df2c2a098f7e547ad8b75869ed1d916094cf2"
+    },
+    {
+      "path": "ci_bank.py",
+      "utf8_bytes": 15995,
+      "sha256": "1295a4263eac308eb656779dad5974def3e626b5caeda2299861e12b3b14ba97"
+    },
+    {
+      "path": "ci_connector.py",
+      "utf8_bytes": 8436,
+      "sha256": "f7a4c6790770cfb7cd6b2096f2602ebfe5924d2bf35688d83ef14e51d87958de"
+    },
+    {
+      "path": "ci_verify.py",
+      "utf8_bytes": 13176,
+      "sha256": "d3d2435b2c034ea8adbe1717bfa23f7fb492f69fdeac27907f5ec827c73af6b7"
+    },
+    {
+      "path": "codec.py",
+      "utf8_bytes": 5618,
+      "sha256": "4bbc30413cb928e86677460b13be5efd578119f988d479003de1dbc5fcd49a33"
+    },
+    {
+      "path": "emit_affine_lean.py",
+      "utf8_bytes": 6756,
+      "sha256": "7907c4f984b273a5b4d9ed2cafffceb7460613c9881e3bf134466ac4fae0a2f3"
+    },
+    {
+      "path": "emit_bank_lean.py",
+      "utf8_bytes": 5979,
+      "sha256": "04072d86070f7a0385817d7d74defce62f4e32ecbc2880acb26822d1f21ecb8a"
+    },
+    {
+      "path": "evidence/AFFINE-LITERAL-HOSTED-REVIEW.json",
+      "utf8_bytes": 8578,
+      "sha256": "749331cef16afd324e913f77ec58496a57fafa30adec9f93f9f683bb913f6c5d"
+    },
+    {
+      "path": "evidence/AFFINE-LITERAL-SOURCE-PREPARATION.json",
+      "utf8_bytes": 6764,
+      "sha256": "1e22c537643b16a3ad55666fff8b703cdb5ae0b82c35076ea91694a75149b13b"
+    },
+    {
+      "path": "evidence/bank-39675913869/MCP.json",
+      "utf8_bytes": 2455,
+      "sha256": "ac75c4c1c0bb4fabbc9416d1d42faab3ce4bdf156aef6a30f8112798f7aa2ff1"
+    },
+    {
+      "path": "evidence/bank-39675913869/NATIVE-RUNTIME.json",
+      "utf8_bytes": 3180,
+      "sha256": "87193ec99b5e5127a24b67f6a77d744bd044e629682106d6340356a29ccf1728"
+    },
+    {
+      "path": "evidence/bank-39675913869/RECEIPT-AUDIT.json",
+      "utf8_bytes": 11804,
+      "sha256": "21d928fa28fab4f5a45f3aca3fd0c802dabfc9368a40aa708434368c6ef29884"
+    },
+    {
+      "path": "evidence/bank-39675913869/RESULT.json",
+      "utf8_bytes": 2687,
+      "sha256": "ffaa42d5d69b08085780a57299d3254903f3d744c3f68444b30c717cba359df6"
+    },
+    {
+      "path": "evidence/BANK-SOURCE-REUSE.json",
+      "utf8_bytes": 2809,
+      "sha256": "ee042d73cf43114efedd1860acd1596ddf40292bbcfce40fef07499555d4560e"
+    },
+    {
+      "path": "evidence/CARGO-FIRST-WRITERS.json",
+      "utf8_bytes": 6602,
+      "sha256": "704c0e1f751342d85e3b759342031f382a1510c41b429068bbf6a1e2fee87c20"
+    },
+    {
+      "path": "evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json",
+      "utf8_bytes": 23498,
+      "sha256": "54860cca08a9bd2f1650beeff2fe6bdbce3bbd95c0b3d7b3fc2d9247b43a80ce"
+    },
+    {
+      "path": "evidence/CELL-FORM-REFLECTION-HOSTED-REVIEW.json",
+      "utf8_bytes": 12985,
+      "sha256": "241081a1e1af4c2baf7fcf809f0a91d604617ed7ae92971875c57352952dabcf"
+    },
+    {
+      "path": "evidence/CELL-ROW-EXPORT-REVIEW.json",
+      "utf8_bytes": 3957,
+      "sha256": "cd6d56f61fc18a21a6cd8af41a6f0628cd73c953d399c879ff6f61bd936c5ee0"
+    },
+    {
+      "path": "evidence/CELL-ROW-EXPORT-SOURCE.json",
+      "utf8_bytes": 10620,
+      "sha256": "6d9dedc3ca28f26f8e62e8ebdf84ef908a50661c42a2c91ce05fb10a3fa7f606"
+    },
+    {
+      "path": "evidence/CELL-SOURCE-INPUT-PREPARATION.json",
+      "utf8_bytes": 25089,
+      "sha256": "c0496b400d3422010be5f4a833e388f8909a7c0638500e17a13d3d78a5cde0dd"
+    },
+    {
+      "path": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
+      "utf8_bytes": 63166,
+      "sha256": "5a1945a2be31ffbba770b47e91a3edffd13875deeb75b95a658d06b7f39035fa"
+    },
+    {
+      "path": "evidence/composition-39673487466/MCP.json",
+      "utf8_bytes": 2455,
+      "sha256": "ac75c4c1c0bb4fabbc9416d1d42faab3ce4bdf156aef6a30f8112798f7aa2ff1"
+    },
+    {
+      "path": "evidence/composition-39673487466/NATIVE-RUNTIME.json",
+      "utf8_bytes": 3180,
+      "sha256": "87193ec99b5e5127a24b67f6a77d744bd044e629682106d6340356a29ccf1728"
+    },
+    {
+      "path": "evidence/composition-39673487466/RECEIPT-AUDIT.json",
+      "utf8_bytes": 8915,
+      "sha256": "70e67b985dc59631674ad7ec828e12943bfa82bc9cf1680a0183c0c3712a9f16"
+    },
+    {
+      "path": "evidence/EXISTING-AFFINE-REUSE.json",
+      "utf8_bytes": 5627,
+      "sha256": "e97ccccd29c6a07804113533f4a92912cc6c5cde0304eff9495f097b9694be53"
+    },
+    {
+      "path": "evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json",
+      "utf8_bytes": 14692,
+      "sha256": "339bf45b6284719d1abc3d511e192aebd61c824beb82e33eeb483000f77ad1fd"
+    },
+    {
+      "path": "evidence/EXISTING-NATIVE-WRITER-REUSE.json",
+      "utf8_bytes": 4712,
+      "sha256": "fc81d0c3621f0a5d016c230ee1e12cec24cf6f49076fcb5496cfbec35d162cd1"
+    },
+    {
+      "path": "evidence/EXISTING-ORIGINAL-CODE-BINDING.json",
+      "utf8_bytes": 9360,
+      "sha256": "3ac78b5fa94cbf420aa7a2a89c6f30dda27af14c76bc75d35290209e43c82c49"
+    },
+    {
+      "path": "evidence/G7-ASSERTION-QUERY-SOURCE-REVIEW.json",
+      "utf8_bytes": 2387,
+      "sha256": "2c3f450427747acf8ad4125bdd6e1f512808d0eb5d3b4d988ad4a04f7b96c05d"
+    },
+    {
+      "path": "evidence/G7-CARRIER-TARGET-SOURCE-REUSE.json",
+      "utf8_bytes": 2942,
+      "sha256": "d5d304cabbd1dd1c6e00170d449b165503060b20e8d515c3497479e3e1459804"
+    },
+    {
+      "path": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json",
+      "utf8_bytes": 9305,
+      "sha256": "eea54b8701536567aaf59f6ac80924ecc23531bdd132f056b9ba2e67f3964036"
+    },
+    {
+      "path": "evidence/G7-CERTIFIED-POPULATION-ROW-SOURCE-REVIEW.json",
+      "utf8_bytes": 5027,
+      "sha256": "cbb8e8368f35884c0e08633268b5712e9abc81388f847275474418e36aa61041"
+    },
+    {
+      "path": "evidence/G7-CORRELATED-POWER-HOSTED-REVIEW.json",
+      "utf8_bytes": 12903,
+      "sha256": "12ca15b4b400198cd3f8341f33d0b28e296bc46c37308e4572eee35d98d8ddc2"
+    },
+    {
+      "path": "evidence/G7-CORRELATED-SURVIVAL-SOURCE-REVIEW.json",
+      "utf8_bytes": 4784,
+      "sha256": "894f8534fb47d30bd7268734512d3410b392b6060eb72294f5a3e7e72a7e4106"
+    },
+    {
+      "path": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
+      "utf8_bytes": 6075,
+      "sha256": "47b9c0c8fc0dffd0c224a490604922947bf3312573422a612fd205f09a853eba"
+    },
+    {
+      "path": "evidence/G7-GAME-RANK-HOSTED-REVIEW.json",
+      "utf8_bytes": 47044,
+      "sha256": "6d11c0dce4ebe203b60e41f54c8590211fd20b5d062f2f96d84446d1446fbb40"
+    },
+    {
+      "path": "evidence/G7-LAW-TABLE-INLET-SOURCE-REVIEW.json",
+      "utf8_bytes": 6156,
+      "sha256": "95050f1322c2cb7f66ee102ac12cbad4cc8876446a58ea564ad3cbd215b1255c"
+    },
+    {
+      "path": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+      "utf8_bytes": 5259,
+      "sha256": "ebe184a7fca4adcfa4651707756c05292848dfe3cedf7b1de13e8e88015573e1"
+    },
+    {
+      "path": "evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json",
+      "utf8_bytes": 25527,
+      "sha256": "4f20d102d9b8ab4ee856384506e2d839f444656729790893a710625290d72ab4"
+    },
+    {
+      "path": "evidence/G7-PHYSICAL-POLYNOMIAL-SOURCE-REVIEW.json",
+      "utf8_bytes": 4628,
+      "sha256": "65b86cb88387fdad6f1c3ee6282f2d8ddffbdb9427cf26420ee27ccc20d7c8b3"
+    },
+    {
+      "path": "evidence/G7-PHYSICAL-WORD-BANK-SOURCE-REVIEW.json",
+      "utf8_bytes": 3232,
+      "sha256": "d64fbdb0ea58cb11b56bed7c1216a36b9541cb35d96fe3b21bb7cd4a4428dfcf"
+    },
+    {
+      "path": "evidence/G7-POLICY-SOURCE-INTAKE.json",
+      "utf8_bytes": 8170,
+      "sha256": "f1f9acbe2af9c5f452fccea744bfc7276d1b151fcb0ab3dc00f913dd3992c9a1"
+    },
+    {
+      "path": "evidence/G7-POPULATION-CERTIFICATE-SOURCE-REVIEW.json",
+      "utf8_bytes": 5730,
+      "sha256": "adb5fc33c67ebba8e12b2dcb82c45834d238390fc7efab8ff07e4a683e97207b"
+    },
+    {
+      "path": "evidence/G7-POPULATION-EXPORTER-SOURCE-REVIEW.json",
+      "utf8_bytes": 4072,
+      "sha256": "46ce8c1c997570cc00d6a649577922f299bcf1c588cb28c22b30b776cfd03b92"
+    },
+    {
+      "path": "evidence/G7-POSITIONAL-ROW-COVERAGE.json",
+      "utf8_bytes": 3255,
+      "sha256": "72475f0e95114fe3eee6ce5c5e0457483bd8b72001380e8832538a30f5f32038"
+    },
+    {
+      "path": "evidence/G7-QUERY-SCOPE-SOURCE-REVIEW.json",
+      "utf8_bytes": 2504,
+      "sha256": "9524e5f363475bc99202dedaed4182d28b0492904d568a0863d66c5e536a80d8"
+    },
+    {
+      "path": "evidence/G7-SELECTED-WORD-FIBRE-SOURCE-REVIEW.json",
+      "utf8_bytes": 3890,
+      "sha256": "c0fb6e4f1ce5bd5f9d2750c8b3e7fab5d4ea2c65e6f02dacd39953f1be7d7a5b"
+    },
+    {
+      "path": "evidence/G7-SUPPLIED-FAMILY-SOURCE-REVIEW.json",
+      "utf8_bytes": 3052,
+      "sha256": "f25b3a29f20b71e03ee273bfd7fcb20e22461433485c3bc02b343d9fc9e4d838"
+    },
+    {
+      "path": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+      "utf8_bytes": 5298,
+      "sha256": "dc38d77dd2cc9be2c9c51cb0231f2bcb4159daee6a1c61aaab5a27c25a13da78"
+    },
+    {
+      "path": "evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json",
+      "utf8_bytes": 23982,
+      "sha256": "93df1c25d0623e63b6b2f40271b64e19cc0b05f5eb71e35b82e6fb0e612a8fce"
+    },
+    {
+      "path": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json",
+      "utf8_bytes": 12705,
+      "sha256": "6178497aaa03a4797cd6013485c8128bf24b66a6e4bae27cc3a8a4bc7c989466"
+    },
+    {
+      "path": "evidence/G7-WORD-READOUT-SOURCE-REVIEW.json",
+      "utf8_bytes": 6475,
+      "sha256": "405d704ea20f900b839adb5e3d97dc9be0c00c1afc9fcd657eb285fa92ab2297"
+    },
+    {
+      "path": "evidence/HOSTED-RECEIVER-REVIEW.json",
+      "utf8_bytes": 10755,
+      "sha256": "2822b1ff4928382997caedc12fcf39bff7d5455022b89be1deda6531b8719f0f"
+    },
+    {
+      "path": "evidence/LEAN-CANONICAL-READOUT-SOURCE-REUSE.json",
+      "utf8_bytes": 5862,
+      "sha256": "54d02681de1041cb39b435e04efd99a6d510cc5450014fa78b6652f6a66c2c09"
+    },
+    {
+      "path": "evidence/LEAN-CAST-SOURCE-REVIEW.json",
+      "utf8_bytes": 7988,
+      "sha256": "84371f51b4ba30b1861487669f6aef70f72f52520fe4e8360923866e7b639c87"
+    },
+    {
+      "path": "evidence/LEAN-PMF-PRELAKE-REVIEW.json",
+      "utf8_bytes": 9645,
+      "sha256": "a1d069a44dfdce2ec79017a35e159487b18875194a5e33ee02b8e3b74e3ba9f4"
+    },
+    {
+      "path": "evidence/LEAN-PRIMITIVE-COEFFICIENT-SOURCE-REUSE.json",
+      "utf8_bytes": 2657,
+      "sha256": "de5dde5be24130e3b48be2e7c27553906e37809573b612d3abbcd636e4227f19"
+    },
+    {
+      "path": "evidence/LEAN-PUBLIC-CAPTURE-SOURCE-REVIEW.json",
+      "utf8_bytes": 5284,
+      "sha256": "632cd672d4a0ff104bf2ddd9af45c09d1a502a8c18e7fb25d1bd162383d2dda2"
+    },
+    {
+      "path": "evidence/LEAN-SOURCE-REVIEW.json",
+      "utf8_bytes": 20854,
+      "sha256": "b783fb6963e518763ffe68357625c85301523385c66d544a43e0a3e9646c04e9"
+    },
+    {
+      "path": "evidence/LITERAL-BANK-SOURCE-PREPARATION.json",
+      "utf8_bytes": 7426,
+      "sha256": "482c4aa08515d4dd16c56b32f5709c20f6d85f33033e11a11a9ee5b5c2d50e12"
+    },
+    {
+      "path": "evidence/native-39671718288/CHECKER-DIFFERENTIAL.json",
+      "utf8_bytes": 461,
+      "sha256": "8fbe085c88d64fd9ff56bf29dfdc37cb8d8bfaba2792ce6f9e85071c27b3279f"
+    },
+    {
+      "path": "evidence/native-39671718288/RECEIPT-SUMMARY.json",
+      "utf8_bytes": 4860,
+      "sha256": "a4dc88a1dd858430831cc6427ac7b4da1db037b3c90c2b4931f48b4e115ed087"
+    },
+    {
+      "path": "evidence/native-39671718288/RESULT.json",
+      "utf8_bytes": 1537,
+      "sha256": "74e3fe8c12810bb6e2c0c4bcf78f3f01557e7c2ca20ccc6365e00d8e39d8fbf0"
+    },
+    {
+      "path": "evidence/native-custody-39676750748/NATIVE-OBJECTS.json",
+      "utf8_bytes": 949,
+      "sha256": "82d86617f90d0936ce21171b7273c328a5a117c79e0bc151a6af82861459db54"
+    },
+    {
+      "path": "evidence/native-custody-39676750748/RECEIPT-AUDIT.json",
+      "utf8_bytes": 10090,
+      "sha256": "926010fbc4d2f7a759f23db9954cc7175292b56dc97c49b3155890f6adba5674"
+    },
+    {
+      "path": "evidence/native-custody-39676750748/RESULT.json",
+      "utf8_bytes": 4596,
+      "sha256": "66715a7669e430291da59196c83bf8d89ac73281f76fc89be73e1d8bfd3ac621"
+    },
+    {
+      "path": "evidence/NATIVE-VALIDATOR-TO-CODE.json",
+      "utf8_bytes": 7638,
+      "sha256": "38a1c9f11dacd0b45e7b24259bf4ff8afd9d3048973231570af1371c81a6a94a"
+    },
+    {
+      "path": "evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json",
+      "utf8_bytes": 6151,
+      "sha256": "d187c3b31f5c572d5b03322e2fa82421410a110c8652863949d6e8c5464d1d8f"
+    },
+    {
+      "path": "evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json",
+      "utf8_bytes": 14328,
+      "sha256": "251c4929d02b4477e1f0459959dd4aa678d64e677de3aa75aae1f83c31b963d9"
+    },
+    {
+      "path": "evidence/PARENT-PARAMETER-SOURCE-REVIEW.json",
+      "utf8_bytes": 4886,
+      "sha256": "88c83b6e3527033bf9faee45b1fb3986668efba3eb329253d03eb4a364c98884"
+    },
+    {
+      "path": "evidence/TWO-TIP-CODE-HOSTED-REVIEW.json",
+      "utf8_bytes": 33824,
+      "sha256": "9af90783970e63c99c720fa44114dd9ddb7892437679ce10882f40b40d04bbe8"
+    },
+    {
+      "path": "failures/39671453994.json",
+      "utf8_bytes": 1609,
+      "sha256": "2f3a01545ae1e092b7c536af7eefb3d5f4ee6f5c7a382beed4eb6ccc470101f0"
+    },
+    {
+      "path": "failures/39672776803.json",
+      "utf8_bytes": 1300,
+      "sha256": "006305660d1247ceee78296965730ed0e8714e21e74634210bf565810191fa32"
+    },
+    {
+      "path": "FIRST-PERSISTENCE-WRITERS.md",
+      "utf8_bytes": 5199,
+      "sha256": "4b7fde8d7d20837c1ecee1dfe55343162c36c2e3bbad45fe28334c1960c5a3bb"
+    },
+    {
+      "path": "fixtures/affine-literals.json",
+      "utf8_bytes": 8432,
+      "sha256": "c92cc6aef51859597cab98ffc47a969d3b34d4ff656e5faadf7432716bbac160"
+    },
+    {
+      "path": "fixtures/native-cases.json",
+      "utf8_bytes": 56401,
+      "sha256": "194934c52bec4b5e3f3af972ce42eed9de3c209e5ea7648eb652b64de1681a35"
+    },
+    {
+      "path": "fixtures/three-bank.json",
+      "utf8_bytes": 272,
+      "sha256": "6c929b870b032338c9e07e834bce85fdf0775a26b4fbdfe202d9e6e704ce5115"
+    },
+    {
+      "path": "fixtures/three-check-request.json",
+      "utf8_bytes": 4790,
+      "sha256": "177a47d8d7437e3392055634d44aa128349e62fd49744bedac9c2a931459c6c0"
+    },
+    {
+      "path": "fixtures/two-acquisition.json",
+      "utf8_bytes": 187,
+      "sha256": "dcaac72a83af8f834fdfba349573378d04b2692abffe827be0a6634ca393425a"
+    },
+    {
+      "path": "fixtures/two-bank.json",
+      "utf8_bytes": 329,
+      "sha256": "1487590ff7e296970df47133a33bfe35b16235aa4b5bf6889081d4c6f2e91650"
+    },
+    {
+      "path": "fixtures/two-certificate.wire",
+      "utf8_bytes": 277,
+      "sha256": "ebe1aebeed99d02155d689a488bf92b655a9b285ef776ea8b6935edd36738da2"
+    },
+    {
+      "path": "fixtures/two-check-request.json",
+      "utf8_bytes": 1677,
+      "sha256": "a3eb503b15ab79c1aa2d994bcd125edfaad2bacad3047de5a97775edc44844a1"
+    },
+    {
+      "path": "G6-ORDERED-CELL-CONTRACT.md",
+      "utf8_bytes": 4138,
+      "sha256": "c9ae5b05ea81e83925d2e9a5ed0087b535dcb2f9d5aac522576cade777fce934"
+    },
+    {
+      "path": "G7-POLICY-REUSE.md",
+      "utf8_bytes": 7200,
+      "sha256": "df336151af5b1231468e5b88bca3fb849fd7ae47347155e316f6061226e9892d"
+    },
+    {
+      "path": "generated/AffineCertificate_1663299e141644e3912056031bf84769e7f6009ee9a116a9e4abab61152c4864.lean",
+      "utf8_bytes": 1436,
+      "sha256": "90f233fc423e6166b867f18a80fbbb02d98a35ef11091d4337abc385bd354e06"
+    },
+    {
+      "path": "generated/AffineCertificate_1824552c57960a9ce9afd4abf952634c4a35f2295ace7f13540106b018557c66.lean",
+      "utf8_bytes": 1504,
+      "sha256": "8c226fd30c9395432f2b46ac39c904723c9db0f2d35a5ec997fc97cc1bfdda73"
+    },
+    {
+      "path": "generated/AffineCertificate_78d991c0b56029b917e3a3996376ecbbeeae5924f28e3c90e59b3a6fac844953.lean",
+      "utf8_bytes": 1247,
+      "sha256": "e5ed329413841f6853e9ac0ff460f4dbf03ccd3075ec658c2b3fdecd7cc4d8f1"
+    },
+    {
+      "path": "generated/AffineCertificate_861dab33cd7fb50134d98158f9086e8c27e1de6ad91be4b8191e274aca7d673c.lean",
+      "utf8_bytes": 1359,
+      "sha256": "5ce2117645aaa9fd3c310e18d5d3008c38e4efa6bf12daf39bcda282c96430e1"
+    },
+    {
+      "path": "generated/AffineCertificate_8b333840de5495917bda5a5f1d611cb212494f6b2e2c64c11f4f1a6192aac0ec.lean",
+      "utf8_bytes": 1195,
+      "sha256": "24a06962d9c012e4c9c94c0a18346f59648b3d08e74947976615e2a19fe41f4f"
+    },
+    {
+      "path": "generated/AffineCertificate_f5edba1021c41e64403f0f0cdb4d63a4c9a8455a4fe1c5bcece5415b917b39f3.lean",
+      "utf8_bytes": 1249,
+      "sha256": "3b3c348f6a2f1c5331a2ddee56ebbf05cce5d5a4220dbbc71d66e583ada8a8b5"
+    },
+    {
+      "path": "generated/BankWitness_4efaf02ca21e032cc08c26d2901d8fe3d11a5d2909894a3c0caea77bffe0c8e8.lean",
+      "utf8_bytes": 3918,
+      "sha256": "c886167ec2a6ee3d94af103d74dfcb7172e4856db6bfc614c798c95373958968"
+    },
+    {
+      "path": "generated/BankWitness_d71c2bf0e0153f8103feb7a65084e462c4b20ea5bc823ace0312057491697979.lean",
+      "utf8_bytes": 4353,
+      "sha256": "919f5f8190adc9fcda1d8e00e84d7bbf000b3798c16aa976d279005e87a31e9d"
+    },
+    {
+      "path": "generated/Certificate_776e5a30f4a0190153c23bcad5c5d4bddbf2998a6fdcc690f7810eac99134939.lean",
+      "utf8_bytes": 7153,
+      "sha256": "510c29496c8270f0dd2c36bbcad81fe73e72b2f73cd1638316d403d1cd651c79"
+    },
+    {
+      "path": "generated/Certificate_e49c1e3d6bffee594b99574d3364e700e8f25342933fe31add2aa6129729bc6b.lean",
+      "utf8_bytes": 17536,
+      "sha256": "0136df5150a1eb3bdb32efabf785a9f6ad53a57770c9939acc6b471834a75542"
+    },
+    {
+      "path": "hosted_guard.py",
+      "utf8_bytes": 5587,
+      "sha256": "9975d91624c8783a31b7e31a20cf2cf2f45ef625c51d9b2e4e0e6a49cced60c4"
+    },
+    {
+      "path": "LAKE-FIRST-WRITER-REVIEW.md",
+      "utf8_bytes": 2928,
+      "sha256": "453446cddf874762e05d1f6968daebf2ae71843db184f694941cef4809fd7f56"
+    },
+    {
+      "path": "lean/AffineCertificateExamples.lean",
+      "utf8_bytes": 2606,
+      "sha256": "76d739d0afdbe26d45340681852aa32ff5d3d87dbc91010cd5e0fbce9196cc9d"
+    },
+    {
+      "path": "lean/AffineCertificateProofBindings.patch",
+      "utf8_bytes": 2619,
+      "sha256": "69bfec6558dadaf5d4d2d31c7dc2f6608d9eb8c9da57dc19f84a8d65e30bb48b"
+    },
+    {
+      "path": "lean/AffineCertificateReceiver.lean",
+      "utf8_bytes": 4134,
+      "sha256": "62d4569e436aadb3202118a818c0ed7635c27a54b8e39b27a1e23188d80b5fc6"
+    },
+    {
+      "path": "lean/GParity/Chart.lean",
+      "utf8_bytes": 9852,
+      "sha256": "337d5e41153a356df2e9a8d8c7998d1f1d41bc56a331bcae10e8d2693768612a"
+    },
+    {
+      "path": "lean/hosted435/G7ExactLawRankCompression.lean",
+      "utf8_bytes": 11876,
+      "sha256": "c2aa5ffb8617013c0a4fb11bc7aa20481a6e4c90a8c177856c442d80cf762bd2"
+    },
+    {
+      "path": "lean/hosted435/G7ExactLawResourceGame.lean",
+      "utf8_bytes": 8248,
+      "sha256": "ae22d0f069fc62f21bed41e0a7b4864d01f9520852433839cba9120ec693b409"
+    },
+    {
+      "path": "lean/hosted435/G7ExactLawSourceTransfer.lean",
+      "utf8_bytes": 6316,
+      "sha256": "e8f713f2f123ec55f97168c92b724b01af5b0835bbe90cc6308e8749ea31423a"
+    },
+    {
+      "path": "lean/hosted435/G7FinitePathBudgetBridge.lean",
+      "utf8_bytes": 5073,
+      "sha256": "901ed36d65848fe0d1ac88a6b4bc70931273c7b043094fa9dc66b29fa422f5d2"
+    },
+    {
+      "path": "lean/hosted435/G7FinitePathGame.lean",
+      "utf8_bytes": 8523,
+      "sha256": "0d48c2129e951f278c3c30e986fa6a054500cc0e7a9230a6cfe024d81da8a990"
+    },
+    {
+      "path": "lean/hosted435/G7FixedCalendarPowerDomain.lean",
+      "utf8_bytes": 3602,
+      "sha256": "b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892"
+    },
+    {
+      "path": "lean/hosted435/G7PaddedResponseCarrier.lean",
+      "utf8_bytes": 4192,
+      "sha256": "b12c8626f6d9b2d6f1d35646f091cc04a682d25f482493ad2065242a70b1060d"
+    },
+    {
+      "path": "lean/hosted435/TwoTipOriginalCodeReceiver.lean",
+      "utf8_bytes": 4384,
+      "sha256": "b20f2ca4357c3edf626be2714901cb417425d7d904395f0757c3c149da2fd41d"
+    },
+    {
+      "path": "lean/hosted435/TwoTipSourceDeclarations.lean",
+      "utf8_bytes": 2296,
+      "sha256": "1afa303d7ee2f28fba18fa719139acbf701ac24e10b4f00365cb2c6e69193a19"
+    },
+    {
+      "path": "lean/NativeCellAggregateReflection.lean",
+      "utf8_bytes": 12798,
+      "sha256": "6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2"
+    },
+    {
+      "path": "lean/NativeCellFormReflection.lean",
+      "utf8_bytes": 4127,
+      "sha256": "29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de"
+    },
+    {
+      "path": "lean/NativeOrderedBankLayout.lean",
+      "utf8_bytes": 3655,
+      "sha256": "00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a"
+    },
+    {
+      "path": "lean/OriginalCodeBankLayout.lean",
+      "utf8_bytes": 2726,
+      "sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208"
+    },
+    {
+      "path": "lean/OriginalCodeChartReceiver.lean",
+      "utf8_bytes": 4463,
+      "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1"
+    },
+    {
+      "path": "lean/OriginalCodeChartReflection.lean",
+      "utf8_bytes": 8194,
+      "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a"
+    },
+    {
+      "path": "lean/proposals/G7CertifiedPopulationRows.lean",
+      "utf8_bytes": 2946,
+      "sha256": "9b1dd5f8660ea516383884ff1c6a14d713543a1cca3eb1fb23c26b6c820f7663"
+    },
+    {
+      "path": "lean/proposals/NativePopulationTableCertificate.lean",
+      "utf8_bytes": 6083,
+      "sha256": "4a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6"
+    },
+    {
+      "path": "lean/proposals/PopulationCoefficientProjection-SOURCE-MAP.json",
+      "utf8_bytes": 5483,
+      "sha256": "38c1801739e56f85aff6d576a93b96ea3c3580b2c4c9c91d40ae2d0af7e3cb0f"
+    },
+    {
+      "path": "lean/proposals/PopulationCoefficientProjection.lean",
+      "utf8_bytes": 3023,
+      "sha256": "4febe046c4c7ed900adc84e391dcb7a4530dc5bedebe9395e275e3cae4d5a899"
+    },
+    {
+      "path": "LITERAL-BANK-LEAN.md",
+      "utf8_bytes": 4327,
+      "sha256": "e415fb5b9c8ccef55d5ffb0218f5c6a9afd9fd37908eda87faeb9d25acdac621"
+    },
+    {
+      "path": "MOMENT-PROVENANCE.md",
+      "utf8_bytes": 7244,
+      "sha256": "4ed388cd68f1a652c10ece802cf86d594f4f15f2112421537716830038b3c9c8"
+    },
+    {
+      "path": "NATIVE-CUSTODY.md",
+      "utf8_bytes": 2942,
+      "sha256": "3c139ac9bc2dba431f82ab288ce5582b33fbdc98312d79b66a4c21790e8004b3"
+    },
+    {
+      "path": "NATIVE-PARENT-CONVENTION.md",
+      "utf8_bytes": 2301,
+      "sha256": "833fef1e727c4bf591529116758108636f89399d5473337c22c94d3c6d41c492"
+    },
+    {
+      "path": "NATIVE-ROW-FIELD-CONTRACT.md",
+      "utf8_bytes": 10139,
+      "sha256": "bb5995b3ee6f8916c8d554fb6ade0327ee8d8635c3250f8af9099b75672f447a"
+    },
+    {
+      "path": "NATIVE-WRITER-REUSE-REVIEW.md",
+      "utf8_bytes": 2708,
+      "sha256": "93a432ae638399fb1cea1013dc43b31b7ed627dfb8e9c8a1dedddd844fea322d"
+    },
+    {
+      "path": "native/cell_row_export.rs",
+      "utf8_bytes": 8443,
+      "sha256": "9e458889c66b3070ebe29cd93387030f6ecd6ffa20a169830af3d428eef81da3"
+    },
+    {
+      "path": "native/CELL-ROW-EXPORT-CONTRACT.md",
+      "utf8_bytes": 7793,
+      "sha256": "bcdebcdd81daf286490d8c19498e201691a54df911e309314ae30ba9d16710e3"
+    },
+    {
+      "path": "native/g7_cell_calendar.rs",
+      "utf8_bytes": 7943,
+      "sha256": "a5cd0afb5c309a66fbf0309df354992f47480b7276775c4ea18f2857ec163eb3"
+    },
+    {
+      "path": "native/g7_controlled_word.rs",
+      "utf8_bytes": 20591,
+      "sha256": "c4f6d679802e06ca2d401f17f08879dd6d63dae878f5a578426cd6b6bd212680"
+    },
+    {
+      "path": "native/g7_correlated_survival.rs",
+      "utf8_bytes": 16339,
+      "sha256": "6a7f5f7879bc7cb3e5166fdda63c0ee0b446cee928046f78a26dd39933561a30"
+    },
+    {
+      "path": "native/g7_exact_law_formula.rs",
+      "utf8_bytes": 64242,
+      "sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40"
+    },
+    {
+      "path": "native/g7_law_table_inlet.rs",
+      "utf8_bytes": 22160,
+      "sha256": "3ec702da77dc3927ff71d3f4ffbb151835df50667f499cc4736f871f37f1c447"
+    },
+    {
+      "path": "native/g7_population_certificate.rs",
+      "utf8_bytes": 15076,
+      "sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c"
+    },
+    {
+      "path": "native/g7_supplied_family.rs",
+      "utf8_bytes": 8706,
+      "sha256": "bca065f5be046ee7a8e5f4d8ac590585c8212f17848c02fb26476301d9c4e860"
+    },
+    {
+      "path": "native/g7_word_readout.rs",
+      "utf8_bytes": 12642,
+      "sha256": "6c260c139294431acf42d905d8f808ad112cd1b2861af24531a50ffcc94563b2"
+    },
+    {
+      "path": "native/G7-ASSERTION-QUERY-CONTRACT.md",
+      "utf8_bytes": 6036,
+      "sha256": "ce49013ac4f304f11da5ae81173b1842c0a51b13a81e8e812bfec5ea13572791"
+    },
+    {
+      "path": "native/G7-CELL-CALENDAR-CONTRACT.md",
+      "utf8_bytes": 6903,
+      "sha256": "a53753c9e2d32e5eeea1ed4367b065553e986fbf3edfc9213d690403218e7a36"
+    },
+    {
+      "path": "native/G7-CONTROLLED-WORD-CONTRACT.md",
+      "utf8_bytes": 6093,
+      "sha256": "d9f753cd29a990dfa5ac19340790c59c55a5647077ca7a3c246224d18f79fb3c"
+    },
+    {
+      "path": "native/G7-CORRELATED-SURVIVAL-CONTRACT.md",
+      "utf8_bytes": 8947,
+      "sha256": "fa3c76574cd8c6d215f284e75f0317b15a57ae2aeaf03470d88bf6854db6165c"
+    },
+    {
+      "path": "native/G7-EVALUATED-WORD-ROW-BINDING.md",
+      "utf8_bytes": 4879,
+      "sha256": "cc01e310003be12ca80544a34c2340136f7398c203871bffda92c294693aa155"
+    },
+    {
+      "path": "native/G7-FORMULA-CONTRACT.md",
+      "utf8_bytes": 17673,
+      "sha256": "a9c75603de1474ba67aa95afd5a7286ea5e3773df2f7ed041aeea533734a5e1d"
+    },
+    {
+      "path": "native/G7-FORMULA-VERIFICATION-PLAN.md",
+      "utf8_bytes": 6789,
+      "sha256": "5eb5d7680b3c0c41f7591d158fde7b9b31e8cb91059caf916e75352867c577d0"
+    },
+    {
+      "path": "native/g7-formula/Cargo.toml",
+      "utf8_bytes": 584,
+      "sha256": "aa7c193ff33cf99dbe33ce81420316a864fa2f9bd6134f76ff5e2532ab22c26b"
+    },
+    {
+      "path": "native/G7-LAW-TABLE-INLET-CONTRACT.md",
+      "utf8_bytes": 7770,
+      "sha256": "86c71540100b5ff43f203ab88d09477bbbf58af17e0e36ffc28d0b3e95c9581f"
+    },
+    {
+      "path": "native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md",
+      "utf8_bytes": 10925,
+      "sha256": "b0dccf432622dd156e62eb124671d9af1545347ef9333e1323f3081c5388fec3"
+    },
+    {
+      "path": "native/G7-POPULATION-TABLE-CERTIFICATE.md",
+      "utf8_bytes": 12318,
+      "sha256": "5bfdc76a59f278ac1746b5a841b6d1f211edf70e01a14b960c33b8a120de95bc"
+    },
+    {
+      "path": "native/G7-SUPPLIED-FAMILY-ASSEMBLY.md",
+      "utf8_bytes": 3701,
+      "sha256": "f6d41506aff00c0e07307ebf0f7823b2eeb144ff3a46e43153c49733e4552c09"
+    },
+    {
+      "path": "native/G7-TARGET-LABELLED-FAMILY-JOIN.md",
+      "utf8_bytes": 8776,
+      "sha256": "a42e8d724e1d63ca0b6f267b39bef984a6471a2fc5c0c02934df9d6bb48a2a0e"
+    },
+    {
+      "path": "native/G7-WORD-READOUT-CONTRACT.md",
+      "utf8_bytes": 5188,
+      "sha256": "ae385d8c9b31cf2e3f97a6383ff992b927e97e2bd655e499b8d563e18cbc84f4"
+    },
+    {
+      "path": "native/G7-WORD-REPRESENTATION-JOIN.md",
+      "utf8_bytes": 9116,
+      "sha256": "14ca595ea4f600ea6e2e3b86f449c4a37b18373213eba16c023821f65602c89d"
+    },
+    {
+      "path": "native/source-inputs/controls/native_snapshot_decode_tests.rs",
+      "utf8_bytes": 9667,
+      "sha256": "38e1bdc0fcf4a082a6af4e215a9d3ffac9cd6ad6fbbfd5d2c98b4e7226af591a"
+    },
+    {
+      "path": "native/source-inputs/controls/serial_early_late_history_tests.original.rs",
+      "utf8_bytes": 11205,
+      "sha256": "82fd059e3b813e6d1c9b65de03c8f15037d5d6d9ab15be8b51687160e2f98cb7"
+    },
+    {
+      "path": "native/source-inputs/controls/serial_early_late_history_tests.rs",
+      "utf8_bytes": 11081,
+      "sha256": "0494f3ed92afd245a9075ddfb0723ba362ec8ba1d120fdde78aa36976a39cfff"
+    },
+    {
+      "path": "native/source-inputs/controls/source_native_snapshot.rs",
+      "utf8_bytes": 8529,
+      "sha256": "37a00f8767af2a0002970e7a59d046861c4c8601f65c46fe0e86650694c6e318"
+    },
+    {
+      "path": "native/source-inputs/controls/source_selected_prefix.rs",
+      "utf8_bytes": 30143,
+      "sha256": "46172afa3ba29b19ea924a4110be822104ca236566a69d8d91e5170a0b6d7af3"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-07-rust-count-pilot/Cargo.lock",
+      "utf8_bytes": 1385,
+      "sha256": "6b82f1a74bedde4d31df8cc90c2dbd50b132feae8779df6c20ce898e77b46c25"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-07-rust-count-pilot/Cargo.toml",
+      "utf8_bytes": 434,
+      "sha256": "f087eb5a12476782f6eab568fc973a7fbc72e4810e70e6f99a91ac24953f8d5b"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-07-rust-count-pilot/src/lib.rs",
+      "utf8_bytes": 10524,
+      "sha256": "6f9ee623a64b356b7c28a09a91de3eff50425c67d3555ff43752023355e18ce0"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-07-rust-count-pilot/src/main.rs",
+      "utf8_bytes": 2582,
+      "sha256": "f0be18f30dbbcf665ab61f079def331530f19a2c5a68b05d329078dbfd91c313"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-07-rust-count-pilot/src/parse.rs",
+      "utf8_bytes": 5018,
+      "sha256": "e7e19824f70eff90ba638241bd0a3369fda755c40753ee6f856c88a40e293cf8"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.lock",
+      "utf8_bytes": 1398,
+      "sha256": "551be9605ca2258dd60dbbc49e10aa8d95759866523e754b10feb4b51a7510ca"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.toml",
+      "utf8_bytes": 465,
+      "sha256": "ad120771a9f79c7880ceb5e66eca4814c819773ea0b7330263ca04cef5ba93c2"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-interval-root-0000z/src/lib.rs",
+      "utf8_bytes": 9836,
+      "sha256": "bfe48152cd63b8abd6bb7257e986b50dec741ec351770c58b19272543b46c1d1"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-interval-root-0000z/src/main.rs",
+      "utf8_bytes": 3775,
+      "sha256": "7ae7cc17ed3fc79a2be9c75fb3f54e6e663a7365bcb1ef31866bade4e79dad70"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-interval-root-0000z/src/parse.rs",
+      "utf8_bytes": 3163,
+      "sha256": "471dca6bd05291811aa07d6440e3c5d3a6aec58a742a37d08a2008de5b1cad4e"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-signed-nine-0008z/Cargo.lock",
+      "utf8_bytes": 1508,
+      "sha256": "96b522ccf3b0fade9a242f22c45996179a020f6426c09c365ae56e4a645c675d"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-signed-nine-0008z/Cargo.toml",
+      "utf8_bytes": 257,
+      "sha256": "a0e43fe45a86579a79aecc2e277c8a730bc7e13be41ccc7260d20c25bbeee36e"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-08-cloud-rust-signed-nine-0008z/src/lib.rs",
+      "utf8_bytes": 9569,
+      "sha256": "281942b869db93c77df8b66ffcfb0a9262a93b866b78bb02011d35da53e4a13f"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/source_fit.rs",
+      "utf8_bytes": 9748,
+      "sha256": "a4e86fe9948ab93f6128f430e9182b445c69b580f9fee01161f95f41a9966839"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/Cargo.lock",
+      "utf8_bytes": 1874,
+      "sha256": "d1ca669fa3fbfb62810cd5653682e65c0548b31e5c957b81c2c3a4b2d524d4fb"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/Cargo.toml",
+      "utf8_bytes": 707,
+      "sha256": "8eb9e35ed020e0efd4feb7c50d52d91dfd68bc0c8928a029e9afd292c321aa8d"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-native-slot-20261010T221453.635194Z/FINAL-RECEIPT.json",
+      "utf8_bytes": 2329,
+      "sha256": "9ee7563a650618649863cc0cad174989baa9fa873b7f4455bad5fbb3aa0aea18"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-native-slot-20261010T221453.635194Z/PLAN.json",
+      "utf8_bytes": 45228,
+      "sha256": "6420fca60d8ff23232e39ce73fbe2d8ca10742f318818b44056d3ace954309ff"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-native-slot-20261010T221453.635194Z/RUSTC-VERSION.json",
+      "utf8_bytes": 222,
+      "sha256": "e04408055f5cf2afa69a133f0cd64b25ffacbea9c376fcee054b28dc415d1cb5"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-sat.request.json",
+      "utf8_bytes": 2658,
+      "sha256": "63d6b2242c428d98fe89c3c6e6295948026de220095a3fe852d5e66069db6591"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-independent-sat.request.json",
+      "utf8_bytes": 3357,
+      "sha256": "0d3d30b9be0cf8ccbb9473c5fdeffd6a4c6a129fa122fff1ea0b181411dd7ef4"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/notes/OLD-PREFIX-SELECTED-REUSE-ADDENDUM-20261011T003213Z.json",
+      "utf8_bytes": 4068,
+      "sha256": "04fa31a13d8c3bd74933acacd2971f7685d1ed8e30898bc4d8e114df4fb087ea"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/notes/OLD-PREFIX-SELECTED-REUSE-ADDENDUM-20261011T003213Z.md",
+      "utf8_bytes": 6751,
+      "sha256": "9176002da771c62b090237c9dc7b079f42b370f14881d9f0469063e7b86ba608"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/notes/SELECTED-PREFIX-AUTHORING-PREFLIGHT-FAILURE-20261011T0039Z.json",
+      "utf8_bytes": 408,
+      "sha256": "38f5726382a446028ad4c56ca368d520896021fbcbaffead96745d36b63c2bdf"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/API.md",
+      "utf8_bytes": 8889,
+      "sha256": "3352a6b1b51312cbb16c41d276662e847b6632f8cb9609c477848b1bceea4bff"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/source_selected_prefix.rs",
+      "utf8_bytes": 30143,
+      "sha256": "46172afa3ba29b19ea924a4110be822104ca236566a69d8d91e5170a0b6d7af3"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/SOURCE-FREEZE-1.json",
+      "utf8_bytes": 6811,
+      "sha256": "a9f877aca3cbbb674923d24214bed5c0bd678078709f38b820ed1eeda368af84"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/VALIDATION-CASES.md",
+      "utf8_bytes": 4407,
+      "sha256": "fda6035dd39014c94931366c2be25fe14d4d24fefd4dbb052d2a8b249fc34f6b"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/affine.rs",
+      "utf8_bytes": 6540,
+      "sha256": "f5c5fbb1c8cda67934e0902708deacf75d417f689d079096bb16fed75b64f001"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/count.rs",
+      "utf8_bytes": 880,
+      "sha256": "04c052f5691474eed7c5a3932d9e1cfb5e0f079e7e807ae9c620bf303287c0fa"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/forest.rs",
+      "utf8_bytes": 3390,
+      "sha256": "d0f284781c81b6a70c22a9bcdd21b0379eeb3032f4d3e33e6c0b8073685f0937"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/law.rs",
+      "utf8_bytes": 16506,
+      "sha256": "e519d232bbea12fa7181a7f5c8c700608d2debf412e519fe7f26abc03564c8a2"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/lib.rs",
+      "utf8_bytes": 873,
+      "sha256": "905866b45229667cc06385461c7eb0e96784cb2309e0ba17b45d4c8409a37d4d"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/main.rs",
+      "utf8_bytes": 3668,
+      "sha256": "cdd116e67dfde99e7cb09439efa414a18a8375c18e4e829d4ad7abe5e556c59c"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/natural_cell.rs",
+      "utf8_bytes": 12724,
+      "sha256": "774a26a70f99bdc760fa15835267c6fc0753bb2db0419844d65895b29f1ecf9e"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/polynomial.rs",
+      "utf8_bytes": 3877,
+      "sha256": "fbde66e1f6f7a612c935b82a53f08ecef0713ccc5fb3d7bcba0ec6fabf2701cb"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/protocol.rs",
+      "utf8_bytes": 23633,
+      "sha256": "0bcf6e0e099d5983604c8d3e6fe189fbb0431de390b7d0f8c7306bbbced2e72a"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_boundary.rs",
+      "utf8_bytes": 9240,
+      "sha256": "f089b81fa649aaea6e1db1da5b373cee8e9e5be2cacb54942a261bc24b845cdb"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_calendar.rs",
+      "utf8_bytes": 12140,
+      "sha256": "d993e8808a4f227001a393db123b1be00f70a5c940388586d909772bbb3ff3a8"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_completion.rs",
+      "utf8_bytes": 4789,
+      "sha256": "52a410c7489414bc4a97de67b509c33ae85f1f9c9400d2381fac51d0fab6713f"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_epoch.rs",
+      "utf8_bytes": 17352,
+      "sha256": "c46a498ac2b5a0f3bc3ea246cc4f6d012ff58871292b8af84cfebe3d45b40354"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_bank.rs",
+      "utf8_bytes": 52208,
+      "sha256": "e31b80a3648e6aa15c8c99f30f4eb94e3fb06c6487f7241064391c05c12ffa5a"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_readout.rs",
+      "utf8_bytes": 23589,
+      "sha256": "7a3a75b60af55f1138e82aa66c5a2e94b5dc9c8a597eadb0ff25230f03dae7c5"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_population.rs",
+      "utf8_bytes": 19011,
+      "sha256": "6afebffe8bb727a1c92bd113d479f01f0b2877bbf527c79866247805bc21da7c"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/src/source_word.rs",
+      "utf8_bytes": 21174,
+      "sha256": "7fbb4e6389c72f09f6799f7fd4c3fc1942d5fa1b0f92fb37792c10f21589d332"
+    },
+    {
+      "path": "native/source-inputs/research/2026-10-10-codex-lean-rust-parity/rust/tests/source_population.rs",
+      "utf8_bytes": 8323,
+      "sha256": "b63c9aa21b6597eb2bb95c41079e1a6425a05853556cc52753d59dacaae54669"
+    },
+    {
+      "path": "native/source-inputs/RESTORED-SOURCES.json",
+      "utf8_bytes": 20261,
+      "sha256": "c5c84b5fa1755ae05830059353c184a77c52bd236b4053fe2668e6e30f066da6"
+    },
+    {
+      "path": "OBLIGATIONS.md",
+      "utf8_bytes": 12626,
+      "sha256": "316e245f110607796f2bb89ef887d6dc8b50ded293dc837db53bc4ba1c07f6df"
+    },
+    {
+      "path": "PROOF.md",
+      "utf8_bytes": 3779,
+      "sha256": "889433166e92816eacc4c62965d8f575291c8dbe8b0df34aa4169423a4991bdb"
+    },
+    {
+      "path": "PROPOSED-NATIVE-PROFILE.json",
+      "utf8_bytes": 4558,
+      "sha256": "0f54730811e1985b36d0e9789c8d899db57bed26524ad816e60c58a7b36a5f9d"
+    },
+    {
+      "path": "PUBLICATION.md",
+      "utf8_bytes": 9135,
+      "sha256": "5a91874f359aa5a128c12150a3a103e151ea801f3b4c2d4c1272b6648a51126f"
+    },
+    {
+      "path": "README.md",
+      "utf8_bytes": 7539,
+      "sha256": "4875ffd4e6625c8cf93d9ca72bd48fcaabbacb4dcd7606000e6f88876693b5de"
+    },
+    {
+      "path": "RECORD-WRITER-GAP.md",
+      "utf8_bytes": 2057,
+      "sha256": "793a81b5e8738f97c30c0a25c71d5c1e22c5e201ea9046bc106452a499c37101"
+    },
+    {
+      "path": "RECORD-WRITER-MAP.json",
+      "utf8_bytes": 10956,
+      "sha256": "2f42a5a071e7415bbff64750830a946f17c5c1a085b37e07762d27d927e092f2"
+    },
+    {
+      "path": "REFERENCE-RESULT.json",
+      "utf8_bytes": 1835,
+      "sha256": "014e6ca874682871182f2061d920cd2122cffaef4e867e65836f1b8936020231"
+    },
+    {
+      "path": "reference.mjs",
+      "utf8_bytes": 12154,
+      "sha256": "36ad1a50012db001e1f1d8bee0d817176b5c68fd14b6c18c712820c9c9ec1914"
+    },
+    {
+      "path": "rust/Cargo.lock",
+      "utf8_bytes": 1573,
+      "sha256": "7e44f9e5f3b4702f3e38d4e11d167f377b8321ed30e1f4863d24b9e405bdd2d0"
+    },
+    {
+      "path": "rust/Cargo.toml",
+      "utf8_bytes": 270,
+      "sha256": "e4060b2f0186742ecc47e8a6b8abe37953b20f126f72b14d9d08f7d667177b97"
+    },
+    {
+      "path": "rust/src/bin/common-bank-moments.rs",
+      "utf8_bytes": 8576,
+      "sha256": "1a18fe4e88fc0a27542eb246d80a76d1aaa2a0534bc9d92f1ce3640c0b6a4d88"
+    },
+    {
+      "path": "rust/src/main.rs",
+      "utf8_bytes": 12550,
+      "sha256": "0a5cede6b95982cf669b064664cc0c2aaf5ded0fd4c1140d52fd32a298680d6a"
+    },
+    {
+      "path": "rust/src/support.rs",
+      "utf8_bytes": 10216,
+      "sha256": "72bc227e8c7846f05fe1b15c4e174adb9bb943aab826d3f873a61f1c8e95f08a"
+    },
+    {
+      "path": "SOURCE-CODE-ROW-BINDING.md",
+      "utf8_bytes": 6600,
+      "sha256": "befaa8717f950df12176a2a3c86d88c2ac7dfa3ca2776ecd85a3722d80db1e6f"
+    }
+  ],
+  "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
+  "remaining": [
+    "execute/source-review proposed moment provenance and one-law identity metadata after the encrypted writer binds",
+    "existing owner Linux encrypted writer/public-recipient binding and enforced first persistence across every new runtime writer",
+    "pinned Lean4.33.1/mathlib0df444a3 standalone module/Lake object custody and full aggregate",
+    "canonical proposer/profile adoption is not supplied",
+    "typed physical source/provider-to-one-common-law correspondence",
+    "formal native refinement or explicit trusted implementation boundary",
+    "original all-input G3 and finite legal INDEPENDENT G4 plus G6/G7 master assembly",
+    "explicit source-reviewed practical API integration for auxiliary bank/support acquisition; canonical runtime dispatch remains unchanged"
+  ],
+  "regression_source_pins": {
+    "test_native_generator.py": "f23b7010d7f121a6da90e198935c46dbe2bd7fa8ded8e13a8a651f1ff0db98f0"
+  },
+  "new_online_execution_scope": {
+    "executor": "GitHub-hosted Ubuntu24.04; new Rust-only job",
+    "workflow_path": ".github/workflows/rust-support-proposal.yml",
+    "old_Lean_or_CM_job_replayed": false,
+    "source_commit_before_workflow": "65a8a592f1997e4b42a73bff86db1475ed203c71",
+    "workflow_docs": [
+      "https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow",
+      "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+    ],
+    "runtime_data_scope": "Intentionally public synthetic mathematical fixtures and source/compiler evidence; no private phone harness records.",
+    "counter_adapter": "hosted_guard.py: actual membership/mount-root resolution for v2/v1; inherited thresholds, no migration/controller setting or fallback",
+    "counter_primary_source": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+    "connector_extension": {
+      "reason": "Remaining unchanged facade and stdio MCP composition obligation after successful native slice",
+      "canonical_source_modified": false,
+      "container": "Official Python3.12 slim-bookworm, actual digest captured and run by digest",
+      "network": "none",
+      "memory_bytes": 2147483648,
+      "cpu_limit": 1,
+      "pids": 128,
+      "wall_seconds": 120,
+      "filesystem": "Readonly public source; one fresh owned output; no credentials/model/private records; scoped container cleanup",
+      "docs": [
+        "https://docs.docker.com/engine/containers/resource_constraints/",
+        "https://docs.docker.com/engine/containers/run/"
+      ],
+      "actual_enforcement_check": "Read/assert actual memory.max/swap.max/cpu.max/pids.max, readonly source mount, loopback-only interfaces, NoNewPrivs and zero effective capabilities in addition to requested flags."
+    }
+  },
+  "publication_notes": [
+    "The first workflow-publication orchestration failed JavaScript parsing because a YAML expression collided with a JavaScript template expression. No mutation executed in that failed call. The workflow string encoding was corrected before publication.",
+    "Actual CI run39670837599 failed workflow validation before any job: runner.temp is not permitted in job-level env. Use the owned relative Cargo target directory instead. No compiler/test execution occurred in this failed run.",
+    "Actual run39670971206 installed official Rust1.90 and fetched the locked dependencies, then refused before compiler launch because the original guard's fixed cgroup-v2 memory.current path was absent. Artifact12380255676 SHA256fc79a68b71e585eafb11739d35caab4dac389e78613a8f06c6bd8a5330295100 retains the error receipt. The NEW owned adapter reuses the exact original supervisor/limits and permits only a validated mounted cgroup-v1 memory root counter; no unbounded fallback or old held-job replay.",
+    "Actual run39671217634 also refused before compiler launch: neither fixed root counter was available. Linux cgroup-v2 documentation confirms memory.current is a NON-ROOT cgroup file. Successor adapter resolves the actual /proc/self/cgroup membership against the actual cgroup mount root, rather than guessing the global root location; rejects path escapes/missing counters. It retains the original supervisor and thresholds and names the actual counter scope.",
+    "Run39671453994 actually compiled Rust with the retained lock and validated cgroup-v2 current membership; original8 groups passed,4 new groups panicked on a usize intermediate subtraction in polynomial division. One arithmetic-index expression is corrected from top-d.len()+1 to top+1-d.len(); fresh tests required. Full failure/correction record is retained.",
+    "Run39672776803 passed the original/native and NEW actual codec CLI + original facade controls. MCP-only harness failed before protocol because -I suppresses server.py's required sibling bridge import. Correct only the harness argv to -E -s -B; original server/bridge/runtime remain unchanged. Fresh MCP execution required.",
+    "Run39673031769 passed actual native/CLI/original facade and two real stdio MCP processes with six connector calls, including unapproved-binary UNKNOWN. Its archive was authenticated and9guard receipt/stream pairs checked. One remaining platform evidence gap was requested-vs-observed Docker enforcement. Add direct kernel/mount/interface assertions before the same connector controls; no canonical/scientific source change.",
+    "Run39673487466 passed native/codec CLI/original runtime and unchanged MCP with actual container enforcement assertions. Authenticated artifact8ce2eb18...4442 and9guard receipt/stream pairs. Published Lean peer source e8fe774e was read/hashed and its exact source projections and selected statement scope independently reviewed; no pinned-Lake/full-master inference.",
+    "Add NEW separate rational finite-bank executable and strict original-row verifier against exact retained PMF/grouping contract. Old proposer/main unchanged; new source is not covered by previous executed binary evidence. Existing bounded workflow gains one90wall/60CPU/512MiB guarded bank step; no new worker, old-lane replay or canonical profile edit.",
+    "Fresh bank run39675913869 passed19native unit groups(6new+13existing),194banks/reversals,17refusals,onegrowth UNKNOWN,8codec negatives/CLI calls and2bank-to-old-runtime chains. Existing proposer binary remained byte-identical; full earlier suites/MCP also passed. Archive05a00e25...1bb6a and10guard stream/receipt pairs authenticated. Formal cast/physical/pinned-Lake/master obligations remain open.",
+    "Correction: intentionally public synthetic runtime traces were not an authorized exception to the standing encrypt-before-first-persistence rule. Prior jobs persist plaintext streams/JSON. Disable push trigger and literal-false manual job pending real existing writer binding. Preserve old results/history and continue source/interface work; no privacy or retroactive encryption claim."
+  ],
+  "actual_native_execution": {
+    "run_id": 39671718288,
+    "tested_commit": "9931b92cad19b72d2c9c81ff1aaa42676182d1a2",
+    "binary_sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+    "artifact_sha256": "5e805fd3bdc4afab85bfcd0a782899931a1fa4c7055a562c5d2d2807b96513c7",
+    "artifact_readback_verified": true
+  },
+  "runtime_source_pin": {
+    "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+    "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+  },
+  "connector_source_pins": [
+    {
+      "path": "applications/research-solver-interop/server.py",
+      "sha256": "8779dd29002166956e890f822997ad98c5b9081533446200484ec92b5ac510df"
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628"
+    },
+    {
+      "path": "applications/research-solver-interop/SOURCE-PINS.json",
+      "sha256": "5fbef49e81257a244baba67fd8b6e84d82905b993077bddcc885e1332f9b1c02"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3"
+    }
+  ],
+  "actual_composed_execution": {
+    "run_id": 39673487466,
+    "tested_commit": "73ff92d4b768e929309a24da773d20a2c63199bc",
+    "binary_sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+    "artifact_id": 12380224011,
+    "artifact_sha256": "8ce2eb184f99a5db74aefa578048a5ce9495fe5754d1d6e828882220d4ee4442",
+    "artifact_readback_verified": true,
+    "guard_receipts_verified": 9,
+    "actual_MCP_processes": 2,
+    "actual_MCP_run_calls": 6,
+    "actual_container_enforcement_checked": true,
+    "canonical_profile_adopted": false
+  },
+  "peer_Lean_source_review": {
+    "commit": "e8fe774e5ff0cc14729bc20328217525f6c5c068",
+    "root": "research/2026-10-21-lean-online-builder",
+    "manifest_listed_bodies_verified": 14,
+    "total_public_files_read": 15,
+    "both_projections_and_submitted_hashes_verified": true,
+    "independent_Lean_execution": false,
+    "pinned_Lake_object_custody": false
+  },
+  "bank_source_contract_pins": [
+    {
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "bytes": 187616,
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "selected_bodies_read": true
+    },
+    {
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787.lean",
+      "bytes": 14129,
+      "sha256": "ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787",
+      "selected_bodies_read": true
+    },
+    {
+      "commit": "514648b697aeed8f46582109cfeefcd7707cd738",
+      "path": "research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json",
+      "bytes": 33921,
+      "sha256": "41aa9b7b3fb639d22db47fffac7f5f92bfea021bc3f3e548f6f2c3dfbb5d7d5a",
+      "selected_bodies_read": true
+    }
+  ],
+  "new_rational_bank_scope": {
+    "status": "ACTUAL_BOUNDED_ONLINE_PASS",
+    "binary": "common-bank-moments",
+    "original_proposer_source_unchanged": true,
+    "domain": "1..256 exact rational atoms; one law; 1..8 positive consecutive copy levels",
+    "positive_support_values": "(0,1]",
+    "zero_mass_values": "arbitrary well-formed rational; omitted exactly",
+    "internal_bits": 8192,
+    "output_bits": 128,
+    "independent_checker": "Original-row Fraction moments versus native grouped moments; request-bound canonical output",
+    "verification": "194 banks/reversals, refusals/growth UNKNOWN, two actual CLI-to-old-runtime fixture chains in NEW bounded job",
+    "no_model_or_physical_test": true,
+    "old_jobs_replayed": false
+  },
+  "actual_rational_bank_execution": {
+    "run_id": 39675913869,
+    "tested_commit": "a45e8380858dbd8502d605b01bd35113957383dc",
+    "bank_binary_sha256": "0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec",
+    "proposer_sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+    "artifact_id": 12382426160,
+    "artifact_sha256": "05a00e25d7bf94487ccddbf6d414988dc537249f7634f599d241ed3a9ce1bb6a",
+    "guard_receipts_verified": 10,
+    "positive_banks": 194,
+    "reversals": 194,
+    "refusals": 17,
+    "output_cap_UNKNOWN": 1,
+    "codec_negatives": 8,
+    "actual_codec_CLI_calls": 8,
+    "old_runtime_chains": 2,
+    "formal_refinement_or_physical_source_admitted": false
+  },
+  "native_object_retention": {
+    "status": "ACTUAL_BOUNDED_ONLINE_PASS",
+    "run_id": 39676750748,
+    "tested_commit": "41217af3de6af9d4a609aa9680ac9025e210a4c6",
+    "artifact_id": 12382691850,
+    "artifact_sha256": "68963ed6ddcb092c8409296f876e286fecd4bc29e7a4831c6413ff200f9de1f0",
+    "native_objects": [
+      {
+        "archive_bytes_hash_and_ELF_verified": true,
+        "archive_mode": "0o644",
+        "archive_path": "rust-bank-result/native/common-bank-moments",
+        "bytes": 638656,
+        "canonical_profile_adopted": false,
+        "compiler": "official Rust1.90.0",
+        "format": "ELF64 little-endian x86_64",
+        "path": "native/common-bank-moments",
+        "sha256": "0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec",
+        "tested_host": "GitHub Ubuntu24.04 x86_64"
+      },
+      {
+        "archive_bytes_hash_and_ELF_verified": true,
+        "archive_mode": "0o644",
+        "archive_path": "rust-bank-result/native/common-support-proposer",
+        "bytes": 720808,
+        "canonical_profile_adopted": false,
+        "compiler": "official Rust1.90.0",
+        "format": "ELF64 little-endian x86_64",
+        "path": "native/common-support-proposer",
+        "sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+        "tested_host": "GitHub Ubuntu24.04 x86_64"
+      }
+    ],
+    "independent_job_binary_hashes_reproduced": true,
+    "guard_receipts_verified": 10,
+    "canonical_adoption": false,
+    "phone_binary_persistence_or_execution": false
+  },
+  "record_writer_gap": {
+    "status": "OPEN;NEW_EXECUTION_HELD",
+    "prior_synthetic_runtime_records_plaintext": true,
+    "public_fixture_exception_authorized": false,
+    "automatic_trigger_disabled": true,
+    "manual_job_condition": false,
+    "existing_identity_changed_or_transferred": false,
+    "owner_binding": "Existing authenticated public-recipient/encrypted writer on Linux; not inferred or replaced",
+    "source_review_continues": true,
+    "selected_source_map": "RECORD-WRITER-MAP.json;FIRST-PERSISTENCE-WRITERS.md",
+    "transitive_loader_failure_coverage": "OPEN; source review is not an installed sink",
+    "pre_Lake_admission": "OPEN;target-level error occurs after configuration trace/elaboration",
+    "peer_outer_pre_Lake_refusal": "SOURCE_REVIEWED_AT311290fc;UNEXECUTED;constant stderr/control custody still requires mediation",
+    "existing_owner_reuse_review": "evidence/EXISTING-NATIVE-WRITER-REUSE.json",
+    "current_pure_policy_source_hash": "493150b8d408905a3297e72b20a5415da397fef1a662a740fee082c3a7a4dbb5",
+    "actual_Linux_writer_binding": false,
+    "Cargo_selected_writer_source_review": "evidence/CARGO-FIRST-WRITERS.json"
+  },
+  "provenance_followon": {
+    "status": "SOURCE_ONLY_UNEXECUTED;EXISTING_WRITER_HOLD",
+    "input_schema_changed": false,
+    "native_engine_changed": false,
+    "canonical_certificate_schema_changed": false,
+    "implemented_origin_kind": "supplied_mathematical_law",
+    "other_providers_bound": false,
+    "identities": [
+      "literal request bytes",
+      "canonical scalar pushforward law independent of L",
+      "bank+L+copy/exponent order+derived moments",
+      "canonical old acquisition request"
+    ],
+    "source_metamorphic_controls": 3,
+    "peer_cast_source_reviewed": "029a729402d349fb771f7c00435d4f8465ab0b6e",
+    "complete_original_result_binder": "SOURCE_ONLY_UNEXECUTED; real runtime origin remains caller obligation",
+    "future_runtime_identity_negative_controls": 4
+  },
+  "literal_bank_lean_followon": {
+    "status": "AUTHORED_FIXTURES_PEER_HOSTED_PASS;PYTHON_EMITTER_AND_NEW_CONTROLS_UNEXECUTED",
+    "receiver_commit": "c524f39cad56c0e3fde9062085a6d848bc8960e2",
+    "receiver_sha256": "879518802d5bbe0ce1e2cf6392a0a6cbe8b70fc9fedb421035ad129684f0530e",
+    "template_sha256": "dc5c4f7bfdb23d53889ae896b67ffe3630586655036fec8cfea57b7c80ea4361",
+    "emitter_sha256": "04072d86070f7a0385817d7d74defce62f4e32ecbc2880acb26822d1f21ecb8a",
+    "source_preparation": "Authored literal template substitutions in memory, not execution of the new Python emitter or Lean.",
+    "formal_scope": "Per-input all-natural-exponent regrouping identity for exact literal raw rows, one existing CM law, selected sparse moments and roots of unchanged certificate polynomial.",
+    "compiled": "ATTRIBUTED_PEER_HOSTED_VIRTUAL_DOCUMENT_CHECK;NOT_NATIVE_LAKE",
+    "native_refinement_proved": false,
+    "physical_source_existence_certified": false,
+    "identity_binding": "Complete raw bank and receiver SHA256; scalar-law and ordered moment IDs; explicit levels/exponents/provenance. No native origin authentication from a pure function.",
+    "staged_ci_controls": {
+      "status": "UNEXECUTED",
+      "fixture_byte_matches": 2,
+      "altered_stdout_and_different_certificate_controls": 4,
+      "new_file_writer_added": false,
+      "Lean_compilation_claimed": false
+    },
+    "review": "evidence/HOSTED-RECEIVER-REVIEW.json"
+  },
+  "existing_affine_receiver": {
+    "status": "PROOF_CORRECTED_VARIANT_PEER_HOSTED_PASS;ORIGINAL_PROPOSAL_REJECTED",
+    "native_solver_replaced": false,
+    "source_review": "evidence/EXISTING-AFFINE-REUSE.json",
+    "receiver_sha256": "62d4569e436aadb3202118a818c0ed7635c27a54b8e39b27a1e23188d80b5fc6",
+    "literal_controls_sha256": "76d739d0afdbe26d45340681852aa32ff5d3d87dbc91010cd5e0fbce9196cc9d",
+    "native_or_Lean_executed": "Peer hosted Lean check only; no new native execution here",
+    "physical_source_admission": false,
+    "review": "evidence/HOSTED-RECEIVER-REVIEW.json"
+  },
+  "affine_literal_followon": {
+    "status": "AUTHORED_FIXTURES_PEER_HOSTED_PASS;PYTHON_CODEC_EMITTER_AND_CONTROLS_UNEXECUTED",
+    "codec_sha256": "f0b1c45b909cdac5062784820970c456c182f4dedb8f603065f22383c29711fe",
+    "emitter_sha256": "7907c4f984b273a5b4d9ed2cafffceb7460613c9881e3bf134466ac4fae0a2f3",
+    "prepared_cases": 6,
+    "staged_false_controls": 8,
+    "staged_unknown_controls": 1,
+    "old_engine_replaced": false,
+    "new_runtime_or_Python_executed": false,
+    "source_preparation": "evidence/AFFINE-LITERAL-SOURCE-PREPARATION.json",
+    "scope": "Request-bound finite matrix only; no source/chart admission or universal native refinement.",
+    "metadata": "Ordered matrix identity independent of cap; explicit supplied-mathematical-matrix provenance; proof-source renderer unchanged.",
+    "hosted_review": "evidence/AFFINE-LITERAL-HOSTED-REVIEW.json"
+  },
+  "finite_PMF_receiver_review": {
+    "peer_commit": "311290fc03de071d634fe5c2ade857acf50d9259",
+    "review": "evidence/LEAN-PMF-PRELAKE-REVIEW.json",
+    "source_sha256": "f23c4428e1f5bad8f2d3675caa1684b66377acf4cfe34451b6be767d4e97d4c7",
+    "seven_selected_types_and_projection_reviewed": true,
+    "full_physical_import_context_compiled": false
+  },
+  "G6_ordered_cell_reuse": {
+    "status": "SOURCE_REVIEW_ONLY;NO_FRESH_FULL_IMPORT_RUN",
+    "review": "evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json",
+    "old_engine_replaced": false,
+    "physical_source_admission": false,
+    "existing_Code_receiver": "evidence/EXISTING-ORIGINAL-CODE-BINDING.json",
+    "extra_Rust_API_or_factory_added": false,
+    "native_validator_source_comparison": "evidence/NATIVE-VALIDATOR-TO-CODE.json",
+    "checked_generic_layout": "evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json",
+    "Code_wrapper_full_import_checked": false,
+    "native_row_field_contract": "NATIVE-ROW-FIELD-CONTRACT.md",
+    "generic_form_reflection": "evidence/CELL-FORM-REFLECTION-HOSTED-REVIEW.json",
+    "aggregate_native_emission_refinement": false,
+    "native_result_binding_source_review": "evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json#native_request_matrix_certificate_binding",
+    "original_Code_component_hosted_review": "evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json"
+  },
+  "native_cell_row_export": {
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "source_sha256": "9e458889c66b3070ebe29cd93387030f6ecd6ffa20a169830af3d428eef81da3",
+    "source_record": "evidence/CELL-ROW-EXPORT-SOURCE.json",
+    "existing_engine_replaced": false,
+    "no_new_Cargo_dependency_or_workflow": true,
+    "staged_tests": 5,
+    "public_source_snapshot": {
+      "files": 51,
+      "bytes": 488056,
+      "root": "native/source-inputs",
+      "original_inventory_unchanged": true
+    },
+    "requires_fresh_recovered_rlib_and_actual_writer_binding": true,
+    "full_bank_width": {
+      "status": "CONDITIONAL_SOURCE_SIZE_DEDUCTION_NOT_A_NEW_THEOREM_OR_GLOBAL_BOUND",
+      "variables": "n=taxa, h=hybrid vertices in the complete rooted binary census",
+      "census": {
+        "vertices": "2*n + 2*h - 1",
+        "edges": "2*n + 3*h - 2"
+      },
+      "bank": "V + E + 1 + h = 4*n + 6*h - 2",
+      "implications": [
+        "n=4,h=0 needs14 coordinates before extra chronology/exposure rows",
+        "AFFINE8 cannot transport any unreduced complete bank with n>=4",
+        "CHART32 with n=4 requires h<=3, separately from its128-row cap"
+      ],
+      "limit_behavior": "Source-level UNKNOWN/unavailable when transport limits fail; never infer mathematical NO, truncate, drop/fix coordinates or infer a global source bound.",
+      "possible_future_reduction": "Requires certified elimination AND a lifting relation to the original shared bank and exact emission premise; none supplied."
+    },
+    "prospective_physical_bridge": {
+      "status": "PROSPECTIVE_REQUIRED_CONTRACT_NOT_IMPLEMENTED_OR_PROVED",
+      "name": "M0_original_port_order",
+      "registry_map": {
+        "native_incoming_0": "Lean H.parent(false), parent0",
+        "native_incoming_1": "Lean H.parent(true), parent1"
+      },
+      "law_substitution": "G_native(h) = 1 - gamma_Lean(h)",
+      "chart_coordinate": "For a future shared physical bank, require the CHART coin coordinate to be gamma_Lean=P(parent1), with the LAW substitution applied coherently to every nonlinear readout.",
+      "required_evidence": [
+        "Complete occurrence-preserving hybrid/edge registries",
+        "Original port order and parent target/source correspondence",
+        "One shared bijective bank layout",
+        "Typed substitution/readout equality under M0"
+      ],
+      "performed_by_current_adapter": false,
+      "opposite_map": "An existing opposite port-order consumer needs an explicit witnessed occurrence bijection and its coherent G_native=gamma_Lean substitution; this proposal does not swap ports."
+    },
+    "source_class_admission": false,
+    "source_review": "evidence/CELL-ROW-EXPORT-REVIEW.json"
+  },
+  "native_parent_convention": {
+    "review": "evidence/PARENT-PARAMETER-SOURCE-REVIEW.json",
+    "native_LAW_G": "P(original incoming[0])",
+    "natural_gamma": "P(parent1)",
+    "source_port_map_and_conditional_complement_required": true,
+    "automatic_transform": false
+  },
+  "G7_policy_source_intake": "evidence/G7-POLICY-SOURCE-INTAKE.json",
+  "aggregate_Lean_reflection": {
+    "review": "evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json",
+    "source_sha256": "6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2",
+    "peer_commit": "111036f929a13e1fdb8c657edc5100294b7f26e3",
+    "hosted_selected_types": 4,
+    "new_execution_by_this_chat": false,
+    "concrete_captured_field_instance_proved": false,
+    "current_prepared_native_context": {
+      "added": [
+        {
+          "bytes": 12798,
+          "module": "NativeCellAggregateReflection",
+          "sha256": "6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2",
+          "source": "explicit owned source or import-only variant"
+        }
+      ],
+      "admission_run": false,
+      "all_bodies_independently_retrieved": false,
+      "all_prior_545_entries_unchanged": true,
+      "bytes": 4530839,
+      "changed": [],
+      "entrypoint_sha256": "66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3",
+      "graph_sha256": "f0caa8dbacbc860e6bddf1a72469d32424f6d164418484e649817587c0bb87b5",
+      "modules": 546,
+      "native_run": false,
+      "removed": [],
+      "selection_sha256": "ea9224fe7fda89b10d6226f047a559087cf6bccfa2b5f8f9de07d2cbe6802050"
+    }
+  },
+  "G7_formula_frontend": {
+    "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "source": {
+      "path": "native/g7_exact_law_formula.rs",
+      "sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40",
+      "utf8_bytes": 64242,
+      "lines": 1386
+    },
+    "review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+    "contract": "native/G7-FORMULA-CONTRACT.md",
+    "verification_plan": "native/G7-FORMULA-VERIFICATION-PLAN.md",
+    "execution": false,
+    "new_canonical_task": false,
+    "previous_declaration_only_events": {
+      "controlled": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json; prior55519 bytes remain exact",
+      "cell": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json; prior55667bytes exact"
+    },
+    "historical_review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
+    "earlier_peer_core_review_does_not_certify_new_arms": true,
+    "current_module_declaration_review": "evidence/G7-SUPPLIED-FAMILY-SOURCE-REVIEW.json",
+    "menu_channel_review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+    "historical_checks_do_not_accept_current_revision": true
+  },
+  "Code_CHART_physical_receiver": {
+    "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
+    "peer_commit": "d26950588232caaf55e72d2bd5eef9ad0e5747ec",
+    "selected_complete_types": 9,
+    "exact_sources": [
+      {
+        "module": "OriginalCodeChartReflection",
+        "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+        "git_blob": "9e91b84b4decb92b2258668cbd1a595227324544",
+        "bytes": 8194
+      },
+      {
+        "module": "OriginalCodeChartReceiver",
+        "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+        "git_blob": "dadd2e68d831a52ae962e5b7949f3e3d67310afb",
+        "bytes": 4463
+      }
+    ],
+    "concrete_captured_request_and_result_origin_proved": false,
+    "new_execution_by_this_chat": false,
+    "current_native_context_metadata": {
+      "added": [
+        {
+          "bytes": 8194,
+          "module": "OriginalCodeChartReflection",
+          "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+          "source": "explicit owned source or import-only variant"
+        },
+        {
+          "bytes": 4463,
+          "module": "OriginalCodeChartReceiver",
+          "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+          "source": "explicit owned source or import-only variant"
+        }
+      ],
+      "all_bodies_independently_retrieved": false,
+      "bytes": 4543496,
+      "graph_sha256": "00d22f308224bd95fb5feabcaaf70559c07c45e145ad5077022927dd321dece1",
+      "modules": 548,
+      "native_run": false,
+      "prior_546_changed": [],
+      "selection_sha256": "1898edabf01297e64a1f8d2ba4b19d302bdc3abf9c3af03668a25a377dfc1343"
+    }
+  },
+  "G7_joint_LAW_inlet": {
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "source": {
+      "path": "native/g7_law_table_inlet.rs",
+      "utf8_bytes": 22160,
+      "sha256": "3ec702da77dc3927ff71d3f4ffbb151835df50667f499cc4736f871f37f1c447",
+      "prior_sha256": "560c8731f8ae7336a02829b3b19c758fcd67a6088fb96c194532fc5f0576ffee"
+    },
+    "review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+    "contract": "native/G7-LAW-TABLE-INLET-CONTRACT.md",
+    "native_engine_unchanged": true,
+    "new_execution": false,
+    "all_finite_provider_or_policy_closed": false,
+    "historical_review": "evidence/G7-LAW-TABLE-INLET-SOURCE-REVIEW.json"
+  },
+  "complete_G7_game_rank_hosted_review": {
+    "review": "evidence/G7-GAME-RANK-HOSTED-REVIEW.json",
+    "peer_commit": "53ee5a23159d98869da8c0c997f560acc1ac0139",
+    "selected_audits": 12,
+    "status": "ATTRIBUTED_HOSTED;EXACT_SOURCE_TYPE_PROJECTION_REVIEWED",
+    "native_548_context_changed": false
+  },
+  "G7_native_physical_polynomial_contract": {
+    "contract": "native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md",
+    "review": "evidence/G7-PHYSICAL-POLYNOMIAL-SOURCE-REVIEW.json",
+    "status": "SOURCE_INTERFACE_ONLY;NO_NEW_PROOF_OR_NATIVE_EXECUTION"
+  },
+  "G7_guarded_assertion_queries": {
+    "review": "evidence/G7-ASSERTION-QUERY-SOURCE-REVIEW.json",
+    "contract": "native/G7-ASSERTION-QUERY-CONTRACT.md",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "not_a_backend_result_or_proof": true,
+    "current_terminal_target_review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json"
+  },
+  "G7_finite_path_horizon_hosted_review": {
+    "review": "evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json",
+    "peer_commit": "7e80b1a8cac5ab3128a36964640baae9f0c48006",
+    "budget_audits": 4,
+    "horizon_audits": 6,
+    "native_implementation_or_query_protocol_accepted": false
+  },
+  "current_peer_source_context": {
+    "modules": 771,
+    "source_bytes": 5891078,
+    "prior548_entries_unchanged": true,
+    "graph_sha256": "b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c",
+    "selection_sha256": "995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4",
+    "native_imports_or_objects_accepted": false,
+    "all771_bodies_independently_read_here": false
+  },
+  "G7_query_scope_source_review": {
+    "path": "evidence/G7-QUERY-SCOPE-SOURCE-REVIEW.json",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "native_AST_to_game_equivalence_proved": false
+  },
+  "G7_transfer_padding_hosted_review": {
+    "review": "evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json",
+    "peer_commit": "6fede63c9f25e4335ba57afd2ef4e0b0f863ce63",
+    "transfer_audits": 8,
+    "padding_audits": 6,
+    "native_provider_or_AST_acceptance": false
+  },
+  "latest_peer_source_inventory_attributed": {
+    "modules": 776,
+    "source_bytes": 5911868,
+    "graph_sha256": "bdd1a96cfeaafa3c3264a5e87c95aedb3bbf165932f6348577aab9a3cba426ab",
+    "selection_sha256": "a8b305193e299bf2f801a5332dcb15de96dedd9a313bdd81087b1c4d17ab2948",
+    "prior775_entries_and_relative_order_verified_unchanged": true,
+    "all776_bodies_independently_read_here": false,
+    "native_import_or_object_acceptance": false
+  },
+  "G7_controlled_word_source": {
+    "source": "native/g7_controlled_word.rs",
+    "sha256": "c4f6d679802e06ca2d401f17f08879dd6d63dae878f5a578426cd6b6bd212680",
+    "review": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json",
+    "contract": "native/G7-CONTROLLED-WORD-CONTRACT.md",
+    "compile_status": "UNCOMPILED;UNEXECUTED",
+    "register_mixture_not_specialized": true,
+    "original_conditional_provider_reused": true,
+    "physical_full_source_admission": false,
+    "attributed_peer_source_review": "5c1da7d8 source comparison of c4f6d679 only; no compile/execution or new cell_calendar review"
+  },
+  "G7_cell_calendar_source": {
+    "source": "native/g7_cell_calendar.rs",
+    "sha256": "a5cd0afb5c309a66fbf0309df354992f47480b7276775c4ea18f2857ec163eb3",
+    "review": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json",
+    "contract": "native/G7-CELL-CALENDAR-CONTRACT.md",
+    "compile_status": "UNCOMPILED;UNEXECUTED",
+    "original_row_vector_calendar_word_binding": true,
+    "physical_or_native_refinement_acceptance": false,
+    "representation_checkpoint": "native/G7-WORD-REPRESENTATION-JOIN.md"
+  },
+  "literal_two_tip_Code_receiver": {
+    "source_commit": "3de8a0f60b4cbd932e0949522b3a7438f24b59ca",
+    "review": "evidence/TWO-TIP-CODE-HOSTED-REVIEW.json",
+    "selected_complete_audits": 8,
+    "execution": "attributed existing hosted peer; no rerun",
+    "actual_native_witness": false,
+    "general_G6_or_M0": false
+  },
+  "G7_word_readout_source": {
+    "path": "native/g7_word_readout.rs",
+    "sha256": "6c260c139294431acf42d905d8f808ad112cd1b2861af24531a50ffcc94563b2",
+    "review": "evidence/G7-WORD-READOUT-SOURCE-REVIEW.json",
+    "contract": "native/G7-WORD-READOUT-CONTRACT.md",
+    "status": "UNCOMPILED;UNEXECUTED",
+    "one_word_all_menu_blocks": true,
+    "actual_global_copy_universe": true,
+    "each_menu_mass_one": true,
+    "physical_or_inverse_family_admission": false,
+    "separate_empty_copy_endpoint_receiver": true
+  },
+  "G7_correlated_survival_source": {
+    "path": "native/g7_correlated_survival.rs",
+    "bytes": 16339,
+    "sha256": "6a7f5f7879bc7cb3e5166fdda63c0ee0b446cee928046f78a26dd39933561a30",
+    "review": "evidence/G7-CORRELATED-SURVIVAL-SOURCE-REVIEW.json",
+    "contract": "native/G7-CORRELATED-SURVIVAL-CONTRACT.md",
+    "status": "SOURCE_ONLY;UNCOMPILED;UNEXECUTED",
+    "physical_source_coverage": false,
+    "original_calibrated_cell_preservation": false,
+    "complete_supplied_registry_binding": true,
+    "zero_row_registry_supported": true,
+    "cumulative_binding_lift_budget": true,
+    "equal_masks_on_distinct_row_IDs_supported": true,
+    "mathematical_power_receiver": "evidence/G7-CORRELATED-POWER-HOSTED-REVIEW.json",
+    "native_rational_refinement_proved": false
+  },
+  "G7_canonical_and_observer_source_reuse": {
+    "peer_commit": "5fdd3666559d80208876c77513067bb401a6a455",
+    "review": "evidence/LEAN-CANONICAL-READOUT-SOURCE-REUSE.json",
+    "new_proof_case": false,
+    "actual_native_refinement": false
+  },
+  "G7_target_labelled_family_consumer": {
+    "contract": "native/G7-TARGET-LABELLED-FAMILY-JOIN.md",
+    "source_checkpoint_only": true,
+    "original_source_index_and_targets_retained": true,
+    "source_and_legal_action_coverage_constructed": false,
+    "carrier_source_reuse": "evidence/G7-CARRIER-TARGET-SOURCE-REUSE.json",
+    "mathematical_supplied_model_assembler": "native/g7_supplied_family.rs",
+    "actual_source_and_target_domain_transport_remains_open": true
+  },
+  "G7_original_row_coverage": {
+    "review": "evidence/G7-POSITIONAL-ROW-COVERAGE.json",
+    "distinct_IDs_equal_masks_retained": true,
+    "mask_quotient": false,
+    "duplicate_support_IDs_refused": true,
+    "native_execution": false
+  },
+  "G7_correlated_power_hosted_review": {
+    "path": "evidence/G7-CORRELATED-POWER-HOSTED-REVIEW.json",
+    "source": "lean/hosted435/G7FixedCalendarPowerDomain.lean",
+    "source_sha256": "b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892",
+    "selected_theorem_count": 6,
+    "attributed_hosted_PASS": true,
+    "independent_rerun": false,
+    "pinned_native_acceptance": false
+  },
+  "G7_physical_word_bank_source_review": {
+    "path": "evidence/G7-PHYSICAL-WORD-BANK-SOURCE-REVIEW.json",
+    "peer_commit": "b65ff185149e0df59d4919676967fac4219c0e23",
+    "peer_proposal_sha256": "b832b279e3a1847e644262c9ae72c82e7bfd8b5e4aedd55a5fe4de070853dd85",
+    "status": "SOURCE_ONLY_UNELABORATED",
+    "native_coefficient_relation": "native/G7-EVALUATED-WORD-ROW-BINDING.md",
+    "new_proof_case": false
+  },
+  "G7_population_table_certificate_proposal": {
+    "path": "lean/proposals/NativePopulationTableCertificate.lean",
+    "utf8_bytes": 6083,
+    "sha256": "4a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6",
+    "status": "SOURCE_ONLY_COMPLETE_CONTEXT_UNELABORATED",
+    "contract": "native/G7-POPULATION-TABLE-CERTIFICATE.md",
+    "review": "evidence/G7-POPULATION-CERTIFICATE-SOURCE-REVIEW.json",
+    "new_audit_or_execution": false,
+    "original_engine_changed": false
+  },
+  "G7_population_certificate_exporter": {
+    "source": {
+      "path": "native/g7_population_certificate.rs",
+      "utf8_bytes": 15076,
+      "sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c"
+    },
+    "review": "evidence/G7-POPULATION-EXPORTER-SOURCE-REVIEW.json",
+    "contract": "native/G7-POPULATION-TABLE-CERTIFICATE.md",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "native_population_engine_unchanged": true,
+    "generated_source_rendered_or_checked": false,
+    "source_or_result_origin_authenticated": false,
+    "new_profile_or_dispatch": false
+  },
+  "G7_primitive_coefficient_source_reuse": {
+    "peer_commit": "559dba6bc996390fe0f7cfcf14e21f2e71007194",
+    "review": "evidence/LEAN-PRIMITIVE-COEFFICIENT-SOURCE-REUSE.json",
+    "explicit_native_population_order_retained": true,
+    "physical_evaluated_word_route_reused": true,
+    "new_execution": false
+  },
+  "G7_supplied_family_assembly": {
+    "source": {
+      "path": "native/g7_supplied_family.rs",
+      "utf8_bytes": 8706,
+      "sha256": "bca065f5be046ee7a8e5f4d8ac590585c8212f17848c02fb26476301d9c4e860"
+    },
+    "review": "evidence/G7-SUPPLIED-FAMILY-SOURCE-REVIEW.json",
+    "contract": "native/G7-SUPPLIED-FAMILY-ASSEMBLY.md",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "existing_model_validator_and_compile_reused": true,
+    "mathematical_supplied_data_only": true,
+    "actual_physical_coverage_proved": false
+  },
+  "G7_public_Lean_capture_source_review": {
+    "peer_commit": "46b86fbf002f252e1a7063ba8981ba03541fda55",
+    "review": "evidence/LEAN-PUBLIC-CAPTURE-SOURCE-REVIEW.json",
+    "complete_source_bodies_reviewed": 5,
+    "attributed_actual_launcher_checks": 3,
+    "attributed_offline_mock_regressions": 12,
+    "new_mathematical_cases": 0,
+    "independent_execution": false,
+    "native_writer_binding": "UNBOUND"
+  },
+  "G7_terminal_target_assertion": {
+    "review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "original_consistent_model_predicates_reused": true,
+    "algebraic_constant_tuple_closed": true,
+    "original_stop_validity_obligation_only": true,
+    "target_selector_or_result_proof_returned": false,
+    "new_backend_or_profile_or_execution": false
+  },
+  "G7_certified_population_sparse_rows": {
+    "source": {
+      "path": "lean/proposals/G7CertifiedPopulationRows.lean",
+      "utf8_bytes": 2946,
+      "sha256": "9b1dd5f8660ea516383884ff1c6a14d713543a1cca3eb1fb23c26b6c820f7663"
+    },
+    "peer_commit": "0cc9b201042f514afce52605a50f35f6378f09f3",
+    "review": "evidence/G7-CERTIFIED-POPULATION-ROW-SOURCE-REVIEW.json",
+    "status": "SOURCE_ONLY_COMPLETE_CONTEXT_UNELABORATED",
+    "new_case_or_execution": false,
+    "full_original_context_exceeds_hosted_source_bound": true,
+    "actual_native_refinement_or_admission": false
+  },
+  "G7_population_coefficient_pure_projection": {
+    "source": {
+      "path": "lean/proposals/PopulationCoefficientProjection.lean",
+      "sha256": "4febe046c4c7ed900adc84e391dcb7a4530dc5bedebe9395e275e3cae4d5a899",
+      "utf8_bytes": 3023
+    },
+    "source_map": "lean/proposals/PopulationCoefficientProjection-SOURCE-MAP.json",
+    "status": "SOURCE_ONLY_COMPLETE_CONTEXT_UNELABORATED",
+    "literal_selected_blocks_unchanged": true,
+    "full_table_or_physical_context_selected": false,
+    "original_hosted_source_bound": 262144,
+    "new_case_or_execution": false,
+    "native_776_context_changed": false
+  },
+  "G7_selected_word_fibre_source_reuse": {
+    "review": "evidence/G7-SELECTED-WORD-FIBRE-SOURCE-REVIEW.json",
+    "contract": "native/G7-WORD-REPRESENTATION-JOIN.md",
+    "original_epoch_rep_independence_sha256": "4120281b29d9dc0ea21ee35b52b5f3ce99a4b1690004dc2153bf693b5d344b8b",
+    "status": "SOURCE_INTERFACE_ONLY",
+    "coefficient_and_evaluated_routes_kept_distinct": true,
+    "native_final_trace_not_retained": true,
+    "no_new_API_or_execution": true,
+    "direct_result_certificate_alternative_retained": true
+  }
+}
