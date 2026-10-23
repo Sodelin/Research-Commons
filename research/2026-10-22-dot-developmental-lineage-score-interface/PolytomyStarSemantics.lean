@@ -83,7 +83,7 @@ theorem every_graft_internal_mixed {N m : ℕ} (D : MSSCInstance N m)
     an internal state is either the full potency (none) or a singleton (some). -/
 inductive StarLabeledTree (A : Type u) (S : Type v) where
   | leaf (a : A)
-  | node (state : Option S) (left right : StarLabeledTree A S)
+  | node (state : Option S) («left» «right» : StarLabeledTree A S)
 
 def eraseStar {A : Type u} {S : Type v} : StarLabeledTree A S → BTree A
   | .leaf a => .leaf a

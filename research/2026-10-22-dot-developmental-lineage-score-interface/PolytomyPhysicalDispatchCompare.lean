@@ -13,14 +13,14 @@ namespace PolytomyReductionModel
 open Turing Lax218471.Subroutine Lax218471.Programs Lax218471Proofs
 
 structure DispatchComparePorts where
-  left : CanonicalGlobalStack
-  right : CanonicalGlobalStack
-  left_type : left ≠ globalFilterPort .typeIndex
-  left_remaining : left ≠ globalFilterPort .remaining
-  left_temp : left ≠ globalFilterPort .temp
-  right_type : right ≠ globalFilterPort .typeIndex
-  right_remaining : right ≠ globalFilterPort .remaining
-  right_temp : right ≠ globalFilterPort .temp
+  «left» : CanonicalGlobalStack
+  «right» : CanonicalGlobalStack
+  left_type : «left» ≠ globalFilterPort .typeIndex
+  left_remaining : «left» ≠ globalFilterPort .remaining
+  left_temp : «left» ≠ globalFilterPort .temp
+  right_type : «right» ≠ globalFilterPort .typeIndex
+  right_remaining : «right» ≠ globalFilterPort .remaining
+  right_temp : «right» ≠ globalFilterPort .temp
 
 def dispatchFlagStore (flag : Bool) (s : CanonicalGlobalStore) : CanonicalGlobalStore := ⟨(s.state.1, flag), s.stk⟩
 
@@ -102,8 +102,8 @@ theorem dispatchCompare_executes (p : DispatchComparePorts) (C D : ℕ) (s : Can
   exact ⟨_, by omega, hall⟩
 
 def originalBudgetUniversePorts : DispatchComparePorts where
-  left := .inr .budget
-  right := .inr .universe
+  «left» := .inr .budget
+  «right» := .inr .universe
   left_type := by decide
   left_remaining := by decide
   left_temp := by decide
@@ -112,8 +112,8 @@ def originalBudgetUniversePorts : DispatchComparePorts where
   right_temp := by decide
 
 def originalBudgetProductPorts : DispatchComparePorts where
-  left := .inr .budget
-  right := globalScanPort (.inr .savedCount)
+  «left» := .inr .budget
+  «right» := globalScanPort (.inr .savedCount)
   left_type := by decide
   left_remaining := by decide
   left_temp := by decide

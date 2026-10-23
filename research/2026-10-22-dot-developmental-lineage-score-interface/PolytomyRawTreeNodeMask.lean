@@ -17,11 +17,11 @@ def rawNodeMask : BTree (ℕ × ℕ) → List Bool
 
 def rawForestNodeMask (ts : List (BTree (ℕ × ℕ))) : List Bool := ts.flatMap rawNodeMask
 
-def rawMaskPrefix (prefix : List Bool) (r : Option (List Bool × List Bool)) :
-    Option (List Bool × List Bool) := r.map (fun p => (p.1, prefix ++ p.2))
+def rawMaskPrefix («prefix» : List Bool) (r : Option (List Bool × List Bool)) :
+    Option (List Bool × List Bool) := r.map (fun p => (p.1, «prefix» ++ p.2))
 
-theorem rawMaskPrefix_fst (prefix : List Bool) (r : Option (List Bool × List Bool)) :
-    (rawMaskPrefix prefix r).map Prod.fst = r.map Prod.fst := by cases r <;> rfl
+theorem rawMaskPrefix_fst («prefix» : List Bool) (r : Option (List Bool × List Bool)) :
+    (rawMaskPrefix «prefix» r).map Prod.fst = r.map Prod.fst := by cases r <;> rfl
 
 def rawForestMaskParse : ℕ → ℕ → List Bool → Option (List Bool × List Bool)
   | _, 0, bits => some (bits, [])
@@ -169,12 +169,12 @@ def rawMarkedSuffixes : List Bool → List Bool → List (List Bool)
   | b :: bits, mark :: mask =>
       if mark then (b :: bits) :: rawMarkedSuffixes bits mask else rawMarkedSuffixes bits mask
 
-theorem rawMarkedSuffixes_false_prefix (prefix rest mask : List Bool) :
-    rawMarkedSuffixes (prefix ++ rest) (List.replicate prefix.length false ++ mask) =
+theorem rawMarkedSuffixes_false_prefix («prefix» rest mask : List Bool) :
+    rawMarkedSuffixes («prefix» ++ rest) (List.replicate prefix.length false ++ mask) =
       rawMarkedSuffixes rest mask := by
-  induction prefix with
+  induction «prefix» with
   | nil => rfl
-  | cons b prefix ih =>
+  | cons b «prefix» ih =>
       simpa only [List.length_cons, List.replicate_succ, List.cons_append,
         rawMarkedSuffixes, Bool.false_eq_true, ↓reduceIte] using ih
 

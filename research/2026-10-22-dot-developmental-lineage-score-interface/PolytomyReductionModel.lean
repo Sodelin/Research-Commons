@@ -18,7 +18,7 @@ universe u v
 
 inductive BTree (A : Type u) where
   | leaf (a : A)
-  | node (left right : BTree A)
+  | node («left» «right» : BTree A)
   deriving DecidableEq
 
 def leaves {A : Type u} : BTree A → List A
@@ -240,16 +240,16 @@ structure MSSCInstance (N m : ℕ) where
   covers : ∀ x : Fin N, ∃ i : Fin m, x ∈ sets i
 
 def firstCover {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m)) (x : Fin N) : ℕ :=
+    («order» : List (Fin m)) (x : Fin N) : ℕ :=
   (order.takeWhile (fun i => decide (x ∉ D.sets i))).length + 1
 
 def msscCost {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m)) : ℕ :=
-  ∑ x : Fin N, firstCover D order x
+    («order» : List (Fin m)) : ℕ :=
+  ∑ x : Fin N, firstCover D «order» x
 
 def MSSCDecision {N m : ℕ} (D : MSSCInstance N m) (K : ℕ) : Prop :=
-  ∃ order : List (Fin m),
-    order.Perm (Finset.univ : Finset (Fin m)).toList ∧ msscCost D order ≤ K
+  ∃ «order» : List (Fin m),
+    order.Perm (Finset.univ : Finset (Fin m)).toList ∧ msscCost D «order» ≤ K
 
 def privateCount (N m : ℕ) : ℕ := m * N + 1
 abbrev Terminal (N m : ℕ) := Sum (Fin N) (Sum (Fin (privateCount N m)) (Fin 2))
@@ -363,10 +363,10 @@ def originalContinuation {N m : ℕ} (D : MSSCInstance N m)
       originalContinuation D (covered ∪ D.sets i) rest
 
 theorem chainCost_anchor_map {N m : ℕ} (D : MSSCInstance N m)
-    (covered : Finset (Fin N)) (order : List (Fin m)) :
+    (covered : Finset (Fin N)) («order» : List (Fin m)) :
     chainCost Finset.univ (blockTypes D) (coveredTypes D covered)
-      (order.map some) = originalContinuation D covered order := by
-  induction order generalizing covered with
+      (order.map some) = originalContinuation D covered «order» := by
+  induction «order» generalizing covered with
   | nil => rfl
   | cons i rest ih =>
       simp only [List.map_cons, chainCost, originalContinuation,
@@ -387,11 +387,11 @@ theorem complement_card_as_sum {N : ℕ} (covered : Finset (Fin N)) :
 /-- Each type is charged once per successive prefix that still misses it.
     This identity is valid even before assuming an ordering covers U. -/
 theorem originalContinuation_firstCover {N m : ℕ} (D : MSSCInstance N m)
-    (covered : Finset (Fin N)) (order : List (Fin m)) :
-    originalContinuation D covered order = ∑ x : Fin N,
+    (covered : Finset (Fin N)) («order» : List (Fin m)) :
+    originalContinuation D covered «order» = ∑ x : Fin N,
       if x ∈ covered then 0 else
         (order.takeWhile (fun i => decide (x ∉ D.sets i))).length := by
-  induction order generalizing covered with
+  induction «order» generalizing covered with
   | nil => simp [originalContinuation]
   | cons i rest ih =>
       rw [originalContinuation, ih, complement_card_as_sum,
@@ -401,15 +401,15 @@ theorem originalContinuation_firstCover {N m : ℕ} (D : MSSCInstance N m)
       by_cases hc : x ∈ covered <;> by_cases hi : x ∈ D.sets i <;>
         simp [hc, hi, List.takeWhile, Nat.add_comm]
 
-def anchorTree {m : ℕ} (order : List (Fin m)) : BTree (Block m) :=
+def anchorTree {m : ℕ} («order» : List (Fin m)) : BTree (Block m) :=
   attach (.leaf none) (order.map some)
 
 /-- Exact MSSC shift for the concrete joining score, not a surrogate score. -/
 theorem anchored_joining_score {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m)) :
-    joiningScore Finset.univ (blockTypes D) (anchorTree order) + N =
-      msscCost D order := by
-  have h := chainCost_anchor_map D (∅ : Finset (Fin N)) order
+    («order» : List (Fin m)) :
+    joiningScore Finset.univ (blockTypes D) (anchorTree «order») + N =
+      msscCost D «order» := by
+  have h := chainCost_anchor_map D (∅ : Finset (Fin N)) «order»
   simp only [coveredTypes, Finset.image_empty, Finset.empty_union] at h
   simp only [anchorTree, joiningScore_attach, joiningScore,
     joinedObserved, zero_add]
@@ -419,10 +419,10 @@ theorem anchored_joining_score {N m : ℕ} (D : MSSCInstance N m)
 /-- The additive identity gives the exact natural-number threshold without
     replacing subtraction by an unjustified integer calculation. -/
 theorem anchored_joining_threshold {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m)) (C0 K : ℕ) (hNK : N ≤ K) :
-    C0 + joiningScore Finset.univ (blockTypes D) (anchorTree order) ≤ C0 + K - N
-      ↔ msscCost D order ≤ K := by
-  have h := anchored_joining_score D order
+    («order» : List (Fin m)) (C0 K : ℕ) (hNK : N ≤ K) :
+    C0 + joiningScore Finset.univ (blockTypes D) (anchorTree «order») ≤ C0 + K - N
+      ↔ msscCost D «order» ≤ K := by
+  have h := anchored_joining_score D «order»
   omega
 
 theorem foldl_node_eq_attach {A : Type u} (t : BTree A) (xs : List A) :
@@ -477,9 +477,9 @@ theorem fullScore_decomposition {N m : ℕ} (D : MSSCInstance N m)
   rw [hsum]
   rfl
 
-theorem anchorTree_valid {m : ℕ} (order : List (Fin m))
+theorem anchorTree_valid {m : ℕ} («order» : List (Fin m))
     (ho : order.Perm (Finset.univ : Finset (Fin m)).toList) :
-    ValidJoiningTree (anchorTree order) := by
+    ValidJoiningTree (anchorTree «order») := by
   have hn : order.Nodup := ho.nodup_iff.mpr Finset.univ.nodup_toList
   have hmap : (order.map (some : Fin m → Block m)).Nodup :=
     List.Nodup.map (Option.some_injective _) hn
@@ -493,7 +493,7 @@ theorem anchorTree_valid {m : ℕ} (order : List (Fin m))
   cases b with
   | none => simp
   | some i =>
-      have hi : i ∈ order := ho.mem_iff.mpr (by simp)
+      have hi : i ∈ «order» := ho.mem_iff.mpr (by simp)
       simp [hi]
 
 /-- One whole direction of the original decision reduction, with concrete
@@ -501,11 +501,11 @@ theorem anchorTree_valid {m : ℕ} (order : List (Fin m))
 theorem msscDecision_implies_refinementDecision {N m : ℕ}
     (D : MSSCInstance N m) (K : ℕ) (hNK : N ≤ K) :
     MSSCDecision D K → RefinementDecision D K := by
-  rintro ⟨order, ho, hcost⟩
-  have hv := anchorTree_valid order ho
-  refine ⟨anchorTree order, hv, ?_⟩
+  rintro ⟨«order», ho, hcost⟩
+  have hv := anchorTree_valid «order» ho
+  refine ⟨anchorTree «order», hv, ?_⟩
   rw [fullScore_decomposition D _ hv]
-  exact (anchored_joining_threshold D order (fixedCost D) K hNK).mpr hcost
+  exact (anchored_joining_threshold D «order» (fixedCost D) K hNK).mpr hcost
 
 def missingMergeCost {I : Type u} {S : Type v} [DecidableEq I] [DecidableEq S]
     (univ : Finset S) (B : I → Finset S) (J : Finset I) : ℕ :=
@@ -627,7 +627,7 @@ theorem map_some_filterMap {A : Type u} (xs : List (Option A))
       | none => simp at hn
       | some a => simp [ih hnxs]
 
-theorem real_order_perm {m : ℕ} (order : List (Fin m))
+theorem real_order_perm {m : ℕ} («order» : List (Fin m))
     (hp : (none :: order.map some).Perm
       (Finset.univ : Finset (Block m)).toList) :
     order.Perm (Finset.univ : Finset (Fin m)).toList := by
@@ -642,7 +642,7 @@ theorem real_order_perm {m : ℕ} (order : List (Fin m))
 
 theorem anchor_tail_order {m : ℕ} (rest : List (Block m))
     (hp : (none :: rest).Perm (Finset.univ : Finset (Block m)).toList) :
-    ∃ order : List (Fin m),
+    ∃ «order» : List (Fin m),
       order.Perm (Finset.univ : Finset (Fin m)).toList ∧ rest = order.map some := by
   have hn : (none :: rest).Nodup := hp.nodup_iff.mpr Finset.univ.nodup_toList
   have hm := map_some_filterMap rest (List.nodup_cons.mp hn).1
@@ -657,9 +657,9 @@ theorem low_score_caterpillar_has_anchor_order {N m : ℕ}
     (D : MSSCInstance N m) (hm : 2 ≤ m) (c : BTree (Block m))
     (hv : ValidJoiningTree c) (hc : IsCaterpillar c)
     (hlow : joiningScore Finset.univ (blockTypes D) c < privateCount N m) :
-    ∃ order : List (Fin m),
+    ∃ «order» : List (Fin m),
       order.Perm (Finset.univ : Finset (Fin m)).toList ∧
-      joiningScore Finset.univ (blockTypes D) (anchorTree order) =
+      joiningScore Finset.univ (blockTypes D) (anchorTree «order») =
         joiningScore Finset.univ (blockTypes D) c := by
   obtain ⟨a, xs, rfl⟩ := caterpillar_representation c hc
   cases xs with
@@ -673,8 +673,8 @@ theorem low_score_caterpillar_has_anchor_order {N m : ℕ}
         simpa [leaves_attach, leaves] using hv
       cases a with
       | none =>
-          obtain ⟨order, ho, he⟩ := anchor_tail_order (b :: rest) hp
-          refine ⟨order, ho, ?_⟩
+          obtain ⟨«order», ho, he⟩ := anchor_tail_order (b :: rest) hp
+          refine ⟨«order», ho, ?_⟩
           change joiningScore Finset.univ (blockTypes D)
             (attach (.leaf none) (order.map some)) = _
           rw [← he]
@@ -683,9 +683,9 @@ theorem low_score_caterpillar_has_anchor_order {N m : ℕ}
           | none =>
               have hs : (none :: some i :: rest).Perm
                   (some i :: none :: rest) := List.Perm.swap _ _ _
-              obtain ⟨order, ho, he⟩ := anchor_tail_order (some i :: rest)
+              obtain ⟨«order», ho, he⟩ := anchor_tail_order (some i :: rest)
                 (hs.trans hp)
-              refine ⟨order, ho, ?_⟩
+              refine ⟨«order», ho, ?_⟩
               change joiningScore Finset.univ (blockTypes D)
                 (attach (.leaf none) (order.map some)) = _
               rw [← he]
@@ -706,10 +706,10 @@ theorem refinementDecision_implies_msscDecision {N m : ℕ}
   have hlow : joiningScore Finset.univ (blockTypes D) c < privateCount N m := by
     simp only [privateCount]
     omega
-  obtain ⟨order, ho, hscore⟩ :=
+  obtain ⟨«order», ho, hscore⟩ :=
     low_score_caterpillar_has_anchor_order D hm c hv hc hlow
-  refine ⟨order, ho, ?_⟩
-  have hs := anchored_joining_score D order
+  refine ⟨«order», ho, ?_⟩
+  have hs := anchored_joining_score D «order»
   rw [hscore] at hs
   omega
 
@@ -722,10 +722,10 @@ theorem fullReductionClaim : FullReductionClaim := by
     refinementDecision_implies_msscDecision D K hm hNK hKmN⟩
 
 theorem firstCover_le_length_of_witness {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m)) (x : Fin N)
-    (hx : ∃ i ∈ order, x ∈ D.sets i) : firstCover D order x ≤ order.length := by
+    («order» : List (Fin m)) (x : Fin N)
+    (hx : ∃ i ∈ «order», x ∈ D.sets i) : firstCover D «order» x ≤ order.length := by
   revert hx
-  induction order with
+  induction «order» with
   | nil => intro hx; simp at hx
   | cons a rest ih =>
       intro hx
@@ -742,18 +742,18 @@ theorem firstCover_le_length_of_witness {N m : ℕ} (D : MSSCInstance N m)
         omega
 
 theorem msscCost_bounds {N m : ℕ} (D : MSSCInstance N m)
-    (order : List (Fin m))
+    («order» : List (Fin m))
     (ho : order.Perm (Finset.univ : Finset (Fin m)).toList) :
-    N ≤ msscCost D order ∧ msscCost D order ≤ m * N := by
+    N ≤ msscCost D «order» ∧ msscCost D «order» ≤ m * N := by
   have hlen : order.length = m := by simpa using ho.length_eq
-  have hl : ∀ x : Fin N, 1 ≤ firstCover D order x := by
+  have hl : ∀ x : Fin N, 1 ≤ firstCover D «order» x := by
     intro x
     simp [firstCover]
-  have hu : ∀ x : Fin N, firstCover D order x ≤ m := by
+  have hu : ∀ x : Fin N, firstCover D «order» x ≤ m := by
     intro x
     obtain ⟨i, hi⟩ := D.covers x
-    have him : i ∈ order := ho.mem_iff.mpr (by simp)
-    simpa [hlen] using firstCover_le_length_of_witness D order x ⟨i, him, hi⟩
+    have him : i ∈ «order» := ho.mem_iff.mpr (by simp)
+    simpa [hlen] using firstCover_le_length_of_witness D «order» x ⟨i, him, hi⟩
   constructor
   · have h := Finset.sum_le_sum (s := Finset.univ) (fun x hx => hl x)
     simpa [msscCost] using h
@@ -764,18 +764,18 @@ theorem msscCost_bounds {N m : ℕ} (D : MSSCInstance N m)
     Given an actual minimizing MSSC order, its anchored tree minimizes over
     ALL valid binary refinements and realizes the precise additive cost shift. -/
 theorem exact_anchor_optimum {N m : ℕ} (D : MSSCInstance N m) (hm : 2 ≤ m)
-    (order : List (Fin m))
+    («order» : List (Fin m))
     (ho : order.Perm (Finset.univ : Finset (Fin m)).toList)
     (hmin : ∀ p : List (Fin m),
       p.Perm (Finset.univ : Finset (Fin m)).toList →
-        msscCost D order ≤ msscCost D p) :
-    ValidJoiningTree (anchorTree order) ∧
-      fullScore D (anchorTree order) + N = fixedCost D + msscCost D order ∧
+        msscCost D «order» ≤ msscCost D p) :
+    ValidJoiningTree (anchorTree «order») ∧
+      fullScore D (anchorTree «order») + N = fixedCost D + msscCost D «order» ∧
       ∀ t : BTree (Block m), ValidJoiningTree t →
-        fullScore D (anchorTree order) ≤ fullScore D t := by
-  have hv := anchorTree_valid order ho
-  have hs := anchored_joining_score D order
-  have hb := (msscCost_bounds D order ho).2
+        fullScore D (anchorTree «order») ≤ fullScore D t := by
+  have hv := anchorTree_valid «order» ho
+  have hs := anchored_joining_score D «order»
+  have hb := (msscCost_bounds D «order» ho).2
   refine ⟨hv, ?_, ?_⟩
   · rw [fullScore_decomposition D _ hv]
     omega
@@ -793,16 +793,16 @@ theorem exact_anchor_optimum {N m : ℕ} (D : MSSCInstance N m) (hm : 2 ≤ m)
       omega
 
 theorem exists_mssc_minimizer {N m : ℕ} (D : MSSCInstance N m) :
-    ∃ order : List (Fin m),
+    ∃ «order» : List (Fin m),
       order.Perm (Finset.univ : Finset (Fin m)).toList ∧
       ∀ p : List (Fin m), p.Perm (Finset.univ : Finset (Fin m)).toList →
-        msscCost D order ≤ msscCost D p := by
+        msscCost D «order» ≤ msscCost D p := by
   classical
-  let P : ℕ → Prop := fun n => ∃ order : List (Fin m),
-    order.Perm (Finset.univ : Finset (Fin m)).toList ∧ msscCost D order = n
+  let P : ℕ → Prop := fun n => ∃ «order» : List (Fin m),
+    order.Perm (Finset.univ : Finset (Fin m)).toList ∧ msscCost D «order» = n
   have hex : ∃ n, P n := ⟨_, Finset.univ.toList, List.Perm.refl _, rfl⟩
-  obtain ⟨order, ho, hs⟩ := Nat.find_spec hex
-  refine ⟨order, ho, ?_⟩
+  obtain ⟨«order», ho, hs⟩ := Nat.find_spec hex
+  refine ⟨«order», ho, ?_⟩
   intro p hp
   rw [hs]
   exact Nat.find_min' hex ⟨p, hp, rfl⟩
@@ -810,15 +810,15 @@ theorem exists_mssc_minimizer {N m : ℕ} (D : MSSCInstance N m) :
 /-- An existential exact optimum identity, with minimizer existence proved
     rather than supplied as an oracle or an extra hypothesis. -/
 theorem exists_exact_optimum_pair {N m : ℕ} (D : MSSCInstance N m) (hm : 2 ≤ m) :
-    ∃ order : List (Fin m), ∃ t : BTree (Block m),
+    ∃ «order» : List (Fin m), ∃ t : BTree (Block m),
       order.Perm (Finset.univ : Finset (Fin m)).toList ∧ ValidJoiningTree t ∧
       (∀ p : List (Fin m), p.Perm (Finset.univ : Finset (Fin m)).toList →
-        msscCost D order ≤ msscCost D p) ∧
+        msscCost D «order» ≤ msscCost D p) ∧
       (∀ u : BTree (Block m), ValidJoiningTree u → fullScore D t ≤ fullScore D u) ∧
-      fullScore D t + N = fixedCost D + msscCost D order := by
-  obtain ⟨order, ho, hmin⟩ := exists_mssc_minimizer D
-  obtain ⟨hv, heq, htree⟩ := exact_anchor_optimum D hm order ho hmin
-  exact ⟨order, anchorTree order, ho, hv, hmin, htree, heq⟩
+      fullScore D t + N = fixedCost D + msscCost D «order» := by
+  obtain ⟨«order», ho, hmin⟩ := exists_mssc_minimizer D
+  obtain ⟨hv, heq, htree⟩ := exact_anchor_optimum D hm «order» ho hmin
+  exact ⟨«order», anchorTree «order», ho, hv, hmin, htree, heq⟩
 
 /- Remaining proof obligations, not supplied as assumptions:
 1. Elaborate/check the concrete block-cell and score proofs, together with the

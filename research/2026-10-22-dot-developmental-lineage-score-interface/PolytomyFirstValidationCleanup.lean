@@ -12,13 +12,13 @@ namespace PolytomyReductionModel
 open Turing Lax218471.Subroutine Lax218471.Programs Lax218471Proofs
 
 theorem guardedDeclaredCount_length_le {K : Type} [DecidableEq K]
-    (left right : K) (hne : left ≠ right) (s : CountdownStore K Bool) (k : K) :
-    ((guardedDeclaredCountEval left right s).stk k).length ≤ (s.stk k).length := by
-  by_cases hkl : k = left
-  · subst k; exact (guardedDeclaredCount_lengths left right hne s).1
-  · by_cases hkr : k = right
-    · subst k; exact (guardedDeclaredCount_lengths left right hne s).2
-    · simpa only [guardedDeclaredCount_extra left right k hkl hkr s] using le_refl (s.stk k).length
+    («left» «right» : K) (hne : «left» ≠ «right») (s : CountdownStore K Bool) (k : K) :
+    ((guardedDeclaredCountEval «left» «right» s).stk k).length ≤ (s.stk k).length := by
+  by_cases hkl : k = «left»
+  · subst k; exact (guardedDeclaredCount_lengths «left» «right» hne s).1
+  · by_cases hkr : k = «right»
+    · subst k; exact (guardedDeclaredCount_lengths «left» «right» hne s).2
+    · simpa only [guardedDeclaredCount_extra «left» «right» k hkl hkr s] using le_refl (s.stk k).length
 
 theorem cleanupMass_mono {K F : Type} (ks : List K) (s t : CountdownStore K F)
     (h : ∀ k, (t.stk k).length ≤ (s.stk k).length) : cleanupMass ks t ≤ cleanupMass ks s := by

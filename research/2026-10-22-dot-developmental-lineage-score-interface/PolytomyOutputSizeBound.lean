@@ -30,8 +30,8 @@ theorem binaryNatFrame_length_le (n : ℕ) : (binaryNatFrame n).length ≤ 2 * n
   omega
 
 theorem flatMap_length_le_const {A : Type*} (xs : List A) (f : A → List Bool)
-    (bound : ℕ) (h : ∀ a ∈ xs, (f a).length ≤ bound) :
-    (xs.flatMap f).length ≤ xs.length * bound := by
+    («bound» : ℕ) (h : ∀ a ∈ xs, (f a).length ≤ «bound») :
+    (xs.flatMap f).length ≤ xs.length * «bound» := by
   induction xs with
   | nil => simp
   | cons a xs ih =>

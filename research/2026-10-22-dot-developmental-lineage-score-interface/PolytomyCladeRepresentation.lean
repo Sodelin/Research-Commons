@@ -39,15 +39,15 @@ theorem CellClade.subset {A : Type u} [DecidableEq A] {C : Finset A}
     {t : BTree A} (h : CellClade C t) : C ⊆ cellSet t := by
   induction h with
   | root t => exact Finset.Subset.refl _
-  | left h ih => exact ih.trans Finset.subset_union_left
-  | right h ih => exact ih.trans Finset.subset_union_right
+  | «left» h ih => exact ih.trans Finset.subset_union_left
+  | «right» h ih => exact ih.trans Finset.subset_union_right
 
 theorem CellClade.nonempty {A : Type u} [DecidableEq A] {C : Finset A}
     {t : BTree A} (h : CellClade C t) : C.Nonempty := by
   induction h with
   | root t => exact cellSet_nonempty t
-  | left h ih => exact ih
-  | right h ih => exact ih
+  | «left» h ih => exact ih
+  | «right» h ih => exact ih
 
 theorem cellClade_node_iff {A : Type u} [DecidableEq A] (C : Finset A)
     (l r : BTree A) : CellClade C (.node l r) ↔
@@ -56,8 +56,8 @@ theorem cellClade_node_iff {A : Type u} [DecidableEq A] (C : Finset A)
   · intro h
     cases h with
     | root => exact Or.inl rfl
-    | left h => exact Or.inr (Or.inl h)
-    | right h => exact Or.inr (Or.inr h)
+    | «left» h => exact Or.inr (Or.inl h)
+    | «right» h => exact Or.inr (Or.inr h)
   · rintro (h | h | h)
     · rw [h]; exact .root _
     · exact .left h
@@ -255,26 +255,26 @@ theorem CellSubtree.subset {A : Type u} [DecidableEq A] {U T : BTree A}
     (h : CellSubtree U T) : cellSet U ⊆ cellSet T := by
   induction h with
   | root t => exact Finset.Subset.refl _
-  | left h ih => exact ih.trans Finset.subset_union_left
-  | right h ih => exact ih.trans Finset.subset_union_right
+  | «left» h ih => exact ih.trans Finset.subset_union_left
+  | «right» h ih => exact ih.trans Finset.subset_union_right
 
 theorem CellSubtree.nodup {A : Type u} {U T : BTree A}
     (h : CellSubtree U T) (hn : (leaves T).Nodup) : (leaves U).Nodup := by
   revert hn
   induction h with
   | root t => exact id
-  | left h ih => intro hn; exact ih hn.of_append_left
-  | right h ih => intro hn; exact ih hn.of_append_right
+  | «left» h ih => intro hn; exact ih hn.of_append_left
+  | «right» h ih => intro hn; exact ih hn.of_append_right
 
 theorem CellClade.has_subtree {A : Type u} [DecidableEq A] {C : Finset A}
     {T : BTree A} (h : CellClade C T) :
     ∃ U : BTree A, CellSubtree U T ∧ cellSet U = C := by
   induction h with
   | root t => exact ⟨t, .root t, rfl⟩
-  | left h ih =>
+  | «left» h ih =>
       obtain ⟨U, hs, he⟩ := ih
       exact ⟨U, .left hs, he⟩
-  | right h ih =>
+  | «right» h ih =>
       obtain ⟨U, hs, he⟩ := ih
       exact ⟨U, .right hs, he⟩
 
@@ -284,11 +284,11 @@ theorem cellClade_in_subtree {A : Type u} [DecidableEq A] {C : Finset A}
   revert hn hc
   induction hu with
   | root t => intro hn hc; exact hc
-  | left hu ih =>
+  | «left» hu ih =>
       intro hn hc
       exact ih hn.of_append_left
         (cellClade_left_of_subset hn hc (hs.trans (CellSubtree.subset hu)))
-  | right hu ih =>
+  | «right» hu ih =>
       intro hn hc
       exact ih hn.of_append_right
         (cellClade_right_of_subset hn hc (hs.trans (CellSubtree.subset hu)))
@@ -321,15 +321,15 @@ theorem coveredByBlocks_has_frontier {I : Type*} {A : Type u} [DecidableEq A]
           obtain ⟨i, U, hu, hi, haU⟩ := hc a (Finset.mem_union.mpr (Or.inl ha))
           cases hu with
           | root => exact (hroot ⟨i, hi⟩).elim
-          | left hu => exact ⟨i, U, hu, hi, haU⟩
-          | right hu => exact (hd ha (CellSubtree.subset hu haU)).elim
+          | «left» hu => exact ⟨i, U, hu, hi, haU⟩
+          | «right» hu => exact (hd ha (CellSubtree.subset hu haU)).elim
         have hcr : CoveredByBlocks blocks r := by
           intro a ha
           obtain ⟨i, U, hu, hi, haU⟩ := hc a (Finset.mem_union.mpr (Or.inr ha))
           cases hu with
           | root => exact (hroot ⟨i, hi⟩).elim
-          | left hu => exact (hd (CellSubtree.subset hu haU) ha).elim
-          | right hu => exact ⟨i, U, hu, hi, haU⟩
+          | «left» hu => exact (hd (CellSubtree.subset hu haU) ha).elim
+          | «right» hu => exact ⟨i, U, hu, hi, haU⟩
         obtain ⟨xs, hxs⟩ := ihl hn.of_append_left hcl
         obtain ⟨ys, hys⟩ := ihr hn.of_append_right hcr
         exact ⟨xs ++ ys, .join hxs hys⟩

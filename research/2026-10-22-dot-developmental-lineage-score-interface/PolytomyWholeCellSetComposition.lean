@@ -409,9 +409,9 @@ def cellSetAnswer (p : InclusionPorts K) (m A : ℕ) (s : CountdownStore K F) : 
 def cellSetResult (p : InclusionPorts K) (m A : ℕ) (s : CountdownStore K F) : CountdownStore K F :=
   ⟨((s.state.1.1, false), cellSetAnswer p m A s), s.stk⟩
 
-def cellSetWordsAnswer (m A : ℕ) (left leftMask right rightMask : List Bool) : Bool :=
-  (rawMarkedSuffixes left leftMask).all (inclusionCheck m A right rightMask) &&
-  (rawMarkedSuffixes right rightMask).all (inclusionCheck m A left leftMask)
+def cellSetWordsAnswer (m A : ℕ) («left» leftMask «right» rightMask : List Bool) : Bool :=
+  (rawMarkedSuffixes «left» leftMask).all (inclusionCheck m A «right» rightMask) &&
+  (rawMarkedSuffixes «right» rightMask).all (inclusionCheck m A «left» leftMask)
 
 theorem cellSetAnswer_words (p : InclusionPorts K) (m A : ℕ) (s : CountdownStore K F) :
     cellSetAnswer p m A s = cellSetWordsAnswer m A

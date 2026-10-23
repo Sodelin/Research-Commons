@@ -20,13 +20,13 @@ def AnyTargetAccepted (G : AnyBlockTarget) : Prop :=
 
 theorem msscDecision_lower {N m : ℕ} (D : MSSCInstance N m) (K : ℕ)
     (h : MSSCDecision D K) : N ≤ K := by
-  obtain ⟨order, hp, hK⟩ := h
-  exact (msscCost_bounds D order hp).1.trans hK
+  obtain ⟨«order», hp, hK⟩ := h
+  exact (msscCost_bounds D «order» hp).1.trans hK
 
 theorem msscDecision_upper {N m : ℕ} (D : MSSCInstance N m) (K : ℕ)
     (h : m * N ≤ K) : MSSCDecision D K := by
-  let order := (Finset.univ : Finset (Fin m)).toList
-  exact ⟨order, List.Perm.refl _, (msscCost_bounds D order (List.Perm.refl _)).2.trans h⟩
+  let «order» := (Finset.univ : Finset (Fin m)).toList
+  exact ⟨«order», List.Perm.refl _, (msscCost_bounds D «order» (List.Perm.refl _)).2.trans h⟩
 
 theorem msscDecision_zero {m : ℕ} (D : MSSCInstance 0 m) (K : ℕ) :
     MSSCDecision D K := msscDecision_upper D K (by simp)

@@ -84,8 +84,8 @@ def treeMaskEnd (result : Option (List Bool × List Bool)) (os : List Bool) : Tr
   | none => treeMaskCfg none (false, none) [] [] []
   | some (rest, mask) => treeMaskCfg none (true, none) rest [] (mask.reverse ++ os)
 
-theorem treeMaskEnd_prefix (prefix os : List Bool) (r : Option (List Bool × List Bool)) :
-    treeMaskEnd (rawMaskPrefix prefix r) os = treeMaskEnd r (prefix.reverse ++ os) := by
+theorem treeMaskEnd_prefix («prefix» os : List Bool) (r : Option (List Bool × List Bool)) :
+    treeMaskEnd (rawMaskPrefix «prefix» r) os = treeMaskEnd r (prefix.reverse ++ os) := by
   cases r with
   | none => rfl
   | some p => rcases p with ⟨rest, mask⟩; simp [rawMaskPrefix, treeMaskEnd, List.reverse_append, List.append_assoc]

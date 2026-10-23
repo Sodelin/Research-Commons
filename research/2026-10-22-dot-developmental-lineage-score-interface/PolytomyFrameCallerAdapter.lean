@@ -156,13 +156,13 @@ theorem frameCaller_executes (source payload : K) (hne : source ≠ payload)
     A later routine may begin at the exact returned boundary. -/
 theorem frameCaller_then (source payload : K) (hne : source ≠ payload)
     (base : K → List Bool) (frame : F) (bits : List Bool)
-    (next : Routine (fun _ : K => Bool) (F × Bool))
+    («next» : Routine (fun _ : K => Bool) (F × Bool))
     (finalStore : Store (fun _ : K => Bool) (F × Bool)) (nextSteps : ℕ)
     (hnext : next.Executes
       (frameCallerResult source payload base frame (readRawBinaryFrame bits))
       finalStore nextSteps) :
     ∃ n ≤ 2 * bits.length + 4 + nextSteps,
-      (RoutineComposition.seq (frameCallerRoutine source payload hne) next).Executes
+      (RoutineComposition.seq (frameCallerRoutine source payload hne) «next»).Executes
         (frameCallerStore source payload base frame false bits []) finalStore n := by
   obtain ⟨n, hn, h⟩ := frameCaller_executes source payload hne base frame bits
   exact ⟨n + nextSteps, Nat.add_le_add_right hn nextSteps,
