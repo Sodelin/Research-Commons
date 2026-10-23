@@ -237,3 +237,6 @@ Source54 /23a03c5f3a7e817828cd60bd6455fcaf3bc36ac4: Rust82 PASS, including the r
 
 
 Source56 preparation: full positive finite-atomic law identification from sparse or consecutive2r+1 moments, reusing the existing CM strict separator and complete positive-grid uniqueness. This selects an explicitly scoped CB-RXN-001 mathematical component while keeping its completed hand theorem and physical stopped-law/derivative/coefficient/oracle joins separate. Rust extends the existing grouped-law module with bounded complete signatures and a literal target-signature/all-finite-positive-rival Lean consumer. New generic/caller/96-name candidates remain unverified; no claim or actual target acceptance is inferred from source preparation.
+
+
+Source56 /63c4e0ddc3b48267a0bdcfab95d85ccc285518dd: all85 workspace Rust tests PASSED, including complete moment signature/grouping/limit cases; the subsequent source preparation correctly REFUSED added-import manifest order for ResearchCommons.Integration.Exports. The added import was listed last in metadata but second in the literal body. Source57 aligns that exact list; no body or theorem/engine/coordinate change. No Lean/caller acceptance at source56 is claimed. The independent source55 SAME-word job remains live and is not restarted or cancelled by this correction.
