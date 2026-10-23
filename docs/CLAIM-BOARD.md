@@ -6,6 +6,8 @@ This is a **claim-by-claim guide**, not a list of everything we have written. St
 
 For completed work that older notes mistakenly leave pending, read the [duplicate-work and supersession report](DUPLICATE-WORK-REPORT.md). It preserves accepted results rather than counting them as new discoveries.
 
+Current status labels were reconciled on 23 October; see the [scope and corrections](STATUS-LABEL-AUDIT.md). Author-complete hand proofs, independent acceptance, formal checking and implementation are separate facts.
+
 ## How to read the board
 
 - **Proved** means the exact stated mathematics has a documented proof and acceptance at the level specified. It does not automatically mean software verified it.
@@ -465,7 +467,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 **Evidence, kept separate:**
 
 - **Hand:** Accepted mathematical review recorded in the linked artifact; this board is an index, not a new independent proof review.
-- **Formal:** No complete kernel-checked proof of this claim is asserted by this card.
+- **Formal:** Accepted selected1611 checks G4WholeProfileDetermination.actual_finite_randomized_common_menu_responses: target-first finite legal mixed-COMMON observations determine the whole row law against arbitrary finite rivals, n≥4, with one joint configuration PMF fixed across allocations. The separate accepted exact-algebraic stopping algorithm is not kernel-checked by that receipt; executable acquisition/detectable stopping remains outside it.
 - **Execution:** No execution result is needed or claimed for this mathematical statement.
 - **Empirical:** This is not a claim about measured biological or physical data.
 
@@ -483,6 +485,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - No theorem-dependency edge asserted in this first register.
 
 **Stable key:** original.G4.COMMON_EFFECTIVE. **Aliases:** G4 COMMON effective stopping.
+
+
+**Additional exact formal receipts:**
+- [Selected1611 independent final review: COMMON semantic endpoint](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/independent/INDEPENDENT-FINAL-REVIEW.md).
 
 </details>
 
@@ -514,7 +520,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 **Evidence, kept separate:**
 
 - **Hand:** Accepted mathematical review recorded in the linked artifact; this board is an index, not a new independent proof review.
-- **Formal:** No complete kernel-checked proof of this claim is asserted by this card.
+- **Formal:** Public accepted1613 checks the hybrid-free-target BOTH certificate at the stated physical CutChild contract: 3n shared full-law requests, at most n+2 copies each, n≥4, against arbitrary finite rivals. This does not kernel-verify the later general reticulate-target BOTH hand theorem.
 - **Execution:** No execution result is needed or claimed for this mathematical statement.
 - **Empirical:** This is not a claim about measured biological or physical data.
 
@@ -530,6 +536,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - No theorem-dependency edge asserted in this first register.
 
 **Stable key:** original.G4.NATURAL_BOTH. 
+
+
+**Additional exact formal receipts:**
+- [Public1613 independent final review: hybrid-free target BOTH subbranch](https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/independent/INDEPENDENT-FINAL-REVIEW.md).
 
 </details>
 
@@ -1641,7 +1651,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Question:** When can a simpler noisy-quantum model faithfully replace the original evolution?
 
-**What we learned:** The commuting case already has a full restricted all-time comparison; additional estimates support work on the still-open general noncommuting case.
+**What we learned:** The commuting case has a completed restricted all-time comparison. The supplied noncommuting paths/rings theorem has now also passed a separate scoped hand review. A complete unrestricted counterexample with a fixed three-qubit observable is separately author-reported; its whole-proof independent review and exact-scope reconciliation remain separate.
 
 **What it lets someone do:** Reuse valid building blocks without restarting those proofs.
 
@@ -1669,7 +1679,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** General noncommuting comparison over all volumes/times and initial density matrices at fixed observable support remains open; the actual homogeneous term 2q I2 is uncontrolled. Do not treat the completed commuting branch CB-PHYS-P5-003 as open.
+**Remaining obligation:** The later source record dates the original hand-proof counterexample goal COMPLETE at 2026-10-21 23:52 UTC and explicitly states that later independent/formal validation is not a new original requirement. Those validation tasks must not reopen the completed authorship assignment. The author reports the hand proof COMPLETE: the unrestricted comparison fails for an admitted family with a fixed three-qubit observable. The proof-authorship task is not unfinished. Whole-proof independent review and formal verification have not been performed; the full proof/admission correction and exact match to the strong-noise bounded-neighborhood general noncommuting continuation have not yet been retrieved/reconciled here. Do not infer that narrower branch is open, refuted or closed from the report alone. The earlier signed homogeneous 2q I2 route remains an unsupplied supplier in its inspected packet, not a verified current master-status verdict. The accepted commuting branch CB-PHYS-P5-003 is unchanged.
 
 **Proof, review and other accepted-source links:**
 
@@ -1681,6 +1691,13 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - No theorem-dependency edge asserted in this first register.
 
 **Stable key:** physics.P5.COMPARISON_COMPONENTS. 
+
+
+**Later attributed completion report (not independent proof acceptance):**
+- [Attributed report of a complete unrestricted-comparison counterexample; proof and scope not verified here](https://github.com/Sodelin/Research-Commons/blob/90cef7822e64fdd0e3ee0016cbefbc16271f00c9/research/2026-10-21-lean-online-builder/PEER-SCIENTIFIC-OUTCOMES.json).
+
+
+- [Independent scoped hand acceptance of actual noncommuting paths/rings comparison](https://github.com/Sodelin/Research-Commons/blob/main/research/2026-10-23-dot-p5-chains-rings-hand-review/INDEPENDENT-HAND-REVIEW.md).
 
 </details>
 
@@ -1718,7 +1735,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** General noncommuting P5 and actual signed homogeneous 2q I2 control remain open. No global trace-distance, multi-time transcript, infinite-volume dynamical construction, weak-noise-at-fixed-h or microscopic system-plus-bath error theorem follows.
+**Remaining obligation:** The later source record dates the original hand-proof counterexample goal COMPLETE at 2026-10-21 23:52 UTC and explicitly states that later independent/formal validation is not a new original requirement. Those validation tasks must not reopen the completed authorship assignment. This commuting theorem is complete at its stated hand-reviewed scope. A separate author-reported COMPLETE hand counterexample to the unrestricted comparison uses an admitted family with a fixed three-qubit observable. Whole-proof independent review and formal verification have not been performed; exact proof retrieval and scope reconciliation are separate remaining tasks, not unfinished authorship. No global trace-distance, multi-time transcript, infinite-volume dynamical construction, weak-noise-at-fixed-h or microscopic system-plus-bath error theorem follows from this commuting result.
 
 **Proof, review and other accepted-source links:**
 

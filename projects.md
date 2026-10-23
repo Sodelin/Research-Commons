@@ -19,13 +19,13 @@ The full G1–G7 report is dated **October 12 evening Pacific / October 13, 2026
 
 Active research instruction: [full-master completion standard](docs/RESEARCH-COMPLETION-STANDARD.md) and [current-owner receipt request](communications/2026-09-30-master-closure-standard-and-receipt-request.md). Component delivery does not close an unresolved promised master or downstream application.
 
-## Current G1–G7 navigation, 9 October 2026
+## Current result navigation and historical components
 
-- [Current results, evidence and remaining obligations](RESEARCH-STATUS.md) and [Start Here](START-HERE.md)
+- [Claim board](docs/CLAIM-BOARD.md), [status-label audit](docs/STATUS-LABEL-AUDIT.md), [current overview](RESEARCH-STATUS.md) and [Start Here](START-HERE.md)
 - [Canonical full scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) and [original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md)
-- [G5 actual triple](research/2026-10-09-dot-g5-actual-frozen-triple-1852z/README.md), [G6 source-chart decision](research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/README.md), [G7 original registry/admission](research/2026-10-09-dot-g7-original-registry-admission-1908z/README.md), [181-module replay](research/2026-10-09-dot-g6-natural-cell-feasibility-1835z/README.md)
+- Historical components, superseded where indicated by the [full binary M3](research/2026-10-10-dot-g5-full-binary-m3-0209z/README.md) and [incorporation catalogue](research/2026-10-11-dot-discovery-lean-incorporation-catalog-2200z/G5-G6-G7-INCORPORATION-CATALOG.md): [G5 actual triple](research/2026-10-09-dot-g5-actual-frozen-triple-1852z/README.md), [G6 source-chart decision](research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/README.md), [G7 original registry/admission](research/2026-10-09-dot-g7-original-registry-admission-1908z/README.md), [181-module replay](research/2026-10-09-dot-g6-natural-cell-feasibility-1835z/README.md)
 - [Practical solver](applications/practical-solver/README.md) and [conditional proof/code bridge](research/2026-10-09-codex-conditional-bridge-1630z/README.md)
-- [Four-lane allocation and revision history](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md): G5, G6, G7 and combined G3/G4 Lean formalization
+- Historical 9 October allocation, not a current task queue: [Four-lane allocation and revision history](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md): G5, G6, G7 and combined G3/G4 Lean formalization
 
 The sections below preserve earlier dated entry points and canonical homes. Their words “active,” “current” and “pending” describe their recorded dates; use newer evidence above before resuming an old assignment. [Pre-refresh project index](https://github.com/Sodelin/Research-Commons/blob/f31ff0a5e56abe3f6b35e473aba634352ad08002/projects.md).
 

@@ -36,6 +36,23 @@ Use or extend the existing register rather than creating duplicate diaries. Incl
 
 “All levels” is a quantifier within an explicit model, not evidence that the same conclusion holds in every scientific field. A claimed general transfer theorem must quantify over its declared source/target experiments, task families and regularity assumptions. Each scientific use still needs a verified instance of those assumptions and the scientific observation/target correspondence. A change of labels or a shared graph shape does not supply that correspondence.
 
+## Status precision and acceptance precedence — 23 October 2026
+
+A current status is a claim about one exact statement, not a mood about a programme. Before assigning **mathematical open**, match the original quantifiers against later proofs, review receipts, incorporated source endpoints and relevant corrections. A failed lookup or unreconciled history is **STATUS UNVERIFIED**, not evidence that a theorem is unproved.
+
+Keep separate fields:
+- **Mathematics:** proved/refuted at a named review scope, author-reported complete hand proof awaiting review, incomplete candidate, or a precisely named open implication. Author completion and independent acceptance are distinct; pending review must not be paraphrased as an unfinished authorship task.
+- **Formal verification:** checked at a named source/receipt, partially checked, source-only, or not attempted. Missing Lean verification does not reopen an accepted hand theorem.
+- **Implementation:** implemented/tested at a stated scope, missing a named code-to-theorem join, or not attempted.
+- **Empirical admission:** measured/calibrated at a stated scope, unadmitted, inconclusive, or not applicable.
+- **Novelty:** attributed prior work, documented extension, or unresolved historical priority.
+
+A broader unsolved extension does not demote the completed narrower theorem. A proved counterexample may finish the question even when it denies the desired positive result. An out-of-scope application is not an automatic outstanding task. A blocked execution or missing artifact is an evidence/access condition, not mathematical disproof.
+
+When a later acceptance supersedes a draft's pending label, correct active summaries directly and link the acceptance. Preserve the old as-of record through immutable history and a dated supersession note; do not leave two contradictory present-tense statuses with only a disclaimer above them.
+
+Classify repeated work by its actual contribution: no added result; independent proof/check; sharper bound or assumptions; new application/adapter; or useful failed-route exclusion. Do not count recovered old work as a new discovery, and do not dismiss an independent improvement merely because it revisits an old question.
+
 ## Continue toward closure
 
 1. Read the latest task-relevant artifacts and consequential peer messages before allocating work, using a peer result or integrating a claim. Preserve ownership and assign non-overlapping obligations.
