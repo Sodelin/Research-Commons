@@ -1,12 +1,12 @@
 # Research Commons: portable Lean and Rust
 
-A portable research package built from the canonical claim registry in reuse and dependency order. Completed results are reused; unresolved questions retain their exact statements and obligations.
+A portable research package assembled from the canonical claim registry in reuse and dependency order. Existing mathematics and engines are reused; unresolved claims keep their exact statements and obligations.
 
-The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The current checked Lean library combines the retained1,613-module graph with36 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
+The pinned registry has **118 claims:75 reuse-rated and43 unranked**, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. The candidate source graph contains1,613 retained modules plus38 integration modules. Exact compiler, dependency and source identities are in [source-lock.json](source-lock.json).
 
 ## Build on a development host
 
-Use Rust 1.90.0 and Lean 4.33.1. Compiler and dependency identities, including the Linux release checksum, are in [source-lock.json](source-lock.json).
+Use Rust1.90.0 and Lean4.33.1.
 
 ```sh
 cd packages/research
@@ -23,87 +23,61 @@ cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
 
-The checked coherent library at [3b90ffa3](https://github.com/Sodelin/Research-Commons/commit/3b90ffa34188f631ff7a08bf43f92f883acf3ee0) **passed**:1,649 source modules plus registry/aggregate, and the complete104,850-declaration/94,569-theorem owned audit. It found zero owned axioms, nonstandard rows or missing modules. All81 Rust tests passed in the same [Linux run](https://github.com/Sodelin/Research-Commons/actions/runs/40011993974). [Exact library receipt](integration/coherent-library-verification-v2.json). The larger14-caller sequence remains incomplete after hosted shutdown during the unchanged hybrid word; library acceptance and actual caller acceptance are separate.
+The **full per-claim gate remains incomplete** and exits2 until every required binding has actual verification. The last accepted complete library is source[3b90ffa3](https://github.com/Sodelin/Research-Commons/commit/3b90ffa34188f631ff7a08bf43f92f883acf3ee0):1,649 source modules plus generated roots,104,850 declarations/94,569 theorems audited, zero owned axioms/nonstandard rows/missing modules. [Exact receipt](integration/coherent-library-verification-v2.json). This is library acceptance; its later whole-caller sequence interrupted.
 
-The earlier [67ef70da](https://github.com/Sodelin/Research-Commons/commit/67ef70da6fe13bce5e43faf028f864b33c2d56e7) baseline passed all eleven Rust-generated proof documents and its complete1,638-source library/audit. [Earlier full receipt](integration/full-profile-verification.json). These are source-specific results.
+The earlier source[67ef70da](https://github.com/Sodelin/Research-Commons/commit/67ef70da6fe13bce5e43faf028f864b33c2d56e7) passed all eleven then-selected Rust-generated proof documents and its1,638-source complete library/audit. [Receipt](integration/full-profile-verification.json). These source-specific results do not transfer automatically to changed code.
 
-The **per-claim integration gate remains incomplete** and intentionally exits 2 until every required binding has actual verification. A coherent build and accepted component callers do not establish every claim's application or the original full scientific endpoints.
+The current source[917d49ef](https://github.com/Sodelin/Research-Commons/commit/917d49ef38f2b9eb9a70927eb3d3f0e182381c4e) passed **85 Rust tests** and its899-source named-export context: **21 claim bindings/96 actual declaration names and owners**, with21059 declarations/14366 theorems audited.97 claims still lack named exports. [Exact export receipt](integration/claim-export-verification-v4.json). This includes the new positive atomic-law component; it does not establish complete applications for all21 claims.
 
-The retained-object cache validates the exact compiler, source/dependency context and every object companion. Added modules and literal callers are always rebuilt. Receipts distinguish compilation from reuse, and the owned-axiom audit remains required. See [RETAINED-OBJECT-REUSE.md](integration/RETAINED-OBJECT-REUSE.md).
+Retained-object reuse checks the exact compiler, dependencies and every object companion. Added modules and literal callers are checked; the complete owned audit is mandatory. [Reuse contract](integration/RETAINED-OBJECT-REUSE.md).
 
-## Actual end-to-end paths
+## Actual end-to-end callers
 
-Each listed path has produced a complete proof document from actual Rust output and passed Lean checking.
+Each path below produced a complete proof document from Rust output and passed Lean checking at its recorded source.
 
-| Caller | Input and checked conclusion | Receipt |
+| Caller | Checked input and conclusion | Evidence |
 | --- | --- | --- |
-| `cm-certificate` | Exact grouped positive laws; literal sparse-moment separation | [CM/affine](integration/certificate-verification.json) |
-| `affine-certificate sat/unsat` | Supplied ordered rational matrix; real witness or full external-multiplier exclusion | [CM/affine](integration/certificate-verification.json) |
-| `source-certificate tree/parallel/infeasible` | Captured original Code/admission/ordered fields; SAME returned positive physical bank, or exclusion of only the supplied cell | [Source/cell](integration/source-cell-verification.json) |
-| `population-certificate edge/ancestral/path` | Actual native population row; total coefficient fibres including zero on absence, original validity/colocation and SAME returned bank | [Population](integration/population-caller-verification.json) |
-| `epoch-certificate` | Four current copies in two original populations; all nine selected endpoint rows, raw witnesses, total coefficients and SAME shared bank | [Mixed epoch](integration/epoch-caller-verification.json) |
-| `completion-certificate` | Complete conditional ancestral input; all12 ordered constant rows, SAME returned rates and passive comb probability1/3 | [Completion/observer](integration/completion-caller-verification.json) |
-| `residual-certificate` | Complete supplied rational ensemble; strict top-k set and residual conservation | [RNA](integration/rna-results-verification.json) |
+| `cm-certificate` | Grouped rational positive laws; literal sparse-moment separation | [CM/affine](integration/certificate-verification.json) |
+| `moment-signature-certificate` | Complete seven-coordinate signature of one three-atom law; total mass identification against EVERY finite positive rival, then every further moment | [Signature](integration/moment-signature-verification.json), [exact input](examples/PositiveMomentSignature.lean) |
+| `affine-certificate sat/unsat` | Ordered rational matrix; real witness or full external-multiplier exclusion | [CM/affine](integration/certificate-verification.json) |
+| `source-certificate tree/parallel/infeasible` | Actual original Code/admission/ordered fields; SAME returned positive physical bank, or only supplied-cell exclusion | [Source/cell](integration/source-cell-verification.json) |
+| `population-certificate edge/ancestral/path` | Actual native population row; total coefficients including zero on absence, original validity/colocation and SAME bank | [Population](integration/population-caller-verification.json) |
+| `epoch-certificate` | Four copies/two original populations; all nine selected endpoint rows, raw witnesses, total coefficients and SAME bank | [Mixed epoch](integration/epoch-caller-verification.json) |
+| `completion-certificate` | Conditional ancestral input; all12 ordered constant rows, true infinite ancestral limit, SAME rates and passive comb probability1/3 | [Completion](integration/completion-caller-verification.json) |
+| `residual-certificate` | Complete rational ensemble; strict top-k set and residual conservation | [RNA](integration/rna-results-verification.json) |
 
-Run a binary through `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Each emitter keeps its input in RAM and returns a complete proof document or refuses. Rendering alone is not acceptance. Resource failure and failed sufficient certificates remain UNKNOWN or INCONCLUSIVE.
+Run a binary through `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Emitters retain inputs in RAM and return a complete document or refuse. Rendering alone is not acceptance. Resource failure and insufficient certificates remain UNKNOWN or INCONCLUSIVE.
 
-The source caller also accepts a request through `source-certificate --stdin MySource`, bounded by the original 65,536-byte RC1 frame. Its entire emitted module must compile and pass the owned audit before acceptance. No universal parser/native refinement is asserted.
+The signature component reuses the existing strict sparse separator and positive-grid interpolation. It identifies the atomic-law intermediary from2r+1 distinct sparse or consecutive moments without a rival-size bound. Reaction coefficients, stopped-law/shifted-Euler observables, derivative acquisition and universal native refinement are separate. The completed CB-RXN-001 hand proof is retained at its original scope. [Predecessor/successor comparison](integration/POSITIVE-MOMENT-REUSE-PREFLIGHT.md).
 
-The mixed-epoch caller checks the actual selected genealogy/population/register fields and compares complete rational coefficient fibres against the existing constructive `fullRows` recurrence. It proves a conditional endpoint law at positive rates and nonnegative duration, including the returned original bank. It does not construct a legal global initialization/calendar prefix or a timed path law. External Copy/menu/readout transport remains a separate obligation.
+The source caller also accepts `source-certificate --stdin MySource` within the original65,536-byte RC1 frame. The mixed-epoch and completion callers retain their explicit valid conditional inputs; they do not construct a legal global initialization/calendar prefix or the external four-taxon tester.
 
-## Independent target verification
+## Independent targets
 
-The isolated CM/affine context uses its own namespace/object directory:
-
-```sh
-cargo run --locked -p research-commons-package -- prepare-certificates
-cd certificates
-lake update
-lake exe cache get
-cd ..
-cargo run --locked -p research-commons-package -- build-certificates
-```
-
-Other commands select actual transitive dependencies from the same complete source graph:
+Targets select the actual transitive dependencies from the same source graph.
 
 ```sh
+cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Exports
+cargo run --locked -p research-commons-package -- check-exports
+cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
 cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalCodeChartReceiver
 cargo run --locked -p research-commons-package -- check-source-callers
 cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Population
 cargo run --locked -p research-commons-package -- check-population-callers
 cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Epoch
 cargo run --locked -p research-commons-package -- check-epoch-callers
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Menu.FiniteForcing
-cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Menu.FiniteForcing
 cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.RNA
 cargo run --locked -p research-commons-package -- check-residual-callers
 ```
 
-The qualified-menu component checks finite-original-index algebra. Its actual original-source size/shape/joint-response instantiation and effective selection remain separate. All six RNA groups have checked conditional exports; their exact source hypotheses are retained. Target and caller receipts are under [integration/](integration/), with failures and corrections retained in [VERIFICATION.md](VERIFICATION.md).
+The isolated CM/affine target remains available through `prepare-certificates` and `build-certificates`, with its own namespace/object directory. Qualified-menu and RNA exports retain actual source/shape/joint-response, positivity, random-input and BE-origin premises. No wrapper turns those premises into implementation evidence.
 
-## Claim integration and remaining work
+## Remaining integration
 
-[claims.json](integration/claims.json) maps every canonical ID to its exact Lean/Rust scope and evidence. The current [export receipt](integration/claim-export-verification-v3.json) **passed** at3b70210d/[run40003057044](https://github.com/Sodelin/Research-Commons/actions/runs/40003057044):91 named declarations and real imported-module owners in20 claim bindings,897 source modules and a clean21050-declaration/14358-theorem audit. All75 Rust tests passed.98 claims still lack named exports; other component/native obligations remain explicit.
+[claims.json](integration/claims.json) records every canonical ID, reuse rank, actual Lean/Rust scope and evidence. [FRONTIER.md](integration/FRONTIER.md) identifies the next exact work; [VERIFICATION.md](VERIFICATION.md) retains failures and corrections.
 
-G3's new fixed-source polynomial and supplied-certificate bank/grid bindings reuse completed hand results. They do not supply the full RCF/enumerator or physical reduced-witness/count/protected-ID assembly. G4's observer exports retain original opaque-root/register/history hypotheses; they do not prove the full finite determining-test/tomography theorem. [Retained endpoints](integration/retained-endpoints.json) and each preflight preserve the original hypotheses.
+The generic176-source `WordCache` receiver and5371/3175 owned audit passed at sourcef7f8a356. Its actual three-copy hybrid word checked the initial table and every supplied primitive, then **failed its final composition reduction and parent-order proof**. [Exact rejection](integration/word-cache-literal-rejection-v3.json). Neither whole word is accepted. The point retains the full original genealogy/population/register, both modes, one natural register draw and SAME bank; no smaller experiment or observed-forest quotient replaces it. [Reuse preflight](integration/WORD-CACHE-PREFLIGHT.md).
 
-The actual `completion-certificate` caller **passed**:12 complete ordered native constant rows at a nonempty original ancestral-root input, total coefficient fibres, the genuine infinite ancestral limit, SAME returned rates and passive unranked comb probability1/3. [Exact receipt](integration/completion-caller-verification.json). It does not construct a legal global prefix or the four-taxon tester wrapper.
+G3 fixed-source polynomial and supplied-bank/grid bindings reuse completed hand results; the original all-input RCF/enumerator and physical reduced-witness/protected-ID assembly remain separate. G4 observer exports preserve opaque roots/register/history and do not supply the full finite determining-test/tomography endpoint. NANUQ001 is not broadened to NANUQ002. RNA schema statements do not admit actual executed traces automatically.
 
-The indexed `ResearchCommons.Integration.Word` receiver and its174-source owned audit passed5213 declarations/3104 theorems. It checks complete finite-position coefficient fibres and uses a proved original-variable/native-bank LeftInverse with the SAME physical bank. [Generic receipt](integration/word-core-verification-v2.json). The larger257517-byte NaturalIndependentWord caller at3b70210d ended in hosted shutdown without a coefficient result. Its literal outcome remains UNKNOWN; COMMON and full coherent14-caller closure are not inferred. See [the word preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md).
-
-NANUQ retains its twelve source/drawing/distinct-set/mean typed exports, without extending CB-NANUQ-001 to the broader all-level CB-NANUQ-002. RNA exports retain positivity, exact conditional random inputs, literal schema guards and BE origins; schema trees are not executed-trace admission.
-
-The Rust `check-exports` interface rejects missing dependencies, revalidates source/object digests, runs the complete selected owned audit and checks every actual type/owner. It retains canonical completion and original integration scope. The older17/73 and18/80 receipts remain available; they are not current pending work.
-
-Whole-word/raw-root/completion/readout refinements, full physical source/target/action coverage, exact AST/history/QE/selector/result origin and the other claim applications remain. Open claims require checked statements; empirical/software records require evidence interfaces. Missing formal/native work does not reopen completed hand mathematics. The strict full-package gate remains incomplete.
-
-Accepted records always name their actual checked source; a documentation-only publication does not create a fresh CI result. Earlier sources and rejected/UNKNOWN caller history remain retained.
-
-The current `word-cache-certificate independent/common` path emits bounded source modules for the SAME larger hybrid word. `check-word-callers` checks the entire bundle through `ResearchCommons.Integration.WordCache`. Source3b90ffa3's generic175-source cache context and5308/3142 owned audit passed; its actual caller still interrupted at the first interval primitive. [Generic cache receipt](integration/word-cache-core-verification.json).
-
-The active9f3f3466 candidate reuses the existing `fullRows` law for a checked complete active population list, with the existing single-epoch polynomial uniqueness theorem. Every cache input proves `ActiveIn`; all original coordinates, full selected keys/registers, operations, initial/final checks and fallback remain. Its generic target now compiles and the actual bundle is under verification. BOTH entire same3-copy words and the final owned audit remain required. Original direct emission stays available. No literal acceptance follows from the generic or completion receipts. [Exact reuse/scope](integration/WORD-CACHE-PREFLIGHT.md).
-
-
-## Complete positive-law signature candidate
-
-The new reuse-ranked CB-RXN-001 component uses the existing strict sparse separator and positive-grid interpolation to derive full positive atomic-mass identification from2r+1 sparse or consecutive moments against ALL finite positive rivals. Rust's existing grouped rational law supplies a complete bounded signature; `moment-signature-certificate` emits its literal target/coordinate proofs and the generic all-finite-rival consumer. `check-moment-callers` checks the actual proof document and complete owned context; `--in-exports` reuses the exact already-built export closure. This candidate has not yet passed the new generic/caller check. It supplies the atomic-law intermediary, with actual reaction coefficients, stopped-law/shifted-Euler observation and derivative acquisition still separate. [Prior/successor and scope](integration/POSITIVE-MOMENT-REUSE-PREFLIGHT.md). The full118 gate stays incomplete.
+The exact remaining joins include every unnamed claim's declarations, whole-word/raw-root/readout refinement, complete physical source/target/action coverage, AST/history/QE/selector/result origin and the original unresolved scientific endpoints. Missing formal/native joins do not reopen completed mathematics. Evidence-only commits record actual checked sources; they do not create fresh CI results.
