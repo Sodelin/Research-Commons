@@ -57,3 +57,9 @@ The [complete scoped hand review](https://github.com/Sodelin/Research-Commons/bl
 ### P5 source publication — 2026-10-23T07:32:00Z
 
 The existing P5 owner published the previously hash-pinned complete proof and correction. Claim CB-PHYS-P5-004 now records the unrestricted negative hand result separately. The earlier 59-card audit and its coverage receipt stay historical; the current board has 60 cards. No new mathematical audit or scientific execution accompanies this publication.
+
+## Source-owner completion recovery — 23 October 2026
+
+The human's explicit correction is applied to all 60 current cards and the machine-readable register: completed hand mathematics is displayed as **PROVED (not Lean formalized)**, with author/review/formal axes separate. Completed cards now call their broader obligations **separate downstream work**. The formal-hardness dependency is typed as formal integration; the complete checker-source proposal is source-complete with validation pending. Neither is silently promoted into a new accepted mathematical theorem.
+
+The [G3 recovery package](../research/2026-10-23-g3-proof-recovery/README.md) supplies 58 already-authored mathematical notes, 17 unelaborated Lean sources and original/public hashes, grouped into 16 reuse records. The recovered repetition-count attribution correction restores the already accepted 15–16 October supplier and removes a duplicate count derivation from the frontier. All proof scopes, existing hand-review receipts, original G3/G4 master quantifiers and P5 original hand-proof completion remain unchanged. No independent proof review, new theorem, native build or scientific run occurred in this recovery.

@@ -8,6 +8,12 @@ For completed work that older notes mistakenly leave pending, read the [duplicat
 
 Current status labels were reconciled on 23 October; see the [scope and corrections](STATUS-LABEL-AUDIT.md). Author-complete hand proofs, independent acceptance, formal checking and implementation are separate facts.
 
+## Binding completion labels — human correction, 23 October 2026
+
+A complete hand proof is **PROVED (not Lean formalized)** when no full Lean receipt exists. Independent review is a separate field; an author-complete proof is not an unstarted research task. A historical “candidate” header, unrun build, missing review or broader unsolved extension cannot reopen the completed statement. Unverified source status is labelled unverified, not inferred mathematically open.
+
+The compact index below is a mathematical summary; the exact current completion/formal/review fields are on each card and in [claims.json](claims.json). Completed cards label later work **separate downstream work**, so that it cannot become another request to re-prove the supplier. The [G3 recovered proof catalogue](../research/2026-10-23-g3-proof-recovery/README.md) preserves 58 mathematical notes and 17 Lean source files with original/public hashes and exact successor corrections. These are recovered sources, not 75 new results.
+
 ## How to read the board
 
 - **Proved** means the exact stated mathematics has a documented proof and acceptance at the level specified. It does not automatically mean software verified it.
@@ -40,66 +46,66 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 | ID | Programme / claim | Mathematical disposition |
 |---|---|---|
-| [CB-G1-001](#cb-g1-001) | A smaller ancestry diagram can preserve the answers | Proved at the stated scope |
-| [CB-G2-001](#cb-g2-001) | Keeping fewer sampled individuals stays consistent | Proved at the stated scope |
-| [CB-G3-001](#cb-g3-001) | Checking one proposed model is easier than ruling out every model | Proved at the stated scope |
-| [CB-G3-002](#cb-g3-002) | A supplied observation certificate can bound the search | Proved at the stated scope |
-| [CB-G3-003](#cb-g3-003) | Some inputs allow us to acquire the needed certificate | Proved at the stated scope |
-| [CB-G3-004](#cb-g3-004) | Can every exact input be decided? | Open mathematical question |
-| [CB-G4-001](#cb-g4-001) | Some hidden information can be recovered by permitted tests | Proved at the stated scope |
-| [CB-G4-002](#cb-g4-002) | Shared routing has a genuine stopping method | Proved at the stated scope |
-| [CB-G4-003](#cb-g4-003) | Two routing modes together need only finitely many exact tests | Proved at the stated scope |
-| [CB-G4-004](#cb-g4-004) | The result extends to qualifying extra tests | Proved at the stated scope |
-| [CB-G4-005](#cb-g4-005) | All independent-routing answers determine all shared-routing answers | Proved at the stated scope |
-| [CB-G4-006](#cb-g4-006) | The algebraic search reduction is already complete | Proved at the stated scope |
-| [CB-G4-007](#cb-g4-007) | The broader automatic certificate finder is still missing | Open mathematical question |
-| [CB-G4-008](#cb-g4-008) | Finite independent-routing tests are the main unresolved branch | Open mathematical question |
-| [CB-G5-001](#cb-g5-001) | Small timed panels recover particular ancestry features | Proved at the stated scope |
-| [CB-G5-002](#cb-g5-002) | Bounded hidden branching has a larger-panel hand theorem | Proved at the stated scope |
-| [CB-G6-001](#cb-g6-001) | Certify only what every compatible model agrees on | Proved at the stated scope |
-| [CB-G7-001](#cb-g7-001) | Choose tests with a proof of what their answers can establish | Proved at the stated scope |
-| [CB-CAUSAL-001](#cb-causal-001) | Some causal questions can be answered with limited experiments | Proved at the stated scope |
-| [CB-CAUSAL-002](#cb-causal-002) | Some exact causal tasks really require many tests | Proved at the stated scope |
-| [CB-CAUSAL-003](#cb-causal-003) | No target means this particular task needs no questions | Named overextension refuted |
-| [CB-LINEAGE-001](#cb-lineage-001) | A best-fit score does not reveal every developmental link | Proved at the stated scope |
-| [CB-LINEAGE-002](#cb-lineage-002) | Different hidden graphs can give identical observed trees | Counterexample proved at stated scope |
-| [CB-LINEAGE-003](#cb-lineage-003) | The actual tree-refinement problem is computationally hard | Proved at the stated scope |
-| [CB-LINEAGE-004](#cb-lineage-004) | An explicit mathematical checking algorithm has been written | Complete proof-source proposal, not yet formally accepted |
-| [CB-LINEAGE-005](#cb-lineage-005) | The formal hardness connection is still missing | Formal dependency still missing |
-| [CB-PHY-001](#cb-phy-001) | A root region can be replaced without changing the stated output | Proved at the stated scope |
-| [CB-RXN-001](#cb-rxn-001) | Finite features identify one scalar reaction-model class | Proved at the stated scope |
-| [CB-RXN-002](#cb-rxn-002) | Two tempting identification shortcuts fail | Named shortcuts refuted |
-| [CB-RXN-003](#cb-rxn-003) | One hidden observation problem reduces to a survival response | Proved at the stated scope |
-| [CB-PHYS-P1-001](#cb-phys-p1-001) | We have better upper and lower limits on the testing cost | Proved at the stated scope |
-| [CB-PHYS-P1-002](#cb-phys-p1-002) | A specific measurement has a useful error bound | Proved at the stated scope |
-| [CB-PHYS-P5-004](#cb-phys-p5-004) | The unrestricted uniform approximation claim has a completed hand counterexample | Counterexample proved at stated hand-proof scope |
-| [CB-PHYS-P5-001](#cb-phys-p5-001) | Several parts of a long-time approximation proof are established | Proved at the stated scope |
-| [CB-PHYS-P5-003](#cb-phys-p5-003) | One restricted noisy-quantum case is fully proved by hand | Proved at the stated scope |
-| [CB-PHYS-P5-002](#cb-phys-p5-002) | One proposed evolution can fail to preserve a physical state | Named shortcut refuted |
-| [CB-NANO-001](#cb-nano-001) | Very similar energy curves can hide opposite model labels | Bounded-error limitation proved |
-| [CB-NANO-002](#cb-nano-002) | Conductance can certify a sign in a specified matrix model | Proved at the stated scope |
+| [CB-G1-001](#cb-g1-001) | A smaller ancestry diagram can preserve the answers | Proved; named Lean scope checked |
+| [CB-G2-001](#cb-g2-001) | Keeping fewer sampled individuals stays consistent | Proved; named Lean scope checked |
+| [CB-G3-001](#cb-g3-001) | Checking one proposed model is easier than ruling out every model | Proved (not Lean formalized) |
+| [CB-G3-002](#cb-g3-002) | A supplied observation certificate can bound the search | Proved (not Lean formalized) |
+| [CB-G3-003](#cb-g3-003) | Some inputs allow us to acquire the needed certificate | Proved (not Lean formalized) |
+| [CB-G3-004](#cb-g3-004) | Can every exact input be decided? | Unresolved mathematical implication |
+| [CB-G4-001](#cb-g4-001) | Some hidden information can be recovered by permitted tests | Proved (not Lean formalized) |
+| [CB-G4-002](#cb-g4-002) | Shared routing has a genuine stopping method | Proved by hand; named Lean subcomponents checked |
+| [CB-G4-003](#cb-g4-003) | Two routing modes together need only finitely many exact tests | Proved by hand; named Lean subcomponents checked |
+| [CB-G4-004](#cb-g4-004) | The result extends to qualifying extra tests | Proved (not Lean formalized) |
+| [CB-G4-005](#cb-g4-005) | All independent-routing answers determine all shared-routing answers | Proved (not Lean formalized) |
+| [CB-G4-006](#cb-g4-006) | The algebraic search reduction is already complete | Proved (not Lean formalized) |
+| [CB-G4-007](#cb-g4-007) | The broader automatic certificate finder is still missing | Unresolved mathematical implication |
+| [CB-G4-008](#cb-g4-008) | Finite independent-routing tests are the main unresolved branch | Unresolved mathematical implication |
+| [CB-G5-001](#cb-g5-001) | Small timed panels recover particular ancestry features | Proved; named Lean scope checked |
+| [CB-G5-002](#cb-g5-002) | Bounded hidden branching has a larger-panel hand theorem | Proved (not Lean formalized) |
+| [CB-G6-001](#cb-g6-001) | Certify only what every compatible model agrees on | Proved by hand; named Lean subcomponents checked |
+| [CB-G7-001](#cb-g7-001) | Choose tests with a proof of what their answers can establish | Proved by hand; named Lean subcomponents checked |
+| [CB-CAUSAL-001](#cb-causal-001) | Some causal questions can be answered with limited experiments | Proved (not Lean formalized) |
+| [CB-CAUSAL-002](#cb-causal-002) | Some exact causal tasks really require many tests | Proved (not Lean formalized) |
+| [CB-CAUSAL-003](#cb-causal-003) | No target means this particular task needs no questions | Proved (not Lean formalized) |
+| [CB-LINEAGE-001](#cb-lineage-001) | A best-fit score does not reveal every developmental link | Proved (not Lean formalized) |
+| [CB-LINEAGE-002](#cb-lineage-002) | Different hidden graphs can give identical observed trees | Proved (not Lean formalized) |
+| [CB-LINEAGE-003](#cb-lineage-003) | The actual tree-refinement problem is computationally hard | Proved (not Lean formalized) |
+| [CB-LINEAGE-004](#cb-lineage-004) | An explicit mathematical checking algorithm has been written | Proof source complete; formal validation pending |
+| [CB-LINEAGE-005](#cb-lineage-005) | The formal hardness connection is still missing | Formal integration pending; mathematics is a separate claim |
+| [CB-PHY-001](#cb-phy-001) | A root region can be replaced without changing the stated output | Proved (not Lean formalized) |
+| [CB-RXN-001](#cb-rxn-001) | Finite features identify one scalar reaction-model class | Proved (not Lean formalized) |
+| [CB-RXN-002](#cb-rxn-002) | Two tempting identification shortcuts fail | Proved (not Lean formalized) |
+| [CB-RXN-003](#cb-rxn-003) | One hidden observation problem reduces to a survival response | Proved (not Lean formalized) |
+| [CB-PHYS-P1-001](#cb-phys-p1-001) | We have better upper and lower limits on the testing cost | Proved (not Lean formalized) |
+| [CB-PHYS-P1-002](#cb-phys-p1-002) | A specific measurement has a useful error bound | Proved (not Lean formalized) |
+| [CB-PHYS-P5-004](#cb-phys-p5-004) | The unrestricted uniform approximation claim has a completed hand counterexample | Proved by author (not Lean formalized) |
+| [CB-PHYS-P5-001](#cb-phys-p5-001) | Several parts of a long-time approximation proof are established | Proved (not Lean formalized) |
+| [CB-PHYS-P5-003](#cb-phys-p5-003) | One restricted noisy-quantum case is fully proved by hand | Proved (not Lean formalized) |
+| [CB-PHYS-P5-002](#cb-phys-p5-002) | One proposed evolution can fail to preserve a physical state | Proved (not Lean formalized) |
+| [CB-NANO-001](#cb-nano-001) | Very similar energy curves can hide opposite model labels | Proved (not Lean formalized) |
+| [CB-NANO-002](#cb-nano-002) | Conductance can certify a sign in a specified matrix model | Proved (not Lean formalized) |
 | [CB-NANO-003](#cb-nano-003) | One known-model thermal calculation keeps a positive margin | Scoped computational certificate |
-| [CB-CM-001](#cb-cm-001) | A classical moment theorem has a checked reusable component | Proved at the stated scope |
-| [CB-SEQ-001](#cb-seq-001) | Three exact first-occurrence formulas are formally proved | Proved at the stated scope |
-| [CB-SEQ-002](#cb-seq-002) | A proposed simple description is impossible | Proved at the stated scope |
-| [CB-SEQ-003](#cb-seq-003) | The allowed lengths are classified in a specific range | Proved at the stated scope |
-| [CB-RNA-001](#cb-rna-001) | A small part of the structure-processing chain is formally connected | Proved at the stated scope |
-| [CB-NANUQ-001](#cb-nanuq-001) | A formal chain connects a stated source to its geometric formula | Proved at the stated scope |
-| [CB-MSCI-001](#cb-msci-001) | Enough sites preserve the specified ancestry-law distinctions | Proved at the stated scope |
-| [CB-MSCI-002](#cb-msci-002) | Equivalent histories differ only by a coherent hidden renaming in one class | Proved at the stated scope |
-| [CB-MSCI-003](#cb-msci-003) | Two-site population features identify a specific model family | Proved at the stated scope |
-| [CB-SOFTWARE-001](#cb-software-001) | The solver distinguishes a sharp fixture from genuinely broad data | Scoped software checks |
-| [CB-SOFTWARE-002](#cb-software-002) | A tested Rust component is not a universal correctness certificate | Scoped software checks |
-| [CB-EMP-BPP-001](#cb-emp-bpp-001) | The saved analyses do not yet support a stable history ranking | Negative or inconclusive empirical result |
-| [CB-EMP-TSUGA-001](#cb-emp-tsuga-001) | Different markers disagree, but the cause is not established | Negative or inconclusive empirical result |
-| [CB-MATERIALS-001](#cb-materials-001) | One descriptor can hide a change in the next-step behaviour | Counterexample proved at stated scope |
-| [CB-DIFFRACTION-001](#cb-diffraction-001) | A good fit alone does not certify a molecule's presence | Conditional theorem |
-| [CB-VIEWSHED-001](#cb-viewshed-001) | Failed runs are now accounted for explicitly | Scoped software checks |
-| [CB-SPORT-BASEBALL-001](#cb-sport-baseball-001) | The tested models did not pass the stronger improvement test | Negative or inconclusive empirical result |
-| [CB-SPORT-BASKETBALL-001](#cb-sport-basketball-001) | An apparent model improvement is not accepted | Negative or inconclusive empirical result |
-| [CB-ALEXANDER-001](#cb-alexander-001) | One host cannot contain every member of the stated restricted class | Proved at the stated scope |
-| [CB-G7-002](#cb-g7-002) | One labelled programme can be optimal in a specified test menu | Proved at the stated scope |
-| [CB-G7-003](#cb-g7-003) | A different menu has a classical covering-array cost | Proved at the stated scope |
+| [CB-CM-001](#cb-cm-001) | A classical moment theorem has a checked reusable component | Proved; named Lean scope checked |
+| [CB-SEQ-001](#cb-seq-001) | Three exact first-occurrence formulas are formally proved | Proved; named Lean scope checked |
+| [CB-SEQ-002](#cb-seq-002) | A proposed simple description is impossible | Proved (not Lean formalized) |
+| [CB-SEQ-003](#cb-seq-003) | The allowed lengths are classified in a specific range | Proved (not Lean formalized) |
+| [CB-RNA-001](#cb-rna-001) | A small part of the structure-processing chain is formally connected | Proved; named Lean scope checked |
+| [CB-NANUQ-001](#cb-nanuq-001) | A formal chain connects a stated source to its geometric formula | Proved; named Lean scope checked |
+| [CB-MSCI-001](#cb-msci-001) | Enough sites preserve the specified ancestry-law distinctions | Proved (not Lean formalized) |
+| [CB-MSCI-002](#cb-msci-002) | Equivalent histories differ only by a coherent hidden renaming in one class | Proved (not Lean formalized) |
+| [CB-MSCI-003](#cb-msci-003) | Two-site population features identify a specific model family | Proved (not Lean formalized) |
+| [CB-SOFTWARE-001](#cb-software-001) | The solver distinguishes a sharp fixture from genuinely broad data | Scoped software result |
+| [CB-SOFTWARE-002](#cb-software-002) | A tested Rust component is not a universal correctness certificate | Scoped software result |
+| [CB-EMP-BPP-001](#cb-emp-bpp-001) | The saved analyses do not yet support a stable history ranking | Empirical negative or inconclusive result |
+| [CB-EMP-TSUGA-001](#cb-emp-tsuga-001) | Different markers disagree, but the cause is not established | Empirical negative or inconclusive result |
+| [CB-MATERIALS-001](#cb-materials-001) | One descriptor can hide a change in the next-step behaviour | Proved (not Lean formalized) |
+| [CB-DIFFRACTION-001](#cb-diffraction-001) | A good fit alone does not certify a molecule's presence | Proved under the stated premises (not Lean formalized) |
+| [CB-VIEWSHED-001](#cb-viewshed-001) | Failed runs are now accounted for explicitly | Scoped software result |
+| [CB-SPORT-BASEBALL-001](#cb-sport-baseball-001) | The tested models did not pass the stronger improvement test | Empirical negative or inconclusive result |
+| [CB-SPORT-BASKETBALL-001](#cb-sport-basketball-001) | An apparent model improvement is not accepted | Empirical negative or inconclusive result |
+| [CB-ALEXANDER-001](#cb-alexander-001) | One host cannot contain every member of the stated restricted class | Proved (not Lean formalized) |
+| [CB-G7-002](#cb-g7-002) | One labelled programme can be optimal in a specified test menu | Proved (not Lean formalized) |
+| [CB-G7-003](#cb-g7-003) | A different menu has a classical covering-array cost | Proved (not Lean formalized) |
 
 ## Claim cards
 
@@ -115,10 +121,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not preserve every possible measurement, recover an unknown model, or certify a DNA analysis.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For rooted-LSA outer-labelled planar cut-child directed multigraphs, including parallel original arc occurrences, the decorated-core linear bound and all-n sharpness preserve contextual completed unranked forest/register/root-history laws. The claimed endpoint is G1FullOriginalClassMasterAndSharpness.actual_G1_original_class_master_with_all_n_sharpness.
 
@@ -137,7 +143,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Timed observations, arbitrary DNA readouts and unrelated source-recognition questions are not consequences of this theorem.
+**Separate downstream work (does not reopen this result):** Timed observations, arbitrary DNA readouts and unrelated source-recognition questions are not consequences of this theorem.
 
 **Proof, review and other accepted-source links:**
 
@@ -163,10 +169,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Agreement between two different models on an untimed summary does not automatically make their timing agree.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Untimed all-panel projectivity uses one graph, physical tuple and registry, common or independent masks, empty panels, current owners and ancestral completion. The documented timed extension preserves the full recorded past, same-clock future paths, timed pruning and exact age-forgetting under its stated source contract.
 
@@ -185,7 +191,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** No unrestricted strong-Markov theorem or cross-source timed identification is inferred.
+**Separate downstream work (does not reopen this result):** No unrestricted strong-Markov theorem or cross-source timed identification is inferred.
 
 **Proof, review and other accepted-source links:**
 
@@ -211,10 +217,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** A search that has not found a model has not proved that no model exists.
 
-**Kind:** algorithm. **Mathematical status:** Proved at the stated scope.
+**Kind:** algorithm. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** With a fixed admitted finite graph/word and rational or effectively algebraic joint input, shared original IDs, parameters and registers, exact feasibility reduces to real-closed-field constraints. Enumeration of admitted finite sources recognizes YES. This does not bound physical append count or ensure NO termination.
 
@@ -233,7 +239,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** General NO termination is CB-G3-004.
+**Separate downstream work (does not reopen this result):** General NO termination is CB-G3-004.
 
 **Proof, review and other accepted-source links:**
 
@@ -259,10 +265,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Missing the certificate means 'not established', not 'no model exists'.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The COMMON supplied-exposure branch uses nonzero nonnegative sparse polynomials, exact zero expectations of the same legal mixed bank, exhaustive finite protected/tie grammar and collapse-preserving additional COMMON rows. The accepted certificate composition needs no supplied actual target source. Under its exact effective encoding it yields bounded witnesses and finite graph/RCF recognition.
 
@@ -281,7 +287,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Universal acquisition of such certificates and a full original parser/admission implementation are not delivered.
+**Separate downstream work (does not reopen this result):** Universal acquisition of such certificates and a full original parser/admission implementation are not delivered.
 
 **Proof, review and other accepted-source links:**
 
@@ -308,10 +314,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Failure of the local conditions does not settle all remaining cases.
 
-**Kind:** algorithm. **Mathematical status:** Proved at the stated scope.
+**Kind:** algorithm. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The accepted quadratic acquisition theorem Q uses an actual legal complete joint COMMON receiver, an acquired algebraic predicate, finite charts/residues and strict-domain rank/curvature conditions. Regular and fixed-residue supplier branches are also retained by the review.
 
@@ -330,7 +336,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Prove every realizable input enters an accepted acquisition branch, or supply another complete all-core mechanism.
+**Separate downstream work (does not reopen this result):** Prove every realizable input enters an accepted acquisition branch, or supply another complete all-core mechanism.
 
 **Proof, review and other accepted-source links:**
 
@@ -355,7 +361,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Neither a failed search nor a fit to a limiting object proves a definitive answer.
 
-**Kind:** question. **Mathematical status:** Open mathematical question.
+**Kind:** question. **Mathematical status:** Unresolved mathematical implication.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -377,7 +383,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Close the total-decision obligation at the exact original source and finite-input interface.
+**Remaining mathematical implication:** Close the total-decision obligation at the exact original source and finite-input interface.
 
 **Proof, review and other accepted-source links:**
 
@@ -404,10 +410,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a stopping rule for every unknown-size model or every weaker measurement.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Finite-cap admitted testers span contextual responses after projection to the authorized channel. Separately, a private-randomness two-port chain used once in a fixed positive four-taxon wrapper has full forest kernels through M roots recovered from completed topology data using at most M+3 copies.
 
@@ -426,7 +432,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Unknown exteriors, multiport shared registers and weaker channels require their own adapters.
+**Separate downstream work (does not reopen this result):** Unknown exteriors, multiport shared registers and weaker channels require their own adapters.
 
 **Proof, review and other accepted-source links:**
 
@@ -452,10 +458,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a working experimental instrument or an algorithm for arbitrary approximate real numbers.
 
-**Kind:** algorithm. **Mathematical status:** Proved at the stated scope.
+**Kind:** algorithm. **Mathematical status:** Proved by hand; named Lean subcomponents checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Whole-network COMMON targets and rivals are finite, strictly positive original sources with at least four taxa, full completed topology, a fixed finite routing-only menu and the same row configuration PMF across allocations. Finite forcing holds for real targets; observation-only stopping is effective with exact algebraic response/compiler encodings. Legal caterpillars expose finite directed-support grids; full-column independence, not a temporary rank plateau, supplies termination.
 
@@ -474,7 +480,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Implementation, finite-error access and transfer to the independent-routing-only menu are separate.
+**Separate downstream work (does not reopen this result):** Implementation, finite-error access and transfer to the independent-routing-only menu are separate.
 
 **Proof, review and other accepted-source links:**
 
@@ -505,10 +511,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Existence alone does not give a uniform procedure for finding the certificate.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved by hand; named Lean subcomponents checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** General natural BOTH finite forcing: each fixed strict binary rooted-LSA outer-labelled planar cut-child target with at least four taxa has a finite legal completed-topology certificate forcing its entire natural COMMON and INDEPENDENT law against all finite unknown-size original rivals using one source and physical tuple.
 
@@ -527,7 +533,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Uniform effective certificate production is separated in CB-G4-007.
+**Separate downstream work (does not reopen this result):** Uniform effective certificate production is separated in CB-G4-007.
 
 **Proof, review and other accepted-source links:**
 
@@ -556,10 +562,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** An arbitrary collection of controls is not automatically covered.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The menu contains the required finite natural BOTH certificate, and each bounded original shape compiles every legal outcome as a polynomial in one shared finite physical tuple. Then a finite certificate selected from that actual menu forces the whole menu law. The natural certificate bounds each actual matching rival, not merely a convenient equivalent representative; joint programme correlations remain joint.
 
@@ -578,7 +584,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Menus missing either hypothesis and a uniform algorithm are not covered.
+**Separate downstream work (does not reopen this result):** Menus missing either hypothesis and a uniform algorithm are not covered.
 
 **Proof, review and other accepted-source links:**
 
@@ -604,10 +610,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not say that a finite independent sample of answers is enough.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Entire natural INDEPENDENT-law equality implies entire natural COMMON-law equality for strict original finite sources and shared physical tuples. The acceptance includes fair mixed arms, repeated cuts, ancestral alignment and the opaque-upper interface, not only static routing. It adds no externally correlated shared register.
 
@@ -626,7 +632,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** The finite-prefix version is CB-G4-008.
+**Separate downstream work (does not reopen this result):** The finite-prefix version is CB-G4-008.
 
 **Proof, review and other accepted-source links:**
 
@@ -651,10 +657,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** The reduction does not itself produce that supplier.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Under polynomial source responses, semialgebraic strict admission/data over the real algebraic field, effectively enumerable legal algebraic tests and exact response encodings, one algebraic tuple on the same graph preserves the entire algebraic profile. Observation-only stopping O is equivalent to uniform supplied-algebraic-source forcing D.
 
@@ -673,7 +679,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** The uniform D algorithm beyond completed branches remains CB-G4-007.
+**Separate downstream work (does not reopen this result):** The uniform D algorithm beyond completed branches remains CB-G4-007.
 
 **Proof, review and other accepted-source links:**
 
@@ -699,7 +705,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** A proof that some finite certificate exists is not automatically a way to find it uniformly.
 
-**Kind:** question. **Mathematical status:** Open mathematical question.
+**Kind:** question. **Mathematical status:** Unresolved mathematical implication.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -721,7 +727,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Supply D, or a valid impossibility result at this exact effective interface.
+**Remaining mathematical implication:** Supply D, or a valid impossibility result at this exact effective interface.
 
 **Proof, review and other accepted-source links:**
 
@@ -746,7 +752,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Neither full-law determination nor the two-mode theorem already answers it.
 
-**Kind:** question. **Mathematical status:** Open mathematical question.
+**Kind:** question. **Mathematical status:** Unresolved mathematical implication.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -768,7 +774,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Prove the finite J_T implication or construct the stated fixed-target exact negative alternative.
+**Remaining mathematical implication:** Prove the finite J_T implication or construct the stated fixed-target exact negative alternative.
 
 **Proof, review and other accepted-source links:**
 
@@ -795,10 +801,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not reconstruct every hidden graph detail or every parameter.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Full binary M3 theorem for temporal binary LSA networks with positive child bridges, positive rates/durations, interior inheritance and contemporaneous tips, at least three taxa: timed three-tip panels determine normalized rooted-cluster and nontrivial-split unions. This is a union target, not tree co-occurrence. Earlier fair M2 normalized-quartet/sharpness results remain separate prior components.
 
@@ -817,7 +823,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Whole-graph/parameter recovery and outside-class targets require separate claims.
+**Separate downstream work (does not reopen this result):** Whole-graph/parameter recovery and outside-class targets require separate claims.
 
 **Proof, review and other accepted-source links:**
 
@@ -842,10 +848,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Full formal assembly and proof of the best possible panel size are different unfinished tasks.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For the declared hidden-routing class with hybrid indegree at most k, the hand theorem uses M_(k+1) timed panels to recover the normalized cluster/split union target at all sizes. It does not assert optimality of this cap.
 
@@ -864,7 +870,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Complete full formal assembly and separately resolve optimality; the hand theorem is not mathematically open merely because formalization is incomplete.
+**Separate downstream work (does not reopen this result):** Complete full formal assembly and separately resolve optimality; the hand theorem is not mathematically open merely because formalization is incomplete.
 
 **Proof, review and other accepted-source links:**
 
@@ -889,10 +895,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not guarantee that every dataset will yield a useful answer or solve exact source existence.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved by hand; named Lean subcomponents checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Completed hand characterization for positive binary rooted-LSA cut-child networks, not requiring planarity, n≥4, finite profiles and natural shared-source modes/control budgets: effective closure clouds and robust target fibres determine finite-data certification. Completed-cell law/TV formal consumers cover selected parts, not the full source assembly. The accepted algorithm specification includes both Hausdorff approximation directions and exact emptiness; an unexecuted full catalogue engine is not a missing mathematical supplier.
 
@@ -911,7 +917,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Full formal/native assembly remains; this does not reopen the accepted hand characterization.
+**Separate downstream work (does not reopen this result):** Full formal/native assembly remains; this does not reopen the accepted hand characterization.
 
 **Proof, review and other accepted-source links:**
 
@@ -937,10 +943,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not automatically give a cheap computation, an experimental sample budget, or a verified native programme.
 
-**Kind:** algorithm. **Mathematical status:** Proved at the stated scope.
+**Kind:** algorithm. **Mathematical status:** Proved by hand; named Lean subcomponents checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Complete finite original-ID registry, fixed finite unranked readouts, shared-source semialgebraic affine exact-law programmes and reset/deletion-closed trajectory costs admit an exact real-algebraic CAD policy/Pareto construction or lower certificate. Full source compiler, response/history/QE and AST-to-CorrectRun assembly remain distinct formal obligations. The hand master already supplies the actual-source census, joint polynomial compiler, rank/deletion argument and CAD winning-fibre selection. Missing full formal/native composition is not missing hand mathematics.
 
@@ -959,7 +965,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Full formal/native assembly, not a new proof of the completed hand characterization.
+**Separate downstream work (does not reopen this result):** Full formal/native assembly, not a new proof of the completed hand characterization.
 
 **Proof, review and other accepted-source links:**
 
@@ -986,10 +992,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a guarantee about noisy samples, fast computation or every hidden-variable model.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For finite acyclic DAGs with binary-valued variables, arbitrary finite original latent/selection carriers, selection sinks, one common positive rational binary registry, separate soft single-target interventions and the specified faithful physical-source class, the exact marked TCM class is recoverable using B=k(n−1)+Σ_{unordered{x,y}}2^{|U\{x,y}|}+Σ_{t∈T,x≠t}2^{|U\{x}|} elementary population CI/invariance queries, with 2B≤5n(n−1)2^u. All targets share one physical source. Binary-valued does not mean binary-degree.
 
@@ -1008,7 +1014,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Formal elaboration and statistical acquisition remain separate; finite postprocessing is not asserted polynomial time.
+**Separate downstream work (does not reopen this result):** Formal elaboration and statistical acquisition remain separate; finite postprocessing is not asserted polynomial time.
 
 **Proof, review and other accepted-source links:**
 
@@ -1034,10 +1040,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a lower bound on laboratory samples or every type of intervention.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For k>0,u≥2 let M=binom(u,2)2^(u−2). The physical class has deterministic lower bound M; an explicit M+1-source promise has exact optimum M. Arbitrary measurable random seeds with error ≤ε on every admitted source, 0≤ε<1/2, require extended expected paid queries ≥M(1−2ε) on one fixed baseline. Nontermination is failure; infinite expectation is allowed.
 
@@ -1056,7 +1062,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Formal acceptance; no lower bound outside this query/physical-source class is inferred.
+**Separate downstream work (does not reopen this result):** Formal acceptance; no lower bound outside this query/physical-source class is inferred.
 
 **Proof, review and other accepted-source links:**
 
@@ -1082,10 +1088,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not trivialize all observational causal discovery.
 
-**Kind:** counterexample. **Mathematical status:** Named overextension refuted.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For k=0 the literal TCM-union target is the empty graph, so its target class is a singleton and query complexity is zero. This refutes extension of CB-CAUSAL-002 to k=0, not its k>0 statement.
 
@@ -1104,7 +1110,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Keep k>0 explicit.
+**Separate downstream work (does not reopen this result):** Keep k>0 explicit.
 
 **Proof, review and other accepted-source links:**
 
@@ -1129,10 +1135,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** A score tie does not prove that two models generate the same biological measurements.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For ε=0 unweighted Carta sampling score, rooted unique-potency DAGs labelled by nonempty subsets of observed cell types and the specified multifurcating typed-tree menu, the full score signature determines exactly the potency-vertex family and reachability, not direct edges. A seven-cell example has a unique optimal progenitor family that changes after leaf deletion.
 
@@ -1151,7 +1157,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Statistical identification needs a specified stochastic forward/observation model.
+**Separate downstream work (does not reopen this result):** Statistical identification needs a specified stochastic forward/observation model.
 
 **Proof, review and other accepted-source links:**
 
@@ -1177,10 +1183,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not settle every biological division model or refute papers with different starting-state assumptions.
 
-**Kind:** counterexample. **Mathematical status:** Counterexample proved at stated scope.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** A multitype branching change-of-basis construction preserves the full sampled timed event-tree law, also after a common neutral inherited-barcode kernel. A fixed-root-3 parent-retaining-birth example has five versus six transition edges. State-preserving division Xi→2Xi, equality from every labelled hidden start, observation-minimality and contradiction of the cited strong-HE theorem are excluded.
 
@@ -1199,7 +1205,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Unknown graph identification under original state-preserving cell-division assumptions remains separate.
+**Separate downstream work (does not reopen this result):** Unknown graph identification under original state-preserving cell-division assumptions remains separate.
 
 **Proof, review and other accepted-source links:**
 
@@ -1226,10 +1232,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not mean every instance is difficult or that a best fit identifies biological truth.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For the actual D_λ objective over all binary joining refinements of arbitrary composite child clades, caterpillar exchange and anchors yield OPT=C0+OPT_MSSC−N. Star-map labels are all S and resolution cost is zero, so hardness holds for every fixed λ with unbounded types/degree. A full exact subset-DP recurrence is supplied. The operational formal endpoint remains separate.
 
@@ -1248,7 +1254,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Historical novelty and the operational formal endpoint are separate; see CB-LINEAGE-005.
+**Separate downstream work (does not reopen this result):** Historical novelty and the operational formal endpoint are separate; see CB-LINEAGE-005.
 
 **Proof, review and other accepted-source links:**
 
@@ -1274,7 +1280,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It has not been compiled or kernel-verified, and it is not a Rust binary running on hardware.
 
-**Kind:** algorithm. **Mathematical status:** Complete proof-source proposal, not yet formally accepted.
+**Kind:** algorithm. **Mathematical status:** Proof source complete; formal validation pending.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -1296,7 +1302,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Elaborate the exact closure, repair failures, inspect actual endpoint axioms and separately validate any native implementation.
+**Remaining validation of the written source:** Elaborate the exact closure, repair failures, inspect actual endpoint axioms and separately validate any native implementation.
 
 **Proof, review and other accepted-source links:**
 
@@ -1322,7 +1328,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Archive metadata or an informally similar theorem is not a verified usable import.
 
-**Kind:** question. **Mathematical status:** Formal dependency still missing.
+**Kind:** question. **Mathematical status:** Formal integration pending; mathematics is a separate claim.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -1344,7 +1350,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Validate the exact closed supplier and prove faithful operational reduction without assuming an extra axiom.
+**Remaining formal integration:** Validate the exact closed supplier and prove faithful operational reduction without assuming an extra axiom.
 
 **Proof, review and other accepted-source links:**
 
@@ -1370,10 +1376,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not show every root can move anywhere or every network becomes a binary tree.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** A maximal binary root region with exactly two boundary edge occurrences is replaceable by a retained-port fork preserving both cut matrices and fixed exterior parameters, with positive inheritance. Degree-two ports remain. Distinct domains: open H with invariant root law; Fourier JC/K2P/K3P with uniform root and literal zeros; strict-positive-rate continuous-time K2P using its actual exponential. Zero-rate K2P and general continuous-time K3P are excluded.
 
@@ -1392,7 +1398,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Broader subblob/single-edge/root-placement statements require separate proof.
+**Separate downstream work (does not reopen this result):** Broader subblob/single-edge/root-placement statements require separate proof.
 
 **Proof, review and other accepted-source links:**
 
@@ -1418,10 +1424,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It is not a practical finite-data procedure or a theorem about every hidden reaction network.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For autonomous scalar stopped laws, all finite scalar rivals share the positive start, observable interval and stopping convention. 3r+1 invariants suffice, or 2r+1 for unit births. A class-specific observation adapter connects the stochastic law to classical positive finite-moment determination.
 
@@ -1440,7 +1446,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Effective finite experimental access and unrestricted hidden reaction models remain outside scope.
+**Separate downstream work (does not reopen this result):** Effective finite experimental access and unrestricted hidden reaction models remain outside scope.
 
 **Proof, review and other accepted-source links:**
 
@@ -1466,10 +1472,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** They do not prove all partial-observation identification impossible.
 
-**Kind:** counterexample. **Mathematical status:** Named shortcuts refuted.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** One hidden-stop example has equal all-order interior initial generator/bracket jets but different observed held laws. Separately, one reaction has unbounded two-time feature rank, so finite chemistry need not have finite linear observable rank. These are distinct named-route obstructions.
 
@@ -1488,7 +1494,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Original inverse problem still needs a source-faithful observation/realization argument.
+**Separate downstream work (does not reopen this result):** Original inverse problem still needs a source-faithful observation/realization argument.
 
 **Proof, review and other accepted-source links:**
 
@@ -1514,10 +1520,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not yet that realization classification or a result for every reaction network.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For the specified embedded independent-block construction, fixed initial state and original full-state stopping, equality of continuous observed held-path laws is equivalent to equality of the actual hidden-diffusion first-exit survival response censored at the stated horizon.
 
@@ -1536,7 +1542,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Classify finite hidden chemical realizations of the response; unrestricted original master remains open.
+**Separate downstream work (does not reopen this result):** Classify finite hidden chemical realizations of the response; unrestricted original master remains open.
 
 **Proof, review and other accepted-source links:**
 
@@ -1562,10 +1568,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** These are not a ready laboratory protocol, efficient preparation or a solved optimal-cost question.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Unknown N-qubit Gibbs states have the same known β and at-most-k-local nonidentity Pauli coefficients individually bounded by one; degree and per-site total strength are not bounded. Collective upper: O((M log(2+βM/ε)+log(1/δ))/ε²), M=Σ_{j=1}^k3^j binom(N,j), unrestricted computation. For k≥5, ε≤1/4096, fixed-β lower32 is Ω(N^a/(log N)^(a/(k−1))), a=min((2k+2)/3,(4k−1)/5), counting every auxiliary spin.
 
@@ -1584,7 +1590,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Close the gap between upper/lower bounds at the original parameter, measurement and copy-cost contract.
+**Separate downstream work (does not reopen this result):** Close the gap between upper/lower bounds at the original parameter, measurement and copy-cost contract.
 
 **Proof, review and other accepted-source links:**
 
@@ -1611,10 +1617,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** The remaining information bound is not proved merely by naming this link.
 
-**Kind:** lemma. **Mathematical status:** Proved at the stated scope.
+**Kind:** lemma. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For the actual n-copy PGM, squared Bures risk≤2δ_n and squared full-trace risk≤8δ_n, δ_n=χ(n+1)−χ(n). No extra unknown copy is used. This is not an identity between measured Umegaki risk and that increment.
 
@@ -1633,7 +1639,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Uniform full-Gibbs δ_n=O(M/n), a suitable dyadic bound or an equally strong direct tester is still missing.
+**Separate downstream work (does not reopen this result):** Uniform full-Gibbs δ_n=O(M/n), a suitable dyadic bound or an equally strong direct tester is still missing.
 
 **Proof, review and other accepted-source links:**
 
@@ -1658,10 +1664,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not refute the published finite-dimensional results, certify microscopic bath physics, supply a computed large witness or establish historical novelty.
 
-**Kind:** counterexample. **Mathematical status:** Counterexample proved at stated hand-proof scope.
+**Kind:** counterexample. **Mathematical status:** Proved by author (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For every integer ell>=40, fix baseline gamma=1, tau=2^(-ell), b_G=exp(-1/8)sqrt(pi/8)exp(-1/128), ORIGINAL Gamma=9/4, b0=2b_G/9, exact h=b_G/4, j=b0/2, k<=12, m<=30, nu<=30 and beta=tau/8. With the SAME fixed O=X1Y2X3, positive normalized initial densities, every bare-Pauli thermal channel present, and the SAME static H in full infinite filters and the original square-window GKSL generator with ordered Lamb shift, the volume/time supremum of ||(exp(s L_T*)-exp(s R*))O||op is infinite, T=sqrt(tau/Gamma). For sufficiently large N=2^(q+1)-1 the finite real-grid maximum of actual predictions is at least exp[y^2 sqrt(N)/55296], y=(b_G/32)tau>0, at times at most N^(-1/2). Bounded-degree trees are allowed; this does not contradict narrower path/ring positive comparisons. Every future search must begin at q>=4ell+80.
 
@@ -1680,7 +1686,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; source preservation and hand-proof completion do not establish historical priority.
 
-**Remaining obligation:** No unfinished obligation remains in the original owner hand-proof goal. Whole-proof independent/formal validation and a feasible numerical witness are unperformed, unclaimed and not new original acceptance requirements. Other scientific and builder goals are separate.
+**Separate downstream work (does not reopen this result):** No unfinished obligation remains in the original owner hand-proof goal. Whole-proof independent/formal validation and a feasible numerical witness are unperformed, unclaimed and not new original acceptance requirements. Other scientific and builder goals are separate.
 
 **Proof, review and other source links:**
 
@@ -1710,10 +1716,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Auxiliary models or finite time windows are not the original all-time result.
 
-**Kind:** lemma. **Mathematical status:** Proved at the stated scope.
+**Kind:** lemma. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Reviewed components include commuting-Pauli comparison, noncommuting finite-window support decomposition, signed-energy identities, auxiliary interacting-noise influence estimates and general-operator incidence velocity 3kh. Their hypotheses remain separate from the actual same-H infinite-filter Redfield versus original square-window GKSL plus triangular Lamb-shift comparison. The completed actual commuting-Pauli comparison is recorded separately as CB-PHYS-P5-003 and is not merely an auxiliary-reference estimate. The operator-incidence packet also proves its full infinite-filter commutator estimates; its integrated auxiliary reference requires g>3kh, guaranteed for general k=2 in its original box, not all k.
 
@@ -1732,7 +1738,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** These component proofs remain completed. CB-PHYS-P5-004 records the full unrestricted counterexample adopted by the original source owner; its full proof and admission correction are now public. The earlier signed homogeneous 2q I2 estimate remains an unsupplied positive-route supplier, not an open original P5 goal. Whole-proof independent/formal checking is unperformed and does not reopen the completed hand-proof assignment. The commuting and path/ring positive theorems keep their narrower scopes.
+**Separate downstream work (does not reopen this result):** These component proofs remain completed. CB-PHYS-P5-004 records the full unrestricted counterexample adopted by the original source owner; its full proof and admission correction are now public. The earlier signed homogeneous 2q I2 estimate remains an unsupplied positive-route supplier, not an open original P5 goal. Whole-proof independent/formal checking is unperformed and does not reopen the completed hand-proof assignment. The commuting and path/ring positive theorems keep their narrower scopes.
 
 **Proof, review and other accepted-source links:**
 
@@ -1766,10 +1772,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not settle general interacting quantum systems, prove the microscopic bath approximation, or establish experimental performance.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Let H=Σ_Z J_ZP_Z be a commuting Pauli Hamiltonian on any finite qubit volume, with sup_i Σ_{Z∋i}|J_Z|≤h. Set S_i={i}∪⋃_{Z∋i}Z, require |S_i|≤m and each site belongs to at most ν such sets, with h,m,ν volume independent. Each site has independent X,Y,Z channels with positive-type thermal correlations, Φ(−s)=conj Φ(s), |Φ(s)|≤(γ/τ_B)e^{−|s|/τ_B}, and Re∫_0^∞Φ(s)ds≥b_0γ>0. For T>0 and g=8b_0γ−2h−24ν2^mγhτ_B>0, the actual infinite-filter Redfield R and original square-window GKSL L_T with triangular Lamb shift satisfy ||exp(tL_T*)O−exp(tR*)O||≤2^s||O||δ/g for every finite volume, t≥0 and s-site observable, where δ=3ν(32γhT+4γτ_B/T+8γhτ_B). Thus the corresponding expectation error is bounded for every initial density matrix, including entangled states. Redfield positivity is not assumed.
 
@@ -1788,7 +1794,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** This commuting theorem is complete at its stated hand-reviewed scope. CB-PHYS-P5-004 separately records the completed unrestricted counterexample hand proof, now published in full. That negative result uses a broader geometry than the separate accepted path/ring positive theorem. No global trace-distance, multi-time transcript, infinite-volume construction, weak-noise-at-fixed-h or microscopic system-plus-bath theorem follows from the commuting result.
+**Separate downstream work (does not reopen this result):** This commuting theorem is complete at its stated hand-reviewed scope. CB-PHYS-P5-004 separately records the completed unrestricted counterexample hand proof, now published in full. That negative result uses a broader geometry than the separate accepted path/ring positive theorem. No global trace-distance, multi-time transcript, infinite-volume construction, weak-noise-at-fixed-h or microscopic system-plus-bath theorem follows from the commuting result.
 
 **Proof, review and other accepted-source links:**
 
@@ -1814,10 +1820,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This example does not by itself disprove the full requested approximation-error bound.
 
-**Kind:** counterexample. **Mathematical status:** Named shortcut refuted.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The reviewed initial packet includes an actual two-qubit Redfield nonpositivity example under its stated generator and initial state. Its target is the unconditional positivity shortcut, not every uniform Redfield/GKSL comparison.
 
@@ -1836,7 +1842,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Do not turn this or a growing-support example into a disproof of the original fixed-support error question.
+**Separate downstream work (does not reopen this result):** Do not turn this or a growing-support example into a disproof of the original fixed-support error question.
 
 **Proof, review and other accepted-source links:**
 
@@ -1861,10 +1867,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not an equal-noiseless-spectrum pair, a fabricated device or proof about every experimental setup.
 
-**Kind:** counterexample. **Mathematical status:** Bounded-error limitation proved.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** In a fixed 60-site known-lead class with unrestricted finite potentials and zero internal loss, opposite reflection-visibility margins have arbitrarily close complete lowest-energy curves. An independently replayed rational example certifies opposite determinant intervals and whole-field energy difference≤0.09999 μeV; zero-temperature conductance separates that particular pair.
 
@@ -1883,7 +1889,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Bounded-potential exact opposite-margin equal-curve existence is unresolved; a near-equal saved pair is not exactly equal.
+**Separate downstream work (does not reopen this result):** Bounded-potential exact opposite-margin equal-curve existence is unresolved; a near-equal saved pair is not exactly equal.
 
 **Proof, review and other accepted-source links:**
 
@@ -1909,10 +1915,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not automatically a certificate of a protected Majorana device or a microscopic realization.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For contractive particle-hole-symmetric reflection matrices with N channels, the sharp attainable region is 0≤g≤2N, |Q|≤1, Q≥1−g, and (−1)^NQ≥g−(2N−1). Thus g<1 implies Q>0. Algebraic attainment does not prove realization by every physical Hamiltonian class.
 
@@ -1931,7 +1937,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** A concrete unknown device needs a justified measurement/model/error adapter.
+**Separate downstream work (does not reopen this result):** A concrete unknown device needs a justified measurement/model/error adapter.
 
 **Proof, review and other accepted-source links:**
 
@@ -2003,10 +2009,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It cannot manufacture a missing link from biological observations to moments.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** CM-T02 is the selected four-module positive finite-moment component. Applications must use one fixed pushforward law with the correct grouped equal values and positive masses; the source/observation adapter is not supplied automatically.
 
@@ -2025,7 +2031,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** No new mathematical priority claimed for the classical theorem.
 
-**Remaining obligation:** Each application must prove its own faithful observation adapter.
+**Separate downstream work (does not reopen this result):** Each application must prove its own faithful observation adapter.
 
 **Proof, review and other accepted-source links:**
 
@@ -2050,10 +2056,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not settle every pattern question about the sequence.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For digit-parity Thue–Morse t, maximum monochromatic progression length A(d) and earliest maximum start i(d): d=2^n+1,n≥2 gives A=2^n+2,i=3·2^(2n)−2^n−1; d=2^(2n)−1,n≥1 gives A=2^(2n)+4,i=3·2^(4n)−2^(2n)+1; d=2^(2n+1)−1,n≥0 gives A=2^(2n+1),i=2^(2n+1)−1. Stronger all-start classifications are also proved. The first formula excludes n=1, since i(3)=45.
 
@@ -2072,7 +2078,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** No whole automatic-sequence classification or historical-priority certification.
+**Separate downstream work (does not reopen this result):** No whole automatic-sequence classification or historical-priority certification.
 
 **Proof, review and other accepted-source links:**
 
@@ -2097,10 +2103,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a complete formula or a solution to the separate Fibonacci question.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Let u be the fixed point beginning 0 of 0→01,1→00; P(n) is minimum nonempty-palindrome factor count of its length-n prefix, P(0)=0. Then d(n)=P(n+1)−P(n) is not 2-automatic and P is not 2-regular. The computational lemma is an all-length inclusion over a closed reachable finite-state system.
 
@@ -2119,7 +2125,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Formal kernel treatment and historical priority are separate; no extrapolation claim.
+**Separate downstream work (does not reopen this result):** Formal kernel treatment and historical priority are separate; no extrapolation claim.
 
 **Proof, review and other accepted-source links:**
 
@@ -2144,10 +2150,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not classify every substitution or cover the lower threshold range.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For every avoidance threshold from (8/3)^+ up to but excluding 3, positive lengths of binary uniform morphisms preserving that threshold on every admissible input are exactly all lengths except 3,6; complementary morphisms realize every admitted length. Strict 8/3 differs: length 5 is impossible there.
 
@@ -2166,7 +2172,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** No classification of all preserving morphisms or the interval (7/3)^+ through 8/3.
+**Separate downstream work (does not reopen this result):** No classification of all preserving morphisms or the interval (7/3)^+ through 8/3.
 
 **Proof, review and other accepted-source links:**
 
@@ -2191,10 +2197,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not certify the original C++ programme, physical energies or total probability of a structural class.
 
-**Kind:** lemma. **Mathematical status:** Proved at the stated scope.
+**Kind:** lemma. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Three accepted Lean modules bind the independently encoded balanced scaffold to literal character/stack processing, bounded close actions, partner-table filter and a fixed generated-pair observable. A separate normalized root-carrier theorem excludes two auxiliary constructors from decoded root-W parent events. Exact sources are within the selected 301-module guarded/full-declaration record.
 
@@ -2213,7 +2219,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Original carrier, multiplicities, weights, emitted structures, L5/L6 inverse-image SUM, traceback, executable numerics/RNG and selected-class confidence remain separate.
+**Separate downstream work (does not reopen this result):** Original carrier, multiplicities, weights, emitted structures, L5/L6 inverse-image SUM, traceback, executable numerics/RNG and selected-class confidence remain separate.
 
 **Proof, review and other accepted-source links:**
 
@@ -2238,10 +2244,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It is not a full DNA likelihood or an end-to-end biological recovery guarantee.
 
-**Kind:** lemma. **Mathematical status:** Proved at the stated scope.
+**Kind:** lemma. **Mathematical status:** Proved; named Lean scope checked.
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The 53-source chain derives actual rooted-cap switching/readout, repeated-label anchor, weighted formula, opened-tree and selected-choice correspondence, faithful opened drawings and source-cycle AddCircle maps including parallel bigons. It concerns distinct displayed resolution sets and arithmetic means, not switching multiplicity, NMSC concordance factors or sequence likelihood.
 
@@ -2260,7 +2266,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Full raw-source embedding/ports, Jordan/face/contour transport, adjacent tips, circular positive support and global composition; do not downgrade inherited hand results.
+**Separate downstream work (does not reopen this result):** Full raw-source embedding/ports, Jordan/face/contour transport, adjacent tips, circular positive support and global composition; do not downgrade inherited hand results.
 
 **Proof, review and other accepted-source links:**
 
@@ -2285,10 +2291,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not promise useful sample sizes or cover relaxed clocks and arbitrary mutation models.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For each fixed finite admitted MSci model and its same complete contemporaneous labelled haploid panel, sufficiently long finite homogeneous stationary clock-JC loci have exactly the equality fibres of route-marginal timed genealogy laws.
 
@@ -2307,7 +2313,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Unknown rate mixtures, unphased genotype coarsening, relaxed clocks, other channels and useful locus counts are outside scope.
+**Separate downstream work (does not reopen this result):** Unknown rate mixtures, unphased genotype coarsening, relaxed clocks, other channels and useful locus counts are outside scope.
 
 **Proof, review and other accepted-source links:**
 
@@ -2332,10 +2338,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not include every possible migration, event or hidden-routing mechanism.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** In the reachable positive finite-epoch class, equality of all finite-sample metric genealogy laws is equivalent to one coherent hidden-population renaming across epochs. Coincident rates, rank deficiency and backward expansion are allowed; a computable finite copy cap is supplied. Silent boundaries, hidden initial routing, continuous migration, instantaneous mergers and alternative biological event factorizations are excluded.
 
@@ -2354,7 +2360,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** No claim for excluded biological histories or a practical small cap.
+**Separate downstream work (does not reopen this result):** No claim for excluded biological histories or a practical small cap.
 
 **Proof, review and other accepted-source links:**
 
@@ -2379,10 +2385,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Two sites does not mean two observed bases or certainty from one locus.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Global identification for the fixed tree/pulse direction, shared B/C rates, clock and current-block routing uses two homologous columns across six phased labelled haploid sequences per locus and nine means. It improves a valid 55-site sufficient bound. The later Jacobian is everywhere nonsingular and supports joint uncertain-target Krawczyk inclusion, without uniform conditioning or guaranteed numerical contraction.
 
@@ -2401,7 +2407,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Empirical accuracy, useful locus counts and broader model classes require separate evidence.
+**Separate downstream work (does not reopen this result):** Empirical accuracy, useful locus counts and broader model classes require separate evidence.
 
 **Proof, review and other accepted-source links:**
 
@@ -2427,7 +2433,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** A mathematically identifiable model need not be accurately estimable from this dataset.
 
-**Kind:** software check. **Mathematical status:** Scoped software checks.
+**Kind:** software check. **Mathematical status:** Scoped software result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2474,7 +2480,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It is not a universal proof that native Rust implements every Lean theorem.
 
-**Kind:** software check. **Mathematical status:** Scoped software checks.
+**Kind:** software check. **Mathematical status:** Scoped software result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2522,7 +2528,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** More archived output is not the same as a supported biological conclusion.
 
-**Kind:** software check. **Mathematical status:** Negative or inconclusive empirical result.
+**Kind:** software check. **Mathematical status:** Empirical negative or inconclusive result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2570,7 +2576,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This is not a capture probability, direction or dated biological event.
 
-**Kind:** software check. **Mathematical status:** Negative or inconclusive empirical result.
+**Kind:** software check. **Mathematical status:** Empirical negative or inconclusive result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2617,10 +2623,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not yet prove failure at the actual sparse recording cadence or describe synthesis kinetics.
 
-**Kind:** counterexample. **Mathematical status:** Counterexample proved at stated scope.
+**Kind:** counterexample. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** A reviewed exact one-attempt lattice descriptor collision changes transition mass. The later fixed-initializer, actual-cadence history determinant has positive conditioning probabilities, but its nonzero value remains unproved.
 
@@ -2639,7 +2645,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Prove the actual sparse-cadence determinant nonzero or another source-faithful result; equilibrium Monte Carlo is not synthesis kinetics.
+**Separate downstream work (does not reopen this result):** Prove the actual sparse-cadence determinant nonzero or another source-faithful result; equilibrium Monte Carlo is not synthesis kinetics.
 
 **Proof, review and other accepted-source links:**
 
@@ -2664,10 +2670,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** The available labels alone do not produce that physical certificate.
 
-**Kind:** theorem. **Mathematical status:** Conditional theorem.
+**Kind:** theorem. **Mathematical status:** Proved under the stated premises (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** The conditional nuisance/set-membership certificate separates selected fit, physical molecular presence, exact boundary attainment and E/I geometry provenance. Thirty-two structure labels were recovered, but numeric profiles/templates, fit registry and calibrated errors were not, so no empirical fit or physical certificate was produced.
 
@@ -2686,7 +2692,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Acquire justified numeric profiles, templates, registry and uncertainty model.
+**Separate downstream work (does not reopen this result):** Acquire justified numeric profiles, templates, registry and uncertainty model.
 
 **Proof, review and other accepted-source links:**
 
@@ -2711,7 +2717,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** Injected failures do not show that a published geographic conclusion was wrong.
 
-**Kind:** software check. **Mathematical status:** Scoped software checks.
+**Kind:** software check. **Mathematical status:** Scoped software result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2758,7 +2764,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** These outputs are not complete WAR, causal player value or current forecasts.
 
-**Kind:** software check. **Mathematical status:** Negative or inconclusive empirical result.
+**Kind:** software check. **Mathematical status:** Empirical negative or inconclusive result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2805,7 +2811,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** A lower fitted error on unreconciled data is not an accepted improvement.
 
-**Kind:** software check. **Mathematical status:** Negative or inconclusive empirical result.
+**Kind:** software check. **Mathematical status:** Empirical negative or inconclusive result.
 
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
@@ -2852,10 +2858,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** This does not rule out unrestricted hosts or a different notion of embedding.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For each nonempty fixed-word-avoiding class with the declared balanced-child cap, no single universal host exists under the stated injective adjacency embeddings. Changed caps, unrestricted host classes and edge-to-path embeddings are excluded.
 
@@ -2874,7 +2880,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Unrestricted universality remains a different question.
+**Separate downstream work (does not reopen this result):** Unrestricted universality remains a different question.
 
 **Proof, review and other accepted-source links:**
 
@@ -2899,10 +2905,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It does not apply to noisy finite data or unknown control labels.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For r≥1 original hybrid sites and n≥4 in the specified original model, natural plus labelled forced-marker observations with known INDEPENDENT mode or unknown COMMON/INDEPENDENT mode have sharp worst-case site union r, two positive-support configurations and one labelled exact-law programme when support cap L≥2; programme count is ceil(2/L). Known COMMON alone has passive cost 0 sites/1 configuration/1 programme.
 
@@ -2921,7 +2927,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** No located specific Lean realization of these optimum formulas is claimed.
+**Separate downstream work (does not reopen this result):** No located specific Lean realization of these optimum formulas is claimed.
 
 **Proof, review and other accepted-source links:**
 
@@ -2947,10 +2953,10 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **What we cannot conclude:** It is not an adaptive-policy lower bound or a result for arbitrary randomized decisions.
 
-**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
 
 <details>
-<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+<summary>Exact scope, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** For r≥2 in the stated STATIC full-forcing-only numerical-law menu, parameter-oblivious support optimum is D=C(r), with K=ceil(C(r)/L) programmes at support cap L. The proof uses classical covering-array capacity and an actual-source matching numerical collision. Unknown IDs, finite-data confidence and adaptive full-forcing optima are excluded.
 
@@ -2969,7 +2975,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Adaptive or differently labelled/observed menus need separate proofs; no specific Lean optimum package is asserted.
+**Separate downstream work (does not reopen this result):** Adaptive or differently labelled/observed menus need separate proofs; no specific Lean optimum package is asserted.
 
 **Proof, review and other accepted-source links:**
 

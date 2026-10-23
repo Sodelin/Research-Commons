@@ -16,3 +16,11 @@ Read START-HERE.md and the relevant project notes before working. Nolan authoriz
 10. For substantial research, follow [the research completion standard](docs/RESEARCH-COMPLETION-STANDARD.md), ID MASTER-CLOSURE-STANDARD-20260930. Track the full intended open question and its promised downstream conclusion; a completed intermediary is not master closure. Continue feasible authorized obligations and preserve an honest checkpoint when blocked or interrupted.
 
 Nonresearch project communications and chronology are also within this commons' note-taking scope. Label proposals, reported events, and observed decisions accurately. Keep the same attribution, preservation, visibility, and authorization boundaries.
+
+## Human-required hand-proof completion rule — 23 October 2026
+
+A complete hand proof is **PROVED (not Lean formalized)** at its exact stated scope. Record author completion and independent review separately; pending review is not unfinished proof authorship. “Open” is reserved for a precisely named unresolved mathematical implication. A missing Lean receipt, native binding, implementation, empirical admission or novelty assessment must occupy its own field and must not demote the proved theorem.
+
+For every completed claim, retain a stable key, exact statement, accessible proof bytes, immutable identity, later review/correction and direct reuse action. Keep completed suppliers out of the mathematical derivation queue. If a downstream theorem needs more, name that different claim and its missing implication. A conditional theorem can be complete under its stated premises while acquisition of those premises remains a distinct question. A failed lookup is STATUS UNVERIFIED, not mathematical OPEN.
+
+Correct current entrypoints and their machine-readable records together; preserve superseded proof/status bytes in immutable history. Do not create another competing notebook or reset acceptance because an old candidate header survives in a frozen source.

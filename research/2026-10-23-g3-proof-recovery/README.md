@@ -1,0 +1,44 @@
+# G3 recovery: completed components stay completed
+
+23 October 2026. Contributor: the existing G3 source owner. **Recovery and status correction; no new mathematics, independent review, Lean check or scientific execution.**
+
+The source owner's complete hand arguments below are **PROVED (not Lean formalized)** at their exact stated scopes. Their independent-review status remains separate. A missing Lean term, missing native binding, historical “candidate” header or unsolved broader extension must not restart the completed proof.
+
+This package recovers **58 authored mathematical notes and 17 unelaborated Lean source files**, previously retained by the source owner. Those are source-file counts, not 75 discoveries or 75 completed master questions. [Original/public hashes and projection details](SOURCE-MANIFEST.json) bind every source. [Exact result scopes, successors and separate integration gaps](RESULT-CATALOGUE.json) cover all 58 mathematical notes. The original files remain unchanged. Private local addressing and runtime receipt locators are omitted from the public notes; no private runtime payload is published.
+
+## Reuse first
+
+| Stable result key | Completed component / source | Separate remaining work |
+|---|---|---|
+| `G3-SUPPLIED-WORD-ADMISSION` | [Strict fresh-word Source/calendar and Originated reflection](G3-UNIFORM-WORD-ORIGINATED-REFLECTION.md) | Typed fresh-array BinaryValid/RegistryValid, calendar/ID isomorphism and Originated proof terms have not been elaborated. This is a formal receiver gap, not an unproved hand splice construction. |
+| `G3-CURRENT-ROOT-TRANSPORT` | [Actual current-root carrier and exchangeability](G3-ACTUAL-CURRENT-ROOT-EXCHANGEABILITY.md) | New copy/symmetry/decoder Lean proof sources are unelaborated; do not substitute an arbitrary full-Code state or per-leaf routing. |
+| `G3-ORIGINAL-BANK-FUTURE` | [Restore the same unused bank and actual legal future](G3-RESTORED-ACTUAL-FUTURE.md) | New typed composition/erasure terms have not passed Lean. No fresh COMMON resampling or arbitrary observer erasure is licensed. |
+| `G3-UNIFORM-FOREST-RECEIVER` | [One full-forest law for every finite current-root cap and supplied word length](G3-UNIFORM-ALL-CAP-ORIGINAL-FOREST-RECEIVER.md) | Actual product-forest/Poisson/canonical decoder proof terms are unelaborated. Forward formulas depending on supplied N are not a bound on unknown witness N. |
+| `G3-PRIVATE-CAP3-I-IMAGE` | [Complete cap-three INDEPENDENT image and one-bigon compression](G3-CAP3-INDEPENDENT-COMPRESSION.md) | No new mathematical derivation is required at this scope. Transfer outside the declared private fragment and Lean elaboration are separate. |
+| `G3-PRIVATE-CAP2-PAIRED` | [Complete paired cap-two strict image and source-size lower bound](G3-PAIRED-CAP2-STRICT-IMAGE.md) | A private kernel coordinate is not automatically an observed arbitrary-core input coordinate; this is not an unrestricted NO procedure. |
+| `G3-PRIVATE-CAP3-PAIRED` | [Paired cap-three one/two/three-cell distinctions](G3-CAP3-TWO-CELL-CRITERION.md) | These defeat their specified compression rules. They do not prove every source is irreducible or refute an input-dependent one-witness H. |
+| `G3-PRIVATE-ORDINARY-FACE-BOUND` | [Input-effective word bound on the paired cap-three ordinary face](G3-CAP3-FACE-ALL-LENGTH-BOUND.md) | An existential internal coordinate may vary over a larger source fibre. Uniform original-input acquisition/coverage is a separate mathematical implication, explicitly not supplied by this theorem. |
+| `G3-MARGINAL-TOPOLOGY-QUOTIENT` | [Whole private-word quotient for individual quartet/triple marginal menus](G3-MARGINAL-QUARTET-PRIVATE-WORD-QUOTIENT.md) | Higher-copy rooted/joint panels and arbitrary controlled exteriors are different claims. No joint-panel G4 counterfamily follows. |
+| `G3-FIXED-QUINTET-DECODER` | [Complete fixed-quintet cap-three decoder and supplied-word consumer](G3-FIXED-QUINTET-CAP3-DECODER.md) | Original typed selected-current-root/actual-future readout binding and unelaborated Lean remain separate. The numerical map is not silently accepted as a general source theorem. |
+| `G3-PAIRED-APPROXIMATION` | [Effective approximation by one physical paired word](G3-SAME-TUPLE-PAIRED-APPROXIMATION-R2.md) | Zero-error attainment, a fixed exact correction chart and an unrestricted witness bound are not conclusions. |
+| `G3-BOTH-BOUNDARY-NONATTAINMENT` | [Algebraic original BOTH closure point without a finite strict source](G3-BOTH-ALGEBRAIC-CLOSURE-NO.md) | This supplies named negative/approximation examples, not a complete classifier. All old source assumptions and actual observation adapters are retained. |
+| `G3-METHOD-EXCLUSIONS` | [Completed logarithmic-method and representation exclusions](G3-FIVE-LOG-ALL-RANK-SCREEN.md) | These are exclusions/adapter analyses, not a solution of the exact promised rank-five log-purity zero or unrestricted source recognition. Do not restart an already excluded direct matrix/height/zero-volume route. |
+| `G3-SOURCE-BOUNDARY-COMPONENTS` | [Named critical-endpoint, exposed-factor and continuous-power components](G3-COMMON-SIX-MOMENT-EXPOSED-FACTORISATION.md) | No global Q13/Hessian classification, all-core boundary coverage, new general critical-count theorem or automatic original source lift is asserted. |
+| `G3-REPETITION-COUNT-REUSE` | [Already accepted radical/repetition count and full retuned-head counter-test](G3-RECIPROCAL-PRIOR-ATTRIBUTION-CORRECTION-20261023.md) | No proof task remains for the accepted old mechanism. Recent alternative proofs/worked resultants are reuse. Independent multiplicities, singular moving heads and original all-input coverage are not supplied by it. |
+| `G3-TERMINATION-EQUIVALENCES` | [Completed fixed-budget/one-witness termination equivalences](G3-TERMINATION-EQUIVALENCES.md) | An equivalence characterizes the missing information; it does not provide total H or complete NO. Do not label that absence as a failure of the already-proved equivalence. |
+
+These entries record author-complete named arguments, including conditional statements at their declared premises. The method-exclusion and boundary groups retain each individual surviving claim; rejected intermediate calculations are not promoted. The repetition-count entry reuses its **already accepted 15–16 October** supplier and mandatory attribution correction. Earlier approximation revision 1 is superseded by revision 2. Companion files and exact scope distinctions are in the machine-readable catalogue.
+
+## The actual unresolved mathematical claim
+
+The existing master is [CB-G3-004](../../docs/CLAIM-BOARD.md#cb-g3-004): total exact recognition for every original finite rational/effectively algebraic joint input, with one admitted finite strict source, original IDs and one tuple across all rows, and terminating NO over all unknown finite sizes/cores. A total input-computable one-witness bound, defined on NO too, or a complete exact source-faithful NO mechanism is not supplied.
+
+The full-five-coordinate promised logarithmic purity equality is a necessary stress case, not the whole original problem. No new full attack or zero algorithm is claimed by this publication. Forward formulas uniform in every supplied finite cap/word length do not bound an unknown realizing word.
+
+For typed integration, preserve actual source/menu/calendar/rate compatibility, current-root routing, opaque entering trees, original bank/history, ordered parent occurrences and the actual exterior/final readout. Parent0 probability is `p=1-native gamma`. New `.lean` files are source-only; old checked suppliers retain their original exact receipts. A Python validation flag is not a Lean certificate.
+
+## How completion is recorded
+
+Use the existing [claim board](../../docs/CLAIM-BOARD.md), [status-label audit](../../docs/STATUS-LABEL-AUDIT.md) and [research completion standard](../../docs/RESEARCH-COMPLETION-STANDARD.md). Reuse a stable claim key, read its proof and later correction, and keep mathematical completion, authorship, independent review, Lean, implementation and empirical admission in separate fields. An unresolved downstream consumer does not reopen its proved supplier.
+
+No local Git mutation, peer wake/start/resume, new worker, native/Cargo/Lake/CI/QE/model run or held/consumed/UNKNOWN replay was performed. No controller or writer binding is supplied by a documentation change.

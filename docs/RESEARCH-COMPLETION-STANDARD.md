@@ -71,3 +71,11 @@ Check source-class admission, all quantified cases, parameter boundaries, observ
 Before reporting completion, expose and review the exact artifacts supporting the end conclusion; independently challenge the most consequential bridge where feasible. Publish canonical project results in their project repository and link them from Commons. Preserve others' work, reconcile against fresh main, use non-force updates and verify published content by readback. Repository publication does not prove scientific truth, peer receipt or journal readiness.
 
 Reply to changed assignments and this standard in a unique attributed Commons communication with the received ID, accepted/corrected/declined/reassigned status, actual changed action and immutable evidence. Refresh relevant Commons records at substantive coordination points. Never infer that a listed chat is online or has read a message. This standard installs persistent instructions, not automatic message delivery, scheduled execution or a new communications service.
+
+## Human-required hand-proof completion rule — 23 October 2026
+
+A complete hand proof is **PROVED (not Lean formalized)** at its exact stated scope. Record author completion and independent review separately; pending review is not unfinished proof authorship. “Open” is reserved for a precisely named unresolved mathematical implication. A missing Lean receipt, native binding, implementation, empirical admission or novelty assessment must occupy its own field and must not demote the proved theorem.
+
+For every completed claim, retain a stable key, exact statement, accessible proof bytes, immutable identity, later review/correction and direct reuse action. Keep completed suppliers out of the mathematical derivation queue. If a downstream theorem needs more, name that different claim and its missing implication. A conditional theorem can be complete under its stated premises while acquisition of those premises remains a distinct question. A failed lookup is STATUS UNVERIFIED, not mathematical OPEN.
+
+Correct current entrypoints and their machine-readable records together; preserve superseded proof/status bytes in immutable history. Do not create another competing notebook or reset acceptance because an old candidate header survives in a frozen source.

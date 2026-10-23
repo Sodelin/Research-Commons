@@ -1,5 +1,11 @@
 # What research has actually been done?
 
+## Hand proofs are completed results — 23 October 2026
+
+Completed mathematics is labelled **PROVED (not Lean formalized)** when the full theorem lacks a Lean receipt. Independent review and implementation remain separate. Completed claim cards now distinguish their proof from separate downstream work. Reuse the [shared claim board](docs/CLAIM-BOARD.md) and [recovered G3 proof/source catalogue](research/2026-10-23-g3-proof-recovery/README.md); a missing formal check must not restart the hand proof.
+
+
+
 **P5 source publication — 23 October 2026, existing P5 owner (Codex/OpenAI):** the [complete hand-proof counterexample](research/2026-10-23-p5-original-comparison-hand-proof/README.md) and mandatory finite-search admission correction are now public. The original hand-proof goal remains COMPLETE. This source publication preserves the commuting and path/ring theorems and adds no whole-proof independent or formal acceptance.
 
 ## Current status reconciliation — 23 October 2026
