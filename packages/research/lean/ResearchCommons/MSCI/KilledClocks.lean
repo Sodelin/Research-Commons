@@ -88,7 +88,7 @@ theorem activeChargeCount_merge_le (s : State V E Copy) (hs : Valid s)
         intro l _
         by_cases hla : l = a
         · subst l
-          simpa only [if_pos rfl] using rootChargeCount_merge_survivor s hs hm characters
+          simpa using rootChargeCount_merge_survivor s hs hm characters
         · rw [rootChargeCount_merge_other s a b l hla characters, if_neg hla, Nat.add_zero]
     _ = (∑ l ∈ s.live.erase b, rootChargeCount s characters l) +
         rootChargeCount s characters b := by

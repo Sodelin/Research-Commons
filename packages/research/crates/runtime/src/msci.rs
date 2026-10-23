@@ -117,10 +117,17 @@ pub fn observation_cutoff(n:usize,epochs:usize,populations:usize,limits:Limits)
  let pairs=n.checked_mul(n-1).ok_or(Error::Overflow)?/2;let b=a.natural(pairs)?;
  let mut paths=q(0,1);let mut term=q(1,1);
  for i in 0..n{paths=a.add(&paths,&term)?;if i+1<n{term=a.mul(&term,&b)?;}}
- let square=a.mul(&states,&states)?;let jsquare=a.mul(&jq,&square)?;
- let denominator_degree=a.add(&jsquare,&states)?;
- let ne=a.mul(&nq,&paths)?;let nes=a.mul(&ne,&states)?;
- let power=a.pow(&nes,epochs)?;let terms=a.mul(&paths,&power)?;
+ // J=0 is an admitted theorem case. Do not build unused S^2 or
+ // (nES)^0 intermediates that can exceed a profile while the bound fits.
+ let (denominator_degree,terms)=if epochs==0{
+  (states.clone(),paths.clone())
+ }else{
+  let square=a.mul(&states,&states)?;let jsquare=a.mul(&jq,&square)?;
+  let denominator_degree=a.add(&jsquare,&states)?;
+  let ne=a.mul(&nq,&paths)?;let nes=a.mul(&ne,&states)?;
+  let power=a.pow(&nes,epochs)?;let terms=a.mul(&paths,&power)?;
+  (denominator_degree,terms)
+ };
  let twice_f=a.mul(&q(2,1),&denominator_degree)?;
  let factor=a.add(&twice_f,&q(1,1))?;let twice_m=a.mul(&q(2,1),&terms)?;
  let recurrence_order=a.mul(&twice_m,&factor)?;
@@ -152,6 +159,12 @@ pub fn observation_cutoff(n:usize,epochs:usize,populations:usize,limits:Limits)
    let json:serde_json::Value=serde_json::from_str(&b.json().unwrap()).unwrap();
    assert_eq!(json["n"],n);assert_eq!(json["source_admission_verified"],false);
   }
+ }
+ #[test]fn zero_epoch_profile_does_not_materialize_an_unused_oversized_square(){
+  // S=200, F=200, K=1604 and L=6412 all fit4digits; S^2=40000
+  // is not part of any required J=0 intermediate.
+  let b=observation_cutoff(2,0,10,Limits{integer_chars:4,..Limits::default()}).unwrap();
+  assert_eq!(b.locus_length(),&q(6412,1));
  }
  #[test]fn invalid_contract_and_profile_limits_never_become_a_negative_identifiability_claim(){
   assert!(matches!(observation_cutoff(1,0,1,Limits::default()),Err(Error::Invalid(_))));

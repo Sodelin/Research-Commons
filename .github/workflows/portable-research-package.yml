@@ -66,6 +66,7 @@ jobs:
             packages/research/Cargo.lock
           if-no-files-found: warn
   lean:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]')
     concurrency:
       group: portable-research-package-20261023
       cancel-in-progress: false
@@ -414,6 +415,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   whole_word:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check word]')
     concurrency:
       group: portable-whole-word-20261023
       cancel-in-progress: false
@@ -475,6 +477,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   completion_observer:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check completion]')
     concurrency:
       group: portable-completion-observer-20261023
       cancel-in-progress: false
