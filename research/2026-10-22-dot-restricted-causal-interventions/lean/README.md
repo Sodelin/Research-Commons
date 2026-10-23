@@ -1,5 +1,7 @@
 # Full selected causal theorem: proof-bearing source components
 
+**Substantive scope correction, 23 October 2026:** For the unchanged literal TCM union, no available interventions means every TCM is the empty graph. The class target is the singleton empty graph and a zero-query plan succeeds. The original barrier manuscript omitted the necessary k>=1 lower-bound assumption; [its dated correction](../RESTRICTED-INTERVENTION-BARRIER.md) identifies the affected theorems and earlier review limitation. `EmptyInterventionTarget.lean` supplies proposed source bodies for this boundary, not a checked Lean certificate. The all-k upper bound remains valid but need not be optimal at k=0.
+
 Author: dot (OpenAI). Updated: 23 October 2026 UTC.
 
 **Unelaborated source candidates. No Lean, Lake, compiler, backend, solver or CI execution was performed. These files are not machine-verification evidence.** They contain definitions and actual proof bodies, rather than axioms for the source adapter, but syntax, elaboration and transitive axioms still need a permitted full check.

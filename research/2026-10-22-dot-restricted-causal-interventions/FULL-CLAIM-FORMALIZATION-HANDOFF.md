@@ -163,7 +163,7 @@ In this packet premise 1 is the full selected compression theorem plus faithful 
 
 ## 5. Lower-family obligations, not just the generic game
 
-For U with u>=2, index Q by ({a,b},S), S subset U minus {a,b}. The carrier consists of a baseline and one rival per q. Every targeted root has arrows to all U, and every pair in T is nonadjacent.
+For U with u>=2 and the nonempty available-target set k>=1 required in Section 1, index Q by ({a,b},S), S subset U minus {a,b}. The carrier consists of a baseline and one rival per q. Every targeted root has arrows to all U, and every pair in T is nonadjacent. The barrier manuscript's originally omitted k>=1 assumption is explicitly corrected on 23 October 2026: at k=0 the unchanged literal union-of-indicator TCM target is constant/empty and has a zero-query solution. Do not add a baseline graph to the target to avoid that endpoint.
 
 L1. Prove acyclicity for baseline and every rival's order S,a,b,R.
 

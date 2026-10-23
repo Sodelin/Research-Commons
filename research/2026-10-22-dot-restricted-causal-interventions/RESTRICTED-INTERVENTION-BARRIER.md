@@ -9,6 +9,10 @@ Original problem: Efficient recovery of the interventional Markov equivalence cl
 
 **Oracle warning:** This lower bound is only for elementary CI and conditional-invariance queries. It is not a lower bound for HPL's broader arbitrary binary full-law constraint oracle, for whole-law observations, or for statistical sample complexity.
 
+**Correction, 23 October 2026:** The original Section 2 omitted the assumption **k >= 1** needed for the manuscript's literal class-of-TCM target. Consequently Theorems 4–5 and the Section 5 exact winning-budget claim were overstated if read at k=0. The package defines TCM as the union of the available single-indicator MAGs, trimmed only at each indicator's own target. When T is empty that union is the empty graph for every source, so the full class-of-TCM target is the singleton empty graph and needs **zero queries**. Distinct observational signatures do not distinguish this degenerate graphical target. The earlier identification of the observational-signature class with its TCM-image representation therefore needs the same exception. The corrected lower claims below require k>=1; the k=1 exponential consequence is unchanged. This is a substantive scope correction, not merely a Lean side condition. The later full-claim formalization handoff already stated k>=1, but did not retroactively correct this manuscript. No extra baseline graph is silently added to the original target.
+
+Affected preserved statements: [original Section 2 scope](https://github.com/Sodelin/Research-Commons/blob/d636806c094cddef5f9e798425219ffdc516b6eb/research/2026-10-22-dot-restricted-causal-interventions/RESTRICTED-INTERVENTION-BARRIER.md#2-observations-sources-and-target), [Theorems 4–5](https://github.com/Sodelin/Research-Commons/blob/d636806c094cddef5f9e798425219ffdc516b6eb/research/2026-10-22-dot-restricted-causal-interventions/RESTRICTED-INTERVENTION-BARRIER.md#4-the-lower-theorem-and-exact-finite-family-optimum), and [Section 5 exact game claim](https://github.com/Sodelin/Research-Commons/blob/d636806c094cddef5f9e798425219ffdc516b6eb/research/2026-10-22-dot-restricted-causal-interventions/RESTRICTED-INTERVENTION-BARRIER.md#5-exact-g7-adapter-and-what-is-not-transferred). The [earlier review record](./HAND-REVIEW-2026-10-22.md) now explicitly acknowledges the missed endpoint. [EmptyInterventionTarget.lean](./lean/EmptyInterventionTarget.lean) supplies source-only proposed proof bodies for the empty TCM, singleton class image, constant target and actual zero-query G7 `Valid`/`Winning` statements. These source bodies are **unelaborated**, not a machine-verification certificate. The all-k upper bound remains valid, but is not optimal at k=0.
+
 ## 1. Prior work and exact scope
 
 Hou, Park and Li [HPL, Definition 6, Proposition 2, Theorem 1, Section 7] define the relevant SIS interventional equivalence by observational separations and single-indicator separations after latent marginalization and selection. Their target is the equivalence class of the trimmed combined MAG, not recovery of every latent node or the underlying DAG. Full target coverage and their quadratic constraint-query result are prior work. Their partial-coverage question asks for an efficient procedure retaining untargeted observed variables.
@@ -19,7 +23,7 @@ Exponential observational CI-query bounds are established by Zhang, Shiragur and
 
 ## 2. Observations, sources, and target
 
-Let the finite observed set be X = T disjoint-union U. T is the known set of available single-target interventions, k = |T|, u = |U| >= 2, and n = k + u. U is retained as observed throughout.
+Let the finite observed set be X = T disjoint-union U. T is the known nonempty set of available single-target interventions, k = |T| >= 1, u = |U| >= 2, and n = k + u. U is retained as observed throughout. The k=0 literal-TCM target has the separate zero-query solution described in the dated correction above.
 
 A source consists of a DAG, one observational mechanism at every node, and one specified replacement mechanism for each target in T. The same mechanisms are used throughout a transcript. For the construction, all variables are binary, kernels are strictly positive, T consists of independent roots, and each t in T has a directed edge to every x in U. There are no contexts, latent variables, or selection variables. These empty nuisance sets satisfy the corresponding HPL structural restrictions.
 
@@ -199,7 +203,7 @@ The selected complete lower outcome is the impossibility certificate for an unre
 
 Exact claim: Theorems 4–5 and the exact M-query hard-family optimum.
 Original obligation: Partial-intervention IMEC inference retaining untargeted observed nodes.
-Model and observations: Sections 2–3; exact CI/invariance oracle; n fixed; u>=2; available targets fixed.
+Model and observations: Sections 2–3; exact CI/invariance oracle; n fixed; u>=2; k>=1; available targets fixed. The omitted k>=1 condition in the originally reviewed version is corrected explicitly above.
 Prior work: Observational unseen-separator lower bounds [ZSU, FMZU]; this packet's explicit informative-root extension and game mapping.
 Proof dependencies: Elementary d-separation, Meek's binary faithfulness theorem, and abstract G7 semantics.
 Checks actually performed: Source reading, author hand proofs, and scoped independent coordinating-context hand review, 22 October 2026; see the separate review record.

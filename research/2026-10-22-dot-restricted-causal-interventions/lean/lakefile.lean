@@ -61,4 +61,5 @@ lean_lib RestrictedCausalSource where
     `BinaryFactorElimination, `BinaryMoralFactorization, `BinaryNestedElimination,
     `BinaryGlobalMarkov, `BinaryCommonFaithfulSource, `BinarySelectedProbabilityLaw,
     `BinaryFaithfulInvariance, `BinarySelectionQuerySemantics,
-    `BinaryOriginalSourceLabels, `BinaryPhysicalOracle, `BinaryPhysicalGame]
+    `BinaryOriginalSourceLabels, `BinaryPhysicalOracle, `BinaryPhysicalGame,
+    `EmptyInterventionTarget]

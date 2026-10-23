@@ -14,6 +14,8 @@ The reviewer read the full manuscript and checked the unique exceptional separat
 
 The pass covers only the stated elementary CI/conditional-invariance oracle and the explicitly constructed source family. It is not a lower bound for arbitrary binary full-law constraints, statistical samples, or the number of physical interventions. Prior observational lower-bound attribution remains required. Historical novelty was not certified.
 
+**Later correction, 23 October 2026:** The original barrier manuscript's Section 2 did not explicitly require k>=1. Its lower Theorems 4–5 and exact winning-budget claim must be restricted to nonempty available-target sets for the unchanged literal class-of-TCM target. At k=0 the union defining every TCM is empty, the target is constant and a zero-query policy is correct. The earlier review did not identify this endpoint omission and must not be cited as acceptance of that false k=0 lower bound. The manuscript now records the correction prominently. The later full-claim handoff already stated k>=1; that does not erase this review limitation.
+
 ## All-variable recovery with a small untargeted remainder
 
 Reviewed manuscript: CAUSALLY-SUFFICIENT-UPPER-BOUND.md, version preserved at commit 94259d00565116cac60fa6374a2c004356340948.
