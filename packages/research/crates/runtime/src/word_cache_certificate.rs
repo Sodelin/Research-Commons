@@ -355,7 +355,7 @@ def stage : WordStage N sample (Fin {dimension}) (Fin {slots}) where
   rows := rows
 theorem coefficient_fibres_checked :
     checkRows (project N Finset.univ)
-      (bindRows {previous_rows}
+      (GProgram.G7.SparseWordComposition.bindRows {previous_rows}
         (cachedStep N sample parentRegistry common encodeVariable {cache_namespace}.cache
           {operation})) rows = true := by
   decide +kernel
