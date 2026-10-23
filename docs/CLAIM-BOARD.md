@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.4-outside-source-continuations. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.5-crossfield-completion-and-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -36,7 +36,7 @@ The compact index below is a mathematical summary; the exact current completion/
 
 ## Coverage and source discipline
 
-This first register contains **69 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+This first register contains **75 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -93,6 +93,7 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-NANO-002](#cb-nano-002) | Conductance can certify a sign in a specified matrix model | Proved (not Lean formalized) |
 | [CB-NANO-003](#cb-nano-003) | One known-model thermal calculation keeps a positive margin | Scoped computational certificate |
 | [CB-NANO-004](#cb-nano-004) | Even a complete transmission spectrum cannot force a negative label | Proved (not Lean formalized) |
+| [CB-NANO-005](#cb-nano-005) | This entire model-changing route cannot reverse the reflection sign | Proved (not Lean formalized) |
 | [CB-CM-001](#cb-cm-001) | A classical moment theorem has a checked reusable component | Proved; named Lean scope checked |
 | [CB-SEQ-001](#cb-seq-001) | Three exact first-occurrence formulas are formally proved | Proved; named Lean scope checked |
 | [CB-SEQ-002](#cb-seq-002) | A proposed simple description is impossible | Proved (not Lean formalized) |
@@ -122,8 +123,282 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-NANUQ-003](#cb-nanuq-003) | Five labels suffice to test the whole anchor-parameter domain, and four do not | Proved (not Lean formalized) |
 | [CB-NANUQ-004](#cb-nanuq-004) | Only the two extreme copies are needed for quartet sets and split unions | Proved (not Lean formalized) |
 | [CB-NANUQ-005](#cb-nanuq-005) | Rounding tolerates errors below one half, and the uniform limit is sharp | Proved (not Lean formalized) |
+| [CB-SOFTSCI-001](#cb-softsci-001) | Extra observations can resolve ambiguity, but their assumptions matter | Proved; archived Lean check recorded |
+| [CB-SOFTSCI-002](#cb-softsci-002) | Identical observations can conceal different intervention effects | Proved; archived Lean check recorded |
+| [CB-SOFTSCI-003](#cb-softsci-003) | Connectedness, trust and an acceptable deal are different requirements | Proved; archived Lean check recorded |
+| [CB-SOFTSCI-004](#cb-softsci-004) | Pooling groups can reverse both within-group comparisons | Proved; archived Lean check recorded |
+| [CB-SOFTSCI-005](#cb-softsci-005) | In one published model fragment, the action determines what can be learned | Proved; archived Lean check recorded |
 
 ## Claim cards
+
+
+<a id="cb-softsci-001"></a>
+### Extra observations can resolve ambiguity, but their assumptions matter
+**CB-SOFTSCI-001 · Soft Sciences · identification, measurement and evidence**
+
+**Question:** Which additional observations actually distinguish competing explanations?
+
+**What we learned:** A sum alone hides its components, a specified second probe recovers them, and known bias bounds translate into exact uncertainty intervals. Correct discriminating labels remove rivals; incorrect exact labels can remove the truth.
+
+**What it lets someone do:** Inspect precisely what extra measurement or evidence justifies a conclusion before fitting or interpreting a model.
+
+**What we cannot conclude:** These noiseless integer and exact-label results do not establish an empirical bias bound, a sample-complexity guarantee or robustness to noisy labels.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** The 27 declarations are nine each in Identifiability, Measurement and Learning. For theta in Int x Int, observing only its sum is noninjective, while observing the sum and first component is injective. For arbitrary prediction functions, more probes preserve identification and postprocessing preserves observation equivalence. In the integer response model response(a,bias)=a+bias, a supplied differential-bias interval [-delta,delta] implies latent difference in [observed gap-delta,observed gap+delta]; an upper bias bound below the observed gap fixes the latent ordering. For deterministic hypotheses and finite exact-label lists, adding correct discriminating evidence preserves a fitting truth and excludes a disagreeing rival; a wrong label excludes truth, inconsistent labels admit no fit, and duplicate identical constraints leave the fitting set unchanged.
+
+**Origin.** project posed. Precisely specified project models, formalizing established reasoning rather than solving an author-designated external open problem.
+
+**Prior work.** These are established identification, additive measurement-invariance and version-space principles. The source comparison credits Wilson and Collins (2019), Putnick and Bornstein (2016), Mitchell's version-space work and related Cslib formalization. The integer examples do not resolve those sources' broader scientific agendas.
+
+**Our contribution and attribution.** The original Formalizing Soft Sciences package exposes the assumptions, proof terms and readable interpretation of these elementary results in one inspectable development. This card recovers that completed work; it adds neither a new theorem nor a claim of 27 discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The repository's complete AI-assisted declaration/publication audit and this bounded actual-source reading support the stated model scope. No human peer-review or fresh worldwide novelty review is claimed.
+- **Formal:** The archived Lean 4.19.0 foundations receipt covers the exact 67 solidarity/foundations declarations, with pinned source hashes and propext/Classical.choice/Quot.sound dependencies. The count includes support lemmas and examples. This audit did not rerun Lean.
+- **Execution:** Successful historical workflow and source/axiom checks are recorded in the linked manifest; no scientific execution or fresh workflow inspection was performed for these cards.
+- **Empirical:** Exact consequences of specified mathematical models. No empirical psychological, social or clinical law follows from formal correctness alone.
+
+**Novelty:** Established mathematics or an already described source-model mechanism; the indexed contribution is precise formalization and source binding, not a claim to a new field-level discovery.
+
+**Separate downstream work (does not reopen this result):** Empirical calibration of bias bounds, stochastic observation models, statistical estimation and learning generalization are not established here. The source's broader research questions remain separate from these completed formal examples.
+
+**Proof, review and related source links:**
+
+- [Identification theorem bodies](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Identifiability.lean) (proof or status).
+- [Measurement theorem bodies](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Measurement.lean) (proof or status).
+- [Learning theorem bodies](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Learning.lean) (proof or status).
+- [Complete declaration inventory and role audit](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md) (proof or status).
+- [Prior-work comparison and reading limits](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md) (proof or status).
+- [Archived 67-declaration source/build receipt](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json) (formal receipt).
+
+**Connections:**
+
+No theorem-transfer dependency is asserted by this card.
+
+**Stable key:** softsciences.EXACT_OBSERVATION_BIAS_EVIDENCE. **Aliases:** Foundations I identification, measurement and learning; Soft Sciences B01 B02 B04.
+
+</details>
+
+
+<a id="cb-softsci-002"></a>
+### Identical observations can conceal different intervention effects
+**CB-SOFTSCI-002 · Soft Sciences · causal information loss**
+
+**Question:** Can two explanations agree on every allowed observation and still disagree about what an intervention does?
+
+**What we learned:** Yes. Two explicit Boolean models have identical observational records but different responses when treatment is set independently.
+
+**What it lets someone do:** Show exactly why the permitted observational input alone cannot support a universally correct effect estimator.
+
+**What we cannot conclude:** This elementary collision is not a general causal-discovery algorithm or a resolution of the richer homophily-versus-contagion problem.
+
+**Kind:** counterexample. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Six declarations concern BinaryModel outcome functions on Boolean treatment and background. The treatment-copy model Y=T and common-cause model Y=U give identical observed functions u -> (u,Y(u,u)) when T=U, but disagree at the intervention T=true,U=false. Their effectNumerator values are 2 and 0. Hence there is no estimator from the complete permitted observational function to Int that returns effectNumerator correctly for every BinaryModel. Equality of all treatment/background response values identifies the full model function. Interpreting the numerator as twice an average treatment effect additionally assumes uniform Boolean background.
+
+**Origin.** project posed. Precisely specified project models, formalizing established reasoning rather than solving an author-designated external open problem.
+
+**Prior work.** Observational non-identification is classical. Shalizi and Thomas (2011) supply a richer network-motivating predecessor, not an equivalent theorem proved by this Boolean example.
+
+**Our contribution and attribution.** The original package gives a transparent checked collision and universal-estimator impossibility consequence in the declared finite model, with the observation/effect distinction explicit. This is formalization of an established principle, not a newly solved causal-inference open problem.
+
+**Evidence, kept separate:**
+
+- **Hand:** The repository's complete AI-assisted declaration/publication audit and this bounded actual-source reading support the stated model scope. No human peer-review or fresh worldwide novelty review is claimed.
+- **Formal:** The archived Lean 4.19.0 foundations receipt covers the exact 67 solidarity/foundations declarations, with pinned source hashes and propext/Classical.choice/Quot.sound dependencies. The count includes support lemmas and examples. This audit did not rerun Lean.
+- **Execution:** Successful historical workflow and source/axiom checks are recorded in the linked manifest; no scientific execution or fresh workflow inspection was performed for these cards.
+- **Empirical:** Exact consequences of specified mathematical models. No empirical psychological, social or clinical law follows from formal correctness alone.
+
+**Novelty:** Established mathematics or an already described source-model mechanism; the indexed contribution is precise formalization and source binding, not a claim to a new field-level discovery.
+
+**Separate downstream work (does not reopen this result):** General DAG identification, causal assumptions in real data, network homophily/contagion separation and the October restricted-intervention upper/lower theorems have different contracts. They are not proved by this six-declaration example.
+
+**Proof, review and related source links:**
+
+- [Boolean causal construction and proofs](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Causality.lean) (proof or status).
+- [Complete declaration inventory and role audit](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md) (proof or status).
+- [Prior-work comparison and reading limits](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md) (proof or status).
+- [Archived 67-declaration source/build receipt](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json) (formal receipt).
+
+**Connections:**
+
+- [CB-CAUSAL-001](#cb-causal-001): **same principle**. Both distinguish observational information from intervention information, but this Boolean example is not a supplier of the later full restricted-query theorem.
+
+**Stable key:** softsciences.BOOLEAN_OBSERVATIONAL_EFFECT_COLLISION. **Aliases:** Foundations I B03; Soft Sciences Boolean causal non-identification.
+
+</details>
+
+
+<a id="cb-softsci-003"></a>
+### Connectedness, trust and an acceptable deal are different requirements
+**CB-SOFTSCI-003 · Soft Sciences · contact structure, incentives and allocation**
+
+**Question:** Does a connected society automatically have trust and incentives to cooperate?
+
+**What we learned:** No such implication follows from the model. Very sparse direct contacts allow unbounded reach, while cooperation and participation obey separate exact payoff and budget conditions.
+
+**What it lets someone do:** Keep structural reach, group membership, trust and incentive compatibility separate when making an argument.
+
+**What we cannot conclude:** The model does not show that labels never affect people, that institutions can finance sanctions, or that a political intervention works.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** The 26 declarations comprise the original 16 Solidarity and 10 CollectiveAction declarations. On Nat with successor/predecessor adjacency, every pair is connected, reach from zero is unbounded, and every neighbor of a belongs to {a+1,a-1}; the last theorem is containment, not a separate formal degree-cardinality statement. Overlapping membership and a separately defined empty trust relation are explicit examples. In the integer one-shot payoff (benefit if the other contributes) minus (cost if one contributes, sanction otherwise), mutual contribution is weakly stable against unilateral withdrawal iff cost<=sanction. For fixed uncongested task capabilities and participation reward>=cost with zero outside option, total surplus need not make an offered allocation acceptable. With unrestricted integer transfers, there exists an acceptable two-person share iff costA+costB<=budget; acceptable shares are exactly [costA,budget-costB].
+
+**Origin.** project posed. Precisely specified project models, formalizing established reasoning rather than solving an author-designated external open problem.
+
+**Prior work.** Elementary graph connectivity, set inclusion, unilateral payoff comparisons and transfer feasibility are established mathematics. The source's broader social interpretation and formal-social-choice bibliography are motivation, not empirical implications or claims to supersede prior formalization.
+
+**Our contribution and attribution.** The original solidarity and foundations package formalizes the separation of mechanisms and exact threshold examples. The preserved Mathematics-of-Psychology copy contains the same 16 solidarity declarations, verified here by identical Git blob 992e225d3385e02ec74274aa656d34de34a4244f; it is not an extra result set.
+
+**Evidence, kept separate:**
+
+- **Hand:** The repository's complete AI-assisted declaration/publication audit and this bounded actual-source reading support the stated model scope. No human peer-review or fresh worldwide novelty review is claimed.
+- **Formal:** The archived Lean 4.19.0 foundations receipt covers the exact 67 solidarity/foundations declarations, with pinned source hashes and propext/Classical.choice/Quot.sound dependencies. The count includes support lemmas and examples. This audit did not rerun Lean.
+- **Execution:** Successful historical workflow and source/axiom checks are recorded in the linked manifest; no scientific execution or fresh workflow inspection was performed for these cards.
+- **Empirical:** Exact consequences of specified mathematical models. No empirical psychological, social or clinical law follows from formal correctness alone.
+
+**Novelty:** Established mathematics or an already described source-model mechanism; the indexed contribution is precise formalization and source binding, not a claim to a new field-level discovery.
+
+**Separate downstream work (does not reopen this result):** Actual trust, cognitive limits, transfer restrictions, bargaining, sanction financing, dynamic stability and the full political recommendation require separate models or evidence. Labels are absent from the specified payoff, not empirically proved irrelevant.
+
+**Proof, review and related source links:**
+
+- [Solidarity source and 16 declarations](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/Solidarity.lean) (proof or status).
+- [Collective-action source and 10 declarations](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/CollectiveAction.lean) (proof or status).
+- [Complete declaration inventory and role audit](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md) (proof or status).
+- [Prior-work comparison and reading limits](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md) (proof or status).
+- [Archived 67-declaration source/build receipt](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json) (formal receipt).
+- [Preserved psychology checkpoint, explicitly not an additional set](https://github.com/Sodelin/Mathematics-of-Psychology-Formalized/blob/db3a4d90e252449f9d7c69f68b6e8bc5685f4fcc/README.md) (proof or status).
+
+**Connections:**
+
+No theorem-transfer dependency is asserted by this card.
+
+**Stable key:** softsciences.NETWORK_REACH_AND_PARTICIPATION. **Aliases:** Original 16 solidarity declarations; Mathematics of Psychology preserved checkpoint; Foundations I B05.
+
+</details>
+
+
+<a id="cb-softsci-004"></a>
+### Pooling groups can reverse both within-group comparisons
+**CB-SOFTSCI-004 · Soft Sciences · aggregation and interpretation**
+
+**Question:** Can a combined comparison point in the opposite direction from every separate context?
+
+**What we learned:** Yes. Checked positive counts favor one group in both strata and the other after pooling.
+
+**What it lets someone do:** Use a transparent exact example to show why an aggregate comparison needs its context and weighting assumptions.
+
+**What we cannot conclude:** This is not a newly discovered paradox, evidence of its frequency in real data, or an automatic causal-adjustment rule.
+
+**Kind:** counterexample. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Eight declarations include a valid positive-denominator witness of Simpson reversal: 9/10>80/100 and 20/100>1/10, but (9+20)/(10+100)=29/110 < (80+1)/(100+10)=81/110. Comparisons are formalized by cross multiplication on natural counts. Integer addition preserves two supplied weak inequalities under equal weighting. The component-nonidentification and recoding consequences explicitly reuse Identifiability.baseline_not_identified and postprocess_preserves_equivalence; they are not independent new discoveries.
+
+**Origin.** project posed. Precisely specified project models, formalizing established reasoning rather than solving an author-designated external open problem.
+
+**Prior work.** Simpson's 1951 analysis is the classical predecessor. The source audit distinguishes its historical example from this package's different strict numerical witness.
+
+**Our contribution and attribution.** The original package checks the synthetic counts, all inequality directions and the reuse of existing information-loss lemmas. This is a reproducible formal example of established mathematics.
+
+**Evidence, kept separate:**
+
+- **Hand:** The repository's complete AI-assisted declaration/publication audit and this bounded actual-source reading support the stated model scope. No human peer-review or fresh worldwide novelty review is claimed.
+- **Formal:** The archived Lean 4.19.0 foundations receipt covers the exact 67 solidarity/foundations declarations, with pinned source hashes and propext/Classical.choice/Quot.sound dependencies. The count includes support lemmas and examples. This audit did not rerun Lean.
+- **Execution:** Successful historical workflow and source/axiom checks are recorded in the linked manifest; no scientific execution or fresh workflow inspection was performed for these cards.
+- **Empirical:** Exact consequences of specified mathematical models. No empirical psychological, social or clinical law follows from formal correctness alone.
+
+**Novelty:** Established mathematics or an already described source-model mechanism; the indexed contribution is precise formalization and source binding, not a claim to a new field-level discovery.
+
+**Separate downstream work (does not reopen this result):** Choosing scientifically appropriate strata, causal adjustment, observed prevalence and empirical uncertainty require additional assumptions and evidence. They are not unresolved parts of this completed finite witness.
+
+**Proof, review and related source links:**
+
+- [Aggregation witness and exact reused proofs](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Aggregation.lean) (proof or status).
+- [Complete declaration inventory and role audit](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md) (proof or status).
+- [Prior-work comparison and reading limits](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md) (proof or status).
+- [Archived 67-declaration source/build receipt](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json) (formal receipt).
+
+**Connections:**
+
+- [CB-SOFTSCI-001](#cb-softsci-001): **reused theorem**. Two of the eight declarations directly reuse the identification and postprocessing results indexed in CB-SOFTSCI-001; they do not add two distinct discoveries.
+
+**Stable key:** softsciences.SYNTHETIC_AGGREGATION_REVERSAL. **Aliases:** Foundations I B06; Soft Sciences checked Simpson witness.
+
+</details>
+
+
+<a id="cb-softsci-005"></a>
+### In one published model fragment, the action determines what can be learned
+**CB-SOFTSCI-005 · Soft Sciences · published-model source verification**
+
+**Question:** Does the specified observation record distinguish the safe and dangerous states?
+
+**What we learned:** The fixed avoidance path produces identical complete records in both states, so every deterministic classifier fails on one. The specified approach path distinguishes the two.
+
+**What it lets someone do:** Inspect and reuse a precisely checked connection between a published model's selected tables and its information limitation.
+
+**What we cannot conclude:** This is not evidence that a treatment works, a learned policy, a reproduction of the full simulation or a new discovery of the already described mechanism.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** The 18 declarations are 14 PublishedCBT trajectory/observation/weight results and four SourceBridge table equalities. In a deterministic four-time-point fragment with externally fixed approach/avoid behavior, spider present, two Boolean danger states and all four declared observation modalities, the avoidance record is identical across states and admits no classifier List Observation -> Bool correct on both; the approach record is injective on those states. Integer-scaled implicit columns have mass 10u and are nonnegative under 0<u and 0<=c<=10u. Equality of the approach columns is exactly c=u, corresponding to normalized CABi=0.1, with other source weight/prior identities and finite sensory/affective/transition/implicit table bridges proved. This is not a semantics proof for the upstream MATLAB/SPM execution.
+
+**Origin.** project posed. Exact verification of a selected fragment of Smith, Moutoussis and Bilek's published computational model, not a solved author-designated open conjecture.
+
+**Prior work.** Smith, Moutoussis and Bilek (2021), Scientific Reports 11,10128, DOI 10.1038/s41598-021-89047-0, already explain that avoidance prevents informative observations. The original paper and pinned CBT_model.m remain the mechanism's source; the contribution here is explicit formal verification and bounded source binding.
+
+**Our contribution and attribution.** The original Formalizing Soft Sciences clinical package checks the all-modality finite record, impossibility/recovery pair, weight identities and source-table equalities. Its extractor records ten matrices and six selected assignments against upstream commit 82a0a3d75b0bdc08d2b78cdf2201d7aa626c27a3. Counts include supporting identities and bridges, not 18 clinical discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The existing publication audit read the decisive original-paper model/results/discussion passages and distinguishes the already described mechanism from its formalized fragment. This recovery read both declaration-bearing clinical source files and SourceTables; it is not independent clinical peer review.
+- **Formal:** The published coverage record reports Lean 4.19.0 build and axiom reports for all 18 clinical declarations, separate from the earlier 67. The scope is the declared finite observation/weight fragment and four source bridges, not all MATLAB/SPM semantics.
+- **Execution:** Historical successful clinical workflow 36408149787 and the publication coverage record document the build, all 18 axiom checks, ten extracted matrices and six selected assignments. No code, extractor, simulator or build was run during this audit.
+- **Empirical:** No patient outcome, treatment recommendation or empirical efficacy claim is established by these model proofs.
+
+**Novelty:** Established mathematics or an already described source-model mechanism; the indexed contribution is precise formalization and source binding, not a claim to a new field-level discovery.
+
+**Separate downstream work (does not reopen this result):** The separate uncertainty-tolerance/partial-approach/generalization candidate remains on hold and is not restarted by this indexing. Posterior updating, agent-selected policy, exposure learning, context generalization, full simulator semantics and clinical effectiveness are outside the completed fragment.
+
+**Proof, review and related source links:**
+
+- [Clinical observation and weight theorem bodies](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/PublishedCBT.lean) (proof or status).
+- [Four source-bridge proofs](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/SourceBridge.lean) (proof or status).
+- [Exact source tables](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/SourceTables.lean) (proof or status).
+- [Coverage and archived clinical verification scope](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/PUBLICATION-COVERAGE-2026-09-29.md) (proof or status).
+- [Recorded successful clinical check](https://github.com/Sodelin/Formalizing-Soft-Sciences/actions/runs/36408149787) (formal receipt).
+- [Original pinned MATLAB model](https://github.com/rssmith33/Simulating_Cognitive_Behavioral_Therapy/blob/82a0a3d75b0bdc08d2b78cdf2201d7aa626c27a3/CBT_model.m) (source).
+- [Original published model](https://doi.org/10.1038/s41598-021-89047-0) (source).
+- [Source/prior-work comparison](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md) (proof or status).
+- [Separate later candidate remains on hold](https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/new-wave-2026-09-30/STARTER-ASSESSMENT.md) (proof or status).
+
+**Connections:**
+
+- [CB-SOFTSCI-001](#cb-softsci-001): **same principle**. Both concern whether observations distinguish explanations. The clinical proof is not asserted to import the foundations theorems or to supply a general learning algorithm.
+
+**Stable key:** softsciences.PUBLISHED_CBT_OBSERVATION_FRAGMENT. **Aliases:** Published-CBT fragment, 18 declarations; Smith–Moutoussis–Bilek observation/source-table verification.
+
+</details>
 
 <a id="cb-nanuq-003"></a>
 ### Five labels suffice to test the whole anchor-parameter domain, and four do not
@@ -204,14 +479,14 @@ Research Commons is a coordination and discovery home, not the entire research a
 
 **Evidence, kept separate:**
 
-- **Hand:** The original manuscript states the exact theorem and complete proof. Its support consequence reuses the independently accepted boundary-quartet supplier. This bounded recovery located no separate independent review of the whole copy-block extension; absence of that receipt does not reopen the completed proof.
+- **Hand:** The complete original proof and named paired-tip suppliers received a separate coordinating AI hand PASS on 23 October. The review checks median-component endpoint replacement, all quartet witnesses, common-order split-union preservation and the explicit lost-full-tree example. This adds independent hand review to already-complete authorship; it is not a new theorem, human peer review or rerun of inherited computational suppliers.
 - **Formal:** No full kernel-checked copy-block theorem is asserted; the later 53-source formal component is not silently upgraded to cover it.
 - **Execution:** The original manuscript records a direct exact check of the single caterpillar example, not a stored universal execution certificate. The theorem follows from its exposed hand argument; nothing was rerun here.
 - **Empirical:** A mathematical statement about the declared representation or distance, not a measured biological claim.
 
 **Novelty:** Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.
 
-**Separate downstream work (does not reopen this result):** Independent whole-extension review and full Lean formalization are separate validation tasks. Interleaved blocks, nonbinary medians, infinite trees, dependent cross-label selections and higher-indegree biological networks are not covered without additional source arguments. Full tree families and weighted probabilities are explicitly not preserved.
+**Separate downstream work (does not reopen this result):** The separate whole-extension hand review is complete. Full Lean formalization remains a distinct validation task. Interleaved blocks, nonbinary medians, infinite trees, dependent cross-label selections and higher-indegree biological networks are not covered without additional source arguments. Full tree families and weighted probabilities are explicitly not preserved.
 
 **Proof, review and related source links:**
 
@@ -222,6 +497,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 **Connections:**
 
 - [CB-NANUQ-002](#cb-nanuq-002): **proved adapter**. The complete hand reduction transfers paired-tip quartet-based distance/support statements to the stated abstract contiguous-copy class; it is not an adapter from every biological network.
+
+**Later independent review:** [Whole-extension hand PASS, 23 October](https://github.com/Sodelin/Research-Commons/blob/afed31041a50fd18675402c293a3a11a2b5f87d5/research/2026-10-23-dot-contiguous-copy-review/CONTIGUOUS-MULTICOPY-INDEPENDENT-HAND-REVIEW-20261023.md). Authorship was already complete before this review.
 
 **Stable key:** september.NANUQ.CONTIGUOUS_COPY_EXTREMES. **Aliases:** Contiguous multicopy extreme-occurrence reduction.
 
@@ -2487,6 +2764,60 @@ Research Commons is a coordination and discovery home, not the entire research a
 </details>
 
 
+<a id="cb-nano-005"></a>
+### This entire model-changing route cannot reverse the reflection sign
+**CB-NANO-005 · Nanowires · ruling out one exact construction route**
+
+**Question:** Can this proposed way of changing a wire model keep all its energy levels but reverse its reflection sign?
+
+**What we learned:** No. Within the precise family of transformations studied, the only possible potential profiles are the original profile and its end-to-end reversal. Both keep the reflection sign unchanged.
+
+**What it lets someone do:** Stop searching this entire route, including asymmetric profiles and isolated transformations, rather than repeatedly testing candidates it cannot produce.
+
+**What we cannot conclude:** This does not show that every wire can be identified from its lowest energy curve. Other ways of producing identical curves remain outside the theorem, and no experimental guarantee follows.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let A be the 60-site path adjacency matrix, K its skew path matrix with upper entries +1 and lower entries −1, and S_a=diag(a)−tA, t=501643/20000. For any real profiles a,b and real orthogonal O with OKOᵀ=±K and OS_aOᵀ=S_b, necessarily b=a or b=reverse(a). Combining this with the accepted spin-sector reduction gives the same classification for every field-independent real orthogonal diag(O+,O−) in the σx spin basis, acting only on spatial coordinates and trivially on Nambu coordinates, for which O+S_aO+ᵀ=O−S_aO−ᵀ=S_b and O+KO−ᵀ=K. In the original 60-site Rashba Hamiltonian with onsite a_jτz+Bσx+Δτx, upper hopping −tτz−iλσyτz, λ=5/2, Δ=1/5, B∈[0,2], identical fixed normal endpoint self-energies −iI and zero internal loss, both resulting profiles have equal Q(a)=det r_L(a,2). Thus no pair in this ansatz has Q(a)≤−m and Q(b)≥m for m>0. Both profiles must remain in the same prescribed bounded class C; the theorem does not enlarge C, classify every transformation O, or assume generic/asymmetric profiles.
+
+**Origin.** Project posed. The previously unresolved common-rotation construction route within the existing bounded-wire identification programme, not asserted to be a named published open problem.
+
+**Prior work.** Classical path sine diagonalization, one-dimensional distance rigidity, finite Fourier orthogonality and Chebyshev/Lagrange interpolation are reused. The existing Commons spin-sector reduction14 proves O+=±O−; fixed-contact symmetry10 proves reflection-determinant preservation under reversal. Mirrored-pair reduction15 previously gave at most 2^30 candidate output profiles, not their admission.
+
+**Our contribution.** Completely classify the remaining output profiles as original or full reversal, using all pairwise distances among the odd cosine coefficients and an exact identity removing the common translation. Compose the classification with the actual reduction14 and fixed-contact symmetry10 suppliers to close the entire declared ansatz, including repeated entries, symmetric profiles and isolated rotations. The earlier finite candidate list is superseded as an unresolved search, not invalidated.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete manuscript and actual reduction14/symmetry10 supplier bodies received separate coordinating AI hand PASS. The receipt checks the gauge, all odd-coefficient distances, translation removal, recovery, both K signs and the actual fixed-contact target. It pins proof SHA256 afff530aea1d4f1be351436ca8c8270a067f22675cdbd8ed50ca9dd0112c9198. This is not human/external peer review.
+- **Formal:** No Lean proof or kernel-checked endpoint for this classification is claimed.
+- **Execution:** No scientific code, numerical experiment or compiler was run for this proof or review. Publication hashes and readbacks establish file identity only.
+- **Empirical:** This is an exact theorem within the specified finite Hamiltonian model. No fabrication admission, measured-device conclusion, thermal guarantee or protected-operation certificate is supplied.
+
+**Novelty:** Unresolved; the classical methods and completed earlier suppliers are credited. Correctness and scoped acceptance do not establish historical novelty.
+
+**Remaining obligation for this claim:** None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.
+
+**Separate downstream work (does not reopen this result):** The original bounded-wire master still requires an admitted opposite-Q-margin pair with the same complete lowest-energy curve, or an exclusion of every such pair in the original class. Equality of a lowest branch need not come from any constant full-pencil transformation. General spatial/Nambu mixing and branch-only coincidences are not classified. The completed common-factor/least-root criterion remains the exact downstream target; neither another restricted-ansatz no-hit nor a numerical near-pair answers it.
+
+**Proof, review and exact supplier links:**
+
+- [Accepted scope and supersession](https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/README.md) (proof or status).
+- [Complete profile-classification proof](https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/SPIN-SECTOR-PROFILE-CLASSIFICATION-CANDIDATE-18.md) (proof).
+- [Separate coordinating hand review binding the proof bytes](https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/SPIN-SECTOR-PROFILE-CLASSIFICATION-INDEPENDENT-REVIEW-18.md) (hand review).
+- [Actual spin-sector reduction14 supplier](https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-reduction/SPIN-SECTOR-INTERTWINER-REDUCTION-CANDIDATE-14.md) (prior supplier).
+- [Actual fixed-contact reversal/symmetry10 supplier](https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/symmetry-check/BOUNDED-COLLISION-SYMMETRY-CHECK-LOCAL-10.md) (prior supplier).
+- [Separate full-master common-factor and lowest-root criterion](https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/lowest-branch-criterion/LOWEST-BRANCH-COMMON-FACTOR-CANDIDATE-11.md) (separate downstream scope).
+
+**Connections:** Reduction14 and symmetry10 are actual reused suppliers, linked above. They have no separate IDs in the current board. This theorem is not derived from the abstract conductance or transmission-spectrum fibre cards.
+
+**Stable key:** nanowire.REAL_SPIN_SECTOR_PROFILE_CLASSIFICATION.
+
+</details>
+
+
 <a id="cb-cm-001"></a>
 ### A classical moment theorem has a checked reusable component
 **CB-CM-001 · Shared mathematics · finite positive moments**
@@ -3492,11 +3823,11 @@ Research Commons is a coordination and discovery home, not the entire research a
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 69 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 75 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.
-- Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is an external source map, not 85 additional claim cards.
+- Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
 - Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims.
