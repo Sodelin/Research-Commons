@@ -7,7 +7,7 @@ one-bit emission and exact reset. The fixed-code space lemma includes
 malformed and early-rejected prefixes; no success-only tape bound is
 silently used for them. The machine boundary is packaged separately.
 -/
-import PolytomyFixedCodeSpaceBound
+import PolytomyRoutineOutputBoundAdapter
 
 namespace PolytomyReductionModel.WholeVerifierController
 
@@ -20,7 +20,11 @@ theorem restrictedInitial_stack_bound (bits : List Bool) :
   | inl n => cases n <;> simp [restrictedInitialStore, numericStore, numericStacks]
   | inr j => simp [restrictedInitialStore, numericStore, numericStacks]
 
-noncomputable def restrictedPrefixPushCap : ℕ := codePushCap restrictedPrefixRoutine.code
+/-- Reuse the pinned proof-side arbitrary-stack run bound. The maximum
+is over all public/private stacks of this same fixed prefix code. -/
+noncomputable def restrictedPrefixPushCap : ℕ :=
+  LibraryRoutineSpace.uniformPushBudget restrictedPrefixRoutine
+    (.inl .source) (.inr .answer) (((), false), false)
 
 def restrictedPrefixPolynomial : Polynomial ℕ :=
   14 * Polynomial.X ^ 3 + 110 * Polynomial.X ^ 2 + 447 * Polynomial.X + 603
@@ -33,8 +37,10 @@ theorem restrictedPrefix_stack_bound (bits : List Bool) :
     ∀ k, ((restrictedPrefixResult bits).stk k).length ≤
       bits.length + restrictedPrefixPushCap * restrictedPrefixBound bits.length := by
   obtain ⟨n, hn, he⟩ := restrictedPrefix_executes bits
-  have hs := routine_executes_stack_bound restrictedPrefixRoutine (restrictedInitialStore bits)
-    (restrictedPrefixResult bits) n bits.length he (restrictedInitial_stack_bound bits)
+  have hs := LibraryRoutineSpace.routine_stack_bound restrictedPrefixRoutine
+    (.inl .source) (.inr .answer) (((), false), false)
+    (restrictedInitialStore bits) (restrictedPrefixResult bits) n bits.length he
+    (restrictedInitial_stack_bound bits)
   intro k
   exact (hs k).trans (Nat.add_le_add_left (Nat.mul_le_mul_left restrictedPrefixPushCap hn) bits.length)
 
@@ -45,7 +51,7 @@ theorem restrictedPrefix_mass_bound (bits : List Bool) :
     cleanupMass restrictedCleanupOwned (restrictedPrefixResult bits) ≤
       restrictedCleanupOwned.length *
         (bits.length + restrictedPrefixPushCap * restrictedPrefixBound bits.length) :=
-  cleanupMass_uniform_bound restrictedCleanupOwned (restrictedPrefixResult bits) _
+  LibraryRoutineSpace.cleanupMass_uniform_bound restrictedCleanupOwned (restrictedPrefixResult bits) _
     (restrictedPrefix_stack_bound bits)
 
 noncomputable def restrictedCleanupPolynomial : Polynomial ℕ :=

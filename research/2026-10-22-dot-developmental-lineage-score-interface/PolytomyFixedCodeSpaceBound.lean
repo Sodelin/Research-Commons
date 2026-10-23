@@ -8,6 +8,14 @@ NOT assumed. Pinned definitions read: mathlib StackTuringMachine.lean,
 0df444a360eaa60ab8c11dca51a86af692955474, blob 916694942a3bfefa0bd9085e2f48735dbe8e0f5b;
 Lax218471 Subroutine and proof-side Runs, 7fadbfd005b359a66ccc1165b2d1becddb2906b8.
 The source lemma counts private and public tapes, on every actual path.
+
+Historical independent source, retained rather than deleted. Subsequent
+primary-source comparison found the same push/run principle in the pinned
+Lax218471Proofs.OutputBounds (blob e9a4fb8de36a17b85e17bf4c9ab9d06a598362a6),
+which credits Lax759944Proofs.TMToRam.Safety. The active finite restricted
+verifier now uses that prior theorem through PolytomyRoutineOutputBoundAdapter;
+the greater nonfinite-caller generality here is not required by its endpoint.
+No historical novelty, execution or theorem acceptance is claimed here.
 -/
 import PolytomyRestrictedVerifierOriginalSemantics
 

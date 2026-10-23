@@ -1,0 +1,717 @@
+{
+  "author": "dot (OpenAI)",
+  "date": "2026-10-23T04:56:00Z",
+  "status": "Read-only pinned source/module inventory; not elaboration or endpoint-axiom verification",
+  "entry_modules": [
+    "Lax218471Proofs.Atom",
+    "Lax218471Proofs.Combinators",
+    "Lax218471Proofs.Embedding",
+    "Lax218471Proofs.OutputBounds",
+    "Lax218471Proofs.RoutineComposition",
+    "Lax218471Proofs.RoutineControl",
+    "Lax218471Proofs.RoutineMachine",
+    "Lax218471Proofs.Transfer"
+  ],
+  "repository": "szymtor/compositional-polytime",
+  "ref": "7fadbfd005b359a66ccc1165b2d1becddb2906b8",
+  "modules": [
+    {
+      "module": "Lax218471Proofs.Atom",
+      "path": "proofs/Lax218471Proofs/Atom.lean",
+      "sha": "92eb63167d04702bff27f6c5e85b7a82f78a5fb8",
+      "imports": [
+        "Lax218471.Programs",
+        "Lax218471Proofs.RoutineComposition"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stmt"
+        },
+        {
+          "kind": "def",
+          "name": "routine"
+        },
+        {
+          "kind": "theorem",
+          "name": "executes"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.Combinators",
+      "path": "proofs/Lax218471Proofs/Combinators.lean",
+      "sha": "7eab9377a692332d4252bd0f0ce6352796d949c2",
+      "imports": [
+        "Lax218471.Combinators",
+        "Lax218471Proofs.Substitution",
+        "Lax218471Proofs.OutputBounds"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "output_size"
+        },
+        {
+          "kind": "theorem",
+          "name": "graph_realizable"
+        },
+        {
+          "kind": "theorem",
+          "name": "store_replace"
+        },
+        {
+          "kind": "theorem",
+          "name": "comp"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.Embedding",
+      "path": "proofs/Lax218471Proofs/Embedding.lean",
+      "sha": "efb55722446ccbb6b7f700a7c6c1246c7245382b",
+      "imports": [
+        "Lax218471Proofs.Runs",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.Fintype.Prod"
+      ],
+      "declarations": [
+        {
+          "kind": "structure",
+          "name": "Embedding"
+        },
+        {
+          "kind": "def",
+          "name": "liftStacks"
+        },
+        {
+          "kind": "theorem",
+          "name": "liftStacks_apply"
+        },
+        {
+          "kind": "theorem",
+          "name": "liftStacks_outside"
+        },
+        {
+          "kind": "theorem",
+          "name": "liftStacks_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "liftStacks_update"
+        },
+        {
+          "kind": "def",
+          "name": "stmt"
+        },
+        {
+          "kind": "def",
+          "name": "cfg"
+        },
+        {
+          "kind": "theorem",
+          "name": "stepAux"
+        },
+        {
+          "kind": "theorem",
+          "name": "runs"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.RoutineComposition",
+      "path": "proofs/Lax218471Proofs/RoutineComposition.lean",
+      "sha": "fed57dcdaf7f6581993a26e5fdc6f919934be568",
+      "imports": [
+        "Lax218471.Subroutine",
+        "Lax218471Proofs.Embedding"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "cfg_ext"
+        },
+        {
+          "kind": "def",
+          "name": "left"
+        },
+        {
+          "kind": "def",
+          "name": "right"
+        },
+        {
+          "kind": "def",
+          "name": "seq"
+        },
+        {
+          "kind": "theorem",
+          "name": "left_boundary"
+        },
+        {
+          "kind": "theorem",
+          "name": "right_boundary"
+        },
+        {
+          "kind": "theorem",
+          "name": "seq_executes"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.RoutineControl",
+      "path": "proofs/Lax218471Proofs/RoutineControl.lean",
+      "sha": "5de8da0ff20c283e21c134b372188a884023d08e",
+      "imports": [
+        "Lax218471Proofs.RoutineComposition",
+        "Mathlib.Data.Fintype.Option"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "identity"
+        },
+        {
+          "kind": "def",
+          "name": "loop"
+        },
+        {
+          "kind": "theorem",
+          "name": "loop_boundary"
+        },
+        {
+          "kind": "theorem",
+          "name": "loop_body"
+        },
+        {
+          "kind": "theorem",
+          "name": "loop_false"
+        },
+        {
+          "kind": "theorem",
+          "name": "loop_true"
+        },
+        {
+          "kind": "def",
+          "name": "branch"
+        },
+        {
+          "kind": "theorem",
+          "name": "branch_left_boundary"
+        },
+        {
+          "kind": "theorem",
+          "name": "branch_right_boundary"
+        },
+        {
+          "kind": "theorem",
+          "name": "branch_true"
+        },
+        {
+          "kind": "theorem",
+          "name": "branch_false"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.Transfer",
+      "path": "proofs/Lax218471Proofs/Transfer.lean",
+      "sha": "8923fe1e1a44004a7e2ebb1da3c158dadf448f12",
+      "imports": [
+        "Lax218471Proofs.RoutineComposition"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "jump"
+        },
+        {
+          "kind": "def",
+          "name": "stmt"
+        },
+        {
+          "kind": "def",
+          "name": "data"
+        },
+        {
+          "kind": "theorem",
+          "name": "data_src"
+        },
+        {
+          "kind": "theorem",
+          "name": "data_dst"
+        },
+        {
+          "kind": "theorem",
+          "name": "update_src"
+        },
+        {
+          "kind": "theorem",
+          "name": "update_dst"
+        },
+        {
+          "kind": "def",
+          "name": "cfg"
+        },
+        {
+          "kind": "theorem",
+          "name": "step_nil"
+        },
+        {
+          "kind": "theorem",
+          "name": "step_cons"
+        },
+        {
+          "kind": "theorem",
+          "name": "runs"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471.Programs",
+      "path": "concepts/Lax218471/Programs.lean",
+      "sha": "3b6cb2b04316ff64129b83c1e3245582c96ebb9f",
+      "imports": [
+        "Lax218471.Subroutine",
+        "Lax218471.PolynomialTime"
+      ],
+      "declarations": [
+        {
+          "kind": "inductive",
+          "name": "Op"
+        },
+        {
+          "kind": "inductive",
+          "name": "Program"
+        },
+        {
+          "kind": "def",
+          "name": "Op.apply"
+        },
+        {
+          "kind": "inductive",
+          "name": "Executes"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471.Combinators",
+      "path": "concepts/Lax218471/Combinators.lean",
+      "sha": "851cb2256abbb31165678193bd5d21f08bca0629",
+      "imports": [
+        "Lax218471.PolynomialTime"
+      ],
+      "declarations": [
+        {
+          "kind": "axiom",
+          "name": "output_size"
+        },
+        {
+          "kind": "axiom",
+          "name": "graph_realizable"
+        },
+        {
+          "kind": "axiom",
+          "name": "comp"
+        }
+      ],
+      "cautions": [
+        {
+          "line": 19,
+          "text": "axiom output_size {α β A B : Type} {ea : α → List A} {eb : β → List B} {f : α → β}"
+        },
+        {
+          "line": 24,
+          "text": "axiom graph_realizable {α β A : Type} {ea : α → List A} {eb : β → List A} {f : α → β}"
+        },
+        {
+          "line": 28,
+          "text": "axiom comp {α β γ A : Type} [Fintype A] [Inhabited A]"
+        }
+      ]
+    },
+    {
+      "module": "Lax218471Proofs.Substitution",
+      "path": "proofs/Lax218471Proofs/Substitution.lean",
+      "sha": "766574752e8cda7e7b749461d004dcdf4cdd7598",
+      "imports": [
+        "Lax218471.Substitution",
+        "Lax218471Proofs.Compiler",
+        "Lax218471Proofs.RoutineMachine"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "compile"
+        },
+        {
+          "kind": "theorem",
+          "name": "polytime"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.OutputBounds",
+      "path": "proofs/Lax218471Proofs/OutputBounds.lean",
+      "sha": "e9a4fb8de36a17b85e17bf4c9ab9d06a598362a6",
+      "imports": [
+        "Lax218471Proofs.Runs",
+        "Lax218471.PolynomialTime",
+        "Mathlib.Data.Finset.Lattice.Fold"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pushBudget"
+        },
+        {
+          "kind": "def",
+          "name": "machinePushBudget"
+        },
+        {
+          "kind": "theorem",
+          "name": "pushBudget_le_machinePushBudget"
+        },
+        {
+          "kind": "theorem",
+          "name": "stepAux_stack_length_le"
+        },
+        {
+          "kind": "theorem",
+          "name": "run_length"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_length"
+        },
+        {
+          "kind": "theorem",
+          "name": "polytime_size"
+        },
+        {
+          "kind": "def",
+          "name": "implementation"
+        },
+        {
+          "kind": "theorem",
+          "name": "graph_realizable"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.Runs",
+      "path": "proofs/Lax218471Proofs/Runs.lean",
+      "sha": "a4e7feea7faea51531d1da60293c869cab4df75e",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "declarations": [
+        {
+          "kind": "inductive",
+          "name": "Runs"
+        },
+        {
+          "kind": "theorem",
+          "name": "trans"
+        },
+        {
+          "kind": "theorem",
+          "name": "one"
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate"
+        },
+        {
+          "kind": "theorem",
+          "name": "iterate_none"
+        },
+        {
+          "kind": "theorem",
+          "name": "of_iterate"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471.Subroutine",
+      "path": "concepts/Lax218471/Subroutine.lean",
+      "sha": "40755f295636ed00d6cb02e05f2b56d7c4bf3948",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.Fintype.Prod"
+      ],
+      "declarations": [
+        {
+          "kind": "structure",
+          "name": "Store"
+        },
+        {
+          "kind": "structure",
+          "name": "Routine"
+        },
+        {
+          "kind": "def",
+          "name": "boundary"
+        },
+        {
+          "kind": "def",
+          "name": "Executes"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471.PolynomialTime",
+      "path": "concepts/Lax218471/PolynomialTime.lean",
+      "sha": "16326d9ad526794685efd07d9eddc2768f49a557",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "Polytime"
+        },
+        {
+          "kind": "structure",
+          "name": "Implementation"
+        },
+        {
+          "kind": "def",
+          "name": "Graph"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471.Substitution",
+      "path": "concepts/Lax218471/Substitution.lean",
+      "sha": "84cd504838644e78acbcc052c655636723099081",
+      "imports": [
+        "Lax218471.Programs"
+      ],
+      "declarations": [
+        {
+          "kind": "axiom",
+          "name": "compile"
+        },
+        {
+          "kind": "def",
+          "name": "ioStore"
+        },
+        {
+          "kind": "axiom",
+          "name": "polytime"
+        }
+      ],
+      "cautions": [
+        {
+          "line": 25,
+          "text": "axiom compile {K A σ I : Type} [DecidableEq K] [Fintype A] [Inhabited A]"
+        },
+        {
+          "line": 39,
+          "text": "axiom polytime {K A σ I : Type} [DecidableEq K] [Fintype A] [Inhabited A]"
+        }
+      ]
+    },
+    {
+      "module": "Lax218471Proofs.Compiler",
+      "path": "proofs/Lax218471Proofs/Compiler.lean",
+      "sha": "deb005d3a32e7bbce87e403a5d84068d991f3b68",
+      "imports": [
+        "Lax218471.Programs",
+        "Lax218471Proofs.Atom",
+        "Lax218471Proofs.RoutineControl",
+        "Lax218471Proofs.CallSimulation",
+        "Lax218471Proofs.PolynomialBounds",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "routine"
+        },
+        {
+          "kind": "def",
+          "name": "overhead"
+        },
+        {
+          "kind": "theorem",
+          "name": "correct"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.RoutineMachine",
+      "path": "proofs/Lax218471Proofs/RoutineMachine.lean",
+      "sha": "f14467ef28d274dc8d5268881991e1716e8c5e9c",
+      "imports": [
+        "Lax218471.Substitution",
+        "Lax218471Proofs.RoutineComposition"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "machine"
+        },
+        {
+          "kind": "theorem",
+          "name": "init_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "halt_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "outputs"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.CallSimulation",
+      "path": "proofs/Lax218471Proofs/CallSimulation.lean",
+      "sha": "5e61e45f0fcd4311fe293c6cb74ece8328a4143d",
+      "imports": [
+        "Lax218471Proofs.Call"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "combined"
+        },
+        {
+          "kind": "theorem",
+          "name": "embedding_cfg"
+        },
+        {
+          "kind": "theorem",
+          "name": "load_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "unload_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "callee_runs"
+        },
+        {
+          "kind": "theorem",
+          "name": "executes"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.PolynomialBounds",
+      "path": "proofs/Lax218471Proofs/PolynomialBounds.lean",
+      "sha": "71a920dbe2baa7b6e4100f93aa7d67357b09d311",
+      "imports": [
+        "Mathlib.Algebra.Polynomial.Eval.Defs"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "eval_mono"
+        }
+      ],
+      "cautions": []
+    },
+    {
+      "module": "Lax218471Proofs.Call",
+      "path": "proofs/Lax218471Proofs/Call.lean",
+      "sha": "c8ddf2945ef92f5b95af8d3299a8442cb32f9708",
+      "imports": [
+        "Lax218471Proofs.Transfer",
+        "Mathlib.Tactic.DeriveFintype"
+      ],
+      "declarations": [
+        {
+          "kind": "inductive",
+          "name": "Phase"
+        },
+        {
+          "kind": "def",
+          "name": "register"
+        },
+        {
+          "kind": "def",
+          "name": "embedding"
+        },
+        {
+          "kind": "def",
+          "name": "code"
+        },
+        {
+          "kind": "def",
+          "name": "routine"
+        },
+        {
+          "kind": "def",
+          "name": "base"
+        },
+        {
+          "kind": "def",
+          "name": "clear"
+        },
+        {
+          "kind": "def",
+          "name": "inputCfg"
+        },
+        {
+          "kind": "def",
+          "name": "loadCfg"
+        },
+        {
+          "kind": "def",
+          "name": "unloadCfg"
+        },
+        {
+          "kind": "def",
+          "name": "outputCfg"
+        },
+        {
+          "kind": "theorem",
+          "name": "entry_eq"
+        },
+        {
+          "kind": "theorem",
+          "name": "input_join"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_join"
+        },
+        {
+          "kind": "theorem",
+          "name": "return_eq"
+        }
+      ],
+      "cautions": []
+    }
+  ],
+  "external": [
+    "Mathlib.Algebra.Polynomial.Eval.Defs",
+    "Mathlib.Computability.TuringMachine.Computable",
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.Data.Fintype.Option",
+    "Mathlib.Data.Fintype.Prod",
+    "Mathlib.Data.Fintype.Sum",
+    "Mathlib.Tactic.DeriveFintype",
+    "Mathlib.Tactic.Linarith"
+  ]
+}
