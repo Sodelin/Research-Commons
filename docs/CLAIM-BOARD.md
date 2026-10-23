@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.8-genome-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.9-memory-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -42,7 +42,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Genome/ownership source recovery — 23 October 2026, 10:00 UTC:** four existing groups cover Samuel G01–G05, preserving all 89 earlier claim objects. They separate [finite ancestry versus unrestricted infinite completion](#cb-genome-001), the [classical three-taxon control](#cb-genome-002), [missing diploid ownership and exact informative sampling](#cb-genome-003), and [independent-block family recovery versus matching correlated marginals](#cb-genome-004). These are recovered completed mathematical results with scoped historical formal receipts, not new discoveries or validated biological classifiers. The ownership sampling criterion consumes a whole infinite record unless the stated switch bound is supplied. Existing subjective ranks are unchanged; these four have not been globally ranked.
 
-This register contains **93 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Controlled-state and memory source recovery — 23 October 2026, 10:15 UTC:** four existing groups cover Samuel M01–M05, preserving all 93 earlier claim objects. [Exact deterministic reduction and predictive memory](#cb-memory-001) are grouped as predecessor and continuation; the [split obstruction](#cb-memory-002), [exact stochastic experiment theorem](#cb-memory-003) and [sharp written calibration bound](#cb-memory-004) retain separate scopes. The opposite-completion supplier is already [CB-GENOME-001](#cb-genome-001), not another counted result. Historical 37-source/108-report evidence is not a new build or a discovery count; calibration's independent review is source-reported, and its general proof is not Lean. Countably supported PMFs are not general continuous kernels, and the approximate-TV target remains unmechanized. No empirical memory/consciousness claim or subjective-rank change is made.
+
+This register contains **97 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -154,6 +156,11 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-GENOME-002](#cb-genome-002) | Exact laws identify three-taxon relationships, but finite samples do not give certainty | Proved; archived Lean check recorded |
 | [CB-GENOME-003](#cb-genome-003) | Missing diploid ownership can change long-term ancestry; informative samples are characterized exactly | Proved; archived Lean check recorded |
 | [CB-GENOME-004](#cb-genome-004) | Independent inheritance blocks have an exact recovery probability; matching marginals do not suffice | Proved; archived Lean check recorded |
+
+| [CB-MEMORY-001](#cb-memory-001) | An exact predictive summary must keep the distinctions that future actions can expose | Proved; archived Lean check recorded |
+| [CB-MEMORY-002](#cb-memory-002) | The present group membership does not determine a predecessor-restoring split | Proved; archived Lean check recorded |
+| [CB-MEMORY-003](#cb-memory-003) | An exact stochastic summary preserves the full adaptive observation record | Proved; archived Lean check recorded |
+| [CB-MEMORY-004](#cb-memory-004) | There is an exact error cost for distinguishing an impossible event from a rare one | Proved (not Lean formalized) |
 
 ## Claim cards
 
@@ -4777,6 +4784,232 @@ No theorem-transfer dependency is asserted by this card.
 
 </details>
 
+<a id="cb-memory-001"></a>
+### An exact predictive summary must keep the distinctions that future actions can expose
+**CB-MEMORY-001 · Time and memory · exact controlled representations**
+
+**Question:** When can a simpler state predict every allowed next step, and what information must it retain?
+
+**What we learned:** Equal summaries must remain equal after every common action. The coarsest exact predictive state keeps precisely the distinctions between finite future responses. In the stipulated parity model, one memory bit suffices even though no fixed recent-history window does.
+
+**What it lets someone do:** Check whether a proposed summary supports exact controlled predictions, identify missing state, and reuse proved restriction adapters under their actual contracts.
+
+**What we cannot conclude:** This is not a discovery algorithm for unknown dynamics or a finding about physical time, consciousness or biological and human memory.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For fixed total deterministic dynamics T:A→X→X on arbitrary carriers, an onto encoding c admits a unique reduced update iff it is fibre-compatible for every action. Outputs after all finite action words, including the empty word, define a quotient to which every onto exact output-preserving representation factors uniquely and surjectively, commuting with actions and outputs. Global depth-k equivalence stability at depth k+1 on every declared state pair implies full finite-future equivalence. Feedback trajectories are preserved only when the actual controller factors through the retained state. In the four-action wait/prime/probe/reset model, the summary (visible bit, history parity/memory bit) commutes for arbitrary finite initial records and all finite words/times, has exactly four predictive classes, and all four are attainable from one initialization. No fixed suffix window determines parity on every record, but one retained parity bit does. Removing or changing the probe changes sufficient information. Actual destructive ancestral restriction to subsets of the original samples and fixed-locus finite-gARG extraction instantiate the controlled map. The imported opposite-completion no-decoder consequence is already recorded at CB-GENOME-001, not a second result here. The global certificate is not sampled agreement, a termination guarantee or an implemented minimization algorithm.
+
+**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: kernel checked selected release. Independent review: recorded independent ai source review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
+
+**Origin.** project posed. M01 and M03 select exact fixed-model questions from the broader time/self-reference source agenda. The predictive continuation completes the earlier arbitrary-history and generic probe-refinement gates; it does not solve the source's entire questions.
+
+**Prior work.** Exact abstraction, behavioral/coalgebraic quotients, action-word distinguishability and sufficient controlled state are established mathematics. The archived comparison credits Rutten, Givan–Dean–Greig, Shalizi–Crutchfield and Littman–Sutton–Singh at their differing model contracts. No fresh complete prior-literature survey is claimed by this recovery.
+
+**Our contribution and attribution.** The original package provides checked universal factorization, exact action/output interfaces, the arbitrary-history parity bridge, a global depth certificate and actual bounded graph adapters. This card combines the explicitly reused exact-abstraction predecessor with its continuation instead of counting them as separate discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete deterministic scope review and its final corrections were read, alongside all seven direct deterministic/application Lean bodies. The archived review checks statement and source correspondence, not a separate compiler run or human/external peer review.
+- **Formal:** Archived 27 September 2026 receipt records Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, a fresh rebuild of 37 project sources with zero compiler exits, and 108 selected axiom reports: 92 packet declarations including supporting lemmas plus 16 reused endpoints. Per-file SHA256 is authoritative; the named pre-replay commit may precede input edits. Only propext, Classical.choice and Quot.sound are recorded, with no missing/unexpected reports or sorryAx. External Mathlib reuse and hosted CI remain separate; no new build or full transitive audit occurred here. The arbitrary-history, generic probe decoder and all-time factored-feedback endpoints supersede their earlier written-only or one-step labels. The finite n−m partition bound is written discussion, not an additional Lean endpoint.
+- **Execution:** Historical project-build receipts and the separate bounded controlled checker/replay are preserved. Finite enumeration is not the support for arbitrary histories after the later formal continuation. No scientific execution occurred in this recovery.
+- **Empirical:** These are statements about fixed mathematical models and declared observations/actions, not empirical biology, consciousness, human or language-model memory, or physical-time necessity.
+
+**Novelty:** Established methods retain credit; this is recovery of completed formalization, explicit contracts and bounded applications, not a new theorem or historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** Automatic adequate-state discovery, general evolving semantics, empirical state/intervention correspondence, a stochastic statistical version of the matched-type/clock null, interval-record dynamics and marked-ARG kernel preservation remain outside this exact theorem. Destructive restriction never restores discarded edges. The ancestry completion supplier and its identical-ancestors property, meaning each member has finitely many descendants or finitely many non-descendants in the stated set, retain CB-GENOME-001's separate scope.
+
+**Proof, review and related source links:**
+
+- [Exact reduction criterion and all-time control preservation](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/exact-abstraction/ExactAbstraction.lean) (proof source).
+- [Coarsest predictive state and global depth certificate](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/PredictiveState.lean) (proof source).
+- [Arbitrary-history parity and generic probe-refinement proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/ControlledMemory.lean) (proof source).
+- [Same-type/clock and delayed-distinction controls](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/HistoryObservation.lean) (proof source).
+- [Actual destructive ancestral-restriction adapter](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/AncestryObservation.lean) (proof source).
+- [Fixed-locus gARG adapter and imported completion consequence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/WongPredictiveBridge.lean) (proof source).
+- [Independent deterministic statement/source review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/INDEPENDENT-SCOPE-REVIEW.md) (hand review).
+- [Latest source-hashed formal receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/verification/PROOF-RECEIPT.json) (formal receipt).
+- [Later source-to-result audit and supersession](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/AUDIT.md) (proof or status).
+
+**Stable key:** september.MEMORY.EXACT_CONTROLLED_PREDICTIVE_STATE. **Aliases:** Samuel M01; Samuel M03; ExactAbstraction; PredictiveState; ControlledMemory.
+
+**Typed connections:**
+
+- [CB-GENOME-001](#cb-genome-001): reused theorem. WongPredictiveBridge.no_global_iap_decoder invokes the actual_garg_opposite_infinite_completions supplier already indexed by CB-GENOME-001. This is a reused completion consequence, not a newly counted source theorem.
+- [CB-SOFTSCI-001](#cb-softsci-001): same principle. Static observation fibres share an information-loss principle, but do not supply controlled universal factorization or the arbitrary-history theorem.
+
+</details>
+
+
+<a id="cb-memory-002"></a>
+### The present group membership does not determine a predecessor-restoring split
+**CB-MEMORY-002 · Changing-agent models · predecessor information**
+
+**Question:** If two groups have the same members, must they split in the same way?
+
+**What we learned:** Not when a split restores immediate predecessors: different legal formation histories leave the same current grouping but require different next partitions.
+
+**What it lets someone do:** Identify a concrete piece of hidden history that this split operation must retain before importing a partition-only model.
+
+**What we cannot conclude:** It does not refute all coalition models, prove full scheduler reachability, or describe biological selfhood.
+
+**Kind:** counterexample. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Legal binary merge forests contain each of four persistent sites exactly once. Adjacent merges combine (0,1) then their group with 2, or (1,2) then their group with 0; site 3 remains a spectator. Both current partitions are {{0,1,2},{3}}. Restoring the immediate predecessors of the same composite yields {{0,1},{2},{3}} versus {{0},{1,2},{3}}. The proof preserves legality and excludes every deterministic partition-only split uniformly over admissible split states, even with arbitrary block-family outputs. This is not an illegal-action totalization artifact. Lean adjacency is forest-list adjacency; the separate pinned 2×2 eight-neighbour IPDm check is not a full formal spatial refinement.
+
+**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: kernel checked selected release. Independent review: recorded independent ai source review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
+
+**Origin.** project posed. M02 formalizes the source's predecessor-restoring merge/split operation as a precise bounded obstruction. It is not a solution of the broader theory of games with changing decision makers.
+
+**Prior work.** Fibre-compatibility obstructions are classical and reuse the exact criterion in CB-MEMORY-001. Apt–Witzel coalition formation already permits whole-coalition value comparisons; its preference, compatibility and stability assumptions are not the same as this predecessor-restoring transition contract.
+
+**Our contribution and attribution.** The original finite source-bound witness makes the same present partition and same controlled split produce different restored partitions, with legal histories and an unchanged spectator. A separate bounded implementation control preserves identical active IDs and visible metadata using declared mocks.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete original source/operation review, merge-history note and actual finite Lean body were read. Full published-paper/source-version equivalence and the stochastic learning scheduler were not verified; no new external or human peer review is claimed.
+- **Formal:** The original 25 September two-module receipt covers 16 selected endpoints, including eight merge-history endpoints, with Lean 4.33.1 and only standard foundational axioms. Archived 27 September 2026 receipt records Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, a fresh rebuild of 37 project sources with zero compiler exits, and 108 selected axiom reports: 92 packet declarations including supporting lemmas plus 16 reused endpoints. Per-file SHA256 is authoritative; the named pre-replay commit may precede input edits. Only propext, Classical.choice and Quot.sound are recorded, with no missing/unexpected reports or sorryAx. External Mathlib reuse and hosted CI remain separate; no new build or full transitive audit occurred here.
+- **Execution:** The archived receipt at IPDm eca9b122480b8c654081d6a844176417aefbbcae reports original merge/split AST bodies, six helpers and four board methods with explicit Agent/Tree and NumPy helper mocks. It verifies this operator witness, not a complete simulation, policy scheduler or probabilistic reachability. No execution was repeated.
+- **Empirical:** These are statements about fixed mathematical models and declared observations/actions, not empirical biology, consciousness, human or language-model memory, or physical-time necessity.
+
+**Novelty:** Established methods retain credit; this is recovery of completed formalization, explicit contracts and bounded applications, not a new theorem or historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** Full source-game semantics need explicit controllers, inherited policies/memory, payoff transport, legality and any desired stochastic reachability. Equilibrium, convergence, paper-version equivalence and biological identity remain separate. Nondeterministic overapproximations are not excluded.
+
+**Proof, review and related source links:**
+
+- [Complete admissible split proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/exact-abstraction/MergeHistoryProjection.lean) (proof source).
+- [Merge-history statement and model limits](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/exact-abstraction/MERGE-HISTORY.md) (proof or status).
+- [Independent source/operation and prior review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/independent-rsos-review.md) (hand review).
+- [Pinned operator check with explicit mocks](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/independent-ipdm-operator-test.json) (execution review).
+- [Original exact-abstraction verification receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/exact-abstraction/PUBLIC-VERIFICATION.json) (formal receipt).
+- [Later fresh project receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/verification/PROOF-RECEIPT.json) (formal receipt).
+
+**Stable key:** september.MEMORY.PREDECESSOR_SPLIT_OBSTRUCTION. **Aliases:** Samuel M02; MergeHistoryProjection.
+
+**Typed connections:**
+
+- [CB-MEMORY-001](#cb-memory-001): reused theorem. MergeHistoryProjection imports ExactAbstraction and instantiates its fibre-compatibility obstruction with the actual legal forest states; the admissible-state strengthening is proved separately.
+
+</details>
+
+
+<a id="cb-memory-003"></a>
+### An exact stochastic summary preserves the full adaptive observation record
+**CB-MEMORY-003 · Stochastic models · exact retained experiment laws**
+
+**Question:** When can a smaller probabilistic model replace the original during an adaptive experiment?
+
+**What we learned:** Matching pushed transitions, initial law, decoded observations and controller information preserves the entire finite observation/action record. Separate marginals or perfect output predictions alone need not provide that state-preserving map.
+
+**What it lets someone do:** Check the exact conditions for reduced-model simulation of the declared experiment and avoid inferring latent transition structure from trace agreement alone.
+
+**What we cannot conclude:** It does not automatically cover continuous kernels, omitted controller/sensor memory, unknown chemical realizations or actual biological mechanisms.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For K:A→X→PMF X on arbitrary carriers with countably supported probability mass functions, an onto q admits a unique reduced kernel iff pushed next-state laws are constant on every q-fibre for all actions. Pointwise commutation is equivalent to one-step law preservation for all initial PMFs; one fixed mixture is insufficient for the converse. Given an exact kernel, the pushed initial law, output decoding and conditional policy factorization through the full retained history, all finite joint state/action and observation/action transcript laws are preserved, including initial and terminal observations. Preservation itself does not require onto. Randomized observed-history policies have an explicit adapter. Joint next-state/measurement kernels allow correlation, but must be Markov in the declared latent state. Copied/complemented fair bits have equal marginals but different joint laws. A six-state single-action chain has two starts with equal complete output traces at every finite horizon yet different pushed next predictive-profile laws, so no profile kernel commutes with those actual source transitions. Randomized tests of the recorded trace cannot separate these starts; another Markov realization of the same outputs is not excluded.
+
+**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: kernel checked selected release. Independent review: recorded independent ai source review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
+
+**Origin.** project posed. M04 is the exact discrete stochastic successor to the controlled-state package. Its fixed action, state, sensor and policy contracts were explicitly chosen; it does not settle all source questions about changing or living systems.
+
+**Prior work.** Strong lumpability, probability-mass-function transport, and trace equivalence versus stronger state-kernel preservation are established mathematics. The recorded comparison distinguishes observational predictive-state results from intervention-preserving dynamics; no general new theory or priority claim is made.
+
+**Our contribution and attribution.** The original package supplies complete checked adaptive finite joint-history preservation and a correlated-sensor interface, with source-level countercontrols to marginal-only and predictive-profile shortcuts. This recovery restores its completed exact status rather than reopening the earlier stochastic gate.
+
+**Evidence, kept separate:**
+
+- **Hand:** Both complete stochastic Lean bodies, the final exact-scope explanation and the independent statement/example review were read. The final review records no unresolved mathematical or public-scope blocker for the exact implementation. It is an AI source review, not a separate compiler run or external peer review.
+- **Formal:** Archived 27 September 2026 receipt records Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, a fresh rebuild of 37 project sources with zero compiler exits, and 108 selected axiom reports: 92 packet declarations including supporting lemmas plus 16 reused endpoints. Per-file SHA256 is authoritative; the named pre-replay commit may precede input edits. Only propext, Classical.choice and Quot.sound are recorded, with no missing/unexpected reports or sorryAx. External Mathlib reuse and hosted CI remain separate; no new build or full transitive audit occurred here. The stochastic continuation contributes two modules and 36 declarations within that overlapping receipt, not 36 new discoveries. The appended approximate-TV construction is explicitly unmechanized and is not certified by these exact-kernel checks.
+- **Execution:** Historical compiler/selected-axiom evidence is linked, not rerun. The all-horizon trace counterexample is proved symbolically, not inferred from finite simulations. No new stochastic experiment or scientific software execution occurred.
+- **Empirical:** These are statements about fixed mathematical models and declared observations/actions, not empirical biology, consciousness, human or language-model memory, or physical-time necessity.
+
+**Novelty:** Established methods retain credit; this is recovery of completed formalization, explicit contracts and bounded applications, not a new theorem or historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** General continuous measures, infinite path measures, source-adequate latent states and conditional controller randomness require further interfaces. Persistent sensor drift/memory must be included in latent state. The appended finite-space approximate-TV proposal has a reviewed coupling/sharpness argument but retains microscopic-marginal lifting, transcript representation and formalization obligations; it is not another completed formal gate. No marked-Wong-process or unrestricted hidden-reaction classification follows.
+
+**Proof, review and related source links:**
+
+- [Exact kernels and adaptive full-history preservation](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/StochasticAbstraction.lean) (proof source).
+- [Full-trace and joint-marginal countercontrols](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/StochasticExamples.lean) (proof source).
+- [Exact stochastic contract and reserved approximate gate](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC.md) (proof or status).
+- [Independent exact-source review and approximate-status boundary](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC-SCOPE-REVIEW.md) (hand review).
+- [Historical full project and selected-axiom receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/verification/PROOF-RECEIPT.json) (formal receipt).
+
+**Stable key:** september.MEMORY.STOCHASTIC_EXPERIMENT_PRESERVATION. **Aliases:** Samuel M04; StochasticAbstraction; StochasticExamples.
+
+**Typed connections:**
+
+- [CB-MEMORY-001](#cb-memory-001): proved adapter. StochasticAbstraction.deterministic_instance embeds a supplied exactly commuting deterministic update as point-mass kernels. This adapter preserves that declared contract, not every broader application mentioned on the deterministic card.
+- [CB-GENOME-004](#cb-genome-004): same principle. The actual repeated-block dependence counterexample and the generic copied/complemented-bit example both distinguish joint information from marginals. Their probability models differ; no theorem import or pedigree-law adapter is asserted.
+
+</details>
+
+
+<a id="cb-memory-004"></a>
+### There is an exact error cost for distinguishing an impossible event from a rare one
+**CB-MEMORY-004 · Calibration · finite-sample rare-event uncertainty**
+
+**Question:** Does seeing no event prove that it is impossible?
+
+**What we learned:** Not in the stated independent-trial model. The unavoidable finite-sample error and the distinct rules attaining its two sharp optima are already derived.
+
+**What it lets someone do:** State precisely what a zero-count observation does and does not establish, including what a known lower event-rate bound buys.
+
+**What we cannot conclude:** This is not structural nonidentifiability of the complete laws, a theorem for arbitrary dependent histories or validated evolutionary calibration.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Observe n≥0 independent fully observed binary trials. M0 always returns zero; Me has one known fixed event probability 0<e<1. Randomized decisions are allowed. With q=(1−e)^n, the minimum sum of the two error probabilities is q, the minimum worst error is q/(1+q), and equal-prior Bayes error is q/2. Both respective attaining rules are supplied, including n=0. For fixed e>0 error can approach zero as n grows, but cannot be zero for finite n. Allowing arbitrarily small e prevents a uniform finite-n worst-error guarantee below one half. A supplied e_min>0 bounds the all-zero probability by (1−e_min)^n, supporting a specified error level rather than certainty. The known-rate, independent-trial and complete-observation assumptions are load-bearing.
+
+**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: not kernel verified. Independent review: source reported independent review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
+
+**Origin.** classical prior. M05 selects an elementary sharp binary-testing model to clarify one aspect of the source's broader sparse-history calibration question. The specified two-model proof is complete; the full evolutionary question is not thereby solved.
+
+**Prior work.** Classical binary-hypothesis testing and a shared positive-probability observation event provide the lower bound and attaining rules. No new statistical principle or field-level novelty is claimed.
+
+**Our contribution and attribution.** The original written derivation exposes both sharp criteria, the all-zero contribution, the empty-sample boundary and the difference between finite-sample uncertainty and equality of full observation laws. The recovery preserves that completed authorship rather than treating unformalized probability as an unwritten proof.
+
+**Evidence, kept separate:**
+
+- **Hand:** The full general written derivation was read. README and PROOF-STRUCTURE explicitly record an independent mathematical review, but a separate calibration-specific review body was not located in this bounded pass. This is reported review provenance, not a newly supplied whole-proof acceptance receipt.
+- **Formal:** No general Lean probability theorem is recorded for this result. The 37-module predictive-memory receipt explicitly keeps calibration written-only; its theorem counts must not be extended to this proof.
+- **Execution:** The archived result and later replay record 15 exact rational cases and 834 deterministic rules. These finite checks support examples and arithmetic, not the arbitrary-n/real-rate theorem. No checker was rerun in this recovery.
+- **Empirical:** These are statements about fixed mathematical models and declared observations/actions, not empirical biology, consciousness, human or language-model memory, or physical-time necessity.
+
+**Novelty:** Established methods retain credit; this is recovery of completed formalization, explicit contracts and bounded applications, not a new theorem or historical-priority claim.
+
+**Separate downstream work (does not reopen this result):** A general Lean probability formalization, dependent/path-dependent or unknown-rate model specifications and empirical sampling admission are separate. The two complete laws are distinct and asymptotically distinguishable for fixed e>0. Missing formalization or the separately unlocated review body does not reopen the completed written mathematics.
+
+**Proof, review and related source links:**
+
+- [Complete sharp written derivation and both attaining rules](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/CALIBRATION-BOUND.md) (proof or status).
+- [Completion, prior scope and reported independent review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/PROOF-STRUCTURE.md) (proof or status).
+- [Independent review also recorded in programme README](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/README.md) (proof or status).
+- [Historical exact finite instances](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/calibration-results.json) (execution review).
+- [Later replay and explicit written-not-Lean status](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/verification/CALIBRATION-REPLAY.json) (execution review).
+
+**Stable key:** september.MEMORY.RARE_EVENT_CALIBRATION_BOUND. **Aliases:** Samuel M05; Rare-event calibration bound.
+
+**Typed connections:**
+
+- [CB-GENOME-002](#cb-genome-002): same principle. Both separate exact-law distinction from finite-sample uncertainty. The known three-taxon full-support control is not the same two-model sharp randomized-testing theorem; its separately written Hoeffding bound is not imported here.
+
+</details>
+
 ## What the connection labels mean
 
 - **Proved adapter:** a proved link that preserves the needed assumptions and observations. Its hand/formal evidence level still matters.
@@ -4790,11 +5023,11 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 93 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 97 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
-- Selected September Samuel/all-level/query, feedback and G01–G05 genome/ownership results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
+- Selected September Samuel/all-level/query, feedback, G01–G05 genome/ownership and M01–M05 controlled-memory/calibration results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
 - Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims.
