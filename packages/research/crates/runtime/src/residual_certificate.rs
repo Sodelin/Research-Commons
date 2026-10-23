@@ -88,6 +88,7 @@ impl Certificate {
   let source=format!(r#"import E8ExactResidualMass
 import Mathlib.Tactic
 
+noncomputable section
 namespace ResearchCommons.Generated.ResidualTopK
 open scoped BigOperators
 open E8ExactResidualMass E8DeterministicTopKCertificate
@@ -106,9 +107,9 @@ theorem supplied_ensemble_strict_top_k :
     fin_cases r <;> norm_num [weight]
   · norm_num [partition, weight, Fin.sum_univ_succ]
   · intro c hc
-    fin_cases c <;>
-      norm_num [selected, residualMass, classMass, outsidePartition,
-        classPartition, partition, classify, weight, Fin.sum_univ_succ] at hc ⊢
+    fin_cases c <;> norm_num [selected] at hc
+    all_goals norm_num [selected, residualMass, classMass, outsidePartition,
+      classPartition, partition, classify, weight, Fin.sum_univ_succ]
 
 theorem same_ensemble_residual_conservation :
     residualMass Finset.univ classify weight selected =
