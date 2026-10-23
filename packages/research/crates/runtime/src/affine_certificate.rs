@@ -40,7 +40,7 @@ theorem checked :
   apply (checkRationalWitness_correct _ _).mpr
   intro r hr
   obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hr
-  fin_cases i <;> norm_num [rows, witness, Row.Holds, Row.eval, Rel, Fin.sum_univ_succ]
+  fin_cases i <;> norm_num [rows, witness, Row.Holds, Row.eval, UnifiedLean.G6.StrictAffineElimination.Rel, Fin.sum_univ_succ]
 theorem real_feasible : ∃ x : Fin {n} → ℝ, ∀ i, (rows i).Holds x := by
   refine ⟨fun i => (witness i : ℝ), ?_⟩
   have h := rationalWitness_real (Finset.univ.image rows) witness
