@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.12-wong-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.13-crossscale-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -50,7 +50,7 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Wong marked-history source recovery — 23 October 2026, 10:47 UTC:** one existing [continuous Big-ARG history construction](#cb-wong-001) is now indexed, preserving all 104 prior claim objects. The actual stored history carries the proved count-and-time law, adaptive mark choices and almost-sure finite absorption. All twelve source/provider bodies match their final historical verification hashes. Continuous cuts are not the discrete-link or Little-ARG model; the result is not a full real-time generator theorem, expected-growth formula, empirical validation or executable simulator certification. The final dated-output/support repairs supersede older pending labels. Historical checks are recorded, not rerun; this is one recovered group, not a new discovery or a change to the dated 75-card ranking.
 
-This register contains **105 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+This register contains **106 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -177,6 +177,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-ALEXANDER-004](#cb-alexander-004) | Every organism belongs to a maximal cluster under a fixed founder window | Proved; archived Lean check recorded |
 
 | [CB-WONG-001](#cb-wong-001) | A continuous recombination model records valid histories and stops almost surely | Proved; archived Lean check recorded |
+
+| [CB-CROSSSCALE-001](#cb-crossscale-001) | Can a research process discover a more useful question before solving the wrong one? | Conceptual documentation complete; evaluation proposed, not performed |
 
 ## Claim cards
 
@@ -5253,7 +5255,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 105 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 106 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -5517,3 +5519,74 @@ No new theorem, compiler execution or empirical experiment was performed to gene
 
 </details>
 
+
+<a id="cb-crossscale-001"></a>
+### Can a research process discover a more useful question before solving the wrong one?
+**CB-CROSSSCALE-001 · Cross-Scale · attributed conceptual framework and research questions**
+
+**Question:** How can we notice missing mechanisms or a more consequential question before committing to a narrow task?
+
+**What we learned:** The documented framework separates success on a checklist from achieving an outcome, and separates questions we can formulate from models and answers compatible with the evidence. It proposes generating and testing changed targets, rather than only checking the current answer.
+
+**What it lets someone do:** State what a proposed observation or transfer must preserve, compare alternative research targets, and follow the fourteen source-backed directions without mistaking them for fourteen solved problems.
+
+**What we cannot conclude:** The method has not been shown to improve research under matched budgets. It is not a universal discovery algorithm, a validated account of model motivation, or an adopted empirical project.
+
+**Kind:** question/proposal. **Status:** Conceptual documentation complete; evaluation proposed, not performed.
+
+This card records a completed conceptual analysis and an **unadopted empirical proposal**, not a proved effectiveness theorem. No matched-budget experiment occurred.
+
+<details>
+<summary>Exact proposal, attribution, evidence, completed successors and limits</summary>
+
+**Exact statement and scope.** Nolan Downard's missed-scope/shadow hypothesis and observability extension motivate a completed public conceptual analysis. The assistant's interpretation distinguishes an intended outcome from local acceptance, a procedure's reachable target set C_A(D), an admitted compatible-model set V(D), and the target-response set R_q(D). The notes give elementary fibre-factorization, changing-view closure, exact-update and finite-separation arguments, with information-loss counterexamples, while crediting established mathematics. The proposed intervention inspects decisive proof/model dependencies, generates a consequential alternative representation or target, and seeks a discriminating test. It is proposed for evaluation against ordinary execution and auditing under matched total budgets; no such experiment occurred. The fourteen-entry catalogue contains source-backed directions and narrower proposals, not fourteen adopted or solved projects. Its BIO-1 exact structural-query gap is superseded by CB-EXACTQUERY-001–003, but noisy NMSC acquisition is not closed; BIO-3 has the completed matched one-adult weighted-pool finite/deterministic ranking reversal in CB-FEEDBACK-004, not a universal population-size theorem.
+
+**Origin.** The already-public consolidated README explicitly credits Nolan Downard with the motivating theory and observability extension. The assistant supplied proposed formal interpretations; the equations are not presented as Nolan's verbatim formulation. Public authored records support this attribution, not a complete original-message chronology or a claim that every downstream theorem was caused by the proposal.
+
+**Prior work.** Observation-fibre factorization, behavioral equivalence, compatible-model elimination, decision sufficiency, experiment design and computational metareasoning are established antecedents. The package's source-match report compares causal knowledge elicitation, research ideation/evaluation, VALG and SGHA at its stated September 2026 reading scope. The synthesis and workflow's historical novelty are unestablished; new current-status or priority review is not implied by this recovery.
+
+**Our contribution and attribution.** Nolan supplied the motivating hypothesis and observability extension. The assistant developed the recorded mathematical interpretation, elementary examples, two-loop workflow, retrospective and source-backed question map. This card recovers those completed conceptual documents and preserves their attribution. It does not count their familiar mathematical ingredients, three historical final answers, or fourteen candidate targets as new discoveries.
+
+**Evidence, kept separate:**
+
+- **Conceptual/source record:** Twenty pinned public package/map records, all five manifest originals and the relevant 104-card statements were read. The observability note records a historical independent AI check of its distinctions; no separate full review receipt was recovered here. The coordinating assistant accepted this source recovery, not a new independent proof or effectiveness review.
+- **Formal:** The consolidated conceptual package claims no new Lean build. Related checked observation and predictive-state statements keep their own cards and exact receipts; they do not certify this proposed research intervention.
+- **Execution:** The workflow and task template are written records, not proof of autonomous enforcement. The historical NANUQ dossier is an illustrative source case, not a held-out controlled experiment or a token-cost comparison. No new scientific execution occurred in this recovery.
+- **Empirical:** No matched-budget trial, measured search-speedup, clinical validation or causal identification of an internal reward mechanism is reported. The proposal is not adopted as an active empirical project by this card.
+
+**Novelty:** Unestablished for the conceptual synthesis or proposed intervention; elementary mathematics retains prior attribution. Documentation, project acceptance and a motivating example do not establish worldwide originality or measured benefit.
+
+**Unadopted proposal boundary:** No proof or empirical project is adopted by this card. The proposed method's effectiveness remains untested; any future evaluation or domain target requires its own explicit admission, source contract and evaluation design.
+
+**Separate downstream work:** If separately requested, a controlled evaluation could compare meaningful correct outcomes under matched total resources. Source-specific domain applications require their actual observation, intervention, model and target adapters. Do not reopen completed BIO-1 exact-query or BIO-3 matched finite-comparison results, and do not infer that G7's fixed-registry theorem guarantees discovery of unrepresented questions.
+
+**Public sources and completed successor links:**
+
+- [Public attribution, package boundary and reading order](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/README.md) (conceptual source).
+- [Pinned originals and declared snapshot transformations](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/SOURCE-MANIFEST.json) (source manifest).
+- [Missed-scope analysis and proposed generative mechanism](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/theory-analysis.md) (conceptual source).
+- [Reachable questions, compatible models and response space](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/OBSERVABILITY-EXTENSION.md) (conceptual source).
+- [Property factorization and changing-view closure](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/partial-views-and-changing-systems.md) (conceptual source).
+- [Three available historical assistant answers](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/ANSWER-RECORD.md) (historical record).
+- [Historical NANUQ case and unavailable timing/cost boundaries](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/nanuq-experiment-dossier.md) (historical record).
+- [Proposed workflow, not runtime enforcement](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/workflow-revision-2.md) (proposal).
+- [Prior-work comparison and proposed evaluation contract](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/RESEARCH-TARGET-GENERATION-SOURCE-MATCH.md) (prior work).
+- [Fourteen source-backed directions, not fourteen solutions](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/INDEX.json) (question catalogue).
+- [BIO-1 completed exact-query matching-bound integration](https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md) (completed successor).
+- [BIO-1 uniform actual-source exact-minimum specification](https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-MINIMUM-THEOREM.md) (completed successor).
+- [BIO-3 completed matched finite model and exact result](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FINITE-RESULT.md) (completed successor).
+- [BIO-3 deterministic comparison and exact reversal boundary](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-COMPARISON.md) (completed successor).
+
+**Typed connections:**
+
+- [CB-SOFTSCI-001](#cb-softsci-001), same principle: Existing checked exact-observation and constraint examples instantiate related information-loss ideas; they are not a new theorem in this conceptual package.
+- [CB-MEMORY-001](#cb-memory-001), same principle: The completed controlled predictive-state theorem is a stronger source-defined mathematical interface, not a proof of automatic research-target generation.
+- [CB-MEMORY-003](#cb-memory-003), same principle: Exact stochastic full-history preservation has its own actual kernel/policy contract and formal receipt; the conceptual framework does not supply empirical admission.
+- [CB-NANUQ-002](#cb-nanuq-002), same principle: The completed all-level theorem supplies the dossier's motivating case. This relation records use as an example, not a reconstructed causal proof-authorship chain.
+- [CB-EXACTQUERY-003](#cb-exactquery-003), same principle: This exact structural-query successor supersedes the older catalogue's corresponding policy gap; noisy biological acquisition remains separate.
+- [CB-FEEDBACK-004](#cb-feedback-004), same principle: The completed exact matched finite/deterministic reversal prevents retaining the catalogue's old blanket BIO-3 HOLD for this narrower source contract.
+- [CB-G7-001](#cb-g7-001), same principle: Exact design on a complete fixed registry is completed mathematics. It does not establish coverage of unrepresented research questions or the proposed workflow's effectiveness.
+
+**Stable key:** crossscale.MISSED_SCOPE_AND_OBSERVABLE_TARGET_GENERATION. **Aliases:** Nolan's cross-scale/shadow hypothesis; Missed-scope and target-generation proposal; Consolidated theory package, 30 September 2026.
+
+</details>
