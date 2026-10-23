@@ -1,0 +1,16 @@
+# Reuse of the original population coefficient certificate
+
+The remaining G7 join is the actual native primitive state/row encoding and total destination fibres into the original word compiler. It is not a missing coalescent recurrence, single-population polynomial, full-state enumerator or transition oracle. Required soundness covers every admitted Code destination, including zero on absence, while retaining the actual outer/local copy map and immutable source/word.
+
+Actually read complete predecessor sources at retained1613 commit7239e89dea5caad68a54227cee3b44a7d9b96389: G7EffectivePopulationCoefficients df18fd3ffe02939b81fc062d48da60011a4724ae0d2cb9b9ea2e846e43b2e946 already constructs the literal rational recurrence, proves permutation equivalence with kernelExpr, and gives actual_population_coefficients at the original positive rates/time for a CoLocated source Code. G7EffectiveCoefficientSupport48c2627f616a9eeb66879efe67f9a602c0781a5f613f05aa305912288bf1e756 proves raw/polynomial zero outside the literal merger support. Both complete proofs and exact actual endpoint signatures were inspected. No recurrence is rederived.
+
+Later source successor actually read/hash-verified at Rust commit3b1019b68e2838cfc4085783a37c3ab0d7736273:
+- lean/proposals/NativePopulationTableCertificate.lean6083B/SHA2564a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6.
+- native/g7_population_certificate.rs15076B/SHA25619967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c.
+The source proposal already compares finite rational exponent-union sums, aggregates duplicate destinations and monomials, includes supplied spurious destinations in its check carrier, and concludes equality at EVERY destination before composing the actual population law. It assumes Boolean coefficient-check success, not the desired population-law equality. The existing exporter borrows the original Context/Snapshot/Table and generates graph/snapshot/check proofs in RAM. Its retained comments correctly state its prior uncompiled/unelaborated scope.
+
+The complete small PopulationCoefficientProjection body was also read. It duplicates selected declarations under their original names and is therefore excluded from this full package; checking it would not bind a Code or actual source law.
+
+Classification: reuse/integration of existing suppliers. The full unchanged6083B proposal is selected once, importing the actual original G7EffectiveCoefficientSupport. The already-available exact target selector and owned-audit mechanism check its actual complete dependency closure. This is not a newly proved recurrence or a fresh conditional source factory. A successful module/audit check still would not certify a particular exported native table, parser/state encoding, panel key, whole epoch/word, raw root/completion, readout, target/action coverage or QE/strategy refinement.
+
+Next: consume the actual target elaboration/audit; repair only precise interface failures if any. Then reuse the already-authored exporter with actual original primitive inputs and close its literal finite check premises. The current original-source/physical-bank certificate path at33e96ac3 remains independently verified and is not relabelled as this population result.

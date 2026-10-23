@@ -12,12 +12,13 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let objects=lean.join(".lake/build/lib/lean");
  let evidence=root.join("build").join(scope).join("sources");
  fs::create_dir_all(&evidence).map_err(|e|e.to_string())?;
- let source_only=scope=="original-source-callers";
+ let target_audit=scope=="retained-target-audit";
+ let source_only=scope=="original-source-callers" || target_audit;
  let mut callers=if source_only {Vec::new()} else {vec![
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
     ("AffineUNSAT","affine-certificate",Some("unsat"))]};
- if project=="lean" {
+ if project=="lean" && !target_audit {
   callers.extend([("OriginalTreeBank","source-certificate",Some("tree")),
     ("OriginalParallelBank","source-certificate",Some("parallel")),
     ("OriginalCellExclusion","source-certificate",Some("infeasible"))]);
@@ -63,7 +64,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
     if !audit[field].as_array().is_some_and(|v|v.is_empty()){return Err(format!("caller audit rejected {field}"));}
  }
  let receipt=json!({"profile":scope,"certificates":records,"owned_axiom_audit_passed":true,
-    "scope":"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."});
+    "scope":if target_audit {"Only the exact target dependency closure and owned declarations; no particular native table/input/result/word/readout is certified."} else {"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."}});
  fs::write(root.join("build").join(scope).join("caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
     .map_err(|e|e.to_string())?;
  println!("{receipt}");
@@ -167,6 +168,31 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
  write_receipt(&receipt)?;println!("{receipt}");Ok(())
 }
 
+fn checked_target(root:&std::path::Path,target:&str)->Result<Vec<String>> {
+   let plan=prepare_lean(root)?;
+   let selected=research_commons_package::selected_modules(&plan,target)?;
+   let receipt=read_json(&root.join("build/lean-target-build.json"))?;
+   if receipt["compiler_exit_success"]!=true || receipt["target"].as_str()!=Some(target) ||
+       receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
+       receipt["module_hashes"]!=plan["module_hashes"] {
+    return Err("no exact successful target build".into());
+   }
+   for entry in receipt["objects"].as_array().ok_or("missing target objects")? {
+    let name=entry["module"].as_str().ok_or("invalid target object")?;
+    let path=root.join("lean/.lake/build/lib/lean").join(research_commons_package::module_path(name)?).with_extension("olean");
+    let bytes=fs::read(path).map_err(|e|e.to_string())?;
+    if research_commons_package::sha256(&bytes)!=entry["sha256"].as_str().ok_or("missing object digest")? {
+     return Err(format!("target object changed: {name}"));
+    }
+   }
+   if receipt["objects"].as_array().ok_or("missing target objects")?.iter()
+      .map(|v|v["module"].as_str().map(str::to_owned).ok_or("missing object module".to_owned()))
+      .collect::<Result<Vec<_>>>()? != selected {
+     return Err("incomplete target object coverage".into());
+   }
+   Ok(selected)
+}
+
 fn run() -> Result<()> {
  let mut args=env::args().skip(1);
  let command=args.next().unwrap_or_else(||"check".into());
@@ -182,28 +208,14 @@ fn run() -> Result<()> {
   "build-certificates"=>build_certificates(&root)?,
   "build"=>build_lean(&root,args.collect())?,
   "check-source-callers"=>{
-   let plan=prepare_lean(&root)?;
-   let selected=research_commons_package::selected_modules(&plan,"OriginalCodeChartReceiver")?;
-   let receipt=read_json(&root.join("build/lean-target-build.json"))?;
-   if receipt["compiler_exit_success"]!=true || receipt["target"]!="OriginalCodeChartReceiver" ||
-       receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
-       receipt["module_hashes"]!=plan["module_hashes"] {
-    return Err("no exact successful source-receiver target build".into());
-   }
-   for entry in receipt["objects"].as_array().ok_or("missing target objects")? {
-    let name=entry["module"].as_str().ok_or("invalid target object")?;
-    let path=root.join("lean/.lake/build/lib/lean").join(research_commons_package::module_path(name)?).with_extension("olean");
-    let bytes=fs::read(path).map_err(|e|e.to_string())?;
-    if research_commons_package::sha256(&bytes)!=entry["sha256"].as_str().ok_or("missing object digest")? {
-     return Err(format!("target object changed: {name}"));
-    }
-   }
-   if receipt["objects"].as_array().ok_or("missing target objects")?.iter()
-      .map(|v|v["module"].as_str().map(str::to_owned).ok_or("missing object module".to_owned()))
-      .collect::<Result<Vec<_>>>()? != selected {
-     return Err("incomplete target object coverage".into());
-   }
+   let selected=checked_target(&root,"OriginalCodeChartReceiver")?;
    check_callers_at(&root,"lean",&selected,"original-source-callers")?;
+  },
+  "audit-target"=>{
+   let target=args.next().ok_or("audit-target needs an exact module")?;
+   if args.next().is_some(){return Err("audit-target accepts one module".into());}
+   let selected=checked_target(&root,&target)?;
+   check_callers_at(&root,"lean",&selected,"retained-target-audit")?;
   },
   "emit-index"=> {
     let claims=read_json(&root.join("registry/claims.json"))?;
@@ -212,7 +224,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|prepare-certificates|build-certificates|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }
