@@ -125,6 +125,40 @@ theorem original_variable_native_bank_left_inverse :
 "#),render.rendered_bytes)?;
  Ok(out)
 }
+/// Read-only shared table/snapshot formatter. No engine call or new law.
+pub(crate) fn table_body(request:&Request,table:&source_word::Table,render:RenderLimits)
+ ->Result<(String,Vec<String>),Error>{
+ let context=&request.context;let mut out=String::new();
+ if table.transitions.len()>render.destinations{return Err(Error::SourceLimit);}
+ let dimension=table.variables.len();
+ let mut monomial_ids:BTreeMap<Vec<usize>,usize>=BTreeMap::new();
+ for t in &table.transitions {
+  for powers in t.polynomial.terms.keys(){
+   let next=monomial_ids.len();monomial_ids.entry(powers.clone()).or_insert(next);
+  }
+ }
+ for (powers,i) in &monomial_ids{
+  if powers.len()!=table.variables.len(){return Err(Error::Invalid("word dictionary exponent arity"));}
+  let body=powers.iter().enumerate().filter(|(_,power)|**power!=0)
+   .map(|(v,power)|format!("({v}, {power})")).collect::<Vec<_>>().join(", ");
+  put(&mut out,&format!(
+   "private def monomial{i} : List (Fin {dimension} × Nat) := [{body}]\n"),
+   render.rendered_bytes)?;
+ }
+ let mut rows=Vec::new();let mut monomials=0usize;
+ for (i,t) in table.transitions.iter().enumerate(){
+  if source_epoch::selected_view(context,&t.witness).map_err(Error::Invalid)?!=t.view{
+   return Err(Error::Invalid("complete selected range witness"));
+  }
+  monomials=monomials.checked_add(t.polynomial.terms.len()).ok_or(Error::SourceLimit)?;
+  if monomials>render.monomials{return Err(Error::SourceLimit);}
+  let label=format!("destination{i}");
+  crate::epoch_certificate::snapshot(&mut out,context,&t.witness,&label,render).map_err(Error::Snapshot)?;
+  put(&mut out,&format!("#check {label}_selected_fields_exact\n"),render.rendered_bytes)?;
+  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,&monomial_ids,render)?));
+ }
+ Ok((out,rows))
+}
 /// Complete immutable natural-word request, preserving ALL register-labelled
 /// destinations and variables. FullView is explicit; completion has a separate
 /// receiver. Failed validation/resource/rendering returns no partial document.
@@ -203,33 +237,9 @@ private def common (h : Hybrid N) : Bool := vertexMode h.val
 private def word : List (Symbol (Fin {slots}) (Fin {nv}) (Fin {ne})) := [{word}]
 "#),render.rendered_bytes)?;
  put(&mut out,&indexed_bank(request,table.variables.len(),render)?,render.rendered_bytes)?;
+ let (table_declarations,rows)=table_body(request,&table,render)?;
+ put(&mut out,&table_declarations,render.rendered_bytes)?;
  let dimension=table.variables.len();
- let mut monomial_ids:BTreeMap<Vec<usize>,usize>=BTreeMap::new();
- for t in &table.transitions {
-  for powers in t.polynomial.terms.keys(){
-   let next=monomial_ids.len();monomial_ids.entry(powers.clone()).or_insert(next);
-  }
- }
- for (powers,i) in &monomial_ids{
-  if powers.len()!=table.variables.len(){return Err(Error::Invalid("word dictionary exponent arity"));}
-  let body=powers.iter().enumerate().filter(|(_,power)|**power!=0)
-   .map(|(v,power)|format!("({v}, {power})")).collect::<Vec<_>>().join(", ");
-  put(&mut out,&format!(
-   "private def monomial{i} : List (Fin {dimension} × Nat) := [{body}]\n"),
-   render.rendered_bytes)?;
- }
- let mut rows=Vec::new();let mut monomials=0usize;
- for (i,t) in table.transitions.iter().enumerate(){
-  if source_epoch::selected_view(context,&t.witness).map_err(Error::Invalid)?!=t.view{
-   return Err(Error::Invalid("complete selected range witness"));
-  }
-  monomials=monomials.checked_add(t.polynomial.terms.len()).ok_or(Error::SourceLimit)?;
-  if monomials>render.monomials{return Err(Error::SourceLimit);}
-  let label=format!("destination{i}");
-  crate::epoch_certificate::snapshot(&mut out,context,&t.witness,&label,render).map_err(Error::Snapshot)?;
-  put(&mut out,&format!("#check {label}_selected_fields_exact\n"),render.rendered_bytes)?;
-  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,&monomial_ids,render)?));
- }
  put(&mut out,&format!(r#"
 private def rows : Rows (Fin {dimension}) (Code N sample) := [{}]
 private def nativeSelectedRows : Nat := {}
@@ -260,7 +270,7 @@ end {}
 "#,rows.join(",\n  "),table.transitions.len(),bindings.namespace),render.rendered_bytes)?;
  Ok(out)
 }
-fn example_request(common:bool)->Result<Request,Error>{
+pub(crate) fn example_request(common:bool)->Result<Request,Error>{
  let (input,_)=crate::source_certificate::example_request("parallel").map_err(|e|Error::Capture(format!("{e:?}")))?;
  let cell=cell_rows::compile_request(input).map_err(|e|Error::Capture(format!("{e:?}")))?;
  Ok(Request{
@@ -282,6 +292,10 @@ pub fn example(mode:&str)->Result<String,Error>{
  let document=emit(&request,Bindings{original_module:"OriginalParallelBank",
   original_source:"ResearchCommons.Generated.OriginalParallelBank.originalSource",namespace},
   RenderLimits{rendered_bytes:262144,..RenderLimits::default()})?;
+ join_example(&document,namespace)
+}
+/// The same retained original bank/parent-order caller, reused by bundles.
+pub(crate) fn join_example(document:&str,namespace:&str)->Result<String,Error>{
  let ending=format!("\nend {namespace}\n");
  let prefix=document.strip_suffix(&ending).ok_or(Error::Invalid("word namespace boundary"))?;
  let joined=format!(r#"{prefix}

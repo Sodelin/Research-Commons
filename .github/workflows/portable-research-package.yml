@@ -452,10 +452,10 @@ jobs:
           restore-keys: |
             retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
       - name: Compile the actual receiver dependency closure in the full package context
-        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Word
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.WordCache
       - name: Audit every owned whole-word dependency and declaration
-        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.Word
-      - name: Kernel-check complete independent and COMMON natural hybrid words
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.WordCache
+      - name: Kernel-check every cached primitive and SAME independent/COMMON natural word
         run: cargo run --locked -p research-commons-package -- check-word-callers
       - name: Retain exact completed source objects even after a later module failure
         if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''

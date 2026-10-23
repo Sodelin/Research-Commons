@@ -396,3 +396,5 @@ mod tests {
 }
 
 pub mod exports;
+
+pub mod certificate_bundle;

@@ -40,8 +40,8 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
   callers.push(("AncestralCompletion","completion-certificate",None));
  }
  if word_callers || scope=="full-profile-callers" {
-  callers.extend([("NaturalIndependentWord","word-certificate",Some("independent")),
-    ("NaturalCommonWord","word-certificate",Some("common"))]);
+  callers.extend([("NaturalIndependentWord","word-cache-certificate",Some("independent")),
+    ("NaturalCommonWord","word-cache-certificate",Some("common"))]);
  }
  if epoch_callers || scope=="full-profile-callers" {
   callers.push(("MixedPopulationEpoch","epoch-certificate",None));
@@ -57,20 +57,27 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
   if let Some(a)=argument {command.args(["--",a]);}
   let output=command.current_dir(&root).stdin(Stdio::null()).output().map_err(|e|e.to_string())?;
   if !output.status.success(){return Err(format!("caller {binary} refused: {}",output.status));}
-  if output.stdout.len()>262144 {return Err(format!("caller {binary} exceeded source limit"));}
-  std::str::from_utf8(&output.stdout).map_err(|e|e.to_string())?;
+  let documents=if binary=="word-cache-certificate" {
+   research_commons_package::certificate_bundle::decode(&output.stdout,module)?
+  }else{
+   if output.stdout.len()>262144{return Err(format!("caller {binary} exceeded source limit"));}
+   std::str::from_utf8(&output.stdout).map_err(|e|e.to_string())?;
+   vec![(module.to_owned(),output.stdout)]
+  };
+  for (module,source_bytes) in documents {
   let source=generated.join(format!("{module}.lean"));
-  fs::write(&source,&output.stdout).map_err(|e|e.to_string())?;
-  fs::write(evidence.join(format!("{module}.lean")),&output.stdout).map_err(|e|e.to_string())?;
+  fs::write(&source,&source_bytes).map_err(|e|e.to_string())?;
+  fs::write(evidence.join(format!("{module}.lean")),&source_bytes).map_err(|e|e.to_string())?;
   println!("LEAN CERTIFICATE {module}");
-  println!("LEAN CERTIFICATE INPUT {module} {} bytes SHA256 {}",output.stdout.len(),research_commons_package::sha256(&output.stdout));
+  println!("LEAN CERTIFICATE INPUT {module} {} bytes SHA256 {}",source_bytes.len(),research_commons_package::sha256(&source_bytes));
   let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated"])
       .arg("-o").arg(objects.join(format!("{module}.olean"))).arg(&source)
       .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
   if !status.success(){return Err(format!("Lean rejected {module}: {status}"));}
-  records.push(json!({"module":module,"source_sha256":research_commons_package::sha256(&output.stdout),
-      "source_bytes":output.stdout.len(),"kernel_check_passed":true}));
+  records.push(json!({"module":module,"source_sha256":research_commons_package::sha256(&source_bytes),
+      "source_bytes":source_bytes.len(),"kernel_check_passed":true}));
   names.push(module.to_owned());
+  }
  }
  let lock=read_json(&root.join("source-lock.json"))?;
  let base=root.join(lock["lean_profile"]["directory"].as_str().ok_or("missing profile directory")?);
@@ -318,7 +325,7 @@ fn run() -> Result<()> {
    check_callers_at(&root,"lean",&selected,"completion-certificate-callers")?;
   },
   "check-word-callers"=>{
-   let selected=checked_target(&root,"ResearchCommons.Integration.Word")?;
+   let selected=checked_target(&root,"ResearchCommons.Integration.WordCache")?;
    check_callers_at(&root,"lean",&selected,"word-certificate-callers")?;
   },
   "check-epoch-callers"=>{

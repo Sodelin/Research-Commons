@@ -76,3 +76,5 @@ mod tests {
 pub mod word_certificate;
 
 pub mod completion_certificate;
+
+pub mod word_cache_certificate;

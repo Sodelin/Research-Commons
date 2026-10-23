@@ -605,6 +605,37 @@
       }
     },
     {
+      "module": "OriginalWordCacheCertificate",
+      "path": "lean/OriginalWordCacheCertificate.lean",
+      "sha256": "7aaf0d4b6e0513104a2b5ad7b2bd4d9cee2bbdbf4ec02a7a909476be9b53c2a6",
+      "imports": [
+        "OriginalWordTableCertificate",
+        "G7SparseWordComposition"
+      ],
+      "provenance": {
+        "role": "Checked primitive cache -> SAME original natural-word composition",
+        "selected_current_context_verified": false,
+        "preflight": "integration/WORD-CACHE-PREFLIGHT.md",
+        "proof_derivation": "Formal composition adapter; actual source/init/step laws and sparse recurrence reused",
+        "scope": "Each entry checked against complete concrete stepRows; full selected key including SAME register; old fallback on misses; initial/final fibre checks; no new stochastic oracle or source coverage."
+      }
+    },
+    {
+      "module": "ResearchCommons.Integration.WordCache",
+      "path": "lean/ResearchCommons/Integration/WordCache.lean",
+      "sha256": "4c77f5710e19420c0883bd9bccfb84a22b154e923d3f602f6f9ba40e7a6065c3",
+      "imports": [
+        "OriginalWordCacheCertificate",
+        "OriginalCodeChartReceiver"
+      ],
+      "provenance": {
+        "role": "Dependency target for actual multi-document same-word callers",
+        "selected_current_context_verified": false,
+        "preflight": "integration/WORD-CACHE-PREFLIGHT.md",
+        "scope": "Complete target, every emitted source, BOTH unchanged word modes and full owned audit must pass before acceptance."
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
       "sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
