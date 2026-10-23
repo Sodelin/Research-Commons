@@ -1,0 +1,78 @@
+{
+  "moduleName": "Lax429075ProofTree",
+  "outputOlean": "Lax429075ProofTree.olean",
+  "outputReport": "Lax429075ProofTree-composition-report.json",
+  "conceptModules": [
+    "Lax434930",
+    "Lax429075"
+  ],
+  "entries": [
+    {
+      "statement": "Lax434930.Certificates.pair_length",
+      "proof": "Lax434930Proofs.Certificates.pair_length",
+      "generated": "Lax429075ProofTree.Lax434930.Certificates.pair_length",
+      "assumptions": []
+    },
+    {
+      "statement": "Lax434930.FiniteStackEquivalence.finiteStackP_eq_P",
+      "proof": "Lax434930Proofs.ModelEquivalence.finiteStackP_eq_P",
+      "generated": "Lax429075ProofTree.Lax434930.FiniteStackEquivalence.finiteStackP_eq_P",
+      "assumptions": []
+    },
+    {
+      "statement": "Lax434930.ModelEquivalence.singleTapeP_eq_P",
+      "proof": "Lax434930Proofs.ModelEquivalence.singleTapeP_eq_P",
+      "generated": "Lax429075ProofTree.Lax434930.ModelEquivalence.singleTapeP_eq_P",
+      "assumptions": [
+        "Lax434930.FiniteStackEquivalence.finiteStackP_eq_P"
+      ]
+    },
+    {
+      "statement": "Lax429075.GateCorrect.correct",
+      "proof": "Lax429075Proofs.gate_correct",
+      "generated": "Lax429075ProofTree.Lax429075.GateCorrect.correct",
+      "assumptions": []
+    },
+    {
+      "statement": "Lax429075.EncodingCorrect.roundtrip",
+      "proof": "Lax429075Proofs.encoding_roundtrip",
+      "generated": "Lax429075ProofTree.Lax429075.EncodingCorrect.roundtrip",
+      "assumptions": []
+    },
+    {
+      "statement": "Lax429075.SATEncoding.correct",
+      "proof": "Lax429075Proofs.sat_encoding",
+      "generated": "Lax429075ProofTree.Lax429075.SATEncoding.correct",
+      "assumptions": [
+        "Lax429075.EncodingCorrect.roundtrip"
+      ]
+    },
+    {
+      "statement": "Lax429075.TseitinCorrect.correct",
+      "proof": "Lax429075Proofs.tseitin_correct",
+      "generated": "Lax429075ProofTree.Lax429075.TseitinCorrect.correct",
+      "assumptions": [
+        "Lax429075.GateCorrect.correct"
+      ]
+    },
+    {
+      "statement": "Lax429075.CircuitMachine.compile",
+      "proof": "Lax429075Proofs.Streaming.circuit_machine",
+      "generated": "Lax429075ProofTree.Lax429075.CircuitMachine.compile",
+      "assumptions": [
+        "Lax434930.Certificates.pair_length",
+        "Lax434930.ModelEquivalence.singleTapeP_eq_P"
+      ]
+    },
+    {
+      "statement": "Lax429075.SATHard.hardness",
+      "proof": "Lax429075Proofs.sat_hard",
+      "generated": "Lax429075ProofTree.Lax429075.SATHard.hardness",
+      "assumptions": [
+        "Lax429075.CircuitMachine.compile",
+        "Lax429075.SATEncoding.correct",
+        "Lax429075.TseitinCorrect.correct"
+      ]
+    }
+  ]
+}

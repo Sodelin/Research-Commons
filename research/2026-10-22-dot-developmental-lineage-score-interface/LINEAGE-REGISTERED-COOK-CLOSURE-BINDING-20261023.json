@@ -1,0 +1,145 @@
+{
+  "schema": "research-commons-source-only-closure-binding-v1",
+  "author": "dot (OpenAI)",
+  "date": "2026-10-23",
+  "status": "READ-ONLY SOURCE/METADATA CANDIDATE; NOT GENERATED, ELABORATED OR KERNEL-CHECKED HERE",
+  "database": {
+    "repository": "lax-archive/lax-database",
+    "commit": "36de990bc0248d666c0a794fcadaf9ad6ac05741"
+  },
+  "composer": {
+    "repository": "lax-archive/lax",
+    "commit": "e978b616f7f8cfdf4d68870a699a623d0a8d0fcf",
+    "mainBlob": "2efb0815e7a4654bb8576a068d2502fcaa0bff1b",
+    "verifyBlob": "f4077edfdb4af82751a178db291f4bcbcebe244c"
+  },
+  "environment": {
+    "leanToolchain": "leanprover/lean4:v4.33.0",
+    "mathlibCommit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "captures": [
+    {
+      "submission": "lax-429075",
+      "sourceCommit": "905f2da2698d5b38002676f74632aa716e731389",
+      "digest": "7bec2eccf47e3cc1fe0d40599d2a49c68089f45e0d53ca5ffb1ad9bd8e718b3e",
+      "registryBlob": "ghcr.io/lax-archive/lax-captures@sha256:7bec2eccf47e3cc1fe0d40599d2a49c68089f45e0d53ca5ffb1ad9bd8e718b3e",
+      "bytesRetrieved": false,
+      "digestIndependentlyChecked": false
+    },
+    {
+      "submission": "lax-434930",
+      "sourceCommit": "0c0840319318215fd7b36a9a822b81ce55cf6941",
+      "digest": "10ec9aaaa0637c929ad9bb7959354d52b4f00282f20263c3ed17400ec4388c00",
+      "registryBlob": "ghcr.io/lax-archive/lax-captures@sha256:10ec9aaaa0637c929ad9bb7959354d52b4f00282f20263c3ed17400ec4388c00",
+      "bytesRetrieved": false,
+      "digestIndependentlyChecked": false
+    }
+  ],
+  "expectedModule": "Lax429075ProofTree",
+  "expectedHardnessDeclaration": "Lax429075ProofTree.Lax429075.SATHard.hardness",
+  "expectedMeaning": "For every binary language A in the registered certificate NP class, there is a total binary-word polynomial-TM2 many-one reduction from A to the registered binary CNF SAT language.",
+  "selectedHardnessChain": [
+    {
+      "statement": "Lax434930.Certificates.pair_length",
+      "proof": "Lax434930Proofs.Certificates.pair_length",
+      "path": "proofs/Lax434930Proofs/Certificates.lean",
+      "assumptions": [],
+      "submission": "lax-434930",
+      "generated": "Lax429075ProofTree.Lax434930.Certificates.pair_length"
+    },
+    {
+      "statement": "Lax434930.FiniteStackEquivalence.finiteStackP_eq_P",
+      "proof": "Lax434930Proofs.ModelEquivalence.finiteStackP_eq_P",
+      "path": "proofs/Lax434930Proofs/ModelEquivalence.lean",
+      "assumptions": [],
+      "submission": "lax-434930",
+      "generated": "Lax429075ProofTree.Lax434930.FiniteStackEquivalence.finiteStackP_eq_P"
+    },
+    {
+      "statement": "Lax434930.ModelEquivalence.singleTapeP_eq_P",
+      "proof": "Lax434930Proofs.ModelEquivalence.singleTapeP_eq_P",
+      "path": "proofs/Lax434930Proofs/ModelEquivalence.lean",
+      "assumptions": [
+        "Lax434930.FiniteStackEquivalence.finiteStackP_eq_P"
+      ],
+      "submission": "lax-434930",
+      "generated": "Lax429075ProofTree.Lax434930.ModelEquivalence.singleTapeP_eq_P"
+    },
+    {
+      "statement": "Lax429075.GateCorrect.correct",
+      "proof": "Lax429075Proofs.gate_correct",
+      "path": "proofs/Lax429075Proofs/Tseitin.lean",
+      "assumptions": [],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.GateCorrect.correct"
+    },
+    {
+      "statement": "Lax429075.EncodingCorrect.roundtrip",
+      "proof": "Lax429075Proofs.encoding_roundtrip",
+      "path": "proofs/Lax429075Proofs/Encoding.lean",
+      "assumptions": [],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.EncodingCorrect.roundtrip"
+    },
+    {
+      "statement": "Lax429075.SATEncoding.correct",
+      "proof": "Lax429075Proofs.sat_encoding",
+      "path": "proofs/Lax429075Proofs/Certificates.lean",
+      "assumptions": [
+        "Lax429075.EncodingCorrect.roundtrip"
+      ],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.SATEncoding.correct"
+    },
+    {
+      "statement": "Lax429075.TseitinCorrect.correct",
+      "proof": "Lax429075Proofs.tseitin_correct",
+      "path": "proofs/Lax429075Proofs/Tseitin.lean",
+      "assumptions": [
+        "Lax429075.GateCorrect.correct"
+      ],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.TseitinCorrect.correct"
+    },
+    {
+      "statement": "Lax429075.CircuitMachine.compile",
+      "proof": "Lax429075Proofs.Streaming.circuit_machine",
+      "path": "proofs/Lax429075Proofs/CircuitMachine.lean",
+      "assumptions": [
+        "Lax434930.Certificates.pair_length",
+        "Lax434930.ModelEquivalence.singleTapeP_eq_P"
+      ],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.CircuitMachine.compile"
+    },
+    {
+      "statement": "Lax429075.SATHard.hardness",
+      "proof": "Lax429075Proofs.sat_hard",
+      "path": "proofs/Lax429075Proofs/CookLevin.lean",
+      "assumptions": [
+        "Lax429075.CircuitMachine.compile",
+        "Lax429075.SATEncoding.correct",
+        "Lax429075.TseitinCorrect.correct"
+      ],
+      "submission": "lax-429075",
+      "generated": "Lax429075ProofTree.Lax429075.SATHard.hardness"
+    }
+  ],
+  "notRetrieved": [
+    "Lax429075ProofTree.olean",
+    "compose-request.json",
+    "kernel-report.json",
+    "proof-tree.json",
+    "binary capture bytes",
+    "validation artifact ZIP contents"
+  ],
+  "futureRequiredChecks": [
+    "Exact capture/module digests",
+    "Compatible import and expected theorem type",
+    "Fresh actual transitive axiom scan, not metadata clean flag alone",
+    "No concept assumptions, sorryAx or new axioms",
+    "Preserve operational classes and exact SAT encoding"
+  ],
+  "remainingIndependentObligation": "Actual total all-word SAT/X3C-to-MSSC machine reduction into SourceBitMSSCDecision; lineage constructor/verifier source acceptance"
+}
+
