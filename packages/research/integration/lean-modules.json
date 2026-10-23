@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "modules": [
+    {
+      "module": "CMFoundations",
+      "path": "lean/CMFoundations.lean",
+      "sha256": "173f00d1871656a016bc4593bae06030914dc161985d3b6df0aa89d667164073",
+      "imports": [
+        "G4ActualSparseCertificateExistence",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "provenance": {
+        "source": "https://github.com/Sodelin/Research-Commons/blob/e8356cf9c31f0f69af144b3c4238042d3b866b63/research/2026-10-21-lean-online-builder/native/physical-pmf/CMFoundations.lean",
+        "role": "retained full-context source receiver",
+        "historical_evidence_transferred": false
+      }
+    },
+    {
+      "module": "CMSeparation",
+      "path": "lean/CMSeparation.lean",
+      "sha256": "58bd9f673f3f143c58a463aea5c86caeeb8ed19d1e3b9025b904af2d8483cf90",
+      "imports": [
+        "CMFoundations",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "provenance": {
+        "source": "https://github.com/Sodelin/Research-Commons/blob/514648b697aeed8f46582109cfeefcd7707cd738/research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json",
+        "role": "retained selected checked endpoint",
+        "historical_evidence_transferred": false
+      }
+    },
+    {
+      "module": "RationalBankMoments",
+      "path": "lean/RationalBankMoments.lean",
+      "sha256": "3c6889a5a7581974d786a66d975ac43a6e9d9bb2194ad64a433898ce8071a4b8",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Rat.Cast.Lemmas",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "provenance": {
+        "source": "https://github.com/Sodelin/Research-Commons/blob/e8356cf9c31f0f69af144b3c4238042d3b866b63/research/2026-10-21-lean-online-builder/native/physical-pmf/RationalBankMoments.lean",
+        "role": "retained full-context source receiver",
+        "historical_evidence_transferred": false
+      }
+    },
+    {
+      "module": "CMRationalBank",
+      "path": "lean/CMRationalBank.lean",
+      "sha256": "879518802d5bbe0ce1e2cf6392a0a6cbe8b70fc9fedb421035ad129684f0530e",
+      "imports": [
+        "CMFoundations",
+        "RationalBankMoments",
+        "Mathlib.Logic.Function.Basic"
+      ],
+      "provenance": {
+        "source": "retained original prepared-master-and-two-profile-loader-project778/source-store/879518802d5bbe0ce1e2cf6392a0a6cbe8b70fc9fedb421035ad129684f0530e.lean",
+        "role": "retained full-context source receiver",
+        "historical_evidence_transferred": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G1",
+      "path": "lean/ResearchCommons/Claims/G1.lean",
+      "sha256": "bfc22c963cb4a3a1dc81a413b1bc65997ee8d7a9a218bcffa31fd810159c6cc9",
+      "imports": [
+        "G1FullOriginalClassMasterAndSharpness"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G2",
+      "path": "lean/ResearchCommons/Claims/G2.lean",
+      "sha256": "84a04d00316a2c1a315cf6915afcbae7f276d6598169d1c85df423885c41a456",
+      "imports": [
+        "UnifiedLean.Source.SourceUnrankedAllPanels",
+        "G2ActualTimedAllPanelLaw",
+        "G2TimedOutputForgetting"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G5",
+      "path": "lean/ResearchCommons/Claims/G5.lean",
+      "sha256": "f5a12edab26b8646d119063ec41bb83e5c59cc302ce46f96b195cbe25b3c7dfa",
+      "imports": [
+        "G5M3NormalizedClusterSplitIdentification"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G6",
+      "path": "lean/ResearchCommons/Claims/G6.lean",
+      "sha256": "355553eb8ed9f3d7bb44ac6d5371367b146e014c20d5809d9ce733ef80996394",
+      "imports": [
+        "G6RationalNaturalCellWitness",
+        "G6ActualCellObservedTV"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G7",
+      "path": "lean/ResearchCommons/Claims/G7.lean",
+      "sha256": "b12fb90921e83ce1044ef85d2a8e63ebd2ddc8e25660761ff99ac3b95a34ef8e",
+      "imports": [
+        "G7ExactLawResourceGame",
+        "G7ExactLawRankCompression",
+        "G7OriginalFamilyStrategy"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.CM",
+      "path": "lean/ResearchCommons/Claims/CM.lean",
+      "sha256": "3f21fa089bbda81bdef475bf4c23d66a67394b318391f1400a07c9629ca4b527",
+      "imports": [
+        "CMSeparation",
+        "CMRationalBank"
+      ],
+      "provenance": {
+        "role": "new typed aliases of retained endpoints",
+        "proof_derivation": false
+      }
+    }
+  ]
+}

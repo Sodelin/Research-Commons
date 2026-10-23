@@ -151,6 +151,32 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
         sources.push((name.to_owned(),module_path(name)?,source));
     }
     if seen.len()!=modules.len(){return Err("order does not cover every module".into());}
+    let retained_count=sources.len();
+    let extra=read_json(&root.join("integration/lean-modules.json"))?;
+    for entry in array(&extra,"modules")? {
+        let name=text(entry,"module")?;
+        if seen.contains(name){return Err(format!("duplicate added module {name}"));}
+        let rel=text(entry,"path")?;
+        let path=Path::new(rel);
+        if path.is_absolute() || path.components().any(|x|!matches!(x,std::path::Component::Normal(_))) {
+            return Err(format!("unsafe added source path {rel}"));
+        }
+        let bytes=fs::read(root.join(path)).map_err(|e|format!("added source {name}: {e}"))?;
+        if sha256(&bytes)!=text(entry,"sha256")? { return Err(format!("added body hash mismatch: {name}")); }
+        for dep in array(entry,"imports")? {
+            let dep=dep.as_str().ok_or("non-string added import")?;
+            module_path(dep)?;
+            if !dep.starts_with("Mathlib.") && dep!="Mathlib" && !seen.contains(dep) {
+                return Err(format!("added dependency not yet built: {name} -> {dep}"));
+            }
+        }
+        let actual=std::str::from_utf8(&bytes).map_err(|e|e.to_string())?.lines()
+            .filter_map(|line|line.strip_prefix("import ")).map(str::trim).collect::<Vec<_>>();
+        let declared=array(entry,"imports")?.iter().map(|v|v.as_str().ok_or("non-string import")).collect::<std::result::Result<Vec<_>,_>>()?;
+        if actual!=declared {return Err(format!("added import manifest mismatch: {name}"));}
+        seen.insert(name.to_owned());
+        sources.push((name.to_owned(),module_path(name)?,bytes));
+    }
     let mut imports=String::new();
     for r in array(target,"roots")? {
         let name=r.as_str().ok_or("non-string root")?;module_path(name)?;
@@ -161,6 +187,9 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
     for (_,path,body) in &sources {
         let p=output.join(path);fs::create_dir_all(p.parent().ok_or("no parent")?).map_err(|e|e.to_string())?;
         fs::write(p,body).map_err(|e|e.to_string())?;
+    }
+    for (name,_,_) in sources.iter().skip(retained_count) {
+        imports.push_str(&format!("import {name}\n"));
     }
     imports.push_str("import ResearchCommons.Registry\n");
     fs::write(output.join("ResearchCommons.lean"),imports).map_err(|e|e.to_string())?;
@@ -177,7 +206,7 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
     let audit=template.replace(placeholder,&format!("#{names}"))
         .replace("\"AUDIT-OWNED.json\"","\"../build/owned-audit.json\"");
     fs::write(output.join("OwnedAudit.lean"),format!("import ResearchCommons\n{audit}")).map_err(|e|e.to_string())?;
-    let plan=json!({"profile":label,"fresh_sources":sources.len(),
+    let plan=json!({"profile":label,"fresh_sources":sources.len(),"retained_sources":retained_count,"added_sources":sources.len()-retained_count,
         "order":sources.iter().map(|(n,_,_)|n).collect::<Vec<_>>(),
         "compiler_invoked":false,"historical_objects_reused":false,
         "source_graph_sha256":sha256(&graph_bytes)});

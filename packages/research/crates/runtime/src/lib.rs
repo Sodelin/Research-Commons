@@ -2,6 +2,7 @@
 #![forbid(unsafe_code)]
 pub use g7_exact_law_formula as exact_law;
 pub use parity_solver as exact_arithmetic;
+pub mod moments;
 
 #[cfg(test)]
 mod tests {

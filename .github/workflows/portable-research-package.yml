@@ -44,6 +44,7 @@ jobs:
           cargo run --locked -p research-commons-package -- prepare > build/preparation.json
           cargo run --locked -p research-commons-package -- emit-index > build/Registry.lean
           cmp build/Registry.lean lean/ResearchCommons/Registry.lean
+          cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -53,7 +54,7 @@ jobs:
             packages/research/Cargo.lock
           if-no-files-found: warn
   lean:
-    name: Fresh coherent retained Lean profile (not all 93 formalizations)
+    name: Fresh coherent retained Lean profile (not all 104 formalizations)
     needs: rust
     runs-on: ubuntu-24.04
     timeout-minutes: 180
@@ -82,6 +83,11 @@ jobs:
           lake exe cache get
       - name: Compile actual module order and aggregate
         run: cargo run --locked -p research-commons-package -- build
+      - name: Check Rust-emitted literal moment certificate with Lean
+        run: |
+          cargo run --locked -p research-commons-runtime --bin cm-certificate > lean/.generated/CMExample.lean
+          cd lean
+          lake env lean -j1 -M6144 -Ddebug.skipKernelTC=false --root=.generated .generated/CMExample.lean
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
