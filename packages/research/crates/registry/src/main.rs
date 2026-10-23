@@ -226,12 +226,23 @@ fn checked_full_profile(root:&std::path::Path)->Result<Vec<String>> {
  Ok(selected)
 }
 
-fn check_exports(root:&std::path::Path)->Result<()> {
+fn check_exports(root:&std::path::Path,target:Option<&str>)->Result<()> {
  research_commons_package::check_package(root)?;
- checked_full_profile(root)?;
  let canonical=read_json(&root.join("registry/claims.json"))?;
  let bindings=read_json(&root.join("integration/claims.json"))?;
  let mut plan=research_commons_package::exports::plan(&canonical,&bindings)?;
+ let selected=if let Some(module)=target{checked_target(root,module)?}else{checked_full_profile(root)?};
+ let source_plan=prepare_lean(root)?;
+ for module in plan["imports"].as_array().ok_or("missing export imports")?{
+  let module=module.as_str().ok_or("invalid export import")?;
+  let required=research_commons_package::selected_modules(&source_plan,module)?;
+  if required.iter().any(|n|!selected.contains(n)){
+   return Err(format!("selected context omits an export dependency of {module}"));
+  }
+ }
+ if target.is_some(){
+  check_callers_at(root,"lean",&selected,"retained-target-audit")?;
+ }
  let document=plan["document"].as_str().ok_or("missing exact export document")?;
  let lean=root.join("lean");let source=lean.join(".generated/ClaimExports.lean");
  fs::write(&source,document).map_err(|e|e.to_string())?;
@@ -243,7 +254,9 @@ fn check_exports(root:&std::path::Path)->Result<()> {
  plan.as_object_mut().ok_or("invalid export plan")?.remove("document");
  plan["document_sha256"]=json!(hash);
  plan["kernel_check_passed"]=json!(true);
- plan["complete_source_and_owned_audit_revalidated"]=json!(true);
+ plan["exact_source_context_and_owned_audit_revalidated"]=json!(true);
+ plan["target"]=json!(target);
+ plan["complete_profile"]=json!(target.is_none());
  plan["all_claims_formalized"]=json!(false);
  fs::write(root.join("build/claim-export-verification.json"),
   serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
@@ -274,7 +287,13 @@ fn run() -> Result<()> {
   },
   "prepare"=>println!("{}",prepare_lean(&root)?),
   "check-callers"=>check_callers_at(&root,"lean",&[],"full-profile-callers")?,
-  "check-exports"=>check_exports(&root)?,
+  "check-exports"=>{
+   match args.collect::<Vec<_>>().as_slice(){
+    []=>check_exports(&root,None)?,
+    [flag,module] if flag=="--target"=>check_exports(&root,Some(module))?,
+    _=>return Err("usage: check-exports [--target Module]".into()),
+   }
+  },
   "prepare-certificates"=>println!("{}",research_commons_package::prepare_certificate_profile(&root)?),
   "build-certificates"=>build_certificates(&root)?,
   "build"=>build_lean(&root,args.collect())?,

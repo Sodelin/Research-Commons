@@ -93,3 +93,12 @@ The next word receiver/context modules and actual `word-certificate independent/
 A typed `ResearchCommons.Claims.NANUQ` export is also pending the current coherent build. It reuses CB-NANUQ-001's named source-to-geometry chain without extending it to CB-NANUQ-002's all-level hand result. The [NANUQ preflight](integration/NANUQ-REUSE-PREFLIGHT.md) retains exact source/drawing and distinct-resolution-set hypotheses. Push CI keeps the complete coherent source/audit and all actual callers mandatory; previously accepted isolated targets remain available by explicit workflow dispatch.
 
 The candidate `check-exports` command verifies every named registry binding against the exact complete compiled object context and prints its full Lean type. It preserves component/candidate statuses and does not change the strict integration gate. See [CLAIM-EXPORT-PREFLIGHT.md](integration/CLAIM-EXPORT-PREFLIGHT.md).
+
+The same declaration check can run independently on the exact union of named export dependencies:
+
+```sh
+cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Exports
+cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
+```
+
+The selected command rejects any context missing even one named export dependency, revalidates all object hashes and performs the complete selected owned audit. This is scoped name/type acceptance, not full-profile or all-claim closure.
