@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.5-crossfield-completion-and-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.6-sequence-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -36,7 +36,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 ## Coverage and source discipline
 
-This first register contains **75 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Revision — 23 October 2026, 09:25 UTC:** nine recovered existing sequence groups are now indexed below, preserving all 75 prior claim objects and their evidence. These are source/navigation groups, not nine new discoveries. Any dated subjective ranking of 75 cards remains that snapshot; the new nine have not been ranked.
+
+This register contains **84 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -128,6 +130,16 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-SOFTSCI-003](#cb-softsci-003) | Connectedness, trust and an acceptable deal are different requirements | Proved; archived Lean check recorded |
 | [CB-SOFTSCI-004](#cb-softsci-004) | Pooling groups can reverse both within-group comparisons | Proved; archived Lean check recorded |
 | [CB-SOFTSCI-005](#cb-softsci-005) | In one published model fragment, the action determines what can be learned | Proved; archived Lean check recorded |
+
+| [CB-SEQ-004](#cb-seq-004) | Every start and phase has an exact matching answer | Proved; archived Lean check recorded |
+| [CB-SEQ-005](#cb-seq-005) | Finite prefix changes have an exactly computable global cost | Proved; archived Lean check recorded |
+| [CB-SEQ-006](#cb-seq-006) | Huge finite matches need not become an infinite match | Proved; archived Lean check recorded |
+| [CB-SEQ-007](#cb-seq-007) | Typical-scale totals differ sharply from exceptional long matches | Proved by hand; acceptance recorded in complete reading edition |
+| [CB-SEQ-008](#cb-seq-008) | A precise coding transfers patterns without preserving every property | Proved by hand; acceptance recorded in complete reading edition |
+| [CB-SEQ-009](#cb-seq-009) | A finite pattern reveals its grouping and hidden alignment | Proved by hand; acceptance recorded in complete reading edition |
+| [CB-SEQ-010](#cb-seq-010) | Grouped patterns can be richer than ordinary Thue–Morse | Proved by hand; acceptance recorded in complete reading edition |
+| [CB-SEQ-011](#cb-seq-011) | Selected digit gaps control repetition, branching and distinguishability | Proved by hand; acceptance recorded in complete reading edition |
+| [CB-SEQ-012](#cb-seq-012) | Every finite prefix can exist without one positive infinite realization | Proved by hand; named Lean components checked |
 
 ## Claim cards
 
@@ -3810,6 +3822,470 @@ No theorem-transfer dependency is asserted by this card.
 
 </details>
 
+
+<a id="cb-seq-004"></a>
+### Every start and phase has an exact matching answer
+**CB-SEQ-004 · Sequences · exact matching graphs**
+
+**Question:** How long can a prescribed Thue–Morse pattern be followed from any starting point?
+
+**What we learned:** There is an exact all-start formula and digit evaluator, plus an attained maximum for every phase and an exact classification of sharp cases.
+
+**What it lets someone do:** Compute the actual longest match and distinguish ordinary starts from exceptional long matches without scanning every path.
+
+**What we cannot conclude:** This is a target-dependent graph result, not every possible pattern search, arithmetic-progression statistic or biological measurement.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For digit-parity Thue–Morse t, the graph has edges w−1→w labelled t(w) and w−2→w labelled 1−t(w), for w≥2, and no edge 0→1. A path's kth edge must read t(k). The attained maximum L(v) has a complete closed form for all natural v, with L(0)=1. For v≥1, 3L(v)≤8v−1, with equality exactly at v=3·2^n−1, where L=8·2^n−3. The proved ten-coordinate integer digit recurrence evaluates this maximum. For the own-target graph of s_a(k)=t(k+a), shifting both target and graph, an actual maximum exists at every natural a,v. For v≥1, 3L_a(v)≤8v+5a−1, with equality iff some n≥0 has a≤2^n and v=3·2^n−a−1; then L_a(v)=8·2^n−a−3. Named endpoints are FullHeight.height_isMaximum/height_closed_form, DigitRecurrence.evaluate_isMaximum, PhaseHeight.height_isMaximum and PhaseExtremal.shifted_extremal_iff.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** The underlying binary population is attributed to the pinned September 2026 biological-unavoidability manuscript. Candidate height tables and digit representation came from the preserved source-side investigation; finite experiments were discovery evidence, not the universal proof. Digit representations are an established method.
+
+**Our contribution and attribution.** The original Samuel repository proves the actual graph-to-formula bridge, digit recurrence and complete phase-extremal necessity/attainment. This card restores that completed source programme alongside, not as an alias of, CB-SEQ-001's arithmetic-progression result.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed.
+- **Formal:** The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun.
+- **Execution:** Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** No joint logarithmic phase/start algorithm, minimal recurrence dimension or integer bit-complexity bound is claimed. Shifting the reading word in the unchanged graph is a different problem. Old candidate/pending integration notes are superseded by the linked final source and receipt.
+
+**Proof, review and related source links:**
+
+- [Complete all-start matching-height proof](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FULL-HEIGHT-PROOF.md) (proof or status).
+- [Exact digit evaluator](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/DIGIT-RECURRENCE.md) (proof or status).
+- [All-phase actual maximum](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-HEIGHT-FORMALIZATION.md) (proof or status).
+- [Sharp phase-extremal classification](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-EXTREMAL-FORMALIZATION.md) (proof or status).
+- [Integrated September source coverage](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md) (proof or status).
+- [Archived exact endpoint and axiom receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json) (formal receipt).
+
+**Connections:**
+
+- [CB-SEQ-001](#cb-seq-001): **same principle**. Both concern Thue–Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d).
+
+**Stable key:** sequences.MATCHING_ALL_START_PHASE_DIGIT. **Aliases:** Samuel T01 and T02; FullHeight; DigitRecurrence; PhaseHeight; PhaseExtremal.
+
+</details>
+
+
+<a id="cb-seq-005"></a>
+### Finite prefix changes have an exactly computable global cost
+**CB-SEQ-005 · Sequences · finite-edit robustness**
+
+**Question:** If the beginning of the target pattern changes, can its worst global matching penalty still be found exactly?
+
+**What we learned:** Yes. An explicit finite search finds the smallest additive allowance that works at every positive start, and a start inside the search attains it.
+
+**What it lets someone do:** Certify the exact robustness cost for one specified finite prefix edit, not just use a universal overestimate.
+
+**What we cannot conclude:** The theorem does not give a fast practical search or cover arbitrary edits indefinitely far along the sequence.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let m≥0 and let a binary target s agree with digit-parity Thue–Morse at every index k≥m, with no restrictions on its first m bits. Let L_s(v) be the attained maximum matching length in the original own-target BinaryAvoidance graph. Set N(m)=3·2^(m+3)+m and B_s=max_{1≤v≤N(m)}(3L_s(v)−8v), in the integers. Every positive v satisfies 3L_s(v)≤8v+B_s, some positive v≤N(m) attains equality, and an integer B is valid at every positive start iff B_s≤B. Also −1≤B_s≤8m−1. FiniteEditExact.height computes the needed maximum; FiniteEditOptimum.individual_optimum_attained and individual_additive_constant_iff supply the global finite-reduction endpoint.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** The own-target graph and unedited/phase matching results are inherited from the Samuel programme and its attributed population construction. The finite-path transport theorem, actual maximum and sharp uniform bound are suppliers, not independently recounted discoveries.
+
+**Our contribution and attribution.** The original continuation strengthens uniform allowance 8m−1 to the exact optimum for each individual edited target, with a proved finite cutoff and attainment. Five promoted modules and selected endpoint counts describe proof organization, not five distinct discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed.
+- **Formal:** The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun.
+- **Execution:** Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** The cutoff is deliberately generous and exponential in m; minimal cutoff and practical runtime are not asserted. m bounds the location of possible edits, not merely their number. No new execution is needed to retain the completed theorem.
+
+**Proof, review and related source links:**
+
+- [Finite-edit transport and uniform stability](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FINITE-EDIT-STABILITY-FORMALIZATION.md) (proof or status).
+- [Complete individual finite-edit optimum](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/REFINEMENT-INDIVIDUAL-FINITE-EDIT.md) (proof or status).
+- [Integrated September source coverage](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md) (proof or status).
+- [Archived exact endpoint and axiom receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json) (formal receipt).
+
+**Connections:**
+
+- [CB-SEQ-004](#cb-seq-004): **reused theorem**. The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness.
+
+**Stable key:** sequences.FINITE_EDIT_INDIVIDUAL_OPTIMUM. **Aliases:** Samuel T03; FiniteEditOptimum.
+
+</details>
+
+
+<a id="cb-seq-006"></a>
+### Huge finite matches need not become an infinite match
+**CB-SEQ-006 · Sequences · quantitative aperiodic avoidance**
+
+**Question:** Does matching longer and longer finite patterns imply that some infinite match exists?
+
+**What we learned:** Not in this model. A specified word's period-break data bounds its matches, yet suitable aperiodic targets have finite matches exceeding any supplied growth schedule while admitting no infinite match.
+
+**What it lets someone do:** Separate a genuine infinite-realization claim from very large finite evidence, and obtain explicit bounds when a period-break modulus is supplied.
+
+**What we cannot conclude:** There is no one target asserted to beat every growth function, nor a word-independent bound for all aperiodic targets.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** In the manuscript's own-target graph P_s, a modulus M(v,b) supplies, for each offset d≤v, an index i in [b,M(v,b)) at which s(i) differs from the label required for a constant-offset two-step edge. Equivalently, even d=2e breaks antiperiod e+1 and odd d=2e+1 breaks period e+1. With B_0=0 and B_{r+1}=M(v,B_r), every actual matching prefix from v has length ell<B_{v+1}. If M(v,b)≤b+R, then ell<(v+1)R. Every non-eventually-periodic target has such a modulus, with existence using choice. Conversely, for every f:Nat→Nat there exists a non-eventually-periodic target s, with no infinite matching path in P_s, and strictly increasing starts v_j having finite matching prefixes longer than f(v_j). The target may depend on f. Named audited endpoints include QuantitativeModulus.prefix_length_lt_clock, prefix_length_lt_uniform_windows and SlowAvoidance.arbitrarily_slow_avoidance.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** The own-target avoidance construction belongs to the September classification programme; its eventually-periodic positive direction credits Alexander. Iterated bounds and finite-state periodicity are established principles. The exact source-specific modulus and slow-construction claims must not be represented as a universal graph theorem.
+
+**Our contribution and attribution.** The original source makes both sides precise: an explicit bound from supplied failure-of-periodicity data and an arbitrary prescribed slow-growth counterexample to word-independent quantitative inference.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed.
+- **Formal:** The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun.
+- **Execution:** Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** A supplied modulus gives an explicit clock; merely knowing a word is aperiodic is not a uniform effective input representation. The construction uses a target-dependent graph, not one graph avoiding every aperiodic target. General biological acquisition and arbitrary graph recognition are separate.
+
+**Proof, review and related source links:**
+
+- [Quantitative modulus theorem and exact source condition](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/QUANTITATIVE-MODULUS-THEOREM.md) (proof or status).
+- [Arbitrarily slow avoidance theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/SLOW-AVOIDANCE-FORMALIZATION.md) (proof or status).
+- [Original classification manuscript](https://github.com/avg-netizen/biological-unavoidability/blob/3d6175e3e23f67bd68e7be591b5a9a6d04e496a3/paper.md) (proof or status).
+- [Integrated September source coverage](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md) (proof or status).
+- [Archived exact endpoint and axiom receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json) (formal receipt).
+
+**Connections:**
+
+No theorem-transfer dependency is asserted by this card.
+
+**Stable key:** sequences.QUANTITATIVE_AND_SLOW_AVOIDANCE. **Aliases:** Samuel T07; QuantitativeModulus; SlowAvoidance.
+
+</details>
+
+
+<a id="cb-seq-007"></a>
+### Typical-scale totals differ sharply from exceptional long matches
+**CB-SEQ-007 · Sequences · exact aggregate matching heights**
+
+**Question:** What happens when we total matching lengths across all starts rather than choose the most extreme one?
+
+**What we learned:** An exact formula gives the total below every power of two, and a digit algorithm computes the total below any cutoff. The mean grows logarithmically even though selected starts have linear height.
+
+**What it lets someone do:** Calculate exact aggregate behavior at large cutoffs without enumerating every starting point.
+
+**What we cannot conclude:** A mean alone is not a concentration bound, a typical-value theorem or a limiting distribution.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; acceptance recorded in complete reading edition.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For the actual attained matching height L(v) of CB-SEQ-004, let A_k=sum_{0≤v<2^k} L(v). Then A_0=1, A_1=1, A_2=6, and for k≥3, A_k=29(3k+1)2^k/72−(k+3)−(7/9)(−1)^k. Consequently A_k/2^k is asymptotic to (29/24)k. The inherited ten-coordinate digit representation yields a fixed-size algorithm computing sum_{0≤v<N}L(v) in O(log N) integer-matrix operations for positive N, with zero cutoff handled directly. The hand proof includes a finite matrix-annihilator identity and exact base cases; it is not extrapolation from numerical totals.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** The regular-sequence summation framework is established in Allouche–Shallit and Heuberger–Krenn–Lechner. The exact inherited recurrence is already proved in the Samuel source. General digit summation is not claimed as a newly invented method.
+
+**Our contribution and attribution.** The October hand proof derives and checks the exact coefficients and arbitrary-cutoff update for this specific graph height. It adds aggregate information beyond the already completed sharp maximum analysis.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete reading edition contains actual mathematical arguments and explicitly records independent AI hand acceptance. Its archival README says not all original separately hashed proof/checker/review files were recovered. This card does not invent those missing receipts or claim a new review.
+- **Formal:** No kernel verification of this hand result is claimed. A separately checked inherited recurrence or another sequence theorem does not automatically formalize this consequence.
+- **Execution:** The archive reports exact supplementary controls where relevant. They do not replace the uniform hand proof; original computation banks are not reconstructed or rerun here.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** Second moments, concentration and limiting distributions remain separate proposed questions. O(log N) counts fixed-size integer operations, not total bit complexity. The inherited formal recurrence does not make this new summation argument kernel-verified.
+
+**Proof, review and related source links:**
+
+- [Complete hand proof: exact dyadic average and cutoff algorithm](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Thue-Morse-Hand-Proofs.md) (proof or status).
+- [Inherited exact digit recurrence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/DIGIT-RECURRENCE.md) (proof or status).
+- [Reading-edition acceptance record and mandatory successor corrections](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md) (proof or status).
+
+**Connections:**
+
+- [CB-SEQ-004](#cb-seq-004): **reused theorem**. Uses the exact graph-to-height digit recurrence, not a fitted recurrence or the unrelated arithmetic-progression formulas.
+
+**Stable key:** sequences.MATCHING_HEIGHT_AGGREGATE. **Aliases:** Thue–Morse dyadic matching-height average; Arbitrary-cutoff height sum.
+
+</details>
+
+
+<a id="cb-seq-008"></a>
+### A precise coding transfers patterns without preserving every property
+**CB-SEQ-008 · Sequences · constrained juggling and enumeration**
+
+**Question:** What survives when a binary pattern is turned into a juggling schedule?
+
+**What we learned:** An explicit coding preserves constrained matching lengths exactly, while equal versus unequal block lengths determine whether the prescribed-prefix generating function is rational.
+
+**What it lets someone do:** Use a fully specified encoding to transfer a theorem and understand why restricting a freely concatenable system changes its counting law.
+
+**What we cannot conclude:** This is not a new unrestricted juggling-height bound, an unrestricted counting theorem, or a practical compression result.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; acceptance recorded in complete reading edition.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** At the three-ball ground state, encode 0 by primitive block (3) and 1 by (4,2). Expand each original matching-graph edge into its own code path, retaining original vertices and distinct internal vertices. Starting only at an original v, the attained constrained throw-match height is H(v)=W(L(v)), where W(2m)=3m and W(2m+1)=3m+1+t(m). For v≥1, H(v)≤4v with equality exactly v=3·2^(2r)−1. Separately, choose two distinct primitive loops at one fixed b-ball state, with positive beat lengths a,c, and count exactly one word for each Thue–Morse block-prefix length, including the empty prefix. Its series F_{a,c}(z) equals [1+(z^a+z^c)/2]/(1−z^(a+c))+(z^a−z^c)P(z^(a+c))/2, where P(x)=product_{r≥0}(1−x^(2^r)). If a=c then F=1/(1−z^a); if a≠c the unit circle is a natural boundary. For b≥2, F(b^(−s))−1 has boundary Re(s)=0.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** Primitive juggling-state coding and unrestricted enumeration are established, including Chung–Graham, Elsner–Klyve–Tou and Tou. The Thue–Morse product's natural-boundary theory is classical, as credited to Allouche's discussion. This is a specified application, not a contradiction to their unrestricted rationality results.
+
+**Our contribution and attribution.** The October source supplies an exact observation-preserving constrained-graph adapter and the explicit prefix-series formula, with the different graph, physical-height and enumeration objects kept separate.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete reading edition contains actual mathematical arguments and explicitly records independent AI hand acceptance. Its archival README says not all original separately hashed proof/checker/review files were recovered. This card does not invent those missing receipts or claim a new review.
+- **Formal:** No kernel verification of this hand result is claimed. A separately checked inherited recurrence or another sequence theorem does not automatically formalize this consequence.
+- **Execution:** The archive reports exact supplementary controls where relevant. They do not replace the uniform hand proof; original computation banks are not reconstructed or rerun here.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** Physical throws remain at most 4 and the routine can continue indefinitely; finite H belongs to the additional constraint graph. The prefix language is not closed under concatenation. Identifying equal physical states must not silently collapse distinct graph vertices. Broader scheduling or compression benefits require separate contracts.
+
+**Proof, review and related source links:**
+
+- [Complete juggling adapter and prefix-series proof](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Thue-Morse-Hand-Proofs.md) (proof or status).
+- [Historical application map with precise limitations](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Prioritized-Thue-Morse-Connections.md) (proof or status).
+- [Reading-edition acceptance record and mandatory successor corrections](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md) (proof or status).
+
+**Connections:**
+
+- [CB-SEQ-004](#cb-seq-004): **proved adapter**. The retained-vertex edge expansion proves H(v)=W(L(v)); it transfers this exact matching observation, not arbitrary graph or juggling properties.
+
+**Stable key:** sequences.CONSTRAINED_JUGGLING_PREFIX_ENUMERATION. **Aliases:** Constrained three-ball Thue–Morse coding; Primitive-loop prefix natural boundary.
+
+</details>
+
+
+<a id="cb-seq-009"></a>
+### A finite pattern reveals its grouping and hidden alignment
+**CB-SEQ-009 · Sequences · grouped hierarchy recovery**
+
+**Question:** How long must a raw pattern be before its hidden block scale and grouping become identifiable?
+
+**What we learned:** There are sharp finite window lengths for every fixed grouping parameter and hierarchy level, including exact exceptional small cases.
+
+**What it lets someone do:** Recover a grouping parameter and legal construction phase without being handed the block boundaries.
+
+**What we cannot conclude:** The absolute origin is not recovered, and no single finite window distinguishes every unbounded grouping parameter.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; acceptance recorded in complete reading edition.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For n≥1 let u_n be the fixed point starting 0 of tau_n:0→0^n1^n,1→1^n0^n. At known level k≥1, the sharp worst-case raw window length determining its phase modulo (2n)^k is D_n(k)=(2n)^(k−1)(4n^2−n)+1. The least length P_n such that no length-P_n factor of u_n occurs in any u_m with m≠n is P_1=9 and P_n=4n+1 for n≥2. The joint threshold is max(P_n,D_n(k)). The accepted common-factor supplier gives, for s<t, maximum shared factor length C(1,2)=8, C(1,t)=4 for t≥3, C(s,2s)=4s for s≥2, and C(s,t)=3s in the remaining s≥2 cases. These are unknown-occurrence-position observations, not supplied-cut queries.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** Recognizability and synchronization have established antecedents, including Durand–Leroy and Klouda–Medkova. These exact grouped-family thresholds do not establish identification of arbitrary written substitution rules; distinct rules can generate the same anchored word.
+
+**Our contribution and attribution.** The October reading edition proves the sharp phase thresholds and parameter/joint corollaries. The common-factor formula is explicitly attributed to its accepted companion review, SHA-256 834eacc2b027a8beef9a42ae27592b1aec3fffd878e7d22b637e41414c6d77bd. That original review body is not reconstructed here.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete reading edition contains actual mathematical arguments and explicitly records independent AI hand acceptance. Its archival README says not all original separately hashed proof/checker/review files were recovered. This card does not invent those missing receipts or claim a new review.
+- **Formal:** No kernel verification of this hand result is claimed. A separately checked inherited recurrence or another sequence theorem does not automatically formalize this consequence.
+- **Execution:** The archive reports exact supplementary controls where relevant. They do not replace the uniform hand proof; original computation banks are not reconstructed or rerun here.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** The separately hashed original common-factor review remains a source-recovery item, not a newly open theorem. Unique phase is not unique occurrence or absolute origin. For n≥L, all groups have the same length-L inventory of words with at most one change, preventing one finite universal parameter window.
+
+**Proof, review and related source links:**
+
+- [Complete grouped hierarchy recovery and supplier provenance](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md) (proof or status).
+- [Reading-edition acceptance record and mandatory successor corrections](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md) (proof or status).
+
+**Connections:**
+
+No theorem-transfer dependency is asserted by this card.
+
+**Stable key:** sequences.GROUPED_PHASE_PARAMETER_IDENTIFICATION. **Aliases:** Grouped whole-motif recovery; Grouped common-factor formula; D_n(k) and P_n thresholds.
+
+</details>
+
+
+<a id="cb-seq-010"></a>
+### Grouped patterns can be richer than ordinary Thue–Morse
+**CB-SEQ-010 · Sequences · grouped factor-count comparison**
+
+**Question:** Which grouped substitution produces more distinct short patterns?
+
+**What we learned:** Exact formulas compare all grouping parameters at any fixed length. Ordinary Thue–Morse is not always the richest member of this larger grouped family.
+
+**What it lets someone do:** Perform a complete fixed-scale comparison rather than infer a winner from a finite arbitrary parameter sample.
+
+**What we cannot conclude:** The result does not give a closed formula for the best grouping at every scale or classify all balanced binary substitutions.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; acceptance recorded in complete reading edition.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For u_n fixed by 0→0^n1^n,1→1^n0^n and p_n(L) its number of distinct contiguous length-L factors, p_n(0)=1; p_n(L)=2L for 1≤L≤n+1; p_n(L)=4L−2n−2 for n+2≤L≤2n. For L≥2n+1, set k=ceil(L/n), delta=(L−1) mod n; then p_n(L)=(n−delta)P_{2n}(k)+delta P_{2n}(k+1), where P_b counts factors in the established base-b digit-sum-parity word. Its exact all-length formula is supplied and credited in the edition. At fixed L≥1, all n≥L have exactly the factors with at most one change, so n=1,…,L represent every grouped inventory. At L=33, n=3 has 98 distinct factors, while ordinary Thue–Morse has 96.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** The chunk companion is the known generalized digit-sum family. Its complexity formulas are credited to Starosta and Peltomäki–Salo; marked-image counting is an established method, including Frid. The contribution does not claim those precursor formulas as new.
+
+**Our contribution and attribution.** The hand proof gives the exact phase-disjoint transfer to the raw grouped word and a finite all-parameter comparison at every fixed scale, including a concrete correction to the idea that ordinary Thue–Morse always maximizes richness.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete reading edition contains actual mathematical arguments and explicitly records independent AI hand acceptance. Its archival README says not all original separately hashed proof/checker/review files were recovered. This card does not invent those missing receipts or claim a new review.
+- **Formal:** No kernel verification of this hand result is claimed. A separately checked inherited recurrence or another sequence theorem does not automatically formalize this consequence.
+- **Execution:** The archive reports exact supplementary controls where relevant. They do not replace the uniform hand proof; original computation banks are not reconstructed or rerun here.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** No all-L closed maximizing-parameter classification or general balanced-rule census is inferred. The selected-digit family in CB-SEQ-011 is different and may have a different maximizing result without contradiction.
+
+**Proof, review and related source links:**
+
+- [Grouped factor-count formula and complete finite comparison](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md) (proof or status).
+- [Reading-edition acceptance record and mandatory successor corrections](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md) (proof or status).
+
+**Connections:**
+
+- [CB-SEQ-009](#cb-seq-009): **same principle**. Uses the same grouped-word family and phase structure, but this card concerns factor counts rather than recovery of an unknown grouping parameter.
+
+**Stable key:** sequences.GROUPED_FACTOR_COMPLEXITY_COMPARISON. **Aliases:** Grouped tau_n factor complexity; L=33 grouped richness comparison.
+
+</details>
+
+
+<a id="cb-seq-011"></a>
+### Selected digit gaps control repetition, branching and distinguishability
+**CB-SEQ-011 · Sequences · arbitrary selected binary digits**
+
+**Question:** How does choosing which binary digits to count change an infinite pattern?
+
+**What we learned:** Exact formulas determine its factor counts and strongest repetitions; a complete branching-pattern classification explains the changes, and the full count function identifies the chosen digit positions.
+
+**What it lets someone do:** Specify a digit-selection rule and derive its combinatorial behavior, including the exact scale at which two choices become distinguishable.
+
+**What we cannot conclude:** This is not a classification of every automatic or balanced-substitution sequence, and arbitrary noncomputable selections do not become algorithms.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; acceptance recorded in complete reading edition.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let S={0=s_0<s_1<…} be any infinite set of binary positions and x_S(r) the XOR of r's bits in S. Put A_i=2^(s_i), A_0=1. Its complexity satisfies p_S(0)=1; p_S(L)=2L for 1≤L≤A_1+1; for i≥1, p_S(L)=4L−2(A_i−A_{i−1}+2) on A_i+2≤L≤2A_i−A_{i−1}+1, and p_S(L)=2L+2(A_i−1) on 2A_i−A_{i−1}+2≤L≤A_{i+1}+1. These ranges cover all positive L; differences at L≥2 are 2 or 4. The exact critical exponent is sup_{i≥1}2^(s_i−s_{i−1}), including infinity. Every nonempty bispecial factor has the edition's unique desubstitution description as an alternating-word image, with full extension classification; strong lengths are 2^(s_{i+1}), weak lengths 2^(s_{i+1}+1)−2^(s_i). For L≥1, 2L≤p_S(L)≤p_TM(L). If S,T first differ in membership at position r≥1, their first differing count is at L=2^r+2, differing by 2, so the full complexity function determines S. For finite mask m with S_m={p:p AND m=0}, E=2^(m+1); masks first differing in bit r first differ in count at L=2^(2^r)+2.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** Cloitre v2 already gives effective all-level factor-complexity recurrence and finite seeds, so this must not be advertised as solving an untouched v1 open question. Here mask m equals v2 iterate m+1. Equally spaced selections and their complexity/exponent special cases are established in generalized digit-sum work by Starosta, Peltomäki–Salo and Blondin-Massé–Brlek–Glen–Labbé. Cassaigne/Klouda special-factor methods are antecedents.
+
+**Our contribution and attribution.** The October collection supplies explicit seed-free arbitrary-infinite-selection formulas, a repetition theorem allowing varying gaps, a complete bispecial/extension classification, and comparison/identifiability corollaries. This is one grouped source programme, not a count of separately novel discoveries.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete reading edition contains actual mathematical arguments and explicitly records independent AI hand acceptance. Its archival README says not all original separately hashed proof/checker/review files were recovered. This card does not invent those missing receipts or claim a new review.
+- **Formal:** No kernel verification of this hand result is claimed. A separately checked inherited recurrence or another sequence theorem does not automatically formalize this consequence.
+- **Execution:** The archive reports exact supplementary controls where relevant. They do not replace the uniform hand proof; original computation banks are not reconstructed or rerun here.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** Historical priority of the arbitrary-S formulation remains unassessed. The formula is symbolic for noncomputable S; finite-mask evaluation has an integer-operation bound, not a general computability miracle. Unique canonical bispecial description is not unique occurrence. A single factor count does not identify a factor language, and this family differs from grouped tau_n.
+
+**Proof, review and related source links:**
+
+- [Complete complexity, exponent, bispecial and comparison proofs with prior correction](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md) (proof or status).
+- [Reading-edition acceptance record and mandatory successor corrections](https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md) (proof or status).
+- [Cloitre's explicitly identified revised source](https://arxiv.org/abs/2604.06243v2) (proof or status).
+
+**Connections:**
+
+- [CB-SEQ-010](#cb-seq-010): **same principle**. Both compare factor complexity, but their families differ: Thue–Morse is maximal within the selected-digit family, not within all grouped tau_n words.
+
+**Stable key:** sequences.SELECTED_DIGIT_COMPLETE_INVARIANTS. **Aliases:** Selected-bit mask family; Arbitrary selected-digit complexity; Gap critical exponent; Bispecial-factor classification; Selected-set identifiability.
+
+</details>
+
+
+<a id="cb-seq-012"></a>
+### Every finite prefix can exist without one positive infinite realization
+**CB-SEQ-012 · Sequences · structured Collatz valuation codes**
+
+**Question:** Can one positive Collatz start follow a fixed Thue–Morse arrangement of valuation blocks forever?
+
+**What we learned:** Only if that same start lies on a cycle. In two specified growing code families, even that exception is impossible, although every finite prefix remains positively realizable.
+
+**What it lets someone do:** Exclude a concrete infinite-code construction using its repetition structure rather than an arbitrary computation cutoff.
+
+**What we cannot conclude:** This does not prove Collatz, exclude arbitrary aperiodic valuation codes, or rule out every nontrivial positive cycle.
+
+**Kind:** theorem. **Mathematical status:** Proved by hand; named Lean components checked.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Use the fully accelerated odd map U(n)=(3n+1)/2^(v_2(3n+1)) on positive odd integers. Let t be ordinary binary Thue–Morse starting 0 and let B_0,B_1 be any fixed nonempty finite words of positive integer valuations. If B_{t_0}B_{t_1}… is the exact valuation sequence of one positive odd N, then U^j(N)=N for some j>0. No equal-codeword-length or average-valuation hypothesis is assumed. The special code B_0=(1),B_1=(2), and every fixed pair B_0=1^p3,B_1=1^q3 with p,q≥3, admit no positive realization because their selected returns strictly grow. The cycle exception is essential: B_0=B_1=(2),N=1 realizes the general premise. Equal length-2d valuation prefixes returning at accelerated time 3d with distinct states require 2·32^d<27^d(N+1); balanced Thue–Morse returns provide unbounded d. The full theorem is analytic, with narrower formal collision/numerical components.
+
+**Origin.** project posed. A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions.
+
+**Prior work.** Finite valuation/parity congruences, affine cycle arithmetic and finite-word realizability are classical. The public archive makes no certified novelty claim for the complete fixed-morphism statement. Rational-base 3/2 Thue–Morse is a different sequence; an unrecovered rational-input continuation or prior-work correction is not silently substituted for this source.
+
+**Our contribution and attribution.** The existing September source and coordinating review reconstruct the full fixed-word coding, same-start size/congruence contradiction and exact cycle-exclusion subclasses. This resolves the older specific 2-adic anchor's positive-membership gate negatively, not the general Collatz problem.
+
+**Evidence, kept separate:**
+
+- **Hand:** The public MODERN_CONTRIBUTIONS review reconstructs the complete accelerated-word collision, balanced-prefix and cycle-exclusion argument. This card recovers that scoped coordinating review; it is not a fresh independent review.
+- **Formal:** Archived PrefixCollision and AffineRepetition modules check narrower actual-shortcut and numerical components. The full odd-word/acceleration bridge, height estimate and Thue–Morse coding theorem remain analytic, not an end-to-end Lean proof.
+- **Execution:** The archive records finite indexing/valuation controls and narrow formal checks. Finite controls are supplemental, not the proof of the infinite theorem; none were rerun.
+- **Empirical:** An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied.
+
+**Novelty:** Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.
+
+**Separate downstream work (does not reopen this result):** Do not relabel the superseded anchor's positive-membership problem as unresolved. Conversely, no universal orbit coverage, rational-input extension, arbitrary morphism realization theorem beyond the stated fixed binary encoding, or end-to-end Lean acceptance follows. The p,q here are valuation-block lengths, not the unrelated generalized binary-substitution parameters.
+
+**Proof, review and related source links:**
+
+- [Complete fixed Thue–Morse valuation proof](https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/proof-search/disproof/TM_Prefix_Return_Exclusion_2026-09-05.md) (proof or status).
+- [Actual-body coordinating reconstruction and formal boundary](https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/research-review/consolidation-2026-09-05/MODERN_CONTRIBUTIONS.md) (hand review).
+- [Original claim manifest](https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/publication/claims.json) (proof or status).
+- [Exact archived verification scope](https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/verification/Blind_Recurrence_Verification_2026-09-05.md) (formal receipt).
+
+**Connections:**
+
+- [CB-SEQ-006](#cb-seq-006): **same principle**. Both expose a finite-prefix/infinite-realization gap, in different graph/arithmetic models; neither theorem is used as a proof supplier of the other.
+
+**Stable key:** sequences.COLLATZ_FIXED_TM_VALUATION_OBSTRUCTION. **Aliases:** F-TM-POSITIVE-EXCLUSION-001; Fixed nonerasing Thue–Morse valuation morphisms.
+
+</details>
+
 ## What the connection labels mean
 
 - **Proved adapter:** a proved link that preserves the needed assumptions and observations. Its hand/formal evidence level still matters.
@@ -3823,10 +4299,10 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 75 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 84 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
-- Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.
+- Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
 - Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
