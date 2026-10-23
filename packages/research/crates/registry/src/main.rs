@@ -95,7 +95,9 @@ fn build_certificates(root:&std::path::Path)->Result<()> {
 
 /// Compile either the complete profile, a diagnostic prefix, or one actual
 /// dependency closure. Scoped success never substitutes for full-profile PASS.
-fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
+fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
+ let reuse=args.iter().any(|a|a=="--reuse-retained");
+ args.retain(|a|a!="--reuse-retained");
  let plan=prepare_lean(root)?;
  let lean=root.join("lean").canonicalize().map_err(|e|e.to_string())?;
  let out=lean.join(".lake/build/lib/lean");
@@ -104,7 +106,7 @@ fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
   []=>(None,None),
   [flag,name] if flag=="--target" => (None,Some(name.as_str())),
   [n]=>(Some(n.parse::<usize>().map_err(|_|"invalid module cap".to_owned())?),None),
-  _=>return Err("usage: build [module-cap|--target Module]".into()),
+  _=>return Err("usage: build [--reuse-retained] [module-cap|--target Module]".into()),
  };
  let all=plan["order"].as_array().ok_or("missing order")?.iter()
     .map(|v|v.as_str().map(str::to_owned).ok_or("non-string module".to_owned())).collect::<Result<Vec<_>>>()?;
@@ -117,6 +119,8 @@ fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
  fs::create_dir_all(root.join("build")).map_err(|e|e.to_string())?;
  let receipt_path=root.join(if target.is_some(){"build/lean-target-build.json"}else{"build/lean-build.json"});
  let mut objects=Vec::new();
+ let mut reused=0usize;
+ let mut cache=if reuse {Some(research_commons_package::object_cache::RetainedObjects::open(root,&plan)?)} else {None};
  let mut receipt=json!({"status":"RUNNING","compiler_exit_success":false,"complete_profile":false,
    "target":target,"selected_source_modules":source_count,"full_profile_source_modules":all.len(),
    "source_graph_sha256":plan["source_graph_sha256"],"module_hashes":plan["module_hashes"],
@@ -131,6 +135,8 @@ fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
   fs::create_dir_all(object.parent().ok_or("no object parent")?).map_err(|e|e.to_string())?;
   println!("LEAN {}/{} {}",i+1,names.len(),name);
   let source=lean.join(".generated").join(&relative);
+  let cached=cache.as_ref().map(|c|c.restore(name)).transpose()?.unwrap_or(false);
+  if cached {reused+=1;println!("REUSE RETAINED {name}");} else {
   let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false"])
     .arg("--root=.generated").arg("-o").arg(&object).arg(&source).current_dir(&lean)
     .stdin(Stdio::null()).status().map_err(|e|format!("lean spawn: {e}"))?;
@@ -138,8 +144,10 @@ fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
    receipt["status"]=json!("FAILED");receipt["failed_module"]=json!(name);write_receipt(&receipt)?;
    return Err(format!("Lean failed on {name}: {status}"));
   }
-  objects.push(json!({"module":name,"sha256":research_commons_package::sha256(&fs::read(object).map_err(|e|e.to_string())?)}));
-  receipt["objects"]=json!(objects);write_receipt(&receipt)?;
+  if let Some(c)=cache.as_mut(){c.capture(name)?;}
+  }
+  objects.push(json!({"module":name,"reused_retained_object":cached,"sha256":research_commons_package::sha256(&fs::read(object).map_err(|e|e.to_string())?)}));
+  receipt["objects"]=json!(objects);receipt["reused_retained_objects"]=json!(reused);write_receipt(&receipt)?;
  }
  let mut owned_audit=false;
  if complete {
@@ -153,7 +161,7 @@ fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
   owned_audit=true;
  }
  receipt["status"]=json!("COMPLETE");receipt["compiler_exit_success"]=json!(true);
- receipt["compiled_modules"]=json!(names.len());receipt["complete_profile"]=json!(complete);
+ receipt["compiled_modules"]=json!(names.len()-reused);receipt["checked_or_reused_modules"]=json!(names.len());receipt["complete_profile"]=json!(complete);
  receipt["owned_axiom_audit_passed"]=json!(owned_audit);
  receipt["historical_acceptance_transferred"]=json!(false);receipt["all_claims_formalized"]=json!(false);
  write_receipt(&receipt)?;println!("{receipt}");Ok(())

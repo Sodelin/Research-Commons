@@ -54,13 +54,14 @@ jobs:
           name: portable-rust-evidence
           path: |
             packages/research/build/
+            !packages/research/build/retained-objects/**
             packages/research/Cargo.lock
           if-no-files-found: warn
   lean:
     concurrency:
       group: portable-research-package-20261023
       cancel-in-progress: false
-    name: Fresh coherent retained Lean profile (not all 116 formalizations)
+    name: Coherent retained Lean profile (not all 116 formalizations)
     needs: rust
     runs-on: ubuntu-24.04
     timeout-minutes: 180
@@ -88,16 +89,31 @@ jobs:
         run: |
           lake update
           lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
       - name: Compile actual module order and aggregate
-        run: cargo run --locked -p research-commons-package -- build
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained
       - name: Kernel-check Rust-emitted positive and negative certificates
         run: cargo run --locked -p research-commons-package -- check-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: portable-lean-evidence
           path: |
             packages/research/build/
+            !packages/research/build/retained-objects/**
             packages/research/lean/.generated/build-plan.json
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
@@ -138,6 +154,7 @@ jobs:
           name: portable-certificate-evidence
           path: |
             packages/research/build/
+            !packages/research/build/retained-objects/**
             packages/research/certificates/.generated/build-plan.json
             packages/research/certificates/lake-manifest.json
           if-no-files-found: warn
@@ -172,16 +189,31 @@ jobs:
         run: |
           lake update
           lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
       - name: Compile the actual receiver dependency closure in the full package context
-        run: cargo run --locked -p research-commons-package -- build --target OriginalCodeChartReceiver
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalCodeChartReceiver
       - name: Check actual Code fields, returned vectors, physical banks and complete exclusions
         run: cargo run --locked -p research-commons-package -- check-source-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: portable-original-source-evidence
           path: |
             packages/research/build/
+            !packages/research/build/retained-objects/**
             packages/research/lean/.generated/build-plan.json
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn

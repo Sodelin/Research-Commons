@@ -6,6 +6,8 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 
+pub mod object_cache;
+
 pub type Result<T> = std::result::Result<T, String>;
 pub fn sha256(bytes: &[u8]) -> String { format!("{:x}", Sha256::digest(bytes)) }
 pub fn read_json(path: &Path) -> Result<Value> {
@@ -203,6 +205,9 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
         if !seen.contains(name){return Err(format!("root absent: {name}"));}
         imports.push_str(&format!("import {name}\n"));
     }
+    // Retained audit modules write their public JSON receipt relative to the
+    // compiler workspace. Reproduce that original directory without editing proofs.
+    fs::create_dir_all(root.join("evidence")).map_err(|e|e.to_string())?;
     fs::create_dir_all(&output).map_err(|e|e.to_string())?;
     for (_,path,body) in &sources {
         let p=output.join(path);fs::create_dir_all(p.parent().ok_or("no parent")?).map_err(|e|e.to_string())?;
