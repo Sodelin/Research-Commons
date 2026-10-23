@@ -1,5 +1,5 @@
 {
-  "board_version": "1.6-sequence-source-recovery",
+  "board_version": "1.7-feedback-source-recovery",
   "claims": [
     {
       "accepted_artifacts": [
@@ -6197,6 +6197,494 @@
           "detail": "An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied."
         }
       }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved. This is recovery of existing completed work, not a new theorem or historical-priority claim; established source models and methods retain their attribution.",
+      "remaining_obligation": "None for this exact completed mathematical claim. Separately stated validation, formalization or broader-source work does not reopen it.",
+      "evidence_basis": "Bounded source recovery on 23 October 2026: the actual completed proof and Lean bodies, reviews and archived receipt/logs were read at Samuel repository commit e2502c82ab9a77c00543932f775a71e5374221f7. This card adds no new proof, compiler execution, independent whole-proof review or empirical validation.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A declared source-specific question within the feedback/ancestry programme. Motivation by prior biology and ancestry literature does not establish that this exact statement was a published open problem."
+      },
+      "id": "CB-FEEDBACK-001",
+      "canonical_key": "september.FEEDBACK.RECURRENT_ANCESTRY_COMPONENTS",
+      "title": "Recurring reproductive links determine an ancestry property under explicit mixing",
+      "programme": "Feedback models · recurrent ancestry",
+      "plain_language": {
+        "question": "When do recurring links between reproductive communities determine long-run ancestry?",
+        "what_we_learned": "Under strong local mixing and no lineage extinction, an infinite group has the identical-ancestors property (IAP) exactly when all but finitely many members lie in one recurrent strongly connected component.",
+        "what_it_lets_someone_do": "Classify the stated ancestry property and construct connected, ancestry-convex component tails without confusing recurring contact with a measured species boundary.",
+        "what_cannot_conclude": "The mixing premise is substantial and is not almost surely satisfied by ordinary finite Wright–Fisher reproduction. This does not identify empirical species or maximal clusters."
+      },
+      "exact_statement_and_scope": "A finite nonempty deme set, organisms indexed by natural numbers with a separate generation map, finite generation prefixes, occupied cohorts in every deme, one-generation parent edges, same-deme parent coverage, and one uniform positive finite lag giving complete within-deme dissemination from every organism are assumed. Ancestry means a nonempty parent path. The identical-ancestors property (IAP, the source's identical-ancestor-point axiom) says that each member of a set has either finitely many descendants or finitely many non-descendants within that set. For every infinite subset, IAP holds iff it is contained modulo finitely many members in one recurrent strongly connected component; that component is unique. Sparse subsets are allowed: this is not equality with the whole component. Whole-history IAP is equivalent to recurrent strong connectivity. A common-cutoff component tail is infinite, connected, ancestrally convex and reflecting. Concrete one-way and bidirectional examples and uniqueness are included.",
+      "prior_work": "Alexander's strict-ancestry and specieslike-cluster predicates, structured-pedigree ancestry mixing, and temporal recurrence/reachability are antecedents. The manuscript explicitly presents a newly posed application question, not an established Alexander conjecture with this wording.",
+      "our_contribution": "The existing package supplies the exact recurrent-component subset classification and its formal interface, not a universal biological theory. This card restores its already completed status.",
+      "accepted_artifacts": [
+        {
+          "label": "Completed manuscript and exact ancestry assumptions",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/MANUSCRIPT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual recurrent-component proof source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryMixing.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Uniqueness and concrete examples",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryExamples.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Internal review and corrections",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/REVIEW-NOTES.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Historical aggregate receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json",
+          "role": "formal_receipt"
+        },
+        {
+          "label": "Build and dependency boundaries",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/VERIFICATION.md",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "The conditional Borel–Cantelli adapter and nonuniform per-organism lag sharpening are written but not checked generalized interfaces. Ordinary independent two-parent Wright–Fisher reproduction with population size at least two does not satisfy the theorem's universal no-extinction/dissemination premise almost surely. No finite-data classifier, maximality theorem or empirical-species conclusion follows. B02/B03 frequency recursions do not automatically instantiate this pedigree.",
+      "aliases": [
+        "Samuel B01",
+        "AncestryMixing",
+        "AncestryExamples"
+      ],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-005",
+          "relation_type": "same_principle",
+          "detail": "Both discuss the identical-ancestors property, but the later actual-law result uses an extinction-permitting synchronization bridge rather than this theorem's no-extinction premise."
+        }
+      ],
+      "completion": {
+        "display": "Proved by hand; named historical Lean scope checked",
+        "formal_verification": "kernel_checked_selected_historical_release",
+        "independent_review": "accepted_scoped_internal_ai_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "A missing fresh build, unformalized extension or broader model does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_internal_ai_review",
+          "detail": "The completed manuscript and internal AI review were recovered; this indexing pass read the actual arguments and source but does not assert a new independent whole-proof acceptance."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_historical_release",
+          "detail": "Selected endpoints in AncestryMixing and AncestryExamples have the archived exit-0 receipt and standard-axiom reports. The five-new-module aggregate records 10 reports for AncestryMixing and 6 for AncestryExamples; auxiliary written extensions are not thereby formalized."
+        },
+        "execution": {
+          "status": "archived_local_build_evidence",
+          "detail": "The 25 September 2026 aggregate local receipt records Lean 4.33.1 with Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and exit-0 compilation of seven custom modules using cached upstream dependencies. Its 72 selected reports include 53 in five new modules and 19 in two unchanged dependencies, not 72 new discoveries. The saved receipt and selected logs were read; no rerun, clean-machine reconstruction or new hosted-CI check occurred."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the explicitly defined mathematical population model. No empirical speciation, biological species identification or measured gene-culture mechanism is established."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved. This is recovery of existing completed work, not a new theorem or historical-priority claim; established source models and methods retain their attribution.",
+      "remaining_obligation": "None for this exact completed mathematical claim. Separately stated validation, formalization or broader-source work does not reopen it.",
+      "evidence_basis": "Bounded source recovery on 23 October 2026: the actual completed proof and Lean bodies, reviews and archived receipt/logs were read at Samuel repository commit e2502c82ab9a77c00543932f775a71e5374221f7. This card adds no new proof, compiler execution, independent whole-proof review or empirical validation.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A declared source-specific question within the feedback/ancestry programme. Motivation by prior biology and ancestry literature does not establish that this exact statement was a published open problem."
+      },
+      "id": "CB-FEEDBACK-002",
+      "canonical_key": "september.FEEDBACK.CULTURAL_POLARIZATION_NEUTRAL_HOMOGENIZATION",
+      "title": "Stable cultural differences can coexist with neutral-marker homogenization",
+      "programme": "Feedback models · culture and neutral exchange",
+      "plain_language": {
+        "question": "Does persistent cultural difference necessarily preserve a neutral genetic difference?",
+        "what_we_learned": "No. The stated majority-of-three cultural dynamics can remain polarized while a positively bounded residual exchange makes the neutral-marker difference decay geometrically.",
+        "what_it_lets_someone_do": "Separate persistence of one type of difference from persistence of another in a fully specified coupled recurrence.",
+        "what_cannot_conclude": "This is one-way cultural control of exchange, not a reciprocal gene-culture or epigenetic model, an ancestry theorem or evidence of empirical speciation."
+      },
+      "exact_statement_and_scope": "Use F(x)=3x²−2x³ and the declared symmetric two-coordinate mixture. For 0<m<1/8 and supplied 0<d<1 satisfying (1−2m)d²=1−6m, the polarized point ((1+d)/2,(1−d)/2) is locally asymptotically stable in the full two-dimensional system. The checked rational witness m=7/78,d=3/4 gives (7/8,1/8). Along the actual cultural trajectory, let rho_t=g/(1+k(x_t−y_t)²), with 0<g≤1/2, k≥0, and cultural/neutral initial frequencies in their valid intervals. Writing a=g/(1+k)>0, the neutral frequencies obey |u_t−v_t|≤(1−2a)^t|u_0−v_0|→0. The coupling goes from culture to exchange only.",
+      "prior_work": "Majority/conformist maps, linear stability and uniform contraction are established methods. The package presents a self-contained boundary example; it does not attribute every helper to a new discovery.",
+      "our_contribution": "The existing completed argument joins full-neighborhood stability and a trajectory-faithful neutral contraction, showing precisely why cultural persistence alone does not imply neutral separation.",
+      "accepted_artifacts": [
+        {
+          "label": "Completed manuscript, dynamics section",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/MANUSCRIPT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual coupled recurrence and stability proof",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FeedbackDynamics.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Internal review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/REVIEW-NOTES.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Historical aggregate receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "The 1/6 existence/restricted-mode threshold must not replace the 1/8 full-stability condition. General square-root existence is a written step, not a checked endpoint. No reciprocal dynamics, epigenetic variable, source-faithful pedigree instantiation or empirical conclusion is supplied.",
+      "aliases": [
+        "Samuel B02",
+        "FeedbackDynamics"
+      ],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-001",
+          "relation_type": "same_principle",
+          "detail": "Both separate phenotype/frequency patterns from ancestry conclusions; this frequency model is not a proved instantiation of the recurrent-pedigree theorem."
+        }
+      ],
+      "completion": {
+        "display": "Proved by hand; named historical Lean scope checked",
+        "formal_verification": "kernel_checked_selected_historical_release",
+        "independent_review": "accepted_scoped_internal_ai_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "A missing fresh build, unformalized extension or broader model does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_internal_ai_review",
+          "detail": "Completed written argument and internal AI review are recovered, not newly derived. The full source body was read in this recovery."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_historical_release",
+          "detail": "The historical aggregate includes 19 selected FeedbackDynamics reports with only the recorded standard logical axioms. The rational witness and stated stability/contraction endpoints are covered; the generalized existence and biological-source bridges are not."
+        },
+        "execution": {
+          "status": "archived_local_build_evidence",
+          "detail": "The 25 September 2026 aggregate local receipt records Lean 4.33.1 with Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and exit-0 compilation of seven custom modules using cached upstream dependencies. Its 72 selected reports include 53 in five new modules and 19 in two unchanged dependencies, not 72 new discoveries. The saved receipt and selected logs were read; no rerun, clean-machine reconstruction or new hosted-CI check occurred."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the explicitly defined mathematical population model. No empirical speciation, biological species identification or measured gene-culture mechanism is established."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved. This is recovery of existing completed work, not a new theorem or historical-priority claim; established source models and methods retain their attribution.",
+      "remaining_obligation": "None for this exact completed mathematical claim. Separately stated validation, formalization or broader-source work does not reopen it.",
+      "evidence_basis": "Bounded source recovery on 23 October 2026: the actual completed proof and Lean bodies, reviews and archived receipt/logs were read at Samuel repository commit e2502c82ab9a77c00543932f775a71e5374221f7. This card adds no new proof, compiler execution, independent whole-proof review or empirical validation.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A declared source-specific question within the feedback/ancestry programme. Motivation by prior biology and ancestry literature does not establish that this exact statement was a published open problem."
+      },
+      "id": "CB-FEEDBACK-003",
+      "canonical_key": "september.FEEDBACK.FOGARTY_AFFINITY_FIXATION",
+      "title": "Positive selection defeats arbitrary admitted affinity changes in one source recursion",
+      "programme": "Feedback models · affinity and cultural fixation",
+      "plain_language": {
+        "question": "Can changing affinities indefinitely prevent fixation under constant positive selection in the specified model?",
+        "what_we_learned": "Not when the initial favored-type odds bound holds. A quantitative bound shrinks at every generation, even for arbitrary admissible affinity sequences.",
+        "what_it_lets_someone_do": "Obtain an explicit uniform decay rate for the unfavored cultural frequency along the actual source recursion.",
+        "what_cannot_conclude": "This does not prove genetic fixation, exact finite-time fixation, finite-population behavior or a theorem for every cultural-transmission model."
+      },
+      "exact_statement_and_scope": "For the declared Fogarty–Zhang–Feldman affinity-bias transmission/selection recursion, let AB,Ab,aB,ab frequencies x1,x2,x3,x4 be nonnegative and sum to one. Selection is one fixed s>0 and the two affinity sequences b1(n),b2(n) lie in [0,1] at every generation. Assume an initial r≥0 with x2≤r x1 and x4≤r x3. With r_n=r/(1+s)^n, both odds inequalities persist and the favored cultural B frequency q_n=x1_n+x3_n satisfies 0≤1−q_n≤r_n/(1+r_n)≤r_n, hence q_n→1. Positive x1,x3 suffice to construct r=max(x2/x1,x4/x3); x2,x4 may vanish. The theorem concerns the actually recursively defined evolve/model sequence, not a sequence assumed to satisfy the desired invariant. A separate exclusion rules out polymorphic fixed points with interior genetic and cultural marginals, including permitted simplex-boundary frequency vectors.",
+      "prior_work": "The source equations are those of Fogarty–Zhang–Feldman, DOI 10.1016/j.tpb.2025.08.003. Order preservation and odds contraction are established mathematics. The package's exact model attribution is preserved; another published transmission model is not silently substituted.",
+      "our_contribution": "The existing package proves the source-specific fixed-point exclusion and a global quantitative fixation extension allowing arbitrary admissible affinity sequences. This is recovery, not a fresh proof or priority certification.",
+      "accepted_artifacts": [
+        {
+          "label": "Complete quantitative proof",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/FOGARTY-GLOBAL-RATE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Original source recursions and fixed-point exclusion",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinity.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual evolution and fixation source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinityFixation.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Independent internal statement review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/rate-statement-review.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Source attribution and model distinction",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/SOURCE-ORIGINS.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Historical aggregate receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Uniformity retains the given initial odds bound and fixed positive s; it is not uniform as s tends to zero or r grows unbounded. Realized affinity sequences may be arbitrary/adaptively chosen, but no additional stochastic measurability theorem is claimed. No genetic-A fixation, finite-time exact attainment, finite-population extension or empirical-species identification follows.",
+      "aliases": [
+        "Samuel B03",
+        "FogartyAffinity",
+        "FogartyAffinityFixation"
+      ],
+      "dependencies": [],
+      "completion": {
+        "display": "Proved by hand; named historical Lean scope checked",
+        "formal_verification": "kernel_checked_selected_historical_release",
+        "independent_review": "accepted_scoped_internal_ai_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "A missing fresh build, unformalized extension or broader model does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_internal_ai_review",
+          "detail": "The complete rate proof and independent internal AI statement review were read. Their source-model restrictions and corrected boundary cases remain explicit."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_historical_release",
+          "detail": "The historical aggregate records 9 selected reports in FogartyAffinity and 9 in FogartyAffinityFixation, with only standard logical axioms. The sharper deficit bound is a join of checked lemmas; the final model endpoint packages the weaker rate and convergence."
+        },
+        "execution": {
+          "status": "archived_local_build_evidence",
+          "detail": "The 25 September 2026 aggregate local receipt records Lean 4.33.1 with Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and exit-0 compilation of seven custom modules using cached upstream dependencies. Its 72 selected reports include 53 in five new modules and 19 in two unchanged dependencies, not 72 new discoveries. The saved receipt and selected logs were read; no rerun, clean-machine reconstruction or new hosted-CI check occurred."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the explicitly defined mathematical population model. No empirical speciation, biological species identification or measured gene-culture mechanism is established."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved. This is recovery of existing completed work, not a new theorem or historical-priority claim; established source models and methods retain their attribution.",
+      "remaining_obligation": "None for this exact completed mathematical claim. Separately stated validation, formalization or broader-source work does not reopen it.",
+      "evidence_basis": "Bounded source recovery on 23 October 2026: the actual completed proof and Lean bodies, reviews and archived receipt/logs were read at Samuel repository commit e2502c82ab9a77c00543932f775a71e5374221f7. This card adds no new proof, compiler execution, independent whole-proof review or empirical validation.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A declared source-specific question within the feedback/ancestry programme. Motivation by prior biology and ancestry literature does not establish that this exact statement was a published open problem."
+      },
+      "id": "CB-FEEDBACK-004",
+      "canonical_key": "september.FEEDBACK.FINITE_DETERMINISTIC_RANKING_REVERSAL",
+      "title": "Finite sampling reverses a matched deterministic marker-barrier ranking",
+      "programme": "Feedback models · finite and deterministic comparison",
+      "plain_language": {
+        "question": "Can finite population sampling reverse which of two mechanisms appears to make a stronger marker barrier?",
+        "what_we_learned": "Yes, in the stated exact two-deme example: pure induction has the larger finite-population barrier, while the matched deterministic genetic model has the larger barrier.",
+        "what_it_lets_someone_do": "Use a fully specified counterexample to avoid transferring an ordering from deterministic dynamics to one finite sampling model.",
+        "what_cannot_conclude": "This is not a universal epigenetic advantage, a population-size monotonicity theorem or an empirical claim. The migration and pulse conventions are essential."
+      },
+      "exact_statement_and_scope": "There is one diploid adult per deme. Migration uses deterministic weighted pools with m=1/4, not integer migrant exchange. Additive divergent selection has s=1/2, recombination r=1/2, independent gamete and offspring draws allow selfing, and the comparison is genetic mu=0 versus pure reset mu=1/2,phi=1 after mating. Both use the EEbb/eebb secondary-contact state and a one-direction migrant marker pulse before selection; the normalization is preselection B0=m/2=1/8. For the finite kernel, RI_gen=937945083/2233177303<RI_epi=3/7, with exact difference 19130904/2233177303; the pulse-start finite marginal error is at most (99/100)^n. In the matched deterministic recurrence every biological generation at least four has genetic RI at least 1027087570805/2255346713174>3/7. Its separately proved common limit retains that ordering, while pure induction has common marker mean 1/14 and RI=3/7. Reduced deterministic index zero means biological generation one. Marker terminal classes need not be singleton full genotype states.",
+      "prior_work": "Classical finite-chain harmonic/absorption arguments and the published reset benchmark are reused. The later Commons finite-population packet uses N≥2 diploids and an exact integer exchanged count 1≤k<N, so it is a related different contract, not a duplicate or direct all-N generalization of the weighted-pool N=1 kernel.",
+      "our_contribution": "The already completed written and formally supported package gives an exact strict finite-versus-deterministic reversal under the same stated preparation and statistic, rather than only a larger finite-population effect.",
+      "accepted_artifacts": [
+        {
+          "label": "Exact finite result and model contract",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FINITE-RESULT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Complete deterministic comparison and common-limit argument",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-COMPARISON.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Independent finite-model audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/INDEPENDENT-MODEL-AUDIT.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Independent deterministic audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-INDEPENDENT-AUDIT.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Joined ranking-reversal Lean source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/RankingReversal.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Combined receipt with recovered-exit boundary",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/verification/combined-receipt.json",
+          "role": "formal_receipt"
+        },
+        {
+          "label": "Related Commons fixed-count N≥2 result, different source contract",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/27b143c73a4ac272b560b2974d83ff96df738531/research/2026-09-30-stepchange-scope/PROOF.md",
+          "role": "proof_or_status"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Deterministic common-limit existence and the full phase/source-to-count-model correspondence have written proof and scoped review but are outside the Lean modules. The formal limiting statement assumes convergence; the unconditional finite-tail ordering does not. The original deterministic compiler-process exit was not retrieved: complete log/object plus a later successful importing module are evidence, not an observed exit-0 for that process. Long decimal approximations are not certified enclosures. No universal population-size trend or empirical speciation claim follows.",
+      "aliases": [
+        "Samuel B04",
+        "FiniteEpigenetic",
+        "DeterministicEpigenetic",
+        "RankingReversal"
+      ],
+      "dependencies": [],
+      "completion": {
+        "display": "Proved by hand; historical Lean components checked with stated receipt limit",
+        "formal_verification": "kernel_checked_components_with_recorded_exit_limit",
+        "independent_review": "accepted_scoped_internal_ai_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "A missing fresh build, unformalized extension or broader model does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_internal_ai_review",
+          "detail": "Complete written source correspondence, common-limit argument and independent internal exact-arithmetic audits were recovered. This indexing pass read the actual bodies and receipts, not a new full-proof review."
+        },
+        "formal": {
+          "status": "kernel_checked_components_with_recorded_exit_limit",
+          "detail": "The combined receipt covers 34 selected reports: 11 FiniteFixation, 10 FiniteEpigenetic, 10 DeterministicEpigenetic and 3 RankingReversal. It checks the explicit count kernel, finite limits, reduced finite-tail ordering and joined reversal. Deterministic common-limit existence and full source transport remain written/reviewed, not formally proved in these modules."
+        },
+        "execution": {
+          "status": "archived_local_build_evidence",
+          "detail": "FiniteFixation, FiniteEpigenetic and RankingReversal have recorded exit-0 builds. The original DeterministicEpigenetic process exit is null/unretrieved; its complete standard-axiom log and compiled object were recovered, and the later RankingReversal module imported that object and exited zero. The source labels this PASS_WITH_RECOVERED_EXIT_EVIDENCE. All four saved logs were read; no new build or scientific execution occurred."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the explicitly defined mathematical population model. No empirical speciation, biological species identification or measured gene-culture mechanism is established."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved. This is recovery of existing completed work, not a new theorem or historical-priority claim; established source models and methods retain their attribution.",
+      "remaining_obligation": "None for this exact completed mathematical claim. Separately stated validation, formalization or broader-source work does not reopen it.",
+      "evidence_basis": "Bounded source recovery on 23 October 2026: the actual completed proof and Lean bodies, reviews and archived receipt/logs were read at Samuel repository commit e2502c82ab9a77c00543932f775a71e5374221f7. This card adds no new proof, compiler execution, independent whole-proof review or empirical validation.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A declared source-specific question within the feedback/ancestry programme. Motivation by prior biology and ancestry literature does not establish that this exact statement was a published open problem."
+      },
+      "id": "CB-FEEDBACK-005",
+      "canonical_key": "september.FEEDBACK.SAME_DRAW_MARKER_ANCESTRY",
+      "title": "One shared random process joins a marker barrier to almost-sure ancestry mixing",
+      "programme": "Feedback models · same-draw marker and parent process",
+      "plain_language": {
+        "question": "Can a positive marker-barrier statistic coexist with the identical-ancestors property in the very same population process?",
+        "what_we_learned": "Yes, for the explicitly constructed process. The same random draws produce both the marker path and parent graph, whose whole-history identical-ancestors property (IAP) holds almost surely.",
+        "what_it_lets_someone_do": "Connect the declared marker calculation to an actual ancestry process, instead of choosing an unrelated graph or leaving the infinite-process connection pending.",
+        "what_cannot_conclude": "This does not equate the statistic with a separately constructed infinite-stream marker-fixation event, cover other genetic regimes or establish an empirical species boundary."
+      },
+      "exact_statement_and_scope": "There are two adults per generation, one per deme, with two parent slots per child and selfing allowed. Four independent uniform Fin14 draws per generation are reused for both parental identity and marker homologue; local parent probability is 6/7, foreign 1/7 and homologue probability 1/2. The pure selected-state induction model has a transition-zero marker pulse followed by ordinary inheritance. The completed bounded R1–R6 theorem proves raw/compressed-record transport, all 81 ordinary and nine pulse marginal identities and off-support closure, a measurable count/parent process, and every finite-path frozen-kernel product law. The designated parent-table mass is 36/2401. For an organism born strictly before the chosen future starting generation and k future generations, non-resolution probability is at most (2365/2401)^k, also conditional on any positive-mass complete earlier raw-history event. Whole-history identical-ancestors property (IAP) holds almost surely: each member has finitely many descendants or finitely many non-descendants within that history. The frozen-kernel RI=3/7, finite-path realization and actual-law IAP are conjoined. Exact avoidance probability and non-resolution bound are not equality of events, and marker counts are not independent across generations.",
+      "prior_work": "Classical product probability, recurrence of a positive-probability symbol, and extinction-or-spread synchronization are reused. This actual-law proof permits extinction and does not derive its premise from the no-extinction recurrent-component theorem.",
+      "our_contribution": "The existing B06 completion supplies the same-draw infinite process, measurable finite-path realization and almost-sure ancestry conclusion. B05's finite precursor is retained within this one group; its old uncompiled/R1–R6 pending list is superseded, not a current missing proof.",
+      "accepted_artifacts": [
+        {
+          "label": "Completed R1–R6 statement and exact exclusions",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/RESULT-AND-SCOPE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Final same-law ancestry theorem",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionAncestry.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Paths and measurability",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionPaths.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Raw-record and marginal transport",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionR1R2.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual probability law",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionNoise.lean",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Corrected independent internal semantic review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/INDEPENDENT-REVIEW.json",
+          "role": "hand_review"
+        },
+        {
+          "label": "Historical B06 combined receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/COMBINED-RECEIPT.json",
+          "role": "formal_receipt"
+        },
+        {
+          "label": "Preserved B05 precursor and superseded pending list",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-finite/README.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Historical B05 finite receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-finite/verification/worker-receipt.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "The source explicitly excludes a separately defined infinite-stream eventual-marker-fixation event identified with fixationValue; that excluded strengthening does not reopen the completed actual-law IAP result. No adaptive genetic regime or empirical species classification follows. A fresh complete 13-custom-module replay/hosted build is not supplied by the four-new-module receipt.",
+      "aliases": [
+        "Samuel B05 precursor",
+        "Samuel B06 completion",
+        "PureInductionAncestry R1–R6"
+      ],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-004",
+          "relation_type": "reused_theorem",
+          "detail": "Reuses the checked finite marker kernel and frozen RI=3/7 statistic, then proves its same-draw count/parent realization; does not reuse the deterministic common-limit argument."
+        },
+        {
+          "claim_id": "CB-FEEDBACK-001",
+          "relation_type": "same_principle",
+          "detail": "Both concern the identical-ancestors property, but this actual-law proof uses extinction-permitting synchronization, not B01's no-extinction premise."
+        }
+      ],
+      "completion": {
+        "display": "Proved by hand; named historical Lean scope checked",
+        "formal_verification": "kernel_checked_selected_historical_release",
+        "independent_review": "accepted_scoped_internal_ai_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "A missing fresh build, unformalized extension or broader model does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_internal_ai_review",
+          "detail": "The corrected independent internal semantic review passes the bounded R1–R6 theorem after resolving the earlier measurability and R6-overclaim issues. The completed statement and actual source bodies were read, not rederived here."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_historical_release",
+          "detail": "The 25 September 2026 B06 receipt records 36 selected standard-axiom reports across four newly compiled modules: 10 R1R2, 8 Noise, 7 Paths and 11 Ancestry. Earlier custom objects were reused. B05 separately has four checked finite endpoints; these are retained precursor evidence, not forty discoveries."
+        },
+        "execution": {
+          "status": "archived_local_build_evidence",
+          "detail": "All four new B06 modules have recorded exit-zero local builds under the pinned Lean 4.33.1 environment, with saved logs read here. Thirteen custom sources are shipped but a fresh complete replay of all thirteen is not claimed. No new compiler or scientific execution occurred."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the explicitly defined mathematical population model. No empirical speciation, biological species identification or measured gene-culture mechanism is established."
+        }
+      }
     }
   ],
   "companion_audit": {
@@ -6206,7 +6694,7 @@
   "contributor": "dot (OpenAI)",
   "coverage": {
     "gaps": [
-      "This is 84 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
+      "This is 89 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
       "Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.",
       "Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.",
       "Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.",
@@ -6228,7 +6716,8 @@
       "Three original Samuel-repository continuations: five-label cutoff, contiguous copy-block reduction and sharp raw-matrix noise radius",
       "Completed real spin-sector nanowire profile classification",
       "Five grouped Soft Sciences result families covering the existing 85 declarations, including the same preserved 16 psychology declarations",
-      "Nine existing sequence source groups: exact matching/phase/digits, finite-edit optimum, quantitative/slow avoidance, aggregate sums, constrained juggling/enumeration, grouped recovery/counts, selected-digit invariants and fixed Thue–Morse Collatz valuation obstruction"
+      "Nine existing sequence source groups: exact matching/phase/digits, finite-edit optimum, quantitative/slow avoidance, aggregate sums, constrained juggling/enumeration, grouped recovery/counts, selected-digit invariants and fixed Thue–Morse Collatz valuation obstruction",
+      "Five recovered feedback/ancestry groups covering Samuel B01–B06: recurrent ancestry, cultural/neutral dynamics, source affinity fixation, exact finite/deterministic ranking reversal, and B05's finite precursor superseded by B06's completed same-draw process"
     ],
     "not_claimed": [
       "Exhaustive indexing of every research directory",
@@ -6312,6 +6801,11 @@
       "contributor": "dot (OpenAI)",
       "updated_utc": "2026-10-23T09:25:00Z",
       "scope": "Add CB-SEQ-004 through CB-SEQ-012 as nine recovered existing source groups. Preserve all 75 prior claim objects unchanged. Recorded formal evidence, complete hand-reading-edition acceptance and narrower formal components remain distinct. No new mathematical proof, build, novelty conclusion or discovery-count inference. Any dated 75-card subjective ranking remains its original snapshot; the new nine were not ranked."
+    },
+    {
+      "contributor": "dot (OpenAI)",
+      "updated_utc": "2026-10-23T09:52:00Z",
+      "scope": "Add CB-FEEDBACK-001 through CB-FEEDBACK-005 as five recovered existing groups covering Samuel B01–B06, preserving all 84 prior claim objects unchanged. Historical local formal receipts remain separate from new execution; B04 retains its unretrieved deterministic-process exit and written-only common-limit/source-transport boundary, and B05's pending R1–R6 list is superseded by B06's completed bounded theorem. The identical-ancestors property (IAP) is defined before use. No empirical speciation, new proof or novelty claim. The dated 75-card subjective ranking remains unchanged and does not rank these additions."
     }
   ],
   "schema_version": "1.1",
@@ -6332,5 +6826,5 @@
     "supersession_rule": "Correct active summaries and point to the later acceptance/correction; preserve immutable historical bytes."
   },
   "title": "Research Commons claim board",
-  "updated_utc": "2026-10-23T09:25:00Z"
+  "updated_utc": "2026-10-23T09:52:00Z"
 }
