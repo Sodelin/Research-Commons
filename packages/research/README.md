@@ -66,7 +66,7 @@ cargo run --locked -p research-commons-package -- build --reuse-retained --targe
 cargo run --locked -p research-commons-package -- check-residual-callers
 ```
 
-At47ea5dcd/run39970715643,65 Rust tests passed. The complete population caller audit passed4137 declarations/2363 theorems with zero owned axioms/nonstandard rows/missing modules. The qualified-menu finite-original-index component passed its4-theorem audit; actual original-source size/shape/joint-response instantiation and effective selection remain separate. The20-module RNA schema/grid/certificate context passed1333 declarations/818 theorems; the repaired residual caller passed atcc97572e/run39971838230 with the complete1348-declaration/830-theorem audit. The later expanded exports of all six RNA groups require their own new context check.
+At47ea5dcd/run39970715643,65 Rust tests passed. The complete population caller audit passed4137 declarations/2363 theorems with zero owned axioms/nonstandard rows/missing modules. The qualified-menu finite-original-index component passed its4-theorem audit; actual original-source size/shape/joint-response instantiation and effective selection remain separate. The20-module RNA schema/grid/certificate context passed1333 declarations/818 theorems; the repaired residual caller passed atcc97572e/run39971838230 with the complete1348-declaration/830-theorem audit. The expanded28-module target for all six RNA groups also passed at716e55b8/run39972899817; its final residual-caller audit checked2130 declarations/1226 theorems with zero owned axioms/nonstandard rows/missing modules.
 
 ## Claim integration and remaining work
 
