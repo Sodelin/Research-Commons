@@ -19,6 +19,12 @@ fn interval(c:&Interval)->String {
 }
 fn atom(a:&AgeAtom)->String {match a {
  AgeAtom::Node(v)=>format!(".node {v}"),AgeAtom::Fixed(q)=>format!(".fixed {}",rat(q))}}
+fn typed_atom(a:&AgeAtom)->String {match a {
+ AgeAtom::Node(v)=>format!(".node ⟨{v}, by norm_num [vertexCount, edgeCount]⟩"),
+ AgeAtom::Fixed(q)=>format!(".fixed {}",rat(q))}}
+fn typed_population(p:Population)->String {match p {
+ Population::Edge(e)=>format!("some ⟨{e}, by norm_num [vertexCount, edgeCount]⟩"),
+ Population::Ancestral=>"none".into()}}
 fn comparison(c:Comparison)->&'static str {match c {
  Comparison::Strict=>".strict",Comparison::Weak=>".weak",Comparison::Equal=>".equal"}}
 fn population(p:Population)->String {match p {Population::Edge(e)=>format!("some {e}"),Population::Ancestral=>"none".into()}}
@@ -67,8 +73,12 @@ fn emit_snapshot(captured:&CompiledCellRows,text:&str,namespace:&str,require_cut
  let exposures=chart.exposures.iter().map(|e|
     format!("⟨{}, {}, {}, {}⟩",population(e.population),atom(&e.younger),atom(&e.older),interval(&e.interval))).collect::<Vec<_>>();
  let coins=chart.coins.iter().map(interval).collect::<Vec<_>>();
- let wire_chronology=list(constraints.clone());let chronology=vector(constraints);
- let wire_exposures=list(exposures.clone());let exposures=vector(exposures);
+ let wire_chronology=list(constraints);
+ let chronology=vector(chart.chronology.iter().map(|c|
+    format!("⟨{}, {}, {}⟩",typed_atom(&c.left),typed_atom(&c.right),comparison(c.kind))).collect());
+ let wire_exposures=list(exposures);
+ let exposures=vector(chart.exposures.iter().map(|e|
+    format!("⟨{}, {}, {}, {}⟩",typed_population(e.population),typed_atom(&e.younger),typed_atom(&e.older),interval(&e.interval))).collect());
  let wire_coins=list(coins.clone());let coin_vector=vector(coins);
  let root=source.root;let nc=chart.chronology.len();let ni=chart.exposures.len();
  let original=lean_string(text);
@@ -112,9 +122,9 @@ theorem input_fields_exact :
       chronology exposures coins {cap} = capturedInput := by
   simp only [inputOfCode, coins, Equiv.refl_symm,
     Equiv.refl_apply, Equiv.symm_apply_apply]
-  norm_num [sourceOfCode, capturedInput, capturedSource, chronology, exposures,
-    coinIntervals, code, codeRoot, codeGraph, codeLeaf, codeSite, codeParent,
-    vertexCount, edgeCount, Astra.NativeCellAggregateReflection.reflectChronology,
+  rw [source_fields_exact]
+  norm_num [capturedInput, chronology, exposures, coinIntervals,
+    Astra.NativeCellAggregateReflection.reflectChronology,
     Astra.NativeCellAggregateReflection.reflectExposure, Astra.NativeCellAggregateReflection.reflectAge,
     Astra.NativeCellFormReflection.encodeComparison, Astra.NativeCellFormReflection.encodeInterval,
     Astra.NativeCellFormReflection.encodeBound, List.ofFn_succ]
@@ -127,11 +137,7 @@ theorem input_fields_exact :
 def returned : List Rat := {values}
 theorem checked :
     GParity.Affine.checkWitness {n} (GParity.Chart.emitRows capturedInput) returned = true := by
-  norm_num [GParity.Affine.checkWitness, returned, GParity.Chart.emitRows, GParity.Chart.comparisonRows, GParity.Chart.affineRow,
-    GParity.Chart.scaledRows, GParity.Chart.ageForm, GParity.Chart.Form.const,
-    GParity.Chart.Form.variable, GParity.Chart.Form.sub, GParity.Chart.Form.scale,
-    GParity.Chart.Source.dimension, capturedInput, capturedSource,
-    GParity.Affine.Row.holds, GParity.Affine.Row.eval, GParity.Rational.dot, List.range_succ]
+  decide +kernel
 noncomputable def sharedBank :=
   checked_original_bank code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
     chronology exposures coins {cap} returned (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
@@ -149,11 +155,7 @@ def weights : List Rat := {values}
 theorem weights_complete : weights.length = (GParity.Chart.emitRows capturedInput).length := by decide
 theorem checked :
     GParity.Affine.checkContradiction {n} (GParity.Chart.emitRows capturedInput) weights = true := by
-  norm_num [GParity.Affine.checkContradiction, weights, GParity.Chart.emitRows, GParity.Chart.comparisonRows, GParity.Chart.affineRow,
-    GParity.Chart.scaledRows, GParity.Chart.ageForm, GParity.Chart.Form.const,
-    GParity.Chart.Form.variable, GParity.Chart.Form.sub, GParity.Chart.Form.scale,
-    GParity.Chart.Source.dimension, capturedInput, capturedSource,
-    GParity.Affine.Row.holds, GParity.Affine.Row.eval, GParity.Rational.dot, List.range_succ]
+  decide +kernel
 theorem actual_source_cell_infeasible :
     ¬ originalCellFeasible (sourceOfValid code binary_valid) chronology exposures coins :=
   checked_original_exclusion code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
