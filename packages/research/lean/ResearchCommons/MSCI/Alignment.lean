@@ -71,8 +71,10 @@ theorem matches_trans (F G H : Parameters J count) (σ τ : Rename J count)
   · intro j
     exact (ht j).comp (hs j)
   · intro i
+    change τ 0 (σ 0 i) = i
     rw [h0, ht0]
   · intro i
+    change τ (Fin.last J) (σ (Fin.last J) i) = i
     rw [hlast, htlast]
   · intro j
     exact (hd j).trans (htd j)
