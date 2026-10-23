@@ -5,15 +5,17 @@ use crate::exact_law::{cell_rows,population_certificate as retained};
 use parity_solver::{source_word::{self,Request,Initial,Symbol,Terminal,Variable},
     source_epoch,source_population::Location};
 pub use retained::{Bindings,Limits as RenderLimits};
+use std::collections::BTreeMap;
 
 #[derive(Debug,PartialEq,Eq)]
 pub enum Error {
  Invalid(&'static str),Capture(String),Native(source_word::Error),Unknown(source_word::Limit),
  Render(retained::Error),Snapshot(crate::epoch_certificate::Error),SourceLimit,
+ SourceBytes{required:usize,cap:usize},
 }
 fn put(out:&mut String,text:&str,cap:usize)->Result<(),Error>{
  let n=out.len().checked_add(text.len()).ok_or(Error::SourceLimit)?;
- if n>cap{return Err(Error::SourceLimit);}
+ if n>cap{return Err(Error::SourceBytes{required:n,cap});}
  out.try_reserve(text.len()).map_err(|_|Error::SourceLimit)?;out.push_str(text);Ok(())
 }
 fn fin(i:usize)->String{format!("⟨{i}, by decide +kernel⟩")}
@@ -36,18 +38,17 @@ fn variable(v:Variable,request:&Request)->Result<String,Error>{
   }
  }
 }
-fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],limits:RenderLimits)
- ->Result<String,Error>{
+fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],
+ monomials:&BTreeMap<Vec<usize>,usize>,limits:RenderLimits)->Result<String,Error>{
  if p.dimension!=variables.len(){return Err(Error::Invalid("word coefficient dimension"));}
  let mut parts=Vec::new();
  for (powers,q) in &p.terms {
   if powers.len()!=variables.len(){return Err(Error::Invalid("word exponent arity"));}
   if q.numer().bits().max(q.denom().bits())>limits.rational_bits{return Err(Error::SourceLimit);}
-  let mut monomial=Vec::new();
-  for (i,power) in powers.iter().enumerate(){
-   if *power!=0{monomial.push(format!("(variableBank {i}, {power})"));}
-  }
-  parts.push(format!("([{}], (({} : ℚ) / ({} : ℚ)))",monomial.join(", "),q.numer(),q.denom()));
+  let i=monomials.get(powers).ok_or(Error::Invalid("complete monomial dictionary"))?;
+  let rational=if q.denom()==parity_solver::q(1,1).denom(){q.numer().to_string()}
+   else{format!("({} / {} : ℚ)",q.numer(),q.denom())};
+  parts.push(format!("(monomial{i}, {rational})"));
  }
  Ok(format!("[{}]",parts.join(", ")))
 }
@@ -132,6 +133,20 @@ private def word : List (Symbol (Fin {slots}) (Fin {nv}) (Fin {ne})) := [{word}]
  put(&mut out,&format!(r#"
 private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
 "#,variables.len(),vector(variables)),render.rendered_bytes)?;
+ let mut monomial_ids:BTreeMap<Vec<usize>,usize>=BTreeMap::new();
+ for t in &table.transitions {
+  for powers in t.polynomial.terms.keys(){
+   let next=monomial_ids.len();monomial_ids.entry(powers.clone()).or_insert(next);
+  }
+ }
+ for (powers,i) in &monomial_ids{
+  if powers.len()!=table.variables.len(){return Err(Error::Invalid("word dictionary exponent arity"));}
+  let body=powers.iter().enumerate().filter(|(_,power)|**power!=0)
+   .map(|(v,power)|format!("(variableBank {v}, {power})")).collect::<Vec<_>>().join(", ");
+  put(&mut out,&format!(
+   "private def monomial{i} : List (WordVariable N (Fin {slots}) × Nat) := [{body}]\n"),
+   render.rendered_bytes)?;
+ }
  let mut rows=Vec::new();let mut monomials=0usize;
  for (i,t) in table.transitions.iter().enumerate(){
   if source_epoch::selected_view(context,&t.witness).map_err(Error::Invalid)?!=t.view{
@@ -141,7 +156,7 @@ private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
   if monomials>render.monomials{return Err(Error::SourceLimit);}
   let label=format!("destination{i}");
   crate::epoch_certificate::snapshot(&mut out,context,&t.witness,&label,render).map_err(Error::Snapshot)?;
-  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,render)?));
+  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,&monomial_ids,render)?));
  }
  put(&mut out,&format!(r#"
 private def rows : Rows (WordVariable N (Fin {slots})) (Code N sample) := [{}]
@@ -207,14 +222,14 @@ theorem same_returned_bank_natural_word (b : SelectedIndex N sample Finset.univ)
   actual_same_source_natural_word b returnedBank.rates returnedBank.inheritance returnedDur
 end {namespace}
 "#);
- if joined.len()>262144{return Err(Error::SourceLimit);}
+ if joined.len()>262144{return Err(Error::SourceBytes{required:joined.len(),cap:262144});}
  Ok(joined)
 }
 #[cfg(test)]mod tests{
  use super::*;
  #[test]fn complete_natural_words_keep_original_register_parent_order_and_shared_bank(){
   for mode in ["independent","common"]{
-   let s=example(mode).unwrap();
+   let s=example(mode).unwrap_or_else(|e|panic!("{mode}: {e:?}"));
    assert!(s.contains("sample : Fin 3"));
    assert!(s.contains("complete_word_coefficient_fibres_checked"));
    assert!(s.contains("named_parent_order_matches_capture"));
