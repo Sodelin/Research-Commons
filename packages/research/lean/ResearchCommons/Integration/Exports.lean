@@ -1,6 +1,7 @@
 import ResearchCommons.Claims.CM
 import ResearchCommons.Claims.G1
 import ResearchCommons.Claims.G2
+import ResearchCommons.Claims.G3Certificate
 import ResearchCommons.Claims.G4
 import ResearchCommons.Claims.G4Observers
 import ResearchCommons.Claims.G5

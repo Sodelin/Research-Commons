@@ -121,6 +121,9 @@ theorem flat_original_input (copy : Fin 3) :
     (state entering).genealogy ((state entering).ancestor copy) = .leaf copy := by
   fin_cases copy <;> rfl
 
+local instance passiveForestDecidableEq : DecidableEq (Finset (UnrankedTree (Fin 3))) :=
+  Classical.decEq _
+
 theorem actual_passive_specified_comb :
     ((selectedCompletion N returnedRates (projection N Finset.univ entering)).map
       (fun a => unrankedForest a.val)) {{toUnranked (comb (2 : Fin 3) [0,1])}} =
@@ -130,7 +133,7 @@ theorem actual_passive_specified_comb :
     flat_original_input (by intro x; fin_cases x <;> simp)
     (by decide) (by decide) (by decide)
   norm_num at h
-  exact h
+  simpa only [PMF.map_apply, tsum_fintype] using h
 #check actual_passive_specified_comb
 
 theorem native_rows_passive_specified_comb :

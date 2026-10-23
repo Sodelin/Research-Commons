@@ -115,11 +115,13 @@ theorem checked_natural_word_indexed {Native : Type*} [DecidableEq Native] [Fint
         (fun i => wordVariables N r (originalGamma p) dur (decode i)) =
       value (readRows (project N Finset.univ) (naturalWordRows N sample H common word) b)
         (wordVariables N r (originalGamma p) dur) := by
+    have bank_eq :
+        (fun i => wordVariables N r (originalGamma p) dur (decode i)) ∘ encode =
+          wordVariables N r (originalGamma p) dur := by
+      funext i
+      exact congrArg (wordVariables N r (originalGamma p) dur) (hleft i)
     rw [← eval_polynomial, polynomial_read_renameRows,
-      MvPolynomial.eval₂_rename, eval_polynomial]
-    congr 1
-    funext i
-    exact congrArg (wordVariables N r (originalGamma p) dur) (hleft i)
+      MvPolynomial.eval₂_rename, bank_eq, eval_polynomial]
   exact evaluated.symm.trans
     (renamed_value.trans (naturalWordRows_actual N sample H common r p dur word b))
 
