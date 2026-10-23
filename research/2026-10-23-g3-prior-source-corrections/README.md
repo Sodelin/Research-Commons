@@ -1,8 +1,9 @@
-# G3 completed suppliers and successor corrections
+# G3 source reuse and admission proofs
 
-23 October 2026. Existing G3 source owner. This is a lookup entrypoint,
-not a new proof, second research queue or change to original acceptance.
-Completed hand mathematics is **PROVED (not Lean formalized)**. Independent
+23 October 2026. Existing G3 source owner. This entrypoint preserves completed
+suppliers, records explicit source-admission arguments and tracks later
+corrections. Original acceptance is unchanged. Completed hand mathematics
+is **PROVED (not Lean formalized)**. Independent
 review, formal checking, execution and source integration are separate.
 
 Original G3 remains unresolved: total exact recognition for every original
@@ -184,6 +185,75 @@ Additional lookup aliases: one-occurrence box, once-occurring kernel,
 repeated slot, repeated use, multi-locus, multilocus, independent replicates,
 fresh-locus transcript, Kronecker power, tensor-power endpoint, nonlinear
 readout admission. Missing an original caller is not missing G2 mathematics.
+
+## Parent-forced bookends do not implement the proposed word comparison
+
+Stable key `G3-BOOKEND-COMPARATOR-ADMISSION-01`. **PROVED by hand (not
+Lean formalized)**, independently unreviewed. This is an all-length
+rejection of one contemplated compiler, applying OLD source identities;
+it is not original G3 undecidability or a new general source law.
+
+For theta in (1/2,1), put zeta=theta^(1/4), x=theta^(1/2), and
+
+    W=E(zeta)*B_I(x,x,1/2)*E(zeta),   O=E(theta).
+
+The SAME reference cell with a parent forced at its original ID becomes
+O: both arms have survival x, so forcing leaves E(zeta)*E(x)*E(zeta).
+Its positive ordinary passage remains. No zero exposure or identity gate
+has been created. All old fields and parent occurrences stay fixed.
+
+Consider a fixed graph containing a lower and upper copy of this finite
+reference, with one unknown word K between them. The two programs making
+one reference natural and the other parent-forced give, chronologically,
+
+    A=W*K*O,       B=O*K*W.
+
+Thus an exact comparison of these programs imposes W*K*O=O*K*W.
+It does not impose [K,W]=0. In particular EVERY intended power K=W^N
+commutes with W, but the actual programs become W^(N+1)*O and O*W^(N+1).
+
+Here is the complete all-N source check. Write Gamma for the OLD cap-four
+coordinate called C in the cited papers, to distinguish it from the
+natural COMMON pair survival. The inherited formulas are
+
+    Gamma(KL)=b2(L)*Gamma(K)+b4(K)*Gamma(L),
+    Gamma(E(a))=0, b2(E(a))=a, b4(E(a))=a^6,
+    Gamma(B_I(x,x,1/2))=(1-x)^3/12.
+
+Consequently d=Gamma(W)=zeta^7*(1-x)^3/12>0, and, for EVERY integer n>=1,
+
+    Gamma(W^n)=d*sum_(j=0)^(n-1) b4(W)^j*b2(W)^(n-1-j)>0,
+    Gamma(W^n*O-O*W^n)=(theta-theta^6)*Gamma(W^n)>0.
+
+All factors are strict and positive. This proves rejection for every N,
+including theta=2^(-1/N), N>=2, where the intended word has exactly the
+required COMMON passage E(1/2). Through four roots its two controlled
+programs already differ. The existing positive tomography maps that
+kernel difference to actual finite rooted-topology tests; Gamma is an
+internal proof coordinate, not a newly granted observable.
+
+The OLD low-copy theorem also says all such kernels commute through at
+most three roots. There, K=E(1/2), theta=3/4 passes the commuting condition
+although theta^N=1/2 is impossible by prime valuations. Thus a smaller
+cap does not supply the proposed root-index implication, and a larger
+cap does not fix this bookend compiler. No cap-by-cap search was used.
+
+Exact suppliers actually inspected: the complete actual free-word source,
+[Sections 2--3](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-g3-reviewed-source-coding-1541z/ACTUAL-FREE-WORD-CODING-AND-PCP-GATE.md),
+6,188 bytes/SHA256 `454f298673d780011afdfecaeb1f5cd79f05c359096a8fa2865f2519361fbf60`;
+the exact fair-cell chronology formulas in
+[Section 5](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-nonlinear-forcing-and-contact-count-1500z/g4-paired/PAIRED-NONLINEAR-SINGLE-FAIR-CELL-FORCING.md),
+9,469 bytes/SHA256 `2b73ef2baf4a573667c006e7e128ad5779b7f652ae5978b3d08bfe7cacbff9f8`;
+and the [old tomography/three-root commutation theorem](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-01-g4-independent-bigon-1923z/TOMOGRAPHY-AND-COMPOSITION.md),
+blob `75891a8c1faff1a7c6c8cc9fc840b2e0d658e1f1`, at its exact private one-box
+scope. Their earlier candidate headings do not reopen their completed
+reviewed suppliers. No old checker, source tuple, solver or compiler ran.
+
+The proposed commuting-word rigidity implication and a different faithful
+ORIGINAL caller remain unsupplied. This result rejects the displayed
+parent-forcing realization; it does not reject every legal completion
+comparison or assert a bug in an existing implementation. Do not reopen
+this construction as a higher-cap, identity-gate or normalization task.
 
 ## Projective spectral bounds and same-tuple invariant: completed hand proof
 
