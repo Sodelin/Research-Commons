@@ -227,8 +227,29 @@ See [the exact deterministic handoff](../HARD-FAMILY-DETERMINISTIC-SOURCE-HANDOF
 All ten modules and their probability/graph/game dependencies are source-only
 and unelaborated. The coordinating review covers the handoff's boundary and
 hand mechanism only, not all proof bodies. The arbitrary-randomness/stopping
-L7 join and optional vector/within-regime action extensions remain separate;
-no complete lower-source or Lean-verification claim follows.
+L7 source join is added in v51 below; optional vector/within-regime action
+extensions remain separate. No Lean-verification claim follows.
+
+## v51 arbitrary-seed, unbounded randomized lower source
+
+`HardFamilyUnboundedRuns` and `HardFamilyRandomizedLower` propose the actual
+physical-family randomized lower join, not a finite-seed or bounded-horizon
+substitute. A fixed seed determines one history-dependent policy. Correctness
+requires an actual finite returned full-class output; infinite querying and
+silent divergence count as failure. The baseline/rival coupling, one-index
+per query bound, finite common witness time for all ever-tested indices,
+measurable event union bound and nonnegative integral give expected baseline
+queries at least M(1−2ε), with extended nonnegative truncation and infinity
+allowed. The final error requirement is on every admitted physical source.
+
+The source retains k>0, one actual baseline source, the original marked-class
+target and the elementary pair-CI/single-endpoint invariance menu. Its exact
+measurability and dependency premises, pinned APIs and narrow coordinating
+handoff review are in [the randomized handoff](../HARD-FAMILY-RANDOMIZED-SOURCE-HANDOFF.md).
+Both modules and their transitive graph/probability/game imports remain
+**SOURCE-ONLY UNELABORATED**, not a machine-checked lower certificate. Optional
+vector-endpoint or within-regime CI extensions and an affine-rank presentation
+are not silently substituted for the current action language.
 
 ## Remaining exact full-claim dependencies (updated)
 
@@ -238,6 +259,6 @@ no complete lower-source or Lean-verification claim follows.
 4. Elaborate and check the canonical bidirected-edge hidden-root source (B8/E1). Actual expansion, acyclicity, retained-sink preservation, exact arbitrary-latent-interior marked projection, direct active-path equivalence/ancestry, finite-order construction, exact selector/hidden-root counts, the complete profile-code bound and the same actual source's named-indicator commutation now have source proof bodies. The original-source graph adapter now composes these constructions, but the full original-source bounded-registry realization theorem has not been certified and its downstream exact target/probability dependencies remain.
 5. Elaborate/check the inducing-path/separator equivalence, literal selected MAG/TCM preservation, ancestral-graph validity, maximality and **both directions of complete selected-DAG/MAG representation** now implemented (A5/B10 at the source-proof level). The prior HPL mask/refined-separator results, both partial query families, common observed/root alignment, shared-separator status induction and actual first-arrow/ancestry transfer have proof bodies. The optimized finite transcript and interactive policy now compose genuine shared separators with the full common-source marked-TCM decoder, exact indexed B, coarse all-n bound and full-coverage endpoint. All remain unelaborated. The sharper grouped k,u formulas are not newly formalized here. No hand citation, graph name or interface axiom substitutes for the direct path, sufficiency or history-completeness constructions.
 6. Elaborate and independently check the now-written fixed-selected-slice common-mechanism binary probability representatives and elementary physical-response join (D1–D6). The actual nonzero-minor geometry, sink relabeling, shared-coordinate injections, rational avoidance, normalization, global Markov, selected-law and invariance identities have proposed bodies through `BinaryPhysicalGame.original_selected_binary_upper`; their existence as source is not verification. Faithfulness is retained for admitted physical parameters, and nonempty common realizations for every original finite source are derived rather than merely postulated.
-7. Elaborate/check the original-source TCM-image equality, graph/target decisions, computable common-source labels and exact finite whole-history decoder (E1–E3). `CompleteHistory` is derived, and the new sorted coordinate enumerations and explicit response-branching Plan supply source bodies for C/E4–E5. The original and complete finite-registry games preserve all responses and full marked-class targets. All-response legality uses the remaining query budget; one source generates the whole actual run. The optional generic enumeration, target specification and arbitrary-source graphical response specification remain explicitly noncomputable, but they are not evaluated in the effective plan body. The exact G7 body is copied as an explicitly unelaborated 4.33.1 compatibility port, not imported silently from another toolchain. No successful elaboration, extracted execution, physical probability closure or runtime validation is claimed. Lower-family L1–L8 have not been formalized by these modules.
+7. Elaborate/check the original-source TCM-image equality, graph/target decisions, computable common-source labels and exact finite whole-history decoder (E1–E3). `CompleteHistory` is derived, and the new sorted coordinate enumerations and explicit response-branching Plan supply source bodies for C/E4–E5. The original and complete finite-registry games preserve all responses and full marked-class targets. All-response legality uses the remaining query budget; one source generates the whole actual run. The optional generic enumeration, target specification and arbitrary-source graphical response specification remain explicitly noncomputable, but they are not evaluated in the effective plan body. The exact G7 body is copied as an explicitly unelaborated 4.33.1 compatibility port, not imported silently from another toolchain. No successful elaboration, extracted execution, physical probability closure or runtime validation is claimed. The later v50/v51 lower-family bodies are described above; their existence as source does not certify L1–L8, and optional extended-action/rank presentations remain separate.
 
 These are the full formalization obligations, not newly discovered gaps in the separately reviewed hand manuscripts. No source-only component is an unconditional formal proof of the original theorem. No proof-site submission or novelty claim is made.

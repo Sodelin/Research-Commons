@@ -65,4 +65,5 @@ lean_lib RestrictedCausalSource where
     `EmptyInterventionTarget,
     `HardFamilyGraphs, `HardFamilyActivePaths, `HardFamilyObservedSignature,
     `HardFamilyIndicatorSignature, `HardFamilyOriginalSources, `HardFamilyActionSignature,
-    `HardFamilyFullTarget, `HardFamilyIndexCount, `HardFamilyAdaptiveLower, `HardFamilyExactGame]
+    `HardFamilyFullTarget, `HardFamilyIndexCount, `HardFamilyAdaptiveLower, `HardFamilyExactGame,
+    `HardFamilyUnboundedRuns, `HardFamilyRandomizedLower]
