@@ -14,7 +14,7 @@ Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintaine
 
 The static dist folder is the deployable artifact. MiniSearch is locally bundled and integrity/licence pinned; jsdom is test-only. Deployment follows the registered Sites ID in .openai/hosting.json. Never recreate that Site to repair a deployment. Source pushes and exact saved-version/deployment receipts are separate. For rollback, redeploy a previously saved good version and its recorded source; do not alter canonical scientific records.
 
-See ARCHITECTURE.md for tool comparisons, ownership, security boundaries and update/coverage limits. Source and test evidence do not establish full visual browser/device acceptance. Canonical coverage is currently97 selected cards, not the entire historical research corpus.
+See ARCHITECTURE.md for tool comparisons, ownership, security boundaries and update/coverage limits. Source and test evidence do not establish full visual browser/device acceptance. Canonical coverage is currently118 selected cards, not the entire historical research corpus.
 
 Citation lookup considers both the canonical origin field and explicitly tagged prior-work references. The same bibliography adapter feeds the reader, weighted search and agent reuse export. Source refresh validates through the shared model in RAM before writing a snapshot. `node tools/check.mjs` uses explicit suite paths and refuses an empty suite rather than accepting a zero-test glob.
 
@@ -56,10 +56,10 @@ Credential-named query **and fragment** parameters are refused, including OAuth 
 For a reviewed producer release, pin the exact source and expected canonical body hash:
 
 ```sh
-python3 tools/refresh.py --commit 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f --expected-sha256 38117d42215e615da9109f3a2548be423e405701e77bdcb5bb8d709220b282cf
+python3 tools/refresh.py --commit f9a65b24a711f5cff9a920d6b1ede3d34e546923 --expected-sha256 b4c4f52a5e25d7c82df329a403dbacc3a12afd337a847d9f492bf4fe465738c9
 ```
 
-The bundled canonical snapshot has97cards. The evidence corpus now has254public bodies/2,587,266original UTF-8bytes/zero unavailable, including owned reading-join sources. Live registry updates are fetched separately after validation; this bundled count is not a claim about the current canonical total. All93prior card objects are unchanged; four memory-source recovery groups retain their stated deterministic/discrete/rare-event scopes, not arbitrary continuous kernels, approximate-TV acceptance or resumed model work. The dated75-entry subjective overlay leaves22later groups unranked. Node and Python3 are required for the complete verification runner; production remains static and does not need Python. Five refresh-guard controls execute the real shared Node validator with memory-only synthetic fixtures and spied writes; no fixture payload is written.
+The bundled canonical snapshot has118cards. The evidence corpus now has322public bodies/3,231,369original UTF-8bytes/zero unavailable, including owned reading-join sources. Live registry updates are fetched separately after validation; this bundled count is not a claim about the current canonical total. All97previously bundled card objects are unchanged;21later canonical cards retain their own exact assumptions/evidence and do not transfer acceptance between population, topology, Wong, cross-scale, feedback or RNA scopes. The dated75-entry subjective overlay leaves43later groups unranked. Node and Python3 are required for the complete verification runner; production remains static and does not need Python. Five refresh-guard controls execute the real shared Node validator with memory-only synthetic fixtures and spied writes; no fixture payload is written.
 
 Bibliography projection stores the normalized safe URL, so equivalent host/default-port spellings deduplicate in both the reader and reuse packet. Distinct scientific anchors remain separate; canonical authored source objects/bytes are unchanged.
 
