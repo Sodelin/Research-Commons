@@ -1,5 +1,10 @@
 # Start here
 
+## Find an answer without reconstructing history
+
+Use [question-first research routes](docs/FIND-AN-ANSWER.md) to find scoped answers and original published-question attribution, [typed connections](docs/RESEARCH-CONNECTIONS.md) to follow dependencies, and [reuse-before-work](docs/REUSE-BEFORE-WORK.md) before allocating another proof/test. The [portable searchable reader and agent CLI](docs/discovery/README.md) use the SAME canonical claim register and stable IDs; they do not create a competing scientific registry. Existing claim/status authorship and exact proof scopes remain authoritative.
+
+
 ## Hand proofs are completed results — 23 October 2026
 
 Completed mathematics is labelled **PROVED (not Lean formalized)** when the full theorem lacks a Lean receipt. Independent review and implementation remain separate. Completed claim cards now distinguish their proof from separate downstream work. Reuse the [shared claim board](docs/CLAIM-BOARD.md) and [recovered G3 proof/source catalogue](research/2026-10-23-g3-proof-recovery/README.md); a missing formal check must not restart the hand proof.
