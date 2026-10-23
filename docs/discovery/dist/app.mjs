@@ -1,4 +1,4 @@
-import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims,validateRanking} from './model.mjs';
+import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims,validateRanking,compareRegisters} from './model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from './source-search.mjs';
 const $=id=>document.getElementById(id);
 const state={data:null,meta:null,limit:9,selected:decodeURIComponent(location.hash.slice(1)),mode:'all',joins:[]};
@@ -6,6 +6,7 @@ const initial=new URLSearchParams(location.search);
 const facetKeys=['topic','status','origin','programme','kind','review','formal_status','novelty'];
 const controlKeys=[...facetKeys,'sort'];
 state.ranking=null;state.rankingSource=null;
+let bundledData=null,bundledMeta=null,registryChanges=null;
 function el(tag,text,cls){const x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(cls)x.className=cls;return x;}
 function add(parent,...children){parent.append(...children);return parent;}
 function link(label,url){const a=el('a',label);const safe=safeLink(url);if(!safe){a.removeAttribute('href');return a;}a.href=safe;a.target='_blank';a.rel='noopener';return a;}
@@ -34,6 +35,25 @@ function initialize(data,meta){
   }
   $('freshness').textContent=`Canonical register updated ${data.updated_utc}. Source ${meta.commit.slice(0,8)}. Search runs locally in your browser.`;
   render();
+}
+function renderChanges(message=''){
+  const panel=$('registry-changes-body');panel.replaceChildren();
+  if(message)panel.append(el('p',message));
+  if(!registryChanges)return;
+  const diff=registryChanges;
+  $('registry-changes').querySelector('summary').textContent=`Since the bundled snapshot: ${diff.added} newly indexed · ${diff.changed} changed · ${diff.removed} absent`;
+  panel.append(el('p',`${diff.added} newly indexed · ${diff.changed} changed · ${diff.removed} absent from the loaded register · ${diff.unchanged} unchanged.`));
+  panel.append(el('p',diff.limitation));
+  panel.append(link(`Bundled source ${bundledMeta.commit.slice(0,8)} ↗`,`https://github.com/Sodelin/Research-Commons/blob/${bundledMeta.commit}/docs/claims.json`),document.createTextNode(' · '),link(`Loaded source ${state.meta.commit.slice(0,8)} ↗`,$('source-link').href));
+  for(const r of diff.records){
+    const row=el('div',undefined,'registry-change');
+    const label=`${r.change_type==='added'?'Newly indexed':r.change_type==='changed'?'Changed':'Absent from loaded register'} · ${r.claim_id} · ${(r.current??r.previous).question}`;
+    if(r.current){const button=el('button',label,'quiet');button.addEventListener('click',()=>select(r.claim_id,true));row.append(button);}
+    else row.append(link(label,`https://github.com/Sodelin/Research-Commons/blob/${bundledMeta.commit}/docs/CLAIM-BOARD.md#${r.claim_id.toLowerCase()}`));
+    if(r.changed_fields.length)row.append(el('small',`Changed source fields: ${r.changed_fields.join(', ')}.`));
+    if(r.previous&&r.current&&r.previous.mathematical_status!==r.current.mathematical_status)row.append(el('p',`Source disposition: ${pretty(r.previous.mathematical_status)} → ${pretty(r.current.mathematical_status)}. Read the scoped evidence before drawing conclusions.`));
+    panel.append(row);
+  }
 }
 function showMode(mode){
   state.mode=mode;
@@ -174,15 +194,18 @@ async function refresh(automatic=false){
     if(!response.ok)throw Error(`GitHub status ${response.status}`);
     const head=(await response.json()).sha;
     if(!/^[0-9a-f]{40}$/.test(head))throw Error('Invalid source commit');
-    if(head===state.meta.commit){$('freshness').textContent=`Latest register checked. ${state.data.updated_utc} · source ${head.slice(0,8)}. Queries stay in this browser.`;return;}
+    if(head===state.meta.commit){$('freshness').textContent=`Latest register checked. ${state.data.updated_utc} · source ${head.slice(0,8)}. Queries stay in this browser.`;renderChanges('Latest-source check succeeded.');return;}
     const raw=await fetch(`https://raw.githubusercontent.com/Sodelin/Research-Commons/${head}/docs/claims.json`,{signal:AbortSignal.timeout(12000)});
     if(!raw.ok)throw Error(`Register status ${raw.status}`);
-    const data=validate(await raw.json());initialize(data,{repository:'Sodelin/Research-Commons',commit:head,path:'docs/claims.json',source_updated_utc:data.updated_utc});
+    const data=validate(await raw.json()),diff=compareRegisters(bundledData,data);initialize(data,{repository:'Sodelin/Research-Commons',commit:head,path:'docs/claims.json',source_updated_utc:data.updated_utc});
+    registryChanges=diff;renderChanges('Compared the loaded canonical register with the bundled snapshot.');
     $('freshness').textContent=`Latest canonical register loaded: ${data.updated_utc} · source ${head.slice(0,8)}. Queries stay in this browser.`;
     if(!automatic)toast('Latest canonical register loaded.');
   }catch{
-    $('freshness').textContent=`Latest-source check unavailable. Showing the verified bundled snapshot (${state.data.updated_utc}, ${state.meta.commit.slice(0,8)}). Search still works; check the canonical board for later results.`;
-    if(!automatic)toast('Kept the bundled source. Latest-source check unavailable.');
+    const kept=state.meta.commit===bundledMeta.commit?'verified bundled snapshot':'previously loaded canonical snapshot';
+    $('freshness').textContent=`Latest-source check unavailable. Showing the ${kept} (${state.data.updated_utc}, ${state.meta.commit.slice(0,8)}). Search still works; check the canonical board for later results.`;
+    renderChanges('Latest-source check unavailable. This comparison describes the snapshots already loaded, not a fresh check of main.');
+    if(!automatic)toast('Kept the loaded source. Latest-source check unavailable.');
   }finally{b.disabled=false;}
 }
 async function start(){
@@ -193,7 +216,8 @@ async function start(){
   for(const[k,v]of Object.entries(STATUS))option($('status'),k,v);
   for(const[k,v]of Object.entries(ORIGIN))option($('origin'),k,v);
   try{const [r,m]=await Promise.all([fetch('./subjective-reuse-ranking.json'),fetch('./ranking-source.json')]);if(r.ok&&m.ok){state.ranking=validateRanking(await r.json());state.rankingSource=await m.json();}}catch{/* Optional dated overlay never blocks claim lookup. */}
-  initialize(data,meta);$('search').value=initial.get('q')??'';
+  bundledData=validate(data);bundledMeta=meta;registryChanges=compareRegisters(data,data);
+  initialize(data,meta);renderChanges('Bundled source loaded; latest-source check pending.');$('search').value=initial.get('q')??'';
   for(const k of controlKeys)$(k).value=initial.get(k)??'';
   const mode=initial.get('mode')??'all';showMode(mode);render();
   let timer; $('search').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{state.limit=9;render();},100);});

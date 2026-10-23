@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {compareRegisters} from '../dist/model.mjs';
+const source=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
+test('snapshot comparison separates additions, source corrections and omissions without inventing progress',()=>{
+ const base=structuredClone(source),seed=structuredClone(base.claims[0]);
+ const card=id=>({...structuredClone(seed),id,dependencies:[]});
+ base.claims=[card('KEEP'),card('EDIT'),card('OMIT')];
+ const current=structuredClone(base);current.claims.pop();current.claims.push(card('ADD'));
+ current.claims[1].separate_downstream_or_validation_work='Synthetic source correction, not an unfinished hand proof';
+ const before=JSON.stringify([base,current]),diff=compareRegisters(base,current);
+ assert.deepEqual([diff.added,diff.changed,diff.removed,diff.unchanged],[1,1,1,1]);
+ assert.deepEqual(diff.records.find(r=>r.claim_id==='EDIT').changed_fields,['separate_downstream_or_validation_work']);
+ assert.equal(diff.records.find(r=>r.claim_id==='EDIT').previous.mathematical_status,diff.records.find(r=>r.claim_id==='EDIT').current.mathematical_status);
+ assert.equal(diff.records.find(r=>r.claim_id==='OMIT').current,null);
+ assert.equal(diff.records.find(r=>r.claim_id==='ADD').previous,null);
+ assert.match(diff.limitation,/not new discoveries/);assert.equal(JSON.stringify([base,current]),before);
+ const reordered={...base,claims:base.claims.map(c=>Object.fromEntries(Object.entries(c).reverse()))};
+ assert.equal(compareRegisters(base,reordered).records.length,0);
+ assert.throws(()=>compareRegisters(base,{claims:[]}),/no claim cards/);
+ const unsafe=structuredClone(base);unsafe.claims[0].origin.source_url='https://example.org/#access_token=synthetic';
+ assert.throws(()=>compareRegisters(base,unsafe),/Unsafe/);
+});

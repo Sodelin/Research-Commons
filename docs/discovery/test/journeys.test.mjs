@@ -6,7 +6,7 @@ const docs={};for(const name of ['claims.json','source.json','reading-joins.json
 const wait=async fn=>{for(let i=0;i<80;i++){if(fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail('Reader did not reach the expected DOM state.');};
 test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-source recovery',async t=>{
  const dom=new JSDOM(html,{url:'https://reader.test/?q=quantum#CB-PHYS-P5-004',pretendToBeVisual:true});
- let copied='',offline=false,credentialSource=false;
+ let copied='',offline=false,credentialSource=false,latestSource=null;
  for(const k of ['window','document','location','history','navigator'])Object.defineProperty(globalThis,k,{value:dom.window[k],configurable:true});
  globalThis.innerWidth=1400;globalThis.matchMedia=()=>({matches:true});globalThis.addEventListener=dom.window.addEventListener.bind(dom.window);
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
@@ -14,7 +14,8 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   if(String(url).startsWith('https://')){
    if(offline)throw Error('Network unavailable');
    if(credentialSource&&String(url).includes('raw.githubusercontent.com')){const source=structuredClone(docs['claims.json']);source.claims[0].accepted_artifacts[0].url='https://example.org/proof#access_token=synthetic-fragment-value';return {ok:true,json:async()=>source};}
-   return {ok:true,json:async()=>({sha:credentialSource?'b'.repeat(40):docs['source.json'].commit})};
+   if(latestSource&&String(url).includes('raw.githubusercontent.com'))return {ok:true,json:async()=>structuredClone(latestSource)};
+   return {ok:true,json:async()=>({sha:credentialSource||latestSource?'b'.repeat(40):docs['source.json'].commit})};
   }
   const name=String(url).replace('./','');return {ok:!!docs[name],json:async()=>structuredClone(docs[name])};
  };
@@ -112,6 +113,26 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   $('reset').click();location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   offline=true;$('refresh').click();await wait(()=>$('freshness').textContent.includes('Showing the verified bundled snapshot'));
   assert(document.querySelectorAll('.claim').length>0);assert($('detail').textContent.includes('CB-G6-001'));
+ });
+ await t.test('validated latest registry exposes newly indexed cards and precise changed fields beside both source pins',async()=>{
+  offline=false;latestSource=structuredClone(docs['claims.json']);
+  const added=structuredClone(latestSource.claims[0]);added.id='TEST-NEWLY-INDEXED';latestSource.claims.push(added);
+  latestSource.claims[0].separate_downstream_or_validation_work='Synthetic downstream-only correction';
+  $('refresh').click();await wait(()=>$('freshness').textContent.includes('Latest canonical register loaded'));
+  const panel=$('registry-changes-body');assert(panel.textContent.includes('1 newly indexed · 1 changed'));
+  assert(panel.textContent.includes('separate_downstream_or_validation_work'));
+  assert(panel.textContent.includes('not new discoveries'));
+  assert([...panel.querySelectorAll('a')].some(a=>a.href.includes(docs['source.json'].commit)));
+  assert([...panel.querySelectorAll('a')].some(a=>a.href.includes('b'.repeat(40))));
+  [...panel.querySelectorAll('button')].find(b=>b.textContent.includes('TEST-NEWLY-INDEXED')).click();
+  assert($('detail').textContent.includes('TEST-NEWLY-INDEXED'));
+ });
+ await t.test('failed refresh after a successful update names the retained live pin and keeps its comparison',async()=>{
+  offline=true;$('refresh').click();await wait(()=>$('freshness').textContent.includes('previously loaded canonical snapshot'));
+  assert($('source-link').href.includes('b'.repeat(40)));
+  assert($('registry-changes-body').textContent.includes('not a fresh check of main'));
+  assert($('registry-changes-body').textContent.includes('1 newly indexed · 1 changed'));
+  assert(!$('freshness').textContent.includes('verified bundled snapshot'));
  });
  dom.window.close();
 });

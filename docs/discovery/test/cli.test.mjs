@@ -20,3 +20,14 @@ test('source refresh rejects credential fragments before persistence through the
  const script=fileURLToPath(new URL('../tools/test_refresh.py',import.meta.url));
  execFileSync('python3',[script],{encoding:'utf8',maxBuffer:64*1024,timeout:15000,stdio:'pipe'});
 });
+test('agent change lookup compares exact sources in RAM with bounded results and refuses unsupported modes',()=>{
+ const sourceURL=new URL('../dist/claims.json',import.meta.url).href;
+ const mock=`import {readFile} from 'node:fs/promises';const data=JSON.parse(await readFile(new URL(${JSON.stringify(sourceURL)})));const c=structuredClone(data.claims[0]);c.id='TEST-NEWLY-INDEXED';data.claims.push(c);data.claims[0].separate_downstream_or_validation_work='Synthetic changed source';globalThis.fetch=async url=>{if(String(url).endsWith('/commits/main'))return {ok:true,json:async()=>({sha:'b'.repeat(40)})};if(String(url).includes('/'+ 'b'.repeat(40)+'/docs/claims.json'))return {ok:true,json:async()=>data};throw Error('Unexpected fixture request');};`;
+ const out=JSON.parse(execFileSync(process.execPath,['--import','data:text/javascript,'+encodeURIComponent(mock),cli,'--changes','--refresh','--limit','1'],{encoding:'utf8',timeout:15000,maxBuffer:2*1024*1024}));
+ assert.equal(out.comparison.current.commit,'b'.repeat(40));assert.notEqual(out.comparison.baseline.commit,out.comparison.current.commit);
+ assert.equal(out.comparison.added,1);assert.equal(out.comparison.changed,1);assert.equal(out.total,2);assert.equal(out.results.length,1);assert.equal(out.next_offset,1);
+ assert.match(out.comparison.limitation,/not new discoveries/);
+ for(const flags of [['--changes'],['--changes','--refresh','--archive'],['--changes','--refresh','--sort','subjective_reuse']]){
+  const bad=spawnSync(process.execPath,[cli,...flags],{encoding:'utf8',timeout:10000});assert.notEqual(bad.status,0);assert.equal(bad.stdout,'');
+ }
+});
