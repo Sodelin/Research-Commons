@@ -5,11 +5,13 @@ Status: bounded acceptance-first source and evidence audit. No new theorem, comp
 
 ## Result first
 
-**The original structural edge/reticulation reduction is solved. The later whole-edge physical survival and calendar lifts are also accepted components, not still-failed drafts. G6 and G7 already have accepted terminating mathematical algorithm specifications under their exact contracts.** None should be reopened merely because an older README, frozen source header, or pending-work list says otherwise.
+**The original structural edge/reticulation reduction is solved. The later whole-edge physical survival and calendar lifts are also accepted components, not still-failed drafts. G6 and G7 already have accepted constructive mathematical algorithm specifications under their exact contracts.** None should be reopened merely because an older README, frozen source header, or pending-work list says otherwise.
 
 What has not yet been supplied by the statements inspected here is an implication from those completed results to the original unknown-size, INDEPENDENT-only finite-identification theorem. That composition question must be checked on the actual bodies and quantifiers, not settled by the word “edge.” The source-body follow-up below identifies the precise interface distinction. This audit does not infer nonexistence of an overlooked theorem.
 
 The main source for component supersession is the [11 October incorporation catalogue][catalog], including its exact-source and declaration audit. It is stronger evidence than the older 10 October pending/recovery labels.
+
+The [P1/P5 addendum](P1-P5-ACCEPTED-WORK-ADDENDUM.md) also restores the completed actual commuting-Pauli dynamics branch and actual measurement suppliers. These are earlier accepted results, not new discoveries.
 
 ## 1. Four different edge/size claims
 

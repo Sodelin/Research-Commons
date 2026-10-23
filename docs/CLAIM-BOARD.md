@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.0-first-source-led-board.
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.1-commuting-P5-acceptance-correction.
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -28,7 +28,7 @@ For completed work that older notes mistakenly leave pending, read the [duplicat
 
 ## Coverage and source discipline
 
-This first register contains **58 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+This first register contains **59 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -71,6 +71,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 | [CB-PHYS-P1-001](#cb-phys-p1-001) | We have better upper and lower limits on the testing cost | Proved at the stated scope |
 | [CB-PHYS-P1-002](#cb-phys-p1-002) | A specific measurement has a useful error bound | Proved at the stated scope |
 | [CB-PHYS-P5-001](#cb-phys-p5-001) | Several parts of a long-time approximation proof are established | Proved at the stated scope |
+| [CB-PHYS-P5-003](#cb-phys-p5-003) | One restricted noisy-quantum case is fully proved by hand | Proved at the stated scope |
 | [CB-PHYS-P5-002](#cb-phys-p5-002) | One proposed evolution can fail to preserve a physical state | Named shortcut refuted |
 | [CB-NANO-001](#cb-nano-001) | Very similar energy curves can hide opposite model labels | Bounded-error limitation proved |
 | [CB-NANO-002](#cb-nano-002) | Conductance can certify a sign in a specified matrix model | Proved at the stated scope |
@@ -1640,7 +1641,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Question:** When can a simpler noisy-quantum model faithfully replace the original evolution?
 
-**What we learned:** Several scoped comparison and influence estimates are proved, but the full requested comparison is not.
+**What we learned:** The commuting case already has a full restricted all-time comparison; additional estimates support work on the still-open general noncommuting case.
 
 **What it lets someone do:** Reuse valid building blocks without restarting those proofs.
 
@@ -1651,7 +1652,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 <details>
 <summary>Exact scope, prior work, evidence and remaining obligation</summary>
 
-**Exact statement and assumptions.** Reviewed components include commuting-Pauli comparison, noncommuting finite-window support decomposition, signed-energy identities, auxiliary interacting-noise influence estimates and general-operator incidence velocity 3kh. Their hypotheses remain separate from the actual same-H infinite-filter Redfield versus original square-window GKSL plus triangular Lamb-shift comparison.
+**Exact statement and assumptions.** Reviewed components include commuting-Pauli comparison, noncommuting finite-window support decomposition, signed-energy identities, auxiliary interacting-noise influence estimates and general-operator incidence velocity 3kh. Their hypotheses remain separate from the actual same-H infinite-filter Redfield versus original square-window GKSL plus triangular Lamb-shift comparison. The completed actual commuting-Pauli comparison is recorded separately as CB-PHYS-P5-003 and is not merely an auxiliary-reference estimate. The operator-incidence packet also proves its full infinite-filter commutator estimates; its integrated auxiliary reference requires g>3kh, guaranteed for general k=2 in its original box, not all k.
 
 **Origin.** published open problem. Motivated by the time- and system-size-uniform many-body coarse-graining direction in Ikeuchi–Mori; the selected project contract is explicit. [Primary source](https://arxiv.org/html/2604.21366v2).
 
@@ -1668,7 +1669,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** Uniform comparison over all volumes/times and all initial density matrices at fixed observable support; homogeneous term 2q I2 remains uncontrolled.
+**Remaining obligation:** General noncommuting comparison over all volumes/times and initial density matrices at fixed observable support remains open; the actual homogeneous term 2q I2 is uncontrolled. Do not treat the completed commuting branch CB-PHYS-P5-003 as open.
 
 **Proof, review and other accepted-source links:**
 
@@ -1680,6 +1681,54 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - No theorem-dependency edge asserted in this first register.
 
 **Stable key:** physics.P5.COMPARISON_COMPONENTS. 
+
+</details>
+
+<a id="cb-phys-p5-003"></a>
+### One restricted noisy-quantum case is fully proved by hand
+**CB-PHYS-P5-003 · Physics P5 · an actual all-time approximation theorem**
+
+**Question:** Do we already have a result that stays valid however long the system evolves or how large it is?
+
+**What we learned:** Yes. In one specified strongly noisy spin-model class, the error in local predictions has a uniform bound.
+
+**What it lets someone do:** Use a proved comparison of the two actual evolution models in that class, not just a helpful auxiliary estimate.
+
+**What we cannot conclude:** It does not settle general interacting quantum systems, prove the microscopic bath approximation, or establish experimental performance.
+
+**Kind:** theorem. **Mathematical status:** Proved at the stated scope.
+
+<details>
+<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+
+**Exact statement and assumptions.** Let H=Σ_Z J_ZP_Z be a commuting Pauli Hamiltonian on any finite qubit volume, with sup_i Σ_{Z∋i}|J_Z|≤h. Set S_i={i}∪⋃_{Z∋i}Z, require |S_i|≤m and each site belongs to at most ν such sets, with h,m,ν volume independent. Each site has independent X,Y,Z channels with positive-type thermal correlations, Φ(−s)=conj Φ(s), |Φ(s)|≤(γ/τ_B)e^{−|s|/τ_B}, and Re∫_0^∞Φ(s)ds≥b_0γ>0. For T>0 and g=8b_0γ−2h−24ν2^mγhτ_B>0, the actual infinite-filter Redfield R and original square-window GKSL L_T with triangular Lamb shift satisfy ||exp(tL_T*)O−exp(tR*)O||≤2^s||O||δ/g for every finite volume, t≥0 and s-site observable, where δ=3ν(32γhT+4γτ_B/T+8γhτ_B). Thus the corresponding expectation error is bounded for every initial density matrix, including entangled states. Redfield positivity is not assumed.
+
+**Origin.** project posed. A restricted actual-dynamics theorem addressing part of the published many-body coarse-graining direction, not a solution to its unrestricted form. [Primary source](https://arxiv.org/html/2604.21366v2).
+
+**Prior work.** Ikeuchi–Mori provide the finite-system time-uniform comparison and exact averaging scheme. Lucia–Cubitt–Michalakis–Pérez-García establish local-observable stability under appropriate relaxation assumptions; Duhamel/relaxation stability is prior work. The source also credits conditional thermodynamic-limit ULE and strong-dissipation results. Novelty of the restricted estimate is not certified.
+
+**Our contribution.** Derive the required integrated damping from the actual commuting strong-noise model, bind both original generator definitions and prove the uniform local-observable comparison with an explicit nonempty thermal-bath family.
+
+**Evidence, kept separate:**
+
+- **Hand:** The later independent review accepts the actual generator comparison, signs/Lamb shift, column damping, factor counts, thermal-bath feasibility and uniform constants. It supersedes the frozen proof's 'candidate' label. The stated proof and later review were reread for this status correction.
+- **Formal:** This is a completed scoped hand theorem, not Lean verification. Lack of formalization does not reopen its mathematical proof.
+- **Execution:** The theorem is not based on a new numerical run or a claimed software certificate.
+- **Empirical:** The explicit bath family establishes mathematical nonvacuity, not calibration of a material or laboratory performance.
+
+**Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
+
+**Remaining obligation:** General noncommuting P5 and actual signed homogeneous 2q I2 control remain open. No global trace-distance, multi-time transcript, infinite-volume dynamical construction, weak-noise-at-fixed-h or microscopic system-plus-bath error theorem follows.
+
+**Proof, review and other accepted-source links:**
+
+- [Actual commuting-Pauli proof, historical candidate title](https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-COMMUTING-PAULI-CANDIDATE.md) (proof or status).
+- [Later independent scoped PASS review](https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-INDEPENDENT-REVIEW-01.md) (hand review).
+
+**Connections:**
+- [CB-PHYS-P5-001](#cb-phys-p5-001): **same principle**. This separately recorded actual-dynamics branch is stronger than merely listing auxiliary components; it does not close the general noncommuting continuation.
+
+**Stable key:** physics.P5.COMMUTING_ACTUAL_UNIFORM. 
 
 </details>
 
@@ -2877,7 +2926,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 58 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 59 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.
