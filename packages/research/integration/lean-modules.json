@@ -680,10 +680,11 @@
     {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "1c65f6287878bdf414e35c8227fe50674029c164b8689dc2775e1c73efa58b0b",
+      "sha256": "62dd90b9010224ae631050365cbb81f1ab5c310bf08e34304c9f419a9396ae46",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
+        "ResearchCommons.Integration.WordCache",
         "ResearchCommons.Claims.G1",
         "ResearchCommons.Claims.G2",
         "ResearchCommons.Claims.G3Certificate",
@@ -701,10 +702,10 @@
       "provenance": {
         "role": "Import-only actual dependency union of every currently named claim binding",
         "proof_derivation": false,
-        "selected_current_context_verified": true,
+        "selected_current_context_verified": false,
         "preflight": "integration/CLAIM-EXPORT-PREFLIGHT.md",
         "scope": "The export command independently validates all required transitive dependencies and object digests, runs the complete selected owned audit, and kernel-checks every name. It retains original integration scopes and pending claims.",
-        "current_verification_scope": "899-source context,21 claim mappings/96 exact declaration names and actual owners, complete21059/14366 owned audit and actual PositiveMomentSignature caller accepted.1651-source full profile and whole118-claim closure are separate.",
+        "current_verification_scope": "Exact named-export union plus actual shared WordCache proof-consumer dependency. Fresh generic staged-word target included in the existing export CI closure; no new CI/QE/source engine or transferred actual word acceptance.",
         "prior_verified_sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v4.json",
