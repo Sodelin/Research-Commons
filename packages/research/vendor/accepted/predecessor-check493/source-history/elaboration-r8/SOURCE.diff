@@ -1,0 +1,22 @@
+--- elaboration-r7/G4PairedNaturalTreeCertificate.lean
++++ elaboration-r8/G4PairedNaturalTreeCertificate.lean
+@@ -4009,7 +4009,8 @@
+       simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
+     simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+       Finset.mem_erase,σ.injective.ne_iff,hl,hLoc]
+-  · simpa only [renameSnapshot,encodeSnapshot,merge] using hReg.symm
++  · change s.register = t.register
++    exact hReg.symm
+ 
+ lemma renameCode_destination (N : RootedBinary V E X) {sample : A → X}
+     (σ : A ≃ B) (s : Code N sample)
+@@ -4097,7 +4098,8 @@
+       rw [hLive]
+       simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
+     simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,hl,hfg]
+-  · simpa only [renameSnapshot,encodeSnapshot,transport] using hReg.symm
++  · change s.register = t.register
++    exact hReg.symm
+ 
+ lemma renameCode_transport (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (f : A → Location V E) (g : B → Location V E)

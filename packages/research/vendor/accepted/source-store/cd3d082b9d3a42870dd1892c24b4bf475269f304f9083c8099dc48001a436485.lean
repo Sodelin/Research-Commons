@@ -1,0 +1,32 @@
+import G7AncestralPolynomialKernel
+
+#print axioms GProgram.G7.AncestralPolynomialKernel.ancestral_roots
+#print axioms GProgram.G7.AncestralPolynomialKernel.rootChoices
+#print axioms GProgram.G7.AncestralPolynomialKernel.ancestral_choice_card
+#print axioms GProgram.G7.AncestralPolynomialKernel.actual_ancestral_holding_rate
+#print axioms GProgram.G7.AncestralPolynomialKernel.actual_terminal_epoch
+#print axioms GProgram.G7.AncestralPolynomialKernel.damped_monomial_integral
+#print axioms GProgram.G7.AncestralPolynomialKernel.Expr
+#print axioms GProgram.G7.AncestralPolynomialKernel.liftTerm
+#print axioms GProgram.G7.AncestralPolynomialKernel.liftExpr
+#print axioms GProgram.G7.AncestralPolynomialKernel.kernelExpr
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprPolynomial
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_nil
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_cons
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_append
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_continuous
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_liftTerm
+#print axioms GProgram.G7.AncestralPolynomialKernel.integral_exprValue
+#print axioms GProgram.G7.AncestralPolynomialKernel.merger_exponent_lt
+#print axioms GProgram.G7.AncestralPolynomialKernel.kernelExpr_bound
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_flatMap
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprValue_finite
+#print axioms GProgram.G7.AncestralPolynomialKernel.kernelExpr_actual
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprPolynomial_nil
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprPolynomial_cons
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprPolynomial_eval
+#print axioms GProgram.G7.AncestralPolynomialKernel.ancestralPolynomial
+#print axioms GProgram.G7.AncestralPolynomialKernel.actual_ancestral_polynomial
+#print axioms GProgram.G7.AncestralPolynomialKernel.exprPolynomial_degree
+#print axioms GProgram.G7.AncestralPolynomialKernel.ancestralPolynomial_degree

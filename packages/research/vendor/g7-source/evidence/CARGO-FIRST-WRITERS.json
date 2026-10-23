@@ -1,0 +1,130 @@
+{
+  "schema": "pinned_Cargo_selected_transitive_writer_source_review_v1",
+  "status": "SOURCE_ONLY;NO_CARGO_RUSTC_BUILD_SCRIPT_OR_NEW_NATIVE_JOB_EXECUTED",
+  "official_toolchain_source": {
+    "repository": "rust-lang/rust",
+    "ref": "1.90.0",
+    "submodule_path": "src/tools/cargo",
+    "submodule_repository": "rust-lang/cargo",
+    "submodule_commit": "840b83a10fb0e039a83f4d70ad032892c287570a",
+    "metadata_source": "https://api.github.com/repos/rust-lang/rust/contents/src/tools/cargo?ref=1.90.0",
+    "installed_or_downloaded_binary_authenticated": false
+  },
+  "sources": [
+    {
+      "git_blob": "fa8239edfba3a54bef2d6c5bad7c17d3636dc6ac",
+      "path": "src/cargo/core/compiler/mod.rs",
+      "sha256": "fa2ebbf95bf24fd215d092f5f58cb4e7c0d5743c6c8a6b87a1888172ba05a506",
+      "source_lines": 2225,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/core/compiler/mod.rs"
+    },
+    {
+      "git_blob": "f70a870cf467da8e3208c96aacc4acee72699265",
+      "path": "src/cargo/core/compiler/build_runner/compilation_files.rs",
+      "sha256": "ce0b4c25ec40a236b1bc469a8d9873bd523a3a02e3ce661f576ce5cd304ac403",
+      "source_lines": 868,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/core/compiler/build_runner/compilation_files.rs"
+    },
+    {
+      "git_blob": "0cec4660de37c3fdcbc4a13ad99f56f5c30cec06",
+      "path": "src/cargo/core/compiler/custom_build.rs",
+      "sha256": "207f1a1f130ade4805eb745cf566abf7332cfd5faebd6fd1851119416ec8df4d",
+      "source_lines": 1415,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/core/compiler/custom_build.rs"
+    },
+    {
+      "git_blob": "2b0f0ff50ffc5ce269a60289c6505b66a32dfcb8",
+      "path": "src/cargo/util/rustc.rs",
+      "sha256": "bdc3b21d37cb07c472cb1e59964f99f91734071b75257f842eb8467ba00ecb93",
+      "source_lines": 393,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/util/rustc.rs"
+    },
+    {
+      "git_blob": "7312558004519a43a15266a5c55665c3dbfd54ff",
+      "path": "src/cargo/util/context/mod.rs",
+      "sha256": "0c6e9518c3deb16dcb951aa18be1fb3a9ce4b5c38256894cad0a0108dcf60a60",
+      "source_lines": 3190,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/util/context/mod.rs"
+    },
+    {
+      "git_blob": "34bff3d367bb5637ab1e8d289269a78a22bf844a",
+      "path": "src/cargo/core/compiler/fingerprint/mod.rs",
+      "sha256": "5e0f94c720015e5d1fc39e86f3df034ebf7be6c75bb2bb398634bb74fcd47d56",
+      "source_lines": 2070,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/cargo/core/compiler/fingerprint/mod.rs"
+    },
+    {
+      "git_blob": "9d27afaad84e481692b0abee144ec0197f27c4f9",
+      "path": "src/doc/src/reference/environment-variables.md",
+      "sha256": "3a76f0f4fd6a2b93fbe89fc886abefb2539db3b730d237ce1185d7ed73959c0c",
+      "source_lines": 435,
+      "url": "https://github.com/rust-lang/cargo/blob/840b83a10fb0e039a83f4d70ad032892c287570a/src/doc/src/reference/environment-variables.md"
+    }
+  ],
+  "reviewed_scope": "Exact source bytes hashed; selected writer/caller/cache-control functions reviewed. Not a complete Cargo/rustc/filesystem/worker audit.",
+  "selected_writers": [
+    {
+      "source": "src/cargo/core/compiler/mod.rs",
+      "lines": [
+        1839,
+        1908
+      ],
+      "path_supplier": "src/cargo/core/compiler/build_runner/compilation_files.rs:294-297",
+      "first_writer": "on_stderr_line lazily creates the message-cache path and writes the ORIGINAL compiler line plus newline when its inner handler returns true.",
+      "location": "The unit's fingerprint path with output- prefix.",
+      "independent_of_outer_guard": true,
+      "display_is_not_cache_control": "show_diagnostics=false still has true cache dispositions at2012/2034/2088; suppressing display does not establish absence of this file writer."
+    },
+    {
+      "source": "src/cargo/core/compiler/custom_build.rs",
+      "lines": [
+        476,
+        478,
+        641,
+        655
+      ],
+      "first_writer": "After a successful selected custom build, Cargo writes captured build-script stdout, stderr and root-output paths inside the script run directory.",
+      "scope": "Conditional on such a selected build script and successful branch; this review does not claim an actual new execution or enumerate all dependency scripts."
+    },
+    {
+      "source": "src/cargo/util/rustc.rs",
+      "lines": [
+        255,
+        313
+      ],
+      "caller": "src/cargo/util/context/mod.rs:423-448",
+      "first_writer": "When enabled and dirty, Cache drop serializes cached compiler-query results, including original stdout/stderr/status, to the selected .rustc_info.json.",
+      "scope": "Conditional cache path/dirty state; not unconditional every Cargo invocation."
+    },
+    {
+      "source": "src/cargo/core/compiler/fingerprint/mod.rs",
+      "lines": [
+        1823,
+        1840
+      ],
+      "first_writer": "write_fingerprint emits a short build hash and serialized fingerprint metadata.",
+      "scope": "Identified for actual source/build-vs-runtime classification; do not classify every build object as a private raw runtime record by analogy."
+    }
+  ],
+  "supported_narrow_control": {
+    "name": "CARGO_CACHE_RUSTC_INFO",
+    "value": "0",
+    "original_source": "src/cargo/util/context/mod.rs:278-282,442-446",
+    "official_pinned_documentation": "src/doc/src/reference/environment-variables.md:71-72",
+    "effect": "Select None for compiler-info cache location; no .rustc_info.json write through that cache.",
+    "does_not_close": [
+      "Compiler diagnostic output- cache",
+      "Custom build output/stderr",
+      "Guard/runtime/internal request/result/failure/recovery",
+      "Lake traces/elaborator audits"
+    ],
+    "source_proposal_only": true,
+    "workflow_or_canonical_profile_changed": false,
+    "new_native_proposal_should_select_this_before_Cargo": true,
+    "actual_complete_toolchain_behavior_verified": false
+  },
+  "actual_remaining_receiving_join": "Existing authenticated recipient and original controller/frame/sequence/writer/transport, plus actual encryption-before-first-write hooks for every selected inner writer; an outer stream capture or quiet CLI alone is insufficient.",
+  "original_holds_preserved": true,
+  "prior_runtime_history_not_reclassified": true,
+  "universal_absence_or_coverage_claim": false
+}

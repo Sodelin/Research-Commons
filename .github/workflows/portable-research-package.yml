@@ -1,0 +1,92 @@
+name: Portable research package
+on:
+  push:
+    branches: [codex/portable-lean-rust-registry-20261023]
+    paths:
+      - 'packages/research/**'
+      - '.github/workflows/portable-research-package.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portable-research-package-20261023
+  cancel-in-progress: false
+jobs:
+  rust:
+    name: Exact Rust engines and source assembly (not full claim closure)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Build and test actual workspace
+        run: cargo test --workspace
+      - name: Check complete registry accounting
+        run: |
+          mkdir -p build
+          cargo run -p research-commons-package -- check > build/coverage.json
+          cargo run -p research-commons-package -- prepare > build/preparation.json
+          cargo run -p research-commons-package -- emit-index > build/Registry.lean
+          cmp build/Registry.lean lean/ResearchCommons/Registry.lean
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-rust-evidence
+          path: |
+            packages/research/build/
+            packages/research/Cargo.lock
+          if-no-files-found: warn
+  lean:
+    name: Fresh coherent retained Lean profile (not all 93 formalizations)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install pinned Lean on hosted Linux
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          sha256sum "$RUNNER_TEMP/lean.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Prepare exact retained sources
+        run: cargo run -p research-commons-package -- prepare
+      - name: Acquire exact mathlib dependency and cache
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Compile actual module order and aggregate
+        run: cargo run -p research-commons-package -- build
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-lean-evidence
+          path: |
+            packages/research/build/
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  completeness:
+    name: Full per-claim integration gate
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Reject unbound claims as whole-package completion
+        run: cargo run -p research-commons-package -- coverage --strict

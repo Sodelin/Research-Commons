@@ -1,0 +1,196 @@
+--- elaboration-r6/G4PairedNaturalTreeCertificate.lean
++++ elaboration-r7/G4PairedNaturalTreeCertificate.lean
+@@ -3961,6 +3961,56 @@
+   rw [he] at hm
+   simpa only [choicePMF,PMF.ofFintype_apply] using congrArg ENNReal.ofReal hm.symm
+ 
++/-- Field-level merger transport isolates raw finite snapshots from dependent
++source-choice and source-validity proofs. The actual source instantiation follows. -/
++lemma renameSnapshot_merge (σ : A ≃ B) (s : State V E A) (t : State V E B)
++    (a b : A) (hv : Valid (merge s a b)) (hv' : Valid (merge t (σ a) (σ b)))
++    (hLive : t.live = s.live.image σ)
++    (hAnc : ∀ x, t.ancestor x = σ (s.ancestor (σ.symm x)))
++    (hTree : ∀ x, t.genealogy x = mapLabels σ (s.genealogy (σ.symm x)))
++    (hLoc : ∀ x, t.location x = s.location (σ.symm x))
++    (hReg : t.register = s.register) :
++    renameSnapshot σ (encodeSnapshot (merge s a b) hv) =
++      encodeSnapshot (merge t (σ a) (σ b)) hv' := by
++  apply Snapshot.ext
++  · simp only [renameSnapshot,encodeSnapshot,merge,hLive]
++    exact Finset.image_erase σ.injective _ _
++  · funext x
++    obtain ⟨y,rfl⟩ := σ.surjective x
++    simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
++      hAnc,σ.injective.eq_iff]
++    split <;> rfl
++  · funext x
++    obtain ⟨y,rfl⟩ := σ.surjective x
++    have hl : σ y ∈ t.live ↔ y ∈ s.live := by
++      rw [hLive]
++      simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
++    by_cases hy : y ∈ s.live.erase b
++    · have hy' : σ y ∈ t.live.erase (σ b) := by
++        simpa only [Finset.mem_erase,σ.injective.ne_iff,hl] using hy
++      simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
++        dif_pos hy,dif_pos hy',Option.map_some]
++      apply congrArg some
++      apply Subtype.ext
++      by_cases ha : y = a
++      · subst y
++        simp only [renameTree,if_pos rfl,hTree,
++          Equiv.symm_apply_apply,mapLabels,ite_true]
++      · simp only [renameTree,if_neg ha,if_neg (σ.injective.ne_iff.mpr ha),
++          hTree,Equiv.symm_apply_apply]
++    · have hy' : σ y ∉ t.live.erase (σ b) := by
++        simpa only [Finset.mem_erase,σ.injective.ne_iff,hl] using hy
++      simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
++        dif_neg hy,dif_neg hy',Option.map_none]
++  · funext x
++    obtain ⟨y,rfl⟩ := σ.surjective x
++    have hl : σ y ∈ t.live ↔ y ∈ s.live := by
++      rw [hLive]
++      simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
++    simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
++      Finset.mem_erase,σ.injective.ne_iff,hl,hLoc]
++  · simpa only [renameSnapshot,encodeSnapshot,merge] using hReg.symm
++
+ lemma renameCode_destination (N : RootedBinary V E X) {sample : A → X}
+     (σ : A ≃ B) (s : Code N sample)
+     (q : Option (Choice N s)) :
+@@ -3970,47 +4020,11 @@
+   | none => rfl
+   | some q =>
+     apply Subtype.ext
+-    change renameSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) (actual_choice_merge_valid N s q)) =
+-      encodeSnapshot (merge (state (renameCode N σ s)) (σ q.2.val.1) (σ q.2.val.2))
+-        (actual_choice_merge_valid N (renameCode N σ s) (renameChoiceEquiv N σ s q))
+-    apply Snapshot.ext
+-    · simp only [renameSnapshot,encodeSnapshot,merge,renameCode_live N σ s]
+-      exact Finset.image_erase σ.injective _ _
+-    · funext x
+-      obtain ⟨y,rfl⟩ := σ.surjective x
+-      simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+-        renameCode_ancestor N σ s,σ.injective.eq_iff]
+-      split <;> rfl
+-    · funext x
+-      obtain ⟨y,rfl⟩ := σ.surjective x
+-      have hl : σ y ∈ (state (renameCode N σ s)).live ↔ y ∈ (state s).live := by
+-        rw [renameCode_live N σ s]
+-        simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
+-      by_cases hy : y ∈ (state s).live.erase q.2.val.2
+-      · have hy' : σ y ∈ (state (renameCode N σ s)).live.erase (σ q.2.val.2) := by
+-          simpa only [Finset.mem_erase,σ.injective.ne_iff,hl] using hy
+-        simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+-          dif_pos hy,dif_pos hy',Option.map_some]
+-        apply congrArg some
+-        apply Subtype.ext
+-        by_cases ha : y = q.2.val.1
+-        · subst y
+-          simp only [renameTree,if_pos rfl,renameCode_genealogy N σ s,
+-            Equiv.symm_apply_apply,mapLabels,ite_true]
+-        · simp only [renameTree,if_neg ha,if_neg (σ.injective.ne_iff.mpr ha),
+-            renameCode_genealogy N σ s,Equiv.symm_apply_apply]
+-      · have hy' : σ y ∉ (state (renameCode N σ s)).live.erase (σ q.2.val.2) := by
+-          simpa only [Finset.mem_erase,σ.injective.ne_iff,hl] using hy
+-        simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+-          dif_neg hy,dif_neg hy',Option.map_none]
+-    · funext x
+-      obtain ⟨y,rfl⟩ := σ.surjective x
+-      have hl : σ y ∈ (state (renameCode N σ s)).live ↔ y ∈ (state s).live := by
+-        rw [renameCode_live N σ s]
+-        simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
+-      simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+-        Finset.mem_erase,σ.injective.ne_iff,hl,renameCode_location N σ s]
+-    · rfl
++    exact renameSnapshot_merge σ (state s) (state (renameCode N σ s))
++      q.2.val.1 q.2.val.2 (actual_choice_merge_valid N s q)
++      (actual_choice_merge_valid N (renameCode N σ s) (renameChoiceEquiv N σ s q))
++      (renameCode_live N σ s) (renameCode_ancestor N σ s)
++      (renameCode_genealogy N σ s) (renameCode_location N σ s) (renameCode_register N σ s)
+ 
+ 
+ lemma renameCode_sourceStep (N : RootedBinary V E X) {sample : A → X}
+@@ -4046,6 +4060,45 @@
+   funext k
+   exact renameCode_iteration N r e k s
+ 
++/-- The corresponding raw transport identity retains every encoded field;
++only the prescribed new population functions need to agree after relabelling. -/
++lemma renameSnapshot_transport (e : A ≃ B) (s : State V E A) (t : State V E B)
++    (f : A → Location V E) (g : B → Location V E)
++    (ev : SourceEvent V E A) (ev' : SourceEvent V E B)
++    (hv : Valid (transport s f ev)) (hv' : Valid (transport t g ev'))
++    (hLive : t.live = s.live.image e)
++    (hAnc : ∀ x, t.ancestor x = e (s.ancestor (e.symm x)))
++    (hTree : ∀ x, t.genealogy x = mapLabels e (s.genealogy (e.symm x)))
++    (hReg : t.register = s.register) (hfg : ∀ x, g (e x) = f x) :
++    renameSnapshot e (encodeSnapshot (transport s f ev) hv) =
++      encodeSnapshot (transport t g ev') hv' := by
++  apply Snapshot.ext
++  · exact (hLive).symm
++  · funext x
++    exact (hAnc x).symm
++  · funext x
++    obtain ⟨y,rfl⟩ := e.surjective x
++    have hl : e y ∈ t.live ↔ y ∈ s.live := by
++      rw [hLive]
++      simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
++    by_cases hy : y ∈ s.live
++    · have hy' := hl.mpr hy
++      simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,
++        dif_pos hy,dif_pos hy',Option.map_some]
++      apply congrArg some
++      apply Subtype.ext
++      simpa only [renameTree,Equiv.symm_apply_apply] using (hTree (e y)).symm
++    · have hy' : e y ∉ t.live := mt hl.mp hy
++      simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,
++        dif_neg hy,dif_neg hy',Option.map_none]
++  · funext x
++    obtain ⟨y,rfl⟩ := e.surjective x
++    have hl : e y ∈ t.live ↔ y ∈ s.live := by
++      rw [hLive]
++      simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
++    simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,hl,hfg]
++  · simpa only [renameSnapshot,encodeSnapshot,transport] using hReg.symm
++
+ lemma renameCode_transport (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (f : A → Location V E) (g : B → Location V E)
+     (ev : SourceEvent V E A) (ev' : SourceEvent V E B)
+@@ -4055,34 +4108,9 @@
+     renameCode N e (admittedCode N sample (transport (state s) f ev) hv) =
+       admittedCode N (sample ∘ e.symm) (transport (state (renameCode N e s)) g ev') hv' := by
+   apply Subtype.ext
+-  change renameSnapshot e (encodeSnapshot (transport (state s) f ev) hv.forest) =
+-    encodeSnapshot (transport (state (renameCode N e s)) g ev') hv'.forest
+-  apply Snapshot.ext
+-  · exact (renameCode_live N e s).symm
+-  · funext x
+-    exact (renameCode_ancestor N e s x).symm
+-  · funext x
+-    obtain ⟨y,rfl⟩ := e.surjective x
+-    have hl : e y ∈ (state (renameCode N e s)).live ↔ y ∈ (state s).live := by
+-      rw [renameCode_live]
+-      simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
+-    by_cases hy : y ∈ (state s).live
+-    · have hy' := hl.mpr hy
+-      simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,
+-        dif_pos hy,dif_pos hy',Option.map_some]
+-      apply congrArg some
+-      apply Subtype.ext
+-      simpa only [renameTree,Equiv.symm_apply_apply] using (renameCode_genealogy N e s (e y)).symm
+-    · have hy' : e y ∉ (state (renameCode N e s)).live := mt hl.mp hy
+-      simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,
+-        dif_neg hy,dif_neg hy',Option.map_none]
+-  · funext x
+-    obtain ⟨y,rfl⟩ := e.surjective x
+-    have hl : e y ∈ (state (renameCode N e s)).live ↔ y ∈ (state s).live := by
+-      rw [renameCode_live]
+-      simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
+-    simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,hl,hfg]
+-  · rfl
++  exact renameSnapshot_transport e (state s) (state (renameCode N e s)) f g ev ev'
++    hv.forest hv'.forest (renameCode_live N e s) (renameCode_ancestor N e s)
++    (renameCode_genealogy N e s) (renameCode_register N e s) hfg
+ 
+ lemma renameCode_exit (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (edge : E) :

@@ -1,0 +1,13 @@
+# Independent actual full1613 staging preflight
+
+12 October 2026, 17:14 UTC. PASS for the parent's conditionally admitted exact aggregate/audit run after immediate fresh coordinated launch gates. No compiler or builder was invoked by this review.
+
+Actual graph 768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13, scripts, configuration, selected source bodies and history match the frozen profile. All 1,611 old selected entries/receipts remain literal, the two paired source contexts match checked narrow493, and the isolated fixture remains separate: 1,614 stored source/cache contexts total. All context keys were independently recomputed from actual source, compiler, Mathlib, import bundles, trust/kernel fields and native digest. Each staged source/cache file matches its authenticated hardlink origin. No unchecked component is present or permitted to compile.
+
+I rehashed 14,100 files covering 3,636,558,272 bytes, authenticated 3,570 direct-import bundle bindings and 193 external roots, and checked first-namespace resolution. The exact eleven-owned Mathlib mapping remains; the new modules' source closure and external companions have the checked narrow provenance. All 28 native libraries match the official compiler/native context: Lean e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 and native digest 59e64f51cbf0f4e9decd55b01026396941427537c1fcf900ad198a7775ba15e6.
+
+Preparation measured 23,986,176 new nonshared bytes, 793,387,008 file-path-counted bytes and 7,057,408 directory/symlink bytes. The unchanged recorded launcher e27a5afdec0e120ed609709b455f9fb96af8ac36bc1cb67f2795362b34a621fb adds one 4,096-byte block: 23,990,272 new bytes and 793,391,104 path bytes. These meet the 64-MiB and 1-GiB staging caps. The largest file is 15,386,319 bytes.
+
+At 17:13:19 UTC free storage was 18,304,425,984 bytes and available RAM 8,779,640,832 bytes, with no active Lean/Lake process in the local namespace. The owner must repeat coordinated fresh gates. Only the aggregate and complete audit may compile, at the unchanged 300 seconds/6144 MiB each; all component fallback is rejected. The 3-GiB package, 8-GiB free floor, per-file and runtime gates remain unchanged.
+
+This preflight is not full1613 acceptance. The final independent gate must preserve all 103,706 full1611 records literally and match all 658 narrow additions exactly. Twenty narrow metadata qualifications remain separate and cannot be used as full-context waivers. Historical failed attempts, the successful split core provenance and the complete narrow terminal result remain preserved.

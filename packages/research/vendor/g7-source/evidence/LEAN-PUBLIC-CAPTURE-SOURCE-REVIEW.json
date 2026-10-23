@@ -1,0 +1,121 @@
+{
+  "schema": "retained_public_Lean_launcher_capture_source_review_v1",
+  "peer_commit": "46b86fbf002f252e1a7063ba8981ba03541fda55",
+  "peer_root": "research/2026-10-21-lean-online-builder",
+  "review_utc": "2026-10-22T05:48:08Z",
+  "source_scope": "Complete five listed public bodies read and SHA256/byte checked. Capture/normal-exit/source-and-audit/after-inventory/packing/encryption-refusal paths inspected; no independent runtime or transitive-writer acceptance.",
+  "sources": [
+    {
+      "path": "online_capture.py",
+      "bytes": 9902,
+      "sha256": "4661c642eddf3d39586b8cc2e76db8436cd32df11869e49a96c1a048e66189fc",
+      "git_blob": "0355f24a2fe3b06e868f5c4b8120abfa0484ed1e"
+    },
+    {
+      "path": "check_online_component.py",
+      "bytes": 5724,
+      "sha256": "e45f0e5b3f8ecfe88ab6dbd1bdc5e325d0abfea24fc666acbd7c23dfac9bfbdd",
+      "git_blob": "105af6e1a73c04e81073cca2feabd26713458b47"
+    },
+    {
+      "path": "check_online.py",
+      "bytes": 1955,
+      "sha256": "8eea8cf812a29872e0b6f00f03bb42049fc89f3d0675130f36347b7d2c89ba0b",
+      "git_blob": "f1bcb367d0db96a9ee7bb8946d379afa3cb73746"
+    },
+    {
+      "path": "ONLINE-RUNNER-INTEGRATION.json",
+      "bytes": 8065,
+      "sha256": "f618483a4d22a22a46fd6b0aa5000e272deaceb727a223e65129efe3342c428c",
+      "git_blob": "1cbf1d5c1ddddb0bfbe27793909ac097c027739d"
+    },
+    {
+      "path": "test_online_capture.py",
+      "bytes": 8280,
+      "sha256": "e089b9b6f85a322e3bcb3d0e46a621bd3a3cbb221ebd652ee4aa6ab1695064e8",
+      "git_blob": "72e549fadfe85db1c9a38813625fc4c18f63550b"
+    }
+  ],
+  "inspected": {
+    "normal_exit_required_for_PASS_and_REJECTED": true,
+    "source_byte_hash_and_ordered_audits_bound": true,
+    "nonempty_equal_service_before_after_inventory": true,
+    "all_listed_public_source_bytes_checked_before_after": true,
+    "timeout_partial_stdout_stderr_retained_losslessly_in_RAM": true,
+    "invalid_UTF8_preserved_as_base64_within_encryption": true,
+    "encrypted_existing_codec_readback_required_before_acceptance": true,
+    "bounded_encrypted_UNVERIFIED_tombstone_when_original_record_exceeds_bound": true,
+    "plaintext_or_automatic_retry_fallback": false,
+    "component_drain_entry_selected": true,
+    "original_Node_or_private_parent_implementation_changed": false,
+    "material_source_mismatch_found": false
+  },
+  "attributed_execution": {
+    "owner": "existing Lean builder",
+    "actual_checks": [
+      {
+        "case": "g7-power-domain",
+        "runner": "check_online_component.py",
+        "status": "PASS_REMOTE_LEAN_CHECK",
+        "normal_child_exit": 0,
+        "source_sha256": "b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892",
+        "submitted_source_sha256": "f317fdd8f247d23504cdc8dd3670b7bc758aed6d0265f569852ede815faa3491",
+        "encrypted_capture_sha256": "0cbabe022a538b7c557dd685cab0bc88ad01bc47a831bc724a0216f697cab2ee",
+        "finished_utc": "2026-10-22T05:35:06.115Z"
+      },
+      {
+        "case": "reject-false",
+        "runner": "check_online_component.py",
+        "status": "REJECTED_REMOTE_LEAN_CHECK",
+        "normal_child_exit": 2,
+        "source_sha256": "5c01e8be286ff04b9870a584e7109647b034bf7d24acf88f2ddd93e683ff95ca",
+        "submitted_source_sha256": "30cc98885140c95f0ed0d933d65fcc9049556486823ba6927cd9a03f95d6ca32",
+        "encrypted_capture_sha256": "dffd6a540caa0646707be7c87a24f952e3b0cc8ddaab8e215431bd4f590d6af7",
+        "finished_utc": "2026-10-22T05:35:27.749Z"
+      },
+      {
+        "case": "probe",
+        "runner": "check_online.py",
+        "status": "PASS_REMOTE_LEAN_CHECK",
+        "normal_child_exit": 0,
+        "source_sha256": "d6e966709ff41111a62bb35e3e88325d442d00b8da88d3daad6592fa3909ed32",
+        "submitted_source_sha256": "de3b55f622c12f6d5c4e64176613d0346152259bf7e508f4be05dbdae08e6293",
+        "encrypted_capture_sha256": "4fa3e1bae7f02cd0b76c53f554e36bcec9014396aa9c75d30b474a5e423a9c58",
+        "finished_utc": "2026-10-22T05:35:55.066Z"
+      }
+    ],
+    "offline_mock_regressions": 12,
+    "offline_failures": 0,
+    "actual_timeout_or_oversized_child_claimed": false,
+    "new_mathematical_case_count": 0,
+    "existing_bounded_cases": 29,
+    "source_modules": 776,
+    "service_context": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+      "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+    }
+  },
+  "independent_execution_here": {
+    "tests": false,
+    "hosted_Lean": false,
+    "native": false,
+    "Cargo": false,
+    "Lake": false,
+    "CI": false,
+    "model": false,
+    "QE": false,
+    "emitter": false,
+    "codec": false
+  },
+  "remaining": [
+    "Actual original-owner Linux controller, authenticated recipient/frame/sequence/journal/transport and transitive first writers are UNBOUND.",
+    "The public launcher is not compiler/OS admission or proof of native source/result origin.",
+    "No pinned4.33.1 imports/objects, native parser/coefficient/AST refinement, physical source/target/action coverage or selector acceptance follows."
+  ],
+  "old_held_used_jobs_replayed": false,
+  "owner_route_retried": false,
+  "keys_or_recipients_exported": false,
+  "local_Git_changed": false,
+  "new_worker": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "online_component_failure_correction_v1",
+  "run_url": "https://github.com/Sodelin/Research-Commons/actions/runs/39672776803",
+  "source_commit": "bf62e950cd6eb88d35d4b0f2a3ae1575a8f07c14",
+  "artifact": {
+    "id": 12380332743,
+    "zip_sha256": "bebe660b8a2dd94662f53f33696235062ad74321e4c7ceed752f3540d65e8a9f",
+    "bytes": 24642
+  },
+  "actual_stage_outcomes": {
+    "native_units": "PASS",
+    "native_build": "PASS",
+    "original556": "PASS",
+    "new_native_and_codec_CLI_and_original_runtime": "PASS",
+    "MCP_harness": "FAILED_BEFORE_PROTOCOL"
+  },
+  "error": "ModuleNotFoundError: No module named 'bridge' while starting unchanged server.py with harness-only -I.",
+  "correction": "Use -E -s -B for the unchanged documented sibling-module server entrypoint. -I removes the script directory required by its from bridge import. Runtime still uses its own original -I child path and source authentication; no canonical source is edited.",
+  "old_harness_sha256": "0b43fdce5092beb73d34c56696c8f0dc70b3eace65d2067116f39cd2e910535f",
+  "new_harness_sha256": "64e414b15f3fff87e0178ed29e2d8837efcb2f7a5bf126cd1371aca593e81907",
+  "runtime_limits_changed": false,
+  "native_or_mathematical_semantics_changed": false,
+  "status": "HARNESS_SOURCE_CORRECTED_FRESH_MCP_CHECK_PENDING"
+}
