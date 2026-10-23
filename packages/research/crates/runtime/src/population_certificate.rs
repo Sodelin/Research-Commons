@@ -22,7 +22,18 @@ pub fn emit(context:&Context,entering:&Snapshot,population:Location,bindings:Bin
   source_population::Decision::Unknown(limit)=>return Err(Error::Unknown(limit)),
  };
  let prepared=retained::prepare(context,entering,&table,bindings,render).map_err(Error::Render)?;
- Ok(prepared.document().to_owned())
+ let mut document=prepared.document().to_owned();
+ // Portable proof-only projection fixes exposed by the first actual check.
+ // Literal graph, snapshots, coefficient tables and theorem targets are unchanged.
+ document=document.replacen("-- SOURCE CANDIDATE;", "set_option maxRecDepth 10000\nset_option maxHeartbeats 4000000\n\n-- SOURCE CANDIDATE;",1);
+ document=document.replace("private abbrev N :","private noncomputable abbrev N :")
+    .replace("theorem taxa_exact : N.leaf =", "theorem taxa_exact : (fun x => N.leaf x) =")
+    .replace("by decide","by decide +kernel")
+    .replace("    decide⟩","    decide +kernel⟩");
+ if document.len()>render.rendered_bytes {
+  return Err(Error::Render(retained::Error::Unknown{kind:"portable_rendered_bytes",required:Some(document.len()),cap:render.rendered_bytes}));
+ }
+ Ok(document)
 }
 /// Two actual raw ordered-copy rows on the same captured four-taxon graph.
 /// Edge uses two copies of taxon0; ancestral uses the original taxa0/1.
@@ -39,11 +50,27 @@ pub fn example(ancestral:bool)->Result<String,Error> {
  let context=Context{source,sample,global_labels:vec![0,1]};
  let entering=Snapshot::from_lineages(&context,&[(0,Tree::Leaf(0)),(1,Tree::Leaf(1))],population,register)
     .map_err(Error::Invalid)?;
- emit(&context,&entering,population,Bindings {
+ let namespace=if ancestral {"ResearchCommons.Generated.AncestralPopulation"}else{"ResearchCommons.Generated.EdgePopulation"};
+ let document=emit(&context,&entering,population,Bindings {
    original_module:"OriginalTreeBank",
    original_source:"ResearchCommons.Generated.OriginalTreeBank.originalSource",
-   namespace:if ancestral {"ResearchCommons.Generated.AncestralPopulation"}else{"ResearchCommons.Generated.EdgePopulation"},
- },PopulationLimits::default(),RenderLimits{rendered_bytes:262144,..RenderLimits::default()})
+   namespace,
+ },PopulationLimits::default(),RenderLimits{rendered_bytes:262144,..RenderLimits::default()})?;
+ let ending=format!("\nend {namespace}\n");
+ let prefix=document.strip_suffix(&ending).ok_or(Error::Invalid("retained namespace boundary"))?;
+ let joined=format!(r#"{prefix}
+noncomputable abbrev returnedRates :=
+  ResearchCommons.Generated.OriginalTreeBank.sharedBank.rates
+theorem same_returned_bank_population_probability (d : Code N sample) (t : ℝ≥0) :
+    Polynomial.eval₂ (Rat.castHom ℝ) (Real.exp (-pairRate returnedRates population * (t : ℝ)))
+      (exprPolynomial (collect rows d)) =
+        (sourceTimeKernel N returnedRates t entering d).toReal :=
+  original_population_probability d returnedRates t
+end {namespace}
+"#);
+ if joined.len()>262144{return Err(Error::Render(retained::Error::Unknown{
+  kind:"joined_rendered_bytes",required:Some(joined.len()),cap:262144}));}
+ Ok(joined)
 }
 #[cfg(test)]mod tests {
  use super::*;
@@ -53,6 +80,8 @@ pub fn example(ancestral:bool)->Result<String,Error> {
   assert!(source.contains("coefficient_table_checked"));
   assert!(source.contains("original_population_probability (d : Code N sample)"));
   assert!(source.contains("private def population"));
+  assert!(source.contains("same_returned_bank_population_probability"));
+  assert!(source.contains("private noncomputable abbrev N"));
  }
  #[test]fn actual_ancestral_table_retains_root_population_and_declared_sample(){
   let source=example(true).unwrap();
