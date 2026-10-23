@@ -51,12 +51,12 @@ theorem conditioned_target_blocks {k u : Nat} (source : Option (Index u)) (t : F
     (arrow_single_edges _ (augmented_acyclic source t)) _ none (some x) connection
   cases route with
   | nil => contradiction
-  | @cons start next finish rest first tail =>
-      have nextEq := indicator_neighbor source t next first
-      subst next
+  | @cons start «next» finish rest «first» tail =>
+      have nextEq := indicator_neighbor source t «next» «first»
+      subst «next»
       cases tail with
       | nil => exact outside conditioned
-      | @cons next after finish remaining second tail =>
+      | @cons «next» after finish remaining second tail =>
           have afterNotIndicator : after ≠ none := by
             intro same
             exact (List.nodup_cons.mp simple).1
@@ -70,15 +70,15 @@ theorem conditioned_target_blocks {k u : Nat} (source : Option (Index u)) (t : F
 theorem indicator_target_active {k u : Nat} (source : Option (Index u)) (t : Fin k)
     (C : Labels k u → Prop) :
     ActiveConnection (arrowGraph (augmented source t)) (augmentedCondition C) none (some (.inl t)) :=
-  single_edge_active _ _ (by intro impossible; cases impossible) .tail .head
+  single_edge_active _ _ (by intro «impossible»; cases «impossible») .tail .head
     (Or.inl ⟨rfl, rfl, rfl⟩)
 
 theorem indicator_untargeted_active {k u : Nat} (source : Option (Index u)) (t : Fin k)
     (C : Labels k u → Prop) (x : Fin u) (outside : ¬ C (.inl t)) :
     ActiveConnection (arrowGraph (augmented source t)) (augmentedCondition C) none (some (.inr x)) := by
   apply two_edge_active _ _ none (some (.inl t)) (some (.inr x))
-    (by intro impossible; cases impossible) (by intro impossible; cases impossible)
-    (by intro impossible; cases impossible) .tail .head .tail .head
+    (by intro «impossible»; cases «impossible») (by intro «impossible»; cases «impossible»)
+    (by intro «impossible»; cases «impossible») .tail .head .tail .head
   · exact Or.inl ⟨rfl, rfl, rfl⟩
   · exact Or.inl ⟨targets_cause_all source t x, rfl, rfl⟩
   · simpa only [ActiveAt, augmentedCondition] using outside
@@ -114,7 +114,7 @@ theorem other_root_no_selected_untargeted_separated {k u : Nat} (source : Option
     | some v => cases v with
       | inl root => intro same; subst root; exact targetOutside conditioned
       | inr z => exact (noUntargeted z conditioned).elim
-  · intro impossible; cases impossible
+  · intro «impossible»; cases «impossible»
   · trivial
   · exact different
   · intro v ma mb edge member
@@ -168,19 +168,19 @@ theorem indicator_other_root_separated_iff {k u : Nat} (source : Option (Index u
 
 /-- Every elementary invariance bit agrees for every baseline/rival pair.
 The quantifiers include ALL available t, endpoints and legal C. -/
-theorem all_indicator_separations_equal {k u : Nat} (first second : Option (Index u))
+theorem all_indicator_separations_equal {k u : Nat} («first» second : Option (Index u))
     (t : Fin k) (C : Labels k u → Prop) (x : Labels k u) (outside : ¬ C x) :
-    (¬ ActiveConnection (arrowGraph (augmented first t)) (augmentedCondition C) none (some x)) ↔
+    (¬ ActiveConnection (arrowGraph (augmented «first» t)) (augmentedCondition C) none (some x)) ↔
       (¬ ActiveConnection (arrowGraph (augmented second t)) (augmentedCondition C) none (some x)) := by
   cases x with
-  | inr x => rw [indicator_untargeted_separated_iff first t C x outside,
+  | inr x => rw [indicator_untargeted_separated_iff «first» t C x outside,
       indicator_untargeted_separated_iff second t C x outside]
   | inl s =>
       by_cases same : s = t
       · subst s
-        exact ⟨fun h => (h (indicator_target_active first t C)).elim,
+        exact ⟨fun h => (h (indicator_target_active «first» t C)).elim,
           fun h => (h (indicator_target_active second t C)).elim⟩
-      · rw [indicator_other_root_separated_iff first t s same C outside,
+      · rw [indicator_other_root_separated_iff «first» t s same C outside,
           indicator_other_root_separated_iff second t s same C outside]
 
 end RestrictedCausal.HardFamily

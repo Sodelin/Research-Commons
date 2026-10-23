@@ -142,26 +142,26 @@ walk and no assumed inducing-path theorem is used. -/
 theorem relaxed_route_activates {V : Type u} (G : MarkedGraph V) (laws : MixedLaws G)
     (C : V → Prop) (x y : V) {p q : Arrival V} {xs : List (Arrival V)}
     (h : Route (Transition G C (AncestorOf G (EndpointCondition C x y))) p xs q)
-    (hq : q.vertex = y) (actual : Option Mark) (prefix : List (Arrival V))
-    (hp : Route (RealStep G C) ⟨x, none⟩ prefix ⟨p.vertex, actual⟩)
+    (hq : q.vertex = y) (actual : Option Mark) («prefix» : List (Arrival V))
+    (hp : Route (RealStep G C) ⟨x, none⟩ «prefix» ⟨p.vertex, actual⟩)
     (hc : CompatibleArrival C p actual) :
     ∃ last ys, Route (RealStep G C) ⟨x, none⟩ ys ⟨y, last⟩ := by
   revert hp hc
-  revert actual prefix
+  revert actual «prefix»
   revert hq
   induction h with
   | nil p =>
-      intro hq actual prefix hp hc
-      exact ⟨actual, prefix, by simpa only [hq] using hp⟩
-  | @cons p next q rest hstep hrest ih =>
-      intro hq actual prefix hp hc
+      intro hq actual «prefix» hp hc
+      exact ⟨actual, «prefix», by simpa only [hq] using hp⟩
+  | @cons p «next» q rest hstep hrest ih =>
+      intro hq actual «prefix» hp hc
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       have hdeparture : DepartureAllowed C (AncestorOf G (EndpointCondition C x y))
           p.vertex p.incoming outgoing := hactive
       rcases departure_dichotomy G C _ p actual outgoing hc hdeparture with good | bad
-      · have copied : RealStep G C ⟨p.vertex, actual⟩ next :=
+      · have copied : RealStep G C ⟨p.vertex, actual⟩ «next» :=
           ⟨outgoing, incoming, hedge, hmark, good⟩
-        exact ih hq next.incoming (prefix ++ [next])
+        exact ih hq «next».incoming («prefix» ++ [«next»])
           (hp.append (.cons copied (.nil _))) (Or.inl rfl)
       · obtain ⟨hactual, hphead, hout, hancestor, hnot⟩ := bad
         obtain ⟨endpoint, hreach, hendpoint⟩ := hancestor
@@ -170,17 +170,17 @@ theorem relaxed_route_activates {V : Type u} (G : MarkedGraph V) (laws : MixedLa
           obtain ⟨directed, hdirected⟩ := hreach
           obtain ⟨arrival, replacement, hreplacement, harrival⟩ :=
             directed_reverse_active G laws C hdirected hnot
-          have newstep : RealStep G C ⟨p.vertex, arrival⟩ next := by
+          have newstep : RealStep G C ⟨p.vertex, arrival⟩ «next» := by
             refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
             rcases harrival with rfl | rfl
             · trivial
             · simpa [ActiveAt] using not_ancestor_condition hnot
-          exact ih hq next.incoming (replacement ++ [next])
+          exact ih hq «next».incoming (replacement ++ [«next»])
             (hreplacement.append (.cons newstep (.nil _))) (Or.inl rfl)
         · subst endpoint
           obtain ⟨directed, hdirected⟩ := hreach
           obtain ⟨last, tail, htail⟩ := directed_forward_active G C hdirected hnot actual
-          exact ⟨last, prefix ++ tail, hp.append htail⟩
+          exact ⟨last, «prefix» ++ tail, hp.append htail⟩
         · exact (hnot ⟨endpoint, hreach, hcondition⟩).elim
 
 theorem endpoint_relaxed_connection {V : Type u} (G : MarkedGraph V) (laws : MixedLaws G)

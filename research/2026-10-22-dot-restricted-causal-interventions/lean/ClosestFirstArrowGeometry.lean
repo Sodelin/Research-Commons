@@ -27,13 +27,13 @@ theorem split_at_mem {V : Type u} {R : V → V → Prop} {p q r : V} {xs : List 
       have same : r = p := by simpa only [List.mem_singleton] using member
       subst r
       exact ⟨[], [], rfl, .nil p, .nil p⟩
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro member
       rcases List.mem_cons.mp member with same | member
       · subst r
-        exact ⟨[], next :: rest, rfl, .nil p, .cons step tail⟩
+        exact ⟨[], «next» :: rest, rfl, .nil p, .cons step tail⟩
       · obtain ⟨front, back, equation, before, after⟩ := ih member
-        exact ⟨next :: front, back, by simpa only [List.cons_append, equation],
+        exact ⟨«next» :: front, back, by simpa only [List.cons_append, equation],
           .cons step before, after⟩
 
 end RestrictedCausal.SelectedWalk.Route
@@ -74,43 +74,43 @@ theorem minimum_directed_first_distance {V : Type u} (G : MarkedGraph V) (Z : V 
 theorem directed_opposites_impossible {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) {b d : V} (forward : Directed G b d)
     (backward : Directed G d b) : False := by
-  have impossible := laws.acyclic b [d, b] (.cons forward (.cons backward (.nil b)))
-  cases impossible
+  have «impossible» := laws.acyclic b [d, b] (.cons forward (.cons backward (.nil b)))
+  cases «impossible»
 
 /-- The entire actual prefix is excluded, including its starting endpoint.
 The one-edge case uses the collider's real incoming head; the longer case
 uses the existing global shortest-path chord theorem. -/
 theorem outgoing_child_not_in_prefix {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x y d : V)
-    {b : Arrival V} {prefix suffix : List (Arrival V)} {last : Option Mark}
-    (before : Route (RealStep G Z) ⟨x, none⟩ prefix b)
+    {b : Arrival V} {«prefix» suffix : List (Arrival V)} {last : Option Mark}
+    (before : Route (RealStep G Z) ⟨x, none⟩ «prefix» b)
     (after : Route (RealStep G Z) b suffix ⟨y, last⟩)
-    (shortest : Shortest G Z x y ((prefix ++ suffix).map Arrival.vertex))
+    (shortest : Shortest G Z x y ((«prefix» ++ suffix).map Arrival.vertex))
     (incoming : b.incoming = some .head) (outside : ¬ Z b.vertex)
     (child : Directed G b.vertex d) :
-    ∀ q ∈ (⟨x, none⟩ :: prefix), q.vertex ≠ d := by
+    ∀ q ∈ (⟨x, none⟩ :: «prefix»), q.vertex ≠ d := by
   intro q member equal
-  obtain ⟨front, middle, equation, first, section⟩ := before.split_at_mem member
+  obtain ⟨front, middle, equation, «first», «section»⟩ := before.split_at_mem member
   have reverseChild : G.edge q.vertex b.vertex .head .tail := by
     simpa only [equal] using laws.symmetric b.vertex d .tail .head child
   cases middle with
   | nil =>
-      cases section
+      cases «section»
       exact laws.irreflexive q.vertex .tail .head (by simpa only [← equal] using child)
-  | cons next rest =>
+  | cons «next» rest =>
       cases rest with
       | nil =>
-          cases section with
+          cases «section» with
           | cons step tail =>
               cases tail
-              obtain ⟨left, received, edge, mark, _⟩ := step
+              obtain ⟨«left», received, edge, mark, _⟩ := step
               have receivedHead : received = .head := Option.some.inj (mark.symm.trans incoming)
-              have receivedTail := (single q.vertex b.vertex left received .head .tail edge reverseChild).2
+              have receivedTail := (single q.vertex b.vertex «left» received .head .tail edge reverseChild).2
               exact Mark.noConfusion (receivedHead.symm.trans receivedTail)
       | cons next2 rest =>
-          have source : Shortest G Z x y ((front ++ (next :: next2 :: rest) ++ suffix).map Arrival.vertex) := by
+          have source : Shortest G Z x y ((front ++ («next» :: next2 :: rest) ++ suffix).map Arrival.vertex) := by
             simpa only [equation, List.append_assoc] using shortest
-          rcases shortest_chord_conditioned_parent G laws single Z x y first section after
+          rcases shortest_chord_conditioned_parent G laws single Z x y «first» «section» after
               (by simp only [List.length_cons]; omega) reverseChild source with blocked | blocked
           · exact directed_opposites_impossible G laws child (by simpa only [equal] using blocked.2)
           · exact outside blocked.1
@@ -120,35 +120,35 @@ source route remains in its original order, so no unproved reversal of a
 closestness potential or a MAG walk-erasure theorem is required. -/
 theorem outgoing_child_not_in_suffix {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x y d : V)
-    {b : Arrival V} {prefix suffix : List (Arrival V)} {last : Option Mark}
-    (before : Route (RealStep G Z) ⟨x, none⟩ prefix b)
+    {b : Arrival V} {«prefix» suffix : List (Arrival V)} {last : Option Mark}
+    (before : Route (RealStep G Z) ⟨x, none⟩ «prefix» b)
     (after : Route (RealStep G Z) b suffix ⟨y, last⟩)
-    (shortest : Shortest G Z x y ((prefix ++ suffix).map Arrival.vertex))
+    (shortest : Shortest G Z x y ((«prefix» ++ suffix).map Arrival.vertex))
     (outgoing : match suffix with
       | [] => True
       | q :: _ => ∃ m, G.edge b.vertex q.vertex .head m)
     (outside : ¬ Z b.vertex) (child : Directed G b.vertex d) :
     ∀ q ∈ (b :: suffix), q.vertex ≠ d := by
   intro q member equal
-  obtain ⟨middle, back, equation, section, final⟩ := after.split_at_mem member
+  obtain ⟨middle, back, equation, «section», final⟩ := after.split_at_mem member
   have chord : G.edge b.vertex q.vertex .tail .head := by simpa only [equal] using child
   cases middle with
   | nil =>
-      cases section
+      cases «section»
       exact laws.irreflexive b.vertex .tail .head chord
-  | cons next rest =>
+  | cons «next» rest =>
       cases rest with
       | nil =>
-          cases section with
+          cases «section» with
           | cons step tail =>
               cases tail
               obtain ⟨m, edge⟩ := (show ∃ m, G.edge b.vertex q.vertex .head m from by
                 simpa only [equation, List.cons_append, List.nil_append] using outgoing)
               exact Mark.noConfusion (single b.vertex q.vertex .head m .tail .head edge chord).1
       | cons next2 rest =>
-          have source : Shortest G Z x y ((prefix ++ (next :: next2 :: rest) ++ back).map Arrival.vertex) := by
+          have source : Shortest G Z x y ((«prefix» ++ («next» :: next2 :: rest) ++ back).map Arrival.vertex) := by
             simpa only [equation, List.append_assoc] using shortest
-          rcases shortest_chord_conditioned_parent G laws single Z x y before section final
+          rcases shortest_chord_conditioned_parent G laws single Z x y before «section» final
               (by simp only [List.length_cons]; omega) chord source with blocked | blocked
           · exact outside blocked.1
           · exact directed_opposites_impossible G laws child (by simpa only [equal] using blocked.2)
@@ -161,7 +161,7 @@ boundary's failure to be a collider-parent makes both collider statuses false.
 This allows undirected edges elsewhere in the MAG. -/
 theorem stopping_boundary_status {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) {p a q d : V}
-    {left old : Mark} (previous : G.edge p a left old)
+    {«left» old : Mark} (previous : G.edge p a «left» old)
     (toward : ∃ m, G.edge a q m .head) (parent : Directed G q d)
     (adjacent : Adjacent G a d)
     (stopped : ¬ (Collider G p a q ∧ Directed G a d)) :
@@ -172,8 +172,8 @@ theorem stopping_boundary_status {V : Type u} (G : MarkedGraph V)
   have receivedHead := head_directed_triangle G laws towardEdge parent replacement
   subst received
   refine ⟨newOut, replacement, ?_⟩
-  have oldStatus := collider_iff_chosen_marks G single p a q left old oldOut .head previous towardEdge
-  have newStatus := collider_iff_chosen_marks G single p a d left old newOut .head previous replacement
+  have oldStatus := collider_iff_chosen_marks G single p a q «left» old oldOut .head previous towardEdge
+  have newStatus := collider_iff_chosen_marks G single p a d «left» old newOut .head previous replacement
   cases newOut with
   | tail =>
       have oldNoncollider : ¬ Collider G p a q := fun collider => stopped ⟨collider, replacement⟩
@@ -181,8 +181,8 @@ theorem stopping_boundary_status {V : Type u} (G : MarkedGraph V)
       · intro collider
         exact (oldNoncollider collider).elim
       · intro collider
-        have impossible := (newStatus.mp collider).2
-        cases impossible
+        have «impossible» := (newStatus.mp collider).2
+        cases «impossible»
   | head =>
       have oldHead : oldOut = .head := by
         cases oldOut with
@@ -207,9 +207,9 @@ theorem discriminating_flank_forces_first {V : Type u} (G H : MarkedGraph V)
   have status := witness_status_transfer G H lawsH singleG singleH skeleton shared w prefixCollidersH
   have noncolliderG : ¬ Collider G a b d := by
     intro collider
-    obtain ⟨left, right, incoming, outgoing⟩ := collider
-    have impossible := (singleG b d .head right .tail .head outgoing firstG).1
-    cases impossible
+    obtain ⟨«left», «right», incoming, outgoing⟩ := collider
+    have «impossible» := (singleG b d .head «right» .tail .head outgoing firstG).1
+    cases «impossible»
   obtain ⟨m, incoming⟩ := incomingH
   exact head_noncollider_forces_directed H lawsH incoming
     ((skeleton b d).mp ⟨.tail, .head, firstG⟩)
@@ -227,9 +227,9 @@ theorem unshielded_flank_forces_first {V : Type u} (G H : MarkedGraph V)
     distinct beforeG ⟨.tail, .head, firstG⟩ nonadjacent simple
   have noncolliderG : ¬ Collider G a b d := by
     intro collider
-    obtain ⟨left, right, incoming, outgoing⟩ := collider
-    have impossible := (singleG b d .head right .tail .head outgoing firstG).1
-    cases impossible
+    obtain ⟨«left», «right», incoming, outgoing⟩ := collider
+    have «impossible» := (singleG b d .head «right» .tail .head outgoing firstG).1
+    cases «impossible»
   obtain ⟨m, incoming⟩ := incomingH
   exact head_noncollider_forces_directed H lawsH incoming
     ((skeleton b d).mp ⟨.tail, .head, firstG⟩)

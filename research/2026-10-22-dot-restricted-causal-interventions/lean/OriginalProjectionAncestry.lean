@@ -37,10 +37,10 @@ theorem split_latent_prefix {X : Type u} {S : Type v} {L : Type w}
       xs = latent.map (fun k => Sum.inr k : L → SourceVertex X S L) ++ (.inl z :: rest) := by
   induction xs generalizing l with
   | nil => cases h
-  | cons next xs ih =>
+  | cons «next» xs ih =>
       cases h with
       | cons hedge htail =>
-          cases next with
+          cases «next» with
           | inl z => exact ⟨[], z, xs, .cons hedge (.nil _), htail, rfl⟩
           | inr k =>
               obtain ⟨latent, z, rest, hp, hr, heq⟩ := ih htail
@@ -71,10 +71,10 @@ theorem contract_directed_aux {X : Type u} {S : Type v} {L : Type w}
   | nil =>
       cases h
       exact ⟨[], .nil _⟩
-  | cons next tail =>
+  | cons «next» tail =>
       cases h with
       | cons hedge htail =>
-          cases next with
+          cases «next» with
           | inl z =>
               have hp := latent_directed_block_projects D ([] : List L) (.cons hedge (.nil (.inl z)))
               have hlt : tail.length < n := by simp only [List.length_cons] at hlength; omega

@@ -79,11 +79,11 @@ endpoint, contradicting the chord's head/nonancestor axiom. This is the
 decisive first exclusion in the minimal-path chord lemma. -/
 theorem shortcut_collider_activated {V : Type u} (G : MarkedGraph V) (laws : AncestralLaws G)
     (Z : V → Prop) {p q : Arrival V} {xs : List (Arrival V)} {m : Mark}
-    (section : Route (RealStep G Z) p xs q) (head : p.incoming = some .head)
+    («section» : Route (RealStep G Z) p xs q) (head : p.incoming = some .head)
     (chord : G.edge p.vertex q.vertex .head m) : AncestorOf G Z p.vertex := by
   classical
   by_contra outside
-  obtain ⟨directed, _⟩ := head_nonancestor_directed_route G laws Z section head
+  obtain ⟨directed, _⟩ := head_nonancestor_directed_route G laws Z «section» head
     ⟨q.vertex, m, chord⟩ outside
   exact laws.head_not_ancestor p.vertex q.vertex m chord ⟨_, directed⟩
 
@@ -94,7 +94,7 @@ excluded using the original conditioned collider's actual outgoing head. -/
 theorem blocked_left_shortcut_conditioned_parent {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (Z : V → Prop) {p q : Arrival V}
     {xs : List (Arrival V)} {outgoing incoming : Mark}
-    (section : Route (RealStep G Z) p xs q)
+    («section» : Route (RealStep G Z) p xs q)
     (chord : G.edge p.vertex q.vertex outgoing incoming)
     (blocked : ¬ DepartureAllowed Z (AncestorOf G Z) p.vertex p.incoming outgoing) :
     Z p.vertex ∧ Directed G p.vertex q.vertex ∧ p.incoming = some .head := by
@@ -104,14 +104,14 @@ theorem blocked_left_shortcut_conditioned_parent {V : Type u} (G : MarkedGraph V
   | some previous =>
       by_cases collider : previous = .head ∧ outgoing = .head
       · have head : p.incoming = some .head := hp.trans (congrArg some collider.1)
-        have activated := shortcut_collider_activated G laws Z section head (collider.2 ▸ chord)
+        have activated := shortcut_collider_activated G laws Z «section» head (collider.2 ▸ chord)
         exact (blocked (by simpa [DepartureAllowed, hp, ActiveAt, collider.1, collider.2] using activated)).elim
       · have conditioned : Z p.vertex := by
           by_contra outside
           exact blocked (by simpa [DepartureAllowed, hp, ActiveAt, if_neg collider] using outside)
-        cases section with
+        cases «section» with
         | nil p => exact (laws.irreflexive p.vertex outgoing incoming chord).elim
-        | @cons p first q rest firstStep tail =>
+        | @cons p «first» q rest firstStep tail =>
             obtain ⟨firstOut, firstIn, firstEdge, _, firstActive⟩ := firstStep
             have atP : ActiveAt Z (AncestorOf G Z) p.vertex previous firstOut := by
               simpa only [hp] using firstActive
@@ -125,7 +125,7 @@ theorem blocked_left_shortcut_conditioned_parent {V : Type u} (G : MarkedGraph V
               cases incoming with
               | head => rfl
               | tail =>
-                  exact (laws.undirected_no_heads p.vertex q.vertex first.vertex firstIn chord
+                  exact (laws.undirected_no_heads p.vertex q.vertex «first».vertex firstIn chord
                     (firstOutHead ▸ firstEdge)).elim
             subst incoming
             exact ⟨conditioned, chord, hp.trans (congrArg some previousHead)⟩
@@ -133,13 +133,13 @@ theorem blocked_left_shortcut_conditioned_parent {V : Type u} (G : MarkedGraph V
 theorem blocked_right_shortcut_conditioned_parent {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (Z : V → Prop) {p q : Arrival V}
     {xs : List (Arrival V)} {outgoing incoming following : Mark}
-    (section : Route (RealStep G Z) p xs q)
+    («section» : Route (RealStep G Z) p xs q)
     (chord : G.edge p.vertex q.vertex outgoing incoming)
     (originalReady : DepartureAllowed Z (AncestorOf G Z) q.vertex q.incoming following)
     (blocked : ¬ ActiveAt Z (AncestorOf G Z) q.vertex incoming following) :
     Z q.vertex ∧ Directed G q.vertex p.vertex ∧ following = .head := by
   obtain ⟨last, ys, reversed, _⟩ := reverse_with_arrival G laws.symmetric Z (AncestorOf G Z)
-    section (some following) originalReady
+    «section» (some following) originalReady
   have reverseBlocked : ¬ DepartureAllowed Z (AncestorOf G Z) q.vertex (some following) incoming := by
     intro ready
     exact blocked ((activeAt_swap Z (AncestorOf G Z) q.vertex following incoming).mp ready)
@@ -153,16 +153,16 @@ minimal-path chord classification without assuming the classification. -/
 theorem shortcut_joins_not_both_blocked {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (Z : V → Prop) {p q : Arrival V}
     {xs : List (Arrival V)} {outgoing incoming following : Mark}
-    (section : Route (RealStep G Z) p xs q)
+    («section» : Route (RealStep G Z) p xs q)
     (chord : G.edge p.vertex q.vertex outgoing incoming)
     (originalReady : DepartureAllowed Z (AncestorOf G Z) q.vertex q.incoming following) :
     ¬ ((¬ DepartureAllowed Z (AncestorOf G Z) p.vertex p.incoming outgoing) ∧
       (¬ ActiveAt Z (AncestorOf G Z) q.vertex incoming following)) := by
   rintro ⟨leftBlocked, rightBlocked⟩
-  have forward := (blocked_left_shortcut_conditioned_parent G laws Z section chord leftBlocked).2.1
-  have backward := (blocked_right_shortcut_conditioned_parent G laws Z section chord originalReady rightBlocked).2.1
-  have impossible := laws.acyclic p.vertex [q.vertex, p.vertex]
+  have forward := (blocked_left_shortcut_conditioned_parent G laws Z «section» chord leftBlocked).2.1
+  have backward := (blocked_right_shortcut_conditioned_parent G laws Z «section» chord originalReady rightBlocked).2.1
+  have «impossible» := laws.acyclic p.vertex [q.vertex, p.vertex]
     (.cons forward (.cons backward (.nil p.vertex)))
-  cases impossible
+  cases «impossible»
 
 end RestrictedCausal.AncestralShortcutGeometry

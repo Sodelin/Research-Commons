@@ -141,10 +141,10 @@ theorem root_free_route_pulls_back {X : Type u} {S : Type v} {L : Type w}
   revert hfree
   induction h with
   | nil p => intro _; exact .nil _
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hfree
-      refine .cons (root_free_step_pulls_back D t Z p next
-        (hfree p List.mem_cons_self) (hfree next (List.mem_cons_of_mem _ List.mem_cons_self)) hstep)
+      refine .cons (root_free_step_pulls_back D t Z p «next»
+        (hfree p List.mem_cons_self) (hfree «next» (List.mem_cons_of_mem _ List.mem_cons_self)) hstep)
         (ih ?_)
       intro r hr
       exact hfree r (List.mem_cons_of_mem _ hr)
@@ -180,18 +180,18 @@ theorem indicator_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
   revert hq
   induction h with
   | nil p => intro _ _ _ _; exact .nil p
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hq hnd hfirst hsupport
       have hnotTail := (List.nodup_cons.mp hnd).1
       have htailNd := (List.nodup_cons.mp hnd).2
-      have hfree : ∀ r ∈ p :: next :: rest, r.vertex ≠ Observed none := by
+      have hfree : ∀ r ∈ p :: «next» :: rest, r.vertex ≠ Observed none := by
         intro r hr heq
         exact hfirst (List.mem_map.mpr ⟨r, hr, heq⟩)
       have hpx : p.vertex ≠ Observed (some x) := by
         intro heq
         exact hnotTail (List.mem_map.mpr ⟨q, Route.end_mem hrest, hq.trans heq.symm⟩)
       have newstep : Transition (arrowGraph (augmentSource D t).arrow) Nonlatent
-          (EndpointAncestor (augmentSource D t) none (some x)) p next := by
+          (EndpointAncestor (augmentSource D t) none (some x)) p «next» := by
         obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
         refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
         cases hm : p.incoming with
@@ -275,7 +275,7 @@ theorem refined_indicator_separator {X : Type u} {S : Type v} {L : Type w}
     refine ⟨(fun h => Option.noConfusion h), last, xs, ?_, hnd⟩
     cases xs with
     | nil => cases hp
-    | cons next rest =>
+    | cons «next» rest =>
       cases hp with
       | cons hstep hrest =>
         obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep

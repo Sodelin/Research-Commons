@@ -24,12 +24,12 @@ theorem last_bad_step {V : Type u} {R : V → V → Prop} (Good : V → V → Pr
   classical
   induction route with
   | nil p => exact Or.inl (.nil p)
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       rcases ih with goodTail | ⟨a, b, front, suffix, equation, before, boundary, bad, after⟩
-      · by_cases good : Good p next
+      · by_cases good : Good p «next»
         · exact Or.inl (.cons ⟨step, good⟩ goodTail)
-        · exact Or.inr ⟨p, next, [], rest, rfl, .nil p, step, good, goodTail⟩
-      · exact Or.inr ⟨a, b, next :: front, suffix,
+        · exact Or.inr ⟨p, «next», [], rest, rfl, .nil p, step, good, goodTail⟩
+      · exact Or.inr ⟨a, b, «next» :: front, suffix,
           by simpa only [List.cons_append, equation], .cons step before, boundary, bad, after⟩
 
 end RestrictedCausal.SelectedWalk.Route
@@ -56,13 +56,13 @@ theorem strict_parent_route_forget {V : Type u} (G : MarkedGraph V) (Z : V → P
 stops. The returned decomposition retains the old complete prefix, not
 merely a subsequence or an independently chosen discriminating witness. -/
 theorem extract_first_arrow_boundary {V : Type u} (G : MarkedGraph V) (Z : V → Prop)
-    (x d : V) {b : Arrival V} {prefix : List (Arrival V)}
-    (before : Route (RealStep G Z) ⟨x, none⟩ prefix b)
+    (x d : V) {b : Arrival V} {«prefix» : List (Arrival V)}
+    (before : Route (RealStep G Z) ⟨x, none⟩ «prefix» b)
     (incoming : b.incoming = some .head) :
-    ∃ a next front rest, prefix = front ++ (next :: rest) ∧
-      Route (RealStep G Z) ⟨x, none⟩ front a ∧ RealStep G Z a next ∧
-      ¬ StrictParentStep G d a next ∧
-      Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) next rest b := by
+    ∃ a «next» front rest, «prefix» = front ++ («next» :: rest) ∧
+      Route (RealStep G Z) ⟨x, none⟩ front a ∧ RealStep G Z a «next» ∧
+      ¬ StrictParentStep G d a «next» ∧
+      Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) «next» rest b := by
   rcases before.last_bad_step (StrictParentStep G d) with all | boundary
   · cases all with
     | nil => cases incoming
@@ -70,22 +70,22 @@ theorem extract_first_arrow_boundary {V : Type u} (G : MarkedGraph V) (Z : V →
   · exact boundary
 
 theorem boundary_next_head {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (d : V)
-    {next b : Arrival V} {rest : List (Arrival V)}
-    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) next rest b)
-    (lastHead : b.incoming = some .head) : next.incoming = some .head := by
+    {«next» b : Arrival V} {rest : List (Arrival V)}
+    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) «next» rest b)
+    (lastHead : b.incoming = some .head) : «next».incoming = some .head := by
   cases after with
   | nil => exact lastHead
   | cons step tail => exact step.2.2
 
 theorem boundary_next_parent {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (d : V)
-    {next b : Arrival V} {rest : List (Arrival V)}
-    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) next rest b)
-    (lastParent : Directed G b.vertex d) : Directed G next.vertex d := by
+    {«next» b : Arrival V} {rest : List (Arrival V)}
+    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) «next» rest b)
+    (lastParent : Directed G b.vertex d) : Directed G «next».vertex d := by
   cases after with
   | nil => exact lastParent
   | cons step tail =>
       obtain ⟨outgoing, incoming, edge, mark, details⟩ := step.2.1
-      have all : Mark.head = .head ∧ outgoing = .head ∧ Directed G next.vertex d := by
+      have all : Mark.head = .head ∧ outgoing = .head ∧ Directed G «next».vertex d := by
         simpa only [step.2.2] using details
       exact all.2.2
 
@@ -95,9 +95,9 @@ ancestral triangle. For a tail replacement, an old collider-parent would
 contradict the defining stopping condition. Root endpoints are explicit. -/
 theorem stopped_boundary_replacement {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (d : V)
-    {a next b : Arrival V} {rest : List (Arrival V)}
-    (boundary : RealStep G Z a next) (stopped : ¬ StrictParentStep G d a next)
-    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) next rest b)
+    {a «next» b : Arrival V} {rest : List (Arrival V)}
+    (boundary : RealStep G Z a «next») (stopped : ¬ StrictParentStep G d a «next»)
+    (after : Route (fun p q => RealStep G Z p q ∧ StrictParentStep G d p q) «next» rest b)
     (lastHead : b.incoming = some .head) (lastParent : Directed G b.vertex d)
     (adjacent : Adjacent G a.vertex d) :
     ∃ outgoing, G.edge a.vertex d outgoing .head ∧
@@ -124,7 +124,7 @@ theorem stopped_boundary_replacement {V : Type u} (G : MarkedGraph V)
             | head => rfl
             | tail =>
                 exact (laws.head_not_ancestor a.vertex d .head newEdge
-                  ⟨[next.vertex, d], .cons oldEdge (.cons nextParent (.nil d))⟩).elim
+                  ⟨[«next».vertex, d], .cons oldEdge (.cons nextParent (.nil d))⟩).elim
           simpa only [oldOutHead] using oldReady
       | tail =>
           have notOldCollider : ¬ (previous = .head ∧ oldOut = .head) := by

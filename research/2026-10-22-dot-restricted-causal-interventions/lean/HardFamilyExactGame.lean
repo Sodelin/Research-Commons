@@ -20,21 +20,21 @@ open GProgram.G7.ExactLawResourceGame
 theorem original_family_target_injective {k u : Nat} [LinearOrder (Labels k u)]
     (nonemptyTargets : 0 < k) :
     Function.Injective (fun source : Option (Index u) => classTarget Available (originalSource (k := k) source)) := by
-  intro first second same
+  intro «first» second same
   have available : ∃ t : Labels k u, Available t := ⟨.inl ⟨0, nonemptyTargets⟩, True.intro⟩
-  have signals (q : Index u) : first = some q ↔ second = some q := by
+  have signals (q : Index u) : «first» = some q ↔ second = some q := by
     have legal := indexQuery_legal (k := k) q
     have baseline := equal_classes_imply_baseline_agreement Available available
-      (originalSource first) (originalSource second) same (BoolCondition (indexBits q))
+      (originalSource «first») (originalSource second) same (BoolCondition (indexBits q))
       (.inr q.first) (.inr q.second) legal.1 legal.2.1 legal.2.2
-    have answers : PositiveAnswer (originalSource (k := k) first) (indexQuery q) ↔
+    have answers : PositiveAnswer (originalSource (k := k) «first») (indexQuery q) ↔
         PositiveAnswer (originalSource second) (indexQuery q) := by
       simp only [indexQuery, PositiveAnswer, if_pos legal]
       exact not_congr baseline
-    rw [← indexQuery_response_iff (k := k) first q, ← indexQuery_response_iff (k := k) second q]
-    exact (PhysicalSource.physical_response_exact Available (physicalSource first) (indexQuery q)).symm.trans
+    rw [← indexQuery_response_iff (k := k) «first» q, ← indexQuery_response_iff (k := k) second q]
+    exact (PhysicalSource.physical_response_exact Available (physicalSource «first») (indexQuery q)).symm.trans
       (answers.trans (PhysicalSource.physical_response_exact Available (physicalSource second) (indexQuery q)))
-  cases first with
+  cases «first» with
   | none =>
       cases second with
       | none => rfl

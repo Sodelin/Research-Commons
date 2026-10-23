@@ -46,19 +46,19 @@ theorem dependsOn_sumAt {S : Finset V} {f : Assignment V → ℚ}
   rw [equalUpdated false, equalUpdated true]
 
 theorem sumAt_product_left {R : Finset V} {f g : Assignment V → ℚ}
-    (right : DependsOn R g) {vertex : V} (outside : vertex ∉ R) :
+    («right» : DependsOn R g) {vertex : V} (outside : vertex ∉ R) :
     sumAt vertex (fun w => f w * g w) = fun w => sumAt vertex f w * g w := by
   funext w
   unfold sumAt
-  rw [dependsOn_update_outside right outside w false, dependsOn_update_outside right outside w true]
+  rw [dependsOn_update_outside «right» outside w false, dependsOn_update_outside «right» outside w true]
   ring
 
 theorem sumAt_product_right {L : Finset V} {f g : Assignment V → ℚ}
-    (left : DependsOn L f) {vertex : V} (outside : vertex ∉ L) :
+    («left» : DependsOn L f) {vertex : V} (outside : vertex ∉ L) :
     sumAt vertex (fun w => f w * g w) = fun w => f w * sumAt vertex g w := by
   funext w
   unfold sumAt
-  rw [dependsOn_update_outside left outside w false, dependsOn_update_outside left outside w true]
+  rw [dependsOn_update_outside «left» outside w false, dependsOn_update_outside «left» outside w true]
   ring
 
 theorem erase_sdiff_list (S : Finset V) (vertex : V) (rest : List V) :
@@ -82,14 +82,14 @@ theorem sdiff_list_of_outside (S : Finset V) (vertex : V) (outside : vertex ∉ 
     exact ⟨member, notRest⟩
 
 theorem eliminate_disjoint_product (vertices : List V) (L R : Finset V) (disjoint : Disjoint L R)
-    (f g : Assignment V → ℚ) (left : DependsOn L f) (right : DependsOn R g) :
+    (f g : Assignment V → ℚ) («left» : DependsOn L f) («right» : DependsOn R g) :
     ∃ F G : Assignment V → ℚ,
       DependsOn (L \ vertices.toFinset) F ∧ DependsOn (R \ vertices.toFinset) G ∧
       eliminateVariables vertices (fun w => f w * g w) = fun w => F w * G w := by
   classical
   induction vertices generalizing L R f g with
   | nil =>
-      exact ⟨f, g, by simpa using left, by simpa using right, rfl⟩
+      exact ⟨f, g, by simpa using «left», by simpa using «right», rfl⟩
   | cons vertex rest ih =>
       by_cases inLeft : vertex ∈ L
       · have outsideRight : vertex ∉ R := fun member => Finset.disjoint_left.mp disjoint inLeft member
@@ -98,22 +98,22 @@ theorem eliminate_disjoint_product (vertices : List V) (L R : Finset V) (disjoin
           intro v inL inR
           exact Finset.disjoint_left.mp disjoint (Finset.mem_erase.mp inL).2 inR
         obtain ⟨F, G, Fdepends, Gdepends, equation⟩ := ih (L.erase vertex) R nextDisjoint
-          (sumAt vertex f) g (dependsOn_sumAt left vertex) right
+          (sumAt vertex f) g (dependsOn_sumAt «left» vertex) «right»
         refine ⟨F, G, ?_, ?_, ?_⟩
         · simpa only [erase_sdiff_list] using Fdepends
         · simpa only [sdiff_list_of_outside R vertex outsideRight rest] using Gdepends
-        · rw [eliminateVariables, sumAt_product_left right outsideRight]
+        · rw [eliminateVariables, sumAt_product_left «right» outsideRight]
           exact equation
       · have nextDisjoint : Disjoint L (R.erase vertex) := by
           apply Finset.disjoint_left.mpr
           intro v inL inR
           exact Finset.disjoint_left.mp disjoint inL (Finset.mem_erase.mp inR).2
         obtain ⟨F, G, Fdepends, Gdepends, equation⟩ := ih L (R.erase vertex) nextDisjoint
-          f (sumAt vertex g) left (dependsOn_sumAt right vertex)
+          f (sumAt vertex g) «left» (dependsOn_sumAt «right» vertex)
         refine ⟨F, G, ?_, ?_, ?_⟩
         · simpa only [sdiff_list_of_outside L vertex inLeft rest] using Fdepends
         · simpa only [erase_sdiff_list] using Gdepends
-        · rw [eliminateVariables, sumAt_product_right left inLeft]
+        · rw [eliminateVariables, sumAt_product_right «left» inLeft]
           exact equation
 
 end RestrictedCausal.ProbabilitySource.BinaryCPT

@@ -35,9 +35,9 @@ theorem retained_arm_terminal {V : Type u} {R : Arrival V → Arrival V → Prop
     (arm : Route R ⟨x, none⟩ states a) {front : List V} {last : V}
     (equation : (⟨x, none⟩ :: states).map Arrival.vertex = front ++ [last]) : a.vertex = last := by
   obtain ⟨before, ends⟩ := arm.full_list_ends
-  have trace := congrArg (List.map Arrival.vertex) ends
-  simp only [List.map_append, List.map_cons, List.map_nil] at trace
-  exact terminal_label_unique (before.map Arrival.vertex) front a.vertex last (trace.symm.trans equation)
+  have «trace» := congrArg (List.map Arrival.vertex) ends
+  simp only [List.map_append, List.map_cons, List.map_nil] at «trace»
+  exact terminal_label_unique (before.map Arrival.vertex) front a.vertex last («trace».symm.trans equation)
 
 /-- Recover the last real incoming edge, with the actual arrival mark,
 from a two-vertex suffix of the arm's physical trace. -/
@@ -45,28 +45,28 @@ theorem retained_arm_last_edge {V : Type u} (G : MarkedGraph V) (Z : V → Prop)
     (x p : V) {a : Arrival V} {states : List (Arrival V)}
     (arm : Route (RealStep G Z) ⟨x, none⟩ states a) (front : List V)
     (equation : (⟨x, none⟩ :: states).map Arrival.vertex = front ++ [p, a.vertex]) :
-    ∃ left incoming, G.edge p a.vertex left incoming ∧ a.incoming = some incoming := by
+    ∃ «left» incoming, G.edge p a.vertex «left» incoming ∧ a.incoming = some incoming := by
   have nonempty : states ≠ [] := by
     intro empty
     have lengths := congrArg List.length equation
     simp only [empty, List.length_map, List.length_cons, List.length_nil, List.length_append] at lengths
     omega
-  obtain ⟨before, prefix, split, route, lastStep⟩ := arm.split_last nonempty
+  obtain ⟨before, «prefix», «split», route, lastStep⟩ := arm.split_last nonempty
   obtain ⟨dropped, ends⟩ := route.full_list_ends
   have originalEnds : (⟨x, none⟩ :: states).map Arrival.vertex =
       dropped.map Arrival.vertex ++ [before.vertex, a.vertex] := by
     have mapped := congrArg (fun nodes => (nodes ++ [a]).map Arrival.vertex) ends
-    simpa only [split, List.map_cons, List.map_append, List.map_nil, List.cons_append,
+    simpa only [«split», List.map_cons, List.map_append, List.map_nil, List.cons_append,
       List.append_assoc] using mapped
   have label : before.vertex = p := penultimate_label_unique (dropped.map Arrival.vertex) front
     before.vertex p a.vertex (originalEnds.symm.trans equation)
-  obtain ⟨left, incoming, edge, mark, _⟩ := lastStep
-  exact ⟨left, incoming, by simpa only [label] using edge, mark⟩
+  obtain ⟨«left», incoming, edge, mark, _⟩ := lastStep
+  exact ⟨«left», incoming, by simpa only [label] using edge, mark⟩
 
 theorem stopped_boundary_vertex_status {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (p d : V)
-    {a b : Arrival V} {left incoming : Mark}
-    (previous : G.edge p a.vertex left incoming) (arrival : a.incoming = some incoming)
+    {a b : Arrival V} {«left» incoming : Mark}
+    (previous : G.edge p a.vertex «left» incoming) (arrival : a.incoming = some incoming)
     (boundary : RealStep G Z a b) (stopped : ¬ StrictParentStep G d a b)
     (headB : b.incoming = some .head) (child : Directed G b.vertex d)
     (adjacent : Adjacent G a.vertex d) :
@@ -77,7 +77,7 @@ theorem stopped_boundary_vertex_status {V : Type u} (G : MarkedGraph V)
   have stoppedVertex : ¬ (Collider G p a.vertex b.vertex ∧ Directed G a.vertex d) := by
     rintro ⟨collider, parent⟩
     have heads := (collider_iff_chosen_marks G single p a.vertex b.vertex
-      left incoming outgoing .head previous edge).mp collider
+      «left» incoming outgoing .head previous edge).mp collider
     apply stopped
     refine ⟨⟨outgoing, .head, edge, mark, ?_⟩, arrival.trans (congrArg some heads.1)⟩
     simpa only [arrival] using (show incoming = .head ∧ outgoing = .head ∧
@@ -103,7 +103,7 @@ theorem retained_left_status {V : Type u} (G : MarkedGraph V)
     simpa only [List.append_assoc, List.cons_append] using equation)
   have finalTrace : (⟨x, none⟩ :: states).map Arrival.vertex = front ++ [p, a.vertex] := by
     simpa only [label] using equation
-  obtain ⟨left, incoming, edge, arrival⟩ := retained_arm_last_edge G Z x p arm front finalTrace
+  obtain ⟨«left», incoming, edge, arrival⟩ := retained_arm_last_edge G Z x p arm front finalTrace
   simpa only [label] using stopped_boundary_vertex_status G laws single Z p d edge arrival
     boundary stopped headB child adjacent
 

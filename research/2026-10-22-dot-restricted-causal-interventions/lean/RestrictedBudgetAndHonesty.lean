@@ -81,8 +81,8 @@ theorem honest_two_phase_consistent {X : Type u} [LinearOrder X] [Fintype X]
       (honestMarginalReplies T D) (honestObservedReplies T D) (honestConditionalReplies T D)) := by
   intro row member
   rcases List.mem_append.mp member with firstTwo | third
-  · rcases List.mem_append.mp firstTwo with first | second
-    · obtain ⟨q, _, same⟩ := List.mem_map.mp first
+  · rcases List.mem_append.mp firstTwo with «first» | second
+    · obtain ⟨q, _, same⟩ := List.mem_map.mp «first»
       subst row
       exact graphical_reply_correct D (marginalIndexAction q)
     · obtain ⟨q, _, same⟩ := List.mem_map.mp second

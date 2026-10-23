@@ -39,7 +39,7 @@ theorem flipSinks_involutive (S : Finset V) (w : Assignment V) :
 
 theorem flipSinks_bijective (S : Finset V) : Function.Bijective (flipSinks S) := by
   constructor
-  · intro first second same
+  · intro «first» second same
     have twice := congrArg (flipSinks S) same
     simpa only [flipSinks_involutive] using twice
   · intro w

@@ -99,9 +99,9 @@ theorem ready_retained_simple {X : Type u} {S : Type v} {L : Type w}
       | inl a =>
           have htrace := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hobs
           by_cases hmem : a ∈ (q :: ys).filterMap SourceSelection.observedValue
-          · obtain ⟨at, hat, hatValue⟩ := List.mem_filterMap.mp hmem
+          · obtain ⟨«at», hat, hatValue⟩ := List.mem_filterMap.mp hmem
             have hatVertex := observedValue_some_vertex hatValue
-            obtain ⟨prefix, hprefix⟩ := hy.prefix_of_mem hat
+            obtain ⟨«prefix», hprefix⟩ := hy.prefix_of_mem hat
             obtain ⟨suffix, hsuffix, hsub⟩ := hy.suffix_of_mem hat
             have hloop := Route.cons hpq hprefix
             have hshort := hobs.sublist hsub
@@ -109,11 +109,11 @@ theorem ready_retained_simple {X : Type u} {S : Type v} {L : Type w}
             | nil =>
                 exact ⟨⟨.inl a, pm⟩, [], .nil _, hatVertex.symm.trans hlast,
                   .cons (by intro z hz; cases hz) .nil⟩
-            | @cons at next last tail hstep htail =>
-                refine ⟨last, next :: tail, .cons ?_ htail, hlast, ?_⟩
+            | @cons «at» «next» last tail hstep htail =>
+                refine ⟨last, «next» :: tail, .cons ?_ htail, hlast, ?_⟩
                 · exact ready_splice_retained D C rfl hloop hatVertex.symm hstep
                 · apply (SourceSelection.noObservedRepeat_iff_trace_nodup _).mpr
-                  change (a :: (next :: tail).filterMap SourceSelection.observedValue).Nodup
+                  change (a :: («next» :: tail).filterMap SourceSelection.observedValue).Nodup
                   have hn := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hshort
                   simpa only [List.filterMap_cons, hatValue] using hn
           · refine ⟨last, q :: ys, .cons hpq hy, hlast, ?_⟩

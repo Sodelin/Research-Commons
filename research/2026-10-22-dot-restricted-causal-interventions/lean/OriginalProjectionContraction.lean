@@ -30,18 +30,18 @@ theorem split_ready_latent_block {X : Type u} {S : Type v} {L : Type w}
     {l : L} {previous : Mark} {xs : List (Arrival (SourceVertex X S L))}
     {b : Sum X S} {lastMark : Option Mark}
     (h : Route (ReadyStep D C) ⟨.inr l, some previous⟩ xs ⟨.inl b, lastMark⟩) :
-    ∃ outgoing latent z finalMark rest prefix,
+    ∃ outgoing latent z finalMark rest «prefix»,
       ¬ (previous = .head ∧ outgoing = .head) ∧
       NoncolliderRoute (arrowGraph D.arrow) (.inr l) outgoing
         (latent.map (fun k => Sum.inr k : L → SourceVertex X S L)) (.inl z) finalMark ∧
       Route (ReadyStep D C) ⟨.inl z, some finalMark⟩ rest ⟨.inl b, lastMark⟩ ∧
-      xs = prefix ++ (⟨.inl z, some finalMark⟩ :: rest) := by
+      xs = «prefix» ++ (⟨.inl z, some finalMark⟩ :: rest) := by
   induction xs generalizing l previous with
   | nil => cases h
-  | cons next xs ih =>
+  | cons «next» xs ih =>
       cases h with
       | cons hstep htail =>
-          rcases next with ⟨nv, nm⟩
+          rcases «next» with ⟨nv, nm⟩
           obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
           change nm = some incoming at hmark
           subst nm
@@ -49,9 +49,9 @@ theorem split_ready_latent_block {X : Type u} {S : Type v} {L : Type w}
           cases nv with
           | inl z => exact ⟨outgoing, [], z, incoming, xs, [], hn, .single hedge, htail, rfl⟩
           | inr k =>
-              obtain ⟨nextOut, latent, z, finalMark, rest, prefix, hnc, hp, hr, heq⟩ := ih htail
+              obtain ⟨nextOut, latent, z, finalMark, rest, «prefix», hnc, hp, hr, heq⟩ := ih htail
               exact ⟨outgoing, k :: latent, z, finalMark, rest,
-                ⟨.inr k, some incoming⟩ :: prefix, hn, .step hedge hnc hp, hr,
+                ⟨.inr k, some incoming⟩ :: «prefix», hn, .step hedge hnc hp, hr,
                 congrArg (List.cons ⟨.inr k, some incoming⟩) heq⟩
 
 theorem ready_retained_optional_activity {X : Type u} {S : Type v} {L : Type w}
@@ -81,10 +81,10 @@ theorem contract_ready_aux {X : Type u} {S : Type v} {L : Type w}
   | nil =>
       cases h
       exact ⟨[], .nil _⟩
-  | cons next tail =>
+  | cons «next» tail =>
       cases h with
       | cons hfirst htail =>
-          rcases next with ⟨nv, nm⟩
+          rcases «next» with ⟨nv, nm⟩
           obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hfirst
           change nm = some incoming at hmark
           subst nm
@@ -101,11 +101,11 @@ theorem contract_ready_aux {X : Type u} {S : Type v} {L : Type w}
                 ⟨outgoing, incoming, hp, rfl,
                   ready_retained_optional_activity D C a previous outgoing hactive⟩ hy⟩
           | inr l =>
-              obtain ⟨nextOut, latent, z, finalMark, rest, prefix, hnc, hp, hr, heq⟩ :=
+              obtain ⟨nextOut, latent, z, finalMark, rest, «prefix», hnc, hp, hr, heq⟩ :=
                 split_ready_latent_block D C htail
               have hmem : (⟨.inl z, some finalMark⟩ : Arrival (SourceVertex X S L)) ∈ tail := by
                 rw [heq]
-                exact List.mem_append_right prefix List.mem_cons_self
+                exact List.mem_append_right «prefix» List.mem_cons_self
               have hne : a ≠ z := by
                 intro haz
                 exact List.rel_of_pairwise_cons hobs (List.mem_cons_of_mem _ hmem)

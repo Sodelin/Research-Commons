@@ -25,13 +25,13 @@ universe u
 
 theorem adjacent_boundaries_contradict_closest {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x y d : V)
-    {a r b : Arrival V} {left right : List (Arrival V)}
+    {a r b : Arrival V} {«left» «right» : List (Arrival V)}
     (leftInside rightInside : List V) {old : List V} {leftOut rightOut : Mark}
     (closest : Closest G Z x y old)
-    (leftArm : Route (RealStep G Z) ⟨x, none⟩ left a)
-    (rightArm : Route (RealStep G Z) ⟨y, none⟩ right r)
-    (oldTrace : x :: old = ((⟨x, none⟩ :: left).map Arrival.vertex) ++ leftInside ++
-      [b.vertex] ++ rightInside ++ ((⟨y, none⟩ :: right).map Arrival.vertex).reverse)
+    (leftArm : Route (RealStep G Z) ⟨x, none⟩ «left» a)
+    (rightArm : Route (RealStep G Z) ⟨y, none⟩ «right» r)
+    (oldTrace : x :: old = ((⟨x, none⟩ :: «left»).map Arrival.vertex) ++ leftInside ++
+      [b.vertex] ++ rightInside ++ ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse)
     (leftStop : leftInside = [] → RealStep G Z a b ∧ ¬ StrictParentStep G d a b)
     (rightStop : rightInside = [] → RealStep G Z r b ∧ ¬ StrictParentStep G d r b)
     (headB : b.incoming = some .head) (child : Directed G b.vertex d)
@@ -41,8 +41,8 @@ theorem adjacent_boundaries_contradict_closest {V : Type u} (G : MarkedGraph V)
     (rightReady : DepartureAllowed Z (AncestorOf G Z) r.vertex r.incoming rightOut)
     (activated : AncestorOf G Z d) (fresh : d ∉ x :: old)
     (distance : directedDistance G Z b.vertex = directedDistance G Z d + 1) : False := by
-  let keptLeft : List V := (⟨x, none⟩ :: left).map Arrival.vertex
-  let keptRight : List V := ((⟨y, none⟩ :: right).map Arrival.vertex).reverse
+  let keptLeft : List V := (⟨x, none⟩ :: «left»).map Arrival.vertex
+  let keptRight : List V := ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse
   have retainedSub : keptLeft ++ keptRight <+ x :: old := by
     rw [oldTrace]
     have sub := ((List.sublist_append_right (leftInside ++ [b.vertex] ++ rightInside) keptRight)
@@ -74,7 +74,7 @@ theorem adjacent_boundaries_contradict_closest {V : Type u} (G : MarkedGraph V)
       (Collider G b.vertex c q ↔ Collider G d c q) := by
     intro c q rest equation
     have reversed := congrArg List.reverse equation
-    have armTrace : (⟨y, none⟩ :: right).map Arrival.vertex = rest.reverse ++ [q, c] := by
+    have armTrace : (⟨y, none⟩ :: «right»).map Arrival.vertex = rest.reverse ++ [q, c] := by
       simpa only [keptRight, List.reverse_reverse, List.reverse_cons, List.reverse_nil,
         List.append_assoc, List.cons_append, List.nil_append] using reversed
     have status := retained_left_status G laws single Z y d rightArm rightBoundary rightStopped
@@ -110,12 +110,12 @@ theorem adjacent_boundaries_contradict_closest {V : Type u} (G : MarkedGraph V)
   · exact rightStable
   · exact central
   · intro empty
-    have impossible := congrArg List.length empty
-    simp only [keptLeft, List.length_map, List.length_cons, List.length_nil] at impossible
+    have «impossible» := congrArg List.length empty
+    simp only [keptLeft, List.length_map, List.length_cons, List.length_nil] at «impossible»
     omega
   · intro empty
-    have impossible := congrArg List.length empty
-    simp only [keptRight, List.length_reverse, List.length_map, List.length_cons, List.length_nil] at impossible
+    have «impossible» := congrArg List.length empty
+    simp only [keptRight, List.length_reverse, List.length_map, List.length_cons, List.length_nil] at «impossible»
     omega
 
 end RestrictedCausal.VertexActivePaths

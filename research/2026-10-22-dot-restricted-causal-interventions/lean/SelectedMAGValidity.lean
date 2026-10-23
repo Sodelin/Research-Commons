@@ -35,10 +35,10 @@ theorem reverse_activity_route {V : Type u} (G : MarkedGraph V)
   | nil p =>
       refine ⟨none, [], .nil _, ?_⟩
       cases p.incoming <;> trivial
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       obtain ⟨last, ys, hy, hready⟩ := ih
-      have backward : Transition G C A ⟨next.vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
+      have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
         refine ⟨incoming, outgoing, symmetric _ _ _ _ hedge, rfl, ?_⟩
         simpa only [hmark] using hready
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],

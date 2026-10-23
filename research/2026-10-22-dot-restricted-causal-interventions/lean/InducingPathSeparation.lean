@@ -38,7 +38,7 @@ theorem head_nonancestor_general {V : Type u} (G : MarkedGraph V) (laws : MixedL
     p.incoming = some .head → ¬ A p.vertex → q.incoming = some .head ∧ ¬ A q.vertex := by
   induction h with
   | nil p => exact fun hp hn => ⟨hp, hn⟩
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hp hn
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       have hout : outgoing = .tail := by
@@ -70,9 +70,9 @@ theorem route_ancestral_support {V : Type u} (G : MarkedGraph V) (laws : MixedLa
       intro hp hq r hr
       have heq : r = p := by simpa only [List.mem_singleton] using hr
       simpa only [heq] using hp
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hp hq
-      have hnext : A next.vertex := by
+      have hnext : A «next».vertex := by
         by_contra hn
         obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
         cases incoming with
@@ -209,7 +209,7 @@ theorem ancestral_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
   revert hq
   induction h with
   | nil p => intro _ _ _ _; exact .nil p
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hq hnd hfirst hsupport
       have hnotTail := (List.nodup_cons.mp hnd).1
       have htailNd := (List.nodup_cons.mp hnd).2
@@ -221,7 +221,7 @@ theorem ancestral_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
         intro heq
         apply hnotTail
         exact List.mem_map.mpr ⟨q, Route.end_mem hrest, hq.trans heq.symm⟩
-      have newstep : Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y) p next := by
+      have newstep : Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y) p «next» := by
         obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
         refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
         cases hm : p.incoming with
@@ -269,7 +269,7 @@ theorem inseparable_implies_inducing {X : Type u} {S : Type v} {L : Type w}
   refine ⟨hne, last, xs, ?_, hnd⟩
   cases hp with
   | nil => exact .nil _
-  | @cons first next finish rest hstep hrest =>
+  | @cons «first» «next» finish rest hstep hrest =>
       obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
       refine .cons ⟨outgoing, incoming, hedge, hmark, trivial⟩
         (ancestral_suffix_inducing D x y hrest rfl (List.nodup_cons.mp hnd).2

@@ -64,13 +64,13 @@ theorem component_source_exists (g : BinaryWitnessGeometry V) (vertex : V)
 
 theorem source_unique_in_component (g : BinaryWitnessGeometry V) (i j : g.SourceIndex)
     {vertex : V} {fromI fromJ : List V}
-    (first : Route g.TrekStep i.val fromI vertex) (second : Route g.TrekStep j.val fromJ vertex) : i = j := by
+    («first» : Route g.TrekStep i.val fromI vertex) (second : Route g.TrekStep j.val fromJ vertex) : i = j := by
   classical
   by_contra different
   let bits : g.SourceIndex → Bool := fun k => if k = i then true else false
   have equalBits : bits i = bits j := by
     rw [← g.circuit.value_at_source bits i, ← g.circuit.value_at_source bits j]
-    exact (g.trek_route_value bits first).trans (g.trek_route_value bits second).symm
+    exact (g.trek_route_value bits «first»).trans (g.trek_route_value bits second).symm
   simp only [bits, if_pos rfl, if_neg different.symm] at equalBits
   cases equalBits
 

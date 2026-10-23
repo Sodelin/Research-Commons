@@ -25,20 +25,20 @@ theorem prefix_sublist_of_mem {V : Type u} {R : V → V → Prop}
       have eq : p = a := by simpa only [List.mem_singleton] using hp
       subst p
       exact ⟨[], .nil a, List.Sublist.refl _⟩
-  | @cons a next b xs step tail ih =>
+  | @cons a «next» b xs step tail ih =>
       intro hp
       rcases List.mem_cons.mp hp with eq | mem
       · subst p
         exact ⟨[], .nil a, (List.nil_sublist _).cons_cons a⟩
       · obtain ⟨ys, route, sublist⟩ := ih mem
-        exact ⟨next :: ys, .cons step route, sublist.cons_cons a⟩
+        exact ⟨«next» :: ys, .cons step route, sublist.cons_cons a⟩
 
 theorem terminal_step_of_nonempty {V : Type u} {R : V → V → Prop}
     {a b : V} {xs : List V} (h : Route R a xs b) (hne : xs ≠ []) : ∃ p, R p b := by
   revert hne
   induction h with
   | nil => intro hne; exact (hne rfl).elim
-  | @cons a next b xs step tail ih =>
+  | @cons a «next» b xs step tail ih =>
       intro _
       cases xs with
       | nil => cases tail; exact ⟨a, step⟩
@@ -64,7 +64,7 @@ theorem collider_route_parentize {V : Type u} (G : MarkedGraph V) (y : V)
   revert parents
   induction h with
   | nil p => intro _; exact .nil p
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro parents
       obtain ⟨outgoing, incoming, edge, mark, collider⟩ := step
       refine .cons ⟨outgoing, incoming, edge, mark, ?_⟩ (ih ?_)
@@ -82,7 +82,7 @@ theorem collider_route_activate {V : Type u} (G : MarkedGraph V) (Z : V → Prop
   revert conditioned
   induction h with
   | nil p => intro _; exact .nil p
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro conditioned
       obtain ⟨outgoing, incoming, edge, mark, collider⟩ := step
       refine .cons ⟨outgoing, incoming, edge, mark, ?_⟩ (ih ?_)
@@ -146,8 +146,8 @@ theorem collider_prefix_parent_transfer {V : Type u} (G H : MarkedGraph V)
   have activeG := collider_parent_prefix_activated G Z x y parentPrefix [] (.nil _) nodup sepG
   have allConditioned : ∀ r ∈ xs, Z r.vertex := by
     intro r mem
-    obtain ⟨prefix, route, sub⟩ := activeG.prefix_sublist_of_mem (List.mem_cons_of_mem _ mem)
-    have shortNodup : (((⟨x, none⟩ :: prefix).map Arrival.vertex) ++ [y]).Nodup :=
+    obtain ⟨«prefix», route, sub⟩ := activeG.prefix_sublist_of_mem (List.mem_cons_of_mem _ mem)
+    have shortNodup : (((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [y]).Nodup :=
       nodup.sublist ((sub.map Arrival.vertex).append (List.Sublist.refl [y]))
     exact parent_of_separated_terminal_conditioned G Z x y route (parentsG r mem) shortNodup sepG
   have activeH := collider_route_activate H Z prefixH (by
@@ -157,8 +157,8 @@ theorem collider_prefix_parent_transfer {V : Type u} (G H : MarkedGraph V)
       exact (notRoot rfl).elim
     · exact allConditioned r mem)
   intro r mem
-  obtain ⟨prefix, route, sub⟩ := activeH.prefix_sublist_of_mem (List.mem_cons_of_mem _ mem)
-  have shortNodup : (((⟨x, none⟩ :: prefix).map Arrival.vertex) ++ [y]).Nodup :=
+  obtain ⟨«prefix», route, sub⟩ := activeH.prefix_sublist_of_mem (List.mem_cons_of_mem _ mem)
+  have shortNodup : (((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [y]).Nodup :=
     nodup.sublist ((sub.map Arrival.vertex).append (List.Sublist.refl [y]))
   obtain ⟨outgoing, incoming, edge⟩ := adjacentH r mem
   have outTail : outgoing = .tail := by
@@ -170,7 +170,7 @@ theorem collider_prefix_parent_transfer {V : Type u} (G H : MarkedGraph V)
         have ready : DepartureAllowed Z (AncestorOf H Z) r.vertex r.incoming .head := by
           simpa [DepartureAllowed, heads r mem, ActiveAt] using
             conditioned_ancestor H Z r.vertex (allConditioned r mem)
-        refine ⟨some incoming, prefix ++ [⟨y, some incoming⟩],
+        refine ⟨some incoming, «prefix» ++ [⟨y, some incoming⟩],
           route.append (.cons ⟨.head, incoming, edge, rfl, ready⟩ (.nil _)), ?_⟩
         simpa only [List.map_cons, List.map_append, List.map_nil] using shortNodup
   subst outgoing

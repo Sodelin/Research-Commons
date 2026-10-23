@@ -32,29 +32,29 @@ theorem drop_top_aux (R : Nat → Nat → Prop) (irreflexive : ∀ a, ¬ R a a)
           exact ⟨[], .nil a, by
             intro v mem
             have eq : v = a := by simpa only [List.mem_singleton] using mem
-            exact eq.symm ▸ ha, fun impossible => (impossible rfl).elim⟩
-      | @cons a next b rest first tail =>
-          have nextBound := bounded next (List.mem_cons_of_mem _ List.mem_cons_self)
-          by_cases nextSmall : next < top
+            exact eq.symm ▸ ha, fun «impossible» => («impossible» rfl).elim⟩
+      | @cons a «next» b rest «first» tail =>
+          have nextBound := bounded «next» (List.mem_cons_of_mem _ List.mem_cons_self)
+          by_cases nextSmall : «next» < top
           · have shorter : rest.length < n := by simp only [List.length_cons] at length; omega
-            obtain ⟨ys, path, small, _⟩ := ih rest.length shorter next rest b rfl tail nextSmall hb
+            obtain ⟨ys, path, small, _⟩ := ih rest.length shorter «next» rest b rfl tail nextSmall hb
               (fun v mem => bounded v (List.mem_cons_of_mem _ mem))
-            refine ⟨next :: ys, .cons first path, ?_, ?_⟩
+            refine ⟨«next» :: ys, .cons «first» path, ?_, ?_⟩
             · intro v mem
               rcases List.mem_cons.mp mem with eq | mem
               · exact eq.symm ▸ ha
               · exact small v mem
             · intro _ eq
               cases eq
-          · have nextTop : next = top := by omega
-            subst next
+          · have nextTop : «next» = top := by omega
+            subst «next»
             cases tail with
             | nil => omega
             | @cons top after b tailRest second remaining =>
                 have afterBound := bounded after (List.mem_cons_of_mem _ (List.mem_cons_of_mem _ List.mem_cons_self))
                 have different : after ≠ top := by intro eq; exact irreflexive top (eq ▸ second)
                 have afterSmall : after < top := by omega
-                have newStep := shortcut a top after first second ha afterSmall
+                have newStep := shortcut a top after «first» second ha afterSmall
                 have shorter : tailRest.length < n := by simp only [List.length_cons] at length; omega
                 obtain ⟨ys, path, small, _⟩ := ih tailRest.length shorter after tailRest b rfl remaining afterSmall hb
                   (fun v mem => bounded v (List.mem_cons_of_mem _ (List.mem_cons_of_mem _ mem)))
@@ -74,11 +74,11 @@ theorem bounded_closed_empty (R : Nat → Nat → Prop) (irreflexive : ∀ a, ¬
       intro a xs route bounded
       cases route with
       | nil => rfl
-      | @cons a next finish rest first tail =>
+      | @cons a «next» finish rest «first» tail =>
           have ha := bounded a List.mem_cons_self
-          have hn := bounded next (List.mem_cons_of_mem _ List.mem_cons_self)
-          have eq : next = a := by omega
-          exact (irreflexive a (eq ▸ first)).elim
+          have hn := bounded «next» (List.mem_cons_of_mem _ List.mem_cons_self)
+          have eq : «next» = a := by omega
+          exact (irreflexive a (eq ▸ «first»)).elim
   | succ bound ih =>
       have oldClosed : ∀ a xs, a ≤ bound → Route R a xs a →
           (∀ v ∈ a :: xs, v ≤ bound + 1) → xs = [] := by
@@ -95,21 +95,21 @@ theorem bounded_closed_empty (R : Nat → Nat → Prop) (irreflexive : ∀ a, ¬
         have top : a = bound + 1 := by omega
         cases route with
         | nil => rfl
-        | @cons a next finish rest first tail =>
-            have nextBound := bounded next (List.mem_cons_of_mem _ List.mem_cons_self)
-            have different : next ≠ a := by intro eq; exact irreflexive a (eq ▸ first)
-            have nextSmall : next ≤ bound := by omega
-            have rotated : Route R next (rest ++ [next]) next :=
-              tail.append (.cons first (.nil next))
-            have rotatedBound : ∀ v ∈ next :: (rest ++ [next]), v ≤ bound + 1 := by
+        | @cons a «next» finish rest «first» tail =>
+            have nextBound := bounded «next» (List.mem_cons_of_mem _ List.mem_cons_self)
+            have different : «next» ≠ a := by intro eq; exact irreflexive a (eq ▸ «first»)
+            have nextSmall : «next» ≤ bound := by omega
+            have rotated : Route R «next» (rest ++ [«next»]) «next» :=
+              tail.append (.cons «first» (.nil «next»))
+            have rotatedBound : ∀ v ∈ «next» :: (rest ++ [«next»]), v ≤ bound + 1 := by
               intro v mem
               rcases List.mem_cons.mp mem with eq | mem
               · exact eq.symm ▸ nextBound
               · rcases List.mem_append.mp mem with mem | mem
                 · exact bounded v (List.mem_cons_of_mem _ (List.mem_cons_of_mem _ mem))
-                · have eq : v = next := by simpa only [List.mem_singleton] using mem
+                · have eq : v = «next» := by simpa only [List.mem_singleton] using mem
                   exact eq.symm ▸ nextBound
-            have nil := oldClosed next (rest ++ [next]) nextSmall rotated rotatedBound
+            have nil := oldClosed «next» (rest ++ [«next»]) nextSmall rotated rotatedBound
             have length := congrArg List.length nil
             simp only [List.length_append, List.length_cons, List.length_nil] at length
             omega

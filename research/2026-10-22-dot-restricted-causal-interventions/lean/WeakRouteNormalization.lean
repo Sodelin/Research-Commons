@@ -32,28 +32,28 @@ theorem bad_join_flag {X : Type u} {S : Type v} {L : Type w}
   classical
   by_cases hb : Z b.vertex
   · refine ⟨hb, ?_⟩
-    by_cases left : TailFlag D b.vertex a.vertex
-    · exact Or.inl left
-    · by_cases right : TailFlag D b.vertex c.vertex
-      · exact Or.inr right
-      · exact (h (fun _ => ⟨left, right⟩)).elim
+    by_cases «left» : TailFlag D b.vertex a.vertex
+    · exact Or.inl «left»
+    · by_cases «right» : TailFlag D b.vertex c.vertex
+      · exact Or.inr «right»
+      · exact (h (fun _ => ⟨«left», «right»⟩)).elim
   · exact (h (fun hz => (hb hz).elim)).elim
 
 theorem merge_bad_steps {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (Z : X → Prop) {a b c : Arrival X}
     (hne : a.vertex ≠ c.vertex)
-    (first : Transition (graph D) Z (Activated D Z) a b)
+    («first» : Transition (graph D) Z (Activated D Z) a b)
     (last : Transition (graph D) Z (Activated D Z) b c)
     (bad : ¬ GoodJoin D Z a b c) : Transition (graph D) Z (Activated D Z) a c := by
   obtain ⟨conditioned, flag⟩ := bad_join_flag D Z bad
-  obtain ⟨left, middleIn, firstEdge, middleMark, firstActive⟩ := first
-  obtain ⟨middleOut, right, lastEdge, lastMark, lastActive⟩ := last
+  obtain ⟨«left», middleIn, firstEdge, middleMark, firstActive⟩ := «first»
+  obtain ⟨middleOut, «right», lastEdge, lastMark, lastActive⟩ := last
   have atMiddle : ActiveAt Z (Activated D Z) b.vertex middleIn middleOut := by
     simpa only [middleMark] using lastActive
   obtain ⟨inHead, outHead⟩ := conditioned_active_heads conditioned atMiddle
   subst middleIn
   subst middleOut
-  exact ⟨left, right, merge_collider_edges D hne firstEdge lastEdge flag, lastMark, firstActive⟩
+  exact ⟨«left», «right», merge_collider_edges D hne firstEdge lastEdge flag, lastMark, firstActive⟩
 
 theorem normalize_aux {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (Z : X → Prop) (n : Nat) :
@@ -69,7 +69,7 @@ theorem normalize_aux {X : Type u} {S : Type v} {L : Type w}
       intro p xs q length route nodup
       cases route with
       | nil p => exact ⟨[], .nil p, nodup, trivial, List.Sublist.refl _⟩
-      | @cons p b q rest first tail =>
+      | @cons p b q rest «first» tail =>
           have shorter : rest.length < n := by
             simp only [List.length_cons] at length
             omega
@@ -79,12 +79,12 @@ theorem normalize_aux {X : Type u} {S : Type v} {L : Type w}
           have newNodup : ((p :: b :: ys).map Arrival.vertex).Nodup :=
             nodup.sublist (newSub.map Arrival.vertex)
           cases ys with
-          | nil => exact ⟨[b], .cons first normalizedTail, newNodup, trivial, newSub⟩
+          | nil => exact ⟨[b], .cons «first» normalizedTail, newNodup, trivial, newSub⟩
           | cons c zs =>
               cases normalizedTail with
               | cons second suffix =>
                   by_cases good : GoodJoin D Z p b c
-                  · exact ⟨b :: c :: zs, .cons first (.cons second suffix),
+                  · exact ⟨b :: c :: zs, .cons «first» (.cons second suffix),
                       newNodup, ⟨good, tailGood⟩, newSub⟩
                   · have endpointsDistinct : p.vertex ≠ c.vertex := by
                       intro eq
@@ -92,7 +92,7 @@ theorem normalize_aux {X : Type u} {S : Type v} {L : Type w}
                       apply notMem
                       simp only [List.map_cons, List.mem_cons, List.mem_map]
                       exact Or.inr (Or.inl eq)
-                    have merged := merge_bad_steps D Z endpointsDistinct first second good
+                    have merged := merge_bad_steps D Z endpointsDistinct «first» second good
                     have removeMiddle : (p :: c :: zs) <+ (p :: b :: c :: zs) :=
                       ((List.Sublist.refl (c :: zs)).cons b).cons_cons p
                     have shortNodup := newNodup.sublist (removeMiddle.map Arrival.vertex)

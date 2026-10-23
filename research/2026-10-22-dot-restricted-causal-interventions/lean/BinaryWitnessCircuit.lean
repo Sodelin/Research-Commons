@@ -65,18 +65,18 @@ def BranchParent (g : BinaryWitnessGeometry V) (parent child : V) : Prop :=
 
 theorem branchParent_edge (g : BinaryWitnessGeometry V) {parent child : V}
     (h : g.BranchParent parent child) : g.arrow parent child := by
-  obtain ⟨b, next⟩ := h
+  obtain ⟨b, «next»⟩ := h
   exact (arrow_directed_exact g.arrow parent child).mp
-    (route_next_edge (g.branch b).shortest.route parent child next)
+    (route_next_edge (g.branch b).shortest.route parent child «next»)
 
 theorem branchParent_off_main (g : BinaryWitnessGeometry V) {parent child : V}
     (h : g.BranchParent parent child) : child ∉ g.main := by
-  obtain ⟨b, next⟩ := h
-  exact g.branch_avoids_main b child next.second_in_tail
+  obtain ⟨b, «next»⟩ := h
+  exact g.branch_avoids_main b child «next».second_in_tail
 
 theorem branchParent_unique (g : BinaryWitnessGeometry V) {a b vertex : V}
-    (first : g.BranchParent a vertex) (second : g.BranchParent b vertex) : a = b := by
-  obtain ⟨firstIndex, firstNext⟩ := first
+    («first» : g.BranchParent a vertex) (second : g.BranchParent b vertex) : a = b := by
+  obtain ⟨firstIndex, firstNext⟩ := «first»
   obtain ⟨secondIndex, secondNext⟩ := second
   by_cases same : firstIndex = secondIndex
   · subst secondIndex
@@ -85,8 +85,8 @@ theorem branchParent_unique (g : BinaryWitnessGeometry V) {a b vertex : V}
 
 theorem branch_vertex_parent (g : BinaryWitnessGeometry V) (b : g.ColliderIndex) (vertex : V)
     (member : vertex ∈ (g.branch b).vertices) : ∃ parent, g.BranchParent parent vertex := by
-  obtain ⟨parent, next⟩ := NextOn.preceding_of_mem b.val vertex (g.branch b).vertices member
-  exact ⟨parent, b, next⟩
+  obtain ⟨parent, «next»⟩ := NextOn.preceding_of_mem b.val vertex (g.branch b).vertices member
+  exact ⟨parent, b, «next»⟩
 
 noncomputable def rank (g : BinaryWitnessGeometry V) : V → Nat := dagRank g.arrow g.acyclic
 
@@ -98,10 +98,10 @@ noncomputable def gate (g : BinaryWitnessGeometry V) (vertex : V) :
   classical
   by_cases member : vertex ∈ g.main
   · by_cases collider : TraceCollider g.arrow g.main vertex
-    · let left := Classical.choose collider
-      let right := Classical.choose (Classical.choose_spec collider)
+    · let «left» := Classical.choose collider
+      let «right» := Classical.choose (Classical.choose_spec collider)
       have spec := Classical.choose_spec (Classical.choose_spec collider)
-      exact .xor left right spec.2.1 spec.2.2 (g.rank_strict spec.2.1) (g.rank_strict spec.2.2)
+      exact .xor «left» «right» spec.2.1 spec.2.2 (g.rank_strict spec.2.1) (g.rank_strict spec.2.2)
     · by_cases hasParent : ∃ parent, MainParent g.arrow g.main parent vertex
       · let parent := Classical.choose hasParent
         have spec := Classical.choose_spec hasParent
@@ -175,15 +175,15 @@ theorem gate_collider_xor (g : BinaryWitnessGeometry V) {a b c : V}
       g.circuit.gate b = .xor a c leftEdge rightEdge leftRank rightRank := by
   classical
   have member := occurrence.left.members.2
-  let left := Classical.choose collider
-  let right := Classical.choose (Classical.choose_spec collider)
+  let «left» := Classical.choose collider
+  let «right» := Classical.choose (Classical.choose_spec collider)
   have spec := Classical.choose_spec (Classical.choose_spec collider)
-  have sameLeft : left = a := spec.1.left.unique_left g.simple occurrence.left
-  have sameRight : right = c := spec.1.right.unique_right g.simple occurrence.right
+  have sameLeft : «left» = a := spec.1.left.unique_left g.simple occurrence.left
+  have sameRight : «right» = c := spec.1.right.unique_right g.simple occurrence.right
   have arrows := trace_collider_original g.arrow g.simple occurrence collider
   refine ⟨arrows.1, arrows.2, g.rank_strict arrows.1, g.rank_strict arrows.2, ?_⟩
   simp only [circuit, gate, dif_pos member, dif_pos collider]
-  dsimp [left, right] at sameLeft sameRight
+  dsimp [«left», «right»] at sameLeft sameRight
   cases sameLeft
   cases sameRight
   rfl
@@ -210,9 +210,9 @@ theorem branch_copy_route (g : BinaryWitnessGeometry V) (b : g.ColliderIndex) :
     intro start rest finish route
     induction route with
     | nil start => intro _; exact .nil start
-    | @cons start next finish rest edge tail ih =>
+    | @cons start «next» finish rest edge tail ih =>
         intro every
-        exact .cons (g.gate_branch_copy (every start next (.here _ _ _)))
+        exact .cons (g.gate_branch_copy (every start «next» (.here _ _ _)))
           (ih (fun a child h => every a child (.there start h)))
   exact transform full (fun a child h => ⟨b, h⟩)
 

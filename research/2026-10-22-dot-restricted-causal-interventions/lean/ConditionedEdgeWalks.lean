@@ -29,21 +29,21 @@ theorem selected_condition_nonlatent {X : Type u} {S : Type v} {L : Type w}
 theorem head_started_marked {V : Type u} (G : MarkedGraph V) (C A : V → Prop)
     (x y : V) (hne : x ≠ y) (hx : C x) {last : Option Mark} {xs : List (Arrival V)}
     (h : Route (Transition G C A) ⟨x, some .head⟩ xs ⟨y, last⟩) :
-    ∃ right, MarkedRoute G C A x y .head right := by
+    ∃ «right», MarkedRoute G C A x y .head «right» := by
   cases xs with
   | nil =>
       cases h
       exact (hne rfl).elim
-  | cons next rest =>
+  | cons «next» rest =>
       cases h with
-      | cons first tail =>
-          obtain ⟨outgoing, incoming, edge, hmark, active⟩ := first
+      | cons «first» tail =>
+          obtain ⟨outgoing, incoming, edge, hmark, active⟩ := «first»
           have hout := (ActiveWalkReduction.conditioned_active_heads hx active).2
           subst outgoing
-          obtain ⟨right, hright⟩ := ActiveWalkReduction.some_arrival_preserved tail ⟨incoming, hmark⟩
-          have nextEq : next = ⟨next.vertex, some incoming⟩ := Arrival.eq_of_fields rfl hmark
-          have endEq : last = some right := hright
-          exact ⟨right, next.vertex, incoming, rest, edge, by
+          obtain ⟨«right», hright⟩ := ActiveWalkReduction.some_arrival_preserved tail ⟨incoming, hmark⟩
+          have nextEq : «next» = ⟨«next».vertex, some incoming⟩ := Arrival.eq_of_fields rfl hmark
+          have endEq : last = some «right» := hright
+          exact ⟨«right», «next».vertex, incoming, rest, edge, by
             simpa only [nextEq, endEq] using tail⟩
 
 /-- If x is conditioned and its MAG endpoint is a head, every unactivated
@@ -53,12 +53,12 @@ retains an actual head at x. -/
 theorem one_conditioned_head_walk {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (x y : X) (Z : X → Prop) (h : InducingPath D x y)
     (hx : Z x) (head : ¬ TailFlag D x y) :
-    ∃ right, MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
+    ∃ «right», MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
       (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
-      (Observed x) (Observed y) .head right := by
-  obtain ⟨left, right, marked⟩ := inducing_marked_route D x y h
+      (Observed x) (Observed y) .head «right» := by
+  obtain ⟨«left», «right», marked⟩ := inducing_marked_route D x y h
   have hleft := marked_inducing_left_head D x y marked head
-  subst left
+  subst «left»
   let C := SelectedCondition (S := S) (L := L) Z
   let E : SourceVertex X S L → Prop := fun v => v = Observed y
   have hAnc : ∀ a, EndpointAncestor D x y a →
@@ -93,14 +93,14 @@ can cause a directed shortcut. -/
 theorem inducing_walk_conditioned_heads {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (x y : X) (Z : X → Prop) (h : InducingPath D x y)
     (headX : Z x → ¬ TailFlag D x y) (headY : Z y → ¬ TailFlag D y x) :
-    ∃ left right, MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
+    ∃ «left» «right», MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
       (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
-      (Observed x) (Observed y) left right ∧
-      (Z x → left = .head) ∧ (Z y → right = .head) := by
+      (Observed x) (Observed y) «left» «right» ∧
+      (Z x → «left» = .head) ∧ (Z y → «right» = .head) := by
   classical
   by_cases hx : Z x
   · by_cases hy : Z y
-    · obtain ⟨left, right, marked⟩ := inducing_marked_route D x y h
+    · obtain ⟨«left», «right», marked⟩ := inducing_marked_route D x y h
       have hl := marked_inducing_left_head D x y marked (headX hx)
       have hr := marked_inducing_right_head D x y marked (headY hy)
       have hAnc : ∀ a, EndpointAncestor D x y a →
@@ -111,18 +111,18 @@ theorem inducing_walk_conditioned_heads {X : Type u} {S : Type v} {L : Type w}
         · simpa only [hxv] using hx
         · simpa only [hyv] using hy
         · exact selected_condition_contains_selection Z v hsv
-      exact ⟨left, right, marked.mono (selected_condition_nonlatent Z) hAnc,
+      exact ⟨«left», «right», marked.mono (selected_condition_nonlatent Z) hAnc,
         fun _ => hl, fun _ => hr⟩
-    · obtain ⟨right, marked⟩ := one_conditioned_head_walk D x y Z h hx (headX hx)
-      exact ⟨.head, right, marked, fun _ => rfl, fun h => (hy h).elim⟩
+    · obtain ⟨«right», marked⟩ := one_conditioned_head_walk D x y Z h hx (headX hx)
+      exact ⟨.head, «right», marked, fun _ => rfl, fun h => (hy h).elim⟩
   · by_cases hy : Z y
-    · obtain ⟨left, marked⟩ := one_conditioned_head_walk D y x Z (inducing_symm D h) hy (headY hy)
-      exact ⟨left, .head, marked.reverse (arrow_graph_symm D.arrow), fun h => (hx h).elim, fun _ => rfl⟩
+    · obtain ⟨«left», marked⟩ := one_conditioned_head_walk D y x Z (inducing_symm D h) hy (headY hy)
+      exact ⟨«left», .head, marked.reverse (arrow_graph_symm D.arrow), fun h => (hx h).elim, fun _ => rfl⟩
     · obtain ⟨last, xs, route, _⟩ := (inducing_implies_inseparable D x y h).2 Z hx hy
-      obtain ⟨left, right, marked⟩ := marked_of_distinct_route (arrowGraph D.arrow)
+      obtain ⟨«left», «right», marked⟩ := marked_of_distinct_route (arrowGraph D.arrow)
         (SelectedCondition Z) (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
         (Observed x) (Observed y) (fun eq => h.1 (Sum.inl.inj (Sum.inl.inj eq))) route
-      exact ⟨left, right, marked, fun h => (hx h).elim, fun h => (hy h).elim⟩
+      exact ⟨«left», «right», marked, fun h => (hx h).elim, fun h => (hy h).elim⟩
 
 theorem directed_head_arrival_route {V : Type u} (G : MarkedGraph V) (C : V → Prop)
     {a b : V} {xs : List V} (h : Route (Directed G) a xs b) (hn : ¬ AncestorOf G C a) :
@@ -130,10 +130,10 @@ theorem directed_head_arrival_route {V : Type u} (G : MarkedGraph V) (C : V → 
   revert hn
   induction h with
   | nil a => intro _; exact ⟨[], .nil _⟩
-  | @cons a next b rest edge tail ih =>
+  | @cons a «next» b rest edge tail ih =>
       intro hn
       obtain ⟨ys, hy⟩ := ih (not_ancestor_successor edge hn)
-      refine ⟨⟨next, some .head⟩ :: ys, .cons ⟨.tail, .head, edge, rfl, ?_⟩ hy⟩
+      refine ⟨⟨«next», some .head⟩ :: ys, .cons ⟨.tail, .head, edge, rfl, ?_⟩ hy⟩
       simpa [ActiveAt] using not_ancestor_condition hn
 
 theorem directed_tail_head_walk {V : Type u} (G : MarkedGraph V) (C : V → Prop)
@@ -183,10 +183,10 @@ supplies at its endpoints. No complete graph-level representation is assumed. -/
 theorem mag_edge_boundary_walk {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (Z : X → Prop) (x y : X) (mx my : Mark)
     (edge : (mag D).edge x y mx my) (headX : Z x → mx = .head) (headY : Z y → my = .head) :
-    ∃ left right, MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
+    ∃ «left» «right», MarkedRoute (arrowGraph D.arrow) (SelectedCondition Z)
       (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
-      (Observed x) (Observed y) left right ∧
-      BoundaryCompatible D Z x mx left ∧ BoundaryCompatible D Z y my right := by
+      (Observed x) (Observed y) «left» «right» ∧
+      BoundaryCompatible D Z x mx «left» ∧ BoundaryCompatible D Z y my «right» := by
   classical
   by_cases leftTail : ¬ AncestorOf (arrowGraph D.arrow) (SelectedCondition Z) (Observed x) ∧ mx = .tail
   · have flag : TailFlag D x y := (endpoint_tail_iff D x y).mp (by simpa only [leftTail.2] using edge.2.1)
@@ -217,8 +217,8 @@ theorem mag_edge_boundary_walk {X : Type u} {S : Type v} {L : Type w}
       have hy : Z y → ¬ TailFlag D y x := by
         intro hz
         exact (endpoint_head_iff D y x).mp (by simpa only [headY hz] using edge.2.2)
-      obtain ⟨left, right, marked, hl, hr⟩ := inducing_walk_conditioned_heads D x y Z edge.1 hx hy
-      exact ⟨left, right, marked, ⟨hl, fun hn hm => (leftTail ⟨hn, hm⟩).elim⟩,
+      obtain ⟨«left», «right», marked, hl, hr⟩ := inducing_walk_conditioned_heads D x y Z edge.1 hx hy
+      exact ⟨«left», «right», marked, ⟨hl, fun hn hm => (leftTail ⟨hn, hm⟩).elim⟩,
         ⟨hr, fun hn hm => (rightTail ⟨hn, hm⟩).elim⟩⟩
 
 end RestrictedCausal.EdgeWalks

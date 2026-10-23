@@ -39,15 +39,15 @@ theorem collider_selected_zero (g : BinaryWitnessGeometry V) (bits : g.SourceInd
     (g.branch_copy_route index) (g.branch index).shortest.endpoint matching
 
 theorem ordinary_adjacent_equal (g : BinaryWitnessGeometry V) (bits : g.SourceIndex → Bool)
-    {a b : V} (next : NextOn g.main a b)
+    {a b : V} («next» : NextOn g.main a b)
     (notA : ¬ TraceCollider g.arrow g.main a) (notB : ¬ TraceCollider g.arrow g.main b) :
     g.circuit.value bits a = g.circuit.value bits b := by
-  have adjacent := route_next_edge g.minimal.1.1 a b next
+  have adjacent := route_next_edge g.minimal.1.1 a b «next»
   rcases arrow_adjacent_directions g.arrow adjacent with forward | backward
   · exact (g.circuit.copy_value bits
-      (g.gate_main_copy ⟨next.members.2, notB⟩ ⟨Or.inl next, forward⟩)).symm
+      (g.gate_main_copy ⟨«next».members.2, notB⟩ ⟨Or.inl «next», forward⟩)).symm
   · exact g.circuit.copy_value bits
-      (g.gate_main_copy ⟨next.members.1, notA⟩ ⟨Or.inr next, backward⟩)
+      (g.gate_main_copy ⟨«next».members.1, notA⟩ ⟨Or.inr «next», backward⟩)
 
 theorem selected_forces_constant_bits (g : BinaryWitnessGeometry V) (bits : g.SourceIndex → Bool)
     (matching : Matches g.conditioned (fun _ => false) (g.circuit.value bits)) :
@@ -60,10 +60,10 @@ theorem selected_forces_constant_bits (g : BinaryWitnessGeometry V) (bits : g.So
     change ¬ TraceCollider g.arrow (g.start :: g.vertices) last
     rw [equation]
     exact trace_last_not_collider g.arrow front last (by rw [← equation]; exact g.simple)
-  · exact allPairs_of_next _ g.main (fun a b next =>
-      trace_collider_isolated g.arrow g.acyclic g.simple next)
-  · exact allPairs_of_next _ g.main (fun a b next notA notB =>
-      g.ordinary_adjacent_equal bits next notA notB)
+  · exact allPairs_of_next _ g.main (fun a b «next» =>
+      trace_collider_isolated g.arrow g.acyclic g.simple «next»)
+  · exact allPairs_of_next _ g.main (fun a b «next» notA notB =>
+      g.ordinary_adjacent_equal bits «next» notA notB)
   · apply allTriples_of_triple
     intro a b c occurrence collider
     obtain ⟨leftEdge, rightEdge, leftRank, rightRank, gate⟩ := g.gate_collider_xor occurrence collider
@@ -72,22 +72,22 @@ theorem selected_forces_constant_bits (g : BinaryWitnessGeometry V) (bits : g.So
 
 theorem collider_constant_zero (g : BinaryWitnessGeometry V) (t : Bool)
     {b : V} (collider : TraceCollider g.arrow g.main b) : g.circuit.value (fun _ => t) b = false := by
-  obtain ⟨a, c, occurrence, left, right⟩ := collider
-  have parentA : MainParent g.arrow g.main a b := ⟨Or.inl occurrence.left, left⟩
-  have parentC : MainParent g.arrow g.main c b := ⟨Or.inr occurrence.right, right⟩
+  obtain ⟨a, c, occurrence, «left», «right»⟩ := collider
+  have parentA : MainParent g.arrow g.main a b := ⟨Or.inl occurrence.left, «left»⟩
+  have parentC : MainParent g.arrow g.main c b := ⟨Or.inr occurrence.right, «right»⟩
   have ordinaryA : g.ordinary a := ⟨occurrence.left.members.1,
     mainParent_ordinary g.arrow g.acyclic g.simple parentA⟩
   have ordinaryC : g.ordinary c := ⟨occurrence.right.members.2,
     mainParent_ordinary g.arrow g.acyclic g.simple parentC⟩
   obtain ⟨leftEdge, rightEdge, leftRank, rightRank, gate⟩ :=
-    g.gate_collider_xor occurrence ⟨a, c, occurrence, left, right⟩
+    g.gate_collider_xor occurrence ⟨a, c, occurrence, «left», «right»⟩
   exact g.circuit.equal_constant_xor_zero a b c leftEdge rightEdge leftRank rightRank gate t
     (g.ordinary_constant_value t a ordinaryA) (g.ordinary_constant_value t c ordinaryC)
 
 theorem branch_constant_zero (g : BinaryWitnessGeometry V) (t : Bool)
     (b : g.ColliderIndex) (vertex : V) (member : vertex ∈ b.val :: (g.branch b).vertices) :
     g.circuit.value (fun _ => t) vertex = false := by
-  obtain ⟨prefix, route⟩ := (g.branch_copy_route b).prefix_of_mem member
+  obtain ⟨«prefix», route⟩ := (g.branch_copy_route b).prefix_of_mem member
   exact (g.circuit.copy_route_value (fun _ => t) route).trans (g.collider_constant_zero t b.property)
 
 theorem constants_match_conditioning (g : BinaryWitnessGeometry V) (t : Bool) :
@@ -100,8 +100,8 @@ theorem constants_match_conditioning (g : BinaryWitnessGeometry V) (t : Bool) :
       exact g.ordinary_outside_conditioning ⟨onMain, ordinary⟩ selected
     exact g.collider_constant_zero t collider
   · by_cases hasParent : ∃ p, g.BranchParent p vertex
-    · obtain ⟨parent, b, next⟩ := hasParent
-      exact g.branch_constant_zero t b vertex next.members.2
+    · obtain ⟨parent, b, «next»⟩ := hasParent
+      exact g.branch_constant_zero t b vertex «next».members.2
     · have off : g.circuit.gate vertex = .off := by
         simp only [circuit, gate, dif_neg onMain, dif_neg hasParent]
       rw [BoundaryCircuit.value, off]

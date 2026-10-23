@@ -34,10 +34,10 @@ def ColliderParentStep {V : Type u} (G : MarkedGraph V) (y : V)
 
 /-- Delete a middle block, retaining the whole initial prefix and terminal.
 The resulting vertex list is literally a sublist of the full simple path. -/
-theorem prefix_terminal_nodup {V : Type u} (prefix middle : List V) (y : V)
-    (h : (prefix ++ middle ++ [y]).Nodup) : (prefix ++ [y]).Nodup := by
+theorem prefix_terminal_nodup {V : Type u} («prefix» middle : List V) (y : V)
+    (h : («prefix» ++ middle ++ [y]).Nodup) : («prefix» ++ [y]).Nodup := by
   apply h.sublist
-  simpa only [List.append_assoc] using (List.sublist_append_right middle [y]).append_left prefix
+  simpa only [List.append_assoc] using (List.sublist_append_right middle [y]).append_left «prefix»
 
 theorem conditioned_ancestor {V : Type u} (G : MarkedGraph V) (Z : V → Prop)
     (v : V) (hv : Z v) : AncestorOf G Z v := ⟨v, ⟨[], .nil _⟩, hv⟩
@@ -49,16 +49,16 @@ theorem collider_parent_prefix_activated {V : Type u} (G : MarkedGraph V)
     (Z : V → Prop) (x y : V)
     {p q : Arrival V} {xs : List (Arrival V)}
     (h : Route (ColliderParentStep G y) p xs q)
-    (prefix : List (Arrival V))
-    (hp : Route (RealStep G Z) ⟨x, none⟩ prefix p)
-    (hnd : ((((⟨x, none⟩ :: prefix) ++ xs).map Arrival.vertex) ++ [y]).Nodup)
+    («prefix» : List (Arrival V))
+    (hp : Route (RealStep G Z) ⟨x, none⟩ «prefix» p)
+    (hnd : ((((⟨x, none⟩ :: «prefix») ++ xs).map Arrival.vertex) ++ [y]).Nodup)
     (hsep : ¬ ActiveConnection G Z x y) : Route (RealStep G Z) p xs q := by
   revert hp hnd
-  revert prefix
+  revert «prefix»
   induction h with
   | nil p => intro _ _ _; exact .nil _
-  | @cons p next q rest hstep hrest ih =>
-      intro prefix hp hnd
+  | @cons p «next» q rest hstep hrest ih =>
+      intro «prefix» hp hnd
       obtain ⟨outgoing, incoming, hedge, hmark, hcollider⟩ := hstep
       have active : DepartureAllowed Z (AncestorOf G Z) p.vertex p.incoming outgoing := by
         cases hm : p.incoming with
@@ -72,16 +72,16 @@ theorem collider_parent_prefix_activated {V : Type u} (G : MarkedGraph V)
                 refine ⟨.tail, .head, triple.2.2, rfl, ?_⟩
                 simpa [hm, ActiveAt] using hn
               have whole := hp.append (.cons last (.nil _))
-              have nd : ((((⟨x, none⟩ :: prefix).map Arrival.vertex)) ++ [y]).Nodup := by
-                apply prefix_terminal_nodup _ ((next :: rest).map Arrival.vertex) y
+              have nd : ((((⟨x, none⟩ :: «prefix»).map Arrival.vertex)) ++ [y]).Nodup := by
+                apply prefix_terminal_nodup _ ((«next» :: rest).map Arrival.vertex) y
                 simpa only [List.map_append, List.append_assoc] using hnd
               apply hsep
-              refine ⟨some .head, prefix ++ [⟨y, some .head⟩], whole, ?_⟩
+              refine ⟨some .head, «prefix» ++ [⟨y, some .head⟩], whole, ?_⟩
               simpa only [List.map_cons, List.map_append, List.map_nil] using nd
             have ha := conditioned_ancestor G Z p.vertex hz
             simpa only [DepartureAllowed, hm, triple.1, triple.2.1, ActiveAt] using ha
-      have copied : RealStep G Z p next := ⟨outgoing, incoming, hedge, hmark, active⟩
-      refine .cons copied (ih (prefix ++ [next]) (hp.append (.cons copied (.nil _))) ?_)
+      have copied : RealStep G Z p «next» := ⟨outgoing, incoming, hedge, hmark, active⟩
+      refine .cons copied (ih («prefix» ++ [«next»]) (hp.append (.cons copied (.nil _))) ?_)
       simpa only [List.cons_append, List.append_assoc, List.singleton_append] using hnd
 
 def TerminalCollider {V : Type u} (p : Arrival V) (outgoing : Mark) : Prop :=
@@ -113,12 +113,12 @@ nonadjacent; those additional properties are not needed for this implication.
 The displayed separator is actual m-separation under the route definition. -/
 theorem terminal_collider_iff_not_mem {V : Type u} (G : MarkedGraph V)
     (Z : V → Prop) (x y : V) {b : Arrival V} {xs : List (Arrival V)}
-    (prefix : Route (ColliderParentStep G y) ⟨x, none⟩ xs b)
+    («prefix» : Route (ColliderParentStep G y) ⟨x, none⟩ xs b)
     (outgoing incoming : Mark) (last : G.edge b.vertex y outgoing incoming)
     (hnd : (((⟨x, none⟩ :: xs).map Arrival.vertex) ++ [y]).Nodup)
     (hsep : ¬ ActiveConnection G Z x y) : TerminalCollider b outgoing ↔ ¬ Z b.vertex := by
   classical
-  have activePrefix := collider_parent_prefix_activated G Z x y prefix [] (.nil _) hnd hsep
+  have activePrefix := collider_parent_prefix_activated G Z x y «prefix» [] (.nil _) hnd hsep
   have blocked : ¬ DepartureAllowed Z (AncestorOf G Z) b.vertex b.incoming outgoing := by
     intro hdeparture
     have edge : RealStep G Z b ⟨y, some incoming⟩ := ⟨outgoing, incoming, last, rfl, hdeparture⟩
@@ -163,28 +163,28 @@ def Collider {V : Type u} (G : MarkedGraph V) (a b c : V) : Prop :=
 
 theorem collider_iff_chosen_marks {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (a b c : V) (ma mb nb nc : Mark)
-    (first : G.edge a b ma mb) (last : G.edge b c nb nc) :
+    («first» : G.edge a b ma mb) (last : G.edge b c nb nc) :
     Collider G a b c ↔ mb = .head ∧ nb = .head := by
   constructor
   · rintro ⟨ma', mc', first', last'⟩
-    exact ⟨(single a b ma mb ma' .head first first').2,
+    exact ⟨(single a b ma mb ma' .head «first» first').2,
       (single b c nb nc .head mc' last last').1⟩
   · rintro ⟨rfl, rfl⟩
-    exact ⟨ma, nc, first, last⟩
+    exact ⟨ma, nc, «first», last⟩
 
 theorem collider_iff_not_mem_separator {V : Type u} (G : MarkedGraph V)
     (single : SingleEdges G) (Z : V → Prop) (x b y : V)
-    (first : Adjacent G x b) (last : Adjacent G b y)
+    («first» : Adjacent G x b) (last : Adjacent G b y)
     (simple : ([x, b, y] : List V).Nodup) (sep : ¬ ActiveConnection G Z x y) :
     Collider G x b y ↔ ¬ Z b := by
-  obtain ⟨mx, mb, first⟩ := first
+  obtain ⟨mx, mb, «first»⟩ := «first»
   obtain ⟨nb, ny, last⟩ := last
-  have prefix : Route (ColliderParentStep G y) ⟨x, none⟩ [⟨b, some mb⟩] ⟨b, some mb⟩ :=
-    .cons ⟨mx, mb, first, rfl, trivial⟩ (.nil _)
-  have h := terminal_collider_iff_not_mem G Z x y prefix nb ny last simple sep
+  have «prefix» : Route (ColliderParentStep G y) ⟨x, none⟩ [⟨b, some mb⟩] ⟨b, some mb⟩ :=
+    .cons ⟨mx, mb, «first», rfl, trivial⟩ (.nil _)
+  have h := terminal_collider_iff_not_mem G Z x y «prefix» nb ny last simple sep
   have marks : (mb = .head ∧ nb = .head) ↔ TerminalCollider (⟨b, some mb⟩ : Arrival V) nb := by
     simp only [TerminalCollider, Option.some.injEq]
-  exact (collider_iff_chosen_marks G single x b y mx mb nb ny first last).trans (marks.trans h)
+  exact (collider_iff_chosen_marks G single x b y mx mb nb ny «first» last).trans (marks.trans h)
 
 def SharedSeparators {V : Type u} (G H : MarkedGraph V) : Prop :=
   ∀ x y, x ≠ y → ¬ Adjacent G x y → ∃ Z : V → Prop,
@@ -194,11 +194,11 @@ theorem shared_separators_unshielded {V : Type u} (G H : MarkedGraph V)
     (singleG : SingleEdges G) (singleH : SingleEdges H)
     (skeleton : ∀ x y, Adjacent G x y ↔ Adjacent H x y)
     (shared : SharedSeparators G H) (x b y : V) (hxy : x ≠ y)
-    (first : Adjacent G x b) (last : Adjacent G b y) (nonedge : ¬ Adjacent G x y)
+    («first» : Adjacent G x b) (last : Adjacent G b y) (nonedge : ¬ Adjacent G x y)
     (simple : ([x, b, y] : List V).Nodup) : Collider G x b y ↔ Collider H x b y := by
   obtain ⟨Z, _, _, sepG, sepH⟩ := shared x y hxy nonedge
-  exact (collider_iff_not_mem_separator G singleG Z x b y first last simple sepG).trans
-    (collider_iff_not_mem_separator H singleH Z x b y ((skeleton x b).mp first)
+  exact (collider_iff_not_mem_separator G singleG Z x b y «first» last simple sepG).trans
+    (collider_iff_not_mem_separator H singleH Z x b y ((skeleton x b).mp «first»)
       ((skeleton b y).mp last) simple sepH).symm
 
 end RestrictedCausal.DiscriminatingStatus

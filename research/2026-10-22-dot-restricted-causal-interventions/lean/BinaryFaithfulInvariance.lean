@@ -23,13 +23,13 @@ variable {V : Type u} [Fintype V] [DecidableEq V]
 variable {T : Type v} [Fintype T] [DecidableEq T]
 
 theorem cylinder_mass_condition_congr (D : V → V → Prop) (θ : Coordinate D → ℚ)
-    (C : Finset V) (first second : Assignment V)
-    (agree : ∀ v ∈ C, first v = second v) :
-    cylinderMass D θ C first = cylinderMass D θ C second := by
+    (C : Finset V) («first» second : Assignment V)
+    (agree : ∀ v ∈ C, «first» v = second v) :
+    cylinderMass D θ C «first» = cylinderMass D θ C second := by
   unfold cylinderMass
   apply Finset.sum_congr rfl
   intro w _
-  have matching : Matches C first w ↔ Matches C second w := by
+  have matching : Matches C «first» w ↔ Matches C second w := by
     constructor
     · intro h v member
       exact (h v member).trans (agree v member)
@@ -38,9 +38,9 @@ theorem cylinder_mass_condition_congr (D : V → V → Prop) (θ : Coordinate D 
   rw [matching]
 
 theorem cell_mass_condition_congr (D : V → V → Prop) (θ : Coordinate D → ℚ)
-    (x y : V) (C : Finset V) (first second : Assignment V)
-    (agree : ∀ v ∈ C, first v = second v) :
-    cellMass D θ x y C first = cellMass D θ x y C second := by
+    (x y : V) (C : Finset V) («first» second : Assignment V)
+    (agree : ∀ v ∈ C, «first» v = second v) :
+    cellMass D θ x y C «first» = cellMass D θ x y C second := by
   funext a b
   apply cylinder_mass_condition_congr
   intro v member

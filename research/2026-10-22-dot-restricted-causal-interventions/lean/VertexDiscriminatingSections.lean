@@ -13,16 +13,16 @@ namespace RestrictedCausal.SelectedWalk.Route
 
 universe u
 
-theorem split_append {V : Type u} {R : V → V → Prop} (prefix suffix : List V)
-    {a b : V} (h : Route R a (prefix ++ suffix) b) :
-    ∃ middle, Route R a prefix middle ∧ Route R middle suffix b := by
-  induction prefix generalizing a with
+theorem split_append {V : Type u} {R : V → V → Prop} («prefix» suffix : List V)
+    {a b : V} (h : Route R a («prefix» ++ suffix) b) :
+    ∃ middle, Route R a «prefix» middle ∧ Route R middle suffix b := by
+  induction «prefix» generalizing a with
   | nil => exact ⟨a, .nil a, h⟩
-  | cons next rest ih =>
+  | cons «next» rest ih =>
       cases h with
       | cons step tail =>
-          obtain ⟨middle, first, last⟩ := ih tail
-          exact ⟨middle, .cons step first, last⟩
+          obtain ⟨middle, «first», last⟩ := ih tail
+          exact ⟨middle, .cons step «first», last⟩
 
 end RestrictedCausal.SelectedWalk.Route
 
@@ -34,10 +34,10 @@ open SourceSelection (AncestorOf)
 
 universe u v
 
-theorem split_map_append {A : Type u} {B : Type v} (f : A → B) (prefix suffix : List B)
-    (xs : List A) (h : xs.map f = prefix ++ suffix) :
-    ∃ first last, xs = first ++ last ∧ first.map f = prefix ∧ last.map f = suffix := by
-  induction prefix generalizing xs with
+theorem split_map_append {A : Type u} {B : Type v} (f : A → B) («prefix» suffix : List B)
+    (xs : List A) (h : xs.map f = «prefix» ++ suffix) :
+    ∃ «first» last, xs = «first» ++ last ∧ «first».map f = «prefix» ∧ last.map f = suffix := by
+  induction «prefix» generalizing xs with
   | nil => exact ⟨[], xs, rfl, rfl, h⟩
   | cons b rest ih =>
       cases xs with
@@ -45,8 +45,8 @@ theorem split_map_append {A : Type u} {B : Type v} (f : A → B) (prefix suffix 
       | cons a as =>
           have eq : f a :: as.map f = b :: (rest ++ suffix) := h
           obtain ⟨head, tail⟩ := List.cons.inj eq
-          obtain ⟨first, last, original, firstTrace, lastTrace⟩ := ih as tail
-          refine ⟨a :: first, last, ?_, ?_, lastTrace⟩
+          obtain ⟨«first», last, original, firstTrace, lastTrace⟩ := ih as tail
+          refine ⟨a :: «first», last, ?_, ?_, lastTrace⟩
           · simpa only [List.cons_append, original]
           · simpa only [List.map_cons, head, firstTrace]
 
@@ -84,15 +84,15 @@ def DiscriminatingWitness.OccursOn {V : Type u} {G : MarkedGraph V} {a b c : V}
 
 theorem left_section_from_tail_decomposition {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x z a b c : V)
-    (prefix suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
-    (decomposition : xs = prefix ++ [a, b, c] ++ suffix)
+    («prefix» suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
+    (decomposition : xs = «prefix» ++ [a, b, c] ++ suffix)
     (notStart : ¬ Z x) (good : Z a ∧ Directed G a c) :
     ∃ w : DiscriminatingWitness G a b c, w.OccursOn (x :: xs) := by
-  obtain ⟨last, states, route, trace, nodup⟩ := vertex_path_realization G single Z x z minimal.1
-  have mapped : states.map Arrival.vertex = prefix ++ (a :: b :: c :: suffix) := by
-    simpa only [List.append_assoc, List.cons_append, List.nil_append] using trace.trans decomposition
+  obtain ⟨last, states, route, «trace», nodup⟩ := vertex_path_realization G single Z x z minimal.1
+  have mapped : states.map Arrival.vertex = «prefix» ++ (a :: b :: c :: suffix) := by
+    simpa only [List.append_assoc, List.cons_append, List.nil_append] using «trace».trans decomposition
   obtain ⟨front, remainder, stateSplit, frontTrace, remainderTrace⟩ :=
-    split_map_append Arrival.vertex prefix (a :: b :: c :: suffix) states mapped
+    split_map_append Arrival.vertex «prefix» (a :: b :: c :: suffix) states mapped
   cases remainder with
   | nil => cases remainderTrace
   | cons qa remaining =>
@@ -118,7 +118,7 @@ theorem left_section_from_tail_decomposition {V : Type u} (G : MarkedGraph V)
                               rw [stateSplit]
                               simp only [List.append_assoc, List.cons_append, List.nil_append]
                             rw [eq]
-                            exact trace
+                            exact «trace»
                           have sourceMinimal : Shortest G Z x z
                               (((front ++ [qa]) ++ [qb, qc] ++ back).map Arrival.vertex) := by
                             rw [sourceTrace]
@@ -150,47 +150,47 @@ theorem left_section_from_tail_decomposition {V : Type u} (G : MarkedGraph V)
 
 theorem left_section_from_vertex_decomposition {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x z a b c : V)
-    (prefix suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
-    (decomposition : x :: xs = prefix ++ [a, b, c] ++ suffix)
+    («prefix» suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
+    (decomposition : x :: xs = «prefix» ++ [a, b, c] ++ suffix)
     (notStart : ¬ Z x) (good : Z a ∧ Directed G a c) :
     ∃ w : DiscriminatingWitness G a b c, w.OccursOn (x :: xs) := by
-  cases prefix with
+  cases «prefix» with
   | nil =>
       have eq : x :: xs = a :: (b :: c :: suffix) := by
         simpa only [List.nil_append, List.cons_append] using decomposition
       have head := (List.cons.inj eq).1
       exact (notStart (head.symm ▸ good.1)).elim
-  | cons first rest =>
-      have eq : x :: xs = first :: (rest ++ [a, b, c] ++ suffix) := by
+  | cons «first» rest =>
+      have eq : x :: xs = «first» :: (rest ++ [a, b, c] ++ suffix) := by
         simpa only [List.cons_append] using decomposition
       exact left_section_from_tail_decomposition G laws single Z x z a b c rest suffix minimal
         (List.cons.inj eq).2 notStart good
 
 structure ThreeSection {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (x z a b c : V) where
-  first : Arrival V
+  «first» : Arrival V
   middle : Arrival V
   third : Arrival V
   front : List (Arrival V)
   back : List (Arrival V)
   last : Option Mark
-  first_vertex : first.vertex = a
+  first_vertex : «first».vertex = a
   middle_vertex : middle.vertex = b
   third_vertex : third.vertex = c
-  prefix : Route (RealStep G Z) ⟨x, none⟩ front first
-  first_step : RealStep G Z first middle
+  «prefix» : Route (RealStep G Z) ⟨x, none⟩ front «first»
+  first_step : RealStep G Z «first» middle
   second_step : RealStep G Z middle third
   suffix : Route (RealStep G Z) third back ⟨z, last⟩
   shortest : Shortest G Z x z ((front ++ [middle, third] ++ back).map Arrival.vertex)
 
 theorem realize_tail_three_section {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
-    (Z : V → Prop) (x z a b c : V) (prefix suffix : List V) {xs : List V}
-    (minimal : Shortest G Z x z xs) (decomposition : xs = prefix ++ [a, b, c] ++ suffix) :
+    (Z : V → Prop) (x z a b c : V) («prefix» suffix : List V) {xs : List V}
+    (minimal : Shortest G Z x z xs) (decomposition : xs = «prefix» ++ [a, b, c] ++ suffix) :
     Nonempty (ThreeSection G Z x z a b c) := by
-  obtain ⟨last, states, route, trace, _⟩ := vertex_path_realization G single Z x z minimal.1
-  have mapped : states.map Arrival.vertex = prefix ++ (a :: b :: c :: suffix) := by
-    simpa only [List.append_assoc, List.cons_append, List.nil_append] using trace.trans decomposition
+  obtain ⟨last, states, route, «trace», _⟩ := vertex_path_realization G single Z x z minimal.1
+  have mapped : states.map Arrival.vertex = «prefix» ++ (a :: b :: c :: suffix) := by
+    simpa only [List.append_assoc, List.cons_append, List.nil_append] using «trace».trans decomposition
   obtain ⟨front, remainder, stateSplit, _, remainderTrace⟩ :=
-    split_map_append Arrival.vertex prefix (a :: b :: c :: suffix) states mapped
+    split_map_append Arrival.vertex «prefix» (a :: b :: c :: suffix) states mapped
   cases remainder with
   | nil => cases remainderTrace
   | cons qa remaining =>
@@ -211,32 +211,32 @@ theorem realize_tail_three_section {V : Type u} (G : MarkedGraph V) (single : Si
                   | cons ab tailB =>
                       cases tailB with
                       | cons bc backRoute =>
-                          refine ⟨{ first := qa, middle := qb, third := qc,
+                          refine ⟨{ «first» := qa, middle := qb, third := qc,
                             front := front ++ [qa], back := back, last := last,
                             first_vertex := qaVertex, middle_vertex := qbVertex, third_vertex := qcVertex,
-                            prefix := frontRoute.append (.cons toA (.nil qa)),
+                            «prefix» := frontRoute.append (.cons toA (.nil qa)),
                             first_step := ab, second_step := bc, suffix := backRoute, shortest := ?_ }⟩
                           have eq : ((front ++ [qa]) ++ [qb, qc] ++ back) = states := by
                             rw [stateSplit]
                             simp only [List.append_assoc, List.cons_append, List.nil_append]
-                          rw [eq, trace]
+                          rw [eq, «trace»]
                           exact minimal
 
 theorem realize_three_section {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
-    (Z : V → Prop) (x z a b c : V) (prefix suffix : List V) {xs : List V}
-    (minimal : Shortest G Z x z xs) (decomposition : x :: xs = prefix ++ [a, b, c] ++ suffix) :
+    (Z : V → Prop) (x z a b c : V) («prefix» suffix : List V) {xs : List V}
+    (minimal : Shortest G Z x z xs) (decomposition : x :: xs = «prefix» ++ [a, b, c] ++ suffix) :
     Nonempty (ThreeSection G Z x z a b c) := by
-  cases prefix with
-  | cons first rest =>
-      have eq : x :: xs = first :: (rest ++ [a, b, c] ++ suffix) := by
+  cases «prefix» with
+  | cons «first» rest =>
+      have eq : x :: xs = «first» :: (rest ++ [a, b, c] ++ suffix) := by
         simpa only [List.cons_append] using decomposition
       exact realize_tail_three_section G single Z x z a b c rest suffix minimal (List.cons.inj eq).2
   | nil =>
       have eq : x :: xs = a :: (b :: c :: suffix) := by
         simpa only [List.nil_append, List.cons_append] using decomposition
       obtain ⟨startEq, tailEq⟩ := List.cons.inj eq
-      obtain ⟨last, states, route, trace, _⟩ := vertex_path_realization G single Z x z minimal.1
-      have mapped : states.map Arrival.vertex = b :: c :: suffix := trace.trans tailEq
+      obtain ⟨last, states, route, «trace», _⟩ := vertex_path_realization G single Z x z minimal.1
+      have mapped : states.map Arrival.vertex = b :: c :: suffix := «trace».trans tailEq
       cases states with
       | nil => cases mapped
       | cons qb remaining =>
@@ -249,48 +249,48 @@ theorem realize_three_section {V : Type u} (G : MarkedGraph V) (single : SingleE
               | cons ab tail =>
                   cases tail with
                   | cons bc suffixRoute =>
-                      refine ⟨{ first := ⟨x, none⟩, middle := qb, third := qc,
+                      refine ⟨{ «first» := ⟨x, none⟩, middle := qb, third := qc,
                         front := [], back := back, last := last,
                         first_vertex := startEq, middle_vertex := qbVertex, third_vertex := qcVertex,
-                        prefix := .nil _, first_step := ab, second_step := bc, suffix := suffixRoute,
+                        «prefix» := .nil _, first_step := ab, second_step := bc, suffix := suffixRoute,
                         shortest := ?_ }⟩
-                      simpa only [List.nil_append, List.cons_append, trace] using minimal
+                      simpa only [List.nil_append, List.cons_append, «trace»] using minimal
 
 theorem shortest_vertex_chord_conditioned_parent {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x z a b c : V)
-    (prefix suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
-    (decomposition : x :: xs = prefix ++ [a, b, c] ++ suffix) (chord : Adjacent G a c) :
+    («prefix» suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
+    (decomposition : x :: xs = «prefix» ++ [a, b, c] ++ suffix) (chord : Adjacent G a c) :
     (Z a ∧ Directed G a c) ∨ (Z c ∧ Directed G c a) := by
-  obtain ⟨section⟩ := realize_three_section G single Z x z a b c prefix suffix minimal decomposition
-  obtain ⟨left, right, edge⟩ := chord
-  have marked : G.edge section.first.vertex section.third.vertex left right := by
-    simpa only [section.first_vertex, section.third_vertex] using edge
-  have long : 1 < ([section.middle, section.third] : List (Arrival V)).length := by decide
-  have result := shortest_chord_conditioned_parent G laws single Z x z section.prefix
-    (.cons section.first_step (.cons section.second_step (.nil section.third))) section.suffix long marked section.shortest
-  simpa only [section.first_vertex, section.third_vertex] using result
+  obtain ⟨«section»⟩ := realize_three_section G single Z x z a b c «prefix» suffix minimal decomposition
+  obtain ⟨«left», «right», edge⟩ := chord
+  have marked : G.edge «section».first.vertex «section».third.vertex «left» «right» := by
+    simpa only [«section».first_vertex, «section».third_vertex] using edge
+  have long : 1 < ([«section».middle, «section».third] : List (Arrival V)).length := by decide
+  have result := shortest_chord_conditioned_parent G laws single Z x z «section».prefix
+    (.cons «section».first_step (.cons «section».second_step (.nil «section».third))) «section».suffix long marked «section».shortest
+  simpa only [«section».first_vertex, «section».third_vertex] using result
 
 /-- Full dual-orientation discriminating-section existence for every shielded
 triple on a shortest active path. The two possible orientations refer to the
 same original graph and the same specified triple, not a weaker summary. -/
 theorem shortest_shielded_triple_discriminated {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x z a b c : V)
-    (prefix suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
-    (decomposition : x :: xs = prefix ++ [a, b, c] ++ suffix)
+    («prefix» suffix : List V) {xs : List V} (minimal : Shortest G Z x z xs)
+    (decomposition : x :: xs = «prefix» ++ [a, b, c] ++ suffix)
     (notStart : ¬ Z x) (notEnd : ¬ Z z) (chord : Adjacent G a c) :
     (∃ w : DiscriminatingWitness G a b c, w.OccursOn (x :: xs)) ∨
       (∃ w : DiscriminatingWitness G c b a, w.OccursOn (x :: xs).reverse) := by
-  rcases shortest_vertex_chord_conditioned_parent G laws single Z x z a b c prefix suffix minimal decomposition chord with
-      left | right
+  rcases shortest_vertex_chord_conditioned_parent G laws single Z x z a b c «prefix» suffix minimal decomposition chord with
+      «left» | «right»
   · exact Or.inl (left_section_from_vertex_decomposition G laws single Z x z a b c
-      prefix suffix minimal decomposition notStart left)
-  · obtain ⟨ys, reversed, trace, _⟩ := reverse_shortest_path G single laws.symmetric Z x z minimal
-    have reversedDecomposition : z :: ys = suffix.reverse ++ [c, b, a] ++ prefix.reverse := by
-      rw [trace, decomposition]
+      «prefix» suffix minimal decomposition notStart «left»)
+  · obtain ⟨ys, reversed, «trace», _⟩ := reverse_shortest_path G single laws.symmetric Z x z minimal
+    have reversedDecomposition : z :: ys = suffix.reverse ++ [c, b, a] ++ «prefix».reverse := by
+      rw [«trace», decomposition]
       simp only [List.reverse_append, List.reverse_cons, List.reverse_nil, List.nil_append,
         List.singleton_append, List.append_assoc]
     obtain ⟨w, occurs⟩ := left_section_from_vertex_decomposition G laws single Z z x c b a
-      suffix.reverse prefix.reverse reversed reversedDecomposition notEnd right
-    exact Or.inr ⟨w, trace ▸ occurs⟩
+      suffix.reverse «prefix».reverse reversed reversedDecomposition notEnd «right»
+    exact Or.inr ⟨w, «trace» ▸ occurs⟩
 
 end RestrictedCausal.VertexActivePaths

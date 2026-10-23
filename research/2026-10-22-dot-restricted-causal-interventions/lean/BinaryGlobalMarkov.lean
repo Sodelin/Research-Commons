@@ -27,8 +27,8 @@ variable {V : Type u} [Fintype V] [DecidableEq V]
 theorem moral_factor_supports_disjoint (D : V → V → Prop) (C : Finset V) (x y : V) :
     Disjoint (leftMoralComponent D C x y) (rightMoralVertices D C x y) := by
   apply Finset.disjoint_left.mpr
-  intro v left right
-  exact (Finset.mem_sdiff.mp right).2 (Finset.mem_union.mpr (Or.inr left))
+  intro v «left» «right»
+  exact (Finset.mem_sdiff.mp «right»).2 (Finset.mem_union.mpr (Or.inr «left»))
 
 theorem left_support_after_elimination (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) (C : Finset V) (x y : V)
@@ -83,7 +83,7 @@ theorem separated_cells_factor (D : V → V → Prop)
     (xOutside : x ∉ C) (yOutside : y ∉ C)
     (separated : ¬ ActiveConnection (arrowGraph D) (fun v => v ∈ C) x y)
     (c : Assignment V) :
-    ∃ left right : Bool → ℚ, ∀ a b, cellMass D θ x y C c a b = left a * right b := by
+    ∃ «left» «right» : Bool → ℚ, ∀ a b, cellMass D θ x y C c a b = «left» a * «right» b := by
   classical
   let inner := (ancestralVertices D C x y \ insert x (insert y C)).toList
   have simple : inner.Nodup := Finset.nodup_toList _
@@ -126,7 +126,7 @@ theorem separated_minor_eval_zero (D : V → V → Prop)
     (separated : ¬ ActiveConnection (arrowGraph D) (fun v => v ∈ C) x y)
     (c : Assignment V) :
     MvPolynomial.eval θ (minorPolynomial D x y C c) = 0 := by
-  obtain ⟨left, right, factors⟩ := separated_cells_factor D acyclic θ C x y
+  obtain ⟨«left», «right», factors⟩ := separated_cells_factor D acyclic θ C x y
     different xOutside yOutside separated c
   rw [eval_minor, factors false false, factors true true, factors false true, factors true false]
   ring

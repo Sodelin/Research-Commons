@@ -22,10 +22,10 @@ theorem collider_reverse_iff {V : Type u} (G : MarkedGraph V)
     (symmetric : ∀ a b ma mb, G.edge a b ma mb → G.edge b a mb ma)
     (a b c : V) : Collider G a b c ↔ Collider G c b a := by
   constructor
-  · rintro ⟨ma, mc, first, last⟩
-    exact ⟨mc, ma, symmetric _ _ _ _ last, symmetric _ _ _ _ first⟩
-  · rintro ⟨mc, ma, first, last⟩
-    exact ⟨ma, mc, symmetric _ _ _ _ last, symmetric _ _ _ _ first⟩
+  · rintro ⟨ma, mc, «first», last⟩
+    exact ⟨mc, ma, symmetric _ _ _ _ last, symmetric _ _ _ _ «first»⟩
+  · rintro ⟨mc, ma, «first», last⟩
+    exact ⟨ma, mc, symmetric _ _ _ _ last, symmetric _ _ _ _ «first»⟩
 
 theorem tripleCost_reverse {V : Type u} (f : V → V → V → Nat)
     (symmetric : ∀ a b c, f a b c = f c b a) (xs : List V) :
@@ -39,16 +39,16 @@ theorem tripleCost_reverse {V : Type u} (f : V → V → V → Nat)
           cases xs with
           | nil => rfl
           | cons c rest =>
-              have split := tripleCost_append_pair f rest.reverse [a] c b
+              have «split» := tripleCost_append_pair f rest.reverse [a] c b
               have reversedTail : tripleCost f (rest.reverse ++ [c, b]) =
                   tripleCost f (b :: c :: rest) := by
                 simpa only [List.reverse_cons, List.append_assoc, List.singleton_append] using ih
               have flip := symmetric c b a
-              simp only [tripleCost] at split
+              simp only [tripleCost] at «split»
               change tripleCost f ((a :: b :: c :: rest).reverse) =
                 f a b c + tripleCost f (b :: c :: rest)
               simp only [List.reverse_cons, List.append_assoc, List.singleton_append]
-              rw [split, reversedTail, flip]
+              rw [«split», reversedTail, flip]
               omega
 
 theorem weightedColliders_reverse {V : Type u} (G : MarkedGraph V)
@@ -81,22 +81,22 @@ theorem vertex_path_route_trace {V : Type u} (G : MarkedGraph V)
   cases route with
   | nil => exact ⟨none, [], .nil _, rfl⟩
   | @cons x b y rest adjacent tail =>
-      obtain ⟨left, incoming, first⟩ := adjacent
-      obtain ⟨last, states, restRoute, trace⟩ := build_after_first G single C tail x left incoming first good
+      obtain ⟨«left», incoming, «first»⟩ := adjacent
+      obtain ⟨last, states, restRoute, «trace»⟩ := build_after_first G single C tail x «left» incoming «first» good
       exact ⟨last, ⟨b, some incoming⟩ :: states,
-        .cons ⟨left, incoming, first, rfl, trivial⟩ restRoute,
-        by simpa only [List.map_cons, trace]⟩
+        .cons ⟨«left», incoming, «first», rfl, trivial⟩ restRoute,
+        by simpa only [List.map_cons, «trace»]⟩
 
 theorem vertex_path_reverse_trace {V : Type u} (G : MarkedGraph V)
     (single : SingleEdges G)
     (symmetric : ∀ a b ma mb, G.edge a b ma mb → G.edge b a mb ma)
     (C : V → Prop) (x y : V) {xs : List V} (path : Path G C x y xs) :
     ∃ ys, Path G C y x ys ∧ y :: ys = (x :: xs).reverse := by
-  obtain ⟨last, states, actual, trace⟩ := vertex_path_route_trace G single C x y path
+  obtain ⟨last, states, actual, «trace»⟩ := vertex_path_route_trace G single C x y path
   obtain ⟨reversedLast, reversedStates, reversed, ready, physical⟩ :=
     reverse_required_arrival_trace G symmetric C (AncestorOf G C) actual none trivial
   have physical' : y :: reversedStates.map Arrival.vertex = (x :: xs).reverse := by
-    simpa only [List.map_cons, trace] using physical
+    simpa only [List.map_cons, «trace»] using physical
   have simple : ((⟨y, none⟩ :: reversedStates).map Arrival.vertex).Nodup := by
     change (y :: reversedStates.map Arrival.vertex).Nodup
     rw [physical']

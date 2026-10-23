@@ -83,14 +83,14 @@ theorem exists_simple_subroute {a b : α} {xs : List α}
           hsub.cons_cons a⟩
 
 /-- A literal prefix-loop-suffix splice; no transitivity of `R` is assumed. -/
-theorem erase_return_segment {a s b : α} {prefix loop suffix : List α}
-    (hp : Route R a prefix s) (_hl : Route R s loop s)
-    (hs : Route R s suffix b) : Route R a (prefix ++ suffix) b :=
+theorem erase_return_segment {a s b : α} {«prefix» loop suffix : List α}
+    (hp : Route R a «prefix» s) (_hl : Route R s loop s)
+    (hs : Route R s suffix b) : Route R a («prefix» ++ suffix) b :=
   hp.append hs
 
-theorem erased_vertices_sublist {a : α} (prefix loop suffix : List α) :
-    (a :: (prefix ++ suffix)) <+ (a :: (prefix ++ (loop ++ suffix))) :=
-  ((List.sublist_append_right loop suffix).append_left prefix).cons_cons a
+theorem erased_vertices_sublist {a : α} («prefix» loop suffix : List α) :
+    (a :: («prefix» ++ suffix)) <+ (a :: («prefix» ++ (loop ++ suffix))) :=
+  ((List.sublist_append_right loop suffix).append_left «prefix»).cons_cons a
 
 end Route
 
@@ -141,8 +141,8 @@ theorem selected_splice_active {V : Type u} {C A S : V → Prop}
 /-- Selected incidences point into the selected vertex. The application derives
 this property from latent projection of a DAG with selection sinks (B1). -/
 def SelectionHeads {V : Type u} (G : MarkedGraph V) (S : V → Prop) : Prop :=
-  ∀ x y left right, G.edge x y left right →
-    (S x → left = .head) ∧ (S y → right = .head)
+  ∀ x y «left» «right», G.edge x y «left» «right» →
+    (S x → «left» = .head) ∧ (S y → «right» = .head)
 
 /-- Every selected occurrence of an active route has the same arrival mark.
 The initial endpoint is required to satisfy this too; an observed start gives

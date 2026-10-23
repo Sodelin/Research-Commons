@@ -28,7 +28,7 @@ theorem head_route_reaches_collider_or_end {V : Type u} (G : MarkedGraph V)
   revert hp
   induction h with
   | nil p => intro _; exact ⟨p.vertex, ⟨[], .nil _⟩, Or.inr rfl⟩
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hp
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       cases outgoing with
@@ -42,7 +42,7 @@ theorem head_route_reaches_collider_or_end {V : Type u} (G : MarkedGraph V)
             | tail => exact (laws.no_tail_tail _ _ hedge).elim
           subst incoming
           obtain ⟨z, ⟨zs, hzs⟩, hz⟩ := ih hmark
-          exact ⟨z, ⟨next.vertex :: zs, .cons hedge hzs⟩, hz⟩
+          exact ⟨z, ⟨«next».vertex :: zs, .cons hedge hzs⟩, hz⟩
 
 /-- The initial arrow makes the return-to-first-endpoint alternative a real
 directed cycle. The other two alternatives are exactly the literal tail flag.
@@ -53,14 +53,14 @@ theorem first_tail_forces_flag {X : Type u} {S : Type v} {L : Type w}
     (C B : SourceVertex X S L → Prop)
     (bound : ∀ a, B a → EndpointAncestor D x y a)
     {p q : Arrival (SourceVertex X S L)} {xs : List (Arrival (SourceVertex X S L))}
-    (first : Directed (arrowGraph D.arrow) (Observed x) p.vertex)
+    («first» : Directed (arrowGraph D.arrow) (Observed x) p.vertex)
     (hp : p.incoming = some .head)
     (rest : Route (Transition (arrowGraph D.arrow) C B) p xs q)
     (hq : q.vertex = Observed y) : TailFlag D x y := by
   obtain ⟨z, hpz, hz⟩ := head_route_reaches_collider_or_end
     (arrowGraph D.arrow) (original_arrow_mixed_laws D) C B rest hp
   have hxp : Reach (arrowGraph D.arrow) (Observed x) p.vertex :=
-    ⟨[p.vertex], .cons first (.nil _)⟩
+    ⟨[p.vertex], .cons «first» (.nil _)⟩
   rcases hz with hb | hend
   · obtain ⟨endpoint, hze, he⟩ := bound z hb
     have hpe := reach_trans hpz hze
@@ -69,7 +69,7 @@ theorem first_tail_forces_flag {X : Type u} {S : Type v} {L : Type w}
         simpa only [hx] using hpe
       have equal := reach_antisymm_of_acyclic (arrowGraph D.arrow) (source_directed_acyclic D) hxp back
       have self : Directed (arrowGraph D.arrow) (Observed x) (Observed x) := by
-        simpa only [equal] using first
+        simpa only [equal] using «first»
       exact ((original_arrow_mixed_laws D).irreflexive _ _ _ self).elim
     · left
       have reached := reach_trans hxp hpe
@@ -129,11 +129,11 @@ theorem reverse_with_arrival {V : Type u} (G : MarkedGraph V)
               have hactive : ActiveAt C A p.vertex previous outgoing := by
                 simpa only [DepartureAllowed, hm] using ready
               exact (activeAt_swap C A p.vertex previous outgoing).mp hactive
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro actual ready
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       obtain ⟨last, ys, hy, hready⟩ := ih actual ready
-      have backward : Transition G C A ⟨next.vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
+      have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
         refine ⟨incoming, outgoing, symmetric _ _ _ _ hedge, rfl, ?_⟩
         simpa only [hmark] using hready
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],
@@ -161,12 +161,12 @@ theorem last_mark_head_of_not_tail_flag {X : Type u} {S : Type v} {L : Type w}
     (C B : SourceVertex X S L → Prop)
     (bound : ∀ a, B a → EndpointAncestor D x y a)
     {p : Arrival (SourceVertex X S L)} {xs : List (Arrival (SourceVertex X S L))}
-    (prefix : Route (Transition (arrowGraph D.arrow) C B) ⟨Observed x, none⟩ xs p)
+    («prefix» : Route (Transition (arrowGraph D.arrow) C B) ⟨Observed x, none⟩ xs p)
     (outgoing incoming : Mark)
     (edge : (arrowGraph D.arrow).edge p.vertex (Observed y) outgoing incoming)
     (ready : DepartureAllowed C B p.vertex p.incoming outgoing) : incoming = .head := by
   obtain ⟨last, ys, reversed, _⟩ := reverse_with_arrival (arrowGraph D.arrow)
-    (arrow_graph_symm D.arrow) C B prefix (some outgoing) ready
+    (arrow_graph_symm D.arrow) C B «prefix» (some outgoing) ready
   exact first_mark_head_of_not_tail_flag D y x noTail C B
     (fun a ha => endpoint_ancestor_swap D x y a (bound a ha)) incoming outgoing
     (arrow_graph_symm D.arrow _ _ _ _ edge) rfl reversed rfl

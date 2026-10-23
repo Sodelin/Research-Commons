@@ -69,12 +69,12 @@ theorem noncollider_values_agree {A : Type u} {B : Type v}
         | nil =>
             have same : vertex = start := by simpa only [List.mem_singleton] using member
             rw [same]
-        | cons next tail =>
+        | cons «next» tail =>
             rcases List.mem_cons.mp member with same | member
             · rw [same]
-            · by_cases nextCollider : collider next
+            · by_cases nextCollider : collider «next»
               · cases tail with
-                | nil => exact (endOutside [start] next rfl nextCollider).elim
+                | nil => exact (endOutside [start] «next» rfl nextCollider).elim
                 | cons following remaining =>
                     have followingOutside : ¬ collider following :=
                       fun h => isolated.2.1 ⟨nextCollider, h⟩
@@ -84,15 +84,15 @@ theorem noncollider_values_agree {A : Type u} {B : Type v}
                         simp only [List.length_cons] at length
                         omega
                       have result := ih remaining.length smaller following remaining rfl followingOutside
-                        (terminalOutside_tail collider next (following :: remaining)
-                          (terminalOutside_tail collider start (next :: following :: remaining) endOutside))
-                        (allPairs_tail _ next _ (allPairs_tail _ start _ isolated))
-                        (allPairs_tail _ next _ (allPairs_tail _ start _ ordinary))
-                        (allTriples_tail _ next _ (allTriples_tail _ start _ across)) vertex later outside
+                        (terminalOutside_tail collider «next» (following :: remaining)
+                          (terminalOutside_tail collider start («next» :: following :: remaining) endOutside))
+                        (allPairs_tail _ «next» _ (allPairs_tail _ start _ isolated))
+                        (allPairs_tail _ «next» _ (allPairs_tail _ start _ ordinary))
+                        (allTriples_tail _ «next» _ (allTriples_tail _ start _ across)) vertex later outside
                       exact result.trans (across.1 nextCollider).symm
               · have smaller : tail.length < n := by simp only [List.length_cons] at length; omega
-                have result := ih tail.length smaller next tail rfl nextCollider
-                  (terminalOutside_tail collider start (next :: tail) endOutside)
+                have result := ih tail.length smaller «next» tail rfl nextCollider
+                  (terminalOutside_tail collider start («next» :: tail) endOutside)
                   (allPairs_tail _ start _ isolated) (allPairs_tail _ start _ ordinary)
                   (allTriples_tail _ start _ across) vertex member outside
                 exact result.trans (ordinary.1 startOutside nextCollider).symm
@@ -115,7 +115,7 @@ theorem copy_route_value (c : BinaryCPT.BoundaryCircuit edge R) (bits : R → Bo
     c.value bits finish = c.value bits start := by
   induction route with
   | nil start => rfl
-  | @cons start next finish rest copy tail ih => exact ih.trans (c.copy_value bits copy)
+  | @cons start «next» finish rest copy tail ih => exact ih.trans (c.copy_value bits copy)
 
 theorem selected_copy_forces_zero (c : BinaryCPT.BoundaryCircuit edge R) (bits : R → Bool)
     (C : Finset V) {start finish : V} {vertices : List V}
@@ -166,9 +166,9 @@ theorem equal_constant_xor_zero (c : BinaryCPT.BoundaryCircuit edge R)
     (a b d : V) (allowA : edge a b) (allowD : edge d b)
     (earlierA : c.rank a < c.rank b) (earlierD : c.rank d < c.rank b)
     (gate : c.gate b = .xor a d allowA allowD earlierA earlierD)
-    (t : Bool) (left : c.value (fun _ => t) a = t) (right : c.value (fun _ => t) d = t) :
+    (t : Bool) («left» : c.value (fun _ => t) a = t) («right» : c.value (fun _ => t) d = t) :
     c.value (fun _ => t) b = false := by
-  rw [BinaryCPT.BoundaryCircuit.value, gate, left, right]
+  rw [BinaryCPT.BoundaryCircuit.value, gate, «left», «right»]
   cases t <;> rfl
 
 /-- Root bits are indexed by ACTUAL source vertices. Coverage is required

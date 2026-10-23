@@ -59,17 +59,17 @@ theorem cylinder_partition_at_vertex (D : V → V → Prop) (θ : Coordinate D �
         have falseMatch := (matches_point_assignment x C c w false outside).mpr ⟨value, matching⟩
         have notTrue : ¬ Matches (insert x C) (pointAssignment x c true) w := by
           intro h
-          have impossible := (matches_point_assignment x C c w true outside).mp h
-          rw [value] at impossible
-          exact Bool.noConfusion impossible.1
+          have «impossible» := (matches_point_assignment x C c w true outside).mp h
+          rw [value] at «impossible»
+          exact Bool.noConfusion «impossible».1
         rw [if_pos falseMatch, if_neg notTrue, add_zero]
     | true =>
         have trueMatch := (matches_point_assignment x C c w true outside).mpr ⟨value, matching⟩
         have notFalse : ¬ Matches (insert x C) (pointAssignment x c false) w := by
           intro h
-          have impossible := (matches_point_assignment x C c w false outside).mp h
-          rw [value] at impossible
-          exact Bool.noConfusion impossible.1
+          have «impossible» := (matches_point_assignment x C c w false outside).mp h
+          rw [value] at «impossible»
+          exact Bool.noConfusion «impossible».1
         rw [if_neg notFalse, if_pos trueMatch, zero_add]
   · have noCell : ∀ b, ¬ Matches (insert x C) (pointAssignment x c b) w :=
       fun b h => matching ((matches_point_assignment x C c w b outside).mp h).2

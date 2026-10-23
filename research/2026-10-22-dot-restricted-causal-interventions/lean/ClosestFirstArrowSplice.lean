@@ -47,11 +47,11 @@ theorem reverse_required_arrival_trace {V : Type u} (G : MarkedGraph V)
                   simpa only [DepartureAllowed, arrival] using ready
                 exact (activeAt_swap C A p.vertex previous outgoing).mp active
       · simp only [List.map_cons, List.map_nil, List.reverse_cons, List.reverse_nil, List.nil_append]
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro actual ready
       obtain ⟨outgoing, incoming, edge, mark, active⟩ := step
-      obtain ⟨last, ys, reversed, compatible, trace⟩ := ih actual ready
-      have backward : Transition G C A ⟨next.vertex, last⟩ ⟨p.vertex, some outgoing⟩ :=
+      obtain ⟨last, ys, reversed, compatible, «trace»⟩ := ih actual ready
+      have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ :=
         ⟨incoming, outgoing, symmetric _ _ _ _ edge, rfl, by simpa only [mark] using compatible⟩
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],
         reversed.append (.cons backward (.nil _)), ?_, ?_⟩
@@ -64,16 +64,16 @@ theorem reverse_required_arrival_trace {V : Type u} (G : MarkedGraph V)
           q.vertex :: (ys ++ [⟨p.vertex, some outgoing⟩]).map Arrival.vertex =
               (q.vertex :: ys.map Arrival.vertex) ++ [p.vertex] := by
                 simp only [List.map_append, List.map_cons, List.map_nil, List.cons_append]
-          _ = ((next :: rest).map Arrival.vertex).reverse ++ [p.vertex] := by rw [trace]
-          _ = ((p :: next :: rest).map Arrival.vertex).reverse := by
+          _ = ((«next» :: rest).map Arrival.vertex).reverse ++ [p.vertex] := by rw [«trace»]
+          _ = ((p :: «next» :: rest).map Arrival.vertex).reverse := by
             simp only [List.map_cons, List.reverse_cons]
 
-theorem nodup_insert_fresh {V : Type u} (left right : List V) (d : V)
-    (simple : (left ++ right).Nodup) (fresh : d ∉ left ++ right) :
-    (left ++ (d :: right)).Nodup := by
-  induction left with
+theorem nodup_insert_fresh {V : Type u} («left» «right» : List V) (d : V)
+    (simple : («left» ++ «right»).Nodup) (fresh : d ∉ «left» ++ «right») :
+    («left» ++ (d :: «right»)).Nodup := by
+  induction «left» with
   | nil => exact List.Nodup.cons fresh simple
-  | cons a left ih =>
+  | cons a «left» ih =>
       obtain ⟨outside, tail⟩ := List.nodup_cons.mp simple
       refine List.Nodup.cons ?_ (ih tail (fun member => fresh (List.mem_cons_of_mem _ member)))
       intro member
@@ -90,46 +90,46 @@ later supplied by extraction from the original simple path. The source
 query, original source graph and target endpoints remain unchanged. -/
 theorem two_boundary_splice {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x y d : V)
-    {a r : Arrival V} {left right : List (Arrival V)} {leftOut rightOut : Mark}
-    (leftArm : Route (RealStep G Z) ⟨x, none⟩ left a)
-    (rightArm : Route (RealStep G Z) ⟨y, none⟩ right r)
+    {a r : Arrival V} {«left» «right» : List (Arrival V)} {leftOut rightOut : Mark}
+    (leftArm : Route (RealStep G Z) ⟨x, none⟩ «left» a)
+    (rightArm : Route (RealStep G Z) ⟨y, none⟩ «right» r)
     (leftEdge : G.edge a.vertex d leftOut .head)
     (rightEdge : G.edge r.vertex d rightOut .head)
     (leftReady : DepartureAllowed Z (AncestorOf G Z) a.vertex a.incoming leftOut)
     (rightReady : DepartureAllowed Z (AncestorOf G Z) r.vertex r.incoming rightOut)
     (activated : AncestorOf G Z d)
-    (simple : (((⟨x, none⟩ :: left).map Arrival.vertex) ++
-      ((⟨y, none⟩ :: right).map Arrival.vertex).reverse).Nodup)
-    (fresh : d ∉ (((⟨x, none⟩ :: left).map Arrival.vertex) ++
-      ((⟨y, none⟩ :: right).map Arrival.vertex).reverse)) :
+    (simple : (((⟨x, none⟩ :: «left»).map Arrival.vertex) ++
+      ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse).Nodup)
+    (fresh : d ∉ (((⟨x, none⟩ :: «left»).map Arrival.vertex) ++
+      ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse)) :
     ∃ vertices, Path G Z x y vertices ∧
-      x :: vertices = ((⟨x, none⟩ :: left).map Arrival.vertex) ++
-        [d] ++ ((⟨y, none⟩ :: right).map Arrival.vertex).reverse ∧
-      vertices.length = left.length + right.length + 2 := by
+      x :: vertices = ((⟨x, none⟩ :: «left»).map Arrival.vertex) ++
+        [d] ++ ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse ∧
+      vertices.length = «left».length + «right».length + 2 := by
   obtain ⟨last, reversed, rightRoute, _, rightTrace⟩ :=
     reverse_required_arrival_trace G laws.symmetric Z (AncestorOf G Z) rightArm (some rightOut) rightReady
   let childState : Arrival V := ⟨d, some .head⟩
   let rightState : Arrival V := ⟨r.vertex, some rightOut⟩
-  have first : RealStep G Z a childState := ⟨leftOut, .head, leftEdge, rfl, leftReady⟩
+  have «first» : RealStep G Z a childState := ⟨leftOut, .head, leftEdge, rfl, leftReady⟩
   have second : RealStep G Z childState rightState :=
     ⟨.head, rightOut, laws.symmetric _ _ _ _ rightEdge, rfl, by
       simpa only [childState, ActiveAt, and_self, if_true] using activated⟩
-  let states := left ++ (childState :: rightState :: reversed)
+  let states := «left» ++ (childState :: rightState :: reversed)
   have route : Route (RealStep G Z) ⟨x, none⟩ states ⟨y, last⟩ :=
-    leftArm.append (.cons first (.cons second rightRoute))
-  have trace : ((⟨x, none⟩ :: states).map Arrival.vertex) =
-      ((⟨x, none⟩ :: left).map Arrival.vertex) ++ [d] ++
-        ((⟨y, none⟩ :: right).map Arrival.vertex).reverse := by
+    leftArm.append (.cons «first» (.cons second rightRoute))
+  have «trace» : ((⟨x, none⟩ :: states).map Arrival.vertex) =
+      ((⟨x, none⟩ :: «left»).map Arrival.vertex) ++ [d] ++
+        ((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse := by
     simpa only [states, childState, rightState, List.map_cons, List.map_append, List.map_nil,
       List.cons_append, List.append_assoc, List.singleton_append] using
-      congrArg (fun tail => ((⟨x, none⟩ :: left).map Arrival.vertex) ++ [d] ++ tail) rightTrace
+      congrArg (fun tail => ((⟨x, none⟩ :: «left»).map Arrival.vertex) ++ [d] ++ tail) rightTrace
   have candidateSimple : ((⟨x, none⟩ :: states).map Arrival.vertex).Nodup := by
-    rw [trace]
+    rw [«trace»]
     simpa only [List.append_assoc, List.singleton_append] using
-      nodup_insert_fresh ((⟨x, none⟩ :: left).map Arrival.vertex)
-        (((⟨y, none⟩ :: right).map Arrival.vertex).reverse) d simple fresh
+      nodup_insert_fresh ((⟨x, none⟩ :: «left»).map Arrival.vertex)
+        (((⟨y, none⟩ :: «right»).map Arrival.vertex).reverse) d simple fresh
   refine ⟨states.map Arrival.vertex, active_route_vertex_path G single Z x y route candidateSimple,
-    by simpa only [List.map_cons] using trace, ?_⟩
+    by simpa only [List.map_cons] using «trace», ?_⟩
   have rightLength := congrArg List.length rightTrace
   simp only [List.length_cons, List.length_map, List.length_reverse] at rightLength
   simp only [states, List.length_map, List.length_append, List.length_cons]

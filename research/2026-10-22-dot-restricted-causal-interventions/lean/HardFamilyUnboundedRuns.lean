@@ -94,11 +94,11 @@ theorem policy_output_persists {S : Type uS} {A : Type uA} {Q : Type uQ}
 theorem policy_output_unique {S : Type uS} {A : Type uA} {Q : Type uQ}
     (E : Experiment S A Bool Q Nat) (policy : Policy A Q) (source : S)
     (m n : Nat) (q r : Q)
-    (first : (policyState E policy source m).output = some q)
+    («first» : (policyState E policy source m).output = some q)
     (second : (policyState E policy source n).output = some r) : q = r := by
   rcases le_total m n with before | after
-  · exact Option.some.inj ((policy_output_persists E policy source m n before q first).symm.trans second)
-  · exact Option.some.inj (first.symm.trans (policy_output_persists E policy source n m after r second))
+  · exact Option.some.inj ((policy_output_persists E policy source m n before q «first»).symm.trans second)
+  · exact Option.some.inj («first».symm.trans (policy_output_persists E policy source n m after r second))
 
 def PolicyError {S : Type uS} {A : Type uA} {Q : Type uQ}
     (E : Experiment S A Bool Q Nat) (policy : Policy A Q) (source : S) : Prop :=
@@ -197,8 +197,8 @@ theorem never_test_implies_error {k u : Nat} [LinearOrder (Labels k u)]
   · exact Or.inl baseError
   · right
     have baseSuccess : ∃ m, (policyState promisedGame policy none m).output = some (promisedGame.target none) := by
-      by_contra impossible
-      exact baseError impossible
+      by_contra «impossible»
+      exact baseError «impossible»
     obtain ⟨m, baseCorrect⟩ := baseSuccess
     rintro ⟨n, rivalCorrect⟩
     rw [state_eq_if_never_tests policy q never n] at rivalCorrect

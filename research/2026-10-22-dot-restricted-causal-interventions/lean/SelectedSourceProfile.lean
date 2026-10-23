@@ -110,10 +110,10 @@ theorem split_selected_prefix {X : Type u} {S : Type v} (H : SelectedGraph X S)
         observedArrival x (some m) :: rest := by
   induction xs generalizing s with
   | nil => cases h
-  | cons next xs ih =>
+  | cons «next» xs ih =>
       cases h with
       | cons hstep htail =>
-          rcases next with ⟨nextVertex, nextMark⟩
+          rcases «next» with ⟨nextVertex, nextMark⟩
           cases nextVertex with
           | inl x =>
               obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
@@ -302,10 +302,10 @@ private theorem contract_aux {X : Type u} {S : Type v} (H : SelectedGraph X S)
   | nil =>
       cases h
       exact ⟨[], .nil _, List.Sublist.refl _⟩
-  | cons next rest =>
+  | cons «next» rest =>
       cases h with
       | cons hstep htail =>
-          rcases next with ⟨nextVertex, nextMark⟩
+          rcases «next» with ⟨nextVertex, nextMark⟩
           cases nextVertex with
           | inl z =>
               have hlt : rest.length < n := by

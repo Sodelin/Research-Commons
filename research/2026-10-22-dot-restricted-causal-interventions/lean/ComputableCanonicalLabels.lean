@@ -220,9 +220,9 @@ theorem codeSource_original_target {X : Type u} [LinearOrder X] [Fintype X]
     tcm D.dag T = tcm (codeSource (encode (originalProfile D.dag))).dag T :=
   tcm_eq_of_all_mags D.dag _ T (fun t => ((codeSource_original_preserves D).2 t.val).mag_eq)
 
-theorem card_enumeration_independent (V : Type u) (first second : Fintype V) :
-    @Fintype.card V first = @Fintype.card V second :=
-  @Fintype.card_congr V V first second (Equiv.refl V)
+theorem card_enumeration_independent (V : Type u) («first» second : Fintype V) :
+    @Fintype.card V «first» = @Fintype.card V second :=
+  @Fintype.card_congr V V «first» second (Equiv.refl V)
 
 /-- The exact original bounds survive the changed finite enumerations and
 the explicit lexicographic root order. No cardinality is inferred from an

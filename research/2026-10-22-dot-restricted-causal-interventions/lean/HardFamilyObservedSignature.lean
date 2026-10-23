@@ -49,9 +49,9 @@ theorem first_no_forward_into_support {k u : Nat} (q : Index u) (z : Labels k u)
       change q.before z = true ∨ z = q.first ∨ z = q.second at member
       change insideArrow (some q) q.first z at edge
       rcases member with before | atFirst | atSecond
-      · have impossible := q.predecessor_of_before q.first z before edge.1
-        rw [q.before_first] at impossible
-        cases impossible
+      · have «impossible» := q.predecessor_of_before q.first z before edge.1
+        rw [q.before_first] at «impossible»
+        cases «impossible»
       · subst z; exact Nat.lt_irrefl _ edge.1
       · subst z; exact edge.2 ⟨rfl, rfl⟩
 
@@ -151,12 +151,12 @@ theorem roots_separated_iff {k u : Nat} (source : Option (Index u))
       cases v with
       | inr z => exact available.elim
       | inl root =>
-          rcases edge with ⟨impossible, _, _⟩ | ⟨impossible, _, _⟩ <;> exact impossible.elim
+          rcases edge with ⟨«impossible», _, _⟩ | ⟨«impossible», _, _⟩ <;> exact «impossible».elim
 
 theorem root_untargeted_active {k u : Nat} (source : Option (Index u))
     (C : Labels k u → Prop) (t : Fin k) (x : Fin u) :
     ActiveConnection (arrowGraph (arrow source)) C (.inl t) (.inr x) :=
-  single_edge_active _ C (by intro impossible; cases impossible) .tail .head
+  single_edge_active _ C (by intro «impossible»; cases «impossible») .tail .head
     (Or.inl ⟨targets_cause_all source t x, rfl, rfl⟩)
 
 theorem untargeted_adjacent_active {k u : Nat} (source : Option (Index u))
@@ -172,6 +172,6 @@ theorem untargeted_adjacent_active {k u : Nat} (source : Option (Index u))
 theorem baseline_untargeted_active {k u : Nat} (C : Labels k u → Prop)
     (x y : Fin u) (different : x ≠ y) :
     ActiveConnection (arrowGraph (arrow none)) C (.inr x) (.inr y) :=
-  untargeted_adjacent_active none C x y different (fun _ impossible => by cases impossible)
+  untargeted_adjacent_active none C x y different (fun _ «impossible» => by cases «impossible»)
 
 end RestrictedCausal.HardFamily

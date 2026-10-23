@@ -247,10 +247,10 @@ theorem contract_root_route_aux {V : Type u} [LinearOrder V] (G : MarkedGraph V)
   | nil =>
       cases h
       exact ⟨[], .nil _, rfl⟩
-  | cons next rest =>
+  | cons «next» rest =>
       cases h with
       | cons hfirst htail =>
-          rcases next with ⟨nv, nm⟩
+          rcases «next» with ⟨nv, nm⟩
           obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hfirst
           change nm = some incoming at hmark
           subst nm

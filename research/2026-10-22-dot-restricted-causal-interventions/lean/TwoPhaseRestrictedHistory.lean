@@ -149,8 +149,8 @@ theorem two_phase_all_actions_legal {X : Type u} [LinearOrder X] [Fintype X]
     ∀ row ∈ twoPhaseHistory T marginals observed conditional r s t, LegalAction T row.1 := by
   intro row member
   rcases List.mem_append.mp member with firstTwo | third
-  · rcases List.mem_append.mp firstTwo with first | second
-    · obtain ⟨q, _, same⟩ := List.mem_map.mp first
+  · rcases List.mem_append.mp firstTwo with «first» | second
+    · obtain ⟨q, _, same⟩ := List.mem_map.mp «first»
       subst row
       exact marginal_action_legal q.val.1 q.val.2
     · obtain ⟨q, _, same⟩ := List.mem_map.mp second

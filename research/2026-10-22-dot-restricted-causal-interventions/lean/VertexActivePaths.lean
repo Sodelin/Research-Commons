@@ -26,10 +26,10 @@ def Path {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (x y : V) (xs : List 
 
 theorem triple_active_iff_marks {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) (a b c : V) (ma mb nb nc : Mark)
-    (first : G.edge a b ma mb) (last : G.edge b c nb nc) :
+    («first» : G.edge a b ma mb) (last : G.edge b c nb nc) :
     TripleActive G Z a b c ↔ ActiveAt Z (AncestorOf G Z) b mb nb := by
   classical
-  have collider := collider_iff_chosen_marks G single a b c ma mb nb nc first last
+  have collider := collider_iff_chosen_marks G single a b c ma mb nb nc «first» last
   by_cases heads : mb = .head ∧ nb = .head
   · simp only [ActiveAt, if_pos heads]
     exact ⟨fun h => h.1 (collider.mpr heads), fun h =>
@@ -41,17 +41,17 @@ theorem triple_active_iff_marks {V : Type u} (G : MarkedGraph V) (single : Singl
 theorem active_route_triples_after_first {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) {p q : Arrival V} {xs : List (Arrival V)}
     (route : Route (RealStep G Z) p xs q) :
-    ∀ (a : V) (left incoming : Mark), G.edge a p.vertex left incoming → p.incoming = some incoming →
+    ∀ (a : V) («left» incoming : Mark), G.edge a p.vertex «left» incoming → p.incoming = some incoming →
       AllTriples (TripleActive G Z) (a :: p.vertex :: xs.map Arrival.vertex) := by
   induction route with
   | nil p => intro _ _ _ _ _; trivial
-  | @cons p next q rest step tail ih =>
-      intro a left incoming first mark
+  | @cons p «next» q rest step tail ih =>
+      intro a «left» incoming «first» mark
       obtain ⟨outgoing, nextIncoming, edge, nextMark, active⟩ := step
       have atP : ActiveAt Z (AncestorOf G Z) p.vertex incoming outgoing := by
         simpa only [mark] using active
-      exact ⟨(triple_active_iff_marks G single Z a p.vertex next.vertex
-        left incoming outgoing nextIncoming first edge).mpr atP,
+      exact ⟨(triple_active_iff_marks G single Z a p.vertex «next».vertex
+        «left» incoming outgoing nextIncoming «first» edge).mpr atP,
         ih p.vertex outgoing nextIncoming edge nextMark⟩
 
 theorem active_route_vertex_path {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
@@ -67,9 +67,9 @@ theorem active_route_vertex_path {V : Type u} (G : MarkedGraph V) (single : Sing
   · exact nodup
   · cases route with
     | nil => trivial
-    | @cons p next q rest step tail =>
-        obtain ⟨left, incoming, edge, mark, _⟩ := step
-        exact active_route_triples_after_first G single Z tail x left incoming edge mark
+    | @cons p «next» q rest step tail =>
+        obtain ⟨«left», incoming, edge, mark, _⟩ := step
+        exact active_route_triples_after_first G single Z tail x «left» incoming edge mark
 
 theorem active_connection_vertex_path {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) (x y : V) (h : ActiveConnection G Z x y) : ∃ xs, Path G Z x y xs := by
@@ -78,21 +78,21 @@ theorem active_connection_vertex_path {V : Type u} (G : MarkedGraph V) (single :
 
 theorem build_after_first {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) {b y : V} {xs : List V} (route : Route (Adjacent G) b xs y) :
-    ∀ (a : V) (left incoming : Mark), G.edge a b left incoming →
+    ∀ (a : V) («left» incoming : Mark), G.edge a b «left» incoming →
       AllTriples (TripleActive G Z) (a :: b :: xs) →
       ∃ last states, Route (RealStep G Z) ⟨b, some incoming⟩ states ⟨y, last⟩ ∧
         states.map Arrival.vertex = xs := by
   induction route with
   | nil b => intro _ _ incoming _ _; exact ⟨some incoming, [], .nil _, rfl⟩
   | @cons b c y rest adjacent tail ih =>
-      intro a left incoming first good
+      intro a «left» incoming «first» good
       obtain ⟨outgoing, nextIncoming, edge⟩ := adjacent
       have active := (triple_active_iff_marks G single Z a b c
-        left incoming outgoing nextIncoming first edge).mp good.1
-      obtain ⟨last, states, restRoute, trace⟩ := ih b outgoing nextIncoming edge good.2
+        «left» incoming outgoing nextIncoming «first» edge).mp good.1
+      obtain ⟨last, states, restRoute, «trace»⟩ := ih b outgoing nextIncoming edge good.2
       refine ⟨last, ⟨c, some nextIncoming⟩ :: states,
         .cons ⟨outgoing, nextIncoming, edge, rfl, active⟩ restRoute, ?_⟩
-      simpa only [List.map_cons, trace]
+      simpa only [List.map_cons, «trace»]
 
 theorem vertex_path_active_connection {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) (x y : V) {xs : List V} (h : Path G Z x y xs) : ActiveConnection G Z x y := by
@@ -100,11 +100,11 @@ theorem vertex_path_active_connection {V : Type u} (G : MarkedGraph V) (single :
   cases route with
   | nil => exact ⟨none, [], .nil _, nodup⟩
   | @cons x b y rest adjacent tail =>
-      obtain ⟨left, incoming, first⟩ := adjacent
-      obtain ⟨last, states, restRoute, trace⟩ := build_after_first G single Z tail x left incoming first good
+      obtain ⟨«left», incoming, «first»⟩ := adjacent
+      obtain ⟨last, states, restRoute, «trace»⟩ := build_after_first G single Z tail x «left» incoming «first» good
       refine ⟨last, ⟨b, some incoming⟩ :: states,
-        .cons ⟨left, incoming, first, rfl, trivial⟩ restRoute, ?_⟩
-      simpa only [List.map_cons, trace] using nodup
+        .cons ⟨«left», incoming, «first», rfl, trivial⟩ restRoute, ?_⟩
+      simpa only [List.map_cons, «trace»] using nodup
 
 theorem active_connection_iff_vertex_path {V : Type u} (G : MarkedGraph V)
     (single : SingleEdges G) (Z : V → Prop) (x y : V) :

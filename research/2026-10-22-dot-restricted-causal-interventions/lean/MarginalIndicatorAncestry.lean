@@ -99,10 +99,10 @@ theorem head_connection_mask {X : Type u} {S : Type v} {L : Type w}
     MarginalMask D t x := by
   obtain ⟨last, xs, hp⟩ := h
   have lifted := hp.map (mapArrival oldSource) (old_selected_step D t)
-  have first : RealStep (arrowGraph (augmentSource D t).arrow) Selected
+  have «first» : RealStep (arrowGraph (augmentSource D t).arrow) Selected
       ⟨Observed none, none⟩ ⟨Observed (some t), some .head⟩ := by
     exact ⟨.tail, .head, (indicator_raw_edge D t _ _ _).mpr ⟨rfl, rfl, rfl⟩, rfl, trivial⟩
-  have whole := Route.cons first lifted
+  have whole := Route.cons «first» lifted
   obtain ⟨r, ys, hy, hvertex, hnd⟩ := ActiveWalkReduction.active_walk_to_simple
     (arrowGraph (augmentSource D t).arrow) (original_arrow_mixed_laws (augmentSource D t))
     Selected whole
@@ -118,16 +118,16 @@ theorem directed_selected_route {X : Type u} {S : Type v} {L : Type w}
   revert incoming
   induction h with
   | nil a => intro incoming; exact ⟨incoming, [], .nil _⟩
-  | @cons a next b rest hedge hrest ih =>
+  | @cons a «next» b rest hedge hrest ih =>
       intro incoming
       have hn : ¬ Selected a := by
         intro hs
         rcases a with ((x | s) | l)
         · exact hs.elim
-        · exact D.selection_sink s next hedge
+        · exact D.selection_sink s «next» hedge
         · exact hs.elim
       obtain ⟨last, ys, hy⟩ := ih (some .head)
-      refine ⟨last, ⟨next, some .head⟩ :: ys, .cons ?_ hy⟩
+      refine ⟨last, ⟨«next», some .head⟩ :: ys, .cons ?_ hy⟩
       refine ⟨.tail, .head, Or.inl ⟨hedge, rfl, rfl⟩, rfl, ?_⟩
       cases incoming with
       | none => trivial
@@ -159,14 +159,14 @@ theorem mask_ancestor_endpoint_or_selection {X : Type u} {S : Type v} {L : Type 
   have htarget : A (Observed (some t)) := by
     cases xs with
     | nil => cases hp
-    | cons next rest =>
+    | cons «next» rest =>
       cases hp with
       | cons hstep hrest =>
         obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
         obtain ⟨hvertex, _, hincoming⟩ := (indicator_raw_edge D t _ _ _).mp hedge
         by_contra hn
-        have hnext : ¬ A next.vertex := by simpa only [hvertex] using hn
-        have hhead : next.incoming = some .head := hmark.trans (congrArg some hincoming)
+        have hnext : ¬ A «next».vertex := by simpa only [hvertex] using hn
+        have hhead : «next».incoming = some .head := hmark.trans (congrArg some hincoming)
         exact (head_nonancestor_general (arrowGraph E.arrow) (original_arrow_mixed_laws E)
           Selected (AncestorOf (arrowGraph E.arrow) Selected) A hBA
           (ancestor_backward_closed (arrowGraph E.arrow) (OneEndpointSelection (some x)))

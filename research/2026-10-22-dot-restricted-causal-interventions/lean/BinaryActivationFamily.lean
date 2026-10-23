@@ -20,8 +20,8 @@ universe u
 theorem trace_collider_activated {V : Type u} (D : V → V → Prop) (C : V → Prop)
     {x y b : V} {vertices : List V} (path : Path (arrowGraph D) C x y vertices)
     (collider : TraceCollider D (x :: vertices) b) : SourceSelection.AncestorOf (arrowGraph D) C b := by
-  obtain ⟨a, c, occurrence, left, right⟩ := collider
-  exact (occurrence.property path.2.2).1 (arrow_heads_collider D left right)
+  obtain ⟨a, c, occurrence, «left», «right»⟩ := collider
+  exact (occurrence.property path.2.2).1 (arrow_heads_collider D «left» «right»)
 
 theorem trace_activation_avoids_main {V : Type u} (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) (C : V → Prop)
@@ -31,9 +31,9 @@ theorem trace_activation_avoids_main {V : Type u} (D : V → V → Prop)
     (shortest : MinimumDirectedPath (arrowGraph D) C b branch finish) :
     ∀ v ∈ branch, v ∉ x :: vertices := by
   obtain ⟨a, c, occurrence, leftEdge, rightEdge⟩ := collider
-  obtain ⟨left, right, literal⟩ := occurrence.literal
+  obtain ⟨«left», «right», literal⟩ := occurrence.literal
   exact shortest_activation_avoids_main_path (arrowGraph D) (arrow_single_edges D acyclic)
-    (arrow_graph_symm D) (arrow_directed_acyclic D acyclic) C x y a b c finish left right
+    (arrow_graph_symm D) (arrow_directed_acyclic D acyclic) C x y a b c finish «left» «right»
     minimal literal (arrow_heads_collider D leftEdge rightEdge) shortest
 
 theorem ordered_trace_activation_disjoint {V : Type u} (D : V → V → Prop)
@@ -46,23 +46,23 @@ theorem ordered_trace_activation_disjoint {V : Type u} (D : V → V → Prop)
     (shortestB : MinimumDirectedPath (arrowGraph D) C b branchB finishB)
     (shortestE : MinimumDirectedPath (arrowGraph D) C e branchE finishE) :
     ∀ v ∈ branchB, v ∉ branchE := by
-  obtain ⟨left, a, middle, d, c, right, original⟩ := ordered
-  have atB : ∀ next rest, middle ++ d :: e :: c :: right = next :: rest →
-      Collider (arrowGraph D) a b next := by
-    intro next rest equation
-    have occurrence : TripleOn (x :: vertices) a b next := by
+  obtain ⟨«left», a, middle, d, c, «right», original⟩ := ordered
+  have atB : ∀ «next» rest, middle ++ d :: e :: c :: «right» = «next» :: rest →
+      Collider (arrowGraph D) a b «next» := by
+    intro «next» rest equation
+    have occurrence : TripleOn (x :: vertices) a b «next» := by
       rw [original, equation]
-      exact TripleOn.of_literal left rest a b next
+      exact TripleOn.of_literal «left» rest a b «next»
     have arrows := trace_collider_original D minimal.1.2.1 occurrence colliderB
     exact arrow_heads_collider D arrows.1 arrows.2
   have occurrenceE : TripleOn (x :: vertices) d e c := by
     rw [original]
     simpa only [List.append_assoc, List.cons_append] using
-      TripleOn.of_literal (left ++ a :: b :: middle) right d e c
+      TripleOn.of_literal («left» ++ a :: b :: middle) «right» d e c
   have arrowsE := trace_collider_original D minimal.1.2.1 occurrenceE colliderE
   exact shortest_activation_branches_disjoint_ordered (arrowGraph D)
     (arrow_single_edges D acyclic) (arrow_graph_symm D) (arrow_directed_acyclic D acyclic)
-    C x y a b d e c finishB finishE left middle right minimal original atB
+    C x y a b d e c finishB finishE «left» middle «right» minimal original atB
     (arrow_heads_collider D arrowsE.1 arrowsE.2) shortestB shortestE
 
 theorem trace_activation_branches_disjoint {V : Type u} (D : V → V → Prop)

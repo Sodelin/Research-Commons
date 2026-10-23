@@ -73,9 +73,9 @@ theorem simple_route_root_free {X : Type u} {S : Type v} {L : Type w}
       intro hp hnd r hr
       have heq : r = p := List.mem_singleton.mp hr
       simpa only [heq] using hp
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hp hnd
-      have hnext : next.vertex ≠ Observed none := by
+      have hnext : «next».vertex ≠ Observed none := by
         intro hn
         obtain ⟨outgoing, incoming, hedge, _, _⟩ := hstep
         have reversed := arrow_graph_symm (augmentSource D t).arrow _ _ _ _ hedge
@@ -83,7 +83,7 @@ theorem simple_route_root_free {X : Type u} {S : Type v} {L : Type w}
           (by simpa only [hn] using reversed)
         cases hrest with
         | nil => exact hq hn
-        | @cons next later q tail second remaining =>
+        | @cons «next» later q tail second remaining =>
             obtain ⟨outgoing₂, incoming₂, hedge₂, _, _⟩ := second
             have secondRoot := (indicator_raw_edge D t later.vertex outgoing₂ incoming₂).mp
               (by simpa only [hn] using hedge₂)
@@ -155,10 +155,10 @@ theorem pullback_route_any {X : Type u} {S : Type v} {L : Type w}
   revert hfree
   induction h with
   | nil p => intro _; exact .nil _
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hfree
-      refine .cons (pullback_step_any D t K p next (hfree p List.mem_cons_self)
-        (hfree next (List.mem_cons_of_mem _ List.mem_cons_self)) hstep) (ih ?_)
+      refine .cons (pullback_step_any D t K p «next» (hfree p List.mem_cons_self)
+        (hfree «next» (List.mem_cons_of_mem _ List.mem_cons_self)) hstep) (ih ?_)
       intro r hr
       exact hfree r (List.mem_cons_of_mem _ hr)
 

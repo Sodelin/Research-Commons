@@ -86,15 +86,15 @@ theorem enumeration_membership (base : Assignment V) (vertices : List V) (w : As
             apply List.mem_map.mpr
             exact ⟨old, oldMember, by simpa only [value] using recovery⟩
 
-theorem point_update_injective_on_agreeing (vertex : V) (b : Bool) (base first second : Assignment V)
-    (firstAt : first vertex = base vertex) (secondAt : second vertex = base vertex)
-    (same : pointAssignment vertex first b = pointAssignment vertex second b) : first = second := by
+theorem point_update_injective_on_agreeing (vertex : V) (b : Bool) (base «first» second : Assignment V)
+    (firstAt : «first» vertex = base vertex) (secondAt : second vertex = base vertex)
+    (same : pointAssignment vertex «first» b = pointAssignment vertex second b) : «first» = second := by
   funext v
   by_cases atVertex : v = vertex
   · subst v
     exact firstAt.trans secondAt.symm
-  · have at := congrFun same v
-    simpa only [pointAssignment, if_neg atVertex] using at
+  · have valueEq := congrFun same v
+    simpa only [pointAssignment, if_neg atVertex] using valueEq
 
 theorem assignmentEnumeration_nodup (base : Assignment V) (vertices : List V) (simple : vertices.Nodup) :
     (assignmentEnumeration base vertices).Nodup := by
@@ -109,13 +109,13 @@ theorem assignmentEnumeration_nodup (base : Assignment V) (vertices : List V) (s
           (fun w => pointAssignment vertex w b)).Nodup := by
         intro b
         apply List.Nodup.map_on ?_ oldSimple
-        intro first firstMember second secondMember same
-        exact point_update_injective_on_agreeing vertex b base first second
-          ((enumeration_membership base rest first).mp firstMember vertex outside)
+        intro «first» firstMember second secondMember same
+        exact point_update_injective_on_agreeing vertex b base «first» second
+          ((enumeration_membership base rest «first»).mp firstMember vertex outside)
           ((enumeration_membership base rest second).mp secondMember vertex outside) same
       apply (mapSimple false).append (mapSimple true)
       intro w inZero inOne
-      obtain ⟨first, _, zeroEq⟩ := List.mem_map.mp inZero
+      obtain ⟨«first», _, zeroEq⟩ := List.mem_map.mp inZero
       obtain ⟨second, _, oneEq⟩ := List.mem_map.mp inOne
       have unequal := congrFun (zeroEq.trans oneEq.symm) vertex
       simp only [pointAssignment, if_pos rfl] at unequal

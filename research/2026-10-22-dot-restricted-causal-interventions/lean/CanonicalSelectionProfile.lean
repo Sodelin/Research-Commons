@@ -29,12 +29,12 @@ structure Profile (X : Type u) where
     (mx = .tail → parent x) ∧ (my = .tail → parent y)
 
 structure BridgeToken {X : Type u} [LinearOrder X] (Q : Profile X) where
-  left : X
-  right : X
+  «left» : X
+  «right» : X
   leftMark : Mark
   rightMark : Mark
-  ordered : left < right
-  allowed : Q.bridge left leftMark right rightMark
+  ordered : «left» < «right»
+  allowed : Q.bridge «left» leftMark «right» rightMark
 
 abbrev Selector {X : Type u} [LinearOrder X] (Q : Profile X) :=
   Sum {x : X // Q.parent x} (BridgeToken Q)

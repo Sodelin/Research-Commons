@@ -67,10 +67,10 @@ theorem everIndices_card_le_total (policy : FamilyPolicy k u) :
     exact (mem_testedIndices q _).mpr
       ⟨row.1, List.mem_map.mpr ⟨row, present, rfl⟩, tested⟩
   have finiteBound : (everIndices policy).card ≤ history.length := by
-    have first := Finset.card_le_card subset
+    have «first» := Finset.card_le_card subset
     have second := testedIndices_card_le (history.map Prod.fst)
     rw [List.length_map] at second
-    exact first.trans second
+    exact «first».trans second
   have castBound : ((everIndices policy).card : ℝ≥0∞) ≤ (history.length : ℝ≥0∞) := by
     exact_mod_cast finiteBound
   exact castBound.trans (le_iSup (fun m : Nat =>
@@ -187,8 +187,8 @@ theorem original_physical_randomized_lower {Omega : Type uOmega} [MeasurableSpac
       exact (original_physical_policy_error (policies seed) source).symm
     rw [same]
     exact measurableErrors (physicalSource source)
-  have bound := randomized_expected_query_lower mu nonemptyTargets policies epsilon restricted
+  have «bound» := randomized_expected_query_lower mu nonemptyTargets policies epsilon restricted
     measurableRestricted measurableTests measurableCount
-  simpa only [totalQueries, original_physical_policy_state] using bound
+  simpa only [totalQueries, original_physical_policy_state] using «bound»
 
 end RestrictedCausal.HardFamily

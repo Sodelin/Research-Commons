@@ -88,29 +88,29 @@ def Winning (E : Experiment S A Y T R) : Nat → History A Y → R → Prop
       ∃ a, E.legal u a ∧ ∀ y, Winning E n ((a,y)::h) (E.update u a)
 
 inductive Plan (A : Type uA) (Y : Type uY) (T : Type uT) : Nat → Type (max uA uY uT)
-  | stop {n : Nat} (target : T) : Plan A Y T n
-  | ask {n : Nat} (action : A) (next : Y → Plan A Y T n) : Plan A Y T (n+1)
+  | «stop» {n : Nat} (target : T) : Plan A Y T n
+  | ask {n : Nat} (action : A) («next» : Y → Plan A Y T n) : Plan A Y T (n+1)
 
 def Valid (E : Experiment S A Y T R) :
     {n : Nat} → Plan A Y T n → History A Y → R → Prop
-  | _,.stop q,h,_ => ∀ s, Consistent E h s → E.target s = q
-  | _,.ask a next,h,u => E.legal u a ∧
-      ∀ y, Valid E (next y) ((a,y)::h) (E.update u a)
+  | _,.«stop» q,h,_ => ∀ s, Consistent E h s → E.target s = q
+  | _,.ask a «next»,h,u => E.legal u a ∧
+      ∀ y, Valid E («next» y) ((a,y)::h) (E.update u a)
 
 def run (E : Experiment S A Y T R) : {n : Nat} → Plan A Y T n → S → T
-  | _,.stop q,_ => q
-  | _,.ask a next,s => run E (next (E.response s a)) s
+  | _,.«stop» q,_ => q
+  | _,.ask a «next»,s => run E («next» (E.response s a)) s
 
 theorem valid_implies_winning (E : Experiment S A Y T R)
     {n : Nat} (p : Plan A Y T n) (h : History A Y) (u : R)
     (hp : Valid E p h u) : Winning E n h u := by
   induction p generalizing h u with
-  | @stop n q =>
+  | @«stop» n q =>
     have hh : Homogeneous E h := fun s t hs ht => (hp s hs).trans (hp t ht).symm
     cases n with
     | zero => exact hh
     | succ n => exact Or.inl hh
-  | ask a next ih => exact Or.inr ⟨a,hp.1,fun y => ih y _ _ (hp.2 y)⟩
+  | ask a «next» ih => exact Or.inr ⟨a,hp.1,fun y => ih y _ _ (hp.2 y)⟩
 
 theorem winning_has_plan [Nonempty T] (E : Experiment S A Y T R)
     (n : Nat) (h : History A Y) (u : R) (hw : Winning E n h u) :
@@ -119,13 +119,13 @@ theorem winning_has_plan [Nonempty T] (E : Experiment S A Y T R)
   induction n generalizing h u with
   | zero =>
     obtain ⟨q,hq⟩ := (homogeneous_iff_terminal E h).mp hw
-    exact ⟨.stop q,hq⟩
+    exact ⟨.«stop» q,hq⟩
   | succ n ih =>
     rcases hw with hh | ⟨a,ha,hy⟩
     · obtain ⟨q,hq⟩ := (homogeneous_iff_terminal E h).mp hh
-      exact ⟨.stop q,hq⟩
-    · let next := fun y => Classical.choose (ih ((a,y)::h) (E.update u a) (hy y))
-      exact ⟨.ask a next,ha,fun y =>
+      exact ⟨.«stop» q,hq⟩
+    · let «next» := fun y => Classical.choose (ih ((a,y)::h) (E.update u a) (hy y))
+      exact ⟨.ask a «next»,ha,fun y =>
         Classical.choose_spec (ih ((a,y)::h) (E.update u a) (hy y))⟩
 
 theorem winning_iff_valid_plan [Nonempty T] (E : Experiment S A Y T R)
@@ -140,8 +140,8 @@ theorem valid_run_identifies (E : Experiment S A Y T R)
     (hp : Valid E p h u) (s : S) (hs : Consistent E h s) :
     run E p s = E.target s := by
   induction p generalizing h u with
-  | stop q => exact (hp s hs).symm
-  | ask a next ih =>
+  | «stop» q => exact (hp s hs).symm
+  | ask a «next» ih =>
     exact ih (E.response s a) ((a,E.response s a)::h) (E.update u a)
       (hp.2 (E.response s a)) ((consistent_extend E h s a _).mpr ⟨hs,rfl⟩)
 

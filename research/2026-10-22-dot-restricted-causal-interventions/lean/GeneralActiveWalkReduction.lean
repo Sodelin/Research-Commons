@@ -104,8 +104,8 @@ theorem splice_departure {V : Type u} (G : MarkedGraph V) (laws : MixedLaws G)
     Transition G C (AncestorOf G C) p r := by
   cases hloop with
   | nil => exact hnext
-  | @cons p first q rest hfirst hrest =>
-      have hwhole : Route (Transition G C (AncestorOf G C)) p (first :: rest) q := .cons hfirst hrest
+  | @cons p «first» q rest hfirst hrest =>
+      have hwhole : Route (Transition G C (AncestorOf G C)) p («first» :: rest) q := .cons hfirst hrest
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hnext
       refine ⟨outgoing, incoming, ?_, hmark, ?_⟩
       · rw [hv]
@@ -149,8 +149,8 @@ theorem active_walk_to_simple {V : Type u} (G : MarkedGraph V) (laws : MixedLaws
   | @cons p q r xs hpq hqr ih =>
       obtain ⟨last, ys, hy, hlast, hnd⟩ := ih
       by_cases hmem : p.vertex ∈ (q :: ys).map Arrival.vertex
-      · obtain ⟨at, hat, hvertex⟩ := List.mem_map.mp hmem
-        obtain ⟨prefix, hprefix⟩ := hy.prefix_of_mem hat
+      · obtain ⟨«at», hat, hvertex⟩ := List.mem_map.mp hmem
+        obtain ⟨«prefix», hprefix⟩ := hy.prefix_of_mem hat
         obtain ⟨suffix, hsuffix, hsub⟩ := hy.suffix_of_mem hat
         have hloop := Route.cons hpq hprefix
         have hshort := hnd.sublist (List.Sublist.map Arrival.vertex hsub)
@@ -158,8 +158,8 @@ theorem active_walk_to_simple {V : Type u} (G : MarkedGraph V) (laws : MixedLaws
         | nil =>
             exact ⟨p, [], .nil p, hvertex.symm.trans hlast,
               List.nodup_singleton p.vertex⟩
-        | @cons at next last tail hstep htail =>
-            refine ⟨last, next :: tail, .cons ?_ htail, hlast, ?_⟩
+        | @cons «at» «next» last tail hstep htail =>
+            refine ⟨last, «next» :: tail, .cons ?_ htail, hlast, ?_⟩
             · exact splice_departure G laws C hloop hvertex.symm hstep
             · simpa only [List.map_cons, hvertex] using hshort
       · exact ⟨last, q :: ys, .cons hpq hy, hlast, List.Nodup.cons hmem hnd⟩

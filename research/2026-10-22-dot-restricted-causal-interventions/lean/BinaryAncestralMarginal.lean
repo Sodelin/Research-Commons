@@ -109,8 +109,8 @@ theorem binary_dag_product_normalized (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) (θ : Coordinate D → ℚ) :
     (∑ w : Assignment V, jointMass D θ w) = 1 := by
   have ancestralEmpty : AncestralSet D (∅ : Finset V) := by
-    intro parent child edge impossible
-    exact (Finset.notMem_empty child impossible).elim
+    intro parent child edge «impossible»
+    exact (Finset.notMem_empty child «impossible»).elim
   have marginal := ancestral_cylinder_mass D acyclic θ ∅ ancestralEmpty (fun _ => false)
   simpa [cylinderMass, Matches, partialJointMass] using marginal
 

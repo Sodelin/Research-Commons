@@ -22,24 +22,24 @@ universe u v w
 
 theorem position_section_data {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (vertex : Nat → X) (Z : X → Prop) (x y : X)
-    {xs : List X} (shortest : Shortest (mag D) Z x y xs) (trace : Trace vertex 0 (x :: xs))
+    {xs : List X} (shortest : Shortest (mag D) Z x y xs) («trace» : Trace vertex 0 (x :: xs))
     (i : Nat) (lower : 0 < i) (upper : i + 1 < (x :: xs).length) :
     Adjacent (mag D) (vertex (i - 1)) (vertex i) ∧
       Adjacent (mag D) (vertex i) (vertex (i + 1)) ∧
       ([vertex (i - 1), vertex i, vertex (i + 1)] : List X).Nodup := by
-  obtain ⟨front, back, equation⟩ := trace_three_section vertex (x :: xs) 0 trace i lower
+  obtain ⟨front, back, equation⟩ := trace_three_section vertex (x :: xs) 0 «trace» i lower
     (by simpa only [Nat.zero_add] using upper)
-  obtain ⟨section⟩ := realize_three_section (mag D) (mag_single_edges D) Z x y
+  obtain ⟨«section»⟩ := realize_three_section (mag D) (mag_single_edges D) Z x y
     (vertex (i - 1)) (vertex i) (vertex (i + 1)) front back shortest equation
-  obtain ⟨firstLeft, firstRight, firstEdge, _, _⟩ := section.first_step
-  obtain ⟨lastLeft, lastRight, lastEdge, _, _⟩ := section.second_step
+  obtain ⟨firstLeft, firstRight, firstEdge, _, _⟩ := «section».first_step
+  obtain ⟨lastLeft, lastRight, lastEdge, _, _⟩ := «section».second_step
   refine ⟨⟨firstLeft, firstRight, ?_⟩, ⟨lastLeft, lastRight, ?_⟩, ?_⟩
-  · simpa only [section.first_vertex, section.middle_vertex] using firstEdge
-  · simpa only [section.middle_vertex, section.third_vertex] using lastEdge
+  · simpa only [«section».first_vertex, «section».middle_vertex] using firstEdge
+  · simpa only [«section».middle_vertex, «section».third_vertex] using lastEdge
   · have injective : ∀ a b, a < (x :: xs).length → b < (x :: xs).length →
         vertex a = vertex b → a = b := by
       intro a b aBound bBound same
-      exact trace_injective vertex (x :: xs) 0 trace shortest.1.2.1 a b
+      exact trace_injective vertex (x :: xs) 0 «trace» shortest.1.2.1 a b
         (by omega) (by simpa only [Nat.zero_add] using aBound)
         (by omega) (by simpa only [Nat.zero_add] using bBound) same
     have firstNe : vertex (i - 1) ≠ vertex i := by
@@ -61,18 +61,18 @@ theorem unshielded_position_status {X : Type u} {S : Type v} {L : Type w}
     (skeleton : ∀ a b, Adjacent (mag D) a b ↔ Adjacent H a b)
     (shared : SharedSeparators (mag D) H)
     (vertex : Nat → X) (Z : X → Prop) (x y : X) {xs : List X}
-    (shortest : Shortest (mag D) Z x y xs) (trace : Trace vertex 0 (x :: xs))
+    (shortest : Shortest (mag D) Z x y xs) («trace» : Trace vertex 0 (x :: xs))
     (i : Nat) (lower : 0 < i) (upper : i + 1 < (x :: xs).length)
     (unshielded : ¬ Adjacent (mag D) (vertex (i - 1)) (vertex (i + 1))) :
     Collider (mag D) (vertex (i - 1)) (vertex i) (vertex (i + 1)) ↔
       Collider H (vertex (i - 1)) (vertex i) (vertex (i + 1)) := by
-  obtain ⟨first, last, simple⟩ := position_section_data D vertex Z x y shortest trace i lower upper
+  obtain ⟨«first», last, simple⟩ := position_section_data D vertex Z x y shortest «trace» i lower upper
   have distinct : vertex (i - 1) ≠ vertex (i + 1) := by
     intro same
     apply (List.nodup_cons.mp simple).1
     exact List.mem_cons_of_mem _ (by simpa only [List.mem_singleton] using same)
   exact shared_separators_unshielded (mag D) H (mag_single_edges D) singleH skeleton shared
-    _ _ _ distinct first last unshielded simple
+    _ _ _ distinct «first» last unshielded simple
 
 /-- Status invariance on the physical shortest path, not on an independently
 chosen equivalent graph summary. The earlier prefix triples are located in
@@ -88,7 +88,7 @@ theorem shortest_path_status_invariant {X : Type u} {S : Type v} {L : Type w}
     (shortest : Shortest (mag D) Z x y xs) (notStart : ¬ Z x) (notEnd : ¬ Z y) :
     AllTriples (fun a b c => Collider (mag D) a b c ↔ Collider H a b c) (x :: xs) := by
   classical
-  obtain ⟨vertex, trace, chosen, start, matches, bounds, wellFounded⟩ :=
+  obtain ⟨vertex, «trace», chosen, start, matches, bounds, wellFounded⟩ :=
     shortest_path_wellFounded_dependencies D Z x y shortest notStart notEnd
   have indexed : ∀ i, 0 < i → i + 1 < (x :: xs).length →
       (Collider (mag D) (vertex (i - 1)) (vertex i) (vertex (i + 1)) ↔
@@ -113,14 +113,14 @@ theorem shortest_path_status_invariant {X : Type u} {S : Type v} {L : Type w}
             simpa only [BetweenStart, matches i active, w, Interior] using interior
           exact (earlier j dependency jLower jUpper).mp sourceCollider
         · exact (unshielded_position_status D H singleH skeleton shared vertex Z x y
-            shortest trace j jLower jUpper jChord).mp sourceCollider
+            shortest «trace» j jLower jUpper jChord).mp sourceCollider
       have targetPrefix := indexed_prefix_colliders D H lawsH.symmetric vertex w prefixInvariant
-      have local := witness_status_transfer (mag D) H lawsH (mag_single_edges D) singleH
+      have witnessStatus := witness_status_transfer (mag D) H lawsH (mag_single_edges D) singleH
         skeleton shared w.witness targetPrefix
-      exact indexed_status_to_standard D H lawsH.symmetric vertex w local
+      exact indexed_status_to_standard D H lawsH.symmetric vertex w witnessStatus
     · exact unshielded_position_status D H singleH skeleton shared vertex Z x y
-        shortest trace i lower upper chord
-  apply all_triples_of_trace vertex _ (x :: xs) 0 trace
+        shortest «trace» i lower upper chord
+  apply all_triples_of_trace vertex _ (x :: xs) 0 «trace»
   intro i lower upper
   exact indexed i lower (by simpa only [Nat.zero_add] using upper)
 

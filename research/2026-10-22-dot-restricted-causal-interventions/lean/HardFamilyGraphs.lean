@@ -30,7 +30,7 @@ namespace Index
 
 variable {u : Nat}
 
-def first (q : Index u) : Fin u := q.1.val.1
+def «first» (q : Index u) : Fin u := q.1.val.1
 def second (q : Index u) : Fin u := q.1.val.2
 
 theorem distinct (q : Index u) : q.first ≠ q.second := ne_of_lt q.1.property
@@ -87,12 +87,12 @@ theorem key_lt_first (q : Index u) (x : Fin u) :
       · subst x
         rw [key_second]
         constructor
-        · intro impossible; omega
-        · intro impossible; exact (hS impossible).elim
+        · intro «impossible»; omega
+        · intro «impossible»; exact (hS «impossible»).elim
       · simp only [key, stage, if_neg hS, if_neg hA, if_neg hB]
         constructor
-        · intro impossible; omega
-        · intro impossible; exact (hS impossible).elim
+        · intro «impossible»; omega
+        · intro «impossible»; exact (hS «impossible»).elim
 
 theorem key_lt_second (q : Index u) (x : Fin u) :
     q.key x < q.key q.second ↔ q.before x = true ∨ x = q.first := by
@@ -112,10 +112,10 @@ theorem key_lt_second (q : Index u) (x : Fin u) :
         simp only [lt_self_iff_false, hS, hA, false_or]
       · simp only [key, stage, if_neg hS, if_neg hA, if_neg hB]
         constructor
-        · intro impossible; omega
-        · rintro (impossible | impossible)
-          · exact (hS impossible).elim
-          · exact (hA impossible).elim
+        · intro «impossible»; omega
+        · rintro («impossible» | «impossible»)
+          · exact (hS «impossible»).elim
+          · exact (hA «impossible»).elim
 
 theorem first_to_remainder (q : Index u) (x : Fin u)
     (hS : ¬ q.before x = true) (hA : x ≠ q.first) (hB : x ≠ q.second) :
@@ -213,8 +213,8 @@ theorem rival_endpoints_to_remainder {k u : Nat} (q : Index u) (x : Fin u)
     (hS : ¬ q.before x = true) (hA : x ≠ q.first) (hB : x ≠ q.second) :
     arrow (some q) (.inr q.first : Labels k u) (.inr x) ∧
       arrow (some q) (.inr q.second : Labels k u) (.inr x) := by
-  have order := q.first_to_remainder x hS hA hB
-  exact ⟨⟨order.1, fun h => hB h.2⟩, ⟨order.2, fun h => q.distinct h.1.symm⟩⟩
+  have «order» := q.first_to_remainder x hS hA hB
+  exact ⟨⟨«order».1, fun h => hB h.2⟩, ⟨«order».2, fun h => q.distinct h.1.symm⟩⟩
 
 theorem inside_adjacent_except {u : Nat} (source : Option (Index u)) (x y : Fin u)
     (different : x ≠ y)

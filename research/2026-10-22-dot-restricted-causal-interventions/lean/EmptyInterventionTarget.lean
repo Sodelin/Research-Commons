@@ -73,7 +73,7 @@ theorem no_targets_zero_query_valid {X : Type u} [LinearOrder X] [Fintype X]
 theorem no_targets_zero_query_winning {X : Type u} [LinearOrder X] [Fintype X]
     (T : X → Prop) [DecidablePred T] (noneAvailable : ∀ x, ¬ T x) (D : FiniteSource X) :
     Winning (originalGame T) 0 [] 0 :=
-  valid_implies_winning (originalGame T) (.stop (classTarget T D)) [] 0
+  valid_implies_winning (originalGame T) (.«stop» (classTarget T D)) [] 0
     (no_targets_zero_query_valid T noneAvailable D)
 
 end RestrictedCausal.PartialQueries

@@ -35,9 +35,9 @@ theorem matches_cell_iff (x y : V) (C : Finset V) (selected w : Assignment V)
       simpa only [cellAssignment, if_neg notX, if_neg notY] using
         matching vertex (Finset.mem_insert_of_mem (Finset.mem_insert_of_mem member))
   · rintro ⟨atX, atY, rest⟩ vertex member
-    rcases Finset.mem_insert.mp member with at | member
+    rcases Finset.mem_insert.mp member with «at» | member
     · subst vertex; simpa only [cellAssignment, if_pos rfl] using atX
-    · rcases Finset.mem_insert.mp member with at | member
+    · rcases Finset.mem_insert.mp member with «at» | member
       · subst vertex; simpa only [cellAssignment, if_neg different.symm, if_pos rfl] using atY
       · have notX : vertex ≠ x := by intro equal; subst vertex; exact xOutside member
         have notY : vertex ≠ y := by intro equal; subst vertex; exact yOutside member
@@ -101,8 +101,8 @@ theorem cell_mass_diagonal (c : BoundaryCircuit edge R)
         slice endpoints a a w matchW nonzero).2
       exact notWitness unique
     · exact if_neg matchW
-  · intro impossible
-    exact (impossible (Finset.mem_univ witness)).elim
+  · intro «impossible»
+    exact («impossible» (Finset.mem_univ witness)).elim
 
 theorem cell_mass_off_diagonal (c : BoundaryCircuit edge R)
     (x y : V) (C : Finset V) (selected : Assignment V)

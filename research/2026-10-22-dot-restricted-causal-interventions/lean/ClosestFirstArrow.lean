@@ -28,12 +28,12 @@ theorem closest_collider_first_arrow {X : Type u} {S : Type v} {L : Type w}
     (skeleton : ∀ a b, Adjacent (mag D) a b ↔ Adjacent H a b)
     (shared : SharedSeparators (mag D) H)
     (Z : X → Prop) (x y d : X)
-    {b c : Arrival X} {prefix suffix : List (Arrival X)} {last : Option Mark}
+    {b c : Arrival X} {«prefix» suffix : List (Arrival X)} {last : Option Mark}
     {directedTail : List X} {finish : X}
-    (before : Route (RealStep (mag D) Z) ⟨x, none⟩ prefix b)
+    (before : Route (RealStep (mag D) Z) ⟨x, none⟩ «prefix» b)
     (bc : RealStep (mag D) Z b c)
     (following : Route (RealStep (mag D) Z) c suffix ⟨y, last⟩)
-    (closest : Closest (mag D) Z x y ((prefix ++ (c :: suffix)).map Arrival.vertex))
+    (closest : Closest (mag D) Z x y ((«prefix» ++ (c :: suffix)).map Arrival.vertex))
     (notStart : ¬ Z x) (notEnd : ¬ Z y)
     (headB : b.incoming = some .head) (atB : ColliderStep (mag D) b c)
     (directed : MinimumDirectedPath (mag D) Z b.vertex (d :: directedTail) finish) :
@@ -42,7 +42,7 @@ theorem closest_collider_first_arrow {X : Type u} {S : Type v} {L : Type w}
   let G := mag D
   have lawsG := (literal_mag_valid D).1
   have singleG := mag_single_edges D
-  have child : Directed G b.vertex d := by cases directed.route with | cons first tail => exact first
+  have child : Directed G b.vertex d := by cases directed.route with | cons «first» tail => exact «first»
   have outside := minimum_directed_positive_outside G Z directed
   have distance := minimum_directed_first_distance G Z directed
   have activated : AncestorOf G Z d :=
@@ -76,7 +76,7 @@ theorem closest_collider_first_arrow {X : Type u} {S : Type v} {L : Type w}
             List.cons_append, List.reverse_append, List.reverse_cons, List.reverse_nil,
             List.nil_append, List.singleton_append, List.append_assoc, List.reverse_reverse] using reversed
         exact (List.cons.inj consEquation).2.symm
-      have originalTrace : x :: (prefix ++ (c :: suffix)).map Arrival.vertex =
+      have originalTrace : x :: («prefix» ++ (c :: suffix)).map Arrival.vertex =
           ((⟨x, none⟩ :: leftFront).map Arrival.vertex) ++ leftInside.map Arrival.vertex ++
           [b.vertex] ++ (rightInside.map Arrival.vertex).reverse ++ keptRight := by
         simp only [List.map_append]
@@ -115,11 +115,11 @@ theorem closest_collider_first_arrow {X : Type u} {S : Type v} {L : Type w}
         closest.1 headB outside child
       have offRight := outgoing_child_not_in_suffix G lawsG singleG Z x y d before after
         closest.1 sourceHead outside child
-      have fresh : d ∉ x :: (prefix ++ (c :: suffix)).map Arrival.vertex := by
+      have fresh : d ∉ x :: («prefix» ++ (c :: suffix)).map Arrival.vertex := by
         intro member
-        have mapped : d ∈ ((⟨x, none⟩ :: (prefix ++ (c :: suffix))).map Arrival.vertex) := member
+        have mapped : d ∈ ((⟨x, none⟩ :: («prefix» ++ (c :: suffix))).map Arrival.vertex) := member
         obtain ⟨q, member, same⟩ := List.mem_map.mp mapped
-        have splitMember : q ∈ (⟨x, none⟩ :: prefix) ++ (c :: suffix) := by
+        have splitMember : q ∈ (⟨x, none⟩ :: «prefix») ++ (c :: suffix) := by
           simpa only [List.cons_append] using member
         rcases List.mem_append.mp splitMember with member | member
         · exact offLeft q member same

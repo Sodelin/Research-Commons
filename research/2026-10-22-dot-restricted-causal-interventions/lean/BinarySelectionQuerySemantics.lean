@@ -21,12 +21,12 @@ variable {V : Type u} [Fintype V] [DecidableEq V]
 variable {T : Type v} [Fintype T] [DecidableEq T]
 
 theorem law_cylinder_condition_congr (law : FiniteBinaryLaw V) (B : Finset V)
-    (first second : Assignment V) (agree : ∀ v ∈ B, first v = second v) :
-    lawCylinder law B first = lawCylinder law B second := by
+    («first» second : Assignment V) (agree : ∀ v ∈ B, «first» v = second v) :
+    lawCylinder law B «first» = lawCylinder law B second := by
   unfold lawCylinder
   apply Finset.sum_congr rfl
   intro w _
-  have matching : Matches B first w ↔ Matches B second w := by
+  have matching : Matches B «first» w ↔ Matches B second w := by
     constructor
     · intro h v member; exact (h v member).trans (agree v member)
     · intro h v member; exact (h v member).trans (agree v member).symm

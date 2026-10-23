@@ -45,11 +45,11 @@ theorem preceding_of_mem {V : Type u} (head vertex : V) (rest : List V)
   revert head member
   induction rest with
   | nil => intro head member; cases member
-  | cons next rest ih =>
+  | cons «next» rest ih =>
       intro head member
       rcases List.mem_cons.mp member with same | later
       · subst vertex; exact ⟨head, .here _ _ _⟩
-      · obtain ⟨parent, occurrence⟩ := ih next later
+      · obtain ⟨parent, occurrence⟩ := ih «next» later
         exact ⟨parent, .there head occurrence⟩
 
 theorem no_into_head {V : Type u} {head a : V} {rest : List V}
@@ -59,37 +59,37 @@ theorem no_into_head {V : Type u} {head a : V} {rest : List V}
   | here => exact (List.nodup_cons.mp simple).1 List.mem_cons_self
   | there _ h => exact (List.nodup_cons.mp simple).1 h.members.2
 
-theorem from_head {V : Type u} {head next b : V} {rest : List V}
-    (simple : (head :: next :: rest).Nodup)
-    (h : NextOn (head :: next :: rest) head b) : b = next := by
+theorem from_head {V : Type u} {head «next» b : V} {rest : List V}
+    (simple : (head :: «next» :: rest).Nodup)
+    (h : NextOn (head :: «next» :: rest) head b) : b = «next» := by
   cases h with
   | here => rfl
   | there _ h => exact ((List.nodup_cons.mp simple).1 h.members.1).elim
 
 theorem unique_right {V : Type u} {vertices : List V} {a b c : V}
-    (first : NextOn vertices a b) (simple : vertices.Nodup) (second : NextOn vertices a c) : b = c := by
+    («first» : NextOn vertices a b) (simple : vertices.Nodup) (second : NextOn vertices a c) : b = c := by
   revert simple second
-  induction first with
+  induction «first» with
   | here a b rest => intro simple second; exact (from_head simple second).symm
-  | @there head rest a b first ih =>
+  | @there head rest a b «first» ih =>
       intro simple second
       cases second with
-      | here => exact ((List.nodup_cons.mp simple).1 first.members.1).elim
+      | here => exact ((List.nodup_cons.mp simple).1 «first».members.1).elim
       | there _ second => exact ih (List.nodup_cons.mp simple).2 second
 
 theorem unique_left {V : Type u} {vertices : List V} {a b c : V}
-    (first : NextOn vertices a b) (simple : vertices.Nodup) (second : NextOn vertices c b) : a = c := by
+    («first» : NextOn vertices a b) (simple : vertices.Nodup) (second : NextOn vertices c b) : a = c := by
   revert simple second
-  induction first with
+  induction «first» with
   | here a b rest =>
       intro simple second
       cases second with
       | here => rfl
       | there _ second => exact (no_into_head (List.nodup_cons.mp simple).2 second).elim
-  | @there head rest a b first ih =>
+  | @there head rest a b «first» ih =>
       intro simple second
       cases second with
-      | here => exact (no_into_head (List.nodup_cons.mp simple).2 first).elim
+      | here => exact (no_into_head (List.nodup_cons.mp simple).2 «first»).elim
       | there _ second => exact ih (List.nodup_cons.mp simple).2 second
 
 theorem distinct {V : Type u} {vertices : List V} {a b : V}
@@ -103,8 +103,8 @@ theorem distinct {V : Type u} {vertices : List V} {a b : V}
       exact (List.nodup_cons.mp simple).1 List.mem_cons_self
   | there head h ih => intro simple; exact ih (List.nodup_cons.mp simple).2
 
-theorem not_from_last {V : Type u} (front : List V) (last next : V)
-    (simple : (front ++ [last]).Nodup) : ¬ NextOn (front ++ [last]) last next := by
+theorem not_from_last {V : Type u} (front : List V) (last «next» : V)
+    (simple : (front ++ [last]).Nodup) : ¬ NextOn (front ++ [last]) last «next» := by
   revert simple
   induction front with
   | nil => intro _ h; cases h with | there _ h => cases h
@@ -130,7 +130,7 @@ theorem route_next_edge {V : Type u} {D : V → V → Prop}
     ∀ a b, NextOn (start :: vertices) a b → D a b := by
   induction route with
   | nil start => intro a b h; cases h with | there _ h => cases h
-  | @cons start next finish rest edge tail ih =>
+  | @cons start «next» finish rest edge tail ih =>
       intro a b h
       cases h with
       | here => exact edge
@@ -141,19 +141,19 @@ theorem route_terminal_trace {V : Type u} {D : V → V → Prop}
     ∃ front, start :: vertices = front ++ [finish] := by
   induction route with
   | nil start => exact ⟨[], rfl⟩
-  | @cons start next finish rest edge tail ih =>
+  | @cons start «next» finish rest edge tail ih =>
       obtain ⟨front, equation⟩ := ih
       exact ⟨start :: front, by simpa only [List.cons_append, equation]⟩
 
 namespace TripleOn
 
-theorem left {V : Type u} {vertices : List V} {a b c : V}
+theorem «left» {V : Type u} {vertices : List V} {a b c : V}
     (h : TripleOn vertices a b c) : NextOn vertices a b := by
   induction h with
   | here a b c rest => exact .here _ _ _
   | there head h ih => exact .there head ih
 
-theorem right {V : Type u} {vertices : List V} {a b c : V}
+theorem «right» {V : Type u} {vertices : List V} {a b c : V}
     (h : TripleOn vertices a b c) : NextOn vertices b c := by
   induction h with
   | here a b c rest => exact .there a (.here _ _ _)
@@ -190,7 +190,7 @@ theorem route_member_position {V : Type u} {D : V → V → Prop}
   | nil start =>
       intro vertex member
       exact Or.inl (by simpa only [List.mem_singleton] using member)
-  | @cons start next finish rest edge tail ih =>
+  | @cons start «next» finish rest edge tail ih =>
       intro vertex member
       rcases List.mem_cons.mp member with same | member
       · exact Or.inl same
@@ -204,29 +204,29 @@ theorem route_member_position {V : Type u} {D : V → V → Prop}
           exact Or.inr (Or.inr ⟨a, c, .there start occurrence⟩)
 
 theorem triple_of_next {V : Type u} {vertices : List V} {a b c : V}
-    (simple : vertices.Nodup) (left : NextOn vertices a b) (right : NextOn vertices b c) :
+    (simple : vertices.Nodup) («left» : NextOn vertices a b) («right» : NextOn vertices b c) :
     TripleOn vertices a b c := by
-  revert simple right
-  induction left with
+  revert simple «right»
+  induction «left» with
   | here a b rest =>
-      intro simple right
+      intro simple «right»
       cases rest with
       | nil =>
-          cases right with
+          cases «right» with
           | here => exact ((List.nodup_cons.mp simple).1 List.mem_cons_self).elim
-          | there _ right => cases right with | there _ right => cases right
-      | cons next rest =>
-          cases right with
+          | there _ «right» => cases «right» with | there _ «right» => cases «right»
+      | cons «next» rest =>
+          cases «right» with
           | here => exact ((List.nodup_cons.mp simple).1 List.mem_cons_self).elim
-          | there _ right =>
-              have same := NextOn.from_head (List.nodup_cons.mp simple).2 right
+          | there _ «right» =>
+              have same := NextOn.from_head (List.nodup_cons.mp simple).2 «right»
               subst c
               exact .here _ _ _ _
-  | @there head rest a b left ih =>
-      intro simple right
-      cases right with
-      | here => exact ((List.nodup_cons.mp simple).1 left.members.2).elim
-      | there _ right => exact .there head (ih (List.nodup_cons.mp simple).2 right)
+  | @there head rest a b «left» ih =>
+      intro simple «right»
+      cases «right» with
+      | here => exact ((List.nodup_cons.mp simple).1 «left».members.2).elim
+      | there _ «right» => exact .there head (ih (List.nodup_cons.mp simple).2 «right»)
 
 theorem allPairs_of_next {V : Type u} (P : V → V → Prop) (vertices : List V)
     (each : ∀ a b, NextOn vertices a b → P a b) : AllPairs P vertices := by
@@ -265,29 +265,29 @@ def TrekRoot {V : Type u} (D : V → V → Prop) (vertices : List V) (vertex : V
 
 theorem arrow_collider_arrows {V : Type u} (D : V → V → Prop) {a b c : V}
     (collider : Collider (arrowGraph D) a b c) : D a b ∧ D c b := by
-  obtain ⟨ma, mc, left, right⟩ := collider
+  obtain ⟨ma, mc, «left», «right»⟩ := collider
   constructor
-  · rcases left with ⟨edge, _, _⟩ | ⟨_, _, impossible⟩
+  · rcases «left» with ⟨edge, _, _⟩ | ⟨_, _, «impossible»⟩
     · exact edge
-    · exact Mark.noConfusion impossible
-  · rcases right with ⟨_, impossible, _⟩ | ⟨edge, _, _⟩
-    · exact Mark.noConfusion impossible
+    · exact Mark.noConfusion «impossible»
+  · rcases «right» with ⟨_, «impossible», _⟩ | ⟨edge, _, _⟩
+    · exact Mark.noConfusion «impossible»
     · exact edge
 
 theorem trace_collider_original {V : Type u} (D : V → V → Prop)
     {vertices : List V} {a b c : V} (simple : vertices.Nodup)
     (triple : TripleOn vertices a b c) (collider : TraceCollider D vertices b) :
     D a b ∧ D c b := by
-  obtain ⟨p, q, occurrence, left, right⟩ := collider
+  obtain ⟨p, q, occurrence, «left», «right»⟩ := collider
   have sameA := triple.left.unique_left simple occurrence.left
   have sameC := triple.right.unique_right simple occurrence.right
-  exact ⟨sameA.symm ▸ left, sameC.symm ▸ right⟩
+  exact ⟨sameA.symm ▸ «left», sameC.symm ▸ «right»⟩
 
 theorem mainParent_unique {V : Type u} (D : V → V → Prop)
     {vertices : List V} {vertex a b : V} (simple : vertices.Nodup)
     (ordinary : ¬ TraceCollider D vertices vertex)
-    (first : MainParent D vertices a vertex) (second : MainParent D vertices b vertex) : a = b := by
-  rcases first with ⟨beforeA | afterA, edgeA⟩ <;>
+    («first» : MainParent D vertices a vertex) (second : MainParent D vertices b vertex) : a = b := by
+  rcases «first» with ⟨beforeA | afterA, edgeA⟩ <;>
     rcases second with ⟨beforeB | afterB, edgeB⟩
   · exact beforeA.unique_left simple beforeB
   · exact (ordinary ⟨a, b, triple_of_next simple beforeA afterB, edgeA, edgeB⟩).elim
@@ -298,12 +298,12 @@ theorem collider_incident_incoming {V : Type u} (D : V → V → Prop)
     {vertices : List V} {b v : V} (simple : vertices.Nodup)
     (collider : TraceCollider D vertices b)
     (beside : NextOn vertices v b ∨ NextOn vertices b v) : D v b := by
-  obtain ⟨a, c, triple, left, right⟩ := collider
+  obtain ⟨a, c, triple, «left», «right»⟩ := collider
   rcases beside with before | after
   · have same := before.unique_left simple triple.left
-    exact same.symm ▸ left
+    exact same.symm ▸ «left»
   · have same := after.unique_right simple triple.right
-    exact same.symm ▸ right
+    exact same.symm ▸ «right»
 
 theorem mainParent_ordinary {V : Type u} (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = [])
@@ -322,11 +322,11 @@ theorem mainParent_member {V : Type u} (D : V → V → Prop)
 
 theorem trace_collider_isolated {V : Type u} (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = [])
-    {vertices : List V} {a b : V} (simple : vertices.Nodup) (next : NextOn vertices a b) :
+    {vertices : List V} {a b : V} (simple : vertices.Nodup) («next» : NextOn vertices a b) :
     ¬ (TraceCollider D vertices a ∧ TraceCollider D vertices b) := by
   intro both
-  have intoA := collider_incident_incoming D simple both.1 (Or.inr next)
-  have intoB := collider_incident_incoming D simple both.2 (Or.inl next)
+  have intoA := collider_incident_incoming D simple both.1 (Or.inr «next»)
+  have intoB := collider_incident_incoming D simple both.2 (Or.inl «next»)
   have empty := acyclic a [b, a] (.cons intoB (.cons intoA (.nil a)))
   cases empty
 
@@ -343,19 +343,19 @@ theorem trace_last_not_collider {V : Type u} (D : V → V → Prop)
   exact NextOn.not_from_last front last c simple triple.right
 
 def OrderedCenters {V : Type u} (vertices : List V) (b e : V) : Prop :=
-  ∃ left a middle d c right, vertices = left ++ a :: b :: (middle ++ d :: e :: c :: right)
+  ∃ «left» a middle d c «right», vertices = «left» ++ a :: b :: (middle ++ d :: e :: c :: «right»)
 
 /-- Distinct nonadjacent interior centers have one literal order. The
 gap is allowed to be empty, corresponding to exactly one ordinary vertex
 between the two colliders. -/
 theorem triple_centers_ordered {V : Type u} {vertices : List V} {a b c d e f : V}
-    (first : TripleOn vertices a b c) (second : TripleOn vertices d e f)
+    («first» : TripleOn vertices a b c) (second : TripleOn vertices d e f)
     (distinct : b ≠ e) (notNext : ¬ NextOn vertices b e) (notPrev : ¬ NextOn vertices e b) :
     OrderedCenters vertices b e ∨ OrderedCenters vertices e b := by
   induction vertices generalizing a b c d e f with
-  | nil => cases first
+  | nil => cases «first»
   | cons head rest ih =>
-      cases first with
+      cases «first» with
       | here a b c tail =>
           cases second with
           | here => exact (distinct rfl).elim
@@ -363,39 +363,39 @@ theorem triple_centers_ordered {V : Type u} {vertices : List V} {a b c d e f : V
               cases second with
               | here => exact (notNext (.there a (.here _ _ _))).elim
               | there _ second =>
-                  obtain ⟨middle, right, equation⟩ := second.literal
-                  exact Or.inl ⟨[], a, middle, d, f, right, by
+                  obtain ⟨middle, «right», equation⟩ := second.literal
+                  exact Or.inl ⟨[], a, middle, d, f, «right», by
                     simpa only [List.nil_append, equation]⟩
-      | there head first =>
+      | there head «first» =>
           cases second with
           | here d e f tail =>
-              cases first with
+              cases «first» with
               | here => exact (notPrev (.there d (.here _ _ _))).elim
-              | there _ first =>
-                  obtain ⟨middle, right, equation⟩ := first.literal
-                  exact Or.inr ⟨[], d, middle, a, c, right, by
+              | there _ «first» =>
+                  obtain ⟨middle, «right», equation⟩ := «first».literal
+                  exact Or.inr ⟨[], d, middle, a, c, «right», by
                     simpa only [List.nil_append, equation]⟩
           | there _ second =>
-              rcases ih first second distinct (fun h => notNext (.there head h))
+              rcases ih «first» second distinct (fun h => notNext (.there head h))
                 (fun h => notPrev (.there head h)) with ordered | ordered
-              · obtain ⟨left, a, middle, d, c, right, equation⟩ := ordered
-                exact Or.inl ⟨head :: left, a, middle, d, c, right, by
+              · obtain ⟨«left», a, middle, d, c, «right», equation⟩ := ordered
+                exact Or.inl ⟨head :: «left», a, middle, d, c, «right», by
                   simpa only [List.cons_append, equation]⟩
-              · obtain ⟨left, a, middle, d, c, right, equation⟩ := ordered
-                exact Or.inr ⟨head :: left, a, middle, d, c, right, by
+              · obtain ⟨«left», a, middle, d, c, «right», equation⟩ := ordered
+                exact Or.inr ⟨head :: «left», a, middle, d, c, «right», by
                   simpa only [List.cons_append, equation]⟩
 
 theorem trace_colliders_ordered {V : Type u} (D : V → V → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = [])
     {vertices : List V} {b e : V} (simple : vertices.Nodup)
-    (first : TraceCollider D vertices b) (second : TraceCollider D vertices e) (distinct : b ≠ e) :
+    («first» : TraceCollider D vertices b) (second : TraceCollider D vertices e) (distinct : b ≠ e) :
     OrderedCenters vertices b e ∨ OrderedCenters vertices e b := by
-  obtain ⟨a, c, firstTriple, firstLeft, firstRight⟩ := first
+  obtain ⟨a, c, firstTriple, firstLeft, firstRight⟩ := «first»
   obtain ⟨d, f, secondTriple, secondLeft, secondRight⟩ := second
-  have first : TraceCollider D vertices b := ⟨a, c, firstTriple, firstLeft, firstRight⟩
+  have «first» : TraceCollider D vertices b := ⟨a, c, firstTriple, firstLeft, firstRight⟩
   have second : TraceCollider D vertices e := ⟨d, f, secondTriple, secondLeft, secondRight⟩
   exact triple_centers_ordered firstTriple secondTriple distinct
-    (fun h => trace_collider_isolated D acyclic simple h ⟨first, second⟩)
-    (fun h => trace_collider_isolated D acyclic simple h ⟨second, first⟩)
+    (fun h => trace_collider_isolated D acyclic simple h ⟨«first», second⟩)
+    (fun h => trace_collider_isolated D acyclic simple h ⟨second, «first»⟩)
 
 end RestrictedCausal.ProbabilitySource

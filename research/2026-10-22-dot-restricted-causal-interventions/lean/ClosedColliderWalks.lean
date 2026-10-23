@@ -62,8 +62,8 @@ theorem closed_splice_departure {V : Type u} (G : MarkedGraph V) (laws : MixedLa
     (hnext : Transition G C A q r) : Transition G C A p r := by
   cases hloop with
   | nil => exact hnext
-  | @cons p first q rest hfirst hrest =>
-      have whole : Route (Transition G C A) p (first :: rest) q := .cons hfirst hrest
+  | @cons p «first» q rest hfirst hrest =>
+      have whole : Route (Transition G C A) p («first» :: rest) q := .cons hfirst hrest
       obtain ⟨outgoing, incoming, edge, mark, active⟩ := hnext
       refine ⟨outgoing, incoming, ?_, mark, ?_⟩
       · rw [hv]
@@ -102,15 +102,15 @@ theorem closed_walk_to_simple {V : Type u} (G : MarkedGraph V) (laws : MixedLaws
   | @cons p q r xs step tail ih =>
       obtain ⟨last, ys, route, lastVertex, nodup⟩ := ih
       by_cases occurs : p.vertex ∈ (q :: ys).map Arrival.vertex
-      · obtain ⟨at, atMem, sameVertex⟩ := List.mem_map.mp occurs
-        obtain ⟨prefix, prefixRoute⟩ := route.prefix_of_mem atMem
+      · obtain ⟨«at», atMem, sameVertex⟩ := List.mem_map.mp occurs
+        obtain ⟨«prefix», prefixRoute⟩ := route.prefix_of_mem atMem
         obtain ⟨suffix, suffixRoute, sublist⟩ := route.suffix_of_mem atMem
         have loop := Route.cons step prefixRoute
         have short := nodup.sublist (List.Sublist.map Arrival.vertex sublist)
         cases suffixRoute with
         | nil => exact ⟨p, [], .nil p, sameVertex.symm.trans lastVertex, List.nodup_singleton p.vertex⟩
-        | @cons at next last rest nextStep restRoute =>
-            refine ⟨last, next :: rest, .cons ?_ restRoute, lastVertex, ?_⟩
+        | @cons «at» «next» last rest nextStep restRoute =>
+            refine ⟨last, «next» :: rest, .cons ?_ restRoute, lastVertex, ?_⟩
             · exact closed_splice_departure G laws C A closed loop sameVertex.symm nextStep
             · simpa only [List.map_cons, sameVertex] using short
       · exact ⟨last, q :: ys, .cons step route, lastVertex, List.Nodup.cons occurs nodup⟩
@@ -119,9 +119,9 @@ theorem closed_walk_to_simple {V : Type u} (G : MarkedGraph V) (laws : MixedLaws
 This is used only on the original DAG, which has no tail-tail edges. It is not
 an invalid application of the mixed-law reduction to a selected MAG. -/
 theorem marked_inducing_walk_is_path {X : Type u} {S : Type v} {L : Type w}
-    (D : SourceDAG X S L) {x y : X} {left right : Mark} (hne : x ≠ y)
+    (D : SourceDAG X S L) {x y : X} {«left» «right» : Mark} (hne : x ≠ y)
     (h : FramedWalk.MarkedRoute (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y)
-      (Observed x) (Observed y) left right) : InducingPath D x y := by
+      (Observed x) (Observed y) «left» «right») : InducingPath D x y := by
   obtain ⟨xs, route⟩ := h.to_route
   obtain ⟨r, ys, simple, endpoint, nodup⟩ := closed_walk_to_simple
     (arrowGraph D.arrow) (original_arrow_mixed_laws D) Nonlatent (EndpointAncestor D x y)

@@ -83,9 +83,9 @@ def Closest {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (x y : V) (xs : Li
 
 theorem exists_closest {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) (x y : V) (h : ActiveConnection G Z x y) : ∃ xs, Closest G Z x y xs := by
-  obtain ⟨first, firstPath⟩ := active_connection_vertex_path G single Z x y h
+  obtain ⟨«first», firstPath⟩ := active_connection_vertex_path G single Z x y h
   obtain ⟨shortest, shortestPath, shortestBound⟩ :=
-    minimum_nat_measure (Path G Z x y) List.length first firstPath
+    minimum_nat_measure (Path G Z x y) List.length «first» firstPath
   obtain ⟨best, ⟨bestPath, bestLength⟩, bestBound⟩ :=
     minimum_nat_measure (fun xs => Path G Z x y xs ∧ xs.length = shortest.length)
       (fun xs => colliderPotential G Z (x :: xs)) shortest ⟨shortestPath, rfl⟩

@@ -36,25 +36,25 @@ theorem minimum_directed_path_exists {V : Type u} (G : MarkedGraph V) (Z : V →
     exact bound xs.length ⟨last, xs, route, endpoint, rfl⟩⟩, length⟩
 
 theorem directed_triangle_shortcut {V : Type u} (G : MarkedGraph V) (laws : AncestralLaws G)
-    {a b c : V} (first : Directed G a b) (last : Directed G b c)
+    {a b c : V} («first» : Directed G a b) (last : Directed G b c)
     (adjacent : Adjacent G a c) : Directed G a c := by
-  obtain ⟨left, right, edge⟩ := adjacent
-  have rightHead := head_directed_triangle G laws first last edge
-  subst right
-  cases left with
+  obtain ⟨«left», «right», edge⟩ := adjacent
+  have rightHead := head_directed_triangle G laws «first» last edge
+  subst «right»
+  cases «left» with
   | tail => exact edge
   | head =>
-      exact (laws.head_not_ancestor a c .head edge ⟨[b, c], .cons first (.cons last (.nil c))⟩).elim
+      exact (laws.head_not_ancestor a c .head edge ⟨[b, c], .cons «first» (.cons last (.nil c))⟩).elim
 
 theorem minimum_directed_tail {V : Type u} (G : MarkedGraph V) (Z : V → Prop)
     {a b finish : V} {vertices : List V}
     (path : MinimumDirectedPath G Z a (b :: vertices) finish) :
     MinimumDirectedPath G Z b vertices finish := by
   cases path.route with
-  | cons first tail =>
+  | cons «first» tail =>
       refine ⟨tail, path.endpoint, ?_⟩
       intro last xs route endpoint
-      have bound := path.minimal last (b :: xs) (.cons first route) endpoint
+      have bound := path.minimal last (b :: xs) (.cons «first» route) endpoint
       simp only [List.length_cons] at bound
       omega
 
@@ -71,37 +71,37 @@ theorem minimum_directed_unshielded {V : Type u} (G : MarkedGraph V) (laws : Anc
           constructor
           · intro adjacent
             cases path.route with
-            | cons first tail =>
+            | cons «first» tail =>
                 cases tail with
                 | cons last suffix =>
-                    have shortcut := directed_triangle_shortcut G laws first last adjacent
+                    have shortcut := directed_triangle_shortcut G laws «first» last adjacent
                     have bound := path.minimal finish (c :: rest) (.cons shortcut suffix) path.endpoint
                     simp only [List.length_cons] at bound
                     omega
           · exact ih (minimum_directed_tail G Z path)
 
 theorem directed_two_step_simple {V : Type u} (G : MarkedGraph V) (laws : AncestralLaws G)
-    {a b c : V} (first : Directed G a b) (last : Directed G b c) :
+    {a b c : V} («first» : Directed G a b) (last : Directed G b c) :
     ([a, b, c] : List V).Nodup := by
-  have ab : a ≠ b := by intro same; subst b; exact laws.irreflexive a .tail .head first
+  have ab : a ≠ b := by intro same; subst b; exact laws.irreflexive a .tail .head «first»
   have bc : b ≠ c := by intro same; subst c; exact laws.irreflexive b .tail .head last
   have ac : a ≠ c := by
     intro same
     subst c
-    have impossible := laws.acyclic a [b, a] (.cons first (.cons last (.nil a)))
-    cases impossible
+    have «impossible» := laws.acyclic a [b, a] (.cons «first» (.cons last (.nil a)))
+    cases «impossible»
   simp [ab, bc, ac]
 
 theorem head_noncollider_forces_directed {V : Type u} (H : MarkedGraph V) (laws : AncestralLaws H)
     {a b c : V} {m : Mark} (incoming : H.edge a b m .head)
     (adjacent : Adjacent H b c) (noncollider : ¬ Collider H a b c) : Directed H b c := by
-  obtain ⟨left, right, edge⟩ := adjacent
-  have leftTail : left = .tail := by
-    cases left with
+  obtain ⟨«left», «right», edge⟩ := adjacent
+  have leftTail : «left» = .tail := by
+    cases «left» with
     | tail => rfl
-    | head => exact (noncollider ⟨m, right, incoming, edge⟩).elim
-  subst left
-  cases right with
+    | head => exact (noncollider ⟨m, «right», incoming, edge⟩).elim
+  subst «left»
+  cases «right» with
   | head => exact edge
   | tail => exact (laws.undirected_no_heads b c a m edge (laws.symmetric a b m .head incoming)).elim
 
@@ -136,7 +136,7 @@ theorem directed_tail_transfers {V : Type u} (G H : MarkedGraph V)
       Route (Directed H) p vertices q := by
   induction route with
   | nil p => intro _ _ _ _; exact .nil p
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro a firstG firstH unshielded
       have nextH := unshielded_directed_step_transfers G H lawsG lawsH singleG singleH skeleton shared
         firstG step firstH unshielded.1
@@ -149,16 +149,16 @@ theorem minimum_directed_path_transfers_from_first {V : Type u} (G H : MarkedGra
     (lawsG : AncestralLaws G) (lawsH : AncestralLaws H)
     (singleG : SingleEdges G) (singleH : SingleEdges H)
     (skeleton : ∀ a b, Adjacent G a b ↔ Adjacent H a b) (shared : SharedSeparators G H)
-    (Z : V → Prop) {start first finish : V} {rest : List V}
-    (path : MinimumDirectedPath G Z start (first :: rest) finish)
-    (firstH : Directed H start first) :
-    Route (Directed H) start (first :: rest) finish ∧ SourceSelection.AncestorOf H Z start := by
+    (Z : V → Prop) {start «first» finish : V} {rest : List V}
+    (path : MinimumDirectedPath G Z start («first» :: rest) finish)
+    (firstH : Directed H start «first») :
+    Route (Directed H) start («first» :: rest) finish ∧ SourceSelection.AncestorOf H Z start := by
   have unshielded := minimum_directed_unshielded G lawsG Z path
   cases path.route with
   | cons firstG tail =>
       have targetTail := directed_tail_transfers G H lawsG lawsH singleG singleH skeleton shared
         tail start firstG firstH unshielded
-      have target : Route (Directed H) start (first :: rest) finish := .cons firstH targetTail
-      exact ⟨target, finish, ⟨first :: rest, target⟩, path.endpoint⟩
+      have target : Route (Directed H) start («first» :: rest) finish := .cons firstH targetTail
+      exact ⟨target, finish, ⟨«first» :: rest, target⟩, path.endpoint⟩
 
 end RestrictedCausal.VertexActivePaths

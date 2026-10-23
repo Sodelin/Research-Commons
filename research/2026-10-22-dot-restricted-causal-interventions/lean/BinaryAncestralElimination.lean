@@ -58,7 +58,7 @@ theorem sumAt_sink_product (D : V → V → Prop) (θ : Coordinate D → ℚ)
     (sink : ∀ child ∈ vertices, ¬ D vertex child) :
     sumAt vertex (partialJointMass D θ vertices) = partialJointMass D θ (vertices.erase vertex) := by
   funext w
-  have split : ∀ b : Bool,
+  have «split» : ∀ b : Bool,
       partialJointMass D θ vertices (pointAssignment vertex w b) =
         bernoulliMass θ (row D w vertex) b * partialJointMass D θ (vertices.erase vertex) w := by
     intro b
@@ -71,7 +71,7 @@ theorem sumAt_sink_product (D : V → V → Prop) (θ : Coordinate D → ℚ)
         partialJointMass D θ (vertices.erase vertex) w from
       erase_sink_product_unchanged D θ vertices vertex w b sink]
   change _ + _ = _
-  rw [split false, split true, ← add_mul, bernoulli_mass_normalized, one_mul]
+  rw [«split» false, «split» true, ← add_mul, bernoulli_mass_normalized, one_mul]
 
 def AncestralSet (D : V → V → Prop) (A : Finset V) : Prop :=
   ∀ parent child, D parent child → child ∈ A → parent ∈ A

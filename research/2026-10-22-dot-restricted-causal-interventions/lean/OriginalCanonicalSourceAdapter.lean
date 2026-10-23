@@ -94,7 +94,7 @@ theorem original_canonical_baseline_selection_ancestry {X : Type u} {S : Type v}
     (∃ s : S, Reach (arrowGraph D.arrow) (.inl (.inl x)) (.inl (.inr s))) ↔
       ∃ s : Selector (sourceProfile D),
         Reach (dagGraph (canonicalRetainedGraph D)) (.inl (.inl x)) (.inl (.inr s)) := by
-  have first : (∃ s : S, Reach (arrowGraph D.arrow) (.inl (.inl x)) (.inl (.inr s))) ↔
+  have «first» : (∃ s : S, Reach (arrowGraph D.arrow) (.inl (.inl x)) (.inl (.inr s))) ↔
       ∃ s : S, Reach (SourceSelection.graph (extracted D)) (.inl x) (.inr s) := by
     have one (s : S) := retained_reach_exact D (.inl x) (.inr s)
     simp only [← extracted_graph_eq D] at one
@@ -107,7 +107,7 @@ theorem original_canonical_baseline_selection_ancestry {X : Type u} {S : Type v}
     have one (s : Selector (sourceProfile D)) :=
       (LatentRoots.retained_ancestry_exact (canonicalRetainedGraph D) (.inl x) (.inr s)).symm
     exact ⟨fun ⟨s, hs⟩ => ⟨s, (one s).mp hs⟩, fun ⟨s, hs⟩ => ⟨s, (one s).mpr hs⟩⟩
-  exact first.trans (middle.trans last)
+  exact «first».trans (middle.trans last)
 
 theorem original_canonical_indicator_selection_ancestry {X : Type u} {S : Type v} {L : Type w}
     [LinearOrder X] (D : SourceDAG X S L)
@@ -116,13 +116,13 @@ theorem original_canonical_indicator_selection_ancestry {X : Type u} {S : Type v
       ∃ s : Selector (sourceProfile D),
         Reach (indicatorGraph (canonicalRetainedGraph D) (.inl target))
           (indicatorRetained (SourceSelection.selectedIndicatorObserved x)) (some (.inl (.inr s))) := by
-  have first : (∃ s : S, Reach (arrowGraph (augmentSource D target).arrow) (.inl (.inl x)) (.inl (.inr s))) ↔
+  have «first» : (∃ s : S, Reach (arrowGraph (augmentSource D target).arrow) (.inl (.inl x)) (.inl (.inr s))) ↔
       ∃ s : S, Reach (SourceSelection.graph (SourceSelection.augment (extracted D) target))
         (.inl x) (.inr s) := by
     have one (s : S) := retained_reach_exact (augmentSource D target) (.inl x) (.inr s)
     simp only [projection_augmentation_exact D target] at one
     exact ⟨fun ⟨s, hs⟩ => ⟨s, (one s).mp hs⟩, fun ⟨s, hs⟩ => ⟨s, (one s).mpr hs⟩⟩
-  exact first.trans (SourceSelection.common_canonical_indicator_selection_ancestry (extracted D) target x)
+  exact «first».trans (SourceSelection.common_canonical_indicator_selection_ancestry (extracted D) target x)
 
 /-- The exact finite bounds apply only to the constructed common source;
 there is no hidden bound on the original S or L carriers. -/

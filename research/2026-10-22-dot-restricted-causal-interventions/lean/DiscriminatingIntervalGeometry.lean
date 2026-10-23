@@ -58,20 +58,20 @@ structure IndexedWitness {X : Type u} {S : Type v} {L : Type w}
 theorem collider_reverse {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) {a b c : X} (collider : Collider (mag D) a b c) :
     Collider (mag D) c b a := by
-  obtain ⟨left, right, first, last⟩ := collider
-  exact ⟨right, left, mag_symmetric D b c .head right last,
-    mag_symmetric D a b left .head first⟩
+  obtain ⟨«left», «right», «first», last⟩ := collider
+  exact ⟨«right», «left», mag_symmetric D b c .head «right» last,
+    mag_symmetric D a b «left» .head «first»⟩
 
 theorem indexed_terminal_collider {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (vertex : Nat → X) {center : Nat}
     (w : IndexedWitness D vertex center)
     (collider : Collider (mag D) (vertex (center - 1)) (vertex center) (vertex (center + 1))) :
     Collider (mag D) (vertex w.before) (vertex center) (vertex w.finish) := by
-  rcases w.orientation with left | right
+  rcases w.orientation with «left» | «right»
   · have before : w.before = center - 1 := by omega
-    simpa only [before, left.2.2] using collider
+    simpa only [before, «left».2.2] using collider
   · have finish : w.finish = center - 1 := by omega
-    simpa only [right.2.1, finish] using collider_reverse D collider
+    simpa only [«right».2.1, finish] using collider_reverse D collider
 
 /-- If the two discriminating starts reach beyond one another's centers,
 there are exactly two boundary cases and one strict-interior case. At a
@@ -117,11 +117,11 @@ theorem mutual_interior_impossible {X : Type u} {S : Type v} {L : Type w}
         ⟨[wa.witness.start], .cons toStart (.nil _)⟩
     · have inB : Interior wb.start b wa.finish := Or.inl ⟨by omega, by omega⟩
       have inA : Interior wa.start a wb.finish := Or.inr ⟨by omega, by omega⟩
-      have first := wb.parents wa.finish inB
+      have «first» := wb.parents wa.finish inB
       have last := wa.parents wb.finish inA
-      have impossible := mag_no_directed_cycle D (vertex wa.finish)
-        [vertex wb.finish, vertex wa.finish] (.cons first (.cons last (.nil _)))
-      cases impossible
+      have «impossible» := mag_no_directed_cycle D (vertex wa.finish)
+        [vertex wb.finish, vertex wa.finish] (.cons «first» (.cons last (.nil _)))
+      cases «impossible»
 
 /-- The actual graphical exclusion discharges, rather than assumes, the
 two-cycle premise of the finite interval contraction theorem. The only
@@ -134,10 +134,10 @@ theorem indexed_dependencies_acyclic {X : Type u} {S : Type v} {L : Type w}
     ∀ a xs, Route (RestrictedBetween active start) a xs a → xs = [] := by
   apply restricted_between_acyclic active start
   intro a b ha hb ab ba
-  have first : Interior (chosen b hb).start b a := by
+  have «first» : Interior (chosen b hb).start b a := by
     simpa only [Interior, BetweenStart, matches b hb] using ab
   have second : Interior (chosen a ha).start a b := by
     simpa only [Interior, BetweenStart, matches a ha] using ba
-  exact mutual_interior_impossible D vertex (chosen a ha) (chosen b hb) first second
+  exact mutual_interior_impossible D vertex (chosen a ha) (chosen b hb) «first» second
 
 end RestrictedCausal.DiscriminatingIntervalGeometry

@@ -36,8 +36,8 @@ theorem compatible_join_active {X : Type u} {S : Type v} {L : Type w}
     (previous outgoing incoming rawPrevious rawOutgoing : Mark)
     (edge : (mag D).edge x y outgoing incoming)
     (active : ActiveAt Z (AncestorOf (mag D) Z) x previous outgoing)
-    (left : BoundaryCompatible D Z x previous rawPrevious)
-    (right : BoundaryCompatible D Z x outgoing rawOutgoing) :
+    («left» : BoundaryCompatible D Z x previous rawPrevious)
+    («right» : BoundaryCompatible D Z x outgoing rawOutgoing) :
     ActiveAt (SelectedCondition Z) (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
       (Observed x) rawPrevious rawOutgoing := by
   classical
@@ -47,16 +47,16 @@ theorem compatible_join_active {X : Type u} {S : Type v} {L : Type w}
       have hp : previous = .head := by
         cases previous with
         | head => rfl
-        | tail => exact Mark.noConfusion ((left.2 hn rfl).symm.trans rawCollider.1)
+        | tail => exact Mark.noConfusion ((«left».2 hn rfl).symm.trans rawCollider.1)
       have ho : outgoing = .head := by
         cases outgoing with
         | head => rfl
-        | tail => exact Mark.noConfusion ((right.2 hn rfl).symm.trans rawCollider.2)
+        | tail => exact Mark.noConfusion ((«right».2 hn rfl).symm.trans rawCollider.2)
       have magAncestor : AncestorOf (mag D) Z x := by simpa [hp, ho, ActiveAt] using active
       have headEdge : (mag D).edge x y .head incoming := by simpa only [ho] using edge
       exact hn (mag_ancestor_source_at_head D Z x y incoming headEdge magAncestor)
     simpa only [ActiveAt, if_pos rawCollider] using ancestor
-  · have hn : ¬ Z x := fun hz => rawCollider ⟨left.1 hz, right.1 hz⟩
+  · have hn : ¬ Z x := fun hz => rawCollider ⟨«left».1 hz, «right».1 hz⟩
     simpa only [ActiveAt, if_neg rawCollider] using hn
 
 def IncomingCompatible {X : Type u} {S : Type v} {L : Type w}
@@ -73,11 +73,11 @@ theorem conditioned_next_mark {X : Type u} (G : MarkedGraph X) (Z : X → Prop)
   intro hz
   cases h with
   | nil => exact (hy (by simpa only [hq] using hz)).elim
-  | cons first rest =>
-      obtain ⟨outgoing, nextIncoming, _, _, active⟩ := first
-      have at : ActiveAt Z (AncestorOf G Z) p.vertex incoming outgoing := by
+  | cons «first» rest =>
+      obtain ⟨outgoing, nextIncoming, _, _, active⟩ := «first»
+      have activityAt : ActiveAt Z (AncestorOf G Z) p.vertex incoming outgoing := by
         simpa only [hp] using active
-      exact (ActiveWalkReduction.conditioned_active_heads hz at).1
+      exact (ActiveWalkReduction.conditioned_active_heads hz activityAt).1
 
 /-- Fold actual edge realizations along the original MAG route. The prefix
 stores one fixed original source and all executed incidences; the next join
@@ -87,61 +87,61 @@ theorem lift_mag_route_aux {X : Type u} {S : Type v} {L : Type w}
     {p q : Arrival X} {xs : List (Arrival X)}
     (h : Route (RealStep (mag D) Z) p xs q) (hq : q.vertex = y) (hy : ¬ Z y)
     (noneUnconditioned : p.incoming = none → ¬ Z p.vertex)
-    (actual : Option Mark) (prefix : List (Arrival (SourceVertex X S L)))
+    (actual : Option Mark) («prefix» : List (Arrival (SourceVertex X S L)))
     (hp : Route (RealStep (arrowGraph D.arrow) (SelectedCondition Z))
-      ⟨Observed x, none⟩ prefix ⟨Observed p.vertex, actual⟩)
+      ⟨Observed x, none⟩ «prefix» ⟨Observed p.vertex, actual⟩)
     (compatible : IncomingCompatible D Z p actual) :
     ∃ last ys, Route (RealStep (arrowGraph D.arrow) (SelectedCondition Z))
       ⟨Observed x, none⟩ ys ⟨Observed y, last⟩ := by
   revert hp compatible
-  revert actual prefix
+  revert actual «prefix»
   revert noneUnconditioned
   revert hq
   induction h with
   | nil p =>
-      intro hq noneUnconditioned actual prefix hp compatible
-      exact ⟨actual, prefix, by simpa only [hq] using hp⟩
-  | @cons p next q rest hstep hrest ih =>
-      intro hq noneUnconditioned actual prefix hp compatible
+      intro hq noneUnconditioned actual «prefix» hp compatible
+      exact ⟨actual, «prefix», by simpa only [hq] using hp⟩
+  | @cons p «next» q rest hstep hrest ih =>
+      intro hq noneUnconditioned actual «prefix» hp compatible
       obtain ⟨outgoing, incoming, edge, hmark, active⟩ := hstep
       have headP : Z p.vertex → outgoing = .head := by
         intro hz
         cases hm : p.incoming with
         | none => exact (noneUnconditioned hm hz).elim
         | some previous =>
-            have at : ActiveAt Z (AncestorOf (mag D) Z) p.vertex previous outgoing := by
+            have activityAt : ActiveAt Z (AncestorOf (mag D) Z) p.vertex previous outgoing := by
               simpa only [hm] using active
-            exact (ActiveWalkReduction.conditioned_active_heads hz at).2
+            exact (ActiveWalkReduction.conditioned_active_heads hz activityAt).2
       have headNext := conditioned_next_mark (mag D) Z hrest y hq hy incoming hmark
-      obtain ⟨left, right, walk, leftBound, rightBound⟩ :=
-        mag_edge_boundary_walk D Z p.vertex next.vertex outgoing incoming edge headP headNext
+      obtain ⟨«left», «right», walk, leftBound, rightBound⟩ :=
+        mag_edge_boundary_walk D Z p.vertex «next».vertex outgoing incoming edge headP headNext
       have ready : DepartureAllowed (SelectedCondition Z)
           (AncestorOf (arrowGraph D.arrow) (SelectedCondition Z))
-          (Observed p.vertex) actual left := by
+          (Observed p.vertex) actual «left» := by
         cases hm : p.incoming with
         | none =>
             cases actual with
             | none => trivial
             | some m =>
-                have impossible : False := by simpa only [IncomingCompatible, hm] using compatible
-                exact impossible.elim
+                have «impossible» : False := by simpa only [IncomingCompatible, hm] using compatible
+                exact «impossible».elim
         | some previous =>
             cases actual with
             | none => trivial
             | some rawPrevious =>
                 have prevBound : BoundaryCompatible D Z p.vertex previous rawPrevious := by
                   simpa only [IncomingCompatible, hm] using compatible
-                have at : ActiveAt Z (AncestorOf (mag D) Z) p.vertex previous outgoing := by
+                have activityAt : ActiveAt Z (AncestorOf (mag D) Z) p.vertex previous outgoing := by
                   simpa only [hm] using active
-                exact compatible_join_active D Z p.vertex next.vertex previous outgoing incoming
-                  rawPrevious left edge at prevBound leftBound
-      obtain ⟨first, firstIncoming, tail, firstEdge, tailRoute⟩ := walk
+                exact compatible_join_active D Z p.vertex «next».vertex previous outgoing incoming
+                  rawPrevious «left» edge activityAt prevBound leftBound
+      obtain ⟨«first», firstIncoming, tail, firstEdge, tailRoute⟩ := walk
       have segment : Route (RealStep (arrowGraph D.arrow) (SelectedCondition Z))
-          ⟨Observed p.vertex, actual⟩ (⟨first, some firstIncoming⟩ :: tail)
-          ⟨Observed next.vertex, some right⟩ :=
-        .cons ⟨left, firstIncoming, firstEdge, rfl, ready⟩ tailRoute
-      apply ih hq (fun hn => ?_) (some right)
-        (prefix ++ (⟨first, some firstIncoming⟩ :: tail)) (hp.append segment)
+          ⟨Observed p.vertex, actual⟩ (⟨«first», some firstIncoming⟩ :: tail)
+          ⟨Observed «next».vertex, some «right»⟩ :=
+        .cons ⟨«left», firstIncoming, firstEdge, rfl, ready⟩ tailRoute
+      apply ih hq (fun hn => ?_) (some «right»)
+        («prefix» ++ (⟨«first», some firstIncoming⟩ :: tail)) (hp.append segment)
       · exact Option.noConfusion (hn.symm.trans hmark)
       · simpa only [IncomingCompatible, hmark] using rightBound
 

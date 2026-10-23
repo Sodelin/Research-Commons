@@ -19,16 +19,16 @@ universe uS uA uQ
 
 def executedActions {S : Type uS} {A : Type uA} {Q : Type uQ}
     (E : Experiment S A Bool Q Nat) : {n : Nat} → Plan A Bool Q n → S → List A
-  | _, .stop _, _ => []
-  | _, .ask action next, source =>
-      action :: executedActions E (next (E.response source action)) source
+  | _, .«stop» _, _ => []
+  | _, .ask action «next», source =>
+      action :: executedActions E («next» (E.response source action)) source
 
 theorem executed_length_le_horizon {S : Type uS} {A : Type uA} {Q : Type uQ}
     (E : Experiment S A Bool Q Nat) {n : Nat} (plan : Plan A Bool Q n) (source : S) :
     (executedActions E plan source).length ≤ n := by
   induction plan with
-  | stop q => simp only [executedActions, List.length_nil]; exact Nat.zero_le _
-  | ask action next ih =>
+  | «stop» q => simp only [executedActions, List.length_nil]; exact Nat.zero_le _
+  | ask action «next» ih =>
       simpa only [executedActions, List.length_cons] using
         Nat.succ_le_succ (ih (E.response source action))
 
@@ -39,8 +39,8 @@ theorem executed_length_le_budget {S : Type uS} {A : Type uA} {Q : Type uQ}
     (source : S) :
     (executedActions (QueryPlan.budgetExperiment admitted target response allowed) plan source).length ≤ budget := by
   induction plan generalizing h budget with
-  | stop q => simp only [executedActions, List.length_nil]; exact Nat.zero_le _
-  | ask action next ih =>
+  | «stop» q => simp only [executedActions, List.length_nil]; exact Nat.zero_le _
+  | ask action «next» ih =>
       have positive : 0 < budget := valid.1.1
       have tail := ih (response source action) ((action, response source action) :: h)
         (budget - 1) (valid.2 (response source action))
@@ -55,10 +55,10 @@ theorem run_eq_of_agree_on_executed {S : Type uS} {A : Type uA} {Q : Type uQ}
       E.response rival action = E.response baseline action) :
     run E plan rival = run E plan baseline := by
   induction plan with
-  | stop q => rfl
-  | ask action next ih =>
-      have first := agree action List.mem_cons_self
-      simp only [run, first]
+  | «stop» q => rfl
+  | ask action «next» ih =>
+      have «first» := agree action List.mem_cons_self
+      simp only [run, «first»]
       apply ih (E.response baseline action)
       intro later member
       exact agree later (List.mem_cons_of_mem _ member)
@@ -95,8 +95,8 @@ theorem mem_testedIndices {k u : Nat} (q : Index u)
       simp only [testedIndices, Finset.mem_union, Finset.mem_filter, Finset.mem_univ, true_and, ih,
         List.mem_cons]
       constructor
-      · rintro (first | ⟨later, member, tests⟩)
-        · exact ⟨action, Or.inl rfl, first⟩
+      · rintro («first» | ⟨later, member, tests⟩)
+        · exact ⟨action, Or.inl rfl, «first»⟩
         · exact ⟨later, Or.inr member, tests⟩
       · rintro ⟨later, same | member, tests⟩
         · subst later; exact Or.inl tests

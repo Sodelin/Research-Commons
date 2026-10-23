@@ -24,10 +24,10 @@ def DirectedAcyclic {V : Type u} (G : MarkedGraph V) : Prop :=
 
 /-- Exactly one token per unordered bidirected edge, independent of any bows. -/
 structure Root {V : Type u} [LinearOrder V] (G : MarkedGraph V) where
-  left : V
-  right : V
-  ordered : left < right
-  edge : G.edge left right .head .head
+  «left» : V
+  «right» : V
+  ordered : «left» < «right»
+  edge : G.edge «left» «right» .head .head
 
 abbrev Vertex {V : Type u} [LinearOrder V] (G : MarkedGraph V) := Sum V (Root G)
 

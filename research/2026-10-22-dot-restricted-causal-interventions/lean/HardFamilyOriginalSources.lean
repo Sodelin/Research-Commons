@@ -23,17 +23,17 @@ abbrev EmptyVertex (X : Type v) := SourceVertex X (PEmpty : Type v) (PEmpty : Ty
 
 def eraseEmpty {X : Type v} : EmptyVertex X → X
   | .inl (.inl x) => x
-  | .inl (.inr impossible) => impossible.elim
-  | .inr impossible => impossible.elim
+  | .inl (.inr «impossible») => «impossible».elim
+  | .inr «impossible» => «impossible».elim
 
 def emptyVertexEquiv (X : Type v) : EmptyVertex X ≃ X where
   toFun := eraseEmpty
   invFun := Observed
   left_inv vertex := by
-    rcases vertex with ((x | impossible) | impossible)
+    rcases vertex with ((x | «impossible») | «impossible»)
     · rfl
-    · exact impossible.elim
-    · exact impossible.elim
+    · exact «impossible».elim
+    · exact «impossible».elim
   right_inv _ := rfl
 
 def emptyNuisanceSource {X : Type v} (D : X → X → Prop)
@@ -50,8 +50,8 @@ def emptyNuisanceSource {X : Type v} (D : X → X → Prop)
       have empty := acyclic (eraseEmpty a) (xs.map eraseEmpty) mapped
       cases xs with
       | nil => rfl
-      | cons next rest => cases empty
-    selection_sink := by intro impossible; exact impossible.elim }
+      | cons «next» rest => cases empty
+    selection_sink := by intro «impossible»; exact «impossible».elim }
 
 def emptySourceEquiv {X : Type v} (D : X → X → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) :
@@ -61,10 +61,10 @@ def emptySourceEquiv {X : Type v} (D : X → X → Prop)
 
 theorem empty_selection_condition {X : Type v} (C : X → Prop) (vertex : EmptyVertex X) :
     SelectedCondition C vertex ↔ C (eraseEmpty vertex) := by
-  rcases vertex with ((x | impossible) | impossible)
+  rcases vertex with ((x | «impossible») | «impossible»)
   · exact Iff.rfl
-  · exact impossible.elim
-  · exact impossible.elim
+  · exact «impossible».elim
+  · exact «impossible».elim
 
 theorem empty_source_connection {X : Type v} (D : X → X → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) (C : X → Prop) (x y : X) :
@@ -78,13 +78,13 @@ def emptyAugmentedSourceEquiv {X : Type v} (D : X → X → Prop)
       (arrowGraph (AddIndicator D target)) where
   toEquiv := emptyVertexEquiv (Option X)
   edge a b ma mb := by
-    rcases a with ((a | impossible) | impossible)
-    · rcases b with ((b | impossible) | impossible)
+    rcases a with ((a | «impossible») | «impossible»)
+    · rcases b with ((b | «impossible») | «impossible»)
       · cases a <;> cases b <;> exact Iff.rfl
-      · exact impossible.elim
-      · exact impossible.elim
-    · exact impossible.elim
-    · exact impossible.elim
+      · exact «impossible».elim
+      · exact «impossible».elim
+    · exact «impossible».elim
+    · exact «impossible».elim
 
 theorem empty_augmented_connection {X : Type v} (D : X → X → Prop)
     (acyclic : ∀ a xs, Route D a xs a → xs = []) (target : X) (C : X → Prop) (x : X) :
@@ -110,9 +110,9 @@ theorem labelCode_injective {k u : Nat} : Function.Injective (@labelCode k u) :=
   cases a with
   | inl t => cases b with
     | inl s => exact congrArg Sum.inl (Fin.ext same)
-    | inr x => have bound := t.isLt; change t.val = k + x.val at same; omega
+    | inr x => have «bound» := t.isLt; change t.val = k + x.val at same; omega
   | inr x => cases b with
-    | inl t => have bound := t.isLt; change k + x.val = t.val at same; omega
+    | inl t => have «bound» := t.isLt; change k + x.val = t.val at same; omega
     | inr y =>
         have value : x.val = y.val := by change k + x.val = k + y.val at same; omega
         exact congrArg Sum.inr (Fin.ext value)

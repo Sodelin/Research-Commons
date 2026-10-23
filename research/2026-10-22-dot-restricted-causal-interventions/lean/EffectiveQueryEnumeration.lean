@@ -31,7 +31,7 @@ theorem map_eq_on_members {I : Type u} {J : Type v} (items : List I) (f g : I �
     (same : items.map f = items.map g) : ∀ x ∈ items, f x = g x := by
   induction items with
   | nil => intro x member; cases member
-  | cons first rest ih =>
+  | cons «first» rest ih =>
       have heads := List.cons.inj same
       intro x member
       rcases List.mem_cons.mp member with label | later
@@ -74,11 +74,11 @@ def marginalKey {X : Type u} (T : X → Prop) (q : MarginalIndex T) : PairKey X 
 theorem marginalKey_injective {X : Type u} (T : X → Prop) :
     Function.Injective (marginalKey T) := by
   intro a b same
-  have first := congrArg (fun p : PairKey X => (ofLex p).1) same
+  have «first» := congrArg (fun p : PairKey X => (ofLex p).1) same
   have second := congrArg (fun p : PairKey X => (ofLex p).2) same
   rcases a with ⟨⟨⟨a, availableA⟩, x⟩, distinctA⟩
   rcases b with ⟨⟨⟨b, availableB⟩, y⟩, distinctB⟩
-  change a = b at first
+  change a = b at «first»
   change x = y at second
   subst b
   subst y
@@ -92,12 +92,12 @@ def observedKey {X : Type u} [LinearOrder X] [Fintype X]
 theorem observedKey_injective {X : Type u} [LinearOrder X] [Fintype X]
     (T : X → Prop) [DecidablePred T] : Function.Injective (observedKey T) := by
   intro a b same
-  have first := congrArg (fun p : QueryKey X => (ofLex p).1) same
+  have «first» := congrArg (fun p : QueryKey X => (ofLex p).1) same
   have second := congrArg (fun p : QueryKey X => (ofLex (ofLex p).2).1) same
   have word := congrArg (fun p : QueryKey X => (ofLex (ofLex p).2).2) same
   rcases a with ⟨⟨⟨a, x⟩, orderedA⟩, bits⟩
   rcases b with ⟨⟨⟨b, y⟩, orderedB⟩, other⟩
-  change a = b at first
+  change a = b at «first»
   change x = y at second
   subst b
   subst y
@@ -114,12 +114,12 @@ def conditionalKey {X : Type u} [LinearOrder X] [Fintype X]
 theorem conditionalKey_injective {X : Type u} [LinearOrder X] [Fintype X]
     (T : X → Prop) [DecidablePred T] : Function.Injective (conditionalKey T) := by
   intro a b same
-  have first := congrArg (fun p : QueryKey X => (ofLex p).1) same
+  have «first» := congrArg (fun p : QueryKey X => (ofLex p).1) same
   have second := congrArg (fun p : QueryKey X => (ofLex (ofLex p).2).1) same
   have word := congrArg (fun p : QueryKey X => (ofLex (ofLex p).2).2) same
   rcases a with ⟨⟨⟨⟨a, availableA⟩, x⟩, distinctA⟩, bits⟩
   rcases b with ⟨⟨⟨⟨b, availableB⟩, y⟩, distinctB⟩, other⟩
-  change a = b at first
+  change a = b at «first»
   change x = y at second
   subst b
   subst y

@@ -19,10 +19,10 @@ universe u
 
 variable {V : Type u} [Fintype V] [DecidableEq V]
 
-theorem eliminateVariables_append (first second : List V) (f : Assignment V → ℚ) :
-    eliminateVariables (first ++ second) f =
-      eliminateVariables second (eliminateVariables first f) := by
-  induction first generalizing f with
+theorem eliminateVariables_append («first» second : List V) (f : Assignment V → ℚ) :
+    eliminateVariables («first» ++ second) f =
+      eliminateVariables second (eliminateVariables «first» f) := by
+  induction «first» generalizing f with
   | nil => rfl
   | cons vertex rest ih =>
       exact ih (sumAt vertex f)

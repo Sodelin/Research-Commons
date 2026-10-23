@@ -19,12 +19,12 @@ theorem endpoint_mem_of_nonempty {V : Type u} {R : V → V → Prop}
     {a b : V} {xs : List V} (route : Route R a xs b) (nonempty : xs ≠ []) : b ∈ xs := by
   revert nonempty
   induction route with
-  | nil => intro impossible; exact (impossible rfl).elim
-  | @cons a next b rest step tail ih =>
+  | nil => intro «impossible»; exact («impossible» rfl).elim
+  | @cons a «next» b rest step tail ih =>
       intro _
       cases rest with
       | nil => cases tail; exact List.mem_cons_self
-      | cons r rs => exact List.mem_cons_of_mem _ (ih (by intro impossible; cases impossible))
+      | cons r rs => exact List.mem_cons_of_mem _ (ih (by intro «impossible»; cases «impossible»))
 
 end RestrictedCausal.SelectedWalk.Route
 
@@ -60,15 +60,15 @@ theorem extended_parent_details {V : Type u} (G : MarkedGraph V) (y : V)
   revert r
   induction route with
   | nil p => intro r last state mem; cases mem
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       intro r last
-      have departure : ∃ after, ColliderParentStep G y next after := by
+      have departure : ∃ after, ColliderParentStep G y «next» after := by
         cases tail with
         | nil => exact ⟨r, last⟩
         | cons nextStep remaining => exact ⟨_, nextStep⟩
       obtain ⟨_, incoming, _, mark, _⟩ := step
       obtain ⟨after, outgoing, nextIncoming, _, _, details⟩ := departure
-      have current : incoming = .head ∧ outgoing = .head ∧ Directed G next.vertex y := by
+      have current : incoming = .head ∧ outgoing = .head ∧ Directed G «next».vertex y := by
         simpa only [mark] using details
       intro state mem
       rcases List.mem_cons.mp mem with eq | mem
@@ -89,21 +89,21 @@ theorem rebuild_head_prefix {V : Type u} {R : Arrival V → Arrival V → Prop}
   induction shape with
   | nil p =>
       intro previous b head allHeads colliders
-      obtain ⟨left, right, first, last⟩ := colliders.1
-      exact ⟨.nil p, right, last⟩
-  | @cons p next q rest sourceStep tail ih =>
+      obtain ⟨«left», «right», «first», last⟩ := colliders.1
+      exact ⟨.nil p, «right», last⟩
+  | @cons p «next» q rest sourceStep tail ih =>
       intro previous b head allHeads colliders
-      have nextHead := allHeads next List.mem_cons_self
+      have nextHead := allHeads «next» List.mem_cons_self
       have tailResult := ih p.vertex b nextHead
         (fun r mem => allHeads r (List.mem_cons_of_mem _ mem)) colliders.2
       obtain ⟨_, incoming, _, firstOutgoing⟩ := colliders.1
-      have nextCollider : ∃ following, Collider H p.vertex next.vertex following := by
+      have nextCollider : ∃ following, Collider H p.vertex «next».vertex following := by
         cases rest with
         | nil => exact ⟨b, colliders.2.1⟩
         | cons after remaining => exact ⟨after.vertex, colliders.2.1⟩
-      obtain ⟨following, left, right, secondIncoming, _⟩ := nextCollider
+      obtain ⟨following, «left», «right», secondIncoming, _⟩ := nextCollider
       have incomingHead : incoming = .head :=
-        (single p.vertex next.vertex .head incoming left .head firstOutgoing secondIncoming).2
+        (single p.vertex «next».vertex .head incoming «left» .head firstOutgoing secondIncoming).2
       refine ⟨.cons ?_ tailResult.1, tailResult.2⟩
       refine ⟨.head, .head, incomingHead ▸ firstOutgoing, nextHead, ?_⟩
       simpa only [head] using (show Mark.head = .head ∧ Mark.head = .head from ⟨rfl, rfl⟩)
@@ -116,16 +116,16 @@ theorem rebuild_parent_prefix {V : Type u} {R : Arrival V → Arrival V → Prop
     Route (ColliderStep H) ⟨x, none⟩ xs q ∧ ∃ incoming, H.edge q.vertex b .head incoming := by
   cases xs with
   | nil => exact (nonempty rfl).elim
-  | cons first rest =>
+  | cons «first» rest =>
       cases shape with
       | cons step tail =>
-          have firstHead := allHeads first List.mem_cons_self
+          have firstHead := allHeads «first» List.mem_cons_self
           have result := rebuild_head_prefix H single tail x b firstHead
             (fun r mem => allHeads r (List.mem_cons_of_mem _ mem)) colliders
-          have firstCollider : ∃ following, Collider H x first.vertex following := by
+          have firstCollider : ∃ following, Collider H x «first».vertex following := by
             cases rest with
             | nil => exact ⟨b, colliders.1⟩
-            | cons next remaining => exact ⟨next.vertex, colliders.1⟩
+            | cons «next» remaining => exact ⟨«next».vertex, colliders.1⟩
           obtain ⟨following, outgoing, incoming, edge, _⟩ := firstCollider
           exact ⟨.cons ⟨outgoing, .head, edge, firstHead, trivial⟩ result.1, result.2⟩
 

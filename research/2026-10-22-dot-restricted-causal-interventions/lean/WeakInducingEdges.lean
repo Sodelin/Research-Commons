@@ -71,12 +71,12 @@ middle vertex is a collider on the raw concatenation and ancestral to an
 outer endpoint or selection. Repeated original vertices are allowed here;
 `edge_inducing` removes them with the proved closed-ancestor reduction. -/
 theorem merge_collider_edges {X : Type u} {S : Type v} {L : Type w}
-    (D : SourceDAG X S L) {x middle y : X} {left right : Mark}
-    (hne : x ≠ y) (first : (graph D).edge x middle left .head)
-    (last : (graph D).edge middle y .head right)
-    (flag : TailFlag D middle x ∨ TailFlag D middle y) : (graph D).edge x y left right := by
+    (D : SourceDAG X S L) {x middle y : X} {«left» «right» : Mark}
+    (hne : x ≠ y) («first» : (graph D).edge x middle «left» .head)
+    (last : (graph D).edge middle y .head «right»)
+    (flag : TailFlag D middle x ∨ TailFlag D middle y) : (graph D).edge x y «left» «right» := by
   have middleAncestor := tail_flag_middle_ancestor D x middle y flag
-  have firstWalk := first.2.mono (fun _ h => h)
+  have firstWalk := «first».2.mono (fun _ h => h)
     (endpoint_ancestor_enlarge D (endpoint_self_left D x y) middleAncestor)
   have lastWalk := last.2.mono (fun _ h => h)
     (endpoint_ancestor_enlarge D middleAncestor (endpoint_self_right D x y))
@@ -85,14 +85,14 @@ theorem merge_collider_edges {X : Type u} {S : Type v} {L : Type w}
 
 theorem retained_edge_marked_walk {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (A : SourceVertex X S L → Prop)
-    (latent : List L) {a b : SourceVertex X S L} {left right : Mark}
-    (h : NoncolliderRoute (arrowGraph D.arrow) a left
-      (latent.map (fun l => Sum.inr l : L → SourceVertex X S L)) b right) :
-    MarkedRoute (arrowGraph D.arrow) Nonlatent A a b left right := by
-  induction latent generalizing a left with
+    (latent : List L) {a b : SourceVertex X S L} {«left» «right» : Mark}
+    (h : NoncolliderRoute (arrowGraph D.arrow) a «left»
+      (latent.map (fun l => Sum.inr l : L → SourceVertex X S L)) b «right») :
+    MarkedRoute (arrowGraph D.arrow) Nonlatent A a b «left» «right» := by
+  induction latent generalizing a «left» with
   | nil =>
       cases h with
-      | single edge => exact ⟨b, right, [], edge, .nil _⟩
+      | single edge => exact ⟨b, «right», [], edge, .nil _⟩
   | cons l ls ih =>
       cases h with
       | @step _ _ _ _ incoming outgoing _ _ edge noncollider tail =>
@@ -104,18 +104,18 @@ theorem retained_edge_marked_walk {X : Type u} {S : Type v} {L : Type w}
 
 theorem projected_edge_marked_walk {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (A : SourceVertex X S L → Prop)
-    {a b : Sum X S} {left right : Mark} (h : (projection D).edge a b left right) :
-    MarkedRoute (arrowGraph D.arrow) Nonlatent A (.inl a) (.inl b) left right := by
+    {a b : Sum X S} {«left» «right» : Mark} (h : (projection D).edge a b «left» «right») :
+    MarkedRoute (arrowGraph D.arrow) Nonlatent A (.inl a) (.inl b) «left» «right» := by
   obtain ⟨_, latent, route⟩ := h
   exact retained_edge_marked_walk D A latent route
 
 theorem observed_projected_edge_weak {X : Type u} {S : Type v} {L : Type w}
-    (D : SourceDAG X S L) {x y : X} {left right : Mark}
-    (h : (extracted D).observed.edge x y left right) : (graph D).edge x y left right := by
+    (D : SourceDAG X S L) {x y : X} {«left» «right» : Mark}
+    (h : (extracted D).observed.edge x y «left» «right») : (graph D).edge x y «left» «right» := by
   refine ⟨?_, projected_edge_marked_walk D (EndpointAncestor D x y) h⟩
   intro eq
   subst y
-  exact (extracted_observed_laws D).irreflexive x left right h
+  exact (extracted_observed_laws D).irreflexive x «left» «right» h
 
 theorem selected_endpoint_ancestor {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (x y : X) (s : S) : EndpointAncestor D x y (.inl (.inr s)) :=
@@ -137,18 +137,18 @@ theorem selection_component_inducing_route {X : Type u} {S : Type v} {L : Type w
       exact ⟨front ++ back, frontRoute.append backRoute⟩
 
 theorem selection_bridge_weak {X : Type u} {S : Type v} {L : Type w}
-    (D : SourceDAG X S L) {x y : X} {left right : Mark}
-    (h : SourceSelection.Bridge (extracted D) x left y right) : (graph D).edge x y left right := by
+    (D : SourceDAG X S L) {x y : X} {«left» «right» : Mark}
+    (h : SourceSelection.Bridge (extracted D) x «left» y «right») : (graph D).edge x y «left» «right» := by
   obtain ⟨hne, s, t, firstEdge, ⟨component, componentRoute⟩, lastEdge⟩ := h
   have firstWalk := projected_edge_marked_walk D (EndpointAncestor D x y) firstEdge
   have lastWalk := projected_edge_marked_walk D (EndpointAncestor D x y)
-    (projection_symm D (.inl y) (.inr t) right .head lastEdge)
+    (projection_symm D (.inl y) (.inr t) «right» .head lastEdge)
   obtain ⟨middle, middleRoute⟩ := selection_component_inducing_route D x y componentRoute
   have ready : ActiveAt Nonlatent (EndpointAncestor D x y) (.inl (.inr t)) .head .head := by
     simpa [ActiveAt] using selected_endpoint_ancestor D x y t
   obtain ⟨last, lastRoute⟩ := lastWalk.with_arrival ready
-  obtain ⟨first, firstIncoming, prefix, edge, prefixRoute⟩ := firstWalk
-  exact ⟨hne, first, firstIncoming, prefix ++ middle ++ last, edge,
+  obtain ⟨«first», firstIncoming, «prefix», edge, prefixRoute⟩ := firstWalk
+  exact ⟨hne, «first», firstIncoming, «prefix» ++ middle ++ last, edge,
     (prefixRoute.append middleRoute).append lastRoute⟩
 
 end RestrictedCausal.WeakInducing

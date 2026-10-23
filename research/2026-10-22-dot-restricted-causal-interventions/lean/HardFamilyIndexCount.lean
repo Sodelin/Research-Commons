@@ -16,9 +16,9 @@ open CanonicalSelection PartialQueries ProbabilitySource
 open scoped BigOperators
 
 theorem Index.ext_before {u : Nat} (q r : Index u)
-    (first : q.first = r.first) (second : q.second = r.second)
+    («first» : q.first = r.first) (second : q.second = r.second)
     (bits : ∀ x, q.before x = r.before x) : q = r := by
-  have pair : q.1 = r.1 := Subtype.ext (Prod.ext first second)
+  have pair : q.1 = r.1 := Subtype.ext (Prod.ext «first» second)
   rcases q with ⟨p, f⟩
   rcases r with ⟨p', g⟩
   change p = p' at pair

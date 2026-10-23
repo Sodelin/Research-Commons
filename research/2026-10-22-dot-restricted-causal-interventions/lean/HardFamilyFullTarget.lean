@@ -42,8 +42,8 @@ theorem tcm_old_edge_iff {X : Type v} {S : Type w} {L : Type z}
     obtain ⟨t, allowed⟩ := available
     refine ⟨?_, ⟨t, allowed⟩, some x, some y, rfl, rfl,
       (old_mag_edge_iff D t x y ma mb).mpr edge⟩
-    rintro ⟨target, first | second⟩
-    · cases first.1
+    rintro ⟨target, «first» | second⟩
+    · cases «first».1
     · cases second.2
 
 theorem mag_eq_of_tcm_eq {X : Type v} {S L S' L' : Type v}

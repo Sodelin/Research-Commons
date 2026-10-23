@@ -52,7 +52,7 @@ theorem reached_chain_vertex_ancestor {X : Type u} {S : Type v} {L : Type w}
     (arrived : ∃ m, p.incoming = some m) : EndpointAncestor D x y (Observed p.vertex) := by
   cases route with
   | nil p => simpa only [lastVertex] using endpoint_self_right D x y
-  | @cons p next q rest step tail =>
+  | @cons p «next» q rest step tail =>
       obtain ⟨outgoing, incoming, edge, mark, active⟩ := step
       obtain ⟨previous, previousMark⟩ := arrived
       have atP : ActiveAt (fun _ : X => True) (AncestorOf (mag D) (Endpoints x y))
@@ -73,9 +73,9 @@ No separate realization of different edges, regimes, or indicators is used. -/
 theorem expand_chain_with_prefix {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (x y : X) {p q : Arrival X} {xs : List (Arrival X)}
     (chain : Route (ColliderChainStep D x y) p xs q) (lastVertex : q.vertex = y) :
-    ∀ (actual : Option Mark) (prefix : List (Arrival (SourceVertex X S L))),
+    ∀ (actual : Option Mark) («prefix» : List (Arrival (SourceVertex X S L))),
       Route (Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y))
-        ⟨Observed x, none⟩ prefix ⟨Observed p.vertex, actual⟩ →
+        ⟨Observed x, none⟩ «prefix» ⟨Observed p.vertex, actual⟩ →
       EndpointAncestor D x y (Observed p.vertex) → TracksArrival p actual →
       ∃ last vertices,
         Route (Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y))
@@ -83,21 +83,21 @@ theorem expand_chain_with_prefix {X : Type u} {S : Type v} {L : Type w}
   revert lastVertex
   induction chain with
   | nil p =>
-      intro lastVertex actual prefix lifted ancestor tracks
-      exact ⟨actual, prefix, by simpa only [lastVertex] using lifted⟩
-  | @cons p next q rest step tail ih =>
-      intro lastVertex actual prefix lifted ancestor tracks
+      intro lastVertex actual «prefix» lifted ancestor tracks
+      exact ⟨actual, «prefix», by simpa only [lastVertex] using lifted⟩
+  | @cons p «next» q rest step tail ih =>
+      intro lastVertex actual «prefix» lifted ancestor tracks
       obtain ⟨outgoing, incoming, edge, mark, active⟩ := step
       have nextAncestor := reached_chain_vertex_ancestor D x y tail lastVertex ⟨incoming, mark⟩
-      obtain ⟨rawLeft, rawRight, walk⟩ := inducing_marked_route D p.vertex next.vertex edge.1
+      obtain ⟨rawLeft, rawRight, walk⟩ := inducing_marked_route D p.vertex «next».vertex edge.1
       have leftHead : outgoing = .head → rawLeft = .head := by
         intro head
-        exact marked_inducing_left_head D p.vertex next.vertex walk
-          ((endpoint_head_iff D p.vertex next.vertex).mp (head ▸ edge.2.1))
+        exact marked_inducing_left_head D p.vertex «next».vertex walk
+          ((endpoint_head_iff D p.vertex «next».vertex).mp (head ▸ edge.2.1))
       have rightHead : incoming = .head → rawRight = .head := by
         intro head
-        exact marked_inducing_right_head D p.vertex next.vertex walk
-          ((endpoint_head_iff D next.vertex p.vertex).mp (head ▸ edge.2.2))
+        exact marked_inducing_right_head D p.vertex «next».vertex walk
+          ((endpoint_head_iff D «next».vertex p.vertex).mp (head ▸ edge.2.2))
       have expanded := walk.mono (fun _ h => h) (endpoint_ancestor_enlarge D ancestor nextAncestor)
       have ready : DepartureAllowed Nonlatent (EndpointAncestor D x y)
           (Observed p.vertex) actual rawLeft := by
@@ -110,19 +110,19 @@ theorem expand_chain_with_prefix {X : Type u} {S : Type v} {L : Type w}
               ActiveWalkReduction.conditioned_active_heads True.intro atP
             have actualHead := tracks.2 (previousMark.trans (congrArg some previousHead))
             simpa only [DepartureAllowed, actualHead, leftHead outgoingHead, ActiveAt] using ancestor
-      obtain ⟨first, firstIncoming, remainder, firstEdge, remainderRoute⟩ := expanded
+      obtain ⟨«first», firstIncoming, remainder, firstEdge, remainderRoute⟩ := expanded
       have copied : Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y)
-          ⟨Observed p.vertex, actual⟩ ⟨first, some firstIncoming⟩ :=
+          ⟨Observed p.vertex, actual⟩ ⟨«first», some firstIncoming⟩ :=
         ⟨rawLeft, firstIncoming, firstEdge, rfl, ready⟩
-      have nextTracks : TracksArrival next (some rawRight) := by
+      have nextTracks : TracksArrival «next» (some rawRight) := by
         constructor
         · intro none
-          have impossible := none.symm.trans mark
-          cases impossible
+          have «impossible» := none.symm.trans mark
+          cases «impossible»
         · intro head
           have incomingHead : incoming = .head := Option.some.inj (mark.symm.trans head)
           exact congrArg some (rightHead incomingHead)
-      exact ih lastVertex (some rawRight) (prefix ++ (⟨first, some firstIncoming⟩ :: remainder))
+      exact ih lastVertex (some rawRight) («prefix» ++ (⟨«first», some firstIncoming⟩ :: remainder))
         (lifted.append (.cons copied remainderRoute)) nextAncestor nextTracks
 
 theorem collider_chain_inducing {X : Type u} {S : Type v} {L : Type w}
@@ -131,7 +131,7 @@ theorem collider_chain_inducing {X : Type u} {S : Type v} {L : Type w}
     (chain : Route (ColliderChainStep D x y) ⟨x, none⟩ vertices ⟨y, last⟩) :
     InducingPath D x y := by
   have tracks : TracksArrival (⟨x, none⟩ : Arrival X) none :=
-    ⟨fun _ => rfl, fun impossible => by cases impossible⟩
+    ⟨fun _ => rfl, fun «impossible» => by cases «impossible»⟩
   obtain ⟨rawLast, rawVertices, rawRoute⟩ := expand_chain_with_prefix D x y chain rfl none []
     (.nil _) (endpoint_self_left D x y) tracks
   obtain ⟨terminal, simpleVertices, simple, endpoint, nodup⟩ := closed_walk_to_simple
@@ -154,7 +154,7 @@ theorem parent_prefix_is_endpoint_chain {X : Type u} {S : Type v} {L : Type w}
     Route (ColliderChainStep D x y) p xs q := by
   induction route with
   | nil p => exact .nil p
-  | @cons p next q rest step tail ih =>
+  | @cons p «next» q rest step tail ih =>
       obtain ⟨outgoing, incoming, edge, mark, parent⟩ := step
       refine .cons ⟨outgoing, incoming, edge, mark, ?_⟩ ih
       cases previousMark : p.incoming with

@@ -92,13 +92,13 @@ theorem original_observed_condition_members (D : FiniteSource X) (b : X → Bool
     · rintro ⟨y, same, conditioned⟩
       have equal : x = y := Sum.inl.inj (Sum.inl.inj same)
       subst y
-      exact ⟨conditioned, fun impossible => impossible⟩
+      exact ⟨conditioned, fun «impossible» => «impossible»⟩
   · constructor
     · intro h; exact (h.2 True.intro).elim
-    · rintro ⟨y, impossible, _⟩; cases impossible
+    · rintro ⟨y, «impossible», _⟩; cases «impossible»
   · constructor
     · intro h; exact h.1.elim
-    · rintro ⟨y, impossible, _⟩; cases impossible
+    · rintro ⟨y, «impossible», _⟩; cases «impossible»
 
 def originalIndicatorEquiv (D : FiniteSource X) (target : X) :
     MarkedEquiv (arrowGraph (augmentSource D.dag target).arrow)
@@ -125,10 +125,10 @@ theorem original_indicator_condition (D : FiniteSource X) (b : X → Bool)
   · cases x with
     | none =>
         constructor
-        · intro impossible; exact impossible.elim
+        · intro «impossible»; exact «impossible».elim
         · intro member
-          obtain ⟨_, _, impossible⟩ := Finset.mem_image.mp member
-          cases impossible
+          obtain ⟨_, _, «impossible»⟩ := Finset.mem_image.mp member
+          cases «impossible»
     | some x => exact (oldImage (Observed x)).symm
   · exact (oldImage (.inl (.inr s))).symm
   · exact (oldImage (.inr l)).symm

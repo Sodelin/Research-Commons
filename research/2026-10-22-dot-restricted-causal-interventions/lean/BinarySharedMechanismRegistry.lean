@@ -128,7 +128,7 @@ theorem recover_single_coordinate (D : V → V → Prop) (target : T → V) (t :
 
 theorem single_indicator_coordinate_injective (D : V → V → Prop) (target : T → V) (t : T) :
     Function.Injective (singleIndicatorCoordinate D target t) := by
-  intro first second same
+  intro «first» second same
   have recovered := congrArg (recoverSingleCoordinate D target t) same
   simpa only [recover_single_coordinate] using recovered
 
@@ -165,7 +165,7 @@ def baselineCoordinate (D : V → V → Prop) (target : T → V) : Coordinate D 
 
 theorem baseline_coordinate_injective (D : V → V → Prop) (target : T → V) :
     Function.Injective (baselineCoordinate D target) := by
-  intro first second same
+  intro «first» second same
   exact Sum.inl.inj same
 
 theorem shared_baseline_polynomial_nonzero (D : V → V → Prop) (target : T → V)

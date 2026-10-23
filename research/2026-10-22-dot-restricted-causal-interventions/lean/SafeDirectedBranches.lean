@@ -25,7 +25,7 @@ theorem minimum_directed_departures_outside {V : Type u} (G : MarkedGraph V)
     (path : MinimumDirectedPath G C a xs finish) : DeparturesOutside C a xs := by
   induction xs generalizing a with
   | nil => trivial
-  | cons next rest ih =>
+  | cons «next» rest ih =>
       exact ⟨minimum_directed_positive_outside G C path,
         ih (minimum_directed_tail G C path)⟩
 
@@ -34,7 +34,7 @@ theorem departures_outside_prefix {V : Type u} (C : V → Prop)
     (safe : DeparturesOutside C a (front ++ back)) : DeparturesOutside C a front := by
   induction front generalizing a with
   | nil => trivial
-  | cons next rest ih => exact ⟨safe.1, ih next safe.2⟩
+  | cons «next» rest ih => exact ⟨safe.1, ih «next» safe.2⟩
 
 theorem directed_safe_head_route {V : Type u} (G : MarkedGraph V) (C : V → Prop)
     {a b : V} {xs : List V} (route : Route (Directed G) a xs b)
@@ -44,7 +44,7 @@ theorem directed_safe_head_route {V : Type u} (G : MarkedGraph V) (C : V → Pro
   revert safe
   induction route with
   | nil a => intro _; exact .nil _
-  | @cons a next b rest edge tail ih =>
+  | @cons a «next» b rest edge tail ih =>
       intro safe
       refine .cons ⟨.tail, .head, edge, rfl, ?_⟩ (ih safe.2)
       simpa [ActiveAt] using safe.1
@@ -81,7 +81,7 @@ theorem rebuild_suffix_head {V : Type u} (G : MarkedGraph V) (C : V → Prop)
     ∃ last, Route (RealStep G C) ⟨p.vertex, some .head⟩ xs ⟨q.vertex, last⟩ := by
   cases route with
   | nil p => exact ⟨some .head, .nil _⟩
-  | @cons p next q rest step tail =>
+  | @cons p «next» q rest step tail =>
       obtain ⟨outgoing, incoming, edge, mark, active⟩ := step
       exact ⟨q.incoming, .cons ⟨outgoing, incoming, edge, mark,
         head_replacement_departure G C p.vertex p.incoming outgoing
@@ -93,7 +93,7 @@ theorem rebuild_suffix_tail {V : Type u} (G : MarkedGraph V) (C : V → Prop)
     ∃ last, Route (RealStep G C) ⟨p.vertex, some .tail⟩ xs ⟨q.vertex, last⟩ := by
   cases route with
   | nil p => exact ⟨some .tail, .nil _⟩
-  | @cons p next q rest step tail =>
+  | @cons p «next» q rest step tail =>
       obtain ⟨outgoing, incoming, edge, mark, _⟩ := step
       exact ⟨q.incoming, .cons ⟨outgoing, incoming, edge, mark,
         tail_replacement_departure G C p.vertex outgoing outside⟩ tail⟩

@@ -25,8 +25,8 @@ inductive Gate (edge : V → V → Prop) (rank : V → Nat) (R : Type v) (vertex
   | off
   | fair (index : R)
   | copy (parent : V) (allowed : edge parent vertex) (earlier : rank parent < rank vertex)
-  | xor (left right : V) (allowLeft : edge left vertex) (allowRight : edge right vertex)
-      (earlierLeft : rank left < rank vertex) (earlierRight : rank right < rank vertex)
+  | xor («left» «right» : V) (allowLeft : edge «left» vertex) (allowRight : edge «right» vertex)
+      (earlierLeft : rank «left» < rank vertex) (earlierRight : rank «right» < rank vertex)
 
 structure BoundaryCircuit (edge : V → V → Prop) (R : Type v) where
   rank : V → Nat
@@ -44,7 +44,7 @@ def value (c : BoundaryCircuit edge R) (bits : R → Bool) (vertex : V) : Bool :
   | .off => false
   | .fair i => bits i
   | .copy parent _ _ => value c bits parent
-  | .xor left right _ _ _ _ => Bool.xor (value c bits left) (value c bits right)
+  | .xor «left» «right» _ _ _ _ => Bool.xor (value c bits «left») (value c bits «right»)
 termination_by c.rank vertex
 decreasing_by
   all_goals simp_wf
@@ -56,8 +56,8 @@ def parameter (c : BoundaryCircuit edge R) : Coordinate edge → ℚ
     | .off => 0
     | .fair _ => 1 / 2
     | .copy parent allowed _ => if parents ⟨parent, allowed⟩ then 1 else 0
-    | .xor left right allowLeft allowRight _ _ =>
-        if Bool.xor (parents ⟨left, allowLeft⟩) (parents ⟨right, allowRight⟩) then 1 else 0
+    | .xor «left» «right» allowLeft allowRight _ _ =>
+        if Bool.xor (parents ⟨«left», allowLeft⟩) (parents ⟨«right», allowRight⟩) then 1 else 0
 
 def rootBits (c : BoundaryCircuit edge R) (w : Assignment V) : R → Bool := fun i => w (c.source i)
 
@@ -76,8 +76,8 @@ theorem parameter_in_cube (c : BoundaryCircuit edge R) (i : Coordinate edge) :
   | fair index => norm_num [parameter, h]
   | copy parent allowed earlier =>
       cases parents ⟨parent, allowed⟩ <;> norm_num [parameter, h]
-  | xor left right allowLeft allowRight earlierLeft earlierRight =>
-      cases Bool.xor (parents ⟨left, allowLeft⟩) (parents ⟨right, allowRight⟩) <;>
+  | xor «left» «right» allowLeft allowRight earlierLeft earlierRight =>
+      cases Bool.xor (parents ⟨«left», allowLeft⟩) (parents ⟨«right», allowRight⟩) <;>
         norm_num [parameter, h]
 
 theorem value_at_source (c : BoundaryCircuit edge R) (bits : R → Bool) (i : R) :
@@ -90,7 +90,7 @@ theorem rootBits_value (c : BoundaryCircuit edge R) (bits : R → Bool) :
   exact c.value_at_source bits i
 
 theorem value_injective (c : BoundaryCircuit edge R) : Function.Injective c.value := by
-  intro first second equal
+  intro «first» second equal
   have roots := congrArg c.rootBits equal
   simpa only [rootBits_value] using roots
 
@@ -109,9 +109,9 @@ theorem factor_at_value (c : BoundaryCircuit edge R) (bits : R → Bool) (vertex
   | copy parent allowed earlier =>
       have output : c.value bits vertex = c.value bits parent := by rw [value, h]
       cases c.value bits parent <;> norm_num [parameter, row, h, bernoulliMass, output, uniformFactor]
-  | xor left right allowLeft allowRight earlierLeft earlierRight =>
-      have output : c.value bits vertex = Bool.xor (c.value bits left) (c.value bits right) := by rw [value, h]
-      cases c.value bits left <;> cases c.value bits right <;>
+  | xor «left» «right» allowLeft allowRight earlierLeft earlierRight =>
+      have output : c.value bits vertex = Bool.xor (c.value bits «left») (c.value bits «right») := by rw [value, h]
+      cases c.value bits «left» <;> cases c.value bits «right» <;>
         norm_num [parameter, row, h, bernoulliMass, output, uniformFactor]
 
 theorem joint_mass_value (c : BoundaryCircuit edge R) (bits : R → Bool) :
@@ -140,12 +140,12 @@ theorem support_is_value (c : BoundaryCircuit edge R) (w : Assignment V)
     induction n using Nat.strongRecOn with
     | ind n ih =>
         intro vertex rankEq
-        have local := factorNonzero vertex
+        have factorNZ := factorNonzero vertex
         cases h : c.gate vertex with
         | off =>
             have output : c.value (c.rootBits w) vertex = false := by rw [value, h]
             rw [output]
-            cases bit : w vertex <;> simp [parameter, row, h, bernoulliMass, bit] at local ⊢
+            cases bit : w vertex <;> simp [parameter, row, h, bernoulliMass, bit] at factorNZ ⊢
         | fair index =>
             rw [value, h]
             change w vertex = w (c.source index)
@@ -154,15 +154,15 @@ theorem support_is_value (c : BoundaryCircuit edge R) (w : Assignment V)
             have parentValue := ih (c.rank parent) (by omega) parent rfl
             have deterministic : w vertex = w parent := by
               cases own : w vertex <;> cases fromParent : w parent <;>
-                simp [parameter, row, h, bernoulliMass, own, fromParent] at local ⊢
+                simp [parameter, row, h, bernoulliMass, own, fromParent] at factorNZ ⊢
             rw [value, h]
             exact deterministic.trans parentValue
-        | xor left right allowLeft allowRight earlierLeft earlierRight =>
-            have leftValue := ih (c.rank left) (by omega) left rfl
-            have rightValue := ih (c.rank right) (by omega) right rfl
-            have deterministic : w vertex = Bool.xor (w left) (w right) := by
-              cases own : w vertex <;> cases fromLeft : w left <;> cases fromRight : w right <;>
-                simp [parameter, row, h, bernoulliMass, own, fromLeft, fromRight] at local ⊢
+        | xor «left» «right» allowLeft allowRight earlierLeft earlierRight =>
+            have leftValue := ih (c.rank «left») (by omega) «left» rfl
+            have rightValue := ih (c.rank «right») (by omega) «right» rfl
+            have deterministic : w vertex = Bool.xor (w «left») (w «right») := by
+              cases own : w vertex <;> cases fromLeft : w «left» <;> cases fromRight : w «right» <;>
+                simp [parameter, row, h, bernoulliMass, own, fromLeft, fromRight] at factorNZ ⊢
             rw [value, h, ← leftValue, ← rightValue]
             exact deterministic
   funext vertex

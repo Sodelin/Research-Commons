@@ -39,31 +39,31 @@ The induction processes the original finite suffix, not a lengthened walk. -/
 theorem relaxed_route_hits {V : Type u} (G : MarkedGraph V) (C E : V → Prop)
     {start p q : Arrival V} {xs : List (Arrival V)}
     (h : Route (Transition G C (AncestorOf G (fun x => E x ∨ C x))) p xs q)
-    (hq : E q.vertex) (actual : Option Mark) (prefix : List (Arrival V))
-    (hp : Route (RealStep G C) start prefix ⟨p.vertex, actual⟩)
+    (hq : E q.vertex) (actual : Option Mark) («prefix» : List (Arrival V))
+    (hp : Route (RealStep G C) start «prefix» ⟨p.vertex, actual⟩)
     (hc : CompatibleArrival C p actual) :
     ∃ endpoint, E endpoint ∧ ∃ last ys,
       Route (RealStep G C) start ys ⟨endpoint, last⟩ := by
   revert hp hc
-  revert actual prefix
+  revert actual «prefix»
   revert hq
   induction h with
   | nil p =>
-      intro hq actual prefix hp hc
-      exact ⟨p.vertex, hq, actual, prefix, hp⟩
-  | @cons p next q rest hstep hrest ih =>
-      intro hq actual prefix hp hc
+      intro hq actual «prefix» hp hc
+      exact ⟨p.vertex, hq, actual, «prefix», hp⟩
+  | @cons p «next» q rest hstep hrest ih =>
+      intro hq actual «prefix» hp hc
       obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
       rcases departure_dichotomy G C _ p actual outgoing hc hactive with good | bad
-      · have copied : RealStep G C ⟨p.vertex, actual⟩ next :=
+      · have copied : RealStep G C ⟨p.vertex, actual⟩ «next» :=
           ⟨outgoing, incoming, hedge, hmark, good⟩
-        exact ih hq next.incoming (prefix ++ [next])
+        exact ih hq «next».incoming («prefix» ++ [«next»])
           (hp.append (.cons copied (.nil _))) (Or.inl rfl)
       · obtain ⟨_, _, _, hancestor, hnot⟩ := bad
         obtain ⟨endpoint, ⟨directed, hdirected⟩, hendpoint⟩ := hancestor
         rcases hendpoint with hterminal | hcondition
         · obtain ⟨last, tail, htail⟩ := directed_forward_active G C hdirected hnot actual
-          exact ⟨endpoint, hterminal, last, prefix ++ tail, hp.append htail⟩
+          exact ⟨endpoint, hterminal, last, «prefix» ++ tail, hp.append htail⟩
         · exact (hnot ⟨endpoint, ⟨directed, hdirected⟩, hcondition⟩).elim
 
 /-- An unconditioned ancestor of selection can receive a new incoming head
@@ -79,12 +79,12 @@ theorem relaxed_from_activated_vertex {V : Type u} (G : MarkedGraph V) (C E : V 
   | nil => exact ⟨p.vertex, hq, some .head, [], .nil _⟩
   | cons hstep hrest =>
       obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
-      have first : RealStep G C ⟨p.vertex, some .head⟩ _ := by
+      have «first» : RealStep G C ⟨p.vertex, some .head⟩ _ := by
         refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
         cases outgoing with
         | tail => simpa [ActiveAt] using hn
         | head => simpa [ActiveAt] using ha
-      exact relaxed_route_hits G C E hrest hq _ [_] (.cons first (.nil _)) (Or.inl rfl)
+      exact relaxed_route_hits G C E hrest hq _ [_] (.cons «first» (.nil _)) (Or.inl rfl)
 
 theorem selected_condition_contains_selection {X : Type u} {S : Type v} {L : Type w}
     (Z : X → Prop) (a : SourceVertex X S L) (ha : Selected a) : SelectedCondition Z a := by
@@ -175,7 +175,7 @@ theorem mask_separator_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
   revert hq
   induction h with
   | nil p => intro _ _ _ _; exact .nil p
-  | @cons p next q rest hstep hrest ih =>
+  | @cons p «next» q rest hstep hrest ih =>
       intro hq hnd hfirst hsupport
       have hnotTail := (List.nodup_cons.mp hnd).1
       have htailNd := (List.nodup_cons.mp hnd).2
@@ -185,7 +185,7 @@ theorem mask_separator_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
       have hpy : p.vertex ≠ Observed y := by
         intro heq
         exact hnotTail (List.mem_map.mpr ⟨q, Route.end_mem hrest, hq.trans heq.symm⟩)
-      have newstep : Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y) p next := by
+      have newstep : Transition (arrowGraph D.arrow) Nonlatent (EndpointAncestor D x y) p «next» := by
         obtain ⟨outgoing, incoming, hedge, hmark, hactive⟩ := hstep
         refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
         cases hm : p.incoming with
@@ -243,7 +243,7 @@ theorem refined_observed_separator {X : Type u} {S : Type v} {L : Type w}
     refine ⟨hne, last, xs, ?_, hnd⟩
     cases hp with
     | nil => exact .nil _
-    | @cons first next finish rest hstep hrest =>
+    | @cons «first» «next» finish rest hstep hrest =>
         obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
         refine .cons ⟨outgoing, incoming, hedge, hmark, trivial⟩
           (mask_separator_suffix_inducing D x y Z upper lower hrest rfl

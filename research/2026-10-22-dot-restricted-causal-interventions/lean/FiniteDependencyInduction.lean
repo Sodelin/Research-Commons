@@ -40,7 +40,7 @@ theorem bounded_acyclic_wellFounded (R : Nat → Nat → Prop) (bound : Nat)
   obtain ⟨i, j, different, same⟩ := Finite.exists_ne_map_eq_of_infinite finitePosition
   have sameValue : f i = f j := congrArg Fin.val same
   have ordered : i < j ∨ j < i := by omega
-  have contradiction : ∀ i j, i < j → f i = f j → False := by
+  have collisionImpossible : ∀ i j, i < j → f i = f j → False := by
     intro i j less equal
     obtain ⟨vertices, route, length⟩ := descending_segment R f step i (j - i)
     have endpoint : i + (j - i) = j := by omega
@@ -50,8 +50,8 @@ theorem bounded_acyclic_wellFounded (R : Nat → Nat → Prop) (bound : Nat)
     simp only [List.length_nil] at length
     omega
   rcases ordered with less | greater
-  · exact contradiction i j less sameValue
-  · exact contradiction j i greater sameValue.symm
+  · exact collisionImpossible i j less sameValue
+  · exact collisionImpossible j i greater sameValue.symm
 
 end RestrictedCausal.IntervalDependency
 
@@ -72,9 +72,9 @@ theorem shortest_path_wellFounded_dependencies {X : Type u} {S : Type v} {L : Ty
         (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), start i = (chosen i hi).start) ∧
         (∀ i (hi : ShieldedPosition D vertex (x :: xs).length i), (chosen i hi).start < (x :: xs).length) ∧
         WellFounded (RestrictedBetween (ShieldedPosition D vertex (x :: xs).length) start) := by
-  obtain ⟨vertex, trace, chosen, start, matches, bounds, acyclic⟩ :=
+  obtain ⟨vertex, «trace», chosen, start, matches, bounds, acyclic⟩ :=
     shortest_path_has_acyclic_dependencies D Z x y shortest notStart notEnd
-  refine ⟨vertex, trace, chosen, start, matches, bounds, ?_⟩
+  refine ⟨vertex, «trace», chosen, start, matches, bounds, ?_⟩
   apply bounded_acyclic_wellFounded _ (x :: xs).length ?_ acyclic
   intro a b edge
   have aBound := edge.1.2.1

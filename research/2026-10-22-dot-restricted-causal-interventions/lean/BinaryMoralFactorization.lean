@@ -33,16 +33,16 @@ theorem clamped_factor_depends (D : V → V → Prop) (θ : Coordinate D → ℚ
     (C S : Finset V) (base : Assignment V) (child : V)
     (family : ∀ v, FamilyVertex D child v → v ∉ C → v ∈ S) :
     DependsOn S (clampedFactor D θ C base child) := by
-  intro first second agree
+  intro «first» second agree
   have familyAgreement : ∀ v, FamilyVertex D child v →
-      clampCondition C base first v = clampCondition C base second v := by
+      clampCondition C base «first» v = clampCondition C base second v := by
     intro v member
     by_cases conditioned : v ∈ C
     · simp only [clampCondition, if_pos conditioned]
     · simp only [clampCondition, if_neg conditioned]
       exact agree v (family v member conditioned)
   have atChild := familyAgreement child (Or.inl rfl)
-  have parentRows : (fun p : {p // D p child} => clampCondition C base first p.val) =
+  have parentRows : (fun p : {p // D p child} => clampCondition C base «first» p.val) =
       (fun p => clampCondition C base second p.val) := by
     funext p
     exact familyAgreement p.val (Or.inr p.property)
@@ -53,10 +53,10 @@ theorem clamped_factor_depends (D : V → V → Prop) (θ : Coordinate D → ℚ
 theorem finite_product_depends {I : Type*} (indices : Finset I) (S : Finset V)
     (factor : I → Assignment V → ℚ) (each : ∀ i ∈ indices, DependsOn S (factor i)) :
     DependsOn S (fun w => ∏ i ∈ indices, factor i w) := by
-  intro first second agree
+  intro «first» second agree
   apply Finset.prod_congr rfl
   intro i member
-  exact each i member first second agree
+  exact each i member «first» second agree
 
 noncomputable def ancestralVertices (D : V → V → Prop) (C : Finset V) (x y : V) : Finset V := by
   classical
@@ -103,7 +103,7 @@ theorem finish_not_in_left_component (D : V → V → Prop)
 
 theorem family_component_closed (D : V → V → Prop) (C : Finset V) (x y child a b : V)
     (childMember : child ∈ ancestralVertices D C x y)
-    (first : FamilyVertex D child a) (firstIn : a ∈ leftMoralComponent D C x y)
+    («first» : FamilyVertex D child a) (firstIn : a ∈ leftMoralComponent D C x y)
     (second : FamilyVertex D child b) (outside : b ∉ C) :
     b ∈ leftMoralComponent D C x y := by
   classical
@@ -111,7 +111,7 @@ theorem family_component_closed (D : V → V → Prop) (C : Finset V) (x y child
   · exact same ▸ firstIn
   · have firstFacts := (mem_leftMoralComponent D C x y a).mp firstIn
     have step := family_vertices_morally_adjacent D _ (fun v => v ∈ C)
-      ((mem_ancestralVertices D C x y child).mp childMember) first second same firstFacts.2.1 outside
+      ((mem_ancestralVertices D C x y child).mp childMember) «first» second same firstFacts.2.1 outside
     obtain ⟨vertices, route⟩ := firstFacts.2.2
     apply (mem_leftMoralComponent D C x y b).mpr
     exact ⟨(mem_ancestralVertices D C x y b).mpr step.2.1, outside,
@@ -174,8 +174,8 @@ theorem clamped_ancestral_product_factors (D : V → V → Prop) (θ : Coordinat
   · exact finite_product_depends (A \ P) _ _ (clamped_right_factor_depends D θ C x y base)
   · funext w
     have subset : P ⊆ A := fun child member => (Finset.mem_filter.mp member).1
-    have split := Finset.prod_sdiff (f := fun child => clampedFactor D θ C base child w) subset
+    have «split» := Finset.prod_sdiff (f := fun child => clampedFactor D θ C base child w) subset
     change (∏ child ∈ A, clampedFactor D θ C base child w) = _
-    exact split.symm.trans (mul_comm _ _)
+    exact «split».symm.trans (mul_comm _ _)
 
 end RestrictedCausal.ProbabilitySource.BinaryCPT

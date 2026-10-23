@@ -37,15 +37,15 @@ theorem endpointLabel_head_iff {X : Type u} {S : Type v} {L : Type w}
   by_cases flag : TailFlag D x y <;> simp [endpointLabel, flag]
 
 theorem weak_edge_mag {X : Type u} {S : Type v} {L : Type w}
-    (D : SourceDAG X S L) {x y : X} {left right : Mark} (h : (graph D).edge x y left right) :
+    (D : SourceDAG X S L) {x y : X} {«left» «right» : Mark} (h : (graph D).edge x y «left» «right») :
     (mag D).edge x y (endpointLabel D x y) (endpointLabel D y x) :=
   ⟨edge_inducing D h, endpointLabel_spec D x y, endpointLabel_spec D y x⟩
 
 theorem normalized_join_active {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (Z : X → Prop) {a b c : Arrival X}
-    {left incoming outgoing right : Mark}
-    (first : (graph D).edge a.vertex b.vertex left incoming)
-    (last : (graph D).edge b.vertex c.vertex outgoing right)
+    {«left» incoming outgoing «right» : Mark}
+    («first» : (graph D).edge a.vertex b.vertex «left» incoming)
+    (last : (graph D).edge b.vertex c.vertex outgoing «right»)
     (active : ActiveAt Z (Activated D Z) b.vertex incoming outgoing)
     (good : GoodJoin D Z a b c) :
     ActiveAt Z (AncestorOf (mag D) Z) b.vertex
@@ -56,7 +56,7 @@ theorem normalized_join_active {X : Type u} {S : Type v} {L : Type w}
   · simp only [ActiveAt, if_pos collider]
     have noLeftFlag := (endpointLabel_head_iff D b.vertex a.vertex).mp collider.1
     have noRightFlag := (endpointLabel_head_iff D b.vertex c.vertex).mp collider.2
-    have inHead := marked_inducing_right_head D a.vertex b.vertex first.2 noLeftFlag
+    have inHead := marked_inducing_right_head D a.vertex b.vertex «first».2 noLeftFlag
     have outHead := marked_inducing_left_head D b.vertex c.vertex last.2 noRightFlag
     have sourceActive : Activated D Z b.vertex := by simpa [ActiveAt, inHead, outHead] using active
     have notSelected : ¬ SelectionAncestor D b.vertex := fun hs => noLeftFlag (Or.inr hs)
@@ -71,17 +71,17 @@ theorem map_after_first {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (Z : X → Prop)
     {b q : Arrival X} {xs : List (Arrival X)}
     (route : Route (Transition (graph D) Z (Activated D Z)) b xs q) :
-    ∀ (a : Arrival X) (left incoming : Mark), (graph D).edge a.vertex b.vertex left incoming →
+    ∀ (a : Arrival X) («left» incoming : Mark), (graph D).edge a.vertex b.vertex «left» incoming →
       b.incoming = some incoming → AllTriples (GoodJoin D Z) (a :: b :: xs) →
       ∃ last ys, Route (Transition (mag D) Z (AncestorOf (mag D) Z))
         ⟨b.vertex, some (endpointLabel D b.vertex a.vertex)⟩ ys ⟨q.vertex, last⟩ ∧
         ys.map Arrival.vertex = xs.map Arrival.vertex := by
   induction route with
   | nil b =>
-      intro a left incoming edge mark good
+      intro a «left» incoming edge mark good
       exact ⟨some (endpointLabel D b.vertex a.vertex), [], .nil _, rfl⟩
   | @cons b c q rest step tail ih =>
-      intro a left incoming firstEdge mark good
+      intro a «left» incoming firstEdge mark good
       obtain ⟨outgoing, nextIncoming, nextEdge, nextMark, active⟩ := step
       have atB : ActiveAt Z (Activated D Z) b.vertex incoming outgoing := by
         simpa only [mark] using active
@@ -101,10 +101,10 @@ theorem good_weak_route_is_mag {X : Type u} {S : Type v} {L : Type w}
     (good : AllTriples (GoodJoin D Z) (⟨x, none⟩ :: xs)) : ActiveConnection (mag D) Z x y := by
   cases route with
   | nil => exact ⟨none, [], .nil _, nodup⟩
-  | @cons p b q rest first tail =>
-      obtain ⟨left, incoming, firstEdge, mark, _⟩ := first
+  | @cons p b q rest «first» tail =>
+      obtain ⟨«left», incoming, firstEdge, mark, _⟩ := «first»
       obtain ⟨magLast, ys, mappedTail, sameVertices⟩ :=
-        map_after_first D Z tail p left incoming firstEdge mark good
+        map_after_first D Z tail p «left» incoming firstEdge mark good
       refine ⟨magLast, ⟨b.vertex, some (endpointLabel D b.vertex x)⟩ :: ys,
         .cons ?_ mappedTail, ?_⟩
       · exact ⟨endpointLabel D x b.vertex, endpointLabel D b.vertex x,

@@ -52,8 +52,8 @@ theorem noncollider_snoc {V : Type u} {G : MarkedGraph V}
     (active : ¬ (incoming = .head ∧ outgoing = .head)) :
     NoncolliderRoute G a ma (mids ++ [b]) c mc := by
   induction h with
-  | single first => exact .step first active (.single edge)
-  | step first hn tail ih => exact .step first hn ih
+  | single «first» => exact .step «first» active (.single edge)
+  | step «first» hn tail ih => exact .step «first» hn ih
 
 theorem noncollider_reverse {V : Type u} {G : MarkedGraph V}
     (symmetric : ∀ a b ma mb, G.edge a b ma mb → G.edge b a mb ma)

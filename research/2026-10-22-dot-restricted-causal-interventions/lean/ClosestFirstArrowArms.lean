@@ -21,18 +21,18 @@ universe u
 
 theorem reverse_collider_context {V : Type u} (G : MarkedGraph V)
     (laws : AncestralLaws G) (single : SingleEdges G) (Z : V → Prop) (x y : V)
-    {b c : Arrival V} {prefix suffix : List (Arrival V)} {last : Option Mark}
-    (before : Route (RealStep G Z) ⟨x, none⟩ prefix b)
+    {b c : Arrival V} {«prefix» suffix : List (Arrival V)} {last : Option Mark}
+    (before : Route (RealStep G Z) ⟨x, none⟩ «prefix» b)
     (bc : RealStep G Z b c) (following : Route (RealStep G Z) c suffix ⟨y, last⟩)
-    (shortest : Shortest G Z x y ((prefix ++ (c :: suffix)).map Arrival.vertex))
+    (shortest : Shortest G Z x y ((«prefix» ++ (c :: suffix)).map Arrival.vertex))
     (headB : b.incoming = some .head) (atB : ColliderStep G b c) :
-    ∃ right next back terminal,
-      Route (RealStep G Z) ⟨y, none⟩ right b ∧ RealStep G Z b next ∧
-      Route (RealStep G Z) next back ⟨x, terminal⟩ ∧ ColliderStep G b next ∧
-      Shortest G Z y x ((right ++ (next :: back)).map Arrival.vertex) ∧
-      ((⟨y, none⟩ :: (right ++ (next :: back))).map Arrival.vertex) =
-        ((⟨x, none⟩ :: (prefix ++ (c :: suffix))).map Arrival.vertex).reverse ∧
-      ((⟨y, none⟩ :: right).map Arrival.vertex) =
+    ∃ «right» «next» back terminal,
+      Route (RealStep G Z) ⟨y, none⟩ «right» b ∧ RealStep G Z b «next» ∧
+      Route (RealStep G Z) «next» back ⟨x, terminal⟩ ∧ ColliderStep G b «next» ∧
+      Shortest G Z y x ((«right» ++ («next» :: back)).map Arrival.vertex) ∧
+      ((⟨y, none⟩ :: («right» ++ («next» :: back))).map Arrival.vertex) =
+        ((⟨x, none⟩ :: («prefix» ++ (c :: suffix))).map Arrival.vertex).reverse ∧
+      ((⟨y, none⟩ :: «right»).map Arrival.vertex) =
         ((b :: c :: suffix).map Arrival.vertex).reverse := by
   obtain ⟨outgoing, received, edge, markC, activeB⟩ := bc
   obtain ⟨colliderOut, colliderIn, colliderEdge, colliderMark, colliderDetails⟩ := atB
@@ -47,21 +47,21 @@ theorem reverse_collider_context {V : Type u} (G : MarkedGraph V)
     reverse_required_arrival_trace G laws.symmetric Z (AncestorOf G Z) following none trivial
   have backToB : RealStep G Z ⟨c.vertex, rightArrival⟩ b :=
     ⟨received, .head, laws.symmetric _ _ _ _ edge, headB, by simpa only [markC] using compatibleC⟩
-  let right := rightTail ++ [b]
-  have rightRoute : Route (RealStep G Z) ⟨y, none⟩ right b :=
+  let «right» := rightTail ++ [b]
+  have rightRoute : Route (RealStep G Z) ⟨y, none⟩ «right» b :=
     reverseFollowing.append (.cons backToB (.nil b))
-  have rightTrace : ((⟨y, none⟩ :: right).map Arrival.vertex) =
+  have rightTrace : ((⟨y, none⟩ :: «right»).map Arrival.vertex) =
       ((b :: c :: suffix).map Arrival.vertex).reverse := by
     calc
-      ((⟨y, none⟩ :: right).map Arrival.vertex) =
+      ((⟨y, none⟩ :: «right»).map Arrival.vertex) =
           (y :: rightTail.map Arrival.vertex) ++ [b.vertex] := by
-            simp only [right, List.map_cons, List.map_append, List.map_nil, List.cons_append]
+            simp only [«right», List.map_cons, List.map_append, List.map_nil, List.cons_append]
       _ = ((c :: suffix).map Arrival.vertex).reverse ++ [b.vertex] := by rw [followingTrace]
       _ = ((b :: c :: suffix).map Arrival.vertex).reverse := by
             simp only [List.map_cons, List.reverse_cons]
-  have prefixNonempty : prefix ≠ [] := by
+  have prefixNonempty : «prefix» ≠ [] := by
     intro empty
-    subst prefix
+    subst «prefix»
     cases before
     cases headB
   obtain ⟨previous, earlier, prefixSplit, earlierRoute, previousStep⟩ := before.split_last prefixNonempty
@@ -71,42 +71,42 @@ theorem reverse_collider_context {V : Type u} (G : MarkedGraph V)
   obtain ⟨terminal, back, reverseEarlier, _, earlierTrace⟩ :=
     reverse_required_arrival_trace G laws.symmetric Z (AncestorOf G Z) earlierRoute
       (some previousOut) previousReady
-  let next : Arrival V := ⟨previous.vertex, some previousOut⟩
-  have reverseStep : RealStep G Z b next :=
+  let «next» : Arrival V := ⟨previous.vertex, some previousOut⟩
+  have reverseStep : RealStep G Z b «next» :=
     ⟨.head, previousOut, laws.symmetric _ _ _ _ previousEdge, rfl, by
       simpa only [headB, ActiveAt, and_self, if_true] using activatedB⟩
-  have reverseCollider : ColliderStep G b next :=
+  have reverseCollider : ColliderStep G b «next» :=
     ⟨.head, previousOut, laws.symmetric _ _ _ _ previousEdge, rfl, by
       simpa only [headB] using (show Mark.head = .head ∧ Mark.head = .head from ⟨rfl, rfl⟩)⟩
-  have leftTrace : b.vertex :: (next :: back).map Arrival.vertex =
-      ((⟨x, none⟩ :: prefix).map Arrival.vertex).reverse := by
+  have leftTrace : b.vertex :: («next» :: back).map Arrival.vertex =
+      ((⟨x, none⟩ :: «prefix»).map Arrival.vertex).reverse := by
     calc
-      b.vertex :: (next :: back).map Arrival.vertex =
+      b.vertex :: («next» :: back).map Arrival.vertex =
           b.vertex :: (previous.vertex :: back.map Arrival.vertex) := rfl
       _ = b.vertex :: ((⟨x, none⟩ :: earlier).map Arrival.vertex).reverse := by rw [earlierTrace]
-      _ = ((⟨x, none⟩ :: prefix).map Arrival.vertex).reverse := by
+      _ = ((⟨x, none⟩ :: «prefix»).map Arrival.vertex).reverse := by
         simp only [prefixSplit, List.map_cons, List.map_append, List.map_nil, List.cons_append,
           List.reverse_append, List.reverse_cons, List.reverse_nil, List.nil_append, List.singleton_append]
-  have fullTrace : ((⟨y, none⟩ :: (right ++ (next :: back))).map Arrival.vertex) =
-      ((⟨x, none⟩ :: (prefix ++ (c :: suffix))).map Arrival.vertex).reverse := by
+  have fullTrace : ((⟨y, none⟩ :: («right» ++ («next» :: back))).map Arrival.vertex) =
+      ((⟨x, none⟩ :: («prefix» ++ (c :: suffix))).map Arrival.vertex).reverse := by
     calc
-      ((⟨y, none⟩ :: (right ++ (next :: back))).map Arrival.vertex) =
-          ((⟨y, none⟩ :: right).map Arrival.vertex) ++ (next :: back).map Arrival.vertex := by
+      ((⟨y, none⟩ :: («right» ++ («next» :: back))).map Arrival.vertex) =
+          ((⟨y, none⟩ :: «right»).map Arrival.vertex) ++ («next» :: back).map Arrival.vertex := by
             simp only [List.map_cons, List.map_append, List.cons_append]
       _ = ((c :: suffix).map Arrival.vertex).reverse ++
-          (b.vertex :: (next :: back).map Arrival.vertex) := by
+          (b.vertex :: («next» :: back).map Arrival.vertex) := by
             rw [rightTrace]
             simp only [List.map_cons, List.reverse_cons, List.append_assoc, List.singleton_append]
       _ = ((c :: suffix).map Arrival.vertex).reverse ++
-          ((⟨x, none⟩ :: prefix).map Arrival.vertex).reverse := by rw [leftTrace]
-      _ = ((⟨x, none⟩ :: (prefix ++ (c :: suffix))).map Arrival.vertex).reverse := by
+          ((⟨x, none⟩ :: «prefix»).map Arrival.vertex).reverse := by rw [leftTrace]
+      _ = ((⟨x, none⟩ :: («prefix» ++ (c :: suffix))).map Arrival.vertex).reverse := by
         simp only [List.map_cons, List.map_append, List.cons_append, List.reverse_append]
   obtain ⟨reversed, reversedShortest, reversedTrace, _⟩ :=
     reverse_shortest_path G single laws.symmetric Z x y shortest
-  have sameTail : (right ++ (next :: back)).map Arrival.vertex = reversed := by
+  have sameTail : («right» ++ («next» :: back)).map Arrival.vertex = reversed := by
     apply (List.cons.inj ?_).2
     simpa only [List.map_cons] using fullTrace.trans reversedTrace.symm
-  refine ⟨right, next, back, terminal, rightRoute, reverseStep, reverseEarlier,
+  refine ⟨«right», «next», back, terminal, rightRoute, reverseStep, reverseEarlier,
     reverseCollider, ?_, fullTrace, rightTrace⟩
   rw [sameTail]
   exact reversedShortest
