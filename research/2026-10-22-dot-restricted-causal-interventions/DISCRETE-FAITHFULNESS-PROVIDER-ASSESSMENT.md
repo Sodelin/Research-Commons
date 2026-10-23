@@ -38,7 +38,7 @@ To prove one Delta nonzero, it suffices to exhibit *any* parameter evaluation at
 
 An **entirely** 0/1 CPT assignment is not such a witness: every root is deterministic, and induction in a finite topological order makes every descendant deterministic. The joint law is a point mass. Every CI minor then vanishes, including on zero-mass conditioning slices. Thus the boundary strategy must retain genuine randomness; it must not be described as finding a nonzero minor at a Boolean corner.
 
-This reduces the supplier burden without changing the final source class. It does not assert that the necessary boundary witnesses have been constructed for arbitrary active paths. Nor does it permit separately chosen final mechanisms. A real-valued positive witness from a classical theorem also proves the rational-coefficient polynomial nonzero, by evaluation through Q into R.
+This reduces the supplier burden without changing the final source class. The linked hand proof now constructs the required boundary witnesses for arbitrary active paths; the complete formal supplier is still unfinished. The argument does not permit separately chosen final mechanisms. A real-valued positive witness from a classical theorem also proves the rational-coefficient polynomial nonzero, by evaluation through Q into R.
 
 ## 2. The classical mathematical supplier
 
@@ -93,7 +93,7 @@ This component is unelaborated. It assumes its polynomial inputs are nonzero or 
 - **D5:** the rational avoidance core now has proposed source bodies. It cannot be applied causally until D1–D4 supply its real inputs. Any claimed open-neighborhood strengthening remains separate.
 - **D6:** prove the positive selected-law calculation equating I_t independent of x given Z,S=1 with equality of the selected x-given-Z control/regime laws. Selection can reweight I_t; unconditional indicator weights must not be substituted for the conditional ones.
 
-The decisive next proof target is D2 with these binary CPT semantics, not an extra generic game lemma. A boundary-witness construction along an appropriately reduced active-path subgraph is a possible route; its path reduction and binary dependency calculation still require proofs. Until that supplier and the remaining adapters are present and checked, the graph-level result retains its exact-response premise. The selected source class, full target, elementary-query budget interpretation, source-only status, and original lower-family obligations L1–L8 remain unchanged.
+The decisive next formal proof target is D2 with these binary CPT semantics, not an extra generic game lemma. The boundary-witness construction along a reduced active-path subgraph now has the linked hand proof; its path reduction and binary dependency calculation still require complete checked source proofs. Until that supplier and the remaining adapters are present and checked, the graph-level result retains its exact-response premise. The selected source class, full target, elementary-query budget interpretation, source-only status, and original lower-family obligations L1–L8 remain unchanged.
 
 ## Scope correction before publication
 

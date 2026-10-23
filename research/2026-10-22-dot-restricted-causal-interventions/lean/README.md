@@ -156,6 +156,10 @@ The package now includes `G7ResourceGamePort.lean`, copying the exact repaired r
 
 All six modules are source-only candidates, not checked programs or verification certificates. Their exact signatures, derived facts, remaining oracle/faithfulness obligations and provider boundary are in [the interactive handoff](../INTERACTIVE-G7-SOURCE-HANDOFF.md).
 
+## Binary witness source components, 23 October
+
+The twelve new modules from `BinaryCPTPolynomials` through `BinaryCircuitMinor` supply actual proposed proof bodies for the collider-count-first minimum, literal forward splicing, exact reversal, shortest-branch main-path exclusion, ordered two-branch exclusion, original-parent binary CPT construction, exact circuit support, finite cell sums and the nonzero actual CPT minor under explicit conditioning/endpoint equations. They remain unelaborated, and no universal D2 theorem is claimed. The missing trek-to-circuit construction and those conditioning equations are not axioms hidden in the graph/game adapter. See [the exact source handoff](../BINARY-WITNESS-SOURCE-HANDOFF.md) for signatures, API provenance, the narrow static review and the complete remaining physical-source obligations.
+
 ## Remaining exact full-claim dependencies
 
 1. Elaborate and check original arbitrary-size DAG projection and the composed common-source adapter (A1–A4/B1/B9). Genuine DAG source data, route-based latent projection, projected mixed laws/acyclicity, selection heads, exact selected-graph extraction, full-profile membership, two-way retained ancestry, both original/projected active-path directions and original-source root-augmentation commutation now have source proofs. The latent-collider case uses concrete conditioned-descendant detours and retained-only splicing. Equating this internal route representation with a separate library representation is not substituted for the direct semantics theorem; any such library port requires its own explicit equivalence.

@@ -45,4 +45,8 @@ lean_lib RestrictedCausalSource where
     `TwoPhaseRestrictedHistory, `RestrictedBudgetAndHonesty,
     `EffectiveQueryEnumeration, `G7ResourceGamePort, `FiniteQueryPlan,
     `FullClassQueryGame, `RestrictedInteractivePlan, `RestrictedQueryBudgetBound,
-    `RationalPolynomialAvoidance]
+    `RationalPolynomialAvoidance, `BinaryCPTPolynomials,
+    `ColliderMinimalActivePaths, `ActivationBranchDistances, `SafeDirectedBranches,
+    `ColliderSpliceCosts, `DirectedBranchSplices, `ColliderMinimumReversal,
+    `ActivationMainPathExclusion, `ActivationBranchPairSplice, `ActivationBranchPairExclusion,
+    `BinaryBoundaryCircuit, `BinaryCircuitMinor]
