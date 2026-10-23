@@ -1,4 +1,4 @@
-import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink} from './model.mjs';
+import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources} from './model.mjs';
 const $=id=>document.getElementById(id);
 const state={data:null,meta:null,limit:9,selected:decodeURIComponent(location.hash.slice(1)),mode:'all',joins:[]};
 const initial=new URLSearchParams(location.search);
@@ -60,8 +60,9 @@ function renderDetail(){
   section(p,'Where the result stops',c.plain_language.what_cannot_conclude,'limit');
   const exact=el('details');exact.append(el('summary','Exact statement and assumptions'),el('p',c.exact_statement_and_scope));p.append(exact);
   section(p,'Question origin',`${ORIGIN[c.origin.category]??pretty(c.origin.category)}. ${c.origin.detail}`);
-  if(c.origin.source_url)p.append(link('Original published question ↗',c.origin.source_url));
-  else if(c.origin.category==='published_open_problem')p.append(el('p','A direct original-paper link is not indexed on this card; consult its linked source references.','limit'));
+  const literature=literatureSources(c);
+  if(literature.length){const refs=el('ul');for(const ref of literature){const li=el('li');li.append(link(ref.label+' ↗',ref.url),el('small',' · '+pretty(ref.role)));refs.append(li);}p.append(refs);}
+  else if(c.origin.category==='published_open_problem')p.append(el('p','No literature URL is indexed in the origin or prior-work references on this card; consult its source references.','limit'));
   section(p,'Prior work',c.prior_work);section(p,'The contribution here',c.our_contribution);
   section(p,'Novelty / historical priority',c.novelty_status);
   p.append(el('h3','Evidence, kept separate'));
@@ -71,7 +72,7 @@ function renderDetail(){
     if(value?.detail){const more=el('details');more.append(el('summary','Scope'),el('p',value.detail));box.append(more);}ev.append(box);
   }p.append(ev);
   p.append(el('h3','Read the proof, review or result'));
-  const sources=el('ul');for(const s of c.accepted_artifacts){const li=el('li');li.append(link(s.label+' ↗',s.url));sources.append(li);}p.append(sources);
+  const sources=el('ul');for(const s of c.accepted_artifacts.filter(a=>!['prior_work','historical_problem_statement'].includes(a.role))){const li=el('li');li.append(link(s.label+' ↗',s.url),el('small',' · '+pretty(s.role)));sources.append(li);}p.append(sources);
   if(c.completion?.mathematical_claim_complete===true){
     section(p,'Mathematical claim complete',c.remaining_obligation);
     if(c.separate_downstream_or_validation_work)section(p,'Separate downstream or validation work',c.separate_downstream_or_validation_work);

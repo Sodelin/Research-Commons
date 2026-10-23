@@ -26,6 +26,8 @@ export function validate(data) {
     if (!c.id || ids.has(c.id)) throw Error('Missing or duplicate claim identity.');
     ids.add(c.id);
     if (!c.plain_language || !c.evidence || !c.origin || !Array.isArray(c.dependencies) || !Array.isArray(c.accepted_artifacts)) throw Error(`Incomplete canonical card ${c.id}.`);
+    if(c.origin.source_url&&!safeLink(c.origin.source_url))throw Error(`Unsafe origin source on ${c.id}.`);
+    if(c.accepted_artifacts.some(a=>!safeLink(a.url)))throw Error(`Unsafe evidence source on ${c.id}.`);
     for(const k of ['question','what_we_learned','what_it_lets_someone_do','what_cannot_conclude'])
       if(typeof c.plain_language[k]!=='string') throw Error(`Missing ${k} on ${c.id}.`);
   }
@@ -43,7 +45,8 @@ function indexFor(claims) {
     answer:c.plain_language.what_we_learned,scope:c.exact_statement_and_scope,
     downstream:c.separate_downstream_or_validation_work??'',
     context:[c.programme,c.plain_language.what_it_lets_someone_do,c.plain_language.what_cannot_conclude,
-      c.prior_work,c.our_contribution,c.remaining_obligation,c.completion?.display??'',JSON.stringify(c.aliases)].join(' ')})));
+      c.prior_work,c.our_contribution,c.remaining_obligation,c.completion?.display??'',JSON.stringify(c.aliases),
+      literatureSources(c).map(a=>a.label+' '+a.url).join(' ')].join(' ')})));
   indexes.set(claims,index); return index;
 }
 export function search(claims, f={}) {
@@ -71,13 +74,19 @@ export function neighbors(claims, id) {
   return {outgoing:c.dependencies.map(r=>({...r,claim:claims.find(x=>x.id===r.claim_id)})),
     incoming:claims.flatMap(other=>other.dependencies.filter(r=>r.claim_id===id).map(r=>({...r,claim:other})))};
 }
+export function literatureSources(c) {
+  const candidates=[];
+  if(c.origin?.source_url && safeLink(c.origin.source_url))candidates.push({label:'Original published question',url:c.origin.source_url,role:'origin_source'});
+  for(const a of c.accepted_artifacts??[])if(['prior_work','historical_problem_statement'].includes(a.role)&&safeLink(a.url))candidates.push({...a});
+  const seen=new Set();return candidates.filter(a=>{if(seen.has(a.url))return false;seen.add(a.url);return true;});
+}
 export function reusePacket(c, meta, joins=[]) {
   return {claim_id:c.id, question:c.plain_language.question, mathematical_status:c.mathematical_status,
     exact_scope:c.exact_statement_and_scope, completion_evidence:c.accepted_artifacts,
     formal_status:c.evidence.formal, execution_status:c.evidence.execution,
     completion:c.completion??null, genuine_remaining_obligation:c.remaining_obligation,
     separate_downstream_or_validation_work:c.separate_downstream_or_validation_work??null, dependencies:c.dependencies,
-    provenance:{origin:c.origin,prior_work:c.prior_work,contribution:c.our_contribution,novelty:c.novelty_status},
+    provenance:{origin:c.origin,prior_work:c.prior_work,literature_sources:literatureSources(c),contribution:c.our_contribution,novelty:c.novelty_status},
     registry_source:meta, reader_evidence_joins:joins.filter(j=>j.claim_ids.includes(c.id)),
     before_new_work:['Read the actual accepted sources and later corrections, not only this summary.',
       'Match the proposed statement, quantifiers, observations and assumptions to this exact scope.',
@@ -86,5 +95,13 @@ export function reusePacket(c, meta, joins=[]) {
       'Preserve existing owners and holds. Discovery is not permission to run a job.']};
 }
 export function safeLink(url) {
-  try {const u=new URL(url); return u.protocol==='https:' ? u.href : null;}catch{return null;}
+  try {
+    if(typeof url!=='string'||/[\u0000-\u0020]/.test(url))return null;
+    const u=new URL(url);
+    // Adapted from the recovered Atlas reading-core link boundary: source
+    // links never carry credentials. Keep scientific domains extensible.
+    if(u.protocol!=='https:'||u.username||u.password||u.port)return null;
+    if([...u.searchParams.keys()].some(k=>/^(?:token|access_token|auth|authorization|api_key|apikey|secret|password|signature|sig|credential|session|x-amz-signature|x-amz-credential|x-amz-security-token|x-goog-signature|x-goog-credential|googleaccessid)$/i.test(k)))return null;
+    return u.href;
+  }catch{return null;}
 }

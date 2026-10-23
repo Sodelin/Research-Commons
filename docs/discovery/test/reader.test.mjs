@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {validate,search,bucket,neighbors,reusePacket,safeLink} from '../dist/model.mjs';
+import {validate,search,bucket,neighbors,reusePacket,safeLink,literatureSources} from '../dist/model.mjs';
 const data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 const meta=JSON.parse(await readFile(new URL('../dist/source.json',import.meta.url)));
 const card=id=>data.claims.find(c=>c.id===id);
@@ -89,4 +89,38 @@ test('historical schema1.0 completion fallback remains available',()=>{
  assert.equal(result.completion,null);assert.equal(result.separate_downstream_or_validation_work,null);
  assert.equal(result.genuine_remaining_obligation,c.remaining_obligation);
  assert.equal(search([c],{q:'CB-G6-001'})[0].id,c.id);
+});
+
+
+test('NANUQ literature is recovered from canonical prior-work artifacts without inventing origin fields',()=>{
+ const c=structuredClone(card('CB-NANUQ-002'));delete c.origin.source_url;
+ const refs=literatureSources(c);assert(refs.some(a=>a.url==='https://link.springer.com/article/10.1007/s11538-025-01549-4'&&a.role==='prior_work'));
+ assert(!refs.some(a=>a.role==='proof_or_status'));assert.equal(c.origin.source_url,undefined);
+ assert(reusePacket(c,meta).provenance.literature_sources.some(a=>a.url.includes('10.1007/s11538')));
+});
+test('bibliography links deduplicate and retain HTTPS trust boundary',()=>{
+ const c=structuredClone(card('CB-SEQ-001'));const url=c.origin.source_url;
+ c.accepted_artifacts.push({label:'Same original source',url,role:'prior_work'},{label:'Unsafe',url:'javascript:alert(1)',role:'prior_work'});
+ const refs=literatureSources(c);assert.equal(refs.filter(a=>a.url===url).length,1);assert(refs.every(a=>a.url.startsWith('https:')));
+});
+test('literature DOI is searchable through the same canonical provenance adapter',()=>{
+ assert(search(data.claims,{q:'10.1007/s11538-025-01549-4'}).some(c=>c.id==='CB-NANUQ-002'));
+});
+
+
+test('recovered Atlas credential-bearing source-link controls preserve scientific URL support',()=>{
+ assert.equal(safeLink('https://token:secret@example.org/proof'),null);
+ assert.equal(safeLink('https://example.org/proof?access_token=hidden'),null);
+ assert.equal(safeLink('https://example.org:8443/proof'),null);
+ assert.equal(safeLink('https://link.springer.com/article/10.1007/s11538-025-01549-4'),'https://link.springer.com/article/10.1007/s11538-025-01549-4');
+ assert.equal(safeLink('https://arxiv.org/abs/1234.5678?context=math'),'https://arxiv.org/abs/1234.5678?context=math');
+});
+
+
+test('registry validation refuses credential/signed source links before accepting a replacement',()=>{
+ for(const url of ['https://token:secret@example.org/proof','https://example.org/proof?X-Amz-Signature=hidden']){
+  const d=structuredClone(data);d.claims[0].accepted_artifacts[0].url=url;
+  assert.throws(()=>validate(d));
+ }
+ const d=structuredClone(data);d.claims[0].origin.source_url='https://example.org/paper?access_token=hidden';assert.throws(()=>validate(d));
 });
