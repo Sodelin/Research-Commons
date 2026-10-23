@@ -162,6 +162,46 @@ Lookup aliases: finite-fibre decoder, finite-valued semialgebraic lift,
 pure-exponential counter, Jordan repair, actual affine quotient, free binary
 source code, PCP length clock, synchronized readout, all-core alphabet.
 
+## Projective spectral bounds and same-tuple invariant: completed hand proof
+
+G3-PROJECTIVE-SPECTRAL-01 is PROVED BY HAND (not Lean formalized).
+[Complete proof](../2026-10-23-g3-projective-spectral-bound/PROOF.md),
+18659B/SHA9aeaccb27b4979a103ec7adb6e9e5f3483b80ebaf9b553f135090c75e600ca7d;
+[separate status](../2026-10-23-g3-projective-spectral-bound/SOURCE-STATUS.json),
+10647B/SHA29b5e79e016c22ee10927569c2d8b8c9cb410723ac3f44dc2c3b2a425906fdad.
+Author self-audit complete; independent correctness review, formalization
+and scientific execution unperformed. Historical novelty unestablished.
+
+For any finite exchangeable, deletion-consistent CURRENT-token coagulation/
+opaque-graft family, the r-to-s transition norm is at most
+binom(r,s)/(r-s+1)*(b_s-b_r). Equal diagonal values have no connecting
+transition. Thus every kernel is semisimple even at boundary ties/zero
+values, and EVERY spectral projector has row-sum norm<=m! through cap m.
+The bound does not depend on word length, spectral gaps or forest shapes.
+The OLD strict-word semisimplicity proof, projective inverse-chain bound
+and ORDINARY projector estimates are reused; their distinct scopes were
+actually read before this generalization.
+
+For ONE actual paired private word with natural COMMON pair survival C,
+BOTH modes obey b_r>=C^binom(r,2) at EVERY arity. The proof allows unequal
+arms and does not assume a common physical arm clock. This gives a finite
+polynomial inductive invariant R_r>=C^binom(r,2) for the SAME tuple. With
+the OLD actual source/path/finite-template compiler, target disjointness
+for ALL templates is sound unrestricted-size NO; no RCF instance or
+completeness of this family is claimed. In an I-only input C remains latent
+internal bookkeeping, not an extra observed value or clock promise.
+
+Population/register/history operators with same-count changes need their
+actual smaller-current-root receiver. Matrix inverses, logs and fractional
+powers are not physical sources. Bounded projectors do not bound physical
+factorization: the OLD cap2 paired rational family still forces arbitrarily
+large minimum words. Original G3 H/complete NO and G4 remain unresolved.
+Do not reopen the completed boundary/projector proof or call it a full attack.
+
+Lookup aliases: diagonal gap, transversal subset, near-coincident modes,
+boundary zero eigenvalues, square-free kernel, Jordan limit, factorial
+spectral projectors, COMMON-pair all-arity I lower bound, same-bank invariant.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
