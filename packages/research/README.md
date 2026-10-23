@@ -2,7 +2,7 @@
 
 A portable research package built from the canonical claim registry in reuse and dependency order. Completed results are reused; unresolved questions retain their exact statements and obligations.
 
-The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The accepted Lean profile combines the retained 1,613-module graph with 25 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
+The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The current checked Lean library combines the retained1,613-module graph with34 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
 
 ## Build on a development host
 
@@ -23,7 +23,9 @@ cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
 
-The coherent package at [67ef70da](https://github.com/Sodelin/Research-Commons/commit/67ef70da6fe13bce5e43faf028f864b33c2d56e7) **passed**: 1,638 source modules, registry/aggregate, the complete 104,712-declaration owned audit, and all eleven Rust-generated proof documents. The audit found zero owned axioms, nonstandard rows or missing modules. All 67 Rust tests passed in the same [Linux CI run](https://github.com/Sodelin/Research-Commons/actions/runs/39981685853). See [the full receipt](integration/full-profile-verification.json).
+The current coherent library at [3b70210d](https://github.com/Sodelin/Research-Commons/commit/3b70210ded071bbefb58ff70a7b70687b15f2429) **passed**:1,647 source modules plus registry/aggregate, and the complete104,755-declaration/94,531-theorem owned audit. It found zero owned axioms, nonstandard rows or missing modules. All75 Rust tests passed in the same [Linux run](https://github.com/Sodelin/Research-Commons/actions/runs/40003057044). [Current library receipt](integration/coherent-library-verification.json). Its larger14-caller job remains incomplete after hosted shutdown during the hybrid word.
+
+The earlier [67ef70da](https://github.com/Sodelin/Research-Commons/commit/67ef70da6fe13bce5e43faf028f864b33c2d56e7) baseline passed all eleven Rust-generated proof documents and its complete1,638-source library/audit. [Earlier full receipt](integration/full-profile-verification.json). These are source-specific results.
 
 The **per-claim integration gate remains incomplete** and intentionally exits 2 until every required binding has actual verification. A coherent build and accepted component callers do not establish every claim's application or the original full scientific endpoints.
 
@@ -40,6 +42,7 @@ Each listed path has produced a complete proof document from actual Rust output 
 | `source-certificate tree/parallel/infeasible` | Captured original Code/admission/ordered fields; SAME returned positive physical bank, or exclusion of only the supplied cell | [Source/cell](integration/source-cell-verification.json) |
 | `population-certificate edge/ancestral/path` | Actual native population row; total coefficient fibres including zero on absence, original validity/colocation and SAME returned bank | [Population](integration/population-caller-verification.json) |
 | `epoch-certificate` | Four current copies in two original populations; all nine selected endpoint rows, raw witnesses, total coefficients and SAME shared bank | [Mixed epoch](integration/epoch-caller-verification.json) |
+| `completion-certificate` | Complete conditional ancestral input; all12 ordered constant rows, SAME returned rates and passive comb probability1/3 | [Completion/observer](integration/completion-caller-verification.json) |
 | `residual-certificate` | Complete supplied rational ensemble; strict top-k set and residual conservation | [RNA](integration/rna-results-verification.json) |
 
 Run a binary through `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Each emitter keeps its input in RAM and returns a complete proof document or refuses. Rendering alone is not acceptance. Resource failure and failed sufficient certificates remain UNKNOWN or INCONCLUSIVE.
@@ -80,31 +83,18 @@ The qualified-menu component checks finite-original-index algebra. Its actual or
 
 ## Claim integration and remaining work
 
-[claims.json](integration/claims.json) maps canonical IDs to Lean declarations, Rust interfaces and verification. [retained-endpoints.json](integration/retained-endpoints.json) preserves owner-curated hypotheses. Typed G1/G2/G4/G5/G6/G7/Wong/RNA exports reuse existing mathematical results.
+[claims.json](integration/claims.json) maps every canonical ID to its exact Lean/Rust scope and evidence. The current [export receipt](integration/claim-export-verification-v3.json) **passed** at3b70210d/[run40003057044](https://github.com/Sodelin/Research-Commons/actions/runs/40003057044):91 named declarations and real imported-module owners in20 claim bindings,897 source modules and a clean21050-declaration/14358-theorem audit. All75 Rust tests passed.98 claims still lack named exports; other component/native obligations remain explicit.
 
-RNA aliases retain global-positive partition hypotheses, exact conditional random inputs, literal schema guards and BE origins. A schema tree is not executed trace admission. The residual caller owns the full ensemble, including repeated classes and zero weights; it does not assert complete RNA support, a sampler law or concentration.
+G3's new fixed-source polynomial and supplied-certificate bank/grid bindings reuse completed hand results. They do not supply the full RCF/enumerator or physical reduced-witness/count/protected-ID assembly. G4's observer exports retain original opaque-root/register/history hypotheses; they do not prove the full finite determining-test/tomography theorem. [Retained endpoints](integration/retained-endpoints.json) and each preflight preserve the original hypotheses.
 
-Whole-word output, raw-root/completion/readout refinement, full physical source/target/action coverage, AST/history/QE/selector/result-origin joins, and other claim applications remain explicit. Open claims need checked statements; empirical records need evidence interfaces. Completed hand mathematics is not reopened by missing formal or native work.
+The actual `completion-certificate` caller **passed**:12 complete ordered native constant rows at a nonempty original ancestral-root input, total coefficient fibres, the genuine infinite ancestral limit, SAME returned rates and passive unranked comb probability1/3. [Exact receipt](integration/completion-caller-verification.json). It does not construct a legal global prefix or the four-taxon tester wrapper.
 
-The next G7 use-site is the immutable whole-word table to the already retained `wordRows`/controlled/natural/completed receivers. The accepted sparse coefficient/key-union checker and mixed-epoch caller are reused. See [SPARSE-EPOCH-PREFLIGHT.md](integration/SPARSE-EPOCH-PREFLIGHT.md). The explicit renderer API variant is recorded in source-lock.json; the canonical stochastic engines are unchanged.
+The indexed `ResearchCommons.Integration.Word` receiver and its174-source owned audit passed5213 declarations/3104 theorems. It checks complete finite-position coefficient fibres and uses a proved original-variable/native-bank LeftInverse with the SAME physical bank. [Generic receipt](integration/word-core-verification-v2.json). The larger257517-byte NaturalIndependentWord caller at3b70210d ended in hosted shutdown without a coefficient result. Its literal outcome remains UNKNOWN; COMMON and full coherent14-caller closure are not inferred. See [the word preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md).
 
-The next word receiver/context modules and actual `word-certificate independent/common` callers are candidate integration source, pending their own complete check. `ResearchCommons.Integration.Word` compares the entire immutable natural table against retained `naturalWordRows`; `check-word-callers` requires its exact target build. See [the predecessor/successor preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md). These additions are not covered by the earlier accepted 1,638-module receipt.
+NANUQ retains its twelve source/drawing/distinct-set/mean typed exports, without extending CB-NANUQ-001 to the broader all-level CB-NANUQ-002. RNA exports retain positivity, exact conditional random inputs, literal schema guards and BE origins; schema trees are not executed-trace admission.
 
-The typed `ResearchCommons.Claims.NANUQ` export passed its complete877-source selected context, owned audit and actual declaration/owner checks. It reuses CB-NANUQ-001's named source-to-geometry chain without extending it to CB-NANUQ-002's all-level hand result. The [NANUQ preflight](integration/NANUQ-REUSE-PREFLIGHT.md) retains exact source/drawing and distinct-resolution-set hypotheses. Push CI keeps the complete coherent source/audit and all actual callers mandatory; previously accepted isolated targets remain available by explicit workflow dispatch.
+The Rust `check-exports` interface rejects missing dependencies, revalidates source/object digests, runs the complete selected owned audit and checks every actual type/owner. It retains canonical completion and original integration scope. The older17/73 and18/80 receipts remain available; they are not current pending work.
 
-The accepted `check-exports` command verifies every named registry binding against the exact complete compiled object context and prints its full Lean type. It preserves component/candidate statuses and does not change the strict integration gate. See [CLAIM-EXPORT-PREFLIGHT.md](integration/CLAIM-EXPORT-PREFLIGHT.md).
+Whole-word/raw-root/completion/readout refinements, full physical source/target/action coverage, exact AST/history/QE/selector/result origin and the other claim applications remain. Open claims require checked statements; empirical/software records require evidence interfaces. Missing formal/native work does not reopen completed hand mathematics. The strict full-package gate remains incomplete.
 
-The same declaration check can run independently on the exact union of named export dependencies:
-
-```sh
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Exports
-cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
-```
-
-The selected command rejects any context missing even one named export dependency, revalidates all object hashes and performs the complete selected owned audit. This is scoped name/type acceptance, not full-profile or all-claim closure.
-
-At [d0d0184e / run39993399257](https://github.com/Sodelin/Research-Commons/actions/runs/39993399257), the export interface **passed** for73 declarations in17 named claim bindings. The complete877-source context audit checked20395 declarations/13947 theorems with zero owned axioms, nonstandard rows or missing modules; all73 Rust tests passed. [Exact receipt](integration/claim-export-verification.json). The other101 claims and original partial/native obligations remain open integration work.
-
-The next finite-observer integration uses existing source/completion/comb results and the unchanged native completion engine. Candidate target `ResearchCommons.Integration.Completion` and `check-completion-callers` compare complete constant rows with the genuine infinite ancestral law and instantiate the passive selected comb event on the SAME original input/returned bank. Nonempty Copy/all-copy root support remain explicit; empty/nonroot inputs are refused before budget checks. This is not full finite-test spanning/tomography, legal calendar initialization or whole-word root admission. See [COMPLETION-OBSERVER-PREFLIGHT.md](integration/COMPLETION-OBSERVER-PREFLIGHT.md). No current PASS is claimed yet.
-
-The expanded [export receipt](integration/claim-export-verification-v2.json) passed at3ed24ca3/run39998490518:80 named declarations in18 claim bindings,878 source modules and a clean20402-declaration/13947-theorem audit; all75 Rust tests passed. CB-G4-001 gains checked forward components while retaining its full tester/tomography obligation.100 claims still need named exports. The new indexed whole-word and corrected completion receivers are separate candidates until their own checks finish.
+The evidence update changes only records and integration status metadata; executable Rust and Lean bodies are byte-identical to the checked source. It uses GitHub's documented skip marker to avoid repeating the same checks. This adds no CI PASS at the evidence-only head; every receipt names its actual checked source. New source work resumes normal CI.
