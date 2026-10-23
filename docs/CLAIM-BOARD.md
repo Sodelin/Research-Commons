@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.15-wong-deterministic-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.16-rna-owner-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -54,7 +54,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Wong deterministic source recovery — 23 October 2026, 11:20 UTC:** two existing groups now separate [actual-record memoized sample extraction](#cb-wong-002) from the [canonical finite-graph normal form](#cb-wong-003), preserving all 110 prior claim objects and card blocks. Exact sample support, protected sampled ancestors, coordinate-dependent retention and unique-parent/MRCA conditions remain explicit. The extractor and interval-list merger are executable definitions; the whole-graph adapter is noncomputable. Storage idempotence is not full-pipeline idempotence. Fifteen full source/provider bodies match the historical receipts; checks and scoped reviews are recovered, not rerun or counted as new discoveries. No empirical or native-performance claim is added, and the dated 75-card ranking is unchanged.
 
-This register contains **112 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**RNA and owner-transfer source recovery — 23 October 2026, 11:28 UTC:** two existing conditional groups now distinguish the [independent positive-support Gamma class law](#cb-rna-002) from [supplied-owner ancestry transfer](#cb-wong-004), preserving all 112 prior claim objects and card blocks. Gamma retains fixed depth, both zero complements, one common positive gauge and actual classifier agreement; it does not instantiate an RNA executable. The owner result retains its exact ancestry/fibre hypotheses; finite errors relax IAP only, and maximality equivalence is among saturated candidates. Historical source checks are recorded, not rerun. These are recovered results, not new discoveries or whole-programme closure. The original 75-card ranking and separate [dated 110-card top-ten update](SUBJECTIVE-REUSE-UPDATE-110.md) remain unchanged; these two additions have not been ranked.
+
+This register contains **114 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -190,6 +192,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-FEEDBACK-006](#cb-feedback-006) | Preparation and order of limits change a finite-population marker assay | Proved (not Lean formalized) |
 | [CB-WONG-002](#cb-wong-002) | Sample ancestry can be extracted exactly from the actual interval records | Proved; archived Lean check recorded |
 | [CB-WONG-003](#cb-wong-003) | A finite ancestry graph has a precise sample-preserving simplification | Proved; archived Lean check recorded |
+| [CB-RNA-002](#cb-rna-002) | A checked bridge gives exact class probabilities under explicit RNA source assumptions | Proved; archived Lean check recorded |
+| [CB-WONG-004](#cb-wong-004) | A supplied owner map can preserve ancestry properties under explicit conditions | Proved; archived Lean check recorded |
 
 ## Claim cards
 
@@ -5266,7 +5270,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 112 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 114 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -5937,4 +5941,137 @@ This card records a completed conceptual analysis and an **unadopted empirical p
 **Stable key:** wong.MRCA_UNARY_CANONICAL_NORMAL_FORM. **Aliases:** Wong W-B finite deterministic normal form; Wong M07 G05 G06 composed simplification.
 
 </details>
+
+<a id="cb-rna-002"></a>
+### A checked bridge gives exact class probabilities under explicit RNA source assumptions
+**CB-RNA-002 · RNA / E8 / PRISM · independent model and class probabilities**
+
+**Question:** When does a weighted trace model give exactly the probabilities of an independently defined RNA structure class?
+
+**What we learned:** The existing checked theorem gives an exact answer once the trace outputs, their weights and their classifier satisfy explicit source-to-model conditions. Zero-weight traces and structures cause no problem.
+
+**What it lets someone do:** Reuse a precise probability bridge and prove its named implementation assumptions instead of rebuilding normalization or assuming the desired class law.
+
+**What we cannot conclude:** This does not certify an actual RNA executable, thermodynamic implementation, shape classifier, random generator or efficient class-mass algorithm.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Fix finite branch bound b and depth d, arbitrary State, nonnegative real production factors and terminal weights, deterministic successors and a starting state with strictly positive recursively defined partition. Trace b d is the finite sequential branch model; only the starting partition must be positive, and zero child partitions are allowed. Independently fix n A/C/G/U positions and a finite raw Gamma carrier of full pair maps G union A: canonical planar scaffold G, canonical planar extension A, disjoint endpoints between them, inclusive outer-span component-local band density at most two and designated hard-unpaired positions. An independently supplied Option-real energy assigns weight zero to None and exp(-E/(RT)) to finite energies, with R,T>0. RootAdmission supplies a trace-event/output map, positive-trace geometry, lossless rendered pair map, exhaustive coverage and injectivity onto positive-weight Gamma outputs, agreement of actual and paper classifiers, and one fixed positive root/input gauge kappa with traceWeight=kappa*paperWeight(output). For every label in an arbitrary class type with decidable equality, the sum of conditional-product trace probabilities assigned that label equals the selected-class paper-weight sum over the ENTIRE raw Gamma carrier divided by its full partition. Both zero-weight complements are proved harmless; positive-support equivalence is constructed from the separate coverage/uniqueness premises, and the common kappa cancels. No desired probability equality is an admission field. The exact endpoint is UnifiedLean.Source.E8PaperGammaAdmission.admitted_root_selected_class_probability.
+
+**Question origin.** Source-specific formal specification and transport of established finite weighted-trace, probability and RNA-grammar mathematics. PRISM's selected-class/adaptive-sampling motivation is not a claim that a generic normalization theorem was a previously unsolved problem.
+
+**Prior work.** CParty's independently specified constrained ensemble and paper recurrence theorem, HFold's inclusive outer-band convention, PRISM weighted traceback, weighted-hypergraph/ADP methods, finite equivalence/PMF aggregation and standard scale-invariance of normalization retain attribution. The current source theorem does not newly discover generic grammar evaluation or stochastic traceback.
+
+**Our contribution.** The existing October 2 package makes an independent finite Gamma carrier and physical-energy specification explicit, corrects its band-coverage convention before acceptance, constructs the positive-output equivalence from source geometry/coverage/uniqueness, handles zero objects on BOTH sides, uses rendering losslessness in classifier transport and cancels one root-wide positive gauge. This successor subsumes the earlier bridge's whole-paper-positive-codomain restriction; predecessor and continuation are indexed once.
+
+**Novelty.** No new generic-theory novelty is claimed. Exact source-specific historical priority is not established by source recovery, compiler receipts or project acceptance.
+
+**Remaining proof obligation.** None for this exact completed conditional theorem. Constructing an actual RNA-program RootAdmission instance, executable refinement and historical-priority assessment are separate downstream tasks, not missing proofs of the stated implication.
+
+**Separate downstream work.** Actual executed C++/pending-continuation decoding, total stochastic-step bounds, factory membership and complete/unambiguous positive output support remain to be bound to the trace model. The mathematical input does not itself prove C++ TURN/index/memory/resource admission or an implemented DP09/Vienna energy/gauge. Current lane-aware rendering/classifier agreement, numerical/transcendental/selector error, conditional RNG law, efficient inverse-image SUM and adaptive confidence remain separate. Importing the child-adapter NonTerminal datatype does not instantiate those interfaces. The older finite-grid wrapper's stronger positivity assumptions are not silently weakened here. No empirical RNA-folding accuracy is asserted.
+
+**Completion rule.** Reuse the completed conditional theorem and exact source. Missing actual-source instantiation, fresh replay, implementation or empirical validation does not reopen its mathematics; earlier narrower bridge and stronger successor are not counted twice.
+
+**Evidence basis.** Full five-module local-body recovery at Commons b828117eb7e1c4ce0c52e5de02d1faa8819b9b29: E8FiniteTracebackLaw, E8SupportedTracebackLaw, E8PaperObservableBridge, E8SCFG2RuntimeChildAdapter and E8PaperGammaAdmission. All recovered source hashes match archived accepted pins; external mathlib bodies and full historical aggregate replay were not re-audited. Complete source/register/review and receipt records were read. Duplicate/ID/key checks use the fresh 110-card register at b121ad1e68878cceb412d68b99adc6ed9c4cddb3, claims blob 2f7b815f3f5261724d7e21501d0aad3e2b0e13fa. This is recovery of existing mathematics, not a new proof or novelty survey.
+
+**Hand/review evidence.** The October 2 independent coordinating-AI review accepts exact Gamma source 94fe4f26 at its conditional scope, including inclusive coverage, two-sided positive support, one common gauge and actual use of rendering losslessness. The October 23 recovery read all five local import-module bodies and found no discrepancy in the scoped implication. Neither is external human peer review or full executable-model acceptance.
+
+**Formal evidence.** The exact Gamma source SHA256 94fe4f2625e7bad19903dc37dfd5c9c91ac5ad2ab907ef54ce6f79598da9faae has an archived Lean 4.33.1/mathlib 0df444a360eaa60ab8c11dca51a86af692955474 exit-zero component receipt and 24 selected standard-only reports. The separately recorded 268 aggregate excerpt identifies this exact source but is explicitly not the whole aggregate certificate. Five recovered local-module source hashes match their own historical receipts; rebuilt import-object hashes are not spliced into a claimed fresh coherent build.
+
+**Execution evidence.** The recovery read the five complete local modules, 1,245 lines total, and matched their source SHA-256s to saved successful component receipts. Local file/hash/readback checks are not new scientific execution. No Lean/compiler, C++ RNA program, sampler or physical experiment was run.
+
+**Empirical status.** An exact conditional theorem about a specified finite weighted model. It does not validate physical RNA energies, biological folding or measured shape probabilities.
+
+**Accepted artifacts and exact sources:**
+
+- [Independent Gamma definitions, admission and exact class-law proof](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/E8PaperGammaAdmission.lean) (proof source).
+- [Exact Gamma independent scope review](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/INDEPENDENT-GAMMA-ADMISSION-REVIEW.md) (hand review).
+- [Gamma source/energy/observable admission register](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/E8-GAMMA-ADMISSION-REGISTER.md) (proof or status).
+- [Exact Gamma component compiler and selected-axiom receipt](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/COMPONENT-RECEIPT.json) (formal receipt).
+- [Historical268 aggregate excerpt, not full certificate](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/AGGREGATE-268-EXCERPT.json) (formal receipt).
+- [Earlier positive-trace paper bridge reused by the successor](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-supported-paper-1106z/E8PaperObservableBridge.lean) (proof source).
+- [Root-only positivity and zero-child traceback proof](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-source-support-0538z/E8SupportedTracebackLaw.lean) (proof source).
+- [Finite trace definitions, weight sums and conditional-product law](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-grid-traceback-0517z/E8FiniteTracebackLaw.lean) (proof source).
+- [Imported source-family datatype and separate child-normalization adapter](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean) (proof source).
+- [Later reconciled source/paper and classifier acceptance boundaries](https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary) (proof or status).
+
+**Typed connections:**
+
+- [CB-RNA-001](#cb-rna-001), candidate connection: The accepted represented scaffold/partner/root-carrier theorem is an adjacent supplier toward actual source admission. Its composition into a complete executed RootAdmission instance is not established by this class-law theorem, and the parser result is not counted again.
+
+**Stable key:** october.RNA.INDEPENDENT_GAMMA_SUPPORTED_CLASS_LAW. **Aliases:** E8 independent Gamma positive-support class law; E8PaperGammaAdmission.admitted_root_selected_class_probability.
+
+</details>
+
+<a id="cb-wong-004"></a>
+### A supplied owner map can preserve ancestry properties under explicit conditions
+**CB-WONG-004 · Wong/Alexander · conditional owner and ancestry transfer**
+
+**Question:** When can a supplied map from a rich history to organism owners preserve precise ancestry properties?
+
+**What we learned:** Exact ancestry correspondence and finite owner fibres transfer the stated properties under their separate hypotheses. The identical-ancestors property even tolerates finitely many wrong ancestry answers per representative. A merely sound owner map is not enough.
+
+**What it lets someone do:** Check the exact assumptions needed before transferring a graph-level ancestry conclusion, and distinguish a valid conditional theorem from a claim that owners can be inferred from genomic data.
+
+**What we cannot conclude:** This does not infer ownership, validate a biological model or classify species empirically. The finite-error relaxation transfers only the identical-ancestors property; maximality equivalence is restricted to whole-owner, saturated candidates.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** The identical-ancestors property (IAP) means that each member has finitely many descendants or finitely many nondescendants inside the candidate. It is a mathematical graph predicate, not an empirical species label. Let R and E be supplied directed graphs on Nat, let q:Nat→Nat be a supplied owner map, let S be an organism candidate, and let C=q⁻¹(S) contain all rich representatives of those owners. Ancestry means nonempty directed paths. If q is onto, every owner fibre is finite, and ancestry is equivalent for every pair of representatives with different owners, then IAP and reflection agree between C in R and S in E. No uniform fibre bound is required. Reflection means that each candidate member with infinitely many ambient descendants also has infinitely many descendants within the candidate. The exact ancestry hypothesis is both directions for every such representative pair, not mere soundness, exact image edges or an existential lift. Under path soundness alone, an R ancestry path maps to owner equality or E ancestry, and convexity pulls back. With an onto owner map, soundness also transfers a common ancestor downward; weak connectivity descends when S is convex. With onto ownership, exact different-owner ancestry and acyclic E, convexity is equivalent. Adding finite fibres gives descent of the source-defined specieslike predicate, namely nonempty induced-undirected connectivity plus IAP plus ancestral convexity. Adding internal weak connectivity of every owner fibre gives specieslike equivalence on saturated candidates C. Under those stronger premises, target maximality is equivalent to rich maximality among all saturated inverse-image candidates. Unrestricted rich maximality of a saturated C also descends. The reverse implication to unrestricted rich maximality is not asserted. Neither the full biosphere/date/child-count conditions nor the fixed founder-window property is automatically transported. The later finite-error extension proves IAP(R,C) iff IAP(E,S) assuming only onto q, finite fibres and, for each a∈C, finitely many b∈C whose R-ancestry answer differs from E-ancestry(q(a),q(b)). The finite error set and its size may vary with a; no common bound is needed. Errors between different owners are permitted and no agreement outside C is required. This IAP theorem needs neither acyclicity, soundness nor connected fibres. It does not transfer reflection, convexity, connectivity, maximality or specieslike status under those relaxed premises. “Finite errors” refers to transitive ancestry answers, not finitely many edited immediate-parent edges. A proved countercontrol fixes one infinite connected rich fork history and identity ownership. Both the fork pedigree and a chain pedigree are sound interpretations, with onto singleton fibres and the stated natural/real-date biosphere properties; the chain is whole-population specieslike and the fork fails IAP. It shows why soundness cannot replace ancestry equivalence. It is an abstract ancestry countermodel, not identical DNA distributions under a specified diploid inheritance law. The same source also composes the previously indexed finite-gARG opposite-completion theorem with elementary observation-fibre recovery to show that arbitrary deterministic coarsening cannot remove that existing ambiguity. This is credited reuse of CB-GENOME-001, not another newly counted obstruction. The graphs, owners and candidate are mathematical inputs. A finite sampled ARG cannot be onto an infinite organism history. An R path after coordinate erasure can switch loci and need not represent one DNA segment. No owner inference, biological validity, observation likelihood, effective decision procedure or empirical species assignment follows.
+
+**Origin.** project posed. The existing Samuel Wong programme separates a supplied genome/cell owner projection from the extra hypotheses required to transfer Alexander's ancestry predicates. Its ledger labels these as elementary conditional extensions, not theorems attributed to the source papers. This is archival recovery of completed work.
+
+**Prior work.** Credit Alexander's stated identical-ancestors, reflection and specieslike definitions; Wong and coauthors' genome/cell representation; elementary finite-set calculus, path projection and observation-fibre factorization; and Lean/Mathlib. Gravel–Steel's model-specific ghost-ancestor work and Thatte's model-specific statistical identifiability are credited by the original source ledger as distinct prior work, not as suppliers of the strong owner hypothesis. The original author reports checking those papers; the located bounded source reviewer did not independently recheck those two citations. Historical novelty is not adjudicated.
+
+**Our contribution.** The existing Samuel source supplies the exact conditional ancestry-transfer hierarchy, its candidate-local finite-disagreement strengthening for IAP, the saturated-maximality qualification and a countercontrol against replacing ancestry equivalence with soundness. Its deterministic coarsening consequence explicitly reuses the already indexed opposite-completion supplier. This card restores completed authorship and historical checking, not new derivation or priority.
+
+**Novelty.** Historical novelty is not adjudicated. Classical suppliers and source definitions retain attribution; archival recovery creates neither new proof authorship nor an empirical result.
+
+**Remaining proof obligation.** None identified for the exact conditional statements in the bounded source recovery. Missing biological admission, owner inference, broader transport or fresh execution does not reopen these completed theorems.
+
+**Separate downstream work.** Establishing the supplied owner/ancestry hypotheses in a specific biological or statistical model; inference of owners from observations; likelihood-level or empirical species identification; transport of biosphere dates, child counts and fixed founder-window conditions; a finite-error theorem for reflection, convexity, connectivity, maximality or specieslike status; unrestricted rich-maximality equivalence; and native implementation remain separate. No such downstream result is claimed here.
+
+**Completion rule.** Reuse the exact completed conditional statement. Historical formal checking, bounded source-correspondence review and whole-proof independent review are different evidence levels. Unestablished model premises or later implementation work do not reopen its proof.
+
+**Evidence basis.** Full-body/source recovery at e2502c82ab9a77c00543932f775a71e5374221f7, with exact final historical source binding. Fresh insertion-only ID/key/alias comparison uses all 112 current claim objects at Commons 21ff917bdd0154376fc94d2a78eef63e6cb40123, claims blob 85ab95b98c3f231e0db6f116223528021ff42990, including published W-B cards 002/003. Relevant genome, memory, population, Alexander, Wong and transfer scopes were compared in the accepted recovery report. The accepted W-C grouping is one conditional theorem hierarchy; reused finite-completion and elementary providers are not counted as new groups.
+
+**Evidence:**
+- **Hand:** Eight complete source/provider bodies were read, totaling 1,731 lines, plus the two actual called ProductiveCore proof bodies; WongAlexander's full provider body was already read in W-B and reused. The archived SOURCE-REVIEW reports a bounded independent statement/source-correspondence check, not an independent whole-proof or compiler check. No separate whole-proof review of the robust extension was located in this bounded evidence set. The nearby COMBINED-STATEMENT-REVIEW concerns W-A's stochastic recorder and is not assigned to this theorem. Current recovery is bounded coordinating AI source review, not human/external peer review, a full 77-module transitive review or a full primary-paper reread.
+- **Formal:** All nine freshly retrieved source-file hashes, including the partly read ProductiveCore supplier, match the final combined historical receipt. Both actual bridge/robust modules and all 15 selected endpoint axiom reports match final PASS_LOCAL_EXACT_COMMIT at proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, checked 2026-09-27T04:15:54.070684+00:00, with Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. The final release records 77 project import-closure modules and 415 selected reports; the 15 here overlap that total and include helpers/reused results. Three bridge endpoints use no axioms; the others use only propext, Classical.choice and Quot.sound. Recorded compiler exits are zero. Earlier 34/35-module source snapshots marked pending integrated commit are superseded for these matching bytes by the final exact-commit receipt. The written swapped-vertices strict-weakening example is not promoted into a separately checked Lean endpoint.
+- **Execution:** Historical source/object/log identities, selected axiom logs and recorded compiler exits were inspected. This recovery performed document/source integrity checks only, not a fresh compilation, scientific execution, native implementation test, likelihood calculation or empirical reproduction.
+- **Empirical:** Conditional mathematical graph statements and abstract countercontrols, not a validated genome-to-pedigree model, empirical species classifier or observed biological experiment.
+
+**Accepted artifacts and exact sources:**
+- [Exact owner-map IAP transfer](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L125) (proof source).
+- [Reflection transfer](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L142) (proof source).
+- [Specieslike equivalence with connected fibres](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L332) (proof source).
+- [Saturated-maximality equivalence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L352) (proof source).
+- [Stronger finite-error IAP transfer](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeRobust.lean#L26) (proof source).
+- [Fixed-owner soundness countercontrol](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L421) (proof source).
+- [Reused finite-coarsening consequence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L464) (proof source).
+- [Full original statement and assumption hierarchy](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/EXPLANATION.md) (proof or status).
+- [Finite-error scope and written strict-weakening example](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ROBUST-IAP.md) (proof or status).
+- [Bounded independent source review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/SOURCE-REVIEW.md) (hand review).
+- [Exact attribution and ownership ledger](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ledger.json) (proof or status).
+- [Robust extension's exact scope ledger](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/robust-ledger.json) (proof or status).
+- [Final exact-commit acceptance](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json) (formal receipt).
+- [Exact source/object/log binding](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json) (formal receipt).
+- [Exact path-soundness provider](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/HistoryProjection.lean) (proof source).
+- [Reused finite-completion supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FiniteGenomeIdentifiability.lean) (proof source).
+- [Elementary observation-fibre supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/ObservationPrediction.lean) (proof source).
+
+**Typed connections:**
+- [CB-GENOME-001](#cb-genome-001), reused theorem: Only the finite-gARG deterministic-coarsening consequence imports the already indexed opposite_compatible_completions result, composed with observation-fibre recovery. It does not supply the positive owner-transfer hypotheses and is not counted again.
+- [CB-POPULATION-003](#cb-population-003), reused theorem: Only two elementary proofs in its ProductiveCore source, weakReach_mono_set and descendant_weakReach_convex, are used for connectivity transport. This is not a dependency on the full productive-pruning or boundary-repair theorem.
+
+**Stable key:** wong.CONDITIONAL_OWNER_ANCESTRY_TRANSFER. **Aliases:** Wong W-C owner-ancestry transfer; WongPedigreeBridge and WongPedigreeRobust.
+
+</details>
+
 
