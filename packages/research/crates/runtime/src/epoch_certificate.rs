@@ -39,7 +39,7 @@ fn sparse(polynomial:&parity_solver::polynomial::Polynomial,variables:&[Location
  }
  Ok(format!("[{}]",parts.join(", ")))
 }
-fn snapshot(out:&mut String,context:&Context,value:&Snapshot,label:&str,limits:RenderLimits)
+pub(crate) fn snapshot(out:&mut String,context:&Context,value:&Snapshot,label:&str,limits:RenderLimits)
  ->Result<(),Error>{
  let source=retained::render_snapshot_declarations(context,value,label,limits).map_err(Error::Render)?;
  let source=crate::population_certificate::repair_literal_snapshot(source,context,value,label).map_err(Error::Validity)?;

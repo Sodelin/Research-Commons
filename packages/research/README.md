@@ -2,7 +2,7 @@
 
 A portable research package built from the canonical claim registry in reuse and dependency order. Completed results are reused; unresolved questions retain their exact statements and obligations.
 
-The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The Lean package combines the retained 1,613-module graph with 25 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
+The pinned registry contains **118 claims**, with 75 reuse-rated and 43 unranked claims, at `447e188def18d91133260f14baf9bdc8ffd5b4df`. No rating or scientific completion field is invented. The accepted Lean profile combines the retained 1,613-module graph with 25 integration modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
 
 ## Build on a development host
 
@@ -86,3 +86,5 @@ RNA aliases retain global-positive partition hypotheses, exact conditional rando
 Whole-word output, raw-root/completion/readout refinement, full physical source/target/action coverage, AST/history/QE/selector/result-origin joins, and other claim applications remain explicit. Open claims need checked statements; empirical records need evidence interfaces. Completed hand mathematics is not reopened by missing formal or native work.
 
 The next G7 use-site is the immutable whole-word table to the already retained `wordRows`/controlled/natural/completed receivers. The accepted sparse coefficient/key-union checker and mixed-epoch caller are reused. See [SPARSE-EPOCH-PREFLIGHT.md](integration/SPARSE-EPOCH-PREFLIGHT.md). The explicit renderer API variant is recorded in source-lock.json; the canonical stochastic engines are unchanged.
+
+The next two modules and actual `word-certificate independent/common` callers are candidate integration source, pending their own complete check. `ResearchCommons.Integration.Word` compares the entire immutable natural table against retained `naturalWordRows`; `check-word-callers` requires its exact target build. See [the predecessor/successor preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md). These additions are not covered by the earlier accepted 1,638-module receipt.

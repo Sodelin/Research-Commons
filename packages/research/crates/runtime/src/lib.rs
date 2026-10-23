@@ -72,3 +72,5 @@ mod tests {
         assert!(matches!(compile(&p, &b, &[], false, Limits::default()), Err(Error::Invalid(_))));
     }
 }
+
+pub mod word_certificate;

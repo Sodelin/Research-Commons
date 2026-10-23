@@ -16,14 +16,16 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let population_callers=scope=="population-certificate-callers";
  let residual_callers=scope=="residual-certificate-callers";
  let epoch_callers=scope=="epoch-certificate-callers";
- let source_only=scope=="original-source-callers" || target_audit || population_callers || residual_callers || epoch_callers;
+ let word_callers=scope=="word-certificate-callers";
+ let source_only=scope=="original-source-callers" || target_audit || population_callers || residual_callers || epoch_callers || word_callers;
  let mut callers=if source_only {Vec::new()} else {vec![
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
     ("AffineUNSAT","affine-certificate",Some("unsat"))]};
  if project=="lean" && !target_audit && !residual_callers {
-  callers.push(("OriginalTreeBank","source-certificate",Some("tree")));
-  if !population_callers && !epoch_callers {
+  if !word_callers { callers.push(("OriginalTreeBank","source-certificate",Some("tree"))); }
+  if word_callers { callers.push(("OriginalParallelBank","source-certificate",Some("parallel"))); }
+  else if !population_callers && !epoch_callers {
    callers.extend([("OriginalParallelBank","source-certificate",Some("parallel")),
     ("OriginalCellExclusion","source-certificate",Some("infeasible"))]);
   }
@@ -32,6 +34,10 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
     ("AncestralPopulation","population-certificate",Some("ancestral")),
     ("PathPopulation","population-certificate",Some("path"))]);
   }
+ }
+ if word_callers || scope=="full-profile-callers" {
+  callers.extend([("NaturalIndependentWord","word-certificate",Some("independent")),
+    ("NaturalCommonWord","word-certificate",Some("common"))]);
  }
  if epoch_callers || scope=="full-profile-callers" {
   callers.push(("MixedPopulationEpoch","epoch-certificate",None));
@@ -80,7 +86,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
     if !audit[field].as_array().is_some_and(|v|v.is_empty()){return Err(format!("caller audit rejected {field}"));}
  }
  let receipt=json!({"profile":scope,"certificates":records,"owned_axiom_audit_passed":true,
-    "scope":if epoch_callers {"Particular full mixed-population native epoch table on the same original source/shared physical bank, all selected coefficient fibres and explicit original edge-then-ancestral order. Whole word/raw completion/readout, universal native/parser, physical census/action/target/QE joins remain separate."} else if residual_callers {"Particular complete supplied finite ensemble, same raw weights/class map, strict residual top-k set and conservation. Actual RNA support/sampling/class-mass computation, simultaneous stochastic events and universal native refinement remain separate."} else if population_callers {"Particular total ordered-copy population tables on the same original source; any positive population rates/durations. Whole epoch/word, parser/native universal refinement, global label/readout, history/source/action/QE joins are separate."} else if target_audit {"Only the exact target dependency closure and owned declarations; no particular native table/input/result/word/readout is certified."} else {"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."}});
+    "scope":if word_callers {"Particular complete natural word tables on the same original hybrid source and returned bank; original parent0/parent1 order, all selected endpoint/register fields, total coefficient fibres and once-drawn register retained in BOTH mode examples. No whole-calendar/readout, completion, universal parser/native/provider/action/target/QE closure."} else if epoch_callers {"Particular full mixed-population native epoch table on the same original source/shared physical bank, all selected coefficient fibres and explicit original edge-then-ancestral order. Whole word/raw completion/readout, universal native/parser, physical census/action/target/QE joins remain separate."} else if residual_callers {"Particular complete supplied finite ensemble, same raw weights/class map, strict residual top-k set and conservation. Actual RNA support/sampling/class-mass computation, simultaneous stochastic events and universal native refinement remain separate."} else if population_callers {"Particular total ordered-copy population tables on the same original source; any positive population rates/durations. Whole epoch/word, parser/native universal refinement, global label/readout, history/source/action/QE joins are separate."} else if target_audit {"Only the exact target dependency closure and owned declarations; no particular native table/input/result/word/readout is certified."} else {"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."}});
  fs::write(root.join("build").join(scope).join("caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
     .map_err(|e|e.to_string())?;
  println!("{receipt}");
@@ -235,6 +241,10 @@ fn run() -> Result<()> {
    let selected=checked_target(&root,"ResearchCommons.Claims.RNA")?;
    check_callers_at(&root,"lean",&selected,"residual-certificate-callers")?;
   },
+  "check-word-callers"=>{
+   let selected=checked_target(&root,"ResearchCommons.Integration.Word")?;
+   check_callers_at(&root,"lean",&selected,"word-certificate-callers")?;
+  },
   "check-epoch-callers"=>{
    let selected=checked_target(&root,"ResearchCommons.Integration.Epoch")?;
    check_callers_at(&root,"lean",&selected,"epoch-certificate-callers")?;
@@ -252,7 +262,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-residual-callers|check-epoch-callers|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-residual-callers|check-epoch-callers|check-word-callers|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }
