@@ -44,4 +44,5 @@ lean_lib RestrictedCausalSource where
     `OrderedFamilyAgreement, `RestrictedHistoryCompleteness,
     `TwoPhaseRestrictedHistory, `RestrictedBudgetAndHonesty,
     `EffectiveQueryEnumeration, `G7ResourceGamePort, `FiniteQueryPlan,
-    `FullClassQueryGame, `RestrictedInteractivePlan, `RestrictedQueryBudgetBound]
+    `FullClassQueryGame, `RestrictedInteractivePlan, `RestrictedQueryBudgetBound,
+    `RationalPolynomialAvoidance]
