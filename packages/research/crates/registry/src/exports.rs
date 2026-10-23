@@ -35,9 +35,6 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
   for declaration in declarations {
    let d=declaration.as_str().ok_or("non-string export declaration")?;
    name(d)?;
-   if !d.starts_with(&(module.to_owned()+".")){
-    return Err(format!("export {d} is outside declared module {module}"));
-   }
    if !local.insert(d){return Err(format!("duplicate declaration {d}"));}
    ds.push(d.to_owned());
   }
@@ -48,15 +45,33 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
  if ids!=canonical_ids{
   return Err("export integration does not cover canonical IDs".into());
  }
- let mut document=String::from("-- Public declaration interface, not a new proof or algorithm.\n");
+ let mut document=String::from("-- Public declaration interface, not a new proof or algorithm.\nimport Lean.Util.CollectAxioms\n");
  for module in &imports{document.push_str(&format!("import {module}\n"));}
- document.push_str("\nnamespace ResearchCommons.Generated.ClaimExports\n");
+ document.push_str("\nopen Lean Elab Command\nnamespace ResearchCommons.Generated.ClaimExports\n");
  for claim in &claims {
   for declaration in claim["declarations"].as_array().ok_or("invalid planned declarations")?{
    let d=declaration.as_str().ok_or("invalid planned declaration")?;
    document.push_str(&format!("#check @{d}\n"));
   }
  }
+ document.push_str("run_cmd do\n  let environment ← getEnv\n  let requested : Array (String × Name × String) := #[\n");
+ let mut records=Vec::new();
+ for claim in &claims{
+  for declaration in claim["declarations"].as_array().ok_or("invalid ownership declarations")?{
+   let id=serde_json::to_string(claim["claim_id"].as_str().ok_or("invalid ownership ID")?).map_err(|e|e.to_string())?;
+   let owner=serde_json::to_string(claim["module"].as_str().ok_or("invalid ownership module")?).map_err(|e|e.to_string())?;
+   let d=declaration.as_str().ok_or("invalid ownership declaration")?;
+   records.push(format!("    ({id}, ``{d}, {owner})"));
+  }
+ }
+ document.push_str(&records.join(",\n"));
+ document.push_str("\n  ]\n");
+ document.push_str("  for (id, declaration, expected) in requested do\n");
+ document.push_str("    let some index := environment.getModuleIdxFor? declaration | throwError m!\"Missing owner for {id}: {declaration}\"\n");
+ document.push_str("    let actual := environment.header.moduleNames[index.toNat]!.toString\n");
+ document.push_str("    unless actual == expected do\n");
+ document.push_str("      throwError m!\"Wrong export owner for {id}: {declaration}, expected {expected}, actual {actual}\"\n");
+ document.push_str("  logInfo m!\"Verified {requested.size} exact claim export owners\"\n");
  document.push_str("end ResearchCommons.Generated.ClaimExports\n");
  if document.len()>262144{return Err("claim export document limit".into());}
  Ok(json!({"schema":1,"claims":claims,"unbound_claims":unbound,
@@ -76,11 +91,18 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
   assert_eq!(p["unbound_claims"],json!(["B"]));
   assert!(p["document"].as_str().unwrap().contains("#check @ResearchCommons.Claims.A.endpoint"));
  }
- #[test]fn declarations_cannot_inject_source_or_escape_the_named_module(){
+ #[test]fn declarations_cannot_inject_source(){
   let(c,mut b)=data();
-  for bad in ["ResearchCommons.Claims.A.endpoint\naxiom forged : False","Other.endpoint"]{
-   b["claims"][0]["lean"]["declarations"]=json!([bad]);assert!(plan(&c,&b).is_err());
-  }
+  b["claims"][0]["lean"]["declarations"]=json!(["ResearchCommons.Claims.A.endpoint\naxiom forged : False"]);
+  assert!(plan(&c,&b).is_err());
+ }
+ #[test]fn module_ownership_is_checked_in_lean_not_guessed_from_namespace(){
+  let(c,mut b)=data();
+  b["claims"][0]["lean"]["declarations"]=json!(["ResearchCommons.Other.endpoint"]);
+  let p=plan(&c,&b).unwrap();let source=p["document"].as_str().unwrap();
+  assert!(source.contains("(\"A\", ``ResearchCommons.Other.endpoint, \"ResearchCommons.Claims.A\")"));
+  assert!(source.contains("environment.getModuleIdxFor? declaration"));
+  assert!(source.contains("unless actual == expected"));
  }
  #[test]fn duplicate_canonical_identity_is_not_collapsed(){
   let(mut c,b)=data();c["claims"].as_array_mut().unwrap().push(json!({"id":"A"}));
