@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.17-rna-interpreter-certificate-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.18-rna-schema-grid-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -58,7 +58,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **RNA interpreter and certificate source recovery — 23 October 2026, 11:49 UTC:** two existing groups now separate the [ordered weighted interpreter](#cb-rna-003) from [strict selected-class certificates](#cb-rna-004), preserving all 114 prior claim objects and card blocks. Exact occurrence multiplicity, earlier-child scheduling and callback-frame conditions are explicit. The certificate requires valid bounds on every unseen class, or the exact residual of one finite weighted ensemble; data-selected-time soundness assumes an already valid all-time event. These are recovered conditional results, not new generic theory, an actual class-SUM engine, discovery/termination or empirical RNA validation. Archived checks are recorded, not rerun. The original 75-card ranking and separate [dated 110-card top-ten update](SUBJECTIVE-REUSE-UPDATE-110.md) are unchanged; these two additions are not ranked.
 
-This register contains **116 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**RNA schema and grid source recovery — 23 October 2026, 12:09 UTC:** two existing groups now index the [bounded root decoder and BE ownership](#cb-rna-005) and [exact midpoint-grid sampling contract](#cb-rna-006), preserving all 116 prior claim objects and card blocks. The former consumes a supplied schema tree; the latter retains all-state/all-depth positive partitions, whole-trace/output equivalence, common continuations, conditional uniformity and total sequential-step fuel. N counts grid points; Sample_V bounds are local only. The supported-root Gamma theorem is not an automatic upgrade of the older grid wrapper. These are recovered completed conditional results and archived checks, not new generic theory, an implemented sampler or empirical RNA validation. Both dated subjective rankings, G5 guides, reader and roadmap remain unchanged; these additions are not ranked.
+
+This register contains **118 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -199,6 +201,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 
 | [CB-RNA-003](#cb-rna-003) | A checked table-filling interpreter sums every ordered derivation under explicit conditions | Proved; archived Lean check recorded |
 | [CB-RNA-004](#cb-rna-004) | Certify a leading class set without calculating every class | Proved; archived Lean checks recorded |
+| [CB-RNA-005](#cb-rna-005) | A checked derivation-tree model bounds coordinates and tracks pair ownership | Proved; archived Lean checks and later selected-closure evidence |
+| [CB-RNA-006](#cb-rna-006) | Bound the sampling bias introduced by an exact finite grid | Proved; archived Lean checks recorded |
 
 ## Claim cards
 
@@ -5275,7 +5279,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 116 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 118 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -6210,5 +6214,155 @@ This card records a completed conceptual analysis and an **unadopted empirical p
 - [CB-RNA-002](#cb-rna-002), candidate connection: The independent Gamma theorem identifies an intended class law only after its own source admission is instantiated. It is an adjacent supplier for a future certificate application, not a direct import or proof of actual class-SUM computation, sampler coverage or termination. The class-law bridge is not counted again.
 
 **Stable key:** october.RNA.SELECTED_CLASS_STRICT_CERTIFICATES. **Aliases:** E8 deterministic top-k and stability certificates; E8 exact finite residual class-mass certificate; E8DeterministicTopKCertificate.interval_certificate_topK; E8ExactResidualMass.exact_residual_topK.
+
+</details>
+
+<a id="cb-rna-005"></a>
+### A checked derivation-tree model bounds coordinates and tracks pair ownership
+**CB-RNA-005 · RNA / E8 / PRISM · root-schema source interfaces**
+
+**Question:** What can be guaranteed about positions and fixed-pair origins before claiming that a complete RNA program is correct?
+
+**What we learned:** An existing checked model converts every parent occurrence in a supplied finite derivation tree to exact bounded coordinates. Local endpoint-origin facts also establish partner ownership of every reached BE outer and anchor pair, including leaves whose own rule does not check ownership.
+
+**What it lets someone do:** Reuse the coordinate decoder and ownership invariant, then focus source validation on the actual trace, local rules and partner-table correspondence instead of deriving these completed lemmas again.
+
+**What we cannot conclude:** It does not prove that arbitrary C++ runs instantiate the tree, that a valid execution schedule or uniform runtime bound follows, or that the output has the intended physical RNA probability.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean checks and later selected-closure evidence.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Fix an arbitrary partner: Int→Int and an individual finite SchemaTree whose nodes carry a RuleId, split fields, ValidItemKey, the literal RuleFamily dispatch and numeric SourceGuard. Child trees are indexed by slots of the exact ordered normalizedChildren list over all 17 nonterminal families and 57 rules, so repeated equal child keys do not merge occurrences. The boundary supplier derives child.j≤parent.j. For rootKey n=W(1,n), boundedEvents/rootEvents recursively construct the preorder parent-event list, converting primary coordinates x to (x−1).toNat in Fin n under derived 1≤x≤n, with an exact one-based round trip; family and primary coordinates are preserved. No clipping or assumed all-descendant bound is used. SourceEvent records only the family and primary pair, not a certified full emitted-output or BE-anchor serialization. Separately, define PartnerPair(i,j) by partner(i)=j OR partner(j)=i, without an involution assumption. If every node satisfies the accepted primitive OriginGuard assignments/checks, root_tree_be_owned proves AllBEOwned: both outer and anchor pairs of every reached BE node satisfy PartnerPair. These local origin facts are not the whole-tree conclusion; same-anchor BE base leaves inherit caller ownership. Normalization cannot create BE through the VP_DIRECT→VP alias. These are two linked completed conclusions on one schema interface, not a newly proved named conjunction theorem. The supplied finite tree is weaker than actual factory membership/execution, and eventsFromDecodedRoot still takes the trace-to-tree function as data.
+
+**Question origin.** Source-specific application of established finite-tree induction, bounds propagation, coordinate conversion and invariant preservation to the existing CParty/SCFG2 rule architecture. This is recovery of completed October 2 mathematics, not a new generic grammar or RNA theorem.
+
+**Prior work.** Finite recursive syntax, slot-preserving traversal, ordinary integer/finite-index arithmetic, inductive invariants and the existing CParty/SCFG2 child-normalization and rule families are prior methods and source architecture. The original package also situates its boundary contract within established weighted-hypergraph and bottom-up dynamic-programming invariants. The current recovery does not claim new generic sampling theory or independently establish historical novelty.
+
+**Our contribution.** The existing source-shaped formalization derives exact root-event bounds from named local guards and derives whole-tree BE ownership from primitive endpoint origins, retaining repeated child slots and the caller-ownership treatment of unchecked same-anchor leaves. Historical independent source review checks the actual public endpoint assignments. This recovery restores the later acceptance and aggregate evidence and distinguishes the already completed represented parser relation from the remaining executable-source join.
+
+**Novelty.** No generic mathematical novelty is claimed. Exact historical priority is not established by source recovery, formal receipts or project acceptance.
+
+**Remaining proof obligation.** None for the two exact completed conditional schema conclusions. Actual generated/executed trace admission, numerical implementation and broader RNA-model claims are separate downstream obligations, not missing proofs of these statements.
+
+**Separate downstream work.** The actual C++/ideal-source trace must instantiate each slot tree, local family/validity/numeric/origin fact, factory membership and total continuation fuel. RightProgress explicitly permits a same-right-endpoint BE child, so the right-bound theorem is not an acyclic schedule, interval-containment or RNA003 EarlierChildren theorem. The finite tree is supplied; neither a finite universe of trees nor a uniform executable runtime is proved. CB-RNA-001 already establishes the represented scanner/partner-to-independent-scaffold relation; identification with actual C++ strings, returned vectors, context reads, helpers and arithmetic/resource domains remains separate. Canonical/fresh/planar/density-two RNA output, exhaustive/unambiguous support, physical weights/root gauge, emitted rendering/current classifier, probabilities, numeric/RNG fidelity and empirical validation do not follow from bounded coordinates or partner ownership alone.
+
+**Completion rule.** Reuse the completed conditional schema statements. Historical pending paragraphs are superseded at the stated later scope. Missing actual-source instantiation, a fresh build or broader RNA correctness does not reopen these proofs; grouped conclusions and formal report counts are not discovery counts.
+
+**Evidence basis.** Full bounded recovery of the exact source modules and named review/receipt records at Commons 7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68. New formal-body reading: 458 lines, plus the already-read 240-line direct normalization supplier; Gamma's complete prior recovery is not counted again. Both public C++ source hashes match the accepted review, with exact ranges itemized in the recovery manifest. Fresh comparison uses 116 cards at d71ea2f3c2f9d1dedb80fcf97c3c27e9fcb4ea90, claims blob fc9eed30fbd512f32683eac66f201497233c35a9, and preserves RNA001–004. Source, historical formal checking, located versus reported independent review and actual implementation remain separate.
+
+**Hand/review evidence.** Three complete bodies were freshly read: ProviderBoundaryContract (223 lines), RootEventDecoder (105) and BEOwnership (130), totaling 458. The exact 240-line child adapter was fully read in the preceding interpreter recovery and reused; only Gamma's needed event/interface definitions were re-inspected. The located independent October 2 BE review accepts source 0927703d and the actual cited public origin ranges. Decoder acceptance is explicitly documented by its dated 13:30 register update; no separate decoder-only independent review body was located in this bounded named packet. Current work is bounded AI source/scope review, not external human review or a full transitive audit.
+
+**Formal evidence.** Decoder SHA256 7756cac41707ad6109db681d4758ad9f1f2556227984c2df6d8fc21605b81e22 and ownership 0927703d009a87ed53c3ab3a68c0b104cac0637fca0d752f6a731fea870187bb match historical exit-zero Lean 4.33.1 / Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 component receipts and exact raw logs. Five decoder reports include three theorems and two recursive functions; ownership has four theorem reports, standard axioms only. The decoder's initial pending status is superseded by recorded frozen278 acceptance. BE was outside278 at that time, but both unchanged bodies, boundary f698aea8 and child 61151fc3 match the later public316 freeze/guard/publication manifest. Its archived guard records a stable selected-closure PASS; its all-declaration receipt reports zero owned axioms/nonstandard rows/missing modules. The public316 publication explicitly leaves three large detailed tables pending; this is not a claim about all later publications. Standalone and later rebuilt object hashes differ, so no fabricated single component object chain or new build is asserted.
+
+**Execution evidence.** Only source/document retrieval, identity and saved-file readback operations were performed. The exact public generator and geometry files match the historical independent review hashes; only the cited endpoint-origin ranges were newly inspected, not the entire C++ codebase. Historical compiler/aggregate evidence was read, not rerun. No compiler, scientific runtime, RNA program or empirical reproduction was executed.
+
+**Empirical status.** Conditional mathematical statements about a supplied source-schema tree and partner relation. No measured RNA-folding accuracy, validated physical energy model, production performance or biological observation is claimed.
+
+**Accepted artifacts and exact sources:**
+
+- [Exact bounded root-event decoder body](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2RootEventDecoder.lean) (proof source).
+- [Exact BE ownership proof from primitive local origins](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2BEOwnership.lean) (proof source).
+- [Full 17-family/57-rule source-child boundary supplier](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/Imported/E8SCFG2ProviderBoundaryContract.lean) (proof source).
+- [Reused valid-active-child normalization supplier](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean) (proof source).
+- [Decoder register with dated pending-to-accepted 278 update](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8-ROOT-DECODER-REGISTER.md) (proof or status).
+- [BE ownership contract and historical outside 278 boundary](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8-BE-OWNERSHIP-REGISTER.md) (proof or status).
+- [Independent exact BE source and origin-fidelity acceptance](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/INDEPENDENT-BE-OWNERSHIP-REVIEW.md) (hand review).
+- [Exact independent BE review/check identities](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/EXACT-BE-OWNERSHIP-REVIEW-CHECK.json) (hand review).
+- [Decoder historical component receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2RootEventDecoder-COMPONENT-RECEIPT.json) (formal receipt).
+- [BE historical component receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-bounded-be-1332z/E8SCFG2BEOwnership-COMPONENT-RECEIPT.json) (formal receipt).
+- [Later 316 selected closure, unchanged source and rebuilt-object hashes](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/guard.json) (formal receipt).
+- [Later 316 source freeze identities](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/FREEZE.json) (formal receipt).
+- [Later 316 all-owned-declaration audit receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/all-declarations/receipt.json) (formal receipt).
+- [Inspected 316 public detailed-table availability boundary](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-lean-316-1651z/package/certificate/DETAILED-REPORTS-PENDING.json) (proof or status).
+- [Already-completed represented scanner/partner relation, not a new claim here](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scaffold-source-1441z/README.md) (proof or status).
+
+**Typed connections:**
+
+- [CB-RNA-001](#cb-rna-001), candidate connection: The represented scanner/partner relation and normalized root-carrier exclusion are already completed. Their identification with actual C++ contexts and their complete operational composition with these schema trees remain separate; no parser proof is repeated here.
+
+- [CB-RNA-002](#cb-rna-002), candidate connection: The decoder uses Gamma's SourceEvent datatype, but this does not invoke or instantiate its conditional class-law theorem. Actual source support, physical weights and output/classifier admission remain necessary.
+
+- [CB-RNA-003](#cb-rna-003), candidate connection: Both reuse the exact child-normalization interface. The schema right-bound lemma is not the interpreter's strictly earlier-child condition, so no full interpreter admission or already completed executable join is asserted.
+
+**Stable key:** october.RNA.ROOT_SCHEMA_COORDINATES_BE_OWNERSHIP. **Aliases:** E8SCFG2RootEventDecoder.rootEvents; E8SCFG2BEOwnership.root_tree_be_owned; Bounded root decoder and scaffold BE ownership.
+
+</details>
+
+<a id="cb-rna-006"></a>
+### Bound the sampling bias introduced by an exact finite grid
+**CB-RNA-006 · RNA / E8 / PRISM · exact-grid sampling contract**
+
+**Question:** How much can a finite random grid change a weighted sampler's output probabilities?
+
+**What we learned:** For an exact midpoint selector, the grid error can be counted and passed through a fixed finite sequence of choices to any fixed output class. The bound depends on grid size, branch slots and total sequential choices, with explicit source-admission conditions.
+
+**What it lets someone do:** Reuse the checked selector and error-budget chain once the actual continuation model, conditional random input, output correspondence and arithmetic have been justified.
+
+**What we cannot conclude:** This does not certify an implemented RNG or floating sampler, replace total execution length by nesting depth, or automatically extend the older globally positive wrapper to the later positive-support Gamma theorem.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean checks recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For b ordered nonnegative real weights with positive total W, the least strict prefix crossing uW<P_(j+1), 0≤u<1, selects j exactly on [P_j/W,P_(j+1)/W); zero-weight entries are never selected. Continuous uniform input gives probability w_j/W. For N>0 uniformly chosen midpoint points (k+1/2)/N, 0≤k<N, exact cutoff counting gives cumulative error≤1/(2N), branch error≤1/N and branch-table total variation≤(b−1)/(2N), including ties and zero weights. N is grid cardinality, not a bit count or sample count. The composed model uses one State, finite branch set Fin b, nonnegative exact factors, one deterministic successor/common continuation, terminal weights and recursive partitions Z_r. Its CURRENT grid wrapper requires Z_r(s)>0 for EVERY state and EVERY natural remaining depth. For d total sequential stochastic production steps, fresh conditionally uniform grid input at each history induces its product law; equal one-step marginals alone do not suffice. A literal whole-carrier equivalence Trace b d≃Structure, exact pointwise trace/source-weight equality and one fixed classifier then give |P_grid(class=c)−sum_(R:class(R)=c)w(R)/sum_Rw(R)|≤d(b−1)/(2N) for every class c. Repeated class labels are summed. d is not recursive height or RNA length; d=0 is exact and b=1 has zero grid bias. Bounds are upper bounds, with no separately recovered extremal-attainment theorem. A subordinate Sample_V integer-loop result at MAXLOOP=30 bounds distinct internal pairs by 496 and pairs plus two optional slots by 498; ONLY after actual branch-vector refinement gives length≤498 does its local grid TV bound become 497/(2N). This is not an all-routine bound or a total-fuel theorem.
+
+**Question origin.** Recovery of existing October 2 source-specific Lean composition of inverse-CDF counting, weighted traceback, finite pushforward and conditional-kernel error bounds. It is not a new generic sampling or TV theorem.
+
+**Prior work.** Partition-based recursive RNA sampling and conditional-product telescoping are established, including Ding–Lawrence (2003) and PRISM §2.1. CParty's weighted decomposition and the Ponty–Saule weighted-hypergraph framework retain prior attribution. Strict inverse-CDF selection, floor/ceiling counts and common-history TV contraction are classical. The sharper general full-history TV result is already CB-TRANSFER-002; this linear finite bound is not a separate generic quantitative discovery.
+
+**Our contribution.** The existing formal artifact connects actual strict midpoint-selector fibers to a normalized production table and a finite weighted output-class law without losing indexed multiplicities. Its explicit contract separates continuous input from finite grid, conditional law from marginal checks, total sequential length from recursion depth, and local source-inspired bounds from full executable admission. Nine linked proof modules and the narrow source-bound adjuncts are grouped once.
+
+**Novelty.** No new generic-theory novelty, extremal-attainment result or historical priority is claimed. Source recovery, archived checking and coordinating review are not an exhaustive literature assessment.
+
+**Remaining proof obligation.** None for the exact conditional selector, finite-grid and finite-trace/class error statements or the stated local integer bounds. Actual program and supported-grid/Gamma instantiation are separate downstream work.
+
+**Separate downstream work.** An actual sampler must supply its pending-state/common-continuation carrier, exact recurrence/traceback weights, finite total production fuel, whole-trace/output equivalence and one frozen classifier, plus fresh conditional input law and numeric/RNG refinement. Variable execution length and missing branches need a justified representation. Sample_V's distinct-pair bound alone does not rule out repeated executed vector entries or cover other routines; the named rank decreases do not prove total fuel. The later supported-root ideal law and Gamma positive-support equivalence do NOT discharge the current grid definition's all-state/all-depth positivity or whole-trace equivalence. A supported-grid adapter needs justified handling of dead states, normalized relevant kernels, local errors/product law and the same Gamma class-event transport. Fixed seeds, regression tests and correct marginal draws do not prove conditional uniformity. Actual class-SUM computation, simultaneous coverage and certificate termination, physical energy correctness and empirical RNA fidelity remain separate.
+
+**Completion rule.** Retain the completed conditional sampling mathematics at its literal stronger wrapper premises. Later supported-root improvements do not silently upgrade the grid endpoint. Missing executable admission or a fresh compiler replay does not reopen these statements; module/report counts are not discovery counts.
+
+**Evidence basis.** Complete local dependency-body recovery and exact archived source/log/import reconciliation at Commons b755d8a14d9f691b40fdd81f9748722fecfee79f. Later shared-scope and prior/source reviews preserve completed grid components and their stronger premises; Gamma review applies to its own supported-root theorem. Fresh collision comparison uses all 116 cards at d71ea2f3c2f9d1dedb80fcf97c3c27e9fcb4ea90, claims blob fc9eed30fbd512f32683eac66f201497233c35a9, plus approved adjacent RNA005. Existing RNA001–004 and generic TRANSFER002 scopes are unchanged. The accepted recovery report and exact source-identity manifest preserve the read-depth and verification boundaries.
+
+**Hand/review evidence.** The October 23 recovery fully read the nine-module local proof chain, 1,172 lines, its 12-line import audit, 206 lines of adjacent rank/branch bounds and the 89-line already-indexed supported-root supplier. No intended-mathematics discrepancy was found. Coordinating AI review accepted one grouped scope with global-positive/whole-trace, conditional-uniformity and Sample_V-only boundaries. No separate original independent grid-body review was located in the bounded original folder. This is AI source/scope review, not external human peer review or a fresh compiler check.
+
+**Formal evidence.** All 13 source/log pairs exactly match archived exit-zero component receipts under Lean 4.33.1 commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6 and mathlib 0df444a360eaa60ab8c11dca51a86af692955474. All direct project-import object hashes match their recorded providers. The nine main proof modules have 41 selected standard-only reports, including 12 on two prerequisites; the import audit repeats 9 endpoints. Adjacent rank/branch bounds have 6+5 reports and the already-indexed supported-root law has 5. Final bridge SHA256 2eaaf7e1a191fb2da4949b3ae64ee2a18d7b0740a1c1701d47078e2c7ed3c10e, midpoint-TV 3c07f12778bdfa3242888512e75ab507bb9a00984ae20a3516b764839a9246b0, error-composition 0689f6cecad612e2cc027c85a388a5ccc41ef1fc33450a3d2d53210917ee2fef. Report counts are not all-declaration or whole-repository verification.
+
+**Execution evidence.** Historical source/log identities and selected compiler evidence were recovered and compared, not rerun. Only source/document retrieval, hashing and local readback occurred. No Lean/compiler, RNA program, numerical sampler or RNG was executed; external mathlib/tactic bodies and the whole C++ source were not re-audited.
+
+**Empirical status.** An exact-real mathematical selector/continuation contract, not a measured sampling guarantee, production implementation certificate or biological accuracy result.
+
+**Accepted artifacts and exact sources:**
+
+- [Strict-prefix selector and exact positive branch fibers](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8StrictPrefixSelector.lean) (proof source).
+- [Actual continuous-uniform selector law](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8UniformPrefixLaw.lean) (proof source).
+- [Observable pushforward retaining repeated labels](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8ObservablePrefixLaw.lean) (proof source).
+- [Exact N-point midpoint counting and cumulative bounds](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointGridLaw.lean) (proof source).
+- [Branch-table TV bound from internal boundaries](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointGridTV.lean) (proof source).
+- [Finite trace weight and globally positive partition law](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8FiniteTracebackLaw.lean) (proof source).
+- [Common-continuation finite-trace error composition](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8TracebackErrorComposition.lean) (proof source).
+- [Normalized production kernel from actual selector counts](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8MidpointProductionKernel.lean) (proof source).
+- [Whole-trace weighted-class grid endpoint](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/E8GridTracebackBridge.lean) (proof source).
+- [Main exact source/compiler/import manifest](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/SOURCE-AND-COMPILE-MANIFEST.json) (formal receipt).
+- [Original grid statement and explicit source boundaries](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-grid-traceback-0517z/README.md) (proof or status).
+- [Named local call-rank decreases, not complete fuel](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8TracebackCallRanks.lean) (proof source).
+- [Sample_V-only guarded integer-pair/slot bound](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8SourceVBranchBound.lean) (proof source).
+- [Adjacent exact source/compiler manifest](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/SOURCE-AND-COMPILE-MANIFEST.json) (formal receipt).
+- [Supported-root ideal law, reused from RNA002](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-source-support-0538z/E8SupportedTracebackLaw.lean) (proof source).
+- [Later scope explicitly retains the grid/Gamma interface](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary) (proof or status).
+- [Claim-by-claim classical-prior and implementation audit](https://github.com/Sodelin/Research-Commons/blob/b755d8a14d9f691b40fdd81f9748722fecfee79f/research/2026-10-02-dot-e8-originality-residual-audit-0831z/E8-CLAIM-BY-CLAIM-ORIGINALITY.md) (proof or status).
+
+**Typed connections:**
+
+- [CB-TRANSFER-002](#cb-transfer-002), same principle: The sharper general full-history TV theorem already indexes the classical error-composition principle. The present source is a separate exact selector-to-production-to-class formal chain, not a new generic TV theorem or a formal import of TRANSFER002.
+
+- [CB-RNA-002](#cb-rna-002), candidate connection: Supported-root Gamma ideal sampling is complete at its own scope. Its positive-support equivalence and root positivity do not instantiate this older wrapper's global positivity and whole-trace equivalence; the supported-grid/source adapter is separate.
+
+- [CB-RNA-003](#cb-rna-003), candidate connection: The completed ordered interpreter is an adjacent weight supplier, not proof that an executed sampler has the required finite continuation carrier, conditional random input or whole-trace/output equivalence.
+
+- [CB-RNA-004](#cb-rna-004), candidate connection: After actual source admission, a verified class-law discrepancy can supply certificate error widening. The grid theorem alone does not prove all-time coverage, selected-class SUM, discovery or termination.
+
+**Stable key:** october.RNA.EXACT_GRID_FINITE_TRACE_BIAS. **Aliases:** E8GridTracebackBridge.unambiguous_grid_class_error; E8 exact midpoint selector and finite-trace grid bias; E8MidpointGridTV branch table bound.
 
 </details>
