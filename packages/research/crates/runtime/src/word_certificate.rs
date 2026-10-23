@@ -161,6 +161,9 @@ private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
  }
  put(&mut out,&format!(r#"
 private def rows : Rows (WordVariable N (Fin {slots})) (Code N sample) := [{}]
+private def nativeSelectedRows : Nat := {}
+theorem complete_output_count : rows.length = nativeSelectedRows := by decide +kernel
+#print nativeSelectedRows
 
 -- Full table has been decoded; the next check compares ALL original fibres.
 #check parentRegistry
@@ -183,7 +186,7 @@ theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
     complete_word_coefficient_fibres_checked b r p dur
 #check actual_same_source_natural_word
 end {}
-"#,rows.join(",\n  "),bindings.namespace),render.rendered_bytes)?;
+"#,rows.join(",\n  "),table.transitions.len(),bindings.namespace),render.rendered_bytes)?;
  Ok(out)
 }
 fn example_request(common:bool)->Result<Request,Error>{

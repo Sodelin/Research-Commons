@@ -91,7 +91,7 @@ The SAME source's full coherent job120510640198 PASSED all1638 selected source m
 
 ## Complete natural-word candidate after accepted mixed epoch
 
-Prior/successor comparison is recorded in integration/WORD-CERTIFICATE-PREFLIGHT.md. Existing concrete step/whole-word/natural initialization proofs and the unchanged native source_word engine are reused. New source compares every final coefficient and destination fibre against wordRows/naturalWordRows using the accepted sparse checker. The actual h1 natural callers preserve all fourteen register-labelled endpoints, the reversed parent0=edge7/parent1=edge6 order, two shared slots, the entire original natural register draw and BOTH actual arm exits. Positive returned rates/inheritance and durations from the SAME returned calendar are joined explicitly.
+Prior/successor comparison is recorded in integration/WORD-CERTIFICATE-PREFLIGHT.md. Existing concrete step/whole-word/natural initialization proofs and the unchanged native source_word engine are reused. New source compares every final coefficient and destination fibre against wordRows/naturalWordRows using the accepted sparse checker. The actual h1 natural callers preserve every actual ordered-genealogy/register-labelled endpoint, the reversed parent0=edge7/parent1=edge6 order, two shared slots, the entire original natural register draw and BOTH actual arm exits. Positive returned rates/inheritance and durations from the SAME returned calendar are joined explicitly.
 
 This source has not yet been accepted by Rust or Lean. The new bounded public CI target/callers must compile and pass a complete owned audit. Whole-calendar admission, controlled transition masks, all-raw completion/authorized observer, global Copy map and full source/action/target/AST/QE/selector remain separate. No upstream engine source or physical cap changed; epoch snapshot rendering is exposed only within the facade and preserves its prior emitted source.
 
@@ -128,3 +128,8 @@ The caller now prints bounded public source byte/hash metadata before compilatio
 
 
 All72 Rust tests passed at99290b70/run39991612358, including the new declaration-injection/module-boundary, duplicate-canonical-ID and scope/pending-claim tests. The actual Lean export lookup is still pending. Its new import-only Exports target covers EVERY named module and transitive dependency and performs its own complete audit; a smaller unrelated target is refused. This avoids waiting for the separate heavy literal-word check without weakening its result or the complete-profile/strict gates.
+
+
+### Ordered selected-carrier count correction
+
+The draft fourteen-endpoint description was too small for the actual ordered genealogy carrier; it corresponded to a coarser unranked forest count. The native table/rendering code always retained EVERY returned selected row. The interrupted diagnostic source99290b70 actually emitted destination indices beyond26 and matched their complete selected fields before shutdown. No endpoint quotient or row deletion is licensed. The emitter now reports the actual nativeSelectedRows count, and Lean checks rows.length against that literal. Exact raw count awaits its emitted record; no unobserved fixed count is asserted. Current independent document255607B/SHAeb93ba43ce63f065f8d8a1d31a29f5fca9616e3268c4af2643a0fe60e25986d3 stayed under the262144-byte limit. It still has no completed coefficient-check result.
