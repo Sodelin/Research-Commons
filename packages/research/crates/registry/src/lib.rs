@@ -83,12 +83,26 @@ pub fn coverage(claims: &Value, ranking: &Value, bindings: &Value) -> Result<Val
     let mut rows=Vec::new();let mut incomplete=Vec::new();
     for id in order {
         let b=maps[id.as_str()];
-        // A metadata row or source-only module is deliberately insufficient.
-        let ready=b["lean"]["state"]=="verified_binding" &&
-            b["rust"]["state"]=="verified_binding" &&
+        let card=array(claims,"claims")?.iter().find(|c|c["id"]==id).ok_or("missing canonical card")?;
+        // Integration is typed by the canonical claim, not by a convenient
+        // binding label. Open questions need exact checked statements; measured
+        // results need evidence interfaces, never invented mathematical proofs.
+        let kind=if card["claim_kind"]=="question" || card["mathematical_status"]=="open" ||
+            card["mathematical_status"]=="formal_integration_obligation" {"open_obligation"}
+            else if card["claim_kind"]=="software_check" {"scoped_evidence"}
+            else {"proof_or_algorithm"};
+        let (lean_state,rust_state)=match kind {
+            "open_obligation"=>("verified_open_statement","verified_obligation_binding"),
+            "scoped_evidence"=>("verified_evidence_interface","verified_evidence_reader"),
+            _=>("verified_binding","verified_binding"),
+        };
+        let ready=b["lean"]["state"]==lean_state && b["rust"]["state"]==rust_state &&
+            b["lean"]["module"].as_str().is_some_and(|s|!s.is_empty()) &&
+            b["lean"]["declarations"].as_array().is_some_and(|s|!s.is_empty()) &&
+            b["rust"]["module"].as_str().is_some_and(|s|!s.is_empty()) &&
             b["verification"].as_array().is_some_and(|r|!r.is_empty());
         if !ready { incomplete.push(id.clone()); }
-        rows.push(json!({"claim_id":id,"reuse_rank":b["reuse_rank"],
+        rows.push(json!({"claim_id":id,"integration_kind":kind,"reuse_rank":b["reuse_rank"],
             "lean":b["lean"],"rust":b["rust"],"integration_complete":ready}));
     }
     Ok(json!({"canonical_claims":rows.len(),"ranked":ranked.len(),
@@ -297,4 +311,29 @@ mod tests {
   let c=json!({"claims":[card("A",json!([]))]});
   assert!(coverage(&c,&json!({"entries":[]}),&json!({"claims":[]})).is_err());
  }
+ #[test] fn exact_open_statement_is_integrated_without_a_fabricated_proof(){
+  let c=json!({"claims":[{"id":"A","dependencies":[],"claim_kind":"question","mathematical_status":"open"}]});
+  let binding=|ls:&str,rs:&str|json!({"claims":[{"claim_id":"A","reuse_rank":null,
+    "lean":{"state":ls,"module":"OpenQuestion","declarations":["OpenQuestion.statement"]},
+    "rust":{"state":rs,"module":"obligations::A"},"verification":[{"kind":"checked_exact_statement"}]}]});
+  let r=coverage(&c,&json!({"entries":[]}),&binding("verified_open_statement","verified_obligation_binding")).unwrap();
+  assert_eq!(r["full_package_complete"],true);
+  assert_eq!(r["ordered_integration"][0]["integration_kind"],"open_obligation");
+  assert_eq!(coverage(&c,&json!({"entries":[]}),&binding("verified_binding","verified_binding")).unwrap()["full_package_complete"],false);
+ }
+ #[test] fn empirical_evidence_is_not_accepted_as_a_proved_theorem(){
+  let c=json!({"claims":[{"id":"A","dependencies":[],"claim_kind":"software_check"}]});
+  let b=json!({"claims":[{"claim_id":"A","reuse_rank":null,
+    "lean":{"state":"verified_binding","module":"Evidence","declarations":["Evidence.record"]},
+    "rust":{"state":"verified_binding","module":"reader"},"verification":[{}]}]});
+  assert_eq!(coverage(&c,&json!({"entries":[]}),&b).unwrap()["full_package_complete"],false);
+ }
+ #[test] fn verification_labels_without_declarations_do_not_close_integration(){
+  let c=json!({"claims":[card("A",json!([]))]});
+  let b=json!({"claims":[{"claim_id":"A","reuse_rank":null,
+    "lean":{"state":"verified_binding","module":"A","declarations":[]},
+    "rust":{"state":"verified_binding","module":"A"},"verification":[{}]}]});
+  assert_eq!(coverage(&c,&json!({"entries":[]}),&b).unwrap()["full_package_complete"],false);
+ }
+
 }
