@@ -1,5 +1,5 @@
 {
-  "board_version": "1.9-memory-source-recovery",
+  "board_version": "1.10-population-source-recovery",
   "claims": [
     {
       "accepted_artifacts": [
@@ -7487,6 +7487,427 @@
           "detail": "Both separate exact-law distinction from finite-sample uncertainty. The known three-taxon full-support control is not the same two-model sharp randomized-testing theorem; its separately written Hoeffding bound is not imported here."
         }
       ]
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+      "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
+      "evidence_basis": "Recovered from the actual proof/scope notes, selected actual source bodies, named archived endpoint/hash entries and the September publication ledger at e2502c82ab9a77c00543932f775a71e5374221f7. Compared against the fresh 97-card schema 1.1 register at 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f, blob 0bc119a3356c9eb034d706f87d2b2b7c4f25a70a. This is archival source recovery, not a new proof, build or worldwide novelty audit.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A source-specific exact question in the original Samuel population programme. Classical population definitions, constructions and methods are credited separately; grouping does not imply multiple newly solved external problems."
+      },
+      "id": "CB-POPULATION-001",
+      "canonical_key": "population.FIXED_GENDER_CAP_TWO",
+      "title": "Two children suffice for target avoidance, even with permanent genders",
+      "programme": "Infinite populations · sharp degree threshold",
+      "plain_language": {
+        "question": "How small can the child cap be while a permanent-gender population avoids a prescribed infinite binary target?",
+        "what_we_learned": "The exact threshold is two; an avoider exists exactly when the cap is at least two and the target is not eventually periodic.",
+        "what_it_lets_someone_do": "Use the same three-root, two-child underlying graph for every such target, changing only genders, while retaining inspecies and specieslike guarantees.",
+        "what_cannot_conclude": "Three roots are not proved minimal, and this does not introduce a new line-graph operation or empirical population model."
+      },
+      "exact_statement_and_scope": "For every natural cap and binary infinite word s, there exist an infinite retained vertex set, an actual eligible permanent-binary-gender population with at most cap children per vertex and finite actual roots, and avoidance of s from every starting vertex, iff cap≥2 and s is not eventually periodic. Nonroots have parents of each gender and chronology/finite-prefix conditions are retained. Below two no eligible infinite population exists. The directed line graph of the original P_s has exactly three roots, exactly two children per vertex and two opposite-gender parents at every nonroot, with full infinite-word language preserved without a shifted first letter. The unlabelled graph is fixed across targets; only genders change. The same actual retained witness is specieslike, an inspecies and reflective. Three-root optimality is not part of the result.",
+      "prior_work": "Original Samuel-project proof; classical directed line graph and edge-to-vertex color transfer are explicitly credited. It sharpens the pinned avg-netizen P_s manuscript's stated four-root/cap-four vertex-gender lift. The exact narrower corollary is not explicit in that pinned manuscript; worldwide priority remains unresolved.",
+      "our_contribution": "The original Samuel project supplies the exact fixed-gender degree threshold, actual full-language recoding and simultaneous cap-two species/inspecies guarantees. This is the precise tighter population-model consequence of a classical recoding, not a rediscovery of the underlying manuscript's classification.",
+      "accepted_artifacts": [
+        {
+          "label": "Exact fixed-gender cap threshold",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/CAP-TWO-THRESHOLD.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Same cap-two inspecies witness",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/CAP-TWO-SPECIES.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Cap-two actual population and path source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/CapTwo.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Same-witness species source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/CapTwoSpecies.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Classical line-digraph and manuscript comparison",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/LINE-GRAPH-PRIOR-ART-AUDIT.md",
+          "role": "prior_work"
+        },
+        {
+          "label": "Integrated September result-family coverage",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Archived core endpoint and source-hash audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Least possible root count at cap two, a generic line-graph formalization, broader models and historical priority are separate questions. Older cap-three/four constructions remain valid but are not the optimal child-cap result.",
+      "aliases": [
+        "Samuel T04",
+        "CapTwo",
+        "CapTwoSpecies"
+      ],
+      "dependencies": [
+        {
+          "claim_id": "CB-SEQ-004",
+          "relation_type": "same_principle",
+          "detail": "Both use the original target-dependent P_s construction. Exact all-start Thue–Morse heights do not supply the general fixed-gender cap threshold, and the two statements are not aliases."
+        }
+      ],
+      "completion": {
+        "display": "Proved; archived Lean check recorded",
+        "formal_verification": "kernel_checked_selected_release",
+        "independent_review": "recorded_source_and_formal_audit",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing a new build, a fresh transitive review or a broader extension does not reopen these exact completed claims. Navigation grouping is not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "recorded_source_and_formal_audit",
+          "detail": "The complete original proof/scope notes and relevant archived endpoint entries were read, with full or selected actual source bodies as itemized in the recovery report. Existing recorded completion is preserved. This is not a fresh whole-import proof review or external human peer acceptance."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_release",
+          "detail": "The archived 25 September 2026 Lean 4.33.1 core audit explicitly records CapTwo.avoiding_population_exists_iff and CapTwoSpecies.cap_two_inspecies_avoider, with their source hashes and only standard foundational axioms. The 405 core selected endpoint rows concern the wider repository, not 405 discoveries. No checking was rerun."
+        },
+        "execution": {
+          "status": "archived_build_receipt",
+          "detail": "Historical compiler/selected-axiom receipts are linked with exact source pins. No Lean, compiler or scientific runtime was executed for this recovery."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the stated infinite graph/population predicates, not measured biology or a validated empirical species classifier."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+      "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
+      "evidence_basis": "Recovered from the actual proof/scope notes, selected actual source bodies, named archived endpoint/hash entries and the September publication ledger at e2502c82ab9a77c00543932f775a71e5374221f7. Compared against the fresh 97-card schema 1.1 register at 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f, blob 0bc119a3356c9eb034d706f87d2b2b7c4f25a70a. This is archival source recovery, not a new proof, build or worldwide novelty audit.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A source-specific exact question in the original Samuel population programme. Classical population definitions, constructions and methods are credited separately; grouping does not imply multiple newly solved external problems."
+      },
+      "id": "CB-POPULATION-002",
+      "canonical_key": "population.CRITICAL_TAIL_AND_PORTS",
+      "title": "Critical populations have exact tail structure and finite-frontier descriptions",
+      "programme": "Infinite populations · structure and port schedules",
+      "plain_language": {
+        "question": "What structure follows from the critical parent/child balance, and when does it realize every infinite word?",
+        "what_we_learned": "Persistent minimum crossing width fixes the tail adjacency. Every critical population has an exact legal fair finite-port encoding; full-schedule periodicity separately forces universality.",
+        "what_it_lets_someone_do": "Replace the infinite tail with an exact port representation and apply the periodic realization theorem only when its genuine labelled-schedule hypothesis is established.",
+        "what_cannot_conclude": "The encoder does not make arbitrary schedules periodic or every critical population universal; rigidity is not a word-language theorem."
+      },
+      "exact_statement_and_scope": "Three distinct statements concern the existing naturally indexed simple InfiniteLabeledPopulation k k, with finite root support, a parent of every required label at each nonroot and child cap k. (1) Rigidity: if every sufficiently late actual cut has crossing count k(k+1)/2, the eventual adjacency is exactly u→v iff u<v≤u+k. One attaining cut does not give this tail conclusion, and adjacency alone does not establish arbitrary-label universality. (2) Encoding, without minimum-width or periodicity assumptions: eventual_encoding constructs a root-free base, C equal to the actual crossing count, initial tokens and a legal fair C-slot schedule; decoded labelled edges agree exactly for every target beyond the base, including edges from pre-base sources, and every actual tail label is below k. Classical finite bijections are used; no regularity, enumeration or fairness is an extra population premise. (3) Conditional realization: if the constructed full named-slot/replacement-label schedule is eventually periodic with positive period p, every infinite word has a strict actual path beginning within one period of that tail. Finite slots do not imply periodicity. The pre-base graph is not reconstructed by the decoder.",
+      "prior_work": "Original population-specific adapters and exact rigidity theorem reuse conservation/finite counting, classical finite-frontier/slice methods and compactness. Recorded comparison credits Oliveira and established omega-regular periodic-fragment results. No invention of these methods or worldwide-priority claim.",
+      "our_contribution": "The original Samuel package proves minimum-width rigidity for every finite label count and the source-faithful fair-port adapter, then transports the separately conditional full-schedule periodic theorem to actual paths. These are separate completed subclaims, not an automatic periodicity deduction.",
+      "accepted_artifacts": [
+        {
+          "label": "Minimum-crossing rigidity scope",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/GENERAL-RIGIDITY-THEOREM.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "General finite-label rigidity source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/GeneralRigidity.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Actual population-to-port adapter",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PORT-ENCODING.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual fair encoding and periodic transport source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PortEncoding.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Full-schedule periodic realization",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PORT-DYNAMICS-FORMALIZATION.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Schedule semantics and realization source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/PortDynamics.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Written canonical-port and converse companions",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/PROPOSAL3-FINITE-PORT-AUDIT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Recorded primary-method comparison",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/PROPOSALS3-10-SOURCE-AUDIT.md",
+          "role": "prior_work"
+        },
+        {
+          "label": "Integrated September result-family coverage",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Archived core endpoint and source-hash audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+          "role": "formal_receipt"
+        },
+        {
+          "label": "Archived isolated real-project rebuild and endpoint audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/real-audit.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "The canonical sorted encoder and converse from eventually translation-periodic labelled graphs to eventually periodic canonical schedules are separately written results, not the stated Lean endpoint. Effective infinite-graph algorithms, arbitrary higher-width classification and unconditional universality are separate extensions. Older blanket 'actual encoder missing' labels are superseded by PortEncoding, not by an unproved periodicity claim.",
+      "aliases": [
+        "Samuel T05 and T06",
+        "GeneralRigidity",
+        "PortEncoding",
+        "PortDynamics"
+      ],
+      "dependencies": [],
+      "completion": {
+        "display": "Proved; archived Lean check recorded",
+        "formal_verification": "kernel_checked_selected_release",
+        "independent_review": "recorded_source_and_formal_audit",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing a new build, a fresh transitive review or a broader extension does not reopen these exact completed claims. Navigation grouping is not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "recorded_source_and_formal_audit",
+          "detail": "The complete original proof/scope notes and relevant archived endpoint entries were read, with full or selected actual source bodies as itemized in the recovery report. Existing recorded completion is preserved. This is not a fresh whole-import proof review or external human peer acceptance."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_release",
+          "detail": "The archived Lean 4.33.1 core audit records GeneralRigidity and PortDynamics endpoints. The real audit records PortEncoding.eventual_encoding and encoded_periodic_realizes with source hashes, exit zero and no warnings in its isolated imported-module rebuild. The canonical sorted/converse written companions are not promoted to Lean endpoints. No checking was rerun."
+        },
+        "execution": {
+          "status": "archived_build_receipt",
+          "detail": "Historical compiler/selected-axiom receipts are linked with exact source pins. No Lean, compiler or scientific runtime was executed for this recovery."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the stated infinite graph/population predicates, not measured biology or a validated empirical species classifier."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+      "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
+      "evidence_basis": "Recovered from the actual proof/scope notes, selected actual source bodies, named archived endpoint/hash entries and the September publication ledger at e2502c82ab9a77c00543932f775a71e5374221f7. Compared against the fresh 97-card schema 1.1 register at 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f, blob 0bc119a3356c9eb034d706f87d2b2b7c4f25a70a. This is archival source recovery, not a new proof, build or worldwide novelty audit.",
+      "claim_kind": "theorem",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A source-specific exact question in the original Samuel population programme. Classical population definitions, constructions and methods are credited separately; grouping does not imply multiple newly solved external problems."
+      },
+      "id": "CB-POPULATION-003",
+      "canonical_key": "population.PRODUCTIVE_PRUNING_AND_REPAIR",
+      "title": "Pruning preserves every infinite word; boundary repair preserves avoidance",
+      "programme": "Infinite populations · pruning and eligibility repair",
+      "plain_language": {
+        "question": "Which deletions preserve infinite target languages, and when can a retained population be made eligible without adding edges?",
+        "what_we_learned": "Productive pruning preserves the full infinite language. On any fixed infinite retained set, finite parent-label deficiency exactly characterizes deletion-only repair, with a canonical maximal retained-edge relation.",
+        "what_it_lets_someone_do": "Choose the appropriate operation knowing whether it preserves every infinite realization or only avoidance, and whether connectivity or species properties require extra premises.",
+        "what_cannot_conclude": "Boundary repair need not preserve all word realizations, connectivity or species properties, and its optimization keeps the retained vertex set fixed."
+      },
+      "exact_statement_and_scope": "For an actual BinaryNatPopulation, productive pruning retains exactly vertices with infinitely many strict descendants. Finite roots, finite children and strict natural chronology yield an infinite ancestrally closed core, a constructed birth-order reindexing into the original eligible model, preservation of any supplied child cap and equivalence of the full infinite Boolean-word language. Whole-graph IAP is required only for the additional whole-core inspecies/specieslike conclusion; IAP means each member has finitely many descendants or finitely many non-descendants in the stated set. Unrestricted maximal connected-IAP-convex clusters are descendant-closed and pruning commutes; common-ancestor/reflection-constrained maximality need not imply descendant closure, although convexity plus reflection still makes pruning commute. Separately, for any fixed infinite retained S, finite incoming-label deficiency is equivalent to existence of an eligible deletion-only repair on exactly S. Deleting all remaining incoming edges at deficient vertices gives the greatest permissible retained-edge relation and inclusion-smallest deleted-edge/root sets, with all deleted edges below a finite birth bound. The reindexed repair preserves eligibility, a supplied child cap and every avoided target, not full language equivalence. The actual P_s C0 repair disconnects; C1 has the shifted original unlabelled geometry.",
+      "prior_work": "Original simultaneous model/transport theorems using classical pruning and finite-union arguments; Alexander's species predicates and existing shared-root two-ray counterexample remain credited. The deletion criterion is a direct structural deduction, not a worldwide novelty claim.",
+      "our_contribution": "The original Samuel package proves simultaneous eligibility, reindexing and exact infinite-language preservation for the productive core, separates two maximality predicates, and characterizes the canonical deletion-only repair. The stronger pruning equivalence is not silently assigned to repair.",
+      "accepted_artifacts": [
+        {
+          "label": "Productive pruning and maximality distinctions",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PRODUCTIVE-CORE-THEOREM.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual core, language and cluster source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/ProductiveCore.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Exact repair criterion and scope",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/BOUNDARY-REPAIR-THEOREM.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Canonical repair and actual population transport",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/BoundaryRepair.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Integrated September result-family coverage",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Archived core endpoint and source-hash audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Productive pruning need not preserve finite paths. Repair allows no added or relabelled edges and does not optimize over a different retained S. Arbitrary-real-date/general-alphabet adapters and empirical species interpretation are separate. Alexander's prior shared-root two-ray example must not be counted as a new counterexample.",
+      "aliases": [
+        "Samuel T08 and T09",
+        "ProductiveCore",
+        "BoundaryRepair"
+      ],
+      "dependencies": [],
+      "completion": {
+        "display": "Proved; archived Lean check recorded",
+        "formal_verification": "kernel_checked_selected_release",
+        "independent_review": "recorded_source_and_formal_audit",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing a new build, a fresh transitive review or a broader extension does not reopen these exact completed claims. Navigation grouping is not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "recorded_source_and_formal_audit",
+          "detail": "The complete original proof/scope notes and relevant archived endpoint entries were read, with full or selected actual source bodies as itemized in the recovery report. Existing recorded completion is preserved. This is not a fresh whole-import proof review or external human peer acceptance."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_release",
+          "detail": "The archived Lean 4.33.1 core audit names ProductiveCore.reindexed_core_language_iff, the cluster/pruning endpoints and BoundaryRepair's existence, optimality and actual-transport endpoints, with source hashes and only standard foundational axioms. The real audit also records its imported ProductiveCore rebuild. This does not assert that every core module was freshly rebuilt by that separate real audit."
+        },
+        "execution": {
+          "status": "archived_build_receipt",
+          "detail": "Historical compiler/selected-axiom receipts are linked with exact source pins. No Lean, compiler or scientific runtime was executed for this recovery."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A theorem about the stated infinite graph/population predicates, not measured biology or a validated empirical species classifier."
+        }
+      }
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+      "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
+      "evidence_basis": "Recovered from the actual proof/scope notes, selected actual source bodies, named archived endpoint/hash entries and the September publication ledger at e2502c82ab9a77c00543932f775a71e5374221f7. Compared against the fresh 97-card schema 1.1 register at 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f, blob 0bc119a3356c9eb034d706f87d2b2b7c4f25a70a. This is archival source recovery, not a new proof, build or worldwide novelty audit.",
+      "claim_kind": "counterexample",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A synthetic same-rule test of information lost by a specified static certificate family, using established potential methods. Not an author-designated conjecture for a published Life-like rule."
+      },
+      "id": "CB-POPULATION-004",
+      "canonical_key": "population.STATEFUL_CA_STATIC_GAP",
+      "title": "One synthetic cellular automaton exposes the cost of forgetting state",
+      "programme": "Cellular automata · state-aware certificates",
+      "plain_language": {
+        "question": "Can a state-aware invariant be strictly stronger than all fixed phase-blind two-label speed certificates for the same cellular automaton?",
+        "what_we_learned": "Yes, for the explicit synthetic three-state rule: every valid static certificate has attained east support one, but every finite nonempty spaceship has horizontal displacement zero.",
+        "what_it_lets_someone_do": "Use a concrete fully model-linked example of information lost by state-blind abstraction, with an exact real-convex-hull comparison and a nontrivial oscillator.",
+        "what_cannot_conclude": "This is one synthetic three-state rule, not Life-like or empirical evidence; static support one does not mean an actual speed-one spaceship exists."
+      },
+      "exact_statement_and_scope": "For the specified synthetic three-state dead/r/l cellular automaton on the integer plane, every valid phase-blind fixed two-label local certificate has east-coordinate support exactly one, attained in the intersection of the two full Mathlib convexHull ℝ sets, not merely rational barycentric approximations. For the same actual evolve/iterate rule, potential p(r)=1,p(l)=0 proves that any finite nonempty initial configuration which recurs exactly as a translate after a natural number of steps has horizontal displacement zero, with arbitrary vertical displacement allowed. Thus horizontal velocity is zero for positive period. A finite nonempty two-cell oscillator is proved by full configuration equalities including the dead exterior. The strict separation is between this actual-rule stateful obstruction and this specified whole static-certificate family; it is not a new speed bound for a published or binary Life-like rule.",
+      "prior_work": "Original faithful same-rule separation and formal real-geometry bridge. State potentials, reduced weights and cycle-mean methods are classical; the existing prior-work audit credits Young–Tarjan–Orlin, Karp and the Alexander/CA literature. No invention of potentials or global-priority certification.",
+      "our_contribution": "The original Samuel project supplies a faithful same-rule strict separation, the actual global evolution proof and the literal full-real-hull adapter. Classical state potentials remain credited; the synthetic example demonstrates a real abstraction limitation without claiming a new bound for a published automaton.",
+      "accepted_artifacts": [
+        {
+          "label": "Synthetic rule and global stateful obstruction",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/STATEFUL-CA-FORMALIZATION.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Literal real-hull comparison",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/STATEFUL-CA-REAL.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual cellular-automaton source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/StatefulCA.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Full real geometry source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/StatefulCAReal.lean",
+          "role": "proof_source"
+        },
+        {
+          "label": "Archived independent semantic review and checks",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/STATEFUL-CA-LEAN-RECEIPT.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Complete written synthetic-rule audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/PROPOSAL10-STATEFUL-CA-AUDIT.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Recorded primary-method comparison",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/source-audits/PROPOSALS3-10-SOURCE-AUDIT.md",
+          "role": "prior_work"
+        },
+        {
+          "label": "Integrated September result-family coverage",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Archived core endpoint and source-hash audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+          "role": "formal_receipt"
+        },
+        {
+          "label": "Archived isolated real-project rebuild and endpoint audit",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/real-audit.json",
+          "role": "formal_receipt"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Application to a published or binary Life-like rule, empirical hardware behaviour and optimization over other certificate families are separate problems. Older rational-hull-only wording is superseded by StatefulCAReal for the exact real optimum; the global theorem is not inferred from the finite checker.",
+      "aliases": [
+        "Samuel T10",
+        "StatefulCA",
+        "StatefulCAReal"
+      ],
+      "dependencies": [],
+      "completion": {
+        "display": "Proved; archived Lean check recorded",
+        "formal_verification": "kernel_checked_selected_release",
+        "independent_review": "recorded_source_and_formal_audit",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing a new build, a fresh transitive review or a broader extension does not reopen these exact completed claims. Navigation grouping is not discovery counting."
+      },
+      "evidence": {
+        "hand": {
+          "status": "recorded_source_and_formal_audit",
+          "detail": "The original written audit and independent semantic-review receipt check the local-certificate quantifiers, signs, full configurations and actual evolution bridge. The later full real-hull scope/source and archived endpoint rows were inspected. This recovery did not conduct a fresh whole-import review or external human peer review."
+        },
+        "formal": {
+          "status": "kernel_checked_selected_release",
+          "detail": "The archived Lean 4.33.1 core receipt covers the actual update rule, charge strip, recurrence obstruction and oscillator. The real audit covers StatefulCAReal.static_east_support_one and real_static_gap_and_global_obstruction, with an isolated rebuild, exit zero and no warnings. Full real hulls, including irrational weights, are in scope. No compiler or checker was rerun."
+        },
+        "execution": {
+          "status": "archived_build_receipt",
+          "detail": "The linked historical receipt records all 729 local rows and eight sample-orbit generations as independent finite checks, alongside compiler/axiom evidence. These finite checks are not the proof of the universal trajectory obstruction. No execution occurred in this recovery."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "An exact mathematical example for one specified synthetic rule, not measured hardware, a Life-like experiment or a validated physical prediction."
+        }
+      }
     }
   ],
   "companion_audit": {
@@ -7496,7 +7917,7 @@
   "contributor": "dot (OpenAI)",
   "coverage": {
     "gaps": [
-      "This is 97 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
+      "This is 101 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
       "Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.",
       "Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.",
       "Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.",
@@ -7521,7 +7942,8 @@
       "Nine existing sequence source groups: exact matching/phase/digits, finite-edit optimum, quantitative/slow avoidance, aggregate sums, constrained juggling/enumeration, grouped recovery/counts, selected-digit invariants and fixed Thue–Morse Collatz valuation obstruction",
       "Five recovered feedback/ancestry groups covering Samuel B01–B06: recurrent ancestry, cultural/neutral dynamics, source affinity fixation, exact finite/deterministic ranking reversal, and B05's finite precursor superseded by B06's completed same-draw process",
       "Four recovered genome/ownership groups covering Samuel G01–G05: arbitrary finite-source completion limits, the known three-taxon control, fixed-infinite-history ownership ambiguity with exact same-family sampling criteria, and independent-block family recovery with the exact-marginal dependence counterexample",
-      "Four recovered controlled-state/memory groups covering Samuel M01–M05: exact deterministic abstraction and predictive state, predecessor-restoring split obstruction, exact countably supported stochastic experiment preservation, and sharp written rare-event calibration. The imported opposite-completion supplier is linked to CB-GENOME-001 rather than counted again."
+      "Four recovered controlled-state/memory groups covering Samuel M01–M05: exact deterministic abstraction and predictive state, predecessor-restoring split obstruction, exact countably supported stochastic experiment preservation, and sharp written rare-event calibration. The imported opposite-completion supplier is linked to CB-GENOME-001 rather than counted again.",
+      "Four recovered infinite-population/stateful-certificate groups covering Samuel T04–T06 and T08–T10: the sharp permanent-gender cap-two threshold, critical-tail rigidity and exact port encoding with separately conditional periodic realization, productive pruning versus canonical deletion-only repair, and one synthetic three-state CA static/stateful separation."
     ],
     "not_claimed": [
       "Exhaustive indexing of every research directory",
@@ -7543,7 +7965,8 @@
     "original.G1–G7 are the original ancestry programme.",
     "physics.P1–P5 refer to the physics question register, not the unrelated October 7 external-catalogue priorities P1–P8.",
     "CG/MG/HG names are preserved aliases or views unless a genuinely distinct scoped claim is recorded.",
-    "The external 372-family/722-record catalogue is source discovery, not 372 Commons results."
+    "The external 372-family/722-record catalogue is source discovery, not 372 Commons results.",
+    "population.* groups source-specific infinite-population theorems and the explicitly synthetic stateful-CA certificate example; it is not an empirical biological classification."
   ],
   "purpose": "A source-linked claim register separating what was asked, what was established, useful consequences, exclusions, prior work and evidence levels.",
   "reconciled_registers": [
@@ -7620,6 +8043,11 @@
       "contributor": "dot (OpenAI)",
       "updated_utc": "2026-10-23T10:15:00Z",
       "scope": "Add CB-MEMORY-001 through CB-MEMORY-004 as four recovered existing groups covering Samuel M01–M05, preserving all 93 prior claim objects unchanged. M01 and M03 are grouped as predecessor and continuation; the opposite-completion supplier is already indexed at CB-GENOME-001. The later historical 37-project-source/108-report receipt supersedes older arbitrary-history and exact-stochastic pending labels without claiming a new run or 108 discoveries. Calibration has a completed written proof and source-reported independent review, not a located standalone review or Lean proof. Countable PMFs, conditional controllers and sensor state remain explicit; the approximate-TV target is unmechanized. No new proof, consciousness/empirical-memory claim or resumed model research. The dated 75-card subjective ranking remains unchanged and these four are not ranked."
+    },
+    {
+      "contributor": "dot (OpenAI)",
+      "updated_utc": "2026-10-23T10:23:00Z",
+      "scope": "Add CB-POPULATION-001 through CB-POPULATION-004 as four recovered existing groups covering Samuel T04–T06 and T08–T10, preserving all 97 prior claim objects. Minimum-width rigidity, actual fair encoding and conditional full-schedule periodic realization remain separate. Productive pruning preserves the full infinite language; deletion-only boundary repair preserves avoidance and may disconnect. The real-hull CA separation concerns one synthetic three-state rule, not a Life-like or empirical result. Archived selected Lean checks are recorded, not rerun. Canonical-port converse remains separately written-only. No new proof, priority finding or discovery-count inference; the dated 75-card ranking remains unchanged and these additions are not ranked."
     }
   ],
   "schema_version": "1.1",
@@ -7640,5 +8068,6 @@
     "supersession_rule": "Correct active summaries and point to the later acceptance/correction; preserve immutable historical bytes."
   },
   "title": "Research Commons claim board",
-  "updated_utc": "2026-10-23T10:15:00Z"
+  "updated_utc": "2026-10-23T10:23:00Z"
 }
+
