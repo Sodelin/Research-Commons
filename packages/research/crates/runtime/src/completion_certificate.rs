@@ -122,7 +122,7 @@ theorem flat_original_input (copy : Fin 3) :
 
 theorem actual_passive_specified_comb :
     ((selectedCompletion N returnedRates (projection N Finset.univ entering)).map
-      (fun a => unrankedForest a.val)) {toUnranked (comb (2 : Fin 3) [0,1])} =
+      (fun a => unrankedForest a.val)) {{toUnranked (comb (2 : Fin 3) [0,1])}} =
         ENNReal.ofReal (1 / 3 : ℝ) := by
   have h := DotG34.SpecifiedCombSelectedObservation.actual_selected_specified_comb_probability
     N returnedRates entering (2 : Fin 3) [0,1] actual_all_copy_root_support
@@ -134,11 +134,11 @@ theorem actual_passive_specified_comb :
 
 theorem native_rows_passive_specified_comb :
     observedValue N rows (fun a => unrankedForest a.val)
-      {toUnranked (comb (2 : Fin 3) [0,1])} (fun i : Fin 0 => Fin.elim0 i) = (1 / 3 : ℝ) := by
+      {{toUnranked (comb (2 : Fin 3) [0,1])}} (fun i : Fin 0 => Fin.elim0 i) = (1 / 3 : ℝ) := by
   classical
   rw [checked_completion_observer N entering rows complete_completion_coefficient_fibres_checked
     actual_all_copy_root_support (fun a => unrankedForest a.val)
-    {toUnranked (comb (2 : Fin 3) [0,1])} returnedRates (fun i : Fin 0 => Fin.elim0 i),
+    {{toUnranked (comb (2 : Fin 3) [0,1])}} returnedRates (fun i : Fin 0 => Fin.elim0 i),
     actual_source_completion_projection N returnedRates entering actual_all_copy_root_support,
     actual_passive_specified_comb]
   norm_num
