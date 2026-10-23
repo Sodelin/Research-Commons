@@ -73,6 +73,37 @@ actual singular-source degree control, heights, denominators and witness
 counts remain separate. Missing these extensions does not reopen the proved
 regular-chart theorem.
 
+## Reciprocal-root arithmetic: keep the quantifiers separate
+
+These completed hand results have separate review/formalization/integration
+evidence. Missing independent correctness review or Lean never makes their
+mathematical claims open again.
+
+| Exact claim | Completed source | Remaining original-source implication |
+| --- | --- | --- |
+| Independent counts; fixed algebraic bases; Boolean ZERO/NONZERO | [Independent equality decision](https://github.com/Sodelin/Research-Commons/blob/42be58afec08d7f0bea16f0883006d3c9a85f54c/research/2026-10-23-g3-independent-reciprocal-equalities/PROOF.md), G3-ARITH-INDEP-RECIP-EQ-01 | Does not decide inequalities or acquire a fixed-base all-core reduction. |
+| ONE shared count; polynomial ORDER | [Root-order/HOM-LOG-ZERO equivalence](https://github.com/Sodelin/Research-Commons/blob/719b8340a0fd72aa18678353c8dbd5a39e42f91f/research/2026-10-23-g3-reciprocal-order-log-zero/PROOF.md), G3-ARITH-ROOT-ORDER-LOGZERO-01 | Neither an unconditional closed-log zero oracle nor arbitrary independent-count order is supplied. |
+| Independent counts; ONE fixed base1/2; ONE strict integer-polynomial inequality | [Recursively enumerable completeness](https://github.com/Sodelin/Research-Commons/blob/58d3d0a122bd6a741e8dd98f6eea286af47c2005/research/2026-10-23-g3-independent-root-order-nogo/PROOF.md), G3-ARITH-INDEP-ROOT-ORDER-NOGO-01 | No total unrestricted backend exists. Actual source-restricted order may still be decidable; original-source backward hardness transfer is missing. |
+| Supplied six-coordinate one-type COMMON family | [Total supplied-family decision](https://github.com/Sodelin/Research-Commons/blob/d2acd1bb306414db446bf57360d772a2e4c79c30/research/2026-10-23-g3-one-type-toric-exclusion/PROOF.md), G3-ARITH-ONE-TYPE-TORIC-01 | Unknown slots, changing types, I/BOTH and unrestricted original cores are not acquired. |
+
+The new independent-order proof is16205B/SHA256
+`6c6efef4a01fc978f9b22b7c3484857f8e20b25cfb4dc3353a5b72a3ca0f1628`;
+its [separate status](https://github.com/Sodelin/Research-Commons/blob/58d3d0a122bd6a741e8dd98f6eea286af47c2005/research/2026-10-23-g3-independent-root-order-nogo/SOURCE-STATUS.json)
+is8055B/SHA256
+`8cb9b06ef26659b2ef7eb54c228df61afa1916971dbb894520afb2b6a81f9928`.
+Both immutable full bodies and actual main were read back exactly. No
+scientific control, source tuple, QE/solver, compiler/native or model run
+occurred. It proves unrestricted ARITHMETIC undecidability, not G3
+undecidability: every fitting original unknown-size source is not forced
+into that encoding. No new positive return or original G4 endpoint follows.
+
+Lookup aliases: reciprocal powers, independent root indices, common
+denominator, order signs, cutpoint, Hilbert10/DPRM, successor calibration,
+one-witness count bound, total NO certificates. The old03 equality bound,
+later07 moving-type presentation and fixed K^n rational-readout screen
+retain their exact scopes and attribution. Do not restart these finished
+arithmetic classifications or mistake one branch for another.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
