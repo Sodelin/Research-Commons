@@ -49,4 +49,16 @@ lean_lib RestrictedCausalSource where
     `ColliderMinimalActivePaths, `ActivationBranchDistances, `SafeDirectedBranches,
     `ColliderSpliceCosts, `DirectedBranchSplices, `ColliderMinimumReversal,
     `ActivationMainPathExclusion, `ActivationBranchPairSplice, `ActivationBranchPairExclusion,
-    `BinaryBoundaryCircuit, `BinaryCircuitMinor]
+    `BinaryBoundaryCircuit, `BinaryCircuitMinor,
+    `BinaryTrekDecomposition, `FiniteDAGRank, `BinaryPathConstraintPropagation,
+    `BinaryTraceIncidence, `BinaryActivationFamily, `BinaryWitnessCircuit,
+    `BinaryActivePathMinor, `BinaryTrekSourceAlignment,
+    `BinarySelectionSinkComplement, `BinarySharedMechanismRegistry,
+    `BinaryCommonPositiveMinorFamily, `BinaryIndicatorLawFactorization,
+    `BinaryConditionalIndependenceAlgebra, `BinarySelectedInvarianceIdentity,
+    `BinaryAncestralMoralConnection, `BinaryAncestralElimination,
+    `BinaryAssignmentElimination, `BinaryAncestralMarginal,
+    `BinaryFactorElimination, `BinaryMoralFactorization, `BinaryNestedElimination,
+    `BinaryGlobalMarkov, `BinaryCommonFaithfulSource, `BinarySelectedProbabilityLaw,
+    `BinaryFaithfulInvariance, `BinarySelectionQuerySemantics,
+    `BinaryOriginalSourceLabels, `BinaryPhysicalOracle, `BinaryPhysicalGame]

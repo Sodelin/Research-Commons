@@ -160,6 +160,55 @@ All six modules are source-only candidates, not checked programs or verification
 
 The twelve new modules from `BinaryCPTPolynomials` through `BinaryCircuitMinor` supply actual proposed proof bodies for the collider-count-first minimum, literal forward splicing, exact reversal, shortest-branch main-path exclusion, ordered two-branch exclusion, original-parent binary CPT construction, exact circuit support, finite cell sums and the nonzero actual CPT minor under explicit conditioning/endpoint equations. They remain unelaborated, and no universal D2 theorem is claimed. The missing trek-to-circuit construction and those conditioning equations are not axioms hidden in the graph/game adapter. See [the exact source handoff](../BINARY-WITNESS-SOURCE-HANDOFF.md) for signatures, API provenance, the narrow static review and the complete remaining physical-source obligations.
 
+## v49: actual finite-DAG geometry-to-circuit join
+
+The eight source modules from `BinaryTrekDecomposition` through
+`BinaryTrekSourceAlignment` now supply a **proposed, unelaborated universal
+D2 proof body**, superseding only the v48 statement that this join had not
+yet been written. The exact endpoint is
+`BinaryActivePathMinor.binary_active_path_minor_nonzero`: any finite
+acyclic original arrow graph, distinct endpoints outside C, and an actual
+active connection imply that the original binary CPT minor at C=0 is a
+nonzero polynomial. The source constructs its minimum, actual branch
+family, original-arrow gates, finite-DAG rank and fair-source vertex
+subtype, then derives the complete slice and endpoint equations. It also
+proves exactly one fair source per collider-deleted main-path component.
+
+See [the exact D2 join handoff](../BINARY-D2-GEOMETRY-SOURCE-HANDOFF.md) for
+the exposed signature, imported proof dependencies and remaining layers.
+This is not successful elaboration, complete transitive static validation,
+the full selected/common-regime faithfulness theorem, or D1--D6 completion.
+The earlier hand review and v48 static review retain only their own
+recorded scope; neither automatically covers these new bodies.
+
+## Selected binary physical-upper source composition
+
+The 21 follow-on modules from `BinarySelectionSinkComplement` through
+`BinaryPhysicalGame` now provide proposed bodies for the actual D1–D6
+elementary probability-source join, normalized selected-law semantics,
+original observed/latent/selection and indicator label adapter, derived
+physical `ExactResponse`, and composition with the unchanged G7 Plan and
+full original marked-TCM class. The common rational CPT point is shared
+across the baseline and every separate named soft-intervention slice.
+The final original-source upper statement has no exposed exact-response,
+minor, global-Markov, circuit, or decoder-correctness premise.
+
+These are **source-only, unelaborated candidates**, not completed machine
+verification. The target still quantifies arbitrary finite original
+hidden/selection carriers and one rival source across all regimes. The
+physical oracle remains an exact elementary population-CI/law-comparison
+specification, not a sample algorithm or arbitrary binary full-law oracle.
+Graphical setwise separation is not confused with the invalid general
+converse from pairwise probabilistic CI to vector CI. The selected flags
+are proved redundant in the actual selected-law conditioning set; all
+latent variables are summed out.
+
+See [the full physical-upper handoff](../BINARY-PHYSICAL-UPPER-SOURCE-HANDOFF.md)
+for the exact signature, all imported/proposed layers, review limits,
+classical attribution, and remaining transitive checking obligations.
+Classical choice in the rational representative or finite law proof does
+not replace the existing supplied-label effective query Plan.
+
 ## Remaining exact full-claim dependencies
 
 1. Elaborate and check original arbitrary-size DAG projection and the composed common-source adapter (A1–A4/B1/B9). Genuine DAG source data, route-based latent projection, projected mixed laws/acyclicity, selection heads, exact selected-graph extraction, full-profile membership, two-way retained ancestry, both original/projected active-path directions and original-source root-augmentation commutation now have source proofs. The latent-collider case uses concrete conditioned-descendant detours and retained-only splicing. Equating this internal route representation with a separate library representation is not substituted for the direct semantics theorem; any such library port requires its own explicit equivalence.
@@ -167,7 +216,7 @@ The twelve new modules from `BinaryCPTPolynomials` through `BinaryCircuitMinor` 
 3. Elaborate and check the composed two-way selected active-path theorem and common canonical named-root preservation in `SelectedProfileSeparation.lean` (B4–B9). Relate its concrete marked-route definition to the final library separation semantics.
 4. Elaborate and check the canonical bidirected-edge hidden-root source (B8/E1). Actual expansion, acyclicity, retained-sink preservation, exact arbitrary-latent-interior marked projection, direct active-path equivalence/ancestry, finite-order construction, exact selector/hidden-root counts, the complete profile-code bound and the same actual source's named-indicator commutation now have source proof bodies. The original-source graph adapter now composes these constructions, but the full original-source bounded-registry realization theorem has not been certified and its downstream exact target/probability dependencies remain.
 5. Elaborate/check the inducing-path/separator equivalence, literal selected MAG/TCM preservation, ancestral-graph validity, maximality and **both directions of complete selected-DAG/MAG representation** now implemented (A5/B10 at the source-proof level). The prior HPL mask/refined-separator results, both partial query families, common observed/root alignment, shared-separator status induction and actual first-arrow/ancestry transfer have proof bodies. The optimized finite transcript and interactive policy now compose genuine shared separators with the full common-source marked-TCM decoder, exact indexed B, coarse all-n bound and full-coverage endpoint. All remain unelaborated. The sharper grouped k,u formulas are not newly formalized here. No hand citation, graph name or interface axiom substitutes for the direct path, sufficiency or history-completeness constructions.
-6. Fixed-selected-slice common-mechanism faithful probability representatives (D1–D6), not merely a formal oracle assumption promoted to physical realizability.
+6. Elaborate and independently check the now-written fixed-selected-slice common-mechanism binary probability representatives and elementary physical-response join (D1–D6). The actual nonzero-minor geometry, sink relabeling, shared-coordinate injections, rational avoidance, normalization, global Markov, selected-law and invariance identities have proposed bodies through `BinaryPhysicalGame.original_selected_binary_upper`; their existence as source is not verification. Faithfulness is retained for admitted physical parameters, and nonempty common realizations for every original finite source are derived rather than merely postulated.
 7. Elaborate/check the original-source TCM-image equality, graph/target decisions, computable common-source labels and exact finite whole-history decoder (E1–E3). `CompleteHistory` is derived, and the new sorted coordinate enumerations and explicit response-branching Plan supply source bodies for C/E4–E5. The original and complete finite-registry games preserve all responses and full marked-class targets. All-response legality uses the remaining query budget; one source generates the whole actual run. The optional generic enumeration, target specification and arbitrary-source graphical response specification remain explicitly noncomputable, but they are not evaluated in the effective plan body. The exact G7 body is copied as an explicitly unelaborated 4.33.1 compatibility port, not imported silently from another toolchain. No successful elaboration, extracted execution, physical probability closure or runtime validation is claimed. Lower-family L1–L8 have not been formalized by these modules.
 
 These are the full formalization obligations, not newly discovered gaps in the separately reviewed hand manuscripts. No source-only component is an unconditional formal proof of the original theorem. No proof-site submission or novelty claim is made.
