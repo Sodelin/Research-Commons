@@ -108,3 +108,36 @@ These remain UNELABORATED source terms. Separate proposed components for all tar
 All paths have a separate L*A accumulator bound and paid cleanup. Budget arithmetic is entered only after this aggregate succeeds; failure clears the score without resetting false. The whole component must still be gated on success of earlier verifier phases. The direct per-node arithmetic avoids a separate A*internalCount-sumCounts multiplication plan; it does not change the objective.
 
 The decisive unclosed joins are now actual bounded binary headers/caps/dimensions and paid A production; one finite inventory connecting all existing grammar/guard/clade/score routines to the original pair encoding; globally absorbing rejection; complete accepted/rejected one-bit clean halt; and one all-word input-length polynomial. Parameters m,A,B in component bounds are NOT yet bounded-header implementations. `VerifierMachineWitness` is still absent, `EncodedSourceHardness` remains an independent premise, and all new terms remain UNELABORATED. This is not an arbitrary differentiation-DAG verifier, a biological-identification result, compilation evidence or full NP-completeness acceptance.
+
+## Additive source update: 23 October 2026, 04:15 UTC
+
+The complete SAME restricted verifier now has a proposed source inhabitant:
+`PolytomyRestrictedVerifierMachine.restrictedVerifierPoly` (declaration in
+namespace `PolytomyReductionModel.WholeVerifierController`) has target
+`VerifierMachineWitness`. This is UNELABORATED source, not Lean acceptance.
+See `POLYTOMY-COMPLETE-RESTRICTED-VERIFIER-SOURCE.md` for the exact fifteen-file
+chain, resource polynomial, review scope and pinned APIs.
+
+The actual pair/header front constructs its own caps, bounds binary N/m
+before A production and handles original saturated budget. One fixed
+inventory joins original target/certificate grammar, complete consumption,
+all eight real guards and absorbing rejection. One shared decoded forest
+and certificate identify every component's existential output through
+codec determinism. The all-word Boolean theorem uses the original
+boundedPairVerifier_eq clipping proof, not a loose operational A bound.
+
+All-path cleanup is charged from a structural maximum-push bound over each
+actual TM2 statement and the finite label set, then induction over actual
+Runs. This includes private intermediate tapes and malformed/error paths.
+All guards restore full public stacks; cleanup erases every public tape,
+emits one bit and resets control. Exact initList/haltList packaging uses
+the same concrete routine code, not an assumed compiler or implementation.
+
+The SOURCE-level construction obligation is therefore supplied by candidate
+terms, while the ACCEPTANCE obligation remains open: full elaboration,
+finite instances, compatible imports, transitive axiom audit and kernel
+checks have not occurred. Independently, EncodedSourceHardness remains an
+unsupplied exact encoding/model premise. The new combined source endpoint
+retains that premise and the original all-refinement actual-D_lambda scope.
+No arbitrary-Carta/DAG verifier, statistical identifiability, historical
+novelty or accepted NP-completeness result is claimed.
