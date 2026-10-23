@@ -22,22 +22,6 @@ fn fin(i:usize)->String{format!("⟨{i}, by decide +kernel⟩")}
 fn vector(xs:Vec<String>)->String{
  if xs.is_empty(){"Fin.elim0".into()}else{format!("![{}]",xs.join(", "))}
 }
-fn population(place:Location)->Result<String,Error>{
- match place {
-  Location::Edge(e)=>Ok(format!("some {}",fin(e))),
-  Location::Ancestral(_)=>Ok("none".into()),
-  Location::Node(_)=>Err(Error::Invalid("node is not a word variable")),
- }
-}
-fn variable(v:Variable,request:&Request)->Result<String,Error>{
- match v {
-  Variable::Survival{slot,population:place}=>Ok(format!("Sum.inl ({}, {})",fin(slot),population(place)?)),
-  Variable::OriginalGamma(h)=>{
-   let site=request.context.source.hybrids.get(h).ok_or(Error::Invalid("original hybrid variable"))?.vertex;
-   Ok(format!("Sum.inr ⟨{}, by decide +kernel⟩",fin(site)))
-  }
- }
-}
 fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],
  monomials:&BTreeMap<Vec<usize>,usize>,limits:RenderLimits)->Result<String,Error>{
  if p.dimension!=variables.len(){return Err(Error::Invalid("word coefficient dimension"));}
@@ -51,6 +35,94 @@ fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],
   parts.push(format!("(monomial{i}, {rational})"));
  }
  Ok(format!("[{}]",parts.join(", ")))
+}
+/// Explicit literal original-variable/native-position binding. Finite fields
+/// and both inverse cases are checked in Lean, never inferred from a separate
+/// noncomputable numbering or from a matching vector length alone.
+fn indexed_bank(request:&Request,dimension:usize,render:RenderLimits)->Result<String,Error>{
+ let source=&request.context.source;
+ let nv=source.vertices;let ne=source.edges.len();let nh=source.hybrids.len();let slots=request.slots;
+ let mut out=String::new();
+ let sites=vector(source.hybrids.iter().map(|h|fin(h.vertex)).collect());
+ put(&mut out,&format!(r#"
+local instance : DecidablePred N.graph.IsHybrid := hybridDecidable N
+private def hybridVertices : Fin {nh} → Fin {nv} := {sites}
+private theorem captured_hybrid_vertices :
+    ∀ i : Fin {nh}, N.graph.IsHybrid (hybridVertices i) := by decide +kernel
+private def nativeHybrid (i : Fin {nh}) : Hybrid N :=
+  ⟨hybridVertices i, captured_hybrid_vertices i⟩
+"#),render.rendered_bytes)?;
+ if nh==0{
+  put(&mut out,&format!(r#"
+private theorem no_original_hybrid : ∀ v : Fin {nv}, ¬ N.graph.IsHybrid v := by decide +kernel
+private def hybridNumber (h : Hybrid N) : Fin 0 :=
+  False.elim (no_original_hybrid h.val h.property)
+private theorem nativeHybrid_number (h : Hybrid N) : nativeHybrid (hybridNumber h) = h := by
+  exact False.elim (no_original_hybrid h.val h.property)
+"#),render.rendered_bytes)?;
+ }else{
+  let mut indices=vec![fin(0);nv];
+  for(i,h)in source.hybrids.iter().enumerate(){indices[h.vertex]=fin(i);}
+  put(&mut out,&format!(r#"
+private def vertexHybridNumber : Fin {nv} → Fin {nh} := {}
+private theorem captured_hybrid_indices :
+    ∀ v : Fin {nv}, N.graph.IsHybrid v → hybridVertices (vertexHybridNumber v) = v := by
+  decide +kernel
+private def hybridNumber (h : Hybrid N) : Fin {nh} := vertexHybridNumber h.val
+private theorem nativeHybrid_number (h : Hybrid N) : nativeHybrid (hybridNumber h) = h := by
+  apply Subtype.ext
+  exact captured_hybrid_indices h.val h.property
+"#,vector(indices)),render.rendered_bytes)?;
+ }
+ let mut slots_data=Vec::new();
+ for j in 0..slots{
+  let edges=vector((0..ne).map(|e|fin(j*(ne+1)+e)).collect());
+  slots_data.push(format!("fun place => match place with | some edge => ({edges}) edge | none => {}",fin(j*(ne+1)+ne)));
+ }
+ let gammas=vector((0..nh).map(|h|fin(slots*(ne+1)+h)).collect());
+ put(&mut out,&format!(r#"
+private def slotCoordinate : Fin {slots} → Option (Fin {ne}) → Fin {dimension} := {}
+private def gammaCoordinate : Fin {nh} → Fin {dimension} := {gammas}
+private def encodeVariable : WordVariable N (Fin {slots}) → Fin {dimension}
+  | .inl p => slotCoordinate p.1 p.2
+  | .inr h => gammaCoordinate (hybridNumber h)
+"#,vector(slots_data)),render.rendered_bytes)?;
+ let vars=(0..slots).flat_map(|j|(0..ne).map(move|e|format!("Sum.inl ({}, some {})",fin(j),fin(e)))
+  .chain(std::iter::once(format!("Sum.inl ({}, none)",fin(j)))))
+  .chain((0..nh).map(|i|format!("Sum.inr (nativeHybrid {})",fin(i)))).collect::<Vec<_>>();
+ put(&mut out,&format!(r#"
+private def variableBank : Fin {dimension} → WordVariable N (Fin {slots}) := {}
+private theorem variableBank_gamma (i : Fin {nh}) :
+    variableBank (gammaCoordinate i) = Sum.inr (nativeHybrid i) := by
+  fin_cases i <;> rfl
+"#,vector(vars)),render.rendered_bytes)?;
+ if slots==0{
+  put(&mut out,&format!(r#"
+private theorem variableBank_interval (slot : Fin 0) (place : Option (Fin {ne})) :
+    variableBank (slotCoordinate slot place) = Sum.inl (slot,place) := by
+  exact Fin.elim0 slot
+"#),render.rendered_bytes)?;
+ }else{
+  put(&mut out,&format!(r#"
+private theorem variableBank_interval (slot : Fin {slots}) (place : Option (Fin {ne})) :
+    variableBank (slotCoordinate slot place) = Sum.inl (slot,place) := by
+  fin_cases slot <;> cases place with
+  | none => rfl
+  | some edge => fin_cases edge <;> rfl
+"#),render.rendered_bytes)?;
+ }
+ put(&mut out,&format!(r#"
+theorem original_variable_native_bank_left_inverse :
+    Function.LeftInverse variableBank encodeVariable := by
+  intro i
+  cases i with
+  | inl pair => exact variableBank_interval pair.1 pair.2
+  | inr h =>
+    change variableBank (gammaCoordinate (hybridNumber h)) = Sum.inr h
+    rw [variableBank_gamma, nativeHybrid_number]
+#check original_variable_native_bank_left_inverse
+"#),render.rendered_bytes)?;
+ Ok(out)
 }
 /// Complete immutable natural-word request, preserving ALL register-labelled
 /// destinations and variables. FullView is explicit; completion has a separate
@@ -129,10 +201,8 @@ private def common (h : Hybrid N) : Bool := vertexMode h.val
  put(&mut out,&format!(r#"
 private def word : List (Symbol (Fin {slots}) (Fin {nv}) (Fin {ne})) := [{word}]
 "#),render.rendered_bytes)?;
- let variables=table.variables.iter().map(|v|variable(*v,request)).collect::<Result<Vec<_>,_>>()?;
- put(&mut out,&format!(r#"
-private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
-"#,variables.len(),vector(variables)),render.rendered_bytes)?;
+ put(&mut out,&indexed_bank(request,table.variables.len(),render)?,render.rendered_bytes)?;
+ let dimension=table.variables.len();
  let mut monomial_ids:BTreeMap<Vec<usize>,usize>=BTreeMap::new();
  for t in &table.transitions {
   for powers in t.polynomial.terms.keys(){
@@ -142,9 +212,9 @@ private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
  for (powers,i) in &monomial_ids{
   if powers.len()!=table.variables.len(){return Err(Error::Invalid("word dictionary exponent arity"));}
   let body=powers.iter().enumerate().filter(|(_,power)|**power!=0)
-   .map(|(v,power)|format!("(variableBank {v}, {power})")).collect::<Vec<_>>().join(", ");
+   .map(|(v,power)|format!("({v}, {power})")).collect::<Vec<_>>().join(", ");
   put(&mut out,&format!(
-   "private def monomial{i} : List (WordVariable N (Fin {slots}) × Nat) := [{body}]\n"),
+   "private def monomial{i} : List (Fin {dimension} × Nat) := [{body}]\n"),
    render.rendered_bytes)?;
  }
  let mut rows=Vec::new();let mut monomials=0usize;
@@ -160,7 +230,7 @@ private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
   rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,&monomial_ids,render)?));
  }
  put(&mut out,&format!(r#"
-private def rows : Rows (WordVariable N (Fin {slots})) (Code N sample) := [{}]
+private def rows : Rows (Fin {dimension}) (Code N sample) := [{}]
 private def nativeSelectedRows : Nat := {}
 theorem complete_output_count : rows.length = nativeSelectedRows := by decide +kernel
 #print nativeSelectedRows
@@ -170,7 +240,7 @@ theorem complete_output_count : rows.length = nativeSelectedRows := by decide +k
 #check word
 
 theorem complete_word_coefficient_fibres_checked :
-    checkNaturalWord N sample parentRegistry common word rows = true := by
+    checkNaturalWordIndexed N sample parentRegistry common word encodeVariable rows = true := by
   decide +kernel
 
 #check complete_word_coefficient_fibres_checked
@@ -179,11 +249,11 @@ theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
     (r : PositivePairRates (Fin {ne})) (p : HybridProbabilities N)
     (dur : Fin {slots} → ℝ≥0) :
     value (readRows (project N Finset.univ) rows b)
-        (wordVariables N r (originalGamma p) dur) =
+        (fun i => wordVariables N r (originalGamma p) dur (variableBank i)) =
       (((initializedWordLaw N sample parentRegistry p common r dur word).map
         (projection N Finset.univ)) b).toReal :=
-  checked_natural_word N sample parentRegistry common word rows
-    complete_word_coefficient_fibres_checked b r p dur
+  checked_natural_word_indexed N sample parentRegistry common word encodeVariable variableBank
+    original_variable_native_bank_left_inverse rows complete_word_coefficient_fibres_checked b r p dur
 #check actual_same_source_natural_word
 end {}
 "#,rows.join(",\n  "),table.transitions.len(),bindings.namespace),render.rendered_bytes)?;
@@ -229,7 +299,7 @@ noncomputable def returnedDur : Fin 2 → ℝ≥0 :=
 #check returnedDur
 theorem same_returned_bank_natural_word (b : SelectedIndex N sample Finset.univ) :
     value (readRows (project N Finset.univ) rows b)
-        (wordVariables N returnedBank.rates (originalGamma returnedBank.inheritance) returnedDur) =
+        (fun i => wordVariables N returnedBank.rates (originalGamma returnedBank.inheritance) returnedDur (variableBank i)) =
       (((initializedWordLaw N sample parentRegistry returnedBank.inheritance common
         returnedBank.rates returnedDur word).map (projection N Finset.univ)) b).toReal :=
   actual_same_source_natural_word b returnedBank.rates returnedBank.inheritance returnedDur

@@ -11,6 +11,7 @@ open Nanuq.Source
 open UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.NativePairClockLaw UnifiedLean.Source.SourceFiniteProjection
 open UnifiedLean.Source.SourceAncestralCompletion
+open UnifiedLean.Source.SourceCompletionHarmonic
 open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
 open GProgram.G7.EffectiveAncestralCompletion

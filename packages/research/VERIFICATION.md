@@ -157,3 +157,17 @@ The actual fixed public input has three current copies at the original ancestral
 ### First completion emitter compilation
 
 Atf8da0591/run39997976081/Rust job120566367245, compilation caught three unescaped Lean Finset literal braces inside the new Rust format string (first at completion_certificate.rs:125). The emitted event syntax is now escaped correctly in Rust while the actual Lean predicate stays unchanged. No completion context/caller/observer check ran in that failed source; dependent jobs were skipped. The source/error/correction remain versioned, without a partial PASS or native-probability claim.
+
+
+### Completion kernel namespace and explicit word-bank binding
+
+At3ed24ca3/run39998490518, Rust and the expanded declaration export job passed. The completion generic target reported only unresolved completionKernel applications at lines40/64; the existing kernel is in SourceCompletionHarmonic, which the retained completion supplier explicitly opens. Both new receiver and emitted caller now use that namespace. No literal completion/observer PASS is inferred from the failed target.
+
+The large word receiver now compares literal Fin D native positions. Existing polynomial_read_renameRows and the actual natural-word theorem supply evaluation after a caller-proved coordinate LeftInverse. The emitter checks original hybrid-site/index coverage, each slot/original-edge/ancestral position and the gamma coordinate case, then instantiates the SAME original physical bank through the decoder. It does not assume independent physical slot fits or an emitted-law identity. This explicitly closes a data/coordinate obligation and removes dependent-subtype function keys from the Boolean comparison; any speedup remains unverified. Hosted shutdown causes and the actual literal coefficient result remain UNKNOWN. All original rows, coefficients, profiles, root cases, ordered parent IDs and natural register mixture stay intact.
+
+
+## Expanded scoped export acceptance
+
+At3ed24ca3/run39998490518/job120568425965, the878-source Exports context/audit passed20402 declarations/13947 theorems with zero owned axioms/nonstandard rows/missing modules. Actual Lean checked80 names/real owners in18 canonical claim bindings, including the seven retained forward CB-G4-001 aliases. All75 Rust tests passed. The100 unnamed claims remain; CB-G4-001 stays COMPONENT-only, with full finite legal tester/tomography and actual completion acceptance separate. Exact new receipt is integration/claim-export-verification-v2.json; the earlier17/73 receipt remains intact.
+
+Recovery observation: the older full run39989161799/job120536396009 is now terminal FAILURE, replacing the earlier in-progress observation. Its log endpoint returned GitHub BlobNotFound404 during this read-only recovery, so no new caller result is inferred. At current source3ed24ca3, independent Word job120568425921 reached exact decoded destination-field checks then a hosted runner shutdown; the literal coefficient outcome remains UNKNOWN. No job was manually replayed or runner cause asserted.

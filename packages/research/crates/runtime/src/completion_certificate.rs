@@ -44,6 +44,7 @@ open UnifiedLean.Source.FiniteSourceSnapshot
 open UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.NativePairClockLaw UnifiedLean.Source.SourceFiniteProjection
 open UnifiedLean.Source.SourceAncestralCompletion
+open UnifiedLean.Source.SourceCompletionHarmonic
 open UnifiedLean.Source.SourceCompletedUnrankedTree
 open UnifiedLean.Source.UnrankedGenealogyObservation
 open GProgram.G7.EffectiveSourceEnumeration
