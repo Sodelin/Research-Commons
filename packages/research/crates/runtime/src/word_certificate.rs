@@ -302,7 +302,7 @@ pub(crate) fn join_example(document:&str,namespace:&str)->Result<String,Error>{
 theorem named_parent_order_matches_capture (b : Bool) :
     (parentRegistry.parents ⟨(7 : Fin 9), by decide +kernel⟩).parent b =
       ResearchCommons.Generated.OriginalParallelBank.code.2.2.2.2.2 (0 : Fin 1) b := by
-  cases b <;> decide +kernel
+  cases b <;> rfl
 
 noncomputable abbrev returnedBank := ResearchCommons.Generated.OriginalParallelBank.sharedBank
 noncomputable def returnedDur : Fin 2 → ℝ≥0 :=

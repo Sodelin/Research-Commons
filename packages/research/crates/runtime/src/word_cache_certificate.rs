@@ -281,6 +281,8 @@ end {namespace}
   append(&mut bundle,name.clone(),source,limits)?;
   imports.push(name);certificates.push(format!("{namespace}.certificate"));
  }
+ // The empty-word path retains the already small direct composition check.
+ if request.word.is_empty(){
  // Reuse the exact final native table rendered by the original emitter.
  let row_marker="private def rows : Rows";
  let row_start=remaining.find(row_marker).ok_or(Error::Invalid("final row boundary"))?;
@@ -312,6 +314,93 @@ end {namespace}
  rows=&remaining[row_start..proof_start],certificates=certificates.join(",\n   "),
  edges=request.context.source.edges.len(),namespace=bindings.namespace);
  append(&mut bundle,final_module,final_source,limits)?;
+ return Ok(bundle);
+ }
+ // Reuse the original certified primitive list once for every compact prefix.
+ let cache_module=format!("{final_module}Cache");
+ let cache_namespace=format!("{}.Cache",bindings.namespace);
+ let cache_source=format!(r#"{header}
+def cache : List (CertifiedStep N sample parentRegistry common encodeVariable) :=
+  [{certificates}]
+end {cache_namespace}
+"#,header=header(&imports,&cache_namespace,&context_namespace),
+ certificates=certificates.join(",\n   "));
+ append(&mut bundle,cache_module.clone(),cache_source,limits)?;
+ let row_marker="private def rows : Rows";
+ let row_start=remaining.find(row_marker).ok_or(Error::Invalid("final row boundary"))?;
+ let proof_marker="theorem complete_word_coefficient_fibres_checked :";
+ let proof_start=remaining.find(proof_marker).ok_or(Error::Invalid("final proof boundary"))?;
+ let mut previous_module=format!("{final_module}Initial");
+ let mut previous_rows=format!("{initial_namespace}.certificate.rows");
+ let mut stage_names=Vec::new();let mut stage_definitions=Vec::new();let mut stage_checks=Vec::new();
+ for (letter,&operation) in request.word.iter().enumerate(){
+  let stage_module=format!("{final_module}Stage{letter}");
+  let stage_namespace=format!("{}.Stage{letter}",bindings.namespace);
+  let (declarations,rows)=if letter+1==request.word.len(){
+   // These are the EXACT original complete native final rows already obtained
+   // by direct::emit. No second final query, fitting or independent bank.
+   (remaining[..row_start].to_string(),remaining[row_start..proof_start].replace("private ",""))
+  }else{
+   let mut prefix=request.clone();prefix.word=request.word[..=letter].to_vec();
+   let table=query(&prefix,Some(letter))?;observe_work(&mut extra_work,&table,request)?;
+   if table.variables!=variables{return Err(Error::Invalid("prefix complete original variable bank"));}
+   let (declarations,rows)=direct::table_body(request,&table,render_all).map_err(Error::Direct)?;
+   (declarations,rows_declaration(&rows,dimension,copies).replace("private ",""))
+  };
+  let data=data_parts(&mut bundle,&stage_module,&stage_namespace,&context_module,
+   &context_namespace,&declarations,limits)?;
+  let source=format!(r#"{header}{rows}
+def stage : WordStage N sample (Fin {dimension}) (Fin {slots}) where
+  operation := {operation}
+  rows := rows
+theorem coefficient_fibres_checked :
+    checkRows (project N Finset.univ)
+      (bindRows {previous_rows}
+        (cachedStep N sample parentRegistry common encodeVariable {cache_namespace}.cache
+          {operation})) rows = true := by
+  decide +kernel
+#check coefficient_fibres_checked
+end {stage_namespace}
+"#,header=header(&[cache_module.clone(),previous_module.clone(),data],
+  &stage_namespace,&context_namespace),operation=symbol(operation));
+  append(&mut bundle,stage_module.clone(),source,limits)?;
+  stage_names.push(format!("{stage_namespace}.stage"));
+  stage_definitions.push(format!("{stage_namespace}.stage"));
+  stage_checks.push(format!("{stage_namespace}.coefficient_fibres_checked"));
+  previous_module=stage_module;previous_rows=format!("{stage_namespace}.rows");
+ }
+ let proof_rules=stage_definitions.into_iter().chain(stage_checks).collect::<Vec<_>>().join(",\n    ");
+ let source=format!(r#"{header}
+private def stages : List (WordStage N sample (Fin {dimension}) (Fin {slots})) :=
+  [{stage_names}]
+private abbrev rows := {previous_rows}
+theorem stages_retain_every_original_operation :
+    stages.map WordStage.operation = word := by rfl
+theorem final_rows_are_the_complete_original_native_output :
+    finalStageRows N sample {initial_namespace}.certificate.rows stages = rows := by rfl
+theorem complete_word_coefficient_fibres_checked :
+    checkStages N sample parentRegistry common encodeVariable {cache_namespace}.cache
+      {initial_namespace}.certificate.rows stages = true := by
+  simp only [stages, checkStages, {proof_rules}, Bool.true_and]
+#check complete_word_coefficient_fibres_checked
+theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
+    (r : PositivePairRates (Fin {edges})) (p : HybridProbabilities N)
+    (dur : Fin {slots} → ℝ≥0) :
+    value (readRows (project N Finset.univ) rows b)
+        (fun i => wordVariables N r (originalGamma p) dur (variableBank i)) =
+      (((initializedWordLaw N sample parentRegistry p common r dur word).map
+        (projection N Finset.univ)) b).toReal := by
+  have h := checked_staged_same_source_natural_word N sample parentRegistry common
+    encodeVariable variableBank original_variable_native_bank_left_inverse
+    {initial_namespace}.certificate {cache_namespace}.cache stages
+    complete_word_coefficient_fibres_checked b r p dur
+  simpa only [stages_retain_every_original_operation,
+    final_rows_are_the_complete_original_native_output] using h
+#check actual_same_source_natural_word
+end {namespace}
+"#,header=header(&[cache_module,previous_module],bindings.namespace,&context_namespace),
+ stage_names=stage_names.join(",\n   "),edges=request.context.source.edges.len(),namespace=bindings.namespace);
+ append(&mut bundle,final_module,source,limits)?;
  Ok(bundle)
 }
 pub fn example(mode:&str)->Result<Bundle,Error>{
@@ -344,7 +433,10 @@ pub fn example(mode:&str)->Result<Bundle,Error>{
    assert!(b.modules.iter().all(|m|m.source.len()<=262144));
    let last=b.modules.last().unwrap();
    assert!(last.source.contains("same_returned_bank_natural_word"));
-   assert!(last.source.contains("checkComposedWord"));
+   assert!(last.source.contains("checkStages"));
+   assert_eq!(b.modules.iter().filter(|m|m.source.contains("#check coefficient_fibres_checked")).count(),7);
+   assert!(last.source.contains("stages_retain_every_original_operation"));
+   assert!(last.source.contains("final_rows_are_the_complete_original_native_output"));
    assert!(b.modules.iter().any(|m|m.source.contains("checkInitial")));
    assert_eq!(b.modules.iter().filter(|m|m.source.contains("checkStep N sample")).count(),b.primitive_entries);
    assert!(!b.modules.iter().any(|m|m.source.contains("native_decide")||m.source.contains("sorry")));

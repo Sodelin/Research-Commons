@@ -441,4 +441,129 @@ theorem checked_same_source_natural_word (N : RootedBinary V E X) (sample : Copy
   intro a _
   rw [← value_readRows, initial_value N sample encode decode hleft initial a r p dur]
 
+/-- One compact, literal prefix row supplied by the unchanged native word
+provider. The operation is retained as data; no source-law equality is an
+input. Its whole coefficient fibre is checked before the next prefix. -/
+structure WordStage (N : RootedBinary V E X) (sample : Copy → X)
+    (Native J : Type*) where
+  operation : Symbol J V E
+  rows : Rows Native (Code N sample)
+
+def finalStageRows (N : RootedBinary V E X) (sample : Copy → X) :
+    Rows Native (Code N sample) →
+      List (WordStage N sample Native J) → Rows Native (Code N sample)
+  | current, [] => current
+  | _, stage :: rest => finalStageRows N sample stage.rows rest
+
+/-- Every intermediate native prefix table is checked against literal
+composition of the PREVIOUS checked row with the SAME certified primitive.
+This avoids constructing the full ungrouped multi-letter expression at once;
+all duplicate/zero/absent coefficient fibres remain in the existing check. -/
+def checkStages (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native)
+    (cache : List (CertifiedStep N sample H common encode)) :
+    Rows Native (Code N sample) → List (WordStage N sample Native J) → Bool
+  | _, [] => true
+  | current, stage :: rest =>
+      checkRows (project N Finset.univ)
+        (bindRows current (cachedStep N sample H common encode cache stage.operation))
+        stage.rows &&
+      checkStages N sample H common encode cache stage.rows rest
+
+theorem checked_stage_value (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (decode : Native → WordVariable N J)
+    (hleft : Function.LeftInverse decode encode)
+    (cache : List (CertifiedStep N sample H common encode))
+    (r : PositivePairRates E) (gamma : Hybrid N → unitInterval) (dur : J → ℝ≥0)
+    (current next : Rows Native (Code N sample))
+    (law : PMF (SelectedIndex N sample Finset.univ))
+    (op : Symbol J V E)
+    (hcurrent : ∀ a, value (readRows (project N Finset.univ) current a)
+        (fun i => wordVariables N r gamma dur (decode i)) = (law a).toReal)
+    (h : checkRows (project N Finset.univ)
+      (bindRows current (cachedStep N sample H common encode cache op)) next = true)
+    (b : SelectedIndex N sample Finset.univ) :
+    value (readRows (project N Finset.univ) next b)
+      (fun i => wordVariables N r gamma dur (decode i)) =
+      ((law.bind (selectedProgramStep N r Finset.univ
+        (instantiateGamma N H gamma common dur op))) b).toReal := by
+  classical
+  let x : Native → ℝ := fun i => wordVariables N r gamma dur (decode i)
+  have heq := checkRows_sound (project N Finset.univ)
+    (bindRows current (cachedStep N sample H common encode cache op)) next h b
+  have hev := congrArg (MvPolynomial.eval₂ (Rat.castHom ℝ) x) heq
+  rw [eval_polynomial, eval_polynomial] at hev
+  apply hev.symm.trans
+  rw [value_read_bindRows]
+  simp_rw [cached_step_value N sample H common encode decode hleft cache op _ b r gamma dur]
+  rw [sum_partition current (fun row => project N Finset.univ row.1)
+    (fun row => value row.2 x)
+    (fun a => (selectedProgramStep N r Finset.univ
+      (instantiateGamma N H gamma common dur op) a b).toReal)]
+  rw [bind_probability_real, tsum_fintype]
+  apply Finset.sum_congr rfl
+  intro a _
+  rw [← value_readRows, hcurrent]
+
+/-- Soundness of checked compact prefix composition for an arbitrary entering
+selected law. The public natural-word receiver derives that entering law from
+the original once-initialized register certificate below. -/
+theorem checked_stages_value (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (decode : Native → WordVariable N J)
+    (hleft : Function.LeftInverse decode encode)
+    (cache : List (CertifiedStep N sample H common encode))
+    (r : PositivePairRates E) (gamma : Hybrid N → unitInterval) (dur : J → ℝ≥0)
+    (stages : List (WordStage N sample Native J))
+    (current : Rows Native (Code N sample))
+    (law : PMF (SelectedIndex N sample Finset.univ))
+    (hcurrent : ∀ a, value (readRows (project N Finset.univ) current a)
+        (fun i => wordVariables N r gamma dur (decode i)) = (law a).toReal)
+    (h : checkStages N sample H common encode cache current stages = true)
+    (b : SelectedIndex N sample Finset.univ) :
+    value (readRows (project N Finset.univ) (finalStageRows N sample current stages) b)
+      (fun i => wordVariables N r gamma dur (decode i)) =
+      ((law.bind (selectedProgram N r Finset.univ
+        (stages.map fun stage => instantiateGamma N H gamma common dur stage.operation))) b).toReal := by
+  induction stages generalizing current law with
+  | nil =>
+      simpa only [finalStageRows, List.map_nil, selectedProgram, PMF.bind_pure] using hcurrent b
+  | cons stage rest ih =>
+      obtain ⟨hfirst, hrest⟩ := bool_and_components _ _ h
+      have hnext := checked_stage_value N sample H common encode decode hleft cache
+        r gamma dur current stage.rows law stage.operation hcurrent hfirst
+      have heq := ih stage.rows
+        (law.bind (selectedProgramStep N r Finset.univ
+          (instantiateGamma N H gamma common dur stage.operation))) hnext hrest
+      simpa only [finalStageRows, List.map_cons, selectedProgram, PMF.bind_assoc] using heq
+
+/-- Complete same-source natural word through checked literal prefixes.
+Every primitive and every complete intermediate/final coefficient check is
+present. Original initialization is integrated ONCE; no desired word law,
+fresh private bank or independent interval realization is supplied. -/
+theorem checked_staged_same_source_natural_word (N : RootedBinary V E X)
+    (sample : Copy → X) (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (decode : Native → WordVariable N J)
+    (hleft : Function.LeftInverse decode encode)
+    (initial : CertifiedInitial N sample encode)
+    (cache : List (CertifiedStep N sample H common encode))
+    (stages : List (WordStage N sample Native J))
+    (h : checkStages N sample H common encode cache initial.rows stages = true)
+    (b : SelectedIndex N sample Finset.univ)
+    (r : PositivePairRates E) (p : HybridProbabilities N) (dur : J → ℝ≥0) :
+    value (readRows (project N Finset.univ)
+      (finalStageRows N sample initial.rows stages) b)
+      (fun i => wordVariables N r (originalGamma p) dur (decode i)) =
+      (((initializedWordLaw N sample H p common r dur
+        (stages.map WordStage.operation)).map (projection N Finset.univ)) b).toReal := by
+  have hinit := initial_value N sample encode decode hleft initial
+  have heq := checked_stages_value N sample H common encode decode hleft cache
+    r (originalGamma p) dur stages initial.rows
+    (((originalRegisterPMF N p).map (initialCode N sample)).map (projection N Finset.univ))
+    (fun a => hinit a r p dur) h b
+  rw [initializedWordLaw_projected]
+  simpa only [List.map_map, Function.comp_def] using heq
+
 end Astra.OriginalWordCacheCertificate
