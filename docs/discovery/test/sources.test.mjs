@@ -112,3 +112,11 @@ test('P1 conditional testing transfer remains complete while its uniform-risk pr
  const hits=searchSources(corpus,'finite minimax',new Set(['CB-PHYS-P1-002']));assert(hits.some(d=>j.links.some(l=>l.url===d.url)));
  assert.equal(data.claims.find(c=>c.id==='CB-PHYS-P1-002').completion.mathematical_claim_complete,true);
 });
+
+test('nanowire all-pair decision theorem does not masquerade as an executed original-instance certificate',()=>{
+ const j=joins.find(j=>j.kind==='reviewed_decidability_not_executed_instance');assert(j);assert.deepEqual(j.claim_ids,['CB-NANO-001','CB-NANO-005']);
+ for(const pattern of [/TWO FIXED/,/EVERY field/,/outside the universal field quantifier/,/actual original-instance decision/,/BOTH margin classes/,/greater than 2epsilon/,/No decision\/separation certificate/])assert.match(j.explanation,pattern);
+ for(const p of j.links.filter(l=>l.expected_sha256)){const d=corpus.documents.find(d=>d.url===p.url);assert(d);assert.equal(d.bytes,p.expected_bytes);assert.equal(d.sha256,p.expected_sha256);assert.equal(d.git_blob,p.expected_git_blob);assert(d.bindings.some(b=>b.source_join_kind===j.kind));}
+ const hits=searchSources(corpus,'bounded class',new Set(['CB-NANO-001']));assert(hits.some(d=>j.links.some(l=>l.url===d.url)));
+ assert.match(data.claims.find(c=>c.id==='CB-NANO-001').separate_downstream_or_validation_work,/existence is unresolved/);
+});
