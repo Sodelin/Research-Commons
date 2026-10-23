@@ -42,3 +42,7 @@ The change view compares the bundled and loaded canonical source pins, exposing 
 The current reader's G3 detail and reuse packet link the older completion/support, WQO and positive-flow proofs plus their later scoped hand acceptances. Reuse them before reopening an excluded route. They are separate from the frozen58 recovered notes and do not close original total-recognition G3.
 
 Dot's [later subjective110-card top-ten assessment](https://github.com/Sodelin/Research-Commons/blob/e19a405f10ce3f5c11edd0d88115107c90cdc791/docs/SUBJECTIVE-REUSE-UPDATE-110.md) supplements the historical75-card JSON ordering. Both retain their dates and actual coverage; expected reuse is distinct from correctness, novelty and objective importance.
+
+## Completed conditional P1 transfer
+
+The reader’s P1 cards now link the original19October proof/scoped hand review and Dot’s later correction at342f2ed3d5b2628f846f54b80d07d8305afa1723/docs/P1-P5-ACCEPTED-WORK-ADDENDUM.md. Finite minimax/off-net/two-source conversion is completed CONDITIONAL on the stated uniform squared-Bures risk premise, with exactly n copies per source and explicit finite-precision slack. The sharper uniform original-class risk/increment premise remains unsupplied; do not rederive the completed conversion. Upper13, lower domains and P5 remain unchanged.
