@@ -1,6 +1,6 @@
 # Lean components and original-source assembly
 
-For research questions and completed results, start with the [canonical discovery gateway](RESEARCH-DISCOVERY-GATEWAY.md). It connects Dot’s claim register and question routes to exact proof, review and current builder evidence. The maintainer is adding discovery filters/export over that same register.
+For research questions and completed results, start with [Find an answer](https://github.com/Sodelin/Research-Commons/blob/main/docs/FIND-AN-ANSWER.md) and the [existing shared reader/agent lookup](DISCOVERY-READER-INTEGRATION.md). The [canonical discovery gateway](RESEARCH-DISCOVERY-GATEWAY.md) connects Dot’s registry to exact proof, review and current builder evidence. The maintainer’s published, schema-corrected reader reuses that same register; this builder supplies its caller/evidence joins.
 
 The current uncompiled source context contains **778 modules / 5,922,316 bytes**:
 755 unchanged original modules and23 explicitly owned modules or import variants.
