@@ -132,7 +132,7 @@ fn vector(items:impl IntoIterator<Item=String>)->String{
 }
 fn dependent_cases(items:impl IntoIterator<Item=String>)->String{
  let items=items.into_iter().collect::<Vec<_>>();
- items.into_iter().rev().fold("Fin.elim0".to_string(),
+ items.into_iter().rev().fold("(fun i => Fin.elim0 i)".to_string(),
   |tail,head|format!("(Fin.cases {head} {tail})"))
 }
 fn render_parameters(name:&str,p:&Parameters)->String{
@@ -159,7 +159,7 @@ pub fn lean_certificate(reference:&Parameters,candidate:&Parameters,name:&str,li
  }
  for (i,sigma) in result.maps.iter().enumerate(){
   s.push_str(&format!("def rename{i} : Rename {j} count := {}\n",
-   dependent_cases(sigma.iter().map(|map|vector(map.iter().map(usize::to_string))))));
+   dependent_cases(sigma.iter().map(|map|vector(map.iter().map(|i|format!("⟨{i}, by decide⟩")))))));
  }
  let supplied=if result.maps.is_empty(){"∅".to_string()}else{
   format!("{{{}}}",(0..result.maps.len()).map(|i|format!("rename{i}")).collect::<Vec<_>>().join(", "))
@@ -210,7 +210,7 @@ pub fn example(incoherent:bool)->Result<String,Error>{
   assert_eq!(filter(&zeros,&zeros,l).unwrap().maps.len(),1);
   let root=Parameters{duration:vec![],rates:vec![vec![q(1,1)]],routing:vec![]};
   assert_eq!(filter(&root,&root,l).unwrap().maps,vec![vec![vec![0]]]);
-  assert!(lean_certificate(&root,&root,"Root",l).unwrap().contains("routing := Fin.elim0"));
+  assert!(lean_certificate(&root,&root,"Root",l).unwrap().contains("routing := (fun i => Fin.elim0 i)"));
  }
  #[test]fn no_partial_filter_or_certificate_on_invalid_dimensions_or_resource_refusal(){
   let a=retained_fixture();let l=Limits::default();

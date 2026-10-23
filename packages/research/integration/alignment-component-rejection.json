@@ -29,5 +29,17 @@
     "source_sha256": "c960770ae9ede3ba70f52f049529b792633f61346693057047ac3e97e475be19",
     "reason": "fin_cases cannot build dependent data in Type via its Prop-only membership recursor; later decide failures contain those invalid placeholders and are not evidence of a coefficient/parameter mismatch.",
     "repair": "Render dependent arrays/maps by Fin.cases ending in Fin.elim0; preserve complete input and returned filter."
+  },
+  "literal_dependent_tail_successor": {
+    "source": "befabb82e6fdeec38f435e41c362afb1751382a3",
+    "run_id": 40039160582,
+    "job_id": 120706098428,
+    "status": "REJECTED_actual_filter_case",
+    "module": "MSCIAlignmentCoherent",
+    "source_bytes": 2144,
+    "source_sha256": "bf9fae378fdc9903d231a3eaf975281baee3528f73c4971cfe9913c9a6eb7f68",
+    "errors": "Nondependent bare Fin.elim0 cannot fill the dependent empty routing tail; OfNat instances do not unfold opaque count in map entries. Later decide error contains those invalid data declarations.",
+    "primary_api_read": "Pinned Lean819816b2 src/Init/Data/Fin/Basic.lean Gitblob6fee3ab2eaacf1b76de02ea7f7880f29fbac8294; elim0 has nondependent result α.",
+    "repair": "Use (fun i => Fin.elim0 i) and explicit ⟨nativeIndex,by decide⟩ Fin constructors in the SAME maps. No parameter/equation/native algorithm/returned-filter change."
   }
 }
