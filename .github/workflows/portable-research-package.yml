@@ -39,6 +39,7 @@ jobs:
           mkdir -p build
           cargo run --locked -p research-commons-package -- check > build/coverage.json
           cargo run --locked -p research-commons-package -- prepare > build/preparation.json
+          cargo run --locked -p research-commons-package -- prepare-certificates > build/certificate-preparation.json
           cargo run --locked -p research-commons-package -- emit-index > build/Registry.lean
           cmp build/Registry.lean lean/ResearchCommons/Registry.lean
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
@@ -95,6 +96,45 @@ jobs:
             packages/research/build/
             packages/research/lean/.generated/build-plan.json
             packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  certificates:
+    name: End-to-end certificate callers (isolated finite-input scope)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same pinned Lean
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          sha256sum "$RUNNER_TEMP/lean.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Prepare exact isolated proof sources
+        run: cargo run --locked -p research-commons-package -- prepare-certificates
+      - name: Acquire the same exact mathlib
+        working-directory: packages/research/certificates
+        run: |
+          lake update
+          lake exe cache get
+      - name: Compile core, check actual emitted proofs and audit all owned declarations
+        run: cargo run --locked -p research-commons-package -- build-certificates
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-certificate-evidence
+          path: |
+            packages/research/build/
+            packages/research/certificates/.generated/build-plan.json
+            packages/research/certificates/lake-manifest.json
           if-no-files-found: warn
   completeness:
     name: Full per-claim integration gate

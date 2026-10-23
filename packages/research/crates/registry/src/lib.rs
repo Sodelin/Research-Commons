@@ -214,6 +214,54 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
         .map_err(|e|e.to_string())?;
     Ok(plan)
 }
+
+/// Small isolated proof context for actual new Rust caller verification.
+/// Its original abstract CM supplier shares declarations with the physical
+/// supplier; separate source/object directories prevent accidental co-import.
+pub fn prepare_certificate_profile(root:&Path)->Result<Value> {
+    let profile=read_json(&root.join("integration/certificate-profile.json"))?;
+    let destination=root.join("certificates/.generated");
+    let mut seen=BTreeSet::new();
+    let mut sources=Vec::new();
+    for m in array(&profile,"modules")? {
+        let name=text(m,"module")?;
+        if seen.contains(name){return Err(format!("duplicate certificate module {name}"));}
+        let path=Path::new(text(m,"path")?);
+        if path.is_absolute() || path.components().any(|x|!matches!(x,std::path::Component::Normal(_))) {
+            return Err("unsafe certificate source path".into());
+        }
+        let bytes=fs::read(root.join(path)).map_err(|e|e.to_string())?;
+        if sha256(&bytes)!=text(m,"sha256")? {return Err(format!("certificate source mismatch: {name}"));}
+        let declared=array(m,"imports")?.iter().map(|x|x.as_str().ok_or("invalid certificate import"))
+            .collect::<std::result::Result<Vec<_>,_>>()?;
+        let actual=std::str::from_utf8(&bytes).map_err(|e|e.to_string())?.lines()
+            .filter_map(|l|l.strip_prefix("import ")).map(str::trim).collect::<Vec<_>>();
+        if actual!=declared {return Err(format!("certificate import mismatch: {name}"));}
+        for dep in declared {
+            module_path(dep)?;
+            if dep!="Mathlib" && !dep.starts_with("Mathlib.") && !seen.contains(dep) {
+                return Err(format!("certificate dependency not yet staged: {name} -> {dep}"));
+            }
+        }
+        seen.insert(name.to_owned());
+        sources.push((name.to_owned(),module_path(name)?,bytes));
+    }
+    let mut aggregate=String::new();
+    for (name,path,bytes) in &sources {
+        let output=destination.join(path);
+        fs::create_dir_all(output.parent().ok_or("no certificate parent")?).map_err(|e|e.to_string())?;
+        fs::write(output,bytes).map_err(|e|e.to_string())?;
+        aggregate.push_str(&format!("import {name}\n"));
+    }
+    fs::write(destination.join("ResearchCommons.lean"),aggregate).map_err(|e|e.to_string())?;
+    let plan=json!({"profile":profile["profile"],"project":"certificates",
+        "order":sources.iter().map(|(n,_,_)|n).collect::<Vec<_>>(),
+        "compiler_invoked":false,"full_registry_profile":false});
+    fs::write(destination.join("build-plan.json"),serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?)
+        .map_err(|e|e.to_string())?;
+    Ok(plan)
+}
+
 #[cfg(test)]
 mod tests {
  use super::*;

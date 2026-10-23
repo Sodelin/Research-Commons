@@ -5,19 +5,19 @@ use std::{env,fs,path::PathBuf,process::{Command,Stdio}};
 /// Execute the actual public Rust callers and kernel-check their literal proof
 /// output against the already built retained package. No external result or
 /// supplied theorem is accepted in place of these checks.
-fn check_callers(root:&std::path::Path)->Result<()> {
+fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&str)->Result<()> {
  let root=root.canonicalize().map_err(|e|e.to_string())?;
- let lean=root.join("lean");
+ let lean=root.join(project);
  let generated=lean.join(".generated");
  let objects=lean.join(".lake/build/lib/lean");
- let evidence=root.join("build/certificates");
+ let evidence=root.join("build").join(scope).join("sources");
  fs::create_dir_all(&evidence).map_err(|e|e.to_string())?;
  let callers=[
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
     ("AffineUNSAT","affine-certificate",Some("unsat"))];
  let mut records=Vec::new();
- let mut names=Vec::new();
+ let mut names=owned.to_vec();
  for (module,binary,argument) in callers {
   let mut command=Command::new("cargo");
   command.args(["run","--locked","-p","research-commons-runtime","--bin",binary]);
@@ -47,21 +47,43 @@ fn check_callers(root:&std::path::Path)->Result<()> {
  let mut imports=String::from("import ResearchCommons\n");
  for name in &names {imports.push_str(&format!("import {name}\n"));}
  let audit=imports+&template.replace(placeholder,&format!("#{selected}"))
-    .replace("\"AUDIT-OWNED.json\"","\"../build/caller-audit.json\"");
+    .replace("\"AUDIT-OWNED.json\"",&format!("\"../build/{scope}/caller-audit.json\""));
  fs::write(generated.join("CallerAudit.lean"),audit).map_err(|e|e.to_string())?;
  let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated",".generated/CallerAudit.lean"])
     .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
  if !status.success(){return Err(format!("caller axiom audit failed: {status}"));}
- let audit=read_json(&root.join("build/caller-audit.json"))?;
+ let audit=read_json(&root.join("build").join(scope).join("caller-audit.json"))?;
  for field in ["owned_axioms","nonstandard_axiom_rows","missing_modules"] {
     if !audit[field].as_array().is_some_and(|v|v.is_empty()){return Err(format!("caller audit rejected {field}"));}
  }
- let receipt=json!({"certificates":records,"owned_axiom_audit_passed":true,
+ let receipt=json!({"profile":scope,"certificates":records,"owned_axiom_audit_passed":true,
     "scope":"Particular exact rational CM law and affine matrices; no physical source/parser/universal-native refinement or full registry closure."});
- fs::write(root.join("build/caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
+ fs::write(root.join("build").join(scope).join("caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
     .map_err(|e|e.to_string())?;
  println!("{receipt}");
  Ok(())
+}
+
+
+fn build_certificates(root:&std::path::Path)->Result<()> {
+ let root=root.canonicalize().map_err(|e|e.to_string())?;
+ let plan=research_commons_package::prepare_certificate_profile(&root)?;
+ let lean=root.join("certificates");
+ let out=lean.join(".lake/build/lib/lean");
+ fs::create_dir_all(&out).map_err(|e|e.to_string())?;
+ let mut names=plan["order"].as_array().ok_or("no certificate order")?.iter()
+    .map(|v|v.as_str().map(str::to_owned).ok_or("invalid certificate module".to_owned())).collect::<Result<Vec<_>>>()?;
+ names.push("ResearchCommons".into());
+ for name in &names {
+    let relative=research_commons_package::module_path(name)?;
+    let target=out.join(&relative).with_extension("olean");
+    fs::create_dir_all(target.parent().ok_or("no certificate target parent")?).map_err(|e|e.to_string())?;
+    let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated"])
+        .arg("-o").arg(target).arg(lean.join(".generated").join(relative))
+        .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
+    if !status.success(){return Err(format!("certificate context rejected {name}: {status}"));}
+ }
+ check_callers_at(&root,"certificates",&names,"isolated-certificate-callers")
 }
 
 fn run() -> Result<()> {
@@ -74,7 +96,9 @@ fn run() -> Result<()> {
    if args.any(|a|a=="--strict")&&result["full_package_complete"]!=true{return Err("full integration incomplete; no claim of package closure".into());}
   },
   "prepare"=>println!("{}",prepare_lean(&root)?),
-  "check-callers"=>check_callers(&root)?,
+  "check-callers"=>check_callers_at(&root,"lean",&[],"full-profile-callers")?,
+  "prepare-certificates"=>println!("{}",research_commons_package::prepare_certificate_profile(&root)?),
+  "build-certificates"=>build_certificates(&root)?,
   "build"=>{
    let plan=prepare_lean(&root)?;
    let lean=root.join("lean").canonicalize().map_err(|e|e.to_string())?;
@@ -124,7 +148,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap]|check-callers|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap]|check-callers|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }
