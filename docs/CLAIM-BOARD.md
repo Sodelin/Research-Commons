@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.16-rna-owner-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.17-rna-interpreter-certificate-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -56,7 +56,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **RNA and owner-transfer source recovery — 23 October 2026, 11:28 UTC:** two existing conditional groups now distinguish the [independent positive-support Gamma class law](#cb-rna-002) from [supplied-owner ancestry transfer](#cb-wong-004), preserving all 112 prior claim objects and card blocks. Gamma retains fixed depth, both zero complements, one common positive gauge and actual classifier agreement; it does not instantiate an RNA executable. The owner result retains its exact ancestry/fibre hypotheses; finite errors relax IAP only, and maximality equivalence is among saturated candidates. Historical source checks are recorded, not rerun. These are recovered results, not new discoveries or whole-programme closure. The original 75-card ranking and separate [dated 110-card top-ten update](SUBJECTIVE-REUSE-UPDATE-110.md) remain unchanged; these two additions have not been ranked.
 
-This register contains **114 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**RNA interpreter and certificate source recovery — 23 October 2026, 11:49 UTC:** two existing groups now separate the [ordered weighted interpreter](#cb-rna-003) from [strict selected-class certificates](#cb-rna-004), preserving all 114 prior claim objects and card blocks. Exact occurrence multiplicity, earlier-child scheduling and callback-frame conditions are explicit. The certificate requires valid bounds on every unseen class, or the exact residual of one finite weighted ensemble; data-selected-time soundness assumes an already valid all-time event. These are recovered conditional results, not new generic theory, an actual class-SUM engine, discovery/termination or empirical RNA validation. Archived checks are recorded, not rerun. The original 75-card ranking and separate [dated 110-card top-ten update](SUBJECTIVE-REUSE-UPDATE-110.md) are unchanged; these two additions are not ranked.
+
+This register contains **116 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -194,6 +196,9 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-WONG-003](#cb-wong-003) | A finite ancestry graph has a precise sample-preserving simplification | Proved; archived Lean check recorded |
 | [CB-RNA-002](#cb-rna-002) | A checked bridge gives exact class probabilities under explicit RNA source assumptions | Proved; archived Lean check recorded |
 | [CB-WONG-004](#cb-wong-004) | A supplied owner map can preserve ancestry properties under explicit conditions | Proved; archived Lean check recorded |
+
+| [CB-RNA-003](#cb-rna-003) | A checked table-filling interpreter sums every ordered derivation under explicit conditions | Proved; archived Lean check recorded |
+| [CB-RNA-004](#cb-rna-004) | Certify a leading class set without calculating every class | Proved; archived Lean checks recorded |
 
 ## Claim cards
 
@@ -5270,7 +5275,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 114 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 116 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -6075,3 +6080,135 @@ This card records a completed conceptual analysis and an **unadopted empirical p
 </details>
 
 
+
+<a id="cb-rna-003"></a>
+### A checked table-filling interpreter sums every ordered derivation under explicit conditions
+**CB-RNA-003 · RNA / E8 / PRISM · source-shaped weighted interpreter**
+
+**Question:** When does a table-filling calculation with bookkeeping callbacks compute the full declared derivation-weight sum?
+
+**What we learned:** An existing checked theorem answers this for every finite size when all children come strictly earlier and callbacks preserve the provider, allowed predicate and local weights. Repeated deduction occurrences are counted, not silently merged.
+
+**What it lets someone do:** Reuse one general correctness theorem and prove its actual source conditions, instead of checking RNA parameters or finite examples one at a time.
+
+**What we cannot conclude:** It does not show that those derivations are exactly the intended RNA structures, or certify the original C++ program, physical weights, floating arithmetic or sampler.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every n, arbitrary deduction and auxiliary-state types, exact Semiring Value with decidable equality, fixed ordered child lists into Fin n, state-indexed SemanticView and observer, assume ObserverFrame: every observer call at every auxiliary state/event preserves the entire provider/allowed/localWeight view. Assume EarlierChildren for every child of every deduction occurrence in every parent provider, including occurrences later skipped as disallowed or zero-local. Starting from the zero chart and visiting List.finRange n in ascending order, the callback-bearing sourceRun returns at each parent exactly the sum of derivationWeights at depth n, the complete finite acyclic expansion. Provider-list occurrences, repeated child positions and ordered Cartesian child choices retain multiplicity; multiplication need not commute. Disallowed and exact zero-local occurrences are skipped, but a nonzero-local occurrence with zero resulting contribution still invokes the observer. The supporting frame theorem permits any finite schedule/initial chart without algebra laws; the indexed layer establishes expansion stabilization, cell equations and unique solution. The exact final endpoint is E8ScheduledDerivationSum.observed_scheduled_derivation_sum. The separately checked valid-active-child adapter equates forward and traceback-normalized SCFG2 lookup streams and arbitrary ordered folds for WMBP_DIRECT_VP, using the non-BE secondary-endpoint invariant; it is not an already composed C++ instantiation.
+
+**Question origin.** Source-shaped formalization of established finite weighted acyclic dynamic programming, semiring algebra and callback/frame invariants. This records an existing October 2 completion, not a newly solved generic dynamic-programming problem.
+
+**Prior work.** Ponty–Saule's weighted acyclic independent-hypergraph framework, AFP Monad_Memo_DP's bottom-up/memory-frame invariant architecture, ordinary finite semiring algebra, Mathlib and the existing CParty/SCFG2 deduction/chart/schedule/normalization operations retain attribution. Isabelle theorems are not directly imported Lean proofs. Generic dynamic programming and weighted grammar evaluation are not claimed as new.
+
+**Our contribution.** The completed source-shaped reference model explicitly retains allowed/zero-local skips, ordered runtime-normalized children, candidate callbacks and final parent writes, then proves their once-for-all ordered derivation-sum contract. The adjoining manual public-source normalization adapter explains why forward reset and traceback retention agree only on valid active children. The October 23 work recovers exact bodies and historical checks; it does not derive a new theorem.
+
+**Novelty.** No generic-theory novelty is claimed. Exact historical priority is not established by this archival recovery, formal receipts or project acceptance.
+
+**Remaining proof obligation.** None for the completed conditional reference-interpreter theorem. Actual source admission, executable refinement, broader RNA probability claims and historical-priority assessment are separate downstream tasks, not missing proofs of this statement.
+
+**Separate downstream work.** The actual all-input normalized provider, root-reachable carrier, schedule/zero-default/fuel and callback frame still require an applicable source proof or refinement. The historical raw auxiliary-cache schedule countercheck violates an earlier-child premise but leaves that fixture's root unchanged; it is not a root-law refutation. A later 57-rule source-footprint audit supports a qualified frozen serial/defined-execution frame, not full C++ memory/alias/IEEE correctness. Derivation multiplicity must separately match intended RNA output support; physical energies, rendered structure/classifier agreement, efficient selected-class inverse-image SUM, conditional RNG and numerical/confidence certification are not established. The child adapter is not imported into the interpreter chain, and manual source transcription is not C++ extraction. No empirical folding or production-performance claim follows.
+
+**Completion rule.** Reuse the exact completed conditional theorem. Missing actual-source instantiation, a new build, a separately located whole-proof review or broader model acceptance does not reopen its mathematics. Modules and endpoint reports are not discovery counts.
+
+**Evidence basis.** Bounded full-body recovery at Commons 7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68: three complete interpreter modules and the adjoining child adapter; exact component receipts, raw logs and named source audits. Two small public C++ validity headers were read fully and the actual child-normalization/schedule-loop bodies were read in the pinned replay header, not all 40 source-audit files. Current-register comparison uses all 114 cards at claims blob 9d6e78944ca465a4c4d1a7c9149af508eff4d205 and distinguishes the already indexed parser and independent Gamma theorems. Prior literature is credited from the accepted package, not newly comprehensively re-reviewed.
+
+**Hand/review evidence.** All four complete formal bodies, 734 lines total, and the named scope/receipt records were read. The historical independent valid-child source audit and later complete 57-rule observer-footprint audit were inspected at their stated limits. No separate whole-interpreter independent proof-review body was located in the bounded packet and two targeted filename searches; this is not a claim that none exists. The recovery is bounded AI source review, not external human review or a new full transitive acceptance.
+
+**Formal evidence.** Exact source SHA256s c21c170e78bdd186bf30f1dbe8a561a225a7210fc3a76fa16e41c319e9faa728 (frame), 0c6dd3c3eb49ac4647707ab6e2b7a48350d113f26a0946ad5ba3486ef5546487 (scheduled chart), c694b0e648b053b4e4b16083c8b2dd2af789731669575158502af7cb65ea4bcf (derivation sum) and 61151fc34a1ca4c9cc09711e59d3ca60b78690005e2f8687867ca4d5915648c3 (child adapter) match archived PASS_LOCAL_COMPONENT exit-zero receipts under Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. Logs match their saved hashes. The three interpreter modules have 14 selected standard-only reports; the child adapter has eight, two axiom-free. Both recorded direct project-import object hashes match the preceding module's recorded output. This is archived component evidence, not a fresh full-library replay or C++ certificate.
+
+**Execution evidence.** Only source/document retrieval, identity and saved-file readback checks were performed. Historical compiler and qualified unit-weight provider-countercheck records were read, not rerun. No Lean/C++ compiler, scientific runtime, physical-energy experiment or new implementation test was executed.
+
+**Empirical status.** An exact conditional mathematical interpreter theorem, not measured biological data, physical-energy validation or observed RNA-folding accuracy.
+
+**Accepted artifacts and exact sources:**
+
+- [Final ordered derivation-sum theorem and complete proof](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledDerivationSum.lean) (proof source).
+- [Callback frame and actual modeled scan/update bodies](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledObserverFrame.lean) (proof source).
+- [Strictly earlier schedule, unique recurrence and chart proof](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledHypergraphCorrectness.lean) (proof source).
+- [Exact historical interpreter source/log/import-object manifest](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/SOURCE-AND-COMPILE-MANIFEST.json) (formal receipt).
+- [Final derivation theorem's exact component receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledDerivationSum-receipt.json) (formal receipt).
+- [Valid-active-child ordered normalization adapter](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean) (proof source).
+- [Exact historical normalization component receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter-receipt.json) (formal receipt).
+- [Original completed interpreter scope and prior attribution](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/README.md) (proof or status).
+- [Independent selected factory-validity source audit, section 4](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-targeted-prior-0601z/TARGETED-E8-NEIGHBORHOOD-AND-REUSE.md) (proof or status).
+- [Later complete observer-footprint audit and its limitations](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-observer-frame-0722z/SCFG2-COMPLETE-OBSERVER-FRAME-AUDIT.md) (proof or status).
+- [Raw all-cache schedule premise countercheck, not a root-law refutation](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-provider-premise-0754z/SCFG2-PROVIDER-PREMISE-CHECK.md) (proof or status).
+- [Later reconciled E8 source/paper boundaries](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary) (proof or status).
+
+**Typed connections:**
+
+- [CB-RNA-001](#cb-rna-001), candidate connection: The completed parser/partner/root-carrier theorem is adjacent source-admission work, not an instantiated proof of this interpreter's all-input provider, strictly earlier schedule or observer frame. It is not counted again.
+- [CB-RNA-002](#cb-rna-002), candidate connection: The independently completed Gamma class-law bridge would additionally require actual-source output support/weights and probability interfaces. An exact derivation-weight sum alone neither instantiates RootAdmission nor establishes structure multiplicity, so the full composition is not asserted.
+
+**Stable key:** october.RNA.ORDERED_SCHEDULED_DERIVATION_SUM. **Aliases:** E8 once-for-all scheduled weighted-hypergraph interpreter; E8ScheduledDerivationSum.observed_scheduled_derivation_sum; E8 scheduled observer/frame/derivation sum.
+
+</details>
+
+
+<a id="cb-rna-004"></a>
+### Certify a leading class set without calculating every class
+**CB-RNA-004 · RNA / E8 / PRISM · selected-class certificates**
+
+**Question:** When can we certify that chosen classes outrank every omitted class, including ones not yet seen?
+
+**What we learned:** A strict certificate is sound if every selected lower bound beats all observed competitors and a valid bound on every unseen class. Alternatively, exact selected-class probabilities leave a residual mass that bounds each omitted class.
+
+**What it lets someone do:** Reuse a checked decision layer once a valid probability engine or simultaneous uncertainty bounds are available, including explicit widening for a proved model discrepancy.
+
+**What we cannot conclude:** This is not an automatic discovery or stopping algorithm, a new confidence inequality, an actual RNA class-sum engine, an internal ranking or tie resolver, or empirical RNA validation.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean checks recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For an arbitrary class type alpha, finite discovered D and selected T with |T|=k, a real mass function m, valid intervals l(a)<=m(a)<=h(a) on every a in D, and m(b)<=u for EVERY b outside D: T is a strict top-k SET if T is contained in D and every selected lower bound exceeds both u and every discovered outsider upper bound. Strict top-k means m(b)<m(a) for every a in T and b outside T; internal selected ranks are not asserted. A threshold implementation requires a genuine common lower bound on all selected lower endpoints and a common upper bound on all discovered outsider upper endpoints. All-class empirical error <=r plus empirical zero on undiscovered classes supplies intervals empirical±r and unseen cap r. If those premises hold simultaneously at every natural time for one fixed mass function, every successful finite data-selected-time certificate is sound; the all-time event and its probability are NOT proved. A verified all-class discrepancy eta between target and actual mass widens lower/upper/unseen bounds to l−eta, h+eta, u+eta. Given discovery, all-class empirical error, each selected true mass >3r and every selected-to-omitted true gap >4r are sufficient for certificate success, not a termination theorem. Separately, for a finite structure ensemble S, one actual classifier, exact nonnegative weights w and common partition Z=sum_S w>0, selected class partitions plus outside partition equal Z; every omitted class mass is at most rho=outside/Z=1−sum_selected p. If rho is strictly below EVERY selected p and |T|=k, T is a strict top-k set. Zero weights are allowed. These are sufficient tests, not necessary characterizations. k=0 has the literal vacuous empty-set conclusion; ties inside T are allowed, but no cross-boundary tie is certified.
+
+**Question origin.** Local Lean formalization and integration of established order, finite-sum, residual-mass and confidence-interface principles, motivated by PRISM selected-class/adaptive-confidence objectives. It is not a newly resolved general statistical problem.
+
+**Prior work.** RapidShapes (2010), Theorem 1 and its selected-shape/residual threshold strategy, already supplies close exact-class aggregation and stopping-method prior. RNAshapes/classified dynamic programming, Massart's DKW inequality and existing confidence-sequence methods retain attribution. The recovered files prove deterministic consequences and finite sums, not those concentration inequalities or a new statistical method; RapidShapes' nested-RNA model is not silently identified with current crossing classes.
+
+**Our contribution.** The existing October 2 artifacts provide explicit reusable theorem interfaces separating discovered intervals from a bound on EVERY unseen class, data-selected-time soundness from stochastic coverage, verified discrepancy from assumed unbiasedness, and set membership from internal ranks. The residual route derives all class masses and conservation from one actual finite ensemble/classifier/weight assignment rather than accepting an unrelated probability table. Three related modules are indexed once as a certificate group.
+
+**Novelty.** No new generic-theory novelty is claimed. Source recovery, project acceptance and archived Lean receipts do not establish historical priority or statistical/biological novelty.
+
+**Remaining proof obligation.** None for the stated conditional ordering, stability and finite-residual theorems. Establishing their actual sampling, numerical, class-mass and RNA-source premises is separate downstream work, not an unproved part of these implications.
+
+**Separate downstream work.** A stochastic theorem must supply the simultaneous all-time/all-class coverage event for the actual fixed classifier and sampling process, including any discovery/selection or restart policy. The files do not prove IID sampling, DKW/confidence sequences, fresh conditional randomness, a TV/numerical bias estimate, eventual discovery, shrinking radii, sample complexity or termination. The residual route needs an actual exact or certified-enclosure inverse-image SUM with the same support, multiplicities, weights, classifier and positive denominator; MaxProduct is not that engine. Gamma admission, executed C++/energy/classifier/RNG refinement, internal ranking, boundary ties, abstention and empirical RNA fidelity remain separate.
+
+**Completion rule.** Retain the completed conditional certificate mathematics. Missing actual sampler coverage, class-SUM implementation, fresh replay or empirical validation does not reopen it; the twenty reported endpoints are not twenty discoveries.
+
+**Evidence basis.** Complete three-module body recovery and archived receipt/log reconciliation at Commons 7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68. The top-k provider is the only local import of each downstream module. Later shared-scope and claim-by-claim prior/source reviews preserve completed deterministic/residual contracts while excluding actual engine/coverage closure. Duplicate comparison uses all 114 current cards, claims blob 9d6e78944ca465a4c4d1a7c9149af508eff4d205. No new proof, runtime or exhaustive novelty survey.
+
+**Hand/review evidence.** The October 23 recovery read all three complete local source bodies and direct project providers, 383 lines, and found no discrepancy in the exact scoped implication. Coordinating review accepted this one-group scope with unseen-class/all-time/strict-margin boundaries. The original folders contain component receipts and authored scope summaries, not a separately recovered original independent body-review file. This is coordinating-AI review, not external human peer review.
+
+**Formal evidence.** Archived Lean 4.33.1 commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6 and mathlib0df444a360eaa60ab8c11dca51a86af692955474 component receipts record exit zero for source SHA25632dc60e3db94f387fae00212662ae9b85544aa759857231ba50d1bb3181a9e7a, 9a30ed5deee52a9f57f764878889988e11630037353698268485d80999fe739a and 34bdd1fa57c2628eaf1e7251dac4b021a028994822cf2f831bb640c8fa941495. Their 7+6+7 selected reports use only propext, Classical.choice and Quot.sound. Both imported provider-object hashes match the provider receipt; this is not a fresh aggregate or full-declaration audit.
+
+**Execution evidence.** Source and log bytes match the three saved compiler receipts, and their local project dependency identity is consistent. Only source/document/hash/readback recovery occurred now. No Lean/compiler, sampling program, RNA execution or experiment was run; external mathlib bodies were not re-audited.
+
+**Empirical status.** Conditional exact mathematics about real-valued class bounds and finite weighted ensembles, not observed biological accuracy or a measured sampler-coverage result.
+
+**Accepted artifacts and exact sources:**
+
+- [Deterministic interval, unseen-class and all-time certificate proofs](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8DeterministicTopKCertificate.lean) (proof source).
+- [Discrepancy widening and strict-gap sufficient conditions](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8CertificateStability.lean) (proof source).
+- [Finite weighted-ensemble residual conservation and strict top-k proof](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/E8ExactResidualMass.lean) (proof source).
+- [Exact deterministic provider compiler and selected-axiom receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8DeterministicTopKCertificate-receipt.json) (formal receipt).
+- [Exact stability compiler and direct-provider identity receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8CertificateStability-receipt.json) (formal receipt).
+- [Exact residual compiler and direct-provider identity receipt](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/E8ExactResidualMass-receipt.json) (formal receipt).
+- [Original certificate statement and explicit stochastic exclusions](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/README.md) (proof or status).
+- [Original residual statement and classical-method attribution](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/README.md) (proof or status).
+- [Later claim-by-claim prior and actual-source interface audit](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-originality-residual-audit-0831z/E8-CLAIM-BY-CLAIM-ORIGINALITY.md) (proof or status).
+- [Shared scope preserves earlier completed certificate components](https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-shared-scope-0549z/SHARED-SCOPE.md#e8-scope) (proof or status).
+
+**Typed connections:**
+
+- [CB-RNA-002](#cb-rna-002), candidate connection: The independent Gamma theorem identifies an intended class law only after its own source admission is instantiated. It is an adjacent supplier for a future certificate application, not a direct import or proof of actual class-SUM computation, sampler coverage or termination. The class-law bridge is not counted again.
+
+**Stable key:** october.RNA.SELECTED_CLASS_STRICT_CERTIFICATES. **Aliases:** E8 deterministic top-k and stability certificates; E8 exact finite residual class-mass certificate; E8DeterministicTopKCertificate.interval_certificate_topK; E8ExactResidualMass.exact_residual_topK.
+
+</details>
