@@ -12,10 +12,11 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let objects=lean.join(".lake/build/lib/lean");
  let evidence=root.join("build").join(scope).join("sources");
  fs::create_dir_all(&evidence).map_err(|e|e.to_string())?;
- let mut callers=vec![
+ let source_only=scope=="original-source-callers";
+ let mut callers=if source_only {Vec::new()} else {vec![
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
-    ("AffineUNSAT","affine-certificate",Some("unsat"))];
+    ("AffineUNSAT","affine-certificate",Some("unsat"))]};
  if project=="lean" {
   callers.extend([("OriginalTreeBank","source-certificate",Some("tree")),
     ("OriginalParallelBank","source-certificate",Some("parallel")),
@@ -49,7 +50,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let placeholder=r##"#["NanuqActualBridgeQuartetResolution", "NanuqActualQuartetPortBranching"]"##;
  if template.matches(placeholder).count()!=1{return Err("unexpected caller audit template".into());}
  let selected=serde_json::to_string(&names).map_err(|e|e.to_string())?;
- let mut imports=String::from("import ResearchCommons\n");
+ let mut imports=if source_only {String::new()} else {String::from("import ResearchCommons\n")};
  for name in &names {imports.push_str(&format!("import {name}\n"));}
  let audit=imports+&template.replace(placeholder,&format!("#{selected}"))
     .replace("\"AUDIT-OWNED.json\"",&format!("\"../build/{scope}/caller-audit.json\""));
@@ -91,6 +92,73 @@ fn build_certificates(root:&std::path::Path)->Result<()> {
  check_callers_at(&root,"certificates",&names,"isolated-certificate-callers")
 }
 
+
+/// Compile either the complete profile, a diagnostic prefix, or one actual
+/// dependency closure. Scoped success never substitutes for full-profile PASS.
+fn build_lean(root:&std::path::Path,args:Vec<String>)->Result<()> {
+ let plan=prepare_lean(root)?;
+ let lean=root.join("lean").canonicalize().map_err(|e|e.to_string())?;
+ let out=lean.join(".lake/build/lib/lean");
+ fs::create_dir_all(&out).map_err(|e|e.to_string())?;
+ let (cap,target)=match args.as_slice() {
+  []=>(None,None),
+  [flag,name] if flag=="--target" => (None,Some(name.as_str())),
+  [n]=>(Some(n.parse::<usize>().map_err(|_|"invalid module cap".to_owned())?),None),
+  _=>return Err("usage: build [module-cap|--target Module]".into()),
+ };
+ let all=plan["order"].as_array().ok_or("missing order")?.iter()
+    .map(|v|v.as_str().map(str::to_owned).ok_or("non-string module".to_owned())).collect::<Result<Vec<_>>>()?;
+ let mut names=if let Some(t)=target {research_commons_package::selected_modules(&plan,t)?} else {all.clone()};
+ if let Some(n)=cap {names.truncate(n);}
+ let source_count=names.len();
+ let complete=target.is_none()&&source_count==all.len();
+ if target.is_none(){names.push("ResearchCommons.Registry".into());}
+ if complete{names.push("ResearchCommons".into());}
+ fs::create_dir_all(root.join("build")).map_err(|e|e.to_string())?;
+ let receipt_path=root.join(if target.is_some(){"build/lean-target-build.json"}else{"build/lean-build.json"});
+ let mut objects=Vec::new();
+ let mut receipt=json!({"status":"RUNNING","compiler_exit_success":false,"complete_profile":false,
+   "target":target,"selected_source_modules":source_count,"full_profile_source_modules":all.len(),
+   "source_graph_sha256":plan["source_graph_sha256"],"module_hashes":plan["module_hashes"],
+   "objects":objects});
+ let write_receipt=|value:&serde_json::Value|->Result<()> {
+   fs::write(&receipt_path,serde_json::to_vec_pretty(value).map_err(|e|e.to_string())?).map_err(|e|e.to_string())
+ };
+ write_receipt(&receipt)?;
+ for (i,name) in names.iter().enumerate(){
+  let relative=research_commons_package::module_path(name)?;
+  let object=out.join(&relative).with_extension("olean");
+  fs::create_dir_all(object.parent().ok_or("no object parent")?).map_err(|e|e.to_string())?;
+  println!("LEAN {}/{} {}",i+1,names.len(),name);
+  let source=lean.join(".generated").join(&relative);
+  let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false"])
+    .arg("--root=.generated").arg("-o").arg(&object).arg(&source).current_dir(&lean)
+    .stdin(Stdio::null()).status().map_err(|e|format!("lean spawn: {e}"))?;
+  if !status.success(){
+   receipt["status"]=json!("FAILED");receipt["failed_module"]=json!(name);write_receipt(&receipt)?;
+   return Err(format!("Lean failed on {name}: {status}"));
+  }
+  objects.push(json!({"module":name,"sha256":research_commons_package::sha256(&fs::read(object).map_err(|e|e.to_string())?)}));
+  receipt["objects"]=json!(objects);write_receipt(&receipt)?;
+ }
+ let mut owned_audit=false;
+ if complete {
+  let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated",".generated/OwnedAudit.lean"])
+    .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
+  if !status.success(){return Err(format!("complete owned axiom audit failed: {status}"));}
+  let audit=read_json(&root.join("build/owned-audit.json"))?;
+  for field in ["owned_axioms","nonstandard_axiom_rows","missing_modules"]{
+   if !audit[field].as_array().is_some_and(|a|a.is_empty()){return Err(format!("audit rejected {field}"));}
+  }
+  owned_audit=true;
+ }
+ receipt["status"]=json!("COMPLETE");receipt["compiler_exit_success"]=json!(true);
+ receipt["compiled_modules"]=json!(names.len());receipt["complete_profile"]=json!(complete);
+ receipt["owned_axiom_audit_passed"]=json!(owned_audit);
+ receipt["historical_acceptance_transferred"]=json!(false);receipt["all_claims_formalized"]=json!(false);
+ write_receipt(&receipt)?;println!("{receipt}");Ok(())
+}
+
 fn run() -> Result<()> {
  let mut args=env::args().skip(1);
  let command=args.next().unwrap_or_else(||"check".into());
@@ -104,47 +172,30 @@ fn run() -> Result<()> {
   "check-callers"=>check_callers_at(&root,"lean",&[],"full-profile-callers")?,
   "prepare-certificates"=>println!("{}",research_commons_package::prepare_certificate_profile(&root)?),
   "build-certificates"=>build_certificates(&root)?,
-  "build"=>{
+  "build"=>build_lean(&root,args.collect())?,
+  "check-source-callers"=>{
    let plan=prepare_lean(&root)?;
-   let lean=root.join("lean").canonicalize().map_err(|e|e.to_string())?;
-   let out=lean.join(".lake/build/lib/lean");
-   fs::create_dir_all(&out).map_err(|e|e.to_string())?;
-   let cap=args.next().map(|v|v.parse::<usize>().map_err(|_|"invalid module cap".to_owned())).transpose()?;
-   let mut names=plan["order"].as_array().ok_or("missing order")?.iter()
-      .map(|v|v.as_str().map(str::to_owned).ok_or("non-string module".to_owned())).collect::<Result<Vec<_>>>()?;
-   let expected=names.len();
-   if let Some(n)=cap { names.truncate(n); }
-   let complete=names.len()==expected;
-   names.push("ResearchCommons.Registry".into());
-   if complete {names.push("ResearchCommons".into());}
-   fs::create_dir_all(root.join("build")).map_err(|e|e.to_string())?;
-   fs::write(root.join("build/lean-build.json"),b"{\"status\":\"RUNNING\",\"complete_profile\":false}").map_err(|e|e.to_string())?;
-   for (i,name) in names.iter().enumerate(){
-    let relative=research_commons_package::module_path(name)?;
-    let target=out.join(&relative).with_extension("olean");
-    fs::create_dir_all(target.parent().ok_or("no object parent")?).map_err(|e|e.to_string())?;
-    println!("LEAN {}/{} {}",i+1,names.len(),name);
-    let source=lean.join(".generated").join(&relative);
-    let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false"])
-      .arg("--root=.generated").arg("-o").arg(&target).arg(&source).current_dir(&lean)
-      .stdin(Stdio::null()).status().map_err(|e|format!("lean spawn: {e}"))?;
-    if !status.success(){return Err(format!("Lean failed on {name}: {status}"));}
+   let selected=research_commons_package::selected_modules(&plan,"OriginalCodeChartReceiver")?;
+   let receipt=read_json(&root.join("build/lean-target-build.json"))?;
+   if receipt["compiler_exit_success"]!=true || receipt["target"]!="OriginalCodeChartReceiver" ||
+       receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
+       receipt["module_hashes"]!=plan["module_hashes"] {
+    return Err("no exact successful source-receiver target build".into());
    }
-   fs::create_dir_all(root.join("build")).map_err(|e|e.to_string())?;
-   if complete {
-    let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated",".generated/OwnedAudit.lean"])
-      .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
-    if !status.success(){return Err(format!("complete owned axiom audit failed: {status}"));}
-    let audit=read_json(&root.join("build/owned-audit.json"))?;
-    for field in ["owned_axioms","nonstandard_axiom_rows","missing_modules"]{
-     if !audit[field].as_array().is_some_and(|a|a.is_empty()){return Err(format!("audit rejected {field}"));}
+   for entry in receipt["objects"].as_array().ok_or("missing target objects")? {
+    let name=entry["module"].as_str().ok_or("invalid target object")?;
+    let path=root.join("lean/.lake/build/lib/lean").join(research_commons_package::module_path(name)?).with_extension("olean");
+    let bytes=fs::read(path).map_err(|e|e.to_string())?;
+    if research_commons_package::sha256(&bytes)!=entry["sha256"].as_str().ok_or("missing object digest")? {
+     return Err(format!("target object changed: {name}"));
     }
    }
-   let receipt=json!({"compiler_exit_success":true,"selected_source_modules":expected,
-      "compiled_modules":names.len(),"complete_profile":complete,"historical_acceptance_transferred":false,
-      "owned_axiom_audit_passed":complete,"all_claims_formalized":false});
-   fs::write(root.join("build/lean-build.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
-   println!("{receipt}");
+   if receipt["objects"].as_array().ok_or("missing target objects")?.iter()
+      .map(|v|v["module"].as_str().map(str::to_owned).ok_or("missing object module".to_owned()))
+      .collect::<Result<Vec<_>>>()? != selected {
+     return Err("incomplete target object coverage".into());
+   }
+   check_callers_at(&root,"lean",&selected,"original-source-callers")?;
   },
   "emit-index"=> {
     let claims=read_json(&root.join("registry/claims.json"))?;
@@ -153,7 +204,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap]|check-callers|prepare-certificates|build-certificates|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }

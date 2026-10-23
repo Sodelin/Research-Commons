@@ -148,6 +148,8 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
     let output=root.join("lean/.generated");
     // Validate the entire plan before writing any generated source.
     let mut sources=Vec::new();
+    let mut module_imports=BTreeMap::new();
+    let mut module_hashes=BTreeMap::new();
     for item in order {
         let name=item.as_str().ok_or("non-string module")?;
         if seen.contains(name){return Err(format!("duplicate module {name}"));}
@@ -161,6 +163,8 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
         let source=fs::read(base.join("source-store").join(format!("{hash}.lean")))
             .map_err(|e|format!("source {name}: {e}"))?;
         if sha256(&source)!=hash{return Err(format!("body hash mismatch: {name}"));}
+        module_imports.insert(name.to_owned(),data["imports"].clone());
+        module_hashes.insert(name.to_owned(),hash.to_owned());
         seen.insert(name.to_owned());
         sources.push((name.to_owned(),module_path(name)?,source));
     }
@@ -188,6 +192,8 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
             .filter_map(|line|line.strip_prefix("import ")).map(str::trim).collect::<Vec<_>>();
         let declared=array(entry,"imports")?.iter().map(|v|v.as_str().ok_or("non-string import")).collect::<std::result::Result<Vec<_>,_>>()?;
         if actual!=declared {return Err(format!("added import manifest mismatch: {name}"));}
+        module_imports.insert(name.to_owned(),entry["imports"].clone());
+        module_hashes.insert(name.to_owned(),sha256(&bytes));
         seen.insert(name.to_owned());
         sources.push((name.to_owned(),module_path(name)?,bytes));
     }
@@ -223,10 +229,45 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
     let plan=json!({"profile":label,"fresh_sources":sources.len(),"retained_sources":retained_count,"added_sources":sources.len()-retained_count,
         "order":sources.iter().map(|(n,_,_)|n).collect::<Vec<_>>(),
         "compiler_invoked":false,"historical_objects_reused":false,
-        "source_graph_sha256":sha256(&graph_bytes)});
+        "source_graph_sha256":sha256(&graph_bytes),
+        "module_imports":module_imports,"module_hashes":module_hashes});
     fs::write(root.join("lean/.generated/build-plan.json"),serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?)
         .map_err(|e|e.to_string())?;
     Ok(plan)
+}
+
+/// Exact transitive owned-source closure in the retained topological order.
+/// Upstream imports remain supplied by the same pinned Mathlib. This never
+/// turns a target build into completion of the entire selected profile.
+pub fn selected_modules(plan:&Value,target:&str)->Result<Vec<String>> {
+    module_path(target)?;
+    let order=array(plan,"order")?.iter().map(|n|n.as_str().map(str::to_owned).ok_or("non-string planned module".to_owned()))
+        .collect::<Result<Vec<_>>>()?;
+    let all=order.iter().cloned().collect::<BTreeSet<_>>();
+    if all.len()!=order.len(){return Err("duplicate planned module".into());}
+    if !all.contains(target){return Err(format!("target absent from exact profile: {target}"));}
+    let imports=plan["module_imports"].as_object().ok_or("missing module imports")?;
+    let mut selected=BTreeSet::new();let mut todo=vec![target.to_owned()];
+    while let Some(name)=todo.pop() {
+        if !selected.insert(name.clone()){continue;}
+        let deps=imports.get(&name).and_then(Value::as_array).ok_or_else(||format!("missing imports: {name}"))?;
+        for dep in deps {
+            let dep=dep.as_str().ok_or("non-string dependency")?;
+            module_path(dep)?;
+            if all.contains(dep){todo.push(dep.to_owned());}
+        }
+    }
+    let mut built=BTreeSet::new();let mut result=Vec::new();
+    for name in order.into_iter().filter(|n|selected.contains(n)) {
+        for dep in imports[&name].as_array().ok_or("invalid imports")? {
+            let dep=dep.as_str().ok_or("non-string dependency")?;
+            if selected.contains(dep)&&!built.contains(dep) {
+                return Err(format!("non-topological selected dependency: {name} -> {dep}"));
+            }
+        }
+        built.insert(name.clone());result.push(name);
+    }
+    Ok(result)
 }
 
 /// Small isolated proof context for actual new Rust caller verification.
@@ -279,6 +320,17 @@ pub fn prepare_certificate_profile(root:&Path)->Result<Value> {
 #[cfg(test)]
 mod tests {
  use super::*;
+
+ #[test] fn selected_build_retains_transitive_dependencies_and_ignores_unrelated_roots(){
+  let p=json!({"order":["Base","Unrelated","Middle","Target"],"module_imports":{
+    "Base":["Mathlib.Data.Real.Basic"],"Unrelated":[],"Middle":["Base"],"Target":["Middle","Base"]}});
+  assert_eq!(selected_modules(&p,"Target").unwrap(),vec!["Base","Middle","Target"]);
+  assert!(selected_modules(&p,"Missing").is_err());
+ }
+ #[test] fn selected_build_refuses_a_broken_dependency_order(){
+  let p=json!({"order":["Target","Base"],"module_imports":{"Target":["Base"],"Base":[]}});
+  assert!(selected_modules(&p,"Target").is_err());
+ }
  fn card(id:&str,deps:Value)->Value{json!({"id":id,"dependencies":deps})}
  #[test] fn missing_rank_does_not_drop_a_claim(){
   let c=json!({"claims":[card("A",json!([])),card("B",json!([]))]});
