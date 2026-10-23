@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "source_key": "G3-ARITH-ROOT-ORDER-LOGZERO-01",
+  "title": "Reciprocal-root order feasibility is Turing-equivalent to homogeneous logarithm zero tests",
+  "authored_utc_date": "2026-10-23",
+  "author": "Existing G3 owner, Codex/OpenAI",
+  "project_master": "G3",
+  "mathematical_status": "PROVED (not Lean formalized)",
+  "proof_authorship": "complete hand proof",
+  "independent_review": "not performed",
+  "formal_verification": "not attempted",
+  "implementation": "not implemented or executed",
+  "empirical_admission": "not applicable",
+  "historical_novelty": "unestablished; classical Taylor remainder bounds and Vandermonde independence are reused",
+  "exact_statement": "Deciding existence of an integer n>=nu satisfying a finite Boolean formula in polynomial comparisons of fixed positive real-algebraic b_i^(1/n), with one shared n, is effectively Turing-equivalent to deciding zero of arbitrary homogeneous real-algebraic-coefficient polynomials in real logarithms of positive algebraic numbers. Already ONE strict polynomial inequality with all bases in (0,1) suffices for the equivalence.",
+  "proof": {
+    "path": "PROOF.md",
+    "bytes": 13309,
+    "sha256": "0a705a550b062879b02f78d38fd379ddd48be9b4c29fe1eee6ce3fbd58b40b5b",
+    "git_blob": "0d5feb0aa9a00c7f999afa036e2307640f443da9"
+  },
+  "lower_reduction": "For homogeneous degree d P, normalize bases gamma_i into (0,1), let G(t)=P(gamma_i^t-1), compute rational M with |G(t)-t^d P(log gamma)|<=M t^(d+1), and subtract A(1-2^(-t))^(d+1), A=4^(d+1)(M+1). The resulting polynomial is positive at some reciprocal integer iff P(log gamma)>0. P and -P give the zero answer; under a nonnegative promise one call suffices.",
+  "upper_reduction": "Group each compared polynomial into s distinct algebraic-base exponentials. Vandermonde ensures a nonzero derivative at order <s unless the function is identically zero. Homogeneous-log zero queries identify that order; effective Taylor bounds fix the entire reciprocal tail sign, leaving finitely many algebraic samples.",
+  "compared_prior": [
+    {
+      "role": "accepted common-denominator equality predecessor",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "handoffs/2026-10-16-codex-g3-unreviewed-source-copy-001/INPUT-RADICAL-BOUND-AND-FULL-SOURCE-TEST-03.md",
+      "sha256": "97987236e5c6f5429d2f597ff1ebd5b34dac7078ff56515122483524a5ad968e",
+      "difference": "Explicitly excludes general exponential-polynomial signs near zero."
+    },
+    {
+      "role": "later scoped review",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "research/2026-10-16-dot-g3-radical-review-0055z/REVIEW.md",
+      "sha256": "179b0a86bdbc37816f971cf5fe072c0258071e47a5c205ae85c0852897468af4",
+      "read_scope": "complete body reread"
+    },
+    {
+      "role": "retuned-type successor",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "handoffs/2026-10-16-codex-g3-primitive-multiplicity-increment-005/ONE-TYPE-BOUNDEDNESS-AND-PRIMITIVE-MULTIPLICITIES-07.md",
+      "sha256": "5c5cd7e670d670d528d0a8414ec39748e37db467e84c4d1b18f25b20056f9916",
+      "read_scope": "complete body previously read; actual cutoff/sign and retuning passages reread"
+    },
+    {
+      "role": "completed independent-denominator equality supplier",
+      "source_key": "G3-ARITH-INDEP-RECIP-EQ-01",
+      "commit": "42be58afec08d7f0bea16f0883006d3c9a85f54c",
+      "path": "research/2026-10-23-g3-independent-reciprocal-equalities/PROOF.md",
+      "sha256": "d55eb70efa9b5e6b2f52f4c68c44caeb9724b31e7cf16cde0f3cf605414af978",
+      "difference": "ZERO/NONZERO only; remains proved and unchanged."
+    },
+    {
+      "role": "existing source-promised homogeneous Phi",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "research/2026-10-10-dot-g3-three-log-purity-1210z/THREE-LOG-PURITY-REDUCTION.md",
+      "sha256": "c99623631f972c3911f3dceba9f1b376ed2b135fd2dbc04aeae268633fcb33a9",
+      "read_scope": "complete previously read; homogeneous definition/degree and exact promised signs reread"
+    }
+  ],
+  "later_reviews_or_corrections": [],
+  "reuse_action": "Retain the proved equivalence as the exact order-query boundary of the completed root-equality supplier. Missing review/Lean/backend work does not reopen its authorship.",
+  "change_classification": "Two-way effective arithmetic reduction at the exact equality-versus-order receiver; not a full G3 attack or historical priority claim.",
+  "master_status": "ACTIVE; original G3 unresolved",
+  "master_goal_complete": false,
+  "new_full_attack": false,
+  "unresolved_mathematical_input": "No total homogeneous-log zero algorithm is supplied.",
+  "source_scope": "The lower-reduction inequality is arithmetic. No claim that arbitrary such polynomials are physically enforceable, source-admitted or extra legal observations. Actual physical validators may have additional structure.",
+  "remaining_master_gap": "Original full-source acquisition/unknown heads/cores, one shared physical bank and unrestricted NO remain unproved. This result neither supplies H nor proves undecidability.",
+  "execution": "Hand proof and source/documentation reads/hash/publication only; no solver, symbolic scientific producer, new tuple, QE, Lean/native/compiler/model or old-suite run.",
+  "publication_scope": "Owned proof and source-status record outside the frozen58-note/17-Lean recovery census; no competing master registry."
+}
