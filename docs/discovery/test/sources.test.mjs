@@ -93,3 +93,14 @@ test('artifact projection refuses private services, mutable revisions and signed
   {url:'https://github.com/Sodelin/Research-Commons/blob/'+'a'.repeat(40)+'/source.md?token=secret'},
  ]};assert.deepEqual(artifactReferences([claim]),[]);
 });
+
+test('fixed-base arithmetic supplier remains author-complete only and outside original G3 closure',()=>{
+ const j=joins.find(j=>j.kind==='author_complete_hand_supplier_not_independent_acceptance');assert(j);
+ assert.match(j.explanation,/not independently reviewed/);assert.match(j.explanation,/ONE shared count vector/);assert.match(j.explanation,/stays OPEN/);assert.match(j.explanation,/Signs, retuned/);
+ const p=j.links.find(l=>l.expected_sha256),d=corpus.documents.find(d=>d.url===p.url);assert(d);
+ assert.equal(d.bytes,14796);assert.equal(d.sha256,p.expected_sha256);assert.equal(d.git_blob,p.expected_git_blob);
+ assert(d.bindings.some(b=>b.claim_id==='CB-G3-004'&&b.source_join_kind===j.kind));
+ assert(searchSources(corpus,'G3-ARITH-INDEP-RECIP-EQ-01',new Set(['CB-G3-004'])).some(d=>d.url===p.url));
+ assert(!data.claims.find(c=>c.id==='CB-G3-004').accepted_artifacts.some(a=>a.url===p.url));
+ assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
+});
