@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-# Pushes retain mandatory workspace tests, coherent library/audit, all callers,
-# the current whole-word diagnostic and the strict claim gate. Previously
-# accepted isolated target jobs remain available on explicit workflow_dispatch;
-# their source/caller checks are also covered by the complete coherent job.
+# Pushes run exact Rust/source accounting, current export dependencies/owned
+# audits and the strict claim gate. Full/word/completion jobs use explicit commit
+# markers or manual dispatch; every required whole-package result remains needed
+# before closure. Skipping an unchanged job never supplies a fresh receipt.
 jobs:
   rust:
     name: Exact Rust engines and source assembly (not full claim closure)
@@ -48,6 +48,7 @@ jobs:
           cmp build/Registry.lean lean/ResearchCommons/Registry.lean
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
           cargo run --locked -p research-commons-runtime --bin moment-signature-certificate > build/PositiveMomentSignature.lean
+          cargo run --locked -p research-commons-runtime --bin jc69-certificate > build/JC69Branch.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- unsat > build/AffineUNSAT.lean
           cargo run --locked -p research-commons-runtime --bin source-certificate -- tree > build/OriginalTreeBank.lean
@@ -583,6 +584,8 @@ jobs:
         run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
       - name: Check complete Rust target signature and ALL-finite-positive-rival consumer
         run: cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
+      - name: Check complete Rust JC branch output at its SAME returned finite clock
+        run: cargo run --locked -p research-commons-package -- check-jc-callers --in-exports
       - name: Retain exact completed source objects even after a later module failure
         if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830

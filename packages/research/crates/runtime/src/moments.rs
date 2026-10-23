@@ -48,7 +48,7 @@ pub fn separating_level(sigma:&PositiveLaw,tau:&PositiveLaw)->Result<u32,String>
     for k in LEVELS { if sigma.moment(k)?!=tau.moment(k)? { return Ok(k); } }
     Err("no certificate found; inconsistent with the stated theorem; no NO result".into())
 }
-fn literal(r:&Rational)->String {
+pub(crate) fn literal(r:&Rational)->String {
     format!("({} / {} : ℚ)",r.numer(),r.denom())
 }
 fn bank(name:&str,law:&PositiveLaw)->String {

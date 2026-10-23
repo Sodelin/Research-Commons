@@ -2069,31 +2069,69 @@
       "claim_id": "CB-MSCI-001",
       "dependencies": [],
       "lean": {
-        "state": "verified_component_binding",
+        "state": "source_component_candidate",
         "module": "ResearchCommons.MSCI.KilledClocks",
         "declarations": [
           "ResearchCommons.MSCI.actual_totalRate_strict_merger",
           "ResearchCommons.MSCI.actual_merger_charge_count_nonincreasing",
           "ResearchCommons.MSCI.actual_killedRate_strict_merger",
-          "ResearchCommons.MSCI.actual_merger_killed_difference_positive"
+          "ResearchCommons.MSCI.actual_merger_killed_difference_positive",
+          "ResearchCommons.MSCI.JC69.character_add",
+          "ResearchCommons.MSCI.JC69.probability_semigroup",
+          "ResearchCommons.MSCI.JC69.fourier_transfer",
+          "ResearchCommons.MSCI.JC69.kernel_probability",
+          "ResearchCommons.MSCI.JC69.normalized_generator",
+          "ResearchCommons.MSCI.JC69.uniform_root_pair_probability",
+          "ResearchCommons.MSCI.JC69.clock_pair_correlation",
+          "ResearchCommons.MSCI.JC69.clock_survival_timeOfSurvival",
+          "ResearchCommons.MSCI.JC69.pair_time_decoder",
+          "ResearchCommons.MSCI.JC69.character_sum",
+          "ResearchCommons.MSCI.JC69.actual_current_tree_character"
         ],
-        "scope": "Actual original-source positive rate bank and current-forest merger/character-count ingredient for comparable killed-rate denominators, for EVERY finite Copy/Site carrier. Does not identify the JC Fourier killed process, construct the full bounded event compiler/epoch/root/recurrence law, recover timed genealogies or formalize the complete observation-equivalence theorem.",
+        "scope": "Actual original-source positive rate bank and current-forest merger/character-count ingredient for comparable killed-rate denominators, for EVERY finite Copy/Site carrier. Does not identify the JC Fourier killed process, construct the full bounded event compiler/epoch/root/recurrence law, recover timed genealogies or formalize the complete observation-equivalence theorem. New extension: exact normalized JC branch PMF/characters/semigroup/generator, common-root pair correlation and finite-clock realization/decoder; whole original timed-tree/locus/channel assembly and full theorem remain separate.",
         "coverage": "actual_current_merger_killed_rate_component_only",
-        "preflight": "integration/MSCI-REUSE-PREFLIGHT.md"
+        "preflight": "integration/JC69-REUSE-PREFLIGHT.md",
+        "prior_verified_component": {
+          "record": "integration/msci-source-component-verification.json",
+          "declarations": [
+            "ResearchCommons.MSCI.actual_totalRate_strict_merger",
+            "ResearchCommons.MSCI.actual_merger_charge_count_nonincreasing",
+            "ResearchCommons.MSCI.actual_killedRate_strict_merger",
+            "ResearchCommons.MSCI.actual_merger_killed_difference_positive"
+          ],
+          "scope": "Actual original-source positive rate bank and current-forest merger/character-count ingredient for comparable killed-rate denominators, for EVERY finite Copy/Site carrier. Does not identify the JC Fourier killed process, construct the full bounded event compiler/epoch/root/recurrence law, recover timed genealogies or formalize the complete observation-equivalence theorem."
+        },
+        "declaration_modules": {
+          "ResearchCommons.MSCI.JC69.character_add": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.probability_semigroup": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.fourier_transfer": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.kernel_probability": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.normalized_generator": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.uniform_root_pair_probability": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.clock_pair_correlation": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.clock_survival_timeOfSurvival": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.pair_time_decoder": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.character_sum": "ResearchCommons.MSCI.JC69",
+          "ResearchCommons.MSCI.JC69.actual_current_tree_character": "ResearchCommons.MSCI.JC69"
+        }
       },
       "obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
       "reuse_rank": 9,
       "rust": {
-        "state": "verified_component_binding",
+        "state": "pending_component_extension_verification",
         "module": "research_commons_runtime::msci",
-        "scope": "OLD sufficient bounded-MSCI cutoff implemented with retained arbitrary-precision arithmetic;3 exact immutable controls plus zero-epoch/profile/refusal boundaries passed in88-test run. Actual source/event/JC observation admission and universal native/refinement remain separate.",
+        "scope": "OLD sufficient bounded-MSCI cutoff implemented with retained arbitrary-precision arithmetic;3 exact immutable controls plus zero-epoch/profile/refusal boundaries passed in88-test run. Actual source/event/JC observation admission and universal native/refinement remain separate. New exact JC branch table/encoder and complete16-coordinate SAME returned-time certificate are pending fresh checking; no exp/log fit or complete source/genealogy provider.",
         "proof_interface": {
           "module": "research_commons_package::exports",
           "command": "check-exports --target ResearchCommons.Integration.Exports",
-          "state": "verified_named_type_and_module_interface",
+          "state": "pending_multi_module_owner_and_actual_branch_check",
           "record": "integration/claim-export-verification-v6.json",
           "scope": "Exact complete source/object/dependency/owned audit plus actual declaration type/module. Existing complete/scoped integration level remains unchanged; no universal native refinement or new science."
-        }
+        },
+        "components": [
+          "research_commons_runtime::msci",
+          "research_commons_runtime::jc69"
+        ]
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -2121,6 +2159,13 @@
           "export_record": "integration/claim-export-verification-v6.json",
           "whole_claim_formal_binding": false,
           "scope": "Actual original-source positive rate bank and current-forest merger/character-count ingredient for comparable killed-rate denominators, for EVERY finite Copy/Site carrier. Does not identify the JC Fourier killed process, construct the full bounded event compiler/epoch/root/recurrence law, recover timed genealogies or formalize the complete observation-equivalence theorem."
+        },
+        {
+          "kind": "jc_branch_and_multi_owner_source_preparation",
+          "checked": false,
+          "preflight": "integration/JC69-REUSE-PREFLIGHT.md",
+          "whole_claim_formal_binding": false,
+          "scope": "Retains previous verified rate/charge component while extending the exact channel interface; no whole MSCI mathematical completion is reopened or asserted newly formalized."
         }
       ]
     },

@@ -19,12 +19,13 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let word_callers=scope=="word-certificate-callers";
  let completion_callers=scope=="completion-certificate-callers";
  let moment_callers=scope=="moment-signature-callers";
- let source_only=scope=="original-source-callers" || target_audit || population_callers || residual_callers || epoch_callers || word_callers || completion_callers || moment_callers;
+ let jc_callers=scope=="jc69-branch-callers";
+ let source_only=scope=="original-source-callers" || target_audit || population_callers || residual_callers || epoch_callers || word_callers || completion_callers || moment_callers || jc_callers;
  let mut callers=if source_only {Vec::new()} else {vec![
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
     ("AffineUNSAT","affine-certificate",Some("unsat"))]};
- if project=="lean" && !target_audit && !residual_callers && !moment_callers {
+ if project=="lean" && !target_audit && !residual_callers && !moment_callers && !jc_callers {
   if !word_callers { callers.push(("OriginalTreeBank","source-certificate",Some("tree"))); }
   if word_callers { callers.push(("OriginalParallelBank","source-certificate",Some("parallel"))); }
   else if !population_callers && !epoch_callers && !completion_callers {
@@ -42,6 +43,9 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  }
  if moment_callers || scope=="full-profile-callers" {
   callers.push(("PositiveMomentSignature","moment-signature-certificate",None));
+ }
+ if jc_callers || scope=="full-profile-callers" {
+  callers.push(("JC69Branch","jc69-certificate",None));
  }
  if word_callers || scope=="full-profile-callers" {
   callers.extend([("NaturalIndependentWord","word-cache-certificate",Some("independent")),
@@ -102,7 +106,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
     if !audit[field].as_array().is_some_and(|v|v.is_empty()){return Err(format!("caller audit rejected {field}"));}
  }
  let receipt=json!({"profile":scope,"certificates":records,"owned_axiom_audit_passed":true,
-    "scope":if moment_callers {"Actual supplied rational positive target, complete M0..M2r signature, total mass equality against EVERY finite positive atomic rival and all further moments, under the explicit matching-signature premise. The stochastic reaction/stopped-law/derivative acquisition and general native refinement joins are separate."} else if completion_callers {"Particular complete native ancestral constant table with nonempty Copy/all-copy root support, unchanged actual infinite completion law and SAME positive returned source bank. Passive selected comb event is derived on the same decoded input. No whole-word/root admission, all-cap tester grammar/tomography or universal native/observer/provider claim."} else if word_callers {"Particular complete natural word tables on the same original hybrid source and returned bank; original parent0/parent1 order, all selected endpoint/register fields, total coefficient fibres and once-drawn register retained in BOTH mode examples. No whole-calendar/readout, completion, universal parser/native/provider/action/target/QE closure."} else if epoch_callers {"Particular full mixed-population native epoch table on the same original source/shared physical bank, all selected coefficient fibres and explicit original edge-then-ancestral order. Whole word/raw completion/readout, universal native/parser, physical census/action/target/QE joins remain separate."} else if residual_callers {"Particular complete supplied finite ensemble, same raw weights/class map, strict residual top-k set and conservation. Actual RNA support/sampling/class-mass computation, simultaneous stochastic events and universal native refinement remain separate."} else if population_callers {"Particular total ordered-copy population tables on the same original source; any positive population rates/durations. Whole epoch/word, parser/native universal refinement, global label/readout, history/source/action/QE joins are separate."} else if target_audit {"Only the exact target dependency closure and owned declarations; no particular native table/input/result/word/readout is certified."} else {"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."}});
+    "scope":if jc_callers {"Actual complete sixteen-entry rational JC branch table on the literal four-base/character encoding; every probability and row normalization checked against the constructed normalized clock-JC PMF at ONE returned finite time. Whole original timed-genealogy/event/locus/source admission and universal parser/native/channel refinement remain separate."} else if moment_callers {"Actual supplied rational positive target, complete M0..M2r signature, total mass equality against EVERY finite positive atomic rival and all further moments, under the explicit matching-signature premise. The stochastic reaction/stopped-law/derivative acquisition and general native refinement joins are separate."} else if completion_callers {"Particular complete native ancestral constant table with nonempty Copy/all-copy root support, unchanged actual infinite completion law and SAME positive returned source bank. Passive selected comb event is derived on the same decoded input. No whole-word/root admission, all-cap tester grammar/tomography or universal native/observer/provider claim."} else if word_callers {"Particular complete natural word tables on the same original hybrid source and returned bank; original parent0/parent1 order, all selected endpoint/register fields, total coefficient fibres and once-drawn register retained in BOTH mode examples. No whole-calendar/readout, completion, universal parser/native/provider/action/target/QE closure."} else if epoch_callers {"Particular full mixed-population native epoch table on the same original source/shared physical bank, all selected coefficient fibres and explicit original edge-then-ancestral order. Whole word/raw completion/readout, universal native/parser, physical census/action/target/QE joins remain separate."} else if residual_callers {"Particular complete supplied finite ensemble, same raw weights/class map, strict residual top-k set and conservation. Actual RNA support/sampling/class-mass computation, simultaneous stochastic events and universal native refinement remain separate."} else if population_callers {"Particular total ordered-copy population tables on the same original source; any positive population rates/durations. Whole epoch/word, parser/native universal refinement, global label/readout, history/source/action/QE joins are separate."} else if target_audit {"Only the exact target dependency closure and owned declarations; no particular native table/input/result/word/readout is certified."} else {"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."}});
  fs::write(root.join("build").join(scope).join("caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
     .map_err(|e|e.to_string())?;
  println!("{receipt}");
@@ -320,6 +324,20 @@ fn run() -> Result<()> {
    let selected=checked_target(&root,"ResearchCommons.Integration.Population")?;
    check_callers_at(&root,"lean",&selected,"population-certificate-callers")?;
   },
+  "check-jc-callers"=>{
+   let target=match args.collect::<Vec<_>>().as_slice(){
+    []=>"ResearchCommons.MSCI.JC69",
+    [flag] if flag=="--in-exports"=>"ResearchCommons.Integration.Exports",
+    _=>return Err("usage: check-jc-callers [--in-exports]".into()),
+   };
+   let selected=checked_target(&root,target)?;
+   let plan=prepare_lean(&root)?;
+   let required=research_commons_package::selected_modules(&plan,"ResearchCommons.MSCI.JC69")?;
+   if required.iter().any(|n|!selected.contains(n)){
+    return Err("actual JC branch caller dependencies missing from checked context".into());
+   }
+   check_callers_at(&root,"lean",&selected,"jc69-branch-callers")?;
+  },
   "check-moment-callers"=>{
    let target=match args.collect::<Vec<_>>().as_slice(){
     []=>"ResearchCommons.Integration.PositiveMoments",
@@ -363,7 +381,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-moment-callers [--in-exports]|check-residual-callers|check-epoch-callers|check-word-callers|check-completion-callers|check-exports|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-moment-callers [--in-exports]|check-jc-callers [--in-exports]|check-residual-callers|check-epoch-callers|check-word-callers|check-completion-callers|check-exports|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }

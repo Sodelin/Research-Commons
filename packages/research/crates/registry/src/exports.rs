@@ -1,7 +1,7 @@
 //! Exact public registry -> declaration-check plan. This reuses Lean as the
 //! proof checker; it creates no native substitute for a scientific algorithm.
 use serde_json::{json,Value};
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap,BTreeSet};
 
 type Result<T> = std::result::Result<T,String>;
 fn name(value:&str)->Result<()> {
@@ -31,14 +31,29 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
    _=>{unbound.push(id);continue;}
   };
   name(module)?;imports.insert(module.to_owned());
-  let mut local=BTreeSet::new();let mut ds=Vec::new();
+  let overrides=match &row["lean"]["declaration_modules"]{
+   Value::Null=>None,
+   Value::Object(m)=>Some(m),
+   _=>return Err("declaration_modules must be an object".into()),
+  };
+  let mut local=BTreeSet::new();let mut ds=Vec::new();let mut owners=BTreeMap::new();
   for declaration in declarations {
    let d=declaration.as_str().ok_or("non-string export declaration")?;
    name(d)?;
    if !local.insert(d){return Err(format!("duplicate declaration {d}"));}
+   let owner=match overrides.and_then(|m|m.get(d)){
+    None=>module,
+    Some(value)=>value.as_str().filter(|s|!s.is_empty()).ok_or("invalid declaration owner")?,
+   };
+   name(owner)?;imports.insert(owner.to_owned());owners.insert(d.to_owned(),owner.to_owned());
    ds.push(d.to_owned());
   }
-  claims.push(json!({"claim_id":id,"module":module,"declarations":ds,
+  if let Some(overrides)=overrides{
+   for key in overrides.keys(){
+    if !local.contains(key.as_str()){return Err(format!("owner for unlisted declaration {key}"));}
+   }
+  }
+  claims.push(json!({"claim_id":id,"module":module,"declarations":ds,"declaration_modules":owners,
    "integration_state":row["lean"]["state"],"scope":row["lean"]["scope"],
    "canonical_completion":card["completion"]}));
  }
@@ -59,8 +74,9 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
  for claim in &claims{
   for declaration in claim["declarations"].as_array().ok_or("invalid ownership declarations")?{
    let id=serde_json::to_string(claim["claim_id"].as_str().ok_or("invalid ownership ID")?).map_err(|e|e.to_string())?;
-   let owner=serde_json::to_string(claim["module"].as_str().ok_or("invalid ownership module")?).map_err(|e|e.to_string())?;
    let d=declaration.as_str().ok_or("invalid ownership declaration")?;
+   let owner=serde_json::to_string(claim["declaration_modules"][d].as_str()
+    .ok_or("invalid ownership module")?).map_err(|e|e.to_string())?;
    records.push(format!("    ({id}, ``{d}, {owner})"));
   }
  }
@@ -103,6 +119,31 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
   assert!(source.contains("(\"A\", ``ResearchCommons.Other.endpoint, \"ResearchCommons.Claims.A\")"));
   assert!(source.contains("environment.getModuleIdxFor? declaration"));
   assert!(source.contains("unless actual == expected"));
+ }
+ #[test]fn one_claim_reuses_multiple_real_module_owners_without_a_wrapper_alias(){
+  let(c,mut b)=data();
+  b["claims"][0]["lean"]["declarations"]=json!([
+   "ResearchCommons.Claims.A.endpoint","ResearchCommons.Shared.semigroup"]);
+  b["claims"][0]["lean"]["declaration_modules"]=json!({
+   "ResearchCommons.Shared.semigroup":"ResearchCommons.SharedLaw"});
+  let p=plan(&c,&b).unwrap();let source=p["document"].as_str().unwrap();
+  assert!(p["imports"].as_array().unwrap().contains(&json!("ResearchCommons.Claims.A")));
+  assert!(p["imports"].as_array().unwrap().contains(&json!("ResearchCommons.SharedLaw")));
+  assert!(source.contains("(\"A\", ``ResearchCommons.Shared.semigroup, \"ResearchCommons.SharedLaw\")"));
+  assert!(source.contains("(\"A\", ``ResearchCommons.Claims.A.endpoint, \"ResearchCommons.Claims.A\")"));
+ }
+ #[test]fn ownership_metadata_cannot_add_an_unlisted_or_unsafe_dependency(){
+  let(c,b)=data();
+  for overrides in [
+   json!(["ResearchCommons.SharedLaw"]),
+   json!({"ResearchCommons.Unlisted.endpoint":"ResearchCommons.SharedLaw"}),
+   json!({"ResearchCommons.Claims.A.endpoint":""}),
+   json!({"ResearchCommons.Claims.A.endpoint":17}),
+   json!({"ResearchCommons.Claims.A.endpoint":"Safe\naxiom forged : False"}),
+  ]{
+   let mut input=b.clone();input["claims"][0]["lean"]["declaration_modules"]=overrides;
+   assert!(plan(&c,&input).is_err());
+  }
  }
  #[test]fn duplicate_canonical_identity_is_not_collapsed(){
   let(mut c,b)=data();c["claims"].as_array_mut().unwrap().push(json!({"id":"A"}));

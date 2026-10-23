@@ -80,3 +80,5 @@ pub mod completion_certificate;
 pub mod word_cache_certificate;
 
 pub mod msci;
+
+pub mod jc69;
