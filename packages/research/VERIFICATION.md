@@ -102,3 +102,14 @@ At9470d7bee23d31a510050d90a534f092797547fb/run39988428942, Rust compilation and 
 
 
 The one-bank compact variant8dad05c1/run39988721194 still hit the same source-document limit in Rust job120534604857, before Lean. No row or coefficient was dropped. The next serializer shares repeated exponent vectors across the COMPLETE table through typed monomial definitions and renders exact integer coefficients directly. Every coefficient still refers to its full original variable/exponent vector. It preserves the262144-byte limit and adds explicit required/cap information to source-byte refusal. This is a code-size improvement awaiting the same actual check, not a new scientific result or broader compiler acceptance.
+
+
+## Named NANUQ chain reuse and focused verification
+
+CB-NANUQ-001's original53-source scoped result and later retained complete endpoints were inspected as recorded in integration/NANUQ-REUSE-PREFLIGHT.md. The new ResearchCommons.Claims.NANUQ module exports those exact existing types; it derives no new geometry/support/all-level result. It remains pending its current coherent build/audit. The all-level hand cardCB-NANUQ-002 and a Rust physical source-to-geometry provider are not promoted.
+
+Canonical main was rechecked at0c33ecd79c66eecf15fde247fe644d4993097a87: docs/claims.json still has the exact pinned Gitblobebe7a376366fbd787767275404371d4497d1128e,118 cards, board1.18. A sorted-key recursive semantic comparison also found no changes. Existing IDs, scientific statuses/obligations and rating order are untouched.
+
+At5c76ee2c/run39989161799, all69 Rust tests passed, including BOTH complete natural hybrid-word examples and the real refusal path. Lean word verification remains in progress and is not accepted merely from Rust rendering. Earlier byte-limit failures are retained. The exact shared variable/monomial definitions preserve every native coefficient and output row without increasing the262144-byte check limit.
+
+CI now runs the full coherent source/audit, ALL actual caller documents, workspace tests and strict per-claim gate on every package push. The current word target remains an additional independent diagnostic. Previously accepted isolated target jobs stay reproducible through workflow_dispatch; their exact receipt histories remain. Unchanged auxiliary jobs are not rerun or counted as independent new evidence on every source/status commit.

@@ -8,6 +8,10 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+# Pushes retain mandatory workspace tests, coherent library/audit, all callers,
+# the current whole-word diagnostic and the strict claim gate. Previously
+# accepted isolated target jobs remain available on explicit workflow_dispatch;
+# their source/caller checks are also covered by the complete coherent job.
 jobs:
   rust:
     name: Exact Rust engines and source assembly (not full claim closure)
@@ -121,6 +125,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   certificates:
+    if: github.event_name == 'workflow_dispatch'
     name: End-to-end certificate callers (isolated finite-input scope)
     needs: rust
     runs-on: ubuntu-24.04
@@ -162,6 +167,7 @@ jobs:
             packages/research/certificates/lake-manifest.json
           if-no-files-found: warn
   source_cells:
+    if: github.event_name == 'workflow_dispatch'
     concurrency:
       group: portable-original-source-cell-20261023
       cancel-in-progress: false
@@ -221,6 +227,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   population_coefficients:
+    if: github.event_name == 'workflow_dispatch'
     concurrency:
       group: portable-population-coefficient-20261023
       cancel-in-progress: false
@@ -282,6 +289,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   qualified_menu:
+    if: github.event_name == 'workflow_dispatch'
     concurrency:
       group: portable-qualified-menu-20261023
       cancel-in-progress: false
@@ -341,6 +349,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   sparse_epoch:
+    if: github.event_name == 'workflow_dispatch'
     concurrency:
       group: portable-sparse-epoch-20261023
       cancel-in-progress: false
@@ -463,6 +472,7 @@ jobs:
             packages/research/lean/lake-manifest.json
           if-no-files-found: warn
   rna_results:
+    if: github.event_name == 'workflow_dispatch'
     concurrency:
       group: portable-rna-results-20261023
       cancel-in-progress: false
