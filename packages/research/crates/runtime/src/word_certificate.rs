@@ -36,7 +36,7 @@ fn variable(v:Variable,request:&Request)->Result<String,Error>{
   }
  }
 }
-fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],request:&Request,limits:RenderLimits)
+fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],limits:RenderLimits)
  ->Result<String,Error>{
  if p.dimension!=variables.len(){return Err(Error::Invalid("word coefficient dimension"));}
  let mut parts=Vec::new();
@@ -45,7 +45,7 @@ fn sparse(p:&parity_solver::polynomial::Polynomial,variables:&[Variable],request
   if q.numer().bits().max(q.denom().bits())>limits.rational_bits{return Err(Error::SourceLimit);}
   let mut monomial=Vec::new();
   for (i,power) in powers.iter().enumerate(){
-   if *power!=0{monomial.push(format!("({}, {power})",variable(variables[i],request)?));}
+   if *power!=0{monomial.push(format!("(variableBank {i}, {power})"));}
   }
   parts.push(format!("([{}], (({} : ℚ) / ({} : ℚ)))",monomial.join(", "),q.numer(),q.denom()));
  }
@@ -128,6 +128,10 @@ private def common (h : Hybrid N) : Bool := vertexMode h.val
  put(&mut out,&format!(r#"
 private def word : List (Symbol (Fin {slots}) (Fin {nv}) (Fin {ne})) := [{word}]
 "#),render.rendered_bytes)?;
+ let variables=table.variables.iter().map(|v|variable(*v,request)).collect::<Result<Vec<_>,_>>()?;
+ put(&mut out,&format!(r#"
+private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
+"#,variables.len(),vector(variables)),render.rendered_bytes)?;
  let mut rows=Vec::new();let mut monomials=0usize;
  for (i,t) in table.transitions.iter().enumerate(){
   if source_epoch::selected_view(context,&t.witness).map_err(Error::Invalid)?!=t.view{
@@ -137,7 +141,7 @@ private def word : List (Symbol (Fin {slots}) (Fin {nv}) (Fin {ne})) := [{word}]
   if monomials>render.monomials{return Err(Error::SourceLimit);}
   let label=format!("destination{i}");
   crate::epoch_certificate::snapshot(&mut out,context,&t.witness,&label,render).map_err(Error::Snapshot)?;
-  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,request,render)?));
+  rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,render)?));
  }
  put(&mut out,&format!(r#"
 private def rows : Rows (WordVariable N (Fin {slots})) (Code N sample) := [{}]
