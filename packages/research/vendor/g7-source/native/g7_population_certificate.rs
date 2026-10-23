@@ -338,7 +338,7 @@ pub fn render_selected_view_declarations(context: &Context, value: &Snapshot, la
     let view = parity_solver::source_epoch::selected_view(context, value).map_err(Error::Invalid)?;
     let mut out = Writer::new(limits.rendered_bytes);
     out.put("private def ")?; out.put(label)?;
-    out.put("View : SelectedView (Fin ")?; out.number(context.source.vertices)?;
+    out.put("View : UnifiedLean.Source.SourceForestSilentPruning.SelectedView (Fin ")?; out.number(context.source.vertices)?;
     out.put(") (Fin ")?; out.number(context.source.edges.len())?;
     out.put(") (Fin ")?; out.number(context.sample.len())?; out.put(") where\n  genealogy := ")?;
     function(&mut out, context.sample.len(), |out,i| match &view.genealogy[i] {

@@ -49,7 +49,7 @@ fn snapshot(out:&mut String,context:&Context,value:&Snapshot,label:&str,limits:R
  put(out,&view,limits.rendered_bytes)?;
  let proof=format!(r#"theorem {label}_selected_fields_exact :
     (project N Finset.univ {label}).val = {label}View := by
-  apply SelectedView.ext
+  apply UnifiedLean.Source.SourceForestSilentPruning.SelectedView.ext
   · funext copy
     fin_cases copy <;> decide +kernel
   · funext copy
