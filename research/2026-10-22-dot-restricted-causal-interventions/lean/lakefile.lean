@@ -62,4 +62,7 @@ lean_lib RestrictedCausalSource where
     `BinaryGlobalMarkov, `BinaryCommonFaithfulSource, `BinarySelectedProbabilityLaw,
     `BinaryFaithfulInvariance, `BinarySelectionQuerySemantics,
     `BinaryOriginalSourceLabels, `BinaryPhysicalOracle, `BinaryPhysicalGame,
-    `EmptyInterventionTarget]
+    `EmptyInterventionTarget,
+    `HardFamilyGraphs, `HardFamilyActivePaths, `HardFamilyObservedSignature,
+    `HardFamilyIndicatorSignature, `HardFamilyOriginalSources, `HardFamilyActionSignature,
+    `HardFamilyFullTarget, `HardFamilyIndexCount, `HardFamilyAdaptiveLower, `HardFamilyExactGame]

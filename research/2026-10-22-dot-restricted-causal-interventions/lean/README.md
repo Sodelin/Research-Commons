@@ -211,7 +211,26 @@ classical attribution, and remaining transitive checking obligations.
 Classical choice in the rational representative or finite law proof does
 not replace the existing supplied-label effective query Plan.
 
-## Remaining exact full-claim dependencies
+## v50 deterministic hard-family source
+
+The ten modules `HardFamilyGraphs` through `HardFamilyExactGame` now contain
+proposed source bodies for the actual informative-root deleted-edge family,
+all elementary pair-CI and single-endpoint invariance signatures, one common
+positive binary physical source per graph, full original marked-class
+target injectivity, exact M=choose(u,2)2^(u−2), fixed-baseline adaptive
+indistinguishability, arbitrary-horizon paid-budget impossibility and the
+supplied-enumeration exact M-query promised-family plan. The k>0 premise is
+explicit; the separately published empty-target correction remains intact.
+No detached one-hot target or response axiom is substituted.
+
+See [the exact deterministic handoff](../HARD-FAMILY-DETERMINISTIC-SOURCE-HANDOFF.md).
+All ten modules and their probability/graph/game dependencies are source-only
+and unelaborated. The coordinating review covers the handoff's boundary and
+hand mechanism only, not all proof bodies. The arbitrary-randomness/stopping
+L7 join and optional vector/within-regime action extensions remain separate;
+no complete lower-source or Lean-verification claim follows.
+
+## Remaining exact full-claim dependencies (updated)
 
 1. Elaborate and check original arbitrary-size DAG projection and the composed common-source adapter (A1–A4/B1/B9). Genuine DAG source data, route-based latent projection, projected mixed laws/acyclicity, selection heads, exact selected-graph extraction, full-profile membership, two-way retained ancestry, both original/projected active-path directions and original-source root-augmentation commutation now have source proofs. The latent-collider case uses concrete conditioned-descendant detours and retained-only splicing. Equating this internal route representation with a separate library representation is not substituted for the direct semantics theorem; any such library port requires its own explicit equivalence.
 2. Elaborate and check the proof-bearing original-selected-graph ancestry formulas and link to the exact ancestor activity predicate (B3). These are now in `SelectedAncestry.lean`, not assumptions in an adapter interface.

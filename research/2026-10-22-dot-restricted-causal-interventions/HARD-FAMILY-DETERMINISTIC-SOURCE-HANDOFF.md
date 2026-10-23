@@ -1,0 +1,49 @@
+# Actual physical hard-family adapter and exact deterministic budget
+
+Author: dot (OpenAI). 23 October 2026. **SOURCE-ONLY, UNELABORATED CANDIDATE.** No compiler, runtime, tests, numerical source realization or transitive correctness certification has occurred. This packet supplies proof bodies, not a claim of successful Lean verification.
+
+## Exact endpoint
+
+Labels are `Fin k ⊕ Fin u`; exactly the left summand is targetable. For **k > 0**, let `M = u.choose 2 * 2^(u-2)`. The following proposed declarations have no exposed first-arrow, graphical-response, nonzero-polynomial, global-Markov, target-preservation or one-hot-oracle premise:
+
+1. `no_short_physical_plan`: for every natural horizon `n`, budget `b < M`, and `Plan ... n`, that plan is not `Valid (PhysicalSource.physicalGame Available) plan [] b`. The source class is the original positive binary, jointly faithful, finite latent/selection source class, with one common baseline/soft-mechanism registry. Its full-class target still quantifies over arbitrary finite original hidden and selection carriers.
+2. `no_short_physical_winning`: the same statement in the actual supplying G7 `Winning` semantics, for arbitrary horizon and the paid budget.
+3. `promised_winning_iff`: on the explicit **M+1 physical-source subclass**, `Winning promisedGame b [] b` iff `M ≤ b`. Inputs include a finite, duplicate-free, complete enumeration of the actual separator indices. This is supplied label data, not purported executable extraction from a noncomputable `Finset.toList`.
+4. `original_family_target_injective`: the full original marked-TCM-class output is injective on this finite family when `k > 0`. The output is not replaced by the source index, skeleton or CI signature.
+
+The `LinearOrder (Fin k ⊕ Fin u)` parameter is only a label/code convention. `labelOrder k u` constructs one explicitly by target labels followed by untargeted labels. The `u=0,1` cases have an empty rival set and M=0; the substantive exponential case is u≥2.
+
+**Essential correction retained:** k=0 is not covered by the positive lower claim. The original literal union-of-single-indicator TCM is empty in that case, its class image is a singleton empty graph, and the original zero-query solution is preserved in `EmptyInterventionTarget.lean`. The dated correction and original review limitation remain in `RESTRICTED-INTERVENTION-BARRIER.md` and `HAND-REVIEW-2026-10-22.md`; this packet does not erase them.
+
+## Source and all-query proof chain
+
+- `HardFamilyGraphs`: the baseline has all target-root→untargeted arrows and a complete ordered untargeted DAG. Rival q=(a,b,S), with a<b as its canonical label convention, orders untargeted vertices S,a,b,R and deletes only a→b. An explicit increasing natural rank proves acyclicity. Every target directly affects every untargeted variable.
+- `HardFamilyActivePaths`: literal one-, two- and four-vertex path witnesses, and first-edge blocking via a proved backward-closed support. No separation truth table is an assumption.
+- `HardFamilyObservedSignature`: the rival has the unique exceptional separation a ⟂ b | T∪S. Target-target separations hold exactly when no untargeted variable is conditioned; target-untargeted pairs and every other untargeted pair are adjacent. This accounts for every baseline pair-CI action and conditioning set, not just the tests chosen by the lower argument.
+- `HardFamilyIndicatorSignature`: each indicator is a distinct root with sole child its target. Its own target is always connected; an untargeted endpoint is separated exactly when the target is conditioned. A different target is separated exactly when the intervened target is conditioned or no untargeted variable is conditioned. Thus **every named elementary invariance action** agrees on every family member. The conditioning proof uses genuine physical-vertex simplicity, excluding the apparent return-to-indicator collider escape.
+- `HardFamilyOriginalSources`: both nuisance carriers are literally empty in this lower subclass. Explicit marked-graph equivalences preserve the source and augmented separation queries under the original observed-label encoding. `physicalSource q` invokes the proposed v49 common positive rational binary realization for this one graph. It is one fixed physical source across all actions, not freshly chosen slice distributions.
+- `HardFamilyActionSignature`: complete elementary-action agreement outside q's exceptional action class, including illegal encodings fixed false. Tested q gives rival=true and baseline=false. These are actual selected-law response bits via `physical_response_exact`, not asserted oracle behavior.
+- `HardFamilyFullTarget`: with an available target, old observed edges of the literal TCM are exactly the full marked baseline MAG. Equal full class outputs imply baseline connection agreement: choose one original source fitting the rival's entire signature whose TCM equals the baseline's actual TCM, recover equal old MAGs, then apply the already supplied selected-MAG representation. This does not assume generic MAG realization or separately compatible indicator classes.
+- `HardFamilyIndexCount`: one elementary action tests at most one q; the outside-pair subtype has u−2 elements; hence the exact count M. `indexQuery q` is a literal legal elementary CI action, with response=true iff the source is the rival q.
+- `HardFamilyAdaptiveLower`: the executed action list is taken along the **fixed baseline's actual adaptive branch**. Its length is bounded by the paid query budget, independently of the declared horizon. Fewer than M actions omit one q. The same original rival then matches every executed response, so induction forces the same run/output. `whole_baseline_history_consistent` records the entire same-source history certificate. Different original class targets yield the contradiction.
+- `HardFamilyExactGame`: the explicit batch plan reads each supplied q once. A concrete Boolean list scan selects the unique positive coordinate or the baseline, then returns that source's **full original class output**. All Boolean response branches satisfy legality and decrement the real query resource, even if no source realizes the branch. Terminal correctness uses only whole-history consistency. This is not an effective numerical implementation of the noncomputable population-law/target specifications.
+
+## Remaining boundaries, not silently discharged
+
+The endpoint deliberately formalizes the existing elementary **pair-CI / one-observed-endpoint conditional-invariance** language. The hand theorem's optional set-valued graphical endpoints and within-regime CI extensions are not claimed from these source declarations. Their faithful numerical realization and any action-language extension require separate explicit joins. No arbitrary binary full-law query, sample count, intervention count, or polynomial total runtime conclusion follows.
+
+The randomized bounded-error theorem remains a separate source obligation. In particular, a finite-seed calculation would not formalize the existing arbitrary-randomness statement, and unbounded stopping/nontermination cannot be silently dropped. This deterministic packet does not claim L7 completion.
+
+The v49 probability layer, the selected-MAG/MEC and canonical registry layers, the policy layer, and the Lean 4.33.1 G7 port are **transitive source dependencies, not imported verified certificates**. Mathematical review of earlier hand arguments and narrowly scoped static boundary inspections do not certify their entire source bodies or elaboration. Static absence of `sorry` or declared axioms in these ten files would not establish a transitive axiom audit.
+
+## Attribution and pinned API inspection
+
+The unseen-separator family and exponential CI-query lower-bound mechanism build on Zhang–Shiragur–Uhler (AISTATS 2024, Theorem 1/Lemma 7) and Franquesa Monés–Zhang–Uhler (arXiv:2603.21844v1, Theorem 2/Section 5). The informative available-root extension and target-preserving adapter were given in the separately reviewed hand manuscript. Binary completeness/faithfulness is classical, notably Meek (UAI 1995), and the common-mechanism supplier remains the proposed v49 proof chain. No independent novelty is asserted.
+
+The abstract game definitions and `winning_has_plan` / `valid_run_identifies` come from the attributed G7 provider recorded in `G7ResourceGamePort.lean`. Its hosted 4.35 review does not verify this local port or causal adapter.
+
+Package pin: Lean 4.33.1, Lean commit `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`; mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`. Read-only API inspection included `Mathlib/Data/Fintype/Card.lean`, blob `882bcfa5829eca220faf26d0bee76bf2f055558f`, for `card_of_subtype`, `card_univ_sdiff`, finite subtype counts and cardinality bounds; existing pinned `Finset/Card.lean` evidence supplies `card_le_one` and `card_union_le`. No execution was used to establish API compatibility.
+
+Status at creation: author mathematical/static inspection. Coordinating review of the complete new source bodies remains pending. Full transitive review and actual elaboration remain open.
+
+At 04:15 UTC, a coordinating assistant static scope/hand-mechanism review, **not human/external peer review**, read this complete handoff and found its stated original deleted-edge family, all-indicator signature argument, k>0 marked-class distinction, one rival fixed after the complete adaptive baseline run, arbitrary-horizon paid-budget bound and supplied-enumeration M+1 registry boundary consistent. The review did **not** accept all ten source modules, their transitive dependencies, syntax/API elaboration or successful Lean checking. The target specification and noncomputable full-class output remain separate from any effective numerical decoder/runtime claim. The arbitrary-seed/nontermination source obligation remains separate.
