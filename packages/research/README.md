@@ -2,7 +2,7 @@
 
 A reproducible research package built from the canonical claim registry and the dated reuse ratings. Completed results are reused. Unresolved questions retain exact statements and obligations. Phone deployment is not a deliverable.
 
-The package pins canonical118 at447e188, with75 ranked and43 unranked claims; no rating or scientific completion field is invented. Its Lean context contains the exact retained1613-module graph plus22 added modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
+The package pins canonical118 at447e188, with75 ranked and43 unranked claims; no rating or scientific completion field is invented. Its Lean context contains the exact retained1613-module graph plus25 added modules. Rust reuses the retained exact arithmetic, affine, source/calendar/word/readout and G7 formula engines.
 
 ## Build on a development host
 
@@ -77,3 +77,5 @@ The RNA aliases preserve global-positive partition hypotheses, exact conditional
 Whole-epoch/word and raw-root/completion/readout refinement, full physical source/target/action coverage, AST/history/QE/selector/result-origin joins and other claim applications remain explicit. Open claims need appropriate checked statements; empirical records need evidence interfaces. Completed hand mathematics is not reopened by missing formal or native work.
 
 Exact accepted component receipts are under integration/. Failed attempts and their corrections remain in VERIFICATION.md and Git history. A complete end-to-end package requires the full build and the complete per-claim gate as well as these scoped successes.
+
+The next G7 use-site compares a complete native sparse epoch table against the existing finite fullRows recurrence. The new total multivariate coefficient/key-union checker and OriginalEpochTableCertificate are candidate source; their combined target is ResearchCommons.Integration.Epoch. No generic proof or actual native table acceptance is inherited. See integration/SPARSE-EPOCH-PREFLIGHT.md.
