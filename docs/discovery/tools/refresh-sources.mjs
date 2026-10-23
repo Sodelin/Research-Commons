@@ -2,13 +2,16 @@
 // Network responses stay in RAM until the complete bounded snapshot is assembled.
 import {readFile,writeFile,rename} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {artifactReferences,recoveredReferences} from '../dist/source-search.mjs';
+import {artifactReferences,recoveredReferences,readingReferences} from '../dist/source-search.mjs';
 import {validate} from '../dist/model.mjs';
 const root=new URL('../dist/',import.meta.url);
 const data=validate(JSON.parse(await readFile(new URL('claims.json',root))));
 const registry=JSON.parse(await readFile(new URL('source.json',root)));
 const refs=artifactReferences(data.claims),documents=[],unavailable=[],catalogues=[];
 const canonicalReferenceCount=refs.length;
+const joins=JSON.parse(await readFile(new URL('reading-joins.json',root))).joins;
+const reading=readingReferences(joins,data.claims);
+for(const ref of reading){const existing=refs.find(r=>r.url===ref.url);if(existing)existing.bindings.push(...ref.bindings);else refs.push(ref);}
 async function publicBytes(url){
  const raw=url.replace('https://github.com/','https://raw.githubusercontent.com/').replace('/blob/','/');
  const r=await fetch(raw,{redirect:'error',signal:AbortSignal.timeout(20000)});
@@ -47,8 +50,8 @@ await Promise.all(Array.from({length:4},async()=>{
 }));
 documents.sort((a,b)=>a.url.localeCompare(b.url));unavailable.sort((a,b)=>a.url.localeCompare(b.url));
 if(total>16*1024*1024)throw Error('Corpus bound exceeded; previous snapshot preserved');
-const corpus={schema:1,registry_source:registry,catalogues,coverage:{selected_references:refs.length,canonical_artifact_references:canonicalReferenceCount,recovered_mathematical_notes:catalogues.reduce((n,c)=>n+c.mathematical_notes,0),indexed:documents.length,unavailable,
-  limitation:'Only immutable first-party Markdown evidence linked by this registry snapshot. Not the full archive. Source hits do not establish acceptance or current status.'},documents};
+const corpus={schema:1,registry_source:registry,catalogues,coverage:{selected_references:refs.length,canonical_artifact_references:canonicalReferenceCount,owned_reading_join_references:reading.length,recovered_mathematical_notes:catalogues.reduce((n,c)=>n+c.mathematical_notes,0),indexed:documents.length,unavailable,
+  limitation:'Only immutable first-party Markdown evidence linked by this registry snapshot and the owned reading joins, plus the declared recovery catalogue. Not the full archive. Source hits do not establish acceptance or current status.'},documents};
 const target=new URL('source-corpus.json',root),pending=new URL('source-corpus.json.pending',root);
 await writeFile(pending,JSON.stringify(corpus));await rename(pending,target);
 console.log(JSON.stringify({indexed:documents.length,unavailable:unavailable.length,bytes:total}));
