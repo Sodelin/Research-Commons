@@ -36,4 +36,7 @@ lean_lib RestrictedCausalSource where
     `DiscriminatingStatusTransport, `IndexedPrefixColliders,
     `ShortestPathStatusInvariance, `MinimumDirectedPathTransfer,
     `ClosestFirstArrowGeometry, `ClosestFirstArrowBoundary,
-    `ClosestFirstArrowFlank]
+    `ClosestFirstArrowFlank, `ClosestFirstArrowSplice,
+    `ClosestFirstArrowPotential, `ClosestFirstArrowIncidence,
+    `ClosestFirstArrowContradiction, `ClosestFirstArrowArms,
+    `ClosestFirstArrow, `ClosestPathAncestry, `SharedSeparatorMEC]
