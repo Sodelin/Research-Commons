@@ -152,14 +152,18 @@ theorem normalized_generator (a b : Base) :
     HasDerivAt (fun t : ℝ => probability (Real.exp ((-(4/3 : ℝ))*t)) a b)
       (if a = b then (-1 : ℝ) else 1/3) 0 := by
   have he : HasDerivAt (fun t : ℝ => Real.exp ((-(4/3 : ℝ))*t)) (-(4/3 : ℝ)) 0 := by
-    convert (Real.hasDerivAt_exp ((-(4/3 : ℝ))*(0 : ℝ))).comp 0
-      ((hasDerivAt_id (0 : ℝ)).const_mul (-(4/3 : ℝ))) using 1 <;> norm_num
+    simpa only [id_eq, mul_zero, Real.exp_zero, one_mul, mul_one] using
+      ((hasDerivAt_id (0 : ℝ)).const_mul (-(4/3 : ℝ))).exp
   by_cases h : a = b
-  · simp only [probability, if_pos h]
-    convert ((hasDerivAt_const (0 : ℝ) (1 : ℝ)).add (he.const_mul (3 : ℝ))).div_const 4 using 1 <;>
-      norm_num
-  · simp only [probability, if_neg h]
-    convert ((hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub he).div_const 4 using 1 <;> norm_num
+  · have hd := ((hasDerivAt_const (0 : ℝ) (1 : ℝ)).add
+        (he.const_mul (3 : ℝ))).div_const 4
+    have hnum : ((0 : ℝ) + 3 * (-(4/3 : ℝ))) / 4 = -1 := by norm_num
+    rw [hnum] at hd
+    simpa only [probability, if_pos h] using hd
+  · have hd := ((hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub he).div_const 4
+    have hnum : ((0 : ℝ) - (-(4/3 : ℝ))) / 4 = 1/3 := by norm_num
+    rw [hnum] at hd
+    simpa only [probability, if_neg h] using hd
 
 /-- Two conditionally independent branches from ONE uniform ancestral base.
 This is the explicit common-root sum, not a product of separate genealogies. -/
