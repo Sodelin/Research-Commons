@@ -1,3 +1,13 @@
+# Current provenance / prior-reader integration
+
+Canonical source74ba3079d346371530887693eab7e8eeb1ba3e20, board1.5, schema1.1,75cards. Final26 records pass:18 model checks,7 DOM journeys,enclosing group.75-card phone Node sample100 warm queries99.7ms; no larger-corpus/browser benchmark claimed. Actual stdin validation accepts the75-card source, and the actual CLI DOI lookup returns CB-NANUQ-002 with TWO canonical literature references.
+
+The NANUQ paper URL already existed under accepted_artifacts/prior_work. Shared bibliography lookup now recovers it, separates prior work from proof evidence, makes DOI text searchable and retains exact roles in agent export. The primary publisher/immutable source ledger were read; this is bibliographic/source correspondence, not a new mathematical or priority audit. Missing-direct-field notice is superseded by the current role-aware behavior.
+
+The earlier first-party Atlas reader source was recovered for inspection; its data/host constraints remain separate. Credential-bearing URL controls were adapted and tested here. Shared validation now refuses credential/signed source links before accepting a replacement, and refresh invokes it in RAM before writing a snapshot. No old 31-control count is imported as current verification, and the old suite was not rerun. No private article corpus was copied.
+
+A wrong-cwd glob invocation returned zero tests during this work; it is NOT a passing verification. The explicit-suite runner now resolves its own source paths and refuses zero suites. Final26-record result is from that actual two-module runner. Earlier records below remain dated history; counts are not added.
+
 # Current downstream-search correction
 
 The Lean gateway accepted the scope of the original THREE reading joins through PR3 comment6360790022. That was source review, not an independently rerun UI or scientific test. Its schema consumer finding identified the original projection omissions. f488882 corrected packet/rendering; this successor also indexes downstream work and the completion display in the SAME search module.

@@ -34,11 +34,11 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   $('reset').click();$('origin').value='published_open_problem';$('origin').dispatchEvent(new dom.window.Event('change'));
   const expected=docs['claims.json'].claims.filter(c=>c.origin.category==='published_open_problem').length;assert($('count').textContent.startsWith(expected+' of'));assert(document.querySelectorAll('.claim').length>0);
  });
- await t.test('missing direct literature URL is labelled as an indexing gap',()=>{
-  const missing=docs['claims.json'].claims.find(c=>c.origin.category==='published_open_problem'&&!c.origin.source_url);
-  assert(missing,'This source successor includes a literature-link gap fixture');
-  location.hash=missing.id;dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
-  assert($('detail').textContent.includes('direct original-paper link is not indexed'));
+ await t.test('prior-work paper is reachable even without an origin URL',()=>{
+  location.hash='CB-NANUQ-002';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
+  const paper=[...$('detail').querySelectorAll('a')].find(a=>a.href.includes('10.1007/s11538-025-01549-4'));
+  assert(paper);assert($('detail').textContent.includes('prior work'));
+  assert(!$('detail').textContent.includes('No literature URL is indexed'));
  });
  await t.test('typing searches and no-result recovery does not claim missing mathematics',async()=>{
   $('reset').click();$('search').value='independant routing';$('search').dispatchEvent(new dom.window.Event('input'));

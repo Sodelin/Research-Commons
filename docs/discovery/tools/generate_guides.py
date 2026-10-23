@@ -20,7 +20,9 @@ lines=['# Find an answer in Research Commons','',intro,
 '| Entry / exact provenance | What this contribution establishes | Boundary |','|---|---|---|']
 for c in claims:
  if c['origin']['category'] not in ['published_open_problem','classical_prior']:continue
- origin=c['origin'];url=origin.get('source_url');ref=f"[Original source]({url})" if url else ('Classical prior' if origin['category']=='classical_prior' else 'Direct original-paper link not indexed')
+ origin=c['origin'];url=origin.get('source_url')
+ refs=[a for a in c['accepted_artifacts'] if a.get('role') in ('prior_work','historical_problem_statement')]
+ ref=(f"[Original source]({url})" if url else ('; '.join(f"[{a['label']}]({a['url']})" for a in refs) if refs else ('Classical prior' if origin['category']=='classical_prior' else 'Literature link not indexed')))
  lines.append(f"| {card(c)} · {ref}. {clean(origin['detail'])} | {clean(c['plain_language']['what_we_learned'])} | {clean(c['plain_language']['what_cannot_conclude'])} |")
 lines+=['','## Browse by the question','']
 groups=collections.defaultdict(list)

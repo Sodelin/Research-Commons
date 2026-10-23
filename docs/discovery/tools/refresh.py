@@ -13,6 +13,8 @@ if __name__ == '__main__':
     data = json.loads(raw)
     if not isinstance(data.get('claims'),list) or not data['claims']:
         raise ValueError('Refuse empty/malformed claim register')
+    # Use the SAME browser/agent policy in RAM before persisting a source snapshot.
+    subprocess.run(['node', str(ROOT/'tools/validate-source.mjs')], input=raw, capture_output=True, check=True)
     # Preserve the canonical author's source bytes, not a parallel registry.
     (ROOT/'dist/claims.json').write_bytes(raw)
     meta = {'repository':REPO,'commit':commit,'path':'docs/claims.json','git_blob':source['sha'],
