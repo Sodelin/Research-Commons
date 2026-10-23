@@ -48,3 +48,7 @@ None automatically closes biological G3 or G4.
 
 The owner has closed the external G3/G4 continuations. This does not withdraw the saved accepted results or silently resolve the open masters. No restart or external contact follows from this status explanation. The [optional shared restart prompt](../handoffs/2026-10-23-g3-g4-accepted-first/PROMPT.md) remains an unissued future draft.
 
+
+### Later continuation priority — 23 October 2026, 06:14–06:17 UTC
+
+The owner subsequently requested an immediate direct attempt on G4 INDEPENDENT-only. Existing contexts now cover positive and negative routes plus an accepted-result audit, while lineage acceptance continues. This does not restart the owner-closed external chats. [Exact updated allocation and no-duplication gate](../research/2026-10-23-dot-priority-review-0614z/CHECKPOINT.md).
