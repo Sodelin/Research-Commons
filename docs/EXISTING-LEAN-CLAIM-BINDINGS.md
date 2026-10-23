@@ -101,3 +101,8 @@ These are existing completed theorem/component bindings. A request for a portabl
 In particular, G7 does not manufacture a total policy: `CorrectRun` for every admitted source over the whole history is a premise. G1's core census is not a serial-word or inverse-witness bound. G2's literal timed pruning is not an arbitrary stopping-time theorem. CM's classical abstract positivity theorem is not a physical-source adapter.
 
 No new theorem, compiler invocation or native test was performed in the retrieval. This source-binding note is published for the existing coordination request; it creates no new execution authority.
+
+
+## G5 source-binding addendum — 23 October 2026, 11:55 UTC
+
+The completed full-binary M3 cluster/split-union theorem is now mapped in [the exact G5 addendum](G5-EXISTING-LEAN-BINDING.md) and its [machine-readable binding](G5-EXISTING-LEAN-BINDING.json). The accepted source and already-vendored portable body have identical bytes. This fills a declaration/evidence lookup omission, not a missing proof, new compiler run or Rust implementation. The original entries and historical acceptance records above remain unchanged.

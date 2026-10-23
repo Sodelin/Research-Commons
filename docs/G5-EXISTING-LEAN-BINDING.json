@@ -1,0 +1,82 @@
+{
+  "title": "G5 addendum to the existing Lean declaration guide",
+  "prepared_utc": "2026-10-23T11:53:00Z",
+  "status": "Published source retrieval; no new proof/build or package edits",
+  "base_guide": {
+    "commit": "fa627492d9521a72a604952527d570571fe0fff7",
+    "path": "docs/EXISTING-LEAN-CLAIM-BINDINGS.json",
+    "current_read_git_blob": "430657527a24f48991c58fcbfa641510e2123e68"
+  },
+  "duplicate_check": "Current guide read and PR3 comments retrieved through 11:51 UTC contain the prior five-family return, not a later exact G5 declaration return.",
+  "binding": {
+    "claim_id": "CB-G5-001",
+    "claim": "Full binary M3 normalized displayed-cluster and nontrivial split-union identification",
+    "module": "G5M3NormalizedClusterSplitIdentification",
+    "namespace": "GProgram.G5.M3NormalizedClusterSplitIdentification",
+    "declarations": [
+      "GProgram.G5.M3NormalizedClusterSplitIdentification.m3_identifies_documented_full_cluster_split_unions"
+    ],
+    "imports": [
+      "G5ObservedLiftedBlocks",
+      "G5FairNormalizedCutQuartetIdentification"
+    ],
+    "source_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+    "source_path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a925841c3168d979272922c39653b30304aab14e901cca4faea14cea41886416.lean",
+    "source_sha256": "a925841c3168d979272922c39653b30304aab14e901cca4faea14cea41886416",
+    "source_git_blob": "f432bda7a80653455dd9249833f59463f0b8b7c7",
+    "vendor_commit": "90216c43d3fe526f1dcf9604cc5184ffffa1d434",
+    "vendor_path": "packages/research/vendor/accepted/source-store/a925841c3168d979272922c39653b30304aab14e901cca4faea14cea41886416.lean",
+    "vendor_git_blob": "f432bda7a80653455dd9249833f59463f0b8b7c7",
+    "vendor_body_equality": "Direct fetched-text equality with the accepted source, plus identical Git blob.",
+    "source_context": "variable {V E X V₂ E₂ : Type*}\nvariable [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E]\nvariable [Fintype V₂] [Fintype E₂] [DecidableEq V₂] [DecidableEq E₂]\nopen scoped Classical",
+    "exact_source_signature": "theorem m3_identifies_documented_full_cluster_split_unions\n    (N : RootedBinary V E X) (C : Calendar N.graph)\n    (hcut : ∀ e, N.graph.IsHybrid (N.graph.source e) → N.graph.IsBridge e)\n    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (common : Hybrid N → Bool) (r : PositivePairRates E)\n    (N₂ : RootedBinary V₂ E₂ X) (C₂ : Calendar N₂.graph)\n    (hcut₂ : ∀ e, N₂.graph.IsHybrid (N₂.graph.source e) → N₂.graph.IsBridge e)\n    (H₂ : OriginalParentRegistry N₂) (p₂ : HybridProbabilities N₂) (common₂ : Hybrid N₂ → Bool) (r₂ : PositivePairRates E₂)\n    (hX : 3 ≤ Fintype.card X) (a0 : ℝ)\n    (htips : ∀ x, C.age (N.leaf x) = a0) (htips₂ : ∀ x, C₂.age (N₂.leaf x) = a0)\n    (heq : ∀ tip : Fin 3 ↪ X, naturalObservedFullLaw N C tip H p common r =\n      naturalObservedFullLaw N₂ C₂ tip H₂ p₂ common₂ r₂) :\n    normalizedDisplayedClusters N = normalizedDisplayedClusters N₂ ∧\n      normalizedDisplayedSplits N = normalizedDisplayedSplits N₂",
+    "hypotheses": [
+      "Two finite original RootedBinary sources on one label set X, with separate vertex/edge carriers and strict Calendars.",
+      "For each source, every edge whose source is hybrid is an actual undirected bridge (hcut).",
+      "Separate OriginalParentRegistry, strictly interior HybridProbabilities, per-hybrid COMMON/current-live-owner INDEPENDENT choices, and PositivePairRates including the original and ancestral populations.",
+      "At least three original taxa; all tips in both sources have the same calendar age a0.",
+      "Equality of ordinary hidden-register naturalObservedFullLaw for every injection Fin 3 ↪ X; this is full timed genealogy-law equality, not finite time bins or sampled estimates."
+    ],
+    "conclusions": [
+      "Equality of normalizedDisplayedClusters, including singleton and full-label clusters.",
+      "Equality of normalizedDisplayedSplits, the nontrivial unordered split union with at least two labels on both sides.",
+      "No equality of displayed-tree co-occurrence families, hidden graphs or parameters is asserted."
+    ],
+    "historical_verification": {
+      "certificate_commit": "81ff60aa0ffe6c39e15546b09105f3c3fafbd1ed",
+      "certificate_path": "research/2026-10-10-dot-g5-full-binary-m3-0209z/CERTIFICATE.json",
+      "certificate_blob": "bf9f28b249534d1a79539435ba34241219f8ff2f",
+      "review_path": "research/2026-10-10-dot-g5-full-binary-m3-0209z/REVIEW-AND-DISPOSITION.md",
+      "review_blob": "b7c1bfce16dcf14a027e89e0c1ca7c1580e6af82",
+      "lean": "4.33.1",
+      "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "closure_modules": 319,
+      "declarations": 6448,
+      "theorem_rows": 4386,
+      "owned_axioms": 0,
+      "nonstandard_axiom_rows": 0,
+      "missing_modules": 0,
+      "fresh_components_in_final_run": 1,
+      "authenticated_exact_context_reuses": 318,
+      "fresh_aggregate": true,
+      "fresh_complete_owned_audit": true,
+      "independent_compiler_rerun_by_reviewer": false,
+      "final_receipt_sha256": "3ed15062f5ca3c0eb373362902abf576c6ec48cc91340baf1e9ad052d0a8171f",
+      "full_audit_sha256": "22976b9e0931eefa1b535df444475dd097ff325f505fa3abb3ca42d9faac5726"
+    },
+    "catalogue": {
+      "commit": "dffb0b501c378c67e4aeea0561a68052e064e8ba",
+      "path": "research/2026-10-11-dot-discovery-lean-incorporation-catalog-2200z/G5-G6-G7-INCORPORATION-CATALOG.json",
+      "git_blob": "886152436ee38ca823e6ef2a3dbc1e9d9d707f2d",
+      "entry": "G5-BINARY-M3"
+    },
+    "limits": [
+      "This retrieval is not a new proof review, compiler run or raw full-audit rehash.",
+      "Frozen UNCOMPILED CANDIDATE comments precede the exact-hash successful receipts and do not reopen the completed theorem.",
+      "No Rust decoder, finite-data estimator, DNA observation adapter or general Lean/Rust refinement is supplied by this declaration.",
+      "Categorical higher-indegree HG and the optional quartet corollary remain outside this exact binary endpoint.",
+      "Portable run 39941733358 remains in progress at the last 11:51 UTC check; no fresh portable-profile acceptance is inferred.",
+      "The package manifest at 90216c43 lists this module but has an empty declarations array and no verified Rust binding."
+    ]
+  }
+}
