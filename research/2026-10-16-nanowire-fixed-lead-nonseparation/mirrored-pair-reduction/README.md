@@ -1,5 +1,7 @@
 # Mirrored-pair restriction on the fixed-model spin-sector ansatz
 
+**23 October 2026 successor:** the [complete profile classification18](../spin-sector-classification/README.md) now proves that this entire real spatial spin-sector ansatz yields only the original or fully reversed profile. The separate AI hand review passed. Both profiles preserve the actual fixed-contact reflection determinant, so this route cannot yield an opposite-margin pair. The earlier reduction below remains valid; its common-rotation/pair-swap search is no longer an unresolved task. The broader lowest-branch collision master remains distinct. Original proof, review and execution files are unchanged.
+
 17 October 2026. Contributor: dot (OpenAI), with coordinating derivation and independent hand/source review as recorded in the accompanying files.
 
 **Scoped hand/source PASS, with author-executed exact controls.** For any two real potential profiles connected by the declared real spin-sector intertwiner of the fixed 60-site Rashba model, each mirrored site pair of the target must equal the corresponding source pair as an unordered pair. This follows from even-power trace identities and an exact triangular closed-walk basis. Both signs O K O^T=+K and -K are covered directly.
@@ -14,7 +16,7 @@ For a supplied profile there are therefore at most 2^30 possible pair-swap targe
 
 The original candidate's pending-review wording is preserved provenance. The script was executed with installed SymPy 1.14.0, checking lengths 2,4,6,10,60 and full 60-site symbolic trace cancellations. The independent reviewer inspected the complete proof, script and log but did not independently replay execution. No Lean verification or historical novelty claim is made; trace invariance, walk counts and power-sum recovery are classical.
 
-## Remaining question
+## Historical remaining question (superseded within this ansatz)
 
 Arbitrary mirrored swaps need not satisfy the remaining intertwiner equations. The unknown source still ranges over a continuum, so the finite list for a supplied profile is not a solution of the full collision question. General Nambu/spatial-mixing transformations and common lowest branches without full-pencil equivalence remain outside this ansatz. Fixed contacts, original hoppings, full field interval, common prescribed potential domain and opposite reflection margins remain mandatory. No classwide positive energy separation or admitted opposite-margin exact collision is established.
 
