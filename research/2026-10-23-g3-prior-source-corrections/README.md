@@ -162,6 +162,29 @@ Lookup aliases: finite-fibre decoder, finite-valued semialgebraic lift,
 pure-exponential counter, Jordan repair, actual affine quotient, free binary
 source code, PCP length clock, synchronized readout, all-core alphabet.
 
+The [original master contract](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md),
+blob `aea996450f5a81ba9f379cf518a0e6991545cdda`, explicitly requires one
+occurrence of the declared typed box in a legal completion. Joint multiport
+tensors and original shared registers remain joint. This is not a grant
+to replace its hidden kernel K by independent copies K tensor K or to
+observe an arbitrary polynomial of K. The original scope passages were
+reread; this is reuse of the contract, not a new restriction.
+
+The completed [G2 capability ledger](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-13-dot-g2-reconstructed-capabilities-0232z/README.md),
+blob `05e3e0a86eea72cee4fc5cf461c272ab527b6cd4`, separately explains
+fresh-locus repeated transcript composition: it requires the actual same
+channels, row equality and conditional fresh-draw experiment. Those source
+premises, and any adapter to THIS original G3 input, must be supplied before
+using a repeated-experiment nonlinear endpoint encoding. G2 is complete;
+its general composition theorem does not acquire a new legal observation.
+No such nonlinear encoding was admitted here. A genuinely supplied joint
+slot still uses its actual joint append map, never independent marginals.
+
+Additional lookup aliases: one-occurrence box, once-occurring kernel,
+repeated slot, repeated use, multi-locus, multilocus, independent replicates,
+fresh-locus transcript, Kronecker power, tensor-power endpoint, nonlinear
+readout admission. Missing an original caller is not missing G2 mathematics.
+
 ## Projective spectral bounds and same-tuple invariant: completed hand proof
 
 G3-PROJECTIVE-SPECTRAL-01 is PROVED BY HAND (not Lean formalized).
