@@ -202,6 +202,41 @@ Lookup aliases: diagonal gap, transversal subset, near-coincident modes,
 boundary zero eigenvalues, square-free kernel, Jordan limit, factorial
 spectral projectors, COMMON-pair all-arity I lower bound, same-bank invariant.
 
+ACTUAL recipient reading/scope adoption is confirmed by
+[Dot's19:09 return](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6372689705).
+The complete return was read; it keeps the exact current-token ROW basis,
+all-template NO gate and latent-I-only-C limits. This is neither independent
+whole-proof correctness acceptance, a reader refresh nor a Lean binding.
+The separately dated18:11-cutoff reconciliation is not relabelled as a
+publication of this later18:48 source result.
+
+### Existing ORIGINAL BOTH closure-NO still passes these bounds
+
+The already-PROVED [G3-BOTH-BOUNDARY-NONATTAINMENT](https://github.com/Sodelin/Research-Commons/blob/c25319a8023310d6c64143affd707402780768b3/research/2026-10-23-g3-proof-recovery/G3-BOTH-ALGEBRAIC-CLOSURE-NO.md)
+is in the EXISTING recovered catalogue/body-search join. Its historical
+candidate header is superseded by the [completed catalogue entry](https://github.com/Sodelin/Research-Commons/blob/c25319a8023310d6c64143affd707402780768b3/research/2026-10-23-g3-proof-recovery/RESULT-CATALOGUE.json).
+Public13833B/manifest SHA549ec36dc6999b323e102587694283107d7685214f21bf232587acc035857cda,
+actual Gitblobaffaf105e11db446b81bdd0df98a6849389b32dc. Its entire original
+proof was reread and the selected public body/Section5 retrieved; the
+completed58-body reader join is not reopened or rebuilt.
+
+For its OLD b=1-2^(-175), the actual paired closure state has C=b^2 and
+R_r=b^binom(r,2). Hence R_r-C^binom(r,2)=b^binom(r,2)*(1-b^binom(r,2))>0
+for EVERY r>=2. Its complete private kernels are projective source limits
+and have positive diagonals, so they satisfy the new spectral bounds too.
+The original compiler maps this same-bank closure state to the declared
+finite algebraic BOTH target. Nevertheless its COMMON subpanel ALREADY
+excludes EVERY finite strict original source/core. Any fixed finite I
+panel may be added as written; this is not a private-box-only negative.
+
+This is a reuse/coverage check, NOT a new NO example or weak-limit theorem.
+The OLD COMMON certificate already decides this particular target. It
+refutes a completeness upgrade using closure plus the new conditioning/
+same-bank inequalities alone, even with positive spectra and strict gaps
+in those inequalities. Exact finite attainment remains a separate duty.
+Do not derive this limit or the OLD loss^(3/2) I replacement again. Both
+were already indexed before this comparison; no source producer/check ran.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
