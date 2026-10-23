@@ -313,6 +313,116 @@ Aliases: attained BOTH boundary YES, COMMON Jensen face, blind independent
 coefficient, all-core passive topology adapter, same-bank tangent interval,
 global normal versus relative-face recognition.
 
+## Calibrated tree-edge words: reuse the complete original-source adapter
+
+The old **9 October**
+[literal reduction](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-calibrated-tree-edge-reduction-1531z/CALIBRATED-TREE-EDGE-REDUCTION-AND-FORCING.md),
+16,246 bytes; SHA256
+`cd7bc7e121f87478d3dc40cedc573b6c7820ea0c89cb1a70fcfbfa91c1d93c23`,
+blob `6c517c35785230fd4a644d0c4ac1fce77ef6729e`, is PROVED with scoped hand
+acceptance. Its complete review (6,513 bytes)
+[tree-edge review](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-calibrated-tree-edge-reduction-1531z/INDEPENDENT-TREE-EDGE-REDUCTION-REVIEW.md)
+has SHA256
+`5f119aabde590313b2ecec55c881e1c9085fa273de37783d7e3f8e7c4f00a35c`.
+The frozen candidate heading does not reopen that proof. Both complete
+bodies, the decoder review and package README were read; the exact source/
+review blobs also match current main at f4e15622. No replay occurred.
+
+Under the stated SAME-source natural BOTH full-topology menu, symmetric
+all-ordered-pair COMMON calibration characterizes the ACTUAL source as an
+ordinary tree with literal equal-arm private words on its edges. It is
+not just a COMMON-equivalent representative. The actual nested-prefix
+identities give K_(i|j)=P_i W_e and K_(i|k)=P_i, hence the lawful arithmetic
+decoder W_e=P_i^-1 K_(i|j), with every lower-current-root block and opaque
+graft retained. The inverse is not a physical edge. Pendant edges need
+no prefix quotient. Reuse this adapter; do not reconstruct an all-core
+word grammar or a new hidden-kernel query.
+
+Its old sentence leaving arbitrary multi-cell natural BOTH finite forcing
+open has a later successor: canonical CB-G4-003 is already PROVED. The
+complete acceptance (8,926 bytes)
+[general acceptance](https://github.com/Sodelin/Research-Commons/blob/78bffa4904a4f56c9efc1d2ab3a18db13f65a982/research/2026-10-13-codex-g4-renewed/critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md),
+SHA256 `487e3abfd36394dc4ec47f81c2796f449c0c6603cfdd8cdda2cb5e6f18e35df3`,
+and the qualified-menu acceptance (2,659 bytes), SHA256
+`c076c16190306cc9aceedd5bcc21886914c2c1efe2d2def8ea80d92badd31a64`,
+were read. CB-G4-004 retains its two menu/compiler hypotheses. These
+existential target-relative results do not supply the uniform acquisition
+algorithm, arbitrary I-only adapter, or total original G3 NO. This lookup
+does not change the 118 canonical claim objects or create a second register.
+
+Aliases: literal equal-arm source, symmetric J calibration, all-exit parent
+tips, nested edge-word decoder, positive prefix quotient, original unknown-
+core converse, fair one-cell forcing, semantic BOTH successor.
+
+## Guard admission: the proposed separated fair-cell energy is excluded
+
+Stable key `G3-GUARD-FAIR-SEPARABLE-ADMISSION-01`. **PROVED by hand at the
+following scope**, as a direct application of the OLD full-source generator
+identity. Independent correctness review and Lean formalization are absent;
+historical novelty is unassessed. This is a useful failed-route exclusion,
+not original G3 undecidability, a new full attack or a scientific execution.
+
+The prospective physical root-order encoding required a linear primitive
+cocycle C with C(E_t)=0 and C(E_t K)=exp(-lambda*t) C(K), lambda fixed.
+These properties follow from the proposed positive diagonal-character
+cocycle; normalization by a smooth positive factor does not change the
+zero/curvature test. Theta is one FIXED static value in (0,1) while applying
+the following identity. It is not differentiated or tied to fresh cells.
+
+In this paragraph X,Y,t are arm DURATIONS and g is natural parent0
+probability, native gamma=1-g. Let
+
+    Phi(t,g)=C(B(exp(-t),exp(-t),g)).
+
+The OLD complete-forest identity
+
+    Q B=B_X/g+B_Y/(1-g)+g(1-g) B_gg/2
+
+gives, on g=1/2, at EVERY finite cap,
+
+    Phi_gg(t,1/2)=-8*lambda*Phi(t,1/2)-16*Phi_t(t,1/2).   (G)
+
+Indeed C(QB)=-lambda*C(B), and B_X+B_Y is the derivative
+along the equal-duration curve. The source equation is retained in
+[CONVEX-ORDINARY-FINAL.md](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-04-dot-g3-convex-ordinary-2307z/CONVEX-ORDINARY-FINAL.md),
+SHA256 `85c74ae9db4cd5f1d0b1bc4acdce53f4bd46edc920983fb275a8782006599ed4`,
+Sections 2--3; its complete statements/proof were read across two bounded
+outputs. The existing G4 FULL-MATRIX-LOG-SOURCE-IDENTITY-R1.md (9,182 bytes), SHA256
+`e89b544ca05b4466fb8735366a29188037481780e02b58c496446dd4600a9d42`,
+was also read COMPLETE. We use the RAW linear equation; no log square is
+discarded, Q is not commuted through an arbitrary prefix, and COMMON is
+not assigned a refreshed bit.
+
+Put s=exp(-t), R(s)=(2-theta)*s-theta, s0=theta/(2-theta).
+For ANY integers a,b>=1 and smooth positive h near (s0,1/2), the proposed
+separated energy
+
+    C(B(s,s,g))=h(s,g)*(R(s)^(2a)+(2g-1)^(2b))             (S)
+
+is impossible. If b=1, at (s0,1/2) its value and t derivative
+vanish but its g second derivative is 8*h>0, contradicting (G).
+If b>=2, its g second derivative on the fair line is h_gg*R^(2a).
+Since Phi_t=-s*Phi_s, equation (G), divided off R^(2a-1)
+away from s0 and then continued to s0, would give
+
+    0=32*a*s0*h(s0,1/2)*R'(s0),
+
+also impossible because R'(s0)=2-theta>0. Thus raising either pure power is not a repair. This is
+one all-degree admission test, not another cap/power search. The original
+h*((2-theta)*s-theta)^2+h*(1-4g(1-g)) is a=b=1.
+
+The actual paired-root family and reciprocal-root arithmetic are OLD/
+completed suppliers. Their existence does not furnish (S). The proposed
+homogeneous-cell guard is withdrawn BEFORE any implementation, parameter
+tuple or control run. The freely parameterized I convex-interior theorem
+explicitly excludes tied arms/BOTH; it is not misapplied to obtain this
+rejection. Conversely (G) excludes this separated ansatz, not every coupled
+nonlinear guard, every conditional fibre or original G3 decision.
+
+The original all-input joint-fibre attainment/complete-NO implication stays
+unresolved. No replacement guard, higher degree producer, copied unknown
+box, static mask factory or peer proof/build job is selected by this entry.
+
 ## Conditional count: completed hand/Lean consumer, stronger application separate
 
 [Exact reuse and route correction](ZERO-SCORE-REUSE.md),9536B/SHA256
