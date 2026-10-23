@@ -32,11 +32,12 @@ private lemma raw_product (m : List (I × Nat)) :
       have hsingle :
           (∏ i : I, (MvPolynomial.X i : MvPolynomial I ℚ) ^
             (if a.1 = i then a.2 else 0)) = MvPolynomial.X a.1 ^ a.2 := by
-        apply Finset.prod_eq_single a.1
-        · intro b _ hne
-          simp [Ne.symm hne]
-        · intro h
-          simp at h
+        have hp := Finset.prod_eq_single (s := Finset.univ)
+          (f := fun i : I => (MvPolynomial.X i : MvPolynomial I ℚ) ^
+            (if a.1 = i then a.2 else 0)) a.1
+          (by intro b _ hne; simp [Ne.symm hne])
+          (by simp)
+        simpa using hp
       rw [List.map_cons, List.prod_cons, ih]
       simp_rw [powerKey_cons, pow_add]
       rw [Finset.prod_mul_distrib, hsingle]
@@ -86,7 +87,8 @@ lemma coefficient_zero_of_absent (p : Sparse I) (k : I → Nat)
       have hp : k ∉ monomialKeys p := by
         intro h
         apply hk
-        simp [monomialKeys, h]
+        change k ∈ powerKey z.1 :: monomialKeys p
+        exact List.mem_cons_of_mem _ h
       change (if powerKey z.1 = k then z.2 else 0) + coefficient p k = 0
       rw [if_neg hz, zero_add]
       exact ih hp
@@ -121,7 +123,8 @@ lemma readRows_empty_of_absent {A K : Type*} [DecidableEq K]
       have ht : k ∉ rowKeys key rows := by
         intro h
         apply hk
-        simp [rowKeys, h]
+        change k ∈ key r.1 :: rowKeys key rows
+        exact List.mem_cons_of_mem _ h
       change (if key r.1 = k then r.2 else []) ++ readRows key rows k = []
       rw [if_neg hr, List.nil_append]
       exact ih ht

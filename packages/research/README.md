@@ -22,7 +22,7 @@ cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
 
-The full coherent build is still running; no complete-library PASS is claimed. The strict per-claim gate intentionally exits2 until every required binding has actual verification. Registry accounting, successful source assembly and an accepted smaller target do not close that gate.
+The full coherent profile at37cb7be5 PASSED:1635 source modules, registry/aggregate, complete104683-declaration owned audit and all ten Rust-generated callers. See integration/full-profile-verification.json. The current three added sparse/epoch candidates are outside that accepted profile and require their own complete check. The strict per-claim gate intentionally exits2 until every required binding has actual verification. Registry accounting, successful source assembly and an accepted smaller target do not close that gate.
 
 The retained-object cache validates the exact compiler, source/dependency context and every object companion. Added modules and literal callers are always rebuilt. Receipts distinguish compilation and reuse, and the owned-axiom audit remains required. See integration/RETAINED-OBJECT-REUSE.md.
 
