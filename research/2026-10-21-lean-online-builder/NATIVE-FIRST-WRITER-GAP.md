@@ -3,11 +3,11 @@
 The remaining native execution boundary is blocked by the **actual original-owner
 Linux controller and transitive first-writer binding**. The supported hosted
 RAM proof-input/result route remains verified. The restored native loader and
-unchanged778-source context are prepared, with16 RAM regressions; they have not
+unchanged778-source context are prepared, with25 RAM regressions and a separate ten-module source profile; they have not
 been constructed or executed as a native build.
 
 [The source map](NATIVE-FIRST-WRITER-GAP.json) identifies exact files, hashes,
-line anchors and existing interfaces. This completes the12:20 source checkpoint.
+line anchors and existing interfaces. The original writer map completed the12:20 source checkpoint; its retained core/namespace/audit first-write paths are unchanged by the later target guard.
 The same binding condition was recorded in r41, r42 and this r43 continuation.
 Independent source/reuse/loader corrections are now complete at this boundary.
 No live process is being awaited and no new native input is available to pass

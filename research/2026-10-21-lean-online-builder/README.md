@@ -34,6 +34,7 @@ The [owner gathering record](OWNER-GATHERING-20261023.json) distinguishes actual
 substantive returns from delivery. G4's [completed calibrated all-cap
 decoder](G4-CALIBRATED-DECODER-REUSE.md) is reused at its reviewed HAND scope;
 the actual captured source/observation caller remains separate.
+The [G3 public caller map](G3-PUBLIC-CALLER-BINDINGS.md) now links completed supplied-word/all-cap hand results and exact unelaborated closing/panel signatures to the existing bounded row/calendar path. It preserves original IDs, the lower-slot/upper-cut distinction and one natural bank. The canonical registry successor is schema1.1, with explicit completion versus downstream fields.
 
 The [exact native admission gap](NATIVE-FIRST-WRITER-GAP.md) now names the
 pre-construction writers and existing codec/policy interfaces. The actual
