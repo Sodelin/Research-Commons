@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {readFile} from 'node:fs/promises';
-import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims} from '../dist/model.mjs';
+import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false;
 let limit=25,offset=0;
@@ -34,7 +34,7 @@ if(refresh){
  data=await source.json();meta={repository:'Sodelin/Research-Commons',commit,path:'docs/claims.json',source_updated_utc:data.updated_utc};
 }
 validate(data);
-const ranking=JSON.parse(await readFile(new URL('../dist/subjective-reuse-ranking.json',import.meta.url)));
+const ranking=validateRanking(JSON.parse(await readFile(new URL('../dist/subjective-reuse-ranking.json',import.meta.url))));
 const rankingSource=JSON.parse(await readFile(new URL('../dist/ranking-source.json',import.meta.url)));
 if(sources){
  if(f.sort)throw Error('--sort orders claim cards only; source hits retain their own evidence roles, not a transferred claim rank.');

@@ -15,3 +15,8 @@ test('agent recovered-component export and combined subjective claim lookup reta
  assert.equal(ranked.results[0].claim_id,'CB-G6-001');assert.equal(ranked.results[0].subjective_reuse.entry.rank,2);
  assert.match(ranked.results[0].subjective_reuse.purpose,/Not mathematical acceptance/);
 });
+
+test('source refresh rejects credential fragments before persistence through the real shared validator',()=>{
+ const script=fileURLToPath(new URL('../tools/test_refresh.py',import.meta.url));
+ execFileSync('python3',[script],{encoding:'utf8',maxBuffer:64*1024,timeout:15000,stdio:'pipe'});
+});

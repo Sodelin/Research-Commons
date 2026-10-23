@@ -14,7 +14,7 @@ Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintaine
 
 The static dist folder is the deployable artifact. MiniSearch is locally bundled and integrity/licence pinned; jsdom is test-only. Deployment follows the registered Sites ID in .openai/hosting.json. Never recreate that Site to repair a deployment. Source pushes and exact saved-version/deployment receipts are separate. For rollback, redeploy a previously saved good version and its recorded source; do not alter canonical scientific records.
 
-See ARCHITECTURE.md for tool comparisons, ownership, security boundaries and update/coverage limits. Source and test evidence do not establish full visual browser/device acceptance. Canonical coverage is currently93 selected cards, not the entire historical research corpus.
+See ARCHITECTURE.md for tool comparisons, ownership, security boundaries and update/coverage limits. Source and test evidence do not establish full visual browser/device acceptance. Canonical coverage is currently97 selected cards, not the entire historical research corpus.
 
 Citation lookup considers both the canonical origin field and explicitly tagged prior-work references. The same bibliography adapter feeds the reader, weighted search and agent reuse export. Source refresh validates through the shared model in RAM before writing a snapshot. `node tools/check.mjs` uses explicit suite paths and refuses an empty suite rather than accepting a zero-test glob.
 
@@ -48,3 +48,17 @@ The G3 importer now consumes the canonical top-level recovered_source_catalogues
 CLI results are bounded to25 by default; use --limit 1..100 and --offset with returned total/next_offset for reproducible pagination. --archive refuses claim facets/current-register refresh; --sources refuses transferred subjective claim sorting. No background service or model call is involved. The public reader source is versioned independently of the canonical registry, without modifying scientific IDs/statuses.
 
 The current canonical successor adds five existing feedback-model groups and four genome/ownership groups:93cards total, with all84prior objects unchanged. The current body snapshot contains229sources/2,228,902original UTF-8bytes/zero unavailable. Historical/scoped formal receipts retain literal detail, including the unretrieved deterministic process-exit fact and separately written source/limit bridges. B05 precursors are not allowed to reopen completed B06 actual-law IAP; its excluded infinite-stream strengthening remains separate. The dated75-card reuse overlay does not rank any of the18later recovered groups. Current coverage is recorded in source.json/source-corpus.json; the broader path inventory retains its own older immutable snapshot.
+
+## Source-link validation and reviewed refresh
+
+Credential-named query **and fragment** parameters are refused, including OAuth fragments, hash-router queries and encoded parameter names/assignments. Ordinary scientific anchors remain valid. This is a URL-parameter boundary, not a general secret-redaction or whole-product security guarantee. The same predicate guards canonical source links, browser rendering, agent lookup and subjective-overlay source URLs. Claim and overlay bodies both validate in RAM before any of the four snapshot files is written. A rejected latest browser source preserves the usable bundled snapshot.
+
+For a reviewed producer release, pin the exact source and expected canonical body hash:
+
+```sh
+python3 tools/refresh.py --commit 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f --expected-sha256 38117d42215e615da9109f3a2548be423e405701e77bdcb5bb8d709220b282cf
+```
+
+The current pinned successor has97cards and238public evidence bodies/2,371,261original UTF-8bytes/zero unavailable. All93prior card objects are unchanged; four memory-source recovery groups retain their stated deterministic/discrete/rare-event scopes, not arbitrary continuous kernels, approximate-TV acceptance or resumed model work. The dated75-entry subjective overlay leaves22later groups unranked. Node and Python3 are required for the complete verification runner; production remains static and does not need Python. Five refresh-guard controls execute the real shared Node validator with memory-only synthetic fixtures and spied writes; no fixture payload is written.
+
+Bibliography projection stores the normalized safe URL, so equivalent host/default-port spellings deduplicate in both the reader and reuse packet. Distinct scientific anchors remain separate; canonical authored source objects/bytes are unchanged.
