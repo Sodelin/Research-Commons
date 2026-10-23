@@ -111,6 +111,7 @@ pub fn example()->Result<String,Error>{
  let end="\nend ResearchCommons.Generated.AncestralCompletion\n";
  let prefix=doc.strip_suffix(end).ok_or(Error::Invalid("completion namespace boundary"))?;
  let out=format!(r#"{prefix}
+noncomputable section
 noncomputable abbrev returnedRates := ResearchCommons.Generated.OriginalTreeBank.sharedBank.rates
 theorem same_returned_bank_completion (b : SelectedIndex N sample Finset.univ) :
     value (readRows (project N Finset.univ) rows b) (fun i : Fin 0 => Fin.elim0 i) =
@@ -147,6 +148,7 @@ theorem native_rows_passive_specified_comb :
     actual_passive_specified_comb]
   norm_num
 #check native_rows_passive_specified_comb
+end
 end ResearchCommons.Generated.AncestralCompletion
 "#);
  if out.len()>262144{return Err(Error::SourceLimit);}

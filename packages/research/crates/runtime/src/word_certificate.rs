@@ -45,7 +45,8 @@ fn indexed_bank(request:&Request,dimension:usize,render:RenderLimits)->Result<St
  let mut out=String::new();
  let sites=vector(source.hybrids.iter().map(|h|fin(h.vertex)).collect());
  put(&mut out,&format!(r#"
-local instance : DecidablePred N.graph.IsHybrid := hybridDecidable N
+private noncomputable instance capturedHybridDecidable : DecidablePred N.graph.IsHybrid :=
+  hybridDecidable N
 private def hybridVertices : Fin {nh} → Fin {nv} := {sites}
 private theorem captured_hybrid_vertices :
     ∀ i : Fin {nh}, N.graph.IsHybrid (hybridVertices i) := by decide +kernel

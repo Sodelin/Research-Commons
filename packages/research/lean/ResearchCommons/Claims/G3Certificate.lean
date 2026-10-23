@@ -4,6 +4,7 @@ import G4WholeProfileDetermination
 The hand bounded-witness result is reused, not rederived. This file supplies
 its supported-bank/grid step only. It does not construct the protected
 physical reduction or source-size bound, acquire a certificate, or decide NO. -/
+set_option autoImplicit false
 noncomputable section
 namespace ResearchCommons.Claims.G3Certificate
 open Nanuq.Source GProgram.G5 GProgram.G5.Normalization
@@ -12,7 +13,7 @@ open UnifiedLean.Source.NativeIndependentPairMixture
 open UnifiedLean.Source.OriginalFixedIDControls
 open UnifiedLean.Source.SourceNaturalInitialization
 open DotG4.WholeProfileDetermination DotG4.ActualSparseCertificateExistence
-open DotG4.ActualPositiveGridUniqueness
+open DotG4.ActualPositiveGridUniqueness DotG4.ActualObservableBankCertificate
 open scoped Classical BigOperators
 
 /-- Removing zero-weight pairs preserves the SAME moment, without refitting

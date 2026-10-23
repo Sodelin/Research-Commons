@@ -129,15 +129,29 @@
       "claim_id": "CB-G3-001",
       "dependencies": [],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "partial_source_binding",
+        "module": "ResearchCommons.Claims.G3FiniteSource",
+        "declarations": [
+          "ResearchCommons.Claims.G3FiniteSource.fixed_controlled_word_coefficients",
+          "ResearchCommons.Claims.G3FiniteSource.completed_controlled_source_readout",
+          "ResearchCommons.Claims.G3FiniteSource.single_source_joint_response",
+          "ResearchCommons.Claims.G3FiniteSource.same_source_history_equations",
+          "ResearchCommons.Claims.G3FiniteSource.constructive_word_rows",
+          "ResearchCommons.Claims.G3FiniteSource.constructive_natural_word_rows"
+        ],
+        "scope": "Original fixed word/source, controlled completed observation and SAME physical source-point history polynomial components. RCF domain/target encoding, exhaustive admitted source enumeration/YES consumer and native refinement remain separate; not general NO.",
+        "preflight": "integration/G3-FINITE-SOURCE-PREFLIGHT.md"
       },
       "obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
       "reuse_rank": 12,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "state": "pending_named_Lean_interface",
+          "command": "check-exports --target ResearchCommons.Integration.Exports",
+          "scope": "Existing Rust-owned exact type/owner/context audit. Retained LAW/controlled-word/family code reused; universal native/source and source-domain coverage not supplied by aliases."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -152,7 +166,14 @@
           "url": "https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-06-dot-g3-global-source-reachability-0019z/REDUCTION.md"
         }
       ],
-      "verification": []
+      "verification": [
+        {
+          "kind": "source_preparation",
+          "checked": false,
+          "preflight": "integration/G3-FINITE-SOURCE-PREFLIGHT.md",
+          "scope": "Six retained exact typed components; pending current context/export acceptance; no new mathematics."
+        }
+      ]
     },
     {
       "claim_id": "CB-G3-002",
