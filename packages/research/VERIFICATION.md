@@ -138,3 +138,10 @@ The draft fourteen-endpoint description was too small for the actual ordered gen
 ### Actual declaration ownership correction
 
 Atc1791600/run39992313902/job120547176141, the complete877-source Exports context compiled, including ResearchCommons.Claims.NANUQ and the import-only union. The new name plan then rejected the legitimate ResearchCommons.Menu namespace because it guessed ownership from file-module prefix. The inspected original finite-forcing source uses namespaceResearchCommons.Menu in fileResearchCommons.Menu.FiniteForcing. The corrected checker retains identifier/refusal validation and uses the SAME environment.getModuleIdxFor?/header.moduleNames mechanism as the actual retained AuditTemplate to verify each declaration's real imported module in Lean. It does not waive ownership or assert current-context owned/export PASS from that failed attempt. The old failure and actual corrected source stay versioned.
+
+
+## Actual claim-export acceptance
+
+Atd0d0184e/run39993399257/job120550906483, the complete877-source Exports target PASSED (861 validated original objects reused,16 sources compiled). The complete owned audit PASSED20395 declarations/13947 theorems, zero owned axioms/nonstandard rows/missing modules. Actual Lean printed and checked73 named declarations in17 canonical claim bindings, and independently verified each real imported-module owner. The exact document hash isb982ae13d79ad8f565000265f93c4b00dd18a51ee7a15e968013d10944c0e89d. All73 Rust tests passed in the same run. Full receipt is integration/claim-export-verification.json.
+
+CB-NANUQ-001's twelve exact named-chain exports are now current-context verified, retaining the original source/drawing/mean hypotheses. Its broader all-level hand successorCB-NANUQ-002 and native geometric provider are not upgraded. The17 bindings gain the checked Rust proof-interface record while their existing scientific/component/native integration levels are retained. The101 still-unnamed claims remain explicit. The strict gate is unchanged and still incomplete; no whole118 completion or literal word PASS is inferred.

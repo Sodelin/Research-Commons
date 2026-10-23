@@ -90,9 +90,9 @@ The next G7 use-site is the immutable whole-word table to the already retained `
 
 The next word receiver/context modules and actual `word-certificate independent/common` callers are candidate integration source, pending their own complete check. `ResearchCommons.Integration.Word` compares the entire immutable natural table against retained `naturalWordRows`; `check-word-callers` requires its exact target build. See [the predecessor/successor preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md). These additions are not covered by the earlier accepted 1,638-module receipt.
 
-A typed `ResearchCommons.Claims.NANUQ` export is also pending the current coherent build. It reuses CB-NANUQ-001's named source-to-geometry chain without extending it to CB-NANUQ-002's all-level hand result. The [NANUQ preflight](integration/NANUQ-REUSE-PREFLIGHT.md) retains exact source/drawing and distinct-resolution-set hypotheses. Push CI keeps the complete coherent source/audit and all actual callers mandatory; previously accepted isolated targets remain available by explicit workflow dispatch.
+The typed `ResearchCommons.Claims.NANUQ` export passed its complete877-source selected context, owned audit and actual declaration/owner checks. It reuses CB-NANUQ-001's named source-to-geometry chain without extending it to CB-NANUQ-002's all-level hand result. The [NANUQ preflight](integration/NANUQ-REUSE-PREFLIGHT.md) retains exact source/drawing and distinct-resolution-set hypotheses. Push CI keeps the complete coherent source/audit and all actual callers mandatory; previously accepted isolated targets remain available by explicit workflow dispatch.
 
-The candidate `check-exports` command verifies every named registry binding against the exact complete compiled object context and prints its full Lean type. It preserves component/candidate statuses and does not change the strict integration gate. See [CLAIM-EXPORT-PREFLIGHT.md](integration/CLAIM-EXPORT-PREFLIGHT.md).
+The accepted `check-exports` command verifies every named registry binding against the exact complete compiled object context and prints its full Lean type. It preserves component/candidate statuses and does not change the strict integration gate. See [CLAIM-EXPORT-PREFLIGHT.md](integration/CLAIM-EXPORT-PREFLIGHT.md).
 
 The same declaration check can run independently on the exact union of named export dependencies:
 
@@ -102,3 +102,5 @@ cargo run --locked -p research-commons-package -- check-exports --target Researc
 ```
 
 The selected command rejects any context missing even one named export dependency, revalidates all object hashes and performs the complete selected owned audit. This is scoped name/type acceptance, not full-profile or all-claim closure.
+
+At [d0d0184e / run39993399257](https://github.com/Sodelin/Research-Commons/actions/runs/39993399257), the export interface **passed** for73 declarations in17 named claim bindings. The complete877-source context audit checked20395 declarations/13947 theorems with zero owned axioms, nonstandard rows or missing modules; all73 Rust tests passed. [Exact receipt](integration/claim-export-verification.json). The other101 claims and original partial/native obligations remain open integration work.
