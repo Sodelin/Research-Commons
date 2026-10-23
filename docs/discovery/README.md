@@ -64,3 +64,14 @@ The bundled canonical snapshot has97cards. The evidence corpus now has246public 
 Bibliography projection stores the normalized safe URL, so equivalent host/default-port spellings deduplicate in both the reader and reuse packet. Distinct scientific anchors remain separate; canonical authored source objects/bytes are unchanged.
 
 Existing formal suppliers are discoverable by exact declaration, including `actual_total_original_strategy_has_bounded_plan`. The owned declaration/module/hypothesis guide at `fa627492d9521a72a604952527d570571fe0fff7` is linked from G1/G2/G6/G7/CM cards and their reuse packets and indexed by the same source search. Its `owned_reading_join_source` binding is navigation, not an accepted-artifact assertion or new proof/package/native acceptance. The first three Lean-reviewed joins retain their original objects unchanged.
+
+## See what changed without reading commits
+
+The reader compares the validated loaded register with its exact bundled snapshot and lists newly indexed cards, changed source fields and cards absent from the loaded register. Each current card opens in the existing detail view; both immutable source pins remain visible. Newly indexed is not newly discovered/proved, and absence is not deletion of historical evidence. Unchanged objects ignore JSON key ordering; array order remains part of the authored source. This is an endpoint comparison, not every intervening revision.
+
+```sh
+node tools/query.mjs --changes --refresh --limit 25
+node tools/query.mjs --changes --refresh --programme 'original.G3' --limit 10
+```
+
+The same comparison engine powers browser and agent output. CLI results have bounded limit/offset/next_offset and separate baseline/current source metadata. Claim facets apply to the current card, or the older card when absent; source-body/archive lookup and subjective sorting remain separate views. Network source stays in RAM; canonical source is never written by this command. If a later refresh fails, the browser identifies the actual retained loaded source and keeps its previous comparison rather than labelling it as the bundled fallback.

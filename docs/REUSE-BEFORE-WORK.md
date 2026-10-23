@@ -18,6 +18,7 @@ node docs/discovery/tools/query.mjs --query 'CB-G6-001'
 node docs/discovery/tools/query.mjs --origin published_open_problem
 node docs/discovery/tools/query.mjs --sources --query 'calibrated decoder'
 node docs/discovery/tools/query.mjs --archive --query 'calendar metric'
+node docs/discovery/tools/query.mjs --changes --refresh --limit 25
 ```
 
 The `--sources` option searches inside the bundled immutable public evidence bodies, returning pinned source links, excerpt, roles, hashes and claim bindings. It is a selected corpus, not the full archive or a new acceptance decision. The browser exposes the same evidence search on demand.
@@ -33,3 +34,5 @@ The default interface returns the exact claim scope, separate evidence axes, acc
 - Why the proposed action advances that gap rather than repeating an accepted outcome.
 
 The record belongs in the existing task/handoff, not a duplicate diary. The procedure does not require busywork, permission for already-authorized source work, or reproof of every supplier.
+
+The change view compares the bundled and loaded canonical source pins, exposing newly indexed cards, changed fields and absent IDs without reconstructing commit history. Newly indexed does not mean new mathematics, and an absent card does not prove evidence deletion. Read both exact source scopes before deciding what work remains.

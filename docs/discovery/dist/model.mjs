@@ -85,6 +85,27 @@ export function neighbors(claims, id) {
   return {outgoing:c.dependencies.map(r=>({...r,claim:claims.find(x=>x.id===r.claim_id)})),
     incoming:claims.flatMap(other=>other.dependencies.filter(r=>r.claim_id===id).map(r=>({...r,claim:other})))};
 }
+function stableSource(value){
+  if(Array.isArray(value))return value.map(stableSource);
+  if(value&&typeof value==='object')return Object.fromEntries(Object.keys(value).sort().map(k=>[k,stableSource(value[k])]));
+  return value;
+}
+export function compareRegisters(previous,current){
+  validate(previous);validate(current);
+  const old=new Map(previous.claims.map(c=>[c.id,c])),now=new Map(current.claims.map(c=>[c.id,c]));
+  const summary=c=>c?{question:c.plain_language.question,exact_scope:c.exact_statement_and_scope,
+    mathematical_status:c.mathematical_status,completion:c.completion??null,formal_status:c.evidence.formal.status}:null;
+  const records=[];
+  for(const c of current.claims){
+    const before=old.get(c.id);
+    const fields=before?[...new Set([...Object.keys(before),...Object.keys(c)])].sort().filter(k=>JSON.stringify(stableSource(before[k]))!==JSON.stringify(stableSource(c[k]))):[];
+    if(!before||fields.length)records.push({claim_id:c.id,change_type:before?'changed':'added',changed_fields:fields,previous:summary(before),current:summary(c)});
+  }
+  for(const c of previous.claims)if(!now.has(c.id))records.push({claim_id:c.id,change_type:'removed',changed_fields:[],previous:summary(c),current:null});
+  return {added:records.filter(r=>r.change_type==='added').length,changed:records.filter(r=>r.change_type==='changed').length,
+    removed:records.filter(r=>r.change_type==='removed').length,unchanged:current.claims.length-records.filter(r=>r.current).length,
+    limitation:'Indexed-card changes between two exact snapshots, not new discoveries, proof acceptance, deletion of historical evidence or complete intervening history.',records};
+}
 export function literatureSources(c) {
   const candidates=[];
   const originURL=safeLink(c.origin?.source_url);

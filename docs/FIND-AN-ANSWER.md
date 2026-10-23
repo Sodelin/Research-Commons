@@ -9,6 +9,7 @@ Begin with the question you need answered. Each link opens the exact claim, assu
 - **How do the results connect?** Read [typed relationships](RESEARCH-CONNECTIONS.md). An idea in common is different from a proved adapter.
 - **What should an agent work on next?** Use [the reuse-before-work procedure](REUSE-BEFORE-WORK.md), including the exact unsupplied implication and completed suppliers.
 - **Looking for older or unmapped sources?** Use [the wider public archive inventory](ARCHIVE-SOURCES.md) or the reader/agent archive-path search. A source hit is not an acceptance verdict.
+- **What changed since the reader snapshot?** Open its source-comparison panel, or use `node docs/discovery/tools/query.mjs --changes --refresh`. Newly indexed cards and changed source fields are distinct from new mathematical discoveries. Both exact source revisions are supplied.
 - **Need full context?** [Canonical claim board](CLAIM-BOARD.md), [status corrections](STATUS-LABEL-AUDIT.md), [accepted work](ACCEPTED-RESULTS-AND-REMAINING-WORK.md), [October source map](OCTOBER-2026-RESEARCH-MAP.md).
 
 ## Published questions and credited classical suppliers
