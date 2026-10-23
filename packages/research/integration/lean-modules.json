@@ -721,15 +721,33 @@
       }
     },
     {
+      "module": "ResearchCommons.MSCI.Alignment",
+      "path": "lean/ResearchCommons/MSCI/Alignment.lean",
+      "sha256": "4e7ffa0729b2ea3516d69986609728c50af900c4e1e215954db98c4abe32ba53",
+      "imports": [
+        "Mathlib.Data.Rat.Defs",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Tactic"
+      ],
+      "provenance": {
+        "role": "Receiver for the OLD complete coherent finite parameter-filter equations",
+        "preflight": "integration/MSCI-ALIGNMENT-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "proof_derivation": "Downstream finite-array formalization of existing exact parameter filter; not a new classification theorem",
+        "scope": "Exact finite equations on supplied same-shape duration/rate/routing arrays; one map shared across adjacent layers, initial/root labels fixed, maps bijective. No original source/metric-law/coefficient/finite-local-alignment/whole classification formal theorem is supplied."
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "f18f7d4ffc51fad6dd5d8555ca3507c75a7fa312b3ff7950ee590c279746756c",
+      "sha256": "d969552615a690389cc1b2e2f759726bd6b797977002eeb0a90ac6866cf19c18",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
         "ResearchCommons.Integration.WordCache",
         "ResearchCommons.MSCI.KilledClocks",
         "ResearchCommons.MSCI.JC69",
+        "ResearchCommons.MSCI.Alignment",
         "ResearchCommons.Claims.G1",
         "ResearchCommons.Claims.G2",
         "ResearchCommons.Claims.G3Certificate",
@@ -750,7 +768,7 @@
         "selected_current_context_verified": false,
         "preflight": "integration/CLAIM-EXPORT-PREFLIGHT.md",
         "scope": "The export command independently validates all required transitive dependencies and object digests, runs the complete selected owned audit, and kernel-checks every name. It retains original integration scopes and pending claims.",
-        "current_verification_scope": "Candidate includes exact JC branch/Fourier/clock component and per-declaration real module ownership; fresh generic/type/actual branch caller and full owned checks pending. Prior22/100 remains accepted at its exact source.",
+        "current_verification_scope": "Candidate additionally includes OLD coherent finite-array filter. Complete current generic/owner/actual result/owned checking required; prior accepted scopes stay at their exact sources.",
         "prior_verified_sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v6.json",

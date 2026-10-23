@@ -82,3 +82,5 @@ pub mod word_cache_certificate;
 pub mod msci;
 
 pub mod jc69;
+
+pub mod alignment;
