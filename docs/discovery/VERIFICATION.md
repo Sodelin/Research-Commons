@@ -38,3 +38,11 @@ Final current run:19 passing records (11 model checks,7 DOM journey subtests,enc
 Deployment, saved version and exact publication receipts are recorded separately after actual success. The whole discovery assignment remains active: broader research/older-site coverage and owner adoption require more than these60 indexed cards.
 
 Local HTTP verification: eight production assets returned200, matched exact on-disk source bytes and used correct ES-module MIME types. The owned preview server was stopped. No other listener was changed.
+
+## Public evidence-body search extension
+
+133 immutable first-party Markdown references fetched successfully over unauthenticated public raw GitHub reads; zero unavailable, 1,344,746 original UTF-8 bytes. All corpus bodies reproduce their recorded SHA256 and Git-blob SHA1 identities, and every role/claim binding matches the canonical accepted_artifacts projection. No canonical status or mathematical premise changed.
+
+Actual explicit runner: 30 test records pass (18 claim-model controls, 3 source-corpus controls, 8 DOM journeys and enclosing group). Source-body DOM journey loads corpus on demand, finds calibrated-decoder evidence, opens immutable source links and follows the existing claim binding. An initial old offline test inherited the new journey's non-matching query and failed; its starting query/selection is now reset explicitly. That failed run is not passing evidence.
+
+Measured on this phone/Node host: initial body index plus calibrated-decoder lookup600.9ms;100 warm body lookups36.1ms. This is not a real-browser visual/device benchmark or proof of full-archive scale. CLI returned the accepted1591 incorporation catalogue with its CB-G7-001/formal_inventory binding and original source hashes. Actual browser visual/screen-reader/device acceptance remains unverified.
