@@ -1,5 +1,57 @@
 # Research Commons
 
+## What this project is
+
+Research Commons is a shared research workspace for **what can be learned about a system from its observations, what cannot, and what a reliable computational answer must prove**. The starting programme studies biological source networks and their stochastic observations; related work tests the same questions in causal discovery, developmental lineage, reaction networks, quantum/materials models and measurement problems. These are separate scientific models, not one theorem that automatically covers every field.
+
+The [vision is “Lossless Compression” and the mission is “Modular Maps”](docs/MISSION-AND-VISION.md): preserve the information needed for a declared target while making the source-to-answer chain explicit. “Lossless” always means **with respect to named observations/targets and assumptions**, not recovery of every hidden detail.
+
+### Why this mathematics?
+
+- **Graphs and probability** describe the real source, its hidden structure, shared parameters and joint observations.
+- **Identifiability and inverse problems** ask which different sources look identical and what information is recoverable.
+- **Algebra, moments and analysis** provide exact constraints, approximation/error controls and counterexamples.
+- **Query complexity and experiment design** ask which legal measurements suffice and what they cost.
+- **Lean and independently checked computation** make particular claims inspectable; they do not replace source assumptions or empirical validation.
+
+The programme builds on earlier coalescent/network and observation theory, classical moment/mixture and semialgebraic methods, causal graphical models and existing verification libraries. For example, the causal lane credits Hou–Park–Li, Meek, Zhang–Shiragur–Uhler and related graphical-equivalence work; lineage complexity uses Feige–Lovász–Tetali's minimum-sum-set-cover hardness. We distinguish a new source-specific argument, a classical result reused, a formal implementation, an empirical test and recovered old work. **Historical novelty is not established by a new file or a Lean port.**
+
+### Four ways to read Commons
+
+1. **Understand the programme and its questions:** [Start Here](START-HERE.md), including solved scoped contracts, open masters and explored candidates.
+2. **See the extensive work this month:** [October research map](docs/OCTOBER-2026-RESEARCH-MAP.md), with dates, prior work, corrections, evidence and remaining tasks.
+3. **Understand the software:** [Lean/Rust solver explained](docs/LEAN-RUST-SOLVER-EXPLAINED.md). Not every tool invokes Lean on every run; computation, result checking, emitted proof source and successful kernel checking are different steps.
+4. **Contribute or verify a claim:** follow theorem → assumptions → exact source → review → build/execution receipt, then consult the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) and [completion standard](docs/RESEARCH-COMPLETION-STANDARD.md).
+
+## Current change map — 23 October 2026
+
+Contributor: dot (OpenAI). **For the extensive month-wide account, read [October 2026 research map](docs/OCTOBER-2026-RESEARCH-MAP.md): G1–G7, sequence proofs, RNA/NANUQ/MSci, practical/empirical results, P1/P5, nanowires/materials, sports, formal/native evidence and the four newer fields.** This is a source-led navigation update requested by Nolan, **not a new proof/build acceptance**. Read this before the preserved dated snapshots below. The [full change-and-evidence map in Start Here](START-HERE.md#full-change-and-evidence-map--23-october-2026) and [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) retain the exact contracts.
+
+### G1–G7: what changed, and what did not
+
+| Goal | Current state | Change / remaining boundary |
+|---|---|---|
+| **G1 — structure** | Original planar, labelled, unranked core/interface theorem and its formal release remain accepted. | Inherited, not newly reproved. A finite decorated core does **not** bound physical source-word length. |
+| **G2 — process laws** | Documented timed/untimed projectivity and full-history/path contract remain complete and integrated. | The 68-module recovery/wiring record is existing evidence, not 68 missing theorems or a new run. |
+| **G3 — recognition** | **General master open.** | Need terminating exact YES/NO for every admitted finite rational/effectively algebraic joint input, one actual positive source/shared tuple, unknown size. Fixed charts, approximation and supplied certificates do not close it. |
+| **G4 — finite determination** | Natural **BOTH** finite forcing (stated strict-source, n≥4 contract) and entire-INDEPENDENT-to-COMMON transfer have scoped hand acceptance. | **Finite INDEPENDENT-only master open:** a finite legal panel must force the COMMON certificate against all unknown-size rivals of one fixed target. |
+| **G5 — displayed structure** | Full **binary M3** normalized rooted-cluster/nontrivial-split-union contract remains complete. | Older “binary assembly missing” notices are superseded. Timed observations/positive-source premises remain; co-occurring whole trees, all parameters and higher-indegree extensions are not thereby recovered. |
+| **G6 — approximation/certification** | **Hand master characterized at its stated scope**; named checked affine/source components remain accepted. | Exact attainment is still G3; source-specific complete formal/native assembly is not automatic. |
+| **G7 — legal design/cost** | **Hand master characterized at its stated registry/action/cost scope**; attributed checked suppliers remain accepted. | New causal upper/lower **source adapters** use the actual G7 game; they are unelaborated, not universal biological policy synthesis or a new G7 build. |
+
+[Exact G1–G7 sources and next obligations](START-HERE.md#full-change-and-evidence-map--23-october-2026). **No overall completion percentage or whole-repository green-build claim follows.**
+
+### New work now mapped to the programme
+
+- **Causal discovery:** [full physical upper-chain source](research/2026-10-22-dot-restricted-causal-interventions/BINARY-PHYSICAL-UPPER-SOURCE-HANDOFF.md) and [deterministic hard-family source](research/2026-10-22-dot-restricted-causal-interventions/HARD-FAMILY-DETERMINISTIC-SOURCE-HANDOFF.md). One common positive binary source, original marked-class target and paid elementary queries are explicit. **Correction:** the lower bound requires at least one available target; the literal empty-target TCM class needs zero queries. [Correction](research/2026-10-22-dot-restricted-causal-interventions/RESTRICTED-INTERVENTION-BARRIER.md). All new source is **UNELABORATED**.
+- **Developmental lineage:** components now join into a [complete proposed restricted verifier](research/2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-COMPLETE-RESTRICTED-VERIFIER-SOURCE.md), on every original encoded input, with the actual root-inclusive score, cleanup and halt. **Unelaborated; exact encoded-source hardness remains separate.** Not general biological-history identification.
+- **Phylogeny:** [hand-reviewed retained-port equality](research/2026-10-22-dot-phylogeny-root-blob/RETAINED-PORT-DIRECT-PROOF.md) now has [open-H](research/2026-10-22-dot-phylogeny-root-blob/RETAINED-PORT-SOURCE-HANDOFF.md) and [literal Fourier/positive-rate K2P](research/2026-10-22-dot-phylogeny-root-blob/RETAINED-PORT-RESTRICTED-SOURCE-HANDOFF.md) source proposals. Both original cut matrices and exterior parameters stay fixed. Source proposals are **not Lean-verified**; broader sub-blob/single-edge claims remain outside the theorem.
+- **Reaction networks:** [scalar progress and hidden-stop obstruction](research/2026-10-22-dot-reaction-partial-observation/FIXED-START-MASTER-GAP-STATUS.md), [nonlocal-rank audit](research/2026-10-22-dot-reaction-partial-observation/NONLOCAL-REALIZATION-ATTACK.md) and [likelihood-route diagnostic](research/2026-10-22-dot-reaction-partial-observation/STOPPED-LIKELIHOOD-ROUTE-AUDIT.md) narrow the missing all-finite-hidden-rival comparison. They do not solve or refute that master.
+
+**Other tracks remain visible:** P1 uniform physical-state risk/testing and paid-copy obligations, P5 actual signed dynamics, nanowire same-device measurement/uncertainty and operational claims remain separate and open at their recorded scope. LLM research remains paused. Existing sports, RNA, sequence and other projects are preserved in [Projects](projects.md), not newly re-audited here.
+
+**Evidence rule:** hand review (generally coordinating AI review), written source, compiler acceptance, execution, measured evidence and novelty are different statuses. No new Lean/Lake/Rust/CI run accompanied this update. The [accepted-package pointer](docs/ACCEPTED-LEAN-PACKAGE.md) and each exact receipt govern old builds; new source counts do not upgrade them. [Full evidence map and reading order](START-HERE.md#full-change-and-evidence-map--23-october-2026).
+
 ## Current navigation correction — 15 October 2026
 
 Read this correction before the preserved older snapshots below. This is a navigation/evidence refresh, not a new proof or a replacement of the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md).
