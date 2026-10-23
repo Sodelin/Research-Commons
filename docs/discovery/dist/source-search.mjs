@@ -4,9 +4,23 @@ import {safeLink} from './model.mjs';
 export function artifactReferences(claims){
   const refs=new Map();
   for(const c of claims)for(const a of c.accepted_artifacts){
-    if(!safeLink(a.url)||!/^https:\/\/github\.com\/Sodelin\/[^/]+\/blob\/[a-f0-9]{40}\/.+\.md$/i.test(a.url))continue;
-    if(!refs.has(a.url))refs.set(a.url,{url:a.url,bindings:[]});
-    refs.get(a.url).bindings.push({claim_id:c.id,role:a.role,label:a.label});
+    const url=safeLink(a.url);
+    if(!url||!/^https:\/\/github\.com\/Sodelin\/[^/]+\/blob\/[a-f0-9]{40}\/.+\.md$/i.test(url))continue;
+    if(!refs.has(url))refs.set(url,{url,bindings:[]});
+    refs.get(url).bindings.push({claim_id:c.id,role:a.role,label:a.label});
+  }
+  return [...refs.values()].sort((a,b)=>a.url.localeCompare(b.url));
+}
+export function readingReferences(joins,claims){
+  const ids=new Set(claims.map(c=>c.id)),refs=new Map();
+  for(const join of joins){
+    if(!Array.isArray(join.claim_ids)||join.claim_ids.some(id=>!ids.has(id)))throw Error('Unknown reading-join claim identity');
+    for(const link of join.links){
+      const url=safeLink(link.url);if(!url)throw Error('Unsafe reading-join source link');
+      if(!/^https:\/\/github\.com\/Sodelin\/[^/]+\/blob\/[a-f0-9]{40}\/.+\.md$/i.test(url))continue;
+      if(!refs.has(url))refs.set(url,{url,bindings:[]});
+      refs.get(url).bindings.push(...join.claim_ids.map(claim_id=>({claim_id,role:'owned_reading_join_source',label:link.label,source_join_kind:join.kind})));
+    }
   }
   return [...refs.values()].sort((a,b)=>a.url.localeCompare(b.url));
 }

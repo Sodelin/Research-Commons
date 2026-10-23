@@ -55,6 +55,16 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   assert($('detail').textContent.includes('Exact native first-writer gap'));
  });
+ await t.test('G7 declaration supplier is visible and exported with its whole-history and native exclusions',async()=>{
+  location.hash='CB-G7-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
+  assert($('detail').textContent.includes('every admitted same source for the whole history'));
+  assert([...$('detail').querySelectorAll('a')].some(a=>a.href.includes('/fa627492d9521a72a604952527d570571fe0fff7/docs/EXISTING-LEAN-CLAIM-BINDINGS.md')));
+  copied='';[...$('detail').querySelectorAll('button')].find(x=>x.textContent==='Copy agent reuse record').click();
+  await wait(()=>copied.startsWith('{'));
+  const packet=JSON.parse(copied);
+  assert(JSON.stringify(packet).includes('formal_source_binding_not_new_acceptance'));
+  assert(JSON.stringify(packet).includes('native policy AST'));
+ });
  await t.test('evidence-body search loads separately and links immutable sources back to claims',async()=>{
   $('reset').click();[...document.querySelectorAll('button')].find(b=>b.textContent.startsWith('Load evidence search')).click();
   await wait(()=>document.querySelector('.source-hit'));

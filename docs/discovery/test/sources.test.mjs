@@ -2,12 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {artifactReferences,recoveredReferences,searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
+import {artifactReferences,recoveredReferences,readingReferences,searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 const data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 const corpus=JSON.parse(await readFile(new URL('../dist/source-corpus.json',import.meta.url)));
+const joins=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))).joins;
 test('public body corpus accounts for every selected immutable artifact and exact source bytes',()=>{
  const refs=artifactReferences(data.claims),byURL=new Map(refs.map(r=>[r.url,r]));
  assert.equal(corpus.coverage.canonical_artifact_references,refs.length);
+ const reading=readingReferences(joins,data.claims);
+ assert.equal(corpus.coverage.owned_reading_join_references,reading.length);
+ for(const ref of reading){if(byURL.has(ref.url))byURL.get(ref.url).bindings.push(...ref.bindings);else byURL.set(ref.url,ref);}
  assert.equal(corpus.documents.length+corpus.coverage.unavailable.length,corpus.coverage.selected_references);
  assert.equal(new Set(corpus.documents.map(d=>d.url)).size,corpus.documents.length);
  for(const d of corpus.documents){
@@ -18,6 +22,25 @@ test('public body corpus accounts for every selected immutable artifact and exac
   assert.equal(createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex'),d.git_blob);
   assert(!Object.hasOwn(d,'mathematical_status'));
  }
+});
+test('owned formal supplier lookup retains exact declarations and source scope without new acceptance',()=>{
+ const hits=searchSources(corpus,'actual_total_original_strategy_has_bounded_plan',new Set(['CB-G7-001']));
+ const hit=hits.find(d=>d.url.endsWith('/docs/EXISTING-LEAN-CLAIM-BINDINGS.md'));
+ assert(hit);assert(hit.url.includes('/fa627492d9521a72a604952527d570571fe0fff7/'));
+ assert(hit.bindings.some(b=>b.claim_id==='CB-G7-001'&&b.role==='owned_reading_join_source'&&b.source_join_kind==='formal_source_binding_not_new_acceptance'));
+ assert.match(hit.body,/CorrectRun/);assert.match(hit.body,/cofacial/i);
+ assert(!Object.hasOwn(hit,'mathematical_status'));
+ assert.match(joins.at(-1).explanation,/not new mathematics/);
+});
+test('reading-source projection validates identity and URLs before fetching and normalizes artifact hosts',()=>{
+ const prefix='https://github.com/Sodelin/Research-Commons/blob/'+'a'.repeat(40)+'/';
+ const link={url:prefix+'proof.md',label:'Owned source'},join={claim_ids:['TEST'],kind:'source_only',links:[link]};
+ assert.throws(()=>readingReferences([join],[]),/identity/);
+ assert.throws(()=>readingReferences([{...join,links:[{...link,url:link.url+'#access_token=secret'}]}],[{id:'TEST'}]),/Unsafe/);
+ assert.equal(readingReferences([{...join,links:[{...link,url:prefix+'proof.md#theorem'}]}],[{id:'TEST'}]).length,0);
+ const claim={id:'TEST',accepted_artifacts:[{...link,url:link.url.replace('github.com','GITHUB.com:443')}]},before=JSON.stringify(claim);
+ assert.equal(artifactReferences([claim])[0].url,link.url);
+ assert.equal(JSON.stringify(claim),before);
 });
 test('all58 recovered G3 notes retain public byte pins and literal component roles, not master acceptance',()=>{
  const notes=corpus.documents.filter(d=>d.expected_sha256);assert.equal(notes.length,58);
