@@ -25,6 +25,15 @@ jobs:
         run: rustup toolchain install 1.90.0 --profile minimal
       - name: Build and test actual workspace
         run: cargo test --workspace
+      - name: Retain exact dependency lock
+        if: always()
+        run: |
+          if [ -f Cargo.lock ]; then
+            echo REPRODUCIBLE_CARGO_LOCK_BEGIN
+            cat Cargo.lock
+            echo REPRODUCIBLE_CARGO_LOCK_END
+            sha256sum Cargo.lock
+          fi
       - name: Check complete registry accounting
         run: |
           mkdir -p build

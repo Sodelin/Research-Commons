@@ -167,6 +167,16 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
     let registry=root.join("lean/ResearchCommons/Registry.lean");
     fs::create_dir_all(output.join("ResearchCommons")).map_err(|e|e.to_string())?;
     fs::copy(registry,output.join("ResearchCommons/Registry.lean")).map_err(|e|e.to_string())?;
+    let mut owned:Vec<String>=sources.iter().map(|(n,_,_)|n.clone()).collect();
+    owned.push("ResearchCommons.Registry".into());
+    owned.push("ResearchCommons".into());
+    let template=fs::read_to_string(base.join("scripts/AuditTemplate.lean")).map_err(|e|e.to_string())?;
+    let placeholder=r##"#["NanuqActualBridgeQuartetResolution", "NanuqActualQuartetPortBranching"]"##;
+    if template.matches(placeholder).count()!=1{return Err("unexpected retained axiom-audit template".into());}
+    let names=serde_json::to_string(&owned).map_err(|e|e.to_string())?;
+    let audit=template.replace(placeholder,&format!("#{names}"))
+        .replace("\"AUDIT-OWNED.json\"","\"../build/owned-audit.json\"");
+    fs::write(output.join("OwnedAudit.lean"),format!("import ResearchCommons\n{audit}")).map_err(|e|e.to_string())?;
     let plan=json!({"profile":label,"fresh_sources":sources.len(),
         "order":sources.iter().map(|(n,_,_)|n).collect::<Vec<_>>(),
         "compiler_invoked":false,"historical_objects_reused":false,

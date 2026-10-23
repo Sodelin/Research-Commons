@@ -1346,7 +1346,7 @@ impl Arena {
                             if index != 0 { work.push(Task::Text(",")); }
                         }
                         work.push(Task::Text("{"));
-                        work.push(Task::Text(if matches!(&self.formulas[id],Formula::Exists(_)) {"Exists["} else {"ForAll["}));
+                        work.push(Task::Text(if matches!(&self.formulas[id],Formula::Exists(..)) {"Exists["} else {"ForAll["}));
                     }
                 },
             }

@@ -26,7 +26,18 @@
     "commit": "3b1019b68e2838cfc4085783a37c3ab0d7736273",
     "tree": "0d3c2c770fc49491a07995afefba7975d0c7ecba",
     "library": "vendor/g7-source/native/g7-formula",
-    "source_only_at_import": true
+    "source_only_at_import": true,
+    "variants": [
+      {
+        "path": "vendor/g7-source/native/g7_exact_law_formula.rs",
+        "original_sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40",
+        "edit": "Formula::Exists(_) -> Formula::Exists(..)",
+        "reason": "Actual rustc1.90 E0023 at line1349: Exists(Vec<Symbol>,FormulaId) has two fields.",
+        "evidence_run": 39940552120,
+        "evidence_job": 120370631442,
+        "canonical_original_changed": false
+      }
+    ]
   },
   "files": [
     {
