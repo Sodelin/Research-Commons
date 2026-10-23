@@ -3,6 +3,7 @@
 pub use g7_exact_law_formula as exact_law;
 pub use parity_solver as exact_arithmetic;
 pub mod moments;
+pub mod affine_certificate;
 
 #[cfg(test)]
 mod tests {

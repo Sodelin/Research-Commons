@@ -42,6 +42,8 @@ jobs:
           cargo run --locked -p research-commons-package -- emit-index > build/Registry.lean
           cmp build/Registry.lean lean/ResearchCommons/Registry.lean
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
+          cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
+          cargo run --locked -p research-commons-runtime --bin affine-certificate -- unsat > build/AffineUNSAT.lean
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -83,11 +85,8 @@ jobs:
           lake exe cache get
       - name: Compile actual module order and aggregate
         run: cargo run --locked -p research-commons-package -- build
-      - name: Check Rust-emitted literal moment certificate with Lean
-        run: |
-          cargo run --locked -p research-commons-runtime --bin cm-certificate > lean/.generated/CMExample.lean
-          cd lean
-          lake env lean -j1 -M6144 -Ddebug.skipKernelTC=false --root=.generated .generated/CMExample.lean
+      - name: Kernel-check Rust-emitted positive and negative certificates
+        run: cargo run --locked -p research-commons-package -- check-callers
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

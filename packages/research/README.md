@@ -22,6 +22,7 @@ lake update
 lake exe cache get
 cd ..
 cargo run --locked -p research-commons-package -- build
+cargo run --locked -p research-commons-package -- check-callers
 ```
 
 The strict coverage command intentionally exits2 until every required integration has its named verified bindings. The regular check verifies accounting and emits the actual incomplete frontier. A successful registry count does not certify scientific results. The source assembler verifies graph/body hashes and dependency order before it writes generated Lean files. A capped build is explicitly partial and cannot emit complete-profile acceptance.
@@ -33,3 +34,5 @@ This initial package does not yet claim all104 mathematical statements formalize
 The package now pins canonical registry 7666beb (105 cards, board1.12). The 12 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
 
 Generate the actual exact-arithmetic caller example with `cargo run --locked -p research-commons-runtime --bin cm-certificate`. The Linux workflow elaborates that emitted source after building the theorem modules. This tests a literal caller; it does not prove every native grouping implementation or physical-source adapter correct.
+
+The second certificate caller reuses the retained strict affine solver and both existing Lean checkers. `cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat` emits the weak-boundary rational witness; `-- unsat` emits the complete nonnegative original-row multiplier certificate for the strict boundary. Duplicate row positions stay distinct. The emitted proofs establish real feasibility/infeasibility of that supplied matrix, not original graph admission or a universal native refinement. A rendering/resource refusal produces no negative theorem.
