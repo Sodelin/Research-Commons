@@ -3,13 +3,20 @@ Author: dot (OpenAI), 23 October 2026.
 OPTIONAL SOURCE PROPOSAL, UNELABORATED. No execution or certificate.
 
 WORK IN PROGRESS toward the ONE ORIGINAL bounded-pair verifier controller.
+Its final decision language is the RESTRICTED encoded marked-star language:
+independently supplied targets satisfying the explicit dimensions, marker,
+mixedness, uniqueness and coverage guards, with the actual D_lambda score.
+Even all-word completeness for that language would NOT verify arbitrary
+differentiation-DAG/Carta inputs. Names such as full_carta do not broaden
+the domain established by the definitions and guards.
 This file supplies its composed original forest grammar/range PHASE,
 not the full controller or VerifierMachineWitness. The target forest
 has ONE unary count and concatenated self-delimiting binary trees. There
 is no length frame per tree and no enclosing-row/block-tag restriction.
 
-The range cursor is emitted, instantiated and cleaned below. The full
-headers/guards/clades/score/final cleanup remain to be composed. No
+The range cursor, original unframed certificate adapter, and target count/
+whole-word joins are emitted below. The full headers/guards/clades/score/
+final cleanup remain to be composed. No
 unspecified routine or machine is assumed to exist.
 -/
 import PolytomyIndexedLeafCellQuery
@@ -1585,5 +1592,973 @@ VerifierMachineWitness therefore remains OPEN. EncodedSourceHardness
 is a separate independent OPEN premise. All source is UNELABORATED;
 no machine execution, compiler/kernel check or verified certificate.
 -/
+
+/-! ## The ORIGINAL unframed, whole single-tree certificate path -/
+
+def wholeInputOp (source : K) : Op K Bool (CountdownState F) :=
+  .peek source (fun st h => (st.1, st.2 && !h.isSome))
+
+theorem wholeInput_true_iff (source : K) (s : CountdownStore K F) :
+    ((wholeInputOp source).apply s).state.2 = true ↔ s.state.2 = true ∧ s.stk source = [] := by
+  cases hw : s.stk source <;> cases hf : s.state.2 <;>
+    simp [wholeInputOp, Op.apply, hw, hf]
+
+def certificatePushOp (p : GrammarPorts K) (bit : Bool) : Op K Bool (CountdownState F) :=
+  .push (p .source) (fun _ => bit)
+
+/-- This TWO-INSTRUCTION internal adapter prepends U(1) to the current
+certificate word. It does not change the external certificate encoding.
+The equivalence to the original unframed parser is proved below. -/
+def certificatePrefixRoutine (p : GrammarPorts K) : Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (Atom.routine (certificatePushOp p false)) (Atom.routine (certificatePushOp p true))
+
+def certificatePrefixEval (p : GrammarPorts K) (s : CountdownStore K F) :=
+  (certificatePushOp p true).apply ((certificatePushOp p false).apply s)
+
+theorem certificatePrefix_source (p : GrammarPorts K) (s : CountdownStore K F) :
+    (certificatePrefixEval p s).stk (p .source) = unaryFrame 1 ++ s.stk (p .source) := by
+  simp [certificatePrefixEval, certificatePushOp, Op.apply, unaryFrame]
+
+theorem certificatePrefix_executes (p : GrammarPorts K) (s : CountdownStore K F) :
+    (certificatePrefixRoutine p).Executes s (certificatePrefixEval p s) 2 :=
+  RoutineComposition.seq_executes _ _ (Atom.executes (certificatePushOp p false) s)
+    (Atom.executes (certificatePushOp p true) ((certificatePushOp p false).apply s))
+
+theorem certificatePrefix_entry (p : GrammarPorts K) (N m L : ℕ) (s : CountdownStore K F)
+    (hs : GrammarEntry p N m L s) : GrammarEntry p N m (L + 2) (certificatePrefixEval p s) := by
+  rcases hs with ⟨hL, hm, hA, hwork⟩
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · rw [certificatePrefix_source]
+    simp only [List.length_append, unaryFrame, List.length_replicate, List.length_singleton]
+    omega
+  · simpa [certificatePrefixEval, certificatePushOp, Op.apply] using hm
+  · simpa [certificatePrefixEval, certificatePushOp, Op.apply] using hA
+  · intro j hjs hjm hjA
+    simpa [certificatePrefixEval, certificatePushOp, Op.apply, hjs] using hwork j hjs hjm hjA
+
+def originalCertificateGrammarRoutine (p : GrammarPorts K) :
+    Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (certificatePrefixRoutine p)
+    (RoutineComposition.seq (originalForestGrammarRoutine p) (Atom.routine (wholeInputOp (p .source))))
+
+def originalCertificateGrammarEval (p : GrammarPorts K) (N m : ℕ) (s : CountdownStore K F) :=
+  (wholeInputOp (p .source)).apply (originalForestGrammarEval p N m (certificatePrefixEval p s))
+
+theorem originalCertificateGrammar_executes (p : GrammarPorts K) (N m L : ℕ)
+    (s : CountdownStore K F) (hs : GrammarEntry p N m L s) :
+    ∃ n ≤ (L + 2) * (18 * (L + 2) + 4 * m + 4 * (N + m * N + 3) + 45) + 25 * (L + 2) + 38,
+      (originalCertificateGrammarRoutine p).Executes s (originalCertificateGrammarEval p N m s) n := by
+  have hp := certificatePrefix_executes p s
+  obtain ⟨n, hn, hg⟩ := originalForestGrammar_executes p N m (L + 2) (certificatePrefixEval p s)
+    (certificatePrefix_entry p N m L s hs)
+  have hw := Atom.executes (wholeInputOp (p .source))
+    (originalForestGrammarEval p N m (certificatePrefixEval p s))
+  have he := RoutineComposition.seq_executes _ _ hp (RoutineComposition.seq_executes _ _ hg hw)
+  exact ⟨2 + (n + 1), by omega, he⟩
+
+theorem oneFramedForest_read (N m : ℕ) (bits : List Bool) :
+    readFramedList (readTargetTree N m) (unaryFrame 1 ++ bits) =
+      (readTargetTree N m bits).map (fun p => ([p.1], p.2)) := by
+  simp only [readFramedList, readUnaryFrame_encode, readMany]
+  cases hp : readTargetTree N m bits with
+  | none => rfl
+  | some pair => rcases pair with ⟨T, rest⟩; rfl
+
+theorem parseBitTree_asTarget (N m : ℕ) (bits : List Bool) :
+    parseBitTree N m bits = (readTargetTree N m bits).bind
+      (fun p => if p.2.isEmpty then some p.1 else none) := by
+  unfold parseBitTree readTargetTree
+  cases hp : parseBitPrefix N m bits.length bits with
+  | none => rfl
+  | some pair =>
+      rcases pair with ⟨T, rest⟩
+      cases rest <;> rfl
+
+theorem oneFramedForest_whole_iff (N m : ℕ) (bits : List Bool) :
+    (∃ Ts : List (BTree (Cell N m)),
+      readFramedList (readTargetTree N m) (unaryFrame 1 ++ bits) = some (Ts, [])) ↔
+      ∃ T : BTree (Cell N m), parseBitTree N m bits = some T := by
+  rw [oneFramedForest_read]
+  simp only [parseBitTree_asTarget]
+  cases hp : readTargetTree N m bits with
+  | none => simp
+  | some pair =>
+      rcases pair with ⟨T, rest⟩
+      cases rest <;> simp
+
+/-- Exact ORIGINAL certificate acceptance, for EVERY unframed Boolean
+word. Extra trailing trees/bytes reject. The internal two-bit adapter
+does not impose or require a new certificate format from the caller. -/
+theorem originalCertificateGrammar_accepts_iff (p : GrammarPorts K) (N m L : ℕ)
+    (s : CountdownStore K F) (hs : GrammarEntry p N m L s) :
+    (originalCertificateGrammarEval p N m s).state.2 = true ↔
+      ∃ T : BTree (Cell N m), parseBitTree N m (s.stk (p .source)) = some T := by
+  let u := certificatePrefixEval p s
+  let v := originalForestGrammarEval p N m u
+  have hu := certificatePrefix_entry p N m L s hs
+  change ((wholeInputOp (p .source)).apply v).state.2 = true ↔ _
+  rw [wholeInput_true_iff]
+  constructor
+  · rintro ⟨hflag, hrest⟩
+    have ho : originalForestGrammarObservation p v = some ((v.stk (p .count)).length, []) := by
+      simp [originalForestGrammarObservation, hflag, hrest]
+    obtain ⟨Ts, hlen, hparse⟩ :=
+      (originalForestGrammar_accepts_iff p N m (L + 2) u hu (v.stk (p .count)).length []).mp ho
+    apply (oneFramedForest_whole_iff N m (s.stk (p .source))).mp
+    exact ⟨Ts, by simpa only [u, certificatePrefix_source] using hparse⟩
+  · intro htree
+    obtain ⟨Ts, hparse⟩ := (oneFramedForest_whole_iff N m (s.stk (p .source))).mpr htree
+    have hparse' : readFramedList (readTargetTree N m) (u.stk (p .source)) = some (Ts, []) := by
+      simpa only [u, certificatePrefix_source] using hparse
+    have ho := (originalForestGrammar_accepts_iff p N m (L + 2) u hu Ts.length []).mpr ⟨Ts, rfl, hparse'⟩
+    cases hflag : v.state.2 with
+    | false => simp [originalForestGrammarObservation, hflag, v] at ho
+    | true =>
+        have he : ((v.stk (p .count)).length, v.stk (p .source)) = (Ts.length, []) :=
+          Option.some.inj (by simpa only [originalForestGrammarObservation, hflag, ↓reduceIte] using ho)
+        exact ⟨hflag, congrArg Prod.snd he⟩
+
+/- The original certificate grammar is now joined to the SAME paid
+forest/range phase. This is still grammar validity, NOT certificate cell
+uniqueness, set equality, refinement, objective acceptance or the final
+clean verifier halt. The remaining whole-contract clauses above retain
+their full force. New source after the 00:32 public snapshot is local and
+UNELABORATED until separately preserved and checked. -/
+
+/-! ## Original target forest count and whole-word guards -/
+
+theorem forestSyntax_count (p : ForestSyntaxPorts K) (s : CountdownStore K F) :
+    (forestSyntaxEval p s).stk (p .count) = (forestSyntaxAfterCount p s).stk (p .count) := by
+  let u := forestSyntaxAfterCount p s
+  change (if u.state.2 then forestSyntaxSuccessEval p u else u).stk (p .count) = u.stk (p .count)
+  cases hf : u.state.2 with
+  | false => simp [hf]
+  | true =>
+      let v := forestSyntaxPrepared p u
+      have hx := treeMaskForward_preserves (forestSyntaxMaskPorts p) (p .count)
+        (by simp [forestSyntaxMaskPorts]) (by simp [forestSyntaxMaskPorts])
+        (by simp [forestSyntaxMaskPorts]) (by simp [forestSyntaxMaskPorts])
+        v.stk v.state.1
+        (rawForestMaskParse (v.stk (p .source)).length (v.stk (p .pending)).length (v.stk (p .source)))
+      have hv : v.stk (p .count) = u.stk (p .count) := by
+        simp [v, forestSyntaxPrepared, wordDuplicateEval]
+      simpa only [hf, ↓reduceIte] using hx.2.2.2.trans hv
+
+theorem originalForestGrammar_stacks (p : GrammarPorts K) (N m : ℕ) (s : CountdownStore K F) :
+    (originalForestGrammarEval p N m s).stk = (forestSyntaxEval (grammarSyntaxPorts p) s).stk := by
+  unfold originalForestGrammarEval
+  split <;> rfl
+
+theorem originalForestGrammar_extra (p : GrammarPorts K) (N m : ℕ) (s : CountdownStore K F) (j : GrammarPort)
+    (hjs : j ≠ .source) (hjc : j ≠ .count) (hjt : j ≠ .tail)
+    (hjp : j ≠ .pending) (hjr : j ≠ .reverse) (hjm : j ≠ .nodeMask) :
+    (originalForestGrammarEval p N m s).stk (p j) = s.stk (p j) := by
+  rw [originalForestGrammar_stacks]
+  exact forestSyntax_extra (grammarSyntaxPorts p) s (p j)
+    (by simpa [grammarSyntaxPorts] using hjs) (by simpa [grammarSyntaxPorts] using hjc)
+    (by simpa [grammarSyntaxPorts] using hjt) (by simpa [grammarSyntaxPorts] using hjp)
+    (by simpa [grammarSyntaxPorts] using hjr) (by simpa [grammarSyntaxPorts] using hjm)
+
+theorem originalForestGrammar_count_bounded (p : GrammarPorts K) (N m L : ℕ)
+    (s : CountdownStore K F) (hs : GrammarEntry p N m L s) :
+    IsUnaryWord ((originalForestGrammarEval p N m s).stk (p .count)) ∧
+      ((originalForestGrammarEval p N m s).stk (p .count)).length ≤ L := by
+  rw [originalForestGrammar_stacks]
+  change IsUnaryWord ((forestSyntaxEval (grammarSyntaxPorts p) s).stk (grammarSyntaxPorts p .count)) ∧ _
+  rw [forestSyntax_count]
+  have hc : s.stk (p .count) = [] := hs.2.2.2 .count (by decide) (by decide) (by decide)
+  have hu := guardedUnaryField_output_unary (p .source) (p .count) (forestSyntaxStartOp.apply s) hc
+  have hb := guardedUnaryField_output_bound (p .source) (p .count) (forestSyntaxStartOp.apply s) hc
+  exact ⟨hu, hb.trans hs.1⟩
+
+def targetCountComparePorts (p : GrammarPorts K) : CellComparePorts K where
+  toFun := fun
+    | .left => p .cellSource
+    | .right => p .count
+    | .temp => p .temp
+    | .residue => p .residue
+    | .subtrahend => p .subtrahend
+  inj' := by intro a b h; cases a <;> cases b <;> simp_all
+
+def targetCountPushOp (p : GrammarPorts K) : Op K Bool (CountdownState F) :=
+  .push (p .cellSource) (fun _ => true)
+
+def targetCountExpected (p : GrammarPorts K) (s : CountdownStore K F) :=
+  (targetCountPushOp p).apply (wordDuplicateEval (p .rows) (p .cellSource) s)
+
+def targetForestEndRoutine (p : GrammarPorts K) : Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (wordDuplicateRoutine (p .rows) (p .temp) (p .cellSource))
+    (RoutineComposition.seq (Atom.routine (targetCountPushOp p))
+      (RoutineComposition.seq (guardedCellCompareRoutine (targetCountComparePorts p) .eq)
+        (RoutineComposition.seq (clearStackRoutine (p .cellSource)) (Atom.routine (wholeInputOp (p .source))))))
+
+def targetForestEndEval (p : GrammarPorts K) (m q : ℕ) (s : CountdownStore K F) :=
+  (wholeInputOp (p .source)).apply (clearStackEval (p .cellSource)
+    (guardedCellCompareEval .eq (m + 1) q (targetCountExpected p s)))
+
+theorem targetForestEnd_result (p : GrammarPorts K) (m q : ℕ) (s : CountdownStore K F)
+    (hc : s.stk (p .cellSource) = []) :
+    targetForestEndEval p m q s = cellCompareFlagStore
+      ((s.state.2 && decide (q = m + 1)) && !(s.stk (p .source)).head?.isSome) s := by
+  apply countdownStore_ext
+  · cases hf : s.state.2 <;>
+      simp [targetForestEndEval, targetCountExpected, targetCountPushOp, wholeInputOp,
+        guardedCellCompareEval, cellCompareFlagStore, cellCompareAnswer, clearStackEval,
+        wordDuplicateEval, Op.apply, hf]
+  · funext j
+    by_cases hj : j = p .cellSource <;> cases hf : s.state.2 <;>
+      simp_all [targetForestEndEval, targetCountExpected, targetCountPushOp, wholeInputOp,
+        guardedCellCompareEval, cellCompareFlagStore, clearStackEval, wordDuplicateEval, Op.apply]
+
+theorem targetForestEnd_executes (p : GrammarPorts K) (m q : ℕ) (s : CountdownStore K F)
+    (hm : s.stk (p .rows) = List.replicate m true)
+    (hq : s.stk (p .count) = List.replicate q true)
+    (hc : s.stk (p .cellSource) = []) (ht : s.stk (p .temp) = [])
+    (hr : s.stk (p .residue) = []) (hd : s.stk (p .subtrahend) = []) :
+    ∃ n ≤ 8 * m + 4 * q + 21,
+      (targetForestEndRoutine p).Executes s (targetForestEndEval p m q s) n := by
+  let u := wordDuplicateEval (p .rows) (p .cellSource) s
+  let v := targetCountExpected p s
+  let w := guardedCellCompareEval .eq (m + 1) q v
+  have h1 := wordDuplicate_executes (p .rows) (p .temp) (p .cellSource)
+    (by simp) (by simp) (by simp) s ht
+  rw [hm, List.length_replicate] at h1
+  have h2 := Atom.executes (targetCountPushOp p) u
+  have hvleft : v.stk (p .cellSource) = List.replicate (m + 1) true := by
+    simp [v, targetCountExpected, targetCountPushOp, wordDuplicateEval, Op.apply, hm, hc, List.replicate_succ]
+  have hvq : v.stk (p .count) = List.replicate q true := by
+    simp [v, targetCountExpected, targetCountPushOp, wordDuplicateEval, Op.apply, hq]
+  have hvx (j : GrammarPort) (hj : j ≠ .cellSource) : v.stk (p j) = s.stk (p j) := by
+    simp [v, targetCountExpected, targetCountPushOp, wordDuplicateEval, Op.apply, hj]
+  obtain ⟨a, ha, h3⟩ := guardedCellCompare_executes (targetCountComparePorts p) .eq (m + 1) q v
+    hvleft hvq ((hvx .residue (by decide)).trans hr) ((hvx .subtrahend (by decide)).trans hd)
+    ((hvx .temp (by decide)).trans ht)
+  have h4 := clearStack_executes (p .cellSource) w
+  have hwlen : (w.stk (p .cellSource)).length = m + 1 := by
+    rw [guardedCellCompare_stacks, hvleft, List.length_replicate]
+  rw [hwlen] at h4
+  have h5 := Atom.executes (wholeInputOp (p .source)) (clearStackEval (p .cellSource) w)
+  have he := RoutineComposition.seq_executes _ _ h1
+    (RoutineComposition.seq_executes _ _ h2 (RoutineComposition.seq_executes _ _ h3
+      (RoutineComposition.seq_executes _ _ h4 h5)))
+  exact ⟨(3 * m + 3) + (1 + (a + ((m + 1 + 1) + 1))), by omega, he⟩
+
+theorem targetForestEnd_accepts_iff (p : GrammarPorts K) (m : ℕ) (s : CountdownStore K F)
+    (hc : s.stk (p .cellSource) = []) :
+    (targetForestEndEval p m (s.stk (p .count)).length s).state.2 = true ↔
+      originalForestGrammarObservation p s = some (m + 1, []) := by
+  rw [targetForestEnd_result p m _ s hc]
+  cases hf : s.state.2 <;> cases hw : s.stk (p .source) <;>
+    simp [cellCompareFlagStore, originalForestGrammarObservation, hf, hw]
+
+def originalTargetForestRoutine (p : GrammarPorts K) :
+    Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (originalForestGrammarRoutine p) (targetForestEndRoutine p)
+
+def originalTargetForestEval (p : GrammarPorts K) (N m : ℕ) (s : CountdownStore K F) :=
+  let u := originalForestGrammarEval p N m s
+  targetForestEndEval p m (u.stk (p .count)).length u
+
+theorem originalTargetForest_executes (p : GrammarPorts K) (N m L : ℕ)
+    (s : CountdownStore K F) (hs : GrammarEntry p N m L s) :
+    ∃ n ≤ L * (18 * L + 4 * m + 4 * (N + m * N + 3) + 45) + 29 * L + 8 * m + 56,
+      (originalTargetForestRoutine p).Executes s (originalTargetForestEval p N m s) n := by
+  let u := originalForestGrammarEval p N m s
+  have hbds := originalForestGrammar_count_bounded p N m L s hs
+  have hq : u.stk (p .count) = List.replicate (u.stk (p .count)).length true := hbds.1
+  have hum : u.stk (p .rows) = List.replicate m true :=
+    (originalForestGrammar_extra p N m s .rows (by decide) (by decide) (by decide)
+      (by decide) (by decide) (by decide)).trans hs.2.1
+  have huwork (j : GrammarPort) (hjs : j ≠ .source) (hjc : j ≠ .count) (hjt : j ≠ .tail)
+      (hjp : j ≠ .pending) (hjr : j ≠ .reverse) (hjm : j ≠ .nodeMask)
+      (hjrows : j ≠ .rows) (hjtypes : j ≠ .types) : u.stk (p j) = [] :=
+    (originalForestGrammar_extra p N m s j hjs hjc hjt hjp hjr hjm).trans
+      (hs.2.2.2 j hjs hjrows hjtypes)
+  obtain ⟨a, ha, hgrammar⟩ := originalForestGrammar_executes p N m L s hs
+  obtain ⟨b, hb, hend⟩ := targetForestEnd_executes p m (u.stk (p .count)).length u hum hq
+    (huwork .cellSource (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide))
+    (huwork .temp (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide))
+    (huwork .residue (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide))
+    (huwork .subtrahend (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide))
+  exact ⟨a + b, by omega, RoutineComposition.seq_executes _ _ hgrammar hend⟩
+
+/-- Precisely the ORIGINAL target FOREST requirements: m+1 typed trees
+and no trailing bytes. This does NOT assert N>0, m>=2, uniqueness,
+markers, mixedness, coverage, certificate refinement or objective. -/
+theorem originalTargetForest_accepts_iff (p : GrammarPorts K) (N m L : ℕ)
+    (s : CountdownStore K F) (hs : GrammarEntry p N m L s) :
+    (originalTargetForestEval p N m s).state.2 = true ↔
+      ∃ Ts : List (BTree (Cell N m)), Ts.length = m + 1 ∧
+        readFramedList (readTargetTree N m) (s.stk (p .source)) = some (Ts, []) := by
+  let u := originalForestGrammarEval p N m s
+  have hc : u.stk (p .cellSource) = [] :=
+    (originalForestGrammar_extra p N m s .cellSource (by decide) (by decide) (by decide)
+      (by decide) (by decide) (by decide)).trans
+      (hs.2.2.2 .cellSource (by decide) (by decide) (by decide))
+  change (targetForestEndEval p m (u.stk (p .count)).length u).state.2 = true ↔ _
+  rw [targetForestEnd_accepts_iff p m u hc]
+  exact originalForestGrammar_accepts_iff p N m L s hs (m + 1) []
+
+/-! ## The same controller: exact CELL matching, not type matching
+
+The local result below is a SEARCH-CONTINUATION flag: false means that
+this candidate matched, so a search may stop. It is not a global failure.
+The later existential join must negate it before using it as membership.
+Both coordinates are physically compared. A nonleaf/malformed suffix is
+not a match. Only genuine-node masks may be used for the tree semantics.
+-/
+
+inductive MatchCursorPort where
+  | cursor (port : RangeCursorPort)
+  | wantedBlock | wantedKind
+  deriving DecidableEq, Fintype
+
+abbrev MatchCursorPorts (K : Type) := MatchCursorPort ↪ K
+
+@[simp] theorem matchCursorPorts_eq (p : MatchCursorPorts K) (a b : MatchCursorPort) :
+    p a = p b ↔ a = b := ⟨p.injective, congrArg p⟩
+
+def matchRangePorts (p : MatchCursorPorts K) : RangeCursorPorts K where
+  toFun := fun j => p (.cursor j)
+  inj' := by intro a b h; simpa using p.injective h
+
+def matchComparePorts (p : MatchCursorPorts K) (kind : Bool) : CellComparePorts K where
+  toFun := fun
+    | .left => if kind then p .wantedKind else p .wantedBlock
+    | .right => if kind then p (.cursor .kind) else p (.cursor .block)
+    | .temp => p (.cursor .temp)
+    | .residue => p (.cursor .residue)
+    | .subtrahend => p (.cursor .subtrahend)
+  inj' := by intro a b h; cases kind <;> cases a <;> cases b <;> simp_all
+
+def rawCellMatch (m A B T : ℕ) (bits : List Bool) : Bool :=
+  match filterRawLeafCell m A (readRawLeafCell bits) with
+  | none => false
+  | some (c, _) => decide (c.1 = B) && decide (c.2 = T)
+
+def searchFlipOp : Op K Bool (CountdownState F) :=
+  .load (fun st => (st.1, !st.2))
+
+def matchLeafCompared (p : MatchCursorPorts K) (m A B T : ℕ) (s : CountdownStore K F) :=
+  let v := rangeLeafParsed (matchRangePorts p) m A s
+  guardedCellCompareEval .eq T (v.stk (p (.cursor .kind))).length
+    (guardedCellCompareEval .eq B (v.stk (p (.cursor .block))).length v)
+
+def matchLeafEval (p : MatchCursorPorts K) (m A B T : ℕ) (s : CountdownStore K F) :=
+  searchFlipOp.apply (clearManyEval (rangeQueryOwned (matchRangePorts p))
+    (matchLeafCompared p m A B T s))
+
+def matchLeafRoutine (p : MatchCursorPorts K) : Routine (fun _ : K => Bool) (CountdownState F) :=
+  let r := matchRangePorts p
+  RoutineComposition.seq (wordDuplicateRoutine (r .word) (r .temp) (r .source))
+    (RoutineComposition.seq (typedLeafCellRoutine (rangeTypedPorts r))
+      (RoutineComposition.seq (guardedCellCompareRoutine (matchComparePorts p false) .eq)
+        (RoutineComposition.seq (guardedCellCompareRoutine (matchComparePorts p true) .eq)
+          (RoutineComposition.seq (clearManyRoutine (rangeQueryOwned r))
+            (Atom.routine searchFlipOp)))))
+
+def MatchQueryInv (p : MatchCursorPorts K) (m A B T L : ℕ) (s : CountdownStore K F) : Prop :=
+  RangeQueryInv (matchRangePorts p) m A L s ∧
+  s.stk (p .wantedBlock) = List.replicate B true ∧
+  s.stk (p .wantedKind) = List.replicate T true
+
+theorem matchLeafCompared_stacks (p : MatchCursorPorts K) (m A B T : ℕ)
+    (s : CountdownStore K F) :
+    (matchLeafCompared p m A B T s).stk = (rangeLeafParsed (matchRangePorts p) m A s).stk := by
+  unfold matchLeafCompared
+  rw [guardedCellCompare_stacks, guardedCellCompare_stacks]
+
+theorem matchLeafCompared_flag (p : MatchCursorPorts K) (m A B T : ℕ)
+    (s : CountdownStore K F) (hz : s.stk (p (.cursor .source)) = []) :
+    (matchLeafCompared p m A B T s).state.2 = rawCellMatch m A B T (s.stk (p (.cursor .word))) := by
+  let r := matchRangePorts p
+  let u := rangeLeafPrepared r s
+  let v := rangeLeafParsed r m A s
+  have hu : u.stk (r .source) = s.stk (r .word) := by
+    simp [u, r, rangeLeafPrepared, wordDuplicateEval, matchRangePorts, hz]
+  have ho := typedLeafCell_observation (rangeTypedPorts r) m A u
+  rw [hu] at ho
+  unfold rawCellMatch
+  rw [← ho]
+  change (guardedCellCompareEval .eq T (v.stk (r .kind)).length
+    (guardedCellCompareEval .eq B (v.stk (r .block)).length v)).state.2 = _
+  rw [guardedCellCompare_flag, guardedCellCompare_flag]
+  cases hf : v.state.2 <;>
+    simp [rawLeafCellObservation, typedRawCellPorts, rangeTypedPorts,
+      cellCompareAnswer, hf, r, matchRangePorts, Bool.and_assoc]
+
+theorem matchLeaf_result (p : MatchCursorPorts K) (m A B T L : ℕ) (s : CountdownStore K F)
+    (hs : MatchQueryInv p m A B T L s) :
+    matchLeafEval p m A B T s = cellCompareFlagStore
+      (!rawCellMatch m A B T (s.stk (p (.cursor .word)))) s := by
+  let r := matchRangePorts p
+  have hrestore := rangeLeaf_result r m A L s hs.1
+  have hstack : (clearManyEval (rangeQueryOwned r) (matchLeafCompared p m A B T s)).stk =
+      (rangeLeafEval r m A s).stk := by
+    change (clearManyEval (rangeQueryOwned r) (matchLeafCompared p m A B T s)).stk =
+      (clearManyEval (rangeQueryOwned r) (rangeLeafParsed r m A s)).stk
+    simp only [rangeQueryOwned, clearManyEval, clearStackEval, matchLeafCompared_stacks]
+  have hframe : (matchLeafCompared p m A B T s).state.1 = s.state.1 := by
+    unfold matchLeafCompared
+    rw [guardedCellCompare_frame, guardedCellCompare_frame]
+    exact typedLeafCell_frame (rangeTypedPorts r) m A (rangeLeafPrepared r s)
+  apply countdownStore_ext
+  · change ((clearManyEval (rangeQueryOwned r) (matchLeafCompared p m A B T s)).state.1,
+      !(clearManyEval (rangeQueryOwned r) (matchLeafCompared p m A B T s)).state.2) = _
+    rw [clearMany_state, hframe, matchLeafCompared_flag p m A B T s hs.1.2.2.2.1]
+    rfl
+  · change (clearManyEval (rangeQueryOwned r) (matchLeafCompared p m A B T s)).stk = s.stk
+    rw [hstack, hrestore]
+    rfl
+
+theorem matchLeaf_executes (p : MatchCursorPorts K) (m A B T L : ℕ) (s : CountdownStore K F)
+    (hs : MatchQueryInv p m A B T L s) :
+    ∃ n ≤ 26 * L + 4 * m + 4 * A + 4 * B + 4 * T + 57,
+      (matchLeafRoutine p).Executes s
+        (cellCompareFlagStore (!rawCellMatch m A B T (s.stk (p (.cursor .word)))) s) n := by
+  rcases hs with ⟨hquery, hB, hT⟩
+  rcases hquery with ⟨hL, hm, hA, hsource, hb, hk, ht, hr, hd⟩
+  let r := matchRangePorts p
+  let u := rangeLeafPrepared r s
+  let v := rangeLeafParsed r m A s
+  let w := guardedCellCompareEval .eq B (v.stk (r .block)).length v
+  let z := matchLeafCompared p m A B T s
+  have huSource : u.stk (r .source) = s.stk (r .word) := by
+    simp [u, rangeLeafPrepared, wordDuplicateEval, hsource]
+  have huExtra (j : K) (hj : j ≠ r .source) : u.stk j = s.stk j := by
+    simp [u, rangeLeafPrepared, wordDuplicateEval, hj]
+  have huL : (u.stk (r .source)).length ≤ L := by rw [huSource]; exact hL
+  have hbu := (huExtra (r .block) (by simp)).trans hb
+  have hku := (huExtra (r .kind) (by simp)).trans hk
+  have h1 := wordDuplicate_executes (r .word) (r .temp) (r .source)
+    (by simp) (by simp) (by simp) s ht
+  obtain ⟨a, ha, h2⟩ := typedLeafCell_executes (rangeTypedPorts r) m A L u huL
+    ((huExtra _ (by simp)).trans hm) ((huExtra _ (by simp)).trans hA)
+    hbu hku ((huExtra _ (by simp)).trans ht)
+    ((huExtra _ (by simp)).trans hr) ((huExtra _ (by simp)).trans hd)
+  have hbds := rawLeafCell_bounds (typedRawCellPorts (rangeTypedPorts r)) L u huL hbu hku
+  have hunary := rawLeafCell_unary (typedRawCellPorts (rangeTypedPorts r)) u hbu hku
+  have hvstk : v.stk = (rawLeafCellEval (typedRawCellPorts (rangeTypedPorts r)) u).stk :=
+    typedLeafCell_stacks (rangeTypedPorts r) m A u
+  have hvx (j : K) (hjs : j ≠ r .source) (hjb : j ≠ r .block) (hjk : j ≠ r .kind) :
+      v.stk j = s.stk j := by
+    rw [hvstk, rawLeafCell_extra (typedRawCellPorts (rangeTypedPorts r)) j hjs hjb hjk]
+    exact huExtra j hjs
+  have hvb : v.stk (r .block) = List.replicate (v.stk (r .block)).length true := by
+    simpa only [hvstk, typedRawCellPorts, rangeTypedPorts] using hunary.1
+  have hvk : v.stk (r .kind) = List.replicate (v.stk (r .kind)).length true := by
+    simpa only [hvstk, typedRawCellPorts, rangeTypedPorts] using hunary.2
+  have hvB : v.stk (p .wantedBlock) = List.replicate B true :=
+    (hvx _ (by simp [r, matchRangePorts]) (by simp [r, matchRangePorts])
+      (by simp [r, matchRangePorts])).trans hB
+  have hvT : v.stk (p .wantedKind) = List.replicate T true :=
+    (hvx _ (by simp [r, matchRangePorts]) (by simp [r, matchRangePorts])
+      (by simp [r, matchRangePorts])).trans hT
+  have hvt := (hvx (r .temp) (by simp) (by simp) (by simp)).trans ht
+  have hvr := (hvx (r .residue) (by simp) (by simp) (by simp)).trans hr
+  have hvd := (hvx (r .subtrahend) (by simp) (by simp) (by simp)).trans hd
+  obtain ⟨b, hbt, h3⟩ := guardedCellCompare_executes (matchComparePorts p false) .eq
+    B (v.stk (r .block)).length v
+    (by simpa [matchComparePorts] using hvB) (by simpa [matchComparePorts, r, matchRangePorts] using hvb)
+    (by simpa [matchComparePorts, r, matchRangePorts] using hvr)
+    (by simpa [matchComparePorts, r, matchRangePorts] using hvd)
+    (by simpa [matchComparePorts, r, matchRangePorts] using hvt)
+  have hwstk : w.stk = v.stk := guardedCellCompare_stacks .eq B _ v
+  obtain ⟨c, hc, h4⟩ := guardedCellCompare_executes (matchComparePorts p true) .eq
+    T (v.stk (r .kind)).length w
+    (by simpa [matchComparePorts, hwstk] using hvT)
+    (by simpa [matchComparePorts, hwstk, r, matchRangePorts] using hvk)
+    (by simpa [matchComparePorts, hwstk, r, matchRangePorts] using hvr)
+    (by simpa [matchComparePorts, hwstk, r, matchRangePorts] using hvd)
+    (by simpa [matchComparePorts, hwstk, r, matchRangePorts] using hvt)
+  obtain ⟨d, hdtime, h5⟩ := clearMany_executes (rangeQueryOwned r) z
+  have h6 := Atom.executes (searchFlipOp (K := K) (F := F)) (clearManyEval (rangeQueryOwned r) z)
+  have hmass : cleanupMass (rangeQueryOwned r) z ≤ 3 * L := by
+    have hsum := Nat.add_le_add (Nat.add_le_add hbds.1 hbds.2.1) hbds.2.2
+    simp only [cleanupMass, rangeQueryOwned, List.map_cons, List.map_nil,
+      List.sum_cons, List.sum_nil, z, matchLeafCompared_stacks, hvstk]
+    simp only [typedRawCellPorts, rangeTypedPorts] at hsum
+    omega
+  have hbL : (v.stk (r .block)).length ≤ L := by
+    simpa only [hvstk, typedRawCellPorts, rangeTypedPorts] using hbds.2.1
+  have hkL : (v.stk (r .kind)).length ≤ L := by
+    simpa only [hvstk, typedRawCellPorts, rangeTypedPorts] using hbds.2.2
+  have he := RoutineComposition.seq_executes _ _ h1 (RoutineComposition.seq_executes _ _ h2
+    (RoutineComposition.seq_executes _ _ h3 (RoutineComposition.seq_executes _ _ h4
+      (RoutineComposition.seq_executes _ _ h5 h6))))
+  change (matchLeafRoutine p).Executes s (matchLeafEval p m A B T s) _ at he
+  rw [matchLeaf_result p m A B T L s ⟨⟨hL, hm, hA, hsource, hb, hk, ht, hr, hd⟩, hB, hT⟩] at he
+  refine ⟨3 * (s.stk (r .word)).length + 3 + (a + (b + (c + (d + 1)))), ?_, he⟩
+  simp only [rangeQueryOwned, List.length_cons, List.length_nil] at hdtime
+  omega
+
+/-! ## One paid mask-loop schema, with actual query implementations
+
+The contract below is a composition interface, not a machine existence
+assumption. Its cell-match instance is supplied below. No final verifier
+may leave a query contract or a complete nested scan as an external axiom.
+-/
+
+def maskedBodyEval (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F) :
+    CountdownStore K F :=
+  let selected := (s.stk (p .mask)).head?.getD false
+  ⟨((s.state.1.1, selected), if selected then q (s.stk (p .word)) else s.state.2),
+    Function.update (Function.update s.stk (p .word) (s.stk (p .word)).tail)
+      (p .mask) (s.stk (p .mask)).tail⟩
+
+def maskedBodyRoutine (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) :
+    Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (Atom.routine (rangeSelectMaskOp p))
+    (RoutineComposition.seq
+      (RoutineControl.branch (fun st => st.1.2) query (Atom.routine cleanupNoop))
+      (RoutineComposition.seq (Atom.routine (rangePopWordOp p)) (Atom.routine (rangePopMaskOp p))))
+
+structure MaskedQueryContract (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F))
+    (q : List Bool → Bool) (I : (K → List Bool) → Prop) (M : ℕ) : Prop where
+  positive : 1 ≤ M
+  query_executes : ∀ s, I s.stk → s.state.1.2 = true → ∃ n ≤ M,
+    query.Executes s (cellCompareFlagStore (q (s.stk (p .word))) s) n
+  cursor_closed : ∀ stk, I stk →
+    I (Function.update (Function.update stk (p .word) (stk (p .word)).tail)
+      (p .mask) (stk (p .mask)).tail)
+  counter_closed : ∀ stk, I stk → I (Function.update stk (p .counter) (stk (p .counter)).tail)
+
+theorem maskedBody_executes (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) (q : List Bool → Bool)
+    (I : (K → List Bool) → Prop) (M : ℕ) (h : MaskedQueryContract p query q I M)
+    (s : CountdownStore K F) (hs : I s.stk) :
+    ∃ n ≤ M + 4, (maskedBodyRoutine p query).Executes s (maskedBodyEval p q s) n := by
+  let u := (rangeSelectMaskOp p).apply s
+  have hpeek := Atom.executes (rangeSelectMaskOp p) s
+  cases hg : u.state.1.2 with
+  | false =>
+      have hbranch := RoutineControl.branch_false (fun st : CountdownState F => st.1.2)
+        query (Atom.routine cleanupNoop) hg (Atom.executes cleanupNoop u)
+      have hp1 := Atom.executes (rangePopWordOp p) u
+      have hp2 := Atom.executes (rangePopMaskOp p) ((rangePopWordOp p).apply u)
+      have he := RoutineComposition.seq_executes _ _ hpeek
+        (RoutineComposition.seq_executes _ _ hbranch (RoutineComposition.seq_executes _ _ hp1 hp2))
+      have hM : 1 ≤ M := h.positive
+      refine ⟨5, by omega, ?_⟩
+      simpa [maskedBodyRoutine, maskedBodyEval, u, rangeSelectMaskOp,
+        rangePopWordOp, rangePopMaskOp, cleanupNoop, Op.apply, hg] using he
+  | true =>
+      obtain ⟨n, hn, hquery⟩ := h.query_executes u hs hg
+      have hbranch := RoutineControl.branch_true (fun st : CountdownState F => st.1.2)
+        query (Atom.routine cleanupNoop) hg hquery
+      let v := cellCompareFlagStore (q (u.stk (p .word))) u
+      have hp1 := Atom.executes (rangePopWordOp p) v
+      have hp2 := Atom.executes (rangePopMaskOp p) ((rangePopWordOp p).apply v)
+      have he := RoutineComposition.seq_executes _ _ hpeek
+        (RoutineComposition.seq_executes _ _ hbranch (RoutineComposition.seq_executes _ _ hp1 hp2))
+      refine ⟨1 + ((n + 1) + (1 + 1)), by omega, ?_⟩
+      simpa [maskedBodyRoutine, maskedBodyEval, u, v, rangeSelectMaskOp,
+        rangePopWordOp, rangePopMaskOp, cellCompareFlagStore, Op.apply, hg] using he
+
+theorem maskedBody_extra (p : RangeCursorPorts K) (q : List Bool → Bool)
+    (s : CountdownStore K F) (j : K) (hjw : j ≠ p .word) (hjm : j ≠ p .mask) :
+    (maskedBodyEval p q s).stk j = s.stk j := by simp [maskedBodyEval, hjw, hjm]
+
+def maskedCountdownContract (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) (q : List Bool → Bool)
+    (I : (K → List Bool) → Prop) (M : ℕ) (h : MaskedQueryContract p query q I M) :
+    CountdownContract (p .counter) (maskedBodyRoutine p query) (maskedBodyEval p q)
+      (fun s => I s.stk) (M + 4) where
+  peek_closed s hs := hs
+  pop_closed s hs hg := h.counter_closed s.stk hs
+  body_closed s hs := h.cursor_closed s.stk hs
+  reset_closed s hs := hs
+  counter_preserved s hs := maskedBody_extra p q s (p .counter) (by simp) (by simp)
+  body_executes s hs := maskedBody_executes p query q I M h s hs
+
+def maskedCountdownRoutine (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) :=
+  countdownRoutine (p .counter) (maskedBodyRoutine p query)
+
+def maskedCountdownEval (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F) :=
+  countdownEval (p .counter) (maskedBodyEval p q) s
+
+theorem maskedCountdown_executes (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) (q : List Bool → Bool)
+    (I : (K → List Bool) → Prop) (M : ℕ) (h : MaskedQueryContract p query q I M)
+    (s : CountdownStore K F) (hs : I s.stk) :
+    ∃ n ≤ (s.stk (p .counter)).length * (M + 7) + 3,
+      (maskedCountdownRoutine p query).Executes s (maskedCountdownEval p q s) n ∧
+      I (maskedCountdownEval p q s).stk ∧
+      (maskedCountdownEval p q s).state.1.2 = false ∧
+      ((maskedCountdownEval p q s).state.2 = true →
+        (maskedCountdownEval p q s).stk (p .counter) = []) := by
+  simpa only [maskedCountdownRoutine, maskedCountdownEval, Nat.add_assoc] using
+    countdownRoutine_executes (p .counter) (maskedBodyRoutine p query) (maskedBodyEval p q)
+      (fun s => I s.stk) (M + 4) (maskedCountdownContract p query q I M h) s hs
+
+theorem maskedCountdownLoop_flag (p : RangeCursorPorts K) (q : List Bool → Bool) (fuel : ℕ) :
+    ∀ s : CountdownStore K F,
+      (s.stk (p .counter)).length = (s.stk (p .mask)).length →
+      (s.stk (p .mask)).length ≤ (s.stk (p .word)).length →
+      (s.stk (p .counter)).length ≤ fuel →
+      s.state.1.2 = (s.stk (p .counter)).head?.isSome →
+      (countdownLoopEval (p .counter) (maskedBodyEval p q) fuel s).state.2 =
+        s.state.2 && (rawMarkedSuffixes (s.stk (p .word)) (s.stk (p .mask))).all q := by
+  induction fuel with
+  | zero =>
+      intro s hsame hfit hlen hpeek
+      have hm : s.stk (p .mask) = [] := List.eq_nil_of_length_eq_zero (by omega)
+      cases hw : s.stk (p .word) <;> simp [countdownLoopEval, rawMarkedSuffixes, hm, hw]
+  | succ fuel ih =>
+      intro s hsame hfit hlen hpeek
+      cases hf : s.state.2 with
+      | false => simp [countdownLoopEval, countdownGuard, hf]
+      | true =>
+          cases hm : s.stk (p .mask) with
+          | nil =>
+              have hc : s.stk (p .counter) = [] :=
+                List.eq_nil_of_length_eq_zero (by simpa [hm] using hsame)
+              cases hw : s.stk (p .word) <;>
+                simp [countdownLoopEval, countdownGuard, hpeek, hc, hm, hw, rawMarkedSuffixes, hf]
+          | cons mark mask =>
+              cases hw : s.stk (p .word) with
+              | nil => simp [hm, hw] at hfit
+              | cons bit bits =>
+                  have hc : (s.stk (p .counter)).head?.isSome = true := by
+                    cases hcs : s.stk (p .counter) with
+                    | nil => simp [hcs, hm] at hsame
+                    | cons c cs => rfl
+                  have hg : countdownGuard s.state = true := by simp [countdownGuard, hpeek, hc, hf]
+                  let u := countdownPeek (p .counter) (maskedBodyEval p q (countdownPop (p .counter) s))
+                  have huw : u.stk (p .word) = bits := by
+                    simp [u, countdownPeek, maskedBodyEval, countdownPop, countdownPopOp, Op.apply, hw]
+                  have hum : u.stk (p .mask) = mask := by
+                    simp [u, countdownPeek, maskedBodyEval, countdownPop, countdownPopOp, Op.apply, hm]
+                  have huc : u.stk (p .counter) = (s.stk (p .counter)).tail := by
+                    change (maskedBodyEval p q (countdownPop (p .counter) s)).stk (p .counter) = _
+                    rw [maskedBody_extra p q _ (p .counter) (by simp) (by simp)]
+                    exact countdownPop_counter (p .counter) s
+                  have huf : u.state.2 = if mark then q (bit :: bits) else true := by
+                    simp [u, countdownPeek, maskedBodyEval, countdownPop, countdownPopOp,
+                      countdownPeekOp, Op.apply, hm, hw, hf]
+                  have husame : (u.stk (p .counter)).length = (u.stk (p .mask)).length := by
+                    rw [huc, hum]
+                    cases hcs : s.stk (p .counter) with
+                    | nil => simp [hcs, hm] at hsame
+                    | cons c cs => simpa [hcs, hm] using hsame
+                  have hufit : (u.stk (p .mask)).length ≤ (u.stk (p .word)).length := by
+                    rw [hum, huw]; simpa [hm, hw] using hfit
+                  have hulen : (u.stk (p .counter)).length ≤ fuel := by
+                    rw [huc]
+                    cases hcs : s.stk (p .counter) with
+                    | nil => simp
+                    | cons c cs => simpa [hcs] using hlen
+                  have hi := ih u husame hufit hulen (countdownPeek_control (p .counter) _)
+                  simp only [countdownLoopEval, hg, ↓reduceIte]
+                  rw [hi, huf, huw, hum]
+                  cases mark <;> simp [hm, hw, hf, rawMarkedSuffixes]
+
+theorem maskedCountdown_flag (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F)
+    (hsame : (s.stk (p .counter)).length = (s.stk (p .mask)).length)
+    (hfit : (s.stk (p .mask)).length ≤ (s.stk (p .word)).length) :
+    (maskedCountdownEval p q s).state.2 =
+      s.state.2 && (rawMarkedSuffixes (s.stk (p .word)) (s.stk (p .mask))).all q :=
+  maskedCountdownLoop_flag p q (s.stk (p .counter)).length
+    (countdownPeek (p .counter) s) hsame hfit (le_refl _) (countdownPeek_control (p .counter) s)
+
+theorem maskedBody_lengths (p : RangeCursorPorts K) (q : List Bool → Bool)
+    (s : CountdownStore K F) (j : K) :
+    ((maskedBodyEval p q s).stk j).length ≤ (s.stk j).length := by
+  by_cases hjm : j = p .mask
+  · subst j; simp only [maskedBodyEval, Function.update_same]
+    cases s.stk (p .mask) <;> simp
+  · by_cases hjw : j = p .word
+    · subst j; simp only [maskedBodyEval, Function.update_of_ne hjm, Function.update_same]
+      cases s.stk (p .word) <;> simp
+    · simp [maskedBodyEval, hjm, hjw]
+
+theorem maskedCountdownLoop_lengths (p : RangeCursorPorts K) (q : List Bool → Bool) (fuel : ℕ) :
+    ∀ (s : CountdownStore K F) (j : K),
+      ((countdownLoopEval (p .counter) (maskedBodyEval p q) fuel s).stk j).length ≤ (s.stk j).length := by
+  induction fuel with
+  | zero => intro s j; exact le_refl _
+  | succ fuel ih =>
+      intro s j
+      cases hg : countdownGuard s.state with
+      | false => simp [countdownLoopEval, hg]
+      | true =>
+          have hpop : ((countdownPop (p .counter) s).stk j).length ≤ (s.stk j).length := by
+            by_cases hj : j = p .counter
+            · subst j; rw [countdownPop_counter]; cases s.stk (p .counter) <;> simp
+            · simp [countdownPop, countdownPopOp, Op.apply, hj]
+          have hb := maskedBody_lengths p q (countdownPop (p .counter) s) j
+          have hi := ih (countdownPeek (p .counter) (maskedBodyEval p q (countdownPop (p .counter) s))) j
+          simpa only [countdownLoopEval, hg, ↓reduceIte] using hi.trans (hb.trans hpop)
+
+theorem maskedCountdown_extra (p : RangeCursorPorts K) (q : List Bool → Bool)
+    (s : CountdownStore K F) (j : K) (hjw : j ≠ p .word) (hjm : j ≠ p .mask) (hjc : j ≠ p .counter) :
+    (maskedCountdownEval p q s).stk j = s.stk j :=
+  countdownLoop_preserves (p .counter) (maskedBodyEval p q) (fun t => t.stk j)
+    (fun _ => rfl) (by intro t; simp [countdownPop, countdownPopOp, Op.apply, hjc])
+    (fun t => maskedBody_extra p q t j hjw hjm)
+    (s.stk (p .counter)).length (countdownPeek (p .counter) s)
+
+theorem maskedCountdown_frame (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F) :
+    (maskedCountdownEval p q s).state.1.1 = s.state.1.1 :=
+  countdownLoop_preserves (p .counter) (maskedBodyEval p q) (fun t => t.state.1.1)
+    (fun _ => rfl) (fun _ => rfl) (fun _ => rfl)
+    (s.stk (p .counter)).length (countdownPeek (p .counter) s)
+
+def maskedAllRoutine (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) :=
+  RoutineComposition.seq (rangeAllPrepareRoutine p)
+    (RoutineComposition.seq (maskedCountdownRoutine p query) (clearManyRoutine (rangeCursorOwned p)))
+
+def maskedAllEval (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F) :=
+  clearManyEval (rangeCursorOwned p) (maskedCountdownEval p q (rangeAllPrepared p s))
+
+def maskedAllResult (p : RangeCursorPorts K) (q : List Bool → Bool) (s : CountdownStore K F) :
+    CountdownStore K F :=
+  ⟨((s.state.1.1, false),
+    (rawMarkedSuffixes (s.stk (p .originalWord)) (s.stk (p .originalMask))).all q), s.stk⟩
+
+theorem maskedAll_executes (p : RangeCursorPorts K)
+    (query : Routine (fun _ : K => Bool) (CountdownState F)) (q : List Bool → Bool)
+    (I : (K → List Bool) → Prop) (M L : ℕ) (h : MaskedQueryContract p query q I M)
+    (s : CountdownStore K F)
+    (hL : (s.stk (p .originalWord)).length ≤ L)
+    (hfit : (s.stk (p .originalMask)).length ≤ (s.stk (p .originalWord)).length)
+    (hw0 : s.stk (p .word) = []) (hm0 : s.stk (p .mask) = [])
+    (hc0 : s.stk (p .counter) = []) (ht0 : s.stk (p .temp) = [])
+    (hi : I (rangeAllPrepared p s).stk) :
+    ∃ n ≤ L * (M + 7) + 12 * L + 17,
+      (maskedAllRoutine p query).Executes s (maskedAllResult p q s) n := by
+  let u := rangeAllPrepared p s
+  let v := maskedCountdownEval p q u
+  have hustk := rangeAllPrepared_stacks p s hw0 hm0 hc0
+  have huw : u.stk (p .word) = s.stk (p .originalWord) := by simp [u, hustk]
+  have hum : u.stk (p .mask) = s.stk (p .originalMask) := by simp [u, hustk]
+  have huc : u.stk (p .counter) = s.stk (p .originalMask) := by simp [u, hustk]
+  have hux (j : K) (hjw : j ≠ p .word) (hjm : j ≠ p .mask) (hjc : j ≠ p .counter) :
+      u.stk j = s.stk j := by simp [u, hustk, hjw, hjm, hjc]
+  have hprep := rangeAllPrepare_executes p s ht0 hm0
+  obtain ⟨a, ha, hrun, hvinv, hvguard, hvexhaust⟩ := maskedCountdown_executes p query q I M h u hi
+  obtain ⟨b, hb, hclear⟩ := clearMany_executes (rangeCursorOwned p) v
+  have hvlen (j : K) : (v.stk j).length ≤ (u.stk j).length :=
+    maskedCountdownLoop_lengths p q (u.stk (p .counter)).length (countdownPeek (p .counter) u) j
+  have hvw := hvlen (p .word)
+  have hvm := hvlen (p .mask)
+  have hvc := hvlen (p .counter)
+  rw [huw] at hvw
+  rw [hum] at hvm
+  rw [huc] at hvc
+  have hmass : cleanupMass (rangeCursorOwned p) v ≤ 3 * L := by
+    simp only [cleanupMass, rangeCursorOwned, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]
+    omega
+  have hresult : maskedAllEval p q s = maskedAllResult p q s := by
+    apply countdownStore_ext
+    · rw [maskedAllEval, clearMany_state]
+      apply Prod.ext
+      · exact Prod.ext (maskedCountdown_frame p q u) hvguard
+      · have hf := maskedCountdown_flag p q u (by rw [huc, hum]) (by rw [hum, huw]; exact hfit)
+        simpa only [rangeAllPrepared_state, Bool.true_and, huw, hum] using hf
+    · funext j
+      by_cases hj : j ∈ rangeCursorOwned p
+      · rw [maskedAllEval, clearMany_member _ _ hj]
+        simp only [rangeCursorOwned, List.mem_cons, List.mem_singleton] at hj
+        rcases hj with rfl | rfl | rfl
+        · exact hw0.symm
+        · exact hm0.symm
+        · exact hc0.symm
+      · have hjw : j ≠ p .word := by intro he; apply hj; simp [rangeCursorOwned, he]
+        have hjm : j ≠ p .mask := by intro he; apply hj; simp [rangeCursorOwned, he]
+        have hjc : j ≠ p .counter := by intro he; apply hj; simp [rangeCursorOwned, he]
+        rw [maskedAllEval, clearMany_outside _ _ hj, maskedCountdown_extra p q u j hjw hjm hjc]
+        exact hux j hjw hjm hjc
+  have he := RoutineComposition.seq_executes _ _ hprep (RoutineComposition.seq_executes _ _ hrun hclear)
+  rw [hresult] at he
+  refine ⟨(3 * (s.stk (p .originalWord)).length + 6 * (s.stk (p .originalMask)).length + 10) + (a + b), ?_, he⟩
+  rw [huc] at ha
+  simp only [rangeCursorOwned, List.length_cons, List.length_nil] at hb
+  have hmul := Nat.mul_le_mul_right (M + 7) (hfit.trans hL)
+  omega
+
+def MatchStackInv (p : MatchCursorPorts K) (m A B T L : ℕ) (stk : K → List Bool) : Prop :=
+  ((stk (p (.cursor .word))).length ≤ L ∧
+    stk (p (.cursor .rows)) = List.replicate m true ∧
+    stk (p (.cursor .types)) = List.replicate A true ∧
+    stk (p (.cursor .source)) = [] ∧ stk (p (.cursor .block)) = [] ∧
+    stk (p (.cursor .kind)) = [] ∧ stk (p (.cursor .temp)) = [] ∧
+    stk (p (.cursor .residue)) = [] ∧ stk (p (.cursor .subtrahend)) = []) ∧
+  stk (p .wantedBlock) = List.replicate B true ∧ stk (p .wantedKind) = List.replicate T true
+
+def matchMaskedContract (p : MatchCursorPorts K) (m A B T L : ℕ) :
+    MaskedQueryContract (matchRangePorts p) (matchLeafRoutine p)
+      (fun bits => !rawCellMatch m A B T bits) (MatchStackInv p m A B T L)
+      (26 * L + 4 * m + 4 * A + 4 * B + 4 * T + 57) where
+  positive := by omega
+  query_executes s hs hselected := matchLeaf_executes p m A B T L s hs
+  cursor_closed stk hs := by
+    have ht : (stk (p (.cursor .word))).tail.length ≤ (stk (p (.cursor .word))).length := by
+      cases stk (p (.cursor .word)) <;> simp
+    unfold MatchStackInv at hs ⊢
+    simpa [matchRangePorts] using And.intro (And.intro (ht.trans hs.1.1) hs.1.2) hs.2
+  counter_closed stk hs := by
+    simpa [MatchStackInv, matchRangePorts] using hs
+
+def MatchAllEntry (p : MatchCursorPorts K) (m A B T L : ℕ) (s : CountdownStore K F) : Prop :=
+  RangeAllEntry (matchRangePorts p) m A L s ∧
+  s.stk (p .wantedBlock) = List.replicate B true ∧ s.stk (p .wantedKind) = List.replicate T true
+
+theorem matchAll_prepared_inv (p : MatchCursorPorts K) (m A B T L : ℕ)
+    (s : CountdownStore K F) (hs : MatchAllEntry p m A B T L s) :
+    MatchStackInv p m A B T L (rangeAllPrepared (matchRangePorts p) s).stk := by
+  rcases hs with ⟨⟨hL, hfit, hm, hA, hwork⟩, hB, hT⟩
+  let r := matchRangePorts p
+  have hf (j : RangeCursorPort) (hj : r j ∈ rangeAllWork r) : s.stk (r j) = [] := hwork _ hj
+  have hustk := rangeAllPrepared_stacks r s (hf .word (by simp [rangeAllWork]))
+    (hf .mask (by simp [rangeAllWork])) (hf .counter (by simp [rangeAllWork]))
+  rw [hustk]
+  unfold MatchStackInv
+  have hsource := hf .source (by simp [rangeAllWork])
+  have hblock := hf .block (by simp [rangeAllWork])
+  have hkind := hf .kind (by simp [rangeAllWork])
+  have htemp := hf .temp (by simp [rangeAllWork])
+  have hresidue := hf .residue (by simp [rangeAllWork])
+  have hsub := hf .subtrahend (by simp [rangeAllWork])
+  simpa [r, matchRangePorts] using
+    And.intro (And.intro hL ⟨hm, hA, hsource, hblock, hkind, htemp, hresidue, hsub⟩) ⟨hB, hT⟩
+
+theorem all_not_flip_eq_any {X : Type} (xs : List X) (q : X → Bool) :
+    !(xs.all (fun x => !q x)) = xs.any q := by
+  induction xs with
+  | nil => rfl
+  | cons x xs ih =>
+      simp only [List.all_cons, List.any_cons]
+      cases hq : q x <;> simp [hq, ih]
+
+def cellMembershipRoutine (p : MatchCursorPorts K) : Routine (fun _ : K => Bool) (CountdownState F) :=
+  RoutineComposition.seq (maskedAllRoutine (matchRangePorts p) (matchLeafRoutine p))
+    (Atom.routine searchFlipOp)
+
+def cellMembershipResult (p : MatchCursorPorts K) (m A B T : ℕ) (s : CountdownStore K F) :
+    CountdownStore K F :=
+  ⟨((s.state.1.1, false),
+    (rawMarkedSuffixes (s.stk (p (.cursor .originalWord)))
+      (s.stk (p (.cursor .originalMask)))).any (rawCellMatch m A B T)), s.stk⟩
+
+/-- Fully instantiated membership search: real typed queries and TWO
+physical comparisons, all cursor/query copying and cleanup paid. This
+returns a local membership Boolean; it does NOT absorb an earlier global
+rejection. The enclosing verifier must branch/store that global flag. -/
+theorem cellMembership_executes (p : MatchCursorPorts K) (m A B T L : ℕ)
+    (s : CountdownStore K F) (hs : MatchAllEntry p m A B T L s) :
+    ∃ n ≤ L * (26 * L + 4 * m + 4 * A + 4 * B + 4 * T + 64) + 12 * L + 18,
+      (cellMembershipRoutine p).Executes s (cellMembershipResult p m A B T s) n := by
+  let r := matchRangePorts p
+  let q := fun bits => !rawCellMatch m A B T bits
+  have hf (j : RangeCursorPort) (hj : r j ∈ rangeAllWork r) : s.stk (r j) = [] := hs.1.2.2.2.2 _ hj
+  obtain ⟨n, hn, he⟩ := maskedAll_executes r (matchLeafRoutine p) q (MatchStackInv p m A B T L)
+    (26 * L + 4 * m + 4 * A + 4 * B + 4 * T + 57) L (matchMaskedContract p m A B T L) s
+    hs.1.1 hs.1.2.1 (hf .word (by simp [rangeAllWork])) (hf .mask (by simp [rangeAllWork]))
+    (hf .counter (by simp [rangeAllWork])) (hf .temp (by simp [rangeAllWork]))
+    (matchAll_prepared_inv p m A B T L s hs)
+  have hflip := Atom.executes (searchFlipOp (K := K) (F := F)) (maskedAllResult r q s)
+  have hresult : searchFlipOp.apply (maskedAllResult r q s) = cellMembershipResult p m A B T s := by
+    apply countdownStore_ext
+    · simp [maskedAllResult, cellMembershipResult, searchFlipOp, Op.apply,
+        r, q, matchRangePorts, all_not_flip_eq_any]
+    · rfl
+  rw [hresult] at hflip
+  exact ⟨n + 1, by omega, RoutineComposition.seq_executes _ _ he hflip⟩
+
+def rawCellCodeMatch (m A B T : ℕ) (c : ℕ × ℕ) : Bool :=
+  decide (c.1 ≤ m ∧ c.2 < A) && (decide (c.1 = B) && decide (c.2 = T))
+
+theorem rawCellMatch_leaf (m A B T : ℕ) (c : ℕ × ℕ) (rest : List Bool) :
+    rawCellMatch m A B T (rawCellTreeBits (.leaf c) ++ rest) = rawCellCodeMatch m A B T c := by
+  by_cases hv : c.1 ≤ m ∧ c.2 < A <;>
+    simp [rawCellMatch, rawCellCodeMatch, rawCellTreeBits, readRawLeafCell,
+      filterRawLeafCell, List.append_assoc, readUnaryFrame_encode, hv]
+
+theorem rawCellMatch_node (m A B T : ℕ) (l r : BTree (ℕ × ℕ)) (rest : List Bool) :
+    rawCellMatch m A B T (rawCellTreeBits (.node l r) ++ rest) = false := rfl
+
+theorem rawCellMatch_views (m A B T : ℕ) (R : BTree (ℕ × ℕ)) (rest : List Bool) :
+    ((rawNodeViews R rest).map rawViewSuffix).any (rawCellMatch m A B T) =
+      (scanLeaves R).any (rawCellCodeMatch m A B T) := by
+  induction R generalizing rest with
+  | leaf c =>
+      simpa only [rawNodeViews, rawViewSuffix, List.map_cons, List.map_nil,
+        List.any_cons, List.any_nil, Bool.or_false, scanLeaves] using rawCellMatch_leaf m A B T c rest
+  | node l r ihl ihr =>
+      simp only [rawNodeViews, List.map_cons, List.map_append, List.any_cons,
+        List.any_append, rawViewSuffix, rawCellMatch_node, Bool.false_or, scanLeaves, ihl, ihr]
+
+/-- This semantic identity covers ALL raw trees, even out-of-range cells;
+the range filter is explicit. No typed-tree or constructor assumption is
+needed to identify what the emitted search actually returns. -/
+theorem rawCellMembership_forest (m A B T : ℕ) (Rs : List (BTree (ℕ × ℕ)))
+    (rest : List Bool) :
+    (rawMarkedSuffixes (rawForestWord Rs ++ rest) (rawForestNodeMask Rs)).any
+      (rawCellMatch m A B T) =
+      (Rs.flatMap scanLeaves).any (rawCellCodeMatch m A B T) := by
+  induction Rs with
+  | nil => simp [rawForestWord, rawForestNodeMask, rawMarkedSuffixes]
+  | cons R Rs ih =>
+      simp only [rawForestWord, rawForestNodeMask, List.flatMap_cons, List.append_assoc]
+      rw [rawMarkedSuffixes_tree, List.any_append, rawCellMatch_views]
+      rw [ih, List.any_append]
+
+theorem rawCellMembership_forest_valid (N m B T : ℕ) (Rs : List (BTree (ℕ × ℕ)))
+    (rest : List Bool) (hv : ∀ R ∈ Rs, rawTreeValid N m R) :
+    (rawMarkedSuffixes (rawForestWord Rs ++ rest) (rawForestNodeMask Rs)).any
+      (rawCellMatch m (N + m * N + 3) B T) = true ↔
+      (B, T) ∈ Rs.flatMap scanLeaves := by
+  rw [rawCellMembership_forest, List.any_eq_true]
+  constructor
+  · rintro ⟨c, hc, hmatch⟩
+    have he : (c.1 ≤ m ∧ c.2 < N + m * N + 3) ∧ c.1 = B ∧ c.2 = T := by
+      simpa only [rawCellCodeMatch, Bool.and_eq_true, decide_eq_true_eq] using hmatch
+    have heq : c = (B, T) := Prod.ext he.2.1 he.2.2
+    simpa only [heq] using hc
+  · intro hc
+    obtain ⟨R, hR, hleaf⟩ := List.mem_flatMap.mp hc
+    have hvalid := hv R hR (B, T) hleaf
+    refine ⟨(B, T), hc, ?_⟩
+    simp [rawCellCodeMatch, rawCellValid] at hvalid ⊢
+    exact hvalid
+
+/-- The forest witness here is RECONSTRUCTED from the parser and range
+observations, not supplied as a validity promise. These observations are
+exactly the ones provided by the grammar phase above. The final bounded
+pair controller still has to place both phases in its common inventory. -/
+theorem cellMembership_observed_forest (p : MatchCursorPorts K) (N m q B T : ℕ)
+    (s : CountdownStore K F) (rest : List Bool)
+    (hparse : rawForestMaskParse (s.stk (p (.cursor .originalWord))).length q
+      (s.stk (p (.cursor .originalWord))) = some (rest, s.stk (p (.cursor .originalMask))))
+    (hcheck : forestMaskCellCheck N m (s.stk (p (.cursor .originalWord)))
+      (s.stk (p (.cursor .originalMask))) = true) :
+    ∃ Rs : List (BTree (ℕ × ℕ)), Rs.length = q ∧
+      s.stk (p (.cursor .originalWord)) = rawForestWord Rs ++ rest ∧
+      s.stk (p (.cursor .originalMask)) = rawForestNodeMask Rs ∧
+      (∀ R ∈ Rs, rawTreeValid N m R) ∧
+      ((cellMembershipResult p m (N + m * N + 3) B T s).state.2 = true ↔
+        (B, T) ∈ Rs.flatMap scanLeaves) := by
+  obtain ⟨Rs, hq, hword, hmask⟩ :=
+    (rawForestMaskParse_all_words (s.stk (p (.cursor .originalWord))) rest
+      (s.stk (p (.cursor .originalMask))) q).mp hparse
+  have hv : ∀ R ∈ Rs, rawTreeValid N m R :=
+    (forestMaskCellCheck_iff N m Rs rest).mp (by simpa only [← hword, ← hmask] using hcheck)
+  refine ⟨Rs, hq, hword, hmask, hv, ?_⟩
+  change (rawMarkedSuffixes (s.stk (p (.cursor .originalWord)))
+    (s.stk (p (.cursor .originalMask)))).any (rawCellMatch m (N + m * N + 3) B T) = true ↔ _
+  rw [hword, hmask]
+  exact rawCellMembership_forest_valid N m B T Rs rest hv
+
+/- The actual membership scan is now an instantiated use of the common
+paid cursor, not a Boolean oracle. It alone does not implement target or
+certificate uniqueness, bidirectional cell sets, the all/exists clade
+nest, marker/mixedness/coverage guards, or distinct-type score. Those
+remain full-controller composition obligations. The final machine and
+encoded-source-hardness premises are still independent and unclosed. -/
 
 end PolytomyReductionModel.WholeVerifierController
