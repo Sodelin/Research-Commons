@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "source_key": "G3-REGULAR-FIELD-DEGREE-01",
+  "title": "Regular original source banks have a field-degree bound independent of word length",
+  "authored_utc_date": "2026-10-23",
+  "author": "Existing G3 owner, Codex/OpenAI",
+  "project_master": "G3",
+  "mathematical_status": "PROVED (not Lean formalized)",
+  "proof_authorship": "complete hand proof",
+  "independent_review": "not performed",
+  "formal_verification": "not attempted",
+  "implementation": "not implemented or executed",
+  "empirical_admission": "not applicable",
+  "historical_novelty": "unestablished; classical specialization, constant-rank theory, implicit functions and affine Bezout are reused",
+  "exact_statement": "On an input-controlled polynomial legal core chart with g independent static equations, an actual finite source-word realization whose entire joint response map has LOCALLY CONSTANT rank r admits an arbitrarily close realization on the SAME graph/path, matching all rows and protected constraints, with its entire polynomial parameter bank in ONE real extension L of the input field K of degree at most max(1,((g+r)*M)^(g+r)). Here M bounds the individual-variable polynomial degrees in the fixed joint compiler and static chart, independently of word length. All but at most r fresh scalar parameters can be rational.",
+  "proof": {
+    "path": "PROOF.md",
+    "bytes": 18064,
+    "sha256": "edcfd7983191bd90d5c3c544e2868a7c7a13a35f39acd141ae06ecc84dfb7c89",
+    "git_blob": "13b6bf60486f65aa1eb74d36ce92e2af30ca5ec4"
+  },
+  "mechanism": "Select g static plus r output equations and a nonsingular parameter minor. Specialize every complementary coordinate rationally in the open free projection. Constant rank keeps ALL output rows fixed. The remaining square system has at most R=g+r variables and total degree at most R*M; affine Bezout bounds the degree of the entire isolated-point coordinate field.",
+  "source_degree_budget": "Fresh append tuples occur only in their own fixed polynomial matrix block. Slot matrix products are multilinear in those blocks, and the fixed original joint response compiler has finite degree. Thus individual raw-parameter degree is independent of the number/order of other cells. Original finite ties are protected in the static tuple; no unbounded fresh-position synchronization is added.",
+  "regularity_hypothesis": "LOCALLY CONSTANT joint map rank on the legal static chart times the fresh open blocks. Full-row-rank witnesses qualify. Evaluating a deficient rank only at a single witness is insufficient.",
+  "static_chart_scope": "Uniformity is relative to finite input-controlled algebraic legal charts, including fixed finite algebraic auxiliaries if needed. Stratifying the growing N-variable OUTPUT fibre would not give a uniform static codimension and is explicitly excluded from this argument.",
+  "coordinate_scope": "Polynomial source coordinates, including survivals/inheritance. No degree/algebraicity assertion about logarithms or population rates reconstructed from survivals.",
+  "singular_counterexample": "On (0,1)^N, P_N=(x_1^2-1/2)^2+sum_i(x_(i+1)^2-x_i)^2 has degree4 and fixed target0, but its unique bank x_i=2^(-1/2^i) has field degree2^N. The witness has zero Jacobian but not locally constant zero rank. This is a nongenealogical polynomial countermodel, NOT an original source embedding or G3 lower bound.",
+  "compared_prior": [
+    {
+      "role": "original source-complete polynomial path/compiler provider",
+      "commit": "9d21c0727564ae0ba101039d97b07c614d17f2e1",
+      "path": "research/2026-10-06-dot-g3-global-source-reachability-0019z/REDUCTION.md",
+      "sha256": "7b789a77b6e15fd8ab7e2c5050021f2d162ddb897285eb34fbabe900ca1f1c24",
+      "read_scope": "complete body reread",
+      "reuse": "Finite protected templates, fresh untied polynomial append blocks, joint compiler and reverse source construction."
+    },
+    {
+      "role": "regular-alternative and fixed-graph algebraization predecessor",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g3-complete-classification/ATTEMPT-2-ALTERNATIVE-PRESENTATIONS.md",
+      "sha256": "37c7cf1641de6a6f3cadefc6a9eda8adc51d4d55ee74e85ff8a2919db736f51f",
+      "read_scope": "complete body read",
+      "difference": "Preserves a regular alternative and obtains an algebraic bank after fixing the graph, without a word-length-independent field-degree bound. Its underlying regular alternatives remain old/reused."
+    },
+    {
+      "role": "later whole-source count/normal successor",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g3-complete-classification/attempt-5/COMPLETE-INTEGER-WITNESS-ATTEMPT.md",
+      "sha256": "b4e5e80fb810048ffa819fc330775813e2df5b0e906b647c6b85cd05f1b97d7a",
+      "read_scope": "complete body read",
+      "difference": "One-presentation algebraic selection is not a uniform count/field/height statement for unknown critical sources. The new theorem is only the regular-chart degree consequence."
+    },
+    {
+      "role": "actual later scoped source/chart review",
+      "commit": "8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6",
+      "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/integration/ROOT-FOURTH-ROUND-ALGEBRAIC-NORMAL-AND-WEAK-CELL-REVIEW.md",
+      "sha256": "b8eb8951dced216681148e3bf4d329b6649b06a68c2d4279fa54cd0a3bc8c4de",
+      "read_scope": "complete body read",
+      "reuse": "Actual jointly legal charts, shared BOTH parameters and exact one-presentation scope remain explicit."
+    }
+  ],
+  "classical_primary": {
+    "source": "Pinaki Mondal, How many zeroes?, TheoremI.2",
+    "url": "https://pinakimondal.org/wp-content/uploads/2021/12/p1_to_16.pdf",
+    "actual_read_scope": "Affine isolated-zero theorem and algebraically closed setting; not the whole book",
+    "use": "At most product-of-degrees isolated complex zeros, hence a bound on the entire coordinate field of a nonsingular point"
+  },
+  "later_reviews_or_corrections": [],
+  "change_classification": "Explicit word-length-uniform regular-source field-degree supplier from classical tools; not a full G3 mechanism or historical novelty claim.",
+  "reuse_action": "Reuse this regular-chart bound rather than reopening fixed-graph algebraization. Keep singular-source degree, height and word-count questions separate; do not infer a full H or complete NO from it.",
+  "master_status": "ACTIVE; original G3 unresolved",
+  "master_goal_complete": false,
+  "new_full_attack": false,
+  "source_scope": "Original normalized source-word grammar and whole joint compiler, including I/BOTH where required, one bank, original chronology/IDs/protected static relations. No extra observations, independent matrix-entry controls, refreshed registers or changed graph are introduced.",
+  "remaining_master_gap": "No universal regular alternative, source-specific singular/critical degree theorem, height/denominator/count bound, source-wide anomalous-family control or unrestricted original NO mechanism is supplied.",
+  "execution": "Hand proof and source/primary-document reads plus metadata/publication only. No mathematical producer, scientific symbolic check, QE, source tuple generation, native/compiler/Lean/model or old-suite execution.",
+  "publication_scope": "Owned proof and separate status source; outside frozen58-note/17-Lean census and not a competing master registry."
+}
