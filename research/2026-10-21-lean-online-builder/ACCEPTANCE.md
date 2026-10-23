@@ -1,5 +1,7 @@
 # Accepted scope and remaining assembly
 
+The full E2E objective is **incomplete and blocked** on the actual original-owner native controller and transitive first-writer binding. [The resumption checkpoint](RESUMPTION-CHECKPOINT.md) records the completed supporting work and exact external requirement.
+
 G1, both timed and unranked G2, and binary full-timed-M3 G5 retain their
 original accepted contracts. G6 and G7 have accepted hand characterizations;
 their source-faithful formal/native assembly remains incomplete. General G3
