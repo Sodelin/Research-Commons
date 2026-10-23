@@ -1,5 +1,10 @@
 # Start here
 
+## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
+
+Start with [what is already accepted and what remains](docs/ACCEPTED-RESULTS-AND-REMAINING-WORK.md). In particular, the qualified G4 BOTH-inclusive control-menu extension was already accepted on October 14; it is not a newly solved theorem or a remaining generic adapter gap. Causal upper/lower mathematics now has coordinating hand acceptance, while new Lean source remains unelaborated. The owner has closed the external G3/G4 continuations; the [shared future prompt](handoffs/2026-10-23-g3-g4-accepted-first/PROMPT.md) is not issued and restarts nothing. Dated older status snapshots below are retained, not current instructions to re-prove completed work.
+
+
 ## First understand the project
 
 Commons is not just a list of conjectures or a folder of Lean files. It connects **sources, observations, compatible explanations, recoverable targets, legal experiments and checkable computational evidence**. The biological G programme supplied the initial detailed source contracts; other fields require their own proofs that those interfaces really match.
