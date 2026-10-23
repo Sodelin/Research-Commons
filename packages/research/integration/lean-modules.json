@@ -285,16 +285,39 @@
     {
       "module": "NativePopulationTableCertificate",
       "path": "lean/NativePopulationTableCertificate.lean",
-      "sha256": "4a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6",
+      "sha256": "6007ecb5a0467a6009810b4457b657dc690830e7de65d75c09fe8338ef681cc4",
       "imports": [
         "G7EffectiveCoefficientSupport"
       ],
       "provenance": {
-        "role": "Unchanged retained supplied-table certificate proposal, selected for actual complete-context checking.",
+        "role": "Retained supplied-table certificate with two explicit current-context proof-script repairs.",
         "source_commit": "3b1019b68e2838cfc4085783a37c3ab0d7736273",
         "original_path": "research/2026-10-21-lean-rust-solver-builder/lean/proposals/NativePopulationTableCertificate.lean",
         "selected_current_context_verified": false,
-        "scope": "Finite rational coefficient and total destination support check, then inherited actual co-located population law; no universal native encoding/whole-word claim."
+        "scope": "Finite rational coefficient and total destination support check, then inherited actual co-located population law; no universal native encoding/whole-word claim.",
+        "original_sha256": "4a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6",
+        "variant_hunks": [
+          "Explicit k != z.1 in negative coefficient-index case, avoiding an orientation-sensitive simp.",
+          "Open the existing NNReal notation scope."
+        ],
+        "rejected_original_check": {
+          "source_commit": "fcfc99d557fe474a7c66e02819a2438fe41b2f12",
+          "run_id": 39959472128,
+          "job_id": 120433802934
+        }
+      }
+    },
+    {
+      "module": "ResearchCommons.Integration.Population",
+      "path": "lean/ResearchCommons/Integration/Population.lean",
+      "sha256": "96ff322e37c33ad6401cf7eb88f9725401aeee0b700788bdcb80875524ccdd75",
+      "imports": [
+        "NativePopulationTableCertificate",
+        "OriginalCodeChartReceiver"
+      ],
+      "provenance": {
+        "role": "Import-only combined context for the existing source-cell and total population certificate receivers.",
+        "scope": "Contains no replacement graph, recurrence, source validity factory or desired-law premise."
       }
     }
   ]

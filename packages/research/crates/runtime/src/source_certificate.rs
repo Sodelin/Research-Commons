@@ -105,6 +105,7 @@ def code : Code (Fin {nt}) (Fin {nh}) := by
   exact ⟨{edge_sources}, {edge_targets}, {root}, {leaves}, {sites}, {parents}⟩
 theorem binary_valid : BinaryValid code := by decide
 theorem registry_valid : RegistryValid code := by decide
+noncomputable abbrev originalSource := sourceOfValid code binary_valid
 {cut}
 def chronology : Fin {nc} → AgeConstraint (NV (X:=Fin {nt}) (ID:=Fin {nh})) := {chronology}
 def exposures : Fin {ni} → Exposure (NV (X:=Fin {nt}) (ID:=Fin {nh})) (NE (X:=Fin {nt}) (ID:=Fin {nh})) := {exposures}
@@ -172,14 +173,18 @@ theorem actual_source_cell_infeasible :
 }
 /// Public deterministic engineering inputs, not new biological experiments.
 /// Four original taxa, plus an ordered non-half parallel-arm case.
-pub fn example(which:&str)->Result<String,Error> {
+pub(crate) fn example_request(which:&str)->Result<(&'static [u8],&'static str),Error> {
  let (input,namespace)=match which {
   "tree"=>("RC1 CHART 7 6 4 0 1 2 4096\nROOT 0\nEDGE 0 0 1\nEDGE 1 0 2\nEDGE 2 1 3\nEDGE 3 1 4\nEDGE 4 2 5\nEDGE 5 2 6\nLEAF 0 3\nLEAF 1 4\nLEAF 2 5\nLEAF 3 6\nAGE EQ V:0 Q:5/1\nEXPOSURE 0 E:0 V:1 V:0 LE:1/2 LE:5/1\nEXPOSURE 1 A Q:0/1 Q:2/1 LE:1/2 NONE\n","OriginalTreeBank"),
   "parallel"=>("RC1 CHART 9 9 4 1 1 2 4096\nROOT 0\nEDGE 0 0 1\nEDGE 1 0 2\nEDGE 2 1 3\nEDGE 3 1 4\nEDGE 4 2 5\nEDGE 5 2 6\nEDGE 6 6 7\nEDGE 7 6 7\nEDGE 8 7 8\nLEAF 0 3\nLEAF 1 4\nLEAF 2 5\nLEAF 3 8\nHYBRID 0 7 7 6\nAGE EQ V:0 Q:8/1\nEXPOSURE 0 E:6 V:7 V:6 LE:1/2 LE:5/1\nEXPOSURE 1 A Q:0/1 Q:2/1 LE:1/2 NONE\nCOIN 0 LE:1/3 LE:1/3\n","OriginalParallelBank"),
   "infeasible"=>("RC1 CHART 7 6 4 0 1 0 4096\nROOT 0\nEDGE 0 0 1\nEDGE 1 0 2\nEDGE 2 1 3\nEDGE 3 1 4\nEDGE 4 2 5\nEDGE 5 2 6\nLEAF 0 3\nLEAF 1 4\nLEAF 2 5\nLEAF 3 6\nAGE EQ V:0 Q:0/1\n","OriginalCellExclusion"),
   _=>return Err(Error::Invalid("example name")),
  };
- emit(input.as_bytes(),namespace,true,262144)
+ Ok((input.as_bytes(),namespace))
+}
+pub fn example(which:&str)->Result<String,Error> {
+ let (input,namespace)=example_request(which)?;
+ emit(input,namespace,true,262144)
 }
 #[cfg(test)] mod tests {
  use super::*;

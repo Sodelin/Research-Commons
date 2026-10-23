@@ -14,6 +14,7 @@ open GProgram.G7.SinglePopulationPolynomialKernel
 open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.EffectivePopulationCoefficients
 open GProgram.G7.EffectiveCoefficientSupport
+open scoped NNReal
 
 variable {V E Copy X : Type*}
 variable [DecidableEq V] [DecidableEq E] [DecidableEq Copy]
@@ -38,9 +39,12 @@ lemma polynomial_coefficient (p : Expr) (k : Nat) :
   | nil => rfl
   | cons z p ih =>
       rw [exprPolynomial_cons, Polynomial.coeff_add, ih]
-      by_cases hz : z.1 = k <;>
+      by_cases hz : z.1 = k
+      · simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial,
+          Polynomial.coeff_monomial, hz]
+      · have hkz : k ≠ z.1 := Ne.symm hz
         simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial,
-          Polynomial.coeff_monomial, hz, eq_comm]
+          Polynomial.coeff_monomial, hz, hkz]
 
 lemma coefficient_zero_of_absent (p : Expr) (k : Nat)
     (hk : k ∉ p.map Prod.fst) : coefficient p k = 0 := by
