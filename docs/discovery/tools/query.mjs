@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {readFile} from 'node:fs/promises';
-import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters} from '../dist/model.mjs';
+import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters,validateAssessments} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
 let limit=25,offset=0;
@@ -27,7 +27,8 @@ if(archive){
 let data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 let meta=JSON.parse(await readFile(new URL('../dist/source.json',import.meta.url)));
 const bundled=validate(data),bundledMeta=meta;
-const joins=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))).joins;
+const navigation=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))),joins=navigation.joins;
+const assessments=validateAssessments(navigation.subjective_assessments??[]);
 if(refresh){
  const response=await fetch('https://api.github.com/repos/Sodelin/Research-Commons/commits/main',{signal:AbortSignal.timeout(15000)});
  if(!response.ok)throw Error(`Main lookup failed: ${response.status}`);
@@ -60,4 +61,4 @@ if(sources){
 }
 const hits=sortClaims(search(data.claims,f),f.sort,ranking);
 console.log(JSON.stringify({coverage:data.coverage, registry_source:meta,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,
- results:hits.slice(offset,offset+limit).map(c=>reusePacket(c,meta,joins,ranking,rankingSource))},null,2));
+ results:hits.slice(offset,offset+limit).map(c=>reusePacket(c,meta,joins,ranking,rankingSource,assessments))},null,2));

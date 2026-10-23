@@ -59,7 +59,7 @@ For a reviewed producer release, pin the exact source and expected canonical bod
 python3 tools/refresh.py --commit 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f --expected-sha256 38117d42215e615da9109f3a2548be423e405701e77bdcb5bb8d709220b282cf
 ```
 
-The bundled canonical snapshot has97cards. The evidence corpus now has246public bodies/2,481,849original UTF-8bytes/zero unavailable, including owned reading-join sources. Live registry updates are fetched separately after validation; this bundled count is not a claim about the current canonical total. All93prior card objects are unchanged; four memory-source recovery groups retain their stated deterministic/discrete/rare-event scopes, not arbitrary continuous kernels, approximate-TV acceptance or resumed model work. The dated75-entry subjective overlay leaves22later groups unranked. Node and Python3 are required for the complete verification runner; production remains static and does not need Python. Five refresh-guard controls execute the real shared Node validator with memory-only synthetic fixtures and spied writes; no fixture payload is written.
+The bundled canonical snapshot has97cards. The evidence corpus now has253public bodies/2,572,470original UTF-8bytes/zero unavailable, including owned reading-join sources. Live registry updates are fetched separately after validation; this bundled count is not a claim about the current canonical total. All93prior card objects are unchanged; four memory-source recovery groups retain their stated deterministic/discrete/rare-event scopes, not arbitrary continuous kernels, approximate-TV acceptance or resumed model work. The dated75-entry subjective overlay leaves22later groups unranked. Node and Python3 are required for the complete verification runner; production remains static and does not need Python. Five refresh-guard controls execute the real shared Node validator with memory-only synthetic fixtures and spied writes; no fixture payload is written.
 
 Bibliography projection stores the normalized safe URL, so equivalent host/default-port spellings deduplicate in both the reader and reuse packet. Distinct scientific anchors remain separate; canonical authored source objects/bytes are unchanged.
 
@@ -75,3 +75,11 @@ node tools/query.mjs --changes --refresh --programme 'original.G3' --limit 10
 ```
 
 The same comparison engine powers browser and agent output. CLI results have bounded limit/offset/next_offset and separate baseline/current source metadata. Claim facets apply to the current card, or the older card when absent; source-body/archive lookup and subjective sorting remain separate views. Network source stays in RAM; canonical source is never written by this command. If a later refresh fails, the browser identifies the actual retained loaded source and keeps its previous comparison rather than labelling it as the bundled fallback.
+
+## Later assessments and older G3 suppliers
+
+The dated110-card subjective top-ten note is linked beside the historical75-card ordering, included in agent reuse records, and searchable as an authored assessment body. It supplements that ordering; the75-entry JSON/ranks are unchanged, and no full110/114 ranking or objective importance/novelty metric is invented.
+
+The G3 detail/reuse view now links six exact older proof/review bodies for COMMON completion/support, the WQO antichain obstruction and strengthened positive-flow/separator results. Later scoped hand acceptances supersede preparation-time pending labels. These are external suppliers, not extra entries in the frozen58-note census or proofs closing total all-input G3 recognition. Their precise limits remain in the join and original sources.
+
+`node tools/refresh-sources.mjs` reuses existing immutable public bodies only after byte/SHA256/Git-blob identity checks, retaining current source bindings and checking any supplied owner pins. Invalid retained bytes are fetched again; conflicting producer pins are refused. The actual refresh reused246 verified bodies and fetched7 new body URLs, plus its existing two catalogue metadata reads. No query/runtime cache is created.

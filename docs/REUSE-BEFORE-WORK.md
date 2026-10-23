@@ -36,3 +36,9 @@ The default interface returns the exact claim scope, separate evidence axes, acc
 The record belongs in the existing task/handoff, not a duplicate diary. The procedure does not require busywork, permission for already-authorized source work, or reproof of every supplier.
 
 The change view compares the bundled and loaded canonical source pins, exposing newly indexed cards, changed fields and absent IDs without reconstructing commit history. Newly indexed does not mean new mathematics, and an absent card does not prove evidence deletion. Read both exact source scopes before deciding what work remains.
+
+## Completed G3 suppliers and dated reuse judgments
+
+The current reader's G3 detail and reuse packet link the older completion/support, WQO and positive-flow proofs plus their later scoped hand acceptances. Reuse them before reopening an excluded route. They are separate from the frozen58 recovered notes and do not close original total-recognition G3.
+
+Dot's [later subjective110-card top-ten assessment](https://github.com/Sodelin/Research-Commons/blob/e19a405f10ce3f5c11edd0d88115107c90cdc791/docs/SUBJECTIVE-REUSE-UPDATE-110.md) supplements the historical75-card JSON ordering. Both retain their dates and actual coverage; expected reuse is distinct from correctness, novelty and objective importance.

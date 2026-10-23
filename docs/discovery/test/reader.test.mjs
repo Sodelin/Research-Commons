@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {validate,search,bucket,neighbors,reusePacket,safeLink,literatureSources} from '../dist/model.mjs';
+import {validate,search,bucket,neighbors,reusePacket,safeLink,literatureSources,validateAssessments,sortClaims,validateRanking} from '../dist/model.mjs';
 const data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 const meta=JSON.parse(await readFile(new URL('../dist/source.json',import.meta.url)));
 const card=id=>data.claims.find(c=>c.id===id);
@@ -54,6 +54,17 @@ test('untrusted source links cannot introduce active URL schemes',()=>{
 test('priority evidence joins reference current card IDs and immutable public sources',async()=>{
  const joins=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url)));
  for(const j of joins.joins){for(const id of j.claim_ids)assert(card(id));for(const l of j.links){assert(safeLink(l.url));assert(!l.url.includes('/blob/main/'));}}
+});
+test('later authored subjective assessment exports as a dated source without rewriting the historical ordering',async()=>{
+ const nav=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))),notes=validateAssessments(nav.subjective_assessments);
+ const ranking=validateRanking(JSON.parse(await readFile(new URL('../dist/subjective-reuse-ranking.json',import.meta.url))));
+ const before=JSON.stringify(ranking),order=sortClaims(data.claims,'subjective_reuse',ranking).map(c=>c.id);
+ const p=reusePacket(card('CB-MEMORY-003'),meta,nav.joins,ranking,null,notes);
+ assert.equal(p.subjective_reuse.later_assessments[0].source_count,110);assert.match(p.subjective_reuse.later_assessments[0].scope,/Not objective importance/);
+ assert.equal(p.subjective_reuse.entry,null);assert.deepEqual(sortClaims(data.claims,'subjective_reuse',ranking).map(c=>c.id),order);assert.equal(JSON.stringify(ranking),before);
+ assert.throws(()=>validateAssessments([{...notes[0],source_url:notes[0].source_url+'#access_token=synthetic'}]),/Invalid/);
+ assert.throws(()=>validateAssessments([{...notes[0],source_count:0}]),/Invalid/);
+ assert.throws(()=>validateAssessments([{...notes[0],subjective:false}]),/Invalid/);
 });
 test('warm ranked lookup is measured over the actual current register',()=>{
  search(data.claims,{q:'routing'});const start=performance.now();

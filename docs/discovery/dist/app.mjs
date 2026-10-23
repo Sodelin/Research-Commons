@@ -1,4 +1,4 @@
-import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims,validateRanking,compareRegisters} from './model.mjs';
+import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims,validateRanking,compareRegisters,validateAssessments} from './model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from './source-search.mjs';
 const $=id=>document.getElementById(id);
 const state={data:null,meta:null,limit:9,selected:decodeURIComponent(location.hash.slice(1)),mode:'all',joins:[]};
@@ -6,6 +6,7 @@ const initial=new URLSearchParams(location.search);
 const facetKeys=['topic','status','origin','programme','kind','review','formal_status','novelty'];
 const controlKeys=[...facetKeys,'sort'];
 state.ranking=null;state.rankingSource=null;
+state.assessments=[];
 let bundledData=null,bundledMeta=null,registryChanges=null;
 function el(tag,text,cls){const x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(cls)x.className=cls;return x;}
 function add(parent,...children){parent.append(...children);return parent;}
@@ -68,6 +69,7 @@ function render(){
   $('ranking-note').textContent=f.sort==='subjective_reuse'?
     `Subjective reuse judgment by ${state.ranking?.author??'unavailable author'}, dated ${state.ranking?.dated_utc??'unknown'}. It covers ${state.ranking?.source_count??0} source cards; newer/unranked entries follow without a score. This is not an importance, novelty, correctness or review metric.`:
     'Reuse judgments, historical novelty, proof completion and review are separate.';
+  for(const n of state.assessments){$('ranking-note').append(document.createTextNode(' '),link(`${n.title} · ${n.dated_utc} ↗`,n.source_url),document.createTextNode(` ${n.scope}`));}
   if(!matches.length){results.append(el('p','No indexed claim matches these filters. Try fewer terms or reset the filters. This is not evidence that no result exists in the archive.','empty'));results.append(link('Search the wider public source archive ↗','https://github.com/search?type=code&q='+encodeURIComponent('repo:Sodelin/Research-Commons '+f.q)));}
   for(const c of matches.slice(0,state.limit)){
     const article=el('article',undefined,'claim'+(c.id===state.selected?' selected':''));
@@ -129,7 +131,9 @@ function renderSources(results,f){
     const article=el('article',undefined,'source-hit');article.append(link(d.title+' ↗',d.url),el('p',sourceExcerpt(d.body,f.q)));
     for(const binding of d.bindings){
       if(binding.claim_id){const b=el('button',`${binding.claim_id} · ${pretty(binding.role)}`,'quiet');b.addEventListener('click',()=>select(binding.claim_id,true));article.append(b);}
-      else{
+      else if(binding.role==='subjective_assessment_not_scientific_acceptance'){
+        article.append(el('p',`Dated subjective assessment · ${binding.author} · ${binding.dated_utc} · ${binding.source_count}-card scope`),el('p',binding.scope));
+      }else{
         article.append(el('p',`${binding.catalogue_key??'Manifest note'} · ${pretty(binding.role)} · ${binding.label}`));
         if(binding.catalogue_record){const record=el('details');record.append(el('summary','Owned component scope and evidence distinctions'));
           for(const key of ['scope','mathematical_status','proof_authorship','independent_review','formal_status','gap'])record.append(el('strong',pretty(key)),el('p',binding.catalogue_record[key]??'Not supplied'));
@@ -184,7 +188,7 @@ function renderDetail(){
   }
   const tools=el('div',undefined,'tools');
   const share=el('button','Copy claim link','quiet');share.addEventListener('click',()=>{const u=new URL(location.href);u.hash=c.id;copy(u.href);});
-  const reuse=el('button','Copy agent reuse record','quiet');reuse.addEventListener('click',()=>copy(JSON.stringify(reusePacket(c,state.meta,state.joins,state.ranking,state.rankingSource),null,2)));
+  const reuse=el('button','Copy agent reuse record','quiet');reuse.addEventListener('click',()=>copy(JSON.stringify(reusePacket(c,state.meta,state.joins,state.ranking,state.rankingSource,state.assessments),null,2)));
   tools.append(share,reuse);p.append(tools);
 }
 async function refresh(automatic=false){
@@ -212,7 +216,7 @@ async function start(){
   const [dataResponse,metaResponse,joinResponse]=await Promise.all([fetch('./claims.json'),fetch('./source.json'),fetch('./reading-joins.json')]);
   if(!dataResponse.ok||!metaResponse.ok)throw Error('Could not load the bundled register.');
   const [data,meta]=await Promise.all([dataResponse.json(),metaResponse.json()]);
-  if(joinResponse.ok)state.joins=(await joinResponse.json()).joins??[];
+  if(joinResponse.ok){const navigation=await joinResponse.json();state.joins=navigation.joins??[];state.assessments=validateAssessments(navigation.subjective_assessments??[]);}
   for(const[k,v]of Object.entries(STATUS))option($('status'),k,v);
   for(const[k,v]of Object.entries(ORIGIN))option($('origin'),k,v);
   try{const [r,m]=await Promise.all([fetch('./subjective-reuse-ranking.json'),fetch('./ranking-source.json')]);if(r.ok&&m.ok){state.ranking=validateRanking(await r.json());state.rankingSource=await m.json();}}catch{/* Optional dated overlay never blocks claim lookup. */}

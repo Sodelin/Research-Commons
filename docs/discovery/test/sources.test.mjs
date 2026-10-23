@@ -2,20 +2,22 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {artifactReferences,recoveredReferences,readingReferences,searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
+import {artifactReferences,recoveredReferences,readingReferences,assessmentReferences,searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 const data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 const corpus=JSON.parse(await readFile(new URL('../dist/source-corpus.json',import.meta.url)));
-const joins=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))).joins;
+const navigation=JSON.parse(await readFile(new URL('../dist/reading-joins.json',import.meta.url))),joins=navigation.joins;
 test('public body corpus accounts for every selected immutable artifact and exact source bytes',()=>{
  const refs=artifactReferences(data.claims),byURL=new Map(refs.map(r=>[r.url,r]));
  assert.equal(corpus.coverage.canonical_artifact_references,refs.length);
  const reading=readingReferences(joins,data.claims);
  assert.equal(corpus.coverage.owned_reading_join_references,reading.length);
- for(const ref of reading){if(byURL.has(ref.url))byURL.get(ref.url).bindings.push(...ref.bindings);else byURL.set(ref.url,ref);}
+ const assessments=assessmentReferences(navigation.subjective_assessments??[]);
+ assert.equal(corpus.coverage.authored_assessment_references,assessments.length);
+ for(const ref of [...reading,...assessments]){if(byURL.has(ref.url))byURL.get(ref.url).bindings.push(...ref.bindings);else byURL.set(ref.url,ref);}
  assert.equal(corpus.documents.length+corpus.coverage.unavailable.length,corpus.coverage.selected_references);
  assert.equal(new Set(corpus.documents.map(d=>d.url)).size,corpus.documents.length);
  for(const d of corpus.documents){
-  if(byURL.has(d.url))assert.deepEqual(d.bindings.filter(b=>b.claim_id),byURL.get(d.url).bindings);
+  if(byURL.has(d.url))assert.deepEqual(d.bindings.filter(b=>b.claim_id||b.role==='subjective_assessment_not_scientific_acceptance'),byURL.get(d.url).bindings);
   else assert(d.bindings.every(b=>!b.claim_id&&b.role.startsWith('recovered_')));
   const bytes=Buffer.from(d.body);assert.equal(bytes.length,d.bytes);
   assert.equal(createHash('sha256').update(bytes).digest('hex'),d.sha256);
@@ -30,20 +32,23 @@ test('owned formal supplier lookup retains exact declarations and source scope w
  assert(hit.bindings.some(b=>b.claim_id==='CB-G7-001'&&b.role==='owned_reading_join_source'&&b.source_join_kind==='formal_source_binding_not_new_acceptance'));
  assert.match(hit.body,/CorrectRun/);assert.match(hit.body,/cofacial/i);
  assert(!Object.hasOwn(hit,'mathematical_status'));
- assert.match(joins.at(-1).explanation,/not new mathematics/);
+ assert.match(joins.find(j=>j.kind==='formal_source_binding_not_new_acceptance').explanation,/not new mathematics/);
 });
 test('reading-source projection validates identity and URLs before fetching and normalizes artifact hosts',()=>{
  const prefix='https://github.com/Sodelin/Research-Commons/blob/'+'a'.repeat(40)+'/';
  const link={url:prefix+'proof.md',label:'Owned source'},join={claim_ids:['TEST'],kind:'source_only',links:[link]};
  assert.throws(()=>readingReferences([join],[]),/identity/);
  assert.throws(()=>readingReferences([{...join,links:[{...link,url:link.url+'#access_token=secret'}]}],[{id:'TEST'}]),/Unsafe/);
+ const pinned={...link,expected_sha256:'a'.repeat(64),expected_bytes:5};
+ assert.throws(()=>readingReferences([{...join,links:[pinned,{...pinned,expected_bytes:6}]}],[{id:'TEST'}]),/Conflicting/);
+ assert.throws(()=>readingReferences([{...join,links:[{...pinned,expected_sha256:'invalid'}]}],[{id:'TEST'}]),/Invalid owned/);
  assert.equal(readingReferences([{...join,links:[{...link,url:prefix+'proof.md#theorem'}]}],[{id:'TEST'}]).length,0);
  const claim={id:'TEST',accepted_artifacts:[{...link,url:link.url.replace('github.com','GITHUB.com:443')}]},before=JSON.stringify(claim);
  assert.equal(artifactReferences([claim])[0].url,link.url);
  assert.equal(JSON.stringify(claim),before);
 });
 test('all58 recovered G3 notes retain public byte pins and literal component roles, not master acceptance',()=>{
- const notes=corpus.documents.filter(d=>d.expected_sha256);assert.equal(notes.length,58);
+ const notes=corpus.documents.filter(d=>d.expected_sha256&&d.bindings.some(b=>b.role.startsWith('recovered_')));assert.equal(notes.length,58);
  assert.equal(corpus.catalogues[0].git_blob,'b9fdb781d1455d42d28033939bc07fd77f9b8dd2');
  for(const d of notes){assert.equal(d.expected_sha256,d.sha256);assert.equal(d.expected_git_blob,d.git_blob);assert.equal(d.expected_bytes,d.bytes);assert(d.url.endsWith('.md'));assert(d.bindings.every(b=>!b.claim_id));}
  const results=searchSources(corpus,'G3-SUPPLIED-WORD-ADMISSION');assert(results.length>0);
@@ -52,6 +57,16 @@ test('all58 recovered G3 notes retain public byte pins and literal component rol
  assert.match(binding.catalogue_record.independent_review,/not_newly/);
  assert.match(binding.catalogue_record.gap,/formal receiver gap/);
  assert.throws(()=>recoveredReferences({entries:[]},{files:[{kind:'authored_mathematical_note',name:'../escape.md'}]},'https://github.com/Sodelin/Research-Commons/blob/'+'a'.repeat(40)+'/notes/'));
+});
+test('older external G3 suppliers retain owner pins and later reviews without closing the master or changing the frozen census',()=>{
+ const j=joins.find(j=>j.kind==='completed_external_suppliers_not_master_acceptance');assert(j);
+ assert.match(j.explanation,/G3 recognition remains OPEN/);assert.match(j.explanation,/outside the frozen 58-note/);
+ const pins=j.links.filter(l=>l.expected_sha256);assert.equal(pins.length,6);
+ for(const p of pins){const d=corpus.documents.find(d=>d.url===p.url);assert(d);assert.equal(d.bytes,p.expected_bytes);assert.equal(d.sha256,p.expected_sha256);if(p.expected_git_blob)assert.equal(d.git_blob,p.expected_git_blob);assert(d.bindings.some(b=>b.source_join_kind===j.kind));}
+ const hits=searchSources(corpus,'COMPLETED SUPPORT',new Set(['CB-G3-004']));assert(hits.some(d=>d.url.endsWith('/COMPLETED-SUPPORT-BOUND-ATTEMPT.md')));
+ assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
+ const assessment=searchSources(corpus,'subjective reuse update').find(d=>d.url.endsWith('/SUBJECTIVE-REUSE-UPDATE-110.md'));assert(assessment);
+ assert(assessment.bindings.every(b=>!b.claim_id&&b.role==='subjective_assessment_not_scientific_acceptance'));
 });
 test('wider archive paths are unique immutable regular-source links with explicit exclusions',async()=>{
  const catalog=JSON.parse(await readFile(new URL('../dist/archive-catalog.json',import.meta.url)));

@@ -1,5 +1,5 @@
 import MiniSearch from './vendor/minisearch.mjs';
-import {safeLink} from './model.mjs';
+import {safeLink,validateAssessments} from './model.mjs';
 // Evidence retrieval is a projection, never a scientific status register.
 export function artifactReferences(claims){
   const refs=new Map();
@@ -19,10 +19,24 @@ export function readingReferences(joins,claims){
       const url=safeLink(link.url);if(!url)throw Error('Unsafe reading-join source link');
       if(!/^https:\/\/github\.com\/Sodelin\/[^/]+\/blob\/[a-f0-9]{40}\/.+\.md$/i.test(url))continue;
       if(!refs.has(url))refs.set(url,{url,bindings:[]});
+      for(const [key,value]of Object.entries(expectedIdentity(link))){
+        if(refs.get(url)[key]!==undefined&&refs.get(url)[key]!==value)throw Error('Conflicting owned source identity');
+        refs.get(url)[key]=value;
+      }
       refs.get(url).bindings.push(...join.claim_ids.map(claim_id=>({claim_id,role:'owned_reading_join_source',label:link.label,source_join_kind:join.kind})));
     }
   }
   return [...refs.values()].sort((a,b)=>a.url.localeCompare(b.url));
+}
+function expectedIdentity(link){
+  if(!['expected_sha256','expected_bytes','expected_git_blob'].some(k=>Object.hasOwn(link,k)))return {};
+  if(!/^[a-f0-9]{64}$/.test(link.expected_sha256)||!Number.isSafeInteger(link.expected_bytes)||link.expected_bytes<0||link.expected_bytes>512*1024||
+    (link.expected_git_blob!==undefined&&!/^[a-f0-9]{40}$/.test(link.expected_git_blob)))throw Error('Invalid owned source identity');
+  return {expected_sha256:link.expected_sha256,expected_bytes:link.expected_bytes,...(link.expected_git_blob?{expected_git_blob:link.expected_git_blob}:{})};
+}
+export function assessmentReferences(notes){
+  return validateAssessments(notes).map(n=>({url:safeLink(n.source_url),...expectedIdentity(n),bindings:[{
+    role:'subjective_assessment_not_scientific_acceptance',label:n.title,author:n.author,dated_utc:n.dated_utc,source_count:n.source_count,scope:n.scope}]}));
 }
 const indexes=new WeakMap();
 export function recoveredReferences(catalogue,manifest,baseURL){
