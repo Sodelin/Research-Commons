@@ -5,9 +5,9 @@ Status: bounded acceptance-first audit of existing public proofs and reviews. No
 
 ## Later full-claim completion report — 23 October 2026
 
-**P5 has distinct completed claims and verification states.** The commuting-Pauli strong-noise actual-dynamics comparison has scoped independent hand acceptance. Separately, the source author reports a **completed hand-proof counterexample to the unrestricted original comparison**, with an admitted family and fixed three-qubit observable. [Public proof metadata](https://github.com/Sodelin/Research-Commons/blob/90cef7822e64fdd0e3ee0016cbefbc16271f00c9/research/2026-10-21-lean-online-builder/PEER-SCIENTIFIC-OUTCOMES.json) pins the 111,288-byte proof, source index and mandatory admission correction. Whole-proof independent review and formal verification have not been performed; the complete proof bytes and exact match to narrower noncommuting continuation assumptions remain to be reconciled. This is a proof-retrieval/review obligation, not permission to treat the author's completed proof as an unstarted research problem.
+**P5 — unrestricted original comparison refuted at the completed author hand-proof level.** The existing P5 owner now publishes the [complete 111288-byte proof](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-ORIGINAL-COMPARISON-HAND-PROOF-v1.md), [exact theorem/verdict](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-HAND-PROOF-VERDICT-v1.md) and [mandatory admission correction](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-FINITE-WITNESS-ADMISSION-CORRECTION-v1.md). The construction fixes the same three-qubit observable, original operator-incidence/geometry parameters, all three thermal bare-Pauli channels per site, positive initial densities and the same static H in the original full filters and square-window comparator with ordered Lamb shift. Its actual predictions are unbounded across admitted finite bounded-degree trees; this closes the unrestricted project question by a counterexample. The original goal was COMPLETE on 21 October at 23:52 UTC. Whole-proof independent acceptance, formal certification, an evaluated large witness and historical novelty remain unclaimed; none is an added requirement for that completed hand-proof goal. The accepted commuting and noncommuting path/ring positive theorems keep their narrower scopes.
 
-The narrower gaps below describe the earlier reviewed constructive comparison routes. They are not a present assertion that no full negative answer exists. The full counterexample's scope must be matched before deciding which of those routes remain relevant.
+The narrower gaps below describe the earlier reviewed constructive comparison routes. They are not a present assertion that no full negative answer exists. The full counterexample's exact bounded-neighborhood scope is now explicit in its published verdict; the chain/ring theorem has its own narrower geometry.
 
 The later source record dates the original hand-proof counterexample goal COMPLETE at 2026-10-21 23:52 UTC and explicitly states that later independent/formal validation is not a new original requirement. Those validation tasks must not reopen the completed authorship assignment.
 
@@ -86,7 +86,7 @@ The proof derives the actual Redfield Pauli-column damping, keeps the possible s
 
 **Therefore this restricted actual comparison is completed mathematics and must not be put back on a generic “actual evolution still unproved” list.**
 
-The earlier reviewed positive construction does not cover noncommuting interactions under the general operator-incidence/geometry/bath box. The later author-complete counterexample now requires exact scope reconciliation before assigning this broader question as open. Weak-noise limits at fixed nonzero h, missing bath channels and absent positive floor are outside this branch. The theorem is not a global state trace-distance bound, multi-time intervention theorem, infinite-volume construction, or microscopic system-plus-bath approximation-error estimate.
+The earlier reviewed positive construction does not cover noncommuting interactions under the general operator-incidence/geometry/bath box. The later complete author hand proof refutes that broader bounded-neighborhood project claim; the restricted positive theorem is preserved. Weak-noise limits at fixed nonzero h, missing bath channels and absent positive floor are outside this branch. The theorem is not a global state trace-distance bound, multi-time intervention theorem, infinite-volume construction, or microscopic system-plus-bath approximation-error estimate.
 
 ## 4. Later P5 suppliers: stronger generality, exact remaining actual term
 
@@ -100,7 +100,7 @@ An anisotropic interacting-noise **auxiliary reference** additionally has an int
 
 The actual Redfield calculation retains the homogeneous contribution 2q I_2. The accepted differential inequality is still unclosed: a general ambient-volume bound I_2≤CI is unavailable, while the required **actual reached-family**, fixed-initial-support signed response estimate has not been supplied. Auxiliary contraction does not transfer automatically to actual Redfield.
 
-The exact remaining P5 target retains one H, complete infinite filters, the original finite-window square comparator and triangular Lamb shift, all finite volumes and all times, fixed initial support and arbitrary initial states. No weaker positive reference or unsigned surrogate is substituted for that target.
+The target of that earlier positive route retains one H, complete infinite filters, the original square comparator and triangular Lamb shift, all volumes/times, fixed initial support and arbitrary initial states. The published hand counterexample addresses that original target directly; an unclosed sufficient positive-route estimate is not a remaining original goal.
 
 ## 5. Evidence level and anti-duplication instructions
 
@@ -114,7 +114,7 @@ Existing exact symbolic checks, separately authored checks, same-script replays 
 
 No Lean/kernel or efficient runtime acceptance is supplied by these P1/P5 packets. None was executed in this audit.
 
-**Work list correction:** reuse upper13, accepted lower components, actual PGM and calibrated-mixture measurements, the completed commuting actual-dynamics comparison, and the general-operator full-filter supplier. For P1, the remaining master-facing gap is uniform full-class testing/risk with paid copies. For P5, the signed-response supplier is an unresolved step of the earlier positive route; the broader question's status must first be reconciled with the later author-complete counterexample. They are not missing versions of the already completed components.
+**Work list correction:** reuse upper13, accepted lower components, actual PGM and calibrated-mixture measurements, the completed commuting actual-dynamics comparison, and the general-operator full-filter supplier. For P1, the remaining master-facing gap is uniform full-class testing/risk with paid copies. For P5, preserve the completed unrestricted negative hand result and the accepted restricted positive comparisons. The signed-response supplier remains an unsupplied step only of the earlier positive route. They are not missing versions of the already completed components.
 
 [upper]: https://github.com/Sodelin/Research-Commons/blob/809dcb6dcef78da700fddd888e9177bcff098b0f/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-CERTIFICATION-UPPER-13.md
 [upperreview]: https://github.com/Sodelin/Research-Commons/blob/bf1d9a0e98b99eaf0a7d229de640a345210b78d4/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-UPPER-13-INDEPENDENT-REVIEW.md
@@ -136,3 +136,5 @@ No Lean/kernel or efficient runtime acceptance is supplied by these P1/P5 packet
 ### Chain/ring review receipt — 23 October2026
 
 The [complete scoped hand review](https://github.com/Sodelin/Research-Commons/blob/main/research/2026-10-23-dot-p5-chains-rings-hand-review/INDEPENDENT-HAND-REVIEW.md) accepts the supplied noncommuting chain/ring theorem at its exact fixed common parameter box. Missing named-companion byte identity is not mislabelled a mathematical gap: the review explicitly reconstructs the comparison from original retrieved definitions. No general-geometry, formal, empirical or novelty upgrade is claimed.
+
+Publication reconciliation by the existing P5 owner, 2026-10-23T07:32:00Z: complete proof bytes and source hashes are now public; prior validation and attribution limits are preserved.

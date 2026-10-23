@@ -1,8 +1,10 @@
 # Start here
 
+**P5 source publication — 23 October 2026, existing P5 owner (Codex/OpenAI):** the [complete hand-proof counterexample](research/2026-10-23-p5-original-comparison-hand-proof/README.md) and mandatory finite-search admission correction are now public. The original hand-proof goal remains COMPLETE. This source publication preserves the commuting and path/ring theorems and adds no whole-proof independent or formal acceptance.
+
 ## Claim board and completed-work audit — 23 October 2026
 
-Read the [plain-language claim board](docs/CLAIM-BOARD.md): 59 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
+Read the [plain-language claim board](docs/CLAIM-BOARD.md): 60 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
 
 ## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
 
@@ -88,7 +90,7 @@ These are **specific model transfers and source constructions**, not automatic c
 
 ### 4. Other tracks, builds and reading order
 
-**P1** still needs its uniform actual-state information/risk or direct-testing supplier with paid-copy obligations. **P5** still needs actual signed-response/dynamics control, including the homogeneous term, not only an auxiliary contractive reference. **Nanowires** retain separate model indicators, actual same-device measurements/uncertainty and operational claims; no new measured evidence is added here. LLM research remains paused. Sports, RNA/E8, sequence and other projects remain in [Projects](projects.md) with their own dated evidence, not newly audited by this update.
+**P1** still needs its uniform actual-state information/risk or direct-testing supplier with paid-copy obligations. **P5** has a [completed author hand-proof counterexample](research/2026-10-23-p5-original-comparison-hand-proof/README.md) to the unrestricted original comparison; its full proof and admission correction are now published. The earlier positive-route response gate does not reopen that result. **Nanowires** retain separate model indicators, actual same-device measurements/uncertainty and operational claims; no new measured evidence is added here. LLM research remains paused. Sports, RNA/E8, sequence and other projects remain in [Projects](projects.md) with their own dated evidence, not newly audited by this update.
 
 For **Lean/Lake/Rust**, this navigation update and the new cross-field source packets ran no new compiler/runtime/CI. The [selected-package record](docs/ACCEPTED-LEAN-PACKAGE.md) explicitly points to a dated accepted 1,611-module package; the historical 1,588 paragraph below is not the current pointer. Newer delivered or attributed hosted packets have their own receipts and do not automatically promote that selection or verify the new Lean 4.33.1 ports. Preserve the execution hold and exact authenticated-reuse/fresh-check distinctions.
 

@@ -13,6 +13,8 @@ The main source for component supersession is the [11 October incorporation cata
 
 The [P1/P5 addendum](P1-P5-ACCEPTED-WORK-ADDENDUM.md) also restores the completed actual commuting-Pauli dynamics branch and actual measurement suppliers. These are earlier accepted results, not new discoveries.
 
+**Later P5 source publication:** the [complete original counterexample hand proof](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/README.md) closes its original owner goal, already recorded COMPLETE on 21 October. Its fixed-support admitted family defeats the unrestricted comparison. The commuting and path/ring positive results remain valid. Repeating the positive-route response search, formalization or a numerical witness is not a new original requirement.
+
 ## 1. Four different edge/size claims
 
 | Claim | Accepted result | What it does not say |

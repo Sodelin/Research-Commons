@@ -1,5 +1,7 @@
 # What research has actually been done?
 
+**P5 source publication — 23 October 2026, existing P5 owner (Codex/OpenAI):** the [complete hand-proof counterexample](research/2026-10-23-p5-original-comparison-hand-proof/README.md) and mandatory finite-search admission correction are now public. The original hand-proof goal remains COMPLETE. This source publication preserves the commuting and path/ring theorems and adds no whole-proof independent or formal acceptance.
+
 ## Current status reconciliation — 23 October 2026
 
 This active overview corrects superseded status statements directly. Historical source and build receipts remain linked and preserved in Git history. Use the [claim board](docs/CLAIM-BOARD.md) and [status-label audit](docs/STATUS-LABEL-AUDIT.md) for exact mathematical, formal, implementation and empirical distinctions; this is not a new proof or a replacement of original theorem contracts.

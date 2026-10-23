@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.1-commuting-P5-acceptance-correction.
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.2-P5-original-hand-proof-publication. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -30,7 +30,7 @@ Current status labels were reconciled on 23 October; see the [scope and correcti
 
 ## Coverage and source discipline
 
-This first register contains **59 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+This first register contains **60 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -72,6 +72,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 | [CB-RXN-003](#cb-rxn-003) | One hidden observation problem reduces to a survival response | Proved at the stated scope |
 | [CB-PHYS-P1-001](#cb-phys-p1-001) | We have better upper and lower limits on the testing cost | Proved at the stated scope |
 | [CB-PHYS-P1-002](#cb-phys-p1-002) | A specific measurement has a useful error bound | Proved at the stated scope |
+| [CB-PHYS-P5-004](#cb-phys-p5-004) | The unrestricted uniform approximation claim has a completed hand counterexample | Counterexample proved at stated hand-proof scope |
 | [CB-PHYS-P5-001](#cb-phys-p5-001) | Several parts of a long-time approximation proof are established | Proved at the stated scope |
 | [CB-PHYS-P5-003](#cb-phys-p5-003) | One restricted noisy-quantum case is fully proved by hand | Proved at the stated scope |
 | [CB-PHYS-P5-002](#cb-phys-p5-002) | One proposed evolution can fail to preserve a physical state | Named shortcut refuted |
@@ -1645,13 +1646,65 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 </details>
 
+<a id="cb-phys-p5-004"></a>
+### The unrestricted uniform approximation claim has a completed hand counterexample
+**CB-PHYS-P5-004 · Physics P5 · unrestricted original comparison**
+
+**Question:** Can the original coarse-grained model approximate every admitted strongly noisy many-body system uniformly in volume and time for one fixed local observable?
+
+**What we learned:** The completed author hand proof gives admitted finite static-H models whose actual Redfield predictions for the same three-qubit observable grow without bound, while the original square-window comparator stays bounded.
+
+**What it lets someone do:** Close the unrestricted project question by a counterexample and retain the valid restricted commuting and path/ring theorems.
+
+**What we cannot conclude:** This does not refute the published finite-dimensional results, certify microscopic bath physics, supply a computed large witness or establish historical novelty.
+
+**Kind:** counterexample. **Mathematical status:** Counterexample proved at stated hand-proof scope.
+
+<details>
+<summary>Exact scope, prior work, evidence and remaining obligation</summary>
+
+**Exact statement and assumptions.** For every integer ell>=40, fix baseline gamma=1, tau=2^(-ell), b_G=exp(-1/8)sqrt(pi/8)exp(-1/128), ORIGINAL Gamma=9/4, b0=2b_G/9, exact h=b_G/4, j=b0/2, k<=12, m<=30, nu<=30 and beta=tau/8. With the SAME fixed O=X1Y2X3, positive normalized initial densities, every bare-Pauli thermal channel present, and the SAME static H in full infinite filters and the original square-window GKSL generator with ordered Lamb shift, the volume/time supremum of ||(exp(s L_T*)-exp(s R*))O||op is infinite, T=sqrt(tau/Gamma). For sufficiently large N=2^(q+1)-1 the finite real-grid maximum of actual predictions is at least exp[y^2 sqrt(N)/55296], y=(b_G/32)tau>0, at times at most N^(-1/2). Bounded-degree trees are allowed; this does not contradict narrower path/ring positive comparisons. Every future search must begin at q>=4ell+80.
+
+**Origin.** The project's stronger uniform many-body contract, motivated by Ikeuchi–Mori; not a refutation of their dimension-dependent finite-system theorem. [Primary source](https://arxiv.org/html/2604.21366v2).
+
+**Prior work.** Reuses standard thermal Gaussian/KMS, engineered spin-chain, tensor-functional, Dyson/Duhamel and polynomial interpolation methods. The earlier commuting and path/ring theorems retain their scoped hand acceptance; historical novelty is unassessed.
+
+**Our contribution.** The existing P5 source owner completed and adopted the full admitted counterexample hand proof on 21 October at 23:52 UTC. This update publishes its exact preserved bytes and correction and reconciles the reader pointers.
+
+**Evidence, kept separate:**
+
+- **Hand:** Complete author derivation and end-to-end author audit. Three existing assistant hand returns cover bounded D3/D5, T4/T7 and C4 gauge/isometry/S5 parts under their stated premises. Whole-proof independent acceptance has not been performed.
+- **Formal:** No full counterexample Lean certificate; separate earlier hosted algebra/integral checks retain their scope. Formalization is not an added requirement for the completed original assignment.
+- **Execution:** No large-system witness search or original dynamics evaluation is claimed. Prior finite controls have their stated limited scope; publication verifies source identity and GitHub readback only.
+- **Empirical:** Mathematical counterexample, not an experimental validation or microscopic system-bath theorem.
+
+**Novelty:** Unresolved; source preservation and hand-proof completion do not establish historical priority.
+
+**Remaining obligation:** No unfinished obligation remains in the original owner hand-proof goal. Whole-proof independent/formal validation and a feasible numerical witness are unperformed, unclaimed and not new original acceptance requirements. Other scientific and builder goals are separate.
+
+**Proof, review and other source links:**
+
+- [Complete owner hand proof (111288 bytes; SHA256 964fe1e3070913ea64b0ffca5de65c271ada7f966c808dd2f29ca0e35152c264)](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-ORIGINAL-COMPARISON-HAND-PROOF-v1.md) (author_hand_proof).
+- [Exact original theorem and owner verdict](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-HAND-PROOF-VERDICT-v1.md) (owner_verdict).
+- [Mandatory finite-witness admission correction](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-FINITE-WITNESS-ADMISSION-CORRECTION-v1.md) (source_correction).
+- [Twenty-body public source manifest](https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/SOURCE-INDEX.json) (source_manifest).
+- [Earlier attributed builder completion record](https://github.com/Sodelin/Research-Commons/blob/90cef7822e64fdd0e3ee0016cbefbc16271f00c9/research/2026-10-21-lean-online-builder/PEER-SCIENTIFIC-OUTCOMES.json) (attributed_owner_completion).
+
+**Connections:**
+
+- No automatic theorem-dependency or whole-proof independent-acceptance edge is asserted.
+
+**Stable key:** physics.P5.ORIGINAL_UNRESTRICTED_COUNTEREXAMPLE.
+
+</details>
+
 <a id="cb-phys-p5-001"></a>
 ### Several parts of a long-time approximation proof are established
 **CB-PHYS-P5-001 · Physics P5 · noisy quantum dynamics**
 
 **Question:** When can a simpler noisy-quantum model faithfully replace the original evolution?
 
-**What we learned:** The commuting case has a completed restricted all-time comparison. The supplied noncommuting paths/rings theorem has now also passed a separate scoped hand review. A complete unrestricted counterexample with a fixed three-qubit observable is separately author-reported; its whole-proof independent review and exact-scope reconciliation remain separate.
+**What we learned:** The commuting and noncommuting paths/rings comparisons have scoped hand acceptance. The unrestricted bounded-neighborhood comparison has a separate completed author hand-proof counterexample, now published with its exact original assumptions and admission correction.
 
 **What it lets someone do:** Reuse valid building blocks without restarting those proofs.
 
@@ -1679,7 +1732,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** The later source record dates the original hand-proof counterexample goal COMPLETE at 2026-10-21 23:52 UTC and explicitly states that later independent/formal validation is not a new original requirement. Those validation tasks must not reopen the completed authorship assignment. The author reports the hand proof COMPLETE: the unrestricted comparison fails for an admitted family with a fixed three-qubit observable. The proof-authorship task is not unfinished. Whole-proof independent review and formal verification have not been performed; the full proof/admission correction and exact match to the strong-noise bounded-neighborhood general noncommuting continuation have not yet been retrieved/reconciled here. Do not infer that narrower branch is open, refuted or closed from the report alone. The earlier signed homogeneous 2q I2 route remains an unsupplied supplier in its inspected packet, not a verified current master-status verdict. The accepted commuting branch CB-PHYS-P5-003 is unchanged.
+**Remaining obligation:** These component proofs remain completed. CB-PHYS-P5-004 records the full unrestricted counterexample adopted by the original source owner; its full proof and admission correction are now public. The earlier signed homogeneous 2q I2 estimate remains an unsupplied positive-route supplier, not an open original P5 goal. Whole-proof independent/formal checking is unperformed and does not reopen the completed hand-proof assignment. The commuting and path/ring positive theorems keep their narrower scopes.
 
 **Proof, review and other accepted-source links:**
 
@@ -1735,7 +1788,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 
 **Novelty:** Unresolved; correctness or project acceptance does not establish novelty.
 
-**Remaining obligation:** The later source record dates the original hand-proof counterexample goal COMPLETE at 2026-10-21 23:52 UTC and explicitly states that later independent/formal validation is not a new original requirement. Those validation tasks must not reopen the completed authorship assignment. This commuting theorem is complete at its stated hand-reviewed scope. A separate author-reported COMPLETE hand counterexample to the unrestricted comparison uses an admitted family with a fixed three-qubit observable. Whole-proof independent review and formal verification have not been performed; exact proof retrieval and scope reconciliation are separate remaining tasks, not unfinished authorship. No global trace-distance, multi-time transcript, infinite-volume dynamical construction, weak-noise-at-fixed-h or microscopic system-plus-bath error theorem follows from this commuting result.
+**Remaining obligation:** This commuting theorem is complete at its stated hand-reviewed scope. CB-PHYS-P5-004 separately records the completed unrestricted counterexample hand proof, now published in full. That negative result uses a broader geometry than the separate accepted path/ring positive theorem. No global trace-distance, multi-time transcript, infinite-volume construction, weak-noise-at-fixed-h or microscopic system-plus-bath theorem follows from the commuting result.
 
 **Proof, review and other accepted-source links:**
 
@@ -2943,7 +2996,7 @@ Source status comes from the linked accepted successors, not an old draft's 'pen
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 59 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 60 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.
