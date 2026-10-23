@@ -34,7 +34,7 @@ The retained-object cache validates the exact compiler, source/dependency contex
 | affine-certificate sat/unsat | Supplied ordered rational matrix; real witness or full external multiplier exclusion | certificate-verification.json |
 | source-certificate tree/parallel/infeasible | Captured original Code/admission/ordered fields; SAME returned positive physical bank, or exclusion of only that supplied cell | source-cell-verification.json |
 | population-certificate edge/ancestral/path | Actual ordered-copy native row; total coefficient fibres including zero on absence, original validity/colocation, SAME returned bank | population-caller-verification.json |
-| residual-certificate | Complete supplied rational ensemble; strict top-k SET and residual conservation | New literal caller is pending repair/check; retained context passed |
+| residual-certificate | Complete supplied rational ensemble; strict top-k SET and residual conservation | rna-caller-verification.json |
 
 Run a binary through `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Each emitter holds its input in RAM and returns a complete proof document or refuses; rendering is not acceptance. A resource failure or failed sufficient certificate is UNKNOWN/INCONCLUSIVE, never an unrestricted negative theorem.
 
@@ -66,11 +66,11 @@ cargo run --locked -p research-commons-package -- build --reuse-retained --targe
 cargo run --locked -p research-commons-package -- check-residual-callers
 ```
 
-At47ea5dcd/run39970715643,65 Rust tests passed. The complete population caller audit passed4137 declarations/2363 theorems with zero owned axioms/nonstandard rows/missing modules. The qualified-menu finite-original-index component passed its4-theorem audit; actual original-source size/shape/joint-response instantiation and effective selection remain separate. The20-module RNA schema/grid/certificate context passed1333 declarations/818 theorems; its subsequently failed new residual caller is excluded from that component receipt.
+At47ea5dcd/run39970715643,65 Rust tests passed. The complete population caller audit passed4137 declarations/2363 theorems with zero owned axioms/nonstandard rows/missing modules. The qualified-menu finite-original-index component passed its4-theorem audit; actual original-source size/shape/joint-response instantiation and effective selection remain separate. The20-module RNA schema/grid/certificate context passed1333 declarations/818 theorems; the repaired residual caller passed atcc97572e/run39971838230 with the complete1348-declaration/830-theorem audit. The later expanded exports of all six RNA groups require their own new context check.
 
 ## Claim integration and remaining work
 
-integration/claims.json maps canonical IDs to exact Lean declarations, Rust interfaces and actual verification. integration/retained-endpoints.json retains the owner-curated source hypotheses. New typed G1/G2/G4/G5/G6/G7/Wong/RNA exports do not claim new mathematical discoveries.
+integration/claims.json maps canonical IDs to exact Lean declarations, Rust interfaces and actual verification. integration/retained-endpoints.json retains the owner-curated source hypotheses. Typed G1/G2/G4/G5/G6/G7/Wong/RNA exports do not claim new mathematical discoveries.
 
 The RNA aliases preserve global-positive partition hypotheses, exact conditional random inputs, literal schema guards and BE origins. A schema tree is not an executed/generated trace admission. The residual caller owns the full ensemble, including repeated class rows and zero weights; it does not assert complete RNA support, a sampler law or concentration.
 
