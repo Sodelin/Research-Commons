@@ -47,6 +47,7 @@ jobs:
           cargo run --locked -p research-commons-package -- emit-index > build/Registry.lean
           cmp build/Registry.lean lean/ResearchCommons/Registry.lean
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
+          cargo run --locked -p research-commons-runtime --bin moment-signature-certificate > build/PositiveMomentSignature.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- unsat > build/AffineUNSAT.lean
           cargo run --locked -p research-commons-runtime --bin source-certificate -- tree > build/OriginalTreeBank.lean
@@ -577,6 +578,8 @@ jobs:
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Exports
       - name: Validate all exact export dependencies, audit and kernel-check named declarations
         run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
+      - name: Check complete Rust target signature and ALL-finite-positive-rival consumer
+        run: cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
       - name: Retain exact completed source objects even after a later module failure
         if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830

@@ -1,4 +1,5 @@
 import ResearchCommons.Claims.CM
+import ResearchCommons.Integration.PositiveMoments
 import ResearchCommons.Claims.G1
 import ResearchCommons.Claims.G2
 import ResearchCommons.Claims.G3Certificate

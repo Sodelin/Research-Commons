@@ -234,3 +234,6 @@ Source53 /4b69879bfd4b2ee3a6886ef86ceee23a7b336409: Rust81 PASS. The generic sca
 
 
 Source54 /23a03c5f3a7e817828cd60bd6455fcaf3bc36ac4: Rust82 PASS, including the real native conditional-row natural-gamma/foreign-slot refusal regression. The generic scalar receiver is REJECTED only at the final finite-sum pointwise rfl: the actual terms use Subtype.instDecidableEq versus Classical.propDecidable for the SAME proposition. Source55 replaces that exact reflexivity step with proposition cases and simplification; source/field/operation/table/coordinate/physical premises remain unchanged. No partial generic/actual acceptance is claimed.
+
+
+Source56 preparation: full positive finite-atomic law identification from sparse or consecutive2r+1 moments, reusing the existing CM strict separator and complete positive-grid uniqueness. This selects an explicitly scoped CB-RXN-001 mathematical component while keeping its completed hand theorem and physical stopped-law/derivative/coefficient/oracle joins separate. Rust extends the existing grouped-law module with bounded complete signatures and a literal target-signature/all-finite-positive-rival Lean consumer. New generic/caller/96-name candidates remain unverified; no claim or actual target acceptance is inferred from source preparation.

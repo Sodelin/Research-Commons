@@ -637,9 +637,41 @@
       }
     },
     {
+      "module": "CMFullMomentUniqueness",
+      "path": "lean/CMFullMomentUniqueness.lean",
+      "sha256": "3fb0a691d5114039df7a737756a87bd78abc24f60973b60d81ff20ded69e5498",
+      "imports": [
+        "CMSeparation",
+        "G4ActualPositiveGridUniqueness"
+      ],
+      "provenance": {
+        "role": "Existing strict sparse separator + positive-grid interpolation -> full atomic mass identification",
+        "preflight": "integration/POSITIVE-MOMENT-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "proof_derivation": "Formal integration of completed classical/hand finite-atomic moment mathematics",
+        "scope": "Any2r+1 distinct natural moments of a positive reference identify the full atomic mass law against ALL finite positive rivals. Actual stopped-law/reaction/oracle joins separate."
+      }
+    },
+    {
+      "module": "ResearchCommons.Integration.PositiveMoments",
+      "path": "lean/ResearchCommons/Integration/PositiveMoments.lean",
+      "sha256": "e0fb8982e3b6524af7a82ceb02cc1477199e77f7d4ab48d196fa383b6de42cc2",
+      "imports": [
+        "CMFullMomentUniqueness",
+        "CMRationalBank"
+      ],
+      "provenance": {
+        "role": "Dependency target for the actual grouped-rational target/signature/all-finite-rival consumer",
+        "preflight": "integration/POSITIVE-MOMENT-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "proof_derivation": false,
+        "scope": "Exact normalized atomic-law/signature component only; no reaction/source-admission or stochastic derivative oracle."
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
+      "sha256": "1c65f6287878bdf414e35c8227fe50674029c164b8689dc2775e1c73efa58b0b",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Claims.G1",
@@ -654,16 +686,17 @@
         "ResearchCommons.Claims.NANUQ",
         "ResearchCommons.Claims.RNA",
         "ResearchCommons.Claims.Wong",
-        "ResearchCommons.Menu.FiniteForcing"
+        "ResearchCommons.Menu.FiniteForcing",
+        "ResearchCommons.Integration.PositiveMoments"
       ],
       "provenance": {
         "role": "Import-only actual dependency union of every currently named claim binding",
         "proof_derivation": false,
-        "selected_current_context_verified": true,
+        "selected_current_context_verified": false,
         "preflight": "integration/CLAIM-EXPORT-PREFLIGHT.md",
         "scope": "The export command independently validates all required transitive dependencies and object digests, runs the complete selected owned audit, and kernel-checks every name. It retains original integration scopes and pending claims.",
-        "current_verification_scope": "Complete897-source context,21050/14358 owned audit and actual91 declarations/real imported owners across20 named claim bindings. G3 scopes remain components, not full hand-claim/native/source-coverage formalization.",
-        "prior_verified_sha256": "a0caf5d92bbabd76558b293f9513513d8ac4a5368847cbffc3241765044828d2",
+        "current_verification_scope": "New scoped RXN001 positive-law component brings21 candidate claim mappings/96 requested declarations; fresh check and actual target signature are pending. Prior20/91 acceptance remains in its exact record.",
+        "prior_verified_sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v3.json"
       }

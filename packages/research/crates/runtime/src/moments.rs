@@ -96,6 +96,102 @@ end ResearchCommons.Generated.CMExample
     if source.len()>limits.render_bytes { return Err("Lean source byte limit; UNKNOWN".into()); }
     Ok(source)
 }
+/// Bounds for the complete consecutive moment signature and proof document.
+/// Refusal is UNKNOWN; it is never an exclusion of a reaction or source family.
+#[derive(Clone,Copy,Debug)]
+pub struct SignatureLimits {
+ pub degree:usize,pub products:usize,pub rational_chars:usize,pub render_bytes:usize,
+}
+impl Default for SignatureLimits {
+ fn default()->Self{Self{degree:4096,products:2_000_000,rational_chars:8192,render_bytes:262144}}
+}
+#[derive(Debug,PartialEq,Eq)]
+pub enum SignatureError {
+ Limit{kind:&'static str,required:usize,cap:usize},Overflow,
+}
+fn signature_bound(kind:&'static str,n:usize,cap:usize)->Result<(),SignatureError>{
+ if n>cap{Err(SignatureError::Limit{kind,required:n,cap})}else{Ok(())}
+}
+fn signature_rational(q:&Rational,limits:SignatureLimits)->Result<(),SignatureError>{
+ signature_bound("rational_chars",q.to_string().len(),limits.rational_chars)
+}
+/// ONE grouped finite positive target supplies M0..M2r. Powers are reused
+/// successively; existing CM-T02 moment API and its emitted bytes are unchanged.
+/// Limits are observed after each exact rational operation, not a global allocator.
+pub fn consecutive_signature(law:&PositiveLaw,limits:SignatureLimits)
+ ->Result<Vec<Rational>,SignatureError>{
+ let degree=law.support_len().checked_mul(2).ok_or(SignatureError::Overflow)?;
+ signature_bound("degree",degree,limits.degree)?;
+ let work=law.support_len().checked_mul(degree.checked_mul(2).and_then(|n|n.checked_add(1))
+   .ok_or(SignatureError::Overflow)?).ok_or(SignatureError::Overflow)?;
+ signature_bound("rational_products",work,limits.products)?;
+ let mut moments=vec![q(0,1);degree.checked_add(1).ok_or(SignatureError::Overflow)?];
+ for (value,weight) in &law.atoms {
+  signature_rational(value,limits)?;signature_rational(weight,limits)?;
+  let mut power=q(1,1);
+  for (k,moment) in moments.iter_mut().enumerate(){
+   let term=weight*&power;signature_rational(&term,limits)?;
+   *moment+=term;signature_rational(moment,limits)?;
+   if k<degree{power*=value;signature_rational(&power,limits)?;}
+  }
+ }
+ Ok(moments)
+}
+/// Particular exact target signature -> all-finite positive atomic-law consumer.
+/// Every supplied coordinate is checked again against the literal rational target
+/// in Lean. The final theorem quantifies over ALL finite positive rival laws.
+/// No stopped-diffusion, derivative-acquisition or latent-reaction refinement is
+/// provided by rendering these mathematical finite-law observations.
+pub fn lean_signature_certificate(reference:&PositiveLaw,limits:SignatureLimits)
+ ->Result<String,SignatureError>{
+ let signature=consecutive_signature(reference,limits)?;
+ let r=reference.support_len();let count=signature.len();
+ let coordinates=signature.iter().map(literal).collect::<Vec<_>>().join(", ");
+ let mut source=String::from("import CMFullMomentUniqueness\nimport CMRationalBank\nimport Mathlib.Tactic\n\nnamespace ResearchCommons.Generated.PositiveMomentSignature\nopen Astra.CommonMoment Astra.CommonMoment.RationalBank\nopen scoped Classical BigOperators\n");
+ source.push_str(&bank("reference",reference));
+ source.push_str(&format!(r#"
+def suppliedSignature : Fin {count} → ℚ := ![{coordinates}]
+theorem reference_support_cardinality : reference.nodes.card = {r} := by
+  change (referenceNodes.image (fun q : ℚ => (q : ℝ))).card = {r}
+  rw [Finset.card_image_of_injective _ Rat.cast_injective]
+  norm_num [referenceNodes]
+
+theorem literal_signature_checked (i : Fin {count}) :
+    moment reference i.val = (suppliedSignature i : ℝ) := by
+  fin_cases i
+  all_goals unfold reference
+  all_goals rw [fromGroupedRationals_moment]
+  all_goals norm_num [referenceNodes, referenceWeight, suppliedSignature]
+
+theorem supplied_signature_identifies_every_finite_positive_rival
+    (rival : FinitePositiveLaw)
+    (h : ∀ i : Fin {count}, moment rival i.val = (suppliedSignature i : ℝ)) :
+    atomMass rival = atomMass reference := by
+  apply atomMass_eq_of_equal_consecutive_moments
+  intro k hk
+  have hi : k < {count} := by
+    rw [reference_support_cardinality] at hk
+    omega
+  exact (h ⟨k, hi⟩).trans (literal_signature_checked ⟨k, hi⟩).symm
+
+theorem supplied_signature_determines_every_further_moment
+    (rival : FinitePositiveLaw)
+    (h : ∀ i : Fin {count}, moment rival i.val = (suppliedSignature i : ℝ)) :
+    ∀ k, moment rival k = moment reference k := by
+  apply all_moments_eq_of_equal_consecutive_moments
+  intro k hk
+  have hi : k < {count} := by
+    rw [reference_support_cardinality] at hk
+    omega
+  exact (h ⟨k, hi⟩).trans (literal_signature_checked ⟨k, hi⟩).symm
+#check literal_signature_checked
+#check supplied_signature_identifies_every_finite_positive_rival
+#check supplied_signature_determines_every_further_moment
+end ResearchCommons.Generated.PositiveMomentSignature
+"#));
+ signature_bound("render_bytes",source.len(),limits.render_bytes)?;
+ Ok(source)
+}
 pub fn example()->Result<(PositiveLaw,PositiveLaw),String> {
     let l=Limits::default();
     Ok((PositiveLaw::new(vec![(q(1,1),q(1,3)),(q(2,1),q(1,3)),(q(3,1),q(1,3))],l)?,
@@ -130,4 +226,30 @@ mod tests {
         let(s,t)=example().unwrap();
         assert!(lean_certificate(&s,&t,Limits{render_bytes:1,..Limits::default()}).is_err());
     }
+    #[test] fn complete_signature_matches_the_actual_three_atom_target() {
+        let (reference,_)=example().unwrap();
+        assert_eq!(consecutive_signature(&reference,SignatureLimits::default()).unwrap(),
+          vec![q(1,1),q(2,1),q(14,3),q(12,1),q(98,3),q(92,1),q(794,3)]);
+        let source=lean_signature_certificate(&reference,SignatureLimits::default()).unwrap();
+        assert!(source.contains("suppliedSignature : Fin 7"));
+        assert!(source.contains("supplied_signature_identifies_every_finite_positive_rival"));
+        assert!(!source.contains("sorry")&&!source.contains("native_decide"));
+    }
+    #[test] fn signature_size_uses_grouped_support_and_does_not_refit_a_target() {
+        let law=PositiveLaw::new(vec![(q(1,1),q(1,4)),(q(1,1),q(1,4)),
+          (q(2,1),q(1,2))],Limits::default()).unwrap();
+        assert_eq!(consecutive_signature(&law,SignatureLimits::default()).unwrap(),
+          vec![q(1,1),q(3,2),q(5,2),q(9,2),q(17,2)]);
+    }
+    #[test] fn signature_operation_and_exact_magnitude_limits_return_no_partial_result() {
+        let (reference,_)=example().unwrap();
+        assert!(matches!(consecutive_signature(&reference,
+          SignatureLimits{products:1,..SignatureLimits::default()}),Err(SignatureError::Limit{kind:"rational_products",..})));
+        let big=PositiveLaw::new(vec![(q(100,1),q(1,1))],Limits::default()).unwrap();
+        assert!(matches!(consecutive_signature(&big,
+          SignatureLimits{rational_chars:3,..SignatureLimits::default()}),Err(SignatureError::Limit{kind:"rational_chars",..})));
+        assert!(matches!(lean_signature_certificate(&reference,
+          SignatureLimits{render_bytes:1,..SignatureLimits::default()}),Err(SignatureError::Limit{kind:"render_bytes",..})));
+    }
+
 }
