@@ -357,7 +357,7 @@ theorem coefficient_fibres_checked :
     checkRows (project N Finset.univ)
       (GProgram.G7.SparseWordComposition.bindRows {previous_rows}
         (cachedStep N sample parentRegistry common encodeVariable {cache_namespace}.cache
-          {operation})) rows = true := by
+          ({operation}))) rows = true := by
   decide +kernel
 #check coefficient_fibres_checked
 end {stage_namespace}

@@ -13,7 +13,7 @@ Latest accepted FULL LIBRARY source47e28fc6/run40037276532/job120699927827:1654 
 
 The prior source65 library acceptance remains in coherent-library-verification-v4.json. Its later staged word rejected Stage0's missing bindRows namespace after every supplied primitive. The emitter now qualifies that existing declaration, preserving original source/Copy/operations/register/full keys/bank. word-stage-literal-rejection.json.
 
-ACTIVE actual SAME3-copy/BOTH-mode word: run40036711843/job120698085315. ACTIVE current full18-caller: run40040953328/job120711863617. Preserve both; consume actual terminal results without restart/cancellation or smaller points. No entire larger word or full18-caller acceptance is claimed yet.
+The SAME3-copy/BOTH-mode successor run40036711843/job120698085315 terminal REJECTED Stage0's unparenthesized Symbol argument after every supplied primitive. That SAME argument is now parenthesized, with fresh full word checking required. ACTIVE current full18-caller: run40040953328/job120711863617. Preserve the active full handle; consume its actual terminal result without restart/cancellation or smaller points. No entire larger word or full18-caller acceptance is claimed yet.
 
 Next actions: recover/retain those corrected whole-word/current full results and repair only exact blockers. Continue actual whole MSCI original timed-output/channel/locus/Feynman and canonical-source/nested-observation joins, reusing accepted hand sources. Next high-reuse items include discrete ExactQuery001 rank10, all-level NANUQ002 rank11 and G4-006 rank14. The discrete query result is NOT an alias of the continuous original-ID G7 game.
 
