@@ -3,6 +3,7 @@ fn main() {
  let result=match kind.as_str() {
   "edge"=>research_commons_runtime::population_certificate::example(false),
   "ancestral"=>research_commons_runtime::population_certificate::example(true),
+  "path"=>research_commons_runtime::population_certificate::path_example(),
   _=>Err(research_commons_runtime::population_certificate::Error::Invalid("example name")),
  };
  match result {

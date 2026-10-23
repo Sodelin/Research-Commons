@@ -27,7 +27,8 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
   }
   if population_callers || scope=="full-profile-callers" {
    callers.extend([("EdgePopulation","population-certificate",Some("edge")),
-    ("AncestralPopulation","population-certificate",Some("ancestral"))]);
+    ("AncestralPopulation","population-certificate",Some("ancestral")),
+    ("PathPopulation","population-certificate",Some("path"))]);
   }
  }
  let mut records=Vec::new();

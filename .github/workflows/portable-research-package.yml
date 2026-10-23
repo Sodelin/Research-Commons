@@ -50,6 +50,7 @@ jobs:
           cargo run --locked -p research-commons-runtime --bin source-certificate -- infeasible > build/OriginalCellExclusion.lean
           cargo run --locked -p research-commons-runtime --bin population-certificate -- edge > build/EdgePopulation.lean
           cargo run --locked -p research-commons-runtime --bin population-certificate -- ancestral > build/AncestralPopulation.lean
+          cargo run --locked -p research-commons-runtime --bin population-certificate -- path > build/PathPopulation.lean
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
