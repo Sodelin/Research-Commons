@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.14-transfer-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.15-wong-deterministic-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -52,7 +52,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Transfer and fixed-exchange source recovery — 23 October 2026, 11:10 UTC:** four existing groups are now indexed, preserving all 106 prior claim objects and card blocks: [statistical comparison and measurable recovery](#cb-transfer-001), [sharp whole-history error and continuity](#cb-transfer-002), [exact certification of one returned simulator](#cb-transfer-003), and [fixed-exchange preparation/limit boundaries](#cb-feedback-006). Classical antecedents retain attribution. The approximate-memory source/formal adapter is not supplied merely by the accepted path bound; ordinary kernels, abstract transitions and different feedback preparations remain separate. Archived checks are recorded, not rerun. These are recovered completed results, not four new discoveries; the dated 75-card ranking remains unchanged and these additions are not ranked.
 
-This register contains **110 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Wong deterministic source recovery — 23 October 2026, 11:20 UTC:** two existing groups now separate [actual-record memoized sample extraction](#cb-wong-002) from the [canonical finite-graph normal form](#cb-wong-003), preserving all 110 prior claim objects and card blocks. Exact sample support, protected sampled ancestors, coordinate-dependent retention and unique-parent/MRCA conditions remain explicit. The extractor and interval-list merger are executable definitions; the whole-graph adapter is noncomputable. Storage idempotence is not full-pipeline idempotence. Fifteen full source/provider bodies match the historical receipts; checks and scoped reviews are recovered, not rerun or counted as new discoveries. No empirical or native-performance claim is added, and the dated 75-card ranking is unchanged.
+
+This register contains **112 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -186,6 +188,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-TRANSFER-002](#cb-transfer-002) | Small local errors have an exact whole-history cost | Proved (not Lean formalized) |
 | [CB-TRANSFER-003](#cb-transfer-003) | A small exact checker can certify one simulator over a whole covered parameter class | Proved (not Lean formalized) |
 | [CB-FEEDBACK-006](#cb-feedback-006) | Preparation and order of limits change a finite-population marker assay | Proved (not Lean formalized) |
+| [CB-WONG-002](#cb-wong-002) | Sample ancestry can be extracted exactly from the actual interval records | Proved; archived Lean check recorded |
+| [CB-WONG-003](#cb-wong-003) | A finite ancestry graph has a precise sample-preserving simplification | Proved; archived Lean check recorded |
 
 ## Claim cards
 
@@ -5262,7 +5266,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 106 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 112 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -5817,6 +5821,120 @@ This card records a completed conceptual analysis and an **unadopted empirical p
 - [CB-FEEDBACK-005](#cb-feedback-005) (same principle): B06's shared Fin14 parent/marker law and almost-sure ancestry theorem are a separate two-adult construction. This fixed-exchange packet supplies neither that shared-draw realization nor an all-N B06 theorem.
 
 **Stable key:** september.FEEDBACK.FIXED_EXCHANGE_ENDPOINTS_AND_LIMITS. **Aliases:** 30 September stepchange finite-population endpoints; Fixed-count all-N marker assay.
+
+</details>
+
+<a id="cb-wong-002"></a>
+### Sample ancestry can be extracted exactly from the actual interval records
+**CB-WONG-002 · Wong ancestry-recombination graphs · deterministic sample extraction**
+
+**Question:** Can we extract exactly the ancestry supported by the chosen samples without assuming an ideal parent oracle?
+
+**What we learned:** Yes. The actual interval-record scanner and memoized traversal return exactly the supported local edges. They recover every original local edge if and only if all those edges are sample-supported.
+
+**What it lets someone do:** Reuse a proved actual-record extraction procedure and its abstract write/check/lookup bounds, with sample support and persistent identities explicit.
+
+**What we cannot conclude:** This is not an unconditional inverse of arbitrary unsampled graphs, an MRCA-truncating simplifier, a machine-time benchmark, a byte-format round trip or tskit conformance.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every finite acyclic interval GARG on a finite node type and linearly ordered coordinates, use decidable node equality and coordinate tests. Supply record and sample lists with exactly the memberships of its record and sample sets; repeated entries and arbitrary order are allowed. At each coordinate x where every child has at most one local parent, the executable actual-record scan followed by memoized rootward tracing with fuel N=card(Node) returns parent p at c exactly when the original edge p→c is active at x and c is a sample or an ancestor of a sample at x. The ancestor-count rank proves fuel adequacy and is not an input oracle. Persistent IDs and unary ancestors are retained. If unique local parents hold at all coordinates, equality of the complete extracted parent-array family with every original indexed local edge relation holds if and only if the source is SampleSupported: every active local edge has a child with a sample descendant, allowing equality. This is an edge-relation round trip, not equality of interval subdivisions, hidden event histories, dates, metadata or bytes. It is not local-MRCA truncation. Starting with an empty functional cache, the run has writes≤N and checks, lookups≤writes+sample-list length. These counters hold even for cyclic parent functions or inadequate fuel; exact extraction correctness has the separate acyclicity/fuel premises. Root and unvisited entries both use none, so roots may be looked up repeatedly. No constant-time scanner/cache/allocation or machine-time assumption is hidden in the inequalities.
+
+**Origin.** project posed. The existing Samuel Wong programme formalizes the source's sample-rootward extraction and an actual interval-record/memoized implementation. This recovers a completed source-specific theorem, not a new claim of solving every source operation.
+
+**Prior work.** Credit Wong et al. 2024 Appendix E sample-rootward traversal, standard memoization and ancestry restriction, and Lean/Mathlib. The existing Samuel package supplies actual-record correspondence, cache-completeness refinement, node-cardinality fuel and exact sample-support/counter contracts. Historical novelty is not adjudicated; this card is archival recovery.
+
+**Our contribution and attribution.** The existing Samuel source connects the actual record scanner to the local graph, proves cache-completeness and equality with a reference traversal, obtains node-cardinality fuel without an algorithmic rank oracle, and states the exact sample-support round trip and abstract operation bounds. This card restores that completion rather than proving it again.
+
+**Evidence, kept separate:**
+
+- **Hand:** All fifteen named source/provider bodies were read completely in the W-B recovery, totaling 3,998 lines. This includes the complete actual scanner, reference and memoized proofs and their named providers. No separate independent whole-extractor hand review was located in this bounded evidence set. The Sol2 deterministic65 statement/source review covers three other displayed contracts and is not silently assigned to this implementation. This is bounded coordinating AI source review, not human/external peer review, an all 77-module transitive review or a full primary-paper reread.
+- **Formal:** The fifteen read source/provider files, totaling 3,998 lines, exactly match both the deterministic 274-release source inventory and the final 415-report receipt. The final historical receipt names proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, with 77 project import-closure modules, zero recorded module exits and 415 selected axiom reports using only propext, Classical.choice and Quot.sound. The 134 selected reports in the thirteen directly named Wong namespaces include helpers and already-indexed providers; they are not 134 new results. The two generic ancestry providers are compiled dependencies without selected reports under those filenames. No fresh compile, scientific runtime, full 77-module independent hand review, native conformance test or empirical reproduction occurred.
+- **Execution:** Historical source/object/log identities and recorded compiler exits were inspected. Only document/source integrity checks were performed in this recovery. Source algorithms are executable Lean definitions, but no compiler, benchmark, production extraction run or external-software conformance test was run here.
+- **Empirical:** A deterministic mathematical graph/representation theorem, not biological data analysis, empirical validation, a stochastic-law identification theorem or measured performance.
+
+**Novelty:** Historical novelty is not adjudicated. Known operations and classical suppliers retain credit; archival recovery does not create new proof authorship or priority.
+
+**Remaining obligation for this exact claim:** None identified for the exact completed actual-record extractor, sample-support criterion and abstract counter bounds in the bounded source recovery.
+
+**Separate downstream work (does not reopen this result):** Incremental across-coordinate tables; machine arrays/cache representation; record-scan, allocation and runtime bounds; fully executable whole-graph export; arbitrary-file parsing and byte/metadata round trips; external tskit conformance. These are distinct from the completed per-coordinate theorem.
+
+**Proof, review and related source links:**
+
+- [Final exact-commit result and scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json) (formal receipt).
+- [Exact source/object/log receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json) (formal receipt).
+- [Selected axiom log](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log) (formal receipt).
+- [Source-specific coverage and remaining boundaries](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/coverage.json) (proof or status).
+- [Exact interval-graph source model](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongGARG.lean) (proof source).
+- [Reference traversal and node-cardinality fuel](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSampleTracing.lean) (proof source).
+- [Executable actual interval-record scan](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongRecordTracing.lean) (proof source).
+- [Memoized semantics and reference equality](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L288) (proof source).
+- [Abstract write/check/lookup bounds](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L408) (proof source).
+- [Actual-record extraction and support round trip](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L446) (proof source).
+- [Wong et al. 2024 representation source](https://doi.org/10.1093/genetics/iyae100) (prior work).
+
+**Stable key:** wong.ACTUAL_RECORD_MEMOIZED_EXTRACTION. **Aliases:** Wong W-B executable extraction; Wong E01 actual-record memoized sample tracing.
+
+</details>
+
+<a id="cb-wong-003"></a>
+### A finite ancestry graph has a precise sample-preserving simplification
+**CB-WONG-003 · Wong ancestry-recombination graphs · deterministic canonical normal form**
+
+**Question:** Can local common-ancestor truncation, unary bypass and interval merging be joined in one exact finite-graph theorem?
+
+**What we learned:** Yes. The result constructs a finite graph with the stated local edges, protected samples, relevant preserved paths and canonical interval storage. The assumptions distinguish sampled ancestors, unsupported edges and isolated original IDs.
+
+**What it lets someone do:** Use a precise mathematical target for a later simplifier/exporter, including what it must preserve and what it deliberately removes.
+
+**What we cannot conclude:** The whole-graph adapter is noncomputable. Only the interval-list merger is executable; storage idempotence is not full-pipeline idempotence, and no stochastic law, timestamps, production software or empirical accuracy is certified.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every finite GARG with globally acyclic union topology, a fixed finite node catalogue and sample set, and each record annotated by a finite family of proper pairwise-disjoint half-open intervals in an arbitrary linear order, first retain precisely the active edges whose child is sample-ancestral but is not a reflexive common ancestor of all designated samples at that coordinate. Then contract paths through nodes that are neither samples nor locally branching vertices of that truncated sample ancestry. The retained set may depend on coordinate; its constancy on automatically derived source breakpoint cells is proved for this rule. The composed theorem constructs an actual finite H on the same node type and sample set. Its local edges are exactly that contraction. H is sample-supported, introduces no new breakpoints and has one nonempty record per active ordered parent-child pair, with strictly separated maximal intervals. Sample-to-sample ancestry paths are exactly preserved. For nonempty samples and a supplied IsMRCA witness, paths from that MRCA to each sample are exactly preserved. At each coordinate where the original graph has unique parents, H also has unique parents and every incident nonsample node has at least two distinct children. Protected sampled ancestors may remain unary, and unused original IDs may remain isolated. An MRCA means a common ancestor below every common ancestor. Unique existence is proved under nonempty samples, unique local parents and existence of some common ancestor; it is not presumed for arbitrary DAGs. The truncation construction is total without an MRCA-existence assumption. Empty and singleton sample sets give no retained edges; without a common ancestor it reduces to ordinary sample-support filtering. This operation deliberately removes supported material above a local MRCA and is not identical to support restriction. Independently, canonical interval storage preserves the full indexed local-edge relation and sample set. Equal full local-edge semantics and samples yield exactly equal canonical graphs; empty-annotation ghost records can disappear. Canonicalizing H again gives H. This is storage idempotence, not a claim of full truncation/contraction-pipeline idempotence. The executable touching-interval list merge preserves union membership for every list and, on sorted nonoverlapping inputs, produces the unique strictly separated interval list, is idempotent and reuses input endpoints. The whole-graph canonicalization and composed normal form use classical finite enumeration/activity decisions. No computable whole-exporter or runtime conclusion follows. No probability law, physical dates, event history or empirical ancestry inference is claimed preserved.
+
+**Origin.** project posed. The existing Samuel Wong programme makes sample resolution, local unary contraction and canonical finite interval storage explicit in one composed theorem. This is recovery of that completed representation result, not a whole-paper or new-biology claim.
+
+**Prior work.** Credit Wong, Ignatieva, Koskela, Gorjanc, Wohns and Kelleher's 2024 sample-resolution and representation operations, particularly the main sample-resolution discussion and Appendices E/G. Ancestral restriction, retained-endpoint contraction, memoization and interval merging are established methods. The existing Samuel formalization supplies exact finite-record construction, source/observation distinctions, protected-sample conditions and canonical-storage proofs. This recovery asserts neither new biology nor historical novelty.
+
+**Our contribution and attribution.** The existing Samuel formalization supplies a total finite MRCA-truncation construction, coordinate-dependent protected contraction, exact full-local-relation canonical storage and their composed finite-graph preservation theorem. The source-specific premises and storage-only fixed point are explicit. This card restores completed authorship and recorded checking, not new derivation.
+
+**Evidence, kept separate:**
+
+- **Hand:** The archived Sol2 PASS WITH SCOPED LIMITS covers the MRCA, canonical-interval and normal-form displayed contracts through bounded statement/source/semantic inspection and false controls, not a full proof-body audit or independent compiler run. The current recovery separately read all fifteen named source/provider bodies completely, including the actual composed theorem. It did not independently review every transitive module or the entire primary paper. The review's sample-support qualification is preserved with attribution, not presented as a newly discovered correction.
+- **Formal:** The fifteen read source/provider files, totaling 3,998 lines, exactly match both the deterministic 274-release source inventory and the final 415-report receipt. The final historical receipt names proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, with 77 project import-closure modules, zero recorded module exits and 415 selected axiom reports using only propext, Classical.choice and Quot.sound. The 134 selected reports in the thirteen directly named Wong namespaces include helpers and already-indexed providers; they are not 134 new results. The two generic ancestry providers are compiled dependencies without selected reports under those filenames. No fresh compile, scientific runtime, full 77-module independent hand review, native conformance test or empirical reproduction occurred. The three final deterministic additions have 65 selected reports: MRCA 24, interval 31 and normal-form 10 in the earlier 274 aggregate. They overlap final 415; counts are not added.
+- **Execution:** The executable touching-list merge and its historical checked example are present in the source. Full graph preparation uses classical enumeration/activity decisions. Historical compiler receipts were inspected, but no new compilation, graph-export run, finite-control execution or external implementation test occurred.
+- **Empirical:** A deterministic mathematical graph/representation theorem, not biological data analysis, empirical validation, a stochastic-law identification theorem or measured performance.
+
+**Novelty:** Historical novelty is not adjudicated. Known operations and classical suppliers retain credit; archival recovery does not create new proof authorship or priority.
+
+**Remaining obligation for this exact claim:** None identified for the exact completed finite deterministic normal-form and canonical-storage contract in the bounded source recovery.
+
+**Separate downstream work (does not reopen this result):** Computable whole-graph/table export and parsing; external serialization and metadata; tskit conformance; machine costs; whole truncation/contraction-pipeline idempotence; separately encoded maximal-run tree tables; global Figure 5c eligibility, all named source examples and literal figure reproduction. Little-ARG stochastic retirement and Big/Little law comparison are separate.
+
+**Proof, review and related source links:**
+
+- [Final exact-commit result and scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json) (formal receipt).
+- [Exact source/object/log receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json) (formal receipt).
+- [Selected axiom log](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log) (formal receipt).
+- [Source-specific coverage and remaining boundaries](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/coverage.json) (proof or status).
+- [Total local-MRCA truncation and finite output](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMRCATruncation.lean) (proof source).
+- [Coordinate-dependent protected contraction](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongLocalSimplification.lean) (proof source).
+- [Actual composed canonical finite-graph theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSimplificationNormalForm.lean#L218) (proof source).
+- [Executable touching-list merge](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalCanonicalization.lean#L62) (proof source).
+- [Canonical graph uniqueness and storage idempotence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalCanonicalization.lean#L581) (proof source).
+- [Scoped historical statement/source review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/SOL2-REVIEW.md) (hand review).
+- [Exact three-module review input identities](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/INPUT-MANIFEST.json) (formal receipt).
+- [Historical 274-report aggregate](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/combined-real-audit.json) (formal receipt).
+- [Wong et al. 2024 representation source](https://doi.org/10.1093/genetics/iyae100) (prior work).
+
+**Stable key:** wong.MRCA_UNARY_CANONICAL_NORMAL_FORM. **Aliases:** Wong W-B finite deterministic normal form; Wong M07 G05 G06 composed simplification.
 
 </details>
 
