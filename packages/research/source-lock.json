@@ -45,10 +45,18 @@
         "reason": "The original private literal renderers are needed by the actual mixed-population epoch caller. Reusing them avoids a duplicate source/snapshot format. Population/epoch engines, parser, arithmetic, protocol, caps and existing prepare semantics are unchanged.",
         "original_reconstruction_checked": true,
         "canonical_original_changed": false,
-        "current_variant_compiled": false,
+        "current_variant_compiled": true,
         "prior_compiled_sha256": "3c6066f85cd9a6ad0b5ae41bf68c62a732dfd6ce953c261a9011abfc100ac9c7",
         "prior_compiled_run": 39980748827,
-        "prior_compiled_job": 120507078259
+        "prior_compiled_job": 120507078259,
+        "current_compile_evidence": {
+          "source_commit": "67ef70da6fe13bce5e43faf028f864b33c2d56e7",
+          "run_id": 39981685853,
+          "rust_job": 120510313499,
+          "native_epoch_job": 120510640202,
+          "full_profile_job": 120510640198
+        },
+        "actual_scope": "Read-only rendering variant compiles, legacy population documents remain byte-identical, and actual mixed-epoch literal proof/caller audit passed. No universal native implementation/refinement is inferred."
       }
     ]
   },
