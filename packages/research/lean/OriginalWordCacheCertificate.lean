@@ -122,7 +122,7 @@ theorem checked_population_rows_value (N : RootedBinary V E X) {sample : Copy �
       by_cases hb : project N Finset.univ row.1 = b
       · simp only [hb, if_pos, mul_one]
         exact value_embedExpr i row.2 r t
-      · simp only [hb, if_neg, mul_zero, value_nil]
+      · rw [if_neg hb, if_neg hb, value_nil, mul_zero]
     _ = ∑ d : Code N sample,
         ev (Astra.NativePopulationTableCertificate.collect rows d) *
           (if project N Finset.univ d = b then 1 else 0) := by
@@ -136,6 +136,11 @@ theorem checked_population_rows_value (N : RootedBinary V E X) {sample : Copy �
     _ = _ := by
       simp_rw [hv, project_eq]
       rw [map_probability_real]
+      apply Finset.sum_congr
+      · ext d
+        simp
+      · intro d _
+        rfl
 
 /-- An interval can reuse the existing complete active-panel row or, when
 ACTUAL input colocation is proved, the existing scalar population checker. -/
@@ -195,7 +200,7 @@ def checkStep (N : RootedBinary V E X) (sample : Copy → X)
       checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
   | _ => checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
 
-lemma bool_and_components (a b : Bool) (h : a && b = true) : a = true ∧ b = true := by
+lemma bool_and_components (a b : Bool) (h : (a && b) = true) : a = true ∧ b = true := by
   cases a <;> cases b <;> simp_all
 
 theorem checked_reference_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
@@ -208,8 +213,8 @@ theorem checked_reference_step_polynomial (N : RootedBinary V E X) (sample : Cop
         (stepPolynomial N H common e.operation (project N Finset.univ e.input) b) := by
   cases hop : e.operation with
   | interval j =>
-      have hh : checkInterval N e.input e.interval &&
-          checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows = true := by
+      have hh : (checkInterval N e.input e.interval &&
+          checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows) = true := by
         simpa only [checkStep, hop] using h
       obtain ⟨hf, hc⟩ := bool_and_components _ _ hh
       have heq := checkRows_sound (project N Finset.univ)

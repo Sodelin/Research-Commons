@@ -366,4 +366,31 @@ pub fn example(mode:&str)->Result<Bundle,Error>{
   assert!(matches!(emit(&limited,binding,Limits::default(),retained::Limits::default()),
    Err(Error::Direct(direct::Error::Unknown(_)))));
  }
+ #[test]fn a_foreign_slot_or_natural_gamma_cannot_hide_in_a_scalar_population_certificate(){
+  use parity_solver::forest::Tree;
+  let mut request=direct::example_request(false).unwrap();
+  let input=Snapshot::from_lineages(&request.context,
+    &[(0,Tree::Leaf(0)),(1,Tree::Leaf(1)),(2,Tree::Leaf(2))],
+    Location::Edge(8),vec![false;request.context.source.vertices]).unwrap();
+  request.initial=Initial::Conditional(input.clone());
+  request.word=vec![Symbol::Interval(0)];
+  let table=query(&request,Some(0)).unwrap();
+  let view=parity_solver::source_epoch::selected_view(&request.context,&input).unwrap();
+  let mut entry=Entry{operation:Symbol::Interval(0),input,view,table};
+  assert!(interval_form(&request,&entry).unwrap().starts_with(".colocated"));
+  for foreign in [
+   entry.table.variables.iter().position(|v|matches!(v,Variable::OriginalGamma(_))).unwrap(),
+   entry.table.variables.iter().position(|v|matches!(v,Variable::Survival{slot:1,..})).unwrap(),
+  ] {
+   let old=entry.table.transitions[0].polynomial.clone();
+   let (powers,coefficient)=old.terms.iter().next().map(|(p,q)|(p.clone(),q.clone())).unwrap();
+   entry.table.transitions[0].polynomial.terms.remove(&powers);
+   let mut tampered=powers;tampered[foreign]+=1;
+   entry.table.transitions[0].polynomial.terms.insert(tampered,coefficient);
+   assert!(matches!(interval_form(&request,&entry),
+     Err(Error::Invalid("foreign coordinate in colocated scalar row"))));
+   entry.table.transitions[0].polynomial=old;
+  }
+ }
+
 }

@@ -228,3 +228,6 @@ The complete source50 build receipt/audit and export receipt are now retained as
 
 
 Source51 passed Rust81, generic cache175 context with5315/3146 clean owned audit, exports and actual completion. Actual independent Step2 still interrupted with shutdown/no coefficient result after the same initial/two boundaries. Source53 candidate reuses the existing scalar total population check for actual colocated inputs, refusing all foreign variable powers, then checks its SAME native-variable embedding. Mixed intervals retain the full active-list proof. No result is transferred to this new source before checking.
+
+
+Source53 /4b69879bfd4b2ee3a6886ef86ceee23a7b336409: Rust81 PASS. The generic scalar-population composition is REJECTED at three actual Lean proof obligations: explicit false-branch reduction, extensional equality of the two finite pushforward sums, and parentheses on Boolean conjunction/equality to avoid an inserted decide coercion. Source54 repairs those exact proof terms and adds one concrete native-table regression refusing both a natural-gamma exponent and a foreign slot exponent in the scalar projection. It keeps every source/point/bank/table field unchanged; source53 generic or literal acceptance is not claimed.
