@@ -38,6 +38,8 @@ def install_loader(destination):
             raise ValueError('STAGED_SOURCE_READBACK_MISMATCH: '+dst.name)
     manifest = {
         'source_only': True, 'compiler_invoked': False, 'controller': 'UNBOUND',
+        'source_profile_name': profile['profile_name'],
+        'target_labels': list(profile['targets']),
         'scripts': {dst.name: wanted for _, dst, wanted in files},
         'owned_mathlib': profile['owned_mathlib'],
         'fresh_original_components_allowed': 0, 'delta_source_allowlist': profile['added'],

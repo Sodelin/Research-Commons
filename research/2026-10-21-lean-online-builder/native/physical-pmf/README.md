@@ -137,3 +137,10 @@ preparation and16 RAM policy/source-condition tests passed; no loader was
 constructed, compiler run, cache created or writer admission supplied.
 The earlier F74 core and prepared contexts remain preserved. See
 ../../RETAINED-LOADER.md and RETAINED-LOADER-VERIFICATION.json.
+
+The23October successor adds nonempty/known/unique selection before any builder
+construction and binds direct calls to that frozen selection. The same adapter
+recognizes a separately pinned ten-component materials context; this778 graph,
+all sources/order and mandatory outer refusal are unchanged. All25 current
+RAM regressions pass; no actual retained builder was loaded or constructed.
+See ../../TARGET-SELECTION.md and ../../TARGET-SELECTION-VERIFICATION.json.

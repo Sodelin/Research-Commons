@@ -15,8 +15,18 @@ The [retained loader correction](RETAINED-LOADER.md) restores the complete
 original audit-status/compiler rehash checks and authenticated first-package
 namespace handling. The primary source preparer installs those original bodies
 with an exact current23-module guard;755 original cache misses cannot silently
-compile. All16 RAM regressions and complete source preparation pass. The actual
+compile. The later [target-selection integration](TARGET-SELECTION.md) rejects
+empty, unknown, duplicate or changed requests before builder construction and
+at direct entry. All25 RAM regressions and both complete source preparations
+pass. The actual
 native loader remains uninvoked under the unchanged writer hold.
+
+Dot's ten existing P1/P5 components now have a [separate provisional source
+target](native/materials/README.md), with51,994 source bytes and five exact
+import-only changes. Every mathematical body is preserved; all23 direct
+external paths occur in the complete pinned Mathlib tree. This is separate
+from the unchanged778 graph and from pinned elaboration. The P5 owner's
+original HAND counterexample goal remains complete at that evidence level.
 
 The [exact native admission gap](NATIVE-FIRST-WRITER-GAP.md) now names the
 pre-construction writers and existing codec/policy interfaces. The actual

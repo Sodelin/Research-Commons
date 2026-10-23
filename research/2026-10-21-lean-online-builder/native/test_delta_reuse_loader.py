@@ -5,8 +5,12 @@ import json
 import re
 from pathlib import Path
 import unittest
+from unittest.mock import patch
+import types
 
-from delta_reuse_loader import profile_for, invocation_allowed, SCRIPTS
+import delta_reuse_loader as loader
+from delta_reuse_loader import (profile_for, invocation_allowed, SCRIPTS,
+                                select_targets, validated_targets)
 
 HERE = Path(__file__).resolve().parent
 PUBLIC = HERE.parent
@@ -148,6 +152,137 @@ class ReuseTests(unittest.TestCase):
     def test_retained_sources_byte_exact(self):
         for name, wanted in SCRIPTS.items():
             self.assertEqual(hashlib.sha256((HERE/'retained-loader'/name).read_bytes()).hexdigest(), wanted)
+
+
+class SelectionTests(unittest.TestCase):
+    def setUp(self):
+        self.graph = json.loads((HERE/'physical-pmf/DEPENDENCY-GRAPH.json').read_bytes())
+        self.label = next(iter(self.graph['targets']))
+
+    def test_current_default_accepted_cannot_report_vacuous_success(self):
+        with self.assertRaises(ValueError):
+            select_targets(self.graph, 'accepted')
+        for request in ('all', 'provisional', self.label):
+            self.assertEqual(select_targets(self.graph, request), [self.label])
+
+    def test_empty_unknown_duplicate_and_malformed_lists_refused(self):
+        for labels in ([], (), ['unknown'], [self.label, self.label],
+                       self.label, None, [[self.label]], [None]):
+            with self.subTest(labels=labels), self.assertRaises(ValueError):
+                validated_targets(self.graph, labels)
+        for request in ('unknown', '', None, ['all']):
+            with self.subTest(request=request), self.assertRaises(ValueError):
+                select_targets(self.graph, request)
+
+    def test_empty_graph_selectors_refused(self):
+        for request in ('all', 'accepted', 'provisional'):
+            with self.assertRaises(ValueError):
+                select_targets({'targets': {}}, request)
+
+    def test_general_selector_retains_order_and_release_partition(self):
+        graph = {'targets': {'z': {}, 'b': {'required_for_accepted_release': False},
+                             'a': {'required_for_accepted_release': True}}}
+        self.assertEqual(select_targets(graph, 'all'), ['z', 'b', 'a'])
+        self.assertEqual(select_targets(graph, 'accepted'), ['z', 'a'])
+        self.assertEqual(select_targets(graph, 'provisional'), ['b'])
+
+    def test_request_is_copied_before_passing_to_inherited_work(self):
+        labels = [self.label]
+        checked = validated_targets(self.graph, labels)
+        labels.append('caller-mutated')
+        self.assertEqual(checked, [self.label])
+
+    def memory_builder(self, request, events):
+        # Load no original builder, filesystem writer or process. Only the owned
+        # adapter runs against an inert RAM base that records boundary crossings.
+        profile = {'targets': self.graph['targets'], 'owned_mathlib': {}}
+        graph = self.graph
+
+        class Root:
+            def resolve(self): return self
+            def __truediv__(self, _part): return self
+            def read_bytes(self): return b'pass'
+            def __str__(self): return '<RAM-wrapper>'
+
+        class Base:
+            def __init__(self):
+                events.append('construct')
+                self.graph = graph
+            def run_targets(self, labels):
+                events.append(('run', labels))
+                return 19
+
+        def fake_exec(_code, namespace):
+            events.append('load')
+            namespace['StreamedAuditBuilder'] = Base
+            namespace['desktop'] = types.SimpleNamespace(auth=types.SimpleNamespace(
+                original=types.SimpleNamespace(OWNED_MATHLIB=None)))
+
+        with patch.object(loader, 'Path', return_value=Root()), \
+                patch.object(loader, 'read_profile', return_value=profile), \
+                patch.dict(loader.__dict__, {'exec': fake_exec}):
+            return loader.builder_type('<RAM>', request)
+
+    def test_bad_selection_cannot_reach_wrapper_load_or_builder_construction(self):
+        for request in ('accepted', 'unknown', '', None):
+            events = []
+            with self.subTest(request=request), self.assertRaises(ValueError):
+                self.memory_builder(request, events)
+            self.assertEqual(events, [])
+
+    def test_direct_call_is_bound_to_preconstruction_selection(self):
+        events = []
+        cls = self.memory_builder('provisional', events)
+        self.assertEqual(events, ['load'])
+        # read_profile is repeated before the inherited constructor too.
+        with patch.object(loader, 'read_profile', return_value={}):
+            builder = cls()
+        self.assertEqual(events, ['load', 'construct'])
+        for labels in ([], ['unknown'], [self.label, self.label]):
+            with self.assertRaises(ValueError):
+                builder.run_targets(labels)
+        builder.graph = {'targets': {self.label: {}, 'other-known-target': {}}}
+        with self.assertRaisesRegex(ValueError, 'PRECONSTRUCTION_SELECTION'):
+            builder.run_targets(['other-known-target'])
+        self.assertEqual(events, ['load', 'construct'])
+        requested = [self.label]
+        self.assertEqual(builder.run_targets(requested), 19)
+        requested.append('later-change')
+        self.assertEqual(events[-1], ('run', [self.label]))
+
+
+class MaterialsProfileTests(unittest.TestCase):
+    def setUp(self):
+        from prepare_materials_project import source_plan
+        self.graph, self.selection, self.bodies = source_plan()
+        self.template = (HERE/'pinned/AuditTemplate.lean').read_bytes()
+
+    def test_deterministic_plan_matches_exact_profile_and_external_boundaries(self):
+        self.assertEqual(self.graph, (HERE/'materials/DEPENDENCY-GRAPH.json').read_bytes())
+        self.assertEqual(self.selection, (HERE/'materials/SOURCE-SELECTION.json').read_bytes())
+        profile = profile_for(self.graph, self.selection, self.template)
+        self.assertEqual((profile['profile_name'], len(profile['original']),
+                          len(profile['added']), len(profile['owned_mathlib'])),
+                         ('materials10', 0, 10, 0))
+        self.assertEqual(select_targets(profile, 'provisional'), [profile['label']])
+        with self.assertRaises(ValueError): select_targets(profile, 'accepted')
+        for name, digest in profile['added'].items():
+            self.assertIn(digest, self.bodies)
+            self.assertTrue(invocation_allowed(profile, name, digest, True, 180, 4096, 'component'))
+        self.assertFalse(invocation_allowed(profile, 'G7OriginalAdmission', '0'*64,
+                                            True, 180, 4096, 'component'))
+
+    def test_profiles_cannot_mix_graph_selection_or_aggregate_identity(self):
+        old_graph = (HERE/'physical-pmf/DEPENDENCY-GRAPH.json').read_bytes()
+        old_selection = (HERE/'physical-pmf/SOURCE-SELECTION.json').read_bytes()
+        for graph, selection in ((old_graph, self.selection), (self.graph, old_selection),
+                                 (self.graph+b' ', self.selection),
+                                 (self.graph, self.selection+b' ')):
+            with self.assertRaises(ValueError): profile_for(graph, selection, self.template)
+        old = profile_for(old_graph, old_selection, self.template)
+        new = profile_for(self.graph, self.selection, self.template)
+        self.assertFalse(invocation_allowed(new, old['aggregate_name'], old['aggregate_sha256'],
+                                            True, 180, 4096, 'aggregate'))
 
 
 if __name__ == '__main__':

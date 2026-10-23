@@ -1,5 +1,11 @@
 # Restore the retained native loader
 
+23October follow-on: [target selection](TARGET-SELECTION.md) integrates Dot's
+existing safeguard into the owned adapter and stages a separate exact
+P1/P5 component profile. All25 current RAM regressions pass. The16-case
+results below remain the original22October evidence. Retained original
+loader bodies and the778 mathematical graph are byte-unchanged.
+
 The primary accepted-master source preparer now installs the **complete retained
 strict loader and authenticated namespace overlay**, with a small exact-current
 delta guard. The previous copied core and source contexts remain preserved.
@@ -96,7 +102,8 @@ audit FIFO/gzip/checkpoints. Restoring its mathematical checks does not mediate
 those writes. Actual original-owner recipient/controller/sequence/journal/
 transport and transitive hooks remain UNBOUND before construction or invocation.
 
-Next existing source action: compare that exact first-write sequence with the
-retained installed writer interfaces and identify the required actual binding.
-No owner-route query/retry, new controller/key, compiler job or old replay is
-selected. Source checkpoint12:20UTC.
+That first-write comparison is complete at its source scope in
+[NATIVE-FIRST-WRITER-GAP.md](NATIVE-FIRST-WRITER-GAP.md). Actual owner facts,
+writer hooks and compatible objects remain separate requirements. A future
+admitted caller must select a target explicitly, for example
+`builder_type(root, 'provisional')`; selection itself grants no execution.
