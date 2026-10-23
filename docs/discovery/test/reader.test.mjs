@@ -132,8 +132,16 @@ test('combinable source-defined facets and subjective ranking preserve unassesse
  assert(filtered.length>0);assert(filtered.every(c=>c.claim_kind==='theorem'&&c.completion.independent_review==='accepted_scoped_hand_review'));
  assert.equal(sortClaims(filtered,'subjective_reuse',ranking)[0].id,'CB-G6-001');
  const all=sortClaims(data.claims,'subjective_reuse',ranking),ranked=new Set(ranking.entries.map(e=>e.claim_id));
- assert(all.slice(-9).every(c=>!ranked.has(c.id)));assert.equal(all.length,data.claims.length);
+ const unranked=data.claims.filter(c=>!ranked.has(c.id));assert(all.slice(-unranked.length).every(c=>!ranked.has(c.id)));assert.equal(all.length,data.claims.length);
  const newCard=data.claims.find(c=>c.id==='CB-SEQ-004');
  const packet=reusePacket(newCard,meta,[],ranking);assert.equal(packet.subjective_reuse.entry,null);assert.match(packet.subjective_reuse.unranked_means,/not low importance/);
  assert.match(newCard.novelty_status,/unassessed/);assert.equal(sortClaims(data.claims,'',ranking),data.claims);
+});
+
+
+test('recovered feedback and genome components keep scoped historical formal evidence and excluded extensions',()=>{
+ const ids=data.claims.filter(c=>/^CB-(FEEDBACK|GENOME)-/.test(c.id));assert.equal(ids.length,9);
+ for(const c of ids){assert.equal(bucket(c),'established');assert.deepEqual(reusePacket(c,meta).formal_status,c.evidence.formal);assert(c.separate_downstream_or_validation_work);}
+ const finite=card('CB-FEEDBACK-004');assert.match(finite.evidence.formal.status,/recorded_exit_limit/);assert.match(finite.separate_downstream_or_validation_work,/exit was not retrieved/);
+ const iap=card('CB-FEEDBACK-005');assert.equal(iap.completion.mathematical_claim_complete,true);assert.match(iap.separate_downstream_or_validation_work,/does not reopen/);
 });
