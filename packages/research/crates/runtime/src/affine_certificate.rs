@@ -36,7 +36,11 @@ namespace ResearchCommons.Generated.AffineSAT
 def rows : Fin {m} → Row {n} := {row_code}
 def witness : Fin {n} → ℚ := {v}
 theorem checked :
-    checkRationalWitness (Finset.univ.image rows) witness = true := by decide
+    checkRationalWitness (Finset.univ.image rows) witness = true := by
+  apply (checkRationalWitness_correct _ _).mpr
+  intro r hr
+  obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hr
+  fin_cases i <;> norm_num [rows, witness, Row.Holds, Row.eval, Rel, Fin.sum_univ_succ]
 theorem real_feasible : ∃ x : Fin {n} → ℝ, ∀ i, (rows i).Holds x := by
   refine ⟨fun i => (witness i : ℝ), ?_⟩
   have h := rationalWitness_real (Finset.univ.image rows) witness
@@ -49,12 +53,27 @@ end ResearchCommons.Generated.AffineSAT
         Decision::Exclusion(weights)=>{
             if !affine::check_exclusion(n,&rows,&weights) {return Err(Error::Invalid("native exclusion"));}
             let v=vector(weights.iter().map(rational).collect());
+            let bound=rows.iter().zip(&weights).fold(q(0,1),|a,(r,w)|a+&r.bound*w);
+            let bound_proof=if bound<q(0,1) {
+                "left\n    norm_num [UnifiedLean.G6.AffineContradictionCertificate.weightedBound, rows, weights, Fin.sum_univ_succ]".to_owned()
+            } else {
+                let i=rows.iter().zip(&weights).position(|(r,w)|r.strict&&w>&q(0,1))
+                    .ok_or(Error::Invalid("missing strict multiplier"))?;
+                format!("right\n    refine ⟨?_, ⟨{i}, ?_, ?_⟩⟩\n    · norm_num [UnifiedLean.G6.AffineContradictionCertificate.weightedBound, rows, weights, Fin.sum_univ_succ]\n    · norm_num [weights]\n    · rfl")
+            };
             source.push_str(&format!(r#"
 namespace ResearchCommons.Generated.AffineUNSAT
 def rows : Fin {m} → Row {n} := {row_code}
 def weights : Fin {m} → ℚ := {v}
 theorem checked :
-    UnifiedLean.G6.AffineContradictionCertificate.check rows weights = true := by decide
+    UnifiedLean.G6.AffineContradictionCertificate.check rows weights = true := by
+  apply (UnifiedLean.G6.AffineContradictionCertificate.check_correct _ _).mpr
+  refine ⟨?_, ?_, ?_⟩
+  · intro i
+    fin_cases i <;> norm_num [weights]
+  · intro j
+    fin_cases j <;> norm_num [UnifiedLean.G6.AffineContradictionCertificate.weightedCoeff, rows, weights, Fin.sum_univ_succ]
+  · {bound_proof}
 theorem real_infeasible : ¬ ∃ x : Fin {n} → ℝ, ∀ i, (rows i).Holds x :=
   UnifiedLean.G6.AffineContradictionCertificate.checked_excludes_real rows weights checked
 end ResearchCommons.Generated.AffineUNSAT
