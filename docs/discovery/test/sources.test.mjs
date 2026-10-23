@@ -120,3 +120,12 @@ test('nanowire all-pair decision theorem does not masquerade as an executed orig
  const hits=searchSources(corpus,'bounded class',new Set(['CB-NANO-001']));assert(hits.some(d=>j.links.some(l=>l.url===d.url)));
  assert.match(data.claims.find(c=>c.id==='CB-NANO-001').separate_downstream_or_validation_work,/existence is unresolved/);
 });
+
+test('root-order logarithm-zero classification preserves its different count contract and missing decider',()=>{
+ const j=joins.find(j=>j.kind==='author_complete_order_logzero_classification_not_decider');assert(j);
+ for(const pattern of [/ONE common integer/,/Turing-equivalent/,/not a cap\/rank ladder/,/not independently reviewed/,/DIFFERENT count\/equality-only contract/,/physical enforcement.*NOT proved/,/No total log-zero algorithm/])assert.match(j.explanation,pattern);
+ const p=j.links.find(l=>l.expected_sha256),d=corpus.documents.find(d=>d.url===p.url);assert(d);assert.equal(d.bytes,p.expected_bytes);assert.equal(d.sha256,p.expected_sha256);assert.equal(d.git_blob,p.expected_git_blob);
+ assert(searchSources(corpus,'G3-ARITH-ROOT-ORDER-LOGZERO-01',new Set(['CB-G3-004'])).some(d=>d.url===p.url));
+ assert(d.bindings.some(b=>b.source_join_kind===j.kind));assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
+ assert(joins.some(j=>j.kind==='author_complete_hand_supplier_not_independent_acceptance'));
+});
