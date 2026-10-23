@@ -105,6 +105,63 @@ later07 moving-type presentation and fixed K^n rational-readout screen
 retain their exact scopes and attribution. Do not restart these finished
 arithmetic classifications or mistake one branch for another.
 
+The new independent-order packet's source/scope integration is now CLOSED
+at [54027715](https://github.com/Sodelin/Research-Commons/blob/54027715c8e0610c35b84e61578428acd45f6932/docs/G3-G4-ACCEPTANCE-AUDIT.md),
+audit Gitblob6219358323db866ec971858edea906b6e7a30d3b. The complete appended
+statement was actually read and preserves all four branches and the missing
+original-source converse. This is not independent correctness acceptance,
+formalization, a second reader build or original goal closure.
+
+## Later repetition-decoder successor and actual free-word capacity: OLD
+
+The [complete9October finite-fibre proof](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-g3-reviewed-source-coding-1541z/FINITE-FIBRE-SEMIALGEBRAIC-COUNTER-OBSTRUCTION.md)
+is11521B/SHA256
+`31276ccc8373b782808078646e15f7bc475cd1c0c022a168f81fe4a02776c83e`.
+Its [actual root-review receipt](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-g3-reviewed-source-coding-1541z/ROOT-FINITE-FIBRE-REVIEW-RECEIPT.md)
+is848B/SHA256
+`da46c53203f4b2b36ee51d005f3aea97754467b46b2312bf8e6d0e461837f7ca`.
+The receipt records an existing SCOPED HAND ACCEPT; it is not an additional
+independent review by the manuscript author or a new review here. The
+preparation-time candidate header does not reopen this theorem.
+
+For a FIXED pure-exponential tuple x(n), a fixed semialgebraic relation with
+FINITE projected decoded-value fibres cannot contain P(n)*beta^n at
+infinitely many n for nonconstant polynomial P. Finite existential algebraic
+auxiliaries, finite choices and rational normalizations do not repair the
+old literal Jordan/repetition-counter decoder. Actual fixed strict source
+words have distinct positive scalar root-count blocks, so their powers
+supply that tuple. The same bounded-language restriction is explicit.
+
+This is stronger than the8October rational-readout screen already cited by
+the new root-order proof. It explicitly does NOT exclude a cutpoint/zero-set
+language without literal decoded integer values, infinitely valued decoder
+fibres, or source parameters changing with the integer. The new reciprocal
+roots vary with their independent indices and use a strict predicate, so
+neither the old screen nor this later successor decides/refutes that theorem.
+This is a later prior-attribution addendum, not another counter theorem.
+
+The [complete actual positive free-word proof](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-g3-reviewed-source-coding-1541z/ACTUAL-FREE-WORD-CODING-AND-PCP-GATE.md)
+is6188B/SHA256
+`454f298673d780011afdfecaeb1f5cd79f05c359096a8fa2865f2519361fbf60`;
+its [root-review receipt](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-g3-reviewed-source-coding-1541z/ROOT-FREE-WORD-REVIEW-RECEIPT.md)
+is925B/SHAd3ce0f0aa4ec05951cd4ffd85b896492d505d162432baa0a864e2bf0ea2d66b5.
+Two rational strict I source words already form a free binary semigroup at
+cap4. Its scoped HAND ACCEPT is inherited. Lack of word capacity is NOT an
+unsolved obstruction. The same-beta two-dilation PCP prescription fails at
+its exact scope; no synchronized second legal coding channel or EVERY-source
+alphabet/converse is supplied. Finite protected IDs do not synchronize an
+unbounded fresh word. Do not repeat the free-code construction, literal
+counter screen, old511-word check or generic PFA provider search.
+
+All four complete bodies and the later package README were read and
+hash-authenticated on23October; no old code/producer was executed. Original
+G3 still needs its actual source-specific H/complete NO or a faithful
+all-core negative reduction. These recovered results supply neither.
+
+Lookup aliases: finite-fibre decoder, finite-valued semialgebraic lift,
+pure-exponential counter, Jordan repair, actual affine quotient, free binary
+source code, PCP length clock, synchronized readout, all-core alphabet.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
