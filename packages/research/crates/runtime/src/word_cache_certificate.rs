@@ -3,7 +3,7 @@
 //! original natural register bank are reused without modifying an engine.
 use crate::word_certificate as direct;
 use crate::exact_law::population_certificate as retained;
-use parity_solver::{source_word::{self,Request,Initial,Symbol,Terminal,Table},
+use parity_solver::{source_word::{self,Request,Initial,Symbol,Terminal,Table,Variable},
     source_epoch::{SelectedView,Transition},source_population::{Snapshot,Location}};
 
 #[derive(Clone,Copy,Debug)]
@@ -84,7 +84,7 @@ open UnifiedLean.Source.SourceNaturalInitialization
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
-open GProgram.G7.FullEpochPolynomial
+open GProgram.G7.FullEpochPolynomial GProgram.G7.SinglePopulationPolynomialKernel
 open GProgram.G7.EffectiveInitializationCoefficients
 open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
 open Astra.NativeSparseTableCertificate Astra.OriginalWordCacheCertificate
@@ -140,6 +140,43 @@ fn active_populations(request:&Request,input:&Snapshot)->Vec<String>{
    Location::Ancestral(_)=>"none".into(),
    Location::Node(_)=>unreachable!(),
   }).collect()
+}
+fn interval_form(request:&Request,entry:&Entry)->Result<String,Error>{
+ if let Symbol::Interval(slot)=entry.operation {
+  if let Some(&first)=entry.input.live.first() {
+   if let Some(place)=entry.input.population[first] {
+    if !matches!(place,Location::Node(_)) &&
+       entry.input.live.iter().all(|&a|entry.input.population[a]==Some(place)) {
+     let variable=entry.table.variables.iter().position(|v|
+      *v==(Variable::Survival{slot,population:place}))
+      .ok_or(Error::Invalid("same original colocated survival coordinate"))?;
+     let mut rows=Vec::new();
+     for (i,destination) in entry.table.transitions.iter().enumerate(){
+      let mut terms=Vec::new();
+      for (powers,q) in &destination.polynomial.terms {
+       if powers.len()!=entry.table.variables.len() ||
+          powers.iter().enumerate().any(|(j,p)|j!=variable && *p!=0) {
+        return Err(Error::Invalid("foreign coordinate in colocated scalar row"));
+       }
+       let scalar=if q.denom()==parity_solver::q(1,1).denom(){q.numer().to_string()}
+        else{format!("({} / {} : ℚ)",q.numer(),q.denom())};
+       terms.push(format!("({}, {scalar})",powers[variable]));
+      }
+      rows.push(format!("(destination{i}, [{}])",terms.join(", ")));
+     }
+     let population=match place{
+      Location::Edge(e)=>format!("(some {})",fin(e)),
+      Location::Ancestral(_)=>"none".into(),
+      Location::Node(_)=>unreachable!(),
+     };
+     return Ok(format!(".colocated {population} (by\n    unfold CoLocated\n    decide +kernel) [{}]",
+       rows.join(",\n    ")));
+    }
+   }
+  }
+ }
+ Ok(format!(".active [{}] (by\n    unfold ActiveIn\n    decide +kernel)",
+    active_populations(request,&entry.input).join(", ")))
 }
 fn rows_declaration(rows:&[String],dimension:usize,copies:usize)->String{
  // copies is metadata only; the actual shared sample type comes from Context.
@@ -231,10 +268,7 @@ def entry : StepEntry N sample (Fin {dimension}) (Fin {slots}) where
   operation := {operation}
   input := input
   rows := rows
-  populations := [{populations}]
-  active := by
-    unfold ActiveIn
-    decide +kernel
+  interval := {interval}
 theorem primitive_coefficient_fibres_checked :
     checkStep N sample parentRegistry common encodeVariable entry = true := by decide +kernel
 def certificate : CertifiedStep N sample parentRegistry common encodeVariable :=
@@ -243,7 +277,7 @@ def certificate : CertifiedStep N sample parentRegistry common encodeVariable :=
 end {namespace}
 "#,header=header(&[context_module.clone(),data],&namespace,&context_namespace),
  rows=rows_declaration(&rows,dimension,copies),operation=symbol(entry.operation),
- populations=active_populations(request,&entry.input).join(", "));
+ interval=interval_form(request,entry)?);
   append(&mut bundle,name.clone(),source,limits)?;
   imports.push(name);certificates.push(format!("{namespace}.certificate"));
  }
@@ -315,7 +349,8 @@ pub fn example(mode:&str)->Result<Bundle,Error>{
    assert_eq!(b.modules.iter().filter(|m|m.source.contains("checkStep N sample")).count(),b.primitive_entries);
    assert!(!b.modules.iter().any(|m|m.source.contains("native_decide")||m.source.contains("sorry")));
    assert!(b.modules.iter().filter(|m|m.source.contains("checkStep N sample"))
-      .all(|m|m.source.contains("populations :=")&&m.source.contains("unfold ActiveIn")));
+      .all(|m|m.source.contains("interval :=")));
+   assert!(b.modules.iter().any(|m|m.source.contains(".colocated")&&m.source.contains("unfold CoLocated")));
    let j:serde_json::Value=serde_json::from_str(&b.json().unwrap()).unwrap();
    assert_eq!(j["modules"].as_array().unwrap().len(),b.modules.len());
    assert_eq!(j["kernel_checked"],false);

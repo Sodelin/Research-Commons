@@ -225,3 +225,6 @@ Source50 /3b90ffa34188f631ff7a08bf43f92f883acf3ee0, run40011993974: Rust81 PASS;
 
 
 The complete source50 build receipt/audit and export receipt are now retained as coherent-library-verification-v2.json:1649 original/additional sources,1651 objects,104850/94569 audited declarations/theorems, zero rejects. The final caller sequence still interrupted at Step2; library acceptance is not whole caller acceptance. word-cache-core-verification.json separately retains the generic175-source/5308/3142 pass, all literal/host-cause limits and the modified-source exclusion. FRONTIER.md is rewritten around the current source/evidence instead of retaining obsolete failed-table next actions.
+
+
+Source51 passed Rust81, generic cache175 context with5315/3146 clean owned audit, exports and actual completion. Actual independent Step2 still interrupted with shutdown/no coefficient result after the same initial/two boundaries. Source53 candidate reuses the existing scalar total population check for actual colocated inputs, refusing all foreign variable powers, then checks its SAME native-variable embedding. Mixed intervals retain the full active-list proof. No result is transferred to this new source before checking.

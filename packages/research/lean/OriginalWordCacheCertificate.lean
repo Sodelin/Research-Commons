@@ -1,5 +1,6 @@
 import OriginalWordTableCertificate
 import G7SparseWordComposition
+import NativePopulationTableCertificate
 
 /-! Finite checked primitive-row cache for the SAME original natural word.
 Existing stepRows/polynomial_stepRows, initialRows and followRows are reused.
@@ -25,6 +26,8 @@ open GProgram.G7.EffectiveInitializationCoefficients
 open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
 open GProgram.G7.SparseRowProducts GProgram.G7.SparseWordComposition
 open GProgram.G7.FullEpochSupport GProgram.G7.FullEpochPolynomial
+open GProgram.G7.SinglePopulationPolynomialKernel
+open GProgram.G7.PopulationSelectedSupport
 open GProgram.G7.SelectedEpochTableUniqueness GProgram.G7.SelectedKernelPolynomial
 open Astra.NativeSparseTableCertificate
 open scoped BigOperators NNReal
@@ -64,13 +67,116 @@ theorem active_fullRows_eq_epochTable (N : RootedBinary V E X) {sample : Copy �
     constructed_source_time_kernel_projection, project_eq]
   exact (actual_selected_epoch_table N (projection N Finset.univ s) b r 1).symm
 
+/-- The scalar coefficients are the unchanged population certificate's literal
+Expr table. Repeated raw Code destinations still contribute their entire sum. -/
+def embedPopulationRows (N : RootedBinary V E X) {sample : Copy → X}
+    (i : Option E) (rows : Astra.NativePopulationTableCertificate.Table N sample) :
+    Rows (Option E) (Code N sample) :=
+  rows.map fun row => (row.1, embedExpr i row.2)
+
+lemma population_exprPolynomial_append (p q : Expr) :
+    exprPolynomial (p ++ q) = exprPolynomial p + exprPolynomial q := by
+  simp only [exprPolynomial, List.map_append, List.sum_append]
+
+lemma population_collect_eval (N : RootedBinary V E X) {sample : Copy → X}
+    (rows : Astra.NativePopulationTableCertificate.Table N sample)
+    (d : Code N sample) (x : ℝ) :
+    Polynomial.eval₂ (Rat.castHom ℝ) x
+      (exprPolynomial (Astra.NativePopulationTableCertificate.collect rows d)) =
+      (rows.map fun row => if row.1 = d then
+        Polynomial.eval₂ (Rat.castHom ℝ) x (exprPolynomial row.2) else 0).sum := by
+  induction rows with
+  | nil => simp [Astra.NativePopulationTableCertificate.collect, exprPolynomial]
+  | cons row rows ih =>
+      change Polynomial.eval₂ (Rat.castHom ℝ) x
+        (exprPolynomial ((if row.1 = d then row.2 else []) ++
+          Astra.NativePopulationTableCertificate.collect rows d)) = _
+      rw [population_exprPolynomial_append, Polynomial.eval₂_add, ih]
+      by_cases h : row.1 = d <;> simp [h, exprPolynomial]
+
+/-- Scalar total-fibre certificate -> actual selected whole population row.
+No full Code carrier is enumerated by either Boolean checker. The finite
+sum here is semantic pushforward algebra, not an executable state oracle. -/
+theorem checked_population_rows_value (N : RootedBinary V E X) {sample : Copy → X}
+    (s : Code N sample) (i : Option E) (hs : CoLocated N s i)
+    (rows : Astra.NativePopulationTableCertificate.Table N sample)
+    (h : Astra.NativePopulationTableCertificate.check N (Fintype.card Copy) s rows = true)
+    (b : SelectedIndex N sample Finset.univ) (r : PositivePairRates E) (t : ℝ≥0) :
+    value (readRows (project N Finset.univ) (embedPopulationRows N i rows) b)
+      (survival r t) =
+        (((sourceTimeKernel N r t s).map (projection N Finset.univ)) b).toReal := by
+  classical
+  let ev : Expr → ℝ := fun p =>
+    Polynomial.eval₂ (Rat.castHom ℝ) (survival r t i) (exprPolynomial p)
+  have hv (d : Code N sample) :
+      ev (Astra.NativePopulationTableCertificate.collect rows d) =
+        (sourceTimeKernel N r t s d).toReal :=
+    Astra.NativePopulationTableCertificate.checked_actual_population N s rows h d i hs r t
+  calc
+    _ = (rows.map fun row => ev row.2 *
+        (if project N Finset.univ row.1 = b then 1 else 0)).sum := by
+      simp only [embedPopulationRows, readRows, List.flatMap_map, value_flatMap]
+      apply congrArg List.sum
+      apply List.map_congr_left
+      intro row _
+      by_cases hb : project N Finset.univ row.1 = b
+      · simp only [hb, if_pos, mul_one]
+        exact value_embedExpr i row.2 r t
+      · simp only [hb, if_neg, mul_zero, value_nil]
+    _ = ∑ d : Code N sample,
+        ev (Astra.NativePopulationTableCertificate.collect rows d) *
+          (if project N Finset.univ d = b then 1 else 0) := by
+      rw [sum_partition rows (fun row => row.1) (fun row => ev row.2)
+        (fun d => if project N Finset.univ d = b then 1 else 0)]
+      apply Finset.sum_congr rfl
+      intro d _
+      rw [show ev (Astra.NativePopulationTableCertificate.collect rows d) =
+        (rows.map fun row => if row.1 = d then ev row.2 else 0).sum from
+          population_collect_eval N rows d (survival r t i)]
+    _ = _ := by
+      simp_rw [hv, project_eq]
+      rw [map_probability_real]
+
+/-- An interval can reuse the existing complete active-panel row or, when
+ACTUAL input colocation is proved, the existing scalar population checker. -/
+inductive IntervalForm (N : RootedBinary V E X) {sample : Copy → X} (s : Code N sample)
+  | active (todo : List (Option E)) (complete : ActiveIn N s todo.toFinset)
+  | colocated (i : Option E) (at_population : CoLocated N s i)
+      (rows : Astra.NativePopulationTableCertificate.Table N sample)
+
+def intervalRows (N : RootedBinary V E X) {sample : Copy → X} (s : Code N sample) :
+    IntervalForm N s → Rows (Option E) (Code N sample)
+  | .active todo _ => fullRows N todo Copy sample s
+  | .colocated i _ rows => embedPopulationRows N i rows
+
+def checkInterval (N : RootedBinary V E X) {sample : Copy → X} (s : Code N sample) :
+    IntervalForm N s → Bool
+  | .active _ _ => true
+  | .colocated _ _ rows =>
+      Astra.NativePopulationTableCertificate.check N (Fintype.card Copy) s rows
+
+theorem checked_interval_polynomial (N : RootedBinary V E X) {sample : Copy → X}
+    (s : Code N sample) (form : IntervalForm N s) (h : checkInterval N s form = true)
+    (b : SelectedIndex N sample Finset.univ) :
+    polynomial (readRows (project N Finset.univ) (intervalRows N s form) b) =
+      epochTable N (project N Finset.univ s) b := by
+  cases form with
+  | active todo hs => exact active_fullRows_eq_epochTable N todo s hs b
+  | colocated i hs rows =>
+      apply polynomial_eq_of_single_epoch_evaluations
+      intro r
+      change MvPolynomial.eval₂ (Rat.castHom ℝ) (survival r 1)
+          (polynomial (readRows (project N Finset.univ) (embedPopulationRows N i rows) b)) = _
+      rw [eval_polynomial, checked_population_rows_value N s i hs rows h b r 1,
+        constructed_source_time_kernel_projection, project_eq]
+      exact (actual_selected_epoch_table N (projection N Finset.univ s) b r 1).symm
+
 structure StepEntry (N : RootedBinary V E X) (sample : Copy → X)
     (Native J : Type*) where
   operation : Symbol J V E
   input : Code N sample
   rows : Rows Native (Code N sample)
-  populations : List (Option E)
-  active : ActiveIn N input populations.toFinset
+  interval : IntervalForm N input
 
 def referenceStepRows (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
@@ -78,30 +184,55 @@ def referenceStepRows (N : RootedBinary V E X) (sample : Copy → X)
     Rows Native (Code N sample) :=
   match e.operation with
   | .interval j => renameRows encode (renameRows (fun i => Sum.inl (j,i))
-      (fullRows N e.populations Copy sample e.input))
+      (intervalRows N e.input e.interval))
   | op => renameRows encode (stepRows N H common op e.input)
-
-theorem reference_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
-    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
-    (encode : WordVariable N J → Native) (e : StepEntry N sample Native J)
-    (b : SelectedIndex N sample Finset.univ) :
-    polynomial (readRows (project N Finset.univ) (referenceStepRows N sample H common encode e) b) =
-      MvPolynomial.rename encode
-        (stepPolynomial N H common e.operation (project N Finset.univ e.input) b) := by
-  cases hop : e.operation with
-  | interval j =>
-      simp only [referenceStepRows, hop, polynomial_read_renameRows]
-      rw [active_fullRows_eq_epochTable N e.populations e.input e.active b]
-      rfl
-  | exit edge =>
-      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows]
-  | enter vertex =>
-      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows]
 
 def checkStep (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
     (encode : WordVariable N J → Native) (e : StepEntry N sample Native J) : Bool :=
-  checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
+  match e.operation with
+  | .interval _ => checkInterval N e.input e.interval &&
+      checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
+  | _ => checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
+
+lemma bool_and_components (a b : Bool) (h : a && b = true) : a = true ∧ b = true := by
+  cases a <;> cases b <;> simp_all
+
+theorem checked_reference_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (e : StepEntry N sample Native J)
+    (h : checkStep N sample H common encode e = true)
+    (b : SelectedIndex N sample Finset.univ) :
+    polynomial (readRows (project N Finset.univ) e.rows b) =
+      MvPolynomial.rename encode
+        (stepPolynomial N H common e.operation (project N Finset.univ e.input) b) := by
+  cases hop : e.operation with
+  | interval j =>
+      have hh : checkInterval N e.input e.interval &&
+          checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows = true := by
+        simpa only [checkStep, hop] using h
+      obtain ⟨hf, hc⟩ := bool_and_components _ _ hh
+      have heq := checkRows_sound (project N Finset.univ)
+        (referenceStepRows N sample H common encode e) e.rows hc b
+      simp only [referenceStepRows, hop, polynomial_read_renameRows] at heq
+      rw [checked_interval_polynomial N e.input e.interval hf b] at heq
+      simpa only [hop, stepPolynomial] using heq.symm
+  | exit edge =>
+      have hc : checkRows (project N Finset.univ)
+          (referenceStepRows N sample H common encode e) e.rows = true := by
+        simpa only [checkStep, hop] using h
+      have heq := checkRows_sound (project N Finset.univ)
+        (referenceStepRows N sample H common encode e) e.rows hc b
+      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows] at heq
+      simpa only [hop] using heq.symm
+  | enter vertex =>
+      have hc : checkRows (project N Finset.univ)
+          (referenceStepRows N sample H common encode e) e.rows = true := by
+        simpa only [checkStep, hop] using h
+      have heq := checkRows_sound (project N Finset.univ)
+        (referenceStepRows N sample H common encode e) e.rows hc b
+      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows] at heq
+      simpa only [hop] using heq.symm
 
 structure CertifiedStep (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
@@ -127,12 +258,8 @@ theorem certified_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
     (b : SelectedIndex N sample Finset.univ) :
     polynomial (readRows (project N Finset.univ) e.entry.rows b) =
       MvPolynomial.rename encode
-        (stepPolynomial N H common e.entry.operation (project N Finset.univ e.entry.input) b) := by
-  have h := checkRows_sound (project N Finset.univ)
-    (referenceStepRows N sample H common encode e.entry)
-    e.entry.rows e.checked b
-  rw [reference_step_polynomial] at h
-  exact h.symm
+        (stepPolynomial N H common e.entry.operation (project N Finset.univ e.entry.input) b) :=
+  checked_reference_step_polynomial N sample H common encode e.entry e.checked b
 
 /-- Full selected-view equality is sufficient by the EXISTING exact step
 polynomial. This is not a quotient by an observed forest or private bit. -/

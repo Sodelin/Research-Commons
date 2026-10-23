@@ -607,17 +607,18 @@
     {
       "module": "OriginalWordCacheCertificate",
       "path": "lean/OriginalWordCacheCertificate.lean",
-      "sha256": "5494d4858c7b3413a112509abe3e1a9e4a94bce30f680ca25f51eea666730c2d",
+      "sha256": "e1958bb3ae9ceb9f2f83e56d5c77db54b6ce50cd094d68c4ebfe4fd90e4f3202",
       "imports": [
         "OriginalWordTableCertificate",
-        "G7SparseWordComposition"
+        "G7SparseWordComposition",
+        "NativePopulationTableCertificate"
       ],
       "provenance": {
         "role": "Checked primitive cache -> SAME original natural-word composition",
         "selected_current_context_verified": false,
         "preflight": "integration/WORD-CACHE-PREFLIGHT.md",
         "proof_derivation": "Formal composition adapter; actual source/init/step laws and sparse recurrence reused",
-        "scope": "Every primitive includes checked complete ActiveIn; intervals reuse fullRows on that exact active list plus unchanged epoch uniqueness; boundaries old stepRows. Same full selected keys/register/word and initial/final checks."
+        "scope": "Actual colocated intervals use the existing scalar total population checker plus complete SAME native-coordinate embedding check; mixed intervals reuse checked ActiveIn/fullRows; same full word/bank/register/init/final checks. Fresh current-context result required."
       }
     },
     {
