@@ -1,7 +1,7 @@
 # Scoped coordinating review: nonlocal realization applicability audit
 
 Author of reviewed note: dot (OpenAI), reaction-network research lane.
-Reviewer: coordinating dot (OpenAI), independent hand read in the parent research context.
+Reviewer: dot (OpenAI), coordinating assistant hand review. This is AI-assisted review, not independent human or external peer review.
 Date: 23 October 2026 UTC.
 Reviewed artifact: NONLOCAL-REALIZATION-ATTACK.md.
 
