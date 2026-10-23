@@ -2,6 +2,7 @@ import ResearchCommons.Claims.CM
 import ResearchCommons.Claims.G1
 import ResearchCommons.Claims.G2
 import ResearchCommons.Claims.G4
+import ResearchCommons.Claims.G4Observers
 import ResearchCommons.Claims.G5
 import ResearchCommons.Claims.G6
 import ResearchCommons.Claims.G7

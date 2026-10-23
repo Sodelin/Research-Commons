@@ -509,14 +509,62 @@
       }
     },
     {
+      "module": "OriginalCompletionTableCertificate",
+      "path": "lean/OriginalCompletionTableCertificate.lean",
+      "sha256": "f8ba83c759c34aed3be95028356fc583896df6a67c90e93bddb57a5f79013e3f",
+      "imports": [
+        "NativeSparseTableCertificate",
+        "G7EffectiveAncestralCompletion",
+        "G7SparseWordComposition"
+      ],
+      "provenance": {
+        "role": "Native constant completion table to retained actual infinite-limit source law and observer",
+        "selected_current_context_verified": false,
+        "preflight": "integration/COMPLETION-OBSERVER-PREFLIGHT.md",
+        "proof_derivation": "new adapter only; recurrence/source law reused"
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.G4Observers",
+      "path": "lean/ResearchCommons/Claims/G4Observers.lean",
+      "sha256": "e25a850d88ec65c070b4a83fd945bb2a057e84fb19f931131d199934984d498b",
+      "imports": [
+        "G1ContextualForestReplacement",
+        "G4SpecifiedCombSelectedObservation"
+      ],
+      "provenance": {
+        "role": "Typed existing forward source/observer components of CB-G4-001; not its entire finite tester/tomography theorem",
+        "selected_current_context_verified": false,
+        "preflight": "integration/COMPLETION-OBSERVER-PREFLIGHT.md",
+        "proof_derivation": false
+      }
+    },
+    {
+      "module": "ResearchCommons.Integration.Completion",
+      "path": "lean/ResearchCommons/Integration/Completion.lean",
+      "sha256": "18c9fc172327b3bda92ea723867efbebb6754a6a939f1041da62b682ea4903b9",
+      "imports": [
+        "OriginalCompletionTableCertificate",
+        "OriginalCodeChartReceiver",
+        "ResearchCommons.Claims.G4Observers"
+      ],
+      "provenance": {
+        "role": "Native constant completion table to retained actual infinite-limit source law and observer",
+        "selected_current_context_verified": false,
+        "preflight": "integration/COMPLETION-OBSERVER-PREFLIGHT.md",
+        "proof_derivation": "new adapter only; recurrence/source law reused"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "a0caf5d92bbabd76558b293f9513513d8ac4a5368847cbffc3241765044828d2",
+      "sha256": "b48b9bb1a4e4a9ae5da1b0030164dbc232b44effbc830f97f593780f8eb8c5cb",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Claims.G1",
         "ResearchCommons.Claims.G2",
         "ResearchCommons.Claims.G4",
+        "ResearchCommons.Claims.G4Observers",
         "ResearchCommons.Claims.G5",
         "ResearchCommons.Claims.G6",
         "ResearchCommons.Claims.G7",
@@ -528,11 +576,13 @@
       "provenance": {
         "role": "Import-only actual dependency union of every currently named claim binding",
         "proof_derivation": false,
-        "selected_current_context_verified": true,
+        "selected_current_context_verified": false,
         "preflight": "integration/CLAIM-EXPORT-PREFLIGHT.md",
         "scope": "The export command independently validates all required transitive dependencies and object digests, runs the complete selected owned audit, and kernel-checks every name. It retains original integration scopes and pending claims.",
         "verification": "integration/claim-export-verification.json",
-        "current_verification_scope": "Every named import's full actual transitive closure, object digests and owned audit revalidated; actual Lean types and real imported-module ownership checked. Existing scopes/completion and partial/candidate levels retained; no namespace-prefix assumption."
+        "current_verification_scope": "Expanded import-only context includes new scoped G4Observers export; current build/name/ownership/audit is pending.",
+        "prior_verified_sha256": "a0caf5d92bbabd76558b293f9513513d8ac4a5368847cbffc3241765044828d2",
+        "prior_verification": "integration/claim-export-verification.json"
       }
     }
   ]
