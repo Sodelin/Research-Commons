@@ -1,5 +1,7 @@
 # Lean components and original-source assembly
 
+For research questions and completed results, start with the [canonical discovery gateway](RESEARCH-DISCOVERY-GATEWAY.md). It connects Dot’s claim register and question routes to exact proof, review and current builder evidence. The maintainer is adding discovery filters/export over that same register.
+
 The current uncompiled source context contains **778 modules / 5,922,316 bytes**:
 755 unchanged original modules and23 explicitly owned modules or import variants.
 The latest source correction adds only the retained G7EncodedMergerSupport. All
@@ -27,6 +29,11 @@ import-only changes. Every mathematical body is preserved; all23 direct
 external paths occur in the complete pinned Mathlib tree. This is separate
 from the unchanged778 graph and from pinned elaboration. The P5 owner's
 original HAND counterexample goal remains complete at that evidence level.
+
+The [owner gathering record](OWNER-GATHERING-20261023.json) distinguishes actual
+substantive returns from delivery. G4's [completed calibrated all-cap
+decoder](G4-CALIBRATED-DECODER-REUSE.md) is reused at its reviewed HAND scope;
+the actual captured source/observation caller remains separate.
 
 The [exact native admission gap](NATIVE-FIRST-WRITER-GAP.md) now names the
 pre-construction writers and existing codec/policy interfaces. The actual
