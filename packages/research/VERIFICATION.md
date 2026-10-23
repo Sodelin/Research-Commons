@@ -243,3 +243,6 @@ Source56 /63c4e0ddc3b48267a0bdcfab95d85ccc285518dd: all85 workspace Rust tests P
 
 
 Source57 /62f7e9ec758f77cb11da137a7036d88054186acf: Rust85 and complete source preparation PASS; its first generic positive-moment file is REJECTED at two exact Lean elaboration terms. The sum_coe_sort rewrite needs explicit grid/function arguments, and Fin.val congrArg must name the larger finite carrier in the truncated-exponent injection. Source58 fixes those terms only. No new mathematical premise, rival count bound or source observation is introduced; generic/actual signature acceptance remains pending.
+
+
+Source58 /6605fe8fb136960ded871328276c74d2e9f80c78, run40019899006 job120641700094: the complete positive-moment source and full export dependency closure compiled and its21059-declaration/14366-theorem owned audit PASSED with zero rejects. The later named-export submission is REJECTED: CB-RXN-001 expected wrapper ResearchCommons.Integration.PositiveMoments but actual declaration owner is CMFullMomentUniqueness. Source59 corrects this exact binding; no theorem is rederived or aliased to conceal the owner. The actual target-signature step was not reached and remains unaccepted.
