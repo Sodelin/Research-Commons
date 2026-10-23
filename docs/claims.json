@@ -1,5 +1,5 @@
 {
-  "board_version": "1.2-hand-proof-completion-recovery",
+  "board_version": "1.3-recovered-results-and-cross-repository-map",
   "claims": [
     {
       "accepted_artifacts": [
@@ -2117,6 +2117,21 @@
           "label": "Lower32",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9b7bb4034a136542a4d2c06afce84c64d1a50ce3/research/2026-10-16-g6-gibbs-certification/latent-light-fraction-32/README.md"
+        },
+        {
+          "label": "Lower24 coordinating review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/0e3e40d07edb9292a2c5a4c64c8f6fe0ae56e98d/research/2026-10-16-g6-gibbs-certification/reservoir-amplified-lock-24/P1-RESERVOIR-AMPLIFIED-LOCK-REVIEW-24.md"
+        },
+        {
+          "label": "Lower26 coordinating review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/a823c8445e1dd2ce4cb4008a547958fa50bac810/research/2026-10-16-g6-gibbs-certification/conditional-product-label-26/P1-CONDITIONAL-PRODUCT-LABEL-REVIEW-26.md"
+        },
+        {
+          "label": "Lower27 coordinating review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/0daba51d070c50bc10153a9272eab0e436484841/research/2026-10-16-g6-gibbs-certification/averaged-shared-counts-27/P1-AVERAGED-COUNTS-REVIEW-27.md"
         }
       ],
       "aliases": [],
@@ -2158,7 +2173,7 @@
         }
       },
       "evidence_basis": "Source-linked synthesis of the current acceptance register and selected proof/review entrypoints.",
-      "exact_statement_and_scope": "Unknown N-qubit Gibbs states have the same known β and at-most-k-local nonidentity Pauli coefficients individually bounded by one; degree and per-site total strength are not bounded. Collective upper: O((M log(2+βM/ε)+log(1/δ))/ε²), M=Σ_{j=1}^k3^j binom(N,j), unrestricted computation. For k≥5, ε≤1/4096, fixed-β lower32 is Ω(N^a/(log N)^(a/(k−1))), a=min((2k+2)/3,(4k−1)/5), counting every auxiliary spin.",
+      "exact_statement_and_scope": "Two unknown N-qubit Gibbs states have the same fixed known β>0; Hamiltonians are at most k-local and every nonidentity Pauli coefficient has magnitude at most one, without a bound on degree or total per-site strength. The promise is equality versus full trace norm at least ε. Collective measurements and adaptive source allocation are allowed, with a worst-case total-copy budget from both sources. The collective upper is O((M log(2+βM/ε)+log(1/δ))/ε²), M=Σ_{j=1}^k3^j binom(N,j), without an efficient-computation claim. Already accepted lower bounds, for fixed parameters and every sufficiently large physical N, include: 24, k≥3 and 0<ε≤1/4, Ω(N^(2k/3)/(log N)^(2/3)); 26, k=3 and 0<ε≤1/256, Ω(N^(9/4)/(log N)^(9/8)); 27, k=4 and 0<ε≤1/256, Ω(N³/log N), and k=5 on the same accuracy domain, Ω(N^(7/2)/(log N)^(7/8)); 29, k≥5 and 0<ε≤1/1024, Ω(N^((2k+1)/3)/(log N)^((2k+1)/(3(k−1)))); 32, k≥5 and 0<ε≤1/4096, Ω(N^a/(log N)^(a/(k−1))), a=min{(2k+2)/3,(4k−1)/5}. Every auxiliary spin counts. Constants and thresholds may depend on fixed k, β and ε; no uniform optimal accuracy/temperature dependence is claimed. Earlier shell21 remains valid in its stated domain, including k=2. Take the strongest applicable bound on complete domain intersections, not by extending the narrow accuracy domains or multiplying rates. These are existing proved components; closing the full optimal-copy gap is separate downstream work.",
       "id": "CB-PHYS-P1-001",
       "mathematical_status": "proved_at_stated_scope",
       "novelty_status": "Unresolved; correctness or project acceptance does not establish novelty.",
@@ -2741,6 +2756,89 @@
       "programme": "Nanowires · thermal error budgets",
       "remaining_obligation": "Nonzero drift, unknown calibration and actual device admission require additional evidence.",
       "title": "One known-model thermal calculation keeps a positive margin"
+    },
+    {
+      "id": "CB-NANO-004",
+      "canonical_key": "nanowire.FIXED_TRANSMISSION_SIGN_FIBRE",
+      "title": "Even a complete transmission spectrum cannot force a negative label",
+      "programme": "Nanowires · limits of a richer measurement",
+      "claim_kind": "theorem",
+      "aliases": [],
+      "plain_language": {
+        "question": "If we know both conductance and the complete transmission spectrum, can we determine the reflection sign?",
+        "what_we_learned": "In this specified matrix model, these richer observations sometimes force a positive sign but never force a negative sign. We found the exact possibilities, including measurement-error limits.",
+        "what_it_lets_someone_do": "Check whether an allowed report is inconsistent, fixes a positive sign, or still permits both signs.",
+        "what_cannot_conclude": "This is not a claim about every physical wire or a measured device, and the sign is not a guarantee of a protected Majorana state."
+      },
+      "exact_statement_and_scope": "For zero-energy, zero-temperature/bias, loss-free canonical-PHS two-terminal scattering with two electron modes per lead, observe local conductance g and the complete ordered quasiparticle transmission eigenvalues 0≤T1≤T2≤T3≤T4≤1 from the same parent's t†t. Write a≥b≥c≥d≥0 for sqrt(1−Ti), p=abcd and w±=ab±cd. If p>0 the exact feasible reflection determinant set is {+p: |g−2|≤w+} ∪ {−p: |g−2|≤w−}. If p=0 it is {0} exactly when |g−2|≤ab, otherwise empty. Every feasible value has an explicit common SO(8) scattering parent. For exact T and |y−g|≤η, replace |g−2| by max(0,|y−2|−η). Uncertain T requires a union over the authenticated joint error/source relation. No negative-only feasible set exists in this class.",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A fixed-spectrum refinement of the existing abstract PHS measurement programme, not asserted to have been a named published open problem."
+      },
+      "prior_work": "The signed-SVD/exterior-square Hodge bound and orthogonal scattering dilation are classical linear algebra already established in the linked Commons four-dimensional and all-channel packets. Standard PHS/conductance conventions are credited there to Beenakker, Dahlhaus, Wimmer and Akhmerov (2011). The earlier observation audit already established that the full transmission spectrum fixes |det r|, not directly its sign.",
+      "our_contribution": "Derive the two exact orientation intervals at a fixed transmission spectrum, attain every point with one common SO(8) parent, include the singular boundary, and compose the exact conductance-error rule. This is not a new Hodge or dilation theorem.",
+      "mathematical_status": "proved_at_stated_scope",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, implementation or a broader physical realization does not reopen this proved claim."
+      },
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "The complete fixed-spectrum proof received coordinating/adversarial AI hand PASS, including pairing bounds, full attainment, the singular case, bounded-error union and the same SO(8) parent. The review pins proof SHA256 04b8eaeae23a25b78f9b2e68924910a404ffe8ef0389205ee3d79ddf1a63be7b; it is not human/external peer review."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No Lean proof or kernel receipt for this theorem is claimed."
+        },
+        "execution": {
+          "status": "not_execution_claim",
+          "detail": "No scientific code, numerical experiment or compiler was run for this proof or review. Hashes/readbacks establish preserved file identity only."
+        },
+        "empirical": {
+          "status": "not_measured_device",
+          "detail": "No fixed-contact Rashba realization, experiment, finite-temperature admission or operating guarantee is supplied."
+        }
+      },
+      "novelty_status": "Unresolved; the inherited mathematical methods are explicitly credited, and correctness/acceptance is not historical priority.",
+      "accepted_artifacts": [
+        {
+          "label": "Current scoped status and contract",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/README.md"
+        },
+        {
+          "label": "Complete fixed-spectrum proof",
+          "role": "proof",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/TRANSMISSION-SPECTRUM-SIGN-FIBRE-20261023.md"
+        },
+        {
+          "label": "Exact coordinating hand review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/TRANSMISSION-SPECTRUM-SIGN-FIBRE-REVIEW-20261023.md"
+        },
+        {
+          "label": "Inherited four-dimensional Hodge supplier",
+          "role": "prior_supplier",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/c6e7264d3155ba10df38bda5d5b773b9426f705f/research/2026-10-16-nanowire-fixed-lead-nonseparation/classwise-readout/SHARP-CONDUCTANCE-DETERMINANT-BOUND-REVIEW-06.md"
+        }
+      ],
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "separate_downstream_or_validation_work": "Any application to a fixed-contact Rashba wire or an unknown device needs its own source/measurement/error admission. Complete quasiparticle transmission eigenvalues must not be replaced by aggregate charge conductance, shot noise or a warm trace. No protected-operation or thermodynamic-topology conclusion follows.",
+      "dependencies": [
+        {
+          "claim_id": "CB-NANO-002",
+          "relation_type": "same_principle",
+          "detail": "Both use PHS reflection-matrix geometry and common-parent scattering constraints. The all-channel (g,Q) region alone does not determine the fixed-spectrum fibre; the actual four-dimensional Hodge supplier is linked separately."
+        }
+      ],
+      "evidence_basis": "The published bcb7c4e proof/review/README were read at their exact preserved bytes. This card indexes their scoped acceptance; it is not another independent proof review."
     },
     {
       "accepted_artifacts": [
@@ -4060,6 +4158,481 @@
       "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
       "separate_downstream_or_validation_work": "Adaptive or differently labelled/observed menus need separate proofs; no specific Lean optimum package is asserted.",
       "title": "A different menu has a classical covering-array cost"
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.",
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "evidence_basis": "Recovered September proof and explicit successor/review records, reconciled against the 60-card board at c25319a8023310d6c64143affd707402780768b3. No new scientific execution or independent re-proof for these cards.",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, review, implementation or a broader unsolved extension does not reopen this proved claim."
+      },
+      "id": "CB-NANUQ-002",
+      "canonical_key": "september.NANUQ.ALL_LEVEL",
+      "programme": "NANUQ / BIO-1 · all-level phylogenetic structure",
+      "title": "The original distance keeps exactly the displayed splits at every finite level",
+      "claim_kind": "theorem",
+      "plain_language": {
+        "question": "Does the same structural reconstruction work when ancestry networks have arbitrarily many reticulations?",
+        "what_we_learned": "Yes, for the stated planar galled class: the original NANUQ distance is circular and its positive splits are exactly the displayed splits, at every finite level.",
+        "what_it_lets_someone_do": "Use one split-representation theorem instead of a separate classification at each reticulation level.",
+        "what_cannot_conclude": "This does not recover every graph detail, apply to arbitrary networks, or prove a complete DNA inference pipeline."
+      },
+      "exact_statement_and_scope": "Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. For every admitted network, the original NANUQ distance is circular decomposable in every chosen outer-embedding order and its positive split support is exactly the union of displayed-tree splits. The six-label finite reduction is a proof device, not a size or level restriction on the source.",
+      "origin": {
+        "category": "published_open_problem",
+        "detail": "The source-result ledger matches the multiple-blob and level-three circularity/support questions in Holtgrefe et al., Theorem 4.7 and section 6, retaining the published structural hypotheses. The arbitrary-finite-level conclusion is a stronger project result."
+      },
+      "prior_work": "Original NANUQ and NANUQ+ scoring, classical circular split decomposition and the cited root-skeleton work are inherited. Holtgrefe et al.'s level-two theorem and stated extensions supply the recorded questions. The January 2026 correction does not change the target theorem.",
+      "our_contribution": "The 29 September package's uniform occurrence-tree reduction, internally audited finite certificate, exact global blob composition and exact support transfer establish the all-level statement. This card restores that earlier result and preserves its source attribution; it is not a new discovery.",
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "The original package records distinct internal structural, finite, composition and support audits of the computer-assisted mathematical proof; no external peer review is asserted."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No complete kernel-checked proof of this exact claim is asserted. Separate narrower formal components do not upgrade the whole theorem."
+        },
+        "execution": {
+          "status": "archived_execution_receipts",
+          "detail": "Archived evidence includes two distinct enumeration/quartet implementations, 122 systems and 24,667 anchor coefficients. These are proof-checking objects, not counts of discoveries or a new replay."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A mathematical source/oracle result, not measured biological validation."
+        }
+      },
+      "accepted_artifacts": [
+        {
+          "label": "Original all-level proof, Samuel Alexander repository",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Original audit inventory and attribution",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/README.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Exact published-question correspondence",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/SOURCE-RESULT-LEDGER.md",
+          "role": "prior_work"
+        },
+        {
+          "label": "Holtgrefe et al., primary prior work and section 6 questions",
+          "url": "https://link.springer.com/article/10.1007/s11538-025-01549-4",
+          "role": "prior_work"
+        }
+      ],
+      "separate_downstream_or_validation_work": "The later 53-source formal chain is a narrower formalization component, not full Lean verification of this all-level theorem. Biological observation/estimation and non-outer-planar networks need their own hypotheses. The separate anchor-positivity theorem is not silently replaced by the stronger authored global four-score-cone continuation.",
+      "dependencies": [
+        {
+          "claim_id": "CB-NANUQ-001",
+          "relation_type": "same_principle",
+          "detail": "That later checked source-to-geometry chain is part of the formalization lineage; it neither replaces nor fully formalizes this earlier complete hand theorem."
+        }
+      ],
+      "aliases": [
+        "29 September all-level NANUQ Theorem A"
+      ]
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.",
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "evidence_basis": "Recovered September proof and explicit successor/review records, reconciled against the 60-card board at c25319a8023310d6c64143affd707402780768b3. No new scientific execution or independent re-proof for these cards.",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, review, implementation or a broader unsolved extension does not reopen this proved claim."
+      },
+      "id": "CB-EXACTQUERY-001",
+      "canonical_key": "september.EXACT_QUERY.ADAPTIVE_THETA",
+      "programme": "Exact quartet queries · adaptive information acquisition",
+      "title": "Recover the split union and an order with optimally growing query cost",
+      "claim_kind": "algorithm",
+      "plain_language": {
+        "question": "How many exact quartet questions are needed when no circular order is supplied?",
+        "what_we_learned": "The deterministic adaptive worst-case cost grows as Theta(n log n), and returns both all displayed splits and a compatible order.",
+        "what_it_lets_someone_do": "Acquire the specified structural information without first asking every quartet question.",
+        "what_cannot_conclude": "This is optimal query growth, not near-linear runtime, a noisy-data guarantee or reconstruction of the hidden original network."
+      },
+      "exact_statement_and_scope": "Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. A query returns the complete set of distinct displayed resolved quartet topologies on four requested taxa, not multiplicities or gene-tree probabilities; the required output is the full nontrivial displayed-split union and any common circular order. No circle, tree or blob tree is supplied. The lower bound is ceil(log_3((2n-5)!!)). The accepted order learner uses at most (n-3)(11 ceil(log_2 n)+15) calls. For a supplied common circle and k distinct splits, the sparse component uses at most min{binomial(n,4),(n-2)(n-3),2n-6+4k ceil(log_2(n-1))}, without knowing k. The inherited source bound k<=13n-27 gives the matching O(n log n) joint upper bound; caching caps distinct calls by binomial(n,4).",
+      "origin": {
+        "category": "project_posed",
+        "detail": "EXACT-QUERY-01 asks this precise all-level complete-support, split-union-plus-order task. Related published quarnet reconstruction questions motivate it but are not identical."
+      },
+      "prior_work": "Tree-count lower bounds, circular-order methods and quartet reconstruction are established. Frohn et al. already prove O(n log n) quarnet-query reconstruction for level-one networks under a different graph/oracle/output contract. This theorem does not close their unrestricted tree-of-blobs query gap.",
+      "our_contribution": "GPT-6 Astra Pro supplied the near-linear order learner and supplied-order sparse decoder. Codex root's returned structural/query/code reviews and integration establish the matching all-size bounds under the inherited source correspondence and linear split count. Sparse decoding is a component, not another counted discovery.",
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "The returned integration accepts the all-size order/query proofs at internal hand-review level, conditional on the pinned accepted source suppliers. It supersedes the earlier pending query header."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No complete kernel-checked proof of this exact claim is asserted. Separate narrower formal components do not upgrade the whole theorem."
+        },
+        "execution": {
+          "status": "archived_execution_receipts",
+          "detail": "Archived independent implementation and graph-truth replays accompany the universal structural and amortization proofs. No re-execution here; finite agreement does not replace the all-size proof."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A mathematical source/oracle result, not measured biological validation."
+        }
+      },
+      "accepted_artifacts": [
+        {
+          "label": "Registered exact source, oracle and target",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/communications/2026-09-30-root-exact-query-master.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Accepted matching-bound integration",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Independent order-space review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/ASTRA-ORDER-REVIEW.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Independent query/amortization review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/ASTRA-QUERY-REVIEW.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Supplied-order sparse decoder",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-sparse-query/README.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Frohn et al., different level-one quarnet problem",
+          "url": "https://arxiv.org/html/2409.06034v2",
+          "role": "prior_work"
+        },
+        {
+          "label": "Earlier outside-repository BIO-1 roadmap, structural gap superseded only",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/EXPLANATION-AND-PRIORITIES.md#bio-1-fewer-quartet-observations-with-justified-recovery",
+          "role": "historical_problem_statement"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Sharp leading constants, efficient exact finite minimax, a full Lean proof and biological providers are separate. Complete support masks cannot silently be replaced by sampled presence/absence. The G7 exact-law/CAD master uses different source, observation and cost contracts; this result is not its alias. The outside Cross-Scale BIO-1 roadmap's structural query-policy gap is superseded by these completed exact-support results; its noisy NMSC acquisition layer is not thereby closed.",
+      "dependencies": [
+        {
+          "claim_id": "CB-NANUQ-002",
+          "relation_type": "reused_theorem",
+          "detail": "Uses the inherited all-level source correspondence and circular split structure, together with its separately reviewed linear split-count supplier."
+        },
+        {
+          "claim_id": "CB-G7-001",
+          "relation_type": "same_principle",
+          "detail": "An earlier discrete adaptive-design theorem, not the later original-ID continuous exact-law design theorem."
+        }
+      ],
+      "aliases": [
+        "EXACT-QUERY-01 (asymptotic branch)"
+      ]
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.",
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "evidence_basis": "Recovered September proof and explicit successor/review records, reconciled against the 60-card board at c25319a8023310d6c64143affd707402780768b3. No new scientific execution or independent re-proof for these cards.",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, review, implementation or a broader unsolved extension does not reopen this proved claim."
+      },
+      "id": "CB-EXACTQUERY-002",
+      "canonical_key": "september.EXACT_QUERY.FINITE_MINIMA",
+      "programme": "Exact quartet queries · sharp small cases",
+      "title": "The exact minima are one query for four taxa and five for five",
+      "claim_kind": "theorem",
+      "plain_language": {
+        "question": "Can the exact optimum be proved, rather than only its growth rate?",
+        "what_we_learned": "Yes: the same structural task requires exactly one query at four taxa and five at five taxa.",
+        "what_it_lets_someone_do": "Use proved finite benchmarks and distinguish an adaptive lower bound from a heuristic search result.",
+        "what_cannot_conclude": "The separately recovered six- and seven-taxon reports do not inherit the five-taxon independent hand acceptance."
+      },
+      "exact_statement_and_scope": "Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. A query returns the complete set of distinct displayed resolved quartet topologies on four requested taxa, not multiplicities or gene-tree probabilities; the required output is the full nontrivial displayed-split union and any common circular order. For deterministic always-correct adaptive algorithms, Q*(4)=1 and Q*(5)=5. The five-taxon lower bound uses an admitted baseline and five admitted rivals, each changing only one quartet answer and the required split target; it remains valid when the common circle is supplied. A finite tested profile subset is not assumed to be a complete census.",
+      "origin": {
+        "category": "project_posed",
+        "detail": "Exact finite specializations of the registered EXACT-QUERY-01 minimax problem."
+      },
+      "prior_work": "Finite decision-tree minimax and indistinguishable-transcript adversaries are classical. The pinned actual-network fixtures and their source admission are inherited and explicitly reused.",
+      "our_contribution": "Codex root's source-admitted five-rival adversary and independent graph-switching/minimax review certify the exact four- and five-taxon optima. Later GPT-6 Astra Pro computations reported Q*(6)=8 and Q*(7)=11 with separate author-run checkers, with a different evidence level recorded below.",
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "Independent finite-minimax review records the graph-derived replay and full five-taxon hand adversary. No independent acceptance of the later Q*(6) or Q*(7) computations is inferred."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No complete kernel-checked proof of this exact claim is asserted."
+        },
+        "execution": {
+          "status": "archived_review_and_partial_source_recovery",
+          "detail": "Q*(4)/Q*(5) have archived independent replay and hand evidence. Separate author checkpoints report Q*(6)=8 and Q*(7)=11 with upper/lower certificate checks, but the save-only recovery did not recover the large catalogues, witnesses or certificate archives. No new replay or validation of those reports is claimed."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A mathematical source/oracle result, not measured biological validation."
+        }
+      },
+      "accepted_artifacts": [
+        {
+          "label": "Independent finite-minimax review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/FINITE-MINIMAX-REVIEW.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Accepted finite theorem within integration",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Historical six-taxon author report, not independently reaccepted",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/CHECKPOINT.md",
+          "role": "historical_report"
+        },
+        {
+          "label": "Historical seven-taxon author report, not independently reaccepted",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/SEVEN-TAXON-CHECKPOINT.md",
+          "role": "historical_report"
+        },
+        {
+          "label": "Exact source/certificate recovery boundary",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/SAVE-ONLY-RECOVERY-20260930.md",
+          "role": "source_recovery"
+        }
+      ],
+      "separate_downstream_or_validation_work": "Recover and independently check the existing large six/seven-taxon certificate archives before upgrading their evidence. Their reported values are not erased by missing archives. Q*(8) was not optimized in the located record. No positive-error randomized optimum or closed all-n formula is asserted.",
+      "dependencies": [
+        {
+          "claim_id": "CB-EXACTQUERY-001",
+          "relation_type": "same_principle",
+          "detail": "Same original query/target contract, but exact finite sharpness is not implied by the asymptotic theorem."
+        }
+      ],
+      "aliases": [
+        "EXACT-QUERY-01 (four/five-taxon sharp branch)"
+      ]
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.",
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "evidence_basis": "Recovered September proof and explicit successor/review records, reconciled against the 60-card board at c25319a8023310d6c64143affd707402780768b3. No new scientific execution or independent re-proof for these cards.",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, review, implementation or a broader unsolved extension does not reopen this proved claim."
+      },
+      "id": "CB-EXACTQUERY-003",
+      "canonical_key": "september.EXACT_QUERY.UNIFORM_MINIMAX",
+      "programme": "Exact quartet queries · constructive all-size optimum",
+      "title": "The exact optimum has a finite constructive specification for every size",
+      "claim_kind": "algorithm",
+      "plain_language": {
+        "question": "Is the best adaptive query policy computable in principle for every number of taxa?",
+        "what_we_learned": "Yes. A bounded representative theorem makes the exact admitted support catalogue finite, after which finite minimax produces an optimal policy and lower certificate.",
+        "what_it_lets_someone_do": "Specify a complete exact optimizer without assuming that arbitrary compressed codes are real networks.",
+        "what_cannot_conclude": "The all-size specification is not an efficient implementation, a closed formula or a decision procedure for the different continuous-law G3 problem."
+      },
+      "exact_statement_and_scope": "Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. A query returns the complete set of distinct displayed resolved quartet topologies on four requested taxa, not multiplicities or gene-tree probabilities; the required output is the full nontrivial displayed-split union and any common circular order. Every actual admitted source has a same-profile, same-split-union and same-compatible-order admitted representative with at most 8n-14 unrooted vertices plus one root. Retaining actual branching blobs and shortening maximal two-port chains permits exhaustive bounded actual-graph generation and full admission filtering. Finite Bellman minimax on the resulting complete profile class computes Q*(n), an optimal deterministic policy and a recursively checkable lower certificate uniformly in n.",
+      "origin": {
+        "category": "project_posed",
+        "detail": "The exact all-n continuation of EXACT-QUERY-01, beyond abstract existence or asymptotic bounds."
+      },
+      "prior_work": "Classical finite minimax recursion is reused. The proof also reuses the pinned all-level structural facts; its indispensable source step is bounded actual-graph coverage, not an unsupported converse for arbitrary occurrence codes.",
+      "our_contribution": "Codex root's exact-minimum construction and independent conditional source-normalization/profile reviews expose a uniform complete actual-source enumeration route for the discrete query game.",
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "Independent profile and normalization reviews accept the actual-source reduction under the explicitly pinned structural suppliers. Those hypotheses are not replaced by an arbitrary-code assumption."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No complete kernel-checked proof of this exact claim is asserted."
+        },
+        "execution": {
+          "status": "mathematical_specification_not_all_size_execution",
+          "detail": "The universal catalogue, minimax optimizer and certificate-checker specification was not implemented or executed as an all-size system. This is a constructive mathematical result; small-size computations do not constitute all-size execution."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "A mathematical source/oracle result, not measured biological validation."
+        }
+      },
+      "accepted_artifacts": [
+        {
+          "label": "Uniform constructive exact-minimum theorem",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-MINIMUM-THEOREM.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Actual-profile coverage review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-PROFILE-REVIEW.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Actual-source normalization review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-NORMALIZATION-REVIEW.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Accepted integration and implementation boundary",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Earlier outside-repository BIO-1 roadmap, structural gap superseded only",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/EXPLANATION-AND-PRIORITIES.md#bio-1-fewer-quartet-observations-with-justified-recovery",
+          "role": "historical_problem_statement"
+        }
+      ],
+      "separate_downstream_or_validation_work": "A practical all-n implementation, better constants and further computed values are separate. The representative preserves discrete topology observations, not probability laws, original controls, branch lengths or full true-K forest kernels. It does not close G3 global continuous-law recognition or G4 finite INDEPENDENT-only forcing. The outside Cross-Scale BIO-1 roadmap's structural query-policy gap is superseded by these completed exact-support results; its noisy NMSC acquisition layer is not thereby closed.",
+      "dependencies": [
+        {
+          "claim_id": "CB-EXACTQUERY-001",
+          "relation_type": "proved_adapter",
+          "detail": "The hand-proved actual-source normalization identifies the complete finite profile game for this same source/oracle/output contract."
+        },
+        {
+          "claim_id": "CB-G1-001",
+          "relation_type": "same_principle",
+          "detail": "Both simplify sources while preserving specified observations, but the observations and normalization theorems differ."
+        },
+        {
+          "claim_id": "CB-G7-001",
+          "relation_type": "same_principle",
+          "detail": "Discrete exact support-policy optimization is not original-ID continuous exact-law/CAD design."
+        }
+      ],
+      "aliases": [
+        "EXACT-QUERY-01 (uniform exact-minimum branch)"
+      ]
+    },
+    {
+      "mathematical_status": "proved_at_stated_scope",
+      "novelty_status": "Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.",
+      "remaining_obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
+      "evidence_basis": "Recovered September proof and explicit successor/review records, reconciled against the 60-card board at c25319a8023310d6c64143affd707402780768b3. No new scientific execution or independent re-proof for these cards.",
+      "completion": {
+        "display": "Proved (not Lean formalized)",
+        "formal_verification": "not_kernel_verified",
+        "independent_review": "accepted_scoped_hand_review",
+        "mathematical_claim_complete": true,
+        "proof_authorship_complete": true,
+        "proof_derivation_required": false,
+        "remaining_work_role": "separate_downstream_extension_or_validation",
+        "rule": "Missing Lean, review, implementation or a broader unsolved extension does not reopen this proved claim."
+      },
+      "id": "CB-TOPOCONTROL-001",
+      "canonical_key": "september.TOPOLOGY_CONTROL.THREE_FOUR",
+      "programme": "Topology controls · graph-informed environment design",
+      "title": "Three settings suffice for a probability floor, and four for certainty",
+      "claim_kind": "theorem",
+      "plain_language": {
+        "question": "With the network's control structure known, how many fixed settings expose every displayed split or quartet?",
+        "what_we_learned": "The worst-case minima are three settings for the stated positive occurrence floor and four for guaranteed occurrence.",
+        "what_it_lets_someone_do": "Use a sharp topology-focused control budget instead of forcing every routing combination.",
+        "what_cannot_conclude": "This does not recover all numerical laws, work with unknown control IDs or justify replacing topology-equivalent parts in every biological experiment."
+      },
+      "exact_statement_and_scope": "Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. Every boundary port is taxon-bearing. Under the stated graph-informed contract, the graph/outer embedding or a certified interaction map is supplied, original hybrid IDs are retained, controls are fixed parameter-oblivious partial parent-forcing assignments, and forcing a parent leaves the other laws unchanged, and natural independent routing probabilities lie in [g,1-g] for 0<g<=1/2. The worst-case minimum number of environments is three so that every displayed nontrivial split and quartet occurrence has probability at least g in at least one environment, and four so each occurs with certainty in at least one environment. The source-admitted lower witnesses and switching-wise <=3-port topology quotient use the pinned source conventions.",
+      "origin": {
+        "category": "project_posed",
+        "detail": "A source-conditional topology-occurrence control problem in the September normalization-effects programme, not the later G7 exact numerical-law master or its marker/full-forcing menus."
+      },
+      "prior_work": "Classical coloring and control-cover reasoning and inherited structural source normalization are reused. Original routing/occurrence semantics, legal original-ID lift and the matching admitted lower witness are required for this experiment-count statement.",
+      "our_contribution": "Codex Work's full report supplies the three/four-environment upper designs, actual-source lower witness and normalization/control-lift accounting. The complete later lower proof supersedes the earlier menu review's pending lower-bound wording.",
+      "evidence": {
+        "hand": {
+          "status": "accepted_scoped_hand_review",
+          "detail": "The report and final checkpoint record the source-conditional full hand theorem; the menu review accepts the upper construction and the later source-admitted lower closes its named gap. Root inspection/replay evidence is separately recorded."
+        },
+        "formal": {
+          "status": "not_kernel_verified",
+          "detail": "No complete kernel-checked proof of this exact claim is asserted."
+        },
+        "execution": {
+          "status": "archived_execution_receipts",
+          "detail": "Archived root verification records the binary-DAG/LSA lower witness, eight switched trees, twelve signed-pair cylinders, rejection of 378 two-row menus and 432 probability checks, alongside separate count and CF-discriminator checks. These are historical support for the exposed proof, not new executions or biological experiments."
+        },
+        "empirical": {
+          "status": "not_empirical_claim",
+          "detail": "An ideal mathematical control/occurrence result, not measured biological validation."
+        }
+      },
+      "accepted_artifacts": [
+        {
+          "label": "Full normalized-controls theorem and source witness",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/REPORT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Final completed scope and supersession",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/CHECKPOINT.md",
+          "role": "proof_or_status"
+        },
+        {
+          "label": "Earlier scoped menu review, read with later lower proof",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/REVIEW-menu.md",
+          "role": "hand_review"
+        },
+        {
+          "label": "Archived independent source/count/CF checks",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/ROOT-VERIFICATION.json",
+          "role": "execution_review"
+        }
+      ],
+      "separate_downstream_or_validation_work": "This is an ideal graph-informed topology-occurrence optimum, not an unknown-graph learner, finite-data biological validation or numerical-law identification optimum. Topology-preserving erasure need not preserve quartet CFs or all original controls; the same report gives exact response-edge criteria and positive CF counterexamples. The passive biological quartet-CF normal-form proof is a separate authored result with a distinct acceptance history.",
+      "dependencies": [
+        {
+          "claim_id": "CB-G7-001",
+          "relation_type": "same_principle",
+          "detail": "A distinct early graph-informed topology-control optimum, not the later original-ID exact-law design master."
+        },
+        {
+          "claim_id": "CB-G7-002",
+          "relation_type": "same_principle",
+          "detail": "The natural-marker programme observes different information and measures a different resource."
+        },
+        {
+          "claim_id": "CB-G7-003",
+          "relation_type": "same_principle",
+          "detail": "The static full-forcing numerical-law covering-array optimum has a different menu and target."
+        }
+      ],
+      "aliases": [
+        "NORMALIZATION-EFFECTS-20260930 (sharp environment-count branch)"
+      ]
     }
   ],
   "companion_audit": {
@@ -4069,11 +4642,11 @@
   "contributor": "dot (OpenAI)",
   "coverage": {
     "gaps": [
-      "This is 60 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
+      "This is 66 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.",
       "Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.",
       "Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.",
       "Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.",
-      "Pre-October Samuel/infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains, and the full external catalogue are not re-audited by this board.",
+      "Selected September Samuel/all-level/query results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is an external source map, not 85 additional claim cards.",
       "Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.",
       "Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.",
       "Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims."
@@ -4085,7 +4658,9 @@
       "Physics P1/P5",
       "Nanowires",
       "Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes",
-      "Reusable positive-moment component"
+      "Reusable positive-moment component",
+      "Five recovered September structural/query/control result groups, with immutable outside-repository antecedents",
+      "Reviewed fixed-transmission-spectrum nanowire sign fibre"
     ],
     "not_claimed": [
       "Exhaustive indexing of every research directory",
@@ -4149,6 +4724,11 @@
       "contributor": "Existing P5 owner, Codex (OpenAI)",
       "scope": "Publish existing unrestricted counterexample hand proof and admission correction; preserve original hand goal COMPLETE and all prior narrower theorem/review scopes.",
       "updated_utc": "2026-10-23T07:32:00Z"
+    },
+    {
+      "contributor": "dot (OpenAI)",
+      "updated_utc": "2026-10-23T08:10:00Z",
+      "scope": "Preserve all 60 existing cards and completion labels; add five recovered September result groups and one reviewed nanowire theorem; restore accepted P1 lower24/26/27 and link outside-repository provenance. No scientific execution or new review of historical proofs."
     }
   ],
   "schema_version": "1.1",
@@ -4169,5 +4749,5 @@
     "supersession_rule": "Correct active summaries and point to the later acceptance/correction; preserve immutable historical bytes."
   },
   "title": "Research Commons claim board",
-  "updated_utc": "2026-10-23T07:58:46Z"
+  "updated_utc": "2026-10-23T08:10:00Z"
 }

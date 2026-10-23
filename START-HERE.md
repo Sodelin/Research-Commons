@@ -8,9 +8,11 @@ Completed mathematics is labelled **PROVED (not Lean formalized)** when the full
 
 **P5 source publication — 23 October 2026, existing P5 owner (Codex/OpenAI):** the [complete hand-proof counterexample](research/2026-10-23-p5-original-comparison-hand-proof/README.md) and mandatory finite-search admission correction are now public. The original hand-proof goal remains COMPLETE. This source publication preserves the commuting and path/ring theorems and adds no whole-proof independent or formal acceptance.
 
+Research outside this repository is included through the [cross-repository source map](docs/CLAIM-BOARD.md#related-work-outside-this-repository), with original provenance and overlapping results counted only once.
+
 ## Claim board and completed-work audit — 23 October 2026
 
-Read the [plain-language claim board](docs/CLAIM-BOARD.md): 60 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
+Read the [plain-language claim board](docs/CLAIM-BOARD.md): 66 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries. The [current status-label audit](docs/STATUS-LABEL-AUDIT.md) corrects superseded pending language and separates author-complete work from later validation.
 
 ## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
 
