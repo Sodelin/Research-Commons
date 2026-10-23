@@ -112,7 +112,7 @@ theorem cached_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
           cases ha : symbolEq e.entry.operation op <;>
             cases hb : decide (project N Finset.univ e.entry.input = project N Finset.univ s) <;>
               simp_all
-        have hop := symbolEq_eq_true.mp hm.1
+        have hop := (symbolEq_eq_true e.entry.operation op).mp hm.1
         have hs : project N Finset.univ e.entry.input = project N Finset.univ s :=
           of_decide_eq_true hm.2
         simpa only [hop, hs] using certified_step_polynomial N sample H common encode e b
