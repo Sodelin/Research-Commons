@@ -76,6 +76,9 @@ fn emit_snapshot(captured:&CompiledCellRows,text:&str,namespace:&str,require_cut
  let mut output=format!(r#"import OriginalCodeChartReceiver
 import Mathlib.Tactic.FinCases
 
+set_option maxRecDepth 4096
+set_option maxHeartbeats 2000000
+
 /-! Particular captured original source and shared cell bank. No whole-source
 census, physical readout law, universal parser/Rust refinement or policy
 completeness is inferred. Rendering is not acceptance. -/
@@ -107,9 +110,14 @@ theorem source_fields_exact :
 theorem input_fields_exact :
     inputOfCode code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
       chronology exposures coins {cap} = capturedInput := by
-  simp only [inputOfCode, sourceOfCode, coins, Equiv.refl_symm,
+  simp only [inputOfCode, coins, Equiv.refl_symm,
     Equiv.refl_apply, Equiv.symm_apply_apply]
-  rfl
+  norm_num [sourceOfCode, capturedInput, capturedSource, chronology, exposures,
+    coinIntervals, code, codeRoot, codeGraph, codeLeaf, codeSite, codeParent,
+    vertexCount, edgeCount, Astra.NativeCellAggregateReflection.reflectChronology,
+    Astra.NativeCellAggregateReflection.reflectExposure, Astra.NativeCellAggregateReflection.reflectAge,
+    Astra.NativeCellFormReflection.encodeComparison, Astra.NativeCellFormReflection.encodeInterval,
+    Astra.NativeCellFormReflection.encodeBound, List.ofFn_succ]
 "#);
  match decision {
   Decision::Witness(x)=>{
@@ -118,14 +126,19 @@ theorem input_fields_exact :
     output.push_str(&format!(r#"
 def returned : List Rat := {values}
 theorem checked :
-    GParity.Affine.checkWitness {n} (GParity.Chart.emitRows capturedInput) returned = true := by decide
+    GParity.Affine.checkWitness {n} (GParity.Chart.emitRows capturedInput) returned = true := by
+  norm_num [GParity.Affine.checkWitness, returned, GParity.Chart.emitRows, GParity.Chart.comparisonRows, GParity.Chart.affineRow,
+    GParity.Chart.scaledRows, GParity.Chart.ageForm, GParity.Chart.Form.const,
+    GParity.Chart.Form.variable, GParity.Chart.Form.sub, GParity.Chart.Form.scale,
+    GParity.Chart.Source.dimension, capturedInput, capturedSource,
+    GParity.Affine.Row.holds, GParity.Affine.Row.eval, GParity.Rational.dot, List.range_succ]
 noncomputable def sharedBank :=
   checked_original_bank code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
-    chronology exposures coins {cap} returned (by simpa only [input_fields_exact] using checked)
+    chronology exposures coins {cap} returned (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
 theorem actual_source_cell_feasible :
     originalCellFeasible (sourceOfValid code binary_valid) chronology exposures coins :=
   checked_original_bank_feasible code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
-    chronology exposures coins {cap} returned (by simpa only [input_fields_exact] using checked)
+    chronology exposures coins {cap} returned (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
 "#));
   }
   Decision::Exclusion(weights)=>{
@@ -135,13 +148,18 @@ theorem actual_source_cell_feasible :
 def weights : List Rat := {values}
 theorem weights_complete : weights.length = (GParity.Chart.emitRows capturedInput).length := by decide
 theorem checked :
-    GParity.Affine.checkContradiction {n} (GParity.Chart.emitRows capturedInput) weights = true := by decide
+    GParity.Affine.checkContradiction {n} (GParity.Chart.emitRows capturedInput) weights = true := by
+  norm_num [GParity.Affine.checkContradiction, weights, GParity.Chart.emitRows, GParity.Chart.comparisonRows, GParity.Chart.affineRow,
+    GParity.Chart.scaledRows, GParity.Chart.ageForm, GParity.Chart.Form.const,
+    GParity.Chart.Form.variable, GParity.Chart.Form.sub, GParity.Chart.Form.scale,
+    GParity.Chart.Source.dimension, capturedInput, capturedSource,
+    GParity.Affine.Row.holds, GParity.Affine.Row.eval, GParity.Rational.dot, List.range_succ]
 theorem actual_source_cell_infeasible :
     ¬ originalCellFeasible (sourceOfValid code binary_valid) chronology exposures coins :=
   checked_original_exclusion code binary_valid registry_valid (Equiv.refl (Fin {nt})) (Equiv.refl (Fin {nh}))
     chronology exposures coins {cap} weights
-    (by simpa only [input_fields_exact] using weights_complete)
-    (by simpa only [input_fields_exact] using checked)
+    (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using weights_complete)
+    (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
 "#));
   }
   Decision::Unknown{..}=>return Err(Error::Unknown),
