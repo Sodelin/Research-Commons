@@ -223,11 +223,11 @@ theorem restrictedBodyAnswer_as_record (N m B : ℕ) (rows cert : List Bool) :
       | some (Ts, []) => scanTargetRecord cert ⟨N, m, ⟨B, Ts⟩⟩
       | _ => false := by
   cases hr : readFramedList (readTargetTree N m) rows with
-  | none => rfl
+  | none => simp [restrictedBodyAnswer, hr]
   | some pair =>
       rcases pair with ⟨Ts, rest⟩
       cases rest with
-      | cons b bs => rfl
+      | cons b bs => simp [restrictedBodyAnswer, hr]
       | nil =>
           cases hc : parseBitTree N m cert <;>
             cases hv : scanRawTargetValid (⟨B, Ts⟩ : RawTargetRows N m) <;>
