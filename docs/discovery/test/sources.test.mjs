@@ -104,3 +104,11 @@ test('fixed-base arithmetic supplier remains author-complete only and outside or
  assert(!data.claims.find(c=>c.id==='CB-G3-004').accepted_artifacts.some(a=>a.url===p.url));
  assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
 });
+
+test('P1 conditional testing transfer remains complete while its uniform-risk premise stays unsupplied',()=>{
+ const j=joins.find(j=>j.kind==='recovered_conditional_transfer_not_uniform_rate');assert(j);
+ assert.deepEqual(j.claim_ids,['CB-PHYS-P1-001','CB-PHYS-P1-002']);assert.match(j.explanation,/EVERY prior/);assert.match(j.explanation,/exactly n physical copies per unknown source/);assert.match(j.explanation,/remains UNSUPPLIED/);assert.match(j.explanation,/completed suppliers/);
+ for(const p of j.links.filter(p=>p.expected_sha256)){const d=corpus.documents.find(d=>d.url===p.url);assert(d);assert.equal(d.bytes,p.expected_bytes);assert.equal(d.sha256,p.expected_sha256);assert.equal(d.git_blob,p.expected_git_blob);assert(d.bindings.some(b=>b.source_join_kind===j.kind));}
+ const hits=searchSources(corpus,'finite minimax',new Set(['CB-PHYS-P1-002']));assert(hits.some(d=>j.links.some(l=>l.url===d.url)));
+ assert.equal(data.claims.find(c=>c.id==='CB-PHYS-P1-002').completion.mathematical_claim_complete,true);
+});
