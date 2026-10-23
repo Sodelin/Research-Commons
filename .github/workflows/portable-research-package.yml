@@ -383,6 +383,8 @@ jobs:
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Epoch
       - name: Audit every owned sparse/epoch dependency and declaration
         run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.Epoch
+      - name: Kernel-check the actual full mixed-population native epoch table
+        run: cargo run --locked -p research-commons-package -- check-epoch-callers
       - name: Retain exact completed source objects even after a later module failure
         if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830

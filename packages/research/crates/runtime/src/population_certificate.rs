@@ -36,8 +36,12 @@ fn path(context:&Context,start:usize,target:usize)->Result<Vec<usize>,Error> {
  result.reverse();Ok(result)
 }
 fn descendant_proof(context:&Context,population:Location)->Result<String,Error> {
+ descendant_locations_proof(context,&vec![population;context.sample.len()])
+}
+fn descendant_locations_proof(context:&Context,locations:&[Location])->Result<String,Error> {
+ if locations.len()!=context.sample.len(){return Err(Error::Invalid("copy population arity"));}
  let mut out=String::new();
- for taxon in &context.sample {
+ for (taxon,population) in context.sample.iter().zip(locations.iter().copied()) {
   let named=finite(*taxon);
   match population {
    Location::Ancestral(root)=>{
@@ -76,27 +80,61 @@ fn descendant_proof(context:&Context,population:Location)->Result<String,Error> 
      out.push_str(&format!("        exact {proof}\n"));
     }
    },
-   Location::Node(_)=>return Err(Error::Invalid("node is not a population coefficient row")),
+   Location::Node(vertex)=>{
+    let start=finite(vertex);let target=context.source.leaves[*taxon];let last=finite(target);
+    let edges=path(context,vertex,target)?;
+    out.push_str(&format!(r#"      · change N.graph.DReach {start} (N.leaf {named})
+        have leaf_at : N.leaf {named} = {last} := congrFun taxa_exact {named}
+        rw [leaf_at]
+"#));
+    for (position,id) in edges.iter().enumerate() {
+     let a=finite(context.source.edges[*id].source);let b=finite(context.source.edges[*id].target);
+     let occurrence=finite(*id);
+     out.push_str(&format!(r#"        have step{position} : N.graph.DReach {a} {b} := by
+          have literal : N.graph.DReach (N.graph.source {occurrence}) (N.graph.target {occurrence}) :=
+            Relation.ReflTransGen.single ⟨{occurrence}, rfl, rfl⟩
+          simpa [edge_sources_exact, edge_targets_exact] using literal
+"#));
+    }
+    if edges.is_empty(){out.push_str("        exact Relation.ReflTransGen.refl\n");}
+    else {
+     let mut proof=format!("step{}",edges.len()-1);
+     for position in (0..edges.len()-1).rev(){proof=format!("Relation.ReflTransGen.trans step{position} ({proof})");}
+     out.push_str(&format!("        exact {proof}\n"));
+    }
+   },
   }
  }
  Ok(out)
 }
-fn replace_validity(document:String,context:&Context,population:Location,destinations:usize)->Result<String,Error> {
- let descendants=descendant_proof(context,population)?;
- let labels=std::iter::once("entering".to_owned()).chain((0..destinations).map(|i|format!("destination{i}")));
- let mut output=document;
- for label in labels {
-  let old=format!("    letI := sourceValidDecidable N sample (decode N.root {label}Snapshot)\n    decide +kernel⟩");
-  if output.matches(&old).count()!=1{return Err(Error::Invalid("retained source-validity proof boundary"));}
-  let replacement=format!(r#"    refine ⟨?_, ?_⟩
+fn rewrite_validity(document:String,label:&str,descendants:&str)->Result<String,Error> {
+ let old=format!("    letI := sourceValidDecidable N sample (decode N.root {label}Snapshot)\n    decide +kernel⟩");
+ if document.matches(&old).count()!=1{return Err(Error::Invalid("retained source-validity proof boundary"));}
+ let replacement=format!(r#"    refine ⟨?_, ?_⟩
     · exact @of_decide_eq_true _ (forestValidDecidable (decode N.root {label}Snapshot))
         (by decide +kernel)
     · intro copy
       fin_cases copy
 {descendants}  ⟩"#);
-  output=output.replacen(&old,&replacement,1);
- }
+ Ok(document.replacen(&old,&replacement,1))
+}
+fn replace_validity(document:String,context:&Context,population:Location,destinations:usize)->Result<String,Error> {
+ let descendants=descendant_proof(context,population)?;
+ let labels=std::iter::once("entering".to_owned()).chain((0..destinations).map(|i|format!("destination{i}")));
+ let mut output=document;
+ for label in labels{output=rewrite_validity(output,&label,&descendants)?;}
  Ok(output)
+}
+/// Same checked forest/path proof projection, now for an actual mixed-location
+/// raw snapshot. It does not assume all live roots occupy one population.
+pub(crate) fn repair_literal_snapshot(document:String,context:&Context,snapshot:&Snapshot,label:&str)
+ ->Result<String,Error> {
+ context.validate_snapshot(snapshot).map_err(Error::Invalid)?;
+ let locations=(0..context.sample.len()).map(|copy|snapshot.population[snapshot.ancestor[copy]]
+   .ok_or(Error::Invalid("missing live population"))).collect::<Result<Vec<_>,_>>()?;
+ let descendants=descendant_locations_proof(context,&locations)?;
+ let document=document.replace("by decide","by decide +kernel").replace("    decide⟩","    decide +kernel⟩");
+ rewrite_validity(document,label,&descendants)
 }
 
 /// Invoke the unchanged bounded recurrence and existing exporter together.

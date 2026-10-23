@@ -261,21 +261,7 @@ pub fn prepare<'a>(context: &'a Context, entering: &'a Snapshot, table: &'a Tabl
     out.put("open GProgram.G7.EffectivePopulationCoefficients\n")?;
     out.put("open GProgram.G7.SinglePopulationPolynomialKernel\nopen scoped NNReal\n")?;
     out.put("open Astra.NativePopulationTableCertificate\n\n")?;
-    out.put("private abbrev N : RootedBinary (Fin ")?; out.number(context.source.vertices)?;
-    out.put(") (Fin ")?; out.number(context.source.edges.len())?;
-    out.put(") (Fin ")?; out.number(context.source.leaves.len())?; out.put(") := ")?;
-    out.put(bindings.original_source)?; out.put("\n\nprivate def sample : Fin ")?;
-    out.number(context.sample.len())?; out.put(" → Fin ")?;
-    out.number(context.source.leaves.len())?; out.put(" := ")?;
-    function(&mut out,context.sample.len(),|out,i| fin(out,context.sample[i]))?;
-    out.put("\n\ntheorem root_exact : N.root = ")?; fin(&mut out,context.source.root)?;
-    out.put(" := by decide\n\ntheorem edge_sources_exact : N.graph.source = ")?;
-    function(&mut out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].source))?;
-    out.put(" := by decide\n\ntheorem edge_targets_exact : N.graph.target = ")?;
-    function(&mut out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].target))?;
-    out.put(" := by decide\n\ntheorem taxa_exact : N.leaf = ")?;
-    function(&mut out,context.source.leaves.len(),|out,i| fin(out,context.source.leaves[i]))?;
-    out.put(" := by decide\n\n")?;
+    context_declarations_into(&mut out,context,bindings)?;
     snapshot(&mut out,"entering",context,entering)?;
     for (i,transition) in table.transitions.iter().enumerate() {
         snapshot(&mut out,&format!("destination{i}"),context,&transition.destination)?;
@@ -305,4 +291,67 @@ pub fn prepare<'a>(context: &'a Context, entering: &'a Snapshot, table: &'a Tabl
     out.put("    (by simpa using coefficient_table_checked) d population entering_colocated r t\n\nend ")?;
     out.put(bindings.namespace)?; out.put("\n")?;
     Ok(Prepared { context, entering, table, bindings, document: out.text })
+}
+
+// Portable integration variant: expose the EXISTING literal renderers so the
+// full epoch caller need not duplicate the context/snapshot format. These
+// functions do no engine work or I/O and return unaccepted source in RAM.
+fn context_declarations_into(out: &mut Writer, context: &Context, bindings: Bindings<'_>) -> Result<()> {
+    out.put("private abbrev N : RootedBinary (Fin ")?; out.number(context.source.vertices)?;
+    out.put(") (Fin ")?; out.number(context.source.edges.len())?;
+    out.put(") (Fin ")?; out.number(context.source.leaves.len())?; out.put(") := ")?;
+    out.put(bindings.original_source)?; out.put("\n\nprivate def sample : Fin ")?;
+    out.number(context.sample.len())?; out.put(" → Fin ")?;
+    out.number(context.source.leaves.len())?; out.put(" := ")?;
+    function(out,context.sample.len(),|out,i| fin(out,context.sample[i]))?;
+    out.put("\n\ntheorem root_exact : N.root = ")?; fin(out,context.source.root)?;
+    out.put(" := by decide\n\ntheorem edge_sources_exact : N.graph.source = ")?;
+    function(out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].source))?;
+    out.put(" := by decide\n\ntheorem edge_targets_exact : N.graph.target = ")?;
+    function(out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].target))?;
+    out.put(" := by decide\n\ntheorem taxa_exact : N.leaf = ")?;
+    function(out,context.source.leaves.len(),|out,i| fin(out,context.source.leaves[i]))?;
+    out.put(" := by decide\n\n")?;
+    Ok(())
+}
+pub fn render_context_declarations(context: &Context, bindings: Bindings<'_>, limits: Limits) -> Result<String> {
+    context.validate().map_err(Error::Invalid)?;
+    name(bindings.original_module, limits.name_bytes)?;
+    name(bindings.original_source, limits.name_bytes)?;
+    name(bindings.namespace, limits.name_bytes)?;
+    let mut out = Writer::new(limits.rendered_bytes);
+    context_declarations_into(&mut out, context, bindings)?;
+    Ok(out.text)
+}
+pub fn render_snapshot_declarations(context: &Context, value: &Snapshot, label: &str, limits: Limits) -> Result<String> {
+    name(label, limits.name_bytes)?;
+    context.validate_snapshot(value).map_err(Error::Invalid)?;
+    let mut out = Writer::new(limits.rendered_bytes);
+    snapshot(&mut out, label, context, value)?;
+    Ok(out.text)
+}
+
+/// Render the existing full selected view of an ACTUALLY validated witness.
+/// This is literal projection formatting, not a stochastic transition engine.
+pub fn render_selected_view_declarations(context: &Context, value: &Snapshot, label: &str, limits: Limits) -> Result<String> {
+    name(label, limits.name_bytes)?;
+    let view = parity_solver::source_epoch::selected_view(context, value).map_err(Error::Invalid)?;
+    let mut out = Writer::new(limits.rendered_bytes);
+    out.put("private def ")?; out.put(label)?;
+    out.put("View : SelectedView (Fin ")?; out.number(context.source.vertices)?;
+    out.put(") (Fin ")?; out.number(context.source.edges.len())?;
+    out.put(") (Fin ")?; out.number(context.sample.len())?; out.put(") where\n  genealogy := ")?;
+    function(&mut out, context.sample.len(), |out,i| match &view.genealogy[i] {
+        None => out.put("none"),
+        Some(t) => { out.put("(some ")?; tree(out,t)?; out.put(")") }
+    })?;
+    out.put("\n  population := ")?;
+    function(&mut out, context.sample.len(), |out,i| match view.population[i] {
+        None => out.put("none"),
+        Some(p) => { out.put("(some ")?; location(out,p)?; out.put(")") }
+    })?;
+    out.put("\n  register := ")?;
+    function(&mut out, context.source.vertices, |out,i| out.put(if view.register[i] {"true"} else {"false"}))?;
+    out.put("\n\n")?;
+    Ok(out.text)
 }
