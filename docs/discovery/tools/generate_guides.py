@@ -14,6 +14,7 @@ lines=['# Find an answer in Research Commons','',intro,
 '- **What is established or refuted?** Follow the scoped result cards; completed hand mathematics does not become open because Lean is unfinished.',
 '- **How do the results connect?** Read [typed relationships](RESEARCH-CONNECTIONS.md). An idea in common is different from a proved adapter.',
 '- **What should an agent work on next?** Use [the reuse-before-work procedure](REUSE-BEFORE-WORK.md), including the exact unsupplied implication and completed suppliers.',
+'- **Looking for older or unmapped sources?** Use [the wider public archive inventory](ARCHIVE-SOURCES.md) or the reader/agent archive-path search. A source hit is not an acceptance verdict.',
 '- **Need full context?** [Canonical claim board](CLAIM-BOARD.md), [status corrections](STATUS-LABEL-AUDIT.md), [accepted work](ACCEPTED-RESULTS-AND-REMAINING-WORK.md), [October source map](OCTOBER-2026-RESEARCH-MAP.md).','',
 '## Published questions and credited classical suppliers','',
 'Origin is taken from the canonical card. This table does not assert a new historical-priority review.','',
@@ -68,6 +69,7 @@ node docs/discovery/tools/query.mjs --query 'independent routing' --refresh
 node docs/discovery/tools/query.mjs --query 'CB-G6-001'
 node docs/discovery/tools/query.mjs --origin published_open_problem
 node docs/discovery/tools/query.mjs --sources --query 'calibrated decoder'
+node docs/discovery/tools/query.mjs --archive --query 'calendar metric'
 ```
 
 The `--sources` option searches inside the bundled immutable public evidence bodies, returning pinned source links, excerpt, roles, hashes and claim bindings. It is a selected corpus, not the full archive or a new acceptance decision. The browser exposes the same evidence search on demand.
@@ -85,3 +87,21 @@ The default interface returns the exact claim scope, separate evidence axes, acc
 The record belongs in the existing task/handoff, not a duplicate diary. The procedure does not require busywork, permission for already-authorized source work, or reproof of every supplier.
 ''')
 print('Generated question routes, typed relationships and agent reuse procedure from',len(claims),'canonical cards')
+
+archive_path=ROOT/'dist/archive-catalog.json'
+if archive_path.exists():
+ archive=json.loads(archive_path.read_text());groups=collections.defaultdict(list)
+ for entry in archive['documents']:groups[entry['group']].append(entry)
+ lines=['# Find older public research sources','',f"Pinned public source `{archive['commit']}`: {len(archive['documents'])} Markdown document paths in selected source roots. Exact Git trees were read in batches; a truncated recursive root response was not used.",'',archive['coverage']['limitations'],'',
+ 'Search these paths in the same discovery reader with **Load wider archive search**, or run:', '',
+ "```sh\nnode docs/discovery/tools/query.mjs --archive --query 'calendar metric'\n```",'',
+ 'This lookup uses words in document paths, not unseen document bodies or current claim dispositions. Query [accepted claims](FIND-AN-ANSWER.md) and [read their evidence](REUSE-BEFORE-WORK.md) before allocating new work. Failed lookup means not found in this snapshot, not absence or open mathematics.','',
+ '## Source groups','', '| Source group | Markdown documents |','|---|---|']
+ for group,entries in sorted(groups.items()):
+  folder=group if '/'in group else group
+  url='https://github.com/'+archive['repository']+'/tree/'+archive['commit']+'/'+folder
+  if len(entries)==1 and entries[0]['path']==group:url=entries[0]['url']
+  lines.append(f"| [{clean(group)}]({url}) | {len(entries)} |")
+ lines+=['','## Selection and exclusions','', 'Selected roots: '+', '.join(archive['coverage']['roots'])+'. Root Markdown sources are also included. Regular authored Markdown paths are inventoried; symlinks, Git submodules and other file formats are outside this view. Dependency/generated subtrees and this discovery reader itself are excluded. The JSON corpus records every excluded subtree and inspected-tree count.','',
+ '[Exact inventory and Git blob identities](discovery/dist/archive-catalog.json). Source ownership and scientific acceptance remain with original authors. Private task/runtime/session records are not copied here.']
+ (OUT/'ARCHIVE-SOURCES.md').write_text('\n'.join(lines)+'\n')

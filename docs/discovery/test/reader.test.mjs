@@ -124,3 +124,16 @@ test('registry validation refuses credential/signed source links before acceptin
  }
  const d=structuredClone(data);d.claims[0].origin.source_url='https://example.org/paper?access_token=hidden';assert.throws(()=>validate(d));
 });
+
+test('combinable source-defined facets and subjective ranking preserve unassessed/unranked distinctions',async()=>{
+ const {sortClaims}=await import('../dist/model.mjs');
+ const ranking=JSON.parse(await readFile(new URL('../dist/subjective-reuse-ranking.json',import.meta.url)));
+ const filtered=search(data.claims,{kind:'theorem',review:'accepted_scoped_hand_review'});
+ assert(filtered.length>0);assert(filtered.every(c=>c.claim_kind==='theorem'&&c.completion.independent_review==='accepted_scoped_hand_review'));
+ assert.equal(sortClaims(filtered,'subjective_reuse',ranking)[0].id,'CB-G6-001');
+ const all=sortClaims(data.claims,'subjective_reuse',ranking),ranked=new Set(ranking.entries.map(e=>e.claim_id));
+ assert(all.slice(-9).every(c=>!ranked.has(c.id)));assert.equal(all.length,data.claims.length);
+ const newCard=data.claims.find(c=>c.id==='CB-SEQ-004');
+ const packet=reusePacket(newCard,meta,[],ranking);assert.equal(packet.subjective_reuse.entry,null);assert.match(packet.subjective_reuse.unranked_means,/not low importance/);
+ assert.match(newCard.novelty_status,/unassessed/);assert.equal(sortClaims(data.claims,'',ranking),data.claims);
+});

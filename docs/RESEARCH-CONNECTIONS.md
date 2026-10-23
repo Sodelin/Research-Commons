@@ -1,6 +1,6 @@
 # Research connections: what depends on what
 
-Generated from the existing canonical claim register at `74ba3079d346371530887693eab7e8eeb1ba3e20` (1.5-crossfield-completion-and-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 75 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `6366c491d6971abacc94dce9124c6b9c154b113e` (1.6-sequence-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 84 selected cards and is not exhaustive.
 
 Directions below follow the canonical register: the source card names a supplier/connection. The relationship type is part of the result. Do not promote a candidate or common idea into a proved implication.
 
@@ -26,6 +26,7 @@ A proved scope-preserving connection at the stated evidence level; not automatic
 | [**CB-CAUSAL-002**](CLAIM-BOARD.md#cb-causal-002) | [**CB-G7-001**](CLAIM-BOARD.md#cb-g7-001) | Physical hard sources and resource histories instantiate the G7 lower-certificate interface. |
 | [**CB-EXACTQUERY-003**](CLAIM-BOARD.md#cb-exactquery-003) | [**CB-EXACTQUERY-001**](CLAIM-BOARD.md#cb-exactquery-001) | The hand-proved actual-source normalization identifies the complete finite profile game for this same source/oracle/output contract. |
 | [**CB-NANUQ-004**](CLAIM-BOARD.md#cb-nanuq-004) | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) | The complete hand reduction transfers paired-tip quartet-based distance/support statements to the stated abstract contiguous-copy class; it is not an adapter from every biological network. |
+| [**CB-SEQ-008**](CLAIM-BOARD.md#cb-seq-008) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | The retained-vertex edge expansion proves H(v)=W(L(v)); it transfers this exact matching observation, not arbitrary graph or juggling properties. |
 
 ## reused theorem
 
@@ -48,6 +49,8 @@ A named mathematical supplier is actually used after its assumptions are met.
 | [**CB-NANUQ-003**](CLAIM-BOARD.md#cb-nanuq-003) | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) | Reuses the original all-level package's structural restriction and audited finite parameter suppliers; it sharpens the parameter-test collection, not the source-level bound. |
 | [**CB-NANUQ-005**](CLAIM-BOARD.md#cb-nanuq-005) | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) | Exact recovery of the raw integer matrix is combined with the accepted circular exact-support theorem under a supplied correct order. |
 | [**CB-SOFTSCI-004**](CLAIM-BOARD.md#cb-softsci-004) | [**CB-SOFTSCI-001**](CLAIM-BOARD.md#cb-softsci-001) | Two of the eight declarations directly reuse the identification and postprocessing results indexed in CB-SOFTSCI-001; they do not add two distinct discoveries. |
+| [**CB-SEQ-005**](CLAIM-BOARD.md#cb-seq-005) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness. |
+| [**CB-SEQ-007**](CLAIM-BOARD.md#cb-seq-007) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | Uses the exact graph-to-height digit recurrence, not a fitted recurrence or the unrelated arithmetic-progression formulas. |
 
 ## same principle
 
@@ -78,6 +81,10 @@ A related idea or method only; not a theorem dependency.
 | [**CB-NANUQ-003**](CLAIM-BOARD.md#cb-nanuq-003) | [**CB-EXACTQUERY-002**](CLAIM-BOARD.md#cb-exactquery-002) | Both have sharp small cases, but five total labels in a parameter test is not five adaptive quartet queries. |
 | [**CB-SOFTSCI-002**](CLAIM-BOARD.md#cb-softsci-002) | [**CB-CAUSAL-001**](CLAIM-BOARD.md#cb-causal-001) | Both distinguish observational information from intervention information, but this Boolean example is not a supplier of the later full restricted-query theorem. |
 | [**CB-SOFTSCI-005**](CLAIM-BOARD.md#cb-softsci-005) | [**CB-SOFTSCI-001**](CLAIM-BOARD.md#cb-softsci-001) | Both concern whether observations distinguish explanations. The clinical proof is not asserted to import the foundations theorems or to supply a general learning algorithm. |
+| [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | [**CB-SEQ-001**](CLAIM-BOARD.md#cb-seq-001) | Both concern Thue–Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d). |
+| [**CB-SEQ-010**](CLAIM-BOARD.md#cb-seq-010) | [**CB-SEQ-009**](CLAIM-BOARD.md#cb-seq-009) | Uses the same grouped-word family and phase structure, but this card concerns factor counts rather than recovery of an unknown grouping parameter. |
+| [**CB-SEQ-011**](CLAIM-BOARD.md#cb-seq-011) | [**CB-SEQ-010**](CLAIM-BOARD.md#cb-seq-010) | Both compare factor complexity, but their families differ: Thue–Morse is maximal within the selected-digit family, not within all grouped tau_n words. |
+| [**CB-SEQ-012**](CLAIM-BOARD.md#cb-seq-012) | [**CB-SEQ-006**](CLAIM-BOARD.md#cb-seq-006) | Both expose a finite-prefix/infinite-realization gap, in different graph/arithmetic models; neither theorem is used as a proof supplier of the other. |
 
 ## Reading scientific completion beside implementation
 
