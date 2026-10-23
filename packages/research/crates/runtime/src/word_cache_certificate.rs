@@ -4,7 +4,7 @@
 use crate::word_certificate as direct;
 use crate::exact_law::population_certificate as retained;
 use parity_solver::{source_word::{self,Request,Initial,Symbol,Terminal,Table},
-    source_epoch::{SelectedView,Transition},source_population::Snapshot};
+    source_epoch::{SelectedView,Transition},source_population::{Snapshot,Location}};
 
 #[derive(Clone,Copy,Debug)]
 pub struct Limits {
@@ -84,6 +84,7 @@ open UnifiedLean.Source.SourceNaturalInitialization
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.FullEpochPolynomial
 open GProgram.G7.EffectiveInitializationCoefficients
 open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
 open Astra.NativeSparseTableCertificate Astra.OriginalWordCacheCertificate
@@ -125,6 +126,20 @@ fn data_parts(bundle:&mut Bundle,base:&str,namespace:&str,context_module:&str,
   append(bundle,name.clone(),source,limits)?;last=name;
  }
  Ok(last)
+}
+/// Original population order, restricted to ALL actual current populations.
+/// Node copies are inert during this interval. The generated ActiveIn proof
+/// checks coverage against the literal source-valid input; this is metadata,
+/// never an independently assumed omission or re-fitted rate bank.
+fn active_populations(request:&Request,input:&Snapshot)->Vec<String>{
+ (0..request.context.source.edges.len()).map(Location::Edge)
+  .chain(std::iter::once(Location::Ancestral(request.context.source.root)))
+  .filter(|place|input.live.iter().any(|&a|input.population[a]==Some(*place)))
+  .map(|place|match place{
+   Location::Edge(e)=>format!("some {}",fin(e)),
+   Location::Ancestral(_)=>"none".into(),
+   Location::Node(_)=>unreachable!(),
+  }).collect()
 }
 fn rows_declaration(rows:&[String],dimension:usize,copies:usize)->String{
  // copies is metadata only; the actual shared sample type comes from Context.
@@ -216,6 +231,10 @@ def entry : StepEntry N sample (Fin {dimension}) (Fin {slots}) where
   operation := {operation}
   input := input
   rows := rows
+  populations := [{populations}]
+  active := by
+    unfold ActiveIn
+    decide +kernel
 theorem primitive_coefficient_fibres_checked :
     checkStep N sample parentRegistry common encodeVariable entry = true := by decide +kernel
 def certificate : CertifiedStep N sample parentRegistry common encodeVariable :=
@@ -223,7 +242,8 @@ def certificate : CertifiedStep N sample parentRegistry common encodeVariable :=
 #check certificate
 end {namespace}
 "#,header=header(&[context_module.clone(),data],&namespace,&context_namespace),
- rows=rows_declaration(&rows,dimension,copies),operation=symbol(entry.operation));
+ rows=rows_declaration(&rows,dimension,copies),operation=symbol(entry.operation),
+ populations=active_populations(request,&entry.input).join(", "));
   append(&mut bundle,name.clone(),source,limits)?;
   imports.push(name);certificates.push(format!("{namespace}.certificate"));
  }
@@ -294,6 +314,8 @@ pub fn example(mode:&str)->Result<Bundle,Error>{
    assert!(b.modules.iter().any(|m|m.source.contains("checkInitial")));
    assert_eq!(b.modules.iter().filter(|m|m.source.contains("checkStep N sample")).count(),b.primitive_entries);
    assert!(!b.modules.iter().any(|m|m.source.contains("native_decide")||m.source.contains("sorry")));
+   assert!(b.modules.iter().filter(|m|m.source.contains("checkStep N sample"))
+      .all(|m|m.source.contains("populations :=")&&m.source.contains("unfold ActiveIn")));
    let j:serde_json::Value=serde_json::from_str(&b.json().unwrap()).unwrap();
    assert_eq!(j["modules"].as_array().unwrap().len(),b.modules.len());
    assert_eq!(j["kernel_checked"],false);

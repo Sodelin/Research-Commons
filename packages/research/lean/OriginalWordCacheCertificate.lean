@@ -17,13 +17,15 @@ open UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.SourceFiniteProjection UnifiedLean.Source.SourceProgramTransport
 open UnifiedLean.Source.SourceNaturalInitialization
 open UnifiedLean.Source.SourceInitializedCalendar
-open UnifiedLean.Source.SourcePoissonExponential
+open UnifiedLean.Source.SourcePoissonKernel UnifiedLean.Source.SourcePoissonExponential
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.EffectivePopulationCoefficients GProgram.G7.EffectiveFullEpochCoefficients
 open GProgram.G7.EffectiveInitializationCoefficients
 open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
 open GProgram.G7.SparseRowProducts GProgram.G7.SparseWordComposition
+open GProgram.G7.FullEpochSupport GProgram.G7.FullEpochPolynomial
+open GProgram.G7.SelectedEpochTableUniqueness GProgram.G7.SelectedKernelPolynomial
 open Astra.NativeSparseTableCertificate
 open scoped BigOperators NNReal
 
@@ -46,17 +48,60 @@ def symbolEq : Symbol J V E → Symbol J V E → Bool
     symbolEq a b = true ↔ a = b := by
   cases a <;> cases b <;> simp [symbolEq]
 
+/-- The inherited single-epoch uniqueness receiver applies to ANY complete
+active population list. Empty original populations need not be expanded.
+No calendar-slot independence or new source polynomial is assumed. -/
+theorem active_fullRows_eq_epochTable (N : RootedBinary V E X) {sample : Copy → X}
+    (todo : List (Option E)) (s : Code N sample) (hs : ActiveIn N s todo.toFinset)
+    (b : SelectedIndex N sample Finset.univ) :
+    polynomial (readRows (project N Finset.univ) (fullRows N todo Copy sample s) b) =
+      epochTable N (project N Finset.univ s) b := by
+  apply polynomial_eq_of_single_epoch_evaluations
+  intro r
+  change MvPolynomial.eval₂ (Rat.castHom ℝ) (survival r 1)
+      (polynomial (readRows (project N Finset.univ) (fullRows N todo Copy sample s) b)) = _
+  rw [eval_polynomial, fullRows_actual N todo s hs b r 1,
+    constructed_source_time_kernel_projection, project_eq]
+  exact (actual_selected_epoch_table N (projection N Finset.univ s) b r 1).symm
+
 structure StepEntry (N : RootedBinary V E X) (sample : Copy → X)
     (Native J : Type*) where
   operation : Symbol J V E
   input : Code N sample
   rows : Rows Native (Code N sample)
+  populations : List (Option E)
+  active : ActiveIn N input populations.toFinset
+
+def referenceStepRows (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (e : StepEntry N sample Native J) :
+    Rows Native (Code N sample) :=
+  match e.operation with
+  | .interval j => renameRows encode (renameRows (fun i => Sum.inl (j,i))
+      (fullRows N e.populations Copy sample e.input))
+  | op => renameRows encode (stepRows N H common op e.input)
+
+theorem reference_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
+    (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
+    (encode : WordVariable N J → Native) (e : StepEntry N sample Native J)
+    (b : SelectedIndex N sample Finset.univ) :
+    polynomial (readRows (project N Finset.univ) (referenceStepRows N sample H common encode e) b) =
+      MvPolynomial.rename encode
+        (stepPolynomial N H common e.operation (project N Finset.univ e.input) b) := by
+  cases hop : e.operation with
+  | interval j =>
+      simp only [referenceStepRows, hop, polynomial_read_renameRows]
+      rw [active_fullRows_eq_epochTable N e.populations e.input e.active b]
+      rfl
+  | exit edge =>
+      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows]
+  | enter vertex =>
+      simp only [referenceStepRows, hop, polynomial_read_renameRows, polynomial_stepRows]
 
 def checkStep (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
     (encode : WordVariable N J → Native) (e : StepEntry N sample Native J) : Bool :=
-  checkRows (project N Finset.univ)
-    (renameRows encode (stepRows N H common e.operation e.input)) e.rows
+  checkRows (project N Finset.univ) (referenceStepRows N sample H common encode e) e.rows
 
 structure CertifiedStep (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
@@ -84,9 +129,9 @@ theorem certified_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
       MvPolynomial.rename encode
         (stepPolynomial N H common e.entry.operation (project N Finset.univ e.entry.input) b) := by
   have h := checkRows_sound (project N Finset.univ)
-    (renameRows encode (stepRows N H common e.entry.operation e.entry.input))
+    (referenceStepRows N sample H common encode e.entry)
     e.entry.rows e.checked b
-  rw [polynomial_read_renameRows, polynomial_stepRows] at h
+  rw [reference_step_polynomial] at h
   exact h.symm
 
 /-- Full selected-view equality is sufficient by the EXISTING exact step
