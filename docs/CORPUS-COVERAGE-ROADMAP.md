@@ -4,6 +4,30 @@
 
 This roadmap distinguishes recovered completed research from unfinished **indexing or evidence recovery**. It does not estimate how many discoveries exist, assign a completion percentage, or certify every proof in the corpus.
 
+## Published coverage update — 23 October 2026, 11:33 UTC
+
+The [canonical register now contains **114 published cards**][claims-114] at **e909f1739a22bb6cc1ea89e655d64a9f5a3cc54a**. [CB-WONG-004][CB-WONG-004] and [CB-RNA-002][CB-RNA-002] are published, not merely insertion-approved. The 11:28 UTC **112-card** and original **104-card** snapshots below are preserved as dated history; their pending-publication labels are superseded by this update.
+
+All **32 original Samuel families** now map to **27 distinct published grouped cards**. This reconciles the original family ledger with the scoped register; it does not assert 32 completed whole programmes, 27 independent discoveries, an exhaustive proof audit or corpus-wide contribution chronology. The W02 row now links to its published conditional owner-transfer card. All 32 original source URLs/blob identities and the other 30 families' recorded reading limits remain unchanged.
+
+W-C's finite-error relaxation remains **IAP only**, with supplied owners and saturated-maximality qualifications. RNA's exact Gamma class-law theorem remains conditional on its named source/weight/output/classifier admission: publication does not certify a running RNA implementation, energy code, RNG or efficient class-mass computation. Historical formal checks, bounded source review and unperformed fresh execution remain separate. No theorem, original ranking or implementation scope is upgraded by this coverage update.
+
+## Earlier coverage reconciliation — 23 October 2026, 11:28 UTC (112-card snapshot retained)
+
+The published canonical register now has **112 cards** at [21ff917bdd0154376fc94d2a78eef63e6cb40123][claims-112]. The original **104-card snapshot below is retained as history**, not the current count. This update reconciles existing source recovery only; it changes no theorem, historical receipt or subjective ranking.
+
+**All 32 original Samuel families now have a bounded source/status mapping:** 31 families link to **26 distinct published grouped cards**; W02 has one completed, insertion-approved group, **CB-WONG-004**, not yet published. Shared-card families are not counted twice. These are coverage/mapping counts, not 32 solved programmes, 27 discoveries, or a claim that every transitive proof was read. The unchanged first 30 rows retain their exact reading limits, B04's unretrieved process-exit evidence and written common-limit boundary, M05's source-reported review limit, and classical attribution.
+
+- **W01, actual continuous marked history:** [CB-WONG-001][CB-WONG-001] is published. Twelve complete source/provider bodies were matched to the final historical receipt. Continuous cuts, finite samples n≥1, stored dates and the explicit one-lineage stop are load-bearing. Finite event and physical stopping are almost sure, not a new expected-physical-time theorem, full real-time generator or empirical simulator claim.
+- **W01, deterministic source operations:** [CB-WONG-002][CB-WONG-002] and [CB-WONG-003][CB-WONG-003] are published. Fifteen complete source/provider bodies match the historical receipts. Exact actual-record memoized extraction needs the stated acyclicity/unique-parent conditions, and recovery of all original local edges needs sample support. MRCA truncation and coordinate-dependent unary bypass protect samples. The whole-graph normal form is noncomputable; the extractor and interval-list merger are executable definitions. Canonical-storage idempotence is not full-pipeline idempotence, and abstract counters are not native runtime bounds.
+- **W02, supplied owner transfer:** the [exact ancestry hierarchy][wong-owner-source] and [finite-error extension][wong-robust-source] have completed body/receipt reconciliation. Eight full fresh bodies plus two called provider proofs were inspected; a previously read provider was reused. All nine fresh file hashes match the [final historical receipt][wong-final-receipt]. The identical-ancestors property (IAP) requires each candidate member to have finitely many descendants or finitely many nondescendants within that candidate. The finite-error relaxation transfers IAP only. Stronger connectivity/specieslike conclusions retain their extra premises, and maximality equivalence is among saturated whole-owner candidates. Owners are supplied, not inferred; no empirical species identification follows. Located independent source correspondence is not a whole-proof review.
+
+**Other completed mapping steps:** [CB-CROSSSCALE-001][CB-CROSSSCALE-001] now records conceptual attribution, not an effectiveness theorem. [CB-TRANSFER-001…003][CB-TRANSFER-001] and [CB-FEEDBACK-006][CB-FEEDBACK-006] now map the separate transfer/fixed-exchange groups; the historical queue below must not restart that recovery. The completed conditional [independent RNA Gamma class-law bridge][rna-gamma-source] has insertion-approved **CB-RNA-002**, also **not yet published**. Its actual executable/energy/classifier/positive-support admission, RNG and efficiency obligations remain separate. W-C and RNA insertion approval does not increase the published count to 114.
+
+The Wong 52-family ledger keeps its mixed completed/partial/open/clarification/empirical/agenda/historical scopes. No Little-ARG expansion, whole-paper completion, fresh scientific execution or new priority claim is made. The 104-card evidence links and prior row records below remain valid at their dated scopes; only W01/W02 rows are advanced here. Contribution attribution is retained, but original question-to-proof chronology is still not reconstructed corpus-wide.
+
+### Historical 104-card baseline, retained
+
 The [canonical register][claims] contains **104 scoped cards** at commit **f87a6c50029c1ae13f0340818b3bf358b1bf3de3**, version 1.11-alexander-source-recovery. Original proof dates, recorded checks and narrower source scopes remain authoritative. The three Alexander additions are now published, preserving their original completion and novelty boundaries. Remaining recovery work below is not a request to re-prove completed mathematics.
 
 ## Five different evidence stages
@@ -52,8 +76,8 @@ The [original publication ledger][samuel-ledger] is an organizing list of **32 f
 | [M03: Predictive state and memory][sam-M03] | Scoped body/status reconciled | [CB-MEMORY-001][CB-MEMORY-001] | Coarsest exact controlled predictive state and full-history/feedback suppliers; not automatic state discovery. |
 | [M04: Exact stochastic preservation][sam-M04] | Scoped body/status reconciled | [CB-MEMORY-003][CB-MEMORY-003] | Exact countably supported PMF/adaptive-record theorem, not general continuous kernels or the unmechanized approximate-TV proposal. |
 | [M05: Rare-event calibration][sam-M05] | Written proof read; formal/review limit | [CB-MEMORY-004][CB-MEMORY-004] | Completed general written calibration bound; no general Lean proof and no separately recovered calibration-review body. |
-| [W01: Wong representation/process][sam-W01] | Ledger/receipts reconciled; marked-process bodies read; card mapping pending | No dedicated card yet | Completed scoped continuous marked law/finite absorption and extraction results are documented; next recover final bodies with continuous cuts, n≥1 and explicit stop. No Little-ARG/whole-paper closure. |
-| [W02: Owner-map and robust-IAP transfer][sam-W02] | Ledger/receipts; body scope pending | No dedicated card yet | Completed conditional owner/path-lifting and robust-IAP subtheorems are documented; their dedicated body/receipt mapping is pending. Background overlaps are not the full transfer. |
+| [W01: Wong representation/process][sam-W01] | Bounded full-body/receipt recovery complete for W-A/W-B; 12 marked-history and 15 deterministic source/provider bodies | Published [CB-WONG-001][CB-WONG-001], [CB-WONG-002][CB-WONG-002], [CB-WONG-003][CB-WONG-003] | Continuous marked law and almost-sure absorption; actual-record extraction and conditional sample-support round trip; noncomputable full normal form with protected samples and storage-only idempotence. No Little-ARG, full generator, native runtime or whole-paper closure. |
+| [W02: Owner-map and robust-IAP transfer][sam-W02] | Bounded body/receipt recovery complete; 8 fresh full bodies plus 2 called provider proofs, exact final receipt | Published [CB-WONG-004][CB-WONG-004] | Supplied finite-fibre owner map; exact ancestry hierarchy. Finite-error extension is IAP-only; maximality equivalence is among saturated candidates. No inferred ownership, biological validation or whole-proof review upgrade. |
 
 ### What those mappings do not collapse
 
@@ -64,7 +88,9 @@ The [original publication ledger][samuel-ledger] is an organizing list of **32 f
 - M01/M03 are predecessor and continuation. M04's countably supported PMF theorem is not a general continuous-kernel result. M05 is a completed general written proof, not a Lean endpoint.
 - Formal audit totals are endpoint/declaration counts with reused suppliers, not discovery counts. New archival reading does not constitute a new compiler run or external peer review.
 
-## Wong: keep the source distinctions before adding cards
+## Wong: historical 104-card recovery stage, retained
+
+**Reading guide:** the recovery-pending wording in this dated section is superseded by the 11:28 UTC update and current W01/W02 rows above. The original ledger's scientific scope limits remain in force.
 
 The [52-family coverage ledger][wong-ledger], [machine-readable statuses][wong-json] and [successor delta][wong-delta] have been reconciled at ledger/acceptance-receipt level. They retain **11 checked-scoped, 11 partial, 13 open, 8 clarification, 6 empirical-open, 2 agenda and 1 historical-context** labels. These are the source ledger's heterogeneous statuses, not a blanket claim of completion or a new judgment based on unread proofs.
 
@@ -72,7 +98,9 @@ The archive already documents completed scoped theorems for the **actual continu
 
 Avoid duplicating the already mapped opposite-completion theorem in [CB-GENOME-001][CB-GENOME-001] or the fixed-locus/restriction adapter in [CB-MEMORY-001][CB-MEMORY-001]. [CB-MEMORY-003][CB-MEMORY-003] does not supply the continuous-cut construction. Ownership ambiguity in [CB-GENOME-003][CB-GENOME-003] is different from conditional owner-map transfer. ProductiveCore appears as a recorded supplier for the owner-transfer development, but [CB-POPULATION-003][CB-POPULATION-003] is not itself the whole transfer theorem.
 
-## Small next-recovery queue beyond this Samuel reconciliation
+## Historical next-recovery queue at the 104-card snapshot
+
+**Reading guide:** retain this queue as a provenance record, not a current instruction to repeat finished recovery. Cross-Scale and transfer/fixed-exchange groups are now published; the independent RNA Gamma group is insertion-approved, not yet published. Remaining exact-source or implementation gaps retain their stated contracts.
 
 These are bounded **source-mapping tasks**, not instructions to resume every research problem.
 
@@ -166,3 +194,19 @@ This roadmap changes no theorem status, register object or subjective ranking. I
 [CB-ALEXANDER-003]: https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/docs/CLAIM-BOARD.md#cb-alexander-003
 
 [CB-ALEXANDER-004]: https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/docs/CLAIM-BOARD.md#cb-alexander-004
+
+[claims-112]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/claims.json
+[CB-WONG-001]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-wong-001
+[CB-WONG-002]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-wong-002
+[CB-WONG-003]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-wong-003
+[CB-CROSSSCALE-001]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-crossscale-001
+[CB-TRANSFER-001]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-transfer-001
+[CB-FEEDBACK-006]: https://github.com/Sodelin/Research-Commons/blob/21ff917bdd0154376fc94d2a78eef63e6cb40123/docs/CLAIM-BOARD.md#cb-feedback-006
+[wong-owner-source]: https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean
+[wong-robust-source]: https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeRobust.lean
+[wong-final-receipt]: https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json
+[rna-gamma-source]: https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/E8PaperGammaAdmission.lean
+
+[claims-114]: https://github.com/Sodelin/Research-Commons/blob/e909f1739a22bb6cc1ea89e655d64a9f5a3cc54a/docs/claims.json
+[CB-WONG-004]: https://github.com/Sodelin/Research-Commons/blob/e909f1739a22bb6cc1ea89e655d64a9f5a3cc54a/docs/CLAIM-BOARD.md#cb-wong-004
+[CB-RNA-002]: https://github.com/Sodelin/Research-Commons/blob/e909f1739a22bb6cc1ea89e655d64a9f5a3cc54a/docs/CLAIM-BOARD.md#cb-rna-002
