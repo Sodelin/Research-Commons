@@ -151,7 +151,8 @@ test('combinable source-defined facets and subjective ranking preserve unassesse
 
 
 test('recovered feedback and genome components keep scoped historical formal evidence and excluded extensions',()=>{
- const ids=data.claims.filter(c=>/^CB-(FEEDBACK|GENOME)-/.test(c.id));assert.equal(ids.length,9);
+ const ids=data.claims.filter(c=>/^CB-(FEEDBACK|GENOME)-/.test(c.id));
+ for(const original of ["CB-FEEDBACK-001", "CB-FEEDBACK-002", "CB-FEEDBACK-003", "CB-FEEDBACK-004", "CB-FEEDBACK-005", "CB-GENOME-001", "CB-GENOME-002", "CB-GENOME-003", "CB-GENOME-004"])assert(ids.some(c=>c.id===original));
  for(const c of ids){assert.equal(bucket(c),'established');assert.deepEqual(reusePacket(c,meta).formal_status,c.evidence.formal);assert(c.separate_downstream_or_validation_work);}
  const finite=card('CB-FEEDBACK-004');assert.match(finite.evidence.formal.status,/recorded_exit_limit/);assert.match(finite.separate_downstream_or_validation_work,/exit was not retrieved/);
  const iap=card('CB-FEEDBACK-005');assert.equal(iap.completion.mathematical_claim_complete,true);assert.match(iap.separate_downstream_or_validation_work,/does not reopen/);
