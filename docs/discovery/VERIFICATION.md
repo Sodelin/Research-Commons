@@ -1,0 +1,17 @@
+# Discovery reader verification
+
+23October2026. Source/projection testing, not independent scientific proof review.
+
+- Canonical60-card JSON snapshot is byte-pinned to public commit78ef5c855146cc88afdad78cd3475eae2399f141; original SHA256646452a61183ce16ee8e2ece8fd9e4f4cdfaa976fb41698498be0546219251a7 matches the Lean gateway's independent source report. Original IDs, scientific statuses and typed edges are unchanged.
+- Final Node test run reports17 passing test records:10 model/contract checks,6 actual DOM journey subtests and their enclosing group. No counts from earlier runs are added.
+- Covered journeys: deep link and P5 completion/proof links; canonical agent record; published-question filtering; typo search and honest no-result recovery; reuse workflow and G6 native-gap links; source-refresh failure preserving snapshot.
+- Covered contracts: immutable status source; exact-ID/prefix/fuzzy ranking; origin/classical attribution; hand-complete versus formal-open separation; typed edge direction; precise reuse record; malformed/duplicate/dangling source refusal; HTTPS-only links; priority owner evidence joins.
+- Actual phone Node sample:60 cards,100 warm queries27.5ms. This is this host's observation, not a browser-wide benchmark or large-archive result.
+- Twelve unique priority immutable source/discussion entrypoints resolve. Existing Lean gateway publication is3a309156d573b1b61f1c32c83e881ad61e538cf7. Public P5 proof/verdict/admission index is separate from restricted positive results.
+- Original failure retained in this authored summary: all DOM assertions passed initially, but a toast timeout accessed the closed test document and made the process fail. The implementation now captures its own element before scheduling; final run passes. A separate initial patch command used a duplicated relative path and did not apply; corrected source was then actually tested. No failed run is relabelled a pass.
+- MiniSearch7.2.0 package SHA512 integrity verified before extraction; local ESM hash and MIT licence metadata are in DEPENDENCIES.json and dist/vendor. Package scripts were not run. jsdom26.1.0 is locked/test-only.
+- No real browser/screenshot capability was available; these are DOM/application and model checks, not visual, Android WebView, screen-reader or phone-device acceptance. No proof/compiler/model/native Lean job or physical device action occurred.
+
+Deployment, saved version and exact publication receipts are recorded separately after actual success. The whole discovery assignment remains active: broader research/older-site coverage and owner adoption require more than these60 indexed cards.
+
+Local HTTP verification: eight production assets returned200, matched exact on-disk source bytes and used correct ES-module MIME types. The owned preview server was stopped. No other listener was changed.
