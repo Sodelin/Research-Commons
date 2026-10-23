@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import {rea
 import {JSDOM} from 'jsdom';
 const root=new URL('../dist/',import.meta.url);
 const html=await readFile(new URL('index.html',root),'utf8');
-const docs={};for(const name of ['claims.json','source.json','reading-joins.json'])docs[name]=JSON.parse(await readFile(new URL(name,root)));
+const docs={};for(const name of ['claims.json','source.json','reading-joins.json','source-corpus.json'])docs[name]=JSON.parse(await readFile(new URL(name,root)));
 const wait=async fn=>{for(let i=0;i<80;i++){if(fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail('Reader did not reach the expected DOM state.');};
 test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-source recovery',async t=>{
  const dom=new JSDOM(html,{url:'https://reader.test/?q=quantum#CB-PHYS-P5-004',pretendToBeVisual:true});
@@ -51,7 +51,17 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   assert($('detail').textContent.includes('Exact native first-writer gap'));
  });
+ await t.test('evidence-body search loads separately and links immutable sources back to claims',async()=>{
+  $('reset').click();[...document.querySelectorAll('button')].find(b=>b.textContent.startsWith('Load evidence search')).click();
+  await wait(()=>document.querySelector('.source-hit'));
+  $('search').value='calibrated decoder';$('search').dispatchEvent(new dom.window.Event('input'));
+  await wait(()=>location.search.includes('calibrated'));
+  assert(document.querySelector('.source-hit a').href.includes('/blob/'));
+  assert(document.querySelector('.source-results').textContent.includes('Source hits do not establish acceptance'));
+  document.querySelector('.source-hit button').click();assert($('detail').textContent.includes('CB-G7-001'));
+ });
  await t.test('offline latest-source failure preserves a usable source snapshot',async()=>{
+  $('reset').click();location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
   offline=true;$('refresh').click();await wait(()=>$('freshness').textContent.includes('Showing the verified bundled snapshot'));
   assert(document.querySelectorAll('.claim').length>0);assert($('detail').textContent.includes('CB-G6-001'));
  });

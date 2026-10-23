@@ -1,4 +1,5 @@
 import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources} from './model.mjs';
+import {searchSources,sourceExcerpt} from './source-search.mjs';
 const $=id=>document.getElementById(id);
 const state={data:null,meta:null,limit:9,selected:decodeURIComponent(location.hash.slice(1)),mode:'all',joins:[]};
 const initial=new URLSearchParams(location.search);
@@ -47,7 +48,34 @@ function render(){
     add(bottom,el('span',c.id),el('span',`${n.outgoing.length+n.incoming.length} connections`));article.append(bottom);results.append(article);
   }
   if(matches.length>state.limit){const more=el('button',`Show ${Math.min(12,matches.length-state.limit)} more`,'loadmore');more.addEventListener('click',()=>{state.limit+=12;render();});results.append(more);}
+  renderSources(results,f);
   if(state.selected)renderDetail();writeRoute();
+}
+let sourceCorpus=null,sourceLoading=false,sourceError=false;
+function renderSources(results,f){
+  const panel=el('section',undefined,'source-results');results.append(panel);
+  panel.append(el('h2','Search the linked evidence bodies'));
+  if(!sourceCorpus){
+    panel.append(el('p','Load the bundled public evidence corpus to search inside source documents. This is separate from the claim summaries.'));
+    if(sourceError)panel.append(el('p','Evidence search could not load. Claim search and original source links remain available.'));
+    const load=el('button',sourceLoading?'Loading evidence…':'Load evidence search (~1.4 MB)');load.disabled=sourceLoading;
+    load.addEventListener('click',async()=>{
+      sourceLoading=true;sourceError=false;render();
+      try{const r=await fetch('./source-corpus.json');if(!r.ok)throw Error('Source corpus unavailable');const corpus=await r.json();if(corpus.schema!==1||!Array.isArray(corpus.documents))throw Error('Unsupported corpus');sourceCorpus=corpus;}
+      catch{sourceError=true;}finally{sourceLoading=false;render();}
+    });panel.append(load);return;
+  }
+  const allowed=new Set(search(state.data.claims,{...f,q:''}).map(c=>c.id));
+  const hits=searchSources(sourceCorpus,f.q,allowed);
+  panel.append(el('p',`${hits.length} matching documents of ${sourceCorpus.coverage.indexed} indexed; ${sourceCorpus.coverage.unavailable.length} unavailable. Evidence snapshot ${sourceCorpus.registry_source.commit.slice(0,8)}. ${sourceCorpus.coverage.limitation}`));
+  if(sourceCorpus.registry_source.commit!==state.meta.commit)panel.append(el('p','The claim register has a different revision. Evidence bodies remain pinned to their bundled source snapshot.','limit'));
+  if(!hits.length)panel.append(el('p','No match in this selected corpus. This does not establish absence from the wider archive.'));
+  for(const d of hits.slice(0,state.limit)){
+    const article=el('article',undefined,'source-hit');article.append(link(d.title+' ↗',d.url),el('p',sourceExcerpt(d.body,f.q)));
+    for(const binding of d.bindings){const b=el('button',`${binding.claim_id} · ${pretty(binding.role)}`,'quiet');b.addEventListener('click',()=>select(binding.claim_id,true));article.append(b);}
+    article.append(el('small',`Source SHA256 ${d.sha256}`));panel.append(article);
+  }
+  if(hits.length>state.limit){const more=el('button','Show more evidence results','loadmore');more.addEventListener('click',()=>{state.limit+=12;render();});panel.append(more);}
 }
 function section(parent,title,text,cls){parent.append(el('h3',title),el('p',text,cls));}
 function select(id,focus=false){state.selected=id;render();if(focus){$('detail').focus({preventScroll:true});if(innerWidth<=1050)$('detail').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}}
