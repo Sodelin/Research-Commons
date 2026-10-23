@@ -16,6 +16,7 @@ open UnifiedLean.Source.NativeIndependentPairMixture
 open UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.SourceFiniteProjection UnifiedLean.Source.SourceProgramTransport
 open UnifiedLean.Source.SourceNaturalInitialization
+open UnifiedLean.Source.SourceInitializedCalendar
 open UnifiedLean.Source.SourcePoissonExponential
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration
@@ -106,7 +107,11 @@ theorem cached_step_polynomial (N : RootedBinary V E X) (sample : Copy → X)
       dsimp only [cachedStep]
       split
       · rename_i hit
-        have hm := Bool.and_eq_true.mp hit
+        have hm : symbolEq e.entry.operation op = true ∧
+            decide (project N Finset.univ e.entry.input = project N Finset.univ s) = true := by
+          cases ha : symbolEq e.entry.operation op <;>
+            cases hb : decide (project N Finset.univ e.entry.input = project N Finset.univ s) <;>
+              simp_all
         have hop := symbolEq_eq_true.mp hm.1
         have hs : project N Finset.univ e.entry.input = project N Finset.univ s :=
           of_decide_eq_true hm.2
@@ -202,11 +207,13 @@ theorem initial_value (N : RootedBinary V E X) (sample : Copy → X)
   have hev := congrArg (MvPolynomial.eval₂ (Rat.castHom ℝ)
     (fun i => wordVariables N r (originalGamma p) dur (decode i))) heq
   rw [eval_polynomial, eval_polynomial] at hev
-  refine hev.symm.trans (initialRows_actual N sample (fun h => encode (.inr h)) p b
-    (fun i => wordVariables N r (originalGamma p) dur (decode i)) ?_)
-  intro h
-  rw [hleft]
-  rfl
+  have hx : ∀ h : Hybrid N,
+      wordVariables N r (originalGamma p) dur (decode (encode (.inr h))) = p.gamma h := by
+    intro h
+    rw [hleft]
+    rfl
+  exact hev.symm.trans (initialRows_actual N sample (fun h => encode (.inr h)) p b
+    (fun i => wordVariables N r (originalGamma p) dur (decode i)) hx)
 
 def checkComposedWord (N : RootedBinary V E X) (sample : Copy → X)
     (H : OriginalParentRegistry N) (common : Hybrid N → Bool)
