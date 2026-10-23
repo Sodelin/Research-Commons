@@ -130,15 +130,18 @@ pub fn filter(reference:&Parameters,candidate:&Parameters,limits:Limits)->Result
 fn vector(items:impl IntoIterator<Item=String>)->String{
  format!("![{}]",items.into_iter().collect::<Vec<_>>().join(", "))
 }
+fn dependent_cases(items:impl IntoIterator<Item=String>)->String{
+ let items=items.into_iter().collect::<Vec<_>>();
+ items.into_iter().rev().fold("Fin.elim0".to_string(),
+  |tail,head|format!("(Fin.cases {head} {tail})"))
+}
 fn render_parameters(name:&str,p:&Parameters)->String{
  let j=p.duration.len();
- let rates=p.rates.iter().map(|r|vector(r.iter().map(literal))).collect::<Vec<_>>();
- let matrices=p.routing.iter().map(|m|vector(m.iter().map(|r|vector(r.iter().map(literal))))).collect::<Vec<_>>();
- let mut s=format!("def {name} : Parameters {j} count where\n  duration := {}\n  rate := fun j => by\n    fin_cases j\n",
-  vector(p.duration.iter().map(literal)));
- for r in rates{s.push_str(&format!("    · exact {r}\n"));}
- s.push_str("  routing := fun j => by\n    fin_cases j\n");
- for m in matrices{s.push_str(&format!("    · exact {m}\n"));}s
+ let rates=dependent_cases(p.rates.iter().map(|r|vector(r.iter().map(literal))));
+ let matrices=dependent_cases(p.routing.iter()
+  .map(|m|vector(m.iter().map(|r|vector(r.iter().map(literal))))));
+ let duration=if j==0{"Fin.elim0".to_string()}else{vector(p.duration.iter().map(literal))};
+ format!("def {name} : Parameters {j} count where\n  duration := {duration}\n  rate := {rates}\n  routing := {matrices}\n")
 }
 /// Entire result certificate on the actual supplied arrays. Native validation
 /// is not assumed to be a bijection onto physical histories, and the checker
@@ -152,15 +155,11 @@ pub fn lean_certificate(reference:&Parameters,candidate:&Parameters,name:&str,li
  let mut s=format!("import ResearchCommons.MSCI.Alignment\nimport Mathlib.Tactic\n\nnamespace ResearchCommons.Generated.MSCIAlignment_{name}\nopen ResearchCommons.MSCI.Alignment\nset_option maxHeartbeats 3000000\nset_option maxRecDepth 10000\n");
  s.push_str(&format!("def count : Fin {} → ℕ := {}\n",j+1,vector(reference.rates.iter().map(|r|r.len().to_string()))));
  for (name,p) in [("reference",reference),("candidate",candidate)]{
-  let mut body=render_parameters(name,p);
-  if j==0{
-   body=body.replace("duration := ![]","duration := Fin.elim0")
-    .replace("  routing := fun j => by\n    fin_cases j\n","  routing := Fin.elim0\n");
-  }s.push_str(&body);
+  s.push_str(&render_parameters(name,p));
  }
  for (i,sigma) in result.maps.iter().enumerate(){
-  s.push_str(&format!("def rename{i} : Rename {j} count := fun j => by\n  fin_cases j\n"));
-  for map in sigma{s.push_str(&format!("  · exact {}\n",vector(map.iter().map(usize::to_string))));}
+  s.push_str(&format!("def rename{i} : Rename {j} count := {}\n",
+   dependent_cases(sigma.iter().map(|map|vector(map.iter().map(usize::to_string))))));
  }
  let supplied=if result.maps.is_empty(){"∅".to_string()}else{
   format!("{{{}}}",(0..result.maps.len()).map(|i|format!("rename{i}")).collect::<Vec<_>>().join(", "))
