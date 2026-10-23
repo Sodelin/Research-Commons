@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.3-recovered-results-and-cross-repository-map. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.4-outside-source-continuations. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -36,7 +36,7 @@ The compact index below is a mathematical summary; the exact current completion/
 
 ## Coverage and source discipline
 
-This first register contains **66 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+This first register contains **69 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -119,8 +119,165 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-EXACTQUERY-002](#cb-exactquery-002) | The exact minima are one query for four taxa and five for five | Proved (not Lean formalized) |
 | [CB-EXACTQUERY-003](#cb-exactquery-003) | The exact optimum has a finite constructive specification for every size | Proved (not Lean formalized) |
 | [CB-TOPOCONTROL-001](#cb-topocontrol-001) | Three settings suffice for a probability floor, and four for certainty | Proved (not Lean formalized) |
+| [CB-NANUQ-003](#cb-nanuq-003) | Five labels suffice to test the whole anchor-parameter domain, and four do not | Proved (not Lean formalized) |
+| [CB-NANUQ-004](#cb-nanuq-004) | Only the two extreme copies are needed for quartet sets and split unions | Proved (not Lean formalized) |
+| [CB-NANUQ-005](#cb-nanuq-005) | Rounding tolerates errors below one half, and the uniform limit is sharp | Proved (not Lean formalized) |
 
 ## Claim cards
+
+<a id="cb-nanuq-003"></a>
+### Five labels suffice to test the whole anchor-parameter domain, and four do not
+**CB-NANUQ-003 · NANUQ · sharp parameter-test reduction**
+
+**Question:** How small can the test configurations be when checking which scoring parameters always work?
+
+**What we learned:** For the stated anchor-positivity criterion, checking every representation through five distinct labels is enough for all finite sizes; stopping at four misses a real obstruction.
+
+**What it lets someone do:** Replace an unbounded parameter test with the proved sharp finite collection.
+
+**What we cannot conclude:** Five labels is not five quartet queries, a five-label restriction of every configuration, or a universal biological sample-size claim.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every real four-score vector (c,s,a,o), with the exceptional anchor-sharing entry fixed at 1, universal nonnegativity of every circular anchor coefficient on finite adjacent singleton/doubleton plane-tree representations with n>=3 distinct taxon labels is equivalent to checking all such coefficients with at most five total labels, and to s=o=1, 1/2<=a<=1, 0<=c<=a. Five is the least sufficient cutoff: an actual five-label representation has a negative coefficient at (1,1,1/2,1), while all three/four-label tests pass. Labels include duplicated taxa. The proof retains the six-label structural reduction and uses equality of the five/six-label normalized inequality collections; it does not assert that each six-label configuration restricts to five while preserving its coefficient.
+
+**Origin.** project posed. A sharp parameter-test corollary of the all-level anchor-certificate programme, not a claimed external five-label conjecture.
+
+**Prior work.** The accepted score-independent six-label restriction, exhaustive adjacent-copy systems and independent symbolic parameter-domain audit are reused. Positive scaling of a linear inequality preserves its sign; classical linear-inequality reasoning is not a new invention.
+
+**Our contribution and attribution.** The original Samuel package identifies the sharp five-label test cutoff from complete normalized-row equality and an actual four-cutoff failure witness, rather than merely comparing row counts. This is an existing completed deduction, not new work by this card.
+
+**Evidence, kept separate:**
+
+- **Hand:** The complete cutoff manuscript derives the result from the accepted restriction, independently audited 16-row parameter system and actual five-label obstruction. Those ingredient reviews are explicit; no separate fresh whole-cutoff review is claimed here. The older obstruction note's pending five-cutoff sentence is superseded by the complete FIVE-TAXON-THRESHOLD proof, not a remaining mathematical gap.
+- **Formal:** The source cites an archived Lean proof of finite-row algebra and the four-label box obstruction. That does not formalize the unbounded representation, enumeration or full sharp-cutoff theorem, and this card makes no whole-theorem kernel claim.
+- **Execution:** The original independent symbolic receipt covers 122 saved systems and 24,667 coefficients; all 16 normalized nonzero rows have witnesses using at most five labels. The focused obstruction has a saved exact graph/quartet check. None was rerun for this card.
+- **Empirical:** A mathematical statement about the declared representation or distance, not a measured biological claim.
+
+**Novelty:** Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.
+
+**Separate downstream work (does not reopen this result):** Full end-to-end Lean formalization is separate. The cutoff concerns universal parameterized anchor positivity, not a necessity characterization for aggregated unweighted network distances, a minimal test for the fixed original score, or the exact-query minimax Q*(5). The stronger global four-score-cone continuation has a different statement and acceptance history.
+
+**Proof, review and related source links:**
+
+- [Complete sharp five-label cutoff theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/FIVE-TAXON-THRESHOLD.md) (proof or status).
+- [Independent exact row/domain audit](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/PARAMETER-DOMAIN-AUDIT.md) (hand review).
+- [Original all-level restriction supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md) (proof or status).
+- [Actual five-label obstruction and original evidence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/source-development/formal-full/FOUR-TAXON-OBSTRUCTION.md) (proof or status).
+
+**Connections:**
+
+- [CB-NANUQ-002](#cb-nanuq-002): **reused theorem**. Reuses the original all-level package's structural restriction and audited finite parameter suppliers; it sharpens the parameter-test collection, not the source-level bound.
+- [CB-EXACTQUERY-002](#cb-exactquery-002): **same principle**. Both have sharp small cases, but five total labels in a parameter test is not five adaptive quartet queries.
+
+**Stable key:** september.NANUQ.SHARP_PARAMETER_CUTOFF. **Aliases:** Five total taxa sharp anchor-parameter cutoff.
+
+</details>
+
+<a id="cb-nanuq-004"></a>
+### Only the two extreme copies are needed for quartet sets and split unions
+**CB-NANUQ-004 · NANUQ · observation-preserving copy reduction**
+
+**Question:** Can many contiguous copies of the same label be reduced without losing the requested structural information?
+
+**What we learned:** Yes. Keeping the first and last copy preserves every distinct quartet set and the union of displayed splits.
+
+**What it lets someone do:** Transfer the paired-copy quartet and distance results to arbitrary finite contiguous copy blocks.
+
+**What we cannot conclude:** The full family of displayed trees can shrink, and occurrence counts or probability distributions need not be preserved.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** Let T be a finite unrooted plane binary tree with at least four taxon labels, each occupying one nonempty contiguous block of physical tips in the cyclic order. Retain the first and last occurrence of each block, or its sole occurrence for a singleton, then restrict and suppress degree-two vertices. The resulting tree has at most twice as many physical tips as labels and has exactly the same complete system of distinct displayed quartet sets and the same union of displayed splits under independent one-occurrence-per-label selections. The common taxon order and quartet-based original NANUQ distance/anchor formulas are preserved. Witness selections may depend on the quartet; no single globally preserving selection or equality of full displayed-tree families is asserted.
+
+**Origin.** project posed. An abstract plane-tree extension of the existing adjacent-copy representation, with biological admission deliberately separate.
+
+**Prior work.** Tree restriction, median components and the circular boundary-quartet split criterion are reused. The paired-tip all-level distance/support and parameter results are prior suppliers. Their reuse is not a new claim to have invented quartet reconstruction.
+
+**Our contribution and attribution.** The original complete hand proof gives a one-block median argument and successive replacement of four selected occurrences, yielding exact set preservation. Its explicit caterpillar shows that the weaker observation target is essential because a full displayed tree can disappear.
+
+**Evidence, kept separate:**
+
+- **Hand:** The original manuscript states the exact theorem and complete proof. Its support consequence reuses the independently accepted boundary-quartet supplier. This bounded recovery located no separate independent review of the whole copy-block extension; absence of that receipt does not reopen the completed proof.
+- **Formal:** No full kernel-checked copy-block theorem is asserted; the later 53-source formal component is not silently upgraded to cover it.
+- **Execution:** The original manuscript records a direct exact check of the single caterpillar example, not a stored universal execution certificate. The theorem follows from its exposed hand argument; nothing was rerun here.
+- **Empirical:** A mathematical statement about the declared representation or distance, not a measured biological claim.
+
+**Novelty:** Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.
+
+**Separate downstream work (does not reopen this result):** Independent whole-extension review and full Lean formalization are separate validation tasks. Interleaved blocks, nonbinary medians, infinite trees, dependent cross-label selections and higher-indegree biological networks are not covered without additional source arguments. Full tree families and weighted probabilities are explicitly not preserved.
+
+**Proof, review and related source links:**
+
+- [Original complete copy-block proof and counterexample](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/CONTIGUOUS-MULTICOPY-EXTENSION.md) (proof or status).
+- [Independently accepted boundary-quartet/support supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-SUPPORT-STRUCTURAL-AUDIT.md) (hand review).
+- [Original all-level theorem and evidence boundary](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/README.md) (proof or status).
+
+**Connections:**
+
+- [CB-NANUQ-002](#cb-nanuq-002): **proved adapter**. The complete hand reduction transfers paired-tip quartet-based distance/support statements to the stated abstract contiguous-copy class; it is not an adapter from every biological network.
+
+**Stable key:** september.NANUQ.CONTIGUOUS_COPY_EXTREMES. **Aliases:** Contiguous multicopy extreme-occurrence reduction.
+
+</details>
+
+<a id="cb-nanuq-005"></a>
+### Rounding tolerates errors below one half, and the uniform limit is sharp
+**CB-NANUQ-005 · NANUQ · exact recovery under bounded matrix error**
+
+**Question:** How much error can the original distance matrix tolerate while still permitting exact recovery?
+
+**What we learned:** Entrywise error strictly below one half allows exact matrix recovery by rounding; with a correct circular order, it also recovers the split support. The uniform threshold cannot be enlarged.
+
+**What it lets someone do:** Use a sharp deterministic robustness guarantee when the stated raw-matrix error promise is justified.
+
+**What we cannot conclude:** This does not supply a statistical estimator, a number of gene samples, an order-finding algorithm or a guarantee for arbitrarily rescaled distances.
+
+**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every finite binary semi-directed LSA-rootable outer-labeled planar galled network on at least four taxa in the pinned source class, the original unnormalized NANUQ distance has integer entries. If an observed matrix has entrywise sup-norm error strictly below 1/2, nearest-integer rounding recovers the exact full raw matrix without needing an order. Given a correct common circular order, the accepted exact-support theorem then recovers the displayed-split union. An admitted four-taxon tree/cycle pair has raw matrices at sup-norm distance 1 and different supports; their common midpoint defeats every decoder at closed error radius 1/2 and every larger strict radius, even with the correct order supplied. This is a sharp uniform result over the class, not a separate sharpness claim for every fixed larger taxon count.
+
+**Origin.** project posed. A deterministic robustness and sharpness continuation of the all-level original-NANUQ theorem.
+
+**Prior work.** Nearest-integer recovery from an error below half the lattice spacing and indistinguishable-midpoint lower bounds are elementary established principles. The existing exact-support theorem and source admission provide the model-specific content.
+
+**Our contribution and attribution.** The original side-package deduction and independent integration review establish the integer-lattice improvement over direct coefficient thresholding and check an actual admitted tree/cycle endpoint pair. This restores an existing sharp bound without claiming a new estimator or discovery.
+
+**Evidence, kept separate:**
+
+- **Hand:** The independent integration review explicitly accepts the sharp raw-noise statement, including integer-lattice reasoning and binary/galled/LSA/outer-planar endpoint admission. It does not claim an independent audit of every side-package assertion.
+- **Formal:** No complete kernel-checked proof of this sharp-noise theorem is asserted.
+- **Execution:** The original review records one successful Node replay with parsed JSON matching the saved side-package result and exact endpoint arithmetic. Those are archived results; no replay or scientific computation was performed for this card.
+- **Empirical:** A mathematical statement about the declared representation or distance, not a measured biological claim.
+
+**Novelty:** Unresolved; project correctness and source correspondence do not certify historical priority or worldwide novelty.
+
+**Separate downstream work (does not reopen this result):** A justified empirical error bound, biological estimator and statistical sample complexity are separate. Distance rescaling changes the radius. The earlier strict 1/4 coefficient-threshold guarantee remains sufficient but is not the optimal raw-matrix guarantee. No fixed-n optimum beyond the uniform class statement is asserted.
+
+**Proof, review and related source links:**
+
+- [Original quantitative corollary and scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ADDITIONAL-COROLLARIES.md) (proof or status).
+- [Independent sharp-noise proof review and archived replay](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/EXTREMALITY-REPLAY.md) (hand review).
+- [Archived exact replay receipt](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/EXTREMALITY-REPLAY.json) (execution receipt).
+- [Original all-level support theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md) (proof or status).
+
+**Connections:**
+
+- [CB-NANUQ-002](#cb-nanuq-002): **reused theorem**. Exact recovery of the raw integer matrix is combined with the accepted circular exact-support theorem under a supplied correct order.
+
+**Stable key:** september.NANUQ.SHARP_RAW_NOISE_RADIUS. **Aliases:** Optimal strict raw NANUQ noise radius 1/2.
+
+</details>
+
 
 <a id="cb-nanuq-002"></a>
 ### The original distance keeps exactly the displayed splits at every finite level
@@ -351,7 +508,7 @@ Research Commons is a coordination and discovery home, not the entire research a
 <details>
 <summary>Exact scope, prior work, evidence and separate downstream work</summary>
 
-**Exact statement and assumptions.** Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. Every boundary port is taxon-bearing. Under the stated graph-informed contract, the graph/outer embedding or a certified interaction map is supplied, original hybrid IDs are retained, controls are fixed parameter-oblivious partial parent-forcing assignments, and forcing a parent leaves the other laws unchanged, and natural independent routing probabilities lie in [g,1-g] for 0<g<=1/2. The worst-case minimum number of environments is three so that every displayed nontrivial split and quartet occurrence has probability at least g in at least one environment, and four so each occurs with certainty in at least one environment. The source-admitted lower witnesses and switching-wise <=3-port topology quotient use the pinned source conventions.
+**Exact statement and assumptions.** Finite binary semi-directed, LSA-rootable, outer-labeled planar, galled networks on n>=4 labeled taxa, with the pinned parallel-edge/bigon conventions and arbitrary finite level and blob count. Every boundary port is taxon-bearing. Under the stated graph-informed contract, the graph/outer embedding or a certified interaction map is supplied, original hybrid IDs are retained, controls are fixed parameter-oblivious partial parent-forcing assignments, and forcing a parent leaves the other laws unchanged, and natural independent routing probabilities lie in [g,1-g] for 0<g<=1/2. Uniformly over this admitted source class, the worst-case minimum number of environments is three so that every displayed nontrivial split and quartet occurrence has probability at least g in at least one environment, and four so each occurs with certainty in at least one environment; these are not asserted to be the exact minima at every fixed taxon count. The source-admitted lower witnesses and switching-wise <=3-port topology quotient use the pinned source conventions.
 
 **Origin.** project posed. A source-conditional topology-occurrence control problem in the September normalization-effects programme, not the later G7 exact numerical-law master or its marker/full-forcing menus.
 
@@ -3335,7 +3492,7 @@ Research Commons is a coordination and discovery home, not the entire research a
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 66 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 69 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Sequence reading editions, general p,q companions, Thue–Morse LCS growth and the lower repetition-threshold interval require separate cards; missing original proof bytes must not be replaced by invented acceptance.
