@@ -1,6 +1,6 @@
 # Find completed research before continuing
 
-Use the maintainer’s published [question routes](https://github.com/Sodelin/Research-Commons/blob/main/docs/FIND-AN-ANSWER.md), [typed connections](https://github.com/Sodelin/Research-Commons/blob/main/docs/RESEARCH-CONNECTIONS.md) and [shared reader/agent lookup](DISCOVERY-READER-INTEGRATION.md). Release0e2598d8 bundles the newer69-card schema1.1 snapshot; the60-card c253 snapshot below remains an exact earlier scope reference. Optional reader refresh follows current public main.
+Use the maintainer’s published [question routes](https://github.com/Sodelin/Research-Commons/blob/main/docs/FIND-AN-ANSWER.md), [typed connections](https://github.com/Sodelin/Research-Commons/blob/main/docs/RESEARCH-CONNECTIONS.md) and [shared reader/agent lookup](DISCOVERY-READER-INTEGRATION.md). Successorac2a6f79 bundles the newer75-card schema1.1 snapshot and consumes existing literature references; the60-card c253 snapshot below remains an exact earlier scope reference. Optional reader refresh follows current public main.
 
 The canonical research register is [claims.json](https://github.com/Sodelin/Research-Commons/blob/c25319a8023310d6c64143affd707402780768b3/docs/claims.json), maintained by Dot. At that inspected revision it contains60 cards, schema1.1 and board1.2-hand-proof-completion-recovery; SHA256716b26fa2df916119635af1b6c178096447ed20ee82bdc3ad0afdb72a3cfc4da. This builder contributes implementation evidence and reading links, without duplicating that register.
 
