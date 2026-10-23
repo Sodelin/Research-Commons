@@ -278,6 +278,35 @@ synchronization, absorbing tree laws, comb/PDA/Kingman mixture, uniformly
 semisimple compact closure, moving-bank cutpoint, singular endpoint,
 affine-in-kernel stochastic postprocessing, generic decision-engine gate.
 
+## Original BOTH faces: reuse the accepted global-support limitation
+
+Do not extend the freely parameterized single-slot I affine-interior
+corollary to the original BOTH image. The already accepted
+[8October all-core proof](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-08-codex-g3-g4-full-shot-1253z/g3-complete-classification/attempt-6-global-both-normal/GLOBAL-SUPPORT-DOES-NOT-COVER-INDEPENDENT-ROWS.md),
+11111B/SHA3ca82756c2323da32dcdcae08f30238580114df7d690aa75fea7f45c50b9ac9a,
+and later2212B acceptance/8893B independent review are OLD/PROVED with
+SCOPED HAND/SOURCE ACCEPT. All THREE complete bodies were reread and
+hash-authenticated; no source/control was rerun. This entry was already
+in the full active audit; it is source reuse, not a newly found theorem.
+
+Three actual passive binary topology channels yield U=E[Z],V=E[Z^3]
+from COMMON and an affine I coordinate W, on ONE original source/bank.
+The all-core support inequality V-3c^2 U+2c^3>=0 has actual strict
+one-cell targets (c,c^3,I) for c<I<(1+c)/2. Thus an attained BOTH point
+can lie on the global boundary. Every global support row at those targets
+has ZERO coefficient on W because both nearby I directions are physically
+realized. Collapsing the COMMON cell would change that I response.
+
+This is not a characterization of every rival on the face, a hidden-box
+decoder for arbitrary cores, or a shortest-witness obstruction; the shown
+targets already have one-cell witnesses. An original recognizer still
+needs the complete joint source fibre. Another ambient global normal or
+an unauthorized I/BOTH scope extension does not supply it.
+
+Aliases: attained BOTH boundary YES, COMMON Jensen face, blind independent
+coefficient, all-core passive topology adapter, same-bank tangent interval,
+global normal versus relative-face recognition.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
