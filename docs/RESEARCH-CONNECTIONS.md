@@ -1,6 +1,6 @@
 # Research connections: what depends on what
 
-Generated from the existing canonical claim register at `dab10581a1252a0deaf2d3713ae95e3712af251b` (1.8-genome-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 93 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f` (1.9-memory-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 97 selected cards and is not exhaustive.
 
 Directions below follow the canonical register: the source card names a supplier/connection. The relationship type is part of the result. Do not promote a candidate or common idea into a proved implication.
 
@@ -27,6 +27,7 @@ A proved scope-preserving connection at the stated evidence level; not automatic
 | [**CB-EXACTQUERY-003**](CLAIM-BOARD.md#cb-exactquery-003) | [**CB-EXACTQUERY-001**](CLAIM-BOARD.md#cb-exactquery-001) | The hand-proved actual-source normalization identifies the complete finite profile game for this same source/oracle/output contract. |
 | [**CB-NANUQ-004**](CLAIM-BOARD.md#cb-nanuq-004) | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) | The complete hand reduction transfers paired-tip quartet-based distance/support statements to the stated abstract contiguous-copy class; it is not an adapter from every biological network. |
 | [**CB-SEQ-008**](CLAIM-BOARD.md#cb-seq-008) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | The retained-vertex edge expansion proves H(v)=W(L(v)); it transfers this exact matching observation, not arbitrary graph or juggling properties. |
+| [**CB-MEMORY-003**](CLAIM-BOARD.md#cb-memory-003) | [**CB-MEMORY-001**](CLAIM-BOARD.md#cb-memory-001) | StochasticAbstraction.deterministic_instance embeds a supplied exactly commuting deterministic update as point-mass kernels. This adapter preserves that declared contract, not every broader application mentioned on the deterministic card. |
 
 ## reused theorem
 
@@ -52,6 +53,8 @@ A named mathematical supplier is actually used after its assumptions are met.
 | [**CB-SEQ-005**](CLAIM-BOARD.md#cb-seq-005) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness. |
 | [**CB-SEQ-007**](CLAIM-BOARD.md#cb-seq-007) | [**CB-SEQ-004**](CLAIM-BOARD.md#cb-seq-004) | Uses the exact graph-to-height digit recurrence, not a fitted recurrence or the unrelated arithmetic-progression formulas. |
 | [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) | [**CB-FEEDBACK-004**](CLAIM-BOARD.md#cb-feedback-004) | Reuses the checked finite marker kernel and frozen RI=3/7 statistic, then proves its same-draw count/parent realization; does not reuse the deterministic common-limit argument. |
+| [**CB-MEMORY-001**](CLAIM-BOARD.md#cb-memory-001) | [**CB-GENOME-001**](CLAIM-BOARD.md#cb-genome-001) | WongPredictiveBridge.no_global_iap_decoder invokes the actual_garg_opposite_infinite_completions supplier already indexed by CB-GENOME-001. This is a reused completion consequence, not a newly counted source theorem. |
+| [**CB-MEMORY-002**](CLAIM-BOARD.md#cb-memory-002) | [**CB-MEMORY-001**](CLAIM-BOARD.md#cb-memory-001) | MergeHistoryProjection imports ExactAbstraction and instantiates its fibre-compatibility obstruction with the actual legal forest states; the admissible-state strengthening is proved separately. |
 
 ## same principle
 
@@ -91,6 +94,9 @@ A related idea or method only; not a theorem dependency.
 | [**CB-FEEDBACK-005**](CLAIM-BOARD.md#cb-feedback-005) | [**CB-FEEDBACK-001**](CLAIM-BOARD.md#cb-feedback-001) | Both concern the identical-ancestors property, but this actual-law proof uses extinction-permitting synchronization, not B01's no-extinction premise. |
 | [**CB-GENOME-003**](CLAIM-BOARD.md#cb-genome-003) | [**CB-GENOME-001**](CLAIM-BOARD.md#cb-genome-001) | Both expose missing information for a future-inclusive target, but arbitrary finite-source completion and fixed complete infinite-source ownership have different quantifiers; neither is silently substituted for the other. |
 | [**CB-GENOME-004**](CLAIM-BOARD.md#cb-genome-004) | [**CB-GENOME-003**](CLAIM-BOARD.md#cb-genome-003) | A complementary finite-observation control with a different explicitly supplied stochastic law; it neither provides the ownership oracle nor establishes infinite-IAP identification. |
+| [**CB-MEMORY-001**](CLAIM-BOARD.md#cb-memory-001) | [**CB-SOFTSCI-001**](CLAIM-BOARD.md#cb-softsci-001) | Static observation fibres share an information-loss principle, but do not supply controlled universal factorization or the arbitrary-history theorem. |
+| [**CB-MEMORY-003**](CLAIM-BOARD.md#cb-memory-003) | [**CB-GENOME-004**](CLAIM-BOARD.md#cb-genome-004) | The actual repeated-block dependence counterexample and the generic copied/complemented-bit example both distinguish joint information from marginals. Their probability models differ; no theorem import or pedigree-law adapter is asserted. |
+| [**CB-MEMORY-004**](CLAIM-BOARD.md#cb-memory-004) | [**CB-GENOME-002**](CLAIM-BOARD.md#cb-genome-002) | Both separate exact-law distinction from finite-sample uncertainty. The known three-taxon full-support control is not the same two-model sharp randomized-testing theorem; its separately written Hoeffding bound is not imported here. |
 
 ## Reading scientific completion beside implementation
 

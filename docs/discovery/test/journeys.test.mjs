@@ -6,12 +6,16 @@ const docs={};for(const name of ['claims.json','source.json','reading-joins.json
 const wait=async fn=>{for(let i=0;i<80;i++){if(fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail('Reader did not reach the expected DOM state.');};
 test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-source recovery',async t=>{
  const dom=new JSDOM(html,{url:'https://reader.test/?q=quantum#CB-PHYS-P5-004',pretendToBeVisual:true});
- let copied='',offline=false;
+ let copied='',offline=false,credentialSource=false;
  for(const k of ['window','document','location','history','navigator'])Object.defineProperty(globalThis,k,{value:dom.window[k],configurable:true});
  globalThis.innerWidth=1400;globalThis.matchMedia=()=>({matches:true});globalThis.addEventListener=dom.window.addEventListener.bind(dom.window);
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
  globalThis.fetch=async url=>{
-  if(String(url).startsWith('https://')){if(offline)throw Error('Network unavailable');return {ok:true,json:async()=>({sha:docs['source.json'].commit})};}
+  if(String(url).startsWith('https://')){
+   if(offline)throw Error('Network unavailable');
+   if(credentialSource&&String(url).includes('raw.githubusercontent.com')){const source=structuredClone(docs['claims.json']);source.claims[0].accepted_artifacts[0].url='https://example.org/proof#access_token=synthetic-fragment-value';return {ok:true,json:async()=>source};}
+   return {ok:true,json:async()=>({sha:credentialSource?'b'.repeat(40):docs['source.json'].commit})};
+  }
   const name=String(url).replace('./','');return {ok:!!docs[name],json:async()=>structuredClone(docs[name])};
  };
  await import('../dist/app.mjs');
@@ -87,6 +91,12 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
   assert($('detail').textContent.includes('exit was not retrieved'));
   assert($('detail').textContent.includes('written/reviewed, not formally proved'));
   assert($('detail').textContent.includes('kernel checked components with recorded exit limit'));
+ });
+ await t.test('credential-bearing latest source is refused while bundled data and safe links remain usable',async()=>{
+  credentialSource=true;$('refresh').click();await wait(()=>$('freshness').textContent.includes('Showing the verified bundled snapshot'));
+  assert(!$('results').textContent.includes('synthetic-fragment-value'));
+  assert(![...document.querySelectorAll('a')].some(a=>a.href.includes('access_token')));
+  assert($('source-link').href.includes(docs['source.json'].commit));credentialSource=false;
  });
  await t.test('offline latest-source failure preserves a usable source snapshot',async()=>{
   $('reset').click();location.hash='CB-G6-001';dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));

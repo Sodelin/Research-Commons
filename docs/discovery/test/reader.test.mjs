@@ -145,3 +145,23 @@ test('recovered feedback and genome components keep scoped historical formal evi
  const finite=card('CB-FEEDBACK-004');assert.match(finite.evidence.formal.status,/recorded_exit_limit/);assert.match(finite.separate_downstream_or_validation_work,/exit was not retrieved/);
  const iap=card('CB-FEEDBACK-005');assert.equal(iap.completion.mathematical_claim_complete,true);assert.match(iap.separate_downstream_or_validation_work,/does not reopen/);
 });
+
+test('credential-bearing fragments and router parameters are refused while scientific anchors survive',async()=>{
+ const {validateRanking}=await import('../dist/model.mjs');
+ for(const fragment of ['access_token=synthetic','?auth=synthetic','/route?step=1&api_key=synthetic','section&token=synthetic','%61ccess_token=synthetic','access_token%3Dsynthetic','!/?X-Amz-Signature=synthetic']){
+  const url='https://example.org/proof#'+fragment;assert.equal(safeLink(url),null,fragment);
+  for(const field of ['origin','artifact']){const copy=structuredClone(data);if(field==='origin')copy.claims[0].origin.source_url=url;else copy.claims[0].accepted_artifacts[0].url=url;assert.throws(()=>validate(copy));}
+  assert.throws(()=>validateRanking({subjective:true,entries:[{source_url:url}]}));
+ }
+ for(const anchor of ['cb-g7-001','theorem-4.7','eq:3','token','section=3','route?section=3','formula=E%3Dmc2'])assert(safeLink('https://example.org/proof#'+anchor),anchor);
+});
+
+test('bibliography normalizes host/default-port spelling but retains distinct scientific anchors',()=>{
+ const c=structuredClone(data.claims[0]);c.origin.source_url='https://example.org/paper';
+ c.accepted_artifacts=[{label:'Same source',role:'prior_work',url:'https://EXAMPLE.org:443/paper'}];
+ const before=JSON.stringify(c);assert.equal(literatureSources(c).length,1);assert.equal(literatureSources(c)[0].url,'https://example.org/paper');
+ c.accepted_artifacts.push({label:'Specific theorem',role:'prior_work',url:'https://EXAMPLE.org:443/paper#theorem-2'});
+ const result=literatureSources(c);assert.equal(result.length,2);assert.equal(result[1].url,'https://example.org/paper#theorem-2');
+ assert.equal(c.accepted_artifacts[0].url,'https://EXAMPLE.org:443/paper');
+ assert(before.includes('EXAMPLE.org:443'));
+});

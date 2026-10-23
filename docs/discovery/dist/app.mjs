@@ -1,4 +1,4 @@
-import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims} from './model.mjs';
+import {validate,search,topic,bucket,STATUS,ORIGIN,RELATION,neighbors,reusePacket,safeLink,literatureSources,sortClaims,validateRanking} from './model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from './source-search.mjs';
 const $=id=>document.getElementById(id);
 const state={data:null,meta:null,limit:9,selected:decodeURIComponent(location.hash.slice(1)),mode:'all',joins:[]};
@@ -192,7 +192,7 @@ async function start(){
   if(joinResponse.ok)state.joins=(await joinResponse.json()).joins??[];
   for(const[k,v]of Object.entries(STATUS))option($('status'),k,v);
   for(const[k,v]of Object.entries(ORIGIN))option($('origin'),k,v);
-  try{const [r,m]=await Promise.all([fetch('./subjective-reuse-ranking.json'),fetch('./ranking-source.json')]);if(r.ok&&m.ok){state.ranking=await r.json();state.rankingSource=await m.json();}}catch{/* Optional dated overlay never blocks claim lookup. */}
+  try{const [r,m]=await Promise.all([fetch('./subjective-reuse-ranking.json'),fetch('./ranking-source.json')]);if(r.ok&&m.ok){state.ranking=validateRanking(await r.json());state.rankingSource=await m.json();}}catch{/* Optional dated overlay never blocks claim lookup. */}
   initialize(data,meta);$('search').value=initial.get('q')??'';
   for(const k of controlKeys)$(k).value=initial.get(k)??'';
   const mode=initial.get('mode')??'all';showMode(mode);render();

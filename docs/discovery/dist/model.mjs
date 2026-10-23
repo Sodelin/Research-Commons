@@ -87,8 +87,9 @@ export function neighbors(claims, id) {
 }
 export function literatureSources(c) {
   const candidates=[];
-  if(c.origin?.source_url && safeLink(c.origin.source_url))candidates.push({label:'Original published question',url:c.origin.source_url,role:'origin_source'});
-  for(const a of c.accepted_artifacts??[])if(['prior_work','historical_problem_statement'].includes(a.role)&&safeLink(a.url))candidates.push({...a});
+  const originURL=safeLink(c.origin?.source_url);
+  if(originURL)candidates.push({label:'Original published question',url:originURL,role:'origin_source'});
+  for(const a of c.accepted_artifacts??[]){const url=safeLink(a.url);if(['prior_work','historical_problem_statement'].includes(a.role)&&url)candidates.push({...a,url});}
   const seen=new Set();return candidates.filter(a=>{if(seen.has(a.url))return false;seen.add(a.url);return true;});
 }
 export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null) {
@@ -107,6 +108,27 @@ export function reusePacket(c, meta, joins=[],ranking=null,rankingSource=null) {
       'Name the new unresolved implication or added value: independent check, sharper scope, new adapter or failed-route exclusion.',
       'Preserve existing owners and holds. Discovery is not permission to run a job.']};
 }
+const CREDENTIAL_KEY=/^(?:token|access_token|auth|authorization|api_key|apikey|secret|password|signature|sig|credential|session|x-amz-signature|x-amz-credential|x-amz-security-token|x-goog-signature|x-goog-credential|googleaccessid)$/i;
+function credentialParameters(text){
+  return [...new URLSearchParams(text).keys()].some(key=>CREDENTIAL_KEY.test(key));
+}
+function credentialFragment(hash){
+  const raw=hash.slice(1),forms=[raw];
+  try{const decoded=decodeURIComponent(raw);if(decoded!==raw)forms.push(decoded);}catch{/* Ordinary malformed anchors retain their existing URL behavior. */}
+  for(const form of forms){
+    // OAuth parameter fragments and hash-router query strings are both links.
+    // A plain scientific anchor such as #token is not a parameter assignment.
+    if(!/[=?&]/.test(form))continue;
+    const parts=[form.replace(/^[!/?]+/,''),...form.split('?').slice(1)];
+    if(parts.some(credentialParameters))return true;
+  }
+  return false;
+}
+export function validateRanking(ranking){
+  if(ranking?.subjective!==true||!Array.isArray(ranking.entries))throw Error('Unsupported subjective source overlay.');
+  if(ranking.entries.some(entry=>entry.source_url&&!safeLink(entry.source_url)))throw Error('Unsafe subjective source link.');
+  return ranking;
+}
 export function safeLink(url) {
   try {
     if(typeof url!=='string'||/[\u0000-\u0020]/.test(url))return null;
@@ -114,7 +136,7 @@ export function safeLink(url) {
     // Adapted from the recovered Atlas reading-core link boundary: source
     // links never carry credentials. Keep scientific domains extensible.
     if(u.protocol!=='https:'||u.username||u.password||u.port)return null;
-    if([...u.searchParams.keys()].some(k=>/^(?:token|access_token|auth|authorization|api_key|apikey|secret|password|signature|sig|credential|session|x-amz-signature|x-amz-credential|x-amz-security-token|x-goog-signature|x-goog-credential|googleaccessid)$/i.test(k)))return null;
+    if(credentialParameters(u.search)||credentialFragment(u.hash))return null;
     return u.href;
   }catch{return null;}
 }

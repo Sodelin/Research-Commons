@@ -1,6 +1,6 @@
 # Find an answer in Research Commons
 
-Generated from the existing canonical claim register at `dab10581a1252a0deaf2d3713ae95e3712af251b` (1.8-genome-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 93 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f` (1.9-memory-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 97 selected cards and is not exhaustive.
 
 Begin with the question you need answered. Each link opens the exact claim, assumptions, proof/review sources and remaining obligation. You do not need to reconstruct commit history.
 
@@ -25,6 +25,7 @@ Origin is taken from the canonical card. This table does not assert a new histor
 | [**CB-SEQ-003**](CLAIM-BOARD.md#cb-seq-003) · [Original source](https://arxiv.org/html/2310.15064v3). Source-posed direction in Shallit–Shur–Zorcic, Power-free complementary binary morphisms. | Throughout the specified range, every positive length except 3 and 6 is possible. | It does not classify every substitution or cover the lower threshold range. |
 | [**CB-NANUQ-002**](CLAIM-BOARD.md#cb-nanuq-002) · [Exact published-question correspondence](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/SOURCE-RESULT-LEDGER.md); [Holtgrefe et al., primary prior work and section 6 questions](https://link.springer.com/article/10.1007/s11538-025-01549-4). The source-result ledger matches the multiple-blob and level-three circularity/support questions in Holtgrefe et al., Theorem 4.7 and section 6, retaining the published structural hypotheses. The arbitrary-finite-level conclusion is a stronger project result. | Yes, for the stated planar galled class: the original NANUQ distance is circular and its positive splits are exactly the displayed splits, at every finite level. | This does not recover every graph detail, apply to arbitrary networks, or prove a complete DNA inference pipeline. |
 | [**CB-GENOME-002**](CLAIM-BOARD.md#cb-genome-002) · [Classical model, attribution and exact-law scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/README.md). Formalization of the known Allman–Degnan–Rhodes three-taxon law and elementary finite-evidence/stability consequences; the separately written statistical bound is a standard application of Hoeffding. | The exact non-collapsed three-taxon law identifies the relationship. With positive noise, every finite sample fits every label with positive probability; an error smaller than half the probability gap preserves the correct answer. | The taxa are already designated. This neither discovers species boundaries nor guarantees certainty from finitely many observed genes. |
+| [**CB-MEMORY-004**](CLAIM-BOARD.md#cb-memory-004) · Classical prior. M05 selects an elementary sharp binary-testing model to clarify one aspect of the source's broader sparse-history calibration question. The specified two-model proof is complete; the full evolutionary question is not thereby solved. | Not in the stated independent-trial model. The unavoidable finite-sample error and the distinct rules attaining its two sharp optima are already derived. | This is not structural nonidentifiability of the complete laws, a theorem for arbitrary dependent histories or validated evolutionary calibration. |
 
 ## Browse by the question
 
@@ -301,13 +302,37 @@ Origin is taken from the canonical card. This table does not assert a new histor
 |---|---|---|
 | [**CB-GENOME-004**](CLAIM-BOARD.md#cb-genome-004) · When do observed symbol matches recover sampled families, and does collecting more blocks always add information? | The stated independent-block model has an exact recovery probability. Repeated correlated blocks can have every correct one-block marginal yet provide no additional recovery gain. Use a precise finite-observation benchmark and check whether an independence assumption really supports the claimed benefit of more data. | Proved; archived Lean check recorded |
 
+### Time and memory
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-MEMORY-001**](CLAIM-BOARD.md#cb-memory-001) · When can a simpler state predict every allowed next step, and what information must it retain? | Equal summaries must remain equal after every common action. The coarsest exact predictive state keeps precisely the distinctions between finite future responses. In the stipulated parity model, one memory bit suffices even though no fixed recent-history window does. Check whether a proposed summary supports exact controlled predictions, identify missing state, and reuse proved restriction adapters under their actual contracts. | Proved; archived Lean check recorded |
+
+### Changing-agent models
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-MEMORY-002**](CLAIM-BOARD.md#cb-memory-002) · If two groups have the same members, must they split in the same way? | Not when a split restores immediate predecessors: different legal formation histories leave the same current grouping but require different next partitions. Identify a concrete piece of hidden history that this split operation must retain before importing a partition-only model. | Proved; archived Lean check recorded |
+
+### Stochastic models
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-MEMORY-003**](CLAIM-BOARD.md#cb-memory-003) · When can a smaller probabilistic model replace the original during an adaptive experiment? | Matching pushed transitions, initial law, decoded observations and controller information preserves the entire finite observation/action record. Separate marginals or perfect output predictions alone need not provide that state-preserving map. Check the exact conditions for reduced-model simulation of the declared experiment and avoid inferring latent transition structure from trace agreement alone. | Proved; archived Lean check recorded |
+
+### Calibration
+
+| Question | Result / use | Disposition |
+|---|---|---|
+| [**CB-MEMORY-004**](CLAIM-BOARD.md#cb-memory-004) · Does seeing no event prove that it is impossible? | Not in the stated independent-trial model. The unavoidable finite-sample error and the distinct rules attaining its two sharp optima are already derived. State precisely what a zero-count observation does and does not establish, including what a known lower event-rate bound buys. | Proved (not Lean formalized) |
+
 ## Missing from this map
 
-- This is 93 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 97 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
-- Selected September Samuel/all-level/query, feedback and G01–G05 genome/ownership results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
+- Selected September Samuel/all-level/query, feedback, G01–G05 genome/ownership and M01–M05 controlled-memory/calibration results are now indexed; the wider infinite-ancestry/genome/SoftSciences programmes, exploratory biological/psychological/social domains and full external catalogue are not exhaustively re-audited. The linked 85-declaration Soft Sciences inventory is represented by five source-specific grouped cards, not 85 discoveries; other outside corpora remain incompletely indexed.
 - Selected solver caches, quantum-oracle applicability audits, source-repaired molecular workbench mocks and further application diagnostics remain in the October source map rather than separate first-version cards.
 - Some exact antecedent attributions are not yet independently indexed at card level. These are labelled rather than converted into novelty claims.
 - Formal counts belong to exact snapshots and receipts. Selected 1611, public 1613, recovered 1614 and older 1615 inventories are not interchangeable whole-repository verification claims.
