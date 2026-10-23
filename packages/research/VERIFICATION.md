@@ -113,3 +113,15 @@ Canonical main was rechecked at0c33ecd79c66eecf15fde247fe644d4993097a87: docs/cl
 At5c76ee2c/run39989161799, all69 Rust tests passed, including BOTH complete natural hybrid-word examples and the real refusal path. Lean word verification remains in progress and is not accepted merely from Rust rendering. Earlier byte-limit failures are retained. The exact shared variable/monomial definitions preserve every native coefficient and output row without increasing the262144-byte check limit.
 
 CI now runs the full coherent source/audit, ALL actual caller documents, workspace tests and strict per-claim gate on every package push. The current word target remains an additional independent diagnostic. Previously accepted isolated target jobs stay reproducible through workflow_dispatch; their exact receipt histories remain. Unchanged auxiliary jobs are not rerun or counted as independent new evidence on every source/status commit.
+
+
+## Exact registry declaration interface candidate
+
+The current nonempty declaration lists were not themselves compiler lookups. The new check-exports command validates the SAME complete source/object/audit receipt, reuses the existing digest checker, then sends every named export to actual Lean #check. It retains canonical IDs/completion and partial/candidate scopes verbatim; it does not change the strict gate or claim native physical algorithms from theorem aliases. No actual export PASS is claimed before CI. Exact predecessor/successor and source-validation/refusal boundaries are in integration/CLAIM-EXPORT-PREFLIGHT.md.
+
+
+### Generic word receiver accepted; literal check interrupted
+
+The complete174-source Word target at5c76ee2c/run39989161799 compiled (165 original objects reused,9 sources compiled) and its owned audit passed5211 declarations/3103 theorems, zero owned axioms/nonstandard rows/missing modules. OriginalParallelBank then checked, but the hosted runner shut down while compiling NaturalIndependentWord; no literal word result or whole-job PASS was returned. The current d507ff7a/run39990075557 target independently reached the SAME clean generic audit, then reported exit143/runner shutdown during NaturalIndependentWord. These are UNKNOWN literal outcomes, not a mathematical rejection or an accepted partial caller group. No underlying host-cause diagnosis is claimed.
+
+The caller now prints bounded public source byte/hash metadata before compilation, and generated word docs print exact per-snapshot/theorem progress checks. This locates the next actual bottleneck without dumping runtime input or asserting result acceptance. All examples are fixed public engineering sources; old private/model/controller holds remain untouched. No manual old-job replay was requested.

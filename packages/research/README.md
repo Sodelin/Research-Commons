@@ -18,6 +18,7 @@ lake update
 lake exe cache get
 cd ..
 cargo run --locked -p research-commons-package -- build --reuse-retained
+cargo run --locked -p research-commons-package -- check-exports
 cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
@@ -90,3 +91,5 @@ The next G7 use-site is the immutable whole-word table to the already retained `
 The next word receiver/context modules and actual `word-certificate independent/common` callers are candidate integration source, pending their own complete check. `ResearchCommons.Integration.Word` compares the entire immutable natural table against retained `naturalWordRows`; `check-word-callers` requires its exact target build. See [the predecessor/successor preflight](integration/WORD-CERTIFICATE-PREFLIGHT.md). These additions are not covered by the earlier accepted 1,638-module receipt.
 
 A typed `ResearchCommons.Claims.NANUQ` export is also pending the current coherent build. It reuses CB-NANUQ-001's named source-to-geometry chain without extending it to CB-NANUQ-002's all-level hand result. The [NANUQ preflight](integration/NANUQ-REUSE-PREFLIGHT.md) retains exact source/drawing and distinct-resolution-set hypotheses. Push CI keeps the complete coherent source/audit and all actual callers mandatory; previously accepted isolated targets remain available by explicit workflow dispatch.
+
+The candidate `check-exports` command verifies every named registry binding against the exact complete compiled object context and prints its full Lean type. It preserves component/candidate statuses and does not change the strict integration gate. See [CLAIM-EXPORT-PREFLIGHT.md](integration/CLAIM-EXPORT-PREFLIGHT.md).

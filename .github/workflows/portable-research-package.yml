@@ -106,6 +106,8 @@ jobs:
             retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
       - name: Compile actual module order and aggregate
         run: cargo run --locked -p research-commons-package -- build --reuse-retained
+      - name: Check exact canonical-ID to Lean-declaration interfaces
+        run: cargo run --locked -p research-commons-package -- check-exports
       - name: Kernel-check Rust-emitted positive and negative certificates
         run: cargo run --locked -p research-commons-package -- check-callers
       - name: Retain exact completed source objects even after a later module failure

@@ -1,0 +1,9 @@
+# Registry declaration-interface check
+
+Exact intended implication: every currently named Lean export in integration/claims.json resolves in the SAME complete compiled/audited source package, and its full original type is printed by Lean. Canonical IDs/completion and integration scope are retained. A successful name/type check does not upgrade a component to a whole theorem, construct a physical provider, or solve an open scientific claim.
+
+The actual predecessor read is packages/research/crates/registry/src/main.rs at5c76ee2c9a7538041a48ed8aa95c4c6e45e2d0db: checked_target validates exact plan/object digests; check_callers_at kernel-checks supplied docs/audits; emit-index generates IDs/count only. The later d507ff7a successor retains those SAME implementations. The complete coverage function and existing per-claim bindings were also inspected. They require nonempty declaration names but do not themselves resolve those names in Lean.
+
+Classification: integration/verification of already solved/exported results, not new mathematics or another build engine. The new check reuses the existing object/digest validator, actual complete-profile receipt, Lean invocation and owned audit. It checks the missing registry-to-declaration join. Source names are validated before rendering; all declared exports are checked, including scoped/candidate ones, without changing their integration level. Pending rows remain explicit.
+
+The current source is a candidate until workspace tests, complete source build and actual check-exports invocation pass. The strict integration gate is unchanged; this does not turn absent native algorithms or partial scientific providers into completed implementations.

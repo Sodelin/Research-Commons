@@ -156,14 +156,21 @@ private def variableBank : Fin {} → WordVariable N (Fin {slots}) := {}
   if monomials>render.monomials{return Err(Error::SourceLimit);}
   let label=format!("destination{i}");
   crate::epoch_certificate::snapshot(&mut out,context,&t.witness,&label,render).map_err(Error::Snapshot)?;
+  put(&mut out,&format!("#check {label}_selected_fields_exact\n"),render.rendered_bytes)?;
   rows.push(format!("({label}, {})",sparse(&t.polynomial,&table.variables,&monomial_ids,render)?));
  }
  put(&mut out,&format!(r#"
 private def rows : Rows (WordVariable N (Fin {slots})) (Code N sample) := [{}]
 
+-- Full table has been decoded; the next check compares ALL original fibres.
+#check parentRegistry
+#check word
+
 theorem complete_word_coefficient_fibres_checked :
     checkNaturalWord N sample parentRegistry common word rows = true := by
   decide +kernel
+
+#check complete_word_coefficient_fibres_checked
 
 theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
     (r : PositivePairRates (Fin {ne})) (p : HybridProbabilities N)
@@ -174,6 +181,7 @@ theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
         (projection N Finset.univ)) b).toReal :=
   checked_natural_word N sample parentRegistry common word rows
     complete_word_coefficient_fibres_checked b r p dur
+#check actual_same_source_natural_word
 end {}
 "#,rows.join(",\n  "),bindings.namespace),render.rendered_bytes)?;
  Ok(out)
@@ -214,12 +222,15 @@ noncomputable def returnedDur : Fin 2 → ℝ≥0 :=
        le_of_lt (sub_pos.mpr (returnedBank.calendar.edge_older (8 : Fin 9)))⟩,
     ⟨returnedBank.calendar.age (6 : Fin 9) - returnedBank.calendar.age (7 : Fin 9),
        le_of_lt (sub_pos.mpr (returnedBank.calendar.edge_older (6 : Fin 9)))⟩]
+
+#check returnedDur
 theorem same_returned_bank_natural_word (b : SelectedIndex N sample Finset.univ) :
     value (readRows (project N Finset.univ) rows b)
         (wordVariables N returnedBank.rates (originalGamma returnedBank.inheritance) returnedDur) =
       (((initializedWordLaw N sample parentRegistry returnedBank.inheritance common
         returnedBank.rates returnedDur word).map (projection N Finset.univ)) b).toReal :=
   actual_same_source_natural_word b returnedBank.rates returnedBank.inheritance returnedDur
+#check same_returned_bank_natural_word
 end {namespace}
 "#);
  if joined.len()>262144{return Err(Error::SourceBytes{required:joined.len(),cap:262144});}

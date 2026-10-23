@@ -59,6 +59,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
   fs::write(&source,&output.stdout).map_err(|e|e.to_string())?;
   fs::write(evidence.join(format!("{module}.lean")),&output.stdout).map_err(|e|e.to_string())?;
   println!("LEAN CERTIFICATE {module}");
+  println!("LEAN CERTIFICATE INPUT {module} {} bytes SHA256 {}",output.stdout.len(),research_commons_package::sha256(&output.stdout));
   let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated"])
       .arg("-o").arg(objects.join(format!("{module}.olean"))).arg(&source)
       .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
@@ -190,15 +191,9 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
  write_receipt(&receipt)?;println!("{receipt}");Ok(())
 }
 
-fn checked_target(root:&std::path::Path,target:&str)->Result<Vec<String>> {
-   let plan=prepare_lean(root)?;
-   let selected=research_commons_package::selected_modules(&plan,target)?;
-   let receipt=read_json(&root.join("build/lean-target-build.json"))?;
-   if receipt["compiler_exit_success"]!=true || receipt["target"].as_str()!=Some(target) ||
-       receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
-       receipt["module_hashes"]!=plan["module_hashes"] {
-    return Err("no exact successful target build".into());
-   }
+/// Reuse the existing complete object/digest validator for exact target and
+/// full-profile callers. A declaration string alone grants no verification.
+fn checked_objects(root:&std::path::Path,receipt:&serde_json::Value,selected:&[String])->Result<()> {
    for entry in receipt["objects"].as_array().ok_or("missing target objects")? {
     let name=entry["module"].as_str().ok_or("invalid target object")?;
     let path=root.join("lean/.lake/build/lib/lean").join(research_commons_package::module_path(name)?).with_extension("olean");
@@ -212,6 +207,59 @@ fn checked_target(root:&std::path::Path,target:&str)->Result<Vec<String>> {
       .collect::<Result<Vec<_>>>()? != selected {
      return Err("incomplete target object coverage".into());
    }
+   Ok(())
+}
+
+fn checked_full_profile(root:&std::path::Path)->Result<Vec<String>> {
+ let plan=prepare_lean(root)?;
+ let receipt=read_json(&root.join("build/lean-build.json"))?;
+ if receipt["compiler_exit_success"]!=true || receipt["complete_profile"]!=true ||
+    receipt["owned_axiom_audit_passed"]!=true ||
+    receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
+    receipt["module_hashes"]!=plan["module_hashes"] {
+  return Err("no exact complete audited source build for claim exports".into());
+ }
+ let mut selected=plan["order"].as_array().ok_or("missing complete order")?.iter()
+  .map(|v|v.as_str().map(str::to_owned).ok_or("invalid complete module".to_owned())).collect::<Result<Vec<_>>>()?;
+ selected.extend(["ResearchCommons.Registry".into(),"ResearchCommons".into()]);
+ checked_objects(root,&receipt,&selected)?;
+ Ok(selected)
+}
+
+fn check_exports(root:&std::path::Path)->Result<()> {
+ research_commons_package::check_package(root)?;
+ checked_full_profile(root)?;
+ let canonical=read_json(&root.join("registry/claims.json"))?;
+ let bindings=read_json(&root.join("integration/claims.json"))?;
+ let mut plan=research_commons_package::exports::plan(&canonical,&bindings)?;
+ let document=plan["document"].as_str().ok_or("missing exact export document")?;
+ let lean=root.join("lean");let source=lean.join(".generated/ClaimExports.lean");
+ fs::write(&source,document).map_err(|e|e.to_string())?;
+ let status=Command::new("lake").args(["env","lean","-j1","-M6144",
+  "-Ddebug.skipKernelTC=false","--root=.generated",".generated/ClaimExports.lean"])
+  .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
+ if !status.success(){return Err(format!("Lean rejected a named claim export: {status}"));}
+ let hash=research_commons_package::sha256(document.as_bytes());
+ plan.as_object_mut().ok_or("invalid export plan")?.remove("document");
+ plan["document_sha256"]=json!(hash);
+ plan["kernel_check_passed"]=json!(true);
+ plan["complete_source_and_owned_audit_revalidated"]=json!(true);
+ plan["all_claims_formalized"]=json!(false);
+ fs::write(root.join("build/claim-export-verification.json"),
+  serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
+ println!("{plan}");Ok(())
+}
+
+fn checked_target(root:&std::path::Path,target:&str)->Result<Vec<String>> {
+   let plan=prepare_lean(root)?;
+   let selected=research_commons_package::selected_modules(&plan,target)?;
+   let receipt=read_json(&root.join("build/lean-target-build.json"))?;
+   if receipt["compiler_exit_success"]!=true || receipt["target"].as_str()!=Some(target) ||
+       receipt["source_graph_sha256"]!=plan["source_graph_sha256"] ||
+       receipt["module_hashes"]!=plan["module_hashes"] {
+    return Err("no exact successful target build".into());
+   }
+   checked_objects(root,&receipt,&selected)?;
    Ok(selected)
 }
 
@@ -226,6 +274,7 @@ fn run() -> Result<()> {
   },
   "prepare"=>println!("{}",prepare_lean(&root)?),
   "check-callers"=>check_callers_at(&root,"lean",&[],"full-profile-callers")?,
+  "check-exports"=>check_exports(&root)?,
   "prepare-certificates"=>println!("{}",research_commons_package::prepare_certificate_profile(&root)?),
   "build-certificates"=>build_certificates(&root)?,
   "build"=>build_lean(&root,args.collect())?,
@@ -262,7 +311,7 @@ fn run() -> Result<()> {
     for (i,c) in rows.iter().enumerate(){println!("  {:?}{}",c["id"].as_str().ok_or("missing id")?,if i+1<rows.len(){","}else{""});}
     println!("]\ntheorem claim_count : claimIDs.length = {} := by decide\nend ResearchCommons.Registry",rows.len());
   },
-  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-residual-callers|check-epoch-callers|check-word-callers|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
+  _=>return Err("usage: commons [check|coverage --strict|prepare|build [module-cap|--target Module]|check-callers|check-source-callers|check-population-callers|check-residual-callers|check-epoch-callers|check-word-callers|check-exports|audit-target Module|prepare-certificates|build-certificates|emit-index]".into())
  }
  Ok(())
 }
