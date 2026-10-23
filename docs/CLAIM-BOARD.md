@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.11-alexander-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.12-wong-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -48,7 +48,9 @@ The compact index below is a mathematical summary; the exact current completion/
 
 **Alexander source recovery — 23 October 2026, 10:29 UTC:** three existing groups cover Samuel A01–A04, preserving all 101 earlier claim objects: [countable-host nonuniversality with exact parents](#cb-alexander-002), [classical matching-state certificates and rank transport](#cb-alexander-003), and [maximal clusters under one fixed real founder window](#cb-alexander-004). The countable-host result does not preserve the uniform child cap of [CB-ALEXANDER-001](#cb-alexander-001). Terminal cloning and complete blow-up are different constructions. The October 2 novelty correction credits classical rank/pruning methods without undoing their checked mathematics. Founder-window existence includes an actual seed and all same-window competitors. Historical proof/hosted receipts are recovered, not rerun; no new discovery, biological validation or subjective-rank change is claimed.
 
-This register contains **104 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
+**Wong marked-history source recovery — 23 October 2026, 10:47 UTC:** one existing [continuous Big-ARG history construction](#cb-wong-001) is now indexed, preserving all 104 prior claim objects. The actual stored history carries the proved count-and-time law, adaptive mark choices and almost-sure finite absorption. All twelve source/provider bodies match their final historical verification hashes. Continuous cuts are not the discrete-link or Little-ARG model; the result is not a full real-time generator theorem, expected-growth formula, empirical validation or executable simulator certification. The final dated-output/support repairs supersede older pending labels. Historical checks are recorded, not rerun; this is one recovered group, not a new discovery or a change to the dated 75-card ranking.
+
+This register contains **105 cards**. It is deliberately not an exhaustive catalogue of the repository. Original G1–G7 split branches and two scoped G7 optima; Four cross-field programmes; Physics P1/P5; Nanowires; Selected October sequences, RNA/E8, NANUQ, MSci, solver infrastructure, empirical and application outcomes; Reusable positive-moment component are represented. 
 
 Stable IDs keep different scopes apart. Original G1–G7 are one programme. **Physics P1–P5 are not the unrelated P1–P8 priorities in the October 7 external catalogue.** CG/MG/HG labels are retained aliases or views, not automatically extra master theorems. The external 372-family catalogue is a source-discovery index, not 372 new results.
 
@@ -173,6 +175,8 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-ALEXANDER-002](#cb-alexander-002) | No countable list of hosts contains all the stated avoiding populations | Proved; archived Lean check recorded |
 | [CB-ALEXANDER-003](#cb-alexander-003) | Matching states either continue forever or have an exact finite height | Proved; archived Lean check recorded |
 | [CB-ALEXANDER-004](#cb-alexander-004) | Every organism belongs to a maximal cluster under a fixed founder window | Proved; archived Lean check recorded |
+
+| [CB-WONG-001](#cb-wong-001) | A continuous recombination model records valid histories and stops almost surely | Proved; archived Lean check recorded |
 
 ## Claim cards
 
@@ -5249,7 +5253,7 @@ No theorem-transfer dependency is asserted by this card.
 - Not claimed: Independent new proof audit of every linked theorem.
 - Not claimed: Whole-repository kernel verification.
 - Not claimed: Novelty or priority certification.
-- This is 97 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
+- This is 105 selected claims, not a file-by-file audit of the complete October corpus or a count of independent novel theorems.
 - Physics P2–P4 remain source-question entries in the prior register; no completed project solution is asserted here.
 - Earlier fair-M2, rare-hybrid matched-cost, HiddenC4 and several finite-cap return/obstruction branches are preserved in the original ledgers but are not individually expanded here.
 - Nine additional existing sequence groups are now indexed from the complete reading editions and original Samuel/Collatz repositories. The p=q=2 companion has recorded completed hand acceptance but unrecovered original proof/review bytes; the reviewed LCS lower-bound/relaxation continuation still needs its exact original statement packet. Broader p,q and lower repetition-threshold coverage remain separately scoped; missing original bytes are not mathematical incompletion by default.
@@ -5444,4 +5448,72 @@ No new theorem, compiler execution or empirical experiment was performed to gene
 
 </details>
 
+
+<a id="cb-wong-001"></a>
+### A continuous recombination model records valid histories and stops almost surely
+**CB-WONG-001 · Wong ancestry-recombination graphs · actual marked-history construction**
+
+**Question:** Does the actual recorded recombination history have the promised probability law and reach a finite stopping point?
+
+**What we learned:** For the specified continuous-coordinate Big-ARG model, the stored splits, mergers, inherited intervals and event dates form a valid history almost surely. Reading counts and times from that stored history gives exactly the constructed law, and the process reaches one remaining lineage almost surely.
+
+**What it lets someone do:** Reuse a source-bound mathematical history construction rather than assume that correct lineage counts alone certify the graph, dates or history-dependent choices.
+
+**What we cannot conclude:** This is not the discrete-link or Little-ARG model, a full real-time generator theorem, empirical validation, or a certified production simulator.
+
+**Kind:** theorem. **Mathematical status:** Proved; archived Lean check recorded.
+
+<details>
+<summary>Exact scope, prior work, evidence and separate downstream work</summary>
+
+**Exact statement and assumptions.** For every finite natural sample count n≥1, real genome length L>0, merger scale a>0 and split scale b≥0, set θ=2b/a and q(k)=bk+a k(k−1)/2 for k≥2. The constructed Ionescu–Tulcea count law jumps up with mass bk/q(k), down with mass a k(k−1)/(2q(k)), and absorbs at one. Independent unit exponentials give pre-stop waits E_i/q(K_i). Wong's literal specialization is a=1, b=ρ; b is a total per-lineage whole-genome rate, not an unstated per-unit-length rate. The actual recorder consumes a uniform active lineage for splitting or uniform unordered pair of distinct active lineage IDs for merging, with normalized-Lebesgue cuts in (0,L). Splits assign full-genome left/right partitions; they are not truncated to sampled ancestral material. The conditional spatial-mark cylinder is proved for the actual recursively selected frontier. The measurable output stores the finite stopping horizon J, explicit success/failure, capped state snapshots and real timestamps, with constant tails after J. Under its law it is almost surely a valid chronological finite marked history with final active count one. The measurable projection reading frontier cardinalities and timestamps from this stored output alone has exactly the constructed count/event-time law; it does not recover time from an undated graph. Proved invariants tie sample IDs, stable lineage identities, interval coverage and event counts to the actual recursion. Event count and physical stopping time are almost surely finite; n=1 has zero events/time, n≥2 has positive physical time, and b=0 is included. No deterministic uniform bound is asserted. The count supplier also proves a finite sum of nonabsorption probabilities, but no expected physical-time endpoint or growth asymptotic is assigned here. Malformed starts, nonhitting paths and invalid consumed transitions fail explicitly; unused mark components and post-stop tails are ignored. Clock positivity is almost sure under the law, not an all-input parser check. ValidDated is a measurable support predicate, not a converse recognizer for all legal intermediate histories. The raw root/single-parent/single-crossover encoding has a classical inverse on its explicit range without distinct parent endpoints. Immediate split/reunion retains two lineage IDs and the raw cut while endpoint-local parent semantics forgets the cut; this is not reconstruction of every history from a simplified graph.
+
+**Origin.** project posed. The existing Samuel Wong programme made the source-to-recorded-history connection explicit for the continuous-breakpoint Big-ARG interpretation of Wong et al.'s Appendix B. This is recovery of that declared mathematical construction, not a claim to solve every problem or empirical question in the paper.
+
+**Prior work.** Credit Wong, Ignatieva, Koskela, Gorjanc, Wohns and Kelleher's 2024 ARG representation/model source and the classical coalescent/recombination literature it cites. Ionescu–Tulcea construction, Lyapunov drift, Borel–Cantelli, product-measure independence and Lean/Mathlib are established suppliers. The continuous-cut interpretation is not silently identified with the discrete-link Figure A1 or Little-ARG process.
+
+**Our contribution and attribution.** The existing Samuel package supplies the actual recorder-to-law connection, intrinsic dated output, adaptive-choice proof, measurable output-support repair and raw-decoder refinement. The twelve direct source/provider bodies form one same-source, same-law result; helpers and overlapping historical endpoint counts are not additional discoveries. This insertion restores completed authorship and exact historical checking rather than deriving the result again.
+
+**Evidence, kept separate:**
+
+- **Hand:** All twelve named source/provider bodies, including proofs, were read in full at e2502c82ab9a77c00543932f775a71e5374221f7, totaling 3,705 lines. The archived combined statement/support review and adaptive acceptance checkpoint were read with their dated scope. The early Process review snapshot differs from the final source; it is not silently extended to later bytes. The final matching body and output-support repair were read here. Earlier adaptive-law and input-only-validity pending language is superseded by the later explicit endpoints. This is bounded coordinating AI source review, not fresh full 77-module/transitive or human/external peer review; the whole journal article was not independently reread in this stage.
+- **Formal:** The historical PASS_LOCAL_EXACT_COMMIT receipt names proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, with 77 project import-closure modules and 415 selected axiom reports. All twelve retrieved source SHA256 identities exactly match the final combined receipt; 126 selected reports lie in these namespaces. Recorded compiler exits are zero and the recorded axiom union is only propext, Classical.choice and Quot.sound; eight selected declarations use no axioms. Dependency/object/log hashes scope the historical reuse. These overlapping counts include suppliers and other programmes, not 415 or 126 independent discoveries. No fresh build or new hosted check is asserted.
+- **Execution:** The final recorded exact-commit result, per-source/object/log manifest and selected axiom log were inspected. This recovery performed source/document integrity checks only, not compiler execution, simulation, scientific experiments or certification of a native simulator.
+- **Empirical:** A theorem about a specified continuous-coordinate probability model and its mathematical stored output, not measured biological data, a validated demographic inference method, an empirical species classifier or a production simulator.
+
+**Novelty:** Historical novelty is not adjudicated. The model and classical suppliers retain credit; archival recovery creates no new proof authorship or priority claim.
+
+**Remaining obligation for this exact claim:** None identified for this exact completed continuous-breakpoint stopped-history and observation contract in the bounded full-body recovery. Separate source extensions, implementation and validation do not reopen it.
+
+**Separate downstream work (does not reopen this result):** Discrete-link Figure A1 specialization; Little-ARG construction/absorption and Big/Little common-observable coupling; full real-time generator/semigroup characterization; expected-growth formulas or asymptotics; compact executable simulator/exporter/parser, byte/metadata round trips and external-software conformance; demographic inference and empirical validation remain separate. Deterministic simplification and conditional owner-transfer packages are separate recovery groups, not automatically covered here.
+
+**Proof, review and related source links:**
+
+- [Final exact-commit result and scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json) (formal receipt).
+- [Exact source/object/log manifest](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json) (formal receipt).
+- [Selected axiom log](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log) (formal receipt).
+- [Archived statement/support review with dated scope](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/verification/COMBINED-STATEMENT-REVIEW.md) (hand review).
+- [Actual adaptive-choice acceptance](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/source-audit/ADAPTIVE-LAW-CHECKPOINT.md) (hand review).
+- [Continuous/discrete source contract](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/source-audit/APPENDIX-B-CONTRACT.md) (proof or status).
+- [Actual count-chain law and summed nonabsorption bound](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongCountChain.lean) (proof source).
+- [Lyapunov drift supplier](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongBigARGDrift.lean) (proof source).
+- [Actual count-law almost-sure absorption](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongBigARGAbsorption.lean) (proof source).
+- [Independent holding times and finite physical absorption](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongWaitingTimes.lean) (proof source).
+- [Continuous marks and independent innovation array](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedLaw.lean) (proof source).
+- [Actual recording invariants, raw decoder and reunion control](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedRecorder.lean) (proof source).
+- [Actual stopped physical-graph theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedProcess.lean#L159) (proof source).
+- [Natural measurable history construction](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedMeasurable.lean) (proof source).
+- [Measurable graph-support repair](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedSupport.lean) (proof source).
+- [Intrinsic stored-history count/time theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedDated.lean#L95) (proof source).
+- [Final output-law validity theorem](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongDatedSupport.lean#L133) (proof source).
+- [Actual recorder's adaptive cylinder](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongAdaptiveSelection.lean#L267) (proof source).
+- [Wong et al. 2024 model and representation source](https://doi.org/10.1093/genetics/iyae100) (prior work).
+
+**Typed connections:**
+
+- [CB-MEMORY-003](#cb-memory-003), same principle: Both preserve stochastic observations, but the countably supported PMF abstraction theorem is not a proved adapter for this continuous-cut Borel history law. No theorem import is asserted.
+
+**Stable key:** wong.CONTINUOUS_MARKED_HISTORY_LAW. **Aliases:** Wong continuous marked-history construction; Wong W-A source recovery.
+
+</details>
 
