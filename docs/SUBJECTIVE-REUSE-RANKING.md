@@ -113,3 +113,27 @@ A single coherent announcement can feature these together. Readers should be abl
 ## How to use this overlay
 
 Use it as a suggested reading/reuse order only. Keep canonical proof status, empirical evidence and exact scope visible. Do not turn the rank into an admission gate, a machine-verification label or a direction to reopen completed work. Revise the order when actual reuse or a newly proved adapter changes my judgment, with a dated revision rather than overwriting scientific history.
+
+## 23 October 2026 update: nine recovered sequence groups, without reranking
+
+The [canonical register at 27b143c73a4ac272b560b2974d83ff96df738531](https://github.com/Sodelin/Research-Commons/blob/27b143c73a4ac272b560b2974d83ff96df738531/docs/claims.json) now has **84 cards**. The table above remains the original **75-card subjective ordering**, unchanged. The nine additions, CB-SEQ-004 through CB-SEQ-012, are recovered existing result groups, not nine newly proved discoveries. This addendum neither assigns them exact global ranks nor claims to rank all 84.
+
+**My provisional judgment: none displaces the current top ten for broad reuse.** They substantially improve the report's coverage of the sequence programme. A result can deserve prominent reporting without overtaking an organizing framework on this particular reuse criterion.
+
+- **CB-SEQ-011, selected-digit classification, is my strongest reporting candidate in this batch.** One explicit family links digit-selection gaps to exact factor complexity, repetition, branching factors and distinguishability of the selection. Its breadth within that family is attractive. It is not a classification of all automatic sequences; Cloitre v2 and established generalized digit-sum special cases remain credited, and historical novelty is unresolved.
+- **CB-SEQ-005 and CB-SEQ-009 are especially clean reusable results.** The first reduces an individual finite-prefix edit's exact global matching penalty to an attained finite search. The second gives sharp raw-window thresholds for recovering a grouping parameter and construction phase without supplied block boundaries. Neither establishes a general-purpose fast algorithm or a uniform window for unbounded grouping parameters.
+- **CB-SEQ-004, 006, 007, 008 and 010 strengthen the programme's internal connections:** exact matching heights, finite-versus-infinite realization limits, aggregate digit computation, a constrained coding adapter and complete fixed-scale grouped-pattern comparison. Their observation and source contracts remain distinct.
+- **CB-SEQ-012 is a useful narrow exclusion, not Collatz closure.** Its fixed Thue–Morse valuation-block coding forces a cycle if positively realized, and specified growing subclasses have no positive realization. Arbitrary valuation codes and all positive cycles are not excluded.
+
+### What kind of progress did an update make?
+
+1. **New mathematical advance:** a previously unproved exact implication is now proved. State the changed conclusion and assumptions.
+2. **Older result recovered:** an existing proof becomes accessible and correctly indexed. This can materially improve reuse and reporting, but it is not a new proof date or discovery count. That is the main progress type in this nine-card addition.
+3. **New review or implementation evidence:** an existing claim gains a separately scoped hand review, formal check, reproducible implementation or application evidence. Say which evidence changed; do not promote one kind into another. An update may have more than one of these labels.
+
+### How I describe importance without pretending to measure it
+
+These are subjective descriptions, not scored tiers or an automatic promotion ladder: **local result** answers one exact question; **reusable component** supplies a clean piece of other arguments; **organizing framework** coordinates multiple components and problems; **demonstrated field advance** has established significance beyond this programme through substantive comparison and outside use or assessment; **transformative impact** requires much broader demonstrated consequences over time.
+
+I currently describe **G7 as an organizing framework within this programme**, supported by its actual causal adapter. That is not evidence of field-wide transformation. The reuse order, depth-of-mathematics judgment, validation status and practical applicability answer different questions. A new proof or demonstrated adapter may change my reuse judgment; merely adding cards, recovering files or accumulating checks does not mechanically change ranks.
+
