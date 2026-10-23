@@ -18,7 +18,9 @@ test('exact identity and typo-tolerant search recover accepted suppliers',()=>{
 });
 test('published questions and classical work retain their actual attribution',()=>{
  const published=search(data.claims,{origin:'published_open_problem'});
- assert(published.length>0);assert(published.every(c=>c.origin.source_url));
+ assert(published.length>0);assert(published.every(c=>c.origin.category==='published_open_problem'));
+ assert(published.find(c=>c.id==='CB-SEQ-001').origin.source_url);
+ assert(published.every(c=>c.origin.detail));
  assert(search(data.claims,{origin:'classical_prior'}).some(c=>c.id==='CB-CM-001'));
  assert(!published.some(c=>c.id==='CB-CM-001'));
 });
@@ -58,4 +60,16 @@ test('warm ranked lookup is measured over the actual current register',()=>{
  for(let i=0;i<100;i++)search(data.claims,{q:i%2?'independent routing':'quantum'});
  const elapsed=performance.now()-start;assert(elapsed<2000,`100 warm queries took ${elapsed}ms`);
  console.log(`Actual register: ${data.claims.length} cards; 100 warm queries ${elapsed.toFixed(1)}ms (this Node/phone host only).`);
+});
+
+
+test('schema1.1 completion and downstream obligations survive agent export separately',()=>{
+ for(const id of ['CB-G6-001','CB-G7-001','CB-PHYS-P5-004']){
+  const c=card(id),packet=reusePacket(c,meta);
+  assert.equal(packet.completion.mathematical_claim_complete,true);
+  assert.equal(packet.completion.proof_derivation_required,false);
+  assert.equal(packet.separate_downstream_or_validation_work,c.separate_downstream_or_validation_work);
+  assert(packet.genuine_remaining_obligation.startsWith('None for this exact proved claim'));
+ }
+ assert.equal(card('CB-G3-004').completion.proof_derivation_required,true);
 });

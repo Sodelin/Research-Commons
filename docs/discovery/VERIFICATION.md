@@ -1,5 +1,12 @@
 # Discovery reader verification
 
+## Current schema1.1 integration,23October2026
+
+Current bundled source e2d396226ff0bc1d7f9b105c00001d62b6df25a2 / board1.4-outside-source-continuations has69 cards. The schema1.1 completion successor supplied through Lean is consumed: mathematical completion and proof-derivation flags are preserved in the agent export; completed claims show separate downstream/validation work. G6/G7/P5 stay complete; original G3 remains unresolved. The exact caller join40d9b22fa3384861101c8aece2ded4327de4010b is linked.
+
+Final current run:19 passing records (11 model checks,7 DOM journey subtests,enclosing group), zero failures/skips. Current69-card sample100 warm queries81.0ms on this phone Node host. The source expansion exposed two obsolete QA assumptions: exactly five published-question cards and every such card having a direct source_url. Counts now follow actual canonical origin data; a missing direct paper URL is explicitly shown as an indexing gap and not fabricated as classical provenance. The corrected full current run passes. Previous v1 evidence below remains dated history, not a current60-card count.
+
+
 23October2026. Source/projection testing, not independent scientific proof review.
 
 - Canonical60-card JSON snapshot is byte-pinned to public commit78ef5c855146cc88afdad78cd3475eae2399f141; original SHA256646452a61183ce16ee8e2ece8fd9e4f4cdfaa976fb41698498be0546219251a7 matches the Lean gateway's independent source report. Original IDs, scientific statuses and typed edges are unchanged.

@@ -20,17 +20,25 @@ test('reader journeys: deep link, search, evidence, origin, graph, reuse, stale-
  await t.test('deep link and source-defined P5 completion/evidence are displayed',()=>{
   assert.equal($('search').value,'quantum');assert($('detail').textContent.includes('CB-PHYS-P5-004'));
   assert($('detail').textContent.includes('Hand-proof verdict'));
+  assert($('detail').textContent.includes('Mathematical claim complete'));
+  assert($('detail').textContent.includes('Separate downstream or validation work'));
   assert($('detail').textContent.includes('Formal verification'));
   assert.equal($('detail').querySelectorAll('script').length,0);
  });
  await t.test('copyable agent record has canonical provenance and scoped evidence',async()=>{
   [...$('detail').querySelectorAll('button')].find(x=>x.textContent==='Copy agent reuse record').click();
   await wait(()=>copied.startsWith('{'));const packet=JSON.parse(copied);
-  assert.equal(packet.claim_id,'CB-PHYS-P5-004');assert.equal(packet.registry_source.commit,docs['source.json'].commit);
+  assert.equal(packet.claim_id,'CB-PHYS-P5-004');assert.equal(packet.completion.mathematical_claim_complete,true);assert.equal(packet.completion.proof_derivation_required,false);assert.equal(packet.registry_source.commit,docs['source.json'].commit);
  });
  await t.test('published-question filter works across the actual source data',async()=>{
   $('reset').click();$('origin').value='published_open_problem';$('origin').dispatchEvent(new dom.window.Event('change'));
-  assert($('count').textContent.includes('5 of'));assert(document.querySelectorAll('.claim').length>0);
+  const expected=docs['claims.json'].claims.filter(c=>c.origin.category==='published_open_problem').length;assert($('count').textContent.startsWith(expected+' of'));assert(document.querySelectorAll('.claim').length>0);
+ });
+ await t.test('missing direct literature URL is labelled as an indexing gap',()=>{
+  const missing=docs['claims.json'].claims.find(c=>c.origin.category==='published_open_problem'&&!c.origin.source_url);
+  assert(missing,'This source successor includes a literature-link gap fixture');
+  location.hash=missing.id;dom.window.dispatchEvent(new dom.window.HashChangeEvent('hashchange'));
+  assert($('detail').textContent.includes('direct original-paper link is not indexed'));
  });
  await t.test('typing searches and no-result recovery does not claim missing mathematics',async()=>{
   $('reset').click();$('search').value='independant routing';$('search').dispatchEvent(new dom.window.Event('input'));
