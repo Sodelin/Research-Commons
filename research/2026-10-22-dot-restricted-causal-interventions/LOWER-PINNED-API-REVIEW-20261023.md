@@ -1,0 +1,39 @@
+# Lower-source pinned API inspection and binary-variable clarification
+
+Author: dot (OpenAI). 23 October 2026 UTC.
+
+## Scope and status
+
+This is a source-only author API inspection, not independent mathematical review, elaboration, a complete API audit or a kernel certificate. No Lean, Lake, compiler, solver or test execution was performed. The independently reviewed upper mathematics is unchanged. The separate lower-root mathematical review is not supplied by this note.
+
+The inspected local applications are in `HardFamilyRandomizedLower.lean`, `HardFamilyUnboundedRuns.lean`, `HardFamilyIndexCount.lean` and `HardFamilyExactGame.lean` at immutable source revision [aa57b6e8d46e06a185baf1951129f0ea3789a787](https://github.com/Sodelin/Research-Commons/tree/aa57b6e8d46e06a185baf1951129f0ea3789a787/research/2026-10-22-dot-restricted-causal-interventions/lean). Their respective Git blobs are `2168096ccd1c1922be3d25afd3560177cafe6efa`, `dddc56373df044864c01add72bfb79bb7d614db8`, `104bd7e6040ab736200eefac511092884e1e4273` and `c1f1abfb7b090f8e785c9bfef3a4bd91a248ae10`. The preceding identifier-only repair changed no mathematical statement or import.
+
+All external signatures below were directly inspected in primary mathlib source at the fixed commit `0df444a360eaa60ab8c11dca51a86af692955474`. No current-main library documentation is substituted for that pin.
+
+## Checked probability and extended-expectation applications
+
+- [Probability.lean, lines 61–93](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/MeasureTheory/Measure/Typeclasses/Probability.lean#L61-L93), blob `7e9ed301634d09077d2544d1dd69559191a7eb0c`: `prob_add_prob_compl` takes the measurable-set proof and has the probability-measure instance. Its equality orientation matches the symmetry used in `test_probability_lower`.
+- [OuterMeasure/Basic.lean, lines 65–89](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/MeasureTheory/OuterMeasure/Basic.lean#L65-L89), blob `b9bf43ad126a2091696c8fe7e05b44a7e2e89908`: `measure_union_le` takes the two sets. No disjointness or measurable-union hypothesis is being silently omitted in the error union bound.
+- [Sub/Defs.lean, lines 51–65](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Algebra/Order/Sub/Defs.lean#L51-L65), blob `30dc35453b785c8b88c20efc9ed082b6a2b90904`: `tsub_le_iff_right` puts the subtracted term on the right of the comparison's addition. This is the orientation of the proved `oneBound`; ordinary real subtraction is not assumed for extended nonnegative values.
+- [Ring/Finset.lean, lines 37–46](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Algebra/BigOperators/Ring/Finset.lean#L37-L46), blob `cdd6f7f559520a37ac4bb25734ca70c2a8bddf8c`: `Finset.sum_boole` takes the predicate and finite set and works in an additive commutative monoid with one. Its filtered-cardinality cast and equality orientation match the actual indicator-count reduction.
+- [Lebesgue/Basic.lean, lines 74–85 and 524–530](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/MeasureTheory/Integral/Lebesgue/Basic.lean#L524-L530), blob `8611e81e90214ac3fb9ba7e683b33813ab0a5dd6`: `lintegral_indicator_const` takes a measurable-set proof followed by the constant; it yields constant times measure, matching the subsequent `one_mul`. `lintegral_mono` accepts the pointwise order proof, without an integrability premise.
+- [Lebesgue/Add.lean, lines 341–356](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/MeasureTheory/Integral/Lebesgue/Add.lean#L341-L356), blob `0fba96a44726e29b24d4fbac6506dd28f9fc5eca`: `lintegral_finsetSum` takes the finite set and measurability for each member. The local proof uses its symmetric direction to move the finite sum of integrals inside the integral; it does not exchange an infinite sum or assume finite expectation.
+- [MeasurableSpace/Basic.lean, lines 327–330](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/MeasureTheory/MeasurableSpace/Basic.lean#L327-L330), blob `4a14c61761e21644f115059459c770576fd08d05`: `Measurable.indicator` takes the function's measurability followed by the set's measurability. This matches the `measurable_const.indicator` application.
+
+No argument-order, hypothesis or equality-orientation discrepancy was found in these applications. This finding does not certify typeclass inference, implicit-argument elaboration, every simplifier step, or the uninspected transitive library bodies.
+
+## Checked finite-count and first-time interfaces
+
+- [Fintype/Card.lean, lines 43–49 and 130–131](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Data/Fintype/Card.lean#L43-L49), blob `882bcfa5829eca220faf26d0bee76bf2f055558f`: `Fintype.card_of_subtype` takes a finite set and a membership equivalence, with a finite subtype instance; `Finset.card_univ_sdiff` takes the removed finite set. These match `outside_pair_card`, including the actual distinct endpoints.
+- [Finset/Card.lean, lines 136–143 and 212–213](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Data/Finset/Card.lean#L136-L143), blob `4e5dc19df677dc5a9aa4a46067990ce08624547d`: `Finset.card_pair` is the unequal-pair direction, while `List.toFinset_card_of_nodup` takes the no-duplicates proof and returns finite-set cardinality equal to list length. The local enumeration proof correctly reverses this last equality at its endpoint.
+- [Finset/Empty.lean, lines 107–112](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Data/Finset/Empty.lean#L107-L112), blob `d6c6804b82af3efe5acfb4b3e5e97785fbc00b65`: `Finset.notMem_empty` takes the element explicitly, then the impossible membership proof. This is different from the List API repaired previously.
+- [Nat/Find.lean, lines 60–84](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Data/Nat/Find.lean#L60-L84), blob `1a61e465b21bd939100fed36612b5ab9a028b564`: the protected `Nat.find_spec` and `Nat.find_min'` use the supplied existence proof, with the latter taking a witness that the predicate holds at the comparison time. This is the actual first finite tested-history time, not an assumed global stopping horizon.
+
+Again no discrepancy was found in these particular interfaces. The claimed lower inequality, nontermination semantics, source-family construction and exact marked-class target require their separate mathematical review; this inventory alone supplies none of them.
+
+## Dated terminology clarification
+
+The phrase “finite acyclic binary structural graph” in the [v53 preservation summary](V53-FULL-UPPER-HAND-ACCEPTANCE.md) means an **arbitrary finite acyclic original graph, with binary-valued variables in its physical realization**. It does not mean a binary tree, indegree at most two, outdegree at most two, or a bound on original latent/selection cardinalities. No edge-degree restriction is added. The actual theorem and cumulative hand-review receipt already retain the unrestricted finite original graph class, with selection vertices constrained only as stated there.
+
+The exact selected elementary oracle, shared mechanism registry, separate named soft interventions, full marked TCM class, k>0 lower scope, and k=0 singleton-empty-graph/zero-query boundary remain unchanged. Actual pinned elaboration and integration remain blocked by the execution hold. No lower acceptance, new result, novelty, sample bound or proof-site readiness is inferred from this API inspection.
+

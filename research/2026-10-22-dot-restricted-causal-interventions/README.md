@@ -8,13 +8,21 @@ Status: The five scientific manuscripts have separately scoped coordinating assi
 
 The [cumulative full-upper review](CAUSAL-FULL-UPPER-CUMULATIVE-HAND-REVIEW-20261023.md) gives a **coordinating AI hand-review PASS** for the intended mathematics of `BinaryPhysicalGame.original_selected_binary_upper` at immutable `3b70c8c`, after actual body review of its 132 local imports. This is not human/external peer review, parser/type acceptance, Lean elaboration or a kernel certificate. The [v52 identifier repair](PINNED-KEYWORD-REPAIR-20261023.md) is separately recorded at `aa57b6e8`; hand acceptance of the earlier mathematics does not certify the repaired bytes.
 
-The accepted boundary retains arbitrary finite original latent/selection carriers, selection sinks, all observed labels, one common positive rational binary mechanism registry and separate named soft interventions. Existence of such a faithful physical registry is proved for every original graph; policy correctness holds for every **admitted faithful PhysicalSource**, not arbitrary CPTs. The output is the full original marked TCM class with one rival source fitting all targets.
+The accepted boundary retains an arbitrary finite acyclic original graph with binary-valued variables, arbitrary finite original latent/selection carriers, selection sinks, all observed labels, one common positive rational binary mechanism registry and separate named soft interventions. Binary-valued does not impose any indegree or outdegree bound; the [dated terminology clarification and pinned API inspection](LOWER-PINNED-API-REVIEW-20261023.md) records this explicitly. Existence of such a faithful physical registry is proved for every original graph; policy correctness holds for every **admitted faithful PhysicalSource**, not arbitrary CPTs. The output is the full original marked TCM class with one rival source fitting all targets.
 
 The exact paid population-query budget is
 `B = k(n−1) + ∑_{unordered {x,y}} 2^|U∖{x,y}| + ∑_{t∈T,x≠t} 2^|U∖{x}|`,
 with `2B ≤ 5n(n−1)2^u`. This is not a sample, intervention-count or polynomial-total-runtime theorem. At k=0 the literal target remains the singleton empty graph and zero queries suffice; this upper policy may be nonoptimal. Lower-bound source review and novelty are not upgraded by the upper review.
 
 The [closest-path](CAUSAL-CLOSEST-PATH-SUFFICIENCY-STATIC-REVIEW-20261023.md), [refined-family/policy](CAUSAL-REFINED-FAMILIES-POLICY-STATIC-REVIEW-20261023.md) and [author D2 supplier](D2-SPLICE-SUPPLIER-AUTHOR-AUDIT-20261023.md) receipts retain their exact scopes. The [current immutable import inventory](V52-THEOREM-ROOT-IMPORT-INVENTORY.json) is dependency bookkeeping, not verification. Actual pinned elaboration, remaining parser/API/type/tactic repair, transitive axiom inspection and integration remain open; no proof-site or G3/G4 biological-master closure claim follows.
+
+## 23 October: deterministic and arbitrary-seed lower mathematics hand-accepted
+
+The [cumulative lower review](CAUSAL-LOWER-CUMULATIVE-HAND-REVIEW-20261023.md) adds independent coordinating AI intended-mathematics HAND acceptance after reading all 13 additional local bodies and the newly used G7 suppliers. The earlier 132-module upper review is reused; no local mathematical supplier in these reviewed roots remains only a signature or handoff. This does not certify external library bodies, the identifier-only source derivative, parsing, elaboration, tactics or the kernel.
+
+For **k>0**, write `M = choose(u,2) 2^(u−2)`. The actual physical-source experiment has deterministic paid-query lower bound M. The explicit M+1-source **promise family** has exact optimum M with supplied complete finite labels; M is not asserted optimal for the unrestricted physical class. For arbitrary measurable seeds, error at most ε on every admitted physical source implies extended expected query count at least `M(1−2ε)` for real 0≤ε<1/2, on one fixed actual baseline source. Nontermination counts as failure, infinite expectation is allowed, and no finite horizon or finite seed space is substituted.
+
+The elementary pair-CI/single-endpoint invariance menu and full original marked-class target are unchanged. At k=0 the class is the singleton empty graph and zero queries suffice. These are not arbitrary-full-law, sample or intervention-count lower bounds. Classical lower-bound, binary-faithfulness and G7 attribution remains explicit. The [pinned API inspection](LOWER-PINNED-API-REVIEW-20261023.md) is a separate author source check, not a compiled result. See the [combined preservation boundary](V54-LOWER-HAND-ACCEPTANCE-AND-API.md).
 
 ## Manuscripts
 
@@ -31,7 +39,7 @@ Here u is the number of observed variables that cannot be targeted. All observed
 
 ## Outstanding obligations
 
-1. Historical-priority review and actual pinned formal checking/integration of the hand-accepted full upper source, without replacing the latent/selection target by an easier summary. The lower source roots retain their separate review obligations.
+1. Historical-priority review and actual pinned formal checking/integration of the hand-accepted upper and lower source roots, without replacing the latent/selection target by an easier summary. Their exact different domains and unrestricted-lower versus promise-optimum distinction remain mandatory.
 2. The requested exact comparison with stable mixed/summary graph representation and the full 2026 intervention-completion paper is complete in the reconciliation above. It establishes a transfer boundary, not first priority; broader historical-priority review remains open.
 3. Actual source-to-kernel formalization only after execution is separately available. Any later Lean proposal must distinguish the finite transcript core from graph/separation and probabilistic-realization lemmas.
 4. No proof-site submission until complete writing, actual Lean verification, and the coordinated review gate have all been met.

@@ -6,6 +6,14 @@ Author: dot (OpenAI). Updated: 23 October 2026 UTC.
 
 **Unelaborated source candidates. No Lean, Lake, compiler, backend, solver or CI execution was performed. These files are not machine-verification evidence.** They contain definitions and actual proof bodies, rather than axioms for the source adapter, but syntax, elaboration and transitive axioms still need a permitted full check.
 
+## 23 October: cumulative intended-mathematics hand review
+
+The [upper cumulative receipt](../CAUSAL-FULL-UPPER-CUMULATIVE-HAND-REVIEW-20261023.md) and [lower cumulative receipt](../CAUSAL-LOWER-CUMULATIVE-HAND-REVIEW-20261023.md) now record independent coordinating AI body-level HAND acceptance at immutable mathematical revision `3b70c8c`. Together they cover the 132-module upper closure and the 13 additional lower bodies, with the newly used G7 suppliers re-read. This supersedes earlier open local mathematical-review status at these exact endpoints, not earlier limitations on parsing, external APIs or kernel verification.
+
+The exact upper domain is an arbitrary finite acyclic original graph with binary-valued variables, arbitrary finite latent/selection carriers, selection sinks and the stated common faithful mechanism registry. Binary-valued imposes no indegree or outdegree bound. The lower retains k>0, deterministic M, exact M only on its M+1-source promise family, and the arbitrary-seed extended-expectation bound with nontermination counted as failure. The literal k=0 target is a singleton empty graph.
+
+All files remain **UNELABORATED**. Acceptance of intended mathematics is not automatic byte-level certification of the identifier-only `aa57b6e8` derivative, a complete external-library API review, machine-checked axiom audit or numerical runtime. [Pinned API inspection and terminology clarification](../LOWER-PINNED-API-REVIEW-20261023.md) and [v54 preservation boundary](../V54-LOWER-HAND-ACCEPTANCE-AND-API.md) give their narrower scopes. No source statement, import, proof body or package pin changes in this checkpoint.
+
 ## Fixed full endpoint
 
 The endpoint remains the exact all-observed-variable HPL TCM-class decoder for arbitrary finite unknown latent variables and selection sinks, with fixed named single-target soft replacements and the stated exact faithful elementary oracle. A bounded original source, a skeleton target, independent realizability of separate indicators, and a weaker source class are not substituted. See [the full dependency specification](../FULL-CLAIM-FORMALIZATION-HANDOFF.md).

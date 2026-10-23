@@ -24,7 +24,7 @@ The first two earlier independent receipts, probability and canonical-MAG-decode
 
 ## Exact accepted claim and exclusions
 
-For every original finite acyclic binary structural graph with arbitrary finite latent and sink-selection carriers, there exists one common strictly positive rational registry realizing the exact selected elementary responses across baseline and all separate named soft interventions. Every admitted faithful `PhysicalSource` is correctly processed by the paid policy, with the full original marked TCM class on all observed labels as output.
+For every arbitrary finite acyclic original graph with binary-valued variables and arbitrary finite latent and sink-selection carriers, there exists one common strictly positive rational registry realizing the exact selected elementary responses across baseline and all separate named soft interventions. Every admitted faithful `PhysicalSource` is correctly processed by the paid policy, with the full original marked TCM class on all observed labels as output.
 
 The exact horizon is
 `B = k(n−1) + ∑_{unordered {x,y}} 2^|U∖{x,y}| + ∑_{t∈T,x≠t} 2^|U∖{x}|`,
@@ -33,3 +33,7 @@ and `2B ≤ 5n(n−1)2^u`. Finite cardinalities, not unguarded negative exponent
 At k=0 the TCM edge relation is empty and the class image is the singleton empty graph, not an empty candidate set. The upper policy may be nonoptimal; the corrected lower scope remains k>0.
 
 No sample bound, physical intervention-count bound, polynomial total decoding runtime, hard-intervention extension, lower-root acceptance, novelty certificate, G3/G4 biological-master closure or proof-site readiness is added. Actual pinned elaboration, any remaining syntax/API/type/tactic fixes, transitive theorem/axiom checking and integration remain open under the existing execution hold.
+
+## Terminology clarification, 23 October 2026
+
+The earlier phrase “finite acyclic binary structural graph” referred to binary-valued variables, not binary indegree or outdegree. The original graph is an arbitrary finite DAG with the stated selection-sink condition. This clarification does not narrow the theorem or change a proof body. See the [pinned API inspection and terminology record](LOWER-PINNED-API-REVIEW-20261023.md).
