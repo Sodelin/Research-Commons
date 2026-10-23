@@ -237,6 +237,47 @@ in those inequalities. Exact finite attainment remains a separate duty.
 Do not derive this limit or the OLD loss^(3/2) I replacement again. Both
 were already indexed before this comparison; no source producer/check ran.
 
+## Uniform spectral conditioning: completed synthetic decision obstruction
+
+G3-SEMISIMPLE-ENDPOINT-NOGO-01 is **PROVED BY HAND (not Lean formalized)**.
+[Complete proof](../2026-10-23-g3-semisimple-endpoint-nogo/PROOF.md),20451B/SHA256
+`32720efb91abb80cfce99b785826426e2d0cf0fc35acbd25ba5f6ae9df831541`;
+[separate evidence/scope](../2026-10-23-g3-semisimple-endpoint-nogo/SOURCE-STATUS.json).
+Independent correctness review, formalization and scientific execution
+are unperformed; this is a completed author hand theorem, not an open proof.
+
+A fixed synthetic polynomial paired alphabet has recursively enumerable
+complete finite-word feasibility despite all-cap exchangeability,
+projectivity, opaque grafting, merge-only same-count identity, projector
+ROW norms<=2 throughout its compact closure, and the same-word paired
+diagonal inequalities above. A finite stochastic endpoint row is a positive
+weighted variance. Its zero DERIVES equality of fresh independent controls;
+a second same-control product row yields independent reciprocal roots.
+The already proved root-order arithmetic theorem is REUSED. No Jordan
+counter or unbounded imposed parameter tie is introduced.
+
+This rejects a generic decision engine using ONLY those structural
+promises. It is NOT original G3 undecidability or a new full G3 attack:
+the synthetic letters have b2=b3, already excluded for actual strict
+private words, and their stochastic static readout has no original caller.
+The OLD actual single-slot I convex-interior/affine-PSD corollary ALSO
+blocks directly transplanting a nontrivial unconditioned affine variance
+detector with a strict-source zero. Protected/conditional/multiport and
+different-mode extensions are not silently excluded by that old result.
+
+The completed9October fixed-tuple finite-fibre decoder exclusion explicitly
+leaves moving parameters and zero-set languages outside its scope. The
+regular degree theorem's locally constant rank premise also fails at the
+variance zero. Those older theorems remain proved; no source, solver/QE,
+tree/matrix control, model/build/native/Lean job or local Git action ran.
+Original total attainment/exclusion still needs the ACTUAL alphabet and
+joint finite-template compiler. No further synthetic extension is selected.
+
+Lookup aliases: endpoint variance, forced parameter equality, fresh-control
+synchronization, absorbing tree laws, comb/PDA/Kingman mixture, uniformly
+semisimple compact closure, moving-bank cutpoint, singular endpoint,
+affine-in-kernel stochastic postprocessing, generic decision-engine gate.
+
 ## Scope and continuation
 
 The local active audit retains these aliases with original and later source
