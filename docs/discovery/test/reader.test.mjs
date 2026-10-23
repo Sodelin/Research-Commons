@@ -73,3 +73,20 @@ test('schema1.1 completion and downstream obligations survive agent export separ
  }
  assert.equal(card('CB-G3-004').completion.proof_derivation_required,true);
 });
+
+
+test('downstream-only text is searchable without reopening completed mathematics',()=>{
+ const c=structuredClone(card('CB-G6-001'));
+ c.separate_downstream_or_validation_work='zephyrnativebinding';
+ const result=search([c],{q:'zephyrnativebinding'});
+ assert.equal(result.length,1);assert.equal(result[0].id,'CB-G6-001');
+ assert.equal(result[0].completion.mathematical_claim_complete,true);
+ assert.equal(search([c],{q:'zephyrnativebinding',status:'open'}).length,0);
+});
+test('historical schema1.0 completion fallback remains available',()=>{
+ const c=structuredClone(card('CB-G6-001'));delete c.completion;delete c.separate_downstream_or_validation_work;
+ const result=reusePacket(c,meta);
+ assert.equal(result.completion,null);assert.equal(result.separate_downstream_or_validation_work,null);
+ assert.equal(result.genuine_remaining_obligation,c.remaining_obligation);
+ assert.equal(search([c],{q:'CB-G6-001'})[0].id,c.id);
+});
