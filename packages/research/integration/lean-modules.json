@@ -187,6 +187,94 @@
         ],
         "review": "Exact endpoint hypotheses and final proof/interface sections inspected. No independent full core-module proof review or new historical acceptance."
       }
+    },
+    {
+      "module": "NativeOrderedBankLayout",
+      "path": "lean/NativeOrderedBankLayout.lean",
+      "sha256": "00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a",
+      "imports": [
+        "Mathlib.Logic.Equiv.Fin.Basic"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
+    },
+    {
+      "module": "OriginalCodeBankLayout",
+      "path": "lean/OriginalCodeBankLayout.lean",
+      "sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208",
+      "imports": [
+        "G7OriginalAdmission",
+        "NativeOrderedBankLayout"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
+    },
+    {
+      "module": "NativeCellFormReflection",
+      "path": "lean/NativeCellFormReflection.lean",
+      "sha256": "29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de",
+      "imports": [
+        "GParity.Chart",
+        "G6NaturalCellOrderedCompiler"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
+    },
+    {
+      "module": "NativeCellAggregateReflection",
+      "path": "lean/NativeCellAggregateReflection.lean",
+      "sha256": "6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2",
+      "imports": [
+        "NativeCellFormReflection"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
+    },
+    {
+      "module": "OriginalCodeChartReflection",
+      "path": "lean/OriginalCodeChartReflection.lean",
+      "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+      "imports": [
+        "OriginalCodeBankLayout",
+        "NativeCellAggregateReflection"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
+    },
+    {
+      "module": "OriginalCodeChartReceiver",
+      "path": "lean/OriginalCodeChartReceiver.lean",
+      "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+      "imports": [
+        "OriginalCodeChartReflection",
+        "G6NaturalCellOrderedCompiler"
+      ],
+      "provenance": {
+        "role": "reuse of retained authored correspondence/physical receiver",
+        "original_sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+        "selected_current_context_verified": false,
+        "scope": "Existing hosted evidence retained separately; complete pinned package elaboration pending."
+      }
     }
   ]
 }

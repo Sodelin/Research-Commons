@@ -12,10 +12,15 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let objects=lean.join(".lake/build/lib/lean");
  let evidence=root.join("build").join(scope).join("sources");
  fs::create_dir_all(&evidence).map_err(|e|e.to_string())?;
- let callers=[
+ let mut callers=vec![
     ("CMExample","cm-certificate",None),
     ("AffineSAT","affine-certificate",Some("sat")),
     ("AffineUNSAT","affine-certificate",Some("unsat"))];
+ if project=="lean" {
+  callers.extend([("OriginalTreeBank","source-certificate",Some("tree")),
+    ("OriginalParallelBank","source-certificate",Some("parallel")),
+    ("OriginalCellExclusion","source-certificate",Some("infeasible"))]);
+ }
  let mut records=Vec::new();
  let mut names=owned.to_vec();
  for (module,binary,argument) in callers {
@@ -57,7 +62,7 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
     if !audit[field].as_array().is_some_and(|v|v.is_empty()){return Err(format!("caller audit rejected {field}"));}
  }
  let receipt=json!({"profile":scope,"certificates":records,"owned_axiom_audit_passed":true,
-    "scope":"Particular exact rational CM law and affine matrices; no physical source/parser/universal-native refinement or full registry closure."});
+    "scope":"Particular exact rational and source-cell certificates for this selected profile; no observation-law, universal parser/native refinement, full source coverage or full registry closure."});
  fs::write(root.join("build").join(scope).join("caller-verification.json"),serde_json::to_vec_pretty(&receipt).map_err(|e|e.to_string())?)
     .map_err(|e|e.to_string())?;
  println!("{receipt}");

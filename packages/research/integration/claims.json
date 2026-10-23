@@ -22,10 +22,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original-class theorem and package",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/0e3d36f4035d61a8ad6ae4dc5000b8cf9e54dc2d/research/2026-10-04-dot-complete-original-g1-1549z/README.md"
         },
         {
+          "label": "Fresh serial build receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2836ff8d1256ac29950e861db4bef53fd3c7ee53/research/2026-10-04-dot-complete-original-g1-1549z/certificate/fresh/SERIAL-BUILD-RECEIPT.json"
         }
@@ -58,10 +60,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Reconstructed G2 capabilities",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-g2-reconstructed-capabilities-0232z/README.md"
         },
         {
+          "label": "Unified integration and evidence accounting",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-g2-unified-integration-0238z/G2-UNIFIED-LAKE-INTEGRATION.md"
         }
@@ -85,10 +89,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original exact criterion",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/eb284f41d13fff2602de4e98411fb15e5891f9e8/research/2026-09-30-g3-exact-source/EXACT-CRITERION.md"
         },
         {
+          "label": "Source-reachability reduction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-06-dot-g3-global-source-reachability-0019z/REDUCTION.md"
         }
@@ -98,7 +104,11 @@
     {
       "claim_id": "CB-G3-002",
       "dependencies": [
-        "CB-G4-002"
+        {
+          "claim_id": "CB-G4-002",
+          "detail": "Reuses the completed COMMON mechanism under its mandatory restrictions.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -114,14 +124,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Certificate-derived bounded witness",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/7cdbb35da93dc82ce5b8ddc8db91140537838774/research/2026-10-13-dot-certificate-bounded-witness-0223z/CERTIFICATE-DERIVED-BOUNDED-WITNESS-CANDIDATE.md"
         },
         {
+          "label": "Later acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/e9e31baf3767593ae6805924463c0bcb4fc08f0f/research/2026-10-13-dot-certificate-bounded-witness-0223z/INDEPENDENT-BOUNDED-WITNESS-REVIEW.md"
         },
         {
+          "label": "Mandatory encoding clarification",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/e9e31baf3767593ae6805924463c0bcb4fc08f0f/research/2026-10-13-dot-certificate-bounded-witness-0223z/INPUT-ENCODING-CLARIFICATION.md"
         }
@@ -145,6 +158,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Quadratic acquisition acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4a082a70ef5d604ffb2db89f988d88b6159f569d/research/2026-10-14-dot-g3-quadratic-acquisition-review-2313z/INDEPENDENT-REVIEW.md"
         }
@@ -154,7 +168,16 @@
     {
       "claim_id": "CB-G3-004",
       "dependencies": [
-        "CB-G3-001"
+        {
+          "claim_id": "CB-G3-001",
+          "detail": "Completed positive search is a supplier, not a total decider.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-G3-002",
+          "detail": "A complete certificate-acquisition theorem could extend this branch.",
+          "relation_type": "candidate_connection"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -170,10 +193,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original master statements",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/0c0dc21eed1046c405e86a92673a6d473a934b6d/research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md"
         },
         {
+          "label": "Directed obligation audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4a082a70ef5d604ffb2db89f988d88b6159f569d/research/2026-10-16-g3-g4-obligation-audit-1930z/OBLIGATION-AUDIT.md"
         }
@@ -197,10 +222,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Admitted testers, Theorem 5",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/5e01a8e727478a2f22686d31f71304126e345116/research/2026-10-01-g4-admitted-testers-0819z/PROOF.md"
         },
         {
+          "label": "Private-chain tomography",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/5e01a8e727478a2f22686d31f71304126e345116/research/2026-10-01-g4-independent-bigon-1923z/TOMOGRAPHY-AND-COMPOSITION.md"
         }
@@ -228,18 +255,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Whole COMMON acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d10564c0b7382a2214dd0ccc1139f4c8a3d3327b/research/2026-10-08-codex-g3-g4-full-shot-1253z/integration/ROOT-WHOLE-COMMON-STOPPING-REVIEW.md"
         },
         {
+          "label": "Mandatory scope correction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d10564c0b7382a2214dd0ccc1139f4c8a3d3327b/research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-effective-stopping/attempt-3/COMMON-ONLY-RECOGNITION-SCOPE-CLARIFICATION.md"
         },
         {
+          "label": "Finite-edge correction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d10564c0b7382a2214dd0ccc1139f4c8a3d3327b/research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-effective-stopping/attempt-3/FINITE-EDGE-COUNT-CORRECTION.md"
         },
         {
+          "label": "Selected1611 independent final review: COMMON semantic endpoint",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/independent/INDEPENDENT-FINAL-REVIEW.md"
         }
@@ -268,10 +299,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "General BOTH acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78bffa4904a4f56c9efc1d2ab3a18db13f65a982/research/2026-10-13-codex-g4-renewed/critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md"
         },
         {
+          "label": "Public1613 independent final review: hybrid-free target BOTH subbranch",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/independent/INDEPENDENT-FINAL-REVIEW.md"
         }
@@ -281,7 +314,11 @@
     {
       "claim_id": "CB-G4-004",
       "dependencies": [
-        "CB-G4-003"
+        {
+          "claim_id": "CB-G4-003",
+          "detail": "Uses the natural BOTH actual-rival size certificate.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -297,10 +334,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Qualified-menu acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/130799a9985e05227e5d3db87733e386277ba962/research/2026-10-13-codex-g4-renewed/critical-review/ROOT-BOTH-INCLUSIVE-MENU-ACCEPTANCE.md"
         },
         {
+          "label": "Menu-extension proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/130799a9985e05227e5d3db87733e386277ba962/research/2026-10-13-codex-g4-renewed/whole-source/continuation-2110z/NATURAL-BOTH-SIZE-CERTIFICATE-AND-MENU-EXTENSION.md"
         }
@@ -324,6 +363,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "General all-law acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/125360b75c9fad294e1ca737834e9bed4117e83e/research/2026-10-13-codex-g4-renewed/critical-review/ROOT-GENERAL-ALL-LAW-COMMONIZATION-ACCEPTANCE.md"
         }
@@ -347,10 +387,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Accepted descent and stopping reduction",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5/research/2026-10-09-dot-full-attempt-wave-0542z/g4-forcing/INDEPENDENT-CONSTRUCTION-LANE-REVIEW.md"
         },
         {
+          "label": "Mandatory exterior-interface clarification",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5/research/2026-10-09-dot-full-attempt-wave-0542z/g4-forcing/ALGEBRAIC-EXTERIOR-INTERFACE-CLARIFICATION.md"
         }
@@ -360,7 +402,11 @@
     {
       "claim_id": "CB-G4-007",
       "dependencies": [
-        "CB-G4-006"
+        {
+          "claim_id": "CB-G4-006",
+          "detail": "Completed equivalence fixes the required supplier.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -376,6 +422,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Reduction and exact effective obligation",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5/research/2026-10-09-dot-full-attempt-wave-0542z/g4-forcing/ALL-PROFILE-DESCENT-AND-GLOBAL-CERTIFICATE-ATTEMPT.md"
         }
@@ -385,9 +432,21 @@
     {
       "claim_id": "CB-G4-008",
       "dependencies": [
-        "CB-G4-002",
-        "CB-G4-003",
-        "CB-G4-005"
+        {
+          "claim_id": "CB-G4-002",
+          "detail": "Supplies the target COMMON certificate.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-G4-003",
+          "detail": "Supplies completed BOTH finite forcing.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-G4-005",
+          "detail": "Supplies entire-I-to-C transfer, not finite extraction.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -403,6 +462,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact finite-bridge equivalence",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-13-codex-g4-renewed/whole-source/continuation-2110z/FINITE-INDEPENDENT-BRIDGE-EXACT-EQUIVALENCE.md"
         }
@@ -429,6 +489,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Full binary M3 package",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/81ff60aa0ffe6c39e15546b09105f3c3fafbd1ed/research/2026-10-10-dot-g5-full-binary-m3-0209z/README.md"
         }
@@ -452,6 +513,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Bounded-indegree hand theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/5e01a8e727478a2f22686d31f71304126e345116/research/2026-10-01-sol61-head-audit-1956z/G5-HIDDEN-AMBIGUITY-BOUNDED-INDEGREE.md"
         }
@@ -483,15 +545,19 @@
       "rust": {
         "state": "source_binding",
         "module": "research_commons_runtime::affine_certificate",
-        "scope": "Retained exact affine solver with literal positive/negative Lean certificates; full physical-source/compiler refinement separate."
+        "scope": "Retained exact affine solver with literal positive/negative Lean certificates; full physical-source/compiler refinement separate.",
+        "source_candidate_module": "research_commons_runtime::source_certificate",
+        "source_candidate_scope": "Generic captured original CHART proof emitter; actual full-context checking pending. Existing verified affine callers remain separate."
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Nonplanar finite-certification theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/539c814ac470fde8147b0e1e6d5307972585b6f8/research/2026-10-01-sol61-head-audit-1956z/G6-NONPLANAR-FINITE-CERTIFICATION.md"
         },
         {
+          "label": "Selected completed-cell TV formal package",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/de3011fa352e04f9be64cf9f4da8a5528cad68db/research/2026-10-10-dot-g6-completed-cell-tv-0258z/README.md"
         }
@@ -535,14 +601,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact G7 master review",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/539c814ac470fde8147b0e1e6d5307972585b6f8/research/2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md"
         },
         {
+          "label": "Scoped hosted game/rank check",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/8a96bb015b6cb88df196d6897b5437344a09238b/research/2026-10-21-lean-rust-solver-builder/evidence/G7-GAME-RANK-HOSTED-REVIEW.json"
         },
         {
+          "label": "Accepted1591 incorporation catalogue and supersessions",
           "role": "formal_inventory",
           "url": "https://github.com/Sodelin/Research-Commons/blob/dffb0b501c378c67e4aeea0561a68052e064e8ba/research/2026-10-11-dot-discovery-lean-incorporation-catalog-2200z/G5-G6-G7-INCORPORATION-CATALOG.md"
         }
@@ -552,7 +621,11 @@
     {
       "claim_id": "CB-CAUSAL-001",
       "dependencies": [
-        "CB-G7-001"
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "Accepted hand source-to-response/history/resource-game adapter instantiates G7; Lean source remains unelaborated.",
+          "relation_type": "proved_adapter"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -568,10 +641,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Full upper hand review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/174168effef1efc5be13d941814c51520de9a8cb/research/2026-10-22-dot-restricted-causal-interventions/CAUSAL-FULL-UPPER-CUMULATIVE-HAND-REVIEW-20261023.md"
         },
         {
+          "label": "Programme and prior-work boundaries",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f300a67ccef954d0935a6e2a7a87389317fbb599/research/2026-10-22-dot-restricted-causal-interventions/README.md"
         }
@@ -581,7 +656,11 @@
     {
       "claim_id": "CB-CAUSAL-002",
       "dependencies": [
-        "CB-G7-001"
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "Physical hard sources and resource histories instantiate the G7 lower-certificate interface.",
+          "relation_type": "proved_adapter"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -597,10 +676,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Lower hand-review receipt",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f300a67ccef954d0935a6e2a7a87389317fbb599/research/2026-10-22-dot-restricted-causal-interventions/CAUSAL-LOWER-CUMULATIVE-HAND-REVIEW-20261023.md"
         },
         {
+          "label": "Accepted lower scope",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f300a67ccef954d0935a6e2a7a87389317fbb599/research/2026-10-22-dot-restricted-causal-interventions/V54-LOWER-HAND-ACCEPTANCE-AND-API.md"
         }
@@ -624,6 +705,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Corrected scope",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f300a67ccef954d0935a6e2a7a87389317fbb599/research/2026-10-22-dot-restricted-causal-interventions/README.md"
         }
@@ -632,7 +714,18 @@
     },
     {
       "claim_id": "CB-LINEAGE-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G3-004",
+          "detail": "Similar inverse-information issue, not original G3 theorem reuse.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G4-008",
+          "detail": "Similar observation-versus-hidden-structure distinction, not a G4 extension.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -647,6 +740,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Score-interface theorem and review",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/README.md"
         }
@@ -670,14 +764,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact-law construction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/STOCHASTIC-GRAPH-OBSTRUCTION.md"
         },
         {
+          "label": "Fixed-root specialization",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/PARENT-RETAINING-BIRTH-SPECIALIZATION.md"
         },
         {
+          "label": "Quantifier audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/QUANTIFIER-AUDIT.md"
         }
@@ -701,10 +798,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Full complexity proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-REFINEMENT-COMPLEXITY.md"
         },
         {
+          "label": "Independent hand review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-REVIEW-20261022-0712Z.md"
         }
@@ -713,7 +812,13 @@
     },
     {
       "claim_id": "CB-LINEAGE-004",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-LINEAGE-003",
+          "detail": "Implements the restricted certificate language, pending formal acceptance.",
+          "relation_type": "candidate_connection"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -728,10 +833,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete verifier source handoff",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-COMPLETE-RESTRICTED-VERIFIER-SOURCE.md"
         },
         {
+          "label": "Source endpoint",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/PolytomyRestrictedAlgorithmsSourceEndpoint.lean"
         }
@@ -740,7 +847,18 @@
     },
     {
       "claim_id": "CB-LINEAGE-005",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-LINEAGE-003",
+          "detail": "Hand reduction is the mathematical target, not already an operational formal theorem.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-LINEAGE-004",
+          "detail": "Validated checking gives membership, not hardness.",
+          "relation_type": "candidate_connection"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -755,6 +873,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Registered closure crosscheck",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c2650a5d8afc0be75cc8141f9f30d0907e961425/research/2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-REGISTERED-COOK-CLOSURE-CROSSCHECK-20261023.md"
         }
@@ -763,7 +882,13 @@
     },
     {
       "claim_id": "CB-PHY-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G1-001",
+          "detail": "Both preserve specified observations under simplification; exact G1 theorem reuse is not established.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -778,10 +903,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Direct proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/ae8a2874f391f7d8f31d9fb4454c47aae6fe9916/research/2026-10-22-dot-phylogeny-root-blob/RETAINED-PORT-DIRECT-PROOF.md"
         },
         {
+          "label": "Restricted-model source handoff",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d6394f0a090466afff39881fabbbfd7c1fe6c49a/research/2026-10-22-dot-phylogeny-root-blob/RETAINED-PORT-RESTRICTED-SOURCE-HANDOFF.md"
         }
@@ -791,7 +918,16 @@
     {
       "claim_id": "CB-RXN-001",
       "dependencies": [
-        "CB-CM-001"
+        {
+          "claim_id": "CB-CM-001",
+          "detail": "Positive moment theorem applies after the stochastic observation adapter.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-G4-008",
+          "detail": "Similar inverse-fibre question, not the ancestry source class.",
+          "relation_type": "same_principle"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -807,6 +943,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Fixed-start scalar adapter",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4f954e531ba7014ab49ba357cd1e68fef6472922/research/2026-10-22-dot-reaction-partial-observation/FIXED-START-SCALAR-MOMENT-ADAPTER.md"
         }
@@ -815,7 +952,13 @@
     },
     {
       "claim_id": "CB-RXN-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G3-004",
+          "detail": "Similar realization pitfalls, different source classes.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -830,10 +973,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "All-order hidden-stop obstruction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2113d9d8ca82d40022a37070172a76267427920e/research/2026-10-22-dot-reaction-partial-observation/HIDDEN-STOP-ALL-ORDER-JET-OBSTRUCTION.md"
         },
         {
+          "label": "Observable-rank obstruction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4c0ec491a10eda3cf809dd685b67467c8369b5fd/research/2026-10-22-dot-reaction-partial-observation/NONLOCAL-REALIZATION-ATTACK.md"
         }
@@ -842,7 +987,18 @@
     },
     {
       "claim_id": "CB-RXN-003",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G3-004",
+          "detail": "Same inverse-fibre viewpoint, not a reduction to original G3.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G4-008",
+          "detail": "Finite determination is still class-specific.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -857,6 +1013,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Survival adapter review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/dfda007ccd8d46d77bd3ea789459de316900c65b/research/2026-10-22-dot-reaction-partial-observation/HIDDEN-EXIT-SURVIVAL-COORDINATING-REVIEW.md"
         }
@@ -865,7 +1022,13 @@
     },
     {
       "claim_id": "CB-PHYS-P1-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G6-001",
+          "detail": "Similar certification viewpoint, not an established theorem transfer from biological G6.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -880,26 +1043,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Collective upper",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/809dcb6dcef78da700fddd888e9177bcff098b0f/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-CERTIFICATION-UPPER-13.md"
         },
         {
+          "label": "Upper review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bf1d9a0e98b99eaf0a7d229de640a345210b78d4/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-UPPER-13-INDEPENDENT-REVIEW.md"
         },
         {
+          "label": "Lower32",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/9b7bb4034a136542a4d2c06afce84c64d1a50ce3/research/2026-10-16-g6-gibbs-certification/latent-light-fraction-32/README.md"
         },
         {
+          "label": "Lower24 coordinating review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/0e3e40d07edb9292a2c5a4c64c8f6fe0ae56e98d/research/2026-10-16-g6-gibbs-certification/reservoir-amplified-lock-24/P1-RESERVOIR-AMPLIFIED-LOCK-REVIEW-24.md"
         },
         {
+          "label": "Lower26 coordinating review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/a823c8445e1dd2ce4cb4008a547958fa50bac810/research/2026-10-16-g6-gibbs-certification/conditional-product-label-26/P1-CONDITIONAL-PRODUCT-LABEL-REVIEW-26.md"
         },
         {
+          "label": "Lower27 coordinating review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/0daba51d070c50bc10153a9272eab0e436484841/research/2026-10-16-g6-gibbs-certification/averaged-shared-counts-27/P1-AVERAGED-COUNTS-REVIEW-27.md"
         }
@@ -908,7 +1077,13 @@
     },
     {
       "claim_id": "CB-PHYS-P1-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-PHYS-P1-001",
+          "detail": "Could improve the upper benchmark if the missing information bound is supplied.",
+          "relation_type": "candidate_connection"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -923,6 +1098,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Measurement theorem and review",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/43cebb410eed5fbf6764b000f0b2e40d77090e25/research/2026-10-20-p1-pgm-information-increment/README.md"
         }
@@ -946,22 +1122,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete owner hand proof (111288 bytes; SHA256 964fe1e3070913ea64b0ffca5de65c271ada7f966c808dd2f29ca0e35152c264)",
           "role": "author_hand_proof",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-ORIGINAL-COMPARISON-HAND-PROOF-v1.md"
         },
         {
+          "label": "Exact original theorem and owner verdict",
           "role": "owner_verdict",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-HAND-PROOF-VERDICT-v1.md"
         },
         {
+          "label": "Mandatory finite-witness admission correction",
           "role": "source_correction",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/P5-FINITE-WITNESS-ADMISSION-CORRECTION-v1.md"
         },
         {
+          "label": "Twenty-body public source manifest",
           "role": "source_manifest",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c98b221d605f7dda739f249e1a9e049136fed51c/research/2026-10-23-p5-original-comparison-hand-proof/SOURCE-INDEX.json"
         },
         {
+          "label": "Earlier attributed builder completion record",
           "role": "attributed_owner_completion",
           "url": "https://github.com/Sodelin/Research-Commons/blob/90cef7822e64fdd0e3ee0016cbefbc16271f00c9/research/2026-10-21-lean-online-builder/PEER-SCIENTIFIC-OUTCOMES.json"
         }
@@ -985,22 +1166,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Initial component review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-INDEPENDENT-REVIEW-01.md"
         },
         {
+          "label": "Signed-energy identities",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4aaa07e7497cab2515a1ba2e5c28392e22f9c84c/research/2026-10-16-p5-strong-noise-coarse-graining/signed-energy-drift-25/README.md"
         },
         {
+          "label": "Operator-incidence supplier",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/04c9808f1fc4ec3c1c57cdbca200e91e82d32d5d/research/2026-10-20-p5-operator-incidence/README.md"
         },
         {
+          "label": "Attributed report of a complete unrestricted-comparison counterexample; proof and scope not verified here",
           "role": "attributed_status_metadata_not_proof_acceptance",
           "url": "https://github.com/Sodelin/Research-Commons/blob/90cef7822e64fdd0e3ee0016cbefbc16271f00c9/research/2026-10-21-lean-online-builder/PEER-SCIENTIFIC-OUTCOMES.json"
         },
         {
+          "label": "Independent hand acceptance of actual noncommuting paths/rings comparison",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/main/research/2026-10-23-dot-p5-chains-rings-hand-review/INDEPENDENT-HAND-REVIEW.md"
         }
@@ -1009,7 +1195,13 @@
     },
     {
       "claim_id": "CB-PHYS-P5-003",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-PHYS-P5-001",
+          "detail": "This separately recorded actual-dynamics branch is stronger than merely listing auxiliary components; it does not close the general noncommuting continuation.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1024,10 +1216,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Actual commuting-Pauli proof, historical candidate title",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-COMMUTING-PAULI-CANDIDATE.md"
         },
         {
+          "label": "Later independent scoped PASS review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-INDEPENDENT-REVIEW-01.md"
         }
@@ -1051,6 +1245,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Two-qubit example and review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/d855ab1267d2e29719ff7e865aac7df85ef7c6a0/research/2026-10-16-p5-strong-noise-coarse-graining/P5-STRONG-NOISE-INDEPENDENT-REVIEW-01.md"
         }
@@ -1074,10 +1269,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Fixed-lead theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/caf7d4531c3027d19d0e899bee7129f672d1f342/research/2026-10-16-nanowire-fixed-lead-nonseparation/README.md"
         },
         {
+          "label": "Finite rational example",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/b6b1f91d84e58506b9028dec1ff0c59e05317224/research/2026-10-16-nanowire-fixed-lead-nonseparation/finite-example/README.md"
         }
@@ -1101,6 +1298,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "All-channel theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f79a9a7626de25a58ee33d4a3dbff00f9f3f3db1/research/2026-10-16-nanowire-fixed-lead-nonseparation/all-channel/README.md"
         }
@@ -1110,7 +1308,11 @@
     {
       "claim_id": "CB-NANO-003",
       "dependencies": [
-        "CB-NANO-002"
+        {
+          "claim_id": "CB-NANO-002",
+          "detail": "Applies the matrix inequality through this particular model/error budget.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1126,6 +1328,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Thermal execution and scope",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/5055e470b32c17bdf93c55e09a891969be9ea23f/research/2026-10-16-nanowire-fixed-lead-nonseparation/thermal-model-budgets/refined-thermal-execution/PUBLICATION-README.md"
         }
@@ -1134,7 +1337,13 @@
     },
     {
       "claim_id": "CB-NANO-004",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-NANO-002",
+          "detail": "Both use PHS reflection-matrix geometry and common-parent scattering constraints. The all-channel (g,Q) region alone does not determine the fixed-spectrum fibre; the actual four-dimensional Hodge supplier is linked separately.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1149,18 +1358,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Current scoped status and contract",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/README.md"
         },
         {
+          "label": "Complete fixed-spectrum proof",
           "role": "proof",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/TRANSMISSION-SPECTRUM-SIGN-FIBRE-20261023.md"
         },
         {
+          "label": "Exact coordinating hand review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-23-dot-nanowire-transmission-sign-fibre/TRANSMISSION-SPECTRUM-SIGN-FIBRE-REVIEW-20261023.md"
         },
         {
+          "label": "Inherited four-dimensional Hodge supplier",
           "role": "prior_supplier",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c6e7264d3155ba10df38bda5d5b773b9426f705f/research/2026-10-16-nanowire-fixed-lead-nonseparation/classwise-readout/SHARP-CONDUCTANCE-DETERMINANT-BOUND-REVIEW-06.md"
         }
@@ -1184,26 +1397,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Accepted scope and supersession",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/README.md"
         },
         {
+          "label": "Complete profile-classification proof",
           "role": "proof",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/SPIN-SECTOR-PROFILE-CLASSIFICATION-CANDIDATE-18.md"
         },
         {
+          "label": "Separate coordinating hand review binding the proof bytes",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/c22ac1651c6605e96b488695c02d0750104c204e/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-classification/SPIN-SECTOR-PROFILE-CLASSIFICATION-INDEPENDENT-REVIEW-18.md"
         },
         {
+          "label": "Actual spin-sector reduction14 supplier",
           "role": "prior_supplier",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/spin-sector-reduction/SPIN-SECTOR-INTERTWINER-REDUCTION-CANDIDATE-14.md"
         },
         {
+          "label": "Actual fixed-contact reversal/symmetry10 supplier",
           "role": "prior_supplier",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/symmetry-check/BOUNDED-COLLISION-SYMMETRY-CHECK-LOCAL-10.md"
         },
         {
+          "label": "Separate full-master common-factor and lowest-root criterion",
           "role": "separate_downstream_scope",
           "url": "https://github.com/Sodelin/Research-Commons/blob/bcb7c4e3d58b0eaab3c24d89f5971fedf92e14cd/research/2026-10-16-nanowire-fixed-lead-nonseparation/lowest-branch-criterion/LOWEST-BRANCH-COMMON-FACTOR-CANDIDATE-11.md"
         }
@@ -1233,6 +1452,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "CM-T02 certificate",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/514648b697aeed8f46582109cfeefcd7707cd738/research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json"
         }
@@ -1265,6 +1485,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact formulas, proof and receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-04-dot-thue-morse-first-occurrence-lean-0550z/package/README.md"
         }
@@ -1288,6 +1509,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Theorem, independent review and exact state certificates",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-04-dot-period-doubling-nonregularity-1150z/README.md"
         }
@@ -1311,6 +1533,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Stability theorem and review",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-04-dot-complementary-avoidance-stability-0954z/README.md"
         }
@@ -1334,6 +1557,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Scaffold source package",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-02-dot-e8-scaffold-source-1441z/README.md"
         }
@@ -1357,6 +1581,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Source-to-geometry endpoint",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Research-Commons/blob/4e8ea9f05a9716ccdabf2b2197e8699ad6e4bf4f/research/2026-10-05-dot-nanuq-actual-curve-geometry-0806z/README.md"
         }
@@ -1380,6 +1605,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Observation-equivalence theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/f96399576168328322aab80f1193afaaf4312fef/research/2026-10-05-dot-flouri-clock-jc-conjecture-resolution-0908z/README.md"
         }
@@ -1403,6 +1629,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Global alignment theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/608f690fd76e216036ed2cd282c236fd0aa4ac46/research/2026-10-05-dot-global-alignment-classification-1007z/README.md"
         }
@@ -1426,10 +1653,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Two-site theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/8b4c6508a81dc4c2c146a811adaa0cc01067db60/research/2026-10-05-dot-msci-two-site-nine-feature-identifiability-1150z/README.md"
         },
         {
+          "label": "Jacobian and interval contractor",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/ebcb33d435eb82f8f18e7f586d8c1f92fe4f32af/research/2026-10-05-dot-msci-joint-jacobian-contractor-1257z/README.md"
         }
@@ -1439,7 +1668,11 @@
     {
       "claim_id": "CB-SOFTWARE-001",
       "dependencies": [
-        "CB-MSCI-003"
+        {
+          "claim_id": "CB-MSCI-003",
+          "detail": "Uses the fixed-family exact identification mathematics; uncertainty still depends on actual data.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1455,6 +1688,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Independent release review",
           "role": "execution_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/1c166276d1f0b037a402f01e3b6deaf370c864e3/research/2026-10-09-codex-practical-release-0207z/validation/INDEPENDENT-REVIEW.md"
         }
@@ -1478,10 +1712,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Rust count pilot",
           "role": "software_evidence",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-07-rust-count-pilot/README.md"
         },
         {
+          "label": "Native transfer rebuild review",
           "role": "execution_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/6dbcf5dae2c38dc7b5da162d271ce3faca082ad2/research/2026-10-07-cloud-independent-auditor-1616z/NATIVE-RUST-COUNT-TRANSFER-REBUILD-REVIEW.md"
         }
@@ -1505,10 +1741,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Completed diagnostic",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/647baeb1907387e9046eba815f3470475bf65872/research/2026-10-05-dot-bpp-matched-layout-completed-diagnostic-0815z/README.md"
         },
         {
+          "label": "Fail-closed release",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/b09b051471985ad9e24246700bf998d8ae526078/research/2026-10-05-dot-bpp-fail-closed-release-prototype-0825z/README.md"
         }
@@ -1517,7 +1755,13 @@
     },
     {
       "claim_id": "CB-EMP-TSUGA-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G6-001",
+          "detail": "G6-style certification would require the missing empirical-to-source admission.",
+          "relation_type": "candidate_connection"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1532,6 +1776,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Empirical integration milestones",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/EMPIRICAL-INTEGRATION-MILESTONES.md"
         }
@@ -1555,6 +1800,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact one-attempt obstruction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/ab80109bcaf0edec8bc3eb58aea2fd369d824fa6/research/2026-10-15-codex-materials-exact-obstruction-2052z/MATERIALS-EXACT-MIXTURE-OBSTRUCTION-01.md"
         }
@@ -1578,6 +1824,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Conditional certificate",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/6a7d50f699245c87727961f59808c1ec0c9adfe5/research/2026-10-16-ge-diffraction-certification/CONDITIONAL-CERTIFICATE-01.md"
         }
@@ -1601,6 +1848,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Scoped runner review",
           "role": "execution_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/6197a000949b7c977cd34aa3ae529bf481d7ebf1/research/2026-10-16-quinn-reliable-runner-review/INDEPENDENT-REVIEW-03.md"
         }
@@ -1624,6 +1872,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Integration and evaluation report",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/1138a5b1a281caa00b38e0976db95b586938754b/research/2026-10-21-dot-baseball-integration-report-1948z/BASEBALL-REPORT.md"
         }
@@ -1647,6 +1896,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Pipeline and evidence gate",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-21-dot-basketball-pipeline-audit-1941z/README.md"
         }
@@ -1670,6 +1920,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Capped-universality theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/7206e66a8de0b04725924e32df822eca530b1143/research/2026-10-09-dot-alexander-capped-universality-2055z/README.md"
         }
@@ -1679,7 +1930,11 @@
     {
       "claim_id": "CB-G7-002",
       "dependencies": [
-        "CB-G7-001"
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "A scoped cost benchmark within the complete exact-law design framework.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1695,10 +1950,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Natural-marker theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/b74ff892402f5d842bb19178a3243f7ef0c0c481/research/2026-10-01-sol61-head-audit-1956z/NATURAL-MARKER-OPTIMUM.md"
         },
         {
+          "label": "Independent acceptance",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/b74ff892402f5d842bb19178a3243f7ef0c0c481/research/2026-10-01-sol61-head-audit-1956z/NATURAL-MARKER-REVIEW.md"
         }
@@ -1707,7 +1964,13 @@
     },
     {
       "claim_id": "CB-G7-003",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "A distinct declared-menu optimum, not the general master or arbitrary adaptive extension.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1722,10 +1985,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Full-forcing numerical optimum",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/e07e0ebefe80ca75b794551021df84998bb072a0/research/2026-10-01-sol61-head-audit-1956z/FULL-FORCING-NUMERICAL-OPTIMUM.md"
         },
         {
+          "label": "Later master acceptance, section 6",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/539c814ac470fde8147b0e1e6d5307972585b6f8/research/2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md"
         }
@@ -1734,7 +1999,13 @@
     },
     {
       "claim_id": "CB-NANUQ-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-NANUQ-001",
+          "detail": "That later checked source-to-geometry chain is part of the formalization lineage; it neither replaces nor fully formalizes this earlier complete hand theorem.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1749,18 +2020,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original all-level proof, Samuel Alexander repository",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md"
         },
         {
+          "label": "Original audit inventory and attribution",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/README.md"
         },
         {
+          "label": "Exact published-question correspondence",
           "role": "prior_work",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/SOURCE-RESULT-LEDGER.md"
         },
         {
+          "label": "Holtgrefe et al., primary prior work and section 6 questions",
           "role": "prior_work",
           "url": "https://link.springer.com/article/10.1007/s11538-025-01549-4"
         }
@@ -1770,7 +2045,16 @@
     {
       "claim_id": "CB-EXACTQUERY-001",
       "dependencies": [
-        "CB-NANUQ-002"
+        {
+          "claim_id": "CB-NANUQ-002",
+          "detail": "Uses the inherited all-level source correspondence and circular split structure, together with its separately reviewed linear split-count supplier.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "An earlier discrete adaptive-design theorem, not the later original-ID continuous exact-law design theorem.",
+          "relation_type": "same_principle"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1786,30 +2070,37 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Registered exact source, oracle and target",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/communications/2026-09-30-root-exact-query-master.md"
         },
         {
+          "label": "Accepted matching-bound integration",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md"
         },
         {
+          "label": "Independent order-space review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/ASTRA-ORDER-REVIEW.md"
         },
         {
+          "label": "Independent query/amortization review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/ASTRA-QUERY-REVIEW.md"
         },
         {
+          "label": "Supplied-order sparse decoder",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-sparse-query/README.md"
         },
         {
+          "label": "Frohn et al., different level-one quarnet problem",
           "role": "prior_work",
           "url": "https://arxiv.org/html/2409.06034v2"
         },
         {
+          "label": "Earlier outside-repository BIO-1 roadmap, structural gap superseded only",
           "role": "historical_problem_statement",
           "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/EXPLANATION-AND-PRIORITIES.md#bio-1-fewer-quartet-observations-with-justified-recovery"
         }
@@ -1818,7 +2109,13 @@
     },
     {
       "claim_id": "CB-EXACTQUERY-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-EXACTQUERY-001",
+          "detail": "Same original query/target contract, but exact finite sharpness is not implied by the asymptotic theorem.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1833,22 +2130,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Independent finite-minimax review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/FINITE-MINIMAX-REVIEW.md"
         },
         {
+          "label": "Accepted finite theorem within integration",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md"
         },
         {
+          "label": "Historical six-taxon author report, not independently reaccepted",
           "role": "historical_report",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/CHECKPOINT.md"
         },
         {
+          "label": "Historical seven-taxon author report, not independently reaccepted",
           "role": "historical_report",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/SEVEN-TAXON-CHECKPOINT.md"
         },
         {
+          "label": "Exact source/certificate recovery boundary",
           "role": "source_recovery",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-astra-exact-enumeration/SAVE-ONLY-RECOVERY-20260930.md"
         }
@@ -1858,7 +2160,21 @@
     {
       "claim_id": "CB-EXACTQUERY-003",
       "dependencies": [
-        "CB-EXACTQUERY-001"
+        {
+          "claim_id": "CB-EXACTQUERY-001",
+          "detail": "The hand-proved actual-source normalization identifies the complete finite profile game for this same source/oracle/output contract.",
+          "relation_type": "proved_adapter"
+        },
+        {
+          "claim_id": "CB-G1-001",
+          "detail": "Both simplify sources while preserving specified observations, but the observations and normalization theorems differ.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "Discrete exact support-policy optimization is not original-ID continuous exact-law/CAD design.",
+          "relation_type": "same_principle"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1874,22 +2190,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Uniform constructive exact-minimum theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-MINIMUM-THEOREM.md"
         },
         {
+          "label": "Actual-profile coverage review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-PROFILE-REVIEW.md"
         },
         {
+          "label": "Actual-source normalization review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-NORMALIZATION-REVIEW.md"
         },
         {
+          "label": "Accepted integration and implementation boundary",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md"
         },
         {
+          "label": "Earlier outside-repository BIO-1 roadmap, structural gap superseded only",
           "role": "historical_problem_statement",
           "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/EXPLANATION-AND-PRIORITIES.md#bio-1-fewer-quartet-observations-with-justified-recovery"
         }
@@ -1898,7 +2219,23 @@
     },
     {
       "claim_id": "CB-TOPOCONTROL-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "A distinct early graph-informed topology-control optimum, not the later original-ID exact-law design master.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G7-002",
+          "detail": "The natural-marker programme observes different information and measures a different resource.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G7-003",
+          "detail": "The static full-forcing numerical-law covering-array optimum has a different menu and target.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -1913,18 +2250,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Full normalized-controls theorem and source witness",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/REPORT.md"
         },
         {
+          "label": "Final completed scope and supersession",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/CHECKPOINT.md"
         },
         {
+          "label": "Earlier scoped menu review, read with later lower proof",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/REVIEW-menu.md"
         },
         {
+          "label": "Archived independent source/count/CF checks",
           "role": "execution_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-normalization-effects/ROOT-VERIFICATION.json"
         }
@@ -1934,7 +2275,16 @@
     {
       "claim_id": "CB-NANUQ-003",
       "dependencies": [
-        "CB-NANUQ-002"
+        {
+          "claim_id": "CB-NANUQ-002",
+          "detail": "Reuses the original all-level package's structural restriction and audited finite parameter suppliers; it sharpens the parameter-test collection, not the source-level bound.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-EXACTQUERY-002",
+          "detail": "Both have sharp small cases, but five total labels in a parameter test is not five adaptive quartet queries.",
+          "relation_type": "same_principle"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1950,18 +2300,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete sharp five-label cutoff theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/FIVE-TAXON-THRESHOLD.md"
         },
         {
+          "label": "Independent exact row/domain audit",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/PARAMETER-DOMAIN-AUDIT.md"
         },
         {
+          "label": "Original all-level restriction supplier",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md"
         },
         {
+          "label": "Actual five-label obstruction and original evidence",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/source-development/formal-full/FOUR-TAXON-OBSTRUCTION.md"
         }
@@ -1971,7 +2325,11 @@
     {
       "claim_id": "CB-NANUQ-004",
       "dependencies": [
-        "CB-NANUQ-002"
+        {
+          "claim_id": "CB-NANUQ-002",
+          "detail": "The complete hand reduction transfers paired-tip quartet-based distance/support statements to the stated abstract contiguous-copy class; it is not an adapter from every biological network.",
+          "relation_type": "proved_adapter"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -1987,18 +2345,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original complete copy-block proof and counterexample",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/CONTIGUOUS-MULTICOPY-EXTENSION.md"
         },
         {
+          "label": "Independently accepted boundary-quartet/support supplier",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-SUPPORT-STRUCTURAL-AUDIT.md"
         },
         {
+          "label": "Original all-level theorem and evidence boundary",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/README.md"
         },
         {
+          "label": "Separate whole-extension coordinating hand review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Research-Commons/blob/afed31041a50fd18675402c293a3a11a2b5f87d5/research/2026-10-23-dot-contiguous-copy-review/CONTIGUOUS-MULTICOPY-INDEPENDENT-HAND-REVIEW-20261023.md"
         }
@@ -2008,7 +2370,11 @@
     {
       "claim_id": "CB-NANUQ-005",
       "dependencies": [
-        "CB-NANUQ-002"
+        {
+          "claim_id": "CB-NANUQ-002",
+          "detail": "Exact recovery of the raw integer matrix is combined with the accepted circular exact-support theorem under a supplied correct order.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2024,18 +2390,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Original quantitative corollary and scope",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ADDITIONAL-COROLLARIES.md"
         },
         {
+          "label": "Independent sharp-noise proof review and archived replay",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/EXTREMALITY-REPLAY.md"
         },
         {
+          "label": "Archived exact replay receipt",
           "role": "execution_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/EXTREMALITY-REPLAY.json"
         },
         {
+          "label": "Original all-level support theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md"
         }
@@ -2059,26 +2429,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Identification theorem bodies",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Identifiability.lean"
         },
         {
+          "label": "Measurement theorem bodies",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Measurement.lean"
         },
         {
+          "label": "Learning theorem bodies",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Learning.lean"
         },
         {
+          "label": "Complete declaration inventory and role audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md"
         },
         {
+          "label": "Prior-work comparison and reading limits",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md"
         },
         {
+          "label": "Archived 67-declaration source/build receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json"
         }
@@ -2087,7 +2463,13 @@
     },
     {
       "claim_id": "CB-SOFTSCI-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-CAUSAL-001",
+          "detail": "Both distinguish observational information from intervention information, but this Boolean example is not a supplier of the later full restricted-query theorem.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2102,18 +2484,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Boolean causal construction and proofs",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Causality.lean"
         },
         {
+          "label": "Complete declaration inventory and role audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md"
         },
         {
+          "label": "Prior-work comparison and reading limits",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md"
         },
         {
+          "label": "Archived 67-declaration source/build receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json"
         }
@@ -2137,26 +2523,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Solidarity source and 16 declarations",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/Solidarity.lean"
         },
         {
+          "label": "Collective-action source and 10 declarations",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/CollectiveAction.lean"
         },
         {
+          "label": "Complete declaration inventory and role audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md"
         },
         {
+          "label": "Prior-work comparison and reading limits",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md"
         },
         {
+          "label": "Archived 67-declaration source/build receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json"
         },
         {
+          "label": "Preserved psychology checkpoint, explicitly not an additional set",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Mathematics-of-Psychology-Formalized/blob/db3a4d90e252449f9d7c69f68b6e8bc5685f4fcc/README.md"
         }
@@ -2166,7 +2558,11 @@
     {
       "claim_id": "CB-SOFTSCI-004",
       "dependencies": [
-        "CB-SOFTSCI-001"
+        {
+          "claim_id": "CB-SOFTSCI-001",
+          "detail": "Two of the eight declarations directly reuse the identification and postprocessing results indexed in CB-SOFTSCI-001; they do not add two distinct discoveries.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2182,18 +2578,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Aggregation witness and exact reused proofs",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/SocialScience/Aggregation.lean"
         },
         {
+          "label": "Complete declaration inventory and role audit",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/THEOREM-BY-THEOREM.md"
         },
         {
+          "label": "Prior-work comparison and reading limits",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md"
         },
         {
+          "label": "Archived 67-declaration source/build receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/projects/foundations/verification-manifest.json"
         }
@@ -2202,7 +2602,13 @@
     },
     {
       "claim_id": "CB-SOFTSCI-005",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SOFTSCI-001",
+          "detail": "Both concern whether observations distinguish explanations. The clinical proof is not asserted to import the foundations theorems or to supply a general learning algorithm.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2217,38 +2623,47 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Clinical observation and weight theorem bodies",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/PublishedCBT.lean"
         },
         {
+          "label": "Four source-bridge proofs",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/SourceBridge.lean"
         },
         {
+          "label": "Exact source tables",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/clinical/ClinicalModels/SourceTables.lean"
         },
         {
+          "label": "Coverage and archived clinical verification scope",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/PUBLICATION-COVERAGE-2026-09-29.md"
         },
         {
+          "label": "Recorded successful clinical check",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/actions/runs/36408149787"
         },
         {
+          "label": "Original pinned MATLAB model",
           "role": "source",
           "url": "https://github.com/rssmith33/Simulating_Cognitive_Behavioral_Therapy/blob/82a0a3d75b0bdc08d2b78cdf2201d7aa626c27a3/CBT_model.m"
         },
         {
+          "label": "Original published model",
           "role": "source",
           "url": "https://doi.org/10.1038/s41598-021-89047-0"
         },
         {
+          "label": "Source/prior-work comparison",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/publication-audit-2026-09-29/SOURCES.md"
         },
         {
+          "label": "Separate later candidate remains on hold",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Formalizing-Soft-Sciences/blob/8e665d2a9f6168e6448b2ca49fccbec87d57d3ad/research/new-wave-2026-09-30/STARTER-ASSESSMENT.md"
         }
@@ -2257,7 +2672,13 @@
     },
     {
       "claim_id": "CB-SEQ-004",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SEQ-001",
+          "detail": "Both concern Thue–Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d).",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2272,26 +2693,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete all-start matching-height proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FULL-HEIGHT-PROOF.md"
         },
         {
+          "label": "Exact digit evaluator",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/DIGIT-RECURRENCE.md"
         },
         {
+          "label": "All-phase actual maximum",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-HEIGHT-FORMALIZATION.md"
         },
         {
+          "label": "Sharp phase-extremal classification",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-EXTREMAL-FORMALIZATION.md"
         },
         {
+          "label": "Integrated September source coverage",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md"
         },
         {
+          "label": "Archived exact endpoint and axiom receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
@@ -2301,7 +2728,11 @@
     {
       "claim_id": "CB-SEQ-005",
       "dependencies": [
-        "CB-SEQ-004"
+        {
+          "claim_id": "CB-SEQ-004",
+          "detail": "The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2317,18 +2748,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Finite-edit transport and uniform stability",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FINITE-EDIT-STABILITY-FORMALIZATION.md"
         },
         {
+          "label": "Complete individual finite-edit optimum",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/REFINEMENT-INDIVIDUAL-FINITE-EDIT.md"
         },
         {
+          "label": "Integrated September source coverage",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md"
         },
         {
+          "label": "Archived exact endpoint and axiom receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
@@ -2352,22 +2787,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Quantitative modulus theorem and exact source condition",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/QUANTITATIVE-MODULUS-THEOREM.md"
         },
         {
+          "label": "Arbitrarily slow avoidance theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/SLOW-AVOIDANCE-FORMALIZATION.md"
         },
         {
+          "label": "Original classification manuscript",
           "role": "proof_or_status",
           "url": "https://github.com/avg-netizen/biological-unavoidability/blob/3d6175e3e23f67bd68e7be591b5a9a6d04e496a3/paper.md"
         },
         {
+          "label": "Integrated September source coverage",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md"
         },
         {
+          "label": "Archived exact endpoint and axiom receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
@@ -2377,7 +2817,11 @@
     {
       "claim_id": "CB-SEQ-007",
       "dependencies": [
-        "CB-SEQ-004"
+        {
+          "claim_id": "CB-SEQ-004",
+          "detail": "Uses the exact graph-to-height digit recurrence, not a fitted recurrence or the unrelated arithmetic-progression formulas.",
+          "relation_type": "reused_theorem"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2393,14 +2837,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete hand proof: exact dyadic average and cutoff algorithm",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Thue-Morse-Hand-Proofs.md"
         },
         {
+          "label": "Inherited exact digit recurrence",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/DIGIT-RECURRENCE.md"
         },
         {
+          "label": "Reading-edition acceptance record and mandatory successor corrections",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md"
         }
@@ -2410,7 +2857,11 @@
     {
       "claim_id": "CB-SEQ-008",
       "dependencies": [
-        "CB-SEQ-004"
+        {
+          "claim_id": "CB-SEQ-004",
+          "detail": "The retained-vertex edge expansion proves H(v)=W(L(v)); it transfers this exact matching observation, not arbitrary graph or juggling properties.",
+          "relation_type": "proved_adapter"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2426,14 +2877,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete juggling adapter and prefix-series proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Thue-Morse-Hand-Proofs.md"
         },
         {
+          "label": "Historical application map with precise limitations",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Prioritized-Thue-Morse-Connections.md"
         },
         {
+          "label": "Reading-edition acceptance record and mandatory successor corrections",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md"
         }
@@ -2457,10 +2911,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete grouped hierarchy recovery and supplier provenance",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md"
         },
         {
+          "label": "Reading-edition acceptance record and mandatory successor corrections",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md"
         }
@@ -2469,7 +2925,13 @@
     },
     {
       "claim_id": "CB-SEQ-010",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SEQ-009",
+          "detail": "Uses the same grouped-word family and phase structure, but this card concerns factor counts rather than recovery of an unknown grouping parameter.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2484,10 +2946,12 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Grouped factor-count formula and complete finite comparison",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md"
         },
         {
+          "label": "Reading-edition acceptance record and mandatory successor corrections",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md"
         }
@@ -2496,7 +2960,13 @@
     },
     {
       "claim_id": "CB-SEQ-011",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SEQ-010",
+          "detail": "Both compare factor complexity, but their families differ: Thue–Morse is maximal within the selected-digit family, not within all grouped tau_n words.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2511,14 +2981,17 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete complexity, exponent, bispecial and comparison proofs with prior correction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/Pattern-Hierarchies-and-Selected-Digit-Proofs.md"
         },
         {
+          "label": "Reading-edition acceptance record and mandatory successor corrections",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/74ba3079/research/2026-10-05-dot-sequence-reading-editions-0100z/README.md"
         },
         {
+          "label": "Cloitre's explicitly identified revised source",
           "role": "proof_or_status",
           "url": "https://arxiv.org/abs/2604.06243v2"
         }
@@ -2527,7 +3000,13 @@
     },
     {
       "claim_id": "CB-SEQ-012",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SEQ-006",
+          "detail": "Both expose a finite-prefix/infinite-realization gap, in different graph/arithmetic models; neither theorem is used as a proof supplier of the other.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2542,18 +3021,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete fixed Thue–Morse valuation proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/proof-search/disproof/TM_Prefix_Return_Exclusion_2026-09-05.md"
         },
         {
+          "label": "Actual-body coordinating reconstruction and formal boundary",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/research-review/consolidation-2026-09-05/MODERN_CONTRIBUTIONS.md"
         },
         {
+          "label": "Original claim manifest",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/publication/claims.json"
         },
         {
+          "label": "Exact archived verification scope",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/verification/Blind_Recurrence_Verification_2026-09-05.md"
         }
@@ -2562,7 +3045,13 @@
     },
     {
       "claim_id": "CB-FEEDBACK-001",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-005",
+          "detail": "Both discuss the identical-ancestors property, but the later actual-law result uses an extinction-permitting synchronization bridge rather than this theorem's no-extinction premise.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2577,26 +3066,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Completed manuscript and exact ancestry assumptions",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/MANUSCRIPT.md"
         },
         {
+          "label": "Actual recurrent-component proof source",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryMixing.lean"
         },
         {
+          "label": "Uniqueness and concrete examples",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryExamples.lean"
         },
         {
+          "label": "Internal review and corrections",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/REVIEW-NOTES.md"
         },
         {
+          "label": "Historical aggregate receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json"
         },
         {
+          "label": "Build and dependency boundaries",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/VERIFICATION.md"
         }
@@ -2605,7 +3100,13 @@
     },
     {
       "claim_id": "CB-FEEDBACK-002",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-001",
+          "detail": "Both separate phenotype/frequency patterns from ancestry conclusions; this frequency model is not a proved instantiation of the recurrent-pedigree theorem.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2620,18 +3121,22 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Completed manuscript, dynamics section",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/MANUSCRIPT.md"
         },
         {
+          "label": "Actual coupled recurrence and stability proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FeedbackDynamics.lean"
         },
         {
+          "label": "Internal review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/REVIEW-NOTES.md"
         },
         {
+          "label": "Historical aggregate receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json"
         }
@@ -2655,26 +3160,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete quantitative proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/FOGARTY-GLOBAL-RATE.md"
         },
         {
+          "label": "Original source recursions and fixed-point exclusion",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinity.lean"
         },
         {
+          "label": "Actual evolution and fixation source",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinityFixation.lean"
         },
         {
+          "label": "Independent internal statement review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/rate-statement-review.md"
         },
         {
+          "label": "Source attribution and model distinction",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/SOURCE-ORIGINS.md"
         },
         {
+          "label": "Historical aggregate receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/verification/receipt.json"
         }
@@ -2698,30 +3209,37 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Exact finite result and model contract",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FINITE-RESULT.md"
         },
         {
+          "label": "Complete deterministic comparison and common-limit argument",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-COMPARISON.md"
         },
         {
+          "label": "Independent finite-model audit",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/INDEPENDENT-MODEL-AUDIT.md"
         },
         {
+          "label": "Independent deterministic audit",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-INDEPENDENT-AUDIT.md"
         },
         {
+          "label": "Joined ranking-reversal Lean source",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/RankingReversal.lean"
         },
         {
+          "label": "Combined receipt with recovered-exit boundary",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/verification/combined-receipt.json"
         },
         {
+          "label": "Related Commons fixed-count N≥2 result, different source contract",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/27b143c73a4ac272b560b2974d83ff96df738531/research/2026-09-30-stepchange-scope/PROOF.md"
         }
@@ -2731,7 +3249,16 @@
     {
       "claim_id": "CB-FEEDBACK-005",
       "dependencies": [
-        "CB-FEEDBACK-004"
+        {
+          "claim_id": "CB-FEEDBACK-004",
+          "detail": "Reuses the checked finite marker kernel and frozen RI=3/7 statistic, then proves its same-draw count/parent realization; does not reuse the deterministic common-limit argument.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-FEEDBACK-001",
+          "detail": "Both concern the identical-ancestors property, but this actual-law proof uses extinction-permitting synchronization, not B01's no-extinction premise.",
+          "relation_type": "same_principle"
+        }
       ],
       "lean": {
         "declarations": [],
@@ -2747,38 +3274,47 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Completed R1–R6 statement and exact exclusions",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/RESULT-AND-SCOPE.md"
         },
         {
+          "label": "Final same-law ancestry theorem",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionAncestry.lean"
         },
         {
+          "label": "Paths and measurability",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionPaths.lean"
         },
         {
+          "label": "Raw-record and marginal transport",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionR1R2.lean"
         },
         {
+          "label": "Actual probability law",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionNoise.lean"
         },
         {
+          "label": "Corrected independent internal semantic review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/INDEPENDENT-REVIEW.json"
         },
         {
+          "label": "Historical B06 combined receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/COMBINED-RECEIPT.json"
         },
         {
+          "label": "Preserved B05 precursor and superseded pending list",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-finite/README.md"
         },
         {
+          "label": "Historical B05 finite receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-finite/verification/worker-receipt.json"
         }
@@ -2802,22 +3338,27 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete finite-gARG scope and interpretation",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/README.md"
         },
         {
+          "label": "Actual no-decoder corollary",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/FiniteGenomeIdentifiability.lean"
         },
         {
+          "label": "Finite-gARG embedding and completion supplier",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongAlexander.lean"
         },
         {
+          "label": "Explicit join/fork completion proof",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/FiniteHistoryCompletion.lean"
         },
         {
+          "label": "Archived selected endpoint receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/verification.json"
         }
@@ -2841,26 +3382,32 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Classical model, attribution and exact-law scope",
           "role": "prior_work",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/README.md"
         },
         {
+          "label": "Exact-law proof source",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/ThreeTaxonIdentifiability.lean"
         },
         {
+          "label": "Archived six exact-law axiom reports",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/validation.txt"
         },
         {
+          "label": "Finite-evidence theorem and separate written tail bound",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/FORMAL-SCOPE.md"
         },
         {
+          "label": "Finite-evidence proof source",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/ThreeTaxonFiniteEvidence.lean"
         },
         {
+          "label": "Archived eight-endpoint finite-evidence receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/verification.json"
         }
@@ -2869,7 +3416,13 @@
     },
     {
       "claim_id": "CB-GENOME-003",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-GENOME-001",
+          "detail": "Both expose missing information for a future-inclusive target, but arbitrary finite-source completion and fixed complete infinite-source ownership have different quantifiers; neither is silently substituted for the other.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2884,46 +3437,57 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Complete ownership construction and exact source maps",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/README.md"
         },
         {
+          "label": "Actual ownership proof source",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingCore.lean"
         },
         {
+          "label": "Actual finite-gARG truncation proof",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingGARG.lean"
         },
         {
+          "label": "Finite-gARG and real-date adapter",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PairingBridge.lean"
         },
         {
+          "label": "Independent internal construction review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PAIRING-FALSIFICATION.md"
         },
         {
+          "label": "Bounded ownership prior-work comparison",
           "role": "prior_work",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/PAIRING-PRIOR-ART.md"
         },
         {
+          "label": "Archived 31-module and 77-theorem ownership receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/genome-pedigree/verification/PROOF-RECEIPT.json"
         },
         {
+          "label": "Exact static-sampling criterion and bounded corollary",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/README.md"
         },
         {
+          "label": "Actual sampling proof source",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PairingObservation.lean"
         },
         {
+          "label": "Independent internal final sampling review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/INDEPENDENT-REVIEW.md"
         },
         {
+          "label": "Archived exact-commit sampling receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/owner-observations/verification/RESULT.json"
         }
@@ -2932,7 +3496,13 @@
     },
     {
       "claim_id": "CB-GENOME-004",
-      "dependencies": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-GENOME-003",
+          "detail": "A complementary finite-observation control with a different explicitly supplied stochastic law; it neither provides the ownership oracle nor establishes infinite-IAP identification.",
+          "relation_type": "same_principle"
+        }
+      ],
       "lean": {
         "declarations": [],
         "module": null,
@@ -2947,34 +3517,42 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
+          "label": "Final observed-family statement and limits",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/README.md"
         },
         {
+          "label": "Complete written derivation and separately scoped corollaries",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/source/written-precursor/RECOVERY-THEOREM.md"
         },
         {
+          "label": "Written-proof independent internal review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/source/written-precursor/REVIEW.md"
         },
         {
+          "label": "Final semantic/source review",
           "role": "hand_review",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/STATEMENT-REVIEW.md"
         },
         {
+          "label": "Actual observed-output recovery proof",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PedigreeBlockRecovery.lean"
         },
         {
+          "label": "Actual full-marginal dependence counterexample",
           "role": "proof_source",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PedigreeBlockDependence.lean"
         },
         {
+          "label": "Exact claim-by-claim formal/written ledger",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/LEDGER.json"
         },
         {
+          "label": "Archived seven-module and 31-endpoint exact-commit receipt",
           "role": "formal_receipt",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/pedigree-block/verification/RESULT.json"
         }
@@ -3054,7 +3632,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately."
     },
     {
       "claim_id": "CB-MEMORY-002",
@@ -3109,7 +3688,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately."
     },
     {
       "claim_id": "CB-MEMORY-003",
@@ -3164,7 +3744,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately."
     },
     {
       "claim_id": "CB-MEMORY-004",
@@ -3214,7 +3795,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately."
     },
     {
       "claim_id": "CB-POPULATION-001",
@@ -3274,7 +3856,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them."
     },
     {
       "claim_id": "CB-POPULATION-002",
@@ -3348,7 +3931,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them."
     },
     {
       "claim_id": "CB-POPULATION-003",
@@ -3397,7 +3981,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them."
     },
     {
       "claim_id": "CB-POPULATION-004",
@@ -3466,7 +4051,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them."
     },
     {
       "claim_id": "CB-ALEXANDER-002",
@@ -3536,7 +4122,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Separately stated broader-model, formal or priority work does not reopen it.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical claim. Separately stated broader-model, formal or priority work does not reopen it."
     },
     {
       "claim_id": "CB-ALEXANDER-003",
@@ -3621,7 +4208,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for the exact completed characterizations and named transport theorem. Novelty/eligibility and separate additional applications are not missing proofs of these statements.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for the exact completed characterizations and named transport theorem. Novelty/eligibility and separate additional applications are not missing proofs of these statements."
     },
     {
       "claim_id": "CB-ALEXANDER-004",
@@ -3701,7 +4289,8 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical existence theorem. Formal replay, historical priority and biological interpretation are separate axes.",
-      "verification": []
+      "verification": [],
+      "obligation": "None for this exact completed mathematical existence theorem. Formal replay, historical priority and biological interpretation are separate axes."
     },
     {
       "claim_id": "CB-WONG-001",
@@ -3828,8 +4417,901 @@
       "scope_owner": "canonical_registry",
       "obligation": "None identified for this exact completed continuous-breakpoint stopped-history and observation contract in the bounded full-body recovery. Separate source extensions, implementation and validation do not reopen it.",
       "verification": []
+    },
+    {
+      "claim_id": "CB-CROSSSCALE-001",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-SOFTSCI-001",
+          "detail": "Existing checked exact-observation and constraint examples instantiate related information-loss ideas; they are not a new theorem in this conceptual package.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-MEMORY-001",
+          "detail": "The completed controlled predictive-state theorem is a stronger source-defined mathematical interface, not a proof of automatic research-target generation.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-MEMORY-003",
+          "detail": "Exact stochastic full-history preservation has its own actual kernel/policy contract and formal receipt; the conceptual framework does not supply empirical admission.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-NANUQ-002",
+          "detail": "The completed all-level theorem supplies the dossier's motivating case. This relation records use as an example, not a reconstructed causal proof-authorship chain.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-EXACTQUERY-003",
+          "detail": "This exact structural-query successor supersedes the older catalogue's corresponding policy gap; noisy biological acquisition remains separate.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-FEEDBACK-004",
+          "detail": "The completed exact matched finite/deterministic reversal prevents retaining the catalogue's old blanket BIO-3 HOLD for this narrower source contract.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G7-001",
+          "detail": "Exact design on a complete fixed registry is completed mathematics. It does not establish coverage of unrepresented research questions or the proposed workflow's effectiveness.",
+          "relation_type": "same_principle"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Public attribution, package boundary and reading order",
+          "role": "conceptual_source",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/README.md"
+        },
+        {
+          "label": "Pinned originals and declared snapshot transformations",
+          "role": "source_manifest",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/SOURCE-MANIFEST.json"
+        },
+        {
+          "label": "Missed-scope analysis and proposed generative mechanism",
+          "role": "conceptual_source",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/theory-analysis.md"
+        },
+        {
+          "label": "Reachable questions, compatible models and response space",
+          "role": "conceptual_source",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/OBSERVABILITY-EXTENSION.md"
+        },
+        {
+          "label": "Property factorization and changing-view closure",
+          "role": "conceptual_source",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/partial-views-and-changing-systems.md"
+        },
+        {
+          "label": "Three available historical assistant answers",
+          "role": "historical_record",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/ANSWER-RECORD.md"
+        },
+        {
+          "label": "Historical NANUQ case and unavailable timing/cost boundaries",
+          "role": "historical_record",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/nanuq-experiment-dossier.md"
+        },
+        {
+          "label": "Proposed workflow, not runtime enforcement",
+          "role": "proposal",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/nolan-scope-theory-2026-09-30/snapshots/workflow-revision-2.md"
+        },
+        {
+          "label": "Prior-work comparison and proposed evaluation contract",
+          "role": "prior_work",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/RESEARCH-TARGET-GENERATION-SOURCE-MATCH.md"
+        },
+        {
+          "label": "Fourteen source-backed directions, not fourteen solutions",
+          "role": "question_catalogue",
+          "url": "https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/open-problem-catalogs-2026-09-30/INDEX.json"
+        },
+        {
+          "label": "BIO-1 completed exact-query matching-bound integration",
+          "role": "completed_successor",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md"
+        },
+        {
+          "label": "BIO-1 uniform actual-source exact-minimum specification",
+          "role": "completed_successor",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/78ef5c855146cc88afdad78cd3475eae2399f141/research/2026-09-30-query-resumption/EXACT-MINIMUM-THEOREM.md"
+        },
+        {
+          "label": "BIO-3 completed matched finite model and exact result",
+          "role": "completed_successor",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FINITE-RESULT.md"
+        },
+        {
+          "label": "BIO-3 deterministic comparison and exact reversal boundary",
+          "role": "completed_successor",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DETERMINISTIC-COMPARISON.md"
+        }
+      ],
+      "obligation": "No proof or empirical project is adopted by this card. The proposed method's effectiveness remains untested; any future evaluation or domain target requires its own explicit admission, source contract and evaluation design."
+    },
+    {
+      "claim_id": "CB-TRANSFER-001",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-MEMORY-001",
+          "detail": "The deterministic exact quotient is already mapped. It is an established related factorization principle, not the ordinary statistical-kernel comparison theorem.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-MEMORY-004",
+          "detail": "The known-rate rare-event test is a concrete testing result. Do not recard it as a new instance of the general TV recovery obstruction.",
+          "relation_type": "same_principle"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Full dominated standard-Borel comparison proof",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/dominated.md"
+        },
+        {
+          "label": "Independent full-scope dominated proof review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-dominated.md"
+        },
+        {
+          "label": "Abstract transition, ordinary-kernel counterexample and prior-source audit",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/abstract-bridge.md"
+        },
+        {
+          "label": "Abstract comparison review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-abstract-bridge.md"
+        },
+        {
+          "label": "Arbitrary-measurable ordinary representation iff",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/arbitrary-measurable.md"
+        },
+        {
+          "label": "Arbitrary-measurable representation review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-arbitrary-measurable.md"
+        },
+        {
+          "label": "Hidden-answer recovery and information obstructions",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/scientific-interface.md"
+        },
+        {
+          "label": "Hidden-answer interface review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-scientific-interface.md"
+        },
+        {
+          "label": "Primary comparison-theory attribution and retrieval limits",
+          "role": "prior_work",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/PRIOR.md"
+        },
+        {
+          "label": "Le Cam's original comparison paper",
+          "role": "prior_work",
+          "url": "https://doi.org/10.1214/aoms/1177700372"
+        }
+      ],
+      "obligation": "None for the exact completed mathematical statement. The separately named source adapters, formalization and empirical validation do not reopen it."
+    },
+    {
+      "claim_id": "CB-TRANSFER-002",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-MEMORY-003",
+          "detail": "Already accepted quantitative supplier for its reserved finite approximate target, not a completed formal source adapter. At a retained history the fine process must use the actual posterior mixture of pushed K rows and the same conditional policy; arbitrary fibre representatives or unconditional action frequencies are insufficient. Do not count a second copy of the bound.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Complete sharp path and all-state proof",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/continuity-and-paths.md"
+        },
+        {
+          "label": "Revised full proof review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-continuity-and-paths.md"
+        },
+        {
+          "label": "Related finite microscopic-PMF approximate target, different source interface",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC.md"
+        },
+        {
+          "label": "Exact PMF and reserved approximate-gate review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/STOCHASTIC-SCOPE-REVIEW.md"
+        }
+      ],
+      "obligation": "None for the exact completed mathematical statement. The separately named source adapters, formalization and empirical validation do not reopen it."
+    },
+    {
+      "claim_id": "CB-TRANSFER-003",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-TRANSFER-001",
+          "detail": "The implementation uses classical finite statistical-comparison ideas, with its own explicit exact primal/dual proof. It does not make the broader ordinary-kernel existence theorem automatically computable.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-G6-001",
+          "detail": "Both distinguish valid certificates from unsupported answers, but G6 has a different biological source/target and closure-fibre contract. No source adapter or empirical pipeline is implied.",
+          "relation_type": "same_principle"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Full compact certificate theorem and computational contract",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate.md"
+        },
+        {
+          "label": "Independent complete mathematical review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate-proof-review.md"
+        },
+        {
+          "label": "Independent implementation and control review",
+          "role": "execution_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/REVIEW-compact-certificate.md"
+        },
+        {
+          "label": "Exact rational arithmetic checker",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact_certificate.py"
+        },
+        {
+          "label": "Archived analytical fixtures and corruption controls",
+          "role": "execution_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/compact-certificate-verification.json"
+        },
+        {
+          "label": "Immutable publication and clean reconstruction replay",
+          "role": "execution_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/PUBLICATION-VERIFICATION.json"
+        },
+        {
+          "label": "Original source-hash manifest",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-general-transfer-closure/manifest.json"
+        }
+      ],
+      "obligation": "None for the exact completed mathematical statement. The separately named source adapters, formalization and empirical validation do not reopen it."
+    },
+    {
+      "claim_id": "CB-FEEDBACK-006",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-FEEDBACK-004",
+          "detail": "Related assay, different source: B04 has N=1 weighted migration pools and a specific finite/deterministic reversal. Fixed integer exchange with 0<k<N excludes N=1; neither theorem is silently substituted for the other.",
+          "relation_type": "same_principle"
+        },
+        {
+          "claim_id": "CB-FEEDBACK-005",
+          "detail": "B06's shared Fin14 parent/marker law and almost-sure ancestry theorem are a separate two-adult construction. This fixed-exchange packet supplies neither that shared-draw realization nor an all-N B06 theorem.",
+          "relation_type": "same_principle"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Exact finite-population model and all-N proofs",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/PROOF.md"
+        },
+        {
+          "label": "Two scoped hand reviews and historical exact-run receipt",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/REVIEW.md"
+        },
+        {
+          "label": "Prior papers, source correspondence and retrieval limits",
+          "role": "prior_work",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/EVIDENCE.md"
+        },
+        {
+          "label": "Archived 36-state endpoint results and countercontrols",
+          "role": "execution_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/exact_results.json"
+        },
+        {
+          "label": "Declared bounded exact endpoint verifier",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/f87a6c50029c1ae13f0340818b3bf358b1bf3de3/research/2026-09-30-stepchange-scope/exact_check.py"
+        },
+        {
+          "label": "Planidin et al., published deterministic source",
+          "role": "prior_work",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12440623/"
+        },
+        {
+          "label": "Greenspoon's earlier finite stochastic epigenetic modelling",
+          "role": "prior_work",
+          "url": "https://doi.org/10.1111/evo.14494"
+        }
+      ],
+      "obligation": "None for the exact completed mathematical statement. The separately named source adapters, formalization and empirical validation do not reopen it."
+    },
+    {
+      "claim_id": "CB-WONG-002",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [],
+      "source_artifacts": [
+        {
+          "label": "Final exact-commit result and scope",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json"
+        },
+        {
+          "label": "Exact source/object/log receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json"
+        },
+        {
+          "label": "Selected axiom log",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log"
+        },
+        {
+          "label": "Source-specific coverage and remaining boundaries",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/coverage.json"
+        },
+        {
+          "label": "Exact interval-graph source model",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongGARG.lean"
+        },
+        {
+          "label": "Reference traversal and node-cardinality fuel",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSampleTracing.lean"
+        },
+        {
+          "label": "Executable actual interval-record scan",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongRecordTracing.lean"
+        },
+        {
+          "label": "Memoized semantics and reference equality",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L288"
+        },
+        {
+          "label": "Abstract write/check/lookup bounds",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L408"
+        },
+        {
+          "label": "Actual-record extraction and support round trip",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L446"
+        },
+        {
+          "label": "Wong et al. 2024 representation source",
+          "role": "prior_work",
+          "url": "https://doi.org/10.1093/genetics/iyae100"
+        }
+      ],
+      "obligation": "None identified for the exact completed actual-record extractor, sample-support criterion and abstract counter bounds in the bounded source recovery."
+    },
+    {
+      "claim_id": "CB-WONG-003",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [],
+      "source_artifacts": [
+        {
+          "label": "Final exact-commit result and scope",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json"
+        },
+        {
+          "label": "Exact source/object/log receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json"
+        },
+        {
+          "label": "Selected axiom log",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log"
+        },
+        {
+          "label": "Source-specific coverage and remaining boundaries",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/coverage.json"
+        },
+        {
+          "label": "Total local-MRCA truncation and finite output",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMRCATruncation.lean"
+        },
+        {
+          "label": "Coordinate-dependent protected contraction",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongLocalSimplification.lean"
+        },
+        {
+          "label": "Actual composed canonical finite-graph theorem",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSimplificationNormalForm.lean#L218"
+        },
+        {
+          "label": "Executable touching-list merge",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalCanonicalization.lean#L62"
+        },
+        {
+          "label": "Canonical graph uniqueness and storage idempotence",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalCanonicalization.lean#L581"
+        },
+        {
+          "label": "Scoped historical statement/source review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/SOL2-REVIEW.md"
+        },
+        {
+          "label": "Exact three-module review input identities",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/INPUT-MANIFEST.json"
+        },
+        {
+          "label": "Historical 274-report aggregate",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/verification/deterministic65/combined-real-audit.json"
+        },
+        {
+          "label": "Wong et al. 2024 representation source",
+          "role": "prior_work",
+          "url": "https://doi.org/10.1093/genetics/iyae100"
+        }
+      ],
+      "obligation": "None identified for the exact completed finite deterministic normal-form and canonical-storage contract in the bounded source recovery."
+    },
+    {
+      "claim_id": "CB-RNA-002",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-RNA-001",
+          "detail": "The accepted represented scaffold/partner/root-carrier theorem is an adjacent supplier toward actual source admission. Its composition into a complete executed RootAdmission instance is not established by this class-law theorem, and the parser result is not counted again.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Independent Gamma definitions, admission and exact class-law proof",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/E8PaperGammaAdmission.lean"
+        },
+        {
+          "label": "Exact Gamma independent scope review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/INDEPENDENT-GAMMA-ADMISSION-REVIEW.md"
+        },
+        {
+          "label": "Gamma source/energy/observable admission register",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/E8-GAMMA-ADMISSION-REGISTER.md"
+        },
+        {
+          "label": "Exact Gamma component compiler and selected-axiom receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/COMPONENT-RECEIPT.json"
+        },
+        {
+          "label": "Historical268 aggregate excerpt, not full certificate",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-independent-gamma-1227z/AGGREGATE-268-EXCERPT.json"
+        },
+        {
+          "label": "Earlier positive-trace paper bridge reused by the successor",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-supported-paper-1106z/E8PaperObservableBridge.lean"
+        },
+        {
+          "label": "Root-only positivity and zero-child traceback proof",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-source-support-0538z/E8SupportedTracebackLaw.lean"
+        },
+        {
+          "label": "Finite trace definitions, weight sums and conditional-product law",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-grid-traceback-0517z/E8FiniteTracebackLaw.lean"
+        },
+        {
+          "label": "Imported source-family datatype and separate child-normalization adapter",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean"
+        },
+        {
+          "label": "Later reconciled source/paper and classifier acceptance boundaries",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/b828117eb7e1c4ce0c52e5de02d1faa8819b9b29/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary"
+        }
+      ],
+      "obligation": "None for this exact completed conditional theorem. Constructing an actual RNA-program RootAdmission instance, executable refinement and historical-priority assessment are separate downstream tasks, not missing proofs of the stated implication."
+    },
+    {
+      "claim_id": "CB-WONG-004",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-GENOME-001",
+          "detail": "Only the finite-gARG deterministic-coarsening consequence imports the already indexed opposite_compatible_completions result, composed with observation-fibre recovery. It does not supply the positive owner-transfer hypotheses and is not counted again.",
+          "relation_type": "reused_theorem"
+        },
+        {
+          "claim_id": "CB-POPULATION-003",
+          "detail": "Only two elementary proofs in its ProductiveCore source, weakReach_mono_set and descendant_weakReach_convex, are used for connectivity transport. This is not a dependency on the full productive-pruning or boundary-repair theorem.",
+          "relation_type": "reused_theorem"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Exact owner-map IAP transfer",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L125"
+        },
+        {
+          "label": "Reflection transfer",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L142"
+        },
+        {
+          "label": "Specieslike equivalence with connected fibres",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L332"
+        },
+        {
+          "label": "Saturated-maximality equivalence",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L352"
+        },
+        {
+          "label": "Stronger finite-error IAP transfer",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeRobust.lean#L26"
+        },
+        {
+          "label": "Fixed-owner soundness countercontrol",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L421"
+        },
+        {
+          "label": "Reused finite-coarsening consequence",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L464"
+        },
+        {
+          "label": "Full original statement and assumption hierarchy",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/EXPLANATION.md"
+        },
+        {
+          "label": "Finite-error scope and written strict-weakening example",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ROBUST-IAP.md"
+        },
+        {
+          "label": "Bounded independent source review",
+          "role": "hand_review",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/SOURCE-REVIEW.md"
+        },
+        {
+          "label": "Exact attribution and ownership ledger",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ledger.json"
+        },
+        {
+          "label": "Robust extension's exact scope ledger",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/robust-ledger.json"
+        },
+        {
+          "label": "Final exact-commit acceptance",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json"
+        },
+        {
+          "label": "Exact source/object/log binding",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json"
+        },
+        {
+          "label": "Exact path-soundness provider",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/HistoryProjection.lean"
+        },
+        {
+          "label": "Reused finite-completion supplier",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FiniteGenomeIdentifiability.lean"
+        },
+        {
+          "label": "Elementary observation-fibre supplier",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/ObservationPrediction.lean"
+        }
+      ],
+      "obligation": "None identified for the exact conditional statements in the bounded source recovery. Missing biological admission, owner inference, broader transport or fresh execution does not reopen these completed theorems."
+    },
+    {
+      "claim_id": "CB-RNA-003",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-RNA-001",
+          "detail": "The completed parser/partner/root-carrier theorem is adjacent source-admission work, not an instantiated proof of this interpreter's all-input provider, strictly earlier schedule or observer frame. It is not counted again.",
+          "relation_type": "candidate_connection"
+        },
+        {
+          "claim_id": "CB-RNA-002",
+          "detail": "The independently completed Gamma class-law bridge would additionally require actual-source output support/weights and probability interfaces. An exact derivation-weight sum alone neither instantiates RootAdmission nor establishes structure multiplicity, so the full composition is not asserted.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Final ordered derivation-sum theorem and complete proof",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledDerivationSum.lean"
+        },
+        {
+          "label": "Callback frame and actual modeled scan/update bodies",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledObserverFrame.lean"
+        },
+        {
+          "label": "Strictly earlier schedule, unique recurrence and chart proof",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledHypergraphCorrectness.lean"
+        },
+        {
+          "label": "Exact historical interpreter source/log/import-object manifest",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/SOURCE-AND-COMPILE-MANIFEST.json"
+        },
+        {
+          "label": "Final derivation theorem's exact component receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/E8ScheduledDerivationSum-receipt.json"
+        },
+        {
+          "label": "Valid-active-child ordered normalization adapter",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter.lean"
+        },
+        {
+          "label": "Exact historical normalization component receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-scfg2-child-adapter-0601z/E8SCFG2RuntimeChildAdapter-receipt.json"
+        },
+        {
+          "label": "Original completed interpreter scope and prior attribution",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-universal-interpreter-0648z/README.md"
+        },
+        {
+          "label": "Independent selected factory-validity source audit, section 4",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-targeted-prior-0601z/TARGETED-E8-NEIGHBORHOOD-AND-REUSE.md"
+        },
+        {
+          "label": "Later complete observer-footprint audit and its limitations",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-observer-frame-0722z/SCFG2-COMPLETE-OBSERVER-FRAME-AUDIT.md"
+        },
+        {
+          "label": "Raw all-cache schedule premise countercheck, not a root-law refutation",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-provider-premise-0754z/SCFG2-PROVIDER-PREMISE-CHECK.md"
+        },
+        {
+          "label": "Later reconciled E8 source/paper boundaries",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md#5-e8-current-sourcepaper-boundary"
+        }
+      ],
+      "obligation": "None for the completed conditional reference-interpreter theorem. Actual source admission, executable refinement, broader RNA probability claims and historical-priority assessment are separate downstream tasks, not missing proofs of this statement."
+    },
+    {
+      "claim_id": "CB-RNA-004",
+      "reuse_rank": null,
+      "lean": {
+        "state": "pending_binding",
+        "module": null,
+        "declarations": []
+      },
+      "rust": {
+        "state": "pending_binding",
+        "module": null
+      },
+      "scope_owner": "canonical_registry",
+      "verification": [],
+      "dependencies": [
+        {
+          "claim_id": "CB-RNA-002",
+          "detail": "The independent Gamma theorem identifies an intended class law only after its own source admission is instantiated. It is an adjacent supplier for a future certificate application, not a direct import or proof of actual class-SUM computation, sampler coverage or termination. The class-law bridge is not counted again.",
+          "relation_type": "candidate_connection"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "label": "Deterministic interval, unseen-class and all-time certificate proofs",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8DeterministicTopKCertificate.lean"
+        },
+        {
+          "label": "Discrepancy widening and strict-gap sufficient conditions",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8CertificateStability.lean"
+        },
+        {
+          "label": "Finite weighted-ensemble residual conservation and strict top-k proof",
+          "role": "proof_source",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/E8ExactResidualMass.lean"
+        },
+        {
+          "label": "Exact deterministic provider compiler and selected-axiom receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8DeterministicTopKCertificate-receipt.json"
+        },
+        {
+          "label": "Exact stability compiler and direct-provider identity receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/E8CertificateStability-receipt.json"
+        },
+        {
+          "label": "Exact residual compiler and direct-provider identity receipt",
+          "role": "formal_receipt",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/E8ExactResidualMass-receipt.json"
+        },
+        {
+          "label": "Original certificate statement and explicit stochastic exclusions",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-certificates-0440z/README.md"
+        },
+        {
+          "label": "Original residual statement and classical-method attribution",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-residual-mass-0448z/README.md"
+        },
+        {
+          "label": "Later claim-by-claim prior and actual-source interface audit",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-e8-originality-residual-audit-0831z/E8-CLAIM-BY-CLAIM-ORIGINALITY.md"
+        },
+        {
+          "label": "Shared scope preserves earlier completed certificate components",
+          "role": "proof_or_status",
+          "url": "https://github.com/Sodelin/Research-Commons/blob/7e9e63102fe4ba2c43c92b18b7cf9aefdb807a68/research/2026-10-02-dot-shared-scope-0549z/SHARED-SCOPE.md#e8-scope"
+        }
+      ],
+      "obligation": "None for the stated conditional ordering, stability and finite-residual theorems. Establishing their actual sampling, numerical, class-mass and RNA-source premises is separate downstream work, not an unproved part of these implications."
     }
   ],
-  "registry_commit": "7666beb40cd4bed85ff508fefd9592295ae94a00",
-  "claim_count": 105
+  "registry_commit": "d71ea2f3c2f9d1dedb80fcf97c3c27e9fcb4ea90",
+  "claim_count": 116
 }

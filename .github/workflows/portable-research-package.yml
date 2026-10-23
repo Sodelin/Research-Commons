@@ -45,6 +45,9 @@ jobs:
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- unsat > build/AffineUNSAT.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- tree > build/OriginalTreeBank.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- parallel > build/OriginalParallelBank.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- infeasible > build/OriginalCellExclusion.lean
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -57,7 +60,7 @@ jobs:
     concurrency:
       group: portable-research-package-20261023
       cancel-in-progress: false
-    name: Fresh coherent retained Lean profile (not all 105 formalizations)
+    name: Fresh coherent retained Lean profile (not all 116 formalizations)
     needs: rust
     runs-on: ubuntu-24.04
     timeout-minutes: 180

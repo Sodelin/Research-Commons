@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 105-claim registry. The subjective reuse overlay orders 75 claims; the remaining 30 are included without invented rankings.
+This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 116-claim registry. The subjective reuse overlay orders 75 claims; the remaining 41 are included without invented rankings.
 
 ## Actual code
 
@@ -31,14 +31,16 @@ The source-only state of the retained G7 Rust proposal is preserved in its origi
 
 This initial package does not yet claim all104 mathematical statements formalized. The strict gate prevents that false conclusion. Original unresolved questions and empirical-only records require their appropriate statement/data interfaces; they are not fabricated theorems. See GOAL.md and source-lock.json for scope/provenance.
 
-The package now pins canonical registry 7666beb (105 cards, board1.12). The 12 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
+The package now pins canonical registry d71ea2f (116 cards, board1.17). The 23 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
 
 Generate the actual exact-arithmetic caller example with `cargo run --locked -p research-commons-runtime --bin cm-certificate`. The Linux workflow elaborates that emitted source after building the theorem modules. This tests a literal caller; it does not prove every native grouping implementation or physical-source adapter correct.
 
 The second certificate caller reuses the retained strict affine solver and both existing Lean checkers. `cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat` emits the weak-boundary rational witness; `-- unsat` emits the complete nonnegative original-row multiplier certificate for the strict boundary. Duplicate row positions stay distinct. The emitted proofs establish real feasibility/infeasibility of that supplied matrix, not original graph admission or a universal native refinement. A rendering/resource refusal produces no negative theorem.
 
-For rapid independent certificate verification, `cargo run --locked -p research-commons-package -- prepare-certificates`, then run `lake update` and `lake exe cache get` inside `certificates`, followed by `cargo run --locked -p research-commons-package -- build-certificates` from the package root. This separate source/object context uses the unchanged abstract CM component and retained affine checkers. It compiles the emitted proofs and audits all selected core/caller declarations. It does not certify the full1613-module physical profile or all105 claim bindings; those retain their separate build/gate.
+For rapid independent certificate verification, `cargo run --locked -p research-commons-package -- prepare-certificates`, then run `lake update` and `lake exe cache get` inside `certificates`, followed by `cargo run --locked -p research-commons-package -- build-certificates` from the package root. This separate source/object context uses the unchanged abstract CM component and retained affine checkers. It compiles the emitted proofs and audits all selected core/caller declarations. It does not certify the full1613-module physical profile or all116 claim bindings; those retain their separate build/gate.
 
-Actual end-to-end caller verification passed at source7898af0a/run39947518267: all three Rust-generated proof documents compiled in Lean4.33.1, and the selected core/export/caller owned-axiom audit passed. Rust had44 passing tests. See integration/certificate-verification.json for exact source hashes and limits. The full-library build and whole105-claim integration remain separate and incomplete.
+Actual end-to-end caller verification passed at source7898af0a/run39947518267: all three Rust-generated proof documents compiled in Lean4.33.1, and the selected core/export/caller owned-axiom audit passed. Rust had44 passing tests. See integration/certificate-verification.json for exact source hashes and limits. The full-library build and whole116-claim integration remain separate and incomplete.
 
 The integration gate follows each canonical claim kind. Open questions need checked formal statements/obligation bindings; empirical/software records need checked evidence interfaces. Neither is converted into a fabricated proved theorem. Labels without actual module/declaration and verification records cannot close a row.
+
+The original-source emitter reuses the public immutable cell snapshot API and the six existing Code/layout/field/physical receiver modules. `source-certificate tree|parallel|infeasible` parses a public four-taxon CHART, retains every captured field and ordered parent occurrence, and emits the literal Code plus its admission/field/certificate proof obligations. The positive case constructs the actual shared physical bank from the same returned vector; the negative case excludes only that supplied source cell. Full-profile `check-callers` kernel-checks all three documents and audits their declarations. Rendering is not acceptance; these new full-context outputs remain unverified until that check succeeds. See integration/SOURCE-CERTIFICATE-PREFLIGHT.md.
