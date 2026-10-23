@@ -165,7 +165,7 @@ pub fn lean_certificate(reference:&Parameters,candidate:&Parameters,name:&str,li
   format!("{{{}}}",(0..result.maps.len()).map(|i|format!("rename{i}")).collect::<Vec<_>>().join(", "))
  };
  s.push_str(&format!("def nativeResult : Finset (Rename {j} count) := {supplied}\n"));
- s.push_str(&format!("theorem entire_native_filter_checked :\n    allAlignments {j} count reference candidate = nativeResult := by\n  decide\n"));
+ s.push_str(&format!("theorem entire_native_filter_checked :\n    allAlignments {j} count reference candidate = nativeResult := by\n  decide +kernel\n"));
  s.push_str(&format!("theorem every_map_and_omission_checked (sigma : Rename {j} count) :\n    Matches {j} count reference candidate sigma ↔ sigma ∈ nativeResult := by\n  rw [← mem_allAlignments_iff, entire_native_filter_checked]\n"));
  s.push_str(&format!("theorem returned_nonempty_iff_exact_parameter_match :\n    nativeResult.Nonempty ↔ ∃ sigma, Matches {j} count reference candidate sigma := by\n  rw [← entire_native_filter_checked, allAlignments_nonempty_iff]\n"));
  s.push_str(&format!("#check every_map_and_omission_checked\n#check returned_nonempty_iff_exact_parameter_match\nend ResearchCommons.Generated.MSCIAlignment_{name}\n"));

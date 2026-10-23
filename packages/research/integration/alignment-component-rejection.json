@@ -41,5 +41,18 @@
     "errors": "Nondependent bare Fin.elim0 cannot fill the dependent empty routing tail; OfNat instances do not unfold opaque count in map entries. Later decide error contains those invalid data declarations.",
     "primary_api_read": "Pinned Lean819816b2 src/Init/Data/Fin/Basic.lean Gitblob6fee3ab2eaacf1b76de02ea7f7880f29fbac8294; elim0 has nondependent result α.",
     "repair": "Use (fun i => Fin.elim0 i) and explicit ⟨nativeIndex,by decide⟩ Fin constructors in the SAME maps. No parameter/equation/native algorithm/returned-filter change."
+  },
+  "literal_enum_reduction_successor": {
+    "source": "a2cb4412dee1b903ebfae56ddcdf7dba72f8c20e",
+    "run_id": 40040095975,
+    "job_id": 120709108605,
+    "status": "REJECTED_complete_filter_case",
+    "module": "MSCIAlignmentCoherent",
+    "source_bytes": 2328,
+    "source_sha256": "0d0133c939a9642ad2dbbd1a1ea3d764a5358bae201e9e301d93cbfa4fb5a2f2",
+    "error_line": 21,
+    "error": "All actual data declarations now elaborate, but default decide did not reduce the finite Pi function-set equality. No false numerical result, host/resource cause or complete parameter-filter acceptance is established.",
+    "primary_api_read": "Pinned src/Lean/Elab/Tactic/Decide.lean Gitblob929dd0a01dc12e7df21860ef791f6a2cf2a038c0: default is elaborator whnf; +kernel constructs a proof requiring kernel reduction.",
+    "repair": "Use decide +kernel for the SAME exact allAlignments/nativeResult equality; no native_decide or new axiom. Keep complete caller owned audit mandatory."
   }
 }
