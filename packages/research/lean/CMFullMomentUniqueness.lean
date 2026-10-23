@@ -52,10 +52,11 @@ theorem moment_on_supergrid (μ : FinitePositiveLaw) (A : Finset ℝ)
     (hsub : μ.nodes ⊆ A) (n : ℕ) :
     (∑ a : A, atomMass μ a * (a : ℝ) ^ n) = moment μ n := by
   classical
-  rw [Finset.sum_coe_sort]
   calc
-    (∑ a ∈ A, atomMass μ a * a ^ n) =
-        ∑ a ∈ μ.nodes, atomMass μ a * a ^ n := by
+    (∑ a : A, atomMass μ a * (a : ℝ) ^ n) =
+        ∑ a ∈ A, atomMass μ a * a ^ n :=
+      Finset.sum_coe_sort A (fun a : ℝ => atomMass μ a * a ^ n)
+    _ = ∑ a ∈ μ.nodes, atomMass μ a * a ^ n := by
       symm
       apply Finset.sum_subset hsub
       intro a _ ha
@@ -82,7 +83,7 @@ theorem atomMass_eq_of_equal_sparse_moments
     intro i j hij
     have h := he hij
     apply Fin.ext
-    exact congrArg Fin.val h
+    exact congrArg (fun z : Fin (2 * τ.nodes.card + 1) => z.val) h
   have hgrid : (fun a : τ.nodes => atomMass σ a) =
       (fun a : τ.nodes => atomMass τ a) := by
     apply positive_grid_weights_unique τ.nodes τ.node_pos eA heA

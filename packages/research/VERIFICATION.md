@@ -240,3 +240,6 @@ Source56 preparation: full positive finite-atomic law identification from sparse
 
 
 Source56 /63c4e0ddc3b48267a0bdcfab95d85ccc285518dd: all85 workspace Rust tests PASSED, including complete moment signature/grouping/limit cases; the subsequent source preparation correctly REFUSED added-import manifest order for ResearchCommons.Integration.Exports. The added import was listed last in metadata but second in the literal body. Source57 aligns that exact list; no body or theorem/engine/coordinate change. No Lean/caller acceptance at source56 is claimed. The independent source55 SAME-word job remains live and is not restarted or cancelled by this correction.
+
+
+Source57 /62f7e9ec758f77cb11da137a7036d88054186acf: Rust85 and complete source preparation PASS; its first generic positive-moment file is REJECTED at two exact Lean elaboration terms. The sum_coe_sort rewrite needs explicit grid/function arguments, and Fin.val congrArg must name the larger finite carrier in the truncated-exponent injection. Source58 fixes those terms only. No new mathematical premise, rival count bound or source observation is introduced; generic/actual signature acceptance remains pending.
