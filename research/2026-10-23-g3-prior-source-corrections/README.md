@@ -278,6 +278,12 @@ synchronization, absorbing tree laws, comb/PDA/Kingman mixture, uniformly
 semisimple compact closure, moving-bank cutpoint, singular endpoint,
 affine-in-kernel stochastic postprocessing, generic decision-engine gate.
 
+Actual recipient reading/scope adoption is confirmed by
+[Dot's20:27 return6374068666](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6374068666),
+which was read in full. It retains the synthetic/actual-source distinction,
+the old BOTH selector and the unchanged original endpoint. This is not
+independent correctness acceptance, formalization or a new reader refresh.
+
 ## Original BOTH faces: reuse the accepted global-support limitation
 
 Do not extend the freely parameterized single-slot I affine-interior
@@ -306,6 +312,43 @@ an unauthorized I/BOTH scope extension does not supply it.
 Aliases: attained BOTH boundary YES, COMMON Jensen face, blind independent
 coefficient, all-core passive topology adapter, same-bank tangent interval,
 global normal versus relative-face recognition.
+
+## Conditional count: completed hand/Lean consumer, stronger application separate
+
+[Exact reuse and route correction](ZERO-SCORE-REUSE.md),8840B/SHA256
+`b0ac2af1e24e97551e7c7d38e29e856b8a170415d42b66435e58ade2a489505c`.
+This is recovery/integration of OLD solved results, not new mathematics.
+
+The9October whole-fibre zero-score criterion and INDEPENDENT-survival
+addendum are PROVED with scoped hand acceptance. Their exact rational bound
+and abstract typed consumer ALSO have a retained independent Lean4.33.1
+kernel replay, whose source hashes match the8523B Bound/7700B Consumer
+bodies in the accepted source store. No new proof or compile is needed to
+close those claims. The old receipt explicitly says no source provider was
+constructed. Complete source/proof/review/receipt reads and exact identities
+are bound in the reuse note; the old inventory's summary was inspected.
+
+WholeFibreProvider.every_fitting_source_bounded requires a complete cover,
+actual equal-arm semantics, exact nonnegative weighted-zero scores, uniform
+weak moduli, a same-source survival floor and physical length identities.
+Its p is the interaction g(1-g), not natural parent0 g/native gamma=1-g.
+These premises are not supplied by kernel checking or a numeric ceiling.
+
+Do NOT turn a universal literal all-presentation provider into a new G3
+requirement. The accepted7580B same-source paired control ALREADY has one
+fixed original rational two-channel target(11/12,5/6), literal sources with
+N cells for EVERY N, and a one-cell witness. A finite uniform cover counting
+those actual presentations cannot bound them all. A proved conversion to
+one bounded representative would be a DIFFERENT, sufficient one-witness
+theorem. Neither unbounded presentations nor that missing conversion refutes
+the original H goal. The reviewed COMMON Poisson obstruction also already
+rules out universal continuous ordinary-neutral additive zero-score coverage;
+nonadditive/nonclosed mechanisms retain their scope. Reuse, do not rederive.
+
+Aliases: conditional zero-score provider, every_fitting_source_bounded,
+piece_numeric_identity, actualLength, interaction coin, uniform weak modulus,
+old independent kernel replay, all presentations versus one witness,
+same-source paired cap-two control, positive score is not exact zero.
 
 ## Scope and continuation
 
