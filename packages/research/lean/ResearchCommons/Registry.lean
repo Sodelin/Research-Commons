@@ -1,4 +1,4 @@
-// Registry metadata only; not proofs of the claims.
+-- Registry metadata only; not proofs of the claims.
 namespace ResearchCommons.Registry
 def claimIDs : List String := [
   "CB-G1-001",

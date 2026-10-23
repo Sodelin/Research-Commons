@@ -6,6 +6,7 @@ pub mod moments;
 pub mod affine_certificate;
 pub mod source_certificate;
 pub mod population_certificate;
+pub mod residual_certificate;
 
 #[cfg(test)]
 mod tests {
