@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 104-claim registry. The subjective reuse overlay orders 75 claims; the remaining 29 are included without invented rankings.
+This is the user-requested end-to-end research package, not a phone application. Its canonical input is the pinned 105-claim registry. The subjective reuse overlay orders 75 claims; the remaining 30 are included without invented rankings.
 
 ## Actual code
 
@@ -30,6 +30,6 @@ The source-only state of the retained G7 Rust proposal is preserved in its origi
 
 This initial package does not yet claim all104 mathematical statements formalized. The strict gate prevents that false conclusion. Original unresolved questions and empirical-only records require their appropriate statement/data interfaces; they are not fabricated theorems. See GOAL.md and source-lock.json for scope/provenance.
 
-The package now pins canonical registry f87a6c5 (104 cards, board1.11). The 11 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
+The package now pins canonical registry 7666beb (105 cards, board1.12). The 12 additions remain unranked alongside 18 earlier unranked entries. No subjective rating or canonical proof status is invented.
 
 Generate the actual exact-arithmetic caller example with `cargo run --locked -p research-commons-runtime --bin cm-certificate`. The Linux workflow elaborates that emitted source after building the theorem modules. This tests a literal caller; it does not prove every native grouping implementation or physical-source adapter correct.

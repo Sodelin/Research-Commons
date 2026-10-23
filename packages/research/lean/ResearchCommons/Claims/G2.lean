@@ -11,4 +11,5 @@ abbrev natural_timed_all_panel_projectivity := @GProgram.G2.ActualTimedAllPanelL
 abbrev controlled_timed_all_panel_projectivity := @GProgram.G2.ActualTimedAllPanelLaw.actual_controlled_complete_timed_all_panel_projectivity
 abbrev natural_timed_forgetting := @GProgram.G2.TimedOutputForgetting.actual_natural_timed_output_forgets
 abbrev controlled_timed_forgetting := @GProgram.G2.TimedOutputForgetting.actual_controlled_timed_output_forgets
+abbrev registered_timed_all_panel_projectivity := @GProgram.G2.ActualTimedAllPanelLaw.actual_registered_timed_all_panel_projectivity
 end ResearchCommons.Claims.G2

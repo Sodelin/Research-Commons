@@ -8,9 +8,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: portable-research-package-20261023
-  cancel-in-progress: false
 jobs:
   rust:
     name: Exact Rust engines and source assembly (not full claim closure)
@@ -54,7 +51,10 @@ jobs:
             packages/research/Cargo.lock
           if-no-files-found: warn
   lean:
-    name: Fresh coherent retained Lean profile (not all 104 formalizations)
+    concurrency:
+      group: portable-research-package-20261023
+      cancel-in-progress: false
+    name: Fresh coherent retained Lean profile (not all 105 formalizations)
     needs: rust
     runs-on: ubuntu-24.04
     timeout-minutes: 180

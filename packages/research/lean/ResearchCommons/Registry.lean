@@ -104,7 +104,8 @@ def claimIDs : List String := [
   "CB-POPULATION-004",
   "CB-ALEXANDER-002",
   "CB-ALEXANDER-003",
-  "CB-ALEXANDER-004"
+  "CB-ALEXANDER-004",
+  "CB-WONG-001"
 ]
-theorem claim_count : claimIDs.length = 104 := by decide
+theorem claim_count : claimIDs.length = 105 := by decide
 end ResearchCommons.Registry
