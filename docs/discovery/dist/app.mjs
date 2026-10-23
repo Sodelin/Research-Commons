@@ -6,7 +6,7 @@ function el(tag,text,cls){const x=document.createElement(tag);if(text!==undefine
 function add(parent,...children){parent.append(...children);return parent;}
 function link(label,url){const a=el('a',label);const safe=safeLink(url);if(!safe){a.removeAttribute('href');return a;}a.href=safe;a.target='_blank';a.rel='noopener';return a;}
 const pretty=s=>String(s??'').replaceAll('_',' ');
-function badge(c){return el('span',STATUS[bucket(c)],'badge '+bucket(c));}
+function badge(c){const label=c.completion?.display??STATUS[bucket(c)];return el('span',bucket(c)==='counterexample'&&!/counterexample/i.test(label)?'Counterexample · '+label:label,'badge '+bucket(c));}
 function filters(){return {q:$('search').value,topic:$('topic').value,status:$('status').value,origin:$('origin').value};}
 function writeRoute(){const u=new URL(location.href);u.search='';for(const[k,v]of Object.entries(filters()))if(v)u.searchParams.set(k,v);if(state.mode==='reuse'||state.mode==='connections')u.searchParams.set('mode',state.mode);u.hash=state.selected;history.replaceState(null,'',u);}
 function toast(message){const target=$('toast');if(!target)return;target.textContent=message;target.style.display='block';setTimeout(()=>target.style.display='none',3000);}
@@ -61,6 +61,7 @@ function renderDetail(){
   const exact=el('details');exact.append(el('summary','Exact statement and assumptions'),el('p',c.exact_statement_and_scope));p.append(exact);
   section(p,'Question origin',`${ORIGIN[c.origin.category]??pretty(c.origin.category)}. ${c.origin.detail}`);
   if(c.origin.source_url)p.append(link('Original published question ↗',c.origin.source_url));
+  else if(c.origin.category==='published_open_problem')p.append(el('p','A direct original-paper link is not indexed on this card; consult its linked source references.','limit'));
   section(p,'Prior work',c.prior_work);section(p,'The contribution here',c.our_contribution);
   section(p,'Novelty / historical priority',c.novelty_status);
   p.append(el('h3','Evidence, kept separate'));
@@ -71,7 +72,13 @@ function renderDetail(){
   }p.append(ev);
   p.append(el('h3','Read the proof, review or result'));
   const sources=el('ul');for(const s of c.accepted_artifacts){const li=el('li');li.append(link(s.label+' ↗',s.url));sources.append(li);}p.append(sources);
-  section(p,'What remains',c.remaining_obligation);
+  if(c.completion?.mathematical_claim_complete===true){
+    section(p,'Mathematical claim complete',c.remaining_obligation);
+    if(c.separate_downstream_or_validation_work)section(p,'Separate downstream or validation work',c.separate_downstream_or_validation_work);
+  }else{
+    section(p,c.completion?.proof_derivation_required===true?'Remaining mathematical implication':'What remains at this scope',c.remaining_obligation);
+    if(c.separate_downstream_or_validation_work)section(p,'Separate downstream or validation work',c.separate_downstream_or_validation_work);
+  }
   for(const j of state.joins.filter(j=>j.claim_ids.includes(c.id))){
     p.append(el('h3',j.title),el('p',j.explanation));const list=el('ul');
     for(const s of j.links){const li=el('li');li.append(link(s.label+' ↗',s.url));list.append(li);}p.append(list);

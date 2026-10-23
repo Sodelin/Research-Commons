@@ -20,7 +20,7 @@ lines=['# Find an answer in Research Commons','',intro,
 '| Entry / exact provenance | What this contribution establishes | Boundary |','|---|---|---|']
 for c in claims:
  if c['origin']['category'] not in ['published_open_problem','classical_prior']:continue
- origin=c['origin'];url=origin.get('source_url');ref=f"[Original source]({url})" if url else 'Classical prior'
+ origin=c['origin'];url=origin.get('source_url');ref=f"[Original source]({url})" if url else ('Classical prior' if origin['category']=='classical_prior' else 'Direct original-paper link not indexed')
  lines.append(f"| {card(c)} · {ref}. {clean(origin['detail'])} | {clean(c['plain_language']['what_we_learned'])} | {clean(c['plain_language']['what_cannot_conclude'])} |")
 lines+=['','## Browse by the question','']
 groups=collections.defaultdict(list)
@@ -28,7 +28,7 @@ for c in claims:groups[c['programme'].split(' · ')[0]].append(c)
 for group,items in groups.items():
  lines+=['### '+group,'','| Question | Result / use | Disposition |','|---|---|---|']
  for c in items:
-  p=c['plain_language'];lines.append(f"| {card(c)} · {clean(p['question'])} | {clean(p['what_we_learned'])} {clean(p['what_it_lets_someone_do'])} | {c['mathematical_status'].replace('_',' ')} |")
+  p=c['plain_language'];lines.append(f"| {card(c)} · {clean(p['question'])} | {clean(p['what_we_learned'])} {clean(p['what_it_lets_someone_do'])} | {clean(c.get('completion',{}).get('display',c['mathematical_status'].replace('_',' ')))} |")
  lines+=['']
 lines+=['## Missing from this map','',*['- '+s for s in source['coverage']['gaps']], '',
 'A failed lookup is **status unverified / not indexed**, not evidence that a result is absent or mathematically open. Search the archive and ask its current owner before allocating another derivation.']
