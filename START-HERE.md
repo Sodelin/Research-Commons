@@ -1,5 +1,9 @@
 # Start here
 
+## Claim board and completed-work audit — 23 October 2026
+
+Read the [plain-language claim board](docs/CLAIM-BOARD.md): 58 separately scoped entries, each explaining the question, result, use and limits, with exact sources and separate mathematical, formal, execution and empirical status. This first register is explicitly not exhaustive. The [duplicate-work report](docs/DUPLICATE-WORK-REPORT.md) identifies completed edge/reticulation and G6/G7 work that supersedes older pending labels; the [G3/G4 acceptance audit](docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves completed branches and states the exact remaining implications. These are reconciliation artifacts, not new theorem discoveries.
+
 ## Current accepted-results snapshot — 23 October 2026, 06:03 UTC
 
 Start with [what is already accepted and what remains](docs/ACCEPTED-RESULTS-AND-REMAINING-WORK.md). In particular, the qualified G4 BOTH-inclusive control-menu extension was already accepted on October 14; it is not a newly solved theorem or a remaining generic adapter gap. Causal upper/lower mathematics now has coordinating hand acceptance, while new Lean source remains unelaborated. The owner has closed the external G3/G4 continuations; the [shared future prompt](handoffs/2026-10-23-g3-g4-accepted-first/PROMPT.md) is not issued and restarts nothing. Dated older status snapshots below are retained, not current instructions to re-prove completed work.
