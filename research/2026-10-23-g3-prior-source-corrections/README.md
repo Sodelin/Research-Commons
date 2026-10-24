@@ -1271,7 +1271,8 @@ Reuse this ALL-coin supplier; it is no longer an open bias/energy-coupling
 lemma. It bounds the previous full transverse-source majorant too.
 The weighted fifth-order sum and chronological energy remain unbounded
 in h; no original AG-Pair/index/ONE-witness/NO or G4 endpoint is supplied.
-The displayed HAND coefficient tables prove Psi7 has BOTH signs on arbitrarily\nweak equal-arm sources. A cellwise-positive L5 shortcut is REFUTED. The homogeneous fair
+The displayed HAND coefficient tables prove Psi7 has BOTH signs on arbitrarily
+weak equal-arm sources. A cellwise-positive L5 shortcut is REFUTED. The homogeneous fair
 orientation result and actual R-only phase counterfamily stay proved.
 
 ## Coupled transverse cancellation: pure constant source forcing completed
@@ -1303,3 +1304,36 @@ source/energy/L5/phase control stays UNPROVED. No whole-jump energy bound,
 V_h selector, source-count bound or original G3/G4 closure is acquired.
 Aliases:2/525, fair normalized heat derivative, signed constant forcing,
 all-coin transverse extra-u cancellation, not a martingale transfer.
+
+## Quadratic state absorption: forced-prefix comparison completed
+
+[QUADRATIC-STATE-ABSORPTION.md](../2026-10-24-g3-asymptotic-root-grid/QUADRATIC-STATE-ABSORPTION.md),
+11831B/SHA8dea255b64f1e7cf87962919125b217dc9d18d2be0c66bf9da62bb8a51dd7a74, Gitbloba30086ff5075fef58302bee252dafe69ce8e25f7.
+Stable key G3-QUADRATIC-STATE-ABSORPTION-01. PROVED HAND/self-reviewed;
+independent correctness review/Lean/source execution absent.
+
+The OLD R7 raw-difference method and own-PRECEDING forced trace are reused.
+On the SAME original full-cap9 paired commutator fibre, arbitrary strict
+coins/scales/counts, the ACTUAL affine difference D=b-a satisfies
+
+    D'=15D+6b+15A_h-21B_h,
+    D+=alpha*D-+(gamma-alpha)*(b--B_h)+(B_h-A_h)*(1-alpha).
+
+Its same-source propagator, ALL-coin bias bound and completed trace prove
+
+    E_a<=C*(E_b+H^3*h^6+H^2*h^4*L5).
+
+The exact quadratic storage-jump sum is therefore <=epsilon*E_b+
+epsilon*h^2*L5+C_epsilon*H*h^6 for ONE sufficiently small fixed H chosen
+after epsilon. Combined with the completed constant cancellation, ONLY the
+homogeneous-LINEAR source jump remains in that error, up to this bound.
+
+The ordinary forcing30*kappa*B_h*integral w*(b-a) is ALSO still present.
+Neither it nor the exact linear sum has acquired a sign/coercivity bound.
+L5/energy, phase/ONE-witness and original unrestricted NO remain unproved.
+No epsilon limit at fixed H, post-jump own-scale trace, coin margin,
+new source observer, physical inverse or G4 endpoint is asserted.
+No source/tuple/coefficient producer or old execution was run.
+
+Aliases: forced prefix difference, quadratic source error absorption,
+E_a by E_b, affine correction retained, linear-plus-ordinary work remains.
