@@ -44,6 +44,37 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Uniform capped commutant projection — quadratic matrix bound proved
+
+[G3-UNIFORM-ORDINARY-COMMUTANT-ESTIMATE-01](../2026-10-24-g3-asymptotic-root-grid/COMMUTANT-ESTIMATE.md)
+is PROVED BY HAND as a quantitative application of the OLD full source
+lift and classical spectral interpolation. Independent review/Lean are
+separate; no scientific/source/solver execution occurred.
+
+For ANY fixed cap M>=2, set L=2*binom(M,2), h_M=1/(32L^2) and
+C_M=6L^3 M(M-1)(6L+4)(3L+2)^(M-2). If an actual private forest kernel K
+of ANY length/coins/scales commutes with S(t),h=-log(t)<=h_M, then
+
+    ||K-sum_r b_r(K)P_r(Q)||_row <= C_M*h^2.
+
+The comparison commutes with the ordinary generator Q and keeps ALL
+unknown higher diagonals b_r(K). No forest-shape multiplier, coin margin,
+relative cell-scale promise or supplied word length is used. Under the
+active pair calibration h=H/(4nu), the error is explicitly O(nu^-2).
+
+The OLD coloured lift at fair equal arms gives
+JG D=Q/2 and JG^2D=(Q^2-Q)/4. Matching its actual pair clock yields
+S(t)=E_(3h)+O(h^3) on the ENTIRE capped forest carrier; no invented bare
+flow or new all-order coefficient theorem. Matrix-log/projector bounds
+then give the displayed estimate uniformly over all K.
+
+This is a kernel-projection bound, NOT dist(nu,Z), a physical normal
+form, a source count bound or an ordinary-mixture theorem. The comparison
+operator need not be positive/physical and is not identified with E(D)
+or a fractional reference power. The original source/phase implication
+AG-Pair remains UNPROVED; this closes one quantitative component inside
+the existing full-scope attempt, without replacing its completion goal.
+
 ## Return-controller admission on the calibrated COMMON face
 
 Admission key: G3-COMMON-FACE-RETURN-SUPPLIER-ADMISSION-01.
