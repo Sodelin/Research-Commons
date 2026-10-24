@@ -560,3 +560,8 @@ At d27a952f63ec7a06bae5fc20680a2677708cc47b/run40087451572/job120853347012, comp
 ## Source122 complete exact-query component acceptance
 
 61027b35206d7da06f7073def120ba1e7c8eb5b0/run40088841986/job120857307451 PASSES21 exact names/245 sources:5029 owned declarations/3331 theorems, zero owned axioms/nonstandard/missing.1909931B artifact12558227760 SHA d20eb963ae5e04f4341f2ea2df851385ec7e6761ff72e4001cf0ed747baa85f5 independently recovered; all245 source hashes and21 complete printed type/axiom/owner records checked. Component accepted; full query algorithm/source/native/minimax remains separate. Its later20-source indicator boundary rejects three generic inverse-chart reductions; full1434/NANUQ steps not reached. Current original inverse chart lemma and3 concrete raw-NANUQ chart/readout receivers are source-only/PENDING actual kernel check, no new scientific mathematics or source law.
+
+
+## Source123 complete NANUQ root rejection; exact chart reduction repair
+
+2937da9f6c5fc5ddea1dda8ef9a8d8dc12023275/run40090286341/job120861539518 rejects ResearchCommons.Claims.NANUQ at private four_taxa_chart51:57, four literal embedding-coercion equalities. One compiler diagnostic/four goals. New3 receiver declarations are NOT accepted, regardless of later clean elaboration. No new named/owned audit ran; subsequent projection/full1434 commands skipped. Existing query21/model components pass their unchanged exact scopes. Artifact metadata12559106441/1948325B/SHA966cd21474ab7058e33d399234f45fc802ad9223dee2f7dad6d2fa3250c5520c is recorded, not independently recovered. Next source reuses the original RawNanuq chart proof's final rfl after simp; all statements/hypotheses unchanged. This is proof integration/verification, no new mathematics or source law.

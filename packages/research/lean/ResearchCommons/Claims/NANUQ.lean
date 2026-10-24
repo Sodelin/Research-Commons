@@ -50,7 +50,7 @@ private theorem four_taxa_chart (x y p q : Fin n)
     (h : ValidFour x y p q) :
     (fourTaxa x y p q h : Fin 4 → Fin n) = ![x,y,p,q] := by
   funext i
-  fin_cases i <;> simp [fourTaxa]
+  fin_cases i <;> simp [fourTaxa] <;> rfl
 
 private theorem valid_four_of_tuple_injective (x y p q : Fin n)
     (h : Function.Injective ![x,y,p,q]) : ValidFour x y p q := by

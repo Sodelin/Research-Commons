@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "THREE_CONCRETE_RECEIVER_PROOFS_PENDING_KERNEL",
+  "status": "ACTUAL_COMPLETE_MODULE_REJECTED_PRIVATE_CHART_REPAIR_PENDING",
   "claim": "CB-NANUQ-002",
   "reuse_rank": 11,
   "preflight": "integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md",
@@ -99,11 +99,44 @@
   "selected_root": {
     "module": "ResearchCommons.Claims.NANUQ",
     "path": "lean/ResearchCommons/Claims/NANUQ.lean",
-    "bytes": 5120,
-    "git_blob": "9cf8e22320849461828822a7e88dab3f961fd93c",
-    "sha256": "494bfc428c7a2613e0700915d2db1abd9ea613a12eb02bc575b1c7871f820483"
+    "bytes": 5128,
+    "git_blob": "db610f707577662328e61ebf0e2f0880624556d7",
+    "sha256": "966ca7eaa98186c86747f90ec0b6ca5c5bc7bc31f60628734d9214cd874c0b13"
   },
   "all_repeated_labels_and_invalid_tuples_zero": true,
   "desired_law_added_as_premise": false,
-  "whole_all_level_claim_closed": false
+  "whole_all_level_claim_closed": false,
+  "rejections": [
+    {
+      "source": "2937da9f6c5fc5ddea1dda8ef9a8d8dc12023275",
+      "run": 40090286341,
+      "job": 120861539518,
+      "target": "ResearchCommons.Claims.NANUQ",
+      "selected_source_modules": 836,
+      "failed_module": "ResearchCommons.Claims.NANUQ",
+      "compiler_errors": 1,
+      "unsolved_goals": 4,
+      "private_lemma": "four_taxa_chart",
+      "line": 51,
+      "reason": "simp left the four literal embedding-structure applications unreduced; exact original proof style closes them by rfl",
+      "new_receiver_component_accepted": false,
+      "new_owned_or_named_audit_ran": false,
+      "clean_later_declarations_not_partial_pass": true,
+      "projection_boundary_not_run": true,
+      "full_combined1434_target_not_run": true,
+      "artifact_metadata": {
+        "id": 12559106441,
+        "bytes": 1948325,
+        "sha256": "966cd21474ab7058e33d399234f45fc802ad9223dee2f7dad6d2fa3250c5520c",
+        "independently_downloaded": false
+      }
+    }
+  ],
+  "repair": {
+    "source": "integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md",
+    "edit": "Append exact original-source rfl reduction after finite chart simp",
+    "actual_kernel_result_pending": true,
+    "source_statement_changes": 0,
+    "new_assumptions": 0
+  }
 }
