@@ -41,5 +41,28 @@
     "actual_native_column_law": true,
     "actual_native_emitter": true,
     "lean_caller": "PENDING"
-  }
+  },
+  "successor_rejections": [
+    {
+      "source": "33a6163e70719d8d4bb8688cf7a13643cde9f787",
+      "run": 40044131851,
+      "job": 120722017343,
+      "source_sha256": "02ee07a42eaa5d85d01cfbd2e0e13f7fc0f4978d8285a796ccef9b335de1d85f",
+      "status": "COMPLETE_MODULE_REJECTED_BEFORE_CALLERS",
+      "errors": [
+        "48:24: error(lean.synthInstanceFailed): failed to synthesize instance of type class",
+        "55:70: error: unsolved goals",
+        "68:11: error: unsolved goals",
+        "73:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "80:38: error: Tactic `split` failed: Could not split an `if` or `match` expression in the goal",
+        "112:45: error: `simp` made no progress",
+        "186:13: error: Type mismatch",
+        "195:11: error: unsolved goals",
+        "201:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "221:4: error: invalid 'calc' step, left-hand side is",
+        "401:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      ],
+      "scope": "Same complete unmodified generic source rejected at the same11 errors; actual caller never started. Rust97 test SUCCESS remains a separate observed result."
+    }
+  ]
 }

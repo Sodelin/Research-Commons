@@ -24,3 +24,5 @@ New downstream candidate: JC69Tree constructs the ORIGINAL all-finite tree/patte
 A native complete JC column implementation/certificate now follows the same original Tree/branch bank. The fixed3-tip64-entry/clock/matrix caller and three new test groups await fresh Linux/Rust/Lean results. No native exponential/log or new genealogy engine is used. Existing word/full job handles remain unchanged.
 
 Actual Rust tree implementation/emitter now passed97 tests at33a6163e. The new complete Lean tree component rejected dependent-type/sum proof elaboration at9e032e80; its exact proof-term repair is pending, with no partial acceptance. Whole original source/measure/recurrence and95 unnamed claims remain distinct.
+
+Canonical registry AND reuse-ranking blobs were rechecked on current main at2026-10-24T00:20:36Z: exact118-card ebe7a376 and75-ranked21cdafec unchanged. The original unranked quotient/cluster-uniqueness suppliers were recovered/read for the next actual channel join; this is source reuse, not new mathematical discovery. Source33a6163e's same generic tree rejection was also read explicitly; the fresh unchanged-statement repair is sourcef2a678cb/run40044466281.
