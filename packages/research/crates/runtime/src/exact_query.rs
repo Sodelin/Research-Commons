@@ -4,6 +4,7 @@
 //! mask check is not global graph/source admission. Limits are UNKNOWN.
 //! Unknown-order learning and exact finite minimax remain separate suppliers.
 use std::collections::{BTreeMap, BTreeSet};
+pub mod order;
 
 pub type Quartet = [u64; 4];
 pub type GapPair = [usize; 2];

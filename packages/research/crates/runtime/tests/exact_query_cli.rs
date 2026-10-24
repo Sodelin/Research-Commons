@@ -33,3 +33,24 @@ fn missing_duplicate_or_crossing_support_emits_no_successful_prefix() {
         assert!(!p.stderr.is_empty());
     }
 }
+
+#[test]
+fn unknown_order_stdin_composes_the_same_original_label_cache() {
+    let p=run(json!({"labels":[40,10,30,20],"answers":[{"quartet":[10,20,30,40],"mask":2}]}));
+    assert!(p.status.success(),"{}",String::from_utf8_lossy(&p.stderr));
+    let v:Value=serde_json::from_slice(&p.stdout).unwrap();
+    assert_eq!(v["order_mode"],"learned");
+    assert_eq!(v["unique_queries"],1);
+    assert_eq!(v["order_acquisition"]["order_queries"],1);
+    assert_eq!(v["chronological_query_trace"].as_array().unwrap().len(),1);
+    let circle:Vec<_>=v["circle"].as_array().unwrap().iter().map(|x|x.as_u64().unwrap()).collect();
+    let mut labels=circle.clone();labels.sort_unstable();assert_eq!(labels,vec![10,20,30,40]);
+    assert_eq!(v["gap_pairs"].as_array().unwrap().len(),1);
+    for bad in [
+        json!({"labels":[40,10,30,20],"answers":[]}),
+        json!({"labels":[0,1,2,3],"circle":[0,1,2,3],"answers":[]}),
+        json!({"labels":[0,1,2,3],"answers":[{"quartet":[0,1,2,3],"mask":7}]})
+    ] {
+        let failed=run(bad);assert_eq!(failed.status.code(),Some(2));assert!(failed.stdout.is_empty());
+    }
+}

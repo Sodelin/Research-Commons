@@ -1,0 +1,15 @@
+# Existing unknown-order caller: reuse before implementation
+
+Claim CB-EXACTQUERY-001, reuse priority10, keeps its original arbitrary finite binary galled/outer-labelled-planar source class, complete distinct displayed-quartet topology support, original labels, split UNION plus common circle and adaptive distinct-query cost. Completed HAND mathematics stays complete.
+
+Closest predecessor: research/2026-09-30-astra-exact-query-1156z/{adaptive_order.py,core.py,insertion.py,recover_all.py} at78ef5c855146cc88afdad78cd3475eae2399f141. All four complete bodies were read again in this assembly:11148/4721/1580/4080 bytes. Exact hashes/blobs are already retained in EXACT-QUERY-REUSE-PREFLIGHT.md. The actual algorithms use a circular rotation tree, representative taxa, biased centroid/arrow search, exact local gaps, path contraction and one original-label query cache. recover_all then calls the SAME pinned sparse rectangle decoder. It is already an implemented algorithm, not a missing mathematical supplier.
+
+Later successors actually read COMPLETE in the existing intake: OPTIMAL-ADAPTIVE-INTEGRATION.md SHA947be56a9b0725486b6ee87367f90620bad146d0812cdb59cfef717e715af019 and EXACT-MINIMUM-THEOREM.md SHA640d885644aa6af18b38dfb6c23ef53e0868fe7370dc6d0485577ec5c705124f at the same commit. Their accepted all-size source/order/query bound and finite optimum specification are REUSED; no new proof, optimum census or theorem scan is selected.
+
+Exact current implementation gap: the portable Rust/CLI only accepts a SUPPLIED common circle. This action ports/composes the retained UNKNOWN-order learner and same shared cache with the existing Rust sparse decoder. It does not replace them with an exhaustive circle search, another query-ranking engine, a measured/coalescent LAW oracle or a new source classifier.
+
+Rust is the production library/CLI component; the unchanged Python files remain test references, preserving source history. Separate order/tree-work/query/output limits refuse the ENTIRE request as UNKNOWN; malformed or incompatible promises refuse, never source NO. Cache/chronological trace use original sorted quartet labels and 1/2/4 masks. Numeric labels are u64 data; private negative tree IDs are a distinct internal carrier.
+
+Acceptance requires a real pinned Rust build, fixed fresh interface/differential cases against the unchanged reference (including path contraction and nonconsecutive/permuted labels), actual CLI/refusal checks and exact readback. No old main/grid/source-model suite is rerun. A finite port check does not certify universal Rust/formal refinement, physical source/circle/oracle admission, original query-charge theorem, all-size practical minimax or authenticated results. Existing proof exports remain unchanged; no scientific result is reopened.
+
+The current full1077-source causal build and independent complete BOTH-word job continue separately. No phone source/Git/build writes, new agents, private controller/model/held action or replay. This authorized portable public engineering work does not bind the UNBOUND private writer/controller.
