@@ -1189,3 +1189,28 @@ coefficient run, independent correctness review or Lean. This does NOT
 bound E_a/fifth-order terms, force pointwise fairness or supply AG-Pair.
 It is a supporting constraint of the same full-scope attempt; no new
 global PSD/cocycle project or repeated source-jet task is selected.
+
+## Actual-source quotient phase flexibility: R-only route REFUTED HAND
+
+[ACTUAL-QUOTIENT-PHASE-FLEXIBILITY.md](../2026-10-24-g3-asymptotic-root-grid/ACTUAL-QUOTIENT-PHASE-FLEXIBILITY.md),
+17688B/SHA66d3b2eb1f5a5662a902f084d637cd2d19fa6c402bbc432fb26ae0e2b78bc813, key
+G3-ACTUAL-QUOTIENT-PHASE-FLEX-01. For EVERY fixed m, one rational delta>0
+works for all sufficiently large N: actual FAIR equal-arm N-cell words,
+only six interior ordinary gaps changed, preserve COMMON c and I pair
+c^(3/4), commute with the reference in R, and have phase N+delta.
+A uniform confluent five-coordinate inverse proves strict source existence;
+this is stronger than the old unpromoted first-order retuning prospect.
+Algebraic survivals/coins may be chosen; no source tuple/model run occurred.
+
+The R-ONLY power-accurate phase/variance-selector route is CLOSED AS FALSE.
+All previously completed R bounds remain TRUE on these words. Further
+R-only source/energy estimates cannot close the index. Full original
+AG-Pair still has COMPLETE forest commutation and remains UNPROVED; some
+unselected finite forest row fails by the OLD all-copy normal form, with
+no uniform arity claimed. Next work must use full-forest data beyond R,
+not another quotient-only coercivity project. HAND author completion only;
+independent review/Lean absent. No original G3/G4 endpoint is claimed.
+
+Aliases: six positive ordinary gaps, actual fair-source counterfamily,
+confluent15-band inverse, unknown diagonals retained, constant phase shift,
+R-only index false, quotient-only one-witness variance selector false.
