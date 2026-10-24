@@ -170,7 +170,7 @@ theorem projected_indicator_edge {X : Type u} {S : Type v} {L : Type w}
   · rintro ⟨rfl, rfl, rfl⟩
     refine ⟨?_, [], .single ((indicator_raw_edge D target _ _ _).mpr ⟨rfl, rfl, rfl⟩)⟩
     intro hbad
-    exact Option.noConfusion (Sum.inl.inj hbad)
+    cases hbad
 
 theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (target : X) (a b : WithBot (Sum X S)) (ma mb : Mark) :
@@ -179,10 +179,10 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
       (SourceSelection.selectedIndicatorVertexEquiv.symm b) ma mb ↔
       (LatentRoots.augmentGraph (projection D) (.inl target)).edge a b ma mb := by
   cases a with
-  | none =>
+  | bot =>
       cases b with
-      | none => exact ⟨fun h => h.1 rfl, False.elim⟩
-      | some b =>
+      | bot => exact ⟨fun h => h.1 rfl, False.elim⟩
+      | coe b =>
           change (projection (augmentSource D target)).edge (.inl none) (oldRetained b) ma mb ↔
             (b = .inl target ∧ ma = .tail ∧ mb = .head)
           rw [projected_indicator_edge]
@@ -191,9 +191,9 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
             exact ⟨oldRetained_injective hb, hma, hmb⟩
           · rintro ⟨rfl, hma, hmb⟩
             exact ⟨rfl, hma, hmb⟩
-  | some a =>
+  | coe a =>
       cases b with
-      | none =>
+      | bot =>
           change (projection (augmentSource D target)).edge (oldRetained a) (.inl none) ma mb ↔
             (a = .inl target ∧ ma = .head ∧ mb = .tail)
           constructor
@@ -205,7 +205,7 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
             have hr := (projected_indicator_edge D target (oldRetained (.inl target)) mb ma).mpr
               ⟨rfl, hmb, hma⟩
             exact projection_symm (augmentSource D target) _ _ _ _ hr
-      | some b => exact projected_old_edge_exact D target a b ma mb
+      | coe b => exact projected_old_edge_exact D target a b ma mb
 
 def original_projection_indicator_equiv {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (target : X) :
@@ -226,6 +226,11 @@ theorem projection_augmentation_exact {X : Type u} {S : Type v} {L : Type w}
   intro a b ma mb
   have hp := (original_projection_indicator_equiv D target).edge a b ma mb
   have he := (SourceSelection.selectedIndicatorGraphEquiv (extracted D) target).edge a b ma mb
+  change
+    (SourceSelection.graph (SourceSelection.augment (extracted D) target)).edge a b ma mb ↔
+      (LatentRoots.augmentGraph (SourceSelection.graph (extracted D)) (.inl target)).edge
+        (SourceSelection.selectedIndicatorVertexEquiv a)
+        (SourceSelection.selectedIndicatorVertexEquiv b) ma mb at he
   rw [extracted_graph_eq D] at he
   exact hp.trans he.symm
 

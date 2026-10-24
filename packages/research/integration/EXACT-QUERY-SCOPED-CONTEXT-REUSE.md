@@ -1,0 +1,9 @@
+# Exact-query source and geometry: one existing receiver check
+
+CB-EXACTQUERY-001 is already mathematically complete. Its original complete-support supplied-circle decoder and unknown-order/shared-cache successor are retained unchanged; no new algorithm or query theorem is sought. The COMPLETE original source/predecessor/successor comparisons and exact immutable bodies read are in EXACT-QUERY-ROOT-PARTITION-REUSE.md and EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md. Current complete Rectangle.lean (12 exact geometric theorems including six recursive coverage/disjointness/legal-query facts) and Source.lean (nine OLD source API exports) were read again.
+
+Prior accepted result:15 names at c79deb202cadfae269f06dedd8c724648b497856, run40062353912, complete930-source/165-name owned context, and the native unknown-order CLI at5b91ebb8e984d61c3b634323dcf3362982560854 with107 tests. The six recursive root-geometry additions compiled in later combined contexts, but their whole-owned/type/owner check was blocked by unrelated causal modules. This is a verification/integration gap, not a missing mathematical search theorem.
+
+Use the EXISTING Source import root as the exact target, adding ONE import of the EXISTING Rectangle module; all theorem/alias bodies stay unchanged. The existing claim-scoped check-exports engine will verify all21 names, both actual owning modules and the complete original source dependency closure. No new checker, transition oracle, source factory, proof or domain engine.
+
+Scope remains partial: local interval/quartet/rectangle predicates, all-depth root cover/disjointness/legal-query geometry, original actual Source/circle/split/quartet APIs. Numeric source/circle/complete-oracle admission, native stack/recursion/output-sensitive charge/unknown-order/universal minimax refinement and runtime origin remain separate. The successful test of this21-name component will not close all those implications or all118 claims.

@@ -595,6 +595,12 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ClinicalModels.Audit
           cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
+      - name: Check original exact-query source and full recursive geometry
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.ExactQuery.Source
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.ExactQuery.Source --claim CB-EXACTQUERY-001
+      - name: Compile the exact original projection compatibility boundary
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalIndicatorProjection
       - name: Check original NANUQ source geometry and scoped all-level components
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.NANUQ

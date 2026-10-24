@@ -1,3 +1,4 @@
+import ResearchCommons.ExactQuery.Rectangle
 import G1AcceptedAllCompatibleCircularOrders
 import G1ActualDisplayedQuartetTransport
 

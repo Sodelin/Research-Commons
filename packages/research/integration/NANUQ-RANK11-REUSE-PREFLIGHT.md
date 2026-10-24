@@ -11,3 +11,6 @@ Reuse the EXISTING Claims.NANUQ root, adding original module imports and AllLeve
 Precise remaining formal implication: all-size original source/outer-face opening and DISTINCT-quartet restriction into covered local carriers, rawRho/actualQuartetData equality on the SAME source, and global circularity/exact positive-support transport. Actual weighted/source blob composition is already supplied and reused. This bounded comparison is not an archive-wide absence assertion.
 
 The scoped pipeline checks001/002/003 together under the existing root. The full-registry target and strict all118 gate retain their purpose. No new domain engine, old producer rerun or private/native/model job.
+
+
+Actual source121 d27a952f/run40087451572/job120853347012 PASSED the complete836-source component context and all31 names/owners:80341 owned declarations/77439 theorems, zero owned axioms/nonstandard rows/missing modules. The8214503B artifact12557618327 was independently hash-verified and all836 source hashes matched; all31 complete printed types and collectAxioms lists were read. These exact components are accepted; whole002 all-level source theorem/003 enumerator coverage and native readout remain separate. No new mathematical proof is counted. See nanuq-scoped-component-verification.json.
