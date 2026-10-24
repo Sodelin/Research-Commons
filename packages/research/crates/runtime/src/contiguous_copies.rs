@@ -113,10 +113,13 @@ theorem same_original_label (i : Fin {n}) :
     globalTaxa (taxon i) = originalLabels (originalPosition i) := by
   revert i
   decide
-theorem actual_contiguous : Contiguous taxon := by decide
+theorem actual_contiguous : Contiguous taxon := by
+  unfold Contiguous
+  decide
 theorem actual_extremes (i : Fin {n}) :
     i ∈ kept ↔ Extreme taxon i := by
   revert i
+  unfold Extreme First Last
   decide
 theorem actual_returned_positions :
     kept.image originalPosition = keptOriginal := by decide
@@ -134,6 +137,18 @@ theorem same_interval_side (l r i : Fin {n})
       (InInterval l r e ↔ InInterval l r i) := by
   obtain ⟨e, he, ht, hs⟩ := same_interval_side_extreme taxon actual_contiguous l r h i
   exact ⟨e, (actual_extremes e).mpr he, ht, hs⟩
+theorem complete_supplied_cut_quartets (l r : Fin {n}) (a b c d : Fin {k})
+    (hab : a ≠ b) :
+    CutQuartet taxon (fun i => i ∈ kept) l r a b c d ↔
+      CutQuartet taxon (fun _ => True) l r a b c d := by
+  simpa only [CutQuartet, actual_extremes] using
+    cut_quartet_extremes_iff taxon actual_contiguous l r a b c d hab
+theorem complete_supplied_cut_splits (l r : Fin {n}) (left : Fin {k} → Prop)
+    (h : ∃ a b, left a ∧ left b ∧ a ≠ b) :
+    CutSplit taxon (fun i => i ∈ kept) l r left ↔
+      CutSplit taxon (fun _ => True) l r left := by
+  simpa only [CutSplit, actual_extremes] using
+    cut_split_extremes_iff taxon actual_contiguous l r left h
 end {namespace}
 "#);
         if source.len() > limits.render_bytes {

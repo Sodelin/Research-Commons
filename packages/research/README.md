@@ -2,7 +2,7 @@
 
 This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
 
-The current graph selects 1,613 retained modules plus 218 integration modules. There are 46 named claim mappings and 503 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
+The current graph selects 1,613 retained modules plus 218 integration modules. There are 46 named claim mappings and 506 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source153/run40127390395 accepts COMPLETE40-source ClosedColliderWalks (1129 declarations/665 theorems, zero rejects); all115 Rust tests remain passing. Full1497 reaches1401 (115compiled+1286reused), REJECTED at OriginalWeakConnection with95 blocked. Next: exact42-source proof port plus NEW1-source partial NANUQ extreme-tip adapter, mandatory full1498/503-name/owned/actual callers and strict118. Whole-package acceptance is not claimed.
+Current compatibility checkpoint: source155/run40129214406 accepts partial NANUQ1-source/3-name/8-declaration/3-theorem core and119 Rust tests. ENTIRE first linear caller rejected at folded-definition Decidable; no wrapped/caller/causal42/full1498 acceptance. Current6-name exact supplied-cut extension and fixed BOTH actual caller outputs, then mandatory42-source causal and full1498/506-name/owned/actual callers. Source15340-source closed-collider1129/665 remains CLOSED; latest actual full1497 remains1401checked/95blocked. Whole118 remains incomplete.
 
 ## Exact known-rate calibration component
 

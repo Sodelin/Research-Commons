@@ -642,18 +642,18 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
-      - name: Check actual contiguous physical-tip extreme retention (partial NANUQ adapter)
-        run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.NANUQ.ContiguousCopies
-          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.ContiguousCopies --claim CB-NANUQ-004
-          cp build/lean-target-build.json build/nanuq-contiguous-component-build.json
-          cargo run --locked -p research-commons-package -- check-contiguous-callers
       - name: Compile and audit the next exact original causal compatibility boundary
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalWeakConnection
           cargo run --locked -p research-commons-package -- audit-target ClosedColliderWalks
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
+      - name: Check actual contiguous physical-tip extreme retention (partial NANUQ adapter)
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.NANUQ.ContiguousCopies
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.ContiguousCopies --claim CB-NANUQ-004
+          cp build/lean-target-build.json build/nanuq-contiguous-component-build.json
+          cargo run --locked -p research-commons-package -- check-contiguous-callers
       - name: Check original stochastic full-history and predictive-profile proofs
         if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |

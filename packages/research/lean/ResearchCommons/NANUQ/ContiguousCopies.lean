@@ -125,4 +125,88 @@ theorem extreme_card_le_two [Fintype Taxon] (taxon : Fin m → Taxon) :
       Fintype.card_le_of_injective encode hinj
     _ = 2 * Fintype.card Taxon := by simp [Fintype.card_prod, Nat.mul_comm]
 
+
+/-- A quartet resolved by ONE supplied contour cut, witnessed by four
+actual physical tips. Availability is explicit, so restriction cannot add tips.
+This is the cut semantics, not an asserted plane-tree representation theorem. -/
+def CutQuartet (taxon : Fin m → Taxon) (available : Fin m → Prop)
+    (l r : Fin m) (a b c d : Taxon) : Prop :=
+  ∃ i j k v, available i ∧ available j ∧ available k ∧ available v ∧
+    taxon i = a ∧ taxon j = b ∧ taxon k = c ∧ taxon v = d ∧
+    InInterval l r i ∧ InInterval l r j ∧
+    ¬ InInterval l r k ∧ ¬ InInterval l r v
+
+/-- Restricting to the actual extreme tips preserves the ENTIRE cut-quartet
+relation. Witnesses depend on this cut/quartet; no single global selection
+preserving all trees is asserted. In applications all four labels differ. -/
+theorem cut_quartet_extremes_iff (taxon : Fin m → Taxon)
+    (hcont : Contiguous taxon) (l r : Fin m) (a b c d : Taxon)
+    (hab : a ≠ b) :
+    CutQuartet taxon (Extreme taxon) l r a b c d ↔
+      CutQuartet taxon (fun _ => True) l r a b c d := by
+  constructor
+  · rintro ⟨i, j, k, v, _, _, _, _, hi, hj, hk, hv, ii, jj, kk, vv⟩
+    exact ⟨i, j, k, v, trivial, trivial, trivial, trivial,
+      hi, hj, hk, hv, ii, jj, kk, vv⟩
+  · rintro ⟨i, j, k, v, _, _, _, _, hi, hj, hk, hv, ii, jj, kk, vv⟩
+    have hij : taxon i ≠ taxon j := by
+      intro h
+      exact hab (hi.symm.trans (h.trans hj))
+    have hrich : ∃ i j, InInterval l r i ∧ InInterval l r j ∧ taxon i ≠ taxon j :=
+      ⟨i, j, ii, jj, hij⟩
+    obtain ⟨ei, hei, hti, hsi⟩ := same_interval_side_extreme taxon hcont l r hrich i
+    obtain ⟨ej, hej, htj, hsj⟩ := same_interval_side_extreme taxon hcont l r hrich j
+    obtain ⟨ek, hek, htk, hsk⟩ := same_interval_side_extreme taxon hcont l r hrich k
+    obtain ⟨ev, hev, htv, hsv⟩ := same_interval_side_extreme taxon hcont l r hrich v
+    refine ⟨ei, ej, ek, ev, hei, hej, hek, hev,
+      hti.trans hi, htj.trans hj, htk.trans hk, htv.trans hv,
+      hsi.mpr ii, hsj.mpr jj, ?_, ?_⟩
+    · intro h
+      exact kk (hsk.mp h)
+    · intro h
+      exact vv (hsv.mp h)
+
+/-- For ONE specified cut, a full one-occurrence-per-label selection can be
+replaced by retained extremes on exactly the same side for EVERY label.
+The selection may depend on the cut. -/
+theorem selection_side_extremes (taxon : Fin m → Taxon)
+    (hcont : Contiguous taxon) (pick : Taxon → Fin m)
+    (hlabel : ∀ t, taxon (pick t) = t) (l r : Fin m)
+    (hrich : ∃ a b, InInterval l r a ∧ InInterval l r b ∧ taxon a ≠ taxon b) :
+    ∃ chosen : Taxon → Fin m, (∀ t, Extreme taxon (chosen t)) ∧
+      (∀ t, taxon (chosen t) = t) ∧
+      (∀ t, InInterval l r (chosen t) ↔ InInterval l r (pick t)) := by
+  classical
+  have each (t : Taxon) := same_interval_side_extreme taxon hcont l r hrich (pick t)
+  choose chosen he ht hs using each
+  exact ⟨chosen, he, fun t => (ht t).trans (hlabel t), hs⟩
+
+/-- Literal split realizability under a one-occurrence-per-label selection
+at one actual contour interval. No weights or joint genealogy are introduced. -/
+def CutSplit (taxon : Fin m → Taxon) (available : Fin m → Prop)
+    (l r : Fin m) (left : Taxon → Prop) : Prop :=
+  ∃ pick : Taxon → Fin m, (∀ t, available (pick t)) ∧
+    (∀ t, taxon (pick t) = t) ∧
+    (∀ t, InInterval l r (pick t) ↔ left t)
+
+/-- The ENTIRE supplied-cut split relation is unchanged by extreme retention
+when the chosen inside side contains two labels. Actual nontrivial tree
+splits have two labels on both sides; the edge-arc receiver stays separate. -/
+theorem cut_split_extremes_iff (taxon : Fin m → Taxon)
+    (hcont : Contiguous taxon) (l r : Fin m) (left : Taxon → Prop)
+    (hrich : ∃ a b, left a ∧ left b ∧ a ≠ b) :
+    CutSplit taxon (Extreme taxon) l r left ↔
+      CutSplit taxon (fun _ => True) l r left := by
+  constructor
+  · rintro ⟨pick, _, hlabel, hside⟩
+    exact ⟨pick, fun _ => trivial, hlabel, hside⟩
+  · rintro ⟨pick, _, hlabel, hside⟩
+    obtain ⟨a, b, ha, hb, hab⟩ := hrich
+    have hn : taxon (pick a) ≠ taxon (pick b) := by
+      simpa only [hlabel] using hab
+    have hi : ∃ i j, InInterval l r i ∧ InInterval l r j ∧ taxon i ≠ taxon j :=
+      ⟨pick a, pick b, (hside a).mpr ha, (hside b).mpr hb, hn⟩
+    obtain ⟨chosen, he, hl, hs⟩ := selection_side_extremes taxon hcont pick hlabel l r hi
+    exact ⟨chosen, he, hl, fun t => (hs t).trans (hside t)⟩
+
 end ResearchCommons.NANUQ.ContiguousCopies
