@@ -93,7 +93,7 @@ The generic Lean filter equations/types AND BOTH complete actual filter results 
 cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate
 ```
 
-The first complete Lean tree module rejected dependent-type/finite-sum proof elaboration. Its unchanged-statement repair and actual64-entry caller remain pending [run40044466281](https://github.com/Sodelin/Research-Commons/actions/runs/40044466281). [Exact errors/scope](integration/jc69-tree-component-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
+The initial complete Lean tree module rejected dependent-type/finite-sum proof elaboration; its next run retained one leaf singleton normalization error. Those proof terms are corrected with the SAME statements and data. The whole module and actual64-entry caller still require a fresh complete check. [Exact errors/scope](integration/jc69-tree-component-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
 
 ## Independent verification targets
 

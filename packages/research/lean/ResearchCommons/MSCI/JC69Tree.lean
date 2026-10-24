@@ -69,7 +69,10 @@ private theorem message_sum {A : Type*} [Fintype A]
 theorem likelihood_sum (t : Genealogy Copy) (x : Survivals t) (a : Base) :
     (∑ p : Pattern t, likelihood t x a p) = 1 := by
   induction t generalizing a with
-  | leaf z => simp [likelihood, Pattern]
+  | leaf z =>
+      rcases a with ⟨a0,a1⟩
+      fin_cases a0 <;> fin_cases a1 <;>
+        norm_num [likelihood, Pattern, Fintype.sum_prod_type, Fin.sum_univ_two]
   | graft l r hl hr =>
       change (∑ p : Pattern l × Pattern r,
         (∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p.1) *

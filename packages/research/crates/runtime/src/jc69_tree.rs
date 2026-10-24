@@ -153,6 +153,8 @@ pub fn example_certificate()->Result<String,Error>{
  let source=format!(r#"import ResearchCommons.MSCI.JC69Tree
 import Mathlib.Tactic
 
+set_option maxRecDepth 10000
+set_option maxHeartbeats 8000000
 namespace ResearchCommons.Generated.JC69TreeColumn
 noncomputable section
 open ResearchCommons.MSCI.JC69
