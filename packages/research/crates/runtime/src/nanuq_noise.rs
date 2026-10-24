@@ -194,7 +194,7 @@ pub fn example(cycle: bool, limits: Limits) -> Result<Recovery, Error> {
     };
     let observed = raw.iter().enumerate().map(|(i, row)|
         row.iter().enumerate().map(|(j, &v)| q(v,1) +
-            if (i + 2*j) % 3 == 0 { q(-1,4) } else { q(1,3) })
+            if i <= j { q(-1,4) } else { q(1,3) })
             .collect()).collect();
     Recovery::new(vec![900,7,42,123], observed, limits)
 }

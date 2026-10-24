@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "whole_current_Rust_context_accepted": false,
+  "Lean_context_executed": false,
+  "records": [
+    {
+      "actual_failure": "Runtime61passed/1failed: the intended asymmetric fixture condition i+2j=0 mod3 was symmetric, yielding observed01=observed10=13/3. Entire new Rust compiled; other two new tests passed. No Lean job ran.",
+      "edit": [
+        "if (i + 2*j) % 3 == 0 { q(-1,4) } else { q(1,3) }",
+        "if i <= j { q(-1,4) } else { q(1,3) }"
+      ],
+      "job": 121003246129,
+      "original_source": "654285444dd21c909527a58a54cf75721ee5c8ba",
+      "run": 40137904477,
+      "scope": "Correct only newly authored synthetic noise fixture to have negative diagonal and strict asymmetric errors. OLD tree/cycle truth matrices, exact rounding/cut/public API, three tests and every Lean statement unchanged.",
+      "original_rust_sha256": "f72641ed53241fdbd9d00f8cc595bbd1325ce2b74b3c1739aae1e4eaa85dfeaa",
+      "corrected_rust": {
+        "bytes": 11875,
+        "git_blob": "ed70c226b82fd8723519e90d93a96c7e95e3a859",
+        "sha256": "26e0a8804c741425e47b32a3ca1a339dfd3bb33f8c7ed36db90c1717849aaa9a"
+      }
+    }
+  ],
+  "relaxed_test_or_hypothesis": false
+}

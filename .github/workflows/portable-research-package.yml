@@ -642,6 +642,12 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
+      - name: Compile and audit the next exact original causal compatibility boundary
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ActivePathReversal
+          cargo run --locked -p research-commons-package -- audit-target ActivePathReversal
+          cp build/lean-target-build.json build/causal-boundary-build.json
+          cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
         if: contains(github.event.head_commit.message, '[check noise]')
         run: |
@@ -649,12 +655,6 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.RawNoise --claim CB-NANUQ-005
           cp build/lean-target-build.json build/nanuq-raw-noise-component-build.json
           cargo run --locked -p research-commons-package -- check-nanuq-noise-callers
-      - name: Compile and audit the next exact original causal compatibility boundary
-        run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target DiscriminatingSectionExtraction
-          cargo run --locked -p research-commons-package -- audit-target DiscriminatingSectionExtraction
-          cp build/lean-target-build.json build/causal-boundary-build.json
-          cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Reuse checked contiguous physical-tip component (explicit scoped refresh only)
         if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]') || contains(github.event.head_commit.message, '[check contiguous]')
         run: |
