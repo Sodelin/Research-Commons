@@ -1,0 +1,15 @@
+# Batch reuse of the established List.Sublist spelling repair
+
+The original full arbitrary-finite restricted-causal theorems and all source/graph/activity/cardinality/query hypotheses remain. This is compiler compatibility of the SAME complete146-module proposal, not another source factory, kernel, proof result or a smaller closure.
+
+All seven complete matched theorem/proof blocks (23177 characters total) were actually read from the original bodies ataa57b6e8d46e06a185baf1951129f0ea3789a787. Their exact raw SHA/Gitblob identities are in causal-source-intake.json/source_hashes; the literal source paths remain research/2026-10-22-dot-restricted-causal-interventions/lean/<Module>.lean. The unchanged successor comparison at mainf300a67c is retained in CAUSAL-REUSE-PREFLIGHT.md; no global absence theorem is inferred.
+
+Closest successful compatibility precedents: SelectedWalkReduction723b258c (compiled at2674eebd after the earlier actual notation rejection), SelectedSourceProfile0aae5e99 (compiled at3c7aaebc) and CanonicalRootSeparation43f48200 (compiled at7f3d2cf0). Each reuses the ORIGINAL List.Sublist proposition under explicit spelling because the old notation is inactive in the pinned parser. No mathematical implication is changed.
+
+The new batch selects OriginalProjectionContraction, WeakRouteNormalization, CommonDiscriminatingParents, MinimalPathChord, DiscriminatingSectionExtraction, DirectedBranchSplices and ClosestFirstArrowContradiction. Only their sublist annotations and one after-import compatibility comment differ. Exact reverse replacements recover EVERY original source byte before that comment; the reversal was actually checked in RAM. Complete relevant proof-block line ranges and exact replacements are versioned with each variant. Unrelated portions were not independently manually re-reviewed; no compiler failure or PASS is invented for a previously blocked module.
+
+Same195 selected integration modules/1077-source target; all146 original vendor bodies remain unchanged. Complete target compilation, exact selected names/types/owners, every registry membership and WHOLE owned-axiom checks remain mandatory. No clean partial, wrapper or repaired syntax is counted as completed science/native refinement.
+
+Separately, CommonIndicatorRoots actually failed at WithBot tactic case names, an ambiguous marked Directed name, the computed equivalence coercion and original identity-map reduction. Its complete9755-character original body was read; the selected proof variant uses bot/coe only for actual WithBot cases, preserves all Option cases, qualifies the original marked relation and exposes the ORIGINAL toFun by rfl. Graph/indicator/root maps and source/activity/ancestry statements remain. This is not graph replacement, reinitialization or a desired-law hypothesis.
+
+No new peer proof/review/suite, model/native-private action, worker, phone source/build/Git write or held replay. The existing changed-source BOTH-word job atd39f9490 is independent and not reselected/cancelled.
