@@ -1517,3 +1517,36 @@ an index, source count or exact decoder. Full R-only counterfamily and
 scope corrections remain unchanged. No new query, clock tie or owner.
 Aliases: resonant rate30 third filter,12-to9,G30,J12,J12-J9,O(s),
 different source propagators,Omega reference cancellation,Hh6 energy.
+
+
+## Sharp weighted source balance; action-controlled source remainders
+
+[SHARP-WEIGHTED-SOURCE-BALANCE.md](../2026-10-24-g3-asymptotic-root-grid/SHARP-WEIGHTED-SOURCE-BALANCE.md),
+11971B/SHA41a45227173edac51ad9bec579672e3dbbab476112f5d018332036359bb2f040,
+Gitblob5aae6f4bf5e43c62407ff329374a46b47715a963.
+Stable key G3-SHARP-WEIGHTED-SOURCE-BALANCE-01. PROVED HAND/self-reviewed
+at original full-cap12/fixed-n scopes; independent review/Lean/execution absent.
+
+The completed Hh6 energy yields absolute linear error H^(4/3)h^(19/3)+Hh7,
+quadratic error H^(4/3)h^(22/3), and ordinary-moment state error Hh7.
+Thus6kappa integral w b^2=Theta_sharp I+sum w Gamma_h(C_i)+O(Hh^(19/3)).
+EXACT constant source terms, actual diagonal weights and I remain. Gamma
+is SIGNED, not an action or an endpoint decoder. No sign/upper/index follows.
+
+Old calibrated-action branches prove h^2 sum w(us+r^2)<=epsilon h^2 Action_h+
+C_epsilon Hh7 (Action_h is old A_h(K), distinct from reference entry A_h).
+OLD general-n Yule/projective equations and holding table also supply the
+derived Psi_n=(n-3)w_n/(n-5)-u_n source contrast. For fixed n>=6,
+Psi_n(C)-Psi7(C)=O_n(us); no cap-uniform bound or word-length cutoff.
+The actual fixed12-to9 receiver matches weighted Psi at rate30 with the
+same action-controlled error, retaining both DIFFERENT source multipliers.
+
+Completed sources/energy and generic all-n algebra are REUSE; no new
+producer or cap ladder. Current missing step is a JOINT valid comparison
+with relative action on the ORIGINAL full fibre. An h^(19/3) energy error
+cannot be relabelled an action bound: the h^2 coefficient matters.
+Any fixed Action_h<=C h^(6+delta) would suffice by OLD rounding, but no
+such bound is acquired. Original AG-Pair/total NO stays unproved.
+Aliases: sharp weighted Gamma balance,19/3 absolute source error,
+S_cost^(1/3) quadratic trace,relative Taylor action,Psi_n,Psi12,
+rate30 Psi receiver,correct action scale,no action upper.
