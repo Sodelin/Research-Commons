@@ -34,7 +34,7 @@ theorem split_ready_latent_block {X : Type u} {S : Type v} {L : Type w}
     {l : L} {previous : Mark} {xs : List (Arrival (SourceVertex X S L))}
     {b : Sum X S} {lastMark : Option Mark}
     (h : Route (ReadyStep D C) ⟨.inr l, some previous⟩ xs ⟨.inl b, lastMark⟩) :
-    ∃ outgoing (latent : List L) z finalMark rest «prefix»,
+    ∃ outgoing, ∃ (latent : List L), ∃ z finalMark rest «prefix»,
       ¬ (previous = .head ∧ outgoing = .head) ∧
       NoncolliderRoute (arrowGraph D.arrow) (.inr l) outgoing
         (latent.map (fun k => Sum.inr k : L → SourceVertex X S L)) (.inl z) finalMark ∧

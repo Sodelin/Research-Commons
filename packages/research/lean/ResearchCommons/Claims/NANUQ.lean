@@ -1,8 +1,15 @@
+import CanonicalTheta
+import RawNanuq
+import NanuqActualNanuqAnchorBridge
+import AllLevelParameterDomain
 import NanuqActualWeightedAnchorComposition
 import NanuqActualOpenedChoiceFamily
 import NanuqActualSourceCycleCurve
 
-/-! Typed reuse of CB-NANUQ-001's named source-to-geometry chain.
+/-! Typed reuse of CB-NANUQ-001's named source-to-geometry chain,
+plus ORIGINAL CB-NANUQ-002 local theta/raw-source/composition components
+and CB-NANUQ-003's exact real-domain component. No new alias proof is added
+for the latter components: their original names and owners are checked.
 Distinct resolution SETS/arithmetic means and all original graph/drawing/
 hybrid-child premises remain. No all-level circularity/support theorem,
 NMSC concordance factor, sequence likelihood or numerical embedding is added. -/

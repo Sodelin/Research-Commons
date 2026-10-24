@@ -2912,15 +2912,55 @@
         }
       ],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "partial_source_binding",
+        "module": "ResearchCommons.Claims.NANUQ",
+        "declarations": [
+          "Nanuq.Canonical.theta_source",
+          "Nanuq.Canonical.theta_weighted",
+          "Nanuq.Canonical.theta_exact_quartet_mean",
+          "Nanuq.Source.RootedBinary.rawRho_valid",
+          "Nanuq.Source.RootedBinary.rawRho_nonneg",
+          "Nanuq.Source.RootedBinary.rawRho_witness_symmetric",
+          "Nanuq.Source.RootedBinary.rawRho_endpoint_symmetric",
+          "Nanuq.Source.RootedBinary.rawNanuq_symmetric",
+          "Nanuq.Source.RootedBinary.rawNanuq_positive",
+          "Nanuq.Source.RootedBinary.rawNanuq_ordered_formula",
+          "Nanuq.Source.RootedBinary.actualQuartetData_witness_symmetric",
+          "Nanuq.Source.RootedBinary.actual_weightedNanuq_eq_anchor",
+          "Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition",
+          "Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition"
+        ],
+        "declaration_modules": {
+          "Nanuq.Canonical.theta_source": "CanonicalTheta",
+          "Nanuq.Canonical.theta_weighted": "CanonicalTheta",
+          "Nanuq.Canonical.theta_exact_quartet_mean": "CanonicalTheta",
+          "Nanuq.Source.RootedBinary.rawRho_valid": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawRho_nonneg": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawRho_witness_symmetric": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawRho_endpoint_symmetric": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawNanuq_symmetric": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawNanuq_positive": "RawNanuq",
+          "Nanuq.Source.RootedBinary.rawNanuq_ordered_formula": "RawNanuq",
+          "Nanuq.Source.RootedBinary.actualQuartetData_witness_symmetric": "NanuqActualNanuqAnchorBridge",
+          "Nanuq.Source.RootedBinary.actual_weightedNanuq_eq_anchor": "NanuqActualNanuqAnchorBridge",
+          "Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition": "NanuqActualNanuqAnchorBridge",
+          "Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition": "NanuqActualNanuqAnchorBridge"
+        },
+        "scope": "OLD formal components only: arbitrary-arm LOCAL canonical theta exact DISTINCT quartet mean/circularity/pseudometric/support with literal Counts,size,positive-mass hypotheses; actual RootedBinary raw DISTINCT quartet tensor symmetry/nonnegativity/positive source distance for n>=3; SAME actualTupleMean weighted/source NANUQ-to-actual-blob anchor decomposition. Does not equate every original galled source with canonical theta, identify rawRho with actualQuartetData, or establish every-source global circularity/support. No biological provider. Completed all-level HAND theorem is retained, not reopened.",
+        "coverage": "PARTIAL_ORIGINAL_LOCAL_THETA_RAW_GRAPH_AND_ACTUAL_BLOB_COMPOSITION_COMPONENTS",
+        "current_formal_acceptance": false
       },
       "obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
       "reuse_rank": 11,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.NANUQ --claim CB-NANUQ-001 --claim CB-NANUQ-002 --claim CB-NANUQ-003",
+          "state": "SOURCE_JOIN_PENDING_CURRENT_LEAN_OWNER_TYPE_AND_AXIOM_CHECK",
+          "scope": "Existing shared Rust source/object/owned/name/owner interface only; no new evaluator, likelihood or all-size source provider."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
