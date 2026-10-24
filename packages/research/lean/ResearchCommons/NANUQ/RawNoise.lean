@@ -1,6 +1,7 @@
 import RawNanuq
 import Mathlib.Algebra.Order.Round
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Rat.Floor
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Tactic.Linarith
 
 /-! Partial formal integration of OLD CB-NANUQ-005 (29 September).
@@ -17,23 +18,22 @@ open Nanuq.Quartet Nanuq.Weighted Nanuq.Source.RootedBinary
 half-integer grid when no three different resolutions are present. -/
 theorem distinct_mean_twice_integer (s : Finset Resolution) (small : s.card ≤ 2) :
     ∃ k : ℤ, 2 * distinctMean s = (k : ℚ) := by
-  classical
   let a := Resolution.xy_zw
   let b := Resolution.xz_yw
   let c := Resolution.xw_yz
   have classify : s = (if a ∈ s then {a} else ∅) ∪
       (if b ∈ s then {b} else ∅) ∪ (if c ∈ s then {c} else ∅) := by
     ext r
-    cases r <;> simp [a, b, c]
+    cases r <;> split_ifs <;> simp_all [a, b, c]
   by_cases ha : a ∈ s <;> by_cases hb : b ∈ s <;> by_cases hc : c ∈ s
   all_goals rw [classify] at small ⊢
   all_goals simp only [ha, hb, hc, if_true, if_false, Finset.empty_union,
     Finset.union_empty] at small ⊢
-  all_goals norm_num [a, b, c] at small
   all_goals first
-    | exact ⟨0, by norm_num [distinctMean, separatesFirstPair, a, b, c]⟩
-    | exact ⟨1, by norm_num [distinctMean, separatesFirstPair, a, b, c]⟩
-    | exact ⟨2, by norm_num [distinctMean, separatesFirstPair, a, b, c]⟩
+    | exact ⟨0, by decide +kernel⟩
+    | exact ⟨1, by decide +kernel⟩
+    | exact ⟨2, by decide +kernel⟩
+    | exact False.elim ((show ¬ (({a,b,c} : Finset Resolution).card ≤ 2) by decide +kernel) small)
 
 /-- Integrality is derived from literal scaled quartet entries, rather than
 supplied as an equality with an integer distance matrix. -/
@@ -49,6 +49,7 @@ theorem source_nanuq_integer {n : ℕ} (rho : QuartetData n)
     simp only [sourceNanuq, if_neg hxy, Finset.mul_sum, mul_ite, mul_zero]
     simp_rw [hcount]
     push_cast
+    rfl
 
 /-- A hypothesis on actual raw graph switching sets, not an assumed desired
 matrix/readout law. Deriving it for EVERY admitted plane source remains a join. -/

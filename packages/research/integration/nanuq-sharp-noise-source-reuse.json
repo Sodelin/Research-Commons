@@ -106,12 +106,12 @@
       "ResearchCommons.NANUQ.RawNoise.raw_source_rounding"
     ],
     "original_mathematics_complete": true,
-    "status": "SOURCE_CANDIDATE_PENDING_CURRENT_COMPILER_AND_OWNED_AUDIT",
+    "status": "SOURCE166_REJECTED_ENTIRE_LEAN_CONTEXT; PROOF_ONLY_SOURCE167_REPAIR_PENDING",
     "whole_claim_formal_binding": false,
     "lean_source": {
-      "bytes": 4596,
-      "git_blob": "ed224f776324bdfb4270a5119c944b18c3532003",
-      "sha256": "f5778018578a57e141d28985a1e147fd24c4c67098e88722a00b567e9c3bf381"
+      "bytes": 4609,
+      "git_blob": "4319ae84c69ca6a5883b48ff75a1c9a2d9518892",
+      "sha256": "cf612e52770ab2ebfc01667e8e56f89c8e22d52f42de342172840a0c543a279c"
     },
     "rust_source": {
       "bytes": 11875,
@@ -140,5 +140,25 @@
     },
     "Rust_current_acceptance": "integration/nanuq-noise-rust-verification.json",
     "whole_workspace_Rust_tests_passed": 122
+  },
+  "exact_pinned_floor_instances": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "Rat": {
+      "path": "Mathlib/Data/Rat/Floor.lean",
+      "bytes": 17991,
+      "git_blob": "613f5decc4b6b5dcf3388b4fc73d2f72ac691a2e",
+      "sha256": "e7ab2c6f3ed60c163295da29afc133d82041a8f1a7d50ecf65eda2a61a3617ac",
+      "source_statement": "instance : FloorRing Rat := FloorRing.ofFloor Rat Rat.floor ...",
+      "read_scope": "Actual imports and exact instance definition read; not claimed independent full proof review."
+    },
+    "Real": {
+      "path": "Mathlib/Algebra/Order/Archimedean/Real/Basic.lean",
+      "bytes": 18602,
+      "git_blob": "27eb96d5d109a829d990016a4412d030756d4fa0",
+      "sha256": "ba51e7d1078ee669a1b5e95968163937113d8ba729e9f2fb7e6ed0ebd66acfd0",
+      "source_statement": "noncomputable instance : FloorRing Real := Archimedean.floorRing _",
+      "read_scope": "Actual imports and exact instance definition read; deprecated Real/Archimedean forwarding module read and bypassed."
+    }
   }
 }
