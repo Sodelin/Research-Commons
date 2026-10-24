@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "25_SOURCE_GRAPH_ACCEPTED_TWO_DOWNSTREAM_PROOF_REPAIRS_PENDING",
+  "status": "EARLY28_QUERY_FAMILY_REJECTED_ONE_BOOLEAN_FUNCTION_EQUALITY_INSTANCE",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -13841,6 +13841,30 @@
         "id": 12565337294
       },
       "no_new_scientific_discovery": true
+    },
+    {
+      "source": "e161bd9399cdb1d7ac119406e92a8a816feab0fd",
+      "run": 40108981548,
+      "job": 120916700095,
+      "status": "EARLY28_QUERY_FAMILY_REJECTED_ONE_BOOLEAN_FUNCTION_EQUALITY_INSTANCE",
+      "target": "PartialObservedQueryFamily",
+      "selected_sources": 28,
+      "failed_modules": [
+        "PartialObservedQueryFamily"
+      ],
+      "compiler_errors": 1,
+      "diagnostics": [
+        "130:4 Fintype (UntargetedOutsidePair T x y → Bool)"
+      ],
+      "finite_subtype_enumeration_compiled": true,
+      "whole_context_accepted": false,
+      "full1466_target_ran": false,
+      "stochastic20_check_ran": false,
+      "whole_owned_and_exact_name_audit_ran": false,
+      "rust_job": 120916516205,
+      "rust_job_success": true,
+      "actual_complete_original_and_later_body_read": true,
+      "no_new_scientific_discovery": true
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -14834,18 +14858,27 @@
     {
       "module": "PartialObservedQueryFamily",
       "original_sha256": "42bd996da51a5b60b34aa8a6e312989275696d14eecfec189d69ad1edeac0bd3",
-      "selected_sha256": "c14be83ce08763c93477674e7d8c2bec7fe779b066f548650ee033c777d1090f",
-      "selected_bytes": 6789,
-      "selected_git_blob": "54d522aed960412d34d3766ca10038b1d1639074",
-      "edit": "Construct the exact original UntargetedOutsidePair finite subtype by Finset.univ.filter and Fintype.subtype using only existing Fintype X/DecidableEq X/DecidablePred T. Original predicate, query coordinates, count and theorem statements are unchanged.",
+      "selected_sha256": "71ffbb836db53525d8599ed92d9035f2375c17786c33c7d23ba913f37cfd7cf6",
+      "selected_bytes": 7102,
+      "selected_git_blob": "6abd513b28e35278106e225af578a46138a30353",
+      "edit": "Retain the exact original finite-subtype enumeration; explicitly inherit DecidableEq of that SAME subtype from the existing DecidableEq X. This supplies Pi.instFintype for its Boolean functions; all original predicates/query coordinates/count/theorem statements remain byte-identical.",
       "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
-      "actual_rejected_source": "49380f95b4b5c28985c1982c2c05a995f14f2ffa",
+      "actual_rejected_source": "e161bd9399cdb1d7ac119406e92a8a816feab0fd",
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "original_vendor_body_unchanged": true,
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
-      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+      "pinned_primary_api": {
+        "repository": "leanprover-community/mathlib4",
+        "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "path": "Mathlib/Data/Fintype/Pi.lean",
+        "bytes": 9539,
+        "git_blob": "e04e7d7d844da2b960d0c667fb22115d5730debf",
+        "sha256": "3621d016ef00906a9538347e3565bc44f5fe22210006ba64009b183c8ff6338f",
+        "read_scope": "COMPLETE; Pi.instFintype explicitly requires DecidableEq of its finite domain; original Fintype.card_fun in COMPLETE BigOperators has the same requirement."
+      }
     }
   ]
 }

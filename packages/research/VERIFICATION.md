@@ -622,3 +622,8 @@ WORD: sourceed4ed3375ecadefc024c86c38baecd214ff06f0d/run40084273155/job120844040
 NANUQ: source0958975aaa7d9d65b77821283c1b31922433b24c/run40090840783/job120863151776 complete836-source/34-name PASS;9045494B artifact12558378958 SHAbffda409dc8a636da74cb331b87bfa53dde713b67920b15df25df54f918b9433 independently recovered, all836 hashes and34 types/axiom/owner records checked.80346 declarations/77444 theorems, zero rejects. Raw tensor/weighted/source blob readout join is formally accepted; full original all-level support/circularity/coverage/native implications stay separate.
 
 The SAME combined1434 target then rejects EndpointColliderActivation130:31 (already rewritten incoming-mark equality):1313 objects=82 compiled+1231 reused,120 blocked. Original indicator/canonical adapter now compile. Current one-term rfl compatibility retains all original statements and frozen vendor bodies. Original all118 goal stays ACTIVE/incomplete.
+
+
+## Source136 actual finite-query boundary rejection
+
+Sourcee161bd9399cdb1d7ac119406e92a8a816feab0fd/run40108981548/job120916700095 rejects the28-source original PartialObservedQueryFamily boundary: ONE Fintype(Boolean-function) failure at130:4. The finite-subtype construction compiles; no full-owned/name/stochastic/full1466 acceptance follows. Rust job120916516205 succeeds. COMPLETE pinned primary Pi and BigOperators require DecidableEq of the original finite domain. The precise next variant inherits it from existing DecidableEq X and preserves the exact query/count/theorem regions; no new classical oracle/source assumption. Frozen originals, accepted transcript31 and prior scientific/formal components remain reused. Current named/owned/all118 gates stay incomplete.

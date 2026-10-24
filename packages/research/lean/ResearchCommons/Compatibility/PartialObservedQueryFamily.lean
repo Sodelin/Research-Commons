@@ -23,6 +23,12 @@ universe u v w
 def UntargetedOutsidePair {X : Type u} (T : X → Prop) (x y : X) :=
   {z : X // ¬ T z ∧ z ≠ x ∧ z ≠ y}
 
+/-- Equality on the exact original subtype is inherited from the supplied X. -/
+instance untargetedOutsidePairDecidableEq {X : Type u} [DecidableEq X]
+    (T : X → Prop) (x y : X) : DecidableEq (UntargetedOutsidePair T x y) := by
+  change DecidableEq {z : X // ¬ T z ∧ z ≠ x ∧ z ≠ y}
+  infer_instance
+
 /-- The original finite subtype is enumerated using the supplied finite X,
 decidable target predicate and equality. No extra source/query is admitted. -/
 instance untargetedOutsidePairFintype {X : Type u} [Fintype X] [DecidableEq X]
