@@ -105,7 +105,7 @@
     }
   ],
   "stable_key": "G3-ASYMPTOTIC-ROOT-GRID-REDUCTION-01",
-  "supporting_estimate_updated_utc": "2026-10-24T06:27:00Z",
+  "supporting_estimate_updated_utc": "2026-10-24T06:44:00Z",
   "supporting_proofs": [
     {
       "evidence": {
@@ -117,7 +117,7 @@
         "scientific_or_native_execution": "none"
       },
       "key": "G3-UNIFORM-ORDINARY-COMMUTANT-ESTIMATE-01",
-      "limits": "The comparison is algebraic, not shown positive/physical or ordinary. This estimates kernels, not distance(nu,Z). AG-Pair remains unproved.",
+      "limits": "The broad matrix theorem alone need not give a positive comparison. The later ACTUAL equal-arm/common-clock minorization supplies positivity in its stated small-reference regime. No ordinary mixture, physical factorization or distance(nu,Z) follows; AG-Pair remains unproved.",
       "mathematical_status": "proved_by_hand",
       "proof": {
         "bytes": 12615,
@@ -126,6 +126,26 @@
         "sha256": "ab2a32654fda179fb532f52fc39caa4267bdf3c5c08a44875a58202cbf7474a5"
       },
       "statement": "Every capped stochastic scalar-count-block private K commuting with the actual S(t) satisfies ||K-sum_r b_r(K)P_r(Q)||_row<=C_M*(-log t)^2 for explicit effective constants depending only on M, uniformly in all source lengths/coins/scales. Under the active calibration this is O(nu^-2)."
+    },
+    {
+      "evidence": {
+        "author_completion": "complete",
+        "author_self_review": "complete",
+        "classification": "source event/path comparison and corollary to the completed matrix estimate; OLD diagonal bound/fair scalar identity reused; historical novelty unassessed",
+        "independent_correctness_review": "not_performed",
+        "lean_formalization": "not_performed",
+        "scientific_or_native_execution": "none"
+      },
+      "key": "G3-EQUAL-ARM-FOREST-MINORIZATION-01",
+      "limits": "No actual source word for the comparison, no all-cap comparison, no noninteger AG-Pair witness and no original G3 closure.",
+      "mathematical_status": "proved_by_hand",
+      "proof": {
+        "bytes": 10346,
+        "git_blob": "2edae99419c6824f478ff7fc3c36892954fca08e",
+        "path": "SOURCE-MINORIZATION.md",
+        "sha256": "b4afce10a427f9a521a1c80a991643aaa6f2628c9fa7826b2d753b7a7ef17811"
+      },
+      "statement": "Every actual equal-arm private word of COMMON exposure H dominates E_H entrywise on each r-to-s compatible forest by2^(-(lambda_r-lambda_s)). This makes its sufficiently-small-reference ordinary-commutant projection positive/coherent through any fixed M. Positive ordinary-commuting kernels need not be ordinary-time mixtures, at every finite cap."
     }
   ]
 }

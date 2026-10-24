@@ -69,11 +69,43 @@ flow or new all-order coefficient theorem. Matrix-log/projector bounds
 then give the displayed estimate uniformly over all K.
 
 This is a kernel-projection bound, NOT dist(nu,Z), a physical normal
-form, a source count bound or an ordinary-mixture theorem. The comparison
-operator need not be positive/physical and is not identified with E(D)
-or a fractional reference power. The original source/phase implication
+form, a source count bound or an ordinary-mixture theorem. The broad matrix comparison need not be positive by itself; the actual
+source-only addendum below supplies positivity at its stated threshold.
+No physical factorization, E(D) or fractional-reference identification follows. The original source/phase implication
 AG-Pair remains UNPROVED; this closes one quantitative component inside
 the existing full-scope attempt, without replacing its completion goal.
+
+## Whole-forest source minorization and positive comparison — proved
+
+[G3-EQUAL-ARM-FOREST-MINORIZATION-01](../2026-10-24-g3-asymptotic-root-grid/SOURCE-MINORIZATION.md)
+PROVES BY HAND that every actual equal-arm private word of COMMON
+exposure H satisfies, for compatible r-to-s forest entries,
+
+    K_I(f,h)>=2^(-(binom(r,2)-binom(s,2)))*E_H(f,h).
+
+Only factors at which roots actually merge pay the all-one-arm routing
+penalty. There are at most r-s such factors, regardless of word length,
+coins or tiny populations. The old paired no-merger lower bound is reused;
+the proof controls the ENTIRE compatible-forest support.
+
+Combining this with the preceding uniform matrix estimate makes K_0
+positive, stochastic, deletion-consistent and opaque-grafting through M
+for all sufficiently small reference h. The threshold is explicit from
+H,M. This source-only strengthening does not assert positivity for the
+broader arbitrary-matrix domain without a fixed COMMON clock.
+
+For EVERY finite M>=3 the addendum also gives a positive ordinary-
+commuting comparison which is NOT a probability mixture of ordinary
+populations: use actual K=S(t_N)^N, t_N=c^(1/(4N)), and large integer N.
+Its retained I diagonals obey b3<b2^3, contrary to an ordinary-time
+mixture's Jensen inequality. No single all-cap comparison, actual word
+for that comparison or AG-Pair counterexample is supplied. The inferred
+indices in the displayed actual witnesses are integers.
+
+The remaining duty is actual positive-word/index structure. Positivity
+of this comparison is now PROVED in the stated source regime; physical
+factorization and the index estimate remain UNPROVED. No cap ladder,
+new source engine, independent review or scientific execution occurred.
 
 ## Return-controller admission on the calibrated COMMON face
 
