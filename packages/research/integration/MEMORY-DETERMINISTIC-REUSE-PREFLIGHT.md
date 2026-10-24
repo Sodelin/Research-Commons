@@ -15,3 +15,6 @@ Exact split contract: OLD legal four-site adjacent-merge forests with the unchan
 The n−m finite partition-refinement termination discussion is written and is NOT counted as a selected Lean endpoint. The global all-pair depth fixed-point hypothesis is explicit and not replaced by sampled agreement. The implicit action totalization caveat is avoided by the original admissible-only split endpoint. Historical source/game/mock controls are not rerun or promoted to a full process simulation.
 
 Next existing action: build the complete36-source import root, check ALL54 names/owners/printed types/axioms with the existing checker, then mandatory full-package named/owned/actual caller/strict gates. Current original code/provider/value/source/target/action/QE/private-origin gaps stay open. No phone authored files/local Git, agents, peer wakes, private/model or held replay.
+
+
+Current source138 did not check this proof context: preparation rejected the import-only root's manifest position after Exports. The existing sequential prepare contract was read and the unchanged root entry is now placed BEFORE its consumer. All213 added dependency positions checked in RAM; no new theorem/proof/source byte changed. Actual current36-source/54-name acceptance is still pending. [Exact rejection](import-root-order-rejection.json).
