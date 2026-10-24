@@ -155,13 +155,14 @@ import Mathlib.Tactic
 
 set_option maxRecDepth 10000
 set_option maxHeartbeats 8000000
+set_option backward.isDefEq.respectTransparency false
 namespace ResearchCommons.Generated.JC69TreeColumn
 noncomputable section
 open ResearchCommons.MSCI.JC69
 open ResearchCommons.MSCI.JC69Tree
 open GProgram.SourceForest
 open GProgram.G2.FaithfulPairAgeDecoration GProgram.G2.ChronologicalDecoration
-open scoped BigOperators NNReal
+open scoped BigOperators NNReal Classical
 def originalTree : Genealogy (Fin 3) := .graft (.graft (.leaf 0) (.leaf 1)) (.leaf 2)
 def suppliedSurvivals : Survivals originalTree :=
   ((2/3 : ℝ), (2/5 : ℝ), ((3/5 : ℝ), (3/5 : ℝ), PUnit.unit, PUnit.unit), PUnit.unit)
@@ -169,6 +170,7 @@ def nativeRows : Fin 4 → Fin 4 → Fin 4 → ℚ := ![{}]
 theorem every_native_pattern_checked (a b c : Base) :
     (nativeRows (number a) (number b) (number c) : ℝ) =
       rootLikelihood originalTree suppliedSurvivals ((a,b),c) := by
+  dsimp only [originalTree, suppliedSurvivals, rootLikelihood, likelihood, Pattern, patternFintype]
   rcases a with ⟨a0,a1⟩
   rcases b with ⟨b0,b1⟩
   rcases c with ⟨c0,c1⟩
@@ -181,7 +183,7 @@ theorem complete_native_column_normalized :
       (nativeRows (number a) (number b) (number c) : ℝ)) = 1 := by
   simp_rw [every_native_pattern_checked]
   have h := root_likelihood_sum originalTree suppliedSurvivals
-  simpa only [originalTree, Pattern, Fintype.sum_prod_type] using h
+  simpa only [originalTree, Pattern, patternFintype, Fintype.sum_prod_type] using h
 
 noncomputable def innerTime : ℝ≥0 := timeOfSurvival ⟨(3/5 : ℝ), by norm_num⟩
 noncomputable def rootTime : ℝ≥0 := timeOfSurvival ⟨(2/5 : ℝ), by norm_num⟩
@@ -220,9 +222,9 @@ theorem same_returned_clock :
   have hi : Real.exp (-((4/3 : ℝ) * (innerTime : ℝ))) = 3/5 := inner_clock
   have hr : Real.exp (-((4/3 : ℝ) * (rootTime : ℝ))) = 2/5 := root_clock
   simp only [originalTree, actualDecoration, clockSurvivals, rootAge, leafAge, sub_zero,
-    branch_clock, hi, hr, suppliedSurvivals]
+    branch_clock, hi, hr, suppliedSurvivals] <;> rfl
 theorem original_tree_valid : originalTree.WellLabelled := by
-  decide +kernel
+  simp [originalTree, Genealogy.WellLabelled, Genealogy.leaves]
 noncomputable def originalPairMatrix : Fin 3 → Fin 3 → ℝ :=
   pairAge leafAge originalTree actualDecoration
 theorem same_decoded_matrix_clock :

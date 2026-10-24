@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-The package integrates the canonical claim registry in reuse and dependency order. Existing proofs and engines are reused; unresolved questions retain exact obligations. The pinned snapshot has **118 claims:75 reuse-rated and43 unranked**, at447e188d. The candidate graph has1,613 retained modules plus42 integration modules; the newest tree-channel module is pending Lean acceptance.
+The package integrates the canonical claim registry in reuse and dependency order. Existing proofs and engines are reused; unresolved questions retain exact obligations. The pinned snapshot has **118 claims:75 reuse-rated and43 unranked**, at447e188d. The candidate graph has1,613 retained modules plus42 integration modules; the newest all-finite tree-channel module is accepted at its generic scope; its separate64-entry native caller is pending.
 
 ## Build on a development host
 
@@ -25,9 +25,9 @@ The full per-claim gate remains incomplete and exits2 until every required bindi
 
 ## Verified package evidence
 
-- **97 Rust tests passed** at[source33a6163e/run40044131851](https://github.com/Sodelin/Research-Commons/actions/runs/40044131851), including three new complete JC-tree column/label/refusal groups. This does not accept the pending Lean tree module.
-- **23 scoped claim mappings/115 actual Lean declaration names and owners passed**, with the complete922-source export context and22102-declaration/14808-theorem owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v8.json). These are scoped components where stated, not115 complete scientific endpoints.
-- The latest accepted **complete library** is source47e28fc6:1,654 sources plus generated roots,105031 declarations/94667 theorems audited. The later18-caller sequence rejected the alignment data renderer. [Library receipt](integration/coherent-library-verification-v5.json). This does not accept that caller sequence or either entire larger word.
+- **97 Rust tests passed** at[source33a6163e/run40044131851](https://github.com/Sodelin/Research-Commons/actions/runs/40044131851), including three new complete JC-tree column/label/refusal groups. The generic all-finite Lean tree component passed separately; the generated native64-entry caller still needs its complete check.
+- **23 scoped claim mappings/128 actual Lean declaration names and owners passed** atsource06a2e48a, with the complete923-source export context and owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v9.json). These are scoped components where stated, not128 complete scientific endpoints.
+- The **complete1,654-source library** and generated roots passed at source47e28fc6, with105031 declarations/94667 theorems audited. The same1,654 source hashes passed again at source9278a34a; that later full sequence rejected the already-repaired word Symbol argument after its library/export commands. [Library receipt](integration/coherent-library-verification-v5.json) · [later full record](integration/word-stage-literal-rejection.json). Neither result accepts the entire larger word or full caller sequence.
 - The earlier source67ef70da passed its complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Historical acceptance does not transfer automatically to changed code.
 
 Retained-object reuse validates the exact compiler, dependencies and every object companion. Added modules and literal callers are checked; complete owned audits are mandatory. [Reuse contract](integration/RETAINED-OBJECT-REUSE.md).
@@ -85,7 +85,7 @@ The generic Lean filter equations/types AND BOTH complete actual filter results 
 
 ## Original-tree JC channel under verification
 
-[JC69Tree](lean/ResearchCommons/MSCI/JC69Tree.lean) constructs normalized patterns and conditional loci on EVERY finite ORIGINAL Genealogy, derives the Fourier factor, retains original copy IDs and reuses G2's SAME pair-matrix/age decoder. Its thirteen new named exports require fresh complete-context checking; the previous115-name acceptance is unchanged.
+[JC69Tree](lean/ResearchCommons/MSCI/JC69Tree.lean) constructs normalized patterns and conditional loci on EVERY finite ORIGINAL Genealogy, derives the Fourier factor, retains original copy IDs and reuses G2's SAME pair-matrix/age decoder. Its thirteen new named exports passed the complete923-source context/owned audit, bringing the current scoped map to128 names. [Accepted generic component](integration/jc69-tree-verification.json).
 
 [Rust pruning](crates/runtime/src/jc69_tree.rs) borrows the retained Tree and exact JC branch arithmetic, preserves one immutable branch/label bank and returns every pattern or explicit refusal. It passed its new tests. The actual three-tip caller emits all64 probabilities and proofs tying them to ONE coherent chronological clock and the decoded pair matrix:
 
@@ -93,7 +93,7 @@ The generic Lean filter equations/types AND BOTH complete actual filter results 
 cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate
 ```
 
-The initial complete Lean tree module rejected dependent-type/finite-sum proof elaboration; its next run retained one leaf singleton normalization error. Those proof terms are corrected with the SAME statements and data. The whole module and actual64-entry caller still require a fresh complete check. [Exact errors/scope](integration/jc69-tree-component-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
+The COMPLETE generic tree module now passed. The SEPARATE64-entry caller rejected four rendered type/enumeration/validity proof steps; those are being repaired with the SAME native table and clock. Complete caller acceptance is still required. [Generic proof history](integration/jc69-tree-component-rejection.json) · [Actual caller failure](integration/jc69-tree-caller-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
 
 ## Independent verification targets
 
@@ -120,7 +120,7 @@ The isolated CM/affine context remains available through `prepare-certificates`/
 
 [claims.json](integration/claims.json) preserves every ID/rating and actual Lean/Rust scope. [FRONTIER.md](integration/FRONTIER.md) names the current work; [VERIFICATION.md](VERIFICATION.md) retains failures and corrections.
 
-The generic same-bank checked-prefix word theorem passed. Every compact literal prefix still requires its own complete coefficient check, followed by both full independent/COMMON modes and the whole owned caller audit. The original ungrouped word rejected its final composition/parent proof; the staged successors reached all primitives and then rejected a missing namespace followed by an unparenthesized composite Symbol argument. Those exact references/parentheses are corrected in the currently running SAME-source word at run40042311302/job120716173428; the previous full job120711863617 and new full job120716173831 are preserved. [Generic staged receipt](integration/word-staged-core-verification.json) · [exact earlier rejection](integration/word-cache-literal-rejection-v3.json) · [staged successor rejection](integration/word-stage-literal-rejection.json). The original source/copies/operations/full keys/register and SAME bank remain.
+The generic same-bank checked-prefix word theorem passed. Every compact literal prefix still requires its own complete coefficient check, followed by both full independent/COMMON modes and the whole owned caller audit. The original ungrouped word rejected its final composition/parent proof; the staged successors reached all primitives and then rejected a missing namespace followed by an unparenthesized composite Symbol argument. Those exact references/parentheses are corrected in the currently running SAME-source word at run40042311302/job120716173428; the previous full job120711863617 is now terminal at the same old Symbol parse error, after its full library/export commands passed; the successor full job120716173831 is running and preserved. [Generic staged receipt](integration/word-staged-core-verification.json) · [exact earlier rejection](integration/word-cache-literal-rejection-v3.json) · [staged successor rejection](integration/word-stage-literal-rejection.json). The original source/copies/operations/full keys/register and SAME bank remain.
 
 Still separate:95 unnamed claim exports and remaining scoped applications; complete physical source/target/action coverage; native/parser/AST/controlled-word/raw-root/readout refinement; actual history-relative QE/selector/result origin. G3 all-input and the original open scientific endpoints remain open. Missing formal/native joins do not reopen completed hand mathematics.
 
