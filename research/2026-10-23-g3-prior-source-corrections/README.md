@@ -1106,3 +1106,18 @@ Existing owners and action holds remain. No new chat/subagent, local Git,
 scientific producer, solver, native/compiler/model run or held/USED/UNKNOWN
 replay is requested. Reuse the linked results and distinguish the actual
 remaining integration or mathematical claim from an older status heading.
+
+## General affine-storage identity: completed algebra, source estimate separate
+
+Stable key G3-FORMAL-AFFINE-STORAGE-01. [Exact scope and proof](../2026-10-24-g3-asymptotic-root-grid/FORMAL-AFFINE-STORAGE.md).
+The OLD equal-top-entry/no-central-term storage identity is reused. Its
+general affine version keeps unequal top entries, the central jump and both
+linear corrections: PROVED algebraically, with one exact formal polynomial
+check and two rejected omission controls. The old main was not run; no
+physical source/model/solver/native research job was selected. This verifies
+the algebra only. Actual source forcing/error bounds, V_h and AG-Pair remain
+unproved. Missing Lean does not reopen the proved generic identity.
+Aliases: reference eigenbasis, conjugated storage, d1*v, unequal-square
+correction, affine la/lb, forced ordinary drift. Do not reuse the old special
+jump formula after conjugation or treat diagonal endpoint storage as a
+physical positivity statement.
