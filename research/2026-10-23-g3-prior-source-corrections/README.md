@@ -1172,3 +1172,20 @@ potential work are explicit. No new source/model/coefficient execution,
 independent correctness acceptance or Lean. This is receiver integration
 within AG-Pair, not a new full attack. Signed energy control/index remains
 UNPROVED; do not replace the energy bound by its converse or rederive R7/R9.
+
+## Matched-band cubic bias: source constraint PROVED HAND
+
+[MATCHED-BAND-BIAS-CONTROL.md](../2026-10-24-g3-asymptotic-root-grid/MATCHED-BAND-BIAS-CONTROL.md),
+10293B/SHAf2b83617627f4ecff7dd926f31fde871982e44433efbe942287f184a53113517, stable key
+G3-MATCHED-BAND-BIAS-01. OLD sigma/source coefficients and full representation
+reused. The actual matched-rate15 bands give R_h=A_h+D_h/kappa=O(h^4) and
+
+    sum v_i*beta_i^2*u_i^3<=C*(sum v_i*u_i^5+E_a+H*h^4).
+
+All strict coins/scales/counts are retained for sufficiently small FIXED
+COMMON H, already allowed by the existing m choice. Source weights,
+diagonal multipliers and actual forcing are explicit. No new source/model/
+coefficient run, independent correctness review or Lean. This does NOT
+bound E_a/fifth-order terms, force pointwise fairness or supply AG-Pair.
+It is a supporting constraint of the same full-scope attempt; no new
+global PSD/cocycle project or repeated source-jet task is selected.
