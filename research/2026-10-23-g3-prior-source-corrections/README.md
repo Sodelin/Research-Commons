@@ -11,6 +11,25 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
+## Fixed-graph coefficient comparator: completed scoped admission
+
+[G3-FIXED-GRAPH-COEFFICIENT-COMPARATOR-01](../2026-10-23-g3-fixed-graph-comparator/PROOF.md)
+is **PROVED BY HAND (not Lean formalized)** under its explicit licensed
+private-chain/public-menu premises. Its [source status](../2026-10-23-g3-fixed-graph-comparator/SOURCE-STATUS.json)
+keeps independent review, execution and original-G3 transfer separate.
+The joint marker decoder retains the actual ancestral process; finite
+physically distinct ordinary populations carry the unknown polynomial
+coefficients. One fixed graph/allocation tests O*P_A-P_B*O=0 rather than
+the already-rejected bare equality P_A=P_B. No physical inverse, unknown
+box duplication or hidden-bit observation is used.
+
+The actual source-rigidity claim CP* remains UNPROVED for arbitrary word
+lengths. An untyped all-core invocation also still needs its all-core
+transfer; passive data are not asserted to fix the licensed scaffold.
+This completed admission result is not original G3 closure or a certified
+full attack. Reuse it at scope; do not reopen its proof because Lean or
+independent review is missing.
+
 ## Global COMMON log guards: completed old result
 
 [The exact attribution correction](LOG-GUARD-REUSE.md) binds all predecessor
