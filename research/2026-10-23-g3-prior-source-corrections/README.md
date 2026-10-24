@@ -1273,3 +1273,33 @@ The weighted fifth-order sum and chronological energy remain unbounded
 in h; no original AG-Pair/index/ONE-witness/NO or G4 endpoint is supplied.
 The displayed HAND coefficient tables prove Psi7 has BOTH signs on arbitrarily\nweak equal-arm sources. A cellwise-positive L5 shortcut is REFUTED. The homogeneous fair
 orientation result and actual R-only phase counterfamily stay proved.
+
+## Coupled transverse cancellation: pure constant source forcing completed
+
+[COUPLED-TRANSVERSE-CANCELLATION.md](../2026-10-24-g3-asymptotic-root-grid/COUPLED-TRANSVERSE-CANCELLATION.md),
+16844B/SHAa28a9c350049190ff7e1e4aaec845e9ba25efb828ac53bbf5d8a49a16344ba6c, Gitblob993229c820a416b78601afc80b73d7bb710f3c8f.
+Stable key G3-COUPLED-TRANSVERSE-CANCELLATION-01. PROVED HAND/self-reviewed;
+independent acceptance/Lean/source execution absent.
+
+On the original FULL-cap9 paired commutator fibre, arbitrary coins/
+scales/counts, for EVERY epsilon choose ONE sufficiently small fixed budget:
+
+    |sum w_i+ epsilon0_i|<=epsilon*h^2*L5+C_epsilon*H*h^6.
+
+epsilon0 is ONLY the constant part of the completed storage jump. The new
+ALL-coin source relation is |sigma/675+rho/945-(2/525)Psi7(C)|<=C*u*s.
+The signed Psi7 endpoint and actual weights cancel the leading source
+term; prefix weights are not replaced by an ordinary clock. No epsilon
+limit at an already fixed H is justified.
+
+REUSE OLD PDE and exact normalization. The fair-slice C_beta=-2*C_u,
+the ONE all-n coefficient rule J_n (with O_n remainder), rho_fair=-u^5/40,
+sigma_fair=u^5/32 and the uniform endpoint-factor argument are displayed.
+Only fixed6/7/9 enter; no cap ladder or new source producer was run.
+Earlier source/bias/trace/phase-flexibility statements remain unchanged.
+
+The pure-constant forcing lemma is COMPLETE; missing state-dependent
+source/energy/L5/phase control stays UNPROVED. No whole-jump energy bound,
+V_h selector, source-count bound or original G3/G4 closure is acquired.
+Aliases:2/525, fair normalized heat derivative, signed constant forcing,
+all-coin transverse extra-u cancellation, not a martingale transfer.
