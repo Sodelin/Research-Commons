@@ -1,6 +1,14 @@
 # Current integration frontier
 
-## Current latent-projection proof repair
+## Latest exact ancestry endpoint repair
+
+Source116 `ae3fe2fa0267b83f0c0cb46f101d53b54d4a403c`/run40081050808/job120834671328:107 Rust tests PASSED; all four original latent-projection repairs compiled. The SAME1092-source target next rejected ONE ambiguous .inl singleton-route endpoint in OriginalProjectionAncestry:963 successful objects (74 compiled/889 reused),128 blocked consumers. The original carrier type is now spelled explicitly on that endpoint. All source/DAG/latent/mark/route statements stay unchanged; full context/name/type/owned acceptance is pending.
+
+All FOUR closest current-main original projection/ancestry/lifting/detour bodies were fetched completely and compared byte-identical with the pinned originals. There is no newer completed implementation in those exact compared paths to replace this source compatibility work; this is a bounded source comparison, not proof of global absence.
+
+The actual source115 compiler log also contains ALL85 unique original social/clinical theorem axiom reports (96 lines including repeated original reports), with no missing or nonstandard entry. Exact names/expected owners/lists/log lines are retained in soft-science-named-axiom-verification.json. This is actual complete named-axiom coverage and compilation of all14 original modules, not a whole-owned environment/type-owner result or acceptance of all five package bindings. Existing math completion remains unchanged. The independent source113 SAME full BOTH word continues without restart/cancellation.
+
+## Prior latent-projection proof repair
 
 Source115 `4ab958ebdd152635753f1793c4a87588094973b1`/run40080263727/job120832324858:107 Rust tests PASSED (complete log read). Both selected-indicator proof reductions compiled. The SAME1092-source target reached OriginalLatentProjection and rejected FOUR original proof terms:962 successful objects (73 compiled/889 exact object reuses),129 blocked consumers. All14 original soft/model modules compiled, and the original NANUQ algebra object was reused; whole owned/name/type acceptance still did not run. No clean-partial or full causal binding acceptance follows.
 

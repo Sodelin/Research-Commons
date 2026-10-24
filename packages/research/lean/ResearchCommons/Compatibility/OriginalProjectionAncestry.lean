@@ -80,7 +80,7 @@ theorem contract_directed_aux {X : Type u} {S : Type v} {L : Type w}
       | cons hedge htail =>
           cases «next» with
           | inl z =>
-              have hp := latent_directed_block_projects D ([] : List L) (.cons hedge (.nil (.inl z)))
+              have hp := latent_directed_block_projects D ([] : List L) (.cons hedge (.nil (Sum.inl z : SourceVertex X S L)))
               have hlt : tail.length < n := by simp only [List.length_cons] at hlength; omega
               obtain ⟨ys, hy⟩ := ih tail.length hlt z tail b rfl htail
               exact ⟨z :: ys, .cons hp hy⟩
