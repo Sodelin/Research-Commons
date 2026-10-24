@@ -9,3 +9,5 @@ No replacement proof, new completion construction or new three-taxon model is se
 Fresh selected compilation, all20 exact names/owners, complete printed types/axioms and full-owned audit remain pending. Existing Rust registry/Lean proof-check interface is reused; no new biological inference engine or algorithm deciding infinite populations is created. A source hash, original PASS or artifact selection is not current whole-context acceptance.
 
 This bounded explicit predecessor/successor comparison does not claim absence of every other archived formulation. Original G1/G2/G5/P5 completions and all G3/G4/native-origin holds remain unchanged.
+
+Actual sourceb094ae85/run40105632721/job120906767687 PASSES the complete32-source/20-name context:1773 owned declarations/1306 theorems, zero owned/nonstandard/missing. All32 current source hashes,1773 actual owned rows and ALL20 COMPLETE printed types/owners/axioms were read/validated from the immutable artifact/log. Both original formal card scopes and actual nominal-carrier join are CLOSED. No identical proof/old source replay is selected. Rust remains the existing proof interface, with its distinct gate state.

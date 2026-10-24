@@ -108,7 +108,8 @@ def sourceArrowDecision {X : Type u} [LinearOrder X] [Fintype X] (c : RegistryCo
   rcases a with (x | r) <;> rcases b with (y | s)
   · exact canonicalGraphEdgeDecision c x y .tail .head
   · exact isFalse id
-  · change Decidable ((y : CanonicalSelection.Vertex Q.val) = r.left ∨ y = r.right)
+  · change Decidable (@Eq (CanonicalSelection.Vertex Q.val) y r.left ∨
+      @Eq (CanonicalSelection.Vertex Q.val) y r.right)
     infer_instance
   · exact isFalse id
 
