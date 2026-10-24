@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "source": "d042d398b741354d8781e3c7930c92f1b614a7e7",
+  "run": 40139844272,
+  "job": 121009246191,
+  "exact_complete_stdout_types": "NANUQ.RawNoise.distinct_mean_twice_integer : ∀ (s : Finset Nanuq.Quartet.Resolution),\n  s.card ≤ 2 → ∃ k, 2 * Nanuq.Quartet.distinctMean s = ↑k\n@NANUQ.RawNoise.source_nanuq_integer : ∀ {n : ℕ} (rho : Nanuq.Weighted.QuartetData n),\n  (∀ (x y p q : Fin n), ∃ k, 2 * rho x y p q = ↑k) → ∀ (x y : Fin n), ∃ k, Nanuq.Weighted.sourceNanuq rho x y = ↑k\n@NANUQ.RawNoise.raw_source_integer : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  (∀ (q : Fin 4 ↪ Fin n), (N.rawDisplayedQuartets q).card ≤ 2) → ∀ (x y : Fin n), ∃ k, N.rawNanuq x y = ↑k\n@NANUQ.RawNoise.round_of_abs_sub_lt_half : ∀ {K : Type u_1} [inst : Field K] [inst_1 : LinearOrder K]\n  [IsStrictOrderedRing K] [inst_3 : FloorRing K] (x : K) (k : ℤ), |x - ↑k| < 1 / 2 → round x = k\n@NANUQ.RawNoise.integer_matrix_rounding : ∀ {I : Type u_1} {J : Type u_2} (observed : I → J → ℚ) (truth : I → J → ℤ),\n  (∀ (i : I) (j : J), |observed i j - ↑(truth i j)| < 1 / 2) → (fun i j => round (observed i j)) = truth\n@NANUQ.RawNoise.raw_source_rounding : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  (∀ (q : Fin 4 ↪ Fin n), (N.rawDisplayedQuartets q).card ≤ 2) →\n    ∀ (observed : Fin n → Fin n → ℝ),\n      (∀ (i j : Fin n), |observed i j - ↑(N.rawNanuq i j)| < 1 / 2) →\n        ∀ (i j : Fin n), ↑(round (observed i j)) = ↑(N.rawNanuq i j)",
+  "selected_names_axiom_dispositions": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.distinct_mean_twice_integer"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.source_nanuq_integer"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.raw_source_integer"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.round_of_abs_sub_lt_half"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.integer_matrix_rounding"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.NANUQ.RawNoise",
+      "name": "ResearchCommons.NANUQ.RawNoise.raw_source_rounding"
+    }
+  ],
+  "source_and_owner_validated": true,
+  "scope": "OLD strict-half RAW-noise theorem partial formalization: actual raw DISTINCT-resolution source under explicit at-most-two set condition derives integer original2n-4 matrix; generic strict nearest-integer and SAME actual-source real observation recovery. No whole admitted plane-source→two-resolution/correct-circle/exact support/admitted sharpness/estimator/native-refinement theorem."
+}

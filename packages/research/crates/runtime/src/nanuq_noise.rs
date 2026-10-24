@@ -147,14 +147,15 @@ impl Recovery {
             else { format!("![{}]", self.labels.iter().map(u64::to_string)
                 .collect::<Vec<_>>().join(", ")) };
         let cases = if n == 0 { "intro i; exact Fin.elim0 i" }
-            else { "intro i j; fin_cases i <;> fin_cases j <;> norm_num [observed, recovered]" };
+            else { "decide +kernel" };
         let positives = self.positive_gap_pairs().iter()
             .map(|[i, j]| format!("({i}, {j})")).collect::<Vec<_>>().join(", ");
         let support_proof = if n == 0 { "intro i; exact Fin.elim0 i" }
-            else { "intro i j; fin_cases i <;> fin_cases j <;> norm_num [returnedPositive, recovered, Nanuq.Weighted.circularAlpha, Nanuq.Weighted.cyclicNext]" };
+            else { "decide +kernel" };
         let observed = grid(&self.observed, false);
         let recovered = grid(&self.integer, true);
         let source = format!(r#"import ResearchCommons.NANUQ.RawNoise
+import Mathlib.Data.Fin.VecNotation
 namespace ResearchCommons.Generated.{namespace}
 open ResearchCommons.NANUQ.RawNoise
 def labels : Fin {n} → ℕ := {labels}

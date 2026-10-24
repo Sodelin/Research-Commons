@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source166 complete51-source actual trace reversal1251/757 PASSES, ALL4 original headers unchanged,0 owned/nonstandard/missing. Entire578787B artifact/every source/row checked. Rust122 PASS. NEW noise source166 ENTIRE Lean context REJECTED (finite-case/cast/floor imports); same6 statements repaired, TWO actual output proofs still pending. Closed standalone51 reused; all causal sources remain mandatory in full1499/512-name/owned/actual callers. Whole118 remains incomplete.
+Current compatibility checkpoint: accepted51-source causal1251/757 plus NEW noise COMPLETE26-source/six-name432/291,0 owned/nonstandard/missing. Entire426626B noise artifact/all6 complete types/every source/row checked. Rust122 engine passed, but first actual generated proof ENTIRE rejected for missing vector notation; cycle not attempted. Current emitter-only import/kernel-arithmetic fix keeps numerical engine/output semantics. BOTH native docs and mandatory full1499/512-name/owned/actual callers pending; whole118 incomplete.
 
 ## Exact known-rate calibration component
 

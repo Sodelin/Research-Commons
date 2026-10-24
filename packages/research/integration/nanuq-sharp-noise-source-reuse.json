@@ -106,7 +106,7 @@
       "ResearchCommons.NANUQ.RawNoise.raw_source_rounding"
     ],
     "original_mathematics_complete": true,
-    "status": "SOURCE166_REJECTED_ENTIRE_LEAN_CONTEXT; PROOF_ONLY_SOURCE167_REPAIR_PENDING",
+    "status": "SIX_NAME_26_SOURCE_CORE_ACCEPTED; ENTIRE_FIRST_NATIVE_DOCUMENT_REJECTED; EMITTER_FIX_PENDING",
     "whole_claim_formal_binding": false,
     "lean_source": {
       "bytes": 4609,
@@ -114,9 +114,9 @@
       "sha256": "cf612e52770ab2ebfc01667e8e56f89c8e22d52f42de342172840a0c543a279c"
     },
     "rust_source": {
-      "bytes": 11875,
-      "git_blob": "ed70c226b82fd8723519e90d93a96c7e95e3a859",
-      "sha256": "26e0a8804c741425e47b32a3ca1a339dfd3bb33f8c7ed36db90c1717849aaa9a"
+      "bytes": 11728,
+      "git_blob": "b8ee427797a2d16e34b0adbd3ddec604c1d500b9",
+      "sha256": "7a485c062a8ade676daf5c21a1c0b6c492642aca5439c80dbf9a8eb0c9d21670"
     },
     "rust_bin": {
       "bytes": 615,
@@ -139,7 +139,9 @@
       "correction": "Only newly authored asymmetric fixture corrected; truth matrices/engine/tests unchanged. Lean job skipped."
     },
     "Rust_current_acceptance": "integration/nanuq-noise-rust-verification.json",
-    "whole_workspace_Rust_tests_passed": 122
+    "whole_workspace_Rust_tests_passed": 122,
+    "formal_core_acceptance": "integration/nanuq-noise-component-verification.json",
+    "emitter_correction": "Import actual pinned Mathlib.Data.Fin.VecNotation (![..] -> vecCons); kernel-decide complete finite Rational strict errors and ALL original circularAlpha returned-support predicates. Original input/output/label/theorem semantics and arithmetic engine unchanged; no new source law/native_decide/oracle."
   },
   "exact_pinned_floor_instances": {
     "repository": "leanprover-community/mathlib4",
@@ -160,5 +162,14 @@
       "source_statement": "noncomputable instance : FloorRing Real := Archimedean.floorRing _",
       "read_scope": "Actual imports and exact instance definition read; deprecated Real/Archimedean forwarding module read and bypassed."
     }
+  },
+  "actual_vector_notation_API": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/Data/Fin/VecNotation.lean",
+    "git_blob": "d1173584d1010592a14c4f8d8ec096a86078774a",
+    "actual_macro_statement": "syntax vecNotation ![term,*] expands to vecCons / vecEmpty",
+    "read_scope": "Exact imports/notation syntax/macros and input/output types read. Data/Matrix/Notation lookup unavailable; actual directory/module recovered before selecting import.",
+    "no_new_array_implementation": true
   }
 }
