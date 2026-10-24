@@ -613,9 +613,13 @@ jobs:
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.NANUQ
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.NANUQ --claim CB-NANUQ-001 --claim CB-NANUQ-002 --claim CB-NANUQ-003
       - name: Reuse exact genome obstruction and finite-evidence proofs on one carrier
-        run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Genome --claim CB-GENOME-001 --claim CB-GENOME-002
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Genome
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Genome --claim CB-GENOME-001 --claim CB-GENOME-002
       - name: Check actual shifted-exponential root-pair moments and identification
-        run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.MSCI.RootPair
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
       - name: Compile and audit the exact original causal compatibility boundary
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target RefinedObservedSeparator
