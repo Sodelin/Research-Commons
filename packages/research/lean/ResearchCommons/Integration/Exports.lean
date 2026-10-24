@@ -23,6 +23,7 @@ import ResearchCommons.Claims.G7
 import ResearchCommons.ExactQuery.Rectangle
 import ResearchCommons.ExactQuery.Source
 import ResearchCommons.Claims.NANUQ
+import ResearchCommons.NANUQ.ContiguousCopies
 import ResearchCommons.Claims.RNA
 import ResearchCommons.Claims.Wong
 import ResearchCommons.Claims.Genome

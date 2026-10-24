@@ -2565,15 +2565,18 @@
         "git_blob": "a516bcb6d8a963f94cb38d489b92667bf1697bb7",
         "source_sha256": "015d2bc62a79e95088037bbd3f958dac7d4a596211bd0156303cca162c53bd7e",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE40_SOURCE_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE40_SOURCE_CLOSED_COLLIDER_WALK_CONTEXT",
         "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "actual_complete_original_and_successor_read": true,
         "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
         "all6_theorem_headers_unchanged": true,
-        "variant": "Split existing combined/selective open command into two valid open commands; explicit SAME original core Nodup.sublist arguments in existing loop restriction. All6 headers/actual backward-closure/route/conditioning/vertex premises unchanged."
+        "variant": "Split existing combined/selective open command into two valid open commands; explicit SAME original core Nodup.sublist arguments in existing loop restriction. All6 headers/actual backward-closure/route/conditioning/vertex premises unchanged.",
+        "verification": "integration/causal-closed-collider-component-verification.json",
+        "accepted_source": "f2c76209b47453d0cf37e14b859a5515ddcc18e3",
+        "accepted_run": 40127390395
       }
     },
     {
@@ -2599,8 +2602,8 @@
     },
     {
       "module": "OriginalWeakConnection",
-      "path": "vendor/restricted-causal-source/OriginalWeakConnection.lean",
-      "sha256": "9d0889809c505d83eb408deb3ddfe3fbc367d84073961b752daa1fe5a7bddb08",
+      "path": "lean/ResearchCommons/Compatibility/OriginalWeakConnection.lean",
+      "sha256": "402d76ec3929f06e5dd8905f0350955f34a4e164c65e42b72ec4335380ce7af7",
       "imports": [
         "WeakInducingEdges"
       ],
@@ -2613,9 +2616,14 @@
         "source_sha256": "9d0889809c505d83eb408deb3ddfe3fbc367d84073961b752daa1fe5a7bddb08",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE42_SOURCE_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "actual_complete_original_and_successor_read": true,
+        "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "variant": "Use the literal implicit pair binders in existing Pairwise.imp; explicitly apply SAME core Nodup.sublist to existing original sublist and Nodup witnesses. All4 original theorem headers, conditioning/source/route/occurrence premises unchanged.",
+        "all4_theorem_headers_unchanged": true
       }
     },
     {
@@ -5175,9 +5183,29 @@
       }
     },
     {
+      "module": "ResearchCommons.NANUQ.ContiguousCopies",
+      "path": "lean/ResearchCommons/NANUQ/ContiguousCopies.lean",
+      "sha256": "fade11209d3e7ac9d4eef2afeb5aa4d3cc6228bef0b6de855b3c90e3be256177",
+      "imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Tactic"
+      ],
+      "provenance": {
+        "role": "New partial formalization of OLD completed contiguous-multicopy result: literal extreme physical-tip retention/cardinality and same contour interval side",
+        "new_mathematical_discovery": false,
+        "preflight": "integration/NANUQ-CONTIGUOUS-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "status": "SOURCE_PENDING_ACTUAL_COMPLETE_CONTEXT_CHECK",
+        "original_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
+        "later_ref": "afed31041a50fd18675402c293a3a11a2b5f87d5",
+        "whole_claim_formal_binding": false
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "d295aa38169c0d484245ca4f178bbabf75a17bc753a16cab19957ef66e55df5c",
+      "sha256": "d29c808f7ddcf25d57e279ae5f42489e4434bf38bd05cc9a14e44923734a9338",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -5204,6 +5232,7 @@
         "ResearchCommons.ExactQuery.Rectangle",
         "ResearchCommons.ExactQuery.Source",
         "ResearchCommons.Claims.NANUQ",
+        "ResearchCommons.NANUQ.ContiguousCopies",
         "ResearchCommons.Claims.RNA",
         "ResearchCommons.Claims.Wong",
         "ResearchCommons.Claims.Genome",

@@ -15460,6 +15460,20 @@
         "2026-10-24T19:43:28.8553006Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ClosedColliderWalks.lean:16:41: error: unexpected token '('; expected command\n2026-10-24T19:43:28.9612715Z BLOCKED LEAN WeakInducingEdges: ClosedColliderWalks"
       ],
       "disposition": "FULL1497_REJECTED; separate complete37-source lifting and24-source/24-name original founder-window context accepted, not whole package."
+    },
+    {
+      "source": "f2c76209b47453d0cf37e14b859a5515ddcc18e3",
+      "run_id": 40127390395,
+      "job_id": 120971780720,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1497,
+      "successful": 1401,
+      "compiled": 115,
+      "reused": 1286,
+      "failed_module": "OriginalWeakConnection",
+      "blocked": 95,
+      "diagnostics": "esearch-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:83:34: error: Function expected at\n2026-10-24T20:03:19.0970500Z   neq\n2026-10-24T20:03:19.0970671Z but this term has type\n2026-10-24T20:03:19.0971128Z   ?m.102 x✝¹ x✝\n2026-10-24T20:03:19.0971237Z \n2026-10-24T20:03:19.0971415Z Note: Expected a function because this term is being applied to the argument\n2026-10-24T20:03:19.0971716Z   eq\n2026-10-24T20:03:19.0972549Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:83:15: error: Type mismatch\n2026-10-24T20:03:19.0973056Z   fun x x_1 neq eq => ?m.100\n2026-10-24T20:03:19.0973246Z has type\n2026-10-24T20:03:19.0973673Z   (x : a✝.vertex ≠ b✝.vertex) → (x_1 : ?m.101 x) → (neq : ?m.102 x x_1) → (eq : ?m.103 x x_1 neq) → ?m.104 x x_1 neq eq\n2026-10-24T20:03:19.0974047Z but is expected to have type\n2026-10-24T20:03:19.0976261Z   a✝.vertex ≠ b✝.vertex → a✝.vertex = b✝.vertex → SourceSelection.isSelected a✝.vertex\n2026-10-24T20:03:19.1945268Z ",
+      "disposition": "FULL1497_REJECTED; complete40-source ClosedColliderWalks accepted separately; no full named/audit/actual caller acceptance."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16809,6 +16823,31 @@
       "status": "PENDING_COMPLETE40_SOURCE_AND_FULL1497_CHECK",
       "later_forward_API_ports_selected": false,
       "existing_notation_variants_reused": true
+    },
+    {
+      "module": "OriginalWeakConnection",
+      "original_sha256": "9d0889809c505d83eb408deb3ddfe3fbc367d84073961b752daa1fe5a7bddb08",
+      "selected": {
+        "bytes": 4697,
+        "git_blob": "267c82fb7b30f35b195db47a4d98667791ca48c2",
+        "sha256": "402d76ec3929f06e5dd8905f0350955f34a4e164c65e42b72ec4335380ce7af7"
+      },
+      "all4_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "  have shortNodup := nodup.sublist (List.Sublist.map Arrival.vertex (List.Sublist.cons_cons _ sublist))",
+          "  have shortNodup := List.Nodup.sublist (List.Sublist.map Arrival.vertex (List.Sublist.cons_cons _ sublist)) nodup",
+          1
+        ],
+        [
+          "pairs.imp (fun _ _ neq eq => (neq eq).elim)",
+          "pairs.imp (fun {_ _} neq eq => (neq eq).elim)",
+          1
+        ]
+      ],
+      "status": "PENDING_COMPLETE42_SOURCE_AND_FULL1498_CHECK",
+      "source_count_assertion_correction": "Initial RAM header-count assertion expected5; complete source has4. Actual4 byte-identical headers checked. Not a compiler failure."
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."
