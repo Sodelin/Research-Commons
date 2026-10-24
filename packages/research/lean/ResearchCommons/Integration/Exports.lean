@@ -30,6 +30,7 @@ import ResearchCommons.Menu.FiniteForcing
 import SocialScience.Audit
 import ClinicalModels.Audit
 import AllLevelParameterDomain
+import StochasticExamples
 
 /-! Exact union of current named claim-export contexts. This is import-only;
 no new proof, algorithm, private input or full-registry closure is asserted. -/
