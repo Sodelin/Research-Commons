@@ -49,6 +49,7 @@ jobs:
           cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
           cargo run --locked -p research-commons-runtime --bin moment-signature-certificate > build/PositiveMomentSignature.lean
           cargo run --locked -p research-commons-runtime --bin jc69-certificate > build/JC69Branch.lean
+          cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate > build/JC69TreeColumn.lean
           cargo run --locked -p research-commons-runtime --bin alignment-certificate -- coherent > build/MSCIAlignmentCoherent.lean
           cargo run --locked -p research-commons-runtime --bin alignment-certificate -- incoherent > build/MSCIAlignmentIncoherent.lean
           cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
@@ -588,6 +589,8 @@ jobs:
         run: cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
       - name: Check complete Rust JC branch output at its SAME returned finite clock
         run: cargo run --locked -p research-commons-package -- check-jc-callers --in-exports
+      - name: Check complete Rust JC tree column at its SAME decoded matrix clock
+        run: cargo run --locked -p research-commons-package -- check-jc-tree-callers --in-exports
       - name: Check ENTIRE coherent parameter filters on both supplied histories
         run: cargo run --locked -p research-commons-package -- check-alignment-callers --in-exports
       - name: Retain exact completed source objects even after a later module failure
