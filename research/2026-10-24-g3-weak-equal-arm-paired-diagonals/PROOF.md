@@ -3,6 +3,11 @@
 Contributor: existing G3 owner. 24 October 2026 UTC.
 Stable key: G3-WEAK-EQUAL-ARM-PAIRED-DIAGONALS-01.
 
+Revision2: prior attribution corrected. The original f22a48a4 body is
+retained immutably; its all-order coefficient rule is OLD/REUSED. This
+is a proved application of retained source and IFT suppliers, not a new
+coefficient or general diagonal-return theorem.
+
 **PROVED BY HAND at the stated diagonal scope.** Author self-review is
 complete. Independent correctness review, Lean and scientific execution
 have not been performed. Original G3 and CP-Pair remain unresolved.
@@ -70,11 +75,29 @@ higher diagonal rank. These are PROVED/REUSED, not new problems.
 The old diagonal sign construction has a rare coin and a possibly strong
 arm. Its explicit weakness is PAIR LOSS. Its uniform-time successor uses
 the same unequal-arm rare profile and does not prescribe the COMMON
-passage. The additional restriction here is literal equal arms, BOTH
-fixed passages and arbitrarily short arms/near-fair coins. Sections3-4
-supply the single all-order source rule for that restriction. Sections5-6
-apply the OLD regular-sum/IFT method, then a finite repetition to control
-both total passages. No new general semigroup or IFT theorem is claimed.
+passage.
+
+A direct predecessor was MISSED before f22a48a4 was frozen:
+research/2026-10-08-dot-g4-interior-coin-source-jets-1213z/
+INTERIOR-COIN-SOURCE-JETS-ADDENDUM-CANDIDATE.md,7641B/SHA256
+81de27ab78b4bf8b8889d2b8a7005194264b831396a50ac0d71076899ac660b6,
+blob38d3595be706125a9a706d2dd188efa926e3a58c, Section4 ALREADY gives
+the all-order coefficient rule used below. Its COMPLETE source,
+COMPLETE scoped HAND ACCEPT6182B/SHA256
+f659f795f963fc9c923f6427e06bb52d905dd8be211582f72387212f03c82f83,
+and later README2752B/SHA256
+75aa45b46860ca491cd90b255014d25f1acda5d763ee2a357fa3fe1ca9aafb12
+have now been read. The frozen candidate heading is historical; the
+rule is PROVED/REUSE with its existing scoped acceptance.
+
+The exact equal-arm specialisation is in Section4. The initial f22a48a4
+derivation reproduced this old theorem and must not be counted as a
+new source rule. The proof below retains the paired-budget application:
+Sections5-6 apply the OLD regular-sum/IFT method and a finite repetition
+to obtain both prescribed passages with equal arms. This application is
+proved; historical novelty is unassessed. No novelty is claimed for its
+coefficient rule, sign method, IFT or general prescribed-time approach.
+[Exact attribution correction](PRIOR-ATTRIBUTION.md).
 
 The OLD weak-cell convex-centering/primitive-sign source16412B/SHA256
 482321c72adaafb3f38a15bc2563b5aa8950dc26a1fc6d019c44abad4cd37e8b
@@ -125,7 +148,7 @@ and every D_j, is analytic jointly in h and mu^2 near(0,0). After(3)
 they are analytic in epsilon,a,kappa, despite the square root in the
 physical coin. Only positive epsilon is a realizing source.
 
-For EVERY fixed j>=3 the all-order rule is
+The OLD accepted all-order rule, specialised exactly in Section4, is
 
     D_j
       =c_j*a^j*(1-2j*kappa)*epsilon^j
@@ -138,63 +161,51 @@ strict finite parameter list. This is not just a leading sign along an
 isolated curve. Constants/remainders may depend on j and on a fixed
 compact profile set; no all-arity uniform remainder is asserted.
 
-## 4. Proof of the single rule, including its lower vanishings
+## 4. Exact specialisation of the OLD accepted source rule
 
-Expand the log expectation in(2) by joint cumulants of edge variables
-Y_ab=xi_a*xi_b. Cumulants of collections supported on disjoint vertex
-sets vanish, since the signs are independent. Consequently each
-coefficient is a sum over connected edge multigraphs on a selected
-set of initial tokens. Repeated edges are allowed in this expansion.
-Symmetry makes the contribution on any fixed j-set the coefficient
-of binom(n,j), which Newton difference D_j selects.
+Use delta for the OLD addendum's small parameter and a0 for its base
+coin, to distinguish them from this note's a,epsilon. Its actual chart is
 
-A connected graph on j vertices needs at least j-1 edge occurrences.
-With exactly j-1 it is a simple tree. At mu=0, edge products on a tree
-are independent fair signs: choose one vertex sign and all edge products
-as coordinates, which bijectively specify the original signs. Hence
-the joint cumulant of its distinct edges has zero constant term.
-It is even in mu and therefore starts at least at mu^2.
+    arm0=delta^2*h0/a0-delta^3*u/a0^2+delta^4*v/a0^3,
+    arm1=delta^2*h0/(1-a0)+delta^3*u/(1-a0)^2
+                                  +delta^4*v/(1-a0)^3,
+    g=a0+delta*w.
 
-Thus j-1 edges cost at least h^(j-1)*mu^2, which is order h^j under
-mu^2=kappa*h. Fewer edges cannot cover j connected vertices. Terms with
-at least j edges cost at least h^j. This proves the lower vanishings.
+Its Section4 and full scoped review already prove, for EVERY fixed j>=3,
 
-There are exactly two contributions at order h^j.
+    D_j=delta^(2j)*J_j+O(delta^(2j+1)),
+    J_j=(-1)^j*(j-1)!/2 * h0^(j-3)
+                        *[h0^3-j*zeta^2/(a0*(1-a0))],
+    zeta=w*h0-u.
 
-(a) A tree contributes at mu^2 precisely when it is a path. The full
-product moment of a tree is mu to the number of its odd-degree vertices.
-Exactly two odd-degree vertices force a tree to be a path. In any
-proper partition of the distinct path edges, each nonempty forest
-block has at least two odd vertices, so the product of block moments
-is O(mu^4). Therefore the path joint cumulant is mu^2+O(mu^4).
-For a nonpath tree every term in its cumulant is O(mu^4).
-There are j!/2 unoriented labelled paths. With edge weight -h/2,
-their total leading contribution is
+Choose the literal parameters
 
-    (j!/2)*(-h/2)^(j-1)*kappa*h.
+    a0=1/2, h0=a/2, u=v=0,
+    w=sqrt(kappa*a)/2, delta=sqrt(epsilon).
 
-(b) A connected j-edge multigraph at mu=0 can contribute only if every
-vertex has even degree. Otherwise no partition into nonzero even-degree
-block moments exists. A connected graph with j vertices, j edges and all
-degrees even has degree two at every vertex. For j>=3 it is a simple
-cycle. Its full product is1, while every proper edge block has odd
-endpoints and zero moment at mu=0. Its joint cumulant is therefore1.
-There are (j-1)!/2 unoriented labelled cycles, giving
+Both original arms are then EXACTLY a*epsilon, and the original parent0
+coin is EXACTLY(1+sqrt(kappa*a*epsilon))/2. Also
 
-    ((j-1)!/2)*(-h/2)^j.
+    zeta^2/(a0*(1-a0))=kappa*a^3/4,
 
-The factorial in the exponential/cumulant series cancels the ordering
-count of these distinct edges. Adding(a),(b) is exactly
+so direct substitution gives
 
-    (-1)^j*(j-1)!/2^(j+1)*(1-2j*kappa)*h^j.
+    J_j=(-1)^j*(j-1)!*a^j*(1-2j*kappa)/2^(j+1).
 
-All other terms have at least one more power of h after substitution.
-Evenness in mu makes the remaining powers integral. This proves(4)
-coefficientwise for every fixed j, with no cap table or extrapolation.
+This is precisely(4), not a new source coefficient. Each finite strict
+profile list and its neighborhood lie in an allowed compact interior
+chart: a0=1/2, h0>0 and w finite.
 
-As a hand consistency identity, j=3 gives
-(-1/8+3*kappa/4)h^3; j=4 gives(3/16-3*kappa/2)h^4.
-These are consequences of the same formula, not new executed controls.
+The OLD lower-order vanishings are joint in those parameters. On this
+equal-arm specialisation, changing delta to-delta only swaps the two
+equal arms' coin orientation. Every b_n is therefore even in delta,
+analytic in epsilon=delta^2. The displayed remainder is consequently
+O(epsilon^(j+1)), and division by epsilon^j is jointly analytic. This
+is the IFT boundary required below; no table or new source run is needed.
+
+The longer path/cycle derivation in the original f22a48a4 body is retained
+there as a reproduction of the old connected-incidence proof, not as new
+mathematical progress. Do not rederive it again.
 
 ## 5. A finite regular unweighted zero and strict IFT lift
 
@@ -357,5 +368,5 @@ than a stronger diagonal theorem or another cap producer.
 
 No biological/forest producer, symbolic or numerical control, solver/QE,
 source compiler, model/native/Lean/Cargo/Lake/CI job, local Git action,
-subagent or old-suite replay was performed. The proof is hand source
-algebra, finite cumulants, the OLD regular-sum argument and analytic IFT.
+subagent or old-suite replay was performed. The proof is hand application of the OLD accepted source rule,
+regular-sum argument and analytic IFT.

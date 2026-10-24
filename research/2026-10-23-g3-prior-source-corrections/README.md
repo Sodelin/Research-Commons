@@ -42,11 +42,21 @@ all parent0 coins in(1/2,1/2+eta), on the SAME tuple. The joint scalar
 COMMON/I-diagonal map has full rank M. Independent review and Lean are
 separate; no new scientific execution occurred.
 
-The new restricted source rule is
+Attribution correction: [the exact retained predecessor](../2026-10-24-g3-weak-equal-arm-paired-diagonals/PRIOR-ATTRIBUTION.md)
+ALREADY supplies the restricted source rule. The8October interior-coin
+source Section4,7641B/SHA81de27ab78b4bf8b8889d2b8a7005194264b831396a50ac0d71076899ac660b6,
+has its complete scoped HAND ACCEPT6182B/SHAf659f795f963fc9c923f6427e06bb52d905dd8be211582f72387212f03c82f83.
+Both complete bodies and later status/provenance were read. The initial
+f22a48a4 new-rule label is WITHDRAWN; its source derivation reproduced
+the old theorem. The current source is a proved paired-budget APPLICATION,
+with no historical novelty claim. The old rule is
 D_j=c_j*a^j*(1-2j*kappa)*epsilon^j+O(epsilon^(j+1)),
 c_j=(-1)^j*(j-1)!/2^(j+1), for equal exposure a*epsilon and
-(2g-1)^2=kappa*a*epsilon. One path/cycle cumulant proof supplies EVERY
-fixed j. The OLD regular-sum/IFT argument is reused, then a finite
+(2g-1)^2=kappa*a*epsilon. Its literal old-chart substitution is
+base coin1/2, mean coefficient a/2,u=v=0,w=sqrt(kappa*a)/2 and
+old delta=sqrt(epsilon). Equal-arm parity supplies analytic epsilon
+division. Do not derive that all-order rule again. The OLD
+regular-sum/IFT argument is reused, then a finite
 repetition fixes BOTH total passages. The older unrestricted diagonal
 and prescribed-I-time theorems are completed predecessors, not reopened.
 
@@ -56,9 +66,41 @@ These words are not claimed to commute with S(t). No full ordinary return,
 one finite all-cap word or admitted fixed G4 target is supplied. Do not
 start another diagonal/cap/time-budget project from this record.
 
-Aliases: equal-arm weak diagonal return, critical square-root coin bias,
+Aliases: interior-coin source Section4, equal-arm weak diagonal return,
+critical square-root coin bias,
 connected path/cycle cumulants, fixed COMMON plus I hazard, paired diagonal
 budget, finite regular diagonal word. This is not full-forest centering.
+
+## Storage boundary under commutation: old formulas applied with the endpoint retained
+
+The OLD multiplicative9/7/6/4 quotient has
+R(S)=[[s9,X,Y,0],[0,s7,0,U],[0,0,s6,T],[0,0,0,s4]].
+For an actual commuting K, let f(sr)=kr=b_r(K), using the unique
+interpolating polynomial at the four distinct diagonal values of S.
+Classical divided differences give
+K_X=X*f[s9,s7], K_Y=Y*f[s9,s6], and
+K_V=X*U*f[s9,s7,s4]+Y*T*f[s9,s6,s4]. Thus the OLD storage
+Psi=K_V/k9-(5/6)*((K_Y/k9)^2-(K_X/k9)^2)
+has this explicit boundary value, rather than zero. These are signed
+internal source coordinates, not new observations or a physical inverse.
+
+The exact old nominal-clock balance is
+6*kappa*integral(w*B^2)=sum(w_i^+*err_i)-w_final*Psi(K), kappa=5/3.
+The endpoint term must stay. On the intended physical witness K=S(t)^2,
+epsilon=-log t, the OLD fair specialization gives x=epsilon^3/15+O(epsilon^4),
+nominal jump spacing3epsilon+O(epsilon^2), final gap epsilon+O(epsilon^2).
+Consequently the integral is7epsilon^7/225+O(epsilon^8), jump errors
+are O(epsilon^8), and Psi(K)=-14epsilon^7/45+O(epsilon^8)<0 for small epsilon.
+Take t=2^(-1/(8m)) for large integer m: this is an ACTUAL all-arity
+commuting CP-Pair witness with COMMON c=2^(-1/m) and I pair c^(3/4).
+It rejects the ordinary-zero-boundary transfer, not CP-Pair.
+
+This is routine reuse of the old centralizer, source jets and storage,
+not a new all-copy/count/copy-scaling theorem. Source definitions are
+COUNT-UNIFORM-COMPACT-WEAK-CAP9-CANDIDATE.md/SHAfa6eb9f154fc35fa50d093b5037f9bf7dc6c754996299371db436436e62854a0
+Sections2-4 and the accepted interior-coin source above. Pair data do not
+justify replacing kr by sr^alpha. A coercive corrected boundary estimate
+for all fitting source words is still unproved. No new producer was run.
 
 ## All-core passive commutation reduction: completed predecessor reused
 
