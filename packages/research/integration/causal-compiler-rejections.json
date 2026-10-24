@@ -13135,6 +13135,19 @@
       "diagnostic": "112:4 Decidable (y = r.left ∨ y = r.right)",
       "selected_repair": "Supply the original canonical Vertex Q type explicitly to BOTH Eq predicates; preserve existing explicit linear order and total finite decision.",
       "proof_statement_or_source_hypotheses_changed": false
+    },
+    {
+      "source": "5ca39ff6e18ba97cd70c4fc0ba2050249df08cbe",
+      "run": 40107012430,
+      "job": 120910853722,
+      "status": "EARLY31_TRANSCRIPT_REJECTED_ONE_EQ_INSTANCE_NO_FULL_TARGET",
+      "failed_module": "FiniteTranscriptDecoder",
+      "compiler_errors": 1,
+      "diagnostic": "113:4 Decidable (y = r.left ∨ y = r.right)",
+      "full1462_target_ran": false,
+      "accepted32_genome_3_root_pair_27_separator_unchanged_and_reused": true,
+      "repair": "Call the actual existing retainedOrder.toDecidableEq dictionary directly and build Decidable of the original disjunction by explicit cases.",
+      "no_new_decision_oracle_or_changed_predicate": true
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -14102,6 +14115,22 @@
       "edit": "Retain accepted explicit Selector-carrier decision; supply the SAME canonical Vertex Q.val type to BOTH Eq predicates, avoiding an erased term type ascription. No classical oracle, new condition or changed result.",
       "actual_rejected_source": "b094ae8555e58091faf132a4ffc4530c86db1445",
       "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "FiniteTranscriptDecoder",
+      "original_sha256": "e58f08241a70105a1d2eb103197166ea3e3bcddc5cb6e46330e58bc923bcd69b",
+      "selected_sha256": "61c09e0598098b94d5d2b0aa4bf531a36ff803362ef705d1c1d2bfd0fe307a0b",
+      "selected_bytes": 13963,
+      "selected_git_blob": "b721410480fd12cd1ad63844e8e20a29c134b32b",
+      "edit": "Use the actual pinned LinearOrder.toDecidableEq field of existing retainedOrder Q.val, then explicit two-case Decidable constructors for the SAME two equality alternatives. No typeclass search, classical fallback, new condition or changed Boolean relation.",
+      "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_rejected_source": "5ca39ff6e18ba97cd70c4fc0ba2050249df08cbe",
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "original_vendor_body_unchanged": true,

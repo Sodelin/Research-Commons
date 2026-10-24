@@ -2311,7 +2311,7 @@
     {
       "module": "FiniteTranscriptDecoder",
       "path": "lean/ResearchCommons/Compatibility/FiniteTranscriptDecoder.lean",
-      "sha256": "e2c6cbbad5a39244c5386ff7486d56d8476416d0b86ef68b34201d707e0f74d8",
+      "sha256": "61c09e0598098b94d5d2b0aa4bf531a36ff803362ef705d1c1d2bfd0fe307a0b",
       "imports": [
         "ComputableCanonicalLabels"
       ],
@@ -2328,7 +2328,9 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Retain accepted explicit Selector-carrier decision; supply the SAME canonical Vertex Q.val type to BOTH Eq predicates, avoiding an erased term type ascription. No classical oracle, new condition or changed result."
+        "variant": "Use the actual pinned LinearOrder.toDecidableEq field of existing retainedOrder Q.val, then explicit two-case Decidable constructors for the SAME two equality alternatives. No typeclass search, classical fallback, new condition or changed Boolean relation.",
+        "primary_api_source": "leanprover-community/mathlib4@0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Order/Defs/LinearOrder.lean",
+        "primary_api_source_sha256": "837dba1e44eb02eb7837e8e7b72b59c277e85899454f45d3be66de44ecd98632"
       }
     },
     {

@@ -110,7 +110,14 @@ def sourceArrowDecision {X : Type u} [LinearOrder X] [Fintype X] (c : RegistryCo
   · exact isFalse id
   · change Decidable (@Eq (CanonicalSelection.Vertex Q.val) y r.left ∨
       @Eq (CanonicalSelection.Vertex Q.val) y r.right)
-    infer_instance
+    let eq : DecidableEq (CanonicalSelection.Vertex Q.val) :=
+      @LinearOrder.toDecidableEq (CanonicalSelection.Vertex Q.val) (retainedOrder Q.val)
+    exact match eq y r.left with
+      | .isTrue hl => .isTrue (Or.inl hl)
+      | .isFalse hl =>
+        match eq y r.right with
+        | .isTrue hr => .isTrue (Or.inr hr)
+        | .isFalse hr => .isFalse (fun h => h.elim hl hr)
   · exact isFalse id
 
 def invarianceConditionDecision {X : Type u} (b : X → Bool) :

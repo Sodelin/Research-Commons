@@ -1,5 +1,7 @@
 # Actual portable package verification
 
+Source1345ca39ff6/run40107012430/job120910853722 remains REJECTED at ONE31-source transcript Decidable instance; full1462/name/owned/callers did not run. No new acceptance is inferred from skipped accepted prechecks. The next source reads/reuses the actual pinned LinearOrder.toDecidableEq dictionary and builds the same two-alternative decision explicitly. This preserves constructive totality, source/history/target quantifiers and all146 frozen originals; no classical replacement or new solver. Accepted32/3/27 components and ALL23 printed types stay reused.
+
 ## Source133: accepted old genome proofs, actual root-pair and refined separator
 
 Sourceb094ae85/run40105632721/job120906767687 PASSES the COMPLETE32-source/20-name genome context (1773 declarations/1306 theorems), COMPLETE3-source/3-name actual exponential root-pair context (44/36), and COMPLETE27-source refined separator (920/523). Artifact12564199589:741239B/SHAbbc1e320e6c233784f96b36dabc4c1e531f3cab4f2e1e8ad99c2e9fafb5a90db independently recovered in RAM. ALL owned rows, source hashes and actual23 requested owner/axiom rows validated; ALL23 COMPLETE terminal printed types read and archived. Zero owned axioms/nonstandard/missing. Root source has2 non-fatal unused-ring warnings, not a zero-warning result. No new scientific theorem, full nine-parameter/native inference or all118 closure follows.
