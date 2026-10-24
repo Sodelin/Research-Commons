@@ -1,5 +1,6 @@
 //! Portable facade over retained exact engines. It adds no source/QE oracle.
 #![forbid(unsafe_code)]
+#![deny(named_arguments_used_positionally)]
 pub use g7_exact_law_formula as exact_law;
 pub use parity_solver as exact_arithmetic;
 pub mod moments;

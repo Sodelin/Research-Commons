@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_ONE_IDENTITY_MAP_PROOF_VARIANT_PENDING",
+  "status": "SAME_FULL_TARGET_REJECTED_LITERAL_REGISTRY_ARITHMETIC_PROOF_VARIANT_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -384,7 +384,13 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Type the SAME identity map (fun x : Vertex G => x) in the original Route.map and use the standard list/identity simplifier. All graph/source data and theorem statements unchanged.",
-        "rejected_source": "5b91ebb8e984d61c3b634323dcf3362982560854"
+        "rejected_source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+        "module_compiled_in_rejected_full_context": {
+          "source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b",
+          "run": 40071581027,
+          "job": 120806140378,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
@@ -415,11 +421,12 @@
     },
     {
       "module": "FiniteProfileRegistry",
-      "path": "vendor/restricted-causal-source/FiniteProfileRegistry.lean",
-      "sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
+      "path": "lean/ResearchCommons/Compatibility/FiniteProfileRegistry.lean",
+      "sha256": "360d4fba826f5c1fd672f6c9892cd76e6030c05b73a07aaa1ba635f4d4ea0509",
       "imports": [
         "CanonicalFiniteBounds",
-        "Mathlib.Data.Fintype.BigOperators"
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Tactic.NormNum"
       ],
       "provenance": {
         "role": "OLD author-complete restricted-causal source proposal; new formal check required",
@@ -430,9 +437,12 @@
         "source_sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Import the existing NormNum tactic and close the original remaining literal equality 3*2*2^(2*2)=96. Registry encoding/source hypotheses/cardinality theorem statements unchanged.",
+        "rejected_source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b"
       }
     },
     {
@@ -4157,6 +4167,18 @@
       "all_theorem_statements_unchanged": true,
       "new_source_law_or_axiom": false,
       "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+    },
+    {
+      "module": "FiniteProfileRegistry",
+      "original_sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
+      "selected_sha256": "360d4fba826f5c1fd672f6c9892cd76e6030c05b73a07aaa1ba635f4d4ea0509",
+      "selected_bytes": 8536,
+      "selected_git_blob": "9f7a020c83f4269577a1a193755bb67ed65b6ca7",
+      "edit": "Import the existing NormNum tactic and close the original remaining literal equality 3*2*2^(2*2)=96. Registry encoding/source hypotheses/cardinality theorem statements unchanged.",
+      "original_vendor_body_unchanged": true,
+      "all_theorem_statements_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
     }
   ],
   "first_full_context_rejection": {
@@ -4183,21 +4205,19 @@
     }
   },
   "latest_full_context_result": {
-    "source": "5b91ebb8e984d61c3b634323dcf3362982560854",
-    "run": 40070946133,
-    "job": 120804198357,
-    "compiled_before_other_module_failed": true,
-    "whole_causal_acceptance": false,
+    "source": "a6d03cf1a30ab39daa138f626c7a0c7a3981d41e",
+    "run": 40072008848,
+    "job": 120807400116,
     "selected_sources": 1077,
-    "successful_objects": 940,
-    "compiled": 52,
+    "successful_objects": 941,
+    "compiled": 53,
     "reused": 888,
     "failed_modules": [
-      "CanonicalLatentRoots"
+      "ResearchCommons.ExactQuery.Rectangle",
+      "FiniteProfileRegistry"
     ],
-    "blocked_modules": 136,
+    "blocked_modules": 134,
     "compiler_exit_success": false,
-    "whole_owned_audit_ran": false,
-    "named_endpoint_audit_ran": false
+    "whole_owned_audit_ran": false
   }
 }

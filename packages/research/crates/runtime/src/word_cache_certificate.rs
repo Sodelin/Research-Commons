@@ -407,7 +407,7 @@ theorem coefficient_fibres_checked :
       if target.hasFVar || target.hasMVar then
         throwError "closed literal coefficient goal required"
       let proof ← Lean.Meta.mkDecideProof target
-      let typeLevels := (Lean.collectLevelParams {} target).params
+      let typeLevels := (Lean.collectLevelParams {{}} target).params
       let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
       let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
         Lean.Meta.mkAuxLemma lemmaLevels target proof
@@ -489,6 +489,14 @@ pub fn example(mode:&str)->Result<Bundle,Error>{
    assert!(last.source.contains("same_returned_bank_natural_word"));
    assert!(last.source.contains("checkStages"));
    assert_eq!(b.modules.iter().filter(|m|m.source.contains("#check coefficient_fibres_checked")).count(),7);
+   // Validate the actual emitted diagnostic syntax in EVERY original stage,
+   // before its expensive full kernel lane. A literal Lean {} must not consume
+   // a Rust named format argument and inject another import/namespace block.
+   for stage in b.modules.iter().filter(|m|m.source.contains("#check coefficient_fibres_checked")) {
+    assert_eq!(stage.source.matches("Lean.collectLevelParams {} target").count(),1);
+    let body=stage.source.split_once("namespace ").expect("stage namespace").1;
+    assert!(!body.lines().any(|line|line.starts_with("import ")));
+   }
    assert!(last.source.contains("stages_retain_every_original_operation"));
    assert!(last.source.contains("final_rows_are_the_complete_original_native_output"));
    assert!(b.modules.iter().any(|m|m.source.contains("checkInitial")));

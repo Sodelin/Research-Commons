@@ -887,7 +887,7 @@
     {
       "module": "ResearchCommons.ExactQuery.Rectangle",
       "path": "lean/ResearchCommons/ExactQuery/Rectangle.lean",
-      "sha256": "5eb402b5e0bec5f22fe2017359ddd01ca51e0a9b651b09504808581df34f5349",
+      "sha256": "f1b41e010529aa3b1937331215360612de3fcde22142136ef51b6efa9bd2ed68",
       "imports": [
         "Mathlib.Data.Finset.Basic",
         "Mathlib.Tactic"
@@ -914,7 +914,19 @@
           "complete_hand_source_actual_read": true,
           "new_scientific_result": false,
           "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
-          "preflight": "integration/EXACT-QUERY-ROOT-PARTITION-REUSE.md"
+          "preflight": "integration/EXACT-QUERY-ROOT-PARTITION-REUSE.md",
+          "first_rejection": {
+            "source": "a6d03cf1a30ab39daa138f626c7a0c7a3981d41e",
+            "run": 40072008848,
+            "job": 120807400116,
+            "lines": [
+              118,
+              121
+            ],
+            "diagnostic": "Named recursion guard is a dependent if; use dif_pos/dif_neg rather than if_pos/if_neg.",
+            "whole_component_accepted": false
+          },
+          "selected_repair_sha256": "f1b41e010529aa3b1937331215360612de3fcde22142136ef51b6efa9bd2ed68"
         },
         "prior_accepted_scope": {
           "source_commit": "63d8bd98cd1cf8290b36c9ab7dbc2bee91ac62b9",
@@ -1294,7 +1306,13 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Type the SAME identity map (fun x : Vertex G => x) in the original Route.map and use the standard list/identity simplifier. All graph/source data and theorem statements unchanged.",
-        "rejected_source": "5b91ebb8e984d61c3b634323dcf3362982560854"
+        "rejected_source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+        "module_compiled_in_rejected_full_context": {
+          "source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b",
+          "run": 40071581027,
+          "job": 120806140378,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
@@ -1325,11 +1343,12 @@
     },
     {
       "module": "FiniteProfileRegistry",
-      "path": "vendor/restricted-causal-source/FiniteProfileRegistry.lean",
-      "sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
+      "path": "lean/ResearchCommons/Compatibility/FiniteProfileRegistry.lean",
+      "sha256": "360d4fba826f5c1fd672f6c9892cd76e6030c05b73a07aaa1ba635f4d4ea0509",
       "imports": [
         "CanonicalFiniteBounds",
-        "Mathlib.Data.Fintype.BigOperators"
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Tactic.NormNum"
       ],
       "provenance": {
         "role": "OLD author-complete restricted-causal source proposal; new formal check required",
@@ -1340,9 +1359,12 @@
         "source_sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Import the existing NormNum tactic and close the original remaining literal equality 3*2*2^(2*2)=96. Registry encoding/source hypotheses/cardinality theorem statements unchanged.",
+        "rejected_source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b"
       }
     },
     {

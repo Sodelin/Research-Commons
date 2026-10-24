@@ -115,10 +115,10 @@ theorem seed_covered_iff_triangle (l r i j : ℕ) :
         intro l r hn
         rw [SeedCovered]
         by_cases small : r-l ≤ 2
-        · rw [if_pos small]
+        · rw [dif_pos small]
           unfold Triangle
           omega
-        · rw [if_neg small]
+        · rw [dif_neg small]
           let m := l+(r-l)/2
           have hlm : l < m := by dsimp [m]; omega
           have hmr : m < r := by dsimp [m]; omega
