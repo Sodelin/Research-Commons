@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "28_QUERY_COMPONENT_ACCEPTED_FULL1466_REJECTED_INDICATOR_PROOF",
+  "status": "PREPARATION_CORRECT_EARLY30_INDICATOR_REJECTED_THREE_CONSTRUCTOR_CONVERSIONS",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -5249,12 +5249,12 @@
     {
       "module": "RefinedIndicatorSeparator",
       "original_sha256": "7215d17549e9b64378a2fe24a940e3f4354e4ed0d25dca3064aef061f7a63f60",
-      "selected_sha256": "ef6eaf914dba25b58958c86e3daab340773a82b0e764af96aaa51626a3432f34",
-      "selected_bytes": 14962,
-      "selected_git_blob": "b21ecce0407217eb004c2b9db01748650099a567",
-      "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged.",
+      "selected_sha256": "7e5c102d6754d0abca1da28c3b39b990e7d4b63f10fb98036cf9dd066a57ff15",
+      "selected_bytes": 14937,
+      "selected_git_blob": "cf8770dad9e59147a52de21641d997bf6500c482",
+      "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged. Follow-on: rewrite the existing indicator_equiv_oldSource BEFORE any equivalence unfolding; eliminate literal some/none equality by cases; expose the actual original oldRetained constructor.",
       "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
-      "actual_rejected_source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+      "actual_rejected_source": "11f17e5eb2f378b3bf4688577bdc4c52703ab109",
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "original_vendor_body_unchanged": true,
@@ -5293,6 +5293,18 @@
         [
           "    refine ⟨(fun h => Option.noConfusion h), last, xs, ?_, hnd⟩",
           "    refine ⟨(by intro h; cases h), last, xs, ?_, hnd⟩"
+        ],
+        [
+          "    simpa only [indicator_equiv_oldSource, sourceIndicatorEquiv] using raw",
+          "    rw [indicator_equiv_oldSource] at raw\n    exact raw"
+        ],
+        [
+          "  exact Option.noConfusion hbad",
+          "  cases hbad"
+        ],
+        [
+          "(by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)",
+          "(by simpa only [hv, oldSource, oldRetained, Observed] using hsupport p List.mem_cons_self)"
         ]
       ]
     }
@@ -6017,12 +6029,12 @@
     {
       "module": "RefinedIndicatorSeparator",
       "original_sha256": "7215d17549e9b64378a2fe24a940e3f4354e4ed0d25dca3064aef061f7a63f60",
-      "selected_sha256": "ef6eaf914dba25b58958c86e3daab340773a82b0e764af96aaa51626a3432f34",
-      "selected_bytes": 14962,
-      "selected_git_blob": "b21ecce0407217eb004c2b9db01748650099a567",
-      "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged.",
+      "selected_sha256": "7e5c102d6754d0abca1da28c3b39b990e7d4b63f10fb98036cf9dd066a57ff15",
+      "selected_bytes": 14937,
+      "selected_git_blob": "cf8770dad9e59147a52de21641d997bf6500c482",
+      "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged. Follow-on: rewrite the existing indicator_equiv_oldSource BEFORE any equivalence unfolding; eliminate literal some/none equality by cases; expose the actual original oldRetained constructor.",
       "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
-      "actual_rejected_source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+      "actual_rejected_source": "11f17e5eb2f378b3bf4688577bdc4c52703ab109",
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "original_vendor_body_unchanged": true,
@@ -6061,19 +6073,56 @@
         [
           "    refine ⟨(fun h => Option.noConfusion h), last, xs, ?_, hnd⟩",
           "    refine ⟨(by intro h; cases h), last, xs, ?_, hnd⟩"
+        ],
+        [
+          "    simpa only [indicator_equiv_oldSource, sourceIndicatorEquiv] using raw",
+          "    rw [indicator_equiv_oldSource] at raw\n    exact raw"
+        ],
+        [
+          "  exact Option.noConfusion hbad",
+          "  cases hbad"
+        ],
+        [
+          "(by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)",
+          "(by simpa only [hv, oldSource, oldRetained, Observed] using hsupport p List.mem_cons_self)"
         ]
       ]
     }
   ],
   "latest_early_projection_result": {
-    "source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
-    "run": 40109765011,
-    "job": 120919015883,
-    "status": "ACCEPTED_28_SOURCE_QUERY_OWNED_COMPONENT",
-    "owned": 932,
-    "theorems": 530,
-    "record": "integration/causal-observed-query-component-verification.json",
-    "whole_causal": false
+    "source": "11f17e5eb2f378b3bf4688577bdc4c52703ab109",
+    "run": 40111563897,
+    "job": 120924337742,
+    "status": "PREPARATION_CORRECT_EARLY30_INDICATOR_REJECTED_THREE_CONSTRUCTOR_CONVERSIONS",
+    "target": "RefinedIndicatorSeparator",
+    "selected_sources": 30,
+    "failed_modules": [
+      "RefinedIndicatorSeparator"
+    ],
+    "compiler_errors": 3,
+    "diagnostics": [
+      "75:4 raw sourceIndicatorEquiv before oldSource rewrite",
+      "77:27 literal some/none Option.noConfusion elaboration",
+      "231:28 original oldRetained constructor reduction"
+    ],
+    "whole_module_accepted": false,
+    "full1472_target_ran": false,
+    "deterministic54_context_ran": false,
+    "whole_owned_and_exact_name_audit_ran": false,
+    "manifest_preparation_passed": true,
+    "rust_job": 120924196488,
+    "rust_job_success": true,
+    "no_new_scientific_discovery": true,
+    "prior_diagnostic_sites_now_compiled": [
+      113,
+      121,
+      128,
+      218,
+      220,
+      275
+    ],
+    "original_Route_map_target_annotation_compiled": true,
+    "original_support_constructor_site_remains": true
   },
   "accepted_original_graph_component": "integration/causal-original-graph-component-verification.json",
   "accepted_marginal_graph_component": {

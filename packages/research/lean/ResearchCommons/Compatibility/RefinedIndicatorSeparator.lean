@@ -72,9 +72,10 @@ theorem old_not_ancestor_root {X : Type u} {S : Type v} {L : Type w}
       (arrow_directed_exact (augmentSource D t).arrow x y).mp hxy)
   have raw' : Route (AddIndicator D.arrow (Observed t)) (some a)
       (xs.map sourceIndicatorEquiv) none := by
-    simpa only [indicator_equiv_oldSource, sourceIndicatorEquiv] using raw
+    rw [indicator_equiv_oldSource] at raw
+    exact raw
   have hbad := (indicator_route_to_new D.arrow (Observed t) raw' rfl).1
-  exact Option.noConfusion hbad
+  cases hbad
 
 theorem old_endpoint_ancestor {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (t x : X) (a : SourceVertex X S L) :
@@ -228,7 +229,7 @@ theorem indicator_suffix_inducing {X : Type u} {S : Type v} {L : Type w}
                         rfl
                       have haOld : AncestorOf (arrowGraph D.arrow) (OneEndpointSelection x)
                           (Observed z) := (old_endpoint_ancestor D t x (Observed z)).mp
-                        (by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)
+                        (by simpa only [hv, oldSource, oldRetained, Observed] using hsupport p List.mem_cons_self)
                       have hmask := ancestral_suffix_forces_mask D x x z Z
                         (fun z hz => one_endpoint_to_pair D x _ (upper z hz)) hzx hzx
                         oldroute hpOld hqOld (by

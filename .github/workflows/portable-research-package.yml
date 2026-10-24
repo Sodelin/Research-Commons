@@ -622,6 +622,10 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.MSCI.RootPair
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
+      - name: Reuse original predictive-state and admissible split proofs
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Memory
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Memory --claim CB-MEMORY-001 --claim CB-MEMORY-002
       - name: Compile and audit the exact original causal compatibility boundary
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target RefinedIndicatorSeparator
@@ -633,10 +637,6 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target StochasticExamples
           cargo run --locked -p research-commons-package -- check-exports --target StochasticExamples --claim CB-MEMORY-003
-      - name: Reuse original predictive-state and admissible split proofs
-        run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Memory
-          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Memory --claim CB-MEMORY-001 --claim CB-MEMORY-002
       - name: Compile the exact original finite transcript decoder
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --target FiniteTranscriptDecoder
       - name: Compile the actual receiver dependency closure in the full package context

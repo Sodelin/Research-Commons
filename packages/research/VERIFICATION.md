@@ -639,3 +639,8 @@ Sourcee161bd9399cdb1d7ac119406e92a8a816feab0fd/run40108981548/job120916700095 re
 ## Source138 import-root ordering rejection before Lean
 
 ac899fbd4889f55b473194235b03e574b41bb5d4/run40111270587/job120923315139 passes Rust build/tests but source preparation rejects ResearchCommons.Integration.Exports -> ResearchCommons.Claims.Memory. The new import-only root was appended after its consumer in the explicit ordered manifest. NO new Lean compilation/type/owned check ran, so neither the current refined-indicator repair nor54 deterministic bindings gained or lost kernel acceptance. The existing prepare implementation was read: it requires every added dependency already present before source generation. Move the unchanged Memory entry immediately before Exports; all213 added dependency positions now checked in RAM, preserving every proof/import/hash/name. Historical accepted source24578364 query28 and stochastic4/20 remain unchanged. See import-root-order-rejection.json.
+
+
+## Source139 corrected preparation and exact three-conversion rejection
+
+11f17e5eb2f378b3bf4688577bdc4c52703ab109/run40111563897/job120924337742 reaches actual30-source RefinedIndicatorSeparator compilation after complete source preparation passes. Three diagnostics remain: raw' equivalence unfolding before the oldSource identity, literal Option some/none contradiction, and oldRetained constructor exposure. No complete-module/owned/54-name/full1472 PASS. The next precise proof edit preserves all11 original headers and uses the unchanged actual definitions; the independent36-source/54-name context is ordered before the unrelated causal boundary. No scientific theorem is reopened. Existing source24578364 accepted query28/stochastic20 contexts remain unchanged.
