@@ -11,7 +11,40 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
-## Active pair-calibrated reduction: hand proof completed, finite rigidity unproved
+## Active sufficient source premise — power-accurate root grid
+
+[G3-ASYMPTOTIC-ROOT-GRID-REDUCTION-01](../2026-10-24-g3-asymptotic-root-grid/PROOF.md)
+and its [separate status](../2026-10-24-g3-asymptotic-root-grid/SOURCE-STATUS.json)
+PROVE BY HAND that the existing negative reduction needs only a
+power-accurate inferred integer index. The COMPLETE old16206B arithmetic
+proof4c54e60b... was reread; its integer-gap/range construction is REUSED.
+A larger range exponent absorbs index errors. No new arithmetic backend
+or physical source constructor is claimed.
+
+The ONE active UNPROVED source statement is **AG-Pair**. Some fixed
+integers m,M,A,k,T must make EVERY arbitrary-length strict equal-arm
+word K, with arbitrary coins and the SAME pair budget, satisfy
+
+    c=2^(-1/m), c<t^4<1, K_C=E(c), b2I(K)=c^(3/4),
+    [K_I,S(t)]=0 through the complete forest cap M,
+    nu=log(c)/(4log(t))>=T
+       => dist(nu,Z)<=A*nu^(-1/k).
+
+Here S(t)=E(t)B_I(t/(2-t),t/(2-t),1/2)E(t^2(2-t)).
+Its strict physical integer powers supply every large exact grid point.
+The old all-core passive source map and SAME-tuple pair calibration are
+already PROVED and reused unchanged. If AG-Pair is supplied, one guarded
+polynomial cutpoint gives original G3 undecidability and excludes a
+universal effective ONE-witness bound. Original G3 remains unresolved.
+
+Exact CP-Pair is retained as an UNPROVED stronger sufficient special
+case, not a second active task. No physical asymptotic estimate follows
+from the arithmetic proof, fixed diagonal synthesis or all-copy normal
+form. The selected integer is not claimed to be an arbitrary source's
+actual cell count. This is a weakening of the existing full-scope route,
+not a new standalone full attack or a solved finite-cap rigidity theorem.
+
+## Pair-calibrated predecessor: completed source transfer, stronger CP-Pair unproved
 
 [G3-PAIR-CALIBRATED-ROOT-REDUCTION-01](../2026-10-24-g3-pair-calibrated-reference/PROOF.md)
 and its [separate status](../2026-10-24-g3-pair-calibrated-reference/SOURCE-STATUS.json)
@@ -24,7 +57,7 @@ both main pair coordinates and supplies a passive commutation test.
 At ANY fixed c=2^(-1/m), the old hard arithmetic instances survive by
 Q_m(x)=Q(x^m). Every fitting main word has total equal-arm plus ordinary
 exposure(log2)/m, uniformly in its unknown length. Coins stay arbitrary;
-there is no relative cell-scale bound. The active **CP-Pair is UNPROVED**:
+there is no relative cell-scale bound. The stronger sufficient **CP-Pair is UNPROVED**:
 some fixed m,M force t^(4N)=c from K_C=E(c), b2I(K)=c^(3/4) and
 [K_I,S(t)]=0 through M, for EVERY finite strict equal-arm word K.
 Proving it would close the original negative reduction. No original
@@ -61,7 +94,7 @@ repetition fixes BOTH total passages. The older unrestricted diagonal
 and prescribed-I-time theorems are completed predecessors, not reopened.
 
 For the active reduction take D=C^(3/4). The paired-diagonal budget task
-is closed; CP-Pair's full chronological forest equations remain UNPROVED.
+is closed; AG-Pair's source estimate and the stronger CP-Pair remain UNPROVED.
 These words are not claimed to commute with S(t). No full ordinary return,
 one finite all-cap word or admitted fixed G4 target is supplied. Do not
 start another diagonal/cap/time-budget project from this record.
@@ -116,7 +149,8 @@ There is no supplied whole template or configuration-aware readout.
 For every finite M>=4 the source/word equivalence is complete. Conditional
 on CP-W at some fixed M, it gives a full original-input root-order reduction.
 **CP-W itself remains UNPROVED** as an inactive alternative. The active
-successor above adds fixed I pair data and uses CP-Pair. Original G3
+pair-calibrated successor adds fixed I pair data; the later AG-Pair
+section above weakens the active sufficient premise. Original G3
 stays unresolved; all completed predecessor claims remain proved.
 
 The earlier [fixed-graph coefficient comparator](../2026-10-23-g3-fixed-graph-comparator/PROOF.md),

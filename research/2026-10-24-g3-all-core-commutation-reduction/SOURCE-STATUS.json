@@ -1,4 +1,10 @@
 {
+  "active_successor": {
+    "detail": "Completed pair calibration is reused. Its later asymptotic-grid successor makes the unproved AG-Pair source estimate active. The old completed claims and proof bytes are unchanged.",
+    "key": "G3-PAIR-CALIBRATED-ROOT-REDUCTION-01",
+    "path": "../2026-10-24-g3-pair-calibrated-reference/SOURCE-STATUS.json",
+    "proof_sha256": "2babce31b4043acb18c7d2a19a75a92d5eb8320b0f705f4283a19132996b91c9"
+  },
   "active_unresolved_implications": [
     {
       "key": "CB-G3-004",
@@ -59,6 +65,7 @@
     "delta": "1/64",
     "main_and_slack_common_passage": "1/2"
   },
+  "current_frontier_updated_utc": "2026-10-24T04:53:00Z",
   "evidence": {
     "author_completion": "complete",
     "author_self_review": "completed",
@@ -69,7 +76,15 @@
     "source_publication": "exact immutable commit containing this record; recipient reading/adoption is separate"
   },
   "holds": "No local Git, subagents/chats/turn actions, native/model/solver/CI jobs, held/USED/UNKNOWN replay or writer bypass.",
-  "next_action": "Follow the active pair-calibrated successor's CP-Pair; reuse the completed source-complete reduction. The older CP-W remains unproved but is inactive. No new source wrapper or cap ladder.",
+  "inactive_unresolved_alternatives": [
+    {
+      "key": "G3-CP-W",
+      "mathematical_status": "unproved",
+      "queue_status": "historical alternative, not a second active task",
+      "statement": "Some fixed M>=4: for every t in(2^(-1/4),1) and every finite strict positive full equal-arm private word K with arbitrary coins, K_C=E(1/2) and [K_I,W(t)]=0 through M imply t^(4N)=1/2 for an integer N>=2."
+    }
+  ],
+  "next_action": "Follow the pair-calibrated successor and its later AG-Pair asymptotic-grid weakening; reuse the completed original source reduction. Exact CP-Pair/CP-W are inactive stronger sufficient alternatives. No new source wrapper or cap ladder.",
   "original_input_scope": "Untyped all-core original finite strict BOTH sources; finite original controls/ordered-parent fields, finite original polynomial physical relations and declared finite passive topology channels. No supplied whole graphical template, word length, calendar or alphabet.",
   "owner": "existing G3 owner",
   "proof": {
@@ -103,20 +118,5 @@
       "relationship": "preserve_completed_qualified_menu_result",
       "target": "CB-G4-004"
     }
-  ],
-  "current_frontier_updated_utc": "2026-10-24T02:30:00Z",
-  "inactive_unresolved_alternatives": [
-    {
-      "key": "G3-CP-W",
-      "mathematical_status": "unproved",
-      "statement": "Some fixed M>=4: for every t in(2^(-1/4),1) and every finite strict positive full equal-arm private word K with arbitrary coins, K_C=E(1/2) and [K_I,W(t)]=0 through M imply t^(4N)=1/2 for an integer N>=2.",
-      "queue_status": "historical alternative, not a second active task"
-    }
-  ],
-  "active_successor": {
-    "key": "G3-PAIR-CALIBRATED-ROOT-REDUCTION-01",
-    "path": "../2026-10-24-g3-pair-calibrated-reference/SOURCE-STATUS.json",
-    "proof_sha256": "2babce31b4043acb18c7d2a19a75a92d5eb8320b0f705f4283a19132996b91c9",
-    "detail": "Completed calibration/source refinements add fixed I pair data and allow a uniformly small COMMON budget. CP-Pair is active and unproved; old completed claims and proof bytes are unchanged."
-  }
+  ]
 }
