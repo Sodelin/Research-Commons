@@ -10,7 +10,10 @@ permissions:
   contents: read
 # Pushes run exact Rust/source accounting, current export dependencies/owned
 # audits and the strict claim gate. Full/word/completion jobs use explicit commit
-# markers or manual dispatch; every required whole-package result remains needed
+# markers or manual dispatch; [check library] reuses the existing full library/
+# owned/export checks without selecting its expensive caller sequence. That mode
+# has a separate serial group so it cannot cancel/replace the live full caller.
+# Every required whole-package result remains needed
 # before closure. Skipping an unchanged job never supplies a fresh receipt.
 jobs:
   rust:
@@ -70,9 +73,9 @@ jobs:
             packages/research/Cargo.lock
           if-no-files-found: warn
   lean:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]') || contains(github.event.head_commit.message, '[check library]')
     concurrency:
-      group: portable-research-package-20261023
+      group: portable-research-package-20261023${{ github.event_name != 'workflow_dispatch' && contains(github.event.head_commit.message, '[check library]') && !contains(github.event.head_commit.message, '[check full]') && '-library' || '' }}
       cancel-in-progress: false
     name: Coherent retained Lean profile (not all 118 formalizations)
     needs: rust
@@ -115,6 +118,7 @@ jobs:
       - name: Check exact canonical-ID to Lean-declaration interfaces
         run: cargo run --locked -p research-commons-package -- check-exports
       - name: Kernel-check Rust-emitted positive and negative certificates
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]')
         run: cargo run --locked -p research-commons-package -- check-callers
       - name: Retain exact completed source objects even after a later module failure
         if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''

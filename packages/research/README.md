@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-The package integrates the canonical claim registry in reuse and dependency order. Existing proofs and engines are reused; unresolved questions retain exact obligations. The pinned snapshot has **118 claims:75 reuse-rated and43 unranked**, at447e188d. The candidate graph has1,613 retained modules plus43 integration modules; the all-finite tree-channel module and its complete64-entry native caller are accepted at their exact scopes; the new original-copy readout join is pending.
+The package integrates the canonical claim registry in reuse and dependency order. Existing proofs and engines are reused; unresolved questions retain exact obligations. The pinned snapshot has **118 claims:75 reuse-rated and43 unranked**, at447e188d. The candidate graph has1,613 retained modules plus44 integration modules; the all-finite tree-channel module and its complete64-entry native caller are accepted at their exact scopes; the original-copy readout is accepted; the real-date measurability join is pending.
 
 ## Build on a development host
 
@@ -26,7 +26,7 @@ The full per-claim gate remains incomplete and exits2 until every required bindi
 ## Verified package evidence
 
 - **97 Rust tests passed** at[source631dbaa0/run40047327555](https://github.com/Sodelin/Research-Commons/actions/runs/40047327555), including three new complete JC-tree column/label/refusal groups. The generic tree component and complete native64-entry caller also passed at source631dbaa0/run40047327555.
-- **23 scoped claim mappings/128 actual Lean declaration names and owners passed** atsource631dbaa0, with the complete923-source export context and22240/14882 owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v10.json). These are scoped components where stated, not128 complete scientific endpoints.
+- **23 scoped claim mappings/131 actual Lean declaration names and owners passed** atsource555695d9, with the complete924-source export context and whole owned audit. Zero owned axioms, nonstandard rows or missing modules.95 claims remain without named exports. [Exact receipt](integration/claim-export-verification-v11.json). These are scoped components where stated, not131 complete scientific endpoints.
 - The **complete1,654-source library** and generated roots passed at source47e28fc6, with105031 declarations/94667 theorems audited. The same1,654 source hashes passed again at source9278a34a; that later full sequence rejected the already-repaired word Symbol argument after its library/export commands. [Library receipt](integration/coherent-library-verification-v5.json) · [later full record](integration/word-stage-literal-rejection.json). Neither result accepts the entire larger word or full caller sequence.
 - The earlier source67ef70da passed its complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Historical acceptance does not transfer automatically to changed code.
 
@@ -86,7 +86,7 @@ The generic Lean filter equations/types AND BOTH complete actual filter results 
 
 ## Original-tree JC channel
 
-[JC69Tree](lean/ResearchCommons/MSCI/JC69Tree.lean) constructs normalized patterns and conditional loci on EVERY finite ORIGINAL Genealogy, derives the Fourier factor, retains original copy IDs and reuses G2's SAME pair-matrix/age decoder. Its thirteen new named exports passed the complete923-source context/owned audit, bringing the current scoped map to128 names. [Accepted generic component](integration/jc69-tree-verification.json).
+[JC69Tree](lean/ResearchCommons/MSCI/JC69Tree.lean) constructs normalized patterns and conditional loci on EVERY finite ORIGINAL Genealogy, derives the Fourier factor, retains original copy IDs and reuses G2's SAME pair-matrix/age decoder. Its thirteen new named exports passed the complete923-source context/owned audit, and the original-copy successor brings the current scoped map to131 names. [Accepted generic component](integration/jc69-tree-verification.json).
 
 [Rust pruning](crates/runtime/src/jc69_tree.rs) borrows the retained Tree and exact JC branch arithmetic, preserves one immutable branch/label bank and returns every pattern or explicit refusal. It passed its new tests. The actual three-tip caller emits all64 probabilities and proofs tying them to ONE coherent chronological clock and the decoded pair matrix:
 
@@ -94,7 +94,7 @@ The generic Lean filter equations/types AND BOTH complete actual filter results 
 cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate
 ```
 
-The COMPLETE generic tree module and SEPARATE64-entry caller now passed, including normalization, coherent chronology, SAME decoded pair-matrix clock and arbitrary finite conditional locus. The full caller audit has22293 declarations/14924 theorems and zero rejects. [Actual source/table/receipt](integration/jc69-tree-caller-verification.json). The later original-copy PMF/Fourier adapter is pending its own whole-context check. [Generic proof history](integration/jc69-tree-component-rejection.json) · [Actual caller failure](integration/jc69-tree-caller-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
+The COMPLETE generic tree module and SEPARATE64-entry caller now passed, including normalization, coherent chronology, SAME decoded pair-matrix clock and arbitrary finite conditional locus. The full caller audit has22293 declarations/14924 theorems and zero rejects. [Actual source/table/receipt](integration/jc69-tree-caller-verification.json). The actual original-copy PMF/Fourier adapter also passed its COMPLETE924-source/131-name context and owned audit at555695d9. [Readout receipt](integration/jc69-original-readout-verification.json). [Generic proof history](integration/jc69-tree-component-rejection.json) · [Actual caller failure](integration/jc69-tree-caller-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
 
 ## Independent verification targets
 
@@ -125,4 +125,4 @@ The generic same-bank checked-prefix word theorem passed. Every compact literal 
 
 Still separate:95 unnamed claim exports and remaining scoped applications; complete physical source/target/action coverage; native/parser/AST/controlled-word/raw-root/readout refinement; actual history-relative QE/selector/result origin. G3 all-input and the original open scientific endpoints remain open. Missing formal/native joins do not reopen completed hand mathematics.
 
-Expensive existing CI jobs use `[check word]`, `[check full]`, `[check completion]` commit markers or manual dispatch. Rust/current dependency/owned checks remain automatic. Skipped jobs provide no acceptance; all required complete checks remain mandatory before closure. Evidence-only commits name actual checked sources and create no fresh CI result.
+Expensive existing CI jobs use `[check word]`, `[check full]`, `[check completion]` commit markers or manual dispatch. `[check library]` reuses the full library/owned/export job and skips its expensive caller step, in a separate non-cancelling group; this verifies library scope only. Rust/current dependency/owned checks remain automatic. Skipped jobs provide no acceptance; all required complete checks remain mandatory before closure. Evidence-only commits name actual checked sources and create no fresh CI result.
