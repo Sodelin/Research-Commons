@@ -84,9 +84,16 @@ theorem conditional_mass_measurable (N : RootedBinary V E X)
   classical
   apply measurable_from_prod_countable_right
   intro d
-  have hg : Measurable (fun M : Copy → Copy → ℝ => GoodPoint N leafAge (d,M)) :=
-    measurable_const.and ((has_timed_bound_joint_measurable N leafAge).comp
-      (measurable_const.prodMk measurable_id))
+  have ht : Measurable (fun M : Copy → Copy → ℝ =>
+      HasTimedBound leafAge M (state d)) :=
+    (has_timed_bound_joint_measurable N (sample := sample) leafAge).comp
+      ((measurable_const : Measurable (fun _ : Copy → Copy → ℝ => d)).prodMk measurable_id)
+  have hc : Measurable (fun _ : Copy → Copy → ℝ => (state d).live.card ≤ 1) :=
+    measurable_const
+  have hg : Measurable (fun M : Copy → Copy → ℝ => GoodPoint N leafAge (d,M)) := by
+    change Measurable (fun M : Copy → Copy → ℝ =>
+      (state d).live.card ≤ 1 ∧ HasTimedBound leafAge M (state d))
+    exact hc.and ht
   have hp := (decoded_probability_measurable leafAge
     ((state d).genealogy (selectedRoot N d))
     (labelPattern ((state d).genealogy (selectedRoot N d)) p)).ennreal_ofReal
@@ -138,6 +145,7 @@ theorem original_point_measurable (N : RootedBinary V E X) (C : Calendar N.graph
     Measurable (originalPoint N C sample register H gamma common) :=
   (complete_end_measurable N _).prodMk (complete_matrix_measurable N _ _ _ _)
 
+omit [Nonempty Copy] in
 theorem actual_original_point_support (N : RootedBinary V E X) (C : Calendar N.graph)
     (sample : Copy → X) (register : V → Bool) (H : OriginalParentRegistry N)
     (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)

@@ -52,5 +52,31 @@
     "scoped_exports": 137
   },
   "same_word_job_preserved": 120743281427,
-  "goal_complete": false
+  "goal_complete": false,
+  "successors": [
+    {
+      "source": "cf06ff049efededde8151c5f932308ac5552c921",
+      "run": 40054189692,
+      "job": 120753511933,
+      "status": "REJECTED_COMPLETE_MODULE",
+      "log_read_complete": true,
+      "sha256": "359936a7ee8d896ca061ad934a618350f32ffd9fa77ef16ba279cd563b257f88",
+      "line": 88,
+      "error": "Measurable.const.and/composition did not infer fixed Code and constant-cardinality arguments through GoodPoint.",
+      "exact_context": "JC69Source.lean:88:4: error: Type mismatch\n  Measurable.and measurable_const\n    (Measurable.comp (has_timed_bound_joint_measurable N leafAge) (Measurable.prodMk measurable_const measurable_id))\nhas type\n  Measurable fun a => ?m.66 ∧ ((fun z => HasTimedBound leafAge z.2 (state z.1)) ∘ fun a => (?m.95, id a)) a\nbut is expected to have type\n  Measurable fun M => GoodPoint N leafAge (d, M)\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:83:42: error: unsolved goals\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\np : Copy → Base\nd : Code N sample\nhg : Measurable fun M => GoodPoint N leafAge (d, M)\nhp :\n  Measurable fun x =>\n    ENNReal.ofReal\n      (rootLikelihood ((state d).genealogy (selectedRoot N d))\n        (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n          (decode x ((state d).genealogy (selectedRoot N d))))\n        (labelPattern ((state d).genealogy (selectedRoot N d)) p))\n⊢ Measurable fun y => (conditionalKernel N leafAge (d, y)) p\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:141:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69Source.actual_original_point_support`:\n  [Nonempty Copy]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Nonempty Copy] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n",
+      "artifact": {
+        "id": 12543969553,
+        "bytes": 242473,
+        "sha256": "c4395a66d8e29f523f2c49d50a55f64acac45f20596c21f759fea42ef27c0dea",
+        "scope": "Actual upload metadata read; ZIP not downloaded."
+      },
+      "no_partial_new_module_acceptance": true
+    }
+  ],
+  "current_repair": {
+    "sha256": "01faad37d92e1488fcfa0abe605ab2aba9c12d2c71861fd37f748669c1bda0db",
+    "bytes": 13819,
+    "scope": "Separate explicitly typed original HasTimedBound/Code and cardinality measurable maps; change the goal to the literal GoodPoint conjunction. Same original source/PMFs/site/bank preserved. Remove only an unused Nonempty Copy binder from source support.",
+    "state": "SOURCE_ONLY_FRESH_COMPLETE_CONTEXT_REQUIRED"
+  }
 }
