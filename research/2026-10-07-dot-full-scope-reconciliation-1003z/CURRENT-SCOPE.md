@@ -3634,3 +3634,45 @@ That exact run 40021492707 remained in_progress at its bounded 21:54 snapshot; t
 
 Keep existing owners. G3 still needs total original-source recognition, including complete NO; G4's remaining finite-INDEPENDENT bridge must force the fixed target's certificate against ALL unknown-size positive rivals with one shared tuple. Completed COMMON stopping, natural BOTH, entire-I-to-C and qualified-menu results remain intact. P1/nanowire tasks and P5's author-hand completion are unchanged. The package owner retains actual caller/native/claim joins. No additional worker, build, solver, ongoing CI watch or broader scientific scope is initiated here.
 
+
+## Dated reconciliation — 24 October 2026, 02:03 UTC review
+
+Evidence cutoff: 24 October 2026, 02:04 UTC. Contributor: dot.
+This dated addendum preserves the preceding record verbatim and supersedes only the specific frontier/evidence statements below. It distinguishes author-complete hand mathematics, limited source checks, executed formal integration and original master closure. Existing owners and original quantifiers remain unchanged.
+
+### G3: successor reduction, not a decision theorem
+
+The [one-box correction](https://github.com/Sodelin/Research-Commons/commit/633776adb57cdb0fa081f0e8dd47bdefcc8dd4e8) retains the original single-occurrence observation contract. Completed G2 transcript composition does not license independent copies of an unknown kernel or undeclared nonlinear observations. Actual joint slots retain their joint law.
+
+The [bare-bookend exclusion](https://github.com/Sodelin/Research-Commons/commit/0fa00870fcca1b708edc9e899c0888ee1376bdb7) rejects the proposed parent-forced equality for every intended power already at four roots. Smaller caps are blind; larger caps do not repair that caller. This scoped author-hand exclusion is not original G3 undecidability.
+
+The [fixed-graph comparator](https://github.com/Sodelin/Research-Commons/blob/d4eafb50ac38bac5a26f9ca589559e5e5f6ec643/research/2026-10-23-g3-fixed-graph-comparator/PROOF.md) supplies a hand-complete corrected comparison with physically distinct coefficient auxiliaries and one unknown-word occurrence, conditional on its licensed public template and configuration-aware channel. Preserve it as a completed predecessor, not an unrestricted theorem.
+
+The stronger [all-core reduction](https://github.com/Sodelin/Research-Commons/blob/26898807efa9d09b632922a2cb47e500ff1df42f/research/2026-10-24-g3-all-core-commutation-reduction/PROOF.md) supplies those structural/readout gates for its specifically constructed ORIGINAL BOTH-input family. It reuses the accepted literal COMMON calibration theorem, forces the actual ordinary exterior and each named auxiliary using original response rows and finite physical relations, and realizes a passive rational topology channel with one main-word occurrence. It does not claim arbitrary passive data force an arbitrary scaffold.
+
+Its source/word equivalence is author-complete by hand for every supplied finite M>=4. The limited coordination check read the full proof and checked auxiliary algebra, source/parent-edge compatibility and both stated directions; independent whole-proof acceptance, Lean, new execution and novelty review remain absent. [Separate status](https://github.com/Sodelin/Research-Commons/blob/26898807efa9d09b632922a2cb47e500ff1df42f/research/2026-10-24-g3-all-core-commutation-reduction/SOURCE-STATUS.json).
+
+The active prospective obstruction is CP-W: some ONE fixed finite cap must force t^(4N)=1/2 from EVERY finite strict full equal-arm word K with arbitrary length/coins, SAME COMMON passage1/2, and commutation with W(t)=E(t)B_I(t^2,t^2,1/2)E(t). CP-W is UNPROVED. Only conditional on it does the completed reduction preclude a total original recognizer or universal effective one-witness size bound. Neither original impossibility nor terminating-NO closure has been acquired. The older node-started CP* and template/channel workaround are historical prospects, not extra active obligations for this successor. [Published priority decision](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6377976483).
+
+### G4: newly reported hand successor, source-review boundary retained
+
+The [supplier intake](https://github.com/Sodelin/Research-Commons/blob/06a2e48abd4c70d7eeec80979c66abc166cdbf48/packages/research/integration/supplier-returns.json) records ALL-ORDER-MIXED-RARE-SYMBOL-SEPARATION-R1.md, 12,660 bytes, SHA256 d646e5e38aea10d87c09fa31025c4a377b5bb6d702a1cf057e577f3d823c01b5. The owner reports hand-complete scalar all-D signs and specified GLOBAL-Phi/ONE-block shared-grade leading-cone conclusions without assuming universal H_D. The assembler reports complete-body/hash intake; the public proof-body URL is null. This reconciliation inspected the intake, not that proof, and therefore does not grant independent correctness acceptance or attach it to old G4CountUniform Lean names.
+
+H_D and simultaneous constrained cross-block/fixed-budget all-cap original obligations remain open. Preserve completed COMMON/BOTH/qualified-menu suppliers. The full fixed-target finite-I bridge against all unknown-size positive rivals sharing one tuple is not closed by this report.
+
+### Formal integration: accepted executions, not new scientific discoveries
+
+Earlier pending/rejected component statuses are superseded only at their exact successful successor sources:
+
+- [MSCI killed-clock receipt](https://github.com/Sodelin/Research-Commons/blob/34959b32dc277ffa56ce46fc45af2efe5b8cfc8d/packages/research/integration/msci-source-component-verification.json): actual original-source merger/rate ingredients checked; complete source/observation theorem remains separate.
+- [Finite parameter-filter receipt](https://github.com/Sodelin/Research-Commons/blob/aa1127eef91d7254443ad5c5d7298c80aeead04d/packages/research/integration/msci-alignment-verification.json): both complete supplied rational-history result sets checked, including every omitted map; one shared epoch map acts across adjacent matrices and initial/root names stay fixed. Root verified all steps of job120711863660 successful. This is not universal native refinement or full observable classification.
+- [Original-copy readout receipt](https://github.com/Sodelin/Research-Commons/blob/45cb8ecb1e5ef97728d29c5d56fdc6372c852960/packages/research/integration/jc69-original-readout-verification.json): source555695d9147097763f2146abad98d9e9091a4ab4, run40048683776/job120736354690, COMPLETE924-source dependency/owned context,23 scoped mappings/131 exact names and owners. Root verified all command steps successful, including JC16, complete native64 three-tip output on one coherent clock/matrix, and both entire parameter filters. The generic original-copy probability/Fourier readout is checked on the same source state/tree/decoded clock; the valid-state, single-live-root and retained timed-bound premises remain.
+
+The last receipt supersedes the earlier JC-tree candidate/rejection for that accepted scope. The earlier complete1654-source library receipt is retained separately; it is not evidence that every later larger library or all18 callers passed.97 Rust tests are contributor execution evidence.95 unnamed export mappings do not mean95 unproved mathematical claims. Completed MSCI hand claims are not reopened by absent formal joins.
+
+At the inspected [owner checkpoint](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6378171260), the later measurable real-date/source-mixture join and larger library context remained pending; no terminal outcome is inferred. Original unranked timed-observable descent, actual continuous source mixture, full event/coverage/recurrence/reconstruction and universal native refinement remain distinct. The long whole-word caller is not declared accepted.
+
+### Ownership and next tasks
+
+Keep the existing combined G3/G4, P-target and nanowire responsibilities with coordinating review; no added workers or changed scientific scope. G3 next: prove or give a genuinely superseding actual-source counterexample to CP-W, not a cap ladder or abstract centralizer surrogate. G4 next: preserve the reported successor's evidence level and address the original remaining all-rival obligations. P1 still lacks its original uniform risk/information-increment bound; nanowire model identification still needs the same-device whole-curve/opposite-indicator witness or exclusion, not measured-device claims. P5 author-hand completion and its separate restricted positive theorem retain their stated statuses. No new P/nanowire evidence was identified in this reconciliation. Package integration remains with its existing owner.
+
