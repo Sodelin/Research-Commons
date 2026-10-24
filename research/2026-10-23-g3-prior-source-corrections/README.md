@@ -44,6 +44,37 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Weighted active-cell rounding: proved bound, optional source estimate unproved
+
+[G3-ACTIVE-MOMENT-ROUNDING-01](../2026-10-24-g3-asymptotic-root-grid/ACTIVE-MOMENT-ROUNDING.md)
+PROVES the finite-array estimate
+|P3-N_J|<=4F+30sqrt(P3 F), for Pj=sum u_i*a_i^j and
+F=sum u_i*a_i^3*((a_i-1)^2+(1-u_i)^2).
+Here J selects a_i>1/2,u_i>1/2 and N_J is an actual integer.
+There is no word-length, coin/activity floor or maximum-scale promise.
+Small/inactive cells contribute bounded mass rather than being counted.
+
+For actual source cells put a_i=h_i/h_B(t),u_i=4g_i(1-g_i).
+The activity defect is exactly -4*sum third_i/h_B(t)^3, by the OLD
+equal-arm definition third_i=-g_i(1-g_i)*(2g_i-1)^4*h_i^3.
+These are physical-parameter quantities, NOT assumed observed rows.
+
+An OPTIONAL sufficient source test is |P3-nu|<=Bnu^(-1/2),
+F<=Bnu^(-2) under the active full commutator/SAME pair budget.
+It would give AG-Pair with k=2,A>=5B+30sqrt(2B) by the proved rounding
+bound. Every intended S(t)^N has a=u=1,P3=N=nu,F=0.
+**The source test is UNPROVED**, is stronger than the conclusion and
+is NOT a new original requirement or another active goal. If it fails,
+AG-Pair may still hold. No actual source-to-moment equality, kernel
+observable, full index estimate or bound on all presentation lengths
+has been supplied. The existing nonzero storage boundary is retained.
+
+This is supporting HAND mathematics, not a new full attack or a new
+source-coefficient discovery. Independent review/Lean unperformed;
+no scientific/source/solver/native run. Classical Cauchy-Schwarz reused.
+The old synthetic variance model and root-count Hankel obstruction
+have different carriers and are not physical suppliers for this test.
+
 ## Joint diagonal log guards: weak-source admission corollary proved
 
 [G3-JOINT-DIAGONAL-LOG-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/ADDITIVE-LOG-ADMISSION.md)
