@@ -31,3 +31,8 @@ CB-CAUSAL-001/002/003's complete existing146-source proposal and10 typed endpoin
 
 
 First actual full context, source1a5582e2/run40065818355, is REJECTED at RationalPolynomialAvoidance38:16: missing DenselyOrdered Q. The existing G7 import shim compiled before that failure; no full causal owned/name/type acceptance follows. The selected compatibility copy adds ONLY Mathlib.Algebra.Order.Field.Basic, whose existing pinned LinearOrderedSemiField.toDenselyOrdered instance was read. All original theorem statements/proof bodies and all146 frozen vendor bodies remain unchanged. Complete1077-source target/owned checking is pending on the import repair; no smaller closure, new mathematical density proof, weakened hypothesis or desired-law premise. Rust102 passed. Exact rejection: causal-compiler-rejections.json.
+
+
+Source29f998f5/run40067030245 compiled the rational-density repair, then REJECTED the next original SelectedWalkReduction at append's unapplied induction hypothesis and four inactive <+ notations. Its explicit compatibility variant applies ih to the already-present k and uses List.Sublist for the same propositions. All original146 vendor bodies remain frozen and the full1077-source target/ten causal endpoints stay selected. No source predicate, physical tuple, theorem scope or desired-law premise is weakened. Exact rejection is retained; full causal acceptance remains pending.
+
+SAME complete word: renderer0bfc2eee exposes the original synchronous kernel mkAuxLemma exception without the builtin diagnostic catch; exact Bool/input/checker/physical consumer unchanged. This is pending diagnostics, not coefficient acceptance. See WORD-KERNEL-DIAGNOSTIC-REUSE-PREFLIGHT.md.

@@ -39,6 +39,44 @@
       "repair": "Move package documentation below all imports; all original theorem statements/proof bodies unchanged",
       "rust_job": 120790700532,
       "rust_status": "success"
+    },
+    {
+      "source": "29f998f50f2425ec579dee6cafd95b8245e0fac7",
+      "run": 40067030245,
+      "job": 120792475334,
+      "module": "SelectedWalkReduction",
+      "errors": [
+        {
+          "line": 37,
+          "column": 45,
+          "diagnostic": "Application type mismatch: ih is Route ... suffix -> Route ... appended suffix; must apply to existing k"
+        },
+        {
+          "line": 51,
+          "column": 38,
+          "diagnostic": "unexpected token '+'; expected term"
+        },
+        {
+          "line": 71,
+          "column": 56,
+          "diagnostic": "unexpected token '+'; expected term"
+        },
+        {
+          "line": 92,
+          "column": 33,
+          "diagnostic": "unexpected token '+'; expected term"
+        },
+        {
+          "line": 206,
+          "column": 25,
+          "diagnostic": "unexpected token '+'; expected term"
+        }
+      ],
+      "previous_rational_instance_variant_compiled": true,
+      "causal_theorem_acceptance": false,
+      "owned_audit_ran": false,
+      "rust_job": 120792340703,
+      "rust_status": "success"
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -60,5 +98,54 @@
     "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
   },
   "native_provider_implemented": false,
-  "whole_claim_formal_binding": false
+  "whole_claim_formal_binding": false,
+  "compatibility_variants": [
+    {
+      "module": "RationalPolynomialAvoidance",
+      "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+      "selected_sha256": "36a72240fdc35223449c801013ad61c0dfa28820f49ca10b7cf94b08f69eb5ec",
+      "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+      "pinned_instance_source": {
+        "repository": "leanprover-community/mathlib4",
+        "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "path": "Mathlib/Algebra/Order/Field/Basic.lean",
+        "bytes": 34578,
+        "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
+        "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
+      },
+      "statements_and_proof_bodies_byte_identical": true,
+      "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
+    },
+    {
+      "module": "SelectedWalkReduction",
+      "original_sha256": "e5ff79d7cbc1870319baaf30d89f29cd77a96346ce2cf7b0f29e3d1c80450288",
+      "selected_sha256": "723b258cab7519cb867f88bc5a75ed29055c9aad3da5fdf1ce485378ddf637f5",
+      "edit": "Apply append induction hypothesis ih to its existing suffix k; replace four inactive <+ spellings by definitionally identical List.Sublist propositions. No hypotheses/conclusion semantics or source predicate change.",
+      "exact_edits": [
+        [
+          "| cons hstep htail ih => exact .cons hstep ih",
+          "| cons hstep htail ih => exact .cons hstep (ih k)"
+        ],
+        [
+          "(x :: ys) <+ (a :: xs)",
+          "List.Sublist (x :: ys) (a :: xs)"
+        ],
+        [
+          "(a :: ys) <+ (a :: xs)",
+          "List.Sublist (a :: ys) (a :: xs)"
+        ],
+        [
+          "(a :: («prefix» ++ suffix)) <+ (a :: («prefix» ++ (loop ++ suffix)))",
+          "List.Sublist (a :: («prefix» ++ suffix)) (a :: («prefix» ++ (loop ++ suffix)))"
+        ],
+        [
+          "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
+          "List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs)"
+        ]
+      ],
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false
+    }
+  ]
 }

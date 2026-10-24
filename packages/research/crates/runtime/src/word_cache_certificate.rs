@@ -398,7 +398,20 @@ theorem coefficient_fibres_checked :
   simp only [{payload_rules}, GProgram.G7.EffectiveFullEpochCoefficients.product,
     List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
     List.cons_append, List.nil_append]
-  decide +kernel
+  -- Reuse the pinned builtin's kernel construction without its catch/diagnose
+  -- fallback, which can replace the original kernel exception with a stuck
+  -- default-transparency Decidable report. This is the SAME closed Bool goal.
+  run_tac
+    Lean.Elab.Tactic.closeMainGoalUsing `kernel_decide_original_error fun target _ => do
+      let target ← Lean.instantiateMVars target
+      if target.hasFVar || target.hasMVar then
+        throwError "closed literal coefficient goal required"
+      let proof ← Lean.Meta.mkDecideProof target
+      let typeLevels := (Lean.collectLevelParams {} target).params
+      let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
+      let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
+        Lean.Elab.Term.mkAuxLemma lemmaLevels target proof
+      pure (Lean.mkConst lemmaName (lemmaLevels.map Lean.Level.param))
 #check coefficient_fibres_checked
 end {stage_namespace}
 "#,header=header(&[cache_module.clone(),previous_module.clone(),data],

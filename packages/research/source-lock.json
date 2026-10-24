@@ -113,6 +113,37 @@
           },
           "statements_and_proof_bodies_byte_identical": true,
           "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
+        },
+        {
+          "module": "SelectedWalkReduction",
+          "original_sha256": "e5ff79d7cbc1870319baaf30d89f29cd77a96346ce2cf7b0f29e3d1c80450288",
+          "selected_sha256": "723b258cab7519cb867f88bc5a75ed29055c9aad3da5fdf1ce485378ddf637f5",
+          "edit": "Apply append induction hypothesis ih to its existing suffix k; replace four inactive <+ spellings by definitionally identical List.Sublist propositions. No hypotheses/conclusion semantics or source predicate change.",
+          "exact_edits": [
+            [
+              "| cons hstep htail ih => exact .cons hstep ih",
+              "| cons hstep htail ih => exact .cons hstep (ih k)"
+            ],
+            [
+              "(x :: ys) <+ (a :: xs)",
+              "List.Sublist (x :: ys) (a :: xs)"
+            ],
+            [
+              "(a :: ys) <+ (a :: xs)",
+              "List.Sublist (a :: ys) (a :: xs)"
+            ],
+            [
+              "(a :: («prefix» ++ suffix)) <+ (a :: («prefix» ++ (loop ++ suffix)))",
+              "List.Sublist (a :: («prefix» ++ suffix)) (a :: («prefix» ++ (loop ++ suffix)))"
+            ],
+            [
+              "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
+              "List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs)"
+            ]
+          ],
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false
         }
       ]
     }
