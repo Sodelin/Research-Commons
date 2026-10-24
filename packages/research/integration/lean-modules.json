@@ -2403,8 +2403,8 @@
         "git_blob": "44e35a62907146085ce31aba94b533eac17d402a",
         "source_sha256": "20ee4524f7c456c3020d83dd69f6efabf315290299b69f6cbd15c61efc42c7ff",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE34_SOURCE_OWNED_CONTEXT",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
@@ -2413,13 +2413,17 @@
         "all6_theorem_headers_unchanged": true,
         "proof_only_edits": "Unfold exact DepartureAllowed when reversing; explicitly instantiate the actual reversed Arrival with SAME vertex and supplied incoming mark. No source/clock/path/ancestry/no-tail premise changed.",
         "followon": "Case-split only the SAME actual Option arrival mark, so both original DepartureAllowed/Transition match eliminators reduce to their actual constructor fields. Original6 headers unchanged.",
-        "latest_rejected_source": "9ead05c9c9afd1812ad8e666d64a67553f1bd0a4"
+        "latest_rejected_source": "9ead05c9c9afd1812ad8e666d64a67553f1bd0a4",
+        "accepted_source": "b41e9e40989a098ea92fbcb0411b64acb7b541b8",
+        "accepted_run": 40121972415,
+        "accepted_job": 120955475347,
+        "current_component_verification": "integration/causal-endpoint-marks-component-verification.json"
       }
     },
     {
       "module": "MarkedActiveWalks",
       "path": "lean/ResearchCommons/Compatibility/MarkedActiveWalks.lean",
-      "sha256": "55a37a550cc486479da37b0291f24882b668eb18ddfcf69fb6241263a76994ec",
+      "sha256": "e5830945f73f32763e259d57bd49fd83d388a3d5db1ca959fa1df97bcae8b92f",
       "imports": [
         "InducingEndpointMarks"
       ],
@@ -2432,11 +2436,15 @@
         "source_sha256": "57a6fd8d1aca2a456c3e2cefcf2716ceeb1c8783e7cc5af4d98966938052a32f",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE35_SOURCE_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained."
+        "variant": "Original selected identity-map compatibility plus ONE direct reverse rewrite of exact arrival/end equalities, avoiding recursive simp on next = Arrival.mk next.vertex mark. Definitions and all11 original theorem headers unchanged.",
+        "actual_complete_original_and_successor_read": true,
+        "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "all11_theorem_headers_unchanged": true,
+        "latest_rejected_source": "b41e9e40989a098ea92fbcb0411b64acb7b541b8"
       }
     },
     {
@@ -5078,9 +5086,27 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.Ownership",
+      "path": "lean/ResearchCommons/Claims/Ownership.lean",
+      "sha256": "dac8aa50265f065a66f87dbbd6a23d3d09fa3939b2bbf4913fe2e496054698b8",
+      "imports": [
+        "PairingBridge",
+        "PairingObservation"
+      ],
+      "provenance": {
+        "role": "Import-only reuse of COMPLETE existing constrained ownership and exact sampling result; no new theorem/engine",
+        "original_repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+        "original_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
+        "actual_complete_original_and_successor_read": true,
+        "preflight": "integration/OWNERSHIP-REUSE-PREFLIGHT.md",
+        "current_context_verified": false,
+        "new_mathematical_discovery": false
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "fab85c6d3eaee5e888084397cc5dc35176112364ec21e452bc16d0c94cf28dbe",
+      "sha256": "6f031aba0f525e38551f13d7381c44a13785fd25143783652a78212e9881009e",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -5110,6 +5136,7 @@
         "ResearchCommons.Claims.RNA",
         "ResearchCommons.Claims.Wong",
         "ResearchCommons.Claims.Genome",
+        "ResearchCommons.Claims.Ownership",
         "ResearchCommons.Menu.FiniteForcing",
         "SocialScience.Audit",
         "ClinicalModels.Audit",
@@ -5129,7 +5156,7 @@
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v16.json",
         "source_commit": "c79deb202cadfae269f06dedd8c724648b497856",
-        "current_candidate_scope": "Existing exact typed claim union plus OLD calibration theorem's concrete new full-sample formalization. All original completed scopes remain; no invented scientific proof or native origin.",
+        "current_candidate_scope": "Existing exact typed claim union plus the OLD completed ownership/sampling result imported unchanged. Root/36 names pending exact whole-context checking; no new scientific theorem or native origin.",
         "current_context_verified": false
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

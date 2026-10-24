@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE33_STATUS_ACCEPTED; FULL1473_REJECTED_AT_ENDPOINT_MARKS103_BLOCKED",
+  "status": "COMPLETE34_ENDPOINT_ACCEPTED; FULL1473_REJECTED_AT_MARKED_WALKS102_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15390,10 +15390,26 @@
         "2026-10-24T18:32:19.6272397Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/InducingEndpointMarks.lean:138:8: error: Type mismatch: After simplification, term\n2026-10-24T18:32:19.6273273Z   hready\n2026-10-24T18:32:19.6273503Z  has type\n2026-10-24T18:32:19.6273879Z   DepartureAllowed.match_1 (fun incoming => Prop) last (fun _ => True) fun previous =>\n2026-10-24T18:32:19.6274343Z     ActiveAt C A next.vertex previous incoming\n2026-10-24T18:32:19.6274687Z but is expected to have type\n2026-10-24T18:32:19.6275238Z   Transition.match_1 (fun x => Prop) last (fun _ => True) fun previous => ActiveAt C A next.vertex previous incoming"
       ],
       "disposition": "ENTIRE34_SOURCE_CONTEXT_REJECTED; no clean-partial acceptance; full1473 not reached"
+    },
+    {
+      "source": "b41e9e40989a098ea92fbcb0411b64acb7b541b8",
+      "run_id": 40121972415,
+      "job_id": 120955475347,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected_sources": 1473,
+      "successful_objects": 1370,
+      "compiled": 105,
+      "reused": 1265,
+      "failed_module": "MarkedActiveWalks",
+      "blocked": 102,
+      "diagnostics": [
+        "2026-10-24T18:52:36.3876005Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MarkedActiveWalks.lean:120:12: error: Tactic `simp` failed with a nested error:\n2026-10-24T18:52:36.3877883Z maximum recursion depth has been reached\n2026-10-24T18:52:36.3878745Z use `set_option maxRecDepth <num>` to increase limit\n2026-10-24T18:52:36.3880296Z use `set_option diagnostics true` to get diagnostic information"
+      ],
+      "disposition": "FULL1473_REJECTED; separate COMPLETE34 endpoint/owned audit accepted and independently validated."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
-  "full_module_selection_unchanged": true,
+  "full_module_selection_unchanged": false,
   "repair": "Actual original Route.cons endpoint inference and explicit decoded-carrier finite decision instance reuse; no hypothesis/target change.",
   "native_provider_implemented": false,
   "whole_claim_formal_binding": false,
@@ -16607,6 +16623,32 @@
         "        simpa only [hmark, DepartureAllowed] using hready",
         "        cases last <;> simpa only [hmark, DepartureAllowed] using hready"
       ]
+    },
+    {
+      "module": "MarkedActiveWalks",
+      "original": {
+        "bytes": 7953,
+        "git_blob": "3f531c6dbdf3eb093a5800f2681ab5d63feb57e9",
+        "sha256": "57a6fd8d1aca2a456c3e2cefcf2716ceeb1c8783e7cc5af4d98966938052a32f"
+      },
+      "successor": {
+        "bytes": 7953,
+        "git_blob": "3f531c6dbdf3eb093a5800f2681ab5d63feb57e9",
+        "sha256": "57a6fd8d1aca2a456c3e2cefcf2716ceeb1c8783e7cc5af4d98966938052a32f"
+      },
+      "selected": {
+        "bytes": 8209,
+        "git_blob": "75162ee13343211ebb244cbd8d892db5bf4c0189",
+        "sha256": "e5830945f73f32763e259d57bd49fd83d388a3d5db1ca959fa1df97bcae8b92f"
+      },
+      "all11_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edit": [
+        "            simpa only [nextEq, endEq] using hrest",
+        "            rw [← nextEq, ← endEq]\n            exact hrest"
+      ],
+      "status": "PENDING_COMPLETE35_SOURCE_AND_FULL1478_CHECK"
     }
-  ]
+  ],
+  "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."
 }

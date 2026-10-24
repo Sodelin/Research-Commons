@@ -2,7 +2,7 @@
 
 This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
 
-The current graph selects 1,613 retained modules plus 214 integration modules. There are 42 named claim mappings and 408 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
+The current graph selects 1,613 retained modules plus 215 integration modules. There are 43 named claim mappings and 444 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source147 accepts the complete33-source original status context (1061 declarations/607 theorems, zero rejects). Full1473 still rejects InducingEndpointMarks at two proof conversions:1369 successful objects/103 blocked. Current selected proof preserves all6 endpoint statements. Complete combined408-name/owned/actual-caller and strict all118 checks remain mandatory; the authoritative current queue is [FRONTIER](integration/FRONTIER.md).
+Current compatibility checkpoint: source149 accepts the complete34-source original endpoint context (1068 declarations/613 theorems, zero rejects; artifact independently verified). Full1473 still rejects MarkedActiveWalks at one recursive simplifier:1370 successful objects/102 blocked. The next proof preserves all11 statements. OLD complete ownership/sampling sources are reused via an import-only33-source/36-name binding, pending actual checking. Complete combined1478/444-name/owned/actual-caller and strict all118 checks remain mandatory; the authoritative current queue is [FRONTIER](integration/FRONTIER.md).
 
 ## Exact known-rate calibration component
 

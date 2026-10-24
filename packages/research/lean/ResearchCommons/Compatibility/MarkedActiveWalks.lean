@@ -117,7 +117,8 @@ theorem marked_of_distinct_route {V : Type u} (G : MarkedGraph V) (C A : V → P
           have nextEq : «next» = ⟨«next».vertex, some incoming⟩ := Arrival.eq_of_fields rfl hmark
           have endEq : last = some «right» := hright
           exact ⟨«left», «right», «next».vertex, incoming, rest, edge, by
-            simpa only [nextEq, endEq] using hrest⟩
+            rw [← nextEq, ← endEq]
+            exact hrest⟩
 
 theorem inducing_marked_route {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (x y : X) (h : InducingPath D x y) :
