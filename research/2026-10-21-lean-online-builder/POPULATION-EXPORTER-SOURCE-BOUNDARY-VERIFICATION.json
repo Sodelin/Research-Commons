@@ -1,0 +1,252 @@
+{
+  "schema": "population_exporter_source_boundary_hosted_verification_v1",
+  "case": "population-exporter-source-boundary",
+  "disposition": "PASS_REMOTE_LEAN_CHECK",
+  "classification": "Verification/integration of retained original source, input and decidability interfaces; not new mathematical admission or a native fixture.",
+  "source": "lean/scoped-context/PopulationExporterSourceBoundary.lean",
+  "source_bytes": 110940,
+  "source_sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a",
+  "submitted_source_sha256": "309480f47c38491d919aaaeaecbf36beea607a3575a711ccc4ab19a6eb209f71",
+  "versions": {
+    "toolchain": "leanprover/lean4:v4.35.0",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270"
+  },
+  "versions_stable": true,
+  "complete_printed_types": [
+    {
+      "name": "GProgram.G7.FiniteReachability.decideReach",
+      "printed_type": "GProgram.G7.FiniteReachability.decideReach.{u_1} {V : Type u_1} [Fintype.{u_1} V] [DecidableEq.{u_1 + 1} V]\n  (R : V → V → Prop) [@DecidableRel.{u_1 + 1, u_1 + 1} V V R] (a b : V) :\n  Decidable (@Relation.ReflTransGen.{u_1} V R a b)",
+      "printed_type_sha256": "d7b0b4aa5e7a2809cd58a12de446f2defab95f78620b951544e919aeef5b4071"
+    },
+    {
+      "name": "GProgram.G7.EffectiveSourceEnumeration.sourceValidDecidable",
+      "printed_type": "GProgram.G7.EffectiveSourceEnumeration.sourceValidDecidable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X]\n  (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³) (sample : Copy → X)\n  (s : @GProgram.SourceForest.State.{u_1, u_2, u_3} V E Copy inst✝⁴) :\n  Decidable\n    (@GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst✝⁴ inst✝ inst✝¹ inst✝² inst✝³ N sample s)",
+      "printed_type_sha256": "42c49dcd71c9080276014e3af163519136a73e7d30a9629e3808f0441e9512f1"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.root_exact",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.root_exact :\n  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (@Nanuq.Source.RootedBinary.root.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      Astra.PopulationExporterSourceBoundary.N)\n    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n      (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) ⋯)",
+      "printed_type_sha256": "c5caf94767d3ab3a0fbe347d2e0d85d1d870874dd37e6c3bcc42f6ab0096665a"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.edge_sources_exact",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.edge_sources_exact :\n  @Eq.{1}\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) →\n      Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (@Nanuq.Source.EdgeGraph.source.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (@Nanuq.Source.RootedBinary.graph.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        Astra.PopulationExporterSourceBoundary.N))\n    fun i =>\n    @ite.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (@Eq.{1} Nat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (instDecidableEqNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) ⋯)\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) ⋯)",
+      "printed_type_sha256": "409e56eccd94414d40afeffcfe15d4d919bbe42f888ee642aed55923acab08db"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.edge_targets_exact",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.edge_targets_exact :\n  @Eq.{1}\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) →\n      Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (@Nanuq.Source.EdgeGraph.target.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (@Nanuq.Source.RootedBinary.graph.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        Astra.PopulationExporterSourceBoundary.N))\n    fun i =>\n    @ite.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (@Eq.{1} Nat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (instDecidableEqNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) ⋯)\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ⋯)",
+      "printed_type_sha256": "7218f1cf709d8bd2b25e9b690e13cbd87e83f44605994845ab717338eca24041"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.taxa_exact",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.taxa_exact :\n  @Eq.{1}\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) →\n      Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (@DFunLike.coe.{1, 1, 1}\n      (Function.Embedding.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (fun x => Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (@Function.instFunLikeEmbedding.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))\n      (@Nanuq.Source.RootedBinary.leaf.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n        Astra.PopulationExporterSourceBoundary.N))\n    fun i =>\n    @ite.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (@Eq.{1} Nat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (instDecidableEqNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) i)\n        (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) ⋯)\n      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ⋯)",
+      "printed_type_sha256": "fb56fc8c8b862c6abef0777af241fd3781cb6127de098b8a3e5d4c1a94e9e47b"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.retained_input_source_valid",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.retained_input_source_valid (n : Nat)\n  (i : Option.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))\n  (register : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) → Bool) :\n  @GProgram.SourceForest.SourceValid.{0, 0, 0, 0} (Fin n)\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (instDecidableEqFin n)\n    (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n    (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n    (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n    Astra.PopulationExporterSourceBoundary.N (UnifiedLean.G7.OriginalPopulationFixture.sample n i)\n    (UnifiedLean.G7.OriginalPopulationFixture.initialState n i register)",
+      "printed_type_sha256": "308c0a0d1603dadd24dad0d4a4074824bafbda4b5295f910774f568e7025eb5a"
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.retained_input_decider",
+      "printed_type": "Astra.PopulationExporterSourceBoundary.retained_input_decider (n : Nat)\n  (i : Option.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))\n  (register : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) → Bool) :\n  Decidable\n    (@GProgram.SourceForest.SourceValid.{0, 0, 0, 0} (Fin n)\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (instDecidableEqFin n)\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))\n      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))\n      Astra.PopulationExporterSourceBoundary.N (UnifiedLean.G7.OriginalPopulationFixture.sample n i)\n      (UnifiedLean.G7.OriginalPopulationFixture.initialState n i register))",
+      "printed_type_sha256": "a623b0f288d7fc12e5a48d6b905179a517c2b87eb39358465d3ae24dcde15170"
+    }
+  ],
+  "selected_theorem_audits": [
+    {
+      "name": "GProgram.G7.FiniteReachability.decideReach",
+      "standard_axioms_only": true,
+      "messages": [
+        "'GProgram.G7.FiniteReachability.decideReach' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "GProgram.G7.EffectiveSourceEnumeration.sourceValidDecidable",
+      "standard_axioms_only": true,
+      "messages": [
+        "'GProgram.G7.EffectiveSourceEnumeration.sourceValidDecidable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.root_exact",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.root_exact' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.edge_sources_exact",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.edge_sources_exact' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.edge_targets_exact",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.edge_targets_exact' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.taxa_exact",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.taxa_exact' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.retained_input_source_valid",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.retained_input_source_valid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.PopulationExporterSourceBoundary.retained_input_decider",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.PopulationExporterSourceBoundary.retained_input_decider' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ]
+    }
+  ],
+  "global_error_diagnostics": [],
+  "complete_warning_diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "message": "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "message": "\n'Mathlib.Data.ENNReal.BigOperators' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.ENNReal.BigOperators\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "message": "`simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [population_roots N s i hs]\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+      "range": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    }
+  ],
+  "normal_child_exit": 0,
+  "complete_before_after_inventory": true,
+  "required_tested_source_identities": {
+    "lean/scoped-context/PopulationExporterSourceBoundary.lean": {
+      "bytes": 110940,
+      "sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a"
+    },
+    "check_online_context.py": {
+      "bytes": 2564,
+      "sha256": "46eaced8f14399e5e274b500fa5d408d477c55b4607d9786d5a0b8e7f576b6af"
+    },
+    "online_capture.py": {
+      "bytes": 10200,
+      "sha256": "8450567f244e3d4933edbf193792be6648a4e64b15e4e33e44c2c905fa43b00e"
+    },
+    "online_lean_full_context.mjs": {
+      "bytes": 11100,
+      "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+    },
+    "online_lean_full_context_drain.mjs": {
+      "bytes": 529,
+      "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+    }
+  },
+  "capture_ciphertext_sha256": "bed9cec1b083d37ab8a7177b652fc65b9f6f60dce6a0d9d3f392afdd3b00d265",
+  "started_utc": "2026-10-22T09:57:56.556Z",
+  "finished_utc": "2026-10-22T09:58:07.670Z",
+  "scope": "Original arbitrary-finite reachability/SourceValid deciders and their old arbitrary-copy input use-site; exact occurrence/taxon function field targets on the retained admitted two-tip source.",
+  "original_exporter": {
+    "commit": "0874c13e2b71a88154ac2bc8a7cb033965213fc0",
+    "successor_commit_same_bytes": "4ac6aa8565ec8aa2bac1d5dc4b3d31af64e86859",
+    "sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c",
+    "git_blob": "a3b3aff0d979543e9636cc17c4a0cf911d8980b5",
+    "compiled": false,
+    "executed": false,
+    "edited": false
+  },
+  "source_correction": {
+    "target": "Explicit coercion of N.leaf embedding to its original taxon function.",
+    "proposal": "proposals/PopulationExporterTaxaCoercion.patch",
+    "patch_sha256": "fbc61fc15cbb20b24cc352f074a3aadb25eaaadc765a957d8a70ec05216189c5",
+    "proposed_result_sha256": "2ceaff7ac28d712d173e10aaa5632b8f8a6956d3b96d503686631415e94490cf",
+    "native_source_applied": false,
+    "rust_compatibility_checked": false
+  },
+  "prior_rejected_revision": "POPULATION-EXPORTER-SOURCE-BOUNDARY-REVISIONS.json",
+  "source_command_map": "POPULATION-EXPORTER-SOURCE-BOUNDARY-SOURCE-MAP.json",
+  "not_supplied": [
+    "Actual native captured input/table",
+    "Exporter rendering or compilation",
+    "Particular coefficient_table_checked proof",
+    "Installed original module imports/objects",
+    "Native proof request/result origin",
+    "Whole-word completion/observer",
+    "Two-sided physical source/target/action coverage"
+  ],
+  "native_writer_controller": "UNBOUND",
+  "review_ciphertext_sha256": "d9704c1a2eb4dfc38fda8e2b01d6d986db7f6f939de863a082d631961e93c024"
+}
