@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Data.Real.Archimedean
 import Mathlib.Tactic.FieldSimp
@@ -44,6 +45,7 @@ def miss (e : EventRate) (n : ℕ) : ℝ := (1 - (e : ℝ)) ^ n
 
 theorem sample_mass_nonnegative (e : EventRate) {n : ℕ} (w : Sample n) :
     0 ≤ sampleMass e w := by
+  unfold sampleMass
   apply Finset.prod_nonneg
   intro i _
   cases h : w i with
@@ -142,7 +144,8 @@ theorem balanced_rule_errors (e : EventRate) (n : ℕ) :
   · rw [hb]
     change miss e n * (1 - miss e n / (1 + miss e n)) =
       miss e n / (1 + miss e n)
-    have hden : 1 + miss e n ≠ 0 := ne_of_gt (by positivity)
+    have hq := miss_positive e n
+    have hden : 1 + miss e n ≠ 0 := ne_of_gt (by linarith)
     field_simp [hden]
     <;> ring
 
@@ -152,6 +155,7 @@ theorem sharp_sum_error (e : EventRate) (n : ℕ) :
   constructor
   · refine ⟨thresholdRule n zeroProbability, ?_⟩
     obtain ⟨ha, hb⟩ := threshold_rule_errors e n zeroProbability
+    dsimp only
     rw [ha, hb]
     simp [zeroProbability]
   · rintro _ ⟨d, rfl⟩
@@ -163,6 +167,7 @@ theorem sharp_worst_error (e : EventRate) (n : ℕ) :
   constructor
   · refine ⟨thresholdRule n (balancedProbability e n), ?_⟩
     obtain ⟨ha, hb⟩ := balanced_rule_errors e n
+    dsimp only
     rw [ha, hb, max_self]
   · rintro _ ⟨d, rfl⟩
     exact worst_error_lower e d
@@ -182,7 +187,7 @@ theorem sharp_equal_prior_error (e : EventRate) (n : ℕ) :
 theorem no_finite_certain_decision (e : EventRate) {n : ℕ} (d : Decision n) :
     0 < max (nullError d) (alternativeError e d) := by
   have hp : 0 < miss e n / (1 + miss e n) :=
-    div_pos (miss_positive e n) (by positivity)
+    div_pos (miss_positive e n) (by have hq := miss_positive e n; linarith)
   exact hp.trans_le (worst_error_lower e d)
 
 theorem zero_trials_miss (e : EventRate) : miss e 0 = 1 := by simp [miss]
@@ -193,7 +198,8 @@ theorem fixed_rate_arbitrarily_accurate (e : EventRate) (η : ℝ) (hη : 0 < η
   refine ⟨n, thresholdRule n (balancedProbability e n), ?_⟩
   obtain ⟨ha, hb⟩ := balanced_rule_errors e n
   rw [ha, hb, max_self]
-  have hden : 0 < 1 + miss e n := by positivity
+  have hq := miss_positive e n
+  have hden : 0 < 1 + miss e n := by linarith
   have hle : miss e n / (1 + miss e n) ≤ miss e n := by
     apply (div_le_iff₀ hden).mpr
     nlinarith [sq_nonneg (miss e n)]
@@ -219,7 +225,7 @@ theorem bernoulli_lower (e : EventRate) (n : ℕ) :
     rw [pow_succ]
     have hmul := mul_le_mul_of_nonneg_right ih
       (sub_nonneg.mpr (le_of_lt e.property.2))
-    have hs := mul_nonneg (Nat.cast_nonneg (R := ℝ) n) (sq_nonneg (e : ℝ))
+    have hs := mul_nonneg (Nat.cast_nonneg (α := ℝ) n) (sq_nonneg (e : ℝ))
     simp only [Nat.cast_succ]
     nlinarith
 

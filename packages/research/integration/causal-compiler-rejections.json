@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMMON_OBSERVED32_REJECTED_2_DIAGNOSTICS; CALIBRATION_LEAN_AND_FULL1473_NOT_REACHED",
+  "status": "COMMON_OBSERVED32_ACCEPTED; CALIBRATION_WHOLE_MODULE_REJECTED_BEFORE_FULL1473",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15323,6 +15323,20 @@
       "calibration_Lean_stage_reached": false,
       "full1473_stage_reached": false,
       "actual_Rust_tests_passed": 114
+    },
+    {
+      "source": "38d7e4186e3eaa15623758787b12d296101dcedf",
+      "run_id": 40116373354,
+      "job_id": 120938566217,
+      "accepted_complete32_common_observed": {
+        "declarations": 1041,
+        "theorems": 594,
+        "zero_rejects": true,
+        "verification": "integration/causal-common-observed-component-verification.json"
+      },
+      "actual31_transcript_decoder_compile_passed": true,
+      "later_Lean_calibration_rejected": true,
+      "full1473_reached": false
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16431,7 +16445,7 @@
       "original_vendor_body_unchanged": true,
       "new_source_law_or_axiom": false,
       "edit": "Literal root-option contradiction; preserve endpoint argument in route induction; reduce incoming fields after cases; explicit original forget/oldSource/Observed constructor reduction. No new CI/MAG/source law or assumption.",
-      "status": "UNELABORATED_PROOF_VARIANT",
+      "status": "ACCEPTED_COMPLETE32_SOURCE_OWNED_CONTEXT",
       "followon": [
         [
           "    · simpa only [List.map_cons, mapArrival, forgetIndicator, sourceIndicatorEquiv, Observed] using nd",
@@ -16443,7 +16457,9 @@
         ]
       ],
       "latest_rejected_source": "1ce057b032f2a693626abe0949c1668b426e86c8",
-      "remaining_previous_diagnostics": 2
+      "remaining_previous_diagnostics": 2,
+      "actual_accepted_source": "38d7e4186e3eaa15623758787b12d296101dcedf",
+      "verification": "integration/causal-common-observed-component-verification.json"
     }
   ]
 }
