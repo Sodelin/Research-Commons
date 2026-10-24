@@ -1214,3 +1214,36 @@ independent review/Lean absent. No original G3/G4 endpoint is claimed.
 Aliases: six positive ordinary gaps, actual fair-source counterfamily,
 confluent15-band inverse, unknown diagonals retained, constant phase shift,
 R-only index false, quotient-only one-witness variance selector false.
+
+## Full seven-root-band orientation: actual full-law constraint beyond R
+
+[FULL-SEVEN-BAND-ORIENTATION.md](../2026-10-24-g3-asymptotic-root-grid/FULL-SEVEN-BAND-ORIENTATION.md),
+14246B/SHA25600332ce1296773cbc59566e511502f0851fa61bc593bb8312e3a9a5086aa56ee, Gitblob4071bc63f6ee3d6caf2f17995ce6f35de70aea16.
+Stable key G3-FULL-SEVEN-BAND-ORIENTATION-01. PROVED HAND at scope;
+self-review complete, independent acceptance/Lean/source execution absent.
+
+REUSE the OLD accepted all-cell/bilinear source identities and their exact
+extra e term. The new integration transports BOTH independent7-to4 band
+coordinates with ONE positive actual weight. Full commutation implies
+sum omega_i[d7(B_ref)S7(B_i)-S7(B_ref)d7(B_i)]=0 for arbitrary cell
+parameters/coins/counts. It never identifies this weighted d7 sum with
+the whole-word root-drop-two d7(K).
+
+For IDENTICAL FAIR bare cells in ONE fixed interval near survival1,
+the exact rational orientation J=S7/d7 is injective: its displayed
+HAND boundary coefficients give J(q)=55/(144q)+O(1) at0, proving
+nonconstancy, then rationality gives the terminal monotonicity interval.
+Full cap7 commutation therefore identifies their common arm survival
+with the reference. The already supplied actual quotient phase-flexible
+family has unequal common/reference arm values, so EVERY sufficiently
+large member fails FULL cap7. Its R-only counterexample stays TRUE.
+
+This is the successor to the earlier unspecified-arity mismatch statement,
+not a new all-copy normal form or a larger-cap ladder. Heterogeneous cells
+and biased coins remain in original AG-Pair; their signed orientation
+sum has no acquired rigidity/index estimate. No homogeneous promise,
+new observation/caller gap or original G3/G4 closure is introduced.
+
+Next: use this ALL-word full-law constraint with the other complete
+commutator/source/budget equations. Reuse the completed homogeneous
+consequence; do not resume R-only index work or reopen OLD identities.
