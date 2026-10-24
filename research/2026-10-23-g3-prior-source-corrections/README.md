@@ -1483,3 +1483,37 @@ remain true. The new proof uses the full equation, beyond its coarse bias
 bound. No source/model/coefficient/tuple/native/build/solver/peer job ran.
 Aliases: T15,9Psi-sigma,matched positive rate15,source mean removed,
 L5 Hh4,linear source absorption,ordinary forcing remains.
+
+
+## Completed resonant ORDINARY forcing and chronological energy
+
+[RESONANT-ORDINARY-FORCING-ENERGY.md](../2026-10-24-g3-asymptotic-root-grid/RESONANT-ORDINARY-FORCING-ENERGY.md),
+13183B/SHA200bb6bab172bcb56a42bf2f95ab5d2f711a0e918b8edbf8be32056b970faceb,
+Gitblob1253e4fe588b1c62cf2bf9ce2a23e6877baf6896.
+Stable key G3-RESONANT-ORDINARY-FORCING-ENERGY-01. PROVED HAND/self-reviewed;
+independent review/Lean/source execution absent.
+
+For the ORIGINAL paired COMPLETE cap12 commutator, arbitrary strict coins/
+scales/counts and one fixed small budget: |integral w(b-a)|<=C Hh^4,
+ordinary forcing<=C Hh^6, E_a+E_b<=C Hh^6; L5<=S_cost<=C Hh^4.
+The earlier cap9 source-error theorem remains unchanged at its own scope.
+
+Mechanism: lambda12-lambda9=lambda9-lambda4=30. The OLD accepted
+general-n L_n=6u_n+(n-4)w_n source identity supplies G30(C)=J12/15.
+Completed ALL-n fair coefficients/fair-slice derivative/endpoints yield
+G30-F9=O(s). The new full12-to9 third filter closes only under COMPLETE
+commutation. Its source multiplier d9/d12 differs from storage d4/d9;
+both stay explicit and their accumulated corrections are bounded.
+An exact ACTUAL-reference identity proves Omega_h=O(h^4).
+
+Source coefficients, all-n theorem, preceding traces and source-linear
+absorption are REUSE. No coefficient/tuple/model/solver/native run or
+cap scan occurred. The ordinary signed forcing and energy bound are now
+COMPLETE. Do not list them or M_h/source-LINEAR absorption as open.
+
+Remaining: relative source-action/variance/phase or ONE-witness control
+and original all-input NO. Energy alone is not A_h<=C h^7, V_h<=C h^5,
+an index, source count or exact decoder. Full R-only counterfamily and
+scope corrections remain unchanged. No new query, clock tie or owner.
+Aliases: resonant rate30 third filter,12-to9,G30,J12,J12-J9,O(s),
+different source propagators,Omega reference cancellation,Hh6 energy.
