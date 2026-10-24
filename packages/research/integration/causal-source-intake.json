@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "AUTHENTICATED_FULL_SOURCE_CANDIDATE_NOT_ELABORATED",
+  "status": "FIRST_FULL_CONTEXT_REJECTED_EXPLICIT_INSTANCE_IMPORT_VARIANT_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -57,13 +57,14 @@
     },
     {
       "module": "RationalPolynomialAvoidance",
-      "path": "vendor/restricted-causal-source/RationalPolynomialAvoidance.lean",
-      "sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+      "path": "lean/ResearchCommons/Compatibility/RationalPolynomialAvoidance.lean",
+      "sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
       "imports": [
         "Mathlib.Algebra.MvPolynomial.Funext",
         "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
         "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
         "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Algebra.Order.Field.Basic",
         "Mathlib.Order.Interval.Set.Infinite"
       ],
       "provenance": {
@@ -77,7 +78,10 @@
         "selected_current_context_verified": false,
         "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+        "rejected_source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f"
       }
     },
     {
@@ -3906,5 +3910,45 @@
   "proof_status": "Completed accepted HAND mathematics, compiler/owned/native integration still separate",
   "manual_read_scope": "Complete4 roots, deterministic lower, source-alignment and BOTH game bodies; relevant full original parent entrypoint/current successor sections. All146 bodies fetched/rehashed, NOT an independent complete manual review of all imports.",
   "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-  "whole_claim_formal_binding": false
+  "whole_claim_formal_binding": false,
+  "compatibility_variants": [
+    {
+      "module": "RationalPolynomialAvoidance",
+      "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+      "selected_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+      "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+      "pinned_instance_source": {
+        "repository": "leanprover-community/mathlib4",
+        "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "path": "Mathlib/Algebra/Order/Field/Basic.lean",
+        "bytes": 34578,
+        "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
+        "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
+      },
+      "statements_and_proof_bodies_byte_identical": true
+    }
+  ],
+  "first_full_context_rejection": {
+    "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
+    "run": 40065818355,
+    "job": 120788886183,
+    "module": "RationalPolynomialAvoidance",
+    "line": 38,
+    "column": 16,
+    "diagnostic": "failed to synthesize instance of type class DenselyOrdered ℚ",
+    "full_owned_audit_ran": false,
+    "exact_name_audit_ran": false,
+    "causal_theorem_acceptance": false,
+    "existing_game_shim_compiled_without_duplicate_declarations": true,
+    "artifact": {
+      "id": 12549651088,
+      "bytes": 260297,
+      "sha256": "dc1944de1ec5a3529270ffa6cd9ef95e5cfcc19b93d8633f0c075d915bd66c54"
+    },
+    "rust": {
+      "job": 120788731331,
+      "tests": 102,
+      "status": "passed"
+    }
+  }
 }

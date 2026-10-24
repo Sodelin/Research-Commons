@@ -96,7 +96,24 @@
       "inventory": "integration/causal-source-intake.json",
       "historical_hand_status_transferred_as_hand_only": true,
       "existing_kernel_acceptance": false,
-      "variant": "G7ResourceGamePort selects an explicit import of existing checked game; original port remains unchanged in vendor snapshot"
+      "variants": [
+        "G7ResourceGamePort selects an explicit import of existing checked game; original port remains unchanged in vendor snapshot",
+        {
+          "module": "RationalPolynomialAvoidance",
+          "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+          "selected_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+          "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+          "pinned_instance_source": {
+            "repository": "leanprover-community/mathlib4",
+            "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+            "path": "Mathlib/Algebra/Order/Field/Basic.lean",
+            "bytes": 34578,
+            "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
+            "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
+          },
+          "statements_and_proof_bodies_byte_identical": true
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "status": "ACTUAL_FULL_CONTEXT_REJECTION_NO_CAUSAL_KERNEL_ACCEPTANCE",
+  "records": [
+    {
+      "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
+      "run": 40065818355,
+      "job": 120788886183,
+      "module": "RationalPolynomialAvoidance",
+      "line": 38,
+      "column": 16,
+      "diagnostic": "failed to synthesize instance of type class DenselyOrdered ℚ",
+      "full_owned_audit_ran": false,
+      "exact_name_audit_ran": false,
+      "causal_theorem_acceptance": false,
+      "existing_game_shim_compiled_without_duplicate_declarations": true,
+      "artifact": {
+        "id": 12549651088,
+        "bytes": 260297,
+        "sha256": "dc1944de1ec5a3529270ffa6cd9ef95e5cfcc19b93d8633f0c075d915bd66c54"
+      },
+      "rust": {
+        "job": 120788731331,
+        "tests": 102,
+        "status": "passed"
+      }
+    }
+  ],
+  "original_all146_vendor_bodies_unchanged": true,
+  "full_module_selection_unchanged": true,
+  "repair": {
+    "module": "RationalPolynomialAvoidance",
+    "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+    "selected_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+    "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+    "pinned_instance_source": {
+      "repository": "leanprover-community/mathlib4",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Algebra/Order/Field/Basic.lean",
+      "bytes": 34578,
+      "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
+      "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
+    },
+    "statements_and_proof_bodies_byte_identical": true
+  },
+  "native_provider_implemented": false,
+  "whole_claim_formal_binding": false
+}

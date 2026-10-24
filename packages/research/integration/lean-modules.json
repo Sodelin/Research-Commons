@@ -947,13 +947,14 @@
     },
     {
       "module": "RationalPolynomialAvoidance",
-      "path": "vendor/restricted-causal-source/RationalPolynomialAvoidance.lean",
-      "sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+      "path": "lean/ResearchCommons/Compatibility/RationalPolynomialAvoidance.lean",
+      "sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
       "imports": [
         "Mathlib.Algebra.MvPolynomial.Funext",
         "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
         "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
         "Mathlib.Algebra.Order.Field.Rat",
+        "Mathlib.Algebra.Order.Field.Basic",
         "Mathlib.Order.Interval.Set.Infinite"
       ],
       "provenance": {
@@ -967,7 +968,10 @@
         "selected_current_context_verified": false,
         "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+        "rejected_source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f"
       }
     },
     {
