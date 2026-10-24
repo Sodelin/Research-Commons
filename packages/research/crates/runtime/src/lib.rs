@@ -91,3 +91,5 @@ pub mod jc69_tree;
 pub mod exact_query;
 
 pub mod calibration;
+
+pub mod contiguous_copies;

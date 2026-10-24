@@ -1,5 +1,6 @@
 import Mathlib.Data.Finset.Max
 import Mathlib.Data.Fintype.Card
+import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Tactic
 
 /-!
@@ -93,7 +94,7 @@ theorem same_interval_side_extreme (taxon : Fin m → Taxon)
 /-- A singleton first/last occurrence is retained once. The Boolean is
 internal proof bookkeeping, never a new observation or source variable. -/
 theorem extreme_card_le_two [Fintype Taxon] (taxon : Fin m → Taxon) :
-    Fintype.card {i : Fin m // Extreme taxon i} ≤ 2 * Fintype.card Taxon := by
+    Nat.card {i : Fin m // Extreme taxon i} ≤ 2 * Fintype.card Taxon := by
   classical
   let encode : {i : Fin m // Extreme taxon i} → Taxon × Bool :=
     fun i => (taxon i.val, if First taxon i.val then true else false)
@@ -118,6 +119,7 @@ theorem extreme_card_le_two [Fintype Taxon] (taxon : Fin m → Taxon) :
       have ilast : Last taxon i.val := i.property.resolve_left hi
       have jlast : Last taxon j.val := j.property.resolve_left hj
       exact le_antisymm (jlast i.val ht) (ilast j.val ht.symm)
+  rw [Nat.card_eq_fintype_card]
   calc
     Fintype.card {i : Fin m // Extreme taxon i} ≤ Fintype.card (Taxon × Bool) :=
       Fintype.card_le_of_injective encode hinj

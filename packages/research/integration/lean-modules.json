@@ -5185,10 +5185,11 @@
     {
       "module": "ResearchCommons.NANUQ.ContiguousCopies",
       "path": "lean/ResearchCommons/NANUQ/ContiguousCopies.lean",
-      "sha256": "fade11209d3e7ac9d4eef2afeb5aa4d3cc6228bef0b6de855b3c90e3be256177",
+      "sha256": "21b969d013fb30ebf1c704527e478d5804896d2ec5075d570516a13bcee6f139",
       "imports": [
         "Mathlib.Data.Finset.Max",
         "Mathlib.Data.Fintype.Card",
+        "Mathlib.SetTheory.Cardinal.Finite",
         "Mathlib.Tactic"
       ],
       "provenance": {
@@ -5199,7 +5200,11 @@
         "status": "SOURCE_PENDING_ACTUAL_COMPLETE_CONTEXT_CHECK",
         "original_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
         "later_ref": "afed31041a50fd18675402c293a3a11a2b5f87d5",
-        "whole_claim_formal_binding": false
+        "whole_claim_formal_binding": false,
+        "latest_rejected_source": "40910626dd104a6f2ab00be56f1fd376216444c0",
+        "latest_rejected_run": 40128718963,
+        "rejection": "One theorem-statement subtype Fintype instance failure before the classical proof; no complete scope accepted.",
+        "proof_only_correction": "Nat.card interface; existing Nat.card_eq_fintype_card inside classical proof. Same finite cardinal, no new equality or desired-law premise."
       }
     },
     {

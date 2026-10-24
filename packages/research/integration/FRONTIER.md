@@ -54,7 +54,7 @@ Latest G3 coupled cancellation16844B/a28a9c35 is COMPLETE read/hash-matched at o
 
 **ClosedColliderWalks is CLOSED/reuse at its complete40-source context.** Source153/run40127390395 accepts1129 owned declarations/665 theorems, zero rejects/missing. Every row/source and609523B artifact checked. All6 original headers/premises unchanged. The combined1497 context reaches1401 and is REJECTED at OriginalWeakConnection's implicit Pairwise binders (95 blocked). The proof-only42-source boundary port and full1498/503-name/caller gates are next. [Receipt](causal-closed-collider-component-verification.json).
 
-**Rank18 CB-NANUQ-004 is partial new formal integration of OLD completed mathematics.** Three concrete finite physical-tip extreme/contour lemmas are now selected for an actual1-source/named/owned check. No whole-claim verification yet. Actual plane-tree arc/restriction/suppression and displayed quartet/split transport remain. [Preflight](NANUQ-CONTIGUOUS-REUSE-PREFLIGHT.md).
+**Rank18 CB-NANUQ-004 is partial new formal integration of OLD completed mathematics.** Source154's COMPLETE1-source attempt was rejected at the subtype cardinal instance in its theorem statement. Source155 uses the SAME finite cardinal via Nat.card, with the existing finite-cardinality rewrite inside the classical proof. NEW Rust code owns the actual cyclic contour/IDs, refuses interleaving and emits ENTIRE linear/wrapped returned-set documents. Four Rust checks and both actual callers are selected, not yet accepted. No whole-claim verification yet. Actual plane-tree arc/restriction/suppression and displayed quartet/split transport remain. [Preflight](NANUQ-CONTIGUOUS-REUSE-PREFLIGHT.md).
 
 ## Genuine remaining implementation and formal joins
 
