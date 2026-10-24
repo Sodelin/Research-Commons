@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "source_commit": "bd32fae00d0abe49cd4869c853c3e2b9beef10bb",
+  "run_id": 40123141811,
+  "job_id": 120958988629,
+  "all36_complete_types_read": true,
+  "actual_owned_module_and_axioms_independently_matched": true,
+  "types": [
+    {
+      "name": "PairingCore.edge_exact_image",
+      "printed_type": "PairingCore.edge_exact_image : ∀ (K : PairingCore.Schedule) (u v : ℕ),\n  PairingCore.Edge K u v ↔ ∃ g h, PairingCore.Genome g h ∧ PairingCore.owner K g = u ∧ PairingCore.owner K h = v",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.owner_exactly_two",
+      "printed_type": "PairingCore.owner_exactly_two : ∀ (K : PairingCore.Schedule) (v : ℕ),\n  ∃ a b, a ≠ b ∧ ∀ (g : ℕ), PairingCore.owner K g = v ↔ g = a ∨ g = b",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.arbitrary_prefix_opposite_iap",
+      "printed_type": "PairingCore.arbitrary_prefix_opposite_iap : ∀ (N : ℕ),\n  ∃ S,\n    (∀ (g : ℕ), g / 8 ≤ N → PairingCore.owner (PairingCore.splitting S) g = PairingCore.owner PairingCore.mixing g) ∧\n      SpeciesBridge.IAP (PairingCore.Edge PairingCore.mixing) SpeciesBridge.Whole ∧\n        ¬SpeciesBridge.IAP (PairingCore.Edge (PairingCore.splitting S)) SpeciesBridge.Whole",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.constrained_counterexample",
+      "printed_type": "PairingCore.constrained_counterexample : ∀ (N : ℕ),\n  ∃ S,\n    2 ≤ S ∧\n      S % 2 = 0 ∧\n        (∀ (g : ℕ),\n            g / 8 ≤ N → PairingCore.owner (PairingCore.splitting S) g = PairingCore.owner PairingCore.mixing g) ∧\n          SpeciesBridge.WeaklyConnected (PairingCore.Edge PairingCore.mixing) SpeciesBridge.Whole ∧\n            SpeciesBridge.WeaklyConnected (PairingCore.Edge (PairingCore.splitting S)) SpeciesBridge.Whole ∧\n              PairingCore.TwoParents (PairingCore.Edge PairingCore.mixing) ∧\n                PairingCore.TwoParents (PairingCore.Edge (PairingCore.splitting S)) ∧\n                  PairingCore.TwoChildren (PairingCore.Edge PairingCore.mixing) ∧\n                    PairingCore.TwoChildren (PairingCore.Edge (PairingCore.splitting S)) ∧\n                      SpeciesBridge.MaximalSpecieslike (PairingCore.Edge PairingCore.mixing) SpeciesBridge.Whole ∧\n                        ¬SpeciesBridge.Specieslike (PairingCore.Edge (PairingCore.splitting S)) SpeciesBridge.Whole ∧\n                          SpeciesGlobalIAP.Inspecies (PairingCore.Edge PairingCore.mixing) SpeciesBridge.Whole ∧\n                            ¬SpeciesGlobalIAP.Inspecies (PairingCore.Edge (PairingCore.splitting S))\n                                  SpeciesBridge.Whole ∧\n                              SpeciesBridge.IAP (PairingCore.Edge PairingCore.mixing) SpeciesBridge.Whole ∧\n                                ¬SpeciesBridge.IAP (PairingCore.Edge (PairingCore.splitting S)) SpeciesBridge.Whole",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.founders_exactly_four",
+      "printed_type": "PairingCore.founders_exactly_four : ∀ (K : PairingCore.Schedule),\n  (∀ (t : ℕ), PairingCore.Allowed (K t) (K (t + 1))) → ∀ (v : ℕ), (¬∃ u, PairingCore.Edge K u v) ↔ v < 4",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.parents_opposite_sex",
+      "printed_type": "PairingCore.parents_opposite_sex : ∀ (K : PairingCore.Schedule),\n  (∀ (t : ℕ), PairingCore.Allowed (K t) (K (t + 1))) →\n    ∀ (u v w : ℕ),\n      PairingCore.Edge K u w → PairingCore.Edge K v w → u ≠ v → ↑(PairingCore.idx u) % 2 ≠ ↑(PairingCore.idx v) % 2",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.same_copy_sex",
+      "printed_type": "PairingCore.same_copy_sex : ∀ (S g : ℕ),\n  ↑(PairingCore.idx (PairingCore.owner PairingCore.mixing g)) % 2 =\n    ↑(PairingCore.idx (PairingCore.owner (PairingCore.splitting S) g)) % 2",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.exact_edges_do_not_lift_paths",
+      "printed_type": "PairingCore.exact_edges_do_not_lift_paths : SpeciesBridge.Descendant (PairingCore.Edge PairingCore.mixing) 0 9 ∧\n  ¬∃ g h,\n      PairingCore.owner PairingCore.mixing g = 0 ∧\n        PairingCore.owner PairingCore.mixing h = 9 ∧ SpeciesBridge.Descendant PairingCore.Genome g h",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.natural_biosphere",
+      "printed_type": "PairingCore.natural_biosphere : ∀ (K : PairingCore.Schedule), SpeciesBridge.NaturalDateBiosphere (PairingCore.Edge K)",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingCore.no_iap_decoder",
+      "printed_type": "PairingCore.no_iap_decoder : ∀ (N : ℕ),\n  ¬∃ D,\n      ∀ (K : PairingCore.Schedule),\n        PairingCore.Family K →\n          (D PairingCore.Genome (PairingCore.observedOwners N K) ↔\n            SpeciesBridge.IAP (PairingCore.Edge K) SpeciesBridge.Whole)",
+      "module": "PairingCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.topology_iff",
+      "printed_type": "PairingGARG.topology_iff : ∀ (T : ℕ) (a b : PairingGARG.Node T),\n  (PairingGARG.finiteARG T).Topology a b ↔ ↑b.1 = ↑a.1 + 1 ∧ b.2 = a.2",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.sample_iff",
+      "printed_type": "PairingGARG.sample_iff : ∀ (T : ℕ) (a : PairingGARG.Node T), a ∈ (PairingGARG.finiteARG T).samples ↔ ↑a.1 = T",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.nonemptyAnnotations",
+      "printed_type": "PairingGARG.nonemptyAnnotations : ∀ (T : ℕ), (PairingGARG.finiteARG T).NonemptyAnnotations",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.uniqueParentAt",
+      "printed_type": "PairingGARG.uniqueParentAt : ∀ (T x : ℕ), (PairingGARG.finiteARG T).UniqueParentAt x",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.sampleSupported",
+      "printed_type": "PairingGARG.sampleSupported : ∀ (T : ℕ), (PairingGARG.finiteARG T).SampleSupported",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingGARG.atLocus_iff",
+      "printed_type": "PairingGARG.atLocus_iff : ∀ (T x : ℕ) (a b : PairingGARG.Node T),\n  (PairingGARG.finiteARG T).AtLocus x a b ↔ x = 0 ∧ (PairingGARG.finiteARG T).Topology a b",
+      "module": "PairingGARG",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingBridge.code_injective",
+      "printed_type": "PairingBridge.code_injective : ∀ (T : ℕ), Function.Injective PairingBridge.code",
+      "module": "PairingBridge",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingBridge.finite_topology_iff_genome",
+      "printed_type": "PairingBridge.finite_topology_iff_genome : ∀ (T : ℕ) (a b : PairingGARG.Node T),\n  (PairingGARG.finiteARG T).Topology a b ↔ PairingCore.Genome (PairingBridge.code a) (PairingBridge.code b)",
+      "module": "PairingBridge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingBridge.finite_pedigree_exact_image",
+      "printed_type": "PairingBridge.finite_pedigree_exact_image : ∀ (T : ℕ) (K : PairingCore.Schedule) (u v : ℕ),\n  u / 4 ≤ T →\n    v / 4 ≤ T →\n      (PairingCore.Edge K u v ↔\n        ∃ a b,\n          (PairingGARG.finiteARG T).Topology a b ∧\n            PairingCore.owner K (PairingBridge.code a) = u ∧ PairingCore.owner K (PairingBridge.code b) = v)",
+      "module": "PairingBridge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingBridge.extraction_retains_every_edge",
+      "printed_type": "PairingBridge.extraction_retains_every_edge : ∀ (T : ℕ) (a b : PairingGARG.Node T),\n  (PairingGARG.finiteARG T).ExtractedAt 0 a b ↔ (PairingGARG.finiteARG T).Topology a b",
+      "module": "PairingBridge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingBridge.generation_dated_biosphere",
+      "printed_type": "PairingBridge.generation_dated_biosphere : ∀ (K : PairingCore.Schedule),\n  WongAlexander.RealDatedBiosphere (PairingCore.Edge K)",
+      "module": "PairingBridge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.query_coownership",
+      "printed_type": "PairingObservation.query_coownership : ∀ (K : PairingCore.Schedule) (t : ℕ),\n  PairingObservation.query K t = true ↔\n    PairingCore.owner K (PairingCore.copy t 0) = PairingCore.owner K (PairingCore.copy t 3)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.local_query",
+      "printed_type": "PairingObservation.local_query : ∀ (k : Fin 3), PairingCore.block k 0 = PairingCore.block k 3 ↔ k = 2",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PairingObservation.query_formula",
+      "printed_type": "PairingObservation.query_formula : ∀ (K : PairingCore.Schedule) (t : ℕ), PairingObservation.query K t = decide (K t = 2)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.query_mixing",
+      "printed_type": "PairingObservation.query_mixing : ∀ (t : ℕ), PairingObservation.query PairingCore.mixing t = false",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.query_splitting",
+      "printed_type": "PairingObservation.query_splitting : ∀ (S t : ℕ),\n  PairingObservation.query (PairingCore.splitting S) t = decide (S < t ∧ t % 2 = 1)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.observe_eq_iff",
+      "printed_type": "PairingObservation.observe_eq_iff : ∀ (T : ℕ → Prop) (K L : PairingCore.Schedule),\n  PairingObservation.observe T K = PairingObservation.observe T L ↔\n    ∀ (t : ℕ), T t → PairingObservation.query K t = PairingObservation.query L t",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.split_observation_eq_iff",
+      "printed_type": "PairingObservation.split_observation_eq_iff : ∀ (T : ℕ → Prop) (S : ℕ),\n  PairingObservation.observe T (PairingCore.splitting S) = PairingObservation.observe T PairingCore.mixing ↔\n    ∀ (t : ℕ), T t → ¬(S < t ∧ t % 2 = 1)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.identifies_iap_iff",
+      "printed_type": "PairingObservation.identifies_iap_iff : ∀ (T : ℕ → Prop),\n  PairingObservation.IdentifiesIAP T ↔ PairingObservation.UnboundedOdd T",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.no_bounded_sampling_decoder",
+      "printed_type": "PairingObservation.no_bounded_sampling_decoder : ∀ (T : ℕ → Prop) (N : ℕ),\n  (∀ (t : ℕ), T t → t ≤ N) → ¬PairingObservation.IdentifiesIAP T",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.observed_positive_not_iap",
+      "printed_type": "PairingObservation.observed_positive_not_iap : ∀ (T : ℕ → Prop) (K : PairingCore.Schedule),\n  PairingCore.Family K →\n    ∀ (t : ℕ),\n      PairingObservation.observe T K t = some true → ¬SpeciesBridge.IAP (PairingCore.Edge K) SpeciesBridge.Whole",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.even_owner_agreement",
+      "printed_type": "PairingObservation.even_owner_agreement : ∀ (S g : ℕ),\n  g / 8 % 2 = 0 → PairingCore.owner (PairingCore.splitting S) g = PairingCore.owner PairingCore.mixing g",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PairingObservation.even_owners_equal",
+      "printed_type": "PairingObservation.even_owners_equal : ∀ (S : ℕ),\n  PairingObservation.evenOwners (PairingCore.splitting S) = PairingObservation.evenOwners PairingCore.mixing",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.no_even_ownership_decoder",
+      "printed_type": "PairingObservation.no_even_ownership_decoder : ¬∃ D,\n    ∀ (K : PairingCore.Schedule),\n      PairingCore.Family K →\n        (D PairingCore.Genome (PairingObservation.evenOwners K) ↔\n          SpeciesBridge.IAP (PairingCore.Edge K) SpeciesBridge.Whole)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.bounded_identifies_iap_iff",
+      "printed_type": "PairingObservation.bounded_identifies_iap_iff : ∀ (T : ℕ → Prop) (B : ℕ),\n  2 ≤ B → B % 2 = 0 → (PairingObservation.BoundedIdentifiesIAP T B ↔ ∃ t, B < t ∧ T t ∧ t % 2 = 1)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PairingObservation.bounded_iap_iff_one_query",
+      "printed_type": "PairingObservation.bounded_iap_iff_one_query : ∀ (B : ℕ),\n  B % 2 = 0 →\n    ∀ (K : PairingCore.Schedule),\n      PairingObservation.BoundedFamily B K →\n        (SpeciesBridge.IAP (PairingCore.Edge K) SpeciesBridge.Whole ↔ PairingObservation.query K (B + 1) = false)",
+      "module": "PairingObservation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

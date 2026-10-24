@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE34_ENDPOINT_ACCEPTED; FULL1473_REJECTED_AT_MARKED_WALKS102_BLOCKED",
+  "status": "COMPLETE35_MARKED_ACCEPTED; FULL1478_REJECTED_AT_CONDITIONED_EDGE_WALKS101_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15406,6 +15406,26 @@
         "2026-10-24T18:52:36.3876005Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MarkedActiveWalks.lean:120:12: error: Tactic `simp` failed with a nested error:\n2026-10-24T18:52:36.3877883Z maximum recursion depth has been reached\n2026-10-24T18:52:36.3878745Z use `set_option maxRecDepth <num>` to increase limit\n2026-10-24T18:52:36.3880296Z use `set_option diagnostics true` to get diagnostic information"
       ],
       "disposition": "FULL1473_REJECTED; separate COMPLETE34 endpoint/owned audit accepted and independently validated."
+    },
+    {
+      "source": "bd32fae00d0abe49cd4869c853c3e2b9beef10bb",
+      "run_id": 40123141811,
+      "job_id": 120958988629,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected_sources": 1478,
+      "successful_objects": 1376,
+      "compiled": 107,
+      "reused": 1269,
+      "failed_module": "ConditionedEdgeWalks",
+      "blocked": 101,
+      "diagnostics": [
+        "2026-10-24T19:07:16.9264148Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:47:12: error: Tactic `simp` failed with a nested error:\n2026-10-24T19:07:16.9264988Z maximum recursion depth has been reached\n2026-10-24T19:07:16.9265517Z use `set_option maxRecDepth <num>` to increase limit\n2026-10-24T19:07:16.9265952Z use `set_option diagnostics true` to get diagnostic information\n2026-10-24T19:07:16.9266833Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:70:6: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9267582Z   hx\n2026-10-24T19:07:16.9267768Z  has type\n2026-10-24T19:07:16.9267954Z   Z x",
+        "2026-10-24T19:07:16.9266833Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:70:6: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9267582Z   hx\n2026-10-24T19:07:16.9267768Z  has type\n2026-10-24T19:07:16.9267954Z   Z x\n2026-10-24T19:07:16.9268161Z but is expected to have type\n2026-10-24T19:07:16.9268407Z   C (Observed x)\n2026-10-24T19:07:16.9269329Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:83:59: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9270069Z   actual",
+        "2026-10-24T19:07:16.9269329Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:83:59: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9270069Z   actual\n2026-10-24T19:07:16.9270268Z  has type\n2026-10-24T19:07:16.9270645Z   Route (RealStep (arrowGraph D.arrow) C) { vertex := Observed x, incoming := some Mark.head } ys\n2026-10-24T19:07:16.9271118Z     { vertex := endpoint, incoming := last }\n2026-10-24T19:07:16.9271414Z but is expected to have type\n2026-10-24T19:07:16.9271840Z   Route (RealStep (arrowGraph D.arrow) C) { vertex := Observed x, incoming := some Mark.head } ys\n2026-10-24T19:07:16.9272312Z     { vertex := Observed y, incoming := last }",
+        "2026-10-24T19:07:16.9273082Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:111:10: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9273816Z   hx\n2026-10-24T19:07:16.9274000Z  has type\n2026-10-24T19:07:16.9274181Z   Z x\n2026-10-24T19:07:16.9274376Z but is expected to have type\n2026-10-24T19:07:16.9274639Z   SelectedCondition Z (Observed x)\n2026-10-24T19:07:16.9275382Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:112:10: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9276551Z   hy",
+        "2026-10-24T19:07:16.9275382Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:112:10: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9276551Z   hy\n2026-10-24T19:07:16.9276741Z  has type\n2026-10-24T19:07:16.9276952Z   Z y\n2026-10-24T19:07:16.9277173Z but is expected to have type\n2026-10-24T19:07:16.9277463Z   SelectedCondition Z (Observed y)\n2026-10-24T19:07:17.0181195Z BLOCKED LEAN MAGPathLifting: ConditionedEdgeWalks\n2026-10-24T19:07:17.0311191Z BLOCKED LEAN MAGMaximality: MAGPathLifting"
+      ],
+      "disposition": "Full1478 REJECTED; independent scoped33-source36-name ownership and COMPLETE35-source marked-walk contexts ACCEPTED, not whole package."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16648,6 +16668,49 @@
         "            rw [← nextEq, ← endEq]\n            exact hrest"
       ],
       "status": "PENDING_COMPLETE35_SOURCE_AND_FULL1478_CHECK"
+    },
+    {
+      "module": "ConditionedEdgeWalks",
+      "original": {
+        "bytes": 12512,
+        "git_blob": "388a6b9482ee69a97695a453e7b60b52fe6a38b8",
+        "sha256": "1b7b90eb9ea5656db9b7a9bfc788df7997a19fb6e162d0d68597076ece497e93"
+      },
+      "successor": {
+        "bytes": 12512,
+        "git_blob": "388a6b9482ee69a97695a453e7b60b52fe6a38b8",
+        "sha256": "1b7b90eb9ea5656db9b7a9bfc788df7997a19fb6e162d0d68597076ece497e93"
+      },
+      "selected": {
+        "bytes": 12740,
+        "git_blob": "9f725ce27b9ad3ba3ba78ec59d0fb71415f2261a",
+        "sha256": "c045f10d241f90c65ab86e01d49974cb9b4826e6f10c142099574fef7e4cf32b"
+      },
+      "all10_original_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "            simpa only [nextEq, endEq] using tail",
+          "            rw [← nextEq, ← endEq]\n            exact tail"
+        ],
+        [
+          "      simpa only [hxv] using hx",
+          "      simpa only [hxv] using (show C (Observed x) from hx)"
+        ],
+        [
+          "  have actual' : Route (RealStep (arrowGraph D.arrow) C)\n",
+          "  change endpoint = Observed y at hend\n  have actual' : Route (RealStep (arrowGraph D.arrow) C)\n"
+        ],
+        [
+          "        · simpa only [hxv] using hx",
+          "        · simpa only [hxv] using\n            (show SelectedCondition (S := S) (L := L) Z (Observed x) from hx)"
+        ],
+        [
+          "        · simpa only [hyv] using hy",
+          "        · simpa only [hyv] using\n            (show SelectedCondition (S := S) (L := L) Z (Observed y) from hy)"
+        ]
+      ],
+      "status": "PENDING_COMPLETE36_SOURCE_AND_FULL1485_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

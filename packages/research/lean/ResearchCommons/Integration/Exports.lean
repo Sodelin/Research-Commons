@@ -27,6 +27,7 @@ import ResearchCommons.Claims.RNA
 import ResearchCommons.Claims.Wong
 import ResearchCommons.Claims.Genome
 import ResearchCommons.Claims.Ownership
+import ResearchCommons.Claims.BlockRecovery
 import ResearchCommons.Menu.FiniteForcing
 import SocialScience.Audit
 import ClinicalModels.Audit

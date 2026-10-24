@@ -2435,8 +2435,8 @@
         "git_blob": "3f531c6dbdf3eb093a5800f2681ab5d63feb57e9",
         "source_sha256": "57a6fd8d1aca2a456c3e2cefcf2716ceeb1c8783e7cc5af4d98966938052a32f",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE35_SOURCE_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE35_SOURCE_OWNED_CONTEXT",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
@@ -2444,13 +2444,16 @@
         "actual_complete_original_and_successor_read": true,
         "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
         "all11_theorem_headers_unchanged": true,
-        "latest_rejected_source": "b41e9e40989a098ea92fbcb0411b64acb7b541b8"
+        "latest_rejected_source": "b41e9e40989a098ea92fbcb0411b64acb7b541b8",
+        "accepted_source": "bd32fae00d0abe49cd4869c853c3e2b9beef10bb",
+        "accepted_run": 40123141811,
+        "current_component_verification": "integration/causal-marked-walks-component-verification.json"
       }
     },
     {
       "module": "ConditionedEdgeWalks",
-      "path": "vendor/restricted-causal-source/ConditionedEdgeWalks.lean",
-      "sha256": "1b7b90eb9ea5656db9b7a9bfc788df7997a19fb6e162d0d68597076ece497e93",
+      "path": "lean/ResearchCommons/Compatibility/ConditionedEdgeWalks.lean",
+      "sha256": "c045f10d241f90c65ab86e01d49974cb9b4826e6f10c142099574fef7e4cf32b",
       "imports": [
         "MarkedActiveWalks"
       ],
@@ -2463,9 +2466,14 @@
         "source_sha256": "1b7b90eb9ea5656db9b7a9bfc788df7997a19fb6e162d0d68597076ece497e93",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE36_SOURCE_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "actual_complete_original_and_successor_read": true,
+        "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "all10_theorem_headers_unchanged": true,
+        "variant": "Direct reverse rewrite of SAME arrival equality; explicitly type original selected conditioning witness; expose exact local endpoint predicate before rewriting. All original10 statements/source/conditioning/incidence premises unchanged."
       }
     },
     {
@@ -5099,6 +5107,27 @@
         "original_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
         "actual_complete_original_and_successor_read": true,
         "preflight": "integration/OWNERSHIP-REUSE-PREFLIGHT.md",
+        "current_context_verified": true,
+        "new_mathematical_discovery": false,
+        "current_component_verification": "integration/genome-ownership-component-verification.json",
+        "accepted_source": "bd32fae00d0abe49cd4869c853c3e2b9beef10bb",
+        "accepted_run": 40123141811
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.BlockRecovery",
+      "path": "lean/ResearchCommons/Claims/BlockRecovery.lean",
+      "imports": [
+        "PedigreeBlockRecovery",
+        "PedigreeBlockDependence"
+      ],
+      "sha256": "ba12d7957b337dad34700e2e7732fc198c41681afc24a44e2f840541ce49c35b",
+      "provenance": {
+        "role": "Reuse six unchanged original finite-family recovery/dependence sources; only new theorem composes OLD path restriction with OLD observed-partition equivalence",
+        "source_repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+        "source_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
+        "actual_complete_original_and_later_source_review": true,
+        "preflight": "integration/BLOCK-RECOVERY-REUSE-PREFLIGHT.md",
         "current_context_verified": false,
         "new_mathematical_discovery": false
       }
@@ -5106,7 +5135,7 @@
     {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "6f031aba0f525e38551f13d7381c44a13785fd25143783652a78212e9881009e",
+      "sha256": "52555f2d3896fc3916f9b9499eab94a38709623d462c545a16de00bc5f3ac5a3",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -5137,6 +5166,7 @@
         "ResearchCommons.Claims.Wong",
         "ResearchCommons.Claims.Genome",
         "ResearchCommons.Claims.Ownership",
+        "ResearchCommons.Claims.BlockRecovery",
         "ResearchCommons.Menu.FiniteForcing",
         "SocialScience.Audit",
         "ClinicalModels.Audit",
@@ -5156,7 +5186,7 @@
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v16.json",
         "source_commit": "c79deb202cadfae269f06dedd8c724648b497856",
-        "current_candidate_scope": "Existing exact typed claim union plus the OLD completed ownership/sampling result imported unchanged. Root/36 names pending exact whole-context checking; no new scientific theorem or native origin.",
+        "current_candidate_scope": "Existing exact typed claim union plus OLD complete ownership/sampling and finite-family recovery results. Actual names/owners/owned/combined checking remains required; no new scientific theorem or native source admission.",
         "current_context_verified": false
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"
