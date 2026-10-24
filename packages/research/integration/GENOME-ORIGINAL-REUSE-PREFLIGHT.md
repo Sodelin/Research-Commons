@@ -1,0 +1,11 @@
+# Existing genome results: bind the originals, do not rederive them
+
+The user requests all canonical claims integrated. CB-GENOME-001 is an exact finite-gARG/abstract infinite-population completion theorem, not a DNA likelihood/biological owner result. CB-GENOME-002 is the prescribed three-topology law's exact identification, finite singleton-support/adverse-witness and deterministic strict-margin theorem. Its written Hoeffding corollary is expressly not a Lean endpoint.
+
+COMPLETE retained FiniteGenomeIdentifiability, ThreeTaxonIdentifiability, ThreeTaxonFiniteEvidence and WongAlexander proof bodies were read. The first three archived original bodies at e2502c82 were independently fetched and byte/SHA/Gitblob matched to the current retained selection. The complete later finite-evidence FORMAL-SCOPE was read; it explicitly distinguishes the original exact-law theorem, singleton-mass witness, strict margin, standard written tail bound and biological exclusions. Exact hashes are in genome-original-source-intake.json. This is reuse of completed mathematics and checked source, not new theorem discovery.
+
+No replacement proof, new completion construction or new three-taxon model is selected. All18 original requested theorem bodies are unchanged. The only new semantic use-site is that the two old modules expose different nominal Topology types: the finite-evidence client cannot directly call the exact-law endpoint on its own type. The new exactTopology is the literal three-constructor equivalence, law_transport proves the two actual original functions equal, and evidence_law_identifiable reuses the original theorem on that SAME finite-evidence carrier. These introduce no desired-law assumption and no extra source observation.
+
+Fresh selected compilation, all20 exact names/owners, complete printed types/axioms and full-owned audit remain pending. Existing Rust registry/Lean proof-check interface is reused; no new biological inference engine or algorithm deciding infinite populations is created. A source hash, original PASS or artifact selection is not current whole-context acceptance.
+
+This bounded explicit predecessor/successor comparison does not claim absence of every other archived formulation. Original G1/G2/G5/P5 completions and all G3/G4/native-origin holds remain unchanged.

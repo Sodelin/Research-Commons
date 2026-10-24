@@ -612,14 +612,18 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.NANUQ
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.NANUQ --claim CB-NANUQ-001 --claim CB-NANUQ-002 --claim CB-NANUQ-003
+      - name: Reuse exact genome obstruction and finite-evidence proofs on one carrier
+        run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Genome --claim CB-GENOME-001 --claim CB-GENOME-002
+      - name: Check actual shifted-exponential root-pair moments and identification
+        run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
       - name: Compile and audit the exact original causal compatibility boundary
         run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target MarginalIndicatorAncestry
-          cargo run --locked -p research-commons-package -- audit-target MarginalIndicatorAncestry
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target RefinedObservedSeparator
+          cargo run --locked -p research-commons-package -- audit-target RefinedObservedSeparator
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
-      - name: Compile the exact original total profile decoder
-        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ExplicitProfileDecoding
+      - name: Compile the exact original finite transcript decoder
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target FiniteTranscriptDecoder
       - name: Compile the actual receiver dependency closure in the full package context
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports
       - name: Validate all exact export dependencies, audit and kernel-check named declarations

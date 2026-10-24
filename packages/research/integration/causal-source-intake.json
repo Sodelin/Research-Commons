@@ -5155,6 +5155,38 @@
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "RefinedObservedSeparator",
+      "original_sha256": "228459647fc9ca0c870571af755b73b6a12647e0a1fcda15cd876752314a7cdf",
+      "selected_sha256": "a44011c7d7fde4951a0414dfef591e26b4e8f213a60ef8357e3c988c0c7ab05d",
+      "selected_bytes": 13681,
+      "selected_git_blob": "71513e3ba137e076ff33e0ec5798d0d5a7b8a995",
+      "edit": "Expose the literal existing next Arrival in Route.cons, then reuse actual relaxed-route lemma; previous identity-map proof compatibility retained.",
+      "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_rejected_source": "339b676b814b925f2958955a18ee40798e790452",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "FiniteTranscriptDecoder",
+      "original_sha256": "e58f08241a70105a1d2eb103197166ea3e3bcddc5cb6e46330e58bc923bcd69b",
+      "selected_sha256": "f9fd3669ffbeaaba5eb566a2f834efe48a46dbc09ecbdf3b3b2186a8f24e9ba7",
+      "selected_bytes": 13557,
+      "selected_git_blob": "3e01287df5df3d4ed2fe4c694cd3d32700a48fe3",
+      "edit": "Expose original decoded Selector and CanonicalSelection.Vertex types to their existing explicit linear orders; preserve actual computable finite decisions.",
+      "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_rejected_source": "339b676b814b925f2958955a18ee40798e790452",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ],
   "first_full_context_rejection": {
@@ -5181,57 +5213,749 @@
     }
   },
   "latest_full_context_result": {
-    "source": "6f17bed62eb5da69cab4b0bcac4e129f12ece1f2",
-    "run": 40101349532,
-    "job": 120894134044,
-    "status": "TERMINAL_REJECTED_TWO_ORIGINAL_PROOF_INTERFACES",
+    "source": "339b676b814b925f2958955a18ee40798e790452",
+    "run": 40103389432,
+    "job": 120900122604,
+    "status": "TERMINAL_REJECTED_TWO_DOWNSTREAM_MODULES_AFTER26_GRAPH_OWNED_AND29_DECODER_COMPILED",
     "target": "ResearchCommons.Integration.Exports",
     "selected_sources": 1435,
-    "successful_objects": 1321,
-    "newly_compiled": 90,
+    "successful_objects": 1324,
+    "newly_compiled": 93,
     "reused_retained": 1231,
     "failed_modules": [
-      "MarginalIndicatorAncestry",
-      "ExplicitProfileDecoding"
+      {
+        "compiler_exit": "exit status: 1",
+        "module": "RefinedObservedSeparator"
+      },
+      {
+        "compiler_exit": "exit status: 1",
+        "module": "FiniteTranscriptDecoder"
+      }
     ],
-    "blocked_modules": 112,
-    "compiler_errors": 5,
+    "blocked_modules": [
+      {
+        "module": "PartialObservedQueryFamily",
+        "unavailable_imports": [
+          "RefinedObservedSeparator"
+        ]
+      },
+      {
+        "module": "RefinedIndicatorSeparator",
+        "unavailable_imports": [
+          "PartialObservedQueryFamily"
+        ]
+      },
+      {
+        "module": "PartialIndicatorQueryFamily",
+        "unavailable_imports": [
+          "RefinedIndicatorSeparator"
+        ]
+      },
+      {
+        "module": "CommonObservedMAG",
+        "unavailable_imports": [
+          "PartialIndicatorQueryFamily"
+        ]
+      },
+      {
+        "module": "DiscriminatingSeparatorStatus",
+        "unavailable_imports": [
+          "CommonObservedMAG"
+        ]
+      },
+      {
+        "module": "InducingEndpointMarks",
+        "unavailable_imports": [
+          "DiscriminatingSeparatorStatus"
+        ]
+      },
+      {
+        "module": "MarkedActiveWalks",
+        "unavailable_imports": [
+          "InducingEndpointMarks"
+        ]
+      },
+      {
+        "module": "ConditionedEdgeWalks",
+        "unavailable_imports": [
+          "MarkedActiveWalks"
+        ]
+      },
+      {
+        "module": "MAGPathLifting",
+        "unavailable_imports": [
+          "ConditionedEdgeWalks"
+        ]
+      },
+      {
+        "module": "MAGMaximality",
+        "unavailable_imports": [
+          "MAGPathLifting"
+        ]
+      },
+      {
+        "module": "ObservedMAGAncestry",
+        "unavailable_imports": [
+          "MAGMaximality"
+        ]
+      },
+      {
+        "module": "ClosedColliderWalks",
+        "unavailable_imports": [
+          "ObservedMAGAncestry"
+        ]
+      },
+      {
+        "module": "WeakInducingEdges",
+        "unavailable_imports": [
+          "ClosedColliderWalks"
+        ]
+      },
+      {
+        "module": "OriginalWeakConnection",
+        "unavailable_imports": [
+          "WeakInducingEdges"
+        ]
+      },
+      {
+        "module": "WeakRouteNormalization",
+        "unavailable_imports": [
+          "OriginalWeakConnection"
+        ]
+      },
+      {
+        "module": "OriginalMAGConnection",
+        "unavailable_imports": [
+          "WeakRouteNormalization"
+        ]
+      },
+      {
+        "module": "CommonDiscriminatingParents",
+        "unavailable_imports": [
+          "OriginalMAGConnection"
+        ]
+      },
+      {
+        "module": "VertexActivePaths",
+        "unavailable_imports": [
+          "CommonDiscriminatingParents"
+        ]
+      },
+      {
+        "module": "MinimalActivePaths",
+        "unavailable_imports": [
+          "VertexActivePaths"
+        ]
+      },
+      {
+        "module": "AncestralShortcutGeometry",
+        "unavailable_imports": [
+          "MinimalActivePaths"
+        ]
+      },
+      {
+        "module": "ColliderMinimalActivePaths",
+        "unavailable_imports": [
+          "MinimalActivePaths"
+        ]
+      },
+      {
+        "module": "MinimalPathChord",
+        "unavailable_imports": [
+          "AncestralShortcutGeometry"
+        ]
+      },
+      {
+        "module": "DiscriminatingSectionExtraction",
+        "unavailable_imports": [
+          "MinimalPathChord"
+        ]
+      },
+      {
+        "module": "ActivePathReversal",
+        "unavailable_imports": [
+          "DiscriminatingSectionExtraction"
+        ]
+      },
+      {
+        "module": "VertexDiscriminatingSections",
+        "unavailable_imports": [
+          "ActivePathReversal"
+        ]
+      },
+      {
+        "module": "IntervalDependency",
+        "unavailable_imports": [
+          "VertexDiscriminatingSections"
+        ]
+      },
+      {
+        "module": "LiteralMAGInducingChains",
+        "unavailable_imports": [
+          "IntervalDependency",
+          "WeakInducingEdges"
+        ]
+      },
+      {
+        "module": "DiscriminatingIntervalGeometry",
+        "unavailable_imports": [
+          "LiteralMAGInducingChains"
+        ]
+      },
+      {
+        "module": "IndexedDiscriminatingSections",
+        "unavailable_imports": [
+          "DiscriminatingIntervalGeometry"
+        ]
+      },
+      {
+        "module": "ReversedPositionTrace",
+        "unavailable_imports": [
+          "IndexedDiscriminatingSections"
+        ]
+      },
+      {
+        "module": "MinimalPathOrderDependencies",
+        "unavailable_imports": [
+          "ReversedPositionTrace"
+        ]
+      },
+      {
+        "module": "FiniteDependencyInduction",
+        "unavailable_imports": [
+          "MinimalPathOrderDependencies"
+        ]
+      },
+      {
+        "module": "DiscriminatingStatusTransport",
+        "unavailable_imports": [
+          "FiniteDependencyInduction"
+        ]
+      },
+      {
+        "module": "IndexedPrefixColliders",
+        "unavailable_imports": [
+          "DiscriminatingStatusTransport"
+        ]
+      },
+      {
+        "module": "ShortestPathStatusInvariance",
+        "unavailable_imports": [
+          "IndexedPrefixColliders"
+        ]
+      },
+      {
+        "module": "MinimumDirectedPathTransfer",
+        "unavailable_imports": [
+          "ShortestPathStatusInvariance"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowGeometry",
+        "unavailable_imports": [
+          "MinimumDirectedPathTransfer"
+        ]
+      },
+      {
+        "module": "ActivationBranchDistances",
+        "unavailable_imports": [
+          "ColliderMinimalActivePaths",
+          "ClosestFirstArrowGeometry"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowBoundary",
+        "unavailable_imports": [
+          "ClosestFirstArrowGeometry"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowFlank",
+        "unavailable_imports": [
+          "ClosestFirstArrowBoundary"
+        ]
+      },
+      {
+        "module": "SafeDirectedBranches",
+        "unavailable_imports": [
+          "ActivationBranchDistances"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowSplice",
+        "unavailable_imports": [
+          "ClosestFirstArrowFlank"
+        ]
+      },
+      {
+        "module": "ColliderSpliceCosts",
+        "unavailable_imports": [
+          "SafeDirectedBranches"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowPotential",
+        "unavailable_imports": [
+          "ClosestFirstArrowSplice"
+        ]
+      },
+      {
+        "module": "DirectedBranchSplices",
+        "unavailable_imports": [
+          "ColliderSpliceCosts"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowIncidence",
+        "unavailable_imports": [
+          "ClosestFirstArrowPotential"
+        ]
+      },
+      {
+        "module": "ColliderMinimumReversal",
+        "unavailable_imports": [
+          "DirectedBranchSplices"
+        ]
+      },
+      {
+        "module": "ActivationMainPathExclusion",
+        "unavailable_imports": [
+          "ColliderMinimumReversal"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowContradiction",
+        "unavailable_imports": [
+          "ClosestFirstArrowIncidence"
+        ]
+      },
+      {
+        "module": "ActivationBranchPairSplice",
+        "unavailable_imports": [
+          "ActivationMainPathExclusion"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrowArms",
+        "unavailable_imports": [
+          "ClosestFirstArrowContradiction"
+        ]
+      },
+      {
+        "module": "ActivationBranchPairExclusion",
+        "unavailable_imports": [
+          "ActivationBranchPairSplice"
+        ]
+      },
+      {
+        "module": "ClosestFirstArrow",
+        "unavailable_imports": [
+          "ClosestFirstArrowArms"
+        ]
+      },
+      {
+        "module": "BinaryTrekDecomposition",
+        "unavailable_imports": [
+          "ActivationBranchPairExclusion"
+        ]
+      },
+      {
+        "module": "ClosestPathAncestry",
+        "unavailable_imports": [
+          "ClosestFirstArrow"
+        ]
+      },
+      {
+        "module": "BinaryAncestralMoralConnection",
+        "unavailable_imports": [
+          "BinaryTrekDecomposition"
+        ]
+      },
+      {
+        "module": "FiniteDAGRank",
+        "unavailable_imports": [
+          "BinaryTrekDecomposition"
+        ]
+      },
+      {
+        "module": "SharedSeparatorMEC",
+        "unavailable_imports": [
+          "ClosestPathAncestry"
+        ]
+      },
+      {
+        "module": "BinaryPathConstraintPropagation",
+        "unavailable_imports": [
+          "FiniteDAGRank"
+        ]
+      },
+      {
+        "module": "RestrictedFamilyCertificate",
+        "unavailable_imports": [
+          "SharedSeparatorMEC"
+        ]
+      },
+      {
+        "module": "BinaryTraceIncidence",
+        "unavailable_imports": [
+          "BinaryPathConstraintPropagation"
+        ]
+      },
+      {
+        "module": "RestrictedQueryActions",
+        "unavailable_imports": [
+          "RestrictedFamilyCertificate",
+          "FiniteTranscriptDecoder"
+        ]
+      },
+      {
+        "module": "BinaryActivationFamily",
+        "unavailable_imports": [
+          "BinaryTraceIncidence"
+        ]
+      },
+      {
+        "module": "OrderedFamilyAgreement",
+        "unavailable_imports": [
+          "RestrictedQueryActions"
+        ]
+      },
+      {
+        "module": "BinaryWitnessCircuit",
+        "unavailable_imports": [
+          "BinaryActivationFamily"
+        ]
+      },
+      {
+        "module": "RestrictedHistoryCompleteness",
+        "unavailable_imports": [
+          "OrderedFamilyAgreement"
+        ]
+      },
+      {
+        "module": "BinaryActivePathMinor",
+        "unavailable_imports": [
+          "BinaryWitnessCircuit"
+        ]
+      },
+      {
+        "module": "TwoPhaseRestrictedHistory",
+        "unavailable_imports": [
+          "RestrictedHistoryCompleteness"
+        ]
+      },
+      {
+        "module": "BinarySelectionSinkComplement",
+        "unavailable_imports": [
+          "BinaryActivePathMinor"
+        ]
+      },
+      {
+        "module": "BinaryTrekSourceAlignment",
+        "unavailable_imports": [
+          "BinaryActivePathMinor"
+        ]
+      },
+      {
+        "module": "RestrictedBudgetAndHonesty",
+        "unavailable_imports": [
+          "TwoPhaseRestrictedHistory"
+        ]
+      },
+      {
+        "module": "BinarySharedMechanismRegistry",
+        "unavailable_imports": [
+          "BinarySelectionSinkComplement"
+        ]
+      },
+      {
+        "module": "EffectiveQueryEnumeration",
+        "unavailable_imports": [
+          "RestrictedBudgetAndHonesty"
+        ]
+      },
+      {
+        "module": "BinaryCommonPositiveMinorFamily",
+        "unavailable_imports": [
+          "BinarySharedMechanismRegistry"
+        ]
+      },
+      {
+        "module": "BinaryIndicatorLawFactorization",
+        "unavailable_imports": [
+          "BinarySharedMechanismRegistry"
+        ]
+      },
+      {
+        "module": "FullClassQueryGame",
+        "unavailable_imports": [
+          "EffectiveQueryEnumeration"
+        ]
+      },
+      {
+        "module": "BinaryConditionalIndependenceAlgebra",
+        "unavailable_imports": [
+          "BinaryIndicatorLawFactorization"
+        ]
+      },
+      {
+        "module": "RestrictedInteractivePlan",
+        "unavailable_imports": [
+          "FullClassQueryGame"
+        ]
+      },
+      {
+        "module": "BinarySelectedInvarianceIdentity",
+        "unavailable_imports": [
+          "BinaryConditionalIndependenceAlgebra"
+        ]
+      },
+      {
+        "module": "RestrictedQueryBudgetBound",
+        "unavailable_imports": [
+          "RestrictedInteractivePlan"
+        ]
+      },
+      {
+        "module": "BinaryAncestralElimination",
+        "unavailable_imports": [
+          "BinarySelectedInvarianceIdentity",
+          "BinaryAncestralMoralConnection"
+        ]
+      },
+      {
+        "module": "BinaryAssignmentElimination",
+        "unavailable_imports": [
+          "BinaryAncestralElimination"
+        ]
+      },
+      {
+        "module": "BinaryAncestralMarginal",
+        "unavailable_imports": [
+          "BinaryAssignmentElimination"
+        ]
+      },
+      {
+        "module": "BinaryFactorElimination",
+        "unavailable_imports": [
+          "BinaryAncestralMarginal"
+        ]
+      },
+      {
+        "module": "BinaryMoralFactorization",
+        "unavailable_imports": [
+          "BinaryFactorElimination"
+        ]
+      },
+      {
+        "module": "BinaryNestedElimination",
+        "unavailable_imports": [
+          "BinaryMoralFactorization"
+        ]
+      },
+      {
+        "module": "BinaryGlobalMarkov",
+        "unavailable_imports": [
+          "BinaryNestedElimination"
+        ]
+      },
+      {
+        "module": "BinaryCommonFaithfulSource",
+        "unavailable_imports": [
+          "BinaryGlobalMarkov",
+          "BinaryCommonPositiveMinorFamily"
+        ]
+      },
+      {
+        "module": "BinarySelectedProbabilityLaw",
+        "unavailable_imports": [
+          "BinaryCommonFaithfulSource"
+        ]
+      },
+      {
+        "module": "BinaryFaithfulInvariance",
+        "unavailable_imports": [
+          "BinarySelectedProbabilityLaw"
+        ]
+      },
+      {
+        "module": "BinarySelectionQuerySemantics",
+        "unavailable_imports": [
+          "BinarySelectedProbabilityLaw"
+        ]
+      },
+      {
+        "module": "BinaryOriginalSourceLabels",
+        "unavailable_imports": [
+          "BinaryFaithfulInvariance",
+          "RestrictedInteractivePlan"
+        ]
+      },
+      {
+        "module": "BinaryPhysicalOracle",
+        "unavailable_imports": [
+          "BinaryOriginalSourceLabels",
+          "BinarySelectionQuerySemantics"
+        ]
+      },
+      {
+        "module": "BinaryPhysicalGame",
+        "unavailable_imports": [
+          "BinaryPhysicalOracle",
+          "RestrictedQueryBudgetBound"
+        ]
+      },
+      {
+        "module": "EmptyInterventionTarget",
+        "unavailable_imports": [
+          "BinaryPhysicalGame"
+        ]
+      },
+      {
+        "module": "HardFamilyGraphs",
+        "unavailable_imports": [
+          "BinaryPhysicalGame"
+        ]
+      },
+      {
+        "module": "HardFamilyActivePaths",
+        "unavailable_imports": [
+          "HardFamilyGraphs"
+        ]
+      },
+      {
+        "module": "HardFamilyObservedSignature",
+        "unavailable_imports": [
+          "HardFamilyActivePaths"
+        ]
+      },
+      {
+        "module": "HardFamilyIndicatorSignature",
+        "unavailable_imports": [
+          "HardFamilyObservedSignature"
+        ]
+      },
+      {
+        "module": "HardFamilyOriginalSources",
+        "unavailable_imports": [
+          "HardFamilyIndicatorSignature"
+        ]
+      },
+      {
+        "module": "HardFamilyActionSignature",
+        "unavailable_imports": [
+          "HardFamilyOriginalSources"
+        ]
+      },
+      {
+        "module": "HardFamilyFullTarget",
+        "unavailable_imports": [
+          "HardFamilyActionSignature",
+          "EmptyInterventionTarget"
+        ]
+      },
+      {
+        "module": "HardFamilyIndexCount",
+        "unavailable_imports": [
+          "HardFamilyFullTarget"
+        ]
+      },
+      {
+        "module": "HardFamilyAdaptiveLower",
+        "unavailable_imports": [
+          "HardFamilyIndexCount"
+        ]
+      },
+      {
+        "module": "HardFamilyExactGame",
+        "unavailable_imports": [
+          "HardFamilyAdaptiveLower"
+        ]
+      },
+      {
+        "module": "HardFamilyUnboundedRuns",
+        "unavailable_imports": [
+          "HardFamilyExactGame"
+        ]
+      },
+      {
+        "module": "HardFamilyRandomizedLower",
+        "unavailable_imports": [
+          "HardFamilyUnboundedRuns"
+        ]
+      },
+      {
+        "module": "ResearchCommons.Claims.Causal",
+        "unavailable_imports": [
+          "BinaryPhysicalGame",
+          "EmptyInterventionTarget",
+          "HardFamilyExactGame",
+          "HardFamilyRandomizedLower",
+          "BinaryTrekSourceAlignment"
+        ]
+      },
+      {
+        "module": "ResearchCommons.Integration.Exports",
+        "unavailable_imports": [
+          "ResearchCommons.Claims.Causal"
+        ]
+      }
+    ],
+    "compiler_errors": 3,
     "diagnostics": [
-      "MarginalIndicatorAncestry38:6 actual mapped route relation needs explicit type",
-      "MarginalIndicatorAncestry71/76/80 actual mapped arrival/mark fields need the original case equality",
-      "ExplicitProfileDecoding216:35 total decode constructor not exposed at parent field"
+      "2026-10-24T14:48:18.1999438Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/RefinedObservedSeparator.lean:86:57: error: don't know how to synthesize placeholder for argument `q`",
+      "2026-10-24T14:48:29.1875296Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/FiniteTranscriptDecoder.lean:93:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class",
+      "2026-10-24T14:48:29.1876485Z   DecidableEq (codeSource c).selections",
+      "2026-10-24T14:48:29.1878779Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/FiniteTranscriptDecoder.lean:111:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class",
+      "2026-10-24T14:48:29.1879879Z   Decidable (y = r.left ∨ y = r.right)"
     ],
-    "complete25_source_graph_kernel_owned_audit_separately_accepted": true,
+    "complete26_source_graph_kernel_owned_audit_separately_accepted": true,
+    "original_total_profile_decoder29_source_compilation_passed": true,
+    "total_profile_decoder_owned_context_separately_audited": false,
     "whole_causal_owned_and_exact_name_audit_ran": false,
     "full_causal_accepted": false,
     "complete_original_and_later_source_bodies_read": true,
     "current_main_equal_pinned": true,
     "artifact": {
-      "id": 12563017969,
-      "bytes": 545407,
-      "sha256": "69b95d8d52dc33c483b3947aeec5b3d7ec8e9f9d0663f4edaf47ddd9d74d1d60",
-      "independently_downloaded_and_hash_checked": true
+      "id": 12563194020,
+      "sha256": "9246781bec44bc326e08c9296b6a02170dce6091b5f5c65a03da5b8aee0c6f66"
+    },
+    "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+  },
+  "current_compatibility_batch": [
+    {
+      "module": "RefinedObservedSeparator",
+      "original_sha256": "228459647fc9ca0c870571af755b73b6a12647e0a1fcda15cd876752314a7cdf",
+      "selected_sha256": "a44011c7d7fde4951a0414dfef591e26b4e8f213a60ef8357e3c988c0c7ab05d",
+      "selected_bytes": 13681,
+      "selected_git_blob": "71513e3ba137e076ff33e0ec5798d0d5a7b8a995",
+      "edit": "Expose the literal existing next Arrival in Route.cons, then reuse actual relaxed-route lemma; previous identity-map proof compatibility retained.",
+      "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_rejected_source": "339b676b814b925f2958955a18ee40798e790452",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "FiniteTranscriptDecoder",
+      "original_sha256": "e58f08241a70105a1d2eb103197166ea3e3bcddc5cb6e46330e58bc923bcd69b",
+      "selected_sha256": "f9fd3669ffbeaaba5eb566a2f834efe48a46dbc09ecbdf3b3b2186a8f24e9ba7",
+      "selected_bytes": 13557,
+      "selected_git_blob": "3e01287df5df3d4ed2fe4c694cd3d32700a48fe3",
+      "edit": "Expose original decoded Selector and CanonicalSelection.Vertex types to their existing explicit linear orders; preserve actual computable finite decisions.",
+      "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+      "actual_rejected_source": "339b676b814b925f2958955a18ee40798e790452",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
-  },
-  "current_compatibility_batch": {
-    "status": "PENDING_ACTUAL_COMPLETE_TARGET",
-    "modules": [
-      "BinaryTrekDecomposition",
-      "ClosestPathAncestry",
-      "CommonIndicatorRoots",
-      "InducingPathSeparation",
-      "MarkedActiveWalks",
-      "OriginalIndicatorProjection",
-      "OriginalProjectionAncestry",
-      "ReadyRetainedNormalization",
-      "RefinedObservedSeparator",
-      "SelectedMAGValidity"
-    ],
-    "actual_failed_module": "CommonIndicatorRoots",
-    "nine_other_modules_previously_blocked": true,
-    "complete_other_proof_blocks_read_chars": 9776,
-    "source_inventory_unchanged": true
-  },
+  ],
   "latest_early_projection_result": {
     "source": "6f17bed62eb5da69cab4b0bcac4e129f12ece1f2",
     "run": 40101349532,
@@ -5241,5 +5965,14 @@
     "declarations": 890,
     "theorems": 499
   },
-  "accepted_original_graph_component": "integration/causal-original-graph-component-verification.json"
+  "accepted_original_graph_component": "integration/causal-original-graph-component-verification.json",
+  "accepted_marginal_graph_component": {
+    "source": "339b676b814b925f2958955a18ee40798e790452",
+    "run": 40103389432,
+    "job": 120900122604,
+    "modules": 26,
+    "owned": 902,
+    "theorems": 508,
+    "record": "integration/causal-marginal-graph-component-verification.json"
+  }
 }

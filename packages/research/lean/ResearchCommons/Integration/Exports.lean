@@ -8,6 +8,7 @@ import ResearchCommons.MSCI.JC69Observation
 import ResearchCommons.MSCI.JC69Measurable
 import ResearchCommons.MSCI.JC69Source
 import ResearchCommons.MSCI.JC69Unranked
+import ResearchCommons.MSCI.RootPair
 import ResearchCommons.MSCI.Alignment
 import ResearchCommons.Claims.Causal
 import ResearchCommons.Claims.G1
@@ -24,6 +25,7 @@ import ResearchCommons.ExactQuery.Source
 import ResearchCommons.Claims.NANUQ
 import ResearchCommons.Claims.RNA
 import ResearchCommons.Claims.Wong
+import ResearchCommons.Claims.Genome
 import ResearchCommons.Menu.FiniteForcing
 import SocialScience.Audit
 import ClinicalModels.Audit

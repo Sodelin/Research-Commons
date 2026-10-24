@@ -81,14 +81,15 @@ theorem relaxed_from_activated_vertex {V : Type u} (G : MarkedGraph V) (C E : V 
       Route (RealStep G C) ⟨p.vertex, some .head⟩ ys ⟨endpoint, last⟩ := by
   cases h with
   | nil => exact ⟨p.vertex, hq, some .head, [], .nil _⟩
-  | cons hstep hrest =>
+  | @cons _ «next» _ _ hstep hrest =>
       obtain ⟨outgoing, incoming, hedge, hmark, _⟩ := hstep
-      have «first» : RealStep G C ⟨p.vertex, some .head⟩ _ := by
+      have «first» : RealStep G C ⟨p.vertex, some .head⟩ «next» := by
         refine ⟨outgoing, incoming, hedge, hmark, ?_⟩
         cases outgoing with
         | tail => simpa [ActiveAt] using hn
         | head => simpa [ActiveAt] using ha
-      exact relaxed_route_hits G C E hrest hq _ [_] (.cons «first» (.nil _)) (Or.inl rfl)
+      exact relaxed_route_hits G C E hrest hq «next».incoming [«next»]
+        (.cons «first» (.nil «next»)) (Or.inl rfl)
 
 theorem selected_condition_contains_selection {X : Type u} {S : Type v} {L : Type w}
     (Z : X → Prop) (a : SourceVertex X S L) (ha : Selected a) : SelectedCondition Z a := by
