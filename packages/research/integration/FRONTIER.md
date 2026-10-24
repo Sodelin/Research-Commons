@@ -1,6 +1,14 @@
 # Current integration frontier
 
-## Latest exact ancestry endpoint repair
+## Current source: exact proof repairs and reusable claim checks
+
+Source117 `c778f3a734f66fb546446d289a91f7f48156f9b1`/run40082141552/job120837868516 passed107 Rust tests and compiled the ancestry endpoint and COMPLETE original active-walk reduction. The SAME1092-source context next rejected one previous-arrival induction inference in OriginalProjectionLifting:965 successful objects (76 compiled/889 reused),126 blocked consumers. The next explicit compatibility supplies the original some incoming arrival, without changing any source/path/activity statement. Full causal/name/type/owned acceptance is still pending.
+
+Source113's full word is terminal REJECTED at its per-key closed/unresolved-goal guard in Stage0, after416 primitives/cache/data compiled. The complete public artifact and failed5125B source are now recovered/hash-matched; no coefficient false or whole-mode acceptance. New proof strategy derives the SAME checker from a closed Boolean key-list fold, splits only closed conjunctions, retains every key/duplicate/exponent and all original word/bank/mode/physical consumers. Source only pending changed full-case checking. See WORD-CLOSED-KEY-FOLD-REUSE.md.
+
+The SAME Rust checker now accepts explicit --claim IDs with a checked --target: it still validates all canonical/binding metadata, rejects unknown/duplicate/unbound IDs, covers complete dependencies, audits the whole selected environment and checks original names/types/owners in Lean. Default behavior is retained. Selected receipts archive all proof/audit source/evidence with explicit non-full-registry scope. Existing CI now checks both COMPLETE old model libraries(67+18 theorems), then the full1092-source export/caller pipeline and unchanged strict gate. No second engine, new proof/model, smaller word or private/held action. New111-test expectation and all new check results remain pending.
+
+## Prior ancestry endpoint repair
 
 Source116 `ae3fe2fa0267b83f0c0cb46f101d53b54d4a403c`/run40081050808/job120834671328:107 Rust tests PASSED; all four original latent-projection repairs compiled. The SAME1092-source target next rejected ONE ambiguous .inl singleton-route endpoint in OriginalProjectionAncestry:963 successful objects (74 compiled/889 reused),128 blocked consumers. The original carrier type is now spelled explicitly on that endpoint. All source/DAG/latent/mark/route statements stay unchanged; full context/name/type/owned acceptance is pending.
 

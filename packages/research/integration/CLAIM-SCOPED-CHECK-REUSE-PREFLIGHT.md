@@ -1,0 +1,14 @@
+# Exact claim selection reuses the current checker
+
+Before implementation, the current complete exports::plan, its ownership/refusal tests, check_exports, checked_target and check_callers_at target-audit path were read. Source117 c778f3a734f66fb546446d289a91f7f48156f9b1 retains the same implementations as the closest source115/116 predecessors. The package ALREADY validates canonical IDs, renders original declaration checks, checks exact source/object dependency closures and runs the full owned/axiom audit. Do not replace those mechanisms.
+
+The precise missing interface is selection of a requested canonical claim set. All118 canonical bindings must still validate, but the existing plan always includes every bound claim, preventing an independent complete check of the85 old model declarations while an unrelated causal proof is rejected. Actual compilation and all85 standard-axiom outputs are already recovered; exact whole-model owner/type/environment audit is the remaining component acceptance gap.
+
+Extend the SAME planner/command with explicit --claim IDs and an explicit --target. Default no-selection behavior/document is unchanged. A selected plan first validates the FULL canonical/binding data through the existing planner, rejects duplicate/unknown/unbound requested IDs, then uses that same planner on the exact selected rows. It preserves every original hypothesis/integration level/completion value and actual module owner. Existing dependency coverage and checked object/owned/type checks remain required.
+
+Selected receipts must state their exact IDs, canonical118 count, target and current source identities, archive their full owned audit and generated named-check source, and explicitly report full_registry_selection=false/all_claims_formalized=false. Refusal of a missing dependency remains fatal. Selection cannot hide malformed unselected bindings or turn zero checks into PASS.
+
+Use the current fixed-public CI lane to check ALL67 foundations/Solidarity and ALL18 clinical declarations in their complete original audit roots, then keep the full1092-source export/strict gate mandatory. This is current-context verification/interface work, not a new proof, model engine, smaller word, scientific/model/native-held run or factory. The existing full BOTH-word job continues unchanged.
+
+
+The selected receipts retain the full owned audit, exact generated named-check source, selected current module hashes/IDs and actual source/run fields when present. The source117 context/source object gate and all owner/type checks are reused unchanged. Four new pure-planner regressions exercise positive scope preservation, invalid IDs, byte-identical default behavior and refusal of malformed unselected metadata. Actual new results are pending; expected test count111 is not a PASS.

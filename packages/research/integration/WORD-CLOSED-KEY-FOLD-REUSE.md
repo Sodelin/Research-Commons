@@ -1,0 +1,15 @@
+# Same full word: split closed Boolean key checks
+
+The exact input/conclusion is unchanged: all original keys/duplicate sums/exponent coefficients of the same three-copy BOTH natural seven-operation word on one21-variable bank, followed by the same physical and owned consumers. No sampled evaluation, smaller source/word, independent refreshed bank or new law premise replaces it.
+
+Actual predecessor source1134f45368c705390c65b2a74bd80d9095f7dcd6ddb/run40078399127/job120826761650 compiled ALL416 primitives, cache and Stage0Data0, then rejected Stage0:72:4 with "closed literal coefficient goal required". The guard is target.hasFVar || target.hasMVar; its message did not distinguish a local variable from an unresolved metavariable. No Stage0/full-mode/COMMON/physical/owned acceptance or false coefficient is established.
+
+Its public artifact12555293471 was recovered/rehashed entirely in RAM:2,135,894B/SHA256ea89589baba2c8f77dc5513840118a1cfbf3a97ba617d0a1b6160be922025fd2/844members. COMPLETE failed Stage0(5125B/SHAe6d2f482542d03842b2dd2ac360f420507d46774f3e0da49ecbea0ae69be6d14), actual Stage0Data0 and Initial sources were read. The failed source is retained in rejected-public-source/4f45368c-NaturalIndependentWordStage0.lean.txt, outside the selected modules.
+
+The existing generic checkRows_of_key_checks DID compile. The original checkRows/checkSparse/readRows and soundness proofs remain byte-identical and supply all mathematical meaning. Its literal caller's arbitrary-key/membership tactic did not produce a closed goal. This is a proof-rendering interface failure, not a new source theorem to derive.
+
+Append checkRows_of_key_list_checks, proved from that existing helper and List.all_eq_true. Its premise is the CLOSED Boolean all-fold on BOTH original finite key lists. The renderer splits this fold into closed conjunctions using the ACTUAL pinned List.all_nil/all_cons/all_append and Bool.and_eq_true definitions, then applies the same synchronous kernel proof construction to each closed goal. No key variable is introduced. Each key retains the full readRows duplicate sum and original checkSparse exponent-key union. The closed/unresolved guard stays and now prints its target; Rust format braces are explicitly escaped.
+
+Relevant primary bodies read at Lean819816b2: Init/Data/List/Basic.lean (all plus nil/cons), Init/Data/List/Lemmas.lean (all_eq_true/all_append), Init/Data/Bool.lean (and_eq_true/iff). This is a bounded relevant-source read, not a new full upstream review.
+
+Core SHA256 ddc34e71ee999df4fb196b2e4e25a947aa79020a64405641f9698645b77caf7d; renderer SHA256 f28c65bee5970fdbc8abb6bd11d285f0b04eb9882f921c308579555d95c5a5af. Source only pending actual new Rust and COMPLETE same-word/physical/owned checking. No memory limit is increased; no native_decide, axiom, polynomial oracle, new case, private/controller/model/held action, worker or cancellation is selected. This changed proof is a justified new same-input check, never an unchanged rerun.

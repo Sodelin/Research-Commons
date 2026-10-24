@@ -288,11 +288,11 @@ fn checked_full_profile(root:&std::path::Path)->Result<Vec<String>> {
  Ok(selected)
 }
 
-fn check_exports(root:&std::path::Path,target:Option<&str>)->Result<()> {
+fn check_exports(root:&std::path::Path,target:Option<&str>,claims:&[String])->Result<()> {
  research_commons_package::check_package(root)?;
  let canonical=read_json(&root.join("registry/claims.json"))?;
  let bindings=read_json(&root.join("integration/claims.json"))?;
- let mut plan=research_commons_package::exports::plan(&canonical,&bindings)?;
+ let mut plan=research_commons_package::exports::plan_for_claims(&canonical,&bindings,claims)?;
  let selected=if let Some(module)=target{checked_target(root,module)?}else{checked_full_profile(root)?};
  let source_plan=prepare_lean(root)?;
  for module in plan["imports"].as_array().ok_or("missing export imports")?{
@@ -305,11 +305,16 @@ fn check_exports(root:&std::path::Path,target:Option<&str>)->Result<()> {
  if target.is_some(){
   check_callers_at(root,"lean",&selected,"retained-target-audit")?;
  }
+ let selection_key=if claims.is_empty(){None}else{
+  Some(research_commons_package::sha256(&serde_json::to_vec(&plan["requested_claims"]).map_err(|e|e.to_string())?))
+ };
+ let stem=selection_key.as_ref().map(|key|format!("ClaimExportsScoped{key}")).unwrap_or_else(||"ClaimExports".into());
+ let relative=format!(".generated/{stem}.lean");
  let document=plan["document"].as_str().ok_or("missing exact export document")?;
- let lean=root.join("lean");let source=lean.join(".generated/ClaimExports.lean");
+ let lean=root.join("lean");let source=lean.join(&relative);
  fs::write(&source,document).map_err(|e|e.to_string())?;
  let status=Command::new("lake").args(["env","lean","-j1","-M6144",
-  "-Ddebug.skipKernelTC=false","--root=.generated",".generated/ClaimExports.lean"])
+  "-Ddebug.skipKernelTC=false","--root=.generated"]).arg(&relative)
   .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
  if !status.success(){return Err(format!("Lean rejected a named claim export: {status}"));}
  let hash=research_commons_package::sha256(document.as_bytes());
@@ -320,8 +325,24 @@ fn check_exports(root:&std::path::Path,target:Option<&str>)->Result<()> {
  plan["target"]=json!(target);
  plan["complete_profile"]=json!(target.is_none());
  plan["all_claims_formalized"]=json!(false);
- fs::write(root.join("build/claim-export-verification.json"),
-  serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
+ let destination=if let Some(key)=selection_key {
+  let directory=root.join("build").join(format!("claim-exports-{key}"));
+  fs::create_dir_all(&directory).map_err(|e|e.to_string())?;
+  let audit=fs::read(root.join("build/retained-target-audit/caller-audit.json")).map_err(|e|e.to_string())?;
+  fs::write(directory.join("owned-audit.json"),&audit).map_err(|e|e.to_string())?;
+  fs::copy(&source,directory.join("ClaimExports.lean")).map_err(|e|e.to_string())?;
+  plan["owned_audit_sha256"]=json!(research_commons_package::sha256(&audit));
+  plan["source_graph_sha256"]=source_plan["source_graph_sha256"].clone();
+  plan["checked_modules"]=json!(&selected);
+  plan["module_hashes"]=serde_json::Value::Object(selected.iter()
+   .map(|name|(name.clone(),source_plan["module_hashes"][name].clone()))
+   .collect::<serde_json::Map<String,serde_json::Value>>());
+  plan["source_commit"]=json!(env::var("GITHUB_SHA").ok());
+  plan["github_run_id"]=json!(env::var("GITHUB_RUN_ID").ok());
+  plan["artifact_directory"]=json!(format!("build/claim-exports-{key}"));
+  directory.join("verification.json")
+ }else{root.join("build/claim-export-verification.json")};
+ fs::write(destination,serde_json::to_vec_pretty(&plan).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
  println!("{plan}");Ok(())
 }
 
@@ -350,11 +371,16 @@ fn run() -> Result<()> {
   "prepare"=>println!("{}",prepare_lean(&root)?),
   "check-callers"=>check_callers_at(&root,"lean",&[],"full-profile-callers")?,
   "check-exports"=>{
-   match args.collect::<Vec<_>>().as_slice(){
-    []=>check_exports(&root,None)?,
-    [flag,module] if flag=="--target"=>check_exports(&root,Some(module))?,
-    _=>return Err("usage: check-exports [--target Module]".into()),
+   let mut target=None;let mut claims=Vec::new();
+   while let Some(flag)=args.next(){
+    match flag.as_str(){
+     "--target" if target.is_none()=>target=Some(args.next().ok_or("--target needs a module")?),
+     "--claim"=>claims.push(args.next().ok_or("--claim needs an exact canonical ID")?),
+     _=>return Err("usage: check-exports [--target Module] [--claim ID ...]".into()),
+    }
    }
+   if !claims.is_empty() && target.is_none(){return Err("selected claims require an explicit checked --target".into());}
+   check_exports(&root,target.as_deref(),&claims)?;
   },
   "prepare-certificates"=>println!("{}",research_commons_package::prepare_certificate_profile(&root)?),
   "build-certificates"=>build_certificates(&root)?,

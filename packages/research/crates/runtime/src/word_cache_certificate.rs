@@ -401,17 +401,17 @@ theorem coefficient_fibres_checked :
   -- Keep the ENTIRE original checkRows goal. Split its BOTH-side key union
   -- into literal-key obligations, avoiding one monolithic dedup/all reduction.
   -- Each obligation still checks full duplicate sums and every exponent key.
-  apply checkRows_of_key_checks
-  intro outputKey outputMember
-  simp only [rowKeys, rows, List.map_cons, List.map_nil,
-    List.mem_append, List.mem_cons, List.not_mem_nil] at outputMember
-  repeat' (first | (rcases outputMember with (rfl | outputMember)) | subst outputKey | contradiction)
+  apply checkRows_of_key_list_checks
+  simp only [rowKeys, rows, List.map_cons, List.map_nil, List.map_append,
+    List.all_cons, List.all_nil, List.all_append, Bool.and_eq_true]
+  all_goals
+    repeat' apply And.intro
   all_goals
     run_tac
       Lean.Elab.Tactic.closeMainGoalUsing `kernel_decide_original_error fun target _ => do
         let target ← Lean.instantiateMVars target
         if target.hasFVar || target.hasMVar then
-          throwError "closed literal coefficient goal required"
+          throwError m!"closed literal coefficient goal required: {{target}}"
         let proof ← Lean.Meta.mkDecideProof target
         let typeLevels := (Lean.collectLevelParams {{}} target).params
         let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains

@@ -94,6 +94,38 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
   "imports":imports,"document":document,
   "scope":"Exact declaration names/types in the actual current Lean package. Integration states and scientific scopes are retained; this is not a native physical provider, solver or upgraded scientific theorem."}))
 }
+
+/// Select exact canonical claims using the SAME complete planner and renderer.
+/// Full input validation occurs before selection; unknown, duplicate and
+/// currently unbound IDs refuse rather than producing a vacuous check.
+pub fn plan_for_claims(canonical:&Value,bindings:&Value,requested:&[String])->Result<Value>{
+ let full=plan(canonical,bindings)?;
+ if requested.is_empty(){return Ok(full);}
+ let cards=canonical["claims"].as_array().ok_or("missing canonical claims")?;
+ let rows=bindings["claims"].as_array().ok_or("missing integration rows")?;
+ let mut selected=BTreeSet::new();
+ for id in requested {
+  if !selected.insert(id.as_str()){return Err(format!("duplicate requested claim {id}"));}
+  if !cards.iter().any(|c|c["id"].as_str()==Some(id.as_str())){
+   return Err(format!("unknown requested claim {id}"));
+  }
+  if !full["claims"].as_array().ok_or("missing full export plan")?.iter()
+   .any(|c|c["claim_id"].as_str()==Some(id.as_str())){
+   return Err(format!("requested claim has no named binding: {id}"));
+  }
+ }
+ let scoped_canonical=json!({"claims":cards.iter().filter(|c|c["id"].as_str()
+  .is_some_and(|id|selected.contains(id))).cloned().collect::<Vec<_>>()});
+ let scoped_bindings=json!({"claims":rows.iter().filter(|c|c["claim_id"].as_str()
+  .is_some_and(|id|selected.contains(id))).cloned().collect::<Vec<_>>()});
+ let mut result=plan(&scoped_canonical,&scoped_bindings)?;
+ result["requested_claims"]=json!(selected.into_iter().collect::<Vec<_>>());
+ result["canonical_claim_count"]=json!(cards.len());
+ result["full_registry_selection"]=json!(false);
+ result["scope"]=json!("Check plan for exactly the selected original claim declarations/owners. Actual successful source/context/name/owned checks are required. Original scopes and integration states are retained; no full-registry or native/scientific closure.");
+ Ok(result)
+}
+
 #[cfg(test)]mod tests {
  use super::*;
  fn data()->(Value,Value){
@@ -148,6 +180,39 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
  #[test]fn duplicate_canonical_identity_is_not_collapsed(){
   let(mut c,b)=data();c["claims"].as_array_mut().unwrap().push(json!({"id":"A"}));
   assert!(plan(&c,&b).is_err());
+ }
+
+
+ #[test]fn selected_claims_preserve_original_names_owners_and_scope(){
+  let(c,mut b)=data();
+  b["claims"][1]["lean"]=json!({"module":"Other","declarations":["Other.extra"],"state":"source_binding"});
+  b["claims"][0]["lean"]["declaration_modules"]=json!({"ResearchCommons.Claims.A.endpoint":"ActualOwner"});
+  let p=plan_for_claims(&c,&b,&["A".to_owned()]).unwrap();
+  assert_eq!(p["requested_claims"],json!(["A"]));
+  assert_eq!(p["canonical_claim_count"],2);
+  assert_eq!(p["full_registry_selection"],false);
+  assert_eq!(p["claims"][0]["integration_state"],"source_binding");
+  assert_eq!(p["claims"][0]["canonical_completion"]["mathematical_claim_complete"],true);
+  assert_eq!(p["unbound_claims"],json!([]));
+  let source=p["document"].as_str().unwrap();
+  assert!(source.contains("import ActualOwner"));
+  assert!(source.contains("(\"A\", \x60\x60ResearchCommons.Claims.A.endpoint, \"ActualOwner\")"));
+  assert!(!source.contains("Other.extra"));
+ }
+ #[test]fn selection_refuses_unknown_duplicate_or_unbound_claims(){
+  let(c,b)=data();
+  for ids in [vec!["Z".to_owned()],vec!["A".to_owned(),"A".to_owned()],vec!["B".to_owned()]]{
+   assert!(plan_for_claims(&c,&b,&ids).is_err());
+  }
+ }
+ #[test]fn empty_selection_is_byte_identical_default_plan(){
+  let(c,b)=data();
+  assert_eq!(plan(&c,&b).unwrap(),plan_for_claims(&c,&b,&[]).unwrap());
+ }
+ #[test]fn selection_cannot_hide_malformed_other_binding(){
+  let(c,mut b)=data();
+  b["claims"][1]["lean"]=json!({"module":"Other","declarations":["bad\naxiom forged : False"]});
+  assert!(plan_for_claims(&c,&b,&["A".to_owned()]).is_err());
  }
 
 }

@@ -150,6 +150,19 @@ theorem checkRows_of_key_checks {A K : Type*} [DecidableEq K] (key : A → K)
   intro k hk
   exact checks k (List.mem_dedup.mp hk)
 
+
+/-- Split the same complete finite key check as a closed Boolean list fold.
+This lets literal callers prove each closed key without introducing an
+arbitrary key variable or dropping duplicate/absent coefficient fibres. -/
+theorem checkRows_of_key_list_checks {A K : Type*} [DecidableEq K] (key : A → K)
+    (reference supplied : Rows I A)
+    (checks : (rowKeys key reference ++ rowKeys key supplied).all
+      (fun k => checkSparse (readRows key reference k) (readRows key supplied k)) = true) :
+    checkRows key reference supplied = true := by
+  apply checkRows_of_key_checks
+  intro k hk
+  exact List.all_eq_true.mp checks k hk
+
 theorem checkRows_sound {A K : Type*} [DecidableEq K] (key : A → K)
     (reference supplied : Rows I A) (h : checkRows key reference supplied = true) :
     ∀ k, polynomial (readRows key reference k) =

@@ -11207,5 +11207,61 @@
       "sha256": "3ede6563e18292e7fb01740c8f96f7439d0503a34e83676267aab5f699c28425",
       "whole_same_word_result": false
     }
+  },
+  "source113_key_variable_terminal": {
+    "source": "4f45368c705390c65b2a74bd80d9095f7dcd6ddb",
+    "run": 40078399127,
+    "job": 120826761650,
+    "status": "TERMINAL_REJECTED_OPEN_OR_UNRESOLVED_PER_KEY_GOAL",
+    "failed_module": "NaturalIndependentWordStage0",
+    "line": 72,
+    "error": "closed literal coefficient goal required",
+    "guard": "target.hasFVar || target.hasMVar; exact open-variable/metavariable identity was not printed",
+    "source_bytes": 5125,
+    "source_sha256": "e6d2f482542d03842b2dd2ac360f420507d46774f3e0da49ecbea0ae69be6d14",
+    "compiled_independent_primitives": 416,
+    "compiled_cache": true,
+    "compiled_stage0_data": true,
+    "no_full_stage_or_mode_acceptance": true,
+    "coefficient_false_established": false,
+    "memory_guard_reached": false,
+    "artifact": {
+      "id": 12555293471,
+      "bytes": 2135894,
+      "sha256": "ea89589baba2c8f77dc5513840118a1cfbf3a97ba617d0a1b6160be922025fd2",
+      "members": 844,
+      "independently_recovered_rehashed_in_RAM": true,
+      "complete_failed_stage_and_initial_read": true,
+      "versioned_failed_source": "integration/rejected-public-source/4f45368c-NaturalIndependentWordStage0.lean.txt"
+    }
+  },
+  "pending_closed_boolean_key_list": {
+    "core_sha256": "ddc34e71ee999df4fb196b2e4e25a947aa79020a64405641f9698645b77caf7d",
+    "renderer_sha256": "f28c65bee5970fdbc8abb6bd11d285f0b04eb9882f921c308579555d95c5a5af",
+    "helper": "Astra.NativeSparseTableCertificate.checkRows_of_key_list_checks",
+    "status": "SOURCE_ONLY_PENDING_SAME_COMPLETE_BOTH_WORD_AND_OWNED_CHECK",
+    "all_original_keys_coefficients_duplicates_zeros_and_absence_retained": true,
+    "change": "Derive original checkRows from the closed Boolean all-fold on BOTH original key lists; split that fold with pinned List/Bool lemmas and And.intro. No arbitrary key introduction; closed/unresolved goal guard is retained and prints its target.",
+    "original_checker_and_soundness_unchanged": true,
+    "new_axiom": false,
+    "native_decide": false,
+    "new_case": false,
+    "memory_limit_increased": false,
+    "primary_API_read": {
+      "commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+      "paths": [
+        "src/Init/Data/Bool.lean",
+        "src/Init/Data/List/Basic.lean",
+        "src/Init/Data/List/Lemmas.lean"
+      ],
+      "relevant_lemmas": [
+        "Bool.and_eq_true",
+        "List.all_nil",
+        "List.all_cons",
+        "List.all_append",
+        "List.all_eq_true"
+      ],
+      "complete_body_manual_read_claimed": false
+    }
   }
 }

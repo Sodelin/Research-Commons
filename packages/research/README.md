@@ -121,3 +121,15 @@ Latest current checks:107 Rust tests passed at4ab958eb. ALL14 retained model mod
 
 
 The direct original social-science/model intake adds85 OLD formal theorem declarations across five cards, with original owner modules and no alias proofs. Their historical4.19 receipts remain scoped; current4.33.1 package acceptance is pending. [Exact reuse and model limits](integration/SOFT-SCIENCE-REUSE-PREFLIGHT.md).
+
+
+Check specific original claim interfaces with their COMPLETE original audit root:
+
+```sh
+cargo run --locked -p research-commons-package -- build --reuse-retained --target SocialScience.Audit
+cargo run --locked -p research-commons-package -- check-exports --target SocialScience.Audit --claim CB-SOFTSCI-001 --claim CB-SOFTSCI-002 --claim CB-SOFTSCI-003 --claim CB-SOFTSCI-004
+cargo run --locked -p research-commons-package -- build --reuse-retained --target ClinicalModels.Audit
+cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
+```
+
+The command validates all canonical metadata and each selected declaration's exact dependencies, owning module, type and whole selected owned audit. It archives scoped evidence; the full package check remains separate. This extension is SOURCE ONLY until its actual new hosted result. [Reuse, refusal and receipt contract](integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md).
