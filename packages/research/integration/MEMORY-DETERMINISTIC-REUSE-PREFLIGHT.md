@@ -18,3 +18,6 @@ Next existing action: build the complete36-source import root, check ALL54 names
 
 
 Current source138 did not check this proof context: preparation rejected the import-only root's manifest position after Exports. The existing sequential prepare contract was read and the unchanged root entry is now placed BEFORE its consumer. All213 added dependency positions checked in RAM; no new theorem/proof/source byte changed. Actual current36-source/54-name acceptance is still pending. [Exact rejection](import-root-order-rejection.json).
+
+
+COMPLETE current acceptance: source69a85a7e/run40112282119/job120926461213,36 sources/54 exact names/2051 declarations/1422 theorems, zero rejects. Actual792035B artifact/source/document/audit hashes and ALL54 complete actual printed types/owners/axiom lists independently checked. The original exact deterministic/legal-split mathematical scope is CLOSED. Whole native/process/minimizer/empirical/expanded-source work remains separate. No identical standalone recheck selected; mandatory expanded combined checks remain. See memory-deterministic-component-verification.json and memory-deterministic-complete-printed-types.json.
