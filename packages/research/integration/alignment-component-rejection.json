@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "status": "REJECTED",
+  "source_commit": "324bf4afbe98c0c2bb1df2afb6ce52ddc451a423",
+  "run_id": 40036370288,
+  "job_id": 120696996527,
+  "failed_module": "ResearchCommons.MSCI.Alignment",
+  "errors": [
+    {
+      "line": 74,
+      "reason": "rewrite did not reduce the endpoint composed lambda"
+    },
+    {
+      "line": 76,
+      "reason": "same at last epoch"
+    }
+  ],
+  "repair": "Expose the identical endpoint expression with change, then apply original fixed-endpoint equations. No parameter/source/array/quantifier change.",
+  "earlier_JC_module": "Complete JC69 generic module compiled, but the whole selected context/exports/owned/caller sequence failed later. No whole case or partial audit PASS inferred.",
+  "fresh_whole_context_required": true,
+  "literal_successor": {
+    "source": "47e28fc6e73ded4142d4bdaeeb5e362be57e685e",
+    "run_id": 40037276532,
+    "export_job": 120699928162,
+    "full_job": 120699927827,
+    "status": "REJECTED_only_literal_array_filter_case",
+    "module": "MSCIAlignmentCoherent",
+    "source_bytes": 2242,
+    "source_sha256": "c960770ae9ede3ba70f52f049529b792633f61346693057047ac3e97e475be19",
+    "reason": "fin_cases cannot build dependent data in Type via its Prop-only membership recursor; later decide failures contain those invalid placeholders and are not evidence of a coefficient/parameter mismatch.",
+    "repair": "Render dependent arrays/maps by Fin.cases ending in Fin.elim0; preserve complete input and returned filter."
+  },
+  "literal_dependent_tail_successor": {
+    "source": "befabb82e6fdeec38f435e41c362afb1751382a3",
+    "run_id": 40039160582,
+    "job_id": 120706098428,
+    "status": "REJECTED_actual_filter_case",
+    "module": "MSCIAlignmentCoherent",
+    "source_bytes": 2144,
+    "source_sha256": "bf9fae378fdc9903d231a3eaf975281baee3528f73c4971cfe9913c9a6eb7f68",
+    "errors": "Nondependent bare Fin.elim0 cannot fill the dependent empty routing tail; OfNat instances do not unfold opaque count in map entries. Later decide error contains those invalid data declarations.",
+    "primary_api_read": "Pinned Lean819816b2 src/Init/Data/Fin/Basic.lean Gitblob6fee3ab2eaacf1b76de02ea7f7880f29fbac8294; elim0 has nondependent result α.",
+    "repair": "Use (fun i => Fin.elim0 i) and explicit ⟨nativeIndex,by decide⟩ Fin constructors in the SAME maps. No parameter/equation/native algorithm/returned-filter change."
+  },
+  "literal_enum_reduction_successor": {
+    "source": "a2cb4412dee1b903ebfae56ddcdf7dba72f8c20e",
+    "run_id": 40040095975,
+    "job_id": 120709108605,
+    "status": "REJECTED_complete_filter_case",
+    "module": "MSCIAlignmentCoherent",
+    "source_bytes": 2328,
+    "source_sha256": "0d0133c939a9642ad2dbbd1a1ea3d764a5358bae201e9e301d93cbfa4fb5a2f2",
+    "error_line": 21,
+    "error": "All actual data declarations now elaborate, but default decide did not reduce the finite Pi function-set equality. No false numerical result, host/resource cause or complete parameter-filter acceptance is established.",
+    "primary_api_read": "Pinned src/Lean/Elab/Tactic/Decide.lean Gitblob929dd0a01dc12e7df21860ef791f6a2cf2a038c0: default is elaborator whnf; +kernel constructs a proof requiring kernel reduction.",
+    "repair": "Use decide +kernel for the SAME exact allAlignments/nativeResult equality; no native_decide or new axiom. Keep complete caller owned audit mandatory."
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "native_validator_to_existing_Code_predicate_source_review_v1",
+  "status": "SOURCE_COMPARISON_ONLY;NOT_EXECUTION_OR_FORMAL_REFINEMENT",
+  "reviewed_utc": "2026-10-21T23:30:05Z",
+  "sources": [
+    {
+      "repository": "Sodelin/Research-Commons",
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/natural_cell.rs",
+      "sha256": "774a26a70f99bdc760fa15835267c6fc0753bb2db0419844d65895b29f1ecf9e",
+      "scope": "Complete source retained; validate/reachable/index functions compared here."
+    },
+    {
+      "repository": "Sodelin/Research-Commons",
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/protocol.rs",
+      "sha256": "0bcf6e0e099d5983604c8d3e6fe189fbb0431de390b7d0f8c7306bbbced2e72a",
+      "scope": "CHART parser counts/bounds/ordered EDGE-LEAF-HYBRID identity checks and original compiler call."
+    },
+    {
+      "repository": "Sodelin/Research-Commons",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "module": "SourceNetwork",
+      "namespace": "Nanuq.Source",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "scope": "DStep/DReach/Acyclic/AvoidReach/Dominates/degrees/RootedBinary exact declarations."
+    },
+    {
+      "repository": "Sodelin/Research-Commons",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "module": "G7OriginalAdmission",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "scope": "Complete BinaryValid/RegistryValid/sourceOfValid/decodedIDs/decoded_parent_exact source."
+    }
+  ],
+  "correspondence_rows": [
+    {
+      "native_lines": [
+        75,
+        77
+      ],
+      "native_condition": "Nonempty bounded vertices/root, at least two leaves, all edge/leaf references in range",
+      "typed_obligation": "Fin vertex/edge/leaf construction bounds and BinaryValid's2<=card X",
+      "scope": "Parser-bound counts/census casts must still be explicit before Code construction."
+    },
+    {
+      "native_lines": [
+        78,
+        81
+      ],
+      "native_condition": "Count each original edge occurrence, then require root indegree0/outdegree2",
+      "typed_obligation": "codeGraph inDegree/outDegree and BinaryValid root_degrees",
+      "scope": "Needs vector-occurrence counts = Fin-edge filter cardinalities; parallel endpoints remain distinct."
+    },
+    {
+      "native_lines": [
+        82,
+        86
+      ],
+      "native_condition": "Each leaf is unseen, indegree1/outdegree0",
+      "typed_obligation": "codeLeaf injective and BinaryValid leaf_degrees",
+      "scope": "LEAF record index is preserved as the Fin taxon label, not a sorted vertex index."
+    },
+    {
+      "native_lines": [
+        88,
+        97
+      ],
+      "native_condition": "Hybrid sites are in range/distinct, have2incoming/1outgoing, and two distinct registered incoming edge indices target that site",
+      "typed_obligation": "RegistryValid injective sites, actual hybrid status, parent targets and parent0!=parent1",
+      "scope": "M0 uses incoming[0]/[1] as false/true; no endpoint-based merging."
+    },
+    {
+      "native_lines": [
+        98,
+        103
+      ],
+      "native_condition": "Every nonroot/nonleaf is either1in2out or2in1out, and the latter iff present in hybrid_set",
+      "typed_obligation": "BinaryValid internal_degrees and RegistryValid coverage of ALL actual hybrids",
+      "scope": "Root/leaf degrees separately exclude them from the2in1out subtype, so complete registry coverage is not merely subset membership."
+    },
+    {
+      "native_lines": [
+        104,
+        116
+      ],
+      "native_condition": "Kahn removal count equals all vertices",
+      "typed_obligation": "codeGraph.Acyclic, defined by absence of positive-length directed self reach",
+      "scope": "Source-aligned intent; a formal theorem relating the mutable queue/remaining counters to Lean TransGen is not supplied."
+    },
+    {
+      "native_lines": [
+        55,
+        69,
+        117
+      ],
+      "native_condition": "Directed DFS from the original root visits every vertex",
+      "typed_obligation": "BinaryValid rooted = forall a, codeGraph.DReach root a",
+      "scope": "Formal DFS soundness/completeness and exact Fin-array correspondence remain open."
+    },
+    {
+      "native_lines": [
+        55,
+        69,
+        119,
+        122
+      ],
+      "native_condition": "For every blocked NONROOT vertex, at least one original leaf stays reachable with that vertex excluded",
+      "typed_obligation": "BinaryValid least_stable, using Dominates=not AvoidReach",
+      "scope": "Matches the classical finite contrapositive only after exact blocked reachability/reflexive endpoint semantics are proved. Native special case returns empty when root is blocked, and root is intentionally exempt from the loop."
+    },
+    {
+      "native_lines": [
+        126,
+        130
+      ],
+      "native_condition": "Dimension V+E+1+H; edge inverses precede one ancestral index, then original hybrid IDs",
+      "typed_obligation": "The explicit native-order BankVar equivalence, independent of arbitrary Fintype/Option enumeration",
+      "scope": "These accessors do not prove the bijection, Code relation or emitted-row relation."
+    }
+  ],
+  "important_source_invariants": [
+    "Native CHART parser requires every EDGE/LEAF/HYBRID record ID to equal its original vector position; no sort/renaming is introduced.",
+    "Parser bounds E,V,H<=32 and D<=32; validate checks array bounds before indexing, with Rust short-circuit guards on hybrid references.",
+    "The blocked DFS never pushes the blocked vertex when it is not the root; the visited invariant must be proved rather than inferred from a diagnostic flag.",
+    "Complete hybrid coverage follows only with the root/leaf degree exclusions plus the internal iff test; do not cite the hybrid-loop subset check alone.",
+    "Original binary census equality is a separate typed Code carrier obligation. Numeric equality may be independently checked, but a native return is not a theorem."
+  ],
+  "concrete_result": "No source-level predicate mismatch found in these inspected branch meanings under the exact captured Fin-array/occurrence relation. This is not a universal semantic-equivalence theorem.",
+  "separate_unproved_algorithm_relations": [
+    "Rust bounded parser and arrays -> exact literal Code",
+    "Mutable indegree accumulation -> Lean per-occurrence Finset cardinality",
+    "Kahn removal -> Lean acyclicity",
+    "DFS and blocked DFS -> DReach/AvoidReach",
+    "All original counts/bounds and shared native-order bank layout",
+    "Ordered row compilation -> typed compileCellList/hemit",
+    "Authentic runtime/binary/input-output origin"
+  ],
+  "not_supplied_by_validate": [
+    "CutChild/bridge property",
+    "Any required outer-labelled planarity/cofacial/source-menu premises",
+    "Calendar/rate/coin feasible bank",
+    "Nonlinear source law/physical readout/provider correspondence",
+    "All-size source exclusion or full G6/G7/master closure"
+  ],
+  "practical_acceptance": "Require actual kernel evidence of BinaryValid and RegistryValid for the exact Code, or keep the explicit trusted implementation/refinement boundary. Native successful validation or supplied Boolean/dictionary values do not replace those proofs.",
+  "new_Rust_API_grammar_or_factory": false,
+  "new_test_or_proof_suite": false,
+  "new_native_or_compiler_or_CI_execution": false,
+  "existing_writer_hold_preserved": true
+}

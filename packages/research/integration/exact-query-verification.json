@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "status": "ACCEPTED_SCOPED_NATIVE_PORT_AND_GEOMETRIC_LEAN_COMPONENT",
+  "source_commit": "63d8bd98cd1cf8290b36c9ab7dbc2bee91ac62b9",
+  "run_id": 40060620084,
+  "rust_job_id": 120773107164,
+  "lean_job_id": 120773247858,
+  "sources": {
+    "cli": {
+      "bytes": 4056,
+      "git_blob": "12483076dfaed912c0c29a8b4c01352d2afed756",
+      "sha256": "4e85c34c466875ac106fb2cd9b17ed5f320105f78d3f4b4c5d215fe17d9d4ab8"
+    },
+    "cli_tests": {
+      "bytes": 1544,
+      "git_blob": "96f1a3b6b2b0bf7aa284bc526487bb2a9f5c80ca",
+      "sha256": "1bce32d6e118e73871691d18e82c650d0c512c39f048b3dfb83f58ae57fde321"
+    },
+    "lean": {
+      "bytes": 3067,
+      "git_blob": "343bf2f619e44a6cb95fae8afb4d2d84ba413155",
+      "sha256": "adc992824b608c4d6ddf5383772ae10bdc83a1f12f10fbea9c562afe06f00431"
+    },
+    "old_reference": {
+      "bytes": 8827,
+      "git_blob": "49933337ce26ce0d5ef58bbfa458bf5706d8e817",
+      "sha256": "2dd411db0ceb248cb42549eca06c0f1e8510f7ba1837fe544e9ef83e7cefc1fa"
+    },
+    "rust": {
+      "bytes": 13129,
+      "git_blob": "ecacb28611b7fe0ecc15b947ceb08fa4ba41c378",
+      "sha256": "625777d0770aa1c052a99d5c4865310445db6c8e2db4e4687bd9490bbedd7fa4"
+    }
+  },
+  "unchanged_original_reference": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "78ef5c855146cc88afdad78cd3475eae2399f141",
+    "path": "research/2026-09-30-astra-sparse-query/sparse_quartet.py",
+    "bytes": 8827,
+    "git_blob": "49933337ce26ce0d5ef58bbfa458bf5706d8e817",
+    "sha256": "2dd411db0ceb248cb42549eca06c0f1e8510f7ba1837fe544e9ef83e7cefc1fa"
+  },
+  "rust_tests": 102,
+  "actual_new_test_groups": [
+    "original-label bit/per-position cache",
+    "whole limit/missing/crossing/empty refusal",
+    "eight chain/dense fixed reference interface cases",
+    "actual stdin original-label recovery",
+    "actual stdin whole missing/duplicate/crossing refusal"
+  ],
+  "original_graph_helpers_or_archived_runners_invoked": false,
+  "selected_names": [
+    "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle",
+    "ResearchCommons.ExactQuery.Rectangle.split_union_rectangle_oracle",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton",
+    "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton"
+  ],
+  "complete_printed_types": {
+    "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle": "ExactQuery.Rectangle.interval_displays_iff_rectangle : ∀ (a b c d i j : ℕ),\n  a < b → b < c → c < d → (ExactQuery.Rectangle.DisplaysADBC i j a b c d ↔ ExactQuery.Rectangle.InRectangle a b c d i j)",
+    "ResearchCommons.ExactQuery.Rectangle.split_union_rectangle_oracle": "ExactQuery.Rectangle.split_union_rectangle_oracle : ∀ (S : Finset (ℕ × ℕ)) (a b c d : ℕ),\n  a < b →\n    b < c →\n      c < d →\n        ((∃ g ∈ S, ExactQuery.Rectangle.DisplaysADBC g.1 g.2 a b c d) ↔\n          ∃ g ∈ S, ExactQuery.Rectangle.InRectangle a b c d g.1 g.2)",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition": "ExactQuery.Rectangle.rectangle_left_partition : ∀ (a m b c d i j : ℕ),\n  a ≤ m →\n    m ≤ b →\n      (ExactQuery.Rectangle.InRectangle a b c d i j ↔\n        ExactQuery.Rectangle.InRectangle a m c d i j ∨ ExactQuery.Rectangle.InRectangle m b c d i j)",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition": "ExactQuery.Rectangle.rectangle_right_partition : ∀ (a b c m d i j : ℕ),\n  c ≤ m →\n    m ≤ d →\n      (ExactQuery.Rectangle.InRectangle a b c d i j ↔\n        ExactQuery.Rectangle.InRectangle a b c m i j ∨ ExactQuery.Rectangle.InRectangle a b m d i j)",
+    "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton": "ExactQuery.Rectangle.rectangle_singleton : ∀ (a c i j : ℕ),\n  ExactQuery.Rectangle.InRectangle a (a + 1) c (c + 1) i j ↔ i = a ∧ j = c",
+    "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton": "ExactQuery.Rectangle.wrap_query_singleton : ∀ (n k i j : ℕ),\n  1 ≤ k → k + 2 < n → i < j → j < n → (ExactQuery.Rectangle.DisplaysABCD i j 0 k (k + 1) (n - 1) ↔ i = k ∧ j = n - 1)"
+  },
+  "owned_audit": {
+    "actual_artifact_id": 12547815521,
+    "artifact_bytes": 20610149,
+    "artifact_sha256": "18710eed8686dbe3ff63b6177e46e872340be83973958f990bf74ba6434522bc",
+    "actual_archive_recovered_in_memory": true,
+    "raw_audit_path": "build/retained-target-audit/caller-audit.json",
+    "raw_audit_bytes": 33820229,
+    "raw_audit_sha256": "7e6a04845cf11bb32e23e1179550f517f665d4eab4a65774b1cb1d591db9a171",
+    "declarations": 22324,
+    "theorems": 14950,
+    "selected_modules": 929,
+    "owned_axioms": [],
+    "nonstandard_axiom_rows": [],
+    "missing_modules": [],
+    "inspection_scope": "Complete owned audit JSON decoded in RAM; every rejection list/count inspected, every6 selected exact theorem name/owner/kind/standard3-axiom row inspected and complete printed types read. Full historical declaration/reference manual reading is not asserted.",
+    "new_declarations": {
+      "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton._proof_1_1": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton._proof_1_1",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.split_union_rectangle_oracle": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.split_union_rectangle_oracle",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton._proof_1_1": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton._proof_1_1",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.InRectangle": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.InRectangle",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "definition",
+        "axioms": []
+      },
+      "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.DisplaysABCD": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.DisplaysABCD",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "definition",
+        "axioms": []
+      },
+      "ResearchCommons.ExactQuery.Rectangle.DisplaysADBC": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.DisplaysADBC",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "definition",
+        "axioms": []
+      },
+      "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.Inside": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.Inside",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "definition",
+        "axioms": []
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition._proof_1_1": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition._proof_1_1",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition._proof_1_1": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition._proof_1_1",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle._proof_1_1": {
+        "name": "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle._proof_1_1",
+        "module": "ResearchCommons.ExactQuery.Rectangle",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  },
+  "target_context_sources": 929,
+  "selected_export_receipt": "integration/claim-export-verification-v15.json",
+  "scope": "COMPLETE929-source selected/owned context and24 SCOPED mappings/156 exact declaration names/owners, including six all-position primitives of the OLD supplied-circle exact-query rectangle search. Rust102 tests passed, including eight reference differential cases and actual stdio/mapping/refusal. All subsequent existing signature/JC16/native64/BOTH entire filter commands/audits passed. This is NOT the whole source/common-circle/algorithm/root-partition/query-charge/unknown-order/asymptotic/minimax theorem, universal native refinement, biological oracle, authenticated controller or full118 integration.",
+  "preflight": "integration/EXACT-QUERY-RUST-INTEGRATION.md",
+  "next": "Reuse actual retained original nontrivial split/quartet/all-circle providers. Bind numeric list/taxon/circle/oracle to those source types; whole algorithm/query-bound/native refinement and unknown-order composition remain genuine gaps. Preserve chronological first-query trace separately from sorted cache.",
+  "whole_scientific_claim": false,
+  "scientific_discovery_count": 0
+}

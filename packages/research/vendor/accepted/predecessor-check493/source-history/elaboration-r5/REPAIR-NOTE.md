@@ -1,0 +1,1 @@
+Attempt6 passed all9 destination markers before memory abort. Replace only the last register lemma application by definitional rfl before considering broader helper extraction. The two remaining ordinary goals unfold the local exits abbreviation. All statements/limits unchanged.

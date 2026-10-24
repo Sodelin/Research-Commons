@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "status": "HISTORICAL_REJECTIONS_PRESERVED; COMPLETE_SOURCE146_ACCEPTED",
+  "source_commit": "38d7e4186e3eaa15623758787b12d296101dcedf",
+  "run_id": 40116373354,
+  "job_id": 120938566217,
+  "diagnostic_headers": [
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:47:8: error(lean.unknownIdentifier): Unknown constant `Finset.prod_nonneg`",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:48:8: error: No goals to be solved",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:145:49: error: failed to prove positivity/nonnegativity/nonzeroness",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:155:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:166:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:176:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:185:36: error: failed to prove positivity/nonnegativity/nonzeroness",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:196:37: error: failed to prove positivity/nonnegativity/nonzeroness",
+    "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:222:43: error: Invalid argument name `R` for function `Nat.cast_nonneg`"
+  ],
+  "actual_ordered_product_api": {
+    "bytes": 12700,
+    "git_blob": "0d96d6a018402a6d38bf357a55b4e401e5232b98",
+    "sha256": "c89a7463df5acd6485e64d14b958daaedf6b857aad2808a4ead0570b52220568",
+    "path": "Mathlib/Algebra/Order/BigOperators/Ring/Finset.lean",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "complete_body_read": true
+  },
+  "new_source": {
+    "bytes": 9978,
+    "git_blob": "be59837aabeafa237f1738486f3619747d3a3304",
+    "sha256": "394e292c29b50862a3a769b43faccc3942028c36d4f00469f360b993471fde50"
+  },
+  "all20_theorem_statements_unchanged": true,
+  "full_n_real_rate_and_ALL_randomized_rules_unchanged": true,
+  "original_mathematical_proof_not_reopened": true,
+  "no_desired_risk_or_model_premise_added": true,
+  "whole_module_or_audit_acceptance": false,
+  "particular_Rust_literal_caller_reached": false,
+  "current_full1473_reached": false,
+  "followon_attempts": [
+    {
+      "source": "56bbb7e959a59f2ee6a1da53917996f9705ee4f7",
+      "run_id": 40117197618,
+      "job_id": 120940956344,
+      "diagnostics": [
+        "2026-10-24T17:43:38.9829691Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:181:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n2026-10-24T17:43:38.9830388Z   nullError (thresholdRule n zeroProbability)\n2026-10-24T17:43:38.9830646Z in the target expression\n2026-10-24T17:43:38.9830984Z   (fun d => (nullError d + alternativeError e d) / 2) (thresholdRule n zeroProbability) = miss e n / 2\n2026-10-24T17:43:38.9831261Z \n2026-10-24T17:43:38.9831334Z case left\n2026-10-24T17:43:38.9831712Z e : ↑EventRate\n2026-10-24T17:43:38.9831895Z n : ℕ\n2026-10-24T17:43:38.9832175Z ha : nullError (thresholdRule n zeroProbability) = ↑zeroProbability\n2026-10-24T17:43:38.9832675Z hb : alternativeError e (thresholdRule n zeroProbability) = miss e n * (1 - ↑zeroProbability)\n2026-10-24T17:43:38.9833434Z ⊢ (fun d => (nullError d + alternativeError e d) / 2) (thresholdRule n zeroProbability) = miss e n / 2"
+      ],
+      "whole_module_accepted": false,
+      "owned_named_caller_or_full1473_reached": false,
+      "new_source": {
+        "bytes": 9993,
+        "git_blob": "4b5ad5752b74964779927fc0b30ff3176a7a561f",
+        "sha256": "861e3adc5ed892a4f52eeaee27802f162885ee9cfc34ca777218d2b908243456"
+      },
+      "all20_statement_headers_unchanged": true
+    }
+  ],
+  "accepted_source": "3c6f7a27db9e6a6869d3e3142b82b8a43f8f0ed7",
+  "verification": "integration/calibration-component-verification.json"
+}

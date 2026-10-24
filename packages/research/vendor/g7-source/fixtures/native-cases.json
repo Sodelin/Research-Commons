@@ -1,0 +1,1218 @@
+{
+  "schema": "support_native_replay_vectors_v1",
+  "reference_source_sha256": "36ad1a50012db001e1f1d8bee0d817176b5c68fd14b6c18c712820c9c9ec1914",
+  "runtime_verified": "V8 reference only; Rust replay pending",
+  "cases": [
+    {
+      "label": "singleton 1/5",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1/5 3 1 1/5 1/125",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e242388333fac3bf68c7c65113e06f8824be57b3cbf2c50d8f61a99c841a6857"
+    },
+    {
+      "label": "singleton 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1/4 3 1 1/4 1/64",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "d313fe42910d0e59bfc3510b96948fc6066c276d493085a41c34b8a034c4367c"
+    },
+    {
+      "label": "singleton 1/3",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1/3 3 1 1/3 1/27",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "b2da16a3beb6cb6a888818c33052fc4f7240bf7a34197498c5ca6ca10169d5d7"
+    },
+    {
+      "label": "singleton 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1/2 3 1 1/2 1/8",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "7477fa4cda02a57c2dd6039ffab1a64a844731a00ac79a214f71a5c0be985bc7"
+    },
+    {
+      "label": "singleton 2/3",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 2/3 3 1 2/3 8/27",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "15dca846130b78ac66793f8d77fa2dff0fd8c2cc30d90a1f4b6891cdc72dcf23"
+    },
+    {
+      "label": "singleton 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 3/4 3 1 3/4 27/64",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "7585fb8782013e584049add10f2d1b7c078e701477064d71a4576fdd88370747"
+    },
+    {
+      "label": "singleton 4/5",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 4/5 3 1 4/5 64/125",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "076baeece02dc3795716e75e9471242d12e6f4f7bf01b5bf07b136152d8733b4"
+    },
+    {
+      "label": "singleton 1",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1 3 1 1 1",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "814ff30a1988812c8b55bbc00f3259a3ab879e857fa3ab3244d4645a97930d1e"
+    },
+    {
+      "label": "two 1/5,1/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/4 5 1 19/80 439/32000 50971/256000000 30345451/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "be3f0348a3a54b112d0051d096b6c1a3c775d7b4194572fc04b39ac0ab267891"
+    },
+    {
+      "label": "reverse 1/5,1/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/5 5 1 19/80 439/32000 50971/256000000 30345451/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "be3f0348a3a54b112d0051d096b6c1a3c775d7b4194572fc04b39ac0ab267891"
+    },
+    {
+      "label": "two 1/5,1/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/4 5 1 9/40 189/16000 19721/128000000 10814201/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "dbf722ea1c1134ecdd5acf2547e3bc93c2fbd44a373d270d04648c667540c8a2"
+    },
+    {
+      "label": "reverse 1/5,1/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/5 5 1 9/40 189/16000 19721/128000000 10814201/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "dbf722ea1c1134ecdd5acf2547e3bc93c2fbd44a373d270d04648c667540c8a2"
+    },
+    {
+      "label": "two 1/5,1/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/4 5 1 17/80 317/32000 27913/256000000 12911353/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "137eb1a40371c55c6e5d7e96d8fcf2780146d7ea8c6f22c6eaa6a4822d884f20"
+    },
+    {
+      "label": "reverse 1/5,1/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/5 5 1 17/80 317/32000 27913/256000000 12911353/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "137eb1a40371c55c6e5d7e96d8fcf2780146d7ea8c6f22c6eaa6a4822d884f20"
+    },
+    {
+      "label": "two 1/5,1/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/3 5 1 3/10 67/2250 3967/3796875 2446327/192216796875",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a70e0344d8a380723c54882502facec81700d1d23c49cf2466a5b248f65b329f"
+    },
+    {
+      "label": "reverse 1/5,1/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/5 5 1 3/10 67/2250 3967/3796875 2446327/192216796875",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a70e0344d8a380723c54882502facec81700d1d23c49cf2466a5b248f65b329f"
+    },
+    {
+      "label": "two 1/5,1/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/3 5 1 4/15 76/3375 8177/11390625 4912337/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "81f6ea231c76cf78a0d1bf718fe989fc00e09c16a38f91a22c1ace08e28e0b30"
+    },
+    {
+      "label": "reverse 1/5,1/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/5 5 1 4/15 76/3375 8177/11390625 4912337/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "81f6ea231c76cf78a0d1bf718fe989fc00e09c16a38f91a22c1ace08e28e0b30"
+    },
+    {
+      "label": "two 1/5,1/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/3 5 1 7/30 103/6750 4453/11390625 2485693/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0c99c1b2818f771e61d56ecd3206c42d901e4c5f9024782986e22e8d327c1711"
+    },
+    {
+      "label": "reverse 1/5,1/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/5 5 1 7/30 103/6750 4453/11390625 2485693/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0c99c1b2818f771e61d56ecd3206c42d901e4c5f9024782986e22e8d327c1711"
+    },
+    {
+      "label": "two 1/5,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/2 5 1 17/40 383/4000 46939/4000000 29297899/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "180c405a3f798b378fa2caa71757f5b416d24ca72122867ff11cab7ce636ed1b"
+    },
+    {
+      "label": "reverse 1/5,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/5 5 1 17/40 383/4000 46939/4000000 29297899/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "180c405a3f798b378fa2caa71757f5b416d24ca72122867ff11cab7ce636ed1b"
+    },
+    {
+      "label": "two 1/5,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/2 5 1 7/20 133/2000 15689/2000000 9766649/20000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "c38625e0c4e3957f6688b9a60947472e74e2417b09dfca55ed13556d9024e089"
+    },
+    {
+      "label": "reverse 1/5,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/5 5 1 7/20 133/2000 15689/2000000 9766649/20000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "c38625e0c4e3957f6688b9a60947472e74e2417b09dfca55ed13556d9024e089"
+    },
+    {
+      "label": "two 1/5,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1/2 5 1 11/40 149/4000 15817/4000000 9768697/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8d756895d94502ff3a6d7a2509d25dc97246282a4c5ecacfa9623af16a2fb9d8"
+    },
+    {
+      "label": "reverse 1/5,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/5 5 1 11/40 149/4000 15817/4000000 9768697/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8d756895d94502ff3a6d7a2509d25dc97246282a4c5ecacfa9623af16a2fb9d8"
+    },
+    {
+      "label": "two 1/5,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 2/3 5 1 11/20 1009/4500 1000243/15187500 10000019683/768867187500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6e162caee63b7d365f551a73998c1c524a8e10440bb85c91db3cd838fbbff592"
+    },
+    {
+      "label": "reverse 1/5,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/5 5 1 11/20 1009/4500 1000243/15187500 10000019683/768867187500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6e162caee63b7d365f551a73998c1c524a8e10440bb85c91db3cd838fbbff592"
+    },
+    {
+      "label": "two 1/5,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 2/3 5 1 13/30 1027/6750 1000729/22781250 10000059049/1153300781250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ec772efe165d0eb6bc1a9f171be8c90c6a1b430560d80b28bac6ef7890b65108"
+    },
+    {
+      "label": "reverse 1/5,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/5 5 1 13/30 1027/6750 1000729/22781250 10000059049/1153300781250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ec772efe165d0eb6bc1a9f171be8c90c6a1b430560d80b28bac6ef7890b65108"
+    },
+    {
+      "label": "two 1/5,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 2/3 5 1 19/60 1081/13500 1002187/45562500 10000177147/2306601562500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0df26f87cae582716dfdf20392f6bc13520a3854cdb3dbd2e560e420466d8bd7"
+    },
+    {
+      "label": "reverse 1/5,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/5 5 1 19/60 1081/13500 1002187/45562500 10000177147/2306601562500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0df26f87cae582716dfdf20392f6bc13520a3854cdb3dbd2e560e420466d8bd7"
+    },
+    {
+      "label": "two 1/5,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 3/4 5 1 49/80 10189/32000 34175971/256000000 1729952220451/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0fd237b6f1e47d2ac3334537409823543734a4c3102526625ba565c7f730c262"
+    },
+    {
+      "label": "reverse 1/5,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/5 5 1 49/80 10189/32000 34175971/256000000 1729952220451/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0fd237b6f1e47d2ac3334537409823543734a4c3102526625ba565c7f730c262"
+    },
+    {
+      "label": "two 1/5,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 3/4 5 1 19/40 3439/16000 11394721/128000000 576651439201/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "5c37d37ef7c783f2fc592445c7301418a1f8143bf8e7b702e839d94c469b160f"
+    },
+    {
+      "label": "reverse 1/5,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/5 5 1 19/40 3439/16000 11394721/128000000 576651439201/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "5c37d37ef7c783f2fc592445c7301418a1f8143bf8e7b702e839d94c469b160f"
+    },
+    {
+      "label": "two 1/5,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 3/4 5 1 27/80 3567/32000 11402913/256000000 576653536353/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "93ff3576582eee20d14d893e7c7a3a64ff2997ac448b2220da24d1754e7ba734"
+    },
+    {
+      "label": "reverse 1/5,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/5 5 1 27/80 3567/32000 11402913/256000000 576653536353/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "93ff3576582eee20d14d893e7c7a3a64ff2997ac448b2220da24d1754e7ba734"
+    },
+    {
+      "label": "two 1/5,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 4/5 5 1 13/20 193/500 12289/62500 3145729/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ac5879e65b3f510c061d2e6a830baae6cd6e1f69eaa7d98b926e71abca33df00"
+    },
+    {
+      "label": "reverse 1/5,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/5 5 1 13/20 193/500 12289/62500 3145729/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ac5879e65b3f510c061d2e6a830baae6cd6e1f69eaa7d98b926e71abca33df00"
+    },
+    {
+      "label": "two 1/5,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 4/5 5 1 1/2 13/50 4097/31250 1048577/19531250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6892c7a5643701e2c0cb32bbd64753505c67a05fa2c9b31b8ce3c4a45125e807"
+    },
+    {
+      "label": "reverse 1/5,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/5 5 1 1/2 13/50 4097/31250 1048577/19531250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6892c7a5643701e2c0cb32bbd64753505c67a05fa2c9b31b8ce3c4a45125e807"
+    },
+    {
+      "label": "two 1/5,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 4/5 5 1 7/20 67/500 4099/62500 1048579/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "088b97bb72a529e3af2e2d5606650eabd15140404c20a6af454a518e7d6b6ec5"
+    },
+    {
+      "label": "reverse 1/5,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/5 5 1 7/20 67/500 4099/62500 1048579/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "088b97bb72a529e3af2e2d5606650eabd15140404c20a6af454a518e7d6b6ec5"
+    },
+    {
+      "label": "two 1/5,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1 5 1 4/5 94/125 11719/15625 7324219/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "17a7d4ce7572951309026a4b14299decbd4d1c09f607727f0bc9b99eeff537f8"
+    },
+    {
+      "label": "reverse 1/5,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/5 5 1 4/5 94/125 11719/15625 7324219/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "17a7d4ce7572951309026a4b14299decbd4d1c09f607727f0bc9b99eeff537f8"
+    },
+    {
+      "label": "two 1/5,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1 5 1 3/5 63/125 7813/15625 4882813/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "46cbd5e6570a230754bd3d8127dfe79a1418d66b6eac566bad7d8eaad219a7c9"
+    },
+    {
+      "label": "reverse 1/5,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/5 5 1 3/5 63/125 7813/15625 4882813/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "46cbd5e6570a230754bd3d8127dfe79a1418d66b6eac566bad7d8eaad219a7c9"
+    },
+    {
+      "label": "two 1/5,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/5 1 5 1 2/5 32/125 3907/15625 2441407/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "f5f9e5c27a6247debfb1174f0a394ba1ba238532d9be2e568b2d9215157c5d0c"
+    },
+    {
+      "label": "reverse 1/5,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/5 5 1 2/5 32/125 3907/15625 2441407/9765625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "f5f9e5c27a6247debfb1174f0a394ba1ba238532d9be2e568b2d9215157c5d0c"
+    },
+    {
+      "label": "two 1/4,1/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/3 5 1 5/16 73/2304 4339/3981312 1068259/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "638b76c71d956589197b7b4ce4c07bea5598842bda7da322331dcd7f1b36d5a7"
+    },
+    {
+      "label": "reverse 1/4,1/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/4 5 1 5/16 73/2304 4339/3981312 1068259/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "638b76c71d956589197b7b4ce4c07bea5598842bda7da322331dcd7f1b36d5a7"
+    },
+    {
+      "label": "two 1/4,1/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/3 5 1 7/24 91/3456 4825/5971968 1107625/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a4677caf0005a837ae40a2f87b09deafab82ae723de6aa3e5e8a462afd8e799b"
+    },
+    {
+      "label": "reverse 1/4,1/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/4 5 1 7/24 91/3456 4825/5971968 1107625/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a4677caf0005a837ae40a2f87b09deafab82ae723de6aa3e5e8a462afd8e799b"
+    },
+    {
+      "label": "two 1/4,1/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/3 5 1 13/48 145/6912 6283/11943936 1225723/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a8a41a3d1bd8f3f70eedb0be14d3e65e72a1de00c2d0f901ba5aa4cf006a43c4"
+    },
+    {
+      "label": "reverse 1/4,1/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/4 5 1 13/48 145/6912 6283/11943936 1225723/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a8a41a3d1bd8f3f70eedb0be14d3e65e72a1de00c2d0f901ba5aa4cf006a43c4"
+    },
+    {
+      "label": "two 1/4,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/2 5 1 7/16 25/256 193/16384 3073/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ddb579d219bc8ce65d7e1de59bc8bce6eb431e428c09eabfa76000728c917683"
+    },
+    {
+      "label": "reverse 1/4,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/4 5 1 7/16 25/256 193/16384 3073/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ddb579d219bc8ce65d7e1de59bc8bce6eb431e428c09eabfa76000728c917683"
+    },
+    {
+      "label": "two 1/4,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/2 5 1 3/8 9/128 65/8192 1025/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "93aacbd0ac8615c6ce371a13facb2a04f98a3656aa48e2158f1332240c248364"
+    },
+    {
+      "label": "reverse 1/4,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/4 5 1 3/8 9/128 65/8192 1025/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "93aacbd0ac8615c6ce371a13facb2a04f98a3656aa48e2158f1332240c248364"
+    },
+    {
+      "label": "two 1/4,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1/2 5 1 5/16 11/256 67/16384 1027/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ee75d7a7167ea3fbb3b2d1bfd97489c174d02bdd146f3c3d223299cff2434ea2"
+    },
+    {
+      "label": "reverse 1/4,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/4 5 1 5/16 11/256 67/16384 1027/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ee75d7a7167ea3fbb3b2d1bfd97489c174d02bdd146f3c3d223299cff2434ea2"
+    },
+    {
+      "label": "two 1/4,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 2/3 5 1 9/16 521/2304 262387/3981312 1073761507/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e5b6bff6e02b8e5b6df364d03eeace615204998e324b2462b835c2e41413b4ba"
+    },
+    {
+      "label": "reverse 1/4,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/4 5 1 9/16 521/2304 262387/3981312 1073761507/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e5b6bff6e02b8e5b6df364d03eeace615204998e324b2462b835c2e41413b4ba"
+    },
+    {
+      "label": "two 1/4,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 2/3 5 1 11/24 539/3456 262873/5971968 1073800873/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "af38965807a6a243977931df135c1e14f4cf35105e6dc17f1164363e0a88ce9c"
+    },
+    {
+      "label": "reverse 1/4,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/4 5 1 11/24 539/3456 262873/5971968 1073800873/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "af38965807a6a243977931df135c1e14f4cf35105e6dc17f1164363e0a88ce9c"
+    },
+    {
+      "label": "two 1/4,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 2/3 5 1 17/48 593/6912 264331/11943936 1073918971/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "85394c58ab18319569db521a4c2f15369b516b3dd2d59663043d34720f98cda8"
+    },
+    {
+      "label": "reverse 1/4,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/4 5 1 17/48 593/6912 264331/11943936 1073918971/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "85394c58ab18319569db521a4c2f15369b516b3dd2d59663043d34720f98cda8"
+    },
+    {
+      "label": "two 1/4,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 3/4 5 1 5/8 41/128 547/4096 44287/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "92f2768e225dde19a02290c6e293a3837679e687248a443ac74725787024dd87"
+    },
+    {
+      "label": "reverse 1/4,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/4 5 1 5/8 41/128 547/4096 44287/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "92f2768e225dde19a02290c6e293a3837679e687248a443ac74725787024dd87"
+    },
+    {
+      "label": "two 1/4,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 3/4 5 1 1/2 7/32 365/4096 29525/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3bce86a815b05152b9045c5ffc1ce088d28bce1854f95839bd8d464ad1893808"
+    },
+    {
+      "label": "reverse 1/4,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/4 5 1 1/2 7/32 365/4096 29525/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3bce86a815b05152b9045c5ffc1ce088d28bce1854f95839bd8d464ad1893808"
+    },
+    {
+      "label": "two 1/4,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 3/4 5 1 3/8 15/128 183/4096 14763/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "18faf57dabf9d631444143a846cdd3d3835fea71a7f02c80a0940d0882e2984b"
+    },
+    {
+      "label": "reverse 1/4,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/4 5 1 3/8 15/128 183/4096 14763/1048576",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "18faf57dabf9d631444143a846cdd3d3835fea71a7f02c80a0940d0882e2984b"
+    },
+    {
+      "label": "two 1/4,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 4/5 5 1 53/80 12413/32000 50347273/256000000 3298544648953/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e18657e6ed2732de6bb7d3600913dfdb2121ad1cf78f3c392c6bc30c875fcc9e"
+    },
+    {
+      "label": "reverse 1/4,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/4 5 1 53/80 12413/32000 50347273/256000000 3298544648953/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e18657e6ed2732de6bb7d3600913dfdb2121ad1cf78f3c392c6bc30c875fcc9e"
+    },
+    {
+      "label": "two 1/4,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 4/5 5 1 21/40 4221/16000 16792841/128000000 1099521393401/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "5cdcded1b688a09693ed1acc7772e2c5042f9adc9e49895bb3915eadaabe3591"
+    },
+    {
+      "label": "reverse 1/4,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/4 5 1 21/40 4221/16000 16792841/128000000 1099521393401/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "5cdcded1b688a09693ed1acc7772e2c5042f9adc9e49895bb3915eadaabe3591"
+    },
+    {
+      "label": "two 1/4,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 4/5 5 1 31/80 4471/32000 16824091/256000000 1099540924651/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "26044e06d06e696d0859ebc34626175996b2fae1ace0a5f9104f3fde8081c2e2"
+    },
+    {
+      "label": "reverse 1/4,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/4 5 1 31/80 4471/32000 16824091/256000000 1099540924651/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "26044e06d06e696d0859ebc34626175996b2fae1ace0a5f9104f3fde8081c2e2"
+    },
+    {
+      "label": "two 1/4,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1 5 1 13/16 193/256 12289/16384 3145729/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "dbc9666628343486221433a147915b950409b81ffdd6fd072efdd4ef305bf720"
+    },
+    {
+      "label": "reverse 1/4,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/4 5 1 13/16 193/256 12289/16384 3145729/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "dbc9666628343486221433a147915b950409b81ffdd6fd072efdd4ef305bf720"
+    },
+    {
+      "label": "two 1/4,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1 5 1 5/8 65/128 4097/8192 1048577/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "9209b016dbc71bd700a1610922059e3a102d26aa8581ecfdde4c86c9588f3868"
+    },
+    {
+      "label": "reverse 1/4,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/4 5 1 5/8 65/128 4097/8192 1048577/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "9209b016dbc71bd700a1610922059e3a102d26aa8581ecfdde4c86c9588f3868"
+    },
+    {
+      "label": "two 1/4,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/4 1 5 1 7/16 67/256 4099/16384 1048579/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0cc55d50499654590fa4e086e95345ed3a254f4d0a8670bdbee0458ac9c12949"
+    },
+    {
+      "label": "reverse 1/4,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/4 5 1 7/16 67/256 4099/16384 1048579/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0cc55d50499654590fa4e086e95345ed3a254f4d0a8670bdbee0458ac9c12949"
+    },
+    {
+      "label": "two 1/3,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/2 5 1 11/24 89/864 2251/186624 178171/241864704",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "617aac520e023f97ba75e943f33dc3656552cdd038e7997f984b9f386cedad69"
+    },
+    {
+      "label": "reverse 1/3,1/2 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/3 5 1 11/24 89/864 2251/186624 178171/241864704",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "617aac520e023f97ba75e943f33dc3656552cdd038e7997f984b9f386cedad69"
+    },
+    {
+      "label": "two 1/3,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/2 5 1 5/12 35/432 793/93312 60073/120932352",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "afd2154c63d69bfae9558c6e8ea741d49d4dc894d90c87bec7235c77aacb082f"
+    },
+    {
+      "label": "reverse 1/3,1/2 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/3 5 1 5/12 35/432 793/93312 60073/120932352",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "afd2154c63d69bfae9558c6e8ea741d49d4dc894d90c87bec7235c77aacb082f"
+    },
+    {
+      "label": "two 1/3,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1/2 5 1 3/8 17/288 307/62208 20707/80621568",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "91130db5f1d8848ba2328e2ad78dd361feaef136a1a0e897435bd406d9405db0"
+    },
+    {
+      "label": "reverse 1/3,1/2 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1/3 5 1 3/8 17/288 307/62208 20707/80621568",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "91130db5f1d8848ba2328e2ad78dd361feaef136a1a0e897435bd406d9405db0"
+    },
+    {
+      "label": "two 1/3,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 7/12 25/108 193/2916 3073/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "16e5dee27b5955f0acbbd695425ceae2b38e105eb45486f26c0539cfce737cc6"
+    },
+    {
+      "label": "reverse 1/3,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/3 5 1 7/12 25/108 193/2916 3073/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "16e5dee27b5955f0acbbd695425ceae2b38e105eb45486f26c0539cfce737cc6"
+    },
+    {
+      "label": "two 1/3,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "2c1dd8d3798fb642095c9f3579d4cf45f4d9391ddd97cefae6291925d80c15c0"
+    },
+    {
+      "label": "reverse 1/3,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "2c1dd8d3798fb642095c9f3579d4cf45f4d9391ddd97cefae6291925d80c15c0"
+    },
+    {
+      "label": "two 1/3,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 5/12 11/108 67/2916 1027/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "56e613f408b15d206700de6366a17006df9224e8c1752a025d75e746d45adcef"
+    },
+    {
+      "label": "reverse 1/3,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/3 5 1 5/12 11/108 67/2916 1027/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "56e613f408b15d206700de6366a17006df9224e8c1752a025d75e746d45adcef"
+    },
+    {
+      "label": "two 1/3,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 3/4 5 1 31/48 2251/6912 1598419/11943936 10461401779/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6f564a842883cb97955000430685ababf5bbac8a9f4bbe4ded73e57e3df4578c"
+    },
+    {
+      "label": "reverse 1/3,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/3 5 1 31/48 2251/6912 1598419/11943936 10461401779/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6f564a842883cb97955000430685ababf5bbac8a9f4bbe4ded73e57e3df4578c"
+    },
+    {
+      "label": "two 1/3,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 3/4 5 1 13/24 793/3456 535537/5971968 3487832977/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e2c55ab059cb173db846857f16ebf57cdcdffb11f5d2f0ab95a54bd84051b245"
+    },
+    {
+      "label": "reverse 1/3,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/3 5 1 13/24 793/3456 535537/5971968 3487832977/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e2c55ab059cb173db846857f16ebf57cdcdffb11f5d2f0ab95a54bd84051b245"
+    },
+    {
+      "label": "two 1/3,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 3/4 5 1 7/16 307/2304 181243/3981312 1163310043/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "7643d9a2a5f016f4f53815d404cc56bfe79c13efb28bc3a83728a7cf7eb9f614"
+    },
+    {
+      "label": "reverse 1/3,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/3 5 1 7/16 307/2304 181243/3981312 1163310043/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "7643d9a2a5f016f4f53815d404cc56bfe79c13efb28bc3a83728a7cf7eb9f614"
+    },
+    {
+      "label": "two 1/3,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 4/5 5 1 41/60 5309/13500 8973577/45562500 185761858297/2306601562500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "1552a11584683d880bc752d5c693ba90664ca63dca5938d3087db44d59bcc2c5"
+    },
+    {
+      "label": "reverse 1/3,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/3 5 1 41/60 5309/13500 8973577/45562500 185761858297/2306601562500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "1552a11584683d880bc752d5c693ba90664ca63dca5938d3087db44d59bcc2c5"
+    },
+    {
+      "label": "two 1/3,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 4/5 5 1 17/30 1853/6750 3001609/22781250 61927129849/1153300781250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "561e8bfd72fe0cd93d163528483e5ed88cc13044de63304b6d0543d6e8b75e50"
+    },
+    {
+      "label": "reverse 1/3,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/3 5 1 17/30 1853/6750 3001609/22781250 61927129849/1153300781250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "561e8bfd72fe0cd93d163528483e5ed88cc13044de63304b6d0543d6e8b75e50"
+    },
+    {
+      "label": "two 1/3,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 4/5 5 1 9/20 701/4500 1010953/15187500 20648887033/768867187500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3f2150c87124fa31d762d93858ddf3f92df51f0c668d75980479c47333c59a8b"
+    },
+    {
+      "label": "reverse 1/3,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/3 5 1 9/20 701/4500 1010953/15187500 20648887033/768867187500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3f2150c87124fa31d762d93858ddf3f92df51f0c668d75980479c47333c59a8b"
+    },
+    {
+      "label": "two 1/3,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1 5 1 5/6 41/54 547/729 44287/59049",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6b8b15aff414bcadeda15aefb7bcaa8b24feef878292329e2cde2f89df17dc6b"
+    },
+    {
+      "label": "reverse 1/3,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/3 5 1 5/6 41/54 547/729 44287/59049",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6b8b15aff414bcadeda15aefb7bcaa8b24feef878292329e2cde2f89df17dc6b"
+    },
+    {
+      "label": "two 1/3,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1 5 1 2/3 14/27 365/729 29525/59049",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "bbcd201a32d7e940fb38f73e0dde6ddcc9399b9c6f51650235898cbdad335711"
+    },
+    {
+      "label": "reverse 1/3,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/3 5 1 2/3 14/27 365/729 29525/59049",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "bbcd201a32d7e940fb38f73e0dde6ddcc9399b9c6f51650235898cbdad335711"
+    },
+    {
+      "label": "two 1/3,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 1 5 1 1/2 5/18 61/243 4921/19683",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a3cb884457ed638198aa291f1d6b2767bea225958843ebc5d8ec6e95e5214979"
+    },
+    {
+      "label": "reverse 1/3,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/3 5 1 1/2 5/18 61/243 4921/19683",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a3cb884457ed638198aa291f1d6b2767bea225958843ebc5d8ec6e95e5214979"
+    },
+    {
+      "label": "two 1/2,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 2/3 5 1 5/8 73/288 4339/62208 1068259/80621568",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "58de9734c03179fdfe4333b4f8ba35e48843fcd7ef971a94e3a87bd2c6e7f7d5"
+    },
+    {
+      "label": "reverse 1/2,2/3 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/2 5 1 5/8 73/288 4339/62208 1068259/80621568",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "58de9734c03179fdfe4333b4f8ba35e48843fcd7ef971a94e3a87bd2c6e7f7d5"
+    },
+    {
+      "label": "two 1/2,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 2/3 5 1 7/12 91/432 4825/93312 1107625/120932352",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ea43977c4dd1fccd5592669376571a0efe22ab0459578b111b2063ed62520ba9"
+    },
+    {
+      "label": "reverse 1/2,2/3 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/2 5 1 7/12 91/432 4825/93312 1107625/120932352",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ea43977c4dd1fccd5592669376571a0efe22ab0459578b111b2063ed62520ba9"
+    },
+    {
+      "label": "two 1/2,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 2/3 5 1 13/24 145/864 6283/186624 1225723/241864704",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "9bbfc154d6bfe004dcf932d074ae1a73bb7c5595bd93ea5081e1db6135bfc3ec"
+    },
+    {
+      "label": "reverse 1/2,2/3 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1/2 5 1 13/24 145/864 6283/186624 1225723/241864704",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "9bbfc154d6bfe004dcf932d074ae1a73bb7c5595bd93ea5081e1db6135bfc3ec"
+    },
+    {
+      "label": "two 1/2,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 3/4 5 1 11/16 89/256 2251/16384 178171/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "50e788d013286de9a9338ece6f1de369a6ff8cba4d67d8ae11346dd291a2d0ab"
+    },
+    {
+      "label": "reverse 1/2,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/2 5 1 11/16 89/256 2251/16384 178171/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "50e788d013286de9a9338ece6f1de369a6ff8cba4d67d8ae11346dd291a2d0ab"
+    },
+    {
+      "label": "two 1/2,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 3/4 5 1 5/8 35/128 793/8192 60073/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "b14aadef47e7e377a350cd89d4e4a1ac94db05898eadb340deca75278712fc06"
+    },
+    {
+      "label": "reverse 1/2,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/2 5 1 5/8 35/128 793/8192 60073/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "b14aadef47e7e377a350cd89d4e4a1ac94db05898eadb340deca75278712fc06"
+    },
+    {
+      "label": "two 1/2,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 3/4 5 1 9/16 51/256 921/16384 62121/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8bd70f13fa35a0c90facb2a3fb819e78868565097368a77a6022cf2fd4acf28a"
+    },
+    {
+      "label": "reverse 1/2,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1/2 5 1 9/16 51/256 921/16384 62121/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8bd70f13fa35a0c90facb2a3fb819e78868565097368a77a6022cf2fd4acf28a"
+    },
+    {
+      "label": "two 1/2,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 4/5 5 1 29/40 1661/4000 802057/4000000 3230991097/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6137bb48fda4b8ad5160bdcfc27f89f25705c2c83abe1531dbfb7885f9b31d4d"
+    },
+    {
+      "label": "reverse 1/2,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/2 5 1 29/40 1661/4000 802057/4000000 3230991097/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "6137bb48fda4b8ad5160bdcfc27f89f25705c2c83abe1531dbfb7885f9b31d4d"
+    },
+    {
+      "label": "two 1/2,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 4/5 5 1 13/20 637/2000 277769/2000000 1083507449/20000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "77655d1cd6c77a66e33d0d62d2c3edf170f1b9d39c3e9886fb66a731961591b1"
+    },
+    {
+      "label": "reverse 1/2,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/2 5 1 13/20 637/2000 277769/2000000 1083507449/20000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "77655d1cd6c77a66e33d0d62d2c3edf170f1b9d39c3e9886fb66a731961591b1"
+    },
+    {
+      "label": "two 1/2,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 4/5 5 1 23/40 887/4000 309019/4000000 1103038699/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e2c5de0f3f6ec6889ec57cd6bbe3f7a1fc259e4ce1c38100058eaa74721c73f4"
+    },
+    {
+      "label": "reverse 1/2,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1/2 5 1 23/40 887/4000 309019/4000000 1103038699/40000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e2c5de0f3f6ec6889ec57cd6bbe3f7a1fc259e4ce1c38100058eaa74721c73f4"
+    },
+    {
+      "label": "two 1/2,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1 5 1 7/8 25/32 193/256 3073/4096",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a45361f1cb70bbdc1840264fb1759121b8d8ba777a6a3977eec3609c5b046fcd"
+    },
+    {
+      "label": "reverse 1/2,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/2 5 1 7/8 25/32 193/256 3073/4096",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a45361f1cb70bbdc1840264fb1759121b8d8ba777a6a3977eec3609c5b046fcd"
+    },
+    {
+      "label": "two 1/2,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1 5 1 3/4 9/16 65/128 1025/2048",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "494e4ef78b36e2bbb2384e756430f20e08d87de342f6cebd32f245b01c44dcd1"
+    },
+    {
+      "label": "reverse 1/2,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/2 5 1 3/4 9/16 65/128 1025/2048",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "494e4ef78b36e2bbb2384e756430f20e08d87de342f6cebd32f245b01c44dcd1"
+    },
+    {
+      "label": "two 1/2,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/2 1 5 1 5/8 11/32 67/256 1027/4096",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3e515fad28529fb30fd07111a8b26dc271c986b0a3c0b49cc9752c0fa105353c"
+    },
+    {
+      "label": "reverse 1/2,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 1/2 5 1 5/8 11/32 67/256 1027/4096",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3e515fad28529fb30fd07111a8b26dc271c986b0a3c0b49cc9752c0fa105353c"
+    },
+    {
+      "label": "two 2/3,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 3/4 5 1 35/48 2699/6912 1856467/11943936 11534095027/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3c9d5319422c79188fdeb03c15e7ade0e1748c89ed2f93b6453ab7f4f75c853c"
+    },
+    {
+      "label": "reverse 2/3,3/4 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 2/3 5 1 35/48 2699/6912 1856467/11943936 11534095027/247669456896",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3c9d5319422c79188fdeb03c15e7ade0e1748c89ed2f93b6453ab7f4f75c853c"
+    },
+    {
+      "label": "two 2/3,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 3/4 5 1 17/24 1241/3456 793585/5971968 4560526225/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0ebef8261c0711695d82064aebe633f25d28ab099053cf7718ae2be5d094496a"
+    },
+    {
+      "label": "reverse 2/3,3/4 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 2/3 5 1 17/24 1241/3456 793585/5971968 4560526225/123834728448",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0ebef8261c0711695d82064aebe633f25d28ab099053cf7718ae2be5d094496a"
+    },
+    {
+      "label": "two 2/3,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 3/4 5 1 11/16 755/2304 439291/3981312 2236003291/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e8a816d87725c42d9ff2e1edf082dbaf169d0dc6d5e21997c74b39f964a586b5"
+    },
+    {
+      "label": "reverse 2/3,3/4 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 2/3 5 1 11/16 755/2304 439291/3981312 2236003291/82556485632",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "e8a816d87725c42d9ff2e1edf082dbaf169d0dc6d5e21997c74b39f964a586b5"
+    },
+    {
+      "label": "two 2/3,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 4/5 5 1 23/30 1546/3375 2489488/11390625 48938023168/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "153ff1d9679001b6c6cf4b75c30886b738a3a599ac992bee468d04912a939599"
+    },
+    {
+      "label": "reverse 2/3,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 2/3 5 1 23/30 1546/3375 2489488/11390625 48938023168/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "153ff1d9679001b6c6cf4b75c30886b738a3a599ac992bee468d04912a939599"
+    },
+    {
+      "label": "two 2/3,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 4/5 5 1 11/15 1364/3375 1992992/11390625 35958682112/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ad045436321d8a60f9c8123d53092bc7d05eac4244908cb57f67cad8a3af4598"
+    },
+    {
+      "label": "reverse 2/3,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 2/3 5 1 11/15 1364/3375 1992992/11390625 35958682112/576650390625",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ad045436321d8a60f9c8123d53092bc7d05eac4244908cb57f67cad8a3af4598"
+    },
+    {
+      "label": "two 2/3,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 4/5 5 1 7/10 394/1125 498832/3796875 7659780352/192216796875",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a879f350c0ef94ca18f12be27cfbbddacf85ac5d135877b3526f660883386a39"
+    },
+    {
+      "label": "reverse 2/3,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 2/3 5 1 7/10 394/1125 498832/3796875 7659780352/192216796875",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a879f350c0ef94ca18f12be27cfbbddacf85ac5d135877b3526f660883386a39"
+    },
+    {
+      "label": "two 2/3,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1 5 1 11/12 89/108 2251/2916 178171/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a27a10a5a26674d8bd0836ac719e87c1a1e375d6e089a8027a5ea3c198e18e94"
+    },
+    {
+      "label": "reverse 2/3,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 2/3 5 1 11/12 89/108 2251/2916 178171/236196",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "a27a10a5a26674d8bd0836ac719e87c1a1e375d6e089a8027a5ea3c198e18e94"
+    },
+    {
+      "label": "two 2/3,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1 5 1 5/6 35/54 793/1458 60073/118098",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "d9289715488b699dfc7964dbbe64d66884b7471a6494b01926110c7a71627636"
+    },
+    {
+      "label": "reverse 2/3,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 2/3 5 1 5/6 35/54 793/1458 60073/118098",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "d9289715488b699dfc7964dbbe64d66884b7471a6494b01926110c7a71627636"
+    },
+    {
+      "label": "two 2/3,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 2/3 1 5 1 3/4 17/36 307/972 20707/78732",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "bfdf375fff0e8a18f568a7df711c7fa8c2e80c38d33f0510fd78ec1473bdce2e"
+    },
+    {
+      "label": "reverse 2/3,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 2/3 5 1 3/4 17/36 307/972 20707/78732",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "bfdf375fff0e8a18f568a7df711c7fa8c2e80c38d33f0510fd78ec1473bdce2e"
+    },
+    {
+      "label": "two 3/4,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 4/5 5 1 63/80 15663/32000 61722273/256000000 3875185273953/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8ee6163815c433fd9dadfcd605b9c35b09a3c32e9b1e1ca56b7faf6d87c45bb8"
+    },
+    {
+      "label": "reverse 3/4,4/5 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 3/4 5 1 63/80 15663/32000 61722273/256000000 3875185273953/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "8ee6163815c433fd9dadfcd605b9c35b09a3c32e9b1e1ca56b7faf6d87c45bb8"
+    },
+    {
+      "label": "two 3/4,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 4/5 5 1 31/40 7471/16000 28167841/128000000 1676162018401/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "57ad52c54010b97d74772fce89609e858e70763e9154a12dd864ca7253f0bc03"
+    },
+    {
+      "label": "reverse 3/4,4/5 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 3/4 5 1 31/40 7471/16000 28167841/128000000 1676162018401/20480000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "57ad52c54010b97d74772fce89609e858e70763e9154a12dd864ca7253f0bc03"
+    },
+    {
+      "label": "two 3/4,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 4/5 5 1 61/80 14221/32000 50949091/256000000 2829462799651/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "12295533b6ac7a3ca0eacfd029a2bb5e1336428ac31736865068b501bf97dc05"
+    },
+    {
+      "label": "reverse 3/4,4/5 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 3/4 5 1 61/80 14221/32000 50949091/256000000 2829462799651/40960000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "12295533b6ac7a3ca0eacfd029a2bb5e1336428ac31736865068b501bf97dc05"
+    },
+    {
+      "label": "two 3/4,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1 5 1 15/16 219/256 13017/16384 3204777/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0b13b293c826d3569d52c5a98ce3ad04ec7b55599294cbd5a08a97e7102616d4"
+    },
+    {
+      "label": "reverse 3/4,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 3/4 5 1 15/16 219/256 13017/16384 3204777/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "0b13b293c826d3569d52c5a98ce3ad04ec7b55599294cbd5a08a97e7102616d4"
+    },
+    {
+      "label": "two 3/4,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1 5 1 7/8 91/128 4825/8192 1107625/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "803563c71e87899d6d534ffe70e1e4f832e83818cde21956efb1e0ac6c1e7afb"
+    },
+    {
+      "label": "reverse 3/4,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 3/4 5 1 7/8 91/128 4825/8192 1107625/2097152",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "803563c71e87899d6d534ffe70e1e4f832e83818cde21956efb1e0ac6c1e7afb"
+    },
+    {
+      "label": "two 3/4,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 3/4 1 5 1 13/16 145/256 6283/16384 1225723/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "58083dc273edaeaf72e1e6682d0d06fbfc37e512ca59ef668db9b20eeea9d768"
+    },
+    {
+      "label": "reverse 3/4,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 3/4 5 1 13/16 145/256 6283/16384 1225723/4194304",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "58083dc273edaeaf72e1e6682d0d06fbfc37e512ca59ef668db9b20eeea9d768"
+    },
+    {
+      "label": "two 4/5,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1 5 1 19/20 439/500 50971/62500 30345451/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "1e75bf04d1c8a9b0c28a489ab893239d36ea70db96351fe6c7fe4fdee6a3228e"
+    },
+    {
+      "label": "reverse 4/5,1 1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 4/5 5 1 19/20 439/500 50971/62500 30345451/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "1e75bf04d1c8a9b0c28a489ab893239d36ea70db96351fe6c7fe4fdee6a3228e"
+    },
+    {
+      "label": "two 4/5,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1 5 1 9/10 189/250 19721/31250 10814201/19531250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "455c3ccdc9f0a8d459f8a01d6f3352726723ddd1c099f485ad6272a169ec4f21"
+    },
+    {
+      "label": "reverse 4/5,1 1/2",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 4/5 5 1 9/10 189/250 19721/31250 10814201/19531250",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "455c3ccdc9f0a8d459f8a01d6f3352726723ddd1c099f485ad6272a169ec4f21"
+    },
+    {
+      "label": "two 4/5,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/5 1 5 1 17/20 317/500 27913/62500 12911353/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "401b59f6722b85c8068cb17cce900ddb42a5965dd47a048f71d116525ceb62bf"
+    },
+    {
+      "label": "reverse 4/5,1 3/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1 4/5 5 1 17/20 317/500 27913/62500 12911353/39062500",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "401b59f6722b85c8068cb17cce900ddb42a5965dd47a048f71d116525ceb62bf"
+    },
+    {
+      "label": "three 1/4,1/2,3/4 1/3,1/3,1/3",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/4 1/2 3/4 7 1 1/2 3/16 397/6144 30037/1572864 1198473/268435456 871870863/1099511627776",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "cc3d1f546eacfbf2cc846069099ecc75c3bb6081f60df8a76f6f905b7ca09bcf"
+    },
+    {
+      "label": "three 1/4,1/2,3/4 1/2,1/4,1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/4 1/2 3/4 7 1 7/16 37/256 795/16384 60075/4194304 14381677/4294967296 10462450357/17592186044416",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "569eb59d5eceff15533bd187886aebab9a6b89361e56d39a23019052b49c6ee3"
+    },
+    {
+      "label": "three 1/3,2/3,1 1/3,1/3,1/3",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/3 2/3 1 7 1 2/3 4/9 794/2187 60074/177147 1597964/4782969 1162494484/3486784401",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "cb702da40f1b09dcc83e2e7fdec113e0fb76ccddc6db8b46a18f9e626319634b"
+    },
+    {
+      "label": "three 1/3,2/3,1 1/2,1/4,1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/3 2/3 1 7 1 7/12 37/108 265/972 2225/8748 14381677/57395628 10462450357/41841412812",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ab2bf2110727a925b2a137e95c68ef77168c0466cdd4cb292ee649041697b9b7"
+    },
+    {
+      "label": "three 1/5,1/2,4/5 1/3,1/3,1/3",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/5 1/2 4/5 7 1 1/2 43/200 92611/1000000 361169491/10000000000 469531862663/40000000000000 614923258267671739/200000000000000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "29200e484e2453b4c8af41e68a00c65817ea45423f6cab26c0cba607faeb399e"
+    },
+    {
+      "label": "three 1/5,1/2,4/5 1/2,1/4,1/4",
+      "request": "COMMON_GENERATE_SUPPORT_V1 3 1/5 1/2 4/5 7 1 17/40 653/4000 277897/4000000 1083509497/40000000000 35214889732493/4000000000000000 9223848874017173237/4000000000000000000000",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "ea6a983ebc0a3b7beef872d3f3142d0cf6bba8e1a5db7e3b6957614b02e42f10"
+    },
+    {
+      "label": "preserved rational spelling",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 2/4 3 2/2 1/2 1/8",
+      "expected": "GENERATED_AND_CHECKED",
+      "stdout_sha256": "3c1c4a8b31bb88d5a81a6bb2ba923d69739d221e0faa4beb03d8ef4177717ff0"
+    },
+    {
+      "label": "moments mismatch",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 1/2 3 1 1/2 1/7",
+      "expected": "UNKNOWN"
+    },
+    {
+      "label": "high moment mismatch",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 1/2 1/6 65/1458 1/2",
+      "expected": "UNKNOWN"
+    },
+    {
+      "label": "derived transport cap",
+      "request": "COMMON_GENERATE_SUPPORT_V1 1 6000000000000/6000000000001 3 1 6000000000000/6000000000001 216000000000000000000000000000000000000/216000000000108000000000018000000000001",
+      "expected": "UNKNOWN"
+    },
+    {
+      "label": "empty",
+      "request": "",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "version",
+      "request": "COMMON_GENERATE_SUPPORT_V0 2 1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "zero count",
+      "request": "COMMON_GENERATE_SUPPORT_V1 0",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "count cap",
+      "request": "COMMON_GENERATE_SUPPORT_V1 4",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "leading count",
+      "request": "COMMON_GENERATE_SUPPORT_V1 02 1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "duplicate",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/6 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "zero node",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 0 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "negative node",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 -1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "node above one",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 4/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "float",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 0.3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "zero denominator",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/0 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "wrong level",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 4 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "trailing",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098 extra",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "truncated",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 1/2 1/6 65/1458",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "bad normalization",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 0 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "moment domain",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 2 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "nonascii",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/3 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    },
+    {
+      "label": "bytes",
+      "request_repeat": {
+        "text": " ",
+        "count": 262145
+      },
+      "expected": "REFUSED"
+    },
+    {
+      "label": "input bit cap",
+      "request": "COMMON_GENERATE_SUPPORT_V1 2 1/340282366920938463463374607431768211456 2/3 5 1 1/2 1/6 65/1458 1025/118098",
+      "expected": "REFUSED"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Independent static review of the natural paired Boolean and ordinary response composition
+
+Verdict: semantic and bounded source/API review PASS for the frozen 14:46 and 14:48 deltas. Both remain UNCOMPILED. This is no source-kernel acceptance, build admission, or general G4 closure.
+
+Frozen identities:
+- 14:46 source: baa929bdc920265026dfd29d1ff68a26b13210df25991b4e236c6bf75fcdfc46; provider ledger: f4d09c5bd792d70ff36c46863f8b13363300d4a3054cb93e9d74d6298014b150.
+- 14:48 source: 24a390d7d914d543f1e11abcd10f61b39914142a958f71c3633643798bb086bd; provider ledger: e49ac9a44b7460857a0b31cbc6b08539736f5a9b5e0ee5d0f4d4e8b76daa7ebe.
+
+Both snapshots retain exactly the same 491 accepted full1611 provider records. Every listed source body and literal import list was independently rehashed and matched. Their exact delta from 14:41 was read. The missing local SourceAncestralCompletion and SourceForestSilentPruning opens identified in the 14:41 review are now present; no graph, probability, positivity, or geometry assumption was added to repair them.
+
+The natural probability composition averages exactly the original once-drawn Hybrid register PMF. It applies the prior fixed-register no-loss gap and actual independent completed reader, whose probability and exchangeability premises were derived in earlier checkpoints. Strict positivity of the original bank witness is supplied by the accepted strict_original_register_coin theorem. It does not infer the independent law from the taxon-level NativeIndependentPairMixture or use the COMMON-only suffix reader for independent routing.
+
+The event is exact: threeCherry 0 is the unordered comb with B=2 and ordered A-list [1,0]. The COMMON scalar comparison applies the accepted enumerated_natural_comb_moment on the Fin3 carrier and the accepted canonical arity-two moment formula. It does not replace the specified crossed cherry by the union of two cherries or assume an arbitrary carrier-renaming law.
+
+The Boolean equivalence derives all-path RouteMeetingGeometry from the two directed calibrations, then exposes an original hybrid using CutChild and the graph's inherited structural hypotheses. Such a hybrid produces a strict independent crossed gap, contradicting the paired equality. The reverse implication uses the empty Hybrid carrier and the already proved moment formula. The new scalar equivalence itself has no separate n>=4 hypothesis; the later legal ordinary-target contract must retain its stated inherited domain. This is an explicit source assembly of the accepted paired hand proof, not a novelty claim.
+
+The 14:48 response consequence first derives absence of rival hybrids from the Boolean theorem. It then reuses accepted directedSurvival_injective_on_laminar and weightedNormalize_directedExposure to identify normalized weights. Finally it reuses actual_common_completed_weighted_tree_law and the unique empty-bank measure. Therefore it obtains equality of every later full completed unranked forest law on any finite Copy/sample for arbitrary finite rival graph carriers. It requires equality of all three displayed finite scalar families; it does not yet implement those families by the proposed at-most-3n legal full-law queries. It asserts equality of observable response laws, not physical graph isomorphism or a general reticulate-target theorem.
+
+Remaining before the intended end-to-end endpoint: the actual independent Fin3 event must be acquired from a legal full all-original-taxon query through a proved selected-carrier/label adapter; the shared-query and n+2-copy bounds must be derived. The fresh bounded selected1611 supplier check confirms SourceCrossCarrierNatural 1d4c912a compares Copy with SelectedCopy keep only, while the G7 natural/completed relabelling modules change graph V/E and retain Copy. No arbitrary natural completed copy-equivalence endpoint was found in these relevant providers. A minimal enumerated three-copy specialization is appropriate. This is a bounded negative supplier finding, not an exhaustive historical absence claim.
+
+All prior partial checkpoints, local corrections, and accepted results remain distinct. No compiler or remote publication was run for this review. The existing public 14:04 scope appendix remains a dated record and is not retrospectively changed by this later source-only progress.

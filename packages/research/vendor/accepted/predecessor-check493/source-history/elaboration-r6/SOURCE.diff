@@ -1,0 +1,11 @@
+--- elaboration-r5/G4PairedNaturalTreeCertificate.lean
++++ elaboration-r6/G4PairedNaturalTreeCertificate.lean
+@@ -4082,7 +4082,7 @@
+       rw [renameCode_live]
+       simp only [Finset.mem_image,e.injective.eq_iff,exists_eq_right]
+     simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,hl,hfg]
+-  · exact (renameCode_register N e s).symm
++  · rfl
+ 
+ lemma renameCode_exit (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (edge : E) :

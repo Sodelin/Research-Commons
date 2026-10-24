@@ -1,0 +1,89 @@
+import NaturalCommonWordCache
+import NaturalCommonWordStage6
+
+set_option maxRecDepth 10000
+set_option maxHeartbeats 30000000
+namespace ResearchCommons.Generated.NaturalCommonWord
+open Nanuq.Source GProgram.SourceForest
+open UnifiedLean.Source.FiniteSourceSnapshot
+open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+open UnifiedLean.Source.NativeIndependentPairMixture
+open UnifiedLean.Source.UniformizedSourceStep
+open UnifiedLean.Source.SourceFiniteProjection UnifiedLean.Source.SourceProgramTransport
+open UnifiedLean.Source.SourceNaturalInitialization
+open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
+open GProgram.G7.EffectiveSourceEnumeration
+open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.FullEpochPolynomial GProgram.G7.SinglePopulationPolynomialKernel
+open GProgram.G7.EffectiveInitializationCoefficients
+open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
+open Astra.NativeSparseTableCertificate Astra.OriginalWordCacheCertificate
+open scoped NNReal BigOperators
+open ResearchCommons.Generated.NaturalCommonWordContext
+
+private def stages : List (WordStage N sample (Fin 21) (Fin 2)) :=
+  [ResearchCommons.Generated.NaturalCommonWord.Stage0.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage1.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage2.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage3.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage4.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage5.stage,
+   ResearchCommons.Generated.NaturalCommonWord.Stage6.stage]
+private abbrev rows := ResearchCommons.Generated.NaturalCommonWord.Stage6.rows
+theorem stages_retain_every_original_operation :
+    stages.map WordStage.operation = word := by rfl
+theorem final_rows_are_the_complete_original_native_output :
+    finalStageRows N sample ResearchCommons.Generated.NaturalCommonWord.Initial.certificate.rows stages = rows := by rfl
+theorem complete_word_coefficient_fibres_checked :
+    checkStages N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalCommonWord.Cache.cache
+      ResearchCommons.Generated.NaturalCommonWord.Initial.certificate.rows stages = true := by
+  simp only [stages, checkStages, ResearchCommons.Generated.NaturalCommonWord.Stage0.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage1.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage2.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage3.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage4.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage5.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage6.stage,
+    ResearchCommons.Generated.NaturalCommonWord.Stage0.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage1.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage2.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage3.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage4.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage5.coefficient_fibres_checked,
+    ResearchCommons.Generated.NaturalCommonWord.Stage6.coefficient_fibres_checked, Bool.true_and]
+#check complete_word_coefficient_fibres_checked
+theorem actual_same_source_natural_word (b : SelectedIndex N sample Finset.univ)
+    (r : PositivePairRates (Fin 9)) (p : HybridProbabilities N)
+    (dur : Fin 2 → ℝ≥0) :
+    value (readRows (project N Finset.univ) rows b)
+        (fun i => wordVariables N r (originalGamma p) dur (variableBank i)) =
+      (((initializedWordLaw N sample parentRegistry p common r dur word).map
+        (projection N Finset.univ)) b).toReal := by
+  have h := checked_staged_same_source_natural_word N sample parentRegistry common
+    encodeVariable variableBank original_variable_native_bank_left_inverse
+    ResearchCommons.Generated.NaturalCommonWord.Initial.certificate ResearchCommons.Generated.NaturalCommonWord.Cache.cache stages
+    complete_word_coefficient_fibres_checked b r p dur
+  simpa only [stages_retain_every_original_operation,
+    final_rows_are_the_complete_original_native_output] using h
+#check actual_same_source_natural_word
+theorem named_parent_order_matches_capture (b : Bool) :
+    (parentRegistry.parents ⟨(7 : Fin 9), by decide +kernel⟩).parent b =
+      ResearchCommons.Generated.OriginalParallelBank.code.2.2.2.2.2 (0 : Fin 1) b := by
+  cases b <;> rfl
+
+noncomputable abbrev returnedBank := ResearchCommons.Generated.OriginalParallelBank.sharedBank
+noncomputable def returnedDur : Fin 2 → ℝ≥0 :=
+  ![⟨returnedBank.calendar.age (7 : Fin 9) - returnedBank.calendar.age (8 : Fin 9),
+       le_of_lt (sub_pos.mpr (returnedBank.calendar.edge_older (8 : Fin 9)))⟩,
+    ⟨returnedBank.calendar.age (6 : Fin 9) - returnedBank.calendar.age (7 : Fin 9),
+       le_of_lt (sub_pos.mpr (returnedBank.calendar.edge_older (6 : Fin 9)))⟩]
+
+#check returnedDur
+theorem same_returned_bank_natural_word (b : SelectedIndex N sample Finset.univ) :
+    value (readRows (project N Finset.univ) rows b)
+        (fun i => wordVariables N returnedBank.rates (originalGamma returnedBank.inheritance) returnedDur (variableBank i)) =
+      (((initializedWordLaw N sample parentRegistry returnedBank.inheritance common
+        returnedBank.rates returnedDur word).map (projection N Finset.univ)) b).toReal :=
+  actual_same_source_natural_word b returnedBank.rates returnedBank.inheritance returnedDur
+#check same_returned_bank_natural_word
+end ResearchCommons.Generated.NaturalCommonWord
