@@ -1247,3 +1247,29 @@ new observation/caller gap or original G3/G4 closure is introduced.
 Next: use this ALL-word full-law constraint with the other complete
 commutator/source/budget equations. Reuse the completed homogeneous
 consequence; do not resume R-only index work or reopen OLD identities.
+
+## Full-band ALL-coin bias bound: prefix energy removed
+
+[FULL-BAND-BIAS-CONTROL.md](../2026-10-24-g3-asymptotic-root-grid/FULL-BAND-BIAS-CONTROL.md),
+15692B/SHAa427c3de3bda1acf10b92e603170108546d681be658112677de4027394ae2db9, Gitblob491d3985e83388c1d2b21914077de6e0767e5140.
+Stable key G3-FULL-BAND-BIAS-01. PROVED HAND/self-review at scope;
+independent correctness review/Lean/source execution absent.
+
+For EVERY actual equal-arm paired full-cap7 commutator word, arbitrary
+coins/relative scales/counts and small fixed COMMON budget,
+
+    sum v_i*beta_i^2*a_i^3<=C*(sum v_i*a_i^5+H*h^4).
+
+The older mixed-band bound included E_a. This successor removes it using
+Psi7=2*w7-u7 on ONE full band with SAME positive actual transports.
+The exact bare contrast[6p3211-6p2221-p4111]/18 retains the old extrae.
+Cubic coefficient v*beta^2/6, complete fair-quartic history cancellation,
+polynomial endpoint factors and the true unknown-diagonal commutator
+give the bound. No source/jet/coefficient producer ran.
+
+Reuse this ALL-coin supplier; it is no longer an open bias/energy-coupling
+lemma. It bounds the previous full transverse-source majorant too.
+The weighted fifth-order sum and chronological energy remain unbounded
+in h; no original AG-Pair/index/ONE-witness/NO or G4 endpoint is supplied.
+The displayed HAND coefficient tables prove Psi7 has BOTH signs on arbitrarily\nweak equal-arm sources. A cellwise-positive L5 shortcut is REFUTED. The homogeneous fair
+orientation result and actual R-only phase counterfamily stay proved.
