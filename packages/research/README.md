@@ -115,3 +115,6 @@ For integration diagnosis, `build --reuse-retained --keep-going --target Researc
 
 
 The same production `exact-quartet-recovery` command now also accepts `labels` instead of `circle` to run the retained unknown-order learner plus sparse decoder with one shared query cache. Supply exactly one carrier and the same complete-support `answers`; missing answers/resources refuse the whole request. The actual13-case differential/output/order/trace and CLI/refusal checks passed within107 Rust tests at5b91ebb8; source/oracle admission and universal algorithm/query-charge refinement remain open. [Source comparison and scope](integration/EXACT-QUERY-UNKNOWN-ORDER-REUSE.md).
+
+
+Latest changed-source verification:107 Rust tests passed atd39f9490, including the stronger emitted-stage syntax regression and runtime format lint. The independent full word is running. Full causal/root checking still rejects exact proof terms; the next explicit repairs preserve original statements and same1077-source target. Neither the six new root-cover theorems nor the causal endpoint chain is yet accepted.

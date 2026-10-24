@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "status": "REJECTED_DEPENDENT_IF_REWRITE_REPAIR_PENDING",
+  "status": "REJECTED_SMALL_BRANCH_LOGIC_PROOF_REPAIR_PENDING",
   "claim": "CB-EXACTQUERY-001",
   "source_path": "lean/ResearchCommons/ExactQuery/Rectangle.lean",
-  "bytes": 6519,
-  "git_blob": "0065295dc0d28f00c173329d775b921092f417d6",
-  "sha256": "f1b41e010529aa3b1937331215360612de3fcde22142136ef51b6efa9bd2ed68",
+  "bytes": 6639,
+  "git_blob": "ee197ff545e4a94fa6f488770ebf6a3c0661bc91",
+  "sha256": "e0d8c23a739761cd30e6c07760afce9166b44784d6138f50c76ec97255b61f8e",
   "selected_new_names": [
     "ResearchCommons.ExactQuery.Rectangle.triangle_mid_partition",
     "ResearchCommons.ExactQuery.Rectangle.triangle_mid_disjoint",
@@ -42,7 +42,15 @@
       ],
       "diagnostic": "Named recursion guard is a dependent if; use dif_pos/dif_neg rather than if_pos/if_neg.",
       "whole_component_accepted": false
+    },
+    {
+      "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+      "run": 40072807852,
+      "job": 120809856986,
+      "line": 120,
+      "diagnostic": "omega alone did not close the False iff empty triangle branch; explicit False.elim and the arithmetic impossibility are now supplied.",
+      "whole_component_accepted": false
     }
   ],
-  "repair": "Only the two proof rewrite lemmas change to dif_pos/dif_neg for the original named dependent guard; algorithm/statements unchanged."
+  "repair": "Construct the SAME small-interval equivalence explicitly from False.elim and a derived contradiction with its actual l/i/j/r inequalities. Recursion and all theorem statements unchanged."
 }

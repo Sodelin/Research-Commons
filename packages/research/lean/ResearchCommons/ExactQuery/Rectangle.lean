@@ -116,8 +116,10 @@ theorem seed_covered_iff_triangle (l r i j : ℕ) :
         rw [SeedCovered]
         by_cases small : r-l ≤ 2
         · rw [dif_pos small]
-          unfold Triangle
-          omega
+          have emptyTriangle : ¬ Triangle l r i j := by
+            rintro ⟨hli, hij, hjr⟩
+            omega
+          exact ⟨False.elim, emptyTriangle⟩
         · rw [dif_neg small]
           let m := l+(r-l)/2
           have hlm : l < m := by dsimp [m]; omega

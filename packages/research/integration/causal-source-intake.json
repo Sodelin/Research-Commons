@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_LITERAL_REGISTRY_ARITHMETIC_PROOF_VARIANT_PENDING",
+  "status": "SAME_FULL_TARGET_REJECTED_ROOT_SEPARATION_AND_SMALL_TRIANGLE_PROOF_REPAIRS_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -442,13 +442,19 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Import the existing NormNum tactic and close the original remaining literal equality 3*2*2^(2*2)=96. Registry encoding/source hypotheses/cardinality theorem statements unchanged.",
-        "rejected_source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b"
+        "rejected_source": "edd84cec4f35b034d7027dfa4973fdb9ecd7c71b",
+        "module_compiled_in_rejected_full_context": {
+          "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+          "run": 40072807852,
+          "job": 120809856986,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
       "module": "CanonicalRootSeparation",
-      "path": "vendor/restricted-causal-source/CanonicalRootSeparation.lean",
-      "sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
+      "path": "lean/ResearchCommons/Compatibility/CanonicalRootSeparation.lean",
+      "sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
       "imports": [
         "FiniteProfileRegistry"
       ],
@@ -461,9 +467,12 @@
         "source_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added.",
+        "rejected_source": "d39f9490d179d8565755f5241a2e2d5f38cf143d"
       }
     },
     {
@@ -4179,6 +4188,52 @@
       "all_theorem_statements_unchanged": true,
       "new_source_law_or_axiom": false,
       "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+    },
+    {
+      "module": "CanonicalRootSeparation",
+      "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
+      "selected_sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
+      "selected_bytes": 18731,
+      "selected_git_blob": "db71d50e063380c5469349041f844caa504ab605",
+      "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added.",
+      "exact_edits": [
+        [
+          "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
+          "List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs)"
+        ],
+        [
+          "have hp := h.map id (fun a b hab => (dag_directed_exact G a b).mp hab)",
+          "have hp := h.map (fun z : Vertex G => z) (fun a b hab => (dag_directed_exact G a b).mp hab)"
+        ],
+        [
+          "simpa only [List.map_id] using hp",
+          "simpa using hp"
+        ],
+        [
+          "  have hleft : match previous with\n      | none => True\n      | some m => ActiveAt (liftCondition C)\n          (AncestorOf (dagGraph G) (liftCondition C)) (.inl x) m mx := by\n    cases previous with\n    | none => trivial\n    | some m => exact (retained_activity_iff G C x m mx).mpr hactive",
+          "  have hleft : match (retainedState (G := G) ⟨x, previous⟩).incoming with\n      | none => True\n      | some m => ActiveAt (liftCondition C)\n          (AncestorOf (dagGraph G) (liftCondition C))\n          (retainedState (G := G) ⟨x, previous⟩).vertex m mx := by\n    cases previous with\n    | none => trivial\n    | some m =>\n        simpa only [retainedState] using\n          (retained_activity_iff G C x m mx).mpr hactive"
+        ],
+        [
+          "SourceSelection.selected_trace_nil hhidden",
+          "SourceSelection.selected_trace_nil (by simpa only [hidden_eq_isSelected G] using hhidden)"
+        ],
+        [
+          "  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: ys) := by\n    apply (SourceSelection.noObservedRepeat_iff_trace_nodup _).mpr",
+          "  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: ys) := by\n    rw [hidden_eq_isSelected G]\n    apply (SourceSelection.noObservedRepeat_iff_trace_nodup _).mpr"
+        ],
+        [
+          "uniform_walk_to_simple_path (root_incidence_tails G)\n    (fun hfalse => hfalse) hy hobs",
+          "uniform_walk_to_simple_path (root_incidence_tails G)\n    (x := (Sum.inl x : Vertex G)) (fun hfalse => hfalse) hy hobs"
+        ],
+        [
+          "  have hobs := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hobs",
+          "  have hselected := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: xs) := by\n    rw [hidden_eq_isSelected G]\n    simpa only [retainedState] using hselected\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hselected"
+        ]
+      ],
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
     }
   ],
   "first_full_context_rejection": {
@@ -4205,19 +4260,38 @@
     }
   },
   "latest_full_context_result": {
-    "source": "a6d03cf1a30ab39daa138f626c7a0c7a3981d41e",
-    "run": 40072008848,
-    "job": 120807400116,
+    "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+    "run": 40072807852,
+    "job": 120809856986,
+    "status": "REJECTED_COMPLETE_ORIGINAL_TARGET",
+    "target": "ResearchCommons.Integration.Exports",
     "selected_sources": 1077,
-    "successful_objects": 941,
-    "compiled": 53,
-    "reused": 888,
+    "successful_objects": 942,
+    "newly_compiled": 54,
+    "reused_retained": 888,
     "failed_modules": [
       "ResearchCommons.ExactQuery.Rectangle",
-      "FiniteProfileRegistry"
+      "CanonicalRootSeparation"
     ],
-    "blocked_modules": 134,
+    "blocked_modules": 133,
+    "compiler_errors": 9,
+    "keep_going": true,
     "compiler_exit_success": false,
-    "whole_owned_audit_ran": false
+    "complete_profile": false,
+    "owned_audit_ran": false,
+    "exact_name_audit_ran": false,
+    "whole_causal_acceptance": false,
+    "rust": {
+      "actual_complete_log_read": true,
+      "emitted_stage_regression_in_existing_BOTH_fixture": true,
+      "failed": 0,
+      "job": 120809704083,
+      "named_format_warning_present": false,
+      "run": 40072807852,
+      "scope": "Rust lint/actual emitted-stage syntax regression plus existing bounded native port/caller tests; no Lean coefficient acceptance",
+      "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+      "status": "success",
+      "tests": 107
+    }
   }
 }
