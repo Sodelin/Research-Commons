@@ -29,3 +29,7 @@ High-reuse CB-EXACTQUERY-001's OLD order learner, supplied-order sparse decoder 
 G3's public all-core commutation reduction/status and G4 d646e5e3 retain attributed owner-HAND scopes; original G3 CP-W and G4 cross-block/constrained-return endpoints remain open. Existing G1/G2/G5 recovery baseline and P5 HAND completion are preserved.
 
 No private/native controller admission: original writer/controller/transitive hooks remain UNBOUND and all original held/USED/UNKNOWN history stands. Public fixed-synthetic package CI is separate. No phone source/Git/build writes, agents/wakes or private/held/model action.
+
+## New source96 candidates (not acceptance)
+
+The word renderer exposes/unfolds the existing matched primitive payload aliases before the SAME total check; all input/data/requirements remain. Its efficacy is unproved. The independent10,388B JC69Unranked draft is now selected for a fresh COMPLETE5-name/owned context check: original decoration transport and same-timed-observation conditional/full-locus PMF across possibly different original source carriers. Previous145 names remain accepted at82e12d5a; no new candidate PASS is inferred. See both new preflights. Existing [check word] mode selects the changed-source full BOTH-word verification; no new compiler/worker/suite.

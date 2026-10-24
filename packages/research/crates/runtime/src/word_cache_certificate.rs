@@ -276,7 +276,7 @@ def certificate : CertifiedStep N sample parentRegistry common encodeVariable :=
 #check certificate
 end {namespace}
 "#,header=header(&[context_module.clone(),data],&namespace,&context_namespace),
- rows=rows_declaration(&rows,dimension,copies),operation=symbol(entry.operation),
+ rows=rows_declaration(&rows,dimension,copies).replace("private ",""),operation=symbol(entry.operation),
  interval=interval_form(request,entry)?);
   append(&mut bundle,name.clone(),source,limits)?;
   imports.push(name);certificates.push(format!("{namespace}.certificate"));
@@ -342,9 +342,14 @@ end {cache_namespace}
   // identity below must be proved by the kernel before it can simplify the
   // unchanged total coefficient-fibre check.
   let mut hit_proofs=String::new();let mut hit_names=Vec::new();
+  let mut payload_definitions=Vec::new();
   for (input,view) in previous_views.iter().enumerate(){
    let index=entries.iter().position(|e|e.operation==operation && &e.view==view)
     .ok_or(Error::Invalid("complete current-prefix cache match"))?;
+   payload_definitions.extend([
+    format!("{}.Step{index}.certificate",bindings.namespace),
+    format!("{}.Step{index}.entry",bindings.namespace),
+    format!("{}.Step{index}.rows",bindings.namespace)]);
    let name=format!("cached_input{input}_exact");
    hit_names.push(format!("{stage_namespace}.{name}"));
    hit_proofs.push_str(&format!(r#"
@@ -355,6 +360,8 @@ theorem {name} :
   rfl
 "#,operation=symbol(operation),namespace=bindings.namespace));
   }
+  payload_definitions.sort();payload_definitions.dedup();
+  let payload_rules=payload_definitions.join(",\n    ");
   let mut next_views=Vec::new();
   let (declarations,rows)=if letter+1==request.word.len(){
    // These are the EXACT original complete native final rows already obtained
@@ -386,6 +393,11 @@ theorem coefficient_fibres_checked :
   simp only [{previous_definitions}, GProgram.G7.SparseWordComposition.bindRows,
     List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
     {hit_rules}]
+  -- Expose the existing checked payloads; only literal finite-list algebra
+  -- remains before the unchanged complete output-key/coefficient check.
+  simp only [{payload_rules}, GProgram.G7.EffectiveFullEpochCoefficients.product,
+    List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
+    List.cons_append, List.nil_append]
   decide +kernel
 #check coefficient_fibres_checked
 end {stage_namespace}
