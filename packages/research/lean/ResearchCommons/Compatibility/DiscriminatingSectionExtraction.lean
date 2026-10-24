@@ -39,8 +39,9 @@ theorem last_failure_suffix {V : Type u} {R : V → V → Prop} (P : V → Prop)
           intro r hr
           have eq : r = p := by simpa only [List.mem_singleton] using hr
           exact eq.symm ▸ hp)
-      · exact Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp,
-          by intro r hr; cases hr, List.Sublist.refl _⟩
+      · refine Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp, ?_, List.Sublist.refl _⟩
+        intro r hr
+        cases hr
   | @cons p «next» q xs step tail ih =>
       rcases ih with all | ⟨b, «prefix», suffix, «first», last, eq, bad, rest, sub⟩
       · by_cases hp : P p
@@ -106,7 +107,7 @@ theorem parent_conditioned_predecessor {V : Type u} (G : MarkedGraph V)
   obtain ⟨outgoing, incoming, chord⟩ := adjacent
   have incomingHead := head_directed_triangle G laws edge good.2 chord
   have «section» : Route (RealStep G Z) a ((«next» :: back) ++ [b, y]) y :=
-    (.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))
+    (Route.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))
   have long : 1 < ((«next» :: back) ++ [b, y]).length := by
     simp only [List.length_append, List.length_cons, List.length_nil]
     omega
@@ -117,7 +118,7 @@ theorem parent_conditioned_predecessor {V : Type u} (G : MarkedGraph V)
   · have reversed := laws.symmetric a.vertex y.vertex outgoing incoming chord
     have conflict := (single y.vertex a.vertex incoming outgoing .tail .head reversed backward.2).1
     have «impossible» : Mark.head = Mark.tail := incomingHead.symm.trans conflict
-    exact (Mark.noConfusion «impossible»).elim
+    cases «impossible»
 
 theorem conditioned_parent_route {V : Type u} (G : MarkedGraph V) (Z : V → Prop) (y : V)
     {p q : Arrival V} {xs : List (Arrival V)} (h : Route (RealStep G Z) p xs q)
@@ -205,7 +206,7 @@ theorem extract_left_discriminating_section {V : Type u} (G : MarkedGraph V)
               (List.nil_sublist (suffix.map Arrival.vertex))
         refine ⟨«stop».vertex, («next» :: rest) ++ [b], parentPath, ?_, nonadjacent, ?_, ?_⟩
         · simpa only [List.map_append, List.map_cons, List.map_nil, List.cons_append,
-            List.append_assoc, List.singleton_append] using fullNodup.sublist (shortSub.trans addSuffix)
+            List.append_assoc, List.singleton_append, List.nil_append] using fullNodup.sublist (shortSub.trans addSuffix)
         · simp only [List.length_append, List.length_cons, List.length_nil]
           omega
         · refine ⟨«next» :: rest, rfl,
@@ -214,10 +215,10 @@ theorem extract_left_discriminating_section {V : Type u} (G : MarkedGraph V)
           have fullStateEq : (⟨x, none⟩ :: («prefix» ++ [b, y] ++ suffix)) =
               dropped ++ («stop» :: ((«next» :: rest) ++ [b, y])) ++ suffix := by
             rw [decomposition]
-            simpa only [List.cons_append, List.append_assoc, List.singleton_append] using
+            simpa only [List.cons_append, List.append_assoc, List.singleton_append, List.nil_append] using
               congrArg (fun states => states ++ ((«next» :: rest) ++ [b, y] ++ suffix)) endEq
           refine ⟨dropped.map Arrival.vertex, ?_⟩
           simpa only [List.map_append, List.map_cons, List.map_nil, List.cons_append,
-            List.append_assoc, List.singleton_append] using congrArg (List.map Arrival.vertex) fullStateEq
+            List.append_assoc, List.singleton_append, List.nil_append] using congrArg (List.map Arrival.vertex) fullStateEq
 
 end RestrictedCausal.AncestralShortcutGeometry

@@ -15570,6 +15570,27 @@
         "2026-10-24T21:42:12.8005543Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MinimalPathChord.lean:92:30: error: unexpected identifier; expected command\n2026-10-24T21:42:12.8902718Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T21:42:12.9039595Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T21:42:12.9173675Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T21:42:12.9306443Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T21:42:12.9438884Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency\n2026-10-24T21:42:12.9574368Z BLOCKED LEAN DiscriminatingIntervalGeometry: LiteralMAGInducingChains\n2026-10-24T21:42:12.9707161Z BLOCKED LEAN IndexedDiscriminatingSections: DiscriminatingIntervalGeometry\n2026-10-24T21:42:12.9839842Z BLOCKED LEAN ReversedPositionTrace: IndexedDiscriminatingSections\n2026-10-24T21:42:12.9973025Z BLOCKED LEAN MinimalPathOrderDependencies: ReversedPositionTrace\n2026-10-24T21:42:13.0106098Z BLOCKED LEAN FiniteDependencyInduction: MinimalPathOrderDependencies\n2026-10-24T21:42:13.0239441Z BLOCKED LEAN DiscriminatingStatusTransport: FiniteDependencyInduction\n2026-10-24T21:42:13.0372671Z BLOCKED LEAN IndexedPrefixColliders: DiscriminatingStatusTransport\n2026-10-24T21:42:13.0505979Z BLOCKED LEAN ShortestPathStatusInvariance: IndexedPrefixColliders\n2026-10-24T21:42:13.0639415Z BLOCKED LEAN MinimumDirectedPathTransfer: ShortestPathStatusInvariance\n2026-10-24T21:42:13.0773365Z BLOCKED LEAN ClosestFirstArrowGeometry: MinimumDirectedPathTransfer\n2026-10-24T21:42:13.0906625Z BLOCKED LEAN ActivationBranchDistances: ClosestFirstArrowGeometry\n2026-10-24T21:42:13.1040055Z BLOCKED LEAN ClosestFirstArrowBoundary: ClosestFirstArrowGeometry\n2026-10-24T21:42:13.1174231Z BLOCKED LEAN ClosestFirstArrowFlank: ClosestFirstArrowBoundary\n2026-10-24T21:42:13.1307387Z BLOCKED LEAN SafeDirectedBranches: ActivationBranchDistances\n2026-10-24T21:42:13.1440600Z BLOCKED LEAN ClosestFirstArrowSplice: ClosestFirstArrowFlank\n2026-10-24T21:42:13.1573775Z BLOCKED LEAN ColliderSpliceCosts: SafeDirectedBranches\n2026-10-24T21:42:13.1706990Z BLOCKED LEAN ClosestFirstArrowPotential: ClosestFirstArrowSplice\n2026-10-24T21:42:13.1840484Z BLOCKED LEAN DirectedBranchSplices: ColliderSpliceCosts"
       ],
       "disposition": "FULL1498_REJECTED; complete48-source ancestral shortcut owned context accepted separately; closed contour standalone correctly skipped/reused, not rejected. Unsolved goals are retained with parser failure, not patched with new assumptions."
+    },
+    {
+      "source": "d2d71e9bef8aff67d48b6e3fefeccc9b97198b6f",
+      "run_id": 40135877177,
+      "job_id": 120997310447,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1498,
+      "successful": 1411,
+      "compiled": 125,
+      "reused": 1286,
+      "failed_module": "DiscriminatingSectionExtraction",
+      "blocked": 86,
+      "diagnostics": [
+        "2026-10-24T21:59:23.1440772Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:43:19: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\n2026-10-24T21:59:23.1442165Z \n2026-10-24T21:59:23.1442283Z V : Type u\n2026-10-24T21:59:23.1442747Z R : V → V → Prop\n2026-10-24T21:59:23.1443390Z P : V → Prop\n2026-10-24T21:59:23.1443895Z p✝ q : V\n2026-10-24T21:59:23.1444272Z xs : List V\n2026-10-24T21:59:23.1444530Z p : V\n2026-10-24T21:59:23.1444823Z hp : ¬P p\n2026-10-24T21:59:23.1445165Z ⊢ (∀ r ∈ [], P r) ∧ [p].Sublist [p]",
+        "2026-10-24T21:59:23.1449402Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:109:5: error(lean.invalidDottedIdent): Invalid dotted identifier notation: The expected type of `.cons` could not be determined\n2026-10-24T21:59:23.1450628Z \n2026-10-24T21:59:23.1450761Z Hint: Using one of these would be unambiguous:",
+        "2026-10-24T21:59:23.1475628Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:120:10: error(lean.invalidField): Invalid field notation: Type of\n2026-10-24T21:59:23.1477224Z   Mark.noConfusion impossible\n2026-10-24T21:59:23.1477724Z is not known; cannot resolve field `elim`\n2026-10-24T21:59:23.1478100Z \n2026-10-24T21:59:23.1478524Z Hint: Consider replacing the field projection with a call to one of the following:",
+        "2026-10-24T21:59:23.2011566Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:207:10: error: Type mismatch: After simplification, term\n2026-10-24T21:59:23.2011776Z   List.Nodup.sublist (List.Sublist.trans shortSub addSuffix) fullNodup\n2026-10-24T21:59:23.2011872Z  has type\n2026-10-24T21:59:23.2015791Z   @List.Nodup V (stop.vertex :: next.vertex :: (List.map Arrival.vertex rest ++ [b.vertex, y.vertex]))\n2026-10-24T21:59:23.2015918Z but is expected to have type\n2026-10-24T21:59:23.2016274Z   @List.Nodup V (stop.vertex :: next.vertex :: (List.map Arrival.vertex rest ++ b.vertex :: ([] ++ [y.vertex])))",
+        "2026-10-24T21:59:23.2016910Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:217:12: error: Type mismatch: After simplification, term\n2026-10-24T21:59:23.2017129Z   congrArg (fun states => states ++ (next :: rest ++ [b, y] ++ suffix)) endEq\n2026-10-24T21:59:23.2017224Z  has type\n2026-10-24T21:59:23.2017732Z   @Eq (List (Arrival V)) ({ vertex := x, incoming := none } :: (front ++ next :: (rest ++ b :: y :: ([] ++ suffix))))\n2026-10-24T21:59:23.2017925Z     (dropped ++ stop :: ([] ++ next :: (rest ++ b :: y :: ([] ++ suffix))))\n2026-10-24T21:59:23.2018038Z but is expected to have type\n2026-10-24T21:59:23.2018341Z   @Eq (List (Arrival V)) ({ vertex := x, incoming := none } :: (front ++ next :: (rest ++ b :: y :: ([] ++ suffix))))\n2026-10-24T21:59:23.2018505Z     (dropped ++ stop :: next :: (rest ++ b :: y :: ([] ++ suffix)))",
+        "2026-10-24T21:59:23.2019133Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSectionExtraction.lean:220:10: error: Type mismatch: After simplification, term\n2026-10-24T21:59:23.2019275Z   congrArg (List.map Arrival.vertex) fullStateEq\n2026-10-24T21:59:23.2019362Z  has type\n2026-10-24T21:59:23.2019453Z   @Eq (List V)\n2026-10-24T21:59:23.2019911Z     (x :: (List.map Arrival.vertex «prefix» ++ b.vertex :: y.vertex :: ([] ++ List.map Arrival.vertex suffix)))\n2026-10-24T21:59:23.2020035Z     (List.map Arrival.vertex dropped ++\n2026-10-24T21:59:23.2020148Z       stop.vertex ::\n2026-10-24T21:59:23.2020492Z         next.vertex :: (List.map Arrival.vertex rest ++ b.vertex :: y.vertex :: ([] ++ List.map Arrival.vertex suffix)))\n2026-10-24T21:59:23.2020596Z but is expected to have type\n2026-10-24T21:59:23.2020687Z   @Eq (List V)\n2026-10-24T21:59:23.2021078Z     (x :: (List.map Arrival.vertex «prefix» ++ b.vertex :: y.vertex :: ([] ++ List.map Arrival.vertex suffix)))\n2026-10-24T21:59:23.2021190Z     (List.map Arrival.vertex dropped ++\n2026-10-24T21:59:23.2021287Z       stop.vertex ::\n2026-10-24T21:59:23.2021391Z         next.vertex ::\n2026-10-24T21:59:23.2021688Z           (List.map Arrival.vertex rest ++ b.vertex :: ([] ++ y.vertex :: ([] ++ List.map Arrival.vertex suffix))))"
+      ],
+      "disposition": "FULL1498_REJECTED. Complete49-source shortest-chord owned context ACCEPTED separately. Closed NANUQ standalone reused; no full named/owned/actual callers acceptance."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -15967,7 +15988,7 @@
       "original_vendor_body_unchanged": true,
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
-      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "status": "ACCEPTED_COMPLETE49_SOURCE_COMPONENT; full1498 separately rejected",
       "exact_edits": [
         [
           "[b] <+ xs",
@@ -17039,7 +17060,45 @@
         ]
       ],
       "scope": "Quote the SAME reserved constructor binder end; no route/vertex/mark/ancestral/source/conditioning/sublist/simp proof change. Reuse selected original List.Sublist spelling variant.",
-      "status": "PENDING_COMPLETE49_SOURCE_AND_FULL1498_CHECK"
+      "status": "ACCEPTED_COMPLETE49_SOURCE_COMPONENT; full1498 separately rejected"
+    },
+    {
+      "module": "DiscriminatingSectionExtraction",
+      "selected": {
+        "bytes": 12589,
+        "git_blob": "106bf49d3f87c390db08307bf87303e3a02f7745",
+        "sha256": "75220aa044f416e6357c45267f3dddeff2425fbaeed193f37c8dd764502dc334"
+      },
+      "all6_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "      · exact Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp,\n          by intro r hr; cases hr, List.Sublist.refl _⟩",
+          "      · refine Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp, ?_, List.Sublist.refl _⟩\n        intro r hr\n        cases hr"
+        ],
+        [
+          "    (.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))",
+          "    (Route.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))"
+        ],
+        [
+          "    exact (Mark.noConfusion «impossible»).elim",
+          "    cases «impossible»"
+        ],
+        [
+          "            List.append_assoc, List.singleton_append] using fullNodup.sublist",
+          "            List.append_assoc, List.singleton_append, List.nil_append] using fullNodup.sublist"
+        ],
+        [
+          "            simpa only [List.cons_append, List.append_assoc, List.singleton_append] using",
+          "            simpa only [List.cons_append, List.append_assoc, List.singleton_append, List.nil_append] using"
+        ],
+        [
+          "            List.append_assoc, List.singleton_append] using congrArg (List.map Arrival.vertex) fullStateEq",
+          "            List.append_assoc, List.singleton_append, List.nil_append] using congrArg (List.map Arrival.vertex) fullStateEq"
+        ]
+      ],
+      "scope": "Separate existing empty-tail forall proof from its adjacent conjunction; name Route.cons before append; eliminate original impossible mark equality by cases; add existing nil_append normalization at the three actual list mismatches.",
+      "status": "PENDING_COMPLETE50_SOURCE_AND_FULL1498_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."
