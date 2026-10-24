@@ -1337,3 +1337,42 @@ No source/tuple/coefficient producer or old execution was run.
 
 Aliases: forced prefix difference, quadratic source error absorption,
 E_a by E_b, affine correction retained, linear-plus-ordinary work remains.
+
+## Positive transverse source cost: ALL weak equal-arm coins
+
+[POSITIVE-TRANSVERSE-SOURCE-COST.md](../2026-10-24-g3-asymptotic-root-grid/POSITIVE-TRANSVERSE-SOURCE-COST.md),
+13596B/SHA4fc277696d4399e3644c8fb538630d256f33ec5f48f19d33b10ece54953050b0, Gitblob2b9682d412b12d5d663cad82052aed9f12114b90.
+Stable key G3-POSITIVE-TRANSVERSE-SOURCE-COST-01. PROVED HAND/self-reviewed;
+independent correctness review/Lean/source execution absent.
+
+REUSE the completed fair derivative/quintics, ALL-coin polynomial factors,
+matched-band equation and forced-prefix comparison. For ALL sufficiently
+weak strict equal-arm cells, including arbitrarily rare coins,
+
+    s/12<=56*sigma+55*rho<=C*s,
+    s=v*(beta^2*u^3+beta*u^4+u^5).
+
+The exact leading form is
+v*u^3*[54(beta-5u/36)^2+11u^2/24], with O(u*s) remainder.
+This is a positive source cost across TWO different matrix bands.
+The earlier SAME-band Psi7 has BOTH signs; that result stays unchanged.
+No new additive whole-word observable/cocycle is inferred.
+
+On the original paired FULL-cap9 commutator fibre, actual separate
+sigma/rho weights and their proved O(H) discrepancy give
+
+    (sum s_i)/48<=55*kappa*M_h+C*(E_b+H*h^4),
+    M_h=integral Pi6^-1*(12b-21B_h+9E_h/kappa).
+
+Pi6 is the actual b4/b6 prefix ratio with positive nominal continuation.
+The signed mean remains; no ordinary-clock substitution or sign erasure.
+A coarse corollary is sum s_i<=C(E_b+sqrt(H*E_b)+H*h^3).
+All strict coins/relative scales/finite counts and ONE fixed budget remain.
+
+The required h-order bound on M_h/E_b, coupled LINEAR-plus-ordinary work,
+L5/energy/phase/ONE-witness and original G3/G4 endpoints remain UNPROVED.
+This is a component of the same original attempt, not a new/full strategy.
+No unequal-arm extension, new source/coefficient program, generic PSD,
+physical inverse, pointwise fair window or peer job is selected.
+Aliases:56sigma+55rho, positive transverse cost,54beta^2-15beta*u+3u^2/2,
+two actual lower-band weights, signed9-band mean, rare coins retained.
