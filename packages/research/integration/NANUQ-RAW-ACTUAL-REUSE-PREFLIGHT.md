@@ -12,3 +12,6 @@ Remaining broader formal implication: every admitted all-level source's outer-fa
 
 
 Actual source1232937da9f/run40090286341/job120861539518 rejects the COMPLETE changed root at four finite chart coercion goals (one diagnostic, private four_taxa_chart line51). No new receiver/name/owned acceptance follows from clean later elaborations. The original RawNanuq fourTaxa_swap proofs already use fin_cases followed by simp then rfl. Reuse that exact terminal definitional reduction for these four literal embedding applications. No statement/source law/readout or assumption changes. Prior31-name source121 acceptance stays pinned; new3-name receiver acceptance remains PENDING.
+
+
+ACTUAL source1240958975a/run40090840783/job120863151776 PASSES this complete34-name/836-source context:80346 declarations/77444 theorems, zero owned/nonstandard/missing. All34 complete printed types/owners/collectAxioms lists and source hashes independently checked. Three raw tensor/readout receivers are now ACCEPTED; remove this chart/composition join from the open frontier. The source123 complete-module rejection stays rejected. Global all-level circularity/exact-support/source-coverage and native observation remain separate; no completed HAND theorem is reopened. See nanuq-raw-actual-join-verification.json.

@@ -1,6 +1,8 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus209 selected integration/proposal modules. Registry accounting is complete; actual integration of all118 is not.
+This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
+
+The current graph selects 1,613 retained modules plus 209 integration modules. There are 34 named claim mappings and 288 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -23,28 +25,17 @@ cargo run --locked -p research-commons-package -- coverage --strict
 
 The final per-claim completion gate currently exits2 because required bindings remain missing. A successful selected build or source preparation must not suppress that result.
 
-## Current actual verification
+## Verified components and current build boundary
 
-- **111 Rust tests pass** at source `fe0dccd2`, run40085312861.
-- **Five additional exact formal-model claim interfaces are accepted**: all85 original names/owners and complete9+5-module contexts;318 owned declarations, zero owned axioms/nonstandard rows/missing modules. Original sources and hypotheses are unchanged. This is formal model integration, with no empirical or clinical inference claim. [Receipts](integration/soft-science-component-verification.json), [complete printed types](integration/soft-science-complete-printed-types.json).
-- The prior **24 scoped mappings/165 names** passed at `c79deb20` in the complete930-source context (22333 declarations/14950 theorems). The five additional component acceptances bring the separately scoped accepted binding count to29. They do not imply a single accepted combined271-name/33-mapping build. [Prior receipt](integration/claim-export-verification-v16.json).
-- The last actual **1434-source combined target is rejected** at OriginalIndicatorProjection:1311 successful objects (80 compiled/1231 reused), one failed module/122 blocked consumers. OriginalProjectionContraction now compiles. The current repair reuses the actual WithBot constructors and fixed original vertex map before graph rewriting. Full causal/name/type/owned acceptance is still pending. [Actual failures](integration/causal-compiler-rejections.json).
-- The SAME complete independent/COMMON natural-word proof remains running independently at source `ed4ed337`, run40084273155/job120844040087. Prior failed word revisions remain rejected. [Proof split and failures](integration/WORD-CLOSED-KEY-FOLD-REUSE.md).
-- The full1657-source library+2roots remains separately accepted at `766c83b3` (105185 declarations/94755 theorems). Historical `67ef70da` also passed the complete eleven-caller sequence and1638-source library. Those receipts do not accept changed source or all118 claims.
-- The strict all118 integration gate still fails as intended while actual interfaces remain missing. Original private native/controller admission remains UNBOUND.
+- **The complete natural-word caller passes in BOTH modes.** Source `ed4ed337`, [run40084273155](https://github.com/Sodelin/Research-Commons/actions/runs/40084273155), job120844040087: all 1,280 generated Lean documents, 69,238 owned declarations /57,433 theorems, zero owned axioms, nonstandard axioms or missing modules. This is the actual original 9-vertex/9-edge/4-taxon/1-hybrid source, three copies, seven operations and 21-variable correlated bank. Both complete natural laws and the SAME returned physical bank are checked. The natural register is sampled once. [Exact receipt and limits](integration/whole-natural-word-verification.json), [complete printed endpoint types](integration/whole-natural-word-complete-printed-types.json), [all generated source hashes](integration/whole-natural-word-source-manifest.json). The full original calendar, final observer, universal native/parser/provider refinement and complete source/action/target/QE/origin binding remain separate. This fixed word is CLOSED and is not selected for an identical rerun.
+- **Three raw-tensor/readout receiver proofs pass.** Source `0958975a`, [run40090840783](https://github.com/Sodelin/Research-Commons/actions/runs/40090840783), job120863151776: complete 836-source/34-name context, 80,346 declarations /77,444 theorems, zero rejects. The original raw tensor equals actual quartet data on every label tuple, including repeated labels, and reuses the existing weighted/source blob-composition laws. The all-level circularity, exact-support and complete-source-coverage theorem remains a separate formal binding. Completed HAND mathematics is unchanged. [Receipt](integration/nanuq-raw-actual-join-verification.json), [complete printed types](integration/nanuq-complete-printed-types-v2.json), [reuse comparison](integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md).
+- **Exact-query source and recursive geometry pass.** Source `61027b35`, [run40088841986](https://github.com/Sodelin/Research-Commons/actions/runs/40088841986): 21 exact declarations in the complete 245-source context; 5,029 declarations /3,331 theorems, zero rejects. Six recursive cover/disjoint/legal-endpoint proofs and the original source interfaces are reusable. Whole search, query-charge/minimax, actual source/circle/oracle and native refinement remain separate. [Receipt](integration/exact-query-scoped-context-verification.json).
+- **Five original formal-model claim interfaces pass.** Source `fe0dccd2`, run40085312861: all 85 original theorem names/owners and complete 9+5-module contexts; 318 owned declarations, zero rejects. These are deterministic/Boolean/integer model claims; no empirical or clinical inference is asserted. [Receipt](integration/soft-science-component-verification.json), [complete printed types](integration/soft-science-complete-printed-types.json).
+- The earlier complete **930-source/24-mapping/165-name context** passed at `c79deb20`: 22,333 declarations /14,950 theorems, zero rejects. [Receipt](integration/claim-export-verification-v16.json). The full 1,657-source library plus two roots passed separately at `766c83b3`: 105,185 declarations /94,755 theorems. Historical `67ef70da` passed the eleven-caller sequence and 1,638-source library. Those receipts remain tied to their actual sources.
+- **111 Rust workspace tests pass** at `fe0dccd2`, run40085312861. The bounded exact-query unknown-order/shared-cache command passed its 13 differential/CLI controls within the earlier 107-test suite.
+- The latest **1,434-source combined export target is rejected** at one original `EndpointColliderActivation` proof term: 1,313 successful objects (82 compiled /1,231 reused), one failed module and 120 blocked consumers. The original contraction, indicator-projection and canonical-source-adapter modules now compile. The selected repair uses `rfl` for an equality already rewritten by case analysis; every original statement and source hypothesis remains unchanged. Its complete check is pending. [Actual failures and variants](integration/causal-compiler-rejections.json).
 
-
-Raw receipts retain their phase boundaries: source build precedes owned audit, and initial owned=false stays literal even when the later actual owned audit passes. Actual artifacts/hashes/counts and every rejected predecessor remain in [VERIFICATION.md](VERIFICATION.md). [Retained-object validation](integration/RETAINED-OBJECT-REUSE.md) checks compiler/dependency/source/object-companion identities.
-
-## Reused all-level NANUQ components
-
-The existing NANUQ root now PASSES the complete836-source/31-name component context:80341 owned declarations/77439 theorems, zero rejects. Its12 prior source-geometry API names,14 ORIGINAL local-theta/raw-source/blob-composition declarations and five original real-domain names retain their exact hypotheses. [Actual receipt](integration/nanuq-scoped-component-verification.json). This is a partial formal binding for CB-NANUQ-002, with whole all-level source circularity/support explicitly pending. No new evaluator or proof was authored.34 cards/288 declaration requests are now selected, with a1434-source combined dependency target; this selection is not acceptance. [Source comparison](integration/NANUQ-RANK11-REUSE-PREFLIGHT.md).
-
-## Exact query source and recursive geometry
-
-The existing query root now PASSES all21 declarations in its complete245-source context:5029 owned declarations/3331 theorems, zero rejects. This closes verification of the six recursive root-geometry additions without rederiving the old algorithm. [Receipt](integration/exact-query-scoped-context-verification.json). Numeric source/circle/complete-oracle, whole stack/query-charge/unknown-order/minimax/native refinement remain separate.
-
-Three new concrete NANUQ raw-tensor/weighted/source readout receiver proofs are authored under the existing root and PENDING their scoped kernel/owned checks; the prior31-name context retains its exact source121 acceptance. [Source comparison](integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md).
+Every accepted scope has independently recovered artifact/hash/source/type/owner/axiom evidence. Rejected complete attempts stay rejected. Clean partials do not count as full acceptance. [Verification history](VERIFICATION.md) · [Current frontier](integration/FRONTIER.md).
 
 ## Actual Rust-to-Lean callers
 
@@ -101,41 +92,15 @@ The accepted Lean module proves the old all-position rectangle/split-union/subdi
 
 The ALREADY-existing original split/quartet/all-compatible-circle providers and chronological first-query trace PASSED their fresh full-context/runtime checks atc79deb20. Numeric source/oracle/circle admission and whole algorithm refinement remain separate. [Provider/reuse/remaining-join contract](integration/EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md).
 
-## Existing causal proof package — selected, not elaborated
+## Existing causal proof integration
 
-The original author-complete upper/lower/k0 proposal is now included: ALL145 inventoried root-closure sources plus its source-alignment companion, byte-authenticated146 sources. It preserves arbitrary finite original binary-VALUED DAGs, latent/selection carriers, one common positive faithful bank, full marked class, exact population-query budgets, k>0 lower, promise-only exact optimum and arbitrary-seed/nontermination/infinite-expectation scope. Hand mathematics remains completed; the new kernel/owned and native integration is separate.
+All 145 inventoried original root-closure sources plus the alignment companion are retained byte-for-byte. The original author-complete upper/lower/zero-parameter mathematics keeps arbitrary finite binary-valued DAGs, latent and selection carriers, ONE common positive faithful mechanism, the full marked class, exact query budgets, positive-parameter lower bounds, promise-only exact optimum and arbitrary-seed/nontermination/infinite-expectation scope. Mathematical completion is not reopened by compiler compatibility work.
 
-The proposed local G7 copy would duplicate an existing namespace. A documented import shim reuses the already checked G7 game; original vendor bytes remain unchanged. No duplicate engine, weakened theorem, smaller closure, new scientific discovery or native causal provider is claimed. Current actual full-context checks are PENDING. [Prior/successor/reuse/acceptance contract](integration/CAUSAL-REUSE-PREFLIGHT.md) · [all source hashes/selection](integration/causal-source-intake.json).
+Selected proof-only variants adapt the retained source to the package's pinned Lean/Mathlib APIs. The existing checked G7 game replaces a duplicate namespace through an explicit import shim. No new source axiom, desired-law premise, transition oracle or weaker graph class is introduced. Whole causal/name/type/owned acceptance and native causal provider/response/selector/result binding remain pending. [Prior/successor comparison](integration/CAUSAL-REUSE-PREFLIGHT.md) · [Source selection](integration/causal-source-intake.json).
 
-## Complete word: exact remaining blocker
+## Checks and remaining scope
 
-The earlier generic174/175/176-source sparse/epoch/word-cache theorem contexts passed. The actual unchanged three-copy/seven-operation/BOTH-mode word still needs its full total coefficient and physical/final owned result.
-
-Source89/run40050896773/job120743281427 is terminal REJECTED at Stage3: all416 primitive documents and Stage0/1/2 compiled, then its total Boolean did not reduce after38 cache-match hints. No false coefficient, host/timeout/memory diagnosis or partial final acceptance is established. [Complete rejection history](integration/word-stage-literal-rejection.json).
-
-Changed executablef1cd000c explicitly exposes existing matched certificate/entry/row payloads and finite-list product algebra before the SAME total checker. The source/copies/operations/all keys/register/bank and both modes stay mandatory. Job120769448710/run40059355260 is TERMINAL REJECTED at Stage3 line533,45,722B/SHA75b99a23: even explicit payload/list expansion leaves the total checkRows Boolean non-reducing. No false coefficient or host/resource cause is established. This source import does not replay or replace it. [Proof-rendering reuse/implementation contract](integration/WORD-PAYLOAD-REUSE-PREFLIGHT.md).
-
-## Scope and next integration
-
-All118 cards remain accounted for by kind. Named components are not whole scientific claim closure. Remaining source/target/action coverage, native row/word/raw-root/completion/readout refinement, AST/game/history-relative QE/selector/result origin and claim-specific full bindings remain explicit in [FRONTIER.md](integration/FRONTIER.md).
-
-CI automatically runs Rust/current named dependency/owned checks and the strict completion gate. Existing expensive jobs use `[check word]`, `[check full]`, `[check completion]` or manual dispatch. `[check library]` selects full-library/owned/export checks in a separate non-cancelling group and skips the caller sequence. Skipped jobs supply no fresh receipt.
-
-Completed G1/G2/G5/P5/G6/G7 science and G3/G4 owner-HAND successors retain their original proof/status/quantifier scopes. Source recovery, ports and wrappers are not new scientific discoveries. No private-controller admission follows from public fixed-synthetic CI: original writer/controller/transitive hooks remain UNBOUND; private/model/held/USED/UNKNOWN stops and existing owners remain. Phone deployment is not this deliverable.
-
-For integration diagnosis, `build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports` collects failures in independent modules, records dependent modules as blocked, and exits2 if any selected source failed. It is the SAME complete target and cannot provide export/owned/caller acceptance after a failure. [Reuse and failure semantics](integration/BUILD-FAILURE-COLLECTION-REUSE-PREFLIGHT.md).
-
-
-The same production `exact-quartet-recovery` command now also accepts `labels` instead of `circle` to run the retained unknown-order learner plus sparse decoder with one shared query cache. Supply exactly one carrier and the same complete-support `answers`; missing answers/resources refuse the whole request. The actual13-case differential/output/order/trace and CLI/refusal checks passed within107 Rust tests at5b91ebb8; source/oracle admission and universal algorithm/query-charge refinement remain open. [Source comparison and scope](integration/EXACT-QUERY-UNKNOWN-ORDER-REUSE.md).
-
-
-Latest current checks:107 Rust tests passed at4ab958eb. ALL14 retained model modules/85 original theorem proofs compiled at the new Lean pin. All85 actual axiom reports use only permitted standard axioms. Full1092-source export checking remains rejected at one ambiguous ancestry endpoint, after963 successful objects; whole name/type/owned acceptance has not run. The next exact proof variant retains every source/theorem statement. The independent SAME full BOTH-word job continues. [Current frontier](integration/FRONTIER.md).
-
-
-The direct original social-science/model intake adds85 OLD formal theorem declarations across five cards, with original owner modules and no alias proofs. Their historical4.19 receipts remain scoped; current4.33.1 package acceptance is pending. [Exact reuse and model limits](integration/SOFT-SCIENCE-REUSE-PREFLIGHT.md).
-
-
-Check specific original claim interfaces with their COMPLETE original audit root:
+Check a complete original claim interface with its actual audit root:
 
 ```sh
 cargo run --locked -p research-commons-package -- build --reuse-retained --target SocialScience.Audit
@@ -144,4 +109,10 @@ cargo run --locked -p research-commons-package -- build --reuse-retained --targe
 cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
 ```
 
-The command validates all canonical metadata and each selected declaration's exact dependencies, owning module, type and whole selected owned audit. It archives scoped evidence; the full package check remains separate. Its111 Rust tests pass. The first complete model root compiles; the minimal-context audit needs the new explicit standard compiler import, so exact whole-owned/name acceptance is still pending. [Reuse, refusal and receipt contract](integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md).
+The same checker validates canonical metadata, exact dependencies, owning modules, printed types and the whole selected owned audit. The full package and strict all-claim gate remain separate. Dependency collection uses `build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports`; failed dependencies are recorded as blocked and exit2 prevents acceptance.
+
+Ordinary CI runs Rust and selected named/owned checks. Existing expensive lanes use `[check word]`, `[check full]`, `[check completion]` or manual dispatch. `[check library]` selects the separate library lane. Skips provide no fresh evidence. Retained object reuse checks compiler, dependency, source and object-companion identities.
+
+Remaining original source/target/action coverage, native row/word/raw-root/completion/readout refinement, AST/game/history-relative QE/selector/result origin and all claim-specific bindings are explicit in [FRONTIER.md](integration/FRONTIER.md). Unbound claims cannot silently pass the completion gate.
+
+G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.

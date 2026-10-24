@@ -1,0 +1,60 @@
+import OriginalCodeChartReceiver
+import Mathlib.Tactic.FinCases
+
+set_option maxRecDepth 4096
+set_option maxHeartbeats 2000000
+
+/-! Particular captured original source and shared cell bank. No whole-source
+census, physical readout law, universal parser/Rust refinement or policy
+completeness is inferred. Rendering is not acceptance. -/
+namespace ResearchCommons.Generated.OriginalParallelBank
+open Nanuq.Source GProgram.G7.OriginalFiniteEncoding GProgram.G7.OriginalAdmission
+open UnifiedLean.Source.NativeParentRouting
+open UnifiedLean.G6.NaturalCellInverseRates UnifiedLean.G6.NaturalCellAffineCompiler
+open UnifiedLean.G6.RationalNaturalCellWitness
+open Astra.OriginalCodeChartReflection Astra.OriginalCodeChartReceiver
+
+def originalRequest : String := "RC1 CHART 9 9 4 1 1 2 4096\nROOT 0\nEDGE 0 0 1\nEDGE 1 0 2\nEDGE 2 1 3\nEDGE 3 1 4\nEDGE 4 2 5\nEDGE 5 2 6\nEDGE 6 6 7\nEDGE 7 6 7\nEDGE 8 7 8\nLEAF 0 3\nLEAF 1 4\nLEAF 2 5\nLEAF 3 8\nHYBRID 0 7 7 6\nAGE EQ V:0 Q:8/1\nEXPOSURE 0 E:6 V:7 V:6 LE:1/2 LE:5/1\nEXPOSURE 1 A Q:0/1 Q:2/1 LE:1/2 NONE\nCOIN 0 LE:1/3 LE:1/3\n"
+def code : Code (Fin 4) (Fin 1) := by
+  simp only [Code, vertexCount, edgeCount, Fintype.card_fin]
+  exact ⟨![0, 0, 1, 1, 2, 2, 6, 6, 7], ![1, 2, 3, 4, 5, 6, 7, 7, 8], 0, ![3, 4, 5, 8], ![7], ![fun b => if b then 6 else 7]⟩
+theorem binary_valid : BinaryValid code := by decide
+theorem registry_valid : RegistryValid code := by decide
+noncomputable abbrev originalSource := sourceOfValid code binary_valid
+theorem cut_child : GProgram.G7.OriginalAdmission.CutChild code := by decide
+
+def chronology : Fin 1 → AgeConstraint (NV (X:=Fin 4) (ID:=Fin 1)) := ![⟨.node ⟨0, by norm_num [vertexCount, edgeCount]⟩, .fixed (8 / 1 : ℚ), .equal⟩]
+def exposures : Fin 2 → Exposure (NV (X:=Fin 4) (ID:=Fin 1)) (NE (X:=Fin 4) (ID:=Fin 1)) := ![⟨some ⟨6, by norm_num [vertexCount, edgeCount]⟩, .node ⟨7, by norm_num [vertexCount, edgeCount]⟩, .node ⟨6, by norm_num [vertexCount, edgeCount]⟩, ⟨some ⟨(1 / 2 : ℚ), false⟩, some ⟨(5 / 1 : ℚ), false⟩⟩⟩, ⟨none, .fixed (0 / 1 : ℚ), .fixed (2 / 1 : ℚ), ⟨some ⟨(1 / 2 : ℚ), false⟩, none⟩⟩]
+def coinIntervals : Fin 1 → RationalInterval := ![⟨some ⟨(1 / 3 : ℚ), false⟩, some ⟨(1 / 3 : ℚ), false⟩⟩]
+noncomputable def coins (h : Hybrid (sourceOfValid code binary_valid)) : RationalInterval :=
+  coinIntervals ((decodedIDs code binary_valid registry_valid).symm h)
+def capturedSource : GParity.Chart.Source :=
+  ⟨9, 0, [⟨0, 1⟩, ⟨0, 2⟩, ⟨1, 3⟩, ⟨1, 4⟩, ⟨2, 5⟩, ⟨2, 6⟩, ⟨6, 7⟩, ⟨6, 7⟩, ⟨7, 8⟩], [3, 4, 5, 8], [⟨7, 7, 6⟩]⟩
+def capturedInput : GParity.Chart.Input :=
+  ⟨capturedSource, [⟨.equal, .node 0, .fixed (8 / 1 : ℚ)⟩], [⟨some 6, .node 7, .node 6, ⟨some ⟨(1 / 2 : ℚ), false⟩, some ⟨(5 / 1 : ℚ), false⟩⟩⟩, ⟨none, .fixed (0 / 1 : ℚ), .fixed (2 / 1 : ℚ), ⟨some ⟨(1 / 2 : ℚ), false⟩, none⟩⟩], [⟨some ⟨(1 / 3 : ℚ), false⟩, some ⟨(1 / 3 : ℚ), false⟩⟩], 4096⟩
+theorem source_fields_exact :
+    sourceOfCode code (Equiv.refl (Fin 4)) (Equiv.refl (Fin 1)) = capturedSource := by rfl
+theorem input_fields_exact :
+    inputOfCode code binary_valid registry_valid (Equiv.refl (Fin 4)) (Equiv.refl (Fin 1))
+      chronology exposures coins 4096 = capturedInput := by
+  simp only [inputOfCode, coins, Equiv.refl_symm,
+    Equiv.refl_apply, Equiv.symm_apply_apply]
+  rw [source_fields_exact]
+  norm_num [capturedInput, chronology, exposures, coinIntervals,
+    Astra.NativeCellAggregateReflection.reflectChronology,
+    Astra.NativeCellAggregateReflection.reflectExposure, Astra.NativeCellAggregateReflection.reflectAge,
+    Astra.NativeCellFormReflection.encodeComparison, Astra.NativeCellFormReflection.encodeInterval,
+    Astra.NativeCellFormReflection.encodeBound, List.ofFn_succ]
+
+def returned : List Rat := [(8 / 1 : ℚ), (4 / 1 : ℚ), (4 / 1 : ℚ), (0 / 1 : ℚ), (0 / 1 : ℚ), (0 / 1 : ℚ), (2 / 1 : ℚ), (1 / 1 : ℚ), (0 / 1 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (11 / 10 : ℚ), (1 / 1 : ℚ), (1 / 1 : ℚ), (2 / 1 : ℚ), (1 / 3 : ℚ)]
+theorem checked :
+    GParity.Affine.checkWitness 20 (GParity.Chart.emitRows capturedInput) returned = true := by
+  decide +kernel
+noncomputable def sharedBank :=
+  checked_original_bank code binary_valid registry_valid (Equiv.refl (Fin 4)) (Equiv.refl (Fin 1))
+    chronology exposures coins 4096 returned (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
+theorem actual_source_cell_feasible :
+    originalCellFeasible (sourceOfValid code binary_valid) chronology exposures coins :=
+  checked_original_bank_feasible code binary_valid registry_valid (Equiv.refl (Fin 4)) (Equiv.refl (Fin 1))
+    chronology exposures coins 4096 returned (by simpa only [input_fields_exact, vertexCount, edgeCount, Fintype.card_fin] using checked)
+end ResearchCommons.Generated.OriginalParallelBank

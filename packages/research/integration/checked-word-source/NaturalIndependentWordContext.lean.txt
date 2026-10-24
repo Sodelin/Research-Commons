@@ -1,0 +1,96 @@
+import OriginalWordCacheCertificate
+import OriginalParallelBank
+
+set_option maxRecDepth 10000
+set_option maxHeartbeats 30000000
+namespace ResearchCommons.Generated.NaturalIndependentWordContext
+open Nanuq.Source GProgram.SourceForest
+open UnifiedLean.Source.FiniteSourceSnapshot
+open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+open UnifiedLean.Source.NativeIndependentPairMixture
+open UnifiedLean.Source.UniformizedSourceStep
+open UnifiedLean.Source.SourceFiniteProjection UnifiedLean.Source.SourceProgramTransport
+open UnifiedLean.Source.SourceNaturalInitialization
+open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
+open GProgram.G7.EffectiveSourceEnumeration
+open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.EffectiveInitializationCoefficients
+open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
+open Astra.OriginalWordTableCertificate
+open scoped NNReal
+noncomputable abbrev N : RootedBinary (Fin 9) (Fin 9) (Fin 4) := ResearchCommons.Generated.OriginalParallelBank.originalSource
+
+def sample : Fin 3 → Fin 4 := (fun i => if i.val = 0 then ⟨3, by decide +kernel⟩ else if i.val = 1 then ⟨3, by decide +kernel⟩ else ⟨3, by decide +kernel⟩)
+
+theorem root_exact : N.root = ⟨0, by decide +kernel⟩ := by decide +kernel
+
+theorem edge_sources_exact : N.graph.source = (fun i => if i.val = 0 then ⟨0, by decide +kernel⟩ else if i.val = 1 then ⟨0, by decide +kernel⟩ else if i.val = 2 then ⟨1, by decide +kernel⟩ else if i.val = 3 then ⟨1, by decide +kernel⟩ else if i.val = 4 then ⟨2, by decide +kernel⟩ else if i.val = 5 then ⟨2, by decide +kernel⟩ else if i.val = 6 then ⟨6, by decide +kernel⟩ else if i.val = 7 then ⟨6, by decide +kernel⟩ else ⟨7, by decide +kernel⟩) := by decide +kernel
+
+theorem edge_targets_exact : N.graph.target = (fun i => if i.val = 0 then ⟨1, by decide +kernel⟩ else if i.val = 1 then ⟨2, by decide +kernel⟩ else if i.val = 2 then ⟨3, by decide +kernel⟩ else if i.val = 3 then ⟨4, by decide +kernel⟩ else if i.val = 4 then ⟨5, by decide +kernel⟩ else if i.val = 5 then ⟨6, by decide +kernel⟩ else if i.val = 6 then ⟨7, by decide +kernel⟩ else if i.val = 7 then ⟨7, by decide +kernel⟩ else ⟨8, by decide +kernel⟩) := by decide +kernel
+
+theorem taxa_exact : (fun x => N.leaf x) = (fun i => if i.val = 0 then ⟨3, by decide +kernel⟩ else if i.val = 1 then ⟨4, by decide +kernel⟩ else if i.val = 2 then ⟨5, by decide +kernel⟩ else ⟨8, by decide +kernel⟩) := by decide +kernel
+
+
+def parent0 : Fin 9 → Fin 9 := ![0, 0, 0, 0, 0, 0, 0, ⟨7, by decide +kernel⟩, 0]
+def parent1 : Fin 9 → Fin 9 := ![0, 0, 0, 0, 0, 0, 0, ⟨6, by decide +kernel⟩, 0]
+theorem captured_parent_fields :
+    ∀ v : Fin 9, N.graph.IsHybrid v →
+      N.graph.target (parent0 v) = v ∧
+      N.graph.target (parent1 v) = v ∧ parent0 v ≠ parent1 v := by
+  decide +kernel
+def parentRegistry : OriginalParentRegistry N where
+  parents h := ⟨h.val, h.property, parent0 h.val, parent1 h.val,
+    (captured_parent_fields h.val h.property).1,
+    (captured_parent_fields h.val h.property).2.1,
+    (captured_parent_fields h.val h.property).2.2⟩
+  original_site _ := rfl
+def vertexMode : Fin 9 → Bool := ![false, false, false, false, false, false, false, false, false]
+def common (h : Hybrid N) : Bool := vertexMode h.val
+
+def word : List (Symbol (Fin 2) (Fin 9) (Fin 9)) := [.enter ⟨8, by decide +kernel⟩, .interval ⟨0, by decide +kernel⟩, .exit ⟨8, by decide +kernel⟩, .enter ⟨7, by decide +kernel⟩, .interval ⟨1, by decide +kernel⟩, .exit ⟨6, by decide +kernel⟩, .exit ⟨7, by decide +kernel⟩]
+
+noncomputable instance capturedHybridDecidable : DecidablePred N.graph.IsHybrid :=
+  hybridDecidable N
+def hybridVertices : Fin 1 → Fin 9 := ![⟨7, by decide +kernel⟩]
+theorem captured_hybrid_vertices :
+    ∀ i : Fin 1, N.graph.IsHybrid (hybridVertices i) := by decide +kernel
+def nativeHybrid (i : Fin 1) : Hybrid N :=
+  ⟨hybridVertices i, captured_hybrid_vertices i⟩
+
+def vertexHybridNumber : Fin 9 → Fin 1 := ![⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩, ⟨0, by decide +kernel⟩]
+theorem captured_hybrid_indices :
+    ∀ v : Fin 9, N.graph.IsHybrid v → hybridVertices (vertexHybridNumber v) = v := by
+  decide +kernel
+def hybridNumber (h : Hybrid N) : Fin 1 := vertexHybridNumber h.val
+theorem nativeHybrid_number (h : Hybrid N) : nativeHybrid (hybridNumber h) = h := by
+  apply Subtype.ext
+  exact captured_hybrid_indices h.val h.property
+
+def slotCoordinate : Fin 2 → Option (Fin 9) → Fin 21 := ![fun place => match place with | some edge => (![⟨0, by decide +kernel⟩, ⟨1, by decide +kernel⟩, ⟨2, by decide +kernel⟩, ⟨3, by decide +kernel⟩, ⟨4, by decide +kernel⟩, ⟨5, by decide +kernel⟩, ⟨6, by decide +kernel⟩, ⟨7, by decide +kernel⟩, ⟨8, by decide +kernel⟩]) edge | none => ⟨9, by decide +kernel⟩, fun place => match place with | some edge => (![⟨10, by decide +kernel⟩, ⟨11, by decide +kernel⟩, ⟨12, by decide +kernel⟩, ⟨13, by decide +kernel⟩, ⟨14, by decide +kernel⟩, ⟨15, by decide +kernel⟩, ⟨16, by decide +kernel⟩, ⟨17, by decide +kernel⟩, ⟨18, by decide +kernel⟩]) edge | none => ⟨19, by decide +kernel⟩]
+def gammaCoordinate : Fin 1 → Fin 21 := ![⟨20, by decide +kernel⟩]
+def encodeVariable : WordVariable N (Fin 2) → Fin 21
+  | .inl p => slotCoordinate p.1 p.2
+  | .inr h => gammaCoordinate (hybridNumber h)
+
+def variableBank : Fin 21 → WordVariable N (Fin 2) := ![Sum.inl (⟨0, by decide +kernel⟩, some ⟨0, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨1, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨2, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨3, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨4, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨5, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨6, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨7, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, some ⟨8, by decide +kernel⟩), Sum.inl (⟨0, by decide +kernel⟩, none), Sum.inl (⟨1, by decide +kernel⟩, some ⟨0, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨1, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨2, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨3, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨4, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨5, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨6, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨7, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, some ⟨8, by decide +kernel⟩), Sum.inl (⟨1, by decide +kernel⟩, none), Sum.inr (nativeHybrid ⟨0, by decide +kernel⟩)]
+theorem variableBank_gamma (i : Fin 1) :
+    variableBank (gammaCoordinate i) = Sum.inr (nativeHybrid i) := by
+  fin_cases i <;> rfl
+
+theorem variableBank_interval (slot : Fin 2) (place : Option (Fin 9)) :
+    variableBank (slotCoordinate slot place) = Sum.inl (slot,place) := by
+  fin_cases slot <;> cases place with
+  | none => rfl
+  | some edge => fin_cases edge <;> rfl
+
+theorem original_variable_native_bank_left_inverse :
+    Function.LeftInverse variableBank encodeVariable := by
+  intro i
+  cases i with
+  | inl pair => exact variableBank_interval pair.1 pair.2
+  | inr h =>
+    change variableBank (gammaCoordinate (hybridNumber h)) = Sum.inr h
+    rw [variableBank_gamma, nativeHybrid_number]
+#check original_variable_native_bank_left_inverse
+
+end ResearchCommons.Generated.NaturalIndependentWordContext
