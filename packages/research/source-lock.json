@@ -903,6 +903,56 @@
           "current_main_equal_pinned": true,
           "current_git_blob": "ede95691448c73dd55200dcbed8aa7e669b2fd11",
           "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "RefinedIndicatorSeparator",
+          "original_sha256": "7215d17549e9b64378a2fe24a940e3f4354e4ed0d25dca3064aef061f7a63f60",
+          "selected_sha256": "ef6eaf914dba25b58958c86e3daab340773a82b0e764af96aaa51626a3432f34",
+          "selected_bytes": 14962,
+          "selected_git_blob": "b21ecce0407217eb004c2b9db01748650099a567",
+          "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged.",
+          "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+          "actual_rejected_source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+          "actual_complete_original_body_read": true,
+          "current_main_equal_pinned": true,
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "exact_edits": [
+            [
+              "  have raw := hp.map sourceIndicatorEquiv (fun x y hxy =>\n    (arrow_directed_exact (augmentSource D t).arrow x y).mp hxy)",
+              "  have raw : Route (AddIndicator D.arrow (Observed t))\n      (sourceIndicatorEquiv (oldSource a)) (xs.map sourceIndicatorEquiv)\n      (sourceIndicatorEquiv (Observed none)) :=\n    hp.map sourceIndicatorEquiv (fun x y hxy =>\n      (arrow_directed_exact (augmentSource D t).arrow x y).mp hxy)"
+            ],
+            [
+              "  | none => trivial\n  | some previous =>\n      by_cases hc",
+              "  | none => simpa only [mapArrival, hm] using hactive\n  | some previous =>\n      by_cases hc"
+            ],
+            [
+              "        simpa only [mapArrival, ActiveAt, if_pos hc] using ha'",
+              "        simpa only [mapArrival, hm, ActiveAt, if_pos hc] using ha'"
+            ],
+            [
+              "        simpa only [mapArrival, ActiveAt, if_neg hc] using hn'",
+              "        simpa only [mapArrival, hm, ActiveAt, if_neg hc] using hn'"
+            ],
+            [
+              "                        simp only [mapArrival, hv, forgetIndicator, sourceIndicatorEquiv]",
+              "                        change forgetIndicator t p.vertex = Observed z\n                        rw [hv]\n                        rfl"
+            ],
+            [
+              "                        simp only [mapArrival, hq, forgetIndicator, sourceIndicatorEquiv]",
+              "                        change forgetIndicator t q.vertex = Observed x\n                        rw [hq]\n                        rfl"
+            ],
+            [
+              "                        (by simpa only [hv] using hsupport p List.mem_cons_self)",
+              "                        (by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)"
+            ],
+            [
+              "    refine ⟨(fun h => Option.noConfusion h), last, xs, ?_, hnd⟩",
+              "    refine ⟨(by intro h; cases h), last, xs, ?_, hnd⟩"
+            ]
+          ]
         }
       ]
     },
@@ -990,6 +1040,21 @@
       "new_sources": 0,
       "new_engines": 0,
       "source_identity_record": "integration/memory-stochastic-source-intake.json",
+      "current_named_kernel_acceptance": true,
+      "accepted_source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+      "accepted_run": 40109765011,
+      "accepted_record": "integration/memory-stochastic-component-verification.json"
+    },
+    {
+      "programme": "Completed original deterministic predictive-state, arbitrary-history parity and admissible split obstruction",
+      "repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "e2502c82ab9a77c00543932f775a71e5374221f7",
+      "existing_source_modules": 7,
+      "originals_unchanged": true,
+      "new_sources": 1,
+      "new_proofs": 0,
+      "new_engines": 0,
+      "source_identity_record": "integration/memory-deterministic-source-intake.json",
       "current_named_kernel_acceptance": false
     }
   ]

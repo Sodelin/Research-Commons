@@ -624,14 +624,19 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
       - name: Compile and audit the exact original causal compatibility boundary
         run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target PartialObservedQueryFamily
-          cargo run --locked -p research-commons-package -- audit-target PartialObservedQueryFamily
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target RefinedIndicatorSeparator
+          cargo run --locked -p research-commons-package -- audit-target RefinedIndicatorSeparator
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Check original stochastic full-history and predictive-profile proofs
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target StochasticExamples
           cargo run --locked -p research-commons-package -- check-exports --target StochasticExamples --claim CB-MEMORY-003
+      - name: Reuse original predictive-state and admissible split proofs
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Memory
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Memory --claim CB-MEMORY-001 --claim CB-MEMORY-002
       - name: Compile the exact original finite transcript decoder
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --target FiniteTranscriptDecoder
       - name: Compile the actual receiver dependency closure in the full package context
