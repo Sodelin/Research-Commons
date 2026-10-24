@@ -15535,6 +15535,22 @@
         "2026-10-24T21:04:34.6891624Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:179:8: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6892494Z   shortNodup\n2026-10-24T21:04:34.6892693Z  has type\n2026-10-24T21:04:34.6893237Z   @List.Nodup V (x :: List.map Arrival.vertex «prefix» ++ [y])\n2026-10-24T21:04:34.6893616Z but is expected to have type\n2026-10-24T21:04:34.6894037Z   @List.Nodup V (x :: (List.map Arrival.vertex «prefix» ++ [y]))\n2026-10-24T21:04:34.7967844Z BLOCKED LEAN VertexActivePaths: CommonDiscriminatingParents\n2026-10-24T21:04:34.8132802Z BLOCKED LEAN MinimalActivePaths: VertexActivePaths\n2026-10-24T21:04:34.8283759Z BLOCKED LEAN AncestralShortcutGeometry: MinimalActivePaths\n2026-10-24T21:04:34.8434757Z BLOCKED LEAN ColliderMinimalActivePaths: MinimalActivePaths\n2026-10-24T21:04:34.8586754Z BLOCKED LEAN MinimalPathChord: AncestralShortcutGeometry\n2026-10-24T21:04:34.8738584Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T21:04:34.8891711Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T21:04:34.9043731Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T21:04:34.9218584Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T21:04:34.9367584Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency\n2026-10-24T21:04:34.9516498Z BLOCKED LEAN DiscriminatingIntervalGeometry: LiteralMAGInducingChains\n2026-10-24T21:04:34.9665940Z BLOCKED LEAN IndexedDiscriminatingSections: DiscriminatingIntervalGeometry\n2026-10-24T21:04:34.9816358Z BLOCKED LEAN ReversedPositionTrace: IndexedDiscriminatingSections\n2026-10-24T21:04:34.9965335Z BLOCKED LEAN MinimalPathOrderDependencies: ReversedPositionTrace\n2026-10-24T21:04:35.0114283Z BLOCKED LEAN FiniteDependencyInduction: MinimalPathOrderDependencies\n2026-10-24T21:04:35.0263954Z BLOCKED LEAN DiscriminatingStatusTransport: FiniteDependencyInduction"
       ],
       "disposition": "FULL1498_REJECTED; complete44-source original MAG and exact current two-output contour contexts accepted separately."
+    },
+    {
+      "source": "a671496cdcecfbe4eb4a03cb700dcd04d802dc4a",
+      "run_id": 40133454035,
+      "job_id": 120990068044,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1498,
+      "successful": 1409,
+      "compiled": 123,
+      "reused": 1286,
+      "failed_module": "AncestralShortcutGeometry",
+      "blocked": 88,
+      "diagnostics": [
+        "2026-10-24T21:27:46.8455421Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/AncestralShortcutGeometry.lean:131:39: error: Application type mismatch: The argument\n2026-10-24T21:27:46.8456716Z   Eq.trans hp (congrArg some previousHead)\n2026-10-24T21:27:46.8457134Z has type\n2026-10-24T21:27:46.8457437Z   p.incoming = some Mark.head\n2026-10-24T21:27:46.8457807Z but is expected to have type\n2026-10-24T21:27:46.8458168Z   some previous = some Mark.head\n2026-10-24T21:27:46.8458540Z in the application\n2026-10-24T21:27:46.8459226Z   ⟨chord, Eq.trans hp (congrArg some previousHead)⟩\n2026-10-24T21:27:46.9506141Z LEAN 1388/1498 ColliderMinimalActivePaths\n2026-10-24T21:27:49.1811257Z BLOCKED LEAN MinimalPathChord: AncestralShortcutGeometry\n2026-10-24T21:27:49.1971105Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T21:27:49.2122209Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T21:27:49.2276473Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T21:27:49.2428198Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T21:27:49.2578583Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency\n2026-10-24T21:27:49.2729379Z BLOCKED LEAN DiscriminatingIntervalGeometry: LiteralMAGInducingChains\n2026-10-24T21:27:49.2881990Z BLOCKED LEAN IndexedDiscriminatingSections: DiscriminatingIntervalGeometry\n2026-10-24T21:27:49.3034615Z BLOCKED LEAN ReversedPositionTrace: IndexedDiscriminatingSections\n2026-10-24T21:27:49.3187067Z BLOCKED LEAN MinimalPathOrderDependencies: ReversedPositionTrace\n2026-10-24T21:27:49.3338694Z BLOCKED LEAN FiniteDependencyInduction: MinimalPathOrderDependencies\n2026-10-24T21:27:49.3490429Z BLOCKED LEAN DiscriminatingStatusTransport: FiniteDependencyInduction\n2026-10-24T21:27:49.3642606Z BLOCKED LEAN IndexedPrefixColliders: DiscriminatingStatusTransport\n2026-10-24T21:27:49.3794454Z BLOCKED LEAN ShortestPathStatusInvariance: IndexedPrefixColliders"
+      ],
+      "disposition": "FULL1498_REJECTED; complete45-source parent context accepted; contour/names/two-caller bodies/audits byte-equal to accepted prior source, reused not new science."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16969,6 +16985,24 @@
       ],
       "scope": "Derive literal terminal edge from SAME Directed parent; instantiate actual final Arrival before appending. Normalize SAME actual cons/append list at both original Nodup witnesses. No source/conditioned vertex/ancestral/parent/route assumption changed.",
       "status": "PENDING_COMPLETE45_SOURCE_AND_FULL1498_CHECK"
+    },
+    {
+      "module": "AncestralShortcutGeometry",
+      "selected": {
+        "bytes": 9208,
+        "sha256": "d96d8264fcab56b21e08670977079da34dde2cbca9b53679abd06d91faa4c21c",
+        "git_blob": "e36424cb8091ab17b18b1b98e13c9180f1e5663a"
+      },
+      "all7_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "            exact ⟨conditioned, chord, hp.trans (congrArg some previousHead)⟩",
+          "            exact ⟨conditioned, chord, congrArg some previousHead⟩"
+        ]
+      ],
+      "scope": "At final goal already rewritten by cases hp:p.incoming, use the SAME some previous=some head equality directly; retain hp at original unreduced local hypotheses. Same actual graph/ancestral/conditioning/marked chord/route hypotheses, no new premise.",
+      "status": "PENDING_COMPLETE48_SOURCE_AND_FULL1498_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."
