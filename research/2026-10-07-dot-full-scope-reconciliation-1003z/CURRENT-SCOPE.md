@@ -3783,3 +3783,37 @@ The full nanowire obligation still ranges over SAME fixed a,b in [-1000,1000]^60
 Keep combined General G3/G4, materials P-target, nanowire and coordinating review responsibilities. The older access-unavailable handoff is superseded: the existing materials/nanowire continuations recovered their scopes and completed bounded checks; this does not imply continuous execution. Nolan's later context-recovery authorization is recorded in [the allocation checkpoint](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6384273326); no additional worker or broader project was started in this reconciliation.
 
 General next: signed energy/source cancellation under original quantifiers. Materials next: a valid uniform interacting-state bound at the already-built square-root aggregate interface, not another conditional bridge. Nanowire next: the all-pair spectral-to-boundary-sign obligation, not retired symmetry/parity shortcuts. Integration owner retains its existing literal build/receiver repairs; no duplicate peer job is assigned. LLM research remains paused. Leave the reader-ready explainer unchanged and record incremental developments in ordinary checkpoints.
+
+
+## Dated reconciliation — 24 October 2026, 17:58 UTC
+
+Author: dot (OpenAI), coordinating review. Append-only reconciliation since 14:01; earlier accepted results and dated evidence remain intact. This is source-led status reconciliation, not independent acceptance of the new hand proofs.
+
+### Material correction: reduced observations cannot close G3
+
+The [actual quotient phase-flexibility construction](https://github.com/Sodelin/Research-Commons/blob/72fd9877da068ba694165b9a82f26a179be64682/research/2026-10-24-g3-asymptotic-root-grid/ACTUAL-QUOTIENT-PHASE-FLEXIBILITY.md) refutes the proposed R-only energy-to-index route. For each fixed m, actual fair finite words can satisfy the paired budgets and selected 9/7/6/4 quotient commutator while retaining a fixed noninteger phase offset for all sufficiently large counts. This is an author-hand existence construction, not an executed algebraic tuple or a counterexample to the COMPLETE-forest master. The [coordination correction](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6385677467) supersedes any reading of the preceding next-task wording as permitting reduced-quotient closure.
+
+The [complete seven-band orientation](https://github.com/Sodelin/Research-Commons/blob/a0606d481186c000b106ee717a572e1e7e724743/research/2026-10-24-g3-asymptotic-root-grid/FULL-SEVEN-BAND-ORIENTATION.md) detects that specific counterfamily already at cap7. Its integer-phase conclusion is restricted to homogeneous fair cells; it is not an arbitrary-source index theorem. No homogeneity promise is added to the original problem.
+
+### Current full-source frontier
+
+Three subsequent complete notes were read by the coordinator and retain author-hand/self-reviewed status, with independent whole-proof review, Lean and source execution absent:
+- [Full-band all-coin bias control](https://github.com/Sodelin/Research-Commons/blob/79ef85219b796eb840b12dfb63e6e7bdfbd06d3f/research/2026-10-24-g3-asymptotic-root-grid/FULL-BAND-BIAS-CONTROL.md) bounds W by C(L5+Hh^4), removing the earlier prefix-energy term. The cellwise-positive functional shortcut is explicitly false; that failure does not refute a full-fibre L5 estimate.
+- [Coupled transverse cancellation](https://github.com/Sodelin/Research-Commons/blob/673282bb83179835bdcad7596206e6c8174a027d/research/2026-10-24-g3-asymptotic-root-grid/COUPLED-TRANSVERSE-CANCELLATION.md) controls the signed CONSTANT storage-jump contribution by epsilon*h^2*L5+C_epsilon*H*h^6, using the SAME-source full-band relation and actual chronological transports.
+- [Quadratic state absorption](https://github.com/Sodelin/Research-Commons/blob/d7034a643404aa21631cf7e75e1d85927db677e2/research/2026-10-24-g3-asymptotic-root-grid/QUADRATIC-STATE-ABSORPTION.md) supplies E_a<=C(E_b+H^3*h^6+H^2*h^4*L5) and absorbs the quadratic source-jump sum into epsilon*E_b+epsilon*h^2*L5+C_epsilon*H*h^6.
+
+For each chosen epsilon, ONE sufficiently small FIXED COMMON budget is chosen afterward. These statements do not allow epsilon to tend to zero at an already fixed budget. They retain arbitrary finite counts, strict coins and scales, original chronology, current roots/opaque grafts and SAME tuple on the paired COMPLETE-cap9 fibre. No physical inverse or new observation is introduced.
+
+The precise next General obligation is the combined homogeneous-LINEAR source contribution and ordinary forcing 30*kappa*B_h*integral w*(b-a), then the required L5/energy/phase or actual ONE-witness implication. Neither these notes nor receiver read/hash acknowledgments establish AG-Pair, terminating all-input NO, or original G3/G4 closure. Reuse completed components rather than restarting bias, constant or quadratic subproblems.
+
+### Materials, nanowire and integration evidence
+
+The [P1 square-root-span checkpoint](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6385374493) excludes an unsupported O(M) fixed-linear-span shortcut: admitted one-body product Gibbs states already supply 4^N linearly independent square roots. This elementary hand screen is not a risk lower bound or P1 counterexample. The unchanged next target is the uniform interacting-state, loss-sensitive bound at the existing square-root aggregate interface. P5 and nanowire accepted scopes and unresolved obligations remain exactly as recorded at 14:01; no new measured-device evidence, same-device uncertainty certificate or operational claim is added.
+
+The coordinator read the [observed-query](https://github.com/Sodelin/Research-Commons/blob/ac899fbd4889f55b473194235b03e574b41bb5d4/packages/research/integration/causal-observed-query-component-verification.json) and [stochastic-history](https://github.com/Sodelin/Research-Commons/blob/ac899fbd4889f55b473194235b03e574b41bb5d4/packages/research/integration/memory-stochastic-component-verification.json) receipts and job120919015883 steps: their scoped steps succeeded, while the later combined dependency closure failed and downstream whole-export checks were skipped. Artifact recovery, hashes and complete type audits remain attributed to the integration owner, not a coordinator rerun.
+
+Later [integration-owner return](https://github.com/Sodelin/Research-Commons/pull/3#issuecomment-6387266647) reports further original-source reuse and calibration Rust tests, with repaired calibration Lean/caller and full1473 checks still pending in that return. These are attributed reports, not new scientific discoveries or all118/package acceptance. Preserve all earlier scoped successes despite later combined failures; do not launch duplicate jobs or confuse preparation/import-order rejection with proof rejection.
+
+### Ownership and repository handoff
+
+Keep combined General G3/G4, materials P-target, nanowire and coordinating review responsibilities. No new worker, broader project or silent easier substitute is assigned. This section is the repository handoff for any unavailable direct context, not evidence it is running. General uses the full-source linear-plus-ordinary obligation above; materials and nanowire retain their original master gates. Integration retains its existing proof/context/caller repair. LLM research remains paused. Keep the reader-ready explainer unchanged; use ordinary checkpoints for subsequent incremental developments.
