@@ -56,16 +56,12 @@ theorem actual_original_label_probability {V E : Type*}
         actualTreeKernel s hs leafAge M bound hm l hl (labelPattern t p) := by
     unfold actualLabelledTreeKernel
     rw [PMF.map_apply, tsum_fintype]
-    change (∑ a : Pattern t, if p = patternLabels t a then
-      actualTreeKernel s hs leafAge M bound hm l hl a else 0) = _
-    calc
-      _ = if p = patternLabels t (labelPattern t p) then
-          actualTreeKernel s hs leafAge M bound hm l hl (labelPattern t p) else 0 :=
-        Finset.sum_eq_single (labelPattern t p)
-          (fun b _ hb => by
-            rw [if_neg (fun h => hb ((he b).mp h))])
-          (fun h => False.elim (h (Finset.mem_univ _)))
-      _ = _ := if_pos ((he _).mpr rfl)
+    rw [Finset.sum_eq_single (labelPattern t p)]
+    · exact if_pos ((he _).mpr rfl)
+    · intro b _ hb
+      exact if_neg (fun h => hb ((he b).mp h))
+    · intro h
+      exact False.elim (h (Finset.mem_univ _))
   rw [hmap]
   exact actual_tree_kernel_probability s hs leafAge M bound hm l hl _
 
