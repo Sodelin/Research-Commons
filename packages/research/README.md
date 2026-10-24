@@ -145,3 +145,5 @@ cargo run --locked -p research-commons-package -- check-calibration-callers
 ```
 
 The last command executes the existing literal proof checker on both a three-trial and an empty-sample output, followed by the full owned audit. Successful rendering alone supplies no acceptance. Source146 passes all115 Rust tests, the general20-name probability module and BOTH literal caller proofs/joint audit. Input-specific namespaces distinguish complete canonical rates/counts. This is the stated mathematical model, not dependent/unknown-rate or empirical calibration.
+
+The NEW partial RAW NANUQ noise receiver is checked with `cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.RawNoise --claim CB-NANUQ-005` after building that target, then `check-nanuq-noise-callers`. Its native API owns a complete signed Rational matrix and original supplied circle labels; ties refuse and limits are UNKNOWN. Six formal components/two complete literal proof callers await current checking; original admitted-source/correct-order/exact-support/optimality joins are separate. [Reuse and exact scope](integration/NANUQ-NOISE-REUSE-PREFLIGHT.md).

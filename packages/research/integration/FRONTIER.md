@@ -1,6 +1,6 @@
 # Current integration frontier
 
-The portable end-to-end Lean/Rust goal remains ACTIVE. All118 canonical claims are represented:75 reuse-ranked and43 explicitly unranked. Current main registry/ranking metadata was checked21:41:29UTC on24October2026 and still matches pinned blobs ebe7a376/21cdafec. Selection is1831 modules (1613 retained+218 integration),46 named claim mappings/506 exact declaration requests. Whole-package/all-claim acceptance is incomplete.
+The portable end-to-end Lean/Rust goal remains ACTIVE. All118 canonical claims are represented:75 reuse-ranked and43 explicitly unranked. Current main registry/ranking metadata was checked21:41:29UTC on24October2026 and still matches pinned blobs ebe7a376/21cdafec. Current candidate selection is1832 modules (1613 retained+219 integration),47 named claim mappings/512 exact declaration requests; new six-name RAW-noise source/native binding is pending actual checking. Whole-package/all-claim acceptance is incomplete.
 
 ## Actual current build boundary
 
@@ -64,3 +64,7 @@ G4's completed hand/subcomponent results, old all-cap algebra and threshold/cent
 6. Pass coherent whole package, actual Rust/Lean caller checks and strict all118 accounting with evidence appropriate to each canonical claim kind. Open scientific questions require exact obligation interfaces, never invented proofs or metadata-only success.
 
 Before any new derivation/implementation/execution, inspect the closest actual predecessor AND later successor, preserve exact quantifiers, classify reuse versus the real missing implication, and remove duplicates. No new private/model jobs, held/USED/UNKNOWN replay, agents/wakes or phone source/local Git writes. Public fixed-synthetic Linux CI is separate from the original private UNBOUND controller/writer. PR3 is the supported coordination gateway; transport does not imply adoption.
+
+## Current OLD raw-noise receiver integration
+
+Rank24 CB-NANUQ-005 is mathematically complete. NEW source/native work reuses exact old distinct-quartet/raw-distance/cyclic coefficient definitions and pinned rounding. Actual at-most-two resolution sets derive raw integrality; outer-planar/source admission, correct circle/all-level support and admitted optimality witness remain separate. Native signed Rational input/output/ALL coefficient proof documents, half-tie refusal, complete original labels and strict promise uniqueness must pass current Rust, six-name/owned and TWO actual caller checks. No estimator/order/source engine or scientific proof is newly claimed. [Exact reuse](NANUQ-NOISE-REUSE-PREFLIGHT.md).

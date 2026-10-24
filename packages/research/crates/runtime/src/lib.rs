@@ -93,3 +93,5 @@ pub mod exact_query;
 pub mod calibration;
 
 pub mod contiguous_copies;
+
+pub mod nanuq_noise;

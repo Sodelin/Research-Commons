@@ -642,6 +642,13 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
+      - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
+        if: contains(github.event.head_commit.message, '[check noise]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.NANUQ.RawNoise
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.RawNoise --claim CB-NANUQ-005
+          cp build/lean-target-build.json build/nanuq-raw-noise-component-build.json
+          cargo run --locked -p research-commons-package -- check-nanuq-noise-callers
       - name: Compile and audit the next exact original causal compatibility boundary
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target DiscriminatingSectionExtraction
@@ -674,6 +681,8 @@ jobs:
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports
       - name: Validate all exact export dependencies, audit and kernel-check named declarations
         run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
+      - name: Check actual RAW NANUQ rounded values in the SAME combined proof context
+        run: cargo run --locked -p research-commons-package -- check-nanuq-noise-callers --in-exports
       - name: Check actual returned contiguous tips in the SAME combined proof context
         run: cargo run --locked -p research-commons-package -- check-contiguous-callers --in-exports
       - name: Check exact Rust calibration values against the SAME combined proof context
