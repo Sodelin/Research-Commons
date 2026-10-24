@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source157/run40130193412 compiles ALL42 original weak-route sources, no proof errors. The workflow's stale40-source audit target is correctly refused by the receipt guard; no owned42 PASS or later NANUQ6/callers/full1498 execution. Current wiring matches both targets; current returned-tip documents add the exact cyclic-rotation formula (an arbitrary bijection is insufficient). Accepted partial1-source/3-name8/3 tip core,119 Rust tests and40-source closed-collider1129/665 remain. Full1498/506 names/owned/actual callers and strict118 are still required.
+Current compatibility checkpoint: source158/run40130693959 accepts complete42-source weak1155/686 and six-name NANUQ1-source13/6 plus BOTH actual original-ID/rotation/cut-output callers in3-source61/42 owned context,0 rejects; ALL6 complete types and whole690976B artifact checked. Full1498 remains REJECTED:1404success/93blocked at OriginalMAGConnection constructor index p. Next exact44-source port plus current output's three original-label-carrier facts, then full1498/506-name/owned/actual callers and strict118. No full plane-tree/whole-claim/native admission.
 
 ## Exact known-rate calibration component
 

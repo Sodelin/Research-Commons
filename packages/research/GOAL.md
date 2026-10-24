@@ -20,3 +20,5 @@ The current package selects all118 claim cards and1830 source modules, with45 na
 Current source154 follow-on selects1831 sources/46 mappings/503 names. Actual source15340-source closed-collider context is accepted; full1497 remains rejected at1401/95blocked. The rank18 contiguous-tip proof core is new partial formalization of OLD completed math, pending actual checking and full plane-tree/restriction caller. No whole118 completion.
 
 Source155 accepts a partial NANUQ1-source/3-name formal core and119 Rust tests, not its rejected actual caller. Next source extends to506 exact names with direct supplied-cut quartet/split relations and corrected two-document caller. All118 goal and actual plane-tree/whole-package gaps remain active.
+
+Source158 closes partial six-name original contour-cut formalization and two actual Rust callers (13/6 core;61/42 joint owned), plus42-source weak1155/686. Full1498 remains rejected at1404/93blocked. Current44-source literal constructor port and exact original-label carrier output extension remain pending; every original tree/source/native/all118 gap is retained.

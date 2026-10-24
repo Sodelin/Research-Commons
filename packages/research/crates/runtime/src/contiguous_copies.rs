@@ -109,6 +109,8 @@ def taxon : Fin {n} → Fin {k} := {taxa}
 def kept : Finset (Fin {n}) := {kept}
 def keptOriginal : Finset (Fin {n}) := {returned}
 theorem actual_names : Function.Injective globalTaxa := by decide
+theorem actual_taxon_carrier : Function.Surjective taxon := by decide
+theorem actual_label_count : (Finset.univ.image originalLabels).card = {k} := by decide
 theorem actual_original_positions : Function.Bijective originalPosition := by decide
 theorem actual_cyclic_rotation (i : Fin {n}) :
     (originalPosition i).val = ({cut} + i.val) % {n} := by
@@ -129,6 +131,10 @@ theorem actual_extremes (i : Fin {n}) :
 theorem actual_returned_positions :
     kept.image originalPosition = keptOriginal := by decide
 theorem actual_bound : keptOriginal.card ≤ 2 * {k} := by decide
+theorem bound_by_original_labels :
+    keptOriginal.card ≤ 2 * (Finset.univ.image originalLabels).card := by
+  rw [actual_label_count]
+  exact actual_bound
 theorem uniform_extreme_bound :
     Nat.card {{i : Fin {n} // Extreme taxon i}} ≤ 2 * {k} := by
   simpa only [Fintype.card_fin] using extreme_card_le_two taxon
