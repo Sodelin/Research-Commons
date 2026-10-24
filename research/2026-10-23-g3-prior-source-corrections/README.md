@@ -44,6 +44,45 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Exact active commutator-to-source charge balance: PROVED HAND
+
+[G3-ACTIVE-CHARGE-BALANCE-01](../2026-10-24-g3-asymptotic-root-grid/ACTIVE-CHARGE-BALANCE.md),
+10416B/SHA256932802cead8b27cabe96b910a8e1ca238108190684cf5602e87b49882d742324,
+is a derived application of the OLD full four-root C/H quotient and the
+unchanged active S reference, independently unreviewed/not Lean formalized.
+It is not a new quotient/coefficient, cap upgrade or full G3 attack.
+
+Write x=OLD C,y=OLD C+H. Actual [K,S(t)]=0 gives exactly
+x(K)=(k2-k4)x(S)/(s2-s4),y(K)=(1-k4)y(S)/(1-s4), retaining unknown k4.
+The explicit fair S charges are positive O(h^3),h=-log t; their eigenvalue
+gaps give positive O(h^2) bounds for BOTH nonzero endpoints.
+
+With actual chronological weights w_0=alpha_i,w_1=alpha_i*rho_i,
+v_i=g_i(1-g_i),beta_i=(2g_i-1)^2,d_i=1-q_i, put
+P_j=sum w_j*v_i*d_i^3 and B_j=sum w_j*v_i*(6-d_i)*beta_i*d_i^2.
+The unchanged active fibre acquires the EXACT balances
+
+    0<P_1-B_1=3x(K)<=2min(1,21H/4)h^2,
+    0<P_0-B_0=3y(K)<=2min(1,6H)h^2,
+    sum v_i*beta_i*a_i^2
+          <=c^(-8)/(5+c)*sum v_i*a_i^3,
+
+where c=2^(-1/m),H=-log c,a_i=-log q_i. Arbitrary source lengths,
+coins/scales/placements remain. This uses the actual commutator, not
+the inactive D=sqrt(C) calibration. The two nonnegative charges can
+cancel; neither is thereby O(h^2). It gives no max a_i/reference bound,
+V_h coercivity, pointwise whole-word fair window, physical selector,
+index theorem or master closure. The nonzero9/7/6/4 storage also remains.
+
+Reuse COMPLETE old FOUR-ROOT-PLACEMENT.md12087B/SHA5f1a25f7... and
+JOINT-MODE-FULL-FOREST-GUARD-AUDIT.md7792B/SHA8c11f4a4... at8b96f4fb;
+their quotient, composition, weights and bare charges were already
+proved. One wrong-directory read-only lookup returned128 before ls-tree
+located the exact old body; this was not absence evidence or a replay.
+Aliases: active chronological charge, commuting C/H quotient, source
+bias/scale balance, two nonzero endpoint charges, weighted near-fairness,
+cubic-charge cancellation. AG-Pair remains the ONE active unproved goal.
+
 ## Pair-budget bias admission: critical calibration is separate
 
 [G3-PAIR-BUDGET-BIAS-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/PAIR-BUDGET-ADMISSION.md)
