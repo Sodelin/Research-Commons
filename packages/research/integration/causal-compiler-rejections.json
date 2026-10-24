@@ -15486,6 +15486,21 @@
         "2026-10-24T20:30:07.4377212Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:90:2: error: Type mismatch: After simplification, term\n2026-10-24T20:30:07.4378370Z   observed_map_nodup x allObserved shortNodup\n2026-10-24T20:30:07.4378698Z  has type\n2026-10-24T20:30:07.4378905Z   @List.Nodup X\n2026-10-24T20:30:07.4386215Z     ((observedState x (SourceSelection.observedArrival x none)).vertex ::\n2026-10-24T20:30:07.4386838Z       List.map Arrival.vertex (List.map (observedState x) ys))\n2026-10-24T20:30:07.4387230Z but is expected to have type\n2026-10-24T20:30:07.4387646Z   @List.Nodup X (x :: List.map Arrival.vertex (List.map (observedState x) ys))\n2026-10-24T20:30:07.5365916Z PACKAGE_INCOMPLETE: Lean failed on OriginalWeakConnection: exit status: 1\n2026-10-24T20:30:07.5386954Z ##[error]Process completed with exit code 2.\n2026-10-24T20:30:07.6089364Z ##[group]Run actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830\n2026-10-24T20:30:07.6089770Z with:\n2026-10-24T20:30:07.6090004Z   path: packages/research/build/retained-objects\n2026-10-24T20:30:07.6090628Z   key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129741477-declaration_exports\n2026-10-24T20:30:07.6091242Z   enableCrossOsArchive: false\n2026-10-24T20:30:07.6091492Z ##[endgroup]\n2026-10-24T20:30:07.7123668Z (node:5626) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-10-24T20:30:07.7124510Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-10-24T20:30:07.7287267Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Research-Commons/Research-Commons --files-from manifest.txt --use-compress-program zstdmt\n2026-10-24T20:30:09.9531617Z (node:5626) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n2026-10-24T20:30:10.9409954Z Sent 13760664 of 215087256 (6.4%), 13.1 MBs/sec\n2026-10-24T20:30:11.7348697Z Sent 215087256 of 215087256 (100.0%), 114.3 MBs/sec\n2026-10-24T20:30:11.8529154Z Cache saved with key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129741477-declaration_exports\n2026-10-24T20:30:11.8662884Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n2026-10-24T20:30:11.8663592Z with:\n2026-10-24T20:30:11.8674527Z   name: portable-claim-exports-evidence"
       ],
       "disposition": "ENTIRE42_SOURCE context REJECTED at final actual head-projection simplification. No partial PASS; later NANUQ6/callers/full1498 were NOT executed."
+    },
+    {
+      "source": "9aa3a8c1eff25eacf80762f87fad6ee98fbbdb23",
+      "run_id": 40130193412,
+      "job_id": 120980244371,
+      "attempted_target": "OriginalWeakConnection",
+      "selected": 42,
+      "compiler_accepted": 42,
+      "compiled": 42,
+      "reused": 0,
+      "proof_failures": [],
+      "audit_target_in_workflow": "ClosedColliderWalks",
+      "disposition": "ALL42 compile; whole pipeline REJECTED before owned audit by exact receipt guard because workflow invoked stale40-source audit target. No compiler failure or42-source owned PASS. Later NANUQ6/callers/full1498 not run.",
+      "diagnostic": "PACKAGE_INCOMPLETE: no exact successful target build",
+      "correction": "Change only workflow audit-target to SAME OriginalWeakConnection as the build. Existing exact target/source/object receipt guard preserved."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,

@@ -81,6 +81,7 @@ impl Retention {
         }
         let n = self.original.len();
         let k = self.global_taxa.len();
+        let cut = self.cut;
         let namespace = format!("ResearchCommons.Generated.Contiguous.N{n}C{}{}",
             self.cut, self.original.iter().map(|t| format!("X{t}")).collect::<String>());
         let array = |values: Vec<String>, domain: usize| {
@@ -109,6 +110,10 @@ def kept : Finset (Fin {n}) := {kept}
 def keptOriginal : Finset (Fin {n}) := {returned}
 theorem actual_names : Function.Injective globalTaxa := by decide
 theorem actual_original_positions : Function.Bijective originalPosition := by decide
+theorem actual_cyclic_rotation (i : Fin {n}) :
+    (originalPosition i).val = ({cut} + i.val) % {n} := by
+  revert i
+  decide
 theorem same_original_label (i : Fin {n}) :
     globalTaxa (taxon i) = originalLabels (originalPosition i) := by
   revert i
