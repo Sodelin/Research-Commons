@@ -1,0 +1,9 @@
+# Existing causal graph closure: compile, then whole-owned audit
+
+The original25-source closure through SelectedMAGValidity contains the actual original-DAG projection, canonical shared source, literal inducing/inseparable and full marked MAG/TCM transport, and ancestral-graph validity. Its mathematical claims are retained; this is pinned-context formal integration rather than another graph/source theorem.
+
+Prior early checks only compiled that exact closure before the mandatory1435-source combined target. They provide no whole causal/declared-export acceptance, and rejected complete modules remain rejected. The existing CLI ALREADY has audit-target Module, which checks the exact successful build receipt/object/source identities and reuses the complete owned-axiom auditor. Its actual implementation and archive paths were read; no new audit engine, alias/source factory, transition oracle or native caller is added.
+
+After this25-source boundary actually compiles, the SAME job calls audit-target SelectedMAGValidity. Archive its literal initial build receipt as build/causal-boundary-build.json and its actual sources/audit as build/causal-boundary-owned-audit before the following full target can overwrite shared paths. The raw build's initial owned-audit flag stays literal; actual audit PASS is a separate phase. Any owned axiom/nonstandard row/missing module refuses.
+
+This scope cannot replace the COMPLETE1435-source/291-name/name-owner/type/owned and downstream caller gates. No full Causal upper/lower/k0, parser/probability/physical provider/response/AST/selector/result or all118 acceptance follows. Original scientific HAND completion is not reopened. No private controller/model/held action, new worker or old job replay is selected. Public fixed-source Linux checks remain separate from original UNBOUND private writers.

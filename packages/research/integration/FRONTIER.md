@@ -24,6 +24,8 @@ Earlier accepted9+5/245/836/1 scoped source-hash sets remain unchanged; both cha
 
 Latest G3 owner components were COMPLETE read/hash-matched: compensated-source bounds14724B/794bcb58 and forced nonlinear trace9431B/e176acf2. They are owner-complete HAND at the equal-arm paired current-root9/7/6/4 representation scope. Do not rederive those source bounds or claim they bound energy; signed chronological coercivity including b-a/accumulated errors remains open. No formal import, AG-Pair/H/NO or original G3 closure follows. [Exact source intake](supplier-returns.json).
 
+Latest early25-source check at3446de66 rejects ONE conversion between generated DepartureAllowed/Transition matchers at unknown last. No new full-context result follows. The current variant splits only the SAME Option Mark cases, then applies the original proof; the existing whole-owned auditor will validate/archive this exact boundary after compilation. [Audit scope](CAUSAL-BOUNDARY-AUDIT-REUSE.md).
+
 ## Genuine remaining implementation and formal joins
 
 - Complete original causal upper/lower/zero-parameter contexts and ten exact exports at the pinned APIs, followed by native causal input/provider/response/game/selector/result links.

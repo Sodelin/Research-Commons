@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_ONE_DEPARTURE_DEFINITION_REDUCTION",
+  "status": "EARLY25_SOURCE_REJECTED_DISTINCT_ORIGINAL_OPTION_MATCHERS",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -827,7 +827,7 @@
     {
       "module": "SelectedMAGValidity",
       "path": "lean/ResearchCommons/Compatibility/SelectedMAGValidity.lean",
-      "sha256": "d9af249e0266afd904fdaf825b42d16dfe22a44bedf12352488100f127f730e3",
+      "sha256": "6da039d160ed39d6fbfa553354db43870dfd3f4e604a3089f091c1beaf0e89cc",
       "imports": [
         "LiteralSelectedMAG"
       ],
@@ -844,8 +844,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Expose ONLY the existing DepartureAllowed definition in the original reverse-route ready-state simp. Retain earlier identity-map compatibility and every original source/marked-target/latent/selection statement.",
-        "actual_rejected_source": "40f136ab1f66acdd30d85e9c5ed12b2f364cfcc6"
+        "variant": "Case-split ONLY the original last:Option Mark before using hready and the existing DepartureAllowed definition, so both original generated matcher functions reduce on constructors. All original source/route/marked-target hypotheses remain.",
+        "actual_rejected_source": "3446de66fc9b50defd6fa2bb23817450fda07c10"
       }
     },
     {
@@ -4944,6 +4944,22 @@
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "SelectedMAGValidity",
+      "original_sha256": "1a8f57d78b0d80e7ed81ce612d1a5514fb00fb4ad4fed430abf895a8eca3cf4c",
+      "selected_sha256": "6da039d160ed39d6fbfa553354db43870dfd3f4e604a3089f091c1beaf0e89cc",
+      "selected_bytes": 10148,
+      "selected_git_blob": "e50834f5198c254f41030fc83ecfe423c8bb4f9c",
+      "edit": "Case-split ONLY the original last:Option Mark before using hready and the existing DepartureAllowed definition, so both original generated matcher functions reduce on constructors. All original source/route/marked-target hypotheses remain.",
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "actual_rejected_source": "3446de66fc9b50defd6fa2bb23817450fda07c10",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ],
   "first_full_context_rejection": {
@@ -5013,10 +5029,17 @@
     "source_inventory_unchanged": true
   },
   "latest_early_projection_result": {
-    "source": "40f136ab1f66acdd30d85e9c5ed12b2f364cfcc6",
-    "run": 40099574317,
-    "job": 120888910419,
-    "target": "LiteralSelectedMAG",
-    "status": "PASSED_COMPLETE_24_SOURCE_COMPILATION_NOT_WHOLE_CAUSAL_OWNED_NAME_ACCEPTANCE"
+    "source": "3446de66fc9b50defd6fa2bb23817450fda07c10",
+    "run": 40100643010,
+    "job": 120892063109,
+    "status": "TERMINAL_REJECTED_DISTINCT_GENERATED_OPTION_MATCHERS",
+    "target": "SelectedMAGValidity",
+    "selected_sources": 25,
+    "compiler_errors": 1,
+    "diagnostic": "47:8 DepartureAllowed.match_1 and Transition.match_1 remain distinct at unknown last. Explicitly split the SAME Option Mark cases before applying the original ready-state proof.",
+    "complete_module_accepted": false,
+    "full1435_source_target_reached": false,
+    "whole_causal_owned_and_exact_name_audit_ran": false,
+    "last_actual_full_target_source": "40f136ab1f66acdd30d85e9c5ed12b2f364cfcc6"
   }
 }
