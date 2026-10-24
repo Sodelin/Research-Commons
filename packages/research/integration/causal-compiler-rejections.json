@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "CALIBRATION_ACCEPTED; FULL1473_REJECTED_NEXT_DISCRIMINATING_STATUS_104_BLOCKED",
+  "status": "COMPLETE33_STATUS_ACCEPTED; FULL1473_REJECTED_AT_ENDPOINT_MARKS103_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15358,6 +15358,28 @@
       ],
       "blocked_modules": 104,
       "disposition": "FULL_UNION_REJECTED; separate generic calibration/20 names/BOTH caller contexts ACCEPTED"
+    },
+    {
+      "source": "6b2702a4ebbde60ff4f0c8276705635f89b079f1",
+      "run_id": 40119402641,
+      "job_id": 120947593566,
+      "accepted_complete33": {
+        "declarations": 1061,
+        "theorems": 607,
+        "zero_rejects": true,
+        "verification": "integration/causal-discriminating-status-component-verification.json"
+      },
+      "actual_full_target": 1473,
+      "successful_objects": 1369,
+      "compiled": 104,
+      "reused": 1265,
+      "failed_module": "InducingEndpointMarks",
+      "diagnostics": [
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/InducingEndpointMarks.lean:138:8: error: Type mismatch: After simplification, term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/InducingEndpointMarks.lean:172:48: error: Application type mismatch: The argument"
+      ],
+      "blocked_modules": 103,
+      "disposition": "WHOLE1473_REJECTED; independent COMPLETE33-source context ACCEPTED"
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16535,7 +16557,40 @@
           "[List.cons_append, List.append_assoc, List.singleton_append, List.nil_append] using hnd"
         ]
       ],
-      "status": "PENDING_COMPLETE33_SOURCE_AND_FULL1473_CHECK"
+      "status": "ACCEPTED_COMPLETE33_SOURCE_OWNED_CONTEXT",
+      "actual_accepted_source": "6b2702a4ebbde60ff4f0c8276705635f89b079f1",
+      "verification": "integration/causal-discriminating-status-component-verification.json"
+    },
+    {
+      "module": "InducingEndpointMarks",
+      "original": {
+        "bytes": 8317,
+        "git_blob": "44e35a62907146085ce31aba94b533eac17d402a",
+        "sha256": "20ee4524f7c456c3020d83dd69f6efabf315290299b69f6cbd15c61efc42c7ff"
+      },
+      "successor": {
+        "bytes": 8317,
+        "git_blob": "44e35a62907146085ce31aba94b533eac17d402a",
+        "sha256": "20ee4524f7c456c3020d83dd69f6efabf315290299b69f6cbd15c61efc42c7ff"
+      },
+      "selected": {
+        "bytes": 8372,
+        "git_blob": "805148356d9498f90aa531789cf31b9056cdcdef",
+        "sha256": "d0a5b762b6402a89141bcefb5a6b3c8ade0e0bf70447d0ee18af3ae434de12ad"
+      },
+      "all6_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "        simpa only [hmark] using hready",
+          "        simpa only [hmark, DepartureAllowed] using hready"
+        ],
+        [
+          "  exact first_mark_head_of_not_tail_flag D y x noTail C B\n",
+          "  exact first_mark_head_of_not_tail_flag (p := ⟨p.vertex, some outgoing⟩) D y x noTail C B\n"
+        ]
+      ],
+      "status": "PENDING_COMPLETE34_SOURCE_AND_FULL1473_CHECK"
     }
   ]
 }

@@ -27,7 +27,7 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-- **Original finite indicator query family passes its complete31-source owned context**, source`dc84dc08`, [run40114331789](https://github.com/Sodelin/Research-Commons/actions/runs/40114331789):1024 declarations/577 theorems, zero rejects. Full1472 remains rejected at the next CommonObservedMAG proof interface (1366 successful/105 blocked); no full package claim. [Receipt](integration/causal-indicator-family-component-verification.json).
+- **Original finite indicator query family passes its complete31-source owned context**, source`dc84dc08`, [run40114331789](https://github.com/Sodelin/Research-Commons/actions/runs/40114331789):1024 declarations/577 theorems, zero rejects. That historical1472 build was separately rejected; the current combined boundary is stated below. [Receipt](integration/causal-indicator-family-component-verification.json).
 - **Original old-observed marked-MAG transport passes its complete32-source owned context**, source`38d7e418`, [run40116373354](https://github.com/Sodelin/Research-Commons/actions/runs/40116373354):1041 declarations/594 theorems, zero rejects. All15 original statements retain actual SAME-source/conditioning/root-free-path/marks. [Receipt](integration/causal-common-observed-component-verification.json).
 - **Rare-event calibration is verified end to end at its OLD known-rate IID model**, [source146/run40117862133](https://github.com/Sodelin/Research-Commons/actions/runs/40117862133). ALL20 complete names/types/owners pass the1-source47/32 owned context; BOTH actual Rust finite/empty-sample proofs pass the joint3-source67/50 owned context. All115 Rust tests pass. Artifact/source/document/audit identities and complete actual printed types were independently checked. [Receipt](integration/calibration-component-verification.json), [types](integration/calibration-complete-printed-types.json). Completed science is reused; dependent/unknown-rate/biological models and universal native refinement remain separate.
 
@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source69a85a7e accepts the54-name memory and30-source indicator components, then rejects ONE original indicator-query finite-subtype/constructor module. The new31-source boundary and complete combined/388-name/owned/caller gates remain mandatory; accepted standalone scopes are reused.
+Current compatibility checkpoint: source147 accepts the complete33-source original status context (1061 declarations/607 theorems, zero rejects). Full1473 still rejects InducingEndpointMarks at two proof conversions:1369 successful objects/103 blocked. Current selected proof preserves all6 endpoint statements. Complete combined408-name/owned/actual-caller and strict all118 checks remain mandatory; the authoritative current queue is [FRONTIER](integration/FRONTIER.md).
 
 ## Exact known-rate calibration component
 
