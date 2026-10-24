@@ -70,9 +70,13 @@ theorem likelihood_sum (t : Genealogy Copy) (x : Survivals t) (a : Base) :
     (∑ p : Pattern t, likelihood t x a p) = 1 := by
   induction t generalizing a with
   | leaf z =>
-      rcases a with ⟨a0,a1⟩
-      fin_cases a0 <;> fin_cases a1 <;>
-        norm_num [likelihood, Pattern, Fintype.sum_prod_type, Fin.sum_univ_two]
+      change (∑ p : Base, if a = p then (1 : ℝ) else 0) = 1
+      calc
+        _ = if a = a then (1 : ℝ) else 0 :=
+          Finset.sum_eq_single a
+            (fun b _ hb => by rw [if_neg (Ne.symm hb)])
+            (fun h => False.elim (h (Finset.mem_univ a)))
+        _ = 1 := if_pos rfl
   | graft l r hl hr =>
       change (∑ p : Pattern l × Pattern r,
         (∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p.1) *
