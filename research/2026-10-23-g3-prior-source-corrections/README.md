@@ -11,6 +11,43 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
+## Mixed normalized linear square admission — PROVED HAND at every finite cap
+
+[G3-NORMALIZED-MIXED-LINEAR-SQUARE-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/NORMALIZED-MIXED-SQUARE-OBSTRUCTION.md),
+12255B/SHA2567f15112e0dce0c4c4cd36f0bfb72cdd8a797bfae6e5a54d634b2f91c581adacf,
+is PROVED HAND/self-reviewed. Independent correctness/Lean and source,
+tuple, coefficient, symbolic/numerical/model/solver/native execution absent.
+
+This successor closes the preceding theorem's MIXED ordinary-Q block and
+fixed reference-eigenframe limitation on OPEN TWO-PARAMETER strict source
+domains. At ANY finite collection of probe caps, no constant linear response
+of C=exp(-tau Q)B equals a nonzero multiple of J7^2. Coefficients may depend
+on a fixed reference; q,g are the SAME unknown physical tuple at every cap.
+The stronger mixed conclusion is not claimed on the fair line alone.
+
+The new mechanism uses CURRENT-root support to bound the r-th left-block
+coin degree by floor(r/2). After z=b2=q+2v(1-q), nonzero block pole orders
+lie in disjoint intervals [lambda_r-floor(r/2),lambda_r]. Target pole42
+forces r10; its numerator has degree<=5 and lower blocks start at z9,
+but the target has nonzero z8. OLD arm-history/routing rules give the exact
+all-coin q4 coefficient A7=q4[-6v^2/7+132v^3/35]+q6*v*R, without a producer.
+
+REUSE complete predecessor8ef47cd4... at0f0113be and full7 history source
+00332ce... at a0606d48. The preflight compares current/retained aliases and
+later source branches, including COMPLETE attributed assembly171. No
+exhaustive corpus-absence or historical-priority claim. Old proofs unchanged.
+
+Changed frontier: retire the arbitrary-cap MIXED linear square decoder
+before any source/coefficient factory. Nonlinear whole-word arithmetic,
+actual cross-cell transport and return-fibre laws are not excluded.
+Original joint action/variance/phase/ONE-witness/total recognition/NO remains
+unresolved. This is a supporting exclusion, NOT a new full G3 attack.
+Missing independent review or Lean does not reopen the hand theorem.
+
+Aliases: mixed normalized square; reference-eigenframe linear decoder;
+spectral root-count coin degree; pair-survival pole42; r10/z8 contradiction;
+all-coin q4 A7; arbitrary finite cap; two-parameter not fair-line no-go.
+
 ## One-cell linear square admission — all finite caps, PROVED HAND
 
 [G3-SINGLE-CELL-LINEAR-SQUARE-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/SINGLE-CELL-MODE-PRODUCT-OBSTRUCTION.md),
@@ -30,7 +67,8 @@ Static reference-dependent coefficients and fixed ordinary bookends/
 linear readouts do not fix the missing mode. In ONE normalized ordinary-Q left
 spectral block, multiplying by b2^lambda_r leaves a nonzero leading
 q8 on the proposed J7-square side, so that exact receiver also fails.
-Arbitrary mixtures of different normalized blocks are not excluded.
+That predecessor left arbitrary normalized mixtures outside its scope;
+the successor above handles open TWO-PARAMETER source domains.
 
 The source spectral lift/semisimplicity and exact old A7 coefficients
 are REUSED, not regenerated. Current/archive/sibling comparisons found
@@ -41,7 +79,7 @@ No historical novelty/absence claim or higher-cap source producer.
 Changed frontier: stop a same-cell linear square factory. Nonlinear
 probability arithmetic is valid but does not identify literal sums of
 cell squares through an unknown word. Full nonlinear/cross-cell laws,
-mixed normalized blocks, conditional-fibre identities and the original
+the mixed FAIR-LINE case alone, conditional-fibre identities and the original
 G3 action/phase/H/terminating-NO implication remain separate. No new/
 full replacement mechanism or smaller completion standard is supplied.
 
