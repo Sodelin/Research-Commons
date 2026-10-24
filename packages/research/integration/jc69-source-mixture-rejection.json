@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "status": "REJECTED_COMPLETE_NEW_MODULE_NO_PARTIAL_ACCEPTANCE",
+  "source_commit": "2706419fc1725aabea145bf8eaf99efe8458186b",
+  "candidate_sha256": "fe1ca58a279ddd4b65020fc4e31ba731afe00177d4dd1add2214314ddcf97f95",
+  "run": 40053605431,
+  "job": 120751693277,
+  "logs_url": "https://github.com/Sodelin/Research-Commons/actions/runs/40053605431/job/120751693277",
+  "actual_log_read_complete": true,
+  "artifact": {
+    "id": 12544676762,
+    "bytes": 242481,
+    "sha256": "004dd85b1619d4dd77556a856ef5d658d70c983891fbff067d694f68eb243c69",
+    "scope": "Actual metadata/upload log read. ZIP not downloaded; no proof artifact inferred."
+  },
+  "actual_errors": [
+    {
+      "line": 53,
+      "message": "Unknown unqualified liveCard identifier."
+    },
+    {
+      "line": 73,
+      "message": "Point-probability proof remains unsolved in invalid cardinality context; no clean partial acceptance."
+    },
+    {
+      "line": 92,
+      "message": "Measurable.ite lacks an inferred DecidablePred GoodPoint; explicit classical tactic instance required."
+    }
+  ],
+  "exact_error_context": "JC69Source.lean:53:2: error(lean.unknownIdentifier): Unknown identifier `liveCard`\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:58:4: warning: declaration uses `sorry`\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:73:74: error: unsolved goals\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\nz : Code N sample × (Copy → Copy → ℝ)\nh : GoodPoint N leafAge z\np : Copy → Base\n⊢ (actualLabelledTreeKernel (state z.1) ⋯ leafAge z.2 ↑(Exists.choose ⋯) ⋯ (selectedRoot N z.1) ⋯) p =\n    ENNReal.ofReal\n      (rootLikelihood ((state z.1).genealogy (selectedRoot N z.1))\n        (clockSurvivals leafAge ((state z.1).genealogy (selectedRoot N z.1))\n          (decode z.2 ((state z.1).genealogy (selectedRoot N z.1))))\n        (labelPattern ((state z.1).genealogy (selectedRoot N z.1)) p))\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:74:6: warning: declaration uses `sorry`\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:92:13: error: don't know how to synthesize implicit argument\n  @Measurable.ite (Copy → Copy → ℝ) ℝ≥0∞\n    (fun x =>\n      ENNReal.ofReal\n        (rootLikelihood ((state d).genealogy (selectedRoot N d))\n          (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n            (decode x ((state d).genealogy (selectedRoot N d))))\n          (labelPattern ((state d).genealogy (selectedRoot N d)) p)))\n    (fun x => (PMF.pure fun x => 0) p) MeasurableSpace.pi ENNReal.measurableSpace (fun a => GoodPoint N leafAge (d, a))\n    ?m.177 (Measurable.setOf hg) hp measurable_const\ncontext:\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\np : Copy → Base\nd : Code N sample\nhg : Measurable fun M => GoodPoint N leafAge (d, M)\nhp :\n  Measurable fun x =>\n    ENNReal.ofReal\n      (rootLikelihood ((state d).genealogy (selectedRoot N d))\n        (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n          (decode x ((state d).genealogy (selectedRoot N d))))\n        (labelPattern ((state d).genealogy (selectedRoot N d)) p))\n⊢ DecidablePred fun a => GoodPoint N leafAge (d, a)\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:92:7: error: failed to infer `have` declaration type\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:83:42: error: unsolved goals\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\np : Copy → Base\nd : Code N sample\nhg : Measurable fun M => GoodPoint N leafAge (d, M)\nhp :\n  Measurable fun x =>\n    ENNReal.ofReal\n      (rootLikelihood ((state d).genealogy (selectedRoot N d))\n        (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n          (decode x ((state d).genealogy (selectedRoot N d))))\n        (labelPattern ((state d).genealogy (selectedRoot N d)) p))\n⊢ Measurable fun y => (conditionalKernel N leafAge (d, y)) p\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:133:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69Source.original_point_measurable`:\n  [Nonempty Copy]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Nonempty Copy] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:139:8: warning: declaration uses `sorry`\n",
+  "rust": {
+    "job": 120751521710,
+    "log_read_complete": true,
+    "tests": 97,
+    "failed": 0,
+    "scope": "Rust/source accounting success is not new Lean/source-law acceptance."
+  },
+  "repair": {
+    "sha256": "359936a7ee8d896ca061ad934a618350f32ffd9fa77ef16ba279cd563b257f88",
+    "bytes": 13388,
+    "changes": [
+      "GoodPoint uses literal original (state d).live.card, avoiding a missing namespace alias.",
+      "conditional_mass_measurable begins with classical, supplying the actual DecidablePred used by Measurable.ite.",
+      "Remove the unused Nonempty Copy binder from original_point_measurable; actual rooted kernel still explicitly requires nonempty Copy."
+    ],
+    "all_source_clock_PMFS_site_register_parameters_preserved": true,
+    "status": "SOURCE_ONLY_FRESH_COMPLETE_CONTEXT_REQUIRED"
+  },
+  "unchanged_acceptance": {
+    "source": "766c83b3a724ae184a7f3e82895755d02a504bd2",
+    "full_library_sources": 1657,
+    "scoped_exports": 137
+  },
+  "same_word_job_preserved": 120743281427,
+  "goal_complete": false
+}

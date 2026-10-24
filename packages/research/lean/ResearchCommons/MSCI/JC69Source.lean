@@ -50,7 +50,7 @@ theorem selected_root_live (N : RootedBinary V E X) {sample : Copy → X}
 
 def GoodPoint (N : RootedBinary V E X) {sample : Copy → X}
     (leafAge : Copy → ℝ) (z : Code N sample × (Copy → Copy → ℝ)) : Prop :=
-  liveCard z.1 ≤ 1 ∧ HasTimedBound leafAge z.2 (state z.1)
+  (state z.1).live.card ≤ 1 ∧ HasTimedBound leafAge z.2 (state z.1)
 
 /-- A total probability kernel, with a fixed harmless value off the original
 full-mass admitted set. The fallback is never a conditioning or renormalization
@@ -81,6 +81,7 @@ theorem conditional_mass_measurable (N : RootedBinary V E X)
     {sample : Copy → X} (leafAge : Copy → ℝ) (p : Copy → Base) :
     Measurable (fun z : Code N sample × (Copy → Copy → ℝ) =>
       conditionalKernel N leafAge z p) := by
+  classical
   apply measurable_from_prod_countable_right
   intro d
   have hg : Measurable (fun M : Copy → Copy → ℝ => GoodPoint N leafAge (d,M)) :=
@@ -130,6 +131,7 @@ def originalPoint (N : RootedBinary V E X) (C : Calendar N.graph)
       (initialCode N sample register) (firstOriginalDate N C)
       (fun x _ => C.age (N.leaf (sample x))) z)
 
+omit [Nonempty Copy] in
 theorem original_point_measurable (N : RootedBinary V E X) (C : Calendar N.graph)
     (sample : Copy → X) (register : V → Bool) (H : OriginalParentRegistry N)
     (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool) :

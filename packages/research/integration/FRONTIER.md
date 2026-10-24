@@ -31,3 +31,5 @@ Before any new implementation, inspect actual predecessor AND later successor, c
 ## New actual-source mixture candidate (not yet acceptance)
 
 JC69Source reuses the original completeCalendarTraceLaw/probability and actual one-root/chronological support to construct the normalized SAME-source finite-locus mutation law. All sites share one tree/matrix; the whole register bank is mixed once. The eight new names are SOURCE ONLY pending the fresh complete selected/owned check. Original nonempty Copy is explicit; unranked timed-output descent and the empty observer remain. See JC69-SOURCE-MIXTURE-REUSE-PREFLIGHT.md. Current word120743281427 is preserved.
+
+First source-mixture candidate2706419f is now terminal REJECTED at the cardinality name/DecidablePred use-site; no partial new-module acceptance. The successor fixes those literal proof-context errors and retains the exact original source/locus bank. See jc69-source-mixture-rejection.json. All8 source-mixture endpoints await fresh complete checking; the unranked draft remains unselected.
