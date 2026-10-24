@@ -44,6 +44,36 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Joint diagonal log guards: weak-source admission corollary proved
+
+[G3-JOINT-DIAGONAL-LOG-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/ADDITIVE-LOG-ADMISSION.md)
+is PROVED HAND as a reuse corollary of the completed paired-diagonal
+FULL RANK, not a new source coefficient theorem/full attack. At EACH fixed
+finite M, the cone of actual normalized I log vectors
+v_n=log b_nI-lambda_n log b_2C has lambda=(binom(n,2)) in its interior.
+This follows from the old actual-word open image at C=1/4,D=1/3.
+
+For one equal-arm cell, h=-log q,p=g(1-g),
+v_n=log E exp(h*K_n*(n-K_n)), K_n~Binomial(n,g).
+The elementary bound
+||v/(2ph)-lambda||_infinity<=Lambda^2*exp(Lambda*h)*h/2
+is uniform over ALL strict coins, including arbitrarily rare ones.
+Hence every nonzero globally nonnegative ordinary-neutral additive
+JOINT I/COMMON diagonal log guard is STRICT on every sufficiently weak
+equal-arm cell, at a threshold independent of its coefficient vector/coin.
+It cannot be tight on the intended large integer reference powers.
+
+The OLD COMMON log cone does not alone assert this joint result.
+Conversely this corollary is only a weak-cell/global-additive admission;
+nonlinear, transported and proper-fibre guards remain outside it.
+The full commutator/off-diagonal source problem is NOT refuted or solved.
+No source tuple, guard optimizer, solver or execution occurred; independent
+review/Lean are separate. No new mathematical discovery count.
+
+Aliases: joint diagonal log cone, ordinary-neutral BOTH log character,
+target-dependent tight weak-cell guard, interior ordinary ray, all-coin
+Bernoulli-cut estimate. The existing diagonal synthesis is not reopened.
+
 ## Uniform capped commutant projection — quadratic matrix bound proved
 
 [G3-UNIFORM-ORDINARY-COMMUTANT-ESTIMATE-01](../2026-10-24-g3-asymptotic-root-grid/COMMUTANT-ESTIMATE.md)
@@ -248,6 +278,28 @@ Aliases: interior-coin source Section4, equal-arm weak diagonal return,
 critical square-root coin bias,
 connected path/cycle cumulants, fixed COMMON plus I hazard, paired diagonal
 budget, finite regular diagonal word. This is not full-forest centering.
+
+## OLD one-fair-cell nonlinear guard: direct provider restored
+
+G3-ONE-FAIR-CELL-GUARD-REUSE-01 is OLD/PROVED with scoped HAND ACCEPT.
+The COMPLETE [proof](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-nonlinear-forcing-and-contact-count-1500z/g4-paired/PAIRED-NONLINEAR-SINGLE-FAIR-CELL-FORCING.md),
+9469B/SHA2b73ef2baf4a573667c006e7e128ad5779b7f652ae5978b3d08bfe7cacbff9f8,
+and COMPLETE [acceptance](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-09-dot-nonlinear-forcing-and-contact-count-1500z/g4-paired/INDEPENDENT-CONSTRUCTION-REVIEW.md),
+6908B/SHAa73156ae039dad6a583d5572a2def6eb702aebf1a1a9277ed3e5e5346a74f5b8,
+plus package README were read. Its frozen candidate heading is superseded.
+
+On the calibrated ordinary-COMMON face let r=b2I/c,s=b3I/c^3.
+The OLD inequality s>=3r^2-3r+1 has equality with r>1 exactly for
+ONE fair equal-arm cell, uniformly over all finite private rival lengths.
+Full cap-four C/H then recover both ordinary pads. This gives the stated
+private natural-BOTH target certificate; arbitrary cores, I-only and
+general multi-cell targets retain their actual separate contracts.
+
+It is STRICT on every multi-cell word, including intended S(t)^N,N>=2,
+so it is not the missing unknown-index guard. Reuse its exact theorem;
+do not derive it again from a newer C/Delta3 expression or count it new.
+Direct path restored because the earlier audit mentioned only
+"one-fair-cell guard" without a nearby searchable provider card.
 
 ## Storage boundary under commutation: old formulas applied with the endpoint retained
 
