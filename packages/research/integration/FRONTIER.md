@@ -4,15 +4,14 @@ The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ran
 
 ## Actual current build boundary
 
-Latest actual source170 15b02b45aae4e3c556fa93addfca3e38ca76f710, [run40142417603](https://github.com/Sodelin/Research-Commons/actions/runs/40142417603):
+Latest actual source171 02d448e48eadd896306b85b3918e65075e96e144, [run40143508898](https://github.com/Sodelin/Research-Commons/actions/runs/40143508898):
 
-- COMPLETE52-source actual vertex-section owned context PASSES:1322 declarations/792 theorems, zero owned/nonstandard/missing. All9 original statements unchanged;26 generated/projection theorem rows are not new mathematical results. Entire658098B artifact/all52 source/object/owned sets/every row independently verified. [Receipt](causal-vertex-section-component-verification.json).
-- Full1499 source context REJECTED at LiteralMAGInducingChains:1416 successful (130compiled+1286reused),82 blocked. Combined512-name/whole-owned/actual caller steps did not run. [Exact failure history](causal-compiler-rejections.json).
-- CLOSED26-source/six-name432/291 OLD noise core plus BOTH actual native docs in28-source458/309 owned context, source168, are REUSED. Rust122 source168 retained; later Rust jobs succeeded with unchanged engine source. [Receipt](nanuq-noise-component-verification-v2.json).
-- Prior51/50/49/48/45/44 causal, actual contiguous-copy/caller, calibration and BOTH natural-word contexts are CLOSED/reused. No identical word replay/cache/key change.
+- COMPLETE54-source actual original-DAG inducing-chain+generic finite interval owned context PASSES:1373 declarations/837 theorems, zero owned/nonstandard/missing. Literal7 original statements unchanged; Interval8 statements/body unchanged;30 generated proof rows are not new discoveries. Entire676682B artifact/all54 source/object/owned sets/every row independently validated. [Receipt](causal-literal-chain-component-verification.json).
+- Full1499 source context REJECTED at DiscriminatingIntervalGeometry:1417 successful (131compiled+1286reused),81 blocked. Actual error is reserved matches binder; no combined512-name/whole-owned/actual caller result. [Failure history](causal-compiler-rejections.json).
+- CLOSED52/51/50/49/48/45/44 causal, OLD noise26-source/six-name432/291 plus TWO actual native docs jointly28-source458/309, actual contour/calibration/etc and BOTH natural word are REUSED at their exact sources. Rust122 scope source168 retained; subsequent Rust jobs succeeded with unchanged engine. No identical word replay/cache/key change.
 - Strict118 completion FAILS; no component suppresses it.
 
-Current source171 proof-only54-source candidate retains ALL7 actual original-DAG inducing-chain statements and the SAME marked incidences/source/endpoint/ancestor/route. COMPLETE earlier/later11510B sources match83cd2fde/blob e5037c23. It lets existing simp reduce4 literal True/head conditionals and qualifies the actual existing ClosedColliderWalks ancestor-closure helper; no new source law/factory/axiom. Next54-source build+owned using the SAME target, then mandatory1499/512-name/combined-owned/actual callers.
+Current source172 quote-only55-source candidate changes only matches→«matches» at the existing binder and2 uses. COMPLETE earlier/later7391B sources matchdf6f706e/blob67938d90, reverse quoting recovers ENTIRE original body. All4 statement semantics and proof steps, actual source MAG/indexed witness/orientations/parent-collider incidences/graphical no-two-cycle proof unchanged. ONE step-local COMMONS_CAUSAL_TARGET now supplies both existing build/audit commands, preserving every source/hash/object/owned guard. Next55-source owned then mandatory1499/512-name/combined-owned/actual callers.
 
 ## Closed integration components: reuse them
 

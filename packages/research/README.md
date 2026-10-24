@@ -27,11 +27,12 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest exact [source170/run40142417603](https://github.com/Sodelin/Research-Commons/actions/runs/40142417603):
+Latest exact [source171/run40143508898](https://github.com/Sodelin/Research-Commons/actions/runs/40143508898):
 
-- COMPLETE52-source actual vertex-section owned context PASSES:1322 declarations/792 theorems, zero owned/nonstandard/missing. ALL9 original statements unchanged; generated/projection rows are not new discoveries. [Receipt](integration/causal-vertex-section-component-verification.json).
-- Full1499 source build REJECTED at LiteralMAGInducingChains:1416 successful/82 blocked; combined512-name/owned/actual caller checks did not run. Current proof-only54-source candidate preserves ALL7 original statements while fixing only reported4 literal conditional reductions and1 namespace ambiguity. [Current frontier](integration/FRONTIER.md).
+- COMPLETE54-source actual source-DAG inducing-chain and generic finite-interval owned context PASSES:1373 declarations/837 theorems, zero owned/nonstandard/missing. Literal7 statement headers unchanged; Interval8 statements/body unchanged; generated rows are not new discoveries. [Receipt](integration/causal-literal-chain-component-verification.json).
+- Full1499 source build REJECTED at DiscriminatingIntervalGeometry:1417 successful/81 blocked; combined512-name/owned/actual callers did not run. Current quote-only55-source candidate preserves all4 statement semantics and ENTIRE original proof logic. [Current frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise26-source/six-name432/291 core plus BOTH actual native proofs in one28-source458/309 owned context are CLOSED/reused at source168. Complete original label/value/strict-half uniqueness/ENTIRE positive-support proofs accepted. [Receipt](integration/nanuq-noise-component-verification-v2.json).
+- Complete52-source actual vertex sections1322/792 is CLOSED/reused. [Receipt](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).
 - The complete BOTH natural word is CLOSED at ed4ed337:1280 generated proof documents/69238 declarations/57433 theorems, SAME original three-copy/seven-operation/21-variable bank with register sampled once. No identical replay/cache/key work is selected. [Receipt and limits](integration/whole-natural-word-verification.json).
 - Earlier raw NANUQ836-source/34-name, exact-query245-source/21-name, deterministic memory36-source/54-name, stochastic, genome, ownership, SAME-array block, founder-window, formal-model, rare-event calibration and actual contiguous-copy/caller contexts remain verified at their literal source-specific scopes. Their exact receipts and limitations are indexed in [the closed-component table](integration/FRONTIER.md#closed-integration-components-reuse-them).
