@@ -11,6 +11,44 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
+## One-cell linear square admission — all finite caps, PROVED HAND
+
+[G3-SINGLE-CELL-LINEAR-SQUARE-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/SINGLE-CELL-MODE-PRODUCT-OBSTRUCTION.md),
+8784B/SHA2568ef47cd473b18c9746277eec77ee149d941400c93dd5403a630b7f172fde7d91,
+is PROVED HAND/self-reviewed. Independent correctness/Lean and
+source/tuple/coefficient/model/solver/native execution absent.
+
+A contemplated source-variation mechanism needed the old A7 square
+as a linear same-cell full-forest coordinate. The exact OLD source
+B=J exp(uG)D has ONLY q^(lambda_a+lambda_b) modes at EVERY finite cap.
+Triangular numbers<=8 are0,1,3,6; no pair sums to8. OLD full7 routing/
+holding coefficients00332ce... give A7=(3/560)q4+... at fairness,
+hence nonzero q8 in its square. This disproves the ENTIRE finite-cap
+raw-linear receiver, even on an open weak fair source interval.
+
+Static reference-dependent coefficients and fixed ordinary bookends/
+linear readouts do not fix the missing mode. In ONE normalized ordinary-Q left
+spectral block, multiplying by b2^lambda_r leaves a nonzero leading
+q8 on the proposed J7-square side, so that exact receiver also fails.
+Arbitrary mixtures of different normalized blocks are not excluded.
+
+The source spectral lift/semisimplicity and exact old A7 coefficients
+are REUSED, not regenerated. Current/archive/sibling comparisons found
+the different OLD rare-profile eta^2*z constant-covector exclusion and
+global cocycle/tensor limits; they are retained at their own scopes.
+No historical novelty/absence claim or higher-cap source producer.
+
+Changed frontier: stop a same-cell linear square factory. Nonlinear
+probability arithmetic is valid but does not identify literal sums of
+cell squares through an unknown word. Full nonlinear/cross-cell laws,
+mixed normalized blocks, conditional-fibre identities and the original
+G3 action/phase/H/terminating-NO implication remain separate. No new/
+full replacement mechanism or smaller completion standard is supplied.
+
+Aliases: missing q8 mode; two-triangular source spectrum; same-cell
+linear product closure; A7 squared; J7 single-block receiver; one-box
+versus tensor; all-cap source-square admission; not nonlinear no-go.
+
 ## Exact biased full-band calibration branch — PROVED HAND at source scope
 
 [G3-BIASED-FULL-BAND-CALIBRATION-01](../2026-10-24-g3-asymptotic-root-grid/BIASED-FULL-BAND-CALIBRATION-BRANCH.md),
