@@ -34,7 +34,7 @@ theorem split_ready_latent_block {X : Type u} {S : Type v} {L : Type w}
     {l : L} {previous : Mark} {xs : List (Arrival (SourceVertex X S L))}
     {b : Sum X S} {lastMark : Option Mark}
     (h : Route (ReadyStep D C) ⟨.inr l, some previous⟩ xs ⟨.inl b, lastMark⟩) :
-    ∃ outgoing latent z finalMark rest «prefix»,
+    ∃ outgoing (latent : List L) z finalMark rest «prefix»,
       ¬ (previous = .head ∧ outgoing = .head) ∧
       NoncolliderRoute (arrowGraph D.arrow) (.inr l) outgoing
         (latent.map (fun k => Sum.inr k : L → SourceVertex X S L)) (.inl z) finalMark ∧
@@ -103,7 +103,11 @@ theorem contract_ready_aux {X : Type u} {S : Type v} {L : Type w}
                 (List.Pairwise.of_cons hobs)
               exact ⟨⟨z, some incoming⟩ :: ys, .cons
                 ⟨outgoing, incoming, hp, rfl,
-                  ready_retained_optional_activity D C a previous outgoing hactive⟩ hy⟩
+                  (by
+                    cases previous with
+                    | none => trivial
+                    | some m =>
+                        exact (original_retained_activity D C a m outgoing).mp hactive)⟩ hy⟩
           | inr l =>
               obtain ⟨nextOut, latent, z, finalMark, rest, «prefix», hnc, hp, hr, heq⟩ :=
                 split_ready_latent_block D C htail
@@ -127,7 +131,11 @@ theorem contract_ready_aux {X : Type u} {S : Type v} {L : Type w}
               obtain ⟨ys, hy⟩ := ih rest.length hlt z (some finalMark) rest b lastMark rfl hr hrestObs
               exact ⟨⟨z, some finalMark⟩ :: ys, .cons
                 ⟨outgoing, finalMark, hproject, rfl,
-                  ready_retained_optional_activity D C a previous outgoing hactive⟩ hy⟩
+                  (by
+                    cases previous with
+                    | none => trivial
+                    | some m =>
+                        exact (original_retained_activity D C a m outgoing).mp hactive)⟩ hy⟩
 
 theorem contract_ready_route {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (C : Sum X S → Prop)

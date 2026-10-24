@@ -1,0 +1,435 @@
+{
+  "schema": 1,
+  "source": "fe0dccd2b7fab243abe40c373bfcc55e2dca066d",
+  "run": 40085312861,
+  "job": 120847091562,
+  "unique_names": 85,
+  "scope": "COMPLETE actual #check types and named axiom reports at exact original owners; not a new theorem or broader model.",
+  "rows": [
+    {
+      "axiom_report": "'SocialScience.Identifiability.equivalent_refl' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.equivalent_refl",
+      "type": "@SocialScience.Identifiability.equivalent_refl : ∀ {Θ X Y : Type} (predict : Θ → X → Y) (design : X → Prop) (θ : Θ),\n  SocialScience.Identifiability.Equivalent predict design θ θ"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.equivalent_symm' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.equivalent_symm",
+      "type": "@SocialScience.Identifiability.equivalent_symm : ∀ {Θ X Y : Type} {predict : Θ → X → Y} {design : X → Prop} {θ φ : Θ},\n  SocialScience.Identifiability.Equivalent predict design θ φ →\n    SocialScience.Identifiability.Equivalent predict design φ θ"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.equivalent_trans' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.equivalent_trans",
+      "type": "@SocialScience.Identifiability.equivalent_trans : ∀ {Θ X Y : Type} {predict : Θ → X → Y} {design : X → Prop}\n  {θ φ ψ : Θ},\n  SocialScience.Identifiability.Equivalent predict design θ φ →\n    SocialScience.Identifiability.Equivalent predict design φ ψ →\n      SocialScience.Identifiability.Equivalent predict design θ ψ"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.restrict_design' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.restrict_design",
+      "type": "@SocialScience.Identifiability.restrict_design : ∀ {Θ X Y : Type} {predict : Θ → X → Y} {small large : X → Prop}\n  {θ φ : Θ},\n  (∀ (x : X), small x → large x) →\n    SocialScience.Identifiability.Equivalent predict large θ φ →\n      SocialScience.Identifiability.Equivalent predict small θ φ"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.more_probes_preserve_identification' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.more_probes_preserve_identification",
+      "type": "@SocialScience.Identifiability.more_probes_preserve_identification : ∀ {Θ X Y : Type} {predict : Θ → X → Y}\n  {small large : X → Prop},\n  (∀ (x : X), small x → large x) →\n    SocialScience.Identifiability.Identified predict small → SocialScience.Identifiability.Identified predict large"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.postprocess_preserves_equivalence' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.postprocess_preserves_equivalence",
+      "type": "@SocialScience.Identifiability.postprocess_preserves_equivalence : ∀ {Θ X Y Z : Type} {predict : Θ → X → Y}\n  {design : X → Prop} {θ φ : Θ} (transform : Y → Z),\n  SocialScience.Identifiability.Equivalent predict design θ φ →\n    SocialScience.Identifiability.Equivalent (fun p x => transform (predict p x)) design θ φ"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.baseline_ambiguous' does not depend on any axioms",
+      "name": "SocialScience.Identifiability.baseline_ambiguous",
+      "type": "SocialScience.Identifiability.baseline_ambiguous : SocialScience.Identifiability.Equivalent\n  SocialScience.Identifiability.twoComponent (fun probe => probe = false) (1, 0) (0, 1)"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.baseline_not_identified' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Identifiability.baseline_not_identified",
+      "type": "SocialScience.Identifiability.baseline_not_identified : ¬SocialScience.Identifiability.Identified\n    SocialScience.Identifiability.twoComponent fun probe => probe = false"
+    },
+    {
+      "axiom_report": "'SocialScience.Identifiability.both_probes_identify' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Identifiability.both_probes_identify",
+      "type": "SocialScience.Identifiability.both_probes_identify : SocialScience.Identifiability.Identified\n  SocialScience.Identifiability.twoComponent fun x => True"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.common_intercept_preserves_order' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "SocialScience.Measurement.common_intercept_preserves_order",
+      "type": "SocialScience.Measurement.common_intercept_preserves_order : ∀ (a b intercept : Int),\n  SocialScience.Measurement.response a intercept ≤ SocialScience.Measurement.response b intercept ↔ a ≤ b"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.common_intercept_preserves_difference' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.common_intercept_preserves_difference",
+      "type": "SocialScience.Measurement.common_intercept_preserves_difference : ∀ (a b intercept : Int),\n  SocialScience.Measurement.response a intercept - SocialScience.Measurement.response b intercept = a - b"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.shift_invariance' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.shift_invariance",
+      "type": "SocialScience.Measurement.shift_invariance : ∀ (latent intercept shift : Int),\n  SocialScience.Measurement.response (latent + shift) (intercept - shift) =\n    SocialScience.Measurement.response latent intercept"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.population_shift_invariance' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.population_shift_invariance",
+      "type": "@SocialScience.Measurement.population_shift_invariance : ∀ {Person : Type} (latent : Person → Int)\n  (intercept shift : Int),\n  (fun p => SocialScience.Measurement.response (latent p + shift) (intercept - shift)) = fun p =>\n    SocialScience.Measurement.response (latent p) intercept"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.known_intercept_identifies' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.known_intercept_identifies",
+      "type": "SocialScience.Measurement.known_intercept_identifies : ∀ (a b intercept : Int),\n  SocialScience.Measurement.response a intercept = SocialScience.Measurement.response b intercept → a = b"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.anchor_identifies_intercept' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.anchor_identifies_intercept",
+      "type": "SocialScience.Measurement.anchor_identifies_intercept : ∀ (anchor first second : Int),\n  SocialScience.Measurement.response anchor first = SocialScience.Measurement.response anchor second → first = second"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.group_intercepts_can_reverse_order' does not depend on any axioms",
+      "name": "SocialScience.Measurement.group_intercepts_can_reverse_order",
+      "type": "SocialScience.Measurement.group_intercepts_can_reverse_order : 0 < 1 ∧\n  SocialScience.Measurement.response 1 0 < SocialScience.Measurement.response 0 2"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.bounded_bias_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "SocialScience.Measurement.bounded_bias_interval",
+      "type": "SocialScience.Measurement.bounded_bias_interval : ∀ (a b biasA biasB δ : Int),\n  -δ ≤ biasA - biasB →\n    biasA - biasB ≤ δ →\n      SocialScience.Measurement.response a biasA - SocialScience.Measurement.response b biasB - δ ≤ a - b ∧\n        a - b ≤ SocialScience.Measurement.response a biasA - SocialScience.Measurement.response b biasB + δ"
+    },
+    {
+      "axiom_report": "'SocialScience.Measurement.difference_exceeding_bias_identifies_order' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Measurement.difference_exceeding_bias_identifies_order",
+      "type": "SocialScience.Measurement.difference_exceeding_bias_identifies_order : ∀ (a b biasA biasB δ : Int),\n  biasA - biasB ≤ δ →\n    δ < SocialScience.Measurement.response a biasA - SocialScience.Measurement.response b biasB → b < a"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.fits_empty' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.fits_empty",
+      "type": "@SocialScience.Learning.fits_empty : ∀ {X Y : Type} (hypothesis : X → Y), SocialScience.Learning.Fits hypothesis []"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.fits_cons_iff' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.fits_cons_iff",
+      "type": "@SocialScience.Learning.fits_cons_iff : ∀ {X Y : Type} (hypothesis : X → Y) (x : X) (y : Y) (evidence : List (X × Y)),\n  SocialScience.Learning.Fits hypothesis ((x, y) :: evidence) ↔\n    hypothesis x = y ∧ SocialScience.Learning.Fits hypothesis evidence"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.fits_append_iff' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.fits_append_iff",
+      "type": "@SocialScience.Learning.fits_append_iff : ∀ {X Y : Type} (hypothesis : X → Y) (first second : List (X × Y)),\n  SocialScience.Learning.Fits hypothesis (first ++ second) ↔\n    SocialScience.Learning.Fits hypothesis first ∧ SocialScience.Learning.Fits hypothesis second"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.more_evidence_narrows_models' does not depend on any axioms",
+      "name": "SocialScience.Learning.more_evidence_narrows_models",
+      "type": "@SocialScience.Learning.more_evidence_narrows_models : ∀ {X Y : Type} (hypothesis : X → Y) {small large : List (X × Y)},\n  (∀ (item : X × Y), item ∈ small → item ∈ large) →\n    SocialScience.Learning.Fits hypothesis large → SocialScience.Learning.Fits hypothesis small"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.truth_survives_correct_label' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.truth_survives_correct_label",
+      "type": "@SocialScience.Learning.truth_survives_correct_label : ∀ {X Y : Type} (truth : X → Y) (evidence : List (X × Y)) (x : X),\n  SocialScience.Learning.Fits truth evidence → SocialScience.Learning.Fits truth ((x, truth x) :: evidence)"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.distinguishing_query_eliminates_rival' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.distinguishing_query_eliminates_rival",
+      "type": "@SocialScience.Learning.distinguishing_query_eliminates_rival : ∀ {X Y : Type} (truth rival : X → Y)\n  (evidence : List (X × Y)) (x : X), rival x ≠ truth x → ¬SocialScience.Learning.Fits rival ((x, truth x) :: evidence)"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.conflicting_labels_impossible' does not depend on any axioms",
+      "name": "SocialScience.Learning.conflicting_labels_impossible",
+      "type": "@SocialScience.Learning.conflicting_labels_impossible : ∀ {X Y : Type} (hypothesis : X → Y) (evidence : List (X × Y))\n  (x : X) (a b : Y), (x, a) ∈ evidence → (x, b) ∈ evidence → a ≠ b → ¬SocialScience.Learning.Fits hypothesis evidence"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.incorrect_label_excludes_truth' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.incorrect_label_excludes_truth",
+      "type": "@SocialScience.Learning.incorrect_label_excludes_truth : ∀ {X Y : Type} (truth : X → Y) (evidence : List (X × Y))\n  (x : X) (label : Y), truth x ≠ label → ¬SocialScience.Learning.Fits truth ((x, label) :: evidence)"
+    },
+    {
+      "axiom_report": "'SocialScience.Learning.duplicate_evidence_same_models' depends on axioms: [propext]",
+      "name": "SocialScience.Learning.duplicate_evidence_same_models",
+      "type": "@SocialScience.Learning.duplicate_evidence_same_models : ∀ {X Y : Type} (hypothesis : X → Y) (evidence : List (X × Y)),\n  SocialScience.Learning.Fits hypothesis (evidence ++ evidence) ↔ SocialScience.Learning.Fits hypothesis evidence"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.observational_equivalence' depends on axioms: [Quot.sound]",
+      "name": "SocialScience.Causality.observational_equivalence",
+      "type": "SocialScience.Causality.observational_equivalence : SocialScience.Causality.observed\n    SocialScience.Causality.treatmentEffect =\n  SocialScience.Causality.observed SocialScience.Causality.commonCause"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.intervention_disagreement' does not depend on any axioms",
+      "name": "SocialScience.Causality.intervention_disagreement",
+      "type": "SocialScience.Causality.intervention_disagreement : SocialScience.Causality.treatmentEffect.outcome true false ≠\n  SocialScience.Causality.commonCause.outcome true false"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.treatment_effect_numerator' does not depend on any axioms",
+      "name": "SocialScience.Causality.treatment_effect_numerator",
+      "type": "SocialScience.Causality.treatment_effect_numerator : SocialScience.Causality.effectNumerator\n    SocialScience.Causality.treatmentEffect =\n  2"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.common_cause_numerator' does not depend on any axioms",
+      "name": "SocialScience.Causality.common_cause_numerator",
+      "type": "SocialScience.Causality.common_cause_numerator : SocialScience.Causality.effectNumerator\n    SocialScience.Causality.commonCause =\n  0"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.no_universal_observational_estimator' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Causality.no_universal_observational_estimator",
+      "type": "SocialScience.Causality.no_universal_observational_estimator : ¬∃ estimate,\n    ∀ (model : SocialScience.Causality.BinaryModel),\n      estimate (SocialScience.Causality.observed model) = SocialScience.Causality.effectNumerator model"
+    },
+    {
+      "axiom_report": "'SocialScience.Causality.all_responses_identify' depends on axioms: [Quot.sound]",
+      "name": "SocialScience.Causality.all_responses_identify",
+      "type": "SocialScience.Causality.all_responses_identify : ∀ (first second : SocialScience.Causality.BinaryModel),\n  (∀ (treatment background : Bool), first.outcome treatment background = second.outcome treatment background) →\n    first = second"
+    },
+    {
+      "axiom_report": "'Solidarity.adj_symm' does not depend on any axioms",
+      "name": "Solidarity.adj_symm",
+      "type": "@Solidarity.adj_symm : ∀ {a b : Nat}, Solidarity.Adj a b → Solidarity.Adj b a"
+    },
+    {
+      "axiom_report": "'Solidarity.reach_trans' does not depend on any axioms",
+      "name": "Solidarity.reach_trans",
+      "type": "@Solidarity.reach_trans : ∀ {a b c : Nat}, Solidarity.Reach a b → Solidarity.Reach b c → Solidarity.Reach a c"
+    },
+    {
+      "axiom_report": "'Solidarity.reach_symm' does not depend on any axioms",
+      "name": "Solidarity.reach_symm",
+      "type": "@Solidarity.reach_symm : ∀ {a b : Nat}, Solidarity.Reach a b → Solidarity.Reach b a"
+    },
+    {
+      "axiom_report": "'Solidarity.zero_reaches' does not depend on any axioms",
+      "name": "Solidarity.zero_reaches",
+      "type": "Solidarity.zero_reaches : ∀ (n : Nat), Solidarity.Reach 0 n"
+    },
+    {
+      "axiom_report": "'Solidarity.path_connected' does not depend on any axioms",
+      "name": "Solidarity.path_connected",
+      "type": "Solidarity.path_connected : ∀ (a b : Nat), Solidarity.Reach a b"
+    },
+    {
+      "axiom_report": "'Solidarity.at_most_two_neighbors' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.at_most_two_neighbors",
+      "type": "Solidarity.at_most_two_neighbors : ∀ (a b : Nat), Solidarity.Adj a b → b = a + 1 ∨ b = a - 1"
+    },
+    {
+      "axiom_report": "'Solidarity.unbounded_reachable' does not depend on any axioms",
+      "name": "Solidarity.unbounded_reachable",
+      "type": "Solidarity.unbounded_reachable : ∀ (bound : Nat), ∃ n, bound < n ∧ Solidarity.Reach 0 n"
+    },
+    {
+      "axiom_report": "'Solidarity.membership_nesting' does not depend on any axioms",
+      "name": "Solidarity.membership_nesting",
+      "type": "@Solidarity.membership_nesting : ∀ {α : Type} {a b c : α → Prop},\n  Solidarity.Included a b → Solidarity.Included b c → Solidarity.Included a c"
+    },
+    {
+      "axiom_report": "'Solidarity.overlapping_memberships' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.overlapping_memberships",
+      "type": "Solidarity.overlapping_memberships : ∃ a b common,\n  Solidarity.Included a common ∧ Solidarity.Included b common ∧ (∃ x, a x ∧ b x) ∧ (∃ x, a x ∧ ¬b x) ∧ ∃ x, b x ∧ ¬a x"
+    },
+    {
+      "axiom_report": "'Solidarity.connected_without_trust' does not depend on any axioms",
+      "name": "Solidarity.connected_without_trust",
+      "type": "Solidarity.connected_without_trust : ∃ trust, (∀ (a b : Nat), Solidarity.Reach a b) ∧ ¬trust 0 1"
+    },
+    {
+      "axiom_report": "'Solidarity.cooperation_stable_iff' depends on axioms: [propext]",
+      "name": "Solidarity.cooperation_stable_iff",
+      "type": "Solidarity.cooperation_stable_iff : ∀ (benefit cost sanction : Int),\n  Solidarity.StableCC benefit cost sanction ↔ cost ≤ sanction"
+    },
+    {
+      "axiom_report": "'Solidarity.no_sanction_failure' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.no_sanction_failure",
+      "type": "Solidarity.no_sanction_failure : ∀ (benefit cost : Int), 0 < cost → ¬Solidarity.StableCC benefit cost 0"
+    },
+    {
+      "axiom_report": "'Solidarity.heterogeneous_cooperation_exists' depends on axioms: [propext]",
+      "name": "Solidarity.heterogeneous_cooperation_exists",
+      "type": "Solidarity.heterogeneous_cooperation_exists : ∃ labels, labels false ≠ labels true ∧ Solidarity.StableCC 3 1 2"
+    },
+    {
+      "axiom_report": "'Solidarity.homogeneous_cooperation_can_fail' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.homogeneous_cooperation_can_fail",
+      "type": "Solidarity.homogeneous_cooperation_can_fail : ∃ labels, labels false = labels true ∧ ¬Solidarity.StableCC 3 1 0"
+    },
+    {
+      "axiom_report": "'Solidarity.symbols_alone_insufficient' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.symbols_alone_insufficient",
+      "type": "Solidarity.symbols_alone_insufficient : ∃ marker, marker false = marker true ∧ ¬Solidarity.StableCC 3 1 0"
+    },
+    {
+      "axiom_report": "'Solidarity.mutual_gain' depends on axioms: [propext, Quot.sound]",
+      "name": "Solidarity.mutual_gain",
+      "type": "Solidarity.mutual_gain : ∀ (benefit cost sanction : Int),\n  cost < benefit + sanction →\n    Solidarity.payoff benefit cost sanction false false < Solidarity.payoff benefit cost sanction true true"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.adding_members_preserves_feasibility' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.adding_members_preserves_feasibility",
+      "type": "@SocialScience.CollectiveAction.adding_members_preserves_feasibility : ∀ {Agent Task : Type}\n  {canDo : Agent → Task → Prop} {small large : Agent → Prop},\n  (∀ (agent : Agent), small agent → large agent) →\n    SocialScience.CollectiveAction.Feasible canDo small → SocialScience.CollectiveAction.Feasible canDo large"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.restricting_members_preserves_acceptance' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.restricting_members_preserves_acceptance",
+      "type": "@SocialScience.CollectiveAction.restricting_members_preserves_acceptance : ∀ {Agent : Type} {cost reward : Agent → Int}\n  {small large : Agent → Prop},\n  (∀ (agent : Agent), small agent → large agent) →\n    SocialScience.CollectiveAction.Accepts cost reward large → SocialScience.CollectiveAction.Accepts cost reward small"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.union_accepts_iff' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.union_accepts_iff",
+      "type": "@SocialScience.CollectiveAction.union_accepts_iff : ∀ {Agent : Type} (cost reward : Agent → Int)\n  (first second : Agent → Prop),\n  (SocialScience.CollectiveAction.Accepts cost reward fun a => first a ∨ second a) ↔\n    SocialScience.CollectiveAction.Accepts cost reward first ∧ SocialScience.CollectiveAction.Accepts cost reward second"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.indispensable_member_withdrawal' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.indispensable_member_withdrawal",
+      "type": "@SocialScience.CollectiveAction.indispensable_member_withdrawal : ∀ {Agent Task : Type} (canDo : Agent → Task → Prop)\n  (group : Agent → Prop) (agent : Agent) (task : Task),\n  (∀ (other : Agent), group other → canDo other task → other = agent) →\n    ¬SocialScience.CollectiveAction.Feasible canDo fun other => group other ∧ other ≠ agent"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.complementary_pair_feasible' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.complementary_pair_feasible",
+      "type": "SocialScience.CollectiveAction.complementary_pair_feasible : SocialScience.CollectiveAction.Feasible\n  SocialScience.CollectiveAction.specialist fun x => True"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.no_specialist_alone_feasible' depends on axioms: [propext]",
+      "name": "SocialScience.CollectiveAction.no_specialist_alone_feasible",
+      "type": "SocialScience.CollectiveAction.no_specialist_alone_feasible : ∀ (agent : Bool),\n  ¬SocialScience.CollectiveAction.Feasible SocialScience.CollectiveAction.specialist fun other => other = agent"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.aggregate_surplus_not_participation' depends on axioms: [propext]",
+      "name": "SocialScience.CollectiveAction.aggregate_surplus_not_participation",
+      "type": "SocialScience.CollectiveAction.aggregate_surplus_not_participation : SocialScience.CollectiveAction.unitCost false +\n      SocialScience.CollectiveAction.unitCost true <\n    SocialScience.CollectiveAction.unequalReward false + SocialScience.CollectiveAction.unequalReward true ∧\n  ¬SocialScience.CollectiveAction.Ready SocialScience.CollectiveAction.specialist\n      SocialScience.CollectiveAction.unitCost SocialScience.CollectiveAction.unequalReward fun x => True"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.repaired_allocation_ready' does not depend on any axioms",
+      "name": "SocialScience.CollectiveAction.repaired_allocation_ready",
+      "type": "SocialScience.CollectiveAction.repaired_allocation_ready : SocialScience.CollectiveAction.Ready\n  SocialScience.CollectiveAction.specialist SocialScience.CollectiveAction.unitCost\n  SocialScience.CollectiveAction.repairedReward fun x => True"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.two_person_budget_iff' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.CollectiveAction.two_person_budget_iff",
+      "type": "SocialScience.CollectiveAction.two_person_budget_iff : ∀ (costA costB budget : Int),\n  (∃ share, costA ≤ share ∧ costB ≤ budget - share) ↔ costA + costB ≤ budget"
+    },
+    {
+      "axiom_report": "'SocialScience.CollectiveAction.acceptable_share_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "SocialScience.CollectiveAction.acceptable_share_interval",
+      "type": "SocialScience.CollectiveAction.acceptable_share_interval : ∀ (costA costB budget share : Int),\n  costA ≤ share ∧ costB ≤ budget - share ↔ costA ≤ share ∧ share ≤ budget - costB"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.reversal_cells_valid' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.reversal_cells_valid",
+      "type": "SocialScience.Aggregation.reversal_cells_valid : 9 ≤ 10 ∧ 80 ≤ 100 ∧ 20 ≤ 100 ∧ 1 ≤ 10 ∧ 0 < 10 ∧ 0 < 100"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.first_stratum_advantage' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.first_stratum_advantage",
+      "type": "SocialScience.Aggregation.first_stratum_advantage : SocialScience.Aggregation.Higher 9 10 80 100"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.second_stratum_advantage' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.second_stratum_advantage",
+      "type": "SocialScience.Aggregation.second_stratum_advantage : SocialScience.Aggregation.Higher 20 100 1 10"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.pooled_reversal' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.pooled_reversal",
+      "type": "SocialScience.Aggregation.pooled_reversal : SocialScience.Aggregation.Higher (80 + 1) (100 + 10) (9 + 20) (10 + 100)"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.simpson_reversal' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.simpson_reversal",
+      "type": "SocialScience.Aggregation.simpson_reversal : SocialScience.Aggregation.Higher 9 10 80 100 ∧\n  SocialScience.Aggregation.Higher 20 100 1 10 ∧\n    SocialScience.Aggregation.Higher (80 + 1) (100 + 10) (9 + 20) (10 + 100)"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.equal_weight_addition_preserves_order' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Aggregation.equal_weight_addition_preserves_order",
+      "type": "SocialScience.Aggregation.equal_weight_addition_preserves_order : ∀ (a b c d : Int), a ≤ b → c ≤ d → a + c ≤ b + d"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.aggregate_cannot_identify_components' depends on axioms: [propext, Quot.sound]",
+      "name": "SocialScience.Aggregation.aggregate_cannot_identify_components",
+      "type": "SocialScience.Aggregation.aggregate_cannot_identify_components : ¬SocialScience.Identifiability.Identified\n    SocialScience.Identifiability.twoComponent fun probe => probe = false"
+    },
+    {
+      "axiom_report": "'SocialScience.Aggregation.recoding_cannot_restore_components' does not depend on any axioms",
+      "name": "SocialScience.Aggregation.recoding_cannot_restore_components",
+      "type": "@SocialScience.Aggregation.recoding_cannot_restore_components : ∀ {Y : Type} (recode : Int → Y),\n  SocialScience.Identifiability.Equivalent (fun p probe => recode (SocialScience.Identifiability.twoComponent p probe))\n    (fun probe => probe = false) (1, 0) (0, 1)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.approach_trajectory' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.approach_trajectory",
+      "type": "ClinicalModels.PublishedCBT.approach_trajectory : ClinicalModels.PublishedCBT.trajectory\n    ClinicalModels.PublishedCBT.approachStep =\n  [ClinicalModels.PublishedCBT.Phase.start, ClinicalModels.PublishedCBT.Phase.stimulus,\n    ClinicalModels.PublishedCBT.Phase.approach, ClinicalModels.PublishedCBT.Phase.interact]"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.avoidance_trajectory' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.avoidance_trajectory",
+      "type": "ClinicalModels.PublishedCBT.avoidance_trajectory : ClinicalModels.PublishedCBT.trajectory\n    ClinicalModels.PublishedCBT.avoidStep =\n  [ClinicalModels.PublishedCBT.Phase.start, ClinicalModels.PublishedCBT.Phase.stimulus,\n    ClinicalModels.PublishedCBT.Phase.avoid, ClinicalModels.PublishedCBT.Phase.safetyCost]"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.avoidance_observational_equivalence' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.avoidance_observational_equivalence",
+      "type": "ClinicalModels.PublishedCBT.avoidance_observational_equivalence : ClinicalModels.PublishedCBT.observedTrajectory true\n    ClinicalModels.PublishedCBT.avoidStep =\n  ClinicalModels.PublishedCBT.observedTrajectory false ClinicalModels.PublishedCBT.avoidStep"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.avoidance_no_perfect_classifier' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.avoidance_no_perfect_classifier",
+      "type": "ClinicalModels.PublishedCBT.avoidance_no_perfect_classifier : ¬∃ classify,\n    ∀ (dangerous : Bool),\n      classify (ClinicalModels.PublishedCBT.observedTrajectory dangerous ClinicalModels.PublishedCBT.avoidStep) =\n        dangerous"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.approach_observations_differ' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.approach_observations_differ",
+      "type": "ClinicalModels.PublishedCBT.approach_observations_differ : ClinicalModels.PublishedCBT.observedTrajectory true\n    ClinicalModels.PublishedCBT.approachStep ≠\n  ClinicalModels.PublishedCBT.observedTrajectory false ClinicalModels.PublishedCBT.approachStep"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.approach_identifies_state' depends on axioms: [propext]",
+      "name": "ClinicalModels.PublishedCBT.approach_identifies_state",
+      "type": "ClinicalModels.PublishedCBT.approach_identifies_state : ∀ (a b : Bool),\n  ClinicalModels.PublishedCBT.observedTrajectory a ClinicalModels.PublishedCBT.approachStep =\n      ClinicalModels.PublishedCBT.observedTrajectory b ClinicalModels.PublishedCBT.approachStep →\n    a = b"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.safe_columns_total_mass' depends on axioms: [propext, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.safe_columns_total_mass",
+      "type": "ClinicalModels.PublishedCBT.safe_columns_total_mass : ∀ (u c : Int) (phase : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.PublishedCBT.mass (ClinicalModels.PublishedCBT.implicitSafe u c phase) = 10 * u"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.danger_columns_total_mass' depends on axioms: [propext, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.danger_columns_total_mass",
+      "type": "ClinicalModels.PublishedCBT.danger_columns_total_mass : ∀ (u : Int) (phase : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.PublishedCBT.mass (ClinicalModels.PublishedCBT.implicitDanger u phase) = 10 * u"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.safe_columns_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.safe_columns_nonnegative",
+      "type": "ClinicalModels.PublishedCBT.safe_columns_nonnegative : ∀ (u c : Int),\n  0 < u →\n    0 ≤ c →\n      c ≤ 10 * u →\n        ∀ (phase : ClinicalModels.PublishedCBT.Phase),\n          ClinicalModels.PublishedCBT.Nonnegative (ClinicalModels.PublishedCBT.implicitSafe u c phase)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.danger_columns_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.danger_columns_nonnegative",
+      "type": "ClinicalModels.PublishedCBT.danger_columns_nonnegative : ∀ (u : Int),\n  0 < u →\n    ∀ (phase : ClinicalModels.PublishedCBT.Phase),\n      ClinicalModels.PublishedCBT.Nonnegative (ClinicalModels.PublishedCBT.implicitDanger u phase)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.implicit_mappings_equal_at_tenth' depends on axioms: [propext, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.implicit_mappings_equal_at_tenth",
+      "type": "ClinicalModels.PublishedCBT.implicit_mappings_equal_at_tenth : ∀ (u : Int) (phase : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.PublishedCBT.implicitSafe u u phase = ClinicalModels.PublishedCBT.implicitDanger u phase"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.approach_implicit_equality_iff' depends on axioms: [propext, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.approach_implicit_equality_iff",
+      "type": "ClinicalModels.PublishedCBT.approach_implicit_equality_iff : ∀ (u c : Int),\n  ClinicalModels.PublishedCBT.implicitSafe u c ClinicalModels.PublishedCBT.Phase.approach =\n      ClinicalModels.PublishedCBT.implicitDanger u ClinicalModels.PublishedCBT.Phase.approach ↔\n    c = u"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.avoidance_implicit_columns_equal' does not depend on any axioms",
+      "name": "ClinicalModels.PublishedCBT.avoidance_implicit_columns_equal",
+      "type": "ClinicalModels.PublishedCBT.avoidance_implicit_columns_equal : ∀ (u c : Int),\n  ClinicalModels.PublishedCBT.implicitSafe u c ClinicalModels.PublishedCBT.Phase.avoid =\n      ClinicalModels.PublishedCBT.implicitDanger u ClinicalModels.PublishedCBT.Phase.avoid ∧\n    ClinicalModels.PublishedCBT.implicitSafe u c ClinicalModels.PublishedCBT.Phase.safetyCost =\n      ClinicalModels.PublishedCBT.implicitDanger u ClinicalModels.PublishedCBT.Phase.safetyCost"
+    },
+    {
+      "axiom_report": "'ClinicalModels.PublishedCBT.explicit_prior_weights' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "name": "ClinicalModels.PublishedCBT.explicit_prior_weights",
+      "type": "ClinicalModels.PublishedCBT.explicit_prior_weights : ∀ (scale safe : Int),\n  0 < scale → 0 ≤ safe → safe ≤ scale → 0 ≤ scale - safe ∧ 0 ≤ safe ∧ scale - safe + safe = scale"
+    },
+    {
+      "axiom_report": "'ClinicalModels.SourceBridge.source_sensory_columns' depends on axioms: [propext]",
+      "name": "ClinicalModels.SourceBridge.source_sensory_columns",
+      "type": "ClinicalModels.SourceBridge.source_sensory_columns : ∀ (p : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.spiderDanger p =\n      ClinicalModels.SourceBridge.bitColumn (ClinicalModels.PublishedCBT.seesSpider p) ∧\n    ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.spiderSafe p =\n        ClinicalModels.SourceBridge.bitColumn (ClinicalModels.PublishedCBT.seesSpider p) ∧\n      ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.arousalDanger p =\n          ClinicalModels.SourceBridge.bitColumn (ClinicalModels.PublishedCBT.highArousal p) ∧\n        ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.arousalSafe p =\n          ClinicalModels.SourceBridge.bitColumn (ClinicalModels.PublishedCBT.highArousal p)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.SourceBridge.source_affective_columns' depends on axioms: [propext]",
+      "name": "ClinicalModels.SourceBridge.source_affective_columns",
+      "type": "ClinicalModels.SourceBridge.source_affective_columns : ∀ (p : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.affectDanger p =\n      ClinicalModels.SourceBridge.affectColumn (ClinicalModels.PublishedCBT.affect true p) ∧\n    ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.affectSafe p =\n      ClinicalModels.SourceBridge.affectColumn (ClinicalModels.PublishedCBT.affect false p)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.SourceBridge.source_transition_columns' depends on axioms: [propext]",
+      "name": "ClinicalModels.SourceBridge.source_transition_columns",
+      "type": "ClinicalModels.SourceBridge.source_transition_columns : ∀ (p : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.transitionApproach p =\n      ClinicalModels.SourceBridge.phaseColumn (ClinicalModels.PublishedCBT.approachStep p) ∧\n    ClinicalModels.SourceBridge.column ClinicalModels.SourceTables.transitionAvoid p =\n      ClinicalModels.SourceBridge.phaseColumn (ClinicalModels.PublishedCBT.avoidStep p)"
+    },
+    {
+      "axiom_report": "'ClinicalModels.SourceBridge.source_implicit_columns' depends on axioms: [propext]",
+      "name": "ClinicalModels.SourceBridge.source_implicit_columns",
+      "type": "ClinicalModels.SourceBridge.source_implicit_columns : ∀ (u c : Int) (p : ClinicalModels.PublishedCBT.Phase),\n  ClinicalModels.SourceBridge.column (ClinicalModels.SourceTables.implicitDanger u c) p =\n      ClinicalModels.SourceBridge.weightsColumn (ClinicalModels.PublishedCBT.implicitDanger u p) ∧\n    ClinicalModels.SourceBridge.column (ClinicalModels.SourceTables.implicitSafe u c) p =\n      ClinicalModels.SourceBridge.weightsColumn (ClinicalModels.PublishedCBT.implicitSafe u c p)"
+    }
+  ]
+}
