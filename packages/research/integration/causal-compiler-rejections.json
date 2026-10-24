@@ -139,6 +139,927 @@
       "owned_audit_ran": false,
       "rust_job": 120795855573,
       "rust_status": "success"
+    },
+    {
+      "source": "d372059e9ced3942e65341a19547ea20af5317f7",
+      "run": 40068901524,
+      "job": 120798009857,
+      "status": "REJECTED_COMPLETE_ORIGINAL_TARGET",
+      "target": "ResearchCommons.Integration.Exports",
+      "selected_sources": 1077,
+      "successful_objects": 934,
+      "newly_compiled": 46,
+      "reused_retained": 888,
+      "failed_modules": [
+        {
+          "compiler_exit": "exit status: 1",
+          "module": "FiniteQueryPlan"
+        },
+        {
+          "compiler_exit": "exit status: 1",
+          "module": "BinaryBoundaryCircuit"
+        },
+        {
+          "compiler_exit": "exit status: 1",
+          "module": "SelectedSourceProfile"
+        }
+      ],
+      "blocked_modules": [
+        {
+          "module": "BinaryCircuitMinor",
+          "unavailable_imports": [
+            "BinaryBoundaryCircuit"
+          ]
+        },
+        {
+          "module": "SelectedAncestry",
+          "unavailable_imports": [
+            "SelectedSourceProfile"
+          ]
+        },
+        {
+          "module": "SelectedProfileSeparation",
+          "unavailable_imports": [
+            "SelectedAncestry"
+          ]
+        },
+        {
+          "module": "CanonicalLatentRoots",
+          "unavailable_imports": [
+            "SelectedProfileSeparation"
+          ]
+        },
+        {
+          "module": "CanonicalFiniteBounds",
+          "unavailable_imports": [
+            "CanonicalLatentRoots"
+          ]
+        },
+        {
+          "module": "FiniteProfileRegistry",
+          "unavailable_imports": [
+            "CanonicalFiniteBounds"
+          ]
+        },
+        {
+          "module": "CanonicalRootSeparation",
+          "unavailable_imports": [
+            "FiniteProfileRegistry"
+          ]
+        },
+        {
+          "module": "MarkedGraphEquivalence",
+          "unavailable_imports": [
+            "CanonicalRootSeparation"
+          ]
+        },
+        {
+          "module": "CommonIndicatorRoots",
+          "unavailable_imports": [
+            "MarkedGraphEquivalence"
+          ]
+        },
+        {
+          "module": "CommonSelectedIndicatorSource",
+          "unavailable_imports": [
+            "CommonIndicatorRoots"
+          ]
+        },
+        {
+          "module": "OriginalLatentProjection",
+          "unavailable_imports": [
+            "CommonSelectedIndicatorSource"
+          ]
+        },
+        {
+          "module": "OriginalProjectionAncestry",
+          "unavailable_imports": [
+            "OriginalLatentProjection"
+          ]
+        },
+        {
+          "module": "GeneralActiveWalkReduction",
+          "unavailable_imports": [
+            "OriginalProjectionAncestry"
+          ]
+        },
+        {
+          "module": "OriginalProjectionLifting",
+          "unavailable_imports": [
+            "GeneralActiveWalkReduction"
+          ]
+        },
+        {
+          "module": "LatentColliderDetours",
+          "unavailable_imports": [
+            "OriginalProjectionLifting"
+          ]
+        },
+        {
+          "module": "ReadyRetainedNormalization",
+          "unavailable_imports": [
+            "LatentColliderDetours"
+          ]
+        },
+        {
+          "module": "OriginalProjectionContraction",
+          "unavailable_imports": [
+            "ReadyRetainedNormalization"
+          ]
+        },
+        {
+          "module": "OriginalIndicatorProjection",
+          "unavailable_imports": [
+            "OriginalProjectionContraction"
+          ]
+        },
+        {
+          "module": "OriginalCanonicalSourceAdapter",
+          "unavailable_imports": [
+            "OriginalIndicatorProjection"
+          ]
+        },
+        {
+          "module": "EndpointColliderActivation",
+          "unavailable_imports": [
+            "OriginalCanonicalSourceAdapter"
+          ]
+        },
+        {
+          "module": "InducingPathSeparation",
+          "unavailable_imports": [
+            "EndpointColliderActivation"
+          ]
+        },
+        {
+          "module": "LiteralSelectedMAG",
+          "unavailable_imports": [
+            "InducingPathSeparation"
+          ]
+        },
+        {
+          "module": "SelectedMAGValidity",
+          "unavailable_imports": [
+            "LiteralSelectedMAG"
+          ]
+        },
+        {
+          "module": "FiniteOriginalTargetImage",
+          "unavailable_imports": [
+            "SelectedMAGValidity"
+          ]
+        },
+        {
+          "module": "MarginalIndicatorAncestry",
+          "unavailable_imports": [
+            "SelectedMAGValidity"
+          ]
+        },
+        {
+          "module": "FiniteGraphDecisions",
+          "unavailable_imports": [
+            "FiniteOriginalTargetImage"
+          ]
+        },
+        {
+          "module": "RefinedObservedSeparator",
+          "unavailable_imports": [
+            "MarginalIndicatorAncestry"
+          ]
+        },
+        {
+          "module": "FiniteSelectedMAGDecision",
+          "unavailable_imports": [
+            "FiniteGraphDecisions"
+          ]
+        },
+        {
+          "module": "PartialObservedQueryFamily",
+          "unavailable_imports": [
+            "RefinedObservedSeparator"
+          ]
+        },
+        {
+          "module": "ExplicitProfileDecoding",
+          "unavailable_imports": [
+            "FiniteSelectedMAGDecision"
+          ]
+        },
+        {
+          "module": "RefinedIndicatorSeparator",
+          "unavailable_imports": [
+            "PartialObservedQueryFamily",
+            "FiniteOriginalTargetImage"
+          ]
+        },
+        {
+          "module": "ComputableCanonicalLabels",
+          "unavailable_imports": [
+            "ExplicitProfileDecoding"
+          ]
+        },
+        {
+          "module": "PartialIndicatorQueryFamily",
+          "unavailable_imports": [
+            "RefinedIndicatorSeparator"
+          ]
+        },
+        {
+          "module": "CommonObservedMAG",
+          "unavailable_imports": [
+            "PartialIndicatorQueryFamily"
+          ]
+        },
+        {
+          "module": "FiniteTranscriptDecoder",
+          "unavailable_imports": [
+            "ComputableCanonicalLabels"
+          ]
+        },
+        {
+          "module": "DiscriminatingSeparatorStatus",
+          "unavailable_imports": [
+            "CommonObservedMAG"
+          ]
+        },
+        {
+          "module": "InducingEndpointMarks",
+          "unavailable_imports": [
+            "DiscriminatingSeparatorStatus"
+          ]
+        },
+        {
+          "module": "MarkedActiveWalks",
+          "unavailable_imports": [
+            "InducingEndpointMarks"
+          ]
+        },
+        {
+          "module": "ConditionedEdgeWalks",
+          "unavailable_imports": [
+            "MarkedActiveWalks"
+          ]
+        },
+        {
+          "module": "MAGPathLifting",
+          "unavailable_imports": [
+            "ConditionedEdgeWalks"
+          ]
+        },
+        {
+          "module": "MAGMaximality",
+          "unavailable_imports": [
+            "MAGPathLifting"
+          ]
+        },
+        {
+          "module": "ObservedMAGAncestry",
+          "unavailable_imports": [
+            "MAGMaximality"
+          ]
+        },
+        {
+          "module": "ClosedColliderWalks",
+          "unavailable_imports": [
+            "ObservedMAGAncestry"
+          ]
+        },
+        {
+          "module": "WeakInducingEdges",
+          "unavailable_imports": [
+            "ClosedColliderWalks"
+          ]
+        },
+        {
+          "module": "OriginalWeakConnection",
+          "unavailable_imports": [
+            "WeakInducingEdges"
+          ]
+        },
+        {
+          "module": "WeakRouteNormalization",
+          "unavailable_imports": [
+            "OriginalWeakConnection"
+          ]
+        },
+        {
+          "module": "OriginalMAGConnection",
+          "unavailable_imports": [
+            "WeakRouteNormalization"
+          ]
+        },
+        {
+          "module": "CommonDiscriminatingParents",
+          "unavailable_imports": [
+            "OriginalMAGConnection"
+          ]
+        },
+        {
+          "module": "VertexActivePaths",
+          "unavailable_imports": [
+            "CommonDiscriminatingParents"
+          ]
+        },
+        {
+          "module": "MinimalActivePaths",
+          "unavailable_imports": [
+            "VertexActivePaths"
+          ]
+        },
+        {
+          "module": "AncestralShortcutGeometry",
+          "unavailable_imports": [
+            "MinimalActivePaths"
+          ]
+        },
+        {
+          "module": "ColliderMinimalActivePaths",
+          "unavailable_imports": [
+            "MinimalActivePaths"
+          ]
+        },
+        {
+          "module": "MinimalPathChord",
+          "unavailable_imports": [
+            "AncestralShortcutGeometry"
+          ]
+        },
+        {
+          "module": "DiscriminatingSectionExtraction",
+          "unavailable_imports": [
+            "MinimalPathChord"
+          ]
+        },
+        {
+          "module": "ActivePathReversal",
+          "unavailable_imports": [
+            "DiscriminatingSectionExtraction"
+          ]
+        },
+        {
+          "module": "VertexDiscriminatingSections",
+          "unavailable_imports": [
+            "ActivePathReversal"
+          ]
+        },
+        {
+          "module": "IntervalDependency",
+          "unavailable_imports": [
+            "VertexDiscriminatingSections"
+          ]
+        },
+        {
+          "module": "LiteralMAGInducingChains",
+          "unavailable_imports": [
+            "IntervalDependency",
+            "WeakInducingEdges"
+          ]
+        },
+        {
+          "module": "DiscriminatingIntervalGeometry",
+          "unavailable_imports": [
+            "LiteralMAGInducingChains"
+          ]
+        },
+        {
+          "module": "IndexedDiscriminatingSections",
+          "unavailable_imports": [
+            "DiscriminatingIntervalGeometry"
+          ]
+        },
+        {
+          "module": "ReversedPositionTrace",
+          "unavailable_imports": [
+            "IndexedDiscriminatingSections"
+          ]
+        },
+        {
+          "module": "MinimalPathOrderDependencies",
+          "unavailable_imports": [
+            "ReversedPositionTrace"
+          ]
+        },
+        {
+          "module": "FiniteDependencyInduction",
+          "unavailable_imports": [
+            "MinimalPathOrderDependencies"
+          ]
+        },
+        {
+          "module": "DiscriminatingStatusTransport",
+          "unavailable_imports": [
+            "FiniteDependencyInduction"
+          ]
+        },
+        {
+          "module": "IndexedPrefixColliders",
+          "unavailable_imports": [
+            "DiscriminatingStatusTransport"
+          ]
+        },
+        {
+          "module": "ShortestPathStatusInvariance",
+          "unavailable_imports": [
+            "IndexedPrefixColliders"
+          ]
+        },
+        {
+          "module": "MinimumDirectedPathTransfer",
+          "unavailable_imports": [
+            "ShortestPathStatusInvariance"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowGeometry",
+          "unavailable_imports": [
+            "MinimumDirectedPathTransfer"
+          ]
+        },
+        {
+          "module": "ActivationBranchDistances",
+          "unavailable_imports": [
+            "ColliderMinimalActivePaths",
+            "ClosestFirstArrowGeometry"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowBoundary",
+          "unavailable_imports": [
+            "ClosestFirstArrowGeometry"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowFlank",
+          "unavailable_imports": [
+            "ClosestFirstArrowBoundary"
+          ]
+        },
+        {
+          "module": "SafeDirectedBranches",
+          "unavailable_imports": [
+            "ActivationBranchDistances"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowSplice",
+          "unavailable_imports": [
+            "ClosestFirstArrowFlank"
+          ]
+        },
+        {
+          "module": "ColliderSpliceCosts",
+          "unavailable_imports": [
+            "SafeDirectedBranches"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowPotential",
+          "unavailable_imports": [
+            "ClosestFirstArrowSplice"
+          ]
+        },
+        {
+          "module": "DirectedBranchSplices",
+          "unavailable_imports": [
+            "ColliderSpliceCosts"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowIncidence",
+          "unavailable_imports": [
+            "ClosestFirstArrowPotential"
+          ]
+        },
+        {
+          "module": "ColliderMinimumReversal",
+          "unavailable_imports": [
+            "DirectedBranchSplices"
+          ]
+        },
+        {
+          "module": "ActivationMainPathExclusion",
+          "unavailable_imports": [
+            "ColliderMinimumReversal"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowContradiction",
+          "unavailable_imports": [
+            "ClosestFirstArrowIncidence"
+          ]
+        },
+        {
+          "module": "ActivationBranchPairSplice",
+          "unavailable_imports": [
+            "ActivationMainPathExclusion"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowArms",
+          "unavailable_imports": [
+            "ClosestFirstArrowContradiction"
+          ]
+        },
+        {
+          "module": "ActivationBranchPairExclusion",
+          "unavailable_imports": [
+            "ActivationBranchPairSplice"
+          ]
+        },
+        {
+          "module": "ClosestFirstArrow",
+          "unavailable_imports": [
+            "ClosestFirstArrowArms"
+          ]
+        },
+        {
+          "module": "BinaryTrekDecomposition",
+          "unavailable_imports": [
+            "ActivationBranchPairExclusion"
+          ]
+        },
+        {
+          "module": "ClosestPathAncestry",
+          "unavailable_imports": [
+            "ClosestFirstArrow"
+          ]
+        },
+        {
+          "module": "BinaryAncestralMoralConnection",
+          "unavailable_imports": [
+            "BinaryTrekDecomposition"
+          ]
+        },
+        {
+          "module": "FiniteDAGRank",
+          "unavailable_imports": [
+            "BinaryTrekDecomposition"
+          ]
+        },
+        {
+          "module": "SharedSeparatorMEC",
+          "unavailable_imports": [
+            "ClosestPathAncestry"
+          ]
+        },
+        {
+          "module": "BinaryPathConstraintPropagation",
+          "unavailable_imports": [
+            "BinaryCircuitMinor",
+            "FiniteDAGRank"
+          ]
+        },
+        {
+          "module": "RestrictedFamilyCertificate",
+          "unavailable_imports": [
+            "SharedSeparatorMEC"
+          ]
+        },
+        {
+          "module": "BinaryTraceIncidence",
+          "unavailable_imports": [
+            "BinaryPathConstraintPropagation"
+          ]
+        },
+        {
+          "module": "RestrictedQueryActions",
+          "unavailable_imports": [
+            "RestrictedFamilyCertificate",
+            "FiniteTranscriptDecoder"
+          ]
+        },
+        {
+          "module": "BinaryActivationFamily",
+          "unavailable_imports": [
+            "BinaryTraceIncidence"
+          ]
+        },
+        {
+          "module": "OrderedFamilyAgreement",
+          "unavailable_imports": [
+            "RestrictedQueryActions"
+          ]
+        },
+        {
+          "module": "BinaryWitnessCircuit",
+          "unavailable_imports": [
+            "BinaryActivationFamily"
+          ]
+        },
+        {
+          "module": "RestrictedHistoryCompleteness",
+          "unavailable_imports": [
+            "OrderedFamilyAgreement"
+          ]
+        },
+        {
+          "module": "BinaryActivePathMinor",
+          "unavailable_imports": [
+            "BinaryWitnessCircuit"
+          ]
+        },
+        {
+          "module": "TwoPhaseRestrictedHistory",
+          "unavailable_imports": [
+            "RestrictedHistoryCompleteness"
+          ]
+        },
+        {
+          "module": "BinarySelectionSinkComplement",
+          "unavailable_imports": [
+            "BinaryActivePathMinor"
+          ]
+        },
+        {
+          "module": "BinaryTrekSourceAlignment",
+          "unavailable_imports": [
+            "BinaryActivePathMinor"
+          ]
+        },
+        {
+          "module": "RestrictedBudgetAndHonesty",
+          "unavailable_imports": [
+            "TwoPhaseRestrictedHistory"
+          ]
+        },
+        {
+          "module": "BinarySharedMechanismRegistry",
+          "unavailable_imports": [
+            "BinarySelectionSinkComplement"
+          ]
+        },
+        {
+          "module": "EffectiveQueryEnumeration",
+          "unavailable_imports": [
+            "RestrictedBudgetAndHonesty"
+          ]
+        },
+        {
+          "module": "BinaryCommonPositiveMinorFamily",
+          "unavailable_imports": [
+            "BinarySharedMechanismRegistry"
+          ]
+        },
+        {
+          "module": "BinaryIndicatorLawFactorization",
+          "unavailable_imports": [
+            "BinarySharedMechanismRegistry"
+          ]
+        },
+        {
+          "module": "FullClassQueryGame",
+          "unavailable_imports": [
+            "EffectiveQueryEnumeration",
+            "FiniteQueryPlan"
+          ]
+        },
+        {
+          "module": "BinaryConditionalIndependenceAlgebra",
+          "unavailable_imports": [
+            "BinaryIndicatorLawFactorization"
+          ]
+        },
+        {
+          "module": "RestrictedInteractivePlan",
+          "unavailable_imports": [
+            "FullClassQueryGame"
+          ]
+        },
+        {
+          "module": "BinarySelectedInvarianceIdentity",
+          "unavailable_imports": [
+            "BinaryConditionalIndependenceAlgebra"
+          ]
+        },
+        {
+          "module": "RestrictedQueryBudgetBound",
+          "unavailable_imports": [
+            "RestrictedInteractivePlan"
+          ]
+        },
+        {
+          "module": "BinaryAncestralElimination",
+          "unavailable_imports": [
+            "BinarySelectedInvarianceIdentity",
+            "BinaryAncestralMoralConnection"
+          ]
+        },
+        {
+          "module": "BinaryAssignmentElimination",
+          "unavailable_imports": [
+            "BinaryAncestralElimination"
+          ]
+        },
+        {
+          "module": "BinaryAncestralMarginal",
+          "unavailable_imports": [
+            "BinaryAssignmentElimination"
+          ]
+        },
+        {
+          "module": "BinaryFactorElimination",
+          "unavailable_imports": [
+            "BinaryAncestralMarginal"
+          ]
+        },
+        {
+          "module": "BinaryMoralFactorization",
+          "unavailable_imports": [
+            "BinaryFactorElimination"
+          ]
+        },
+        {
+          "module": "BinaryNestedElimination",
+          "unavailable_imports": [
+            "BinaryMoralFactorization"
+          ]
+        },
+        {
+          "module": "BinaryGlobalMarkov",
+          "unavailable_imports": [
+            "BinaryNestedElimination"
+          ]
+        },
+        {
+          "module": "BinaryCommonFaithfulSource",
+          "unavailable_imports": [
+            "BinaryGlobalMarkov",
+            "BinaryCommonPositiveMinorFamily"
+          ]
+        },
+        {
+          "module": "BinarySelectedProbabilityLaw",
+          "unavailable_imports": [
+            "BinaryCommonFaithfulSource"
+          ]
+        },
+        {
+          "module": "BinaryFaithfulInvariance",
+          "unavailable_imports": [
+            "BinarySelectedProbabilityLaw"
+          ]
+        },
+        {
+          "module": "BinarySelectionQuerySemantics",
+          "unavailable_imports": [
+            "BinarySelectedProbabilityLaw"
+          ]
+        },
+        {
+          "module": "BinaryOriginalSourceLabels",
+          "unavailable_imports": [
+            "BinaryFaithfulInvariance",
+            "RestrictedInteractivePlan"
+          ]
+        },
+        {
+          "module": "BinaryPhysicalOracle",
+          "unavailable_imports": [
+            "BinaryOriginalSourceLabels",
+            "BinarySelectionQuerySemantics"
+          ]
+        },
+        {
+          "module": "BinaryPhysicalGame",
+          "unavailable_imports": [
+            "BinaryPhysicalOracle",
+            "RestrictedQueryBudgetBound"
+          ]
+        },
+        {
+          "module": "EmptyInterventionTarget",
+          "unavailable_imports": [
+            "BinaryPhysicalGame"
+          ]
+        },
+        {
+          "module": "HardFamilyGraphs",
+          "unavailable_imports": [
+            "BinaryPhysicalGame"
+          ]
+        },
+        {
+          "module": "HardFamilyActivePaths",
+          "unavailable_imports": [
+            "HardFamilyGraphs"
+          ]
+        },
+        {
+          "module": "HardFamilyObservedSignature",
+          "unavailable_imports": [
+            "HardFamilyActivePaths"
+          ]
+        },
+        {
+          "module": "HardFamilyIndicatorSignature",
+          "unavailable_imports": [
+            "HardFamilyObservedSignature"
+          ]
+        },
+        {
+          "module": "HardFamilyOriginalSources",
+          "unavailable_imports": [
+            "HardFamilyIndicatorSignature"
+          ]
+        },
+        {
+          "module": "HardFamilyActionSignature",
+          "unavailable_imports": [
+            "HardFamilyOriginalSources"
+          ]
+        },
+        {
+          "module": "HardFamilyFullTarget",
+          "unavailable_imports": [
+            "HardFamilyActionSignature",
+            "EmptyInterventionTarget"
+          ]
+        },
+        {
+          "module": "HardFamilyIndexCount",
+          "unavailable_imports": [
+            "HardFamilyFullTarget"
+          ]
+        },
+        {
+          "module": "HardFamilyAdaptiveLower",
+          "unavailable_imports": [
+            "HardFamilyIndexCount"
+          ]
+        },
+        {
+          "module": "HardFamilyExactGame",
+          "unavailable_imports": [
+            "HardFamilyAdaptiveLower"
+          ]
+        },
+        {
+          "module": "HardFamilyUnboundedRuns",
+          "unavailable_imports": [
+            "HardFamilyExactGame"
+          ]
+        },
+        {
+          "module": "HardFamilyRandomizedLower",
+          "unavailable_imports": [
+            "HardFamilyUnboundedRuns"
+          ]
+        },
+        {
+          "module": "ResearchCommons.Claims.Causal",
+          "unavailable_imports": [
+            "BinaryPhysicalGame",
+            "EmptyInterventionTarget",
+            "HardFamilyExactGame",
+            "HardFamilyRandomizedLower",
+            "BinaryTrekSourceAlignment"
+          ]
+        },
+        {
+          "module": "ResearchCommons.Integration.Exports",
+          "unavailable_imports": [
+            "ResearchCommons.Claims.Causal"
+          ]
+        }
+      ],
+      "compiler_errors": 20,
+      "diagnostic_contexts": [
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/FiniteQueryPlan.lean:33:81: error: unsolved goals\nI : Type uI\ninst✝ : DecidableEq I\nr : I → Bool\ni : I\nanswer : Bool\n⊢ (if True then answer else r i) = answer",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/FiniteQueryPlan.lean:81:67: error: No goals to be solved",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:77:32: error: unsolved goals\ncase copy.false\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nvertex : V\nparents : { p // edge p vertex } → Bool\nparent : V\nallowed : edge parent vertex\nearlier : c.rank parent < c.rank vertex\nh : c.gate vertex = Gate.copy parent allowed earlier\n⊢ (0 ≤ if parents ⟨parent, allowed⟩ = true then 1 else 0) ∧ (if parents ⟨parent, allowed⟩ = true then 1 else 0) ≤ 1\n\ncase copy.true\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nvertex : V\nparents : { p // edge p vertex } → Bool\nparent : V\nallowed : edge parent vertex\nearlier : c.rank parent < c.rank vertex\nh : c.gate vertex = Gate.copy parent allowed earlier\n⊢ (0 ≤ if parents ⟨parent, allowed⟩ = true then 1 else 0) ∧ (if parents ⟨parent, allowed⟩ = true then 1 else 0) ≤ 1",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:79:69: error: unsolved goals\ncase xor.false\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nvertex : V\nparents : { p // edge p vertex } → Bool\nleft right : V\nallowLeft : edge left vertex\nallowRight : edge right vertex\nearlierLeft : c.rank left < c.rank vertex\nearlierRight : c.rank right < c.rank vertex\nh : c.gate vertex = Gate.xor left right allowLeft allowRight earlierLeft earlierRight\n⊢ (0 ≤ if parents ⟨left, allowLeft⟩ = parents ⟨right, allowRight⟩ then 0 else 1) ∧\n(if parents ⟨left, allowLeft⟩ = parents ⟨right, allowRight⟩ then 0 else 1) ≤ 1\n\ncase xor.true\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nvertex : V\nparents : { p // edge p vertex } → Bool\nleft right : V\nallowLeft : edge left vertex\nallowRight : edge right vertex\nearlierLeft : c.rank left < c.rank vertex\nearlierRight : c.rank right < c.rank vertex\nh : c.gate vertex = Gate.xor left right allowLeft allowRight earlierLeft earlierRight\n⊢ (0 ≤ if parents ⟨left, allowLeft⟩ = parents ⟨right, allowRight⟩ then 0 else 1) ∧\n(if parents ⟨left, allowLeft⟩ = parents ⟨right, allowRight⟩ then 0 else 1) ≤ 1",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:103:8: error: unsolved goals\ncase off\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex : V\nh : c.gate vertex = Gate.off\noutput : c.value bits vertex = false\n⊢ (match c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier => if (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n0",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:106:15: error: unsolved goals\ncase fair.false\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex : V\nindex : R\nh : c.gate vertex = Gate.fair index\noutput : c.value bits vertex = bits index\n⊢ (if bits index = true then\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1 / 2\n\ncase fair.true\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex : V\nindex : R\nh : c.gate vertex = Gate.fair index\noutput : c.value bits vertex = bits index\n⊢ (if bits index = true then\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1 / 2",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:109:32: error: unsolved goals\ncase copy.false\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex parent : V\nallowed : edge parent vertex\nearlier : c.rank parent < c.rank vertex\nh : c.gate vertex = Gate.copy parent allowed earlier\noutput : c.value bits vertex = c.value bits parent\n⊢ (if c.value bits parent = true then\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1\n\ncase copy.true\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex parent : V\nallowed : edge parent vertex\nearlier : c.rank parent < c.rank vertex\nh : c.gate vertex = Gate.copy parent allowed earlier\noutput : c.value bits vertex = c.value bits parent\n⊢ (if c.value bits parent = true then\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:112:69: error: unsolved goals\ncase xor.false.false\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex left right : V\nallowLeft : edge left vertex\nallowRight : edge right vertex\nearlierLeft : c.rank left < c.rank vertex\nearlierRight : c.rank right < c.rank vertex\nh : c.gate vertex = Gate.xor left right allowLeft allowRight earlierLeft earlierRight\noutput : c.value bits vertex = (c.value bits left ^^ c.value bits right)\n⊢ (if c.value bits left = c.value bits right then\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1\n\ncase xor.false.true\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nbits : R → Bool\nvertex left right : V\nallowLeft : edge left vertex\nallowRight : edge right vertex\nearlierLeft : c.rank left < c.rank vertex\nearlierRight : c.rank right < c.rank vertex\nh : c.gate vertex = Gate.xor left right allowLeft allowRight earlierLeft earlierRight\noutput : c.value bits vertex = (c.value bits left ^^ c.value bits right)\n⊢ (if c.value bits left = c.value bits right then\n1 -\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1\nelse\nmatch c.gate (row edge (c.value bits) vertex).fst with\n| Gate.off => 0\n| Gate.fair index => 1 / 2\n| Gate.copy parent allowed earlier =>\nif (row edge (c.value bits) vertex).snd ⟨parent, allowed⟩ = true then 1 else 0\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nif\n(row edge (c.value bits) vertex).snd ⟨left, allowLeft⟩ =\n(row edge (c.value bits) vertex).snd ⟨right, allowRight⟩ then\n0\nelse 1) =\n1\n",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/BinaryBoundaryCircuit.lean:166:26: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\nc.value (c.rootBits w) left\nin the target expression\nw vertex =\nmatch Gate.xor left right allowLeft allowRight earlierLeft earlierRight with\n| Gate.off => false\n| Gate.fair i => c.rootBits w i\n| Gate.copy parent allowed earlier => c.value (c.rootBits w) parent\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nc.value (c.rootBits w) left ^^ c.value (c.rootBits w) right\n\ncase ind.xor\nV : Type u\ninst✝¹ : Fintype V\ninst✝ : DecidableEq V\nedge : V → V → Prop\nR : Type v\nc : BoundaryCircuit edge R\nw : Assignment V\nnonzero : jointMass edge c.parameter w ≠ 0\nfactorNonzero : ∀ (vertex : V), bernoulliMass c.parameter (row edge w vertex) (w vertex) ≠ 0\nn : ℕ\nih : ∀ m < n, ∀ (vertex : V), c.rank vertex = m → w vertex = c.value (c.rootBits w) vertex\nvertex : V\nrankEq : c.rank vertex = n\nfactorNZ : bernoulliMass c.parameter (row edge w vertex) (w vertex) ≠ 0\nleft right : V\nallowLeft : edge left vertex\nallowRight : edge right vertex\nearlierLeft : c.rank left < c.rank vertex\nearlierRight : c.rank right < c.rank vertex\nh : c.gate vertex = Gate.xor left right allowLeft allowRight earlierLeft earlierRight\nleftValue : w left = c.value (c.rootBits w) left\nrightValue : w right = c.value (c.rootBits w) right\ndeterministic : w vertex = (w left ^^ w right)\n⊢ w vertex =\nmatch Gate.xor left right allowLeft allowRight earlierLeft earlierRight with\n| Gate.off => false\n| Gate.fair i => c.rootBits w i\n| Gate.copy parent allowed earlier => c.value (c.rootBits w) parent\n| Gate.xor left right allowLeft allowRight earlierLeft earlierRight =>\nc.value (c.rootBits w) left ^^ c.value (c.rootBits w) right",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:131:14: error: Type mismatch: After simplification, term\ncongrArg (List.cons (selectedArrival t)) heq\nhas type\n@Eq (List (Arrival (X ⊕ S))) (selectedArrival t :: xs)\n(selectedArrival t :: (List.map selectedArrival vs ++ observedArrival x (some m) :: rest))\nbut is expected to have type\n@Eq (List (Arrival (X ⊕ S))) ({ vertex := Sum.inr t, incoming := some Mark.head } :: xs)\n(selectedArrival t :: (List.map selectedArrival vs ++ observedArrival x (some m) :: rest))",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:161:16: error: don't know how to synthesize implicit argument `α`\n@List.cons (Arrival (?m.111 ⊕ S)) (selectedArrival s) (List.map selectedArrival xs)\ncontext:\nX : Type u\nS : Type v\nH : SelectedGraph X S\nC A : X ⊕ S → Prop\nselected_active : ∀ (s : S), A (Sum.inr s)\nx y : X\nmx my : Mark\nprevious : Option Mark\nleft_active :\nmatch previous with\n| none => True\n| some m => ActiveAt C A (Sum.inl x) m mx\nleft✝ : x ≠ y\ns t : S\nhx : H.boundary x mx s\nhy : H.boundary y my t\nxs : List S\nhst : Route H.selectionEdge s xs t\n⊢ Type (max v ?u.85)",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:161:37: error: don't know how to synthesize implicit argument `β`\n@List.map S (Arrival (?m.111 ⊕ S)) selectedArrival xs\ncontext:\nX : Type u\nS : Type v\nH : SelectedGraph X S\nC A : X ⊕ S → Prop\nselected_active : ∀ (s : S), A (Sum.inr s)\nx y : X\nmx my : Mark\nprevious : Option Mark\nleft_active :\nmatch previous with\n| none => True\n| some m => ActiveAt C A (Sum.inl x) m mx\nleft✝ : x ≠ y\ns t : S\nhx : H.boundary x mx s\nhy : H.boundary y my t\nxs : List S\nhst : Route H.selectionEdge s xs t\n⊢ Type (max v ?u.85)",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:161:44: error: don't know how to synthesize implicit argument `X`\n@selectedArrival ?m.111 S\ncontext:\nX : Type u\nS : Type v\nH : SelectedGraph X S\nC A : X ⊕ S → Prop\nselected_active : ∀ (s : S), A (Sum.inr s)\nx y : X\nmx my : Mark\nprevious : Option Mark\nleft_active :\nmatch previous with\n| none => True\n| some m => ActiveAt C A (Sum.inl x) m mx\nleft✝ : x ≠ y\ns t : S\nhx : H.boundary x mx s\nhy : H.boundary y my t\nxs : List S\nhst : Route H.selectionEdge s xs t\n⊢ Type ?u.85",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:161:16: error: don't know how to synthesize implicit argument `X`\n@selectedArrival ?m.111 S s\ncontext:\nX : Type u\nS : Type v\nH : SelectedGraph X S\nC A : X ⊕ S → Prop\nselected_active : ∀ (s : S), A (Sum.inr s)\nx y : X\nmx my : Mark\nprevious : Option Mark\nleft_active :\nmatch previous with\n| none => True\n| some m => ActiveAt C A (Sum.inl x) m mx\nleft✝ : x ≠ y\ns t : S\nhx : H.boundary x mx s\nhy : H.boundary y my t\nxs : List S\nhst : Route H.selectionEdge s xs t\n⊢ Type ?u.85",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:161:6: error: failed to infer `let` declaration type",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:159:69: error: unsolved goals\nX : Type u\nS : Type v\nH : SelectedGraph X S\nC A : X ⊕ S → Prop\nselected_active : ∀ (s : S), A (Sum.inr s)\nx y : X\nmx my : Mark\nprevious : Option Mark\nleft_active :\nmatch previous with\n| none => True\n| some m => ActiveAt C A (Sum.inl x) m mx\nleft✝ : x ≠ y\ns t : S\nhx : H.boundary x mx s\nhy : H.boundary y my t\nxs : List S\nhst : Route H.selectionEdge s xs t\n⊢ ∃ selectedStates,\n(∀ (p : Arrival (X ⊕ S)), p ∈ selectedStates → isSelected p.vertex) ∧\nRoute (Transition (graph H) C A) { vertex := Sum.inl x, incoming := previous }\n(selectedStates ++ [{ vertex := Sum.inl y, incoming := some my }]) { vertex := Sum.inl y, incoming := some my }",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:285:68: error: Type mismatch\nhfalse\nhas type\nisSelected ?m.102\nbut is expected to have type\nFalse",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:298:43: error: unexpected token '+'; expected term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:370:41: error: unexpected token '+'; expected term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/SelectedSourceProfile.lean:405:38: error: unsolved goals\nX : Type u\nS : Type v\nH : SelectedGraph X S\ntarget x y : X\nmx my : Mark\n⊢ (¬x = y ∧\n∃ s t,\n(augment H target).boundary (some x) mx s ∧\nComponent (augment H target) s t ∧ (augment H target).boundary (some y) my t) ↔\n¬x = y ∧ ∃ s t, H.boundary x mx s ∧ Component H s t ∧ H.boundary y my t"
+      ],
+      "previous_canonical_variant_compiled": true,
+      "keep_going": true,
+      "compiler_exit_success": false,
+      "complete_profile": false,
+      "owned_audit_ran": false,
+      "exact_name_audit_ran": false,
+      "whole_causal_acceptance": false,
+      "rust": {
+        "job": 120797879271,
+        "log_read": true,
+        "run": 40068901524,
+        "source": "d372059e9ced3942e65341a19547ea20af5317f7",
+        "status": "success",
+        "tests": 104
+      }
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -247,6 +1168,42 @@
       ],
       "all_theorem_statements_unchanged": true,
       "original_vendor_body_unchanged": true
+    },
+    {
+      "module": "BinaryBoundaryCircuit",
+      "original_sha256": "750d8a37090ce4202599c6284ca7466ffd7058b409693f53846c0183203f441d",
+      "selected_sha256": "36c066e0c123026590d16baa578737d6ad50e6a9838cb3f9a3aaec410b62528d",
+      "selected_bytes": 9452,
+      "selected_git_blob": "defe5bac183f2784d0e442d9a6793f14f6052f41",
+      "edit": "Name original Boolean case equations, unfold the existing row/parameter before gate cases, and expose the same XOR match before rewriting original parent values. No gate/rank/CPT/source definition or theorem scope changed.",
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+    },
+    {
+      "module": "FiniteQueryPlan",
+      "original_sha256": "7f49a04e94ef82e27bbba5c5c52ab2ade05f1049f580eeb6b72ddf10d07c925c",
+      "selected_sha256": "a6111e7956623bdc59191716a2d11dc087426efc69eebd8b40e47d4b57aae841",
+      "selected_bytes": 6001,
+      "selected_git_blob": "8b939dccb8b2f0dbd2431725d54574d1a700e3b2",
+      "edit": "Simplify the existing literal writeReply equality and remove an omega after simp already closes the positive-length goal. All statements/source fields unchanged.",
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+    },
+    {
+      "module": "SelectedSourceProfile",
+      "original_sha256": "68e7a904ca2a8dc43e307e3ea005d55105578e24396a48894ed503be8756bc31",
+      "selected_sha256": "0aae5e993d860f436dcc0d6fe646b21219579ac5680c7a4a293991fc01246bf6",
+      "selected_bytes": 20311,
+      "selected_git_blob": "3cefc8aa3a5a438fe2dd9b4161c92e2d81d2132f",
+      "edit": "Supply the existing selectedArrival/List carrier and original Sum.inl argument explicitly, spell four existing sublist propositions as List.Sublist, and expose the same original boundary/Component formulas for augmentation. Statement semantics and actual source/mark/selection hypotheses unchanged.",
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
     }
   ]
 }
