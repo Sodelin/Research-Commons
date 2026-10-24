@@ -135,7 +135,7 @@ theorem reverse_with_arrival {V : Type u} (G : MarkedGraph V)
       obtain ⟨last, ys, hy, hready⟩ := ih actual ready
       have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
         refine ⟨incoming, outgoing, symmetric _ _ _ _ hedge, rfl, ?_⟩
-        simpa only [hmark, DepartureAllowed] using hready
+        cases last <;> simpa only [hmark, DepartureAllowed] using hready
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],
         hy.append (.cons backward (.nil _)), ?_⟩
       cases hm : p.incoming with

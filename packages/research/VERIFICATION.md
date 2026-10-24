@@ -677,3 +677,6 @@ Source1476b2702a4/run40119402641/job120947593566: complete33-source original dis
 
 
 At18:26:42UTC actual main claims/ranking metadata again matches pinned ebe7a376366fbd787767275404371d4497d1128e/21cdafecd9835c396af2a084351dfe100b1b4e48,835875B/44276B:118 cards,75 ranked/43 unranked. A stale source69 compatibility checkpoint survived in README after its entrypoint wording changed; it is now replaced explicitly with current source147/33-source acceptance/full1369/103-blocked facts and the authoritative frontier link. No new mathematical problem is reopened by this documentation correction.
+
+
+Source1489ead05c9/run40120826790/job120951980090: entire34-source endpoint context remains REJECTED at ONE distinct-generated-match conversion. The exact reversed-arrival argument elaborates, but no whole context/full1473/claim acceptance follows. Next proof cases the SAME actual Option Mark; all6 headers/source/ancestry/no-tail hypotheses remain unchanged, no new model or source operation. Calibration/33-source status remain closed/reuse.
