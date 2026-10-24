@@ -44,6 +44,44 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Pair-budget bias admission: critical calibration is separate
+
+[G3-PAIR-BUDGET-BIAS-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/PAIR-BUDGET-ADMISSION.md)
+is PROVED HAND as a derived source comparison, independently unreviewed/not
+Lean formalized. Source11918B/SHA256
+6fae70415d90061eabe524e9e732a4e831e83e1b169afff7b8dc875c6a4b34ff.
+
+OLD exact pair products give, for actual equal-arm words,
+A+B_bias=H-2L+2sum log cosh(h_i/2), where A is ordinary exposure,
+H=-log C,L=log(D/C),beta_i=(2g_i-1)^2, and
+B_bias=2sum[-log(1-beta_i*tanh(h_i/2))]>=0.
+At the DIFFERENT critical pair D=sqrt(C),0<H<=1, this proves
+
+    A+(1/2)sum beta_i*h_i <=(1/4)sum h_i^2.
+
+OLD fair two-jet cancellation plus polynomial coin symmetry then gives,
+for the COMPLETE private forest carrier through any given m,
+
+    ||K_I-E_m(sqrt(C))||_row <=(3/2)C_m*H*(max h_i)^2,
+
+with rational computable C_m from retained polynomials. Count/coins/scales
+are unrestricted. This is an actual-source necessary estimate, not an
+exact physical replacement, pointwise fair window or reference-scale bound.
+A strict two-cell hand construction retains coins arbitrarily close to
+either boundary. No source or coefficient execution occurred.
+
+ACTIVE AG-Pair has D=C^(3/4), so H-2L=H/2; it DOES NOT acquire that
+critical bound. The old fixed one-cell S(c^(1/4)) already shows why the
+two active pair data ALONE cannot force V_h small; no commutation is
+claimed for it. R(r)=E(2r/(1+r^2)) B(r^2,r^2,1/2) E(2r/(1+r^2))
+has pair(t^2,t),t=2r^2/(1+r^2), but is recorded ONLY as an inactive
+calibration comparison. No new active AG variant or all-core successor,
+index theorem, selector or master requirement is added. The original
+AG-Pair/full G3 implication remains unproved. Reuse the OLD paired image,
+fair two-jet proof/telescope and BOTH closure-NO; do not rederive them.
+Aliases: half-hazard paired budget, critical square-root passage,
+aggregate coin bias, ordinary expenditure, cosh/tanh balance, bias action.
+
 ## Exact pair-gap calibration and rounding: one optional coercivity test
 
 [G3-ACTIVE-MOMENT-ROUNDING-01](../2026-10-24-g3-asymptotic-root-grid/ACTIVE-MOMENT-ROUNDING.md)
