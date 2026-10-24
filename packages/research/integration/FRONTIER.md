@@ -1,6 +1,14 @@
 # Current integration frontier
 
-## Latest source correction and reused algebra
+## Current latent-projection proof repair
+
+Source115 `4ab958ebdd152635753f1793c4a87588094973b1`/run40080263727/job120832324858:107 Rust tests PASSED (complete log read). Both selected-indicator proof reductions compiled. The SAME1092-source target reached OriginalLatentProjection and rejected FOUR original proof terms:962 successful objects (73 compiled/889 exact object reuses),129 blocked consumers. All14 original soft/model modules compiled, and the original NANUQ algebra object was reused; whole owned/name/type acceptance still did not run. No clean-partial or full causal binding acceptance follows.
+
+The COMPLETE original10,318UTF8-byte latent-projection source was read against raw SHA256b89518f45b05dcd0b40a2807ed660d93545df4587e06c8dce58be14c8324153d/Gitblobef7d282de4981a77a170e5b9d967e4b1936ec71d. New explicit proof compatibility supplies dependent induction arguments, eliminates the actual constructor equality, substitutes the derived head endpoint and types the original route-lift relation. Original arbitrary latent carrier/source DAG/graph definitions and all theorem conclusions/hypotheses remain. All146 vendor originals, full1092-target and current word stay intact. New variant is source-only pending actual complete context. The source113 SAME full BOTH-word job continues without restart/cancellation.
+
+Current public-main claims and reuse-ranking Gitblobs were rechecked:118cards/75rated/43unranked are byte-identical to the selected originals. The current exact G5 addendum was read and matches the EXISTING full_cluster_split_unions alias; no duplicate G5 proof or wrapper work was selected.
+
+## Prior source correction and reused algebra
 
 Source114 `aaadd989b58e96bfe82e817c8f11e28ed29e00cc`, [run40079280942](https://github.com/Sodelin/Research-Commons/actions/runs/40079280942):107 Rust tests PASSED and ALL14 byte-identical soft/model modules (85 original theorem proofs) compiled under the new pin. The causal WithBot proof compiled too. The full1091-source target remains REJECTED at two definitional-equivalence proof terms in CommonSelectedIndicatorSource:960 successful objects (72 compiled/888 reused),130 blocked consumers. Whole owned/name/type audit did not run; no new five-card binding acceptance is inferred from those clean modules.
 
