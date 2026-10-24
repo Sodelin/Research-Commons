@@ -44,6 +44,61 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## All-arity first primitive and negative-part allowance: OLD PROVED / REUSE
+
+The COMPLETE old [time integral](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/SOURCE-TWO-MERGER-TIME-INTEGRAL.md),
+7039B/SHAaf77bf3860fdcd7067927f7e6614b89801ecac9dbb6cd57105161c2e09bcb403,
+is followed by the COMPLETE [source-uniform proof](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/SOURCE-UNIFORM-NEGATIVE-PRIMITIVE-1255.md),
+7384B/SHA864fa337cb5e66fd63c0bd70cac10fca0a4e3cee91354175e2f7e3ccd718179c,
+and actual COMPLETE [scoped HAND/SOURCE PASS](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/INDEPENDENT-NEGATIVE-PRIMITIVE-REVIEW.md),
+5450B/SHA63bae43a2c538048a058cc09c1cdb1d8896c28810681d03f0d15edd174c6080f.
+All three complete bodies were reread/hash matched. The integral's earlier
+UNPROVED allowance heading is SUPERSEDED. Stop another all-n derivation,
+coefficient producer, constant scan or proof/review job for this result.
+
+For actual equal-arm natural-I cells, d_j=b_j,z_n is the OLD first
+ordinary-eigenbasis primitive numerator, a_n=z_n/d_(n-2),chi_n=d_n/d_(n-2).
+The OLD exact cocycle and sharp bound, on ONE tuple at every n>=4, are
+
+    a_n(KL)=a_n(K)+chi_n(K)*a_n(L),
+    sum_i chi_n(actual prefix_i)*(a_n(B_i))^-
+                       <=(1/20)*(1-chi_n(word)).
+
+The proof is actual two-arm IID routing/Kingman source mathematics,
+not an arbitrary projective-kernel assertion. It is uniform in original
+coins, positive exposures and finite source length. Its sharper
+coin/exposure-sensitive bare bound is retained in the linked source.
+No new ordinary limit, finite source membership or master theorem follows.
+
+NORMALIZATION: this a_n is NOT the strong-cell contrast
+F_n=3*pi_n(22,1^(n-4))-2*pi_n(3,1^(n-3)).
+The retained partition identity gives
+z_n=-binom(n,4)*F_n/(2n-3). At n=4, with x=OLD C,
+a_4=-3*x/(10*b2). Negative primitive parts correspond to POSITIVE C,
+not negative C. This is normalization integration/reuse, not a new
+source formula. Commutation implies a_n(K)/(1-chi_n(K))
+=a_n(S)/(1-chi_n(S)); that is routine application of the OLD cocycle,
+not another all-arity G3 breakthrough.
+
+The later EXISTING G4 owner HAND successor
+UNEQUAL-ARM-NEGATIVE-PRIMITIVE-POTENTIAL-R1.md10826B/SHA
+4b669990276614bb375c139ed5026071b5c6edfc06d5132ef37593fc0be21c29,
+with6041B preflight/SHA01d5c2ce1f396b3d2b8730f1eb1bc9b8f477c20501489e65b6328402682eda8e,
+was read COMPLETE in the existing -2 workspace. It extends unequal
+exposures at author-HAND scope, independently unreviewed/not Lean formalized.
+That local source read is not its public publication, an owner transfer
+or a new execution. Active G3 already fits the OLD equal-arm PASS.
+
+The bound leaves positive/negative chronological cancellation and moving
+reservoir survival open. It does NOT bound each of P_j,B_j separately
+in the active charge note, force V_h, identify a first cell, or give a
+fixed-cap word/index certificate. The old bare C=0 stratum itself has
+nonzero cancelling cubic/bias pieces. AG-Pair remains the ONE unproved
+source implication; do not convert this completed supplier into a new task.
+Aliases: all-n first primitive, two-merger cocycle, shifted binomial tilt,
+negative reservoir/summability, sharp1/20, root-count primitive z_n/a_n,
+ordinary eigenbasis, SOURCE-TWO-MERGER-TIME-INTEGRAL successor.
+
 ## Exact active commutator-to-source charge balance: PROVED HAND
 
 [G3-ACTIVE-CHARGE-BALANCE-01](../2026-10-24-g3-asymptotic-root-grid/ACTIVE-CHARGE-BALANCE.md),
