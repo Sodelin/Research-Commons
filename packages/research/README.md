@@ -1,10 +1,10 @@
 # Research Commons: portable Lean and Rust
 
-The package integrates the canonical claim registry in reuse and dependency order. Existing proofs and engines are reused; unresolved questions retain exact obligations. The pinned snapshot has **118 claims:75 reuse-rated and43 unranked**, at447e188d. The candidate graph has1,613 retained modules plus45 integration modules. The original-tree channel/native64 caller, original-copy readout, real-date measurability and actual original-source/locus mixture are accepted at their separate exact scopes.
+This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus47 integration modules. Registry accounting is complete; actual integration of all118 is not.
 
 ## Build on a development host
 
-Use Rust1.90.0 and Lean4.33.1. Exact compiler/dependency/source identities are in [source-lock.json](source-lock.json).
+Use Rust1.90.0, Lean4.33.1 and the exact Mathlib/source identities in [source-lock.json](source-lock.json). Python3/standard library is a test/reference dependency for the retained exact-query decoder; production quartet recovery is Rust.
 
 ```sh
 cd packages/research
@@ -21,20 +21,21 @@ cargo run --locked -p research-commons-package -- check-callers
 cargo run --locked -p research-commons-package -- coverage --strict
 ```
 
-The full per-claim gate remains incomplete and exits2 until every required binding has actual verification.
+The final per-claim completion gate currently exits2 because required bindings remain missing. A successful selected build or source preparation must not suppress that result.
 
-## Verified package evidence
+## Current actual verification
 
-- **97 Rust tests passed** at[source631dbaa0/run40047327555](https://github.com/Sodelin/Research-Commons/actions/runs/40047327555), including three new complete JC-tree column/label/refusal groups. The generic tree component and complete native64-entry caller also passed at source631dbaa0/run40047327555.
-- **23 scoped mappings/145 exact Lean declaration names and owners passed** atsource82e12d5a/run40055357005 in the COMPLETE927-source target/owned context.22295 declarations/14927 theorems audited; ZERO owned axioms/nonstandard rows/missing modules.95 claims remain unnamed. [Exact receipt](integration/claim-export-verification-v13.json). These remain scoped components rather than whole scientific endpoints.
-- The **complete1,657-source library +2roots passed** atsource766c83b3:105185 declarations/94755 theorems audited, zero owned axioms/nonstandard rows/missing modules. [Full receipt](integration/coherent-library-verification-v6.json). This library-only mode intentionally skips the expensive caller sequence; it is not whole-word or118-claim acceptance.
-- The earlier source67ef70da passed its complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Historical acceptance does not transfer automatically to changed code.
+- **Sourcef1cd000c/run40059355260 passed97 Rust tests and the COMPLETE928-source selected Lean/owned context.**40 integration modules compiled/888 exact retained objects reused;22309 declarations/14939 theorems, zero owned axioms/nonstandard rows/missing modules.
+- **23 SCOPED mappings/150 exact declaration names and owners passed**, including the five new original timed-unranked congruence endpoints.95 claims remain unnamed at that accepted source. Every later positive-signature/JC16/native64/BOTH entire parameter-filter command and owned audit passed. [Exact receipt](integration/claim-export-verification-v14.json).
+- The **full1,657-source library+2roots** remains separately accepted at766c83b3:105185 declarations/94755 theorems, zero rejects. [Receipt](integration/coherent-library-verification-v6.json). This library-only check skipped its expensive caller sequence; it is not fresh full1660-library/word/118 acceptance.
+- Historical source67ef70da passed the complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Acceptance never transfers automatically to changed source.
+- The new exact-query Rust/Lean component below is **PENDING** fresh compilation/tests/owned audit. Its six candidate names are not included in the150 accepted count. The separate source96 complete-word job is still running.
 
-Retained-object reuse validates the exact compiler, dependencies and every object companion. Added modules and literal callers are checked; complete owned audits are mandatory. [Reuse contract](integration/RETAINED-OBJECT-REUSE.md).
+Raw receipts retain their phase boundaries: source build precedes owned audit, and initial owned=false stays literal even when the later actual owned audit passes. Actual artifacts/hashes/counts and every rejected predecessor remain in [VERIFICATION.md](VERIFICATION.md). [Retained-object validation](integration/RETAINED-OBJECT-REUSE.md) checks compiler/dependency/source/object-companion identities.
 
-## Actual end-to-end callers
+## Actual Rust-to-Lean callers
 
-Each path below produced a complete proof document from Rust output and passed Lean checking at its recorded source.
+Each caller below produced a complete native-output proof document and passed its separately recorded Lean scope.
 
 | Caller | Checked input and conclusion | Evidence |
 | --- | --- | --- |
@@ -50,87 +51,53 @@ Each path below produced a complete proof document from Rust output and passed L
 | `completion-certificate` | Conditional ancestral input; all12 ordered constant rows, true infinite ancestral limit, SAME rates and passive comb probability1/3 | [Completion](integration/completion-caller-verification.json) |
 | `residual-certificate` | Complete rational ensemble; strict top-k set and residual conservation | [RNA](integration/rna-results-verification.json) |
 
-Run a binary with `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Emitters retain inputs in RAM and return a complete document or refuse. Resource failure and insufficient certificates remain UNKNOWN or INCONCLUSIVE.
+Use `cargo run --locked -p research-commons-runtime --bin NAME -- ARG`. Emitters keep inputs in memory and return a complete document or refuse. Resource failures and insufficient certificates are UNKNOWN/INCONCLUSIVE.
 
-The signature component reuses the existing sparse separator and positive-grid interpolation. Its all-finite-rival conclusion has no rival-size cap. Reaction coefficients, stopped-law/shifted-Euler observables, derivative acquisition and universal native refinement remain separate. The completed CB-RXN-001 hand proof is retained at its original scope.
+`source-certificate --stdin MySource` accepts the original65,536-byte RC1 frame. Mixed-epoch and completion paths retain valid conditional-input premises; they do not invent a legal full-calendar prefix or external observation provider.
 
-The source caller also accepts `source-certificate --stdin MySource` within the original65,536-byte RC1 frame. Mixed-epoch and completion callers retain explicit valid conditional inputs; they do not construct a legal global calendar prefix or the external four-taxon tester.
+## Original source, real clocks and JC loci
 
-## Reusable MSCI component
+The accepted MSCI modules use the ORIGINAL finite Code/Copy/graph/rates/register and real-date/pair-matrix spaces. They construct normalized four-base branches, semigroup/Fourier/generator identities, complete labelled-tree and original-copy readouts, finite loci and measurable decoded clocks. Native callers check all16 branch and64 tree probabilities at ONE returned clock/SAME matrix; they do not independently refit coordinates.
 
-[ResearchCommons.MSCI.KilledClocks](lean/ResearchCommons/MSCI/KilledClocks.lean) passed its actual current-source/dependency/type/owned checks. For every finite original Copy/Site carrier it uses the existing same-rate surviving-clock embedding, actual legal merger and complete current-tree charges to derive strict total/killed-rate decrease. It does not assume a desired transition law.
+[JC69Source](lean/ResearchCommons/MSCI/JC69Source.lean) constructs a normalized finite-locus PMF over the actual original complete calendar/ancestral trace measure. Old one-root/chronological support is derived; sites share ONE trace before multiplication. The supplied whole original entering bank is mixed ONCE outside that integral. Finite NONEMPTY Copy is explicit. [Accepted source mixture](integration/jc69-source-mixture-verification.json).
 
-The Rust library ports the OLD exact sufficient observation-cutoff calculation, using retained arbitrary-precision arithmetic and explicit profile/work/magnitude refusals:
+[JC69Unranked](lean/ResearchCommons/MSCI/JC69Unranked.lean) transports original child swaps, real decorations, labels, pair ages and likelihoods. Original decoder/full completed-forest support then derives identical conditional one-site/finite-locus PMFs across different source carriers sharing the SAME Copy IDs, leafAge and observed full forest/matrix. Desired probability equality is the conclusion. [Accepted five endpoints/types/owned scope](integration/jc69-unranked-verification.json).
+
+Actual measurable whole-source quotient factorization, empty observer, same natural-bank specialization, canonical source/event coverage, killed Fourier/root expansion, recurrence/reconstruction and universal native/provider/parser refinement remain genuine joins. The full canonical MSCI mathematics is completed at its own HAND scope and is not reopened by these formal tasks.
+
+The existing observation-cutoff port reuses arbitrary-precision rational/integer arithmetic:
 
 ```sh
 cargo run --locked -p research-commons-runtime --bin msci-cutoff -- 3 2 3
 ```
 
-Three immutable retained controls, beyond-machine-integer output, refusals and the zero-epoch profile boundary passed. [Exact accepted component](integration/msci-source-component-verification.json) · [prior/successor comparison](integration/MSCI-REUSE-PREFLIGHT.md).
+[Cutoff/source component](integration/msci-source-component-verification.json) and [entire coherent filters](integration/msci-alignment-verification.json) keep their distinct contracts. A computed sufficient cutoff is not empirical inference or a finite-data recommendation.
 
-This is a component of CB-MSCI-001. The actual JC event/channel/epoch/recurrence/timed-genealogy theorem and complete source admission are separate. The number is not an inference result or a finite-data recommendation.
+## Exact quartet component — new source, verification pending
 
-## Actual JC branch and coherent parameter filter
-
-[JC69](lean/ResearchCommons/MSCI/JC69.lean) constructs the normalized PMF and proves its semigroup/Fourier/charge, generator and common-root pair/clock identities. The complete Rust16-entry table passed Lean checking and the selected caller owned audit at ONE returned time. [Exact record](integration/jc69-branch-verification.json).
-
-The OLD CB-MSCI-002 coherent parameter filter is now implemented in [Rust](crates/runtime/src/alignment.rs), using exact supplied rational durations/rates/routing arrays. ONE hidden renaming is shared by both adjacent matrices; initial/root names stay fixed. It returns the whole filter or explicit invalid/resource refusal. Equal rates, support zeros and backward expansion are retained.
+Reuse-priority10 CB-EXACTQUERY-001 already has a completed supplied-circle search, unknown-order learner, shared cache and later accepted query theorem. The original supplied-circle decoder is retained byte-identically. The Rust component ports its exact rectangle search/cache and provides the bounded command below; it does not derive another algorithm or replace complete displayed-topology support with coalescent probabilities.
 
 ```sh
-cargo run --locked -p research-commons-runtime --bin jc69-certificate
-cargo run --locked -p research-commons-runtime --bin alignment-certificate -- coherent
-cargo run --locked -p research-commons-runtime --bin alignment-certificate -- incoherent
+printf '%s\n' '{"circle":[40,10,30,20],"answers":[{"quartet":[10,20,30,40],"mask":2}]}' |
+  cargo run --locked -p research-commons-runtime --bin exact-quartet-recovery
 ```
 
-The generic Lean filter equations/types AND BOTH complete actual filter results passed, including every omitted map and the full22133/14830 caller owned audit. Computational dependent arrays, explicit Fin indices and trusted kernel reduction repaired the earlier rejected renderers. [Exact accepted results](integration/msci-alignment-verification.json). [Exact rejection](integration/alignment-component-rejection.json) · [reuse comparison](integration/MSCI-ALIGNMENT-REUSE-PREFLIGHT.md). Structural array checks do not supply full canonical source admission, actual nested-forest observability or the whole classification theorem. JC branch checking also does not supply the full timed-tree/locus/source equivalence.
+Expected conditional output: gap[0,2] in the supplied circle, one original-label query and two predicates. Original masks use SORTED labels, not circle positions. Local mask checks do not validate a hidden graph/source or common circle. Missing answers/resources refuse the entire run as UNKNOWN; no successful prefix or source NO is returned.
 
-## Original-tree JC channel
+The candidate Lean module proves the old all-position rectangle/split-union/subdivision/singleton/wrap primitives. Whole search/query-charge induction, original graph/circle/source admission, retained unknown-order caller and exact finite minimax remain separate. The eight fixed differential and actual stdin controls are NEW interface verification, not replay of old graph/producer/main suites. [Exact source/component/limits/test contract](integration/EXACT-QUERY-RUST-INTEGRATION.md) · [predecessor/successor comparison](integration/EXACT-QUERY-REUSE-PREFLIGHT.md).
 
-[JC69Tree](lean/ResearchCommons/MSCI/JC69Tree.lean) constructs normalized patterns and conditional loci on EVERY finite ORIGINAL Genealogy, derives the Fourier factor, retains original copy IDs and reuses G2's SAME pair-matrix/age decoder. Its thirteen new named exports passed the complete923-source context/owned audit, and the original-copy successor brings the current scoped map to131 names. [Accepted generic component](integration/jc69-tree-verification.json).
+## Complete word: exact remaining blocker
 
-[Rust pruning](crates/runtime/src/jc69_tree.rs) borrows the retained Tree and exact JC branch arithmetic, preserves one immutable branch/label bank and returns every pattern or explicit refusal. It passed its new tests. The actual three-tip caller emits all64 probabilities and proofs tying them to ONE coherent chronological clock and the decoded pair matrix:
+The earlier generic174/175/176-source sparse/epoch/word-cache theorem contexts passed. The actual unchanged three-copy/seven-operation/BOTH-mode word still needs its full total coefficient and physical/final owned result.
 
-```sh
-cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate
-```
+Source89/run40050896773/job120743281427 is terminal REJECTED at Stage3: all416 primitive documents and Stage0/1/2 compiled, then its total Boolean did not reduce after38 cache-match hints. No false coefficient, host/timeout/memory diagnosis or partial final acceptance is established. [Complete rejection history](integration/word-stage-literal-rejection.json).
 
-The COMPLETE generic tree module and SEPARATE64-entry caller now passed, including normalization, coherent chronology, SAME decoded pair-matrix clock and arbitrary finite conditional locus. The full caller audit has22293 declarations/14924 theorems and zero rejects. [Actual source/table/receipt](integration/jc69-tree-caller-verification.json). The actual original-copy PMF/Fourier adapter also passed its COMPLETE924-source/131-name context and owned audit at555695d9. [Readout receipt](integration/jc69-original-readout-verification.json). [Generic proof history](integration/jc69-tree-component-rejection.json) · [Actual caller failure](integration/jc69-tree-caller-rejection.json) · [predecessor/successor reuse](integration/JC69-TREE-REUSE-PREFLIGHT.md). The full unranked timed-output quotient, measurable source/channel mixture and bounded recurrence/reconstruction are still separate.
+Changed executablef1cd000c explicitly exposes existing matched certificate/entry/row payloads and finite-list product algebra before the SAME total checker. The source/copies/operations/all keys/register/bank and both modes stay mandatory. Existing job120769448710/run40059355260 is IN PROGRESS; this query-source change does not replay or replace it. [Proof-rendering reuse/implementation contract](integration/WORD-PAYLOAD-REUSE-PREFLIGHT.md).
 
-## Independent verification targets
+## Scope and next integration
 
-```sh
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Exports
-cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
-cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
-cargo run --locked -p research-commons-package -- check-jc-callers --in-exports
-cargo run --locked -p research-commons-package -- check-jc-tree-callers --in-exports
-cargo run --locked -p research-commons-package -- check-alignment-callers --in-exports
-cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalCodeChartReceiver
-cargo run --locked -p research-commons-package -- check-source-callers
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Population
-cargo run --locked -p research-commons-package -- check-population-callers
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Epoch
-cargo run --locked -p research-commons-package -- check-epoch-callers
-cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.RNA
-cargo run --locked -p research-commons-package -- check-residual-callers
-```
+All118 cards remain accounted for by kind. Named components are not whole scientific claim closure. Remaining source/target/action coverage, native row/word/raw-root/completion/readout refinement, AST/game/history-relative QE/selector/result origin and claim-specific full bindings remain explicit in [FRONTIER.md](integration/FRONTIER.md).
 
-The isolated CM/affine context remains available through `prepare-certificates`/`build-certificates`. Qualified-menu/RNA exports preserve actual source/shape/joint-response, positivity, random-input and BE-origin premises. No wrapper converts those premises into implementation evidence.
+CI automatically runs Rust/current named dependency/owned checks and the strict completion gate. Existing expensive jobs use `[check word]`, `[check full]`, `[check completion]` or manual dispatch. `[check library]` selects full-library/owned/export checks in a separate non-cancelling group and skips the caller sequence. Skipped jobs supply no fresh receipt.
 
-## Remaining integration
-
-[claims.json](integration/claims.json) preserves every ID/rating and actual Lean/Rust scope. [FRONTIER.md](integration/FRONTIER.md) names the current work; [VERIFICATION.md](VERIFICATION.md) retains failures and corrections.
-
-The generic same-bank checked-prefix word theorem passed. Every compact literal prefix still requires its own complete coefficient check, followed by both full independent/COMMON modes and the whole owned caller audit. The original ungrouped word rejected its final composition/parent proof; the staged successors reached all primitives and then rejected a missing namespace followed by an unparenthesized composite Symbol argument. Those exact references/parentheses are corrected; that SAME-source word run40042311302/job120716173428 passed its first3 stages and then rejected Stage3 when its whole coefficient Boolean did not reduce. No false coefficient or host cause is established; the previous full job120711863617 is now terminal at the same old Symbol parse error, after its full library/export commands passed; the successor old full job120716173831 is now terminal at the SAME Stage3 Boolean after its full1654 library/export commands passed; fresh changed-source word job120743281427 is now terminal REJECTED at the SAME Stage3 non-reducing Boolean after38 input/cache-match hints. [Generic staged receipt](integration/word-staged-core-verification.json) · [exact earlier rejection](integration/word-cache-literal-rejection-v3.json) · [staged successor rejection](integration/word-stage-literal-rejection.json). The original source/copies/operations/full keys/register and SAME bank remain.
-
-Still separate:95 unnamed claim exports and remaining scoped applications; complete physical source/target/action coverage; native/parser/AST/controlled-word/raw-root/readout refinement; actual history-relative QE/selector/result origin. G3 all-input and the original open scientific endpoints remain open. Missing formal/native joins do not reopen completed hand mathematics.
-
-Expensive existing CI jobs use `[check word]`, `[check full]`, `[check completion]` commit markers or manual dispatch. `[check library]` reuses the full library/owned/export job and skips its expensive caller step, in a separate non-cancelling group; this verifies library scope only. Rust/current dependency/owned checks remain automatic. Skipped jobs provide no acceptance; all required complete checks remain mandatory before closure. Evidence-only commits name actual checked sources and create no fresh CI result.
-
-The first real-date measurability attempt rejected its graft product conversion in BOTH selected and full-library contexts. The successor preserves the same function/spaces and uses explicit kernel reflexivity; [exact rejection](integration/jc69-measurable-rejection.json). The word emitter now exposes every previous native-row/cache match as a separate kernel theorem before the unchanged total coefficient check. Those hints, complete BOTH modes and final audits are still pending. [Exact reuse/implementation scope](integration/WORD-STAGE-CACHE-MATCH-REUSE-PREFLIGHT.md).
-
-The real-date likelihood/decoded-matrix/conditional-locus/original-copy measurability component now PASSED its complete925-source/137-name and full1657 library contexts at766c83b3. [Exact accepted scope](integration/jc69-measurable-verification.json). Actual original source-measure mixing and unranked observable descent remain separate; the changed SAME-word cache-match/literal/physical audit is still running.
-
-The actual original-source/locus mixture PASSED its complete927-source/145-name context and whole owned audit at82e12d5a. It reuses the actual original complete trace/support and SAME matrix, with site multiplication inside ONE source integral and the supplied whole register bank mixed ONCE. All later selected signature/JC16/native64/BOTH filter commands passed; Rust97 passed. [Accepted scope](integration/jc69-source-mixture-verification.json). Nonempty Copy is explicit; unranked/empty/source coverage/recurrence/native and whole118 integration remain separate. The full1657 library acceptance is distinct.
-
-The word89 cache-match attempt is now rejected at Stage3. Actual context/failed source/artifact were recovered; no false coefficient or host cause is established. The next action exposes the existing certified row payloads before the SAME total check; no smaller case or automatic unchanged replay. [Exact terminal history](integration/word-stage-literal-rejection.json). The retained exact-query algorithms/constructive theorem are also recovered for future reuse; [bounded source comparison](integration/EXACT-QUERY-REUSE-PREFLIGHT.md).
+Completed G1/G2/G5/P5/G6/G7 science and G3/G4 owner-HAND successors retain their original proof/status/quantifier scopes. Source recovery, ports and wrappers are not new scientific discoveries. No private-controller admission follows from public fixed-synthetic CI: original writer/controller/transitive hooks remain UNBOUND; private/model/held/USED/UNKNOWN stops and existing owners remain. Phone deployment is not this deliverable.

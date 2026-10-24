@@ -86,3 +86,5 @@ pub mod jc69;
 pub mod alignment;
 
 pub mod jc69_tree;
+
+pub mod exact_query;

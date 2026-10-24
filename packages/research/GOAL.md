@@ -9,3 +9,6 @@ Completion requires actual source bindings, coherent Lean builds, Rust builds/te
 This is a portable public-source package. Phone deployment, app-data access and the old phone controller are not deliverables. Existing private jobs, consumed actions, owner stops, model-testing holds and the old disabled workflows remain unchanged. No local Git mutations or additional agents are used.
 
 Integration acceptance follows the canonical claim kind: completed mathematics/algorithms require their verified bindings; unresolved questions require exact checked formal statements and obligation interfaces; software/empirical records require scoped evidence interfaces. None may be satisfied by relabelling another kind, metadata alone, an invented proof or a falsely successful solver.
+
+
+Current implementation checkpoint: accepted predecessorf1cd000c has23 SCOPED/150-name exports and928-source owned checking; separate complete1657+2root library remains accepted at766c83b3. The exact-query reuse-priority10 native supplied-circle port/geometric formal component is the next selected source, with no test/whole-claim acceptance inferred. The complete-word result remains a separate live dependency. All118 kind-specific acceptance requirements and the active goal are unchanged.
