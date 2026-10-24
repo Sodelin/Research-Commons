@@ -201,12 +201,18 @@ theorem old_observed_active_iff {X : Type u} {S : Type v} {L : Type w}
     have nd := forget_nodup t (⟨Observed (some x), none⟩ :: xs) hnd hfree
     refine ⟨last, xs.map (mapArrival (forgetIndicator t)), ?_, ?_⟩
     · exact pulled
-    · simpa only [List.map_cons, mapArrival, forgetIndicator, sourceIndicatorEquiv, Observed] using nd
+    · have hstart :
+          forgetIndicator t (Observed (some x) : SourceVertex (Option X) S L) = Observed x := by
+        rfl
+      simpa only [List.map_cons, mapArrival, hstart] using nd
   · rintro ⟨last, xs, hp, hnd⟩
     have lifted := hp.map (mapArrival oldSource) (lift_step_any D t K)
     have nd := hnd.map (old_source_injective (X := X) (S := S) (L := L))
     refine ⟨last, xs.map (mapArrival oldSource), lifted, ?_⟩
-    simpa only [List.map_cons, List.map_map, Function.comp_def, mapArrival, oldSource, Observed] using nd
+    have hstart :
+        oldSource (Observed x : SourceVertex X S L) = Observed (some x) := by
+      rfl
+    simpa only [List.map_cons, List.map_map, Function.comp_def, mapArrival, hstart] using nd
 
 theorem old_inducing_iff {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (t x y : X) :

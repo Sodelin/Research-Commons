@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "LATEST_FULL1472_REJECTED_COMMON_OBSERVED_MAG; PRECEDING31_SOURCE_OWNED_ACCEPTED",
+  "status": "COMMON_OBSERVED32_REJECTED_2_DIAGNOSTICS; CALIBRATION_LEAN_AND_FULL1473_NOT_REACHED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15311,6 +15311,18 @@
       "diagnostics": 10,
       "blocked_modules": 105,
       "disposition": "FULL_UNION_REJECTED; only separately complete31-source context ACCEPTED"
+    },
+    {
+      "source": "1ce057b032f2a693626abe0949c1668b426e86c8",
+      "run_id": 40115859604,
+      "job_id": 120937042236,
+      "attempted_target": "CommonObservedMAG",
+      "diagnostics": 2,
+      "original10_diagnostics_reduced_to2": true,
+      "disposition": "WHOLE32_SOURCE_CONTEXT_REJECTED; clean partials are not acceptance",
+      "calibration_Lean_stage_reached": false,
+      "full1473_stage_reached": false,
+      "actual_Rust_tests_passed": 114
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16409,9 +16421,9 @@
     {
       "module": "CommonObservedMAG",
       "original_sha256": "4c8d2976862881434fc55173129635a00e8941d1e89daf5efede06c3c8fdf6ba",
-      "selected_sha256": "b1374b898086d6287806fe8333ba69f68ac178ef6f4fbf0f07e23606533a63c9",
-      "selected_bytes": 13378,
-      "selected_git_blob": "bb18f6abb672dab61f5ec6038664570b4332b1ad",
+      "selected_sha256": "d54520e8243a5792a9af812d3a725cccebad05aa9fe54009b380491eb442118d",
+      "selected_bytes": 13559,
+      "selected_git_blob": "d896337087a43d7ac1a39aae61eb588bd99297d0",
       "source_ref": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
       "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
       "complete_original_and_later_bodies_read": true,
@@ -16419,7 +16431,19 @@
       "original_vendor_body_unchanged": true,
       "new_source_law_or_axiom": false,
       "edit": "Literal root-option contradiction; preserve endpoint argument in route induction; reduce incoming fields after cases; explicit original forget/oldSource/Observed constructor reduction. No new CI/MAG/source law or assumption.",
-      "status": "UNELABORATED_PROOF_VARIANT"
+      "status": "UNELABORATED_PROOF_VARIANT",
+      "followon": [
+        [
+          "    · simpa only [List.map_cons, mapArrival, forgetIndicator, sourceIndicatorEquiv, Observed] using nd",
+          "    · have hstart :\n          forgetIndicator t (Observed (some x) : SourceVertex (Option X) S L) = Observed x := by\n        rfl\n      simpa only [List.map_cons, mapArrival, hstart] using nd"
+        ],
+        [
+          "    simpa only [List.map_cons, List.map_map, Function.comp_def, mapArrival, oldSource, Observed] using nd",
+          "    have hstart :\n        oldSource (Observed x : SourceVertex X S L) = Observed (some x) := by\n      rfl\n    simpa only [List.map_cons, List.map_map, Function.comp_def, mapArrival, hstart] using nd"
+        ]
+      ],
+      "latest_rejected_source": "1ce057b032f2a693626abe0949c1668b426e86c8",
+      "remaining_previous_diagnostics": 2
     }
   ]
 }
