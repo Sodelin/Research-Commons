@@ -11,7 +11,27 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
-## All-core passive commutation reduction: conditional hand theorem completed
+## Active pair-calibrated reduction: hand proof completed, finite rigidity unproved
+
+[G3-PAIR-CALIBRATED-ROOT-REDUCTION-01](../2026-10-24-g3-pair-calibrated-reference/PROOF.md)
+and its [separate status](../2026-10-24-g3-pair-calibrated-reference/SOURCE-STATUS.json)
+are PROVED BY HAND for their source/arithmetic refinements. This applies
+the OLD pair formula to
+S(t)=E(t)B_I(t/(2-t),t/(2-t),1/2)E(t^2(2-t)), whose SAME tuple gives
+COMMON t^4 and I pair t^3. The completed all-core transfer below fixes
+both main pair coordinates and supplies a passive commutation test.
+
+At ANY fixed c=2^(-1/m), the old hard arithmetic instances survive by
+Q_m(x)=Q(x^m). Every fitting main word has total equal-arm plus ordinary
+exposure(log2)/m, uniformly in its unknown length. Coins stay arbitrary;
+there is no relative cell-scale bound. The active **CP-Pair is UNPROVED**:
+some fixed m,M force t^(4N)=c from K_C=E(c), b2I(K)=c^(3/4) and
+[K_I,S(t)]=0 through M, for EVERY finite strict equal-arm word K.
+Proving it would close the original negative reduction. No original
+impossibility is claimed without it. An absolute weak-source Taylor
+error, finite rank or a fixed-architecture theorem cannot fill this gap.
+
+## All-core passive commutation reduction: completed predecessor reused
 
 [G3-ALL-CORE-COMMUTATION-REDUCTION-01](../2026-10-24-g3-all-core-commutation-reduction/PROOF.md)
 and its [separate status](../2026-10-24-g3-all-core-commutation-reduction/SOURCE-STATUS.json)
@@ -24,14 +44,39 @@ There is no supplied whole template or configuration-aware readout.
 
 For every finite M>=4 the source/word equivalence is complete. Conditional
 on CP-W at some fixed M, it gives a full original-input root-order reduction.
-**CP-W itself remains UNPROVED**, so original G3 stays unresolved. This is
-a full-scope attempt with an explicit missing source theorem.
+**CP-W itself remains UNPROVED** as an inactive alternative. The active
+successor above adds fixed I pair data and uses CP-Pair. Original G3
+stays unresolved; all completed predecessor claims remain proved.
 
 The earlier [fixed-graph coefficient comparator](../2026-10-23-g3-fixed-graph-comparator/PROOF.md),
 G3-FIXED-GRAPH-COEFFICIENT-COMPARATOR-01, remains PROVED at its own premises
 and is reused. Its extra typed-scaffold/channel gates are removed for
 the stronger constructed family; the old node-started CP* prospect is
 historical, not a second active task. No original G3 closure is claimed.
+
+## ALL-copy ordered normal form: old theorem, not a missing supplier
+
+At Commons8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6, the OLD
+[PASSIVE-CHAIN-NORMAL-FORM.md](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-01-sol61-g4-allcopy-2237z/PASSIVE-CHAIN-NORMAL-FORM.md),
+20826B/SHA25601a480df1935657593249ac0197e287b5390daef6094a0c7c1dc7fe7ba41730d,
+and complete [scoped HAND ACCEPT](https://github.com/Sodelin/Research-Commons/blob/8b96f4fbb6ee0a19a0b20dd86f8a798ee4c96dd6/research/2026-10-01-sol61-g4-allcopy-2237z/ROOT-PASSIVE-CHAIN-REVIEW.md),
+4702B/SHA2563e79708bfbab1c79e0a604098c6574f70665120063490b851004b64a7da2d8f8,
+are PROVED/REUSE. Exact theorem/scope clauses and the full old review
+were read here; this is not a new whole-proof review or old-control replay.
+
+For supplied finite positive two-port private chains, all-copy full-forest
+equality fixes the number and ORDER of bare cells, each arm/coin triple
+(up to passive arm exchange), and every positive ordinary connector.
+Thus K R=R K at EVERY arity for a strict one-cell reference R already
+implies normalized K=R^L. The COMMON root index follows. Do not rederive
+this consequence. The effective prefix finder assumes both finite shapes
+supplied; it does not supply a cap against all unknown lengths. CP-Pair
+needs only a finite root-index conclusion, not full reconstruction.
+
+Lookup aliases: ordered chain normal form, prefix strip, passive root
+tomography, all-copy centralizer, cyclic centralizer, positive word power,
+finite prefix for supplied shapes. Keep this distinct from finite signed
+algebra closure and any unproved uniform finite-cap rigidity.
 
 ## Global COMMON log guards: completed old result
 
