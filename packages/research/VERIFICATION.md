@@ -649,3 +649,8 @@ ac899fbd4889f55b473194235b03e574b41bb5d4/run40111270587/job120923315139 passes R
 ## Source140 original deterministic scope and refined-indicator acceptance
 
 69a85a7e30abfd24c6e99a53eed2202e48fcd044/run40112282119/job120926461213 PASSES36-source/54-name memory context:2051 declarations/1422 theorems; ALL54 actual complete printed types/owners/axiom lists read and all36 hashes/owned rows checked. Only the330B import root is newly compiled;35 original objects are reused. Original completed mathematical scopes preserved, no new proof. The30-source refined-indicator owned context also PASSES1014/571. Actual792035B artifact12567382276 SHAaeb3a1e4801de89b3b841b57a547cc0b990e0d5cc4711717fc76024a5064f0c7 independently recovered in RAM; zero owned/nonstandard/missing for both. Full1472 remains REJECTED:1365 successful=100+1265, ONE PartialIndicatorQueryFamily/3 errors/106blocked. Reuse accepted subtype/Option proof patterns at its original one-endpoint predicate; full causal/388-name/owned/caller/strict gates stay pending.
+
+
+## Source141 one remaining original endpoint-constructor failure
+
+04af94f60ae46f283dbbb073a7966935f8987b88/run40113796331/job120930949674: original31-source PartialIndicatorQueryFamily remains rejected at ONE Observed none=Observed(some t) constructor inference,102:55. Finite subtype/equality/Boolean count now compile; no complete-module/owned/full1472 acceptance. The exact next edit cases that same impossible equality, preserving all5 original statements and source conditions. No repeated whole-word or new mathematics.

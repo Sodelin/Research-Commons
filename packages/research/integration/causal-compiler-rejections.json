@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "54_MEMORY_AND30_INDICATOR_ACCEPTED_FULL1472_REJECTED_ONE_INDICATOR_FAMILY",
+  "status": "EARLY31_QUERY_FAMILY_REJECTED_ONE_OBSERVED_OPTION_CONSTRUCTOR",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15278,6 +15278,25 @@
         "sha256": "aeb3a1e4801de89b3b841b57a547cc0b990e0d5cc4711717fc76024a5064f0c7"
       },
       "no_new_scientific_discovery": true
+    },
+    {
+      "source": "04af94f60ae46f283dbbb073a7966935f8987b88",
+      "run": 40113796331,
+      "job": 120930949674,
+      "status": "EARLY31_QUERY_FAMILY_REJECTED_ONE_OBSERVED_OPTION_CONSTRUCTOR",
+      "target": "PartialIndicatorQueryFamily",
+      "selected_sources": 31,
+      "failed_modules": [
+        "PartialIndicatorQueryFamily"
+      ],
+      "compiler_errors": 1,
+      "diagnostic": "102:55 Sum.inl.inj heq cannot infer the original Observed none=Observed(some t) constructor",
+      "original_finite_subtype_and_Boolean_count_compiled": true,
+      "whole_module_accepted": false,
+      "whole_owned_and_exact_name_audit_ran": false,
+      "full1472_target_ran": false,
+      "source_predicates_and5_theorem_statements_unchanged": true,
+      "no_new_scientific_discovery": true
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16358,12 +16377,12 @@
     {
       "module": "PartialIndicatorQueryFamily",
       "original_sha256": "029fa2d53a219c30fc3ef49e6b0cce561674106dfc3ea59bd2fbe9e261beb879",
-      "selected_sha256": "3eff841d29a25164133be56d9255b8b929fbdde0e1751b4eb321f270e67711e2",
-      "selected_bytes": 5428,
-      "selected_git_blob": "f7b137dfa2dbe4462bdbc26c3233b1a4f2f48fbb",
-      "edit": "Reuse accepted observed-query Fintype.subtype/univ.filter and inherited DecidableEq for the SAME original one-endpoint predicate; cases only the original impossible none=some equality. All5 original theorem statements/query coordinates/count/source/selection/latent/target hypotheses remain unchanged.",
+      "selected_sha256": "e0d3d2f4977bba4c440f230fd73be8f314606ed4319873675bd111ba27834128",
+      "selected_bytes": 5381,
+      "selected_git_blob": "76b3bcf6632819b2490e68f94420f7f9ae0f5f04",
+      "edit": "Reuse accepted observed-query Fintype.subtype/univ.filter and inherited DecidableEq for the SAME original one-endpoint predicate; cases only the original impossible none=some equality. All5 original theorem statements/query coordinates/count/source/selection/latent/target hypotheses remain unchanged. Follow-on: eliminate the SAME literal Observed-none/Observed-some contradiction by cases, avoiding inference through nested Sum.inl.injectivity.",
       "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
-      "actual_rejected_source": "69a85a7e30abfd24c6e99a53eed2202e48fcd044",
+      "actual_rejected_source": "04af94f60ae46f283dbbb073a7966935f8987b88",
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "original_vendor_body_unchanged": true,

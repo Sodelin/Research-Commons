@@ -99,7 +99,7 @@ theorem own_target_inducing {X : Type u} {S : Type v} {L : Type w}
     intro h
     have heq : (Observed none : SourceVertex (Option X) S L) = Observed (some t) :=
       List.mem_singleton.mp h
-    exact Option.noConfusion (Sum.inl.inj (Sum.inl.inj heq))
+    cases heq
 
 theorem indicator_pair_query_count {X : Type u} [Fintype X] [DecidableEq X]
     (T : X → Prop) [DecidablePred T] (x : X) :
