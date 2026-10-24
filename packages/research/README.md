@@ -2,7 +2,7 @@
 
 This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
 
-The current graph selects 1,613 retained modules plus 209 integration modules. There are 34 named claim mappings and 288 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
+The current graph selects 1,613 retained modules plus 210 integration modules. There are 35 named claim mappings and 291 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -33,7 +33,7 @@ The final per-claim completion gate currently exits2 because required bindings r
 - **Five original formal-model claim interfaces pass.** Source `fe0dccd2`, run40085312861: all 85 original theorem names/owners and complete 9+5-module contexts; 318 owned declarations, zero rejects. These are deterministic/Boolean/integer model claims; no empirical or clinical inference is asserted. [Receipt](integration/soft-science-component-verification.json), [complete printed types](integration/soft-science-complete-printed-types.json).
 - The earlier complete **930-source/24-mapping/165-name context** passed at `c79deb20`: 22,333 declarations /14,950 theorems, zero rejects. [Receipt](integration/claim-export-verification-v16.json). The full 1,657-source library plus two roots passed separately at `766c83b3`: 105,185 declarations /94,755 theorems. Historical `67ef70da` passed the eleven-caller sequence and 1,638-source library. Those receipts remain tied to their actual sources.
 - **111 Rust workspace tests pass** at `fe0dccd2`, run40085312861. The bounded exact-query unknown-order/shared-cache command passed its 13 differential/CLI controls within the earlier 107-test suite.
-- The latest **1,434-source combined export target is rejected** at one original `EndpointColliderActivation` proof term: 1,313 successful objects (82 compiled /1,231 reused), one failed module and 120 blocked consumers. The original contraction, indicator-projection and canonical-source-adapter modules now compile. The selected repair uses `rfl` for an equality already rewritten by case analysis; every original statement and source hypothesis remains unchanged. Its complete check is pending. [Actual failures and variants](integration/causal-compiler-rejections.json).
+- The latest **1,434-source combined export target is rejected** at one original untyped `InducingPathSeparation` binder: 1,314 successful objects (83 compiled /1,231 reused), one failed module and 119 blocked consumers. The previous endpoint-collider equality repair and its complete 22-source boundary now compile. The selected binder repair explicitly retains the original `SourceVertex X S L` carrier and all hypotheses. Current selection adds one pending G4 formal module, bringing the combined target to 1,435 sources; its complete check is pending. [Actual failures and variants](integration/causal-compiler-rejections.json).
 
 Every accepted scope has independently recovered artifact/hash/source/type/owner/axiom evidence. Rejected complete attempts stay rejected. Clean partials do not count as full acceptance. [Verification history](VERIFICATION.md) · [Current frontier](integration/FRONTIER.md).
 
@@ -97,6 +97,10 @@ The ALREADY-existing original split/quartet/all-compatible-circle providers and 
 All 145 inventoried original root-closure sources plus the alignment companion are retained byte-for-byte. The original author-complete upper/lower/zero-parameter mathematics keeps arbitrary finite binary-valued DAGs, latent and selection carriers, ONE common positive faithful mechanism, the full marked class, exact query budgets, positive-parameter lower bounds, promise-only exact optimum and arbitrary-seed/nontermination/infinite-expectation scope. Mathematical completion is not reopened by compiler compatibility work.
 
 Selected proof-only variants adapt the retained source to the package's pinned Lean/Mathlib APIs. The existing checked G7 game replaces a duplicate namespace through an explicit import shim. No new source axiom, desired-law premise, transition oracle or weaker graph class is introduced. Whole causal/name/type/owned acceptance and native causal provider/response/selector/result binding remain pending. [Prior/successor comparison](integration/CAUSAL-REUSE-PREFLIGHT.md) · [Source selection](integration/causal-source-intake.json).
+
+## Pending formal use-site from a completed result
+
+Reuse-rank14 CB-G4-006 now selects three formal finite-original-equation declarations on ONE fixed parameter ring, reusing the retained HAND descent proof and pinned Mathlib Hilbert/finite-span theorems. This is SOURCE ONLY until the whole selected kernel/name/owner/axiom check passes. It provides no effective prefix, RCF witness transfer, actual source/menu admission or uniform all-rival stopping algorithm. [Exact predecessor/successor and gap](integration/G4-ALGEBRAIC-PROFILE-REUSE-PREFLIGHT.md).
 
 ## Checks and remaining scope
 

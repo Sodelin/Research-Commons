@@ -1,5 +1,11 @@
 # Actual portable package verification
 
+## Latest source125 result and next selected formal use-site
+
+Source d03e76358cdda716b8bea79cdfb57f9ace43f8d1/run40095773163 passed111 Rust tests and the earlier exact model/query/NANUQ scoped checks. EndpointColliderActivation now compiles in its complete22-source boundary. The SAME1434-source combined target is REJECTED at the original InducingPathSeparation untyped carrier binder:1314 successful objects (83 compiled/1231 reused),1failed/119blocked. Six diagnostics are the carrier-inference cascade; whole causal/name/type/owned acceptance did not run. COMPLETE original and later source were read and match. The new proof-only carrier annotation preserves every original hypothesis and all146 frozen vendor bodies. Exact failure/variant are in causal-compiler-rejections.json.
+
+The next reuse-ranked partial formal integration is CB-G4-006's finite-original-equation step, NOT a new descent/stopping theorem. Its completed HAND predecessor/review/clarification and later successor were read and hashed. Three new Lean declarations reuse the pinned Mathlib Hilbert basis and finite-span-subset theorem. Their current complete kernel/owned/name/type check is PENDING. Original source/admission/RCF/enumeration/forcing and all118 closure remain separate. Selected graph1823 /combined1435 /35mappings /291names; actual older receipts retain their own scope. The accepted complete BOTH natural-word1280-source and raw NANUQ836/34-name tasks remain CLOSED; no duplicate word rerun is selected.
+
 Initial source8e9b13157901d9ba2952075c3ad5a9f3b2cb8a82 was checked by [hosted run39940552120](https://github.com/Sodelin/Research-Commons/actions/runs/39940552120), job120370631442, on Ubuntu24.04/Rust1.90. This is a new portable public-source build, not execution on the phone or reuse of a historical native permit.
 
 The build reached the retained G7 library and failed with rustc E0023 at line1349: `Formula::Exists(_)` matches one field although `Exists(Vec<Symbol>,FormulaId)` has two. The portable copy uses `Formula::Exists(..)`. The original PR2 source remains unchanged; source-lock.json names the exact original and one-line variant. No test PASS or Lean build is claimed from that failed run. The Lean and completeness jobs were skipped because the Rust job failed. The actual failure and source history are retained.

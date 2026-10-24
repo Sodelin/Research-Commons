@@ -188,10 +188,29 @@
       }
     },
     {
+      "module": "ResearchCommons.G4.AlgebraicProfile",
+      "path": "lean/ResearchCommons/G4/AlgebraicProfile.lean",
+      "sha256": "d7b148dd683c4dcae5d9f655bd3089efc45c75df231e5e1ccd0363c7af360322",
+      "imports": [
+        "Mathlib.RingTheory.Polynomial.Basic",
+        "Mathlib.RingTheory.Ideal.Maps"
+      ],
+      "provenance": {
+        "role": "NEW formal use-site of OLD Hilbert finite-original-generator step; not new scientific theorem",
+        "prior_hand_source": "9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5",
+        "prior_sha256": "cd8cc7832847e5e7ad0155755a8a702b9b0cad87bd051398d7ca75e2b84db793",
+        "bounded_current_main_comparison": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "whole_algebraic_descent_or_G4_stopping": false,
+        "current_context_verified": false,
+        "preflight": "integration/G4-ALGEBRAIC-PROFILE-REUSE-PREFLIGHT.md"
+      }
+    },
+    {
       "module": "ResearchCommons.Claims.G4",
       "path": "lean/ResearchCommons/Claims/G4.lean",
-      "sha256": "4d04c8771a4ca6eb86973684f9c2b3ded922165ace3d58a871a46d1f400412cf",
+      "sha256": "e37e279dc4b4bcb1ec2c94d4fa0afa9adda975898732001dd84ccd131733d03d",
       "imports": [
+        "ResearchCommons.G4.AlgebraicProfile",
         "G4WholeProfileDetermination",
         "G4PairedNaturalTreeCertificate"
       ],
@@ -208,8 +227,11 @@
           }
         ],
         "review": "Exact endpoint hypotheses and final proof/interface sections inspected. No independent full core-module proof review or new historical acceptance.",
-        "selected_current_context_verified": true,
-        "full_profile_verification": "integration/full-profile-verification.json"
+        "selected_current_context_verified": false,
+        "full_profile_verification": "integration/full-profile-verification.json",
+        "current_formal_use_site": "imports the exact partial finite-original-equation receiver; no stopped G4 theorem",
+        "earlier_alias_bodies_preserved": true,
+        "changed_import_current_context_pending": true
       }
     },
     {
@@ -1806,7 +1828,7 @@
     {
       "module": "InducingPathSeparation",
       "path": "lean/ResearchCommons/Compatibility/InducingPathSeparation.lean",
-      "sha256": "56d9ea5f0a25910834418f0fbbc08176c380e3fd16c44ec48a849bfb462013d6",
+      "sha256": "9da59447652aa95d8eb1cb5bb784d51637bd88f58fe835e4799003a68f4d3e73",
       "imports": [
         "EndpointColliderActivation"
       ],
@@ -1823,7 +1845,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained."
+        "variant": "Type ONLY the original hcondition binder as SourceVertex X S L. Preserve existing identity-map proof compatibility, every original theorem/graph/selection/latent hypothesis and all original vendor bytes.",
+        "actual_rejection": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1"
       }
     },
     {

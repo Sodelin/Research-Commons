@@ -132,7 +132,7 @@ theorem inducing_implies_inseparable {X : Type u} {S : Type v} {L : Type w}
   obtain ⟨hne, last, xs, hp, _⟩ := h
   refine ⟨hne, ?_⟩
   intro Z hx hy
-  have hcondition : ∀ a, SelectedCondition Z a → Nonlatent a := by
+  have hcondition : ∀ a : SourceVertex X S L, SelectedCondition Z a → Nonlatent a := by
     intro a ha
     cases a with
     | inl r => trivial

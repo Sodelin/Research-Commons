@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_INDICATOR_WITHBOT_CASES_AND_EQUIV_REDUCTION_PENDING_WITH_KNOWN_NOTATION_BATCH",
+  "status": "SAME_FULL_TARGET_REJECTED_UNTYPED_ORIGINAL_CARRIER_BINDER_COMPATIBILITY_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -779,7 +779,7 @@
     {
       "module": "InducingPathSeparation",
       "path": "lean/ResearchCommons/Compatibility/InducingPathSeparation.lean",
-      "sha256": "56d9ea5f0a25910834418f0fbbc08176c380e3fd16c44ec48a849bfb462013d6",
+      "sha256": "9da59447652aa95d8eb1cb5bb784d51637bd88f58fe835e4799003a68f4d3e73",
       "imports": [
         "EndpointColliderActivation"
       ],
@@ -796,7 +796,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained."
+        "variant": "Type ONLY the original hcondition binder as SourceVertex X S L. Preserve existing identity-map proof compatibility, every original theorem/graph/selection/latent hypothesis and all original vendor bytes.",
+        "actual_rejection": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1"
       }
     },
     {
@@ -4875,6 +4876,22 @@
       "current_main_equal_pinned": true,
       "current_git_blob": "ede95691448c73dd55200dcbed8aa7e669b2fd11",
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "InducingPathSeparation",
+      "original_sha256": "77b22400f1621d0a5abaa3c78bc31c607951fdbf16dd6e488164484c0a386d2e",
+      "selected_sha256": "9da59447652aa95d8eb1cb5bb784d51637bd88f58fe835e4799003a68f4d3e73",
+      "selected_bytes": 13523,
+      "selected_git_blob": "651d64725e9adc6c08af9db372721112bea08ee4",
+      "edit": "Type ONLY the original hcondition binder as SourceVertex X S L. Preserve existing identity-map proof compatibility, every original theorem/graph/selection/latent hypothesis and all original vendor bytes.",
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "actual_rejected_source": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ],
   "first_full_context_rejection": {
@@ -4901,21 +4918,35 @@
     }
   },
   "latest_full_context_result": {
-    "source": "0958975aaa7d9d65b77821283c1b31922433b24c",
-    "run": 40090840783,
-    "job": 120863151776,
+    "source": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1",
+    "run": 40095773163,
+    "job": 120877768663,
+    "status": "TERMINAL_REJECTED_UNTYPED_ORIGINAL_SOURCE_VERTEX_BINDER",
+    "target": "ResearchCommons.Integration.Exports",
     "selected_sources": 1434,
-    "successful_objects": 1313,
-    "compiled": 82,
-    "reused": 1231,
+    "successful_objects": 1314,
+    "newly_compiled": 83,
+    "reused_retained": 1231,
     "failed_modules": [
-      "EndpointColliderActivation"
+      "InducingPathSeparation"
     ],
-    "blocked_modules": 120,
-    "compiler_errors": 1,
-    "compiler_exit_success": false,
-    "whole_owned_audit_ran": false,
-    "OriginalIndicatorProjection_and_OriginalCanonicalSourceAdapter_compiled": true
+    "blocked_modules": 119,
+    "compiler_errors": 6,
+    "diagnostic": "135:22-49 hcondition forall a cannot infer original SourceVertex X S L selection/latent carrier; explicit a:SourceVertex X S L preserves the exact original proposition. One untyped binder causes five inference errors plus the downstream unsolved goal.",
+    "endpoint_collider_activation_compiled": true,
+    "early22_source_boundary_passed": true,
+    "whole_causal_owned_and_exact_name_audit_ran": false,
+    "full_causal_accepted": false,
+    "rust_tests_passed": 111,
+    "complete_original_and_later_same_path_read": true,
+    "current_main_comparison": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+    "current_main_equal_pinned_original": true,
+    "artifact": {
+      "id": 12560978075,
+      "bytes": 9045516,
+      "sha256": "12e2298c427d85c62f2d8564a0b408589060a64e904a331e7315c64718b75c02",
+      "scope": "Metadata observed in actual complete workflow log; no redundant duplicate scoped audit/artifact recovery selected"
+    }
   },
   "current_compatibility_batch": {
     "status": "PENDING_ACTUAL_COMPLETE_TARGET",
@@ -4937,14 +4968,10 @@
     "source_inventory_unchanged": true
   },
   "latest_early_projection_result": {
-    "source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
-    "run": 40088841986,
-    "job": 120857307451,
-    "target": "OriginalIndicatorProjection",
-    "source_modules": 20,
-    "successful_prefix": 19,
-    "failed": "OriginalIndicatorProjection",
-    "errors": 3,
-    "combined_target_not_reached": true
+    "source": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1",
+    "run": 40095773163,
+    "job": 120877768663,
+    "target": "EndpointColliderActivation",
+    "status": "PASSED_22_SOURCE_COMPILATION_NOT_WHOLE_OWNED_NAME_ACCEPTANCE"
   }
 }

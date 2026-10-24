@@ -1,6 +1,6 @@
 # Current integration frontier
 
-The user-requested portable end-to-end Lean/Rust goal remains ACTIVE. All 118 canonical claims are accounted for: 75 reuse-rated and 43 unranked. The latest current-main body and ranking blobs were actually rechecked at 2026-10-24T11:46:01Z and match the pinned inputs. Current selection is 1,822 sources (1,613 retained +209 added), 34 named mappings /288 declaration requests. Accounting and selection are not complete claim integration.
+The user-requested portable end-to-end Lean/Rust goal remains ACTIVE. All 118 canonical claims are accounted for: 75 reuse-rated and 43 unranked. The latest current-main body and ranking blobs were actually rechecked at 2026-10-24T11:46:01Z and match the pinned inputs. Current selection is 1,823 sources (1,613 retained +210 added), 35 named mappings /291 declaration requests. Accounting and selection are not complete claim integration.
 
 ## Closed formal integration items: reuse, do not repeat
 
@@ -14,9 +14,13 @@ The latest Rust suite has 111 passing tests. Existing unknown-order/shared-cache
 
 ## Current combined-build blocker
 
-The latest full 1,434-source export target at source `0958975a` is REJECTED:1,313 successful objects (82 compiled/1,231 reused), one failed `EndpointColliderActivation` module and 120 blocked consumers. Whole causal/name/type/owned acceptance did not run.
+The latest full 1,434-source export target at source `d03e7635` is REJECTED:1,314 successful objects (83 compiled/1,231 reused), one failed `InducingPathSeparation` module and 119 blocked consumers. Whole causal/name/type/owned acceptance did not run. The previous EndpointColliderActivation proof and complete22-source early boundary now compile.
 
-OriginalProjectionContraction, OriginalIndicatorProjection and OriginalCanonicalSourceAdapter now compile. The actual remaining diagnostic asks for `some Mark.head = some Mark.head` while the original proof supplies `hpm : p.incoming = some Mark.head` after the match already rewrote the goal. The selected compatibility uses `rfl` at that ONE conjunction. Other uses of hpm, every original hypothesis/conclusion and all 146 vendor originals are preserved. Complete original and current-main bodies were read and matched. Early 22-source boundary checking then the SAME full 1,434-source target are next. [Actual failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
+The actual diagnostic cannot infer S/L for the original untyped hcondition binder. The selected compatibility supplies ONLY `a : SourceVertex X S L`, retaining all latent/selection/source/activity hypotheses and the original proposition. COMPLETE original and current-main bodies were read and match. All146 frozen vendor bodies remain unchanged. Next: early23-source boundary then the SAME combined target, now1,435 sources because of the one new G4 formal use-site. [Actual failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
+
+## Next rated formal use-site: no completed mathematics reopened
+
+Rank14 CB-G4-006's all-profile algebraic descent/stopping reduction is already HAND proved. Its COMPLETE predecessor, scoped review, mandatory exterior clarification and later current-main source were read and hashed; the later same-path body is unchanged. The new three-declaration module formalizes only the finite ORIGINAL generator/equation step using the existing pinned Mathlib Hilbert basis/finite-span results. It is SOURCE ONLY, awaiting complete kernel/owned/exact-name checks. The original source/menu/RCF transfer, effective enumeration and all-real-unknown-size-rival forcing joins remain separate. No effective finite-prefix algorithm or full G4 closure is claimed. [Preflight](G4-ALGEBRAIC-PROFILE-REUSE-PREFLIGHT.md).
 
 ## Genuine remaining implementation and formal joins
 
