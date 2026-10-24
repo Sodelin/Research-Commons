@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus195 selected integration/proposal modules. Registry accounting is complete; actual integration of all118 is not.
+This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus209 selected integration/proposal modules. Registry accounting is complete; actual integration of all118 is not.
 
 ## Build on a development host
 
@@ -118,3 +118,6 @@ The same production `exact-quartet-recovery` command now also accepts `labels` i
 
 
 Latest changed-source verification:107 Rust tests passed at5fb1e31. The full1077-source causal/export target has ONE remaining WithBot proof failure;945 objects compiled/reused and131 consumers are blocked. Same complete source selection remains mandatory; root/causal whole-context acceptance is pending. The independent full-word proof reached the real Stage3 kernel memory guard. The changed renderer splits the SAME total check over every BOTH-side key; its Rust/full word/physical/owned checks are pending. [Exact proof strategy and rejection evidence](integration/WORD-KEY-CHECK-DECOMPOSITION-REUSE.md).
+
+
+The direct original social-science/model intake adds85 OLD formal theorem declarations across five cards, with original owner modules and no alias proofs. Their historical4.19 receipts remain scoped; current4.33.1 package acceptance is pending. [Exact reuse and model limits](integration/SOFT-SCIENCE-REUSE-PREFLIGHT.md).

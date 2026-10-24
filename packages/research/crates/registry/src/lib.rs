@@ -20,6 +20,14 @@ fn text<'a>(v: &'a Value, key: &str) -> Result<&'a str> {
 fn array<'a>(v: &'a Value, key: &str) -> Result<&'a Vec<Value>> {
     v.get(key).and_then(Value::as_array).ok_or_else(||format!("missing array: {key}"))
 }
+/// Upstream modules supplied by the pinned Lean toolchain or Mathlib cache.
+/// This recognizes whole namespace components, never similarly prefixed project
+/// names; source/owned imports still require the exact staged dependency.
+fn compiler_supplied_import(name: &str) -> bool {
+    matches!(name, "Mathlib" | "Std" | "Init" | "Lean")
+        || ["Mathlib.", "Std.", "Init.", "Lean."].iter().any(|root|name.starts_with(*root))
+}
+
 pub fn module_path(name: &str) -> Result<PathBuf> {
     if name.is_empty() { return Err("empty Lean module".into()); }
     let mut p=PathBuf::new();
@@ -186,7 +194,7 @@ pub fn prepare_lean(root: &Path) -> Result<Value> {
         for dep in array(entry,"imports")? {
             let dep=dep.as_str().ok_or("non-string added import")?;
             module_path(dep)?;
-            if !dep.starts_with("Mathlib.") && dep!="Mathlib" && !seen.contains(dep) {
+            if !compiler_supplied_import(dep) && !seen.contains(dep) {
                 return Err(format!("added dependency not yet built: {name} -> {dep}"));
             }
         }
@@ -299,7 +307,7 @@ pub fn prepare_certificate_profile(root:&Path)->Result<Value> {
         if actual!=declared {return Err(format!("certificate import mismatch: {name}"));}
         for dep in declared {
             module_path(dep)?;
-            if dep!="Mathlib" && !dep.starts_with("Mathlib.") && !seen.contains(dep) {
+            if !compiler_supplied_import(dep) && !seen.contains(dep) {
                 return Err(format!("certificate dependency not yet staged: {name} -> {dep}"));
             }
         }

@@ -505,7 +505,7 @@
     {
       "module": "CommonIndicatorRoots",
       "path": "lean/ResearchCommons/Compatibility/CommonIndicatorRoots.lean",
-      "sha256": "6d3ce688252e1b1905490b6ab99a93de03beb711423cec2ebaac9d817f6f85ab",
+      "sha256": "6e78a0bca0c84269364fe69842edcfb57ed78358e41736747aa464ab033e51b1",
       "imports": [
         "MarkedGraphEquivalence",
         "Mathlib.Order.WithBot"
@@ -523,8 +523,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Retain source112 WithBot bot/coe cases/computed equivalence/qualified Directed/typed identity repair; prove the remaining original coe incidence equivalence with explicit congrArg/injection.",
-        "rejected_source": "5fb1e31fa869e1188a9fff6f3dc78afe4f062b4a"
+        "variant": "Retain the original indicator/root map, source112 WithBot tactic cases and explicit identity simplifications. Spell the remaining WithBot embeddings as typed coercions and apply ACTUAL pinned WithBot.coe_inj. Source113's WithBot.coe function spelling was invalid (a Coe instance). No definition/hypothesis/conclusion change.",
+        "rejected_source": "4f45368c705390c65b2a74bd80d9095f7dcd6ddb"
       }
     },
     {
@@ -4348,10 +4348,10 @@
     {
       "module": "CommonIndicatorRoots",
       "original_sha256": "9cdf2cd713e7a37ef16194a728f8cbf949a24c3f9b2d42f3989f7baedb694ea6",
-      "selected_sha256": "6d3ce688252e1b1905490b6ab99a93de03beb711423cec2ebaac9d817f6f85ab",
-      "selected_bytes": 10907,
-      "selected_git_blob": "d08d2e2704faa89051e3d49d6aa372ae38b659ab",
-      "edit": "Retain source112 WithBot bot/coe cases/computed equivalence/qualified Directed/typed identity repair; prove the remaining original coe incidence equivalence with explicit congrArg/injection.",
+      "selected_sha256": "6e78a0bca0c84269364fe69842edcfb57ed78358e41736747aa464ab033e51b1",
+      "selected_bytes": 10658,
+      "selected_git_blob": "90f4d3338cdf8f4a1145e085ca97c72eb15a41c5",
+      "edit": "Retain the original indicator/root map, source112 WithBot tactic cases and explicit identity simplifications. Spell the remaining WithBot embeddings as typed coercions and apply ACTUAL pinned WithBot.coe_inj. Source113's WithBot.coe function spelling was invalid (a Coe instance). No definition/hypothesis/conclusion change.",
       "original_vendor_body_unchanged": true,
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
@@ -4362,8 +4362,17 @@
       "reviewed_complete_proof_blocks": [
         "indicator_arrow_equiv"
       ],
-      "actual_rejected_source": "5fb1e31fa869e1188a9fff6f3dc78afe4f062b4a",
-      "prior_selected_sha256": "29a0c9a1722f9847539e1fe115126f5b963b3a37b27910bc0ab86ce153c7c493"
+      "actual_rejected_source": "4f45368c705390c65b2a74bd80d9095f7dcd6ddb",
+      "prior_selected_sha256": "6d3ce688252e1b1905490b6ab99a93de03beb711423cec2ebaac9d817f6f85ab",
+      "pinned_original_api": {
+        "repository": "leanprover-community/mathlib4",
+        "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "path": "Mathlib/Order/WithBot.lean",
+        "git_blob": "330fe865bdd45f57b53eae43347a7d2cbe105adf",
+        "sha256": "1167c56b29f831e2dbc02a98bd73734867f047b67ba111bc9dba5c9a2bfbbf93",
+        "actual_coe_injective_and_coe_inj_bodies_read": true,
+        "complete_source_manual_read_claimed": false
+      }
     },
     {
       "module": "DirectedBranchSplices",
@@ -4754,9 +4763,9 @@
     }
   },
   "latest_full_context_result": {
-    "source": "5fb1e31fa869e1188a9fff6f3dc78afe4f062b4a",
-    "run": 40075576505,
-    "job": 120818225826,
+    "source": "4f45368c705390c65b2a74bd80d9095f7dcd6ddb",
+    "run": 40078399127,
+    "job": 120826761643,
     "selected_sources": 1077,
     "successful_objects": 945,
     "compiled": 57,
@@ -4765,7 +4774,7 @@
       "CommonIndicatorRoots"
     ],
     "blocked_modules": 131,
-    "compiler_errors": 1,
+    "compiler_errors": 4,
     "compiler_exit_success": false,
     "whole_owned_audit_ran": false
   },
