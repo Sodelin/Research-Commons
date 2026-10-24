@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SOURCE_PORT_PENDING_ACTUAL_RUST_CI",
+  "status": "ACCEPTED_BOUNDED_NATIVE_PORT_CLI_AND_REFERENCE_PARITY",
   "claim": "CB-EXACTQUERY-001",
   "prior_solution": "Existing adaptive_order/insertion/recover_all plus sparse_quartet; accepted mathematics OLD/REUSE",
   "preflight": "integration/EXACT-QUERY-UNKNOWN-ORDER-REUSE.md",
@@ -77,10 +77,27 @@
       "actual stdin label-mode composition and refusals"
     ]
   },
-  "checks_executed": false,
+  "checks_executed": true,
   "whole_claim_formal_binding": false,
   "physical_source_oracle_admission": false,
   "query_charge_and_unknown_order_formal_refinement": false,
   "finite_minimax_implementation": false,
-  "private_native_controller": "UNBOUND"
+  "private_native_controller": "UNBOUND",
+  "actual_rust": {
+    "actual_complete_log_read": true,
+    "differential_fixed_cases": 13,
+    "failed": 0,
+    "job": 120804040770,
+    "new_checks": [
+      "2026-10-24T06:38:12.6932568Z test exact_query::order::tests::order_limits_oracle_and_promise_failures_return_no_successful_prefix ... ok",
+      "2026-10-24T06:38:12.8602763Z test exact_query::order::tests::existing_unknown_order_and_shared_decoder_match_retained_reference ... ok",
+      "2026-10-24T06:38:19.4217083Z test unknown_order_stdin_composes_the_same_original_label_cache ... ok"
+    ],
+    "run": 40070946133,
+    "source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+    "status": "success",
+    "tests": 107
+  },
+  "reference_complete_output_order_trace_counts_all_13_cases_matched": true,
+  "scope": "Actual bounded Rust port/CLI and same-algorithm reference parity only; source/oracle admission, universal algorithm/query-charge formal refinement and finite minimax remain open."
 }

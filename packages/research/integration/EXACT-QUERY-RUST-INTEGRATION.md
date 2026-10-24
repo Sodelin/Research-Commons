@@ -37,3 +37,6 @@ Actual successor status: source63d8bd98/run40060620084 PASSED102 Rust tests and 
 
 
 The existing unknown-order/shared-cache caller is now ported into the SAME Rust exact_query module and production CLI's optional labels mode; circle mode remains. Original circular rotation tree, biased centroid/arrow tests, exact local gaps, path contraction and sparse decoder are reused. Four original learner/caller/reference bodies are copied byte-identically and rehashed. Thirteen new fixed interface cases, full chronological differential trace and actual CLI/refusal tests are SELECTED/PENDING, not an old scientific suite or universal refinement. See EXACT-QUERY-UNKNOWN-ORDER-REUSE.md and exact-query-order-verification.json. Complete physical source/oracle, algorithm/query-charge formal refinement and all-size exact minimax remain genuine gaps. Source103's complete BOTH-word job is unchanged and not reselected.
+
+
+Actual successor: source5b91ebb8/run40070946133/job120804040770 PASSED107 Rust tests. The retained unknown-order/shared-cache port and CLI,13 differential complete-output/order/trace comparisons and whole refusals passed. No additional Lean algorithm/source/oracle/query-charge theorem or exact minimax implementation is inferred; exact-query-order-verification.json retains that boundary.

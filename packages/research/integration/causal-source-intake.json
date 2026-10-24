@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_TWO_DOWNSTREAM_MODULES_VARIANTS_PENDING",
+  "status": "SAME_FULL_TARGET_REJECTED_ONE_IDENTITY_MAP_PROOF_VARIANT_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -301,7 +301,14 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Use standard if simplification in the original four endpoint equality proof steps; literal circuit/CPT/minor/slice/source statements unchanged.",
-        "rejected_source": "3c7aaebc005758885030e7f90b4c85a649db4ce5"
+        "rejected_source": "3c7aaebc005758885030e7f90b4c85a649db4ce5",
+        "module_compiled_in_rejected_full_context": {
+          "source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+          "run": 40070946133,
+          "job": 120804198357,
+          "compiled_before_other_module_failed": true,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
@@ -325,7 +332,14 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Give original nil routes the existing Directed(graph H)/Sum X S carrier explicitly and cases the same impossible inl=inr equality; theorem/source hypotheses unchanged.",
-        "rejected_source": "3c7aaebc005758885030e7f90b4c85a649db4ce5"
+        "rejected_source": "3c7aaebc005758885030e7f90b4c85a649db4ce5",
+        "module_compiled_in_rejected_full_context": {
+          "source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+          "run": 40070946133,
+          "job": 120804198357,
+          "compiled_before_other_module_failed": true,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
@@ -351,8 +365,8 @@
     },
     {
       "module": "CanonicalLatentRoots",
-      "path": "vendor/restricted-causal-source/CanonicalLatentRoots.lean",
-      "sha256": "9b2d3b016d46cd0b799fc7c68bc29f7ba6dc2875f27d5c84bfdc7086df4ce590",
+      "path": "lean/ResearchCommons/Compatibility/CanonicalLatentRoots.lean",
+      "sha256": "8c84dc08cd26826ee7ccf6d1995b2090f5b8045f4ff8b215e6124e2ffdbe0bee",
       "imports": [
         "SelectedProfileSeparation"
       ],
@@ -365,9 +379,12 @@
         "source_sha256": "9b2d3b016d46cd0b799fc7c68bc29f7ba6dc2875f27d5c84bfdc7086df4ce590",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Type the SAME identity map (fun x : Vertex G => x) in the original Route.map and use the standard list/identity simplifier. All graph/source data and theorem statements unchanged.",
+        "rejected_source": "5b91ebb8e984d61c3b634323dcf3362982560854"
       }
     },
     {
@@ -4128,6 +4145,18 @@
       "all_theorem_statements_unchanged": true,
       "new_source_law_or_axiom": false,
       "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+    },
+    {
+      "module": "CanonicalLatentRoots",
+      "original_sha256": "9b2d3b016d46cd0b799fc7c68bc29f7ba6dc2875f27d5c84bfdc7086df4ce590",
+      "selected_sha256": "8c84dc08cd26826ee7ccf6d1995b2090f5b8045f4ff8b215e6124e2ffdbe0bee",
+      "selected_bytes": 14004,
+      "selected_git_blob": "7368b0f30dee3c635bf6d7c9cc877b45e36aa112",
+      "edit": "Type the SAME identity map (fun x : Vertex G => x) in the original Route.map and use the standard list/identity simplifier. All graph/source data and theorem statements unchanged.",
+      "original_vendor_body_unchanged": true,
+      "all_theorem_statements_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
     }
   ],
   "first_full_context_rejection": {
@@ -4154,19 +4183,19 @@
     }
   },
   "latest_full_context_result": {
-    "source": "3c7aaebc005758885030e7f90b4c85a649db4ce5",
-    "run": 40070235001,
-    "job": 120802035297,
-    "compiled_before_other_modules_failed": true,
+    "source": "5b91ebb8e984d61c3b634323dcf3362982560854",
+    "run": 40070946133,
+    "job": 120804198357,
+    "compiled_before_other_module_failed": true,
     "whole_causal_acceptance": false,
     "selected_sources": 1077,
-    "compiled": 49,
+    "successful_objects": 940,
+    "compiled": 52,
     "reused": 888,
     "failed_modules": [
-      "BinaryCircuitMinor",
-      "SelectedAncestry"
+      "CanonicalLatentRoots"
     ],
-    "blocked_modules": 138,
+    "blocked_modules": 136,
     "compiler_exit_success": false,
     "whole_owned_audit_ran": false,
     "named_endpoint_audit_ran": false

@@ -56,3 +56,8 @@ Source d372059e/run40068901524 actually exercised the existing keep-going builde
 
 
 Source3c7aaebc/run40070235001 passed104 Rust tests. ALL THREE previous repaired modules compiled in the SAME1077-source target; its next result is REJECTED at BinaryCircuitMinor and SelectedAncestry:937 successful objects (49 compiled/888 reused),8 errors and138 blocked consumers. No full owned/name/type acceptance ran. Current copies use standard endpoint if simplification and explicit original nil-route Sum/Directed types, with original statements/source/slice/minor/selection predicates unchanged. All146 vendor bodies and the SAME complete target stay selected. Actual rejections remain in causal-compiler-rejections.json.
+
+
+Source5b91ebb8/run40070946133 actually PASSED107 Rust tests, including the new retained UNKNOWN-order/shared-cache port,13 complete-output/order/full-query-trace differential cases, work/query/oracle/promise refusals and actual CLI label mode. Production recovery stays Rust; unchanged Python is reference-only. This is bounded native caller acceptance, not universal source/query-charge refinement, source admission or finite minimax. See exact-query-order-verification.json.
+
+The SAME1077-source Lean target compiled the two repaired downstream modules and SelectedProfileSeparation, then REJECTED one CanonicalLatentRoots route identity-map simplification:940 successful objects (52 compiled/888 reused),1 error and136 blocked consumers. No whole owned/name/type acceptance. Its explicit copy only types/simplifies that same identity-map proof; all146 frozen vendor bodies, source/graph predicates, theorem statements and complete target stay unchanged. See causal-compiler-rejections.json.
