@@ -71,12 +71,39 @@
         "scope": "Actual upload metadata read; ZIP not downloaded."
       },
       "no_partial_new_module_acceptance": true
+    },
+    {
+      "source": "17627d8e9434af9eedfe87b74682871bb64dca49",
+      "run": 40054736476,
+      "job": 120755266072,
+      "status": "REJECTED_COMPLETE_MODULE",
+      "log_read_complete": true,
+      "sha256": "01faad37d92e1488fcfa0abe605ab2aba9c12d2c71861fd37f748669c1bda0db",
+      "line": 100,
+      "error": "The untyped intermediate Measurable.ite application leaves an ORDINARY implicit DecidablePred unresolved. A local classical instance does not determine that non-instance argument without an expected result type.",
+      "exact_context": "JC69Source.lean:100:13: error: don't know how to synthesize implicit argument\n  @Measurable.ite (Copy → Copy → ℝ) ℝ≥0∞\n    (fun x =>\n      ENNReal.ofReal\n        (rootLikelihood ((state d).genealogy (selectedRoot N d))\n          (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n            (decode x ((state d).genealogy (selectedRoot N d))))\n          (labelPattern ((state d).genealogy (selectedRoot N d)) p)))\n    (fun x => (PMF.pure fun x => 0) p) MeasurableSpace.pi ENNReal.measurableSpace (fun a => GoodPoint N leafAge (d, a))\n    ?m.269 (Measurable.setOf hg) hp measurable_const\ncontext:\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\np : Copy → Base\nd : Code N sample\nht : Measurable fun M => HasTimedBound leafAge M (state d)\nhc : Measurable fun x => (state d).live.card ≤ 1\nhg : Measurable fun M => GoodPoint N leafAge (d, M)\nhp :\n  Measurable fun x =>\n    ENNReal.ofReal\n      (rootLikelihood ((state d).genealogy (selectedRoot N d))\n        (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n          (decode x ((state d).genealogy (selectedRoot N d))))\n        (labelPattern ((state d).genealogy (selectedRoot N d)) p))\n⊢ DecidablePred fun a => GoodPoint N leafAge (d, a)\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:100:7: error: failed to infer `have` declaration type\n/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/MSCI/JC69Source.lean:83:42: error: unsolved goals\nV : Type u_1\nE : Type u_2\nX : Type u_3\nCopy : Type u_4\ninst✝⁷ : DecidableEq V\ninst✝⁶ : DecidableEq E\ninst✝⁵ : Fintype V\ninst✝⁴ : Fintype E\ninst✝³ : Fintype X\ninst✝² : DecidableEq Copy\ninst✝¹ : Fintype Copy\ninst✝ : Nonempty Copy\nN : RootedBinary V E X\nsample : Copy → X\nleafAge : Copy → ℝ\np : Copy → Base\nd : Code N sample\nht : Measurable fun M => HasTimedBound leafAge M (state d)\nhc : Measurable fun x => (state d).live.card ≤ 1\nhg : Measurable fun M => GoodPoint N leafAge (d, M)\nhp :\n  Measurable fun x =>\n    ENNReal.ofReal\n      (rootLikelihood ((state d).genealogy (selectedRoot N d))\n        (clockSurvivals leafAge ((state d).genealogy (selectedRoot N d))\n          (decode x ((state d).genealogy (selectedRoot N d))))\n        (labelPattern ((state d).genealogy (selectedRoot N d)) p))\n⊢ Measurable fun y => (conditionalKernel N leafAge (d, y)) p\n",
+      "artifact": {
+        "id": 12544947982,
+        "bytes": 242472,
+        "sha256": "77506a24d11ce1c2a3442aeeabfef1d7275c1509fa89aa4949917c6aadcd8189",
+        "scope": "Actual upload metadata read; ZIP not downloaded."
+      },
+      "no_partial_new_module_acceptance": true
     }
   ],
   "current_repair": {
-    "sha256": "01faad37d92e1488fcfa0abe605ab2aba9c12d2c71861fd37f748669c1bda0db",
-    "bytes": 13819,
-    "scope": "Separate explicitly typed original HasTimedBound/Code and cardinality measurable maps; change the goal to the literal GoodPoint conjunction. Same original source/PMFs/site/bank preserved. Remove only an unused Nonempty Copy binder from source support.",
+    "sha256": "1006166958c352104405f3659c2ca8ea94476109e8573012161d0d3549f70d63",
+    "bytes": 14061,
+    "scope": "Type the complete if-function before applying Measurable.ite, fixing the API's ordinary implicit decision argument. No change to the actual source law or its parameters.",
+    "primary_api": {
+      "repository": "leanprover-community/mathlib4",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/MeasureTheory/MeasurableSpace/Basic.lean",
+      "gitblob": "4a14c61761e21644f115059459c770576fd08d05",
+      "literal_statement": "theorem Measurable.ite {p : α → Prop} {_ : DecidablePred p} (hp : MeasurableSet {a | p a}) (hf : Measurable f) (hg : Measurable g) : Measurable (fun x => ite (p x) (f x) (g x))",
+      "actual_relevant_definition_and_proof_read": true
+    },
     "state": "SOURCE_ONLY_FRESH_COMPLETE_CONTEXT_REQUIRED"
-  }
+  },
+  "repair_history_reason": "The earlier classical-only fix did not discharge an ordinary implicit argument. Exact pinned API inspection now replaces that guess with a full expected result type."
 }

@@ -97,9 +97,13 @@ theorem conditional_mass_measurable (N : RootedBinary V E X)
   have hp := (decoded_probability_measurable leafAge
     ((state d).genealogy (selectedRoot N d))
     (labelPattern ((state d).genealogy (selectedRoot N d)) p)).ennreal_ofReal
-  have hi := Measurable.ite hg.setOf hp
-    (measurable_const : Measurable (fun _ : Copy → Copy → ℝ =>
-      (PMF.pure (fun _ : Copy => (0 : Base)) p)))
+  have hi : Measurable (fun M : Copy → Copy → ℝ =>
+      if GoodPoint N leafAge (d,M) then
+        ENNReal.ofReal (rootLikelihood ((state d).genealogy (selectedRoot N d))
+          (clockSurvivals leafAge _ (decode M _))
+          (labelPattern ((state d).genealogy (selectedRoot N d)) p))
+      else (PMF.pure (fun _ : Copy => (0 : Base)) p)) :=
+    Measurable.ite hg.setOf hp measurable_const
   convert hi using 1
   funext M
   by_cases h : GoodPoint N leafAge (d,M)

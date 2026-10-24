@@ -35,3 +35,5 @@ JC69Source reuses the original completeCalendarTraceLaw/probability and actual o
 First source-mixture candidate2706419f is now terminal REJECTED at the cardinality name/DecidablePred use-site; no partial new-module acceptance. The successor fixes those literal proof-context errors and retains the exact original source/locus bank. See jc69-source-mixture-rejection.json. All8 source-mixture endpoints await fresh complete checking; the unranked draft remains unselected.
 
 Second mixture attemptcf06ff04 is COMPLETE-module REJECTED at a single measurable-factor inference use-site. The new repair types the exact original Code/cardinality/HasTimedBound factors explicitly; it does not add a source assumption. All8 endpoints remain pending; see the extended rejection record.
+
+Third mixture attempt17627d8e is COMPLETE-module REJECTED at the untyped Measurable.ite intermediate. Actual pinned API inspection found an ordinary implicit decision argument. The new source types that entire if-function explicitly; all source-law data and8 statements stay unchanged and pending.
