@@ -1376,3 +1376,42 @@ No unequal-arm extension, new source/coefficient program, generic PSD,
 physical inverse, pointwise fair window or peer job is selected.
 Aliases:56sigma+55rho, positive transverse cost,54beta^2-15beta*u+3u^2/2,
 two actual lower-band weights, signed9-band mean, rare coins retained.
+
+## Reference-calibrated source action: exact zero and variance domination
+
+[REFERENCE-CALIBRATED-SOURCE-ACTION.md](../2026-10-24-g3-asymptotic-root-grid/REFERENCE-CALIBRATED-SOURCE-ACTION.md),
+13146B/SHA23b6650ddeb169b1c980ccaab924fd3bfd6e3c4ae14a752478772d89374ac5de, Gitblob551e1e5a0e115f416c1c57bcf0e856e43f5e0ccd.
+Stable key G3-REFERENCE-CALIBRATED-SOURCE-ACTION-01. PROVED HAND/self-reviewed;
+independent correctness review/Lean/source execution absent.
+
+For the SAME sufficiently weak equal-arm source, ell=log(Z/q), J=56sigma+55rho,
+exact fair value/derivative calibration at u_*=log(2exp(h)-1) gives positive
+a_ref=360h^2+O(h^3), b_ref=12h^4+O(h^5) and
+
+    Phi_h=J-a_ref*F+b_ref*ell
+          >=c*h^2*ell*(ell-h)^2>=0.
+
+Its strict zero is EXACTLY the fair reference cell. All strict coins are
+covered. F<=0 includes rare coins directly; F>0 implies beta<=C*u by the
+OLD source two-jet. Outer scales and the compact analytic blow-up cover
+all u/h, with exact local division at the calibrated zero. The scaled
+limit is (3x/8)[(x^2-6xy-4)^2+2yx^3].
+
+The literal physical-word action A_h=sum Phi_h therefore dominates
+c*h^2*V_h. Every exact S(t)^N has A_h=0. This action is NOT an endpoint
+observable: unweighted F/J source sums have different actual transports.
+No upper action bound or physical witness selector has been acquired.
+
+ONE actual full-fitting witness with A_h<=C h^7 would imply the OLD
+optional V_h<=C' h^5 and k=2 rounding consequence. This is a stronger
+SUFFICIENT condition, not a new original requirement or a proved selector.
+Original signed LINEAR-plus-ordinary/mean/energy/phase and total NO remain
+UNPROVED. Never impose Phi_h=0 or h-dependent ties as a new source menu.
+
+The OLD accepted one-fair-cell BOTH certificate9469B/2b73ef2b... and its
+6908B/a73156ae... HAND ACCEPT were read COMPLETE and reused. They are
+strict on multi-cell words; this many-cell source action is a different
+claim, not another proof of their certificate. No new source/tuple/
+coefficient/QE/model/native/compiler job or peer job was run.
+Aliases: calibrated source action, exact fair double zero, Phi_h,
+a_ref/b_ref proof coefficients, h^2 variance domination, no endpoint descent.
