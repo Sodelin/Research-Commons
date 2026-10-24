@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "status": "SOURCE_ONLY_PENDING_RUST111_AND_COMPLETE_COMPONENT_CHECKS",
+  "status": "SOURCE119_EXPLICIT_COMPILER_AUDIT_IMPORT_PENDING",
   "preflight": "integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md",
   "source_hashes": {
     "planner": {
-      "bytes": 11808,
-      "sha256": "9915b427a1d9014002443b4bcc03acc6371a6cb0d09410b99bfd8039da49d578",
-      "git_blob": "781c18ccb09c0726103095d625d6b0b01e41ea47"
+      "bytes": 11821,
+      "sha256": "420127ed5c9ab3343fec25eb45e2929a4d8b534d559360d90db61613c3856eb5",
+      "git_blob": "b51546bec95b02672c00819f58d3507a23f7c2d7"
     },
     "main": {
-      "bytes": 31640,
-      "git_blob": "c01a1d63568f84d985b7fe62101575b77fcd1917",
-      "sha256": "d74039781406a2f7f2eb212660488b429e8bc7607dab25fbd90b7ca443159b56"
+      "bytes": 32041,
+      "sha256": "130391db430107c2ce048c83e8e92f9d8a47866cdbc7ff5682f6032d187096a2",
+      "git_blob": "773659c30dcfbc3cea45ace3317073bdd6a21d72"
     },
     "workflow": {
       "bytes": 41543,
@@ -20,7 +20,7 @@
     }
   },
   "original_full_plan_body_unchanged": true,
-  "original_default_document_and_receipt_path_preserved": true,
+  "original_default_document_and_receipt_path_preserved": false,
   "full_canonical_and_binding_validation_before_selection": true,
   "requested_unknown_duplicate_and_unbound_ids_refuse": true,
   "explicit_checked_target_required": true,
@@ -56,5 +56,46 @@
   "same_full1092_export_target_and_strict_gate_retained": true,
   "no_new_domain_engine_or_proof": true,
   "word_path_not_filtered_by_claims": true,
-  "actual_results": null
+  "actual_results": null,
+  "previous_source118_result": {
+    "source": "ed4ed3375ecadefc024c86c38baecd214ff06f0d",
+    "run": 40084273155,
+    "rust_job": 120843879383,
+    "tests": 111,
+    "rust_pass": true,
+    "model_group_target_modules": 9,
+    "compiler_exit_success": true,
+    "model_owned_name_type_check_passed": false,
+    "first_failed_audit": "CallerAudit.lean: unknown Command namespace / run_cmd needs compiler elaboration",
+    "job": 120844040288,
+    "full1092_target_reached": false,
+    "clinical_check_reached": false
+  },
+  "default_document_delta": "Explicit standard import Lean; original named/type/owner commands and default receipt path unchanged.",
+  "audit_import_repair": {
+    "actual_error": "Minimal Std-only source roots did not transitively import the compiler command frontend used by the existing owned/name audit.",
+    "selected": "import Lean in BOTH generators",
+    "primary": {
+      "repository": "leanprover/lean4",
+      "commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+      "path": "src/Lean.lean",
+      "bytes": 1524,
+      "sha256": "b5c1c5190efdd590cc2e7464acd39b2e926a8ebd816377bf7c5b48dc85e73b28",
+      "git_blob": "db1d56fbd201eae72ad393ad94929d0602e80fa2"
+    },
+    "import_provides": [
+      "Lean.Elab",
+      "Lean.Meta",
+      "Lean.Parser",
+      "Lean.Util"
+    ],
+    "mathematical_modules_changed": false,
+    "new_axiom": false,
+    "actual_result_pending": true
+  },
+  "audit_source_capture": {
+    "actual_generated_CallerAudit_saved_before_execution": true,
+    "successful_scoped_receipt_includes_OwnedAudit_source_and_sha": true,
+    "source118_failed_source_not_claimed_recovered": true
+  }
 }

@@ -1,6 +1,12 @@
 # Current integration frontier
 
-## Current source: exact proof repairs and reusable claim checks
+## Current shared compiler-audit import repair
+
+Source118 `ed4ed3375ecadefc024c86c38baecd214ff06f0d`/run40084273155 passed ALL111 Rust tests, including the four new scoped-planner regressions. The first COMPLETE9-module foundations/Solidarity root compiled, but its owned audit REJECTED before named checks: CallerAudit.lean had no Command namespace/command elaboration import in this minimal Std-only environment. The clinical check and following full1092-source pipeline were not reached. No component or full binding acceptance is inferred.
+
+Both EXISTING audit generators now explicitly import the pinned standard compiler frontend Lean. Actual pinned src/Lean.lean imports Lean.Elab/Meta/Parser/Util; relevant compiler command modules were read too. Earlier Mathlib contexts supplied this transitively; the mathematical model/source/proof bodies and all audit/owner/type rules are unchanged. The default generated document has this explicit import delta; its interface/receipt path remain. The changed check must actually pass. Current source118 SAME full BOTH-word job continues independently; its input/closed-Boolean key strategy is unchanged and is not reselected/cancelled by this audit repair.
+
+## Prior source: exact proof repairs and reusable claim checks
 
 Source117 `c778f3a734f66fb546446d289a91f7f48156f9b1`/run40082141552/job120837868516 passed107 Rust tests and compiled the ancestry endpoint and COMPLETE original active-walk reduction. The SAME1092-source context next rejected one previous-arrival induction inference in OriginalProjectionLifting:965 successful objects (76 compiled/889 reused),126 blocked consumers. The next explicit compatibility supplies the original some incoming arrival, without changing any source/path/activity statement. Full causal/name/type/owned acceptance is still pending.
 

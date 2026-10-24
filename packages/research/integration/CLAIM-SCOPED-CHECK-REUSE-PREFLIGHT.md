@@ -12,3 +12,10 @@ Use the current fixed-public CI lane to check ALL67 foundations/Solidarity and A
 
 
 The selected receipts retain the full owned audit, exact generated named-check source, selected current module hashes/IDs and actual source/run fields when present. The source117 context/source object gate and all owner/type checks are reused unchanged. Four new pure-planner regressions exercise positive scope preservation, invalid IDs, byte-identical default behavior and refusal of malformed unselected metadata. Actual new results are pending; expected test count111 is not a PASS.
+
+
+Source118 `ed4ed3375ecadefc024c86c38baecd214ff06f0d`/run40084273155 passed ALL111 Rust tests, including the four new scoped-planner regressions. The first COMPLETE9-module foundations/Solidarity root compiled, but its owned audit REJECTED before named checks: CallerAudit.lean had no Command namespace/command elaboration import in this minimal Std-only environment. The clinical check and following full1092-source pipeline were not reached. No component or full binding acceptance is inferred.
+
+Both EXISTING audit generators now explicitly import the pinned standard compiler frontend Lean. Actual pinned src/Lean.lean imports Lean.Elab/Meta/Parser/Util; relevant compiler command modules were read too. Earlier Mathlib contexts supplied this transitively; the mathematical model/source/proof bodies and all audit/owner/type rules are unchanged. The default generated document has this explicit import delta; its interface/receipt path remain. The changed check must actually pass. Current source118 SAME full BOTH-word job continues independently; its input/closed-Boolean key strategy is unchanged and is not reselected/cancelled by this audit repair.
+
+The existing audit runner also saves its exact generated CallerAudit source BEFORE execution. Successful scoped receipts copy/hash that source alongside the complete owned JSON and named-check source. Source118's earlier failed audit source is not claimed independently recovered; this capture is a new current-runtime guarantee.

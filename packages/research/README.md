@@ -132,4 +132,4 @@ cargo run --locked -p research-commons-package -- build --reuse-retained --targe
 cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
 ```
 
-The command validates all canonical metadata and each selected declaration's exact dependencies, owning module, type and whole selected owned audit. It archives scoped evidence; the full package check remains separate. This extension is SOURCE ONLY until its actual new hosted result. [Reuse, refusal and receipt contract](integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md).
+The command validates all canonical metadata and each selected declaration's exact dependencies, owning module, type and whole selected owned audit. It archives scoped evidence; the full package check remains separate. Its111 Rust tests pass. The first complete model root compiles; the minimal-context audit needs the new explicit standard compiler import, so exact whole-owned/name acceptance is still pending. [Reuse, refusal and receipt contract](integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md).

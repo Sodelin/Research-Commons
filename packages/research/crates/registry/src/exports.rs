@@ -60,7 +60,7 @@ pub fn plan(canonical:&Value,bindings:&Value)->Result<Value>{
  if ids!=canonical_ids{
   return Err("export integration does not cover canonical IDs".into());
  }
- let mut document=String::from("-- Public declaration interface, not a new proof or algorithm.\nimport Lean.Util.CollectAxioms\n");
+ let mut document=String::from("-- Public declaration interface, not a new proof or algorithm.\nimport Lean.Util.CollectAxioms\nimport Lean\n");
  for module in &imports{document.push_str(&format!("import {module}\n"));}
  document.push_str("\nopen Lean Elab Command\nnamespace ResearchCommons.Generated.ClaimExports\n");
  for claim in &claims {

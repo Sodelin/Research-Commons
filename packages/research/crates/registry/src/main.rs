@@ -102,10 +102,12 @@ fn check_callers_at(root:&std::path::Path,project:&str,owned:&[String],scope:&st
  let placeholder=r##"#["NanuqActualBridgeQuartetResolution", "NanuqActualQuartetPortBranching"]"##;
  if template.matches(placeholder).count()!=1{return Err("unexpected caller audit template".into());}
  let selected=serde_json::to_string(&names).map_err(|e|e.to_string())?;
- let mut imports=if source_only {String::new()} else {String::from("import ResearchCommons\n")};
+ let mut imports=String::from("import Lean\n");
+ if !source_only {imports.push_str("import ResearchCommons\n");}
  for name in &names {imports.push_str(&format!("import {name}\n"));}
  let audit=imports+&template.replace(placeholder,&format!("#{selected}"))
     .replace("\"AUDIT-OWNED.json\"",&format!("\"../build/{scope}/caller-audit.json\""));
+ fs::write(evidence.join("CallerAudit.lean"),&audit).map_err(|e|e.to_string())?;
  fs::write(generated.join("CallerAudit.lean"),audit).map_err(|e|e.to_string())?;
  let status=Command::new("lake").args(["env","lean","-j1","-M6144","-Ddebug.skipKernelTC=false","--root=.generated",".generated/CallerAudit.lean"])
     .current_dir(&lean).stdin(Stdio::null()).status().map_err(|e|e.to_string())?;
@@ -330,6 +332,9 @@ fn check_exports(root:&std::path::Path,target:Option<&str>,claims:&[String])->Re
   fs::create_dir_all(&directory).map_err(|e|e.to_string())?;
   let audit=fs::read(root.join("build/retained-target-audit/caller-audit.json")).map_err(|e|e.to_string())?;
   fs::write(directory.join("owned-audit.json"),&audit).map_err(|e|e.to_string())?;
+  let audit_source=fs::read(root.join("build/retained-target-audit/sources/CallerAudit.lean")).map_err(|e|e.to_string())?;
+  fs::write(directory.join("OwnedAudit.lean"),&audit_source).map_err(|e|e.to_string())?;
+  plan["owned_audit_source_sha256"]=json!(research_commons_package::sha256(&audit_source));
   fs::copy(&source,directory.join("ClaimExports.lean")).map_err(|e|e.to_string())?;
   plan["owned_audit_sha256"]=json!(research_commons_package::sha256(&audit));
   plan["source_graph_sha256"]=source_plan["source_graph_sha256"].clone();
