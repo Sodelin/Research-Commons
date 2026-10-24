@@ -24,6 +24,21 @@
         "tests": 102,
         "status": "passed"
       }
+    },
+    {
+      "source": "9852c346cbba1303b750c30dadb9f50a78fa766a",
+      "run": 40066477177,
+      "job": 120790822920,
+      "module": "RationalPolynomialAvoidance",
+      "line": 9,
+      "column": 0,
+      "diagnostic": "invalid 'import' command, it must be used in the beginning of the file",
+      "cause": "Package-owned module documentation header was inserted before the import section",
+      "causal_theorem_acceptance": false,
+      "owned_audit_ran": false,
+      "repair": "Move package documentation below all imports; all original theorem statements/proof bodies unchanged",
+      "rust_job": 120790700532,
+      "rust_status": "success"
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -31,7 +46,7 @@
   "repair": {
     "module": "RationalPolynomialAvoidance",
     "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
-    "selected_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+    "selected_sha256": "36a72240fdc35223449c801013ad61c0dfa28820f49ca10b7cf94b08f69eb5ec",
     "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
     "pinned_instance_source": {
       "repository": "leanprover-community/mathlib4",
@@ -41,7 +56,8 @@
       "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
       "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
     },
-    "statements_and_proof_bodies_byte_identical": true
+    "statements_and_proof_bodies_byte_identical": true,
+    "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
   },
   "native_provider_implemented": false,
   "whole_claim_formal_binding": false

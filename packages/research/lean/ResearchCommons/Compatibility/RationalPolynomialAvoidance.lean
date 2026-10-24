@@ -1,3 +1,10 @@
+import Mathlib.Algebra.MvPolynomial.Funext
+import Mathlib.Algebra.MvPolynomial.NoZeroDivisors
+import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
+import Mathlib.Algebra.Order.Field.Rat
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Order.Interval.Set.Infinite
+
 /-!
 Package compatibility variant, 2026-10-24.
 Original RationalPolynomialAvoidance is retained byte-identically in vendor/restricted-causal-source.
@@ -6,12 +13,6 @@ The first full pinned build (run40065818355, job120788886183) failed at38:16 bec
 DenselyOrdered Q was unavailable. Import the existing pinned ordered-field instance.
 No theorem statement or proof body is changed. Complete consumer/owned checking is pending.
 -/
-import Mathlib.Algebra.MvPolynomial.Funext
-import Mathlib.Algebra.MvPolynomial.NoZeroDivisors
-import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
-import Mathlib.Algebra.Order.Field.Rat
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Order.Interval.Set.Infinite
 
 /-!
 Author: dot (OpenAI), 2026-10-23.

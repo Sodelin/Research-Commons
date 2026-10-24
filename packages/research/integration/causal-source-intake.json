@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "FIRST_FULL_CONTEXT_REJECTED_EXPLICIT_INSTANCE_IMPORT_VARIANT_PENDING",
+  "status": "FULL_CONTEXT_REJECTIONS_PRESERVED_IMPORT_AND_HEADER_REPAIR_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -58,7 +58,7 @@
     {
       "module": "RationalPolynomialAvoidance",
       "path": "lean/ResearchCommons/Compatibility/RationalPolynomialAvoidance.lean",
-      "sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+      "sha256": "36a72240fdc35223449c801013ad61c0dfa28820f49ca10b7cf94b08f69eb5ec",
       "imports": [
         "Mathlib.Algebra.MvPolynomial.Funext",
         "Mathlib.Algebra.MvPolynomial.NoZeroDivisors",
@@ -80,8 +80,9 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
-        "rejected_source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f"
+        "variant": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical; compatibility documentation follows the imports",
+        "rejected_source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
+        "rejected_header_source": "9852c346cbba1303b750c30dadb9f50a78fa766a"
       }
     },
     {
@@ -3915,7 +3916,7 @@
     {
       "module": "RationalPolynomialAvoidance",
       "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
-      "selected_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0",
+      "selected_sha256": "36a72240fdc35223449c801013ad61c0dfa28820f49ca10b7cf94b08f69eb5ec",
       "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
       "pinned_instance_source": {
         "repository": "leanprover-community/mathlib4",
@@ -3925,7 +3926,8 @@
         "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
         "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
       },
-      "statements_and_proof_bodies_byte_identical": true
+      "statements_and_proof_bodies_byte_identical": true,
+      "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
     }
   ],
   "first_full_context_rejection": {
