@@ -1,0 +1,11 @@
+# Original raw quartet tensor to existing actual blob composition
+
+Intended formal receiver: for EVERY finite RootedBinary V E (Fin n), with original V/E/taxon carriers and all four labels, rawRho equals actualQuartetData, including invalid/repeated-label zero cases; hence raw sourceNanuq and its weighted version use the already proved actual blob decomposition. No source-size cap, chosen switching multiplicities, fitted row, desired-law premise, new calendar or source graph.
+
+Prior mathematical result is OLD. COMPLETE RawNanuq and NanuqActualNanuqAnchorBridge were read/rawSHA/Gitblob checked; COMPLETE NanuqActualDistinctAnchor and NanuqActualFullAnchor were then read and checked at0f1056ab3506fc521d5f2023f2599bf637df36d9. WeightedSource/WeightedAnchor were also read for the literal original pair masks, constant2n-4 and weighted definition. Exact identities are in nanuq-raw-actual-source-join.json. The full-profile HAND theorem/current successor e2502c82 and original-vs-local scope comparison remain in nanuq-all-level-source-reuse.json; no completed mathematics is reopened.
+
+The accepted source121836-module/80341-declaration audit was searched in memory by BOTH rawRho/rawNanuq and actualQuartetData type/body references. No declaration in THIS checked context mentions both; nearby raw theorems were read. This is bounded receiver search, not global absence evidence. actualTupleMean is ALREADY defined as rawQuartetMean on injective tuples, zero otherwise. The missing implication is the equality of the two concrete charts and direct use of the EXISTING weighted/source composition theorem.
+
+New code is placed in the EXISTING Claims.NANUQ root, with two private finite-label chart lemmas and three public receiver declarations. All original retained/vendor source bodies remain byte-identical. No new abstract conditional factory, source law, probability oracle, all-level circularity/support proof or domain engine. Existing31 accepted interfaces retain their pinned source121 evidence; these three new declarations require actual scoped kernel/whole-owned/name checking.
+
+Remaining broader formal implication: every admitted all-level source's outer-face/local finite-certificate and positive global circularity/exact-support transport. This concrete chart join does not supply that endpoint or native/biological readout admission.

@@ -38,7 +38,13 @@ Raw receipts retain their phase boundaries: source build precedes owned audit, a
 
 ## Reused all-level NANUQ components
 
-The existing NANUQ root now PASSES the complete836-source/31-name component context:80341 owned declarations/77439 theorems, zero rejects. Its12 prior source-geometry API names,14 ORIGINAL local-theta/raw-source/blob-composition declarations and five original real-domain names retain their exact hypotheses. [Actual receipt](integration/nanuq-scoped-component-verification.json). This is a partial formal binding for CB-NANUQ-002, with whole all-level source circularity/support explicitly pending. No new evaluator or proof was authored.34 cards/285 declaration requests are now selected, with a1434-source combined dependency target; this selection is not acceptance. [Source comparison](integration/NANUQ-RANK11-REUSE-PREFLIGHT.md).
+The existing NANUQ root now PASSES the complete836-source/31-name component context:80341 owned declarations/77439 theorems, zero rejects. Its12 prior source-geometry API names,14 ORIGINAL local-theta/raw-source/blob-composition declarations and five original real-domain names retain their exact hypotheses. [Actual receipt](integration/nanuq-scoped-component-verification.json). This is a partial formal binding for CB-NANUQ-002, with whole all-level source circularity/support explicitly pending. No new evaluator or proof was authored.34 cards/288 declaration requests are now selected, with a1434-source combined dependency target; this selection is not acceptance. [Source comparison](integration/NANUQ-RANK11-REUSE-PREFLIGHT.md).
+
+## Exact query source and recursive geometry
+
+The existing query root now PASSES all21 declarations in its complete245-source context:5029 owned declarations/3331 theorems, zero rejects. This closes verification of the six recursive root-geometry additions without rederiving the old algorithm. [Receipt](integration/exact-query-scoped-context-verification.json). Numeric source/circle/complete-oracle, whole stack/query-charge/unknown-order/minimax/native refinement remain separate.
+
+Three new concrete NANUQ raw-tensor/weighted/source readout receiver proofs are authored under the existing root and PENDING their scoped kernel/owned checks; the prior31-name context retains its exact source121 acceptance. [Source comparison](integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md).
 
 ## Actual Rust-to-Lean callers
 

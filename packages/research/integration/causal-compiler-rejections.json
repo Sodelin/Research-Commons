@@ -12187,6 +12187,34 @@
         "sha256": "3c941ac39eeb9d260d1d6cf33215e4ac567a13ef26261cc48f8985f8ece685a1",
         "independent_zip_recovered": true
       }
+    },
+    {
+      "source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
+      "run": 40088841986,
+      "job": 120857307451,
+      "status": "TERMINAL_REJECTED_GENERIC_OLD_LABEL_INVERSE_CHART_REDUCTION",
+      "target": "OriginalIndicatorProjection",
+      "selected_sources": 20,
+      "successful_prefix_modules": 19,
+      "failed_modules": [
+        "OriginalIndicatorProjection"
+      ],
+      "compiler_errors": 3,
+      "diagnostics": [
+        "186/197 change cannot reduce generic selectedIndicatorVertexEquiv.symm coerced Sum label to oldRetained",
+        "208 projected_old_edge_exact needs that SAME inverse-chart equality"
+      ],
+      "prior_impossible_equality_withbot_constructor_and_dependent_graph_rewrite_errors_absent": true,
+      "combined1434_target_ran": false,
+      "nanuq_scoped_step_skipped": true,
+      "query245_scoped_step_passed": true,
+      "whole_causal_acceptance": false,
+      "artifact": {
+        "id": 12558227760,
+        "bytes": 1909931,
+        "sha256": "d20eb963ae5e04f4341f2ea2df851385ec7e6761ff72e4001cf0ed747baa85f5",
+        "independent_zip_recovered": true
+      }
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -12982,6 +13010,21 @@
       "actual_complete_original_body_read": true,
       "current_main_equal_pinned": true,
       "current_blob": "e2f7290522d8932dd457c3a1a5a46268d1a2d165",
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "OriginalIndicatorProjection",
+      "original_sha256": "17ba5ec70943a85a67ec0aa3e60b59eea5ebd0078cc44d4e0e04c832b239a07b",
+      "selected_sha256": "46f6a078ba689f92f591974b217b91dbd90d6cce795ea1ef23b78318c3b8f4ac",
+      "selected_bytes": 11399,
+      "selected_git_blob": "0fd7412d094bf62649a665d4f4ffc1c2effaeb11",
+      "edit": "Derive the actual selectedIndicatorVertexEquiv inverse on a coerced old Sum label by cases on that SAME label, then rewrite its inverse chart at the original three WithBot branch sites. This avoids assuming the generic inverse is definitionally oldRetained. Graph/source/latent/selection/mark statements and frozen vendor bodies unchanged.",
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "actual_rejected_source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
+      "actual_complete_original_body_read": true,
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ]

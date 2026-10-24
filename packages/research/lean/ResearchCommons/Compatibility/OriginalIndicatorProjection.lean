@@ -21,6 +21,12 @@ def oldRetained {X : Type u} {S : Type v} : Sum X S → Sum (Option X) S
   | .inl x => .inl (some x)
   | .inr s => .inr s
 
+private theorem indicator_inverse_old {X : Type u} {S : Type v}
+    (a : Sum X S) :
+    SourceSelection.selectedIndicatorVertexEquiv.symm (a : WithBot (Sum X S)) =
+      oldRetained a := by
+  cases a <;> rfl
+
 def oldSource {X : Type u} {S : Type v} {L : Type w} :
     SourceVertex X S L → SourceVertex (Option X) S L
   | .inl r => .inl (oldRetained r)
@@ -183,6 +189,7 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
       cases b with
       | bot => exact ⟨fun h => h.1 rfl, False.elim⟩
       | coe b =>
+          rw [indicator_inverse_old]
           change (projection (augmentSource D target)).edge (.inl none) (oldRetained b) ma mb ↔
             (b = .inl target ∧ ma = .tail ∧ mb = .head)
           rw [projected_indicator_edge]
@@ -194,6 +201,7 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
   | coe a =>
       cases b with
       | bot =>
+          rw [indicator_inverse_old]
           change (projection (augmentSource D target)).edge (oldRetained a) (.inl none) ma mb ↔
             (a = .inl target ∧ ma = .head ∧ mb = .tail)
           constructor
@@ -205,7 +213,9 @@ theorem projection_augment_option {X : Type u} {S : Type v} {L : Type w}
             have hr := (projected_indicator_edge D target (oldRetained (.inl target)) mb ma).mpr
               ⟨rfl, hmb, hma⟩
             exact projection_symm (augmentSource D target) _ _ _ _ hr
-      | coe b => exact projected_old_edge_exact D target a b ma mb
+      | coe b =>
+          simp only [indicator_inverse_old]
+          exact projected_old_edge_exact D target a b ma mb
 
 def original_projection_indicator_equiv {X : Type u} {S : Type v} {L : Type w}
     (D : SourceDAG X S L) (target : X) :
