@@ -642,11 +642,11 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
-      - name: Check next OLD vertex-section causal boundary (explicit scoped selection)
+      - name: Check next OLD actual-DAG inducing-chain boundary (explicit scoped selection)
         if: contains(github.event.head_commit.message, '[check causal]') || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target VertexDiscriminatingSections
-          cargo run --locked -p research-commons-package -- audit-target VertexDiscriminatingSections
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target LiteralMAGInducingChains
+          cargo run --locked -p research-commons-package -- audit-target LiteralMAGInducingChains
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
