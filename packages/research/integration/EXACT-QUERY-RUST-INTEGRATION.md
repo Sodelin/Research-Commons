@@ -40,3 +40,6 @@ The existing unknown-order/shared-cache caller is now ported into the SAME Rust 
 
 
 Actual successor: source5b91ebb8/run40070946133/job120804040770 PASSED107 Rust tests. The retained unknown-order/shared-cache port and CLI,13 differential complete-output/order/trace comparisons and whole refusals passed. No additional Lean algorithm/source/oracle/query-charge theorem or exact minimax implementation is inferred; exact-query-order-verification.json retains that boundary.
+
+
+Next exact-query formal join is now SELECTED/PENDING: six OLD root-partition/disjointness/legal-query geometry theorems in the existing Rectangle module. They construct the literal terminating half-open midpoint-root cover and prove its equivalence for ALL natural sizes, then combine it with wrap candidates. The COMPLETE old21055B proof was reread/rehashed; its later matching-bound/minimax successor remains OLD/REUSE. No finite enumeration, source-law oracle or desired recovery equality is assumed. Actual complete-context/kernel/owned checking is mandatory before acceptance. Same1808-source graph/1077-target; no smaller closure, new math discovery or whole native/query-charge/source refinement claim. See EXACT-QUERY-ROOT-PARTITION-REUSE.md.

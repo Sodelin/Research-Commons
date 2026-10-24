@@ -68,4 +68,94 @@ theorem wrap_query_singleton (n k i j : ℕ)
   unfold DisplaysABCD Inside
   omega
 
+
+/-- Non-wrap nonadjacent gap pairs in the literal half-open interval. -/
+def Triangle (l r i j : ℕ) : Prop := l ≤ i ∧ i+2 ≤ j ∧ j < r
+
+/-- The OLD two cross-half roots plus recursive triangles cover exactly the
+parent triangle. Empty cross-half rectangles are allowed and contain no cell. -/
+theorem triangle_mid_partition (l m r i j : ℕ) (hlm : l < m) (hmr : m < r) :
+    Triangle l r i j ↔
+      InRectangle l (m-1) m r i j ∨
+      InRectangle (m-1) m (m+1) r i j ∨
+      Triangle l m i j ∨ Triangle m r i j := by
+  unfold Triangle InRectangle
+  omega
+
+theorem triangle_mid_disjoint (l m r i j : ℕ) :
+    (InRectangle l (m-1) m r i j →
+      ¬ InRectangle (m-1) m (m+1) r i j ∧
+      ¬ Triangle l m i j ∧ ¬ Triangle m r i j) ∧
+    (InRectangle (m-1) m (m+1) r i j →
+      ¬ Triangle l m i j ∧ ¬ Triangle m r i j) ∧
+    (Triangle l m i j → ¬ Triangle m r i j) := by
+  unfold InRectangle Triangle
+  omega
+
+/-- Literal coverage of the OLD recursively emitted root rectangles.
+This is geometry, not an oracle that inspects unknown source splits. -/
+def SeedCovered (l r i j : ℕ) : Prop :=
+  if small : r-l ≤ 2 then False
+  else
+    let m := l+(r-l)/2
+    InRectangle l (m-1) m r i j ∨
+      InRectangle (m-1) m (m+1) r i j ∨
+      SeedCovered l m i j ∨ SeedCovered m r i j
+termination_by r-l
+decreasing_by all_goals omega
+
+/-- ALL finite recursion depths, rather than a bounded root enumeration. -/
+theorem seed_covered_iff_triangle (l r i j : ℕ) :
+    SeedCovered l r i j ↔ Triangle l r i j := by
+  have aux : ∀ n l r : ℕ, r-l=n →
+      (SeedCovered l r i j ↔ Triangle l r i j) := by
+    intro n
+    induction n using Nat.strong_induction_on with
+    | h n ih =>
+        intro l r hn
+        rw [SeedCovered]
+        by_cases small : r-l ≤ 2
+        · rw [if_pos small]
+          unfold Triangle
+          omega
+        · rw [if_neg small]
+          let m := l+(r-l)/2
+          have hlm : l < m := by dsimp [m]; omega
+          have hmr : m < r := by dsimp [m]; omega
+          have leftSmall : m-l < n := by dsimp [m]; omega
+          have rightSmall : r-m < n := by dsimp [m]; omega
+          change (InRectangle l (m-1) m r i j ∨
+            InRectangle (m-1) m (m+1) r i j ∨
+            SeedCovered l m i j ∨ SeedCovered m r i j) ↔ Triangle l r i j
+          rw [ih (m-l) leftSmall l m rfl, ih (r-m) rightSmall m r rfl]
+          exact (triangle_mid_partition l m r i j hlm hmr).symm
+  exact aux (r-l) l r rfl
+
+def CandidateSplit (n i j : ℕ) : Prop :=
+  i+2 ≤ j ∧ j < n ∧ ¬ (i=0 ∧ j=n-1)
+
+def WrapCandidate (n i j : ℕ) : Prop :=
+  1 ≤ i ∧ i+2 < n ∧ j=n-1
+
+/-- Every original nontrivial two-gap candidate is covered by the actual
+non-wrap root recursion or exactly one of the OLD special wrap queries. -/
+theorem all_candidates_covered (n i j : ℕ) (hn : 4 ≤ n) :
+    CandidateSplit n i j ↔
+      SeedCovered 0 (n-1) i j ∨ WrapCandidate n i j := by
+  rw [seed_covered_iff_triangle]
+  unfold CandidateSplit Triangle WrapCandidate
+  omega
+
+theorem wrap_and_nonwrap_disjoint (n i j : ℕ) :
+    ¬ (SeedCovered 0 (n-1) i j ∧ WrapCandidate n i j) := by
+  rw [seed_covered_iff_triangle]
+  unfold Triangle WrapCandidate
+  omega
+
+theorem emitted_roots_have_distinct_query_positions (l m r : ℕ)
+    (hlm : l < m) (hmr : m < r) :
+    (l < m-1 → l < m-1 ∧ m-1 < m ∧ m < r) ∧
+    (m+1 < r → m-1 < m ∧ m < m+1 ∧ m+1 < r) := by
+  omega
+
 end ResearchCommons.ExactQuery.Rectangle
