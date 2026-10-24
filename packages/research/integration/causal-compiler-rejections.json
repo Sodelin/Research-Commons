@@ -15474,6 +15474,18 @@
       "blocked": 95,
       "diagnostics": "esearch-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:83:34: error: Function expected at\n2026-10-24T20:03:19.0970500Z   neq\n2026-10-24T20:03:19.0970671Z but this term has type\n2026-10-24T20:03:19.0971128Z   ?m.102 x✝¹ x✝\n2026-10-24T20:03:19.0971237Z \n2026-10-24T20:03:19.0971415Z Note: Expected a function because this term is being applied to the argument\n2026-10-24T20:03:19.0971716Z   eq\n2026-10-24T20:03:19.0972549Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:83:15: error: Type mismatch\n2026-10-24T20:03:19.0973056Z   fun x x_1 neq eq => ?m.100\n2026-10-24T20:03:19.0973246Z has type\n2026-10-24T20:03:19.0973673Z   (x : a✝.vertex ≠ b✝.vertex) → (x_1 : ?m.101 x) → (neq : ?m.102 x x_1) → (eq : ?m.103 x x_1 neq) → ?m.104 x x_1 neq eq\n2026-10-24T20:03:19.0974047Z but is expected to have type\n2026-10-24T20:03:19.0976261Z   a✝.vertex ≠ b✝.vertex → a✝.vertex = b✝.vertex → SourceSelection.isSelected a✝.vertex\n2026-10-24T20:03:19.1945268Z ",
       "disposition": "FULL1497_REJECTED; complete40-source ClosedColliderWalks accepted separately; no full named/audit/actual caller acceptance."
+    },
+    {
+      "source": "7c366e941236e8b07bd18c2f69fe6bcb01ed9dec",
+      "run_id": 40129741477,
+      "job_id": 120978871694,
+      "attempted_target": "OriginalWeakConnection",
+      "selected": 42,
+      "failed_module": "OriginalWeakConnection",
+      "diagnostics": [
+        "2026-10-24T20:30:07.4377212Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/OriginalWeakConnection.lean:90:2: error: Type mismatch: After simplification, term\n2026-10-24T20:30:07.4378370Z   observed_map_nodup x allObserved shortNodup\n2026-10-24T20:30:07.4378698Z  has type\n2026-10-24T20:30:07.4378905Z   @List.Nodup X\n2026-10-24T20:30:07.4386215Z     ((observedState x (SourceSelection.observedArrival x none)).vertex ::\n2026-10-24T20:30:07.4386838Z       List.map Arrival.vertex (List.map (observedState x) ys))\n2026-10-24T20:30:07.4387230Z but is expected to have type\n2026-10-24T20:30:07.4387646Z   @List.Nodup X (x :: List.map Arrival.vertex (List.map (observedState x) ys))\n2026-10-24T20:30:07.5365916Z PACKAGE_INCOMPLETE: Lean failed on OriginalWeakConnection: exit status: 1\n2026-10-24T20:30:07.5386954Z ##[error]Process completed with exit code 2.\n2026-10-24T20:30:07.6089364Z ##[group]Run actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830\n2026-10-24T20:30:07.6089770Z with:\n2026-10-24T20:30:07.6090004Z   path: packages/research/build/retained-objects\n2026-10-24T20:30:07.6090628Z   key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129741477-declaration_exports\n2026-10-24T20:30:07.6091242Z   enableCrossOsArchive: false\n2026-10-24T20:30:07.6091492Z ##[endgroup]\n2026-10-24T20:30:07.7123668Z (node:5626) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-10-24T20:30:07.7124510Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-10-24T20:30:07.7287267Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Research-Commons/Research-Commons --files-from manifest.txt --use-compress-program zstdmt\n2026-10-24T20:30:09.9531617Z (node:5626) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n2026-10-24T20:30:10.9409954Z Sent 13760664 of 215087256 (6.4%), 13.1 MBs/sec\n2026-10-24T20:30:11.7348697Z Sent 215087256 of 215087256 (100.0%), 114.3 MBs/sec\n2026-10-24T20:30:11.8529154Z Cache saved with key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129741477-declaration_exports\n2026-10-24T20:30:11.8662884Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n2026-10-24T20:30:11.8663592Z with:\n2026-10-24T20:30:11.8674527Z   name: portable-claim-exports-evidence"
+      ],
+      "disposition": "ENTIRE42_SOURCE context REJECTED at final actual head-projection simplification. No partial PASS; later NANUQ6/callers/full1498 were NOT executed."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16848,6 +16860,24 @@
       ],
       "status": "PENDING_COMPLETE42_SOURCE_AND_FULL1498_CHECK",
       "source_count_assertion_correction": "Initial RAM header-count assertion expected5; complete source has4. Actual4 byte-identical headers checked. Not a compiler failure."
+    },
+    {
+      "module": "OriginalWeakConnection",
+      "selected": {
+        "bytes": 4749,
+        "sha256": "9b0de8822abbc6f87aab4a8a766ebc4664d008505c40539011d3790272a6690a",
+        "git_blob": "8687a7652ce7b7c1077c42812c6af6eef313941c"
+      },
+      "all4_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "  simpa only [List.map_cons] using observed_map_nodup x allObserved shortNodup",
+          "  simpa only [List.map_cons, observedState, SourceSelection.observedArrival] using\n    observed_map_nodup x allObserved shortNodup"
+        ]
+      ],
+      "scope": "Reduce actual original observed head constructor/state definitions at SAME list-map conclusion; no predicate/witness/field changed.",
+      "status": "PENDING_COMPLETE42_SOURCE_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

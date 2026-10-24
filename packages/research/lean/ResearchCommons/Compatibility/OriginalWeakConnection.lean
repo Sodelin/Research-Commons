@@ -87,6 +87,7 @@ theorem original_connection_is_weak {X : Type u} {S : Type v} {L : Type w}
   have mapped := compressed.map (observedState x)
     (fun _ _ step => compressed_step_is_weak D Z x step)
   refine ⟨last, ys.map (observedState x), mapped, ?_⟩
-  simpa only [List.map_cons] using observed_map_nodup x allObserved shortNodup
+  simpa only [List.map_cons, observedState, SourceSelection.observedArrival] using
+    observed_map_nodup x allObserved shortNodup
 
 end RestrictedCausal.WeakInducing
