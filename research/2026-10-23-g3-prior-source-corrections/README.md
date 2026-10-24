@@ -44,6 +44,88 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
+## Return-controller admission on the calibrated COMMON face
+
+Admission key: G3-COMMON-FACE-RETURN-SUPPLIER-ADMISSION-01.
+This is an OLD source identity applied to the current receiver, not a
+new Jensen theorem, a refutation of G4's hand proof or original G3 closure.
+
+The COMPLETE retained G4
+CLUSTERED-CAP7-SELECTED9-RETURN-CANDIDATE-R3.md was read:
+20851B/SHA25612b741947c69460291f716083f294cb57a038b1791b2f6e8833ee068d3265b0a.
+Its declared conclusion is the complete I kernel through seven current
+roots, selected Lambda9 and a COMMON PAIR below the fixed I pair.
+Its Sections2,6,8,9 were checked for the literal word/regularity/clock
+boundary. The companion
+SEVENTH-QUARTIC-HELPER-CONE-CANDIDATE-R1.md,
+13644B/SHAb2fe50d1b80b1b1f4fc890be62297c0c3a3aa0389fd3c9eec5b84983113ff2a6,
+was read in Section1 and its source-profile definition: minority
+parent0 probability epsilon*s, native gamma=1-epsilon*s, arms
+rho and exp(-epsilon*s*z), fixed0<rho<1 and s,z>0.
+Those arms are unequal for every sufficiently small positive epsilon.
+Reading these sources is not independent correctness acceptance of their
+assembled cone/IFT arguments or execution of a tuple.
+
+The OLD ordinary-COMMON face condition is stricter than fixing its pair.
+For any natural fresh private word, let A be its ordinary survival bank
+and (u_i,v_i,g_i) its actual bare arms and parent0 coins. The actual
+source product gives
+
+    b2_C=A*product_i[g_i*u_i+(1-g_i)*v_i],
+    b3_C=A^3*product_i[g_i*u_i^3+(1-g_i)*v_i^3],
+
+    b3_C/(b2_C)^3
+      =product_i (g_i*u_i^3+(1-g_i)*v_i^3)
+                     /(g_i*u_i+(1-g_i)*v_i)^3 >=1.
+
+Strict cube Jensen with0<g_i<1 makes equality equivalent to
+u_i=v_i in EVERY cell. This is the old COMMON calibration/log-guard
+fact; the original all-core calibrated-tree theorem below already uses
+the stronger source statement. It does not assume equal coins and does
+not average an exposed register afresh.
+
+The ratio is multiplicative under actual private concatenation.
+Every ordinary pad contributes1; every added strict private word
+contributes at least1. Hence an unequal-arm return block has ratio>1
+and CANNOT be repaired to COMMON E(c), even just through its two- and
+three-root no-merger coordinates, by positive ordinary smoothing,
+additional weak equal-arm backgrounds or further strict private blocks.
+Arithmetic inverses or signed clock corrections are not source repairs.
+
+Consequently the existing unrestricted G4 R3 regular return, its proper
+source cones and its unequal-arm helper controllers are NOT suppliers
+for an AG-Pair repair on this calibrated G3 face. A full I submersion in
+their unrestricted source coordinates does not imply a submersion in
+the equal-arm/common-calibrated fibre. Matching the two COMMON PAIR
+hazards alone would miss this obstruction.
+
+The tempting transfer was removed BEFORE claiming a capped commutant
+counterexample or selecting any scientific run. The G4 R3 hand result
+remains PROVED at its own stated relative scope; this admission rejects
+its proposed use here. No general equal-arm return/nonreturn theorem
+follows. The completed equal-arm paired-DIAGONAL synthesis also remains
+proved and supplies no off-diagonal repair.
+
+OLD providers reused: the literal calibrated-tree proof16246B/
+SHAcd7bc7e121f87478d3dc40cedc573b6c7820ea0c89cb1a70fcfbfa91c1d93c23
+and its scoped HAND ACCEPT6513B/
+SHA5f119aabde590313b2ecec55c881e1c9085fa273de37783d7e3f8e7c4f00a35c
+at Commons8b96f4fb, plus the accepted original BOTH-face card below.
+No old provider was rederived as a new discovery or rerun.
+
+The COMPLETE old passive-chain normal form20826B/
+SHA01a480df1935657593249ac0197e287b5390daef6094a0c7c1dc7fe7ba41730d
+and its4702B scoped review3e79708b... were also reread in full.
+Their measurable infinite-cohort extraction and supplied-shape QE use
+the already recorded all-copy/known-length scopes. They do not supply
+AG-Pair at a fixed cap against unbounded unknown lengths.
+
+Changed frontier: the ONE active AG-Pair estimate must retain literal
+equal arms at every admitted cell and arbitrary strict coins. Neither
+the unrestricted G4 controller nor R9's whole-word near-fair window
+supplies that estimate. No next-cap source producer, new source factory,
+extra observable or peer proof/review job is selected.
+
 ## Pair-calibrated predecessor: completed source transfer, stronger CP-Pair unproved
 
 [G3-PAIR-CALIBRATED-ROOT-REDUCTION-01](../2026-10-24-g3-pair-calibrated-reference/PROOF.md)
