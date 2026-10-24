@@ -1380,7 +1380,7 @@ two actual lower-band weights, signed9-band mean, rare coins retained.
 ## Reference-calibrated source action: exact zero and variance domination
 
 [REFERENCE-CALIBRATED-SOURCE-ACTION.md](../2026-10-24-g3-asymptotic-root-grid/REFERENCE-CALIBRATED-SOURCE-ACTION.md),
-13146B/SHA23b6650ddeb169b1c980ccaab924fd3bfd6e3c4ae14a752478772d89374ac5de, Gitblob551e1e5a0e115f416c1c57bcf0e856e43f5e0ccd.
+13747B/SHA01f749193d5e5f4f59be4a83f32b7078f0e12141dc9895da3cf2a112ab7397de, Gitblobc979aa7b437d55b31e08519f49a9bc471cc3d703.
 Stable key G3-REFERENCE-CALIBRATED-SOURCE-ACTION-01. PROVED HAND/self-reviewed;
 independent correctness review/Lean/source execution absent.
 
@@ -1398,8 +1398,9 @@ all u/h, with exact local division at the calibrated zero. The scaled
 limit is (3x/8)[(x^2-6xy-4)^2+2yx^3].
 
 The literal physical-word action A_h=sum Phi_h therefore dominates
-c*h^2*V_h. Every exact S(t)^N has A_h=0. This action is NOT an endpoint
-observable: unweighted F/J source sums have different actual transports.
+c*h^2*V_h. Every exact S(t)^N has A_h=0. No full-endpoint
+decoder has been supplied: unweighted F/J sums retain different transports.
+The separate finite-diagonal obstruction is stated below.
 No upper action bound or physical witness selector has been acquired.
 
 ONE actual full-fitting witness with A_h<=C h^7 would imply the OLD
@@ -1415,3 +1416,40 @@ claim, not another proof of their certificate. No new source/tuple/
 coefficient/QE/model/native/compiler job or peer job was run.
 Aliases: calibrated source action, exact fair double zero, Phi_h,
 a_ref/b_ref proof coefficients, h^2 variance domination, no endpoint descent.
+
+## Source action: finite-diagonal nonrecovery and full-endpoint scope correction
+
+[SOURCE-ACTION-DIAGONAL-NONDESCENT.md](../2026-10-24-g3-asymptotic-root-grid/SOURCE-ACTION-DIAGONAL-NONDESCENT.md),
+12528B/SHA5ce504c4799a23955473c90b104510287447cc36dc7eba0a9a9fd108d5d29665, Gitblob89f628a2ca669b21742fbe81d1e26095ed662e6c.
+Stable key G3-SOURCE-ACTION-DIAGONAL-NONDESCENT-01. PROVED HAND/self-reviewed;
+independent correctness review/Lean/source execution absent.
+
+For EVERY finite M, two actual finite ALL-FAIR equal-arm private words
+have the SAME COMMON c and I pair c^(3/4), SAME entire no-merger diagonal
+bank through M, but DIFFERENT calibrated source action A_h. Algebraic
+natural survival banks may be used when c,t are algebraic. This is an
+existence proof; no actual collision tuple or source/QE run was executed.
+
+REUSE OLD regular-sum/character-divisor mechanisms. Any arbitrary decoder
+on tiny-word budgets would force the source action to be a finite log
+character. Its rational fair-source part has a genuine pole at q=-1;
+its derivative has order>=2, while log-diagonal derivatives have only
+simple poles. An explicit fair padding source transfers the contradiction
+to the exact paired budget. Negative q is an algebraic test only.
+
+The earlier categorical FULL-endpoint non-descent wording in the action
+proof was stronger than proved and is WITHDRAWN. The current action proof
+is13747B/01f749193d5e5f4f59be4a83f32b7078f0e12141dc9895da3cf2a112ab7397de; all displayed mathematical
+blocks, calibration, zero set and variance LOWER bound are unchanged.
+Its old13146B/23b6650d version is retained at immutable e100b68c and in
+the local pre-correction archive; no old inequality is reopened for Lean.
+
+The new theorem excludes a universal exact action decoder from finite
+DIAGONALS. It excludes neither a decoder from COMPLETE forest kernels,
+a useful upper inequality, a special zero test nor a ONE-witness bound
+on the proper full commutator fibre. Endpoint values/architectures can
+vary with M; no fixed-target all-prefix family or original G3/G4 closure.
+Return to actual signed source/energy/phase work; no generic decoder
+factory or peer proof/build/review/model job is selected.
+Aliases: calibrated action diagonal non-descent, fair q=-1 pole,
+simple log poles, exact paired fair compensator, full endpoint unproved.

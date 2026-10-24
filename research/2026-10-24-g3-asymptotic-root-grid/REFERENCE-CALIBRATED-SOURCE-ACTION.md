@@ -5,6 +5,14 @@ Existing G3 owner,24October2026UTC. PROVED HAND at the displayed scope;
 author self-review complete, independent correctness review and Lean absent.
 No source/tuple/coefficient/model/solver/native/scientific execution.
 
+Scope correction,24October2026UTC: the earlier categorical wording
+that no full-endpoint reconstruction exists was stronger than proved
+and is withdrawn. Inequalities(2)--(5), exact calibration and zero set
+are UNCHANGED/PROVED HAND. No full-kernel non-descent theorem is supplied.
+The separate SOURCE-ACTION-DIAGONAL-NONDESCENT.md proves only the precise
+finite-diagonal-bank obstruction, even on the exact paired budget; it
+does not exclude a full-law/proper-fibre action upper bound.
+
 Original total G3 and AG-Pair remain UNPROVED. This note supplies a
 per-cell relative cost and its literal-word variance consequence. It does
 NOT supply an upper bound from the endpoint or a new smaller master goal.
@@ -295,9 +303,11 @@ then give AG-Pair with its old k=2 implication. This is a SUFFICIENT
 stronger selector condition, not an acquired upper bound, equivalence,
 new master requirement or proof of original total NO.
 
-The source action does NOT descend to an endpoint by definition.
-F, sigma and rho have different actual chronological transports;
-their unweighted sums cannot be read from K or from its diagonals.
+The source action is defined on a literal word. No decoder from the
+full endpoint K has been supplied here, and no full-endpoint non-descent
+theorem is claimed. F,sigma,rho retain different actual transports.
+The separate diagonal-bank obstruction does not exclude a full-law/
+proper-fibre action upper bound.
 The whole-word mean/energy bound in the immediate predecessor remains
 true and retains its SIGNED M_h. Neither it nor(5) supplies the needed
 upper action estimate. The actual R-only phase-flexible words remain
