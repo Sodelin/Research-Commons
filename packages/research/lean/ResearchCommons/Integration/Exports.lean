@@ -9,6 +9,7 @@ import ResearchCommons.MSCI.JC69Measurable
 import ResearchCommons.MSCI.JC69Source
 import ResearchCommons.MSCI.JC69Unranked
 import ResearchCommons.MSCI.Alignment
+import ResearchCommons.Claims.Causal
 import ResearchCommons.Claims.G1
 import ResearchCommons.Claims.G2
 import ResearchCommons.Claims.G3Certificate

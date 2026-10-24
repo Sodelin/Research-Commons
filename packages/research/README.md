@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus48 integration modules. Registry accounting is complete; actual integration of all118 is not.
+This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus195 selected integration/proposal modules. Registry accounting is complete; actual integration of all118 is not.
 
 ## Build on a development host
 
@@ -25,11 +25,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Current actual verification
 
-- **Source63d8bd98/run40060620084 passed102 Rust tests and the COMPLETE929-source selected Lean/owned context.**41 integration modules compiled/888 exact retained objects reused;22324 declarations/14950 theorems, zero owned axioms/nonstandard rows/missing modules.
-- **24 SCOPED mappings/156 exact declaration names and owners passed**, including all6 new geometric exact-query endpoints.94 claims remain unnamed at that accepted source. Every later positive-signature/JC16/native64/BOTH entire parameter-filter command and owned audit passed. [Exact receipt](integration/claim-export-verification-v15.json).
-- The **full1,657-source library+2roots** remains separately accepted at766c83b3:105185 declarations/94755 theorems, zero rejects. [Receipt](integration/coherent-library-verification-v6.json). This library-only check skipped its expensive caller sequence; it is not fresh full1661-library/word/118 acceptance.
+- **Sourcec79deb20/run40062353912 passed102 Rust tests and the COMPLETE930-source selected Lean/owned context.**42 integration modules compiled/888 exact retained objects reused;22333 declarations/14950 theorems, zero owned axioms/nonstandard rows/missing modules.
+- **24 SCOPED mappings/165 exact declaration names and owners passed**, including9 typed original-source query providers. These9 additions are definitions/exports of OLD results, not9 new mathematical theorems.94 claims remain unnamed at that accepted source. Every later positive-signature/JC16/native64/BOTH entire parameter-filter command and owned audit passed. [Exact receipt](integration/claim-export-verification-v16.json).
+- The **full1,657-source library+2roots** remains separately accepted at766c83b3:105185 declarations/94755 theorems, zero rejects. [Receipt](integration/coherent-library-verification-v6.json). This library-only check skipped its expensive caller sequence; it is not fresh full1808-library/word/118 acceptance.
 - Historical source67ef70da passed the complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Acceptance never transfers automatically to changed source.
-- The bounded exact-query Rust/Lean geometric component below PASSED its recorded actual checks. Nine OLD original-source typed API exports and added chronological trace now require fresh checks; they are outside156 accepted names. The separate source96 complete-word job is still running.
+- The bounded exact-query Rust/Lean geometry, original-source API and chronological trace PASSED at their recorded scopes. The full existing causal proposal is newly selected and PENDING actual full-context checking. The source96 complete-word job is terminal rejected at Stage3.
 
 Raw receipts retain their phase boundaries: source build precedes owned audit, and initial owned=false stays literal even when the later actual owned audit passes. Actual artifacts/hashes/counts and every rejected predecessor remain in [VERIFICATION.md](VERIFICATION.md). [Retained-object validation](integration/RETAINED-OBJECT-REUSE.md) checks compiler/dependency/source/object-companion identities.
 
@@ -86,7 +86,13 @@ Expected conditional output: gap[0,2] in the supplied circle, one original-label
 
 The accepted Lean module proves the old all-position rectangle/split-union/subdivision/singleton/wrap primitives. Whole search/query-charge induction, original graph/circle/source admission, retained unknown-order caller and exact finite minimax remain separate. The eight fixed differential and actual stdin controls PASSED, as NEW interface verification rather than replay of old graph/producer/main suites. [Exact accepted scope](integration/exact-query-verification.json). [Exact source/component/limits/test contract](integration/EXACT-QUERY-RUST-INTEGRATION.md) · [predecessor/successor comparison](integration/EXACT-QUERY-REUSE-PREFLIGHT.md).
 
-The next source exports the ALREADY-existing original split/quartet/all-compatible-circle providers and preserves chronological first-query trace separately from the sorted cache. These changed API/trace bytes are pending fresh checks; no source/oracle/circle admission or whole algorithm refinement is inferred. [Provider/reuse/remaining-join contract](integration/EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md).
+The ALREADY-existing original split/quartet/all-compatible-circle providers and chronological first-query trace PASSED their fresh full-context/runtime checks atc79deb20. Numeric source/oracle/circle admission and whole algorithm refinement remain separate. [Provider/reuse/remaining-join contract](integration/EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md).
+
+## Existing causal proof package — selected, not elaborated
+
+The original author-complete upper/lower/k0 proposal is now included: ALL145 inventoried root-closure sources plus its source-alignment companion, byte-authenticated146 sources. It preserves arbitrary finite original binary-VALUED DAGs, latent/selection carriers, one common positive faithful bank, full marked class, exact population-query budgets, k>0 lower, promise-only exact optimum and arbitrary-seed/nontermination/infinite-expectation scope. Hand mathematics remains completed; the new kernel/owned and native integration is separate.
+
+The proposed local G7 copy would duplicate an existing namespace. A documented import shim reuses the already checked G7 game; original vendor bytes remain unchanged. No duplicate engine, weakened theorem, smaller closure, new scientific discovery or native causal provider is claimed. Current actual full-context checks are PENDING. [Prior/successor/reuse/acceptance contract](integration/CAUSAL-REUSE-PREFLIGHT.md) · [all source hashes/selection](integration/causal-source-intake.json).
 
 ## Complete word: exact remaining blocker
 
@@ -94,7 +100,7 @@ The earlier generic174/175/176-source sparse/epoch/word-cache theorem contexts p
 
 Source89/run40050896773/job120743281427 is terminal REJECTED at Stage3: all416 primitive documents and Stage0/1/2 compiled, then its total Boolean did not reduce after38 cache-match hints. No false coefficient, host/timeout/memory diagnosis or partial final acceptance is established. [Complete rejection history](integration/word-stage-literal-rejection.json).
 
-Changed executablef1cd000c explicitly exposes existing matched certificate/entry/row payloads and finite-list product algebra before the SAME total checker. The source/copies/operations/all keys/register/bank and both modes stay mandatory. Existing job120769448710/run40059355260 is IN PROGRESS; this query-source change does not replay or replace it. [Proof-rendering reuse/implementation contract](integration/WORD-PAYLOAD-REUSE-PREFLIGHT.md).
+Changed executablef1cd000c explicitly exposes existing matched certificate/entry/row payloads and finite-list product algebra before the SAME total checker. The source/copies/operations/all keys/register/bank and both modes stay mandatory. Job120769448710/run40059355260 is TERMINAL REJECTED at Stage3 line533,45,722B/SHA75b99a23: even explicit payload/list expansion leaves the total checkRows Boolean non-reducing. No false coefficient or host/resource cause is established. This source import does not replay or replace it. [Proof-rendering reuse/implementation contract](integration/WORD-PAYLOAD-REUSE-PREFLIGHT.md).
 
 ## Scope and next integration
 

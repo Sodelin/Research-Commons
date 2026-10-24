@@ -12,3 +12,6 @@ Integration acceptance follows the canonical claim kind: completed mathematics/a
 
 
 Current implementation checkpoint: accepted predecessor63d8bd98 has24 SCOPED/156-name exports,929-source owned checking and102 passed Rust tests; separate complete1657+2root library remains accepted at766c83b3. The exact-query reuse-priority10 bounded supplied-circle port/geometric component passed. Nine reused actual source API exports and chronological trace are the next selected changes, with no test/whole-claim acceptance transfer. The complete-word result remains a separate live dependency. All118 kind-specific acceptance requirements and the active goal are unchanged.
+
+
+Latest accepted executablec79deb20 has24 SCOPED/165-name/930-source owned checking and102 Rust tests, including original query-provider/chronological-trace integration. Source96 complete BOTH-word is separately terminal rejected at the non-reducing Stage3 checker. The next selected package includes the COMPLETE existing causal proof proposal146 sources/10 typed endpoints, with the existing checked G7 game reused rather than duplicated; formal/native acceptance remains pending. All118 requirements and active goal remain unchanged.
