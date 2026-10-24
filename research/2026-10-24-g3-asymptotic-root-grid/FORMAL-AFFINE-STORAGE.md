@@ -82,7 +82,7 @@ not a new user stop. This one generic check does not release any other hold.
 
 A commuting endpoint may become diagonal in the reference basis, but the
 ordinary evolution then has the displayed forcing and actual conjugated
-cells have the additional jump terms. Their uniform source-specific bounds,
+cells have the additional jump terms. The arbitrary-source jump/error estimates,
 chronological cancellation, and the AG-Pair index estimate are UNPROVED.
 The original nonzero raw storage boundary is not discarded. In particular
 this identity supplies no V_h bound, finite positive replacement, all-input
@@ -92,3 +92,98 @@ Existing next action: use these complete identities only when deriving actual
 source estimates under the unchanged SAME-pair capped commutator. Do not
 rerun the old special check or count the present algebra as a solved index
 problem. All original owners, no-local-Git/no-worker rules and holds persist.
+
+## Reference forcing addendum — PROVED by hand from OLD source jets
+
+This is a derived coordinate calculation, not a new bare-source coefficient
+or a uniform arbitrary-word estimate. It was not executed by the preceding
+formal-polynomial check. Independent review/Lean remain absent.
+
+Use the OLD actual multiplicative9/7/6/4 representation with ordinary
+generator D=diag(-36,-21,-15,-6), and kappa=5/3. For the SAME active
+
+    S(t)=E(t) B_I(t/(2-t),t/(2-t),1/2) E(t^2*(2-t)),
+    h=-log(t),
+
+write its represented matrix as
+
+    R(S)=[ s1 X Y 0 ]
+         [ 0 s2 0 U ]
+         [ 0 0 s3 T ]
+         [ 0 0 0 s4 ].
+
+The zero14 entry is exact: a single bare cell has zero14 and the two
+ordinary bookends are diagonal in this representation. OLD fair-source
+jets give, with f0=1/15,
+
+    (s1,s2,s3,s4)=1-3h*(36,21,15,6)+O(h^2),
+    X=f0*h^3+O(h^4), Y=f0*h^3+O(h^4),
+    U=-kappa*f0*h^3+O(h^4),
+    T= kappa*f0*h^3+O(h^4).
+
+Here the actual arm exposure is log(2*exp(h)-1)=2h+O(h^2).
+The retained fair cubic rule f=mu^3/15+O(mu^4), mu=arm/2,
+therefore applies. Multiplying by the two actual diagonal bookends changes
+none of the displayed leading cubic coefficients. The first-order diagonal
+clock3h is the already proved actual reference pair clock.
+
+For sufficiently small h>0 all four diagonal values are distinct. Its
+EXACT eigenvector matrix is
+
+    P=[ 1 A B G ]
+      [ 0 1 0 D0]
+      [ 0 0 1 E0]
+      [ 0 0 0 1 ],
+
+    A=X/(s2-s1), B=Y/(s3-s1),
+    D0=U/(s4-s2), E0=T/(s4-s3),
+    G=(X*D0+Y*E0)/(s4-s1).
+
+Direct substitution gives R(S)*P=P*diag(s1,s2,s3,s4); no spectral
+eigenvalue of an UNKNOWN word has been substituted here. The four
+denominator gaps have nonzero linear terms. Thus the ratios extend
+analytically to h=0 and the reused jets yield
+
+    A= h^2/675+O(h^3),       B= h^2/945+O(h^3),
+    D0=-kappa*h^2/675+O(h^3),
+    E0= kappa*h^2/405+O(h^3),
+    G= kappa*h^4/1366875+O(h^5).
+
+The ordinary generator in this basis is P^-1*D*P. Its actual off-diagonal
+coefficients, in the notation of the generic drift above, are EXACTLY
+
+    q12=-15A, q13=-21B, q24=-15D0, q34=-9E0,
+    q14=-30G+15A*D0+9B*E0.
+
+Choose the affine correction that removes the two linear drift terms:
+
+    la=(q24+kappa*q12)/15=-D0-kappa*A,
+    lb=(q34-kappa*q13)/9=-E0+(7kappa/3)*B.
+
+The leading h^2 terms cancel in BOTH, so la,lb=O(h^3). Consequently
+
+    eta=q14+la*q12+lb*q13
+       =kappa*h^4*(-30/1366875-15/455625+9/382725)+O(h^5)
+       =-4*h^4/76545+O(h^5).
+
+This proves eta<0 for all sufficiently small positive h. In particular
+the forced drift is NOT the old homogeneous -6*kappa*b^2 drift, even
+though a commuting whole endpoint becomes diagonal in this exact basis.
+The coefficient has now been derived by hand; its earlier tentative
+working label is superseded at precisely this reference-only scope.
+
+This does not sign or bound the general conjugated jump errors. The
+latter have the central/unequal-square/affine terms in the full identity.
+One cannot absorb them, integrate a bound using the whole COMMON budget
+as though it were only physical ordinary exposure, or infer V_h/index
+from the sign of eta. No source count/coin margin, new observer, physical
+inverse or altered reference is acquired.
+
+Reused sources actually read: the12533B count-uniform compact proof,
+SHA256fa6eb9f154fc35fa50d093b5037f9bf7dc6c754996299371db436436e62854a0,
+Sections2--4 (complete body read); and the COMPLETE2753B retained fair
+source-coefficient consumer, SHA256
+6445cc6b81c92b4d0dbad9dada072d1e360e422cb704b7eba9ef3152be3586b9.
+Its cubic rule and OLD representation are reused, not rerun or relabelled
+new source discoveries. The older unpromoted reference-basis calculation
+is the immediate predecessor. Historical novelty is not assessed.

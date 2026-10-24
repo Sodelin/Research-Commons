@@ -1121,3 +1121,9 @@ Aliases: reference eigenbasis, conjugated storage, d1*v, unequal-square
 correction, affine la/lb, forced ordinary drift. Do not reuse the old special
 jump formula after conjugation or treat diagonal endpoint storage as a
 physical positivity statement.
+
+The SAME affine note now also derives the reference-only forced constant
+eta=-4*h^4/76545+O(h^5)<0 by HAND from OLD source jets and exact
+eigenvectors. This supersedes the prior tentative coefficient label.
+It does not bound arbitrary-source cell errors or prove an index; no new
+source/coefficient execution was used for that addendum.
