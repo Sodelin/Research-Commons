@@ -44,7 +44,7 @@ theorem reverse_activity_route {V : Type u} (G : MarkedGraph V)
       obtain ⟨last, ys, hy, hready⟩ := ih
       have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
         refine ⟨incoming, outgoing, symmetric _ _ _ _ hedge, rfl, ?_⟩
-        simpa only [hmark] using hready
+        simpa only [hmark, DepartureAllowed] using hready
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],
         hy.append (.cons backward (.nil _)), ?_⟩
       cases hm : p.incoming with

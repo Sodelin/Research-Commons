@@ -16,13 +16,13 @@ The latest Rust suite has 111 passing tests. Existing unknown-order/shared-cache
 
 ## Current combined-build blocker
 
-Latest full1435-source target at73c84c99 is REJECTED:1316 successful objects (85 compiled/1231 reused), one failed LiteralSelectedMAG and118 blocked consumers. The previous inducing-path carrier and complete23-source early boundary compile. No whole causal/name/type/owned acceptance follows.
+Actual source40f136ab/run40099574317/job120888910419 passes LiteralSelectedMAG and the COMPLETE24-source boundary. The SAME1435-source target next rejects SelectedMAGValidity at ONE existing DepartureAllowed definition reduction:1317 successful objects (86 compiled/1231 reused),117blocked. Whole causal/name/type/owned acceptance did not run.
 
-The four actual errors need the SAME baseline condition functions and actual canonicalIndicatorEquiv application exposed before original label rewriting. COMPLETE original and later same-path bodies match. The selected proof-only variant unfolds those original definitions and derives the actual application by rfl; every original marked-target/source/selection/latent hypothesis and all146 vendor originals remain. Next: early24-source boundary then SAME complete1435-source/291-name target. [Failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
+COMPLETE original and later source bodies match. The literal DepartureAllowed definition IS the target match on the original previous mark. The selected proof adds ONLY that existing definition to the original simp list; earlier identity-map compatibility and all original graph/marked-target/source/selection/latent/route statements remain. Next: early25-source boundary then SAME1435-source/291-name combined target. All146 frozen originals remain unchanged. [Failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
 
-All five earlier scoped dependency/hash sets (9,5,245,836,1 modules) were compared with current source: every hash matches and the changed LiteralSelectedMAG is absent. They are reused; separate prechecks are manual/explicit rather than repeated before each unrelated proof repair. The mandatory combined source/export/owned/actual-caller/strict gates are retained unchanged. [Exact reuse](scoped-check-source-reuse.json), [CI contract](SCOPED-CHECK-REUSE.md).
+Earlier accepted9+5/245/836/1 scoped source-hash sets remain unchanged; both changed causal modules are absent. Their duplicate prechecks are manual/explicit while full combined/export/owned/caller/strict gates remain mandatory. [Reuse](scoped-check-source-reuse.json).
 
-Latest early24-source follow-up at457f1d90/run40098926539 fixes all3 indicator-wrapper diagnostics but rejects ONE baseline condition-function equality. No new full1435/291-name/owned result follows. The new exact funext/cases/rfl equality retains the actual canonical carrier and original connection theorem. All earlier rejected complete attempts stay rejected.
+Latest G3 owner components were COMPLETE read/hash-matched: compensated-source bounds14724B/794bcb58 and forced nonlinear trace9431B/e176acf2. They are owner-complete HAND at the equal-arm paired current-root9/7/6/4 representation scope. Do not rederive those source bounds or claim they bound energy; signed chronological coercivity including b-a/accumulated errors remains open. No formal import, AG-Pair/H/NO or original G3 closure follows. [Exact source intake](supplier-returns.json).
 
 ## Genuine remaining implementation and formal joins
 

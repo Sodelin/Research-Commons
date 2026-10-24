@@ -1,5 +1,9 @@
 # Actual portable package verification
 
+Source12840f136ab/run40099574317/job120888910419 passes LiteralSelectedMAG's baseline/indicator transport and complete24-source boundary. The SAME1435-source combined target is REJECTED at ONE SelectedMAGValidity DepartureAllowed definition reduction:1317 successful objects (86 compiled/1231 reused),1failed/117blocked. Whole causal/name/type/owned/callers did not run. COMPLETE original and later source match; the next variant only unfolds the existing departure definition in the original simp. All original source/marked-target/route/latent/selection hypotheses and frozen vendor bytes remain.
+
+The G3 compensated-source and forced-trace suppliers were COMPLETE read and rawSHA/Gitblob matched at their exact immutable commits; source-only/owner-HAND scopes and the remaining signed coercivity/AG-Pair/original G3 gaps are recorded in supplier-returns.json. No proof/source evaluator/model/native job, duplicate trace derivation or canonical status promotion was selected by that intake.
+
 Source127457f1d90/run40098926539/job120887031955: early24-source LiteralSelectedMAG is REJECTED at one baseline higher-order condition-function equality. The three original indicator-wrapper diagnostics are repaired, but the COMPLETE module is not accepted and the combined1435-source/name/owned/caller stages are skipped. The next exact proof derives the SAME function equality by funext/cases/rfl at the actual canonical carrier before reusing the original theorem. Every source/marked-target/latent/selection hypothesis and frozen vendor body remains. Unchanged accepted scoped contexts are reused; no new scientific or native result is inferred. Exact diagnostics/source variant remain in causal-compiler-rejections.json.
 
 ## Source126 actual accepted component and remaining failure
