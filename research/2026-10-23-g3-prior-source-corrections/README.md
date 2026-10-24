@@ -1158,3 +1158,17 @@ generic affine note, whose8059B mathematical body remains unchanged.
 Aliases: whole-coin polynomial divisibility, v beta^2 u^3 transverse,
 pair normalization, horizontal compensation, Xi, Theta O(h^6),
 h^4 r+h^2 s constant jump, actual-source all-length weighted balance.
+
+## Forced reference jump trace: OLD scalar lemma integrated, HAND proof complete
+
+[G3-FORCED-REFERENCE-JUMP-TRACE.md](../2026-10-24-g3-asymptotic-root-grid/FORCED-REFERENCE-JUMP-TRACE.md),
+9431B/SHAe176acf212f0ace869445f7f9103cdc837d190e3ce6e2d853b08eb33222ed8fd, stable key
+G3-FORCED-REFERENCE-JUMP-TRACE-01. The completed OLD scalar5/2 lemma and
+nonlinear trace are reused with exact reference forcing. On the actual
+paired commutator, ALL strict coins/scales/counts,
+sum |J|^(5/2)<=C_H(E_b+h^8); the bare-f version retains
+h^5*sum r_i^(5/2). Affine-exponential own-interval trace and continuous
+potential work are explicit. No new source/model/coefficient execution,
+independent correctness acceptance or Lean. This is receiver integration
+within AG-Pair, not a new full attack. Signed energy control/index remains
+UNPROVED; do not replace the energy bound by its converse or rederive R7/R9.
