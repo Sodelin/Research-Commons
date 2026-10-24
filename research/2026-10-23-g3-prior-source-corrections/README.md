@@ -1,6 +1,6 @@
 # G3 source reuse and admission proofs
 
-23 October 2026. Existing G3 source owner. This entrypoint preserves completed
+Updated24 October 2026. Existing G3 source owner. This entrypoint preserves completed
 suppliers, records explicit source-admission arguments and tracks later
 corrections. Original acceptance is unchanged. Completed hand mathematics
 is **PROVED (not Lean formalized)**. Independent
@@ -30,6 +30,35 @@ some fixed m,M force t^(4N)=c from K_C=E(c), b2I(K)=c^(3/4) and
 Proving it would close the original negative reduction. No original
 impossibility is claimed without it. An absolute weak-source Taylor
 error, finite rank or a fixed-architecture theorem cannot fill this gap.
+
+## Weak equal-arm paired diagonals: synthesis completed at every finite cap
+
+[G3-WEAK-EQUAL-ARM-PAIRED-DIAGONALS-01](../2026-10-24-g3-weak-equal-arm-paired-diagonals/PROOF.md)
+and [separate status](../2026-10-24-g3-weak-equal-arm-paired-diagonals/SOURCE-STATUS.json)
+are PROVED BY HAND. For every finite M,0<C<D<sqrt(C)<1 and eta>0 small,
+ONE finite strict equal-arm word has COMMON E(C) at all forest arities
+and I diagonals D^binom(n,2) through M. All populations can be weak and
+all parent0 coins in(1/2,1/2+eta), on the SAME tuple. The joint scalar
+COMMON/I-diagonal map has full rank M. Independent review and Lean are
+separate; no new scientific execution occurred.
+
+The new restricted source rule is
+D_j=c_j*a^j*(1-2j*kappa)*epsilon^j+O(epsilon^(j+1)),
+c_j=(-1)^j*(j-1)!/2^(j+1), for equal exposure a*epsilon and
+(2g-1)^2=kappa*a*epsilon. One path/cycle cumulant proof supplies EVERY
+fixed j. The OLD regular-sum/IFT argument is reused, then a finite
+repetition fixes BOTH total passages. The older unrestricted diagonal
+and prescribed-I-time theorems are completed predecessors, not reopened.
+
+For the active reduction take D=C^(3/4). The paired-diagonal budget task
+is closed; CP-Pair's full chronological forest equations remain UNPROVED.
+These words are not claimed to commute with S(t). No full ordinary return,
+one finite all-cap word or admitted fixed G4 target is supplied. Do not
+start another diagonal/cap/time-budget project from this record.
+
+Aliases: equal-arm weak diagonal return, critical square-root coin bias,
+connected path/cycle cumulants, fixed COMMON plus I hazard, paired diagonal
+budget, finite regular diagonal word. This is not full-forest centering.
 
 ## All-core passive commutation reduction: completed predecessor reused
 
