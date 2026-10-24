@@ -1,5 +1,13 @@
 # Current integration frontier
 
+## Current executable checkpoint and next action
+
+Source112 `5fb1e31fa869e1188a9fff6f3dc78afe4f062b4a`, [run40075576505](https://github.com/Sodelin/Research-Commons/actions/runs/40075576505): 107 Rust tests PASSED (complete actual log read). The SAME1077-source causal/export target is TERMINAL REJECTED:945 successful objects (57 compiled/888 reused), ONE remaining WithBot injection goal in CommonIndicatorRoots and131 blocked consumers. All prior31 indicator diagnostics are fixed; the whole named/type/owned audit did not run. The six new root-cover proofs compiled, but their full selected-context acceptance is still pending.
+
+The selected repair proves that exact coe-incidence equivalence by congruence/injectivity. Nine previously BLOCKED modules receive only explicit identity-map/Sum proof compatibility in their COMPLETE inspected original proof blocks (9776 characters); no failure or PASS is invented for those modules. All146 vendor originals and the complete1077-source target are retained. See causal-compiler-rejections.json and CAUSAL-REUSE-PREFLIGHT.md.
+
+Source109's independent full word is now TERMINAL REJECTED at the Stage3 kernel excessive-memory guard, after416 primitive modules and Stage0/1/2 compiled. Its exact artifact and complete46,624B source are recovered/hash-matched and retained. This establishes neither false coefficients nor OS OOM. The next source decomposes the SAME checker over ALL keys from BOTH original lists, preserving duplicate sums, all exponent keys, the entire word/bank/modes and physical/owned consumers. Original finite checker and soundness proofs are byte-unchanged. See [WORD-KEY-CHECK-DECOMPOSITION-REUSE.md](WORD-KEY-CHECK-DECOMPOSITION-REUSE.md). Changed-source acceptance remains pending; no private/controller/model/held action or unchanged replay is selected.
+
 The portable Lean/Rust goal is ACTIVE. All118 canonical IDs remain (75 rated/43 unranked).24 claims have165 ACCEPTED SCOPED named endpoints;94 are still unnamed. Completed HAND mathematics is not reopened. Nine OLD actual original-source API aliases passed fresh owner/context checking. Full existing causal roots are newly selected, not accepted yet; this is downstream formal checking, not new mathematics.
 
 ## Accepted actual package scope

@@ -11091,7 +11091,8 @@
       }
     },
     "last_renderer_rejected_source": "282a95e11a1bada72c9f396557f24446f72829f1",
-    "original_exception_still_unknown": true
+    "original_exception_still_unknown": false,
+    "result": "Source109 SAME complete Stage3 exposes actual kernel excessive-memory guard; Stage0/1/2 compile with the repaired pinned API. No false-coefficient or OS/host-OOM conclusion."
   },
   "source103_renderer_terminal": {
     "source": "282a95e11a1bada72c9f396557f24446f72829f1",
@@ -11117,7 +11118,9 @@
       "sha256": "2c2779ec7716aeee2fa227e262b62206862848bbae3898239331ec3e775dce94",
       "files": 844,
       "independently_downloaded_rehashed_in_RAM": true,
-      "actual_complete_failed_stage0_read": true
+      "actual_complete_failed_stage0_read": true,
+      "versioned_failed_source": "integration/rejected-public-source/282a95e1-NaturalIndependentWordStage0.lean.txt",
+      "versioned_source_is_actual_public_rejected_bytes": true
     },
     "repair": {
       "renderer": {
@@ -11150,5 +11153,52 @@
         "Stage0_acceptance_not_yet_observed": true
       }
     }
+  },
+  "source109_original_kernel_terminal": {
+    "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+    "run": 40072807852,
+    "job": 120809856999,
+    "status": "TERMINAL_REJECTED_KERNEL_MEMORY_GUARD_AT_STAGE3",
+    "failed_module": "NaturalIndependentWordStage3",
+    "source_bytes": 46624,
+    "source_sha256": "402577bec5a6b7df8c7674aa7e16fa9bb5b2ea7d17cac0f118830474a94be5f4",
+    "error_line": 536,
+    "error": "(kernel) excessive memory consumption detected",
+    "compiled_independent_primitives": 416,
+    "compiled_full_stages": [
+      0,
+      1,
+      2
+    ],
+    "stage3_coefficient_check_accepted": false,
+    "whole_independent_mode_accepted": false,
+    "common_mode_accepted": false,
+    "final_physical_receiver_accepted": false,
+    "whole_owned_audit_ran": false,
+    "coefficient_false_established": false,
+    "host_OS_OOM_established": false,
+    "artifact": {
+      "id": 12552882793,
+      "bytes": 2172857,
+      "sha256": "60ef189635f7ae8a50a1a282c223292f2173f24f07c1d68336b5f2b5bdfa1fe2",
+      "members": 856,
+      "independently_downloaded_and_rehashed_in_RAM": true,
+      "actual_complete_failed_stage_read": true,
+      "versioned_failed_source": "integration/rejected-public-source/d39f9490-NaturalIndependentWordStage3.lean.txt"
+    }
+  },
+  "pending_key_decomposition": {
+    "preflight": "integration/WORD-KEY-CHECK-DECOMPOSITION-REUSE.md",
+    "renderer_sha256": "e7813a8d7e84230ae13272b97e3c440f3c543fc824a9ea9880da37768ce032a3",
+    "helper_module_sha256": "3ede6563e18292e7fb01740c8f96f7439d0503a34e83676267aab5f699c28425",
+    "helper": "Astra.NativeSparseTableCertificate.checkRows_of_key_checks",
+    "same_complete_case": true,
+    "all_keys_from_both_original_lists": true,
+    "all_duplicate_sums_and_exponent_union_retained": true,
+    "original_checkRows_and_soundness_unchanged": true,
+    "new_source_oracle": false,
+    "new_axiom": false,
+    "native_decide": false,
+    "status": "SOURCE_ONLY_PENDING_RUST_FULL_SAME_WORD_AND_OWNED_CHECK"
   }
 }

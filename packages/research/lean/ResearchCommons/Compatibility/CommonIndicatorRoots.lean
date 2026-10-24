@@ -132,6 +132,19 @@ theorem indicator_arrow_equiv {V : Type u} [LinearOrder V] (G : MarkedGraph V)
   rcases a with _ | (x | r) <;> rcases b with _ | (y | s) <;>
     simp [AddIndicator, Arrow, CanonicalSelection.Directed, augmentGraph, SourceSelection.augmentObserved,
       indicatorVertexEquiv, rootUp, Incident]
+  change (y = r.left ∨ y = r.right) ↔
+    (WithBot.coe y = WithBot.coe r.left ∨ WithBot.coe y = WithBot.coe r.right)
+  constructor
+  · rintro (h | h)
+    · exact Or.inl (congrArg (fun v : V => WithBot.coe v) h)
+    · exact Or.inr (congrArg (fun v : V => WithBot.coe v) h)
+  · rintro (h | h)
+    · left
+      injection h with same
+      exact same
+    · right
+      injection h with same
+      exact same
 
 def indicatorGraph {V : Type u} [LinearOrder V] (G : MarkedGraph V) (target : V) :
     MarkedGraph (Option (Vertex G)) where

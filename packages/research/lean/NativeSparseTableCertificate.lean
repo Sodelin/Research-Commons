@@ -136,6 +136,20 @@ def checkRows {A K : Type*} [DecidableEq K] (key : A → K)
   ((rowKeys key reference ++ rowKeys key supplied).dedup).all fun k =>
     checkSparse (readRows key reference k) (readRows key supplied k)
 
+
+/-- Proof decomposition of the SAME checkRows Boolean. It suffices to prove
+the original sparse check for EVERY key from BOTH literal row lists; no
+deduplication computation, sampled evaluation or source-law oracle is assumed.
+Duplicates still contribute their full readRows sums. -/
+theorem checkRows_of_key_checks {A K : Type*} [DecidableEq K] (key : A → K)
+    (reference supplied : Rows I A)
+    (checks : ∀ k ∈ rowKeys key reference ++ rowKeys key supplied,
+      checkSparse (readRows key reference k) (readRows key supplied k) = true) :
+    checkRows key reference supplied = true := by
+  apply List.all_eq_true.mpr
+  intro k hk
+  exact checks k (List.mem_dedup.mp hk)
+
 theorem checkRows_sound {A K : Type*} [DecidableEq K] (key : A → K)
     (reference supplied : Rows I A) (h : checkRows key reference supplied = true) :
     ∀ k, polynomial (readRows key reference k) =

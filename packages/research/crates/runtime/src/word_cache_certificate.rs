@@ -398,20 +398,26 @@ theorem coefficient_fibres_checked :
   simp only [{payload_rules}, GProgram.G7.EffectiveFullEpochCoefficients.product,
     List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
     List.cons_append, List.nil_append]
-  -- Reuse the pinned builtin's kernel construction without its catch/diagnose
-  -- fallback, which can replace the original kernel exception with a stuck
-  -- default-transparency Decidable report. This is the SAME closed Bool goal.
-  run_tac
-    Lean.Elab.Tactic.closeMainGoalUsing `kernel_decide_original_error fun target _ => do
-      let target ← Lean.instantiateMVars target
-      if target.hasFVar || target.hasMVar then
-        throwError "closed literal coefficient goal required"
-      let proof ← Lean.Meta.mkDecideProof target
-      let typeLevels := (Lean.collectLevelParams {{}} target).params
-      let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
-      let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
-        Lean.Meta.mkAuxLemma lemmaLevels target proof
-      pure (Lean.mkConst lemmaName (lemmaLevels.map Lean.Level.param))
+  -- Keep the ENTIRE original checkRows goal. Split its BOTH-side key union
+  -- into literal-key obligations, avoiding one monolithic dedup/all reduction.
+  -- Each obligation still checks full duplicate sums and every exponent key.
+  apply checkRows_of_key_checks
+  intro outputKey outputMember
+  simp only [rowKeys, rows, List.map_cons, List.map_nil,
+    List.mem_append, List.mem_cons, List.not_mem_nil] at outputMember
+  repeat' (first | (rcases outputMember with (rfl | outputMember)) | subst outputKey | contradiction)
+  all_goals
+    run_tac
+      Lean.Elab.Tactic.closeMainGoalUsing `kernel_decide_original_error fun target _ => do
+        let target ← Lean.instantiateMVars target
+        if target.hasFVar || target.hasMVar then
+          throwError "closed literal coefficient goal required"
+        let proof ← Lean.Meta.mkDecideProof target
+        let typeLevels := (Lean.collectLevelParams {{}} target).params
+        let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
+        let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
+          Lean.Meta.mkAuxLemma lemmaLevels target proof
+        pure (Lean.mkConst lemmaName (lemmaLevels.map Lean.Level.param))
 #check coefficient_fibres_checked
 end {stage_namespace}
 "#,header=header(&[cache_module.clone(),previous_module.clone(),data],

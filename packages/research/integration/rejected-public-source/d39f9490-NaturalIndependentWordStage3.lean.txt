@@ -1,0 +1,548 @@
+import NaturalIndependentWordCache
+import NaturalIndependentWordStage2
+import NaturalIndependentWordStage3Data4
+
+set_option maxRecDepth 10000
+set_option maxHeartbeats 30000000
+namespace ResearchCommons.Generated.NaturalIndependentWord.Stage3
+open Nanuq.Source GProgram.SourceForest
+open UnifiedLean.Source.FiniteSourceSnapshot
+open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+open UnifiedLean.Source.NativeIndependentPairMixture
+open UnifiedLean.Source.UniformizedSourceStep
+open UnifiedLean.Source.SourceFiniteProjection UnifiedLean.Source.SourceProgramTransport
+open UnifiedLean.Source.SourceNaturalInitialization
+open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
+open GProgram.G7.EffectiveSourceEnumeration
+open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.FullEpochPolynomial GProgram.G7.SinglePopulationPolynomialKernel
+open GProgram.G7.EffectiveInitializationCoefficients
+open GProgram.G7.EffectiveWordCoefficients GProgram.G7.SymbolicProgramPolynomial
+open Astra.NativeSparseTableCertificate Astra.OriginalWordCacheCertificate
+open scoped NNReal BigOperators
+open ResearchCommons.Generated.NaturalIndependentWordContext
+
+-- 3 full-copy literal carrier; no quotient by a forest.
+def rows : Rows (Fin 21) (Code N sample) := [(destination0, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination1, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination2, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination3, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination4, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination5, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination6, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination7, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination8, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination9, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination10, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination11, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination12, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination13, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination14, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination15, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination16, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination17, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination18, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination19, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination20, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination21, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination22, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination23, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination24, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination25, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination26, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination27, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination28, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination29, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination30, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination31, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination32, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination33, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination34, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination35, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination36, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination37, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination38, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination39, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination40, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination41, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination42, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination43, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination44, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination45, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination46, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination47, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination48, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination49, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination50, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination51, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination52, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination53, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination54, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination55, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination56, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination57, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination58, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination59, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination60, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination61, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination62, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination63, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination64, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination65, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination66, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination67, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination68, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination69, [(monomial1, (1 / 12 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination70, [(monomial6, (1 / 12 : ℚ)), (monomial0, (-1 / 6 : ℚ)), (monomial1, (1 / 12 : ℚ)), (monomial7, (-1 / 8 : ℚ)), (monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 8 : ℚ)), (monomial8, (1 / 24 : ℚ)), (monomial4, (-1 / 12 : ℚ)), (monomial5, (1 / 24 : ℚ))]),
+  (destination71, [(monomial0, (1 / 12 : ℚ)), (monomial1, (-1 / 12 : ℚ)), (monomial2, (-1 / 8 : ℚ)), (monomial3, (1 / 8 : ℚ)), (monomial4, (1 / 24 : ℚ)), (monomial5, (-1 / 24 : ℚ))]),
+  (destination72, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination73, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination74, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination75, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination76, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination77, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination78, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination79, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination80, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination81, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination82, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination83, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination84, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination85, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination86, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination87, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination88, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination89, [(monomial9, (1 / 4 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination90, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination91, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination92, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination93, [(monomial3, (1 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial5, (-1 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination94, [(monomial7, (1 / 4 : ℚ)), (monomial2, (-3 / 4 : ℚ)), (monomial3, (3 / 4 : ℚ)), (monomial9, (-1 / 4 : ℚ)), (monomial8, (-1 / 4 : ℚ)), (monomial4, (3 / 4 : ℚ)), (monomial5, (-3 / 4 : ℚ)), (monomial10, (1 / 4 : ℚ))]),
+  (destination95, [(monomial2, (1 / 4 : ℚ)), (monomial3, (-1 / 2 : ℚ)), (monomial9, (1 / 4 : ℚ)), (monomial4, (-1 / 4 : ℚ)), (monomial5, (1 / 2 : ℚ)), (monomial10, (-1 / 4 : ℚ))]),
+  (destination96, [(monomial10, 1), (monomial11, -1)]),
+  (destination97, [(monomial11, 1)]),
+  (destination98, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination99, [(monomial10, 1), (monomial11, -1)]),
+  (destination100, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination101, [(monomial10, 1), (monomial11, -1)]),
+  (destination102, [(monomial4, 1), (monomial5, -3), (monomial10, 3), (monomial11, -1)]),
+  (destination103, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination104, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination105, [(monomial10, 1), (monomial11, -1)]),
+  (destination106, [(monomial4, 1), (monomial5, -3), (monomial10, 3), (monomial11, -1)]),
+  (destination107, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination108, [(monomial4, 1), (monomial5, -3), (monomial10, 3), (monomial11, -1)]),
+  (destination109, [(monomial5, 1), (monomial10, -2), (monomial11, 1)]),
+  (destination110, [(monomial8, 1), (monomial4, -4), (monomial5, 6), (monomial10, -4), (monomial11, 1)]),
+  (destination111, [(monomial4, 1), (monomial5, -3), (monomial10, 3), (monomial11, -1)])]
+
+theorem cached_input0_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination0 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step42.certificate.entry.rows := by
+  rfl
+
+theorem cached_input1_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination1 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step61.certificate.entry.rows := by
+  rfl
+
+theorem cached_input2_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination2 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step43.certificate.entry.rows := by
+  rfl
+
+theorem cached_input3_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination3 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step62.certificate.entry.rows := by
+  rfl
+
+theorem cached_input4_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination4 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step44.certificate.entry.rows := by
+  rfl
+
+theorem cached_input5_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination5 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step63.certificate.entry.rows := by
+  rfl
+
+theorem cached_input6_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination6 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step45.certificate.entry.rows := by
+  rfl
+
+theorem cached_input7_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination7 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step64.certificate.entry.rows := by
+  rfl
+
+theorem cached_input8_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination8 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step46.certificate.entry.rows := by
+  rfl
+
+theorem cached_input9_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination9 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step65.certificate.entry.rows := by
+  rfl
+
+theorem cached_input10_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination10 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step47.certificate.entry.rows := by
+  rfl
+
+theorem cached_input11_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination11 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step66.certificate.entry.rows := by
+  rfl
+
+theorem cached_input12_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination12 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step48.certificate.entry.rows := by
+  rfl
+
+theorem cached_input13_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination13 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step67.certificate.entry.rows := by
+  rfl
+
+theorem cached_input14_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination14 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step49.certificate.entry.rows := by
+  rfl
+
+theorem cached_input15_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination15 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step68.certificate.entry.rows := by
+  rfl
+
+theorem cached_input16_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination16 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step50.certificate.entry.rows := by
+  rfl
+
+theorem cached_input17_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination17 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step69.certificate.entry.rows := by
+  rfl
+
+theorem cached_input18_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination18 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step51.certificate.entry.rows := by
+  rfl
+
+theorem cached_input19_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination19 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step70.certificate.entry.rows := by
+  rfl
+
+theorem cached_input20_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination20 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step52.certificate.entry.rows := by
+  rfl
+
+theorem cached_input21_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination21 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step71.certificate.entry.rows := by
+  rfl
+
+theorem cached_input22_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination22 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step53.certificate.entry.rows := by
+  rfl
+
+theorem cached_input23_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination23 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step72.certificate.entry.rows := by
+  rfl
+
+theorem cached_input24_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination24 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step54.certificate.entry.rows := by
+  rfl
+
+theorem cached_input25_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination25 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step73.certificate.entry.rows := by
+  rfl
+
+theorem cached_input26_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination26 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step55.certificate.entry.rows := by
+  rfl
+
+theorem cached_input27_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination27 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step74.certificate.entry.rows := by
+  rfl
+
+theorem cached_input28_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination28 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step56.certificate.entry.rows := by
+  rfl
+
+theorem cached_input29_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination29 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step75.certificate.entry.rows := by
+  rfl
+
+theorem cached_input30_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination30 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step57.certificate.entry.rows := by
+  rfl
+
+theorem cached_input31_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination31 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step76.certificate.entry.rows := by
+  rfl
+
+theorem cached_input32_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination32 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step58.certificate.entry.rows := by
+  rfl
+
+theorem cached_input33_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination33 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step77.certificate.entry.rows := by
+  rfl
+
+theorem cached_input34_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination34 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step59.certificate.entry.rows := by
+  rfl
+
+theorem cached_input35_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination35 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step78.certificate.entry.rows := by
+  rfl
+
+theorem cached_input36_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination36 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step60.certificate.entry.rows := by
+  rfl
+
+theorem cached_input37_exact :
+    cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+      (.enter ⟨7, by decide +kernel⟩) ResearchCommons.Generated.NaturalIndependentWord.Stage2.destination37 =
+        ResearchCommons.Generated.NaturalIndependentWord.Step79.certificate.entry.rows := by
+  rfl
+
+def stage : WordStage N sample (Fin 21) (Fin 2) where
+  operation := .enter ⟨7, by decide +kernel⟩
+  rows := rows
+theorem coefficient_fibres_checked :
+    checkRows (project N Finset.univ)
+      (GProgram.G7.SparseWordComposition.bindRows ResearchCommons.Generated.NaturalIndependentWord.Stage2.rows
+        (cachedStep N sample parentRegistry common encodeVariable ResearchCommons.Generated.NaturalIndependentWord.Cache.cache
+          (.enter ⟨7, by decide +kernel⟩))) rows = true := by
+  simp only [ResearchCommons.Generated.NaturalIndependentWord.Stage2.rows, GProgram.G7.SparseWordComposition.bindRows,
+    List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input0_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input1_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input2_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input3_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input4_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input5_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input6_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input7_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input8_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input9_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input10_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input11_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input12_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input13_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input14_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input15_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input16_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input17_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input18_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input19_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input20_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input21_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input22_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input23_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input24_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input25_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input26_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input27_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input28_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input29_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input30_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input31_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input32_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input33_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input34_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input35_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input36_exact,
+    ResearchCommons.Generated.NaturalIndependentWord.Stage3.cached_input37_exact]
+  -- Expose the existing checked payloads; only literal finite-list algebra
+  -- remains before the unchanged complete output-key/coefficient check.
+  simp only [ResearchCommons.Generated.NaturalIndependentWord.Step42.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step42.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step42.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step43.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step43.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step43.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step44.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step44.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step44.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step45.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step45.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step45.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step46.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step46.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step46.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step47.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step47.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step47.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step48.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step48.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step48.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step49.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step49.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step49.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step50.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step50.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step50.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step51.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step51.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step51.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step52.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step52.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step52.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step53.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step53.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step53.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step54.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step54.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step54.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step55.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step55.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step55.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step56.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step56.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step56.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step57.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step57.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step57.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step58.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step58.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step58.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step59.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step59.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step59.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step60.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step60.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step60.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step61.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step61.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step61.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step62.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step62.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step62.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step63.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step63.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step63.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step64.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step64.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step64.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step65.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step65.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step65.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step66.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step66.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step66.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step67.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step67.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step67.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step68.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step68.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step68.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step69.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step69.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step69.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step70.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step70.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step70.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step71.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step71.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step71.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step72.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step72.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step72.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step73.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step73.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step73.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step74.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step74.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step74.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step75.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step75.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step75.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step76.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step76.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step76.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step77.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step77.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step77.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step78.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step78.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step78.rows,
+    ResearchCommons.Generated.NaturalIndependentWord.Step79.certificate,
+    ResearchCommons.Generated.NaturalIndependentWord.Step79.entry,
+    ResearchCommons.Generated.NaturalIndependentWord.Step79.rows, GProgram.G7.EffectiveFullEpochCoefficients.product,
+    List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
+    List.cons_append, List.nil_append]
+  -- Reuse the pinned builtin's kernel construction without its catch/diagnose
+  -- fallback, which can replace the original kernel exception with a stuck
+  -- default-transparency Decidable report. This is the SAME closed Bool goal.
+  run_tac
+    Lean.Elab.Tactic.closeMainGoalUsing `kernel_decide_original_error fun target _ => do
+      let target ← Lean.instantiateMVars target
+      if target.hasFVar || target.hasMVar then
+        throwError "closed literal coefficient goal required"
+      let proof ← Lean.Meta.mkDecideProof target
+      let typeLevels := (Lean.collectLevelParams {} target).params
+      let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
+      let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
+        Lean.Meta.mkAuxLemma lemmaLevels target proof
+      pure (Lean.mkConst lemmaName (lemmaLevels.map Lean.Level.param))
+#check coefficient_fibres_checked
+end ResearchCommons.Generated.NaturalIndependentWord.Stage3
