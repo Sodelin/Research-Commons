@@ -378,3 +378,7 @@ Current-main26898807 at01:53:29UTC24October was compared: docs treeaaf496ad and 
 
 
 Older full sourceaa1127ee/run40042311302/job120716173831 is now terminal REJECTED at the SAME Stage3 Boolean line147/SHA06f97fef, after COMPLETE1654-library/owned and exact115-name export commands passed. Its full1,727,712-character actual log was read. All1654 source hashes were compared equal to the prior source75 full profile; new artifact12543572000/SHAc0c84cba retains this exact attempt. No whole-word/caller PASS, host cause, restart/cancel or old replay. The actual changed-source766c83b3 current word120743281427 remains live and is the only current long caller dependency.
+
+## Source91: actual original trace/locus mixture candidate
+
+Prior/successor comparison and complete original trace/support bodies were read before implementation; exact identities are in JC69-SOURCE-MIXTURE-REUSE-PREFLIGHT.md. Original complete source measure/root/chronological support are OLD/REUSE. The13,343B JC69Source SHAfe1ca58a279ddd4b65020fc4e31ba731afe00177d4dd1add2214314ddcf97f95 is new formal integration only, with8 selected endpoints awaiting actual complete context/owned audit. No desired source-mixing identity is a premise; nonempty original Copy is explicit. Existing running word job120743281427 remains intact. No phone source/Git/build write or held private/native/model execution occurred.

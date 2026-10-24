@@ -6,6 +6,7 @@ import ResearchCommons.MSCI.JC69
 import ResearchCommons.MSCI.JC69Tree
 import ResearchCommons.MSCI.JC69Observation
 import ResearchCommons.MSCI.JC69Measurable
+import ResearchCommons.MSCI.JC69Source
 import ResearchCommons.MSCI.Alignment
 import ResearchCommons.Claims.G1
 import ResearchCommons.Claims.G2

@@ -27,3 +27,7 @@ G4 d646e5e3 was read/hash-matched in full: its GLOBAL-Phi and ONE-block shared-g
 The NEW public G3 all-core commutation reduction/status at26898807 were read COMPLETE. Its original-input all-core forcing/passive coefficient-bank reduction is owner-PROVED HAND. The original decision obstruction remains conditional on UNPROVED CP-W; original G3/CB-G3-004 is unresolved. No fixed-scaffold or source-forcing theorem is reopened, and no independent correctness/native/kernel acceptance follows from reading. supplier-returns.json records the pointer/scope.
 
 Before any new implementation, inspect actual predecessor AND later successor, compare original quantifiers/interfaces and reuse completed suppliers. No duplicate engines/wrappers are counted as mathematical progress. No local Git/source writes, subagents, peer wake, private/model/held/USED/UNKNOWN replay. Original owners and holds persist. Phone deployment is outside this goal; unrelated private writer/controller remains UNBOUND.
+
+## New actual-source mixture candidate (not yet acceptance)
+
+JC69Source reuses the original completeCalendarTraceLaw/probability and actual one-root/chronological support to construct the normalized SAME-source finite-locus mutation law. All sites share one tree/matrix; the whole register bank is mixed once. The eight new names are SOURCE ONLY pending the fresh complete selected/owned check. Original nonempty Copy is explicit; unranked timed-output descent and the empty observer remain. See JC69-SOURCE-MIXTURE-REUSE-PREFLIGHT.md. Current word120743281427 is preserved.
