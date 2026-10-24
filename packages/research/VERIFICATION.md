@@ -1,5 +1,13 @@
 # Actual portable package verification
 
+## Source126 actual accepted component and remaining failure
+
+Source73c84c99/run40096997969/job120881390655 PASSES the three finite-original-equation names in the complete selected module. Actual owned audit:4 declarations/4 theorems including one generated simp lemma, zero owned/nonstandard/missing. Public artifact12561880360 was independently downloaded/hash-checked:9072779B/SHA104adfde578f2da8bc371ee5bc0ae164a444f0d8eeb4711bdc4330d60ca0c1eb. All three COMPLETE printed types, exact module owners and four actual axiom rows were read. This is a downstream formal use-site of the completed HAND descent theorem, not full source/RCF/O⇔D/stopping closure. Exact receipt: integration/g4-algebraic-profile-component-verification.json.
+
+The SAME1435-source combined target remains REJECTED at LiteralSelectedMAG's4 condition/equiv proof reductions:1316 successful objects (85 compiled/1231 reused),1failed/118blocked. The previous inducing-path binder and complete23-source early boundary compile. COMPLETE original and current-main LiteralSelectedMAG/adapter were read, original hashes matched; the selected variant preserves every original source/target/latent/selection hypothesis while exposing the actual functions/Equiv. No full causal/name/type/owned acceptance is inferred.
+
+The already accepted9+5/245/836/1 source-hash sets were mechanically compared with current source: ALL match, and changed LiteralSelectedMAG is absent. Their duplicate prechecks are now manual/explicit; mandatory complete1435-source/291-name/owned and actual-caller/strict gates remain. No word/certificate/native/model/held replay is selected. See integration/scoped-check-source-reuse.json.
+
 ## Latest source125 result and next selected formal use-site
 
 Source d03e76358cdda716b8bea79cdfb57f9ace43f8d1/run40095773163 passed111 Rust tests and the earlier exact model/query/NANUQ scoped checks. EndpointColliderActivation now compiles in its complete22-source boundary. The SAME1434-source combined target is REJECTED at the original InducingPathSeparation untyped carrier binder:1314 successful objects (83 compiled/1231 reused),1failed/119blocked. Six diagnostics are the carrier-inference cascade; whole causal/name/type/owned acceptance did not run. COMPLETE original and later source were read and match. The new proof-only carrier annotation preserves every original hypothesis and all146 frozen vendor bodies. Exact failure/variant are in causal-compiler-rejections.json.

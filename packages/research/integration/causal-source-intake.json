@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_UNTYPED_ORIGINAL_CARRIER_BINDER_COMPATIBILITY_PENDING",
+  "status": "SAME_FULL_TARGET_REJECTED_CONDITION_EQUIV_PROOF_REDUCTION_COMPATIBILITY_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -802,8 +802,8 @@
     },
     {
       "module": "LiteralSelectedMAG",
-      "path": "vendor/restricted-causal-source/LiteralSelectedMAG.lean",
-      "sha256": "ceeb94ca337205a26471fe18b187ef1b423029110d099887ebf7aa141f13df34",
+      "path": "lean/ResearchCommons/Compatibility/LiteralSelectedMAG.lean",
+      "sha256": "3abde844ce0ad4a7c0f72cbf0a3a10943350e48d6a294b64bd134996dfea5efd",
       "imports": [
         "InducingPathSeparation"
       ],
@@ -816,9 +816,12 @@
         "source_sha256": "ceeb94ca337205a26471fe18b187ef1b423029110d099887ebf7aa141f13df34",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Unfold the SAME baseline condition functions and original graph constructors; expose the actual canonicalIndicatorEquiv.toEquiv by a private rfl lemma before the existing observed-label rewrites. Every original theorem/target/source/latent/selection hypothesis remains.",
+        "actual_rejected_source": "73c84c99f46e7a977f99efefde174871d2d4f7f8"
       }
     },
     {
@@ -4892,6 +4895,22 @@
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "LiteralSelectedMAG",
+      "original_sha256": "ceeb94ca337205a26471fe18b187ef1b423029110d099887ebf7aa141f13df34",
+      "selected_sha256": "3abde844ce0ad4a7c0f72cbf0a3a10943350e48d6a294b64bd134996dfea5efd",
+      "selected_bytes": 11310,
+      "selected_git_blob": "c0ceccdeeca1511d74aa79c0aa6dc2c085925b69",
+      "edit": "Unfold the SAME baseline condition functions and original graph constructors; expose the actual canonicalIndicatorEquiv.toEquiv by a private rfl lemma before the existing observed-label rewrites. Every original theorem/target/source/latent/selection hypothesis remains.",
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "actual_rejected_source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ],
   "first_full_context_rejection": {
@@ -4918,35 +4937,39 @@
     }
   },
   "latest_full_context_result": {
-    "source": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1",
-    "run": 40095773163,
-    "job": 120877768663,
-    "status": "TERMINAL_REJECTED_UNTYPED_ORIGINAL_SOURCE_VERTEX_BINDER",
+    "source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
+    "run": 40096997969,
+    "job": 120881390655,
+    "status": "TERMINAL_REJECTED_ORIGINAL_TARGET_CONDITION_EQUIV_PROOF_REDUCTIONS",
     "target": "ResearchCommons.Integration.Exports",
-    "selected_sources": 1434,
-    "successful_objects": 1314,
-    "newly_compiled": 83,
+    "selected_sources": 1435,
+    "successful_objects": 1316,
+    "newly_compiled": 85,
     "reused_retained": 1231,
     "failed_modules": [
-      "InducingPathSeparation"
+      "LiteralSelectedMAG"
     ],
-    "blocked_modules": 119,
-    "compiler_errors": 6,
-    "diagnostic": "135:22-49 hcondition forall a cannot infer original SourceVertex X S L selection/latent carrier; explicit a:SourceVertex X S L preserves the exact original proposition. One untyped binder causes five inference errors plus the downstream unsolved goal.",
-    "endpoint_collider_activation_compiled": true,
-    "early22_source_boundary_passed": true,
+    "blocked_modules": 118,
+    "compiler_errors": 4,
+    "diagnostics": [
+      "95:16 original canonical baseline connection needs explicit same condition-function reduction",
+      "133:8,137:8 observed-label rewrite is blocked by canonicalIndicatorEquiv.toEquiv wrapper",
+      "146:6 selection-ancestry simplifier needs the SAME wrapper exposed"
+    ],
+    "inducing_path_carrier_repair_compiled": true,
+    "early23_source_boundary_passed": true,
     "whole_causal_owned_and_exact_name_audit_ran": false,
     "full_causal_accepted": false,
-    "rust_tests_passed": 111,
-    "complete_original_and_later_same_path_read": true,
-    "current_main_comparison": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
-    "current_main_equal_pinned_original": true,
+    "rank14_finite_equation_component_separately_accepted": true,
     "artifact": {
-      "id": 12560978075,
-      "bytes": 9045516,
-      "sha256": "12e2298c427d85c62f2d8564a0b408589060a64e904a331e7315c64718b75c02",
-      "scope": "Metadata observed in actual complete workflow log; no redundant duplicate scoped audit/artifact recovery selected"
-    }
+      "id": 12561880360,
+      "bytes": 9072779,
+      "sha256": "104adfde578f2da8bc371ee5bc0ae164a444f0d8eeb4711bdc4330d60ca0c1eb",
+      "all_zip_bytes_independently_hashed": true
+    },
+    "complete_original_and_current_main_body_read": true,
+    "current_main_equal_pinned": true,
+    "current_main_comparison": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc"
   },
   "current_compatibility_batch": {
     "status": "PENDING_ACTUAL_COMPLETE_TARGET",
@@ -4968,10 +4991,10 @@
     "source_inventory_unchanged": true
   },
   "latest_early_projection_result": {
-    "source": "d03e76358cdda716b8bea79cdfb57f9ace43f8d1",
-    "run": 40095773163,
-    "job": 120877768663,
-    "target": "EndpointColliderActivation",
-    "status": "PASSED_22_SOURCE_COMPILATION_NOT_WHOLE_OWNED_NAME_ACCEPTANCE"
+    "source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
+    "run": 40096997969,
+    "job": 120881390655,
+    "target": "InducingPathSeparation",
+    "status": "PASSED_23_SOURCE_COMPILATION_NOT_WHOLE_OWNED_NAME_ACCEPTANCE"
   }
 }

@@ -12,15 +12,15 @@ The user-requested portable end-to-end Lean/Rust goal remains ACTIVE. All 118 ca
 
 The latest Rust suite has 111 passing tests. Existing unknown-order/shared-cache query implementation and its actual 13-case differential/CLI checks are reused; no second engine is selected.
 
+6. **Finite ORIGINAL response equations on one fixed ring**, source `73c84c99f46e7a977f99efefde174871d2d4f7f8`, run40096997969/job120881390655. Complete1-module/3-name scope passes, with4 owned declarations/4 theorems including one generated simp lemma; zero rejects. All three complete printed types/owners/axioms and artifact/source hashes were independently checked. The old HAND all-profile theorem is reused, not reopened. This finite-equation formal use-site is CLOSED; RCF/source/menu/algorithm receiver remains separate. [Receipt](g4-algebraic-profile-component-verification.json).
+
 ## Current combined-build blocker
 
-The latest full 1,434-source export target at source `d03e7635` is REJECTED:1,314 successful objects (83 compiled/1,231 reused), one failed `InducingPathSeparation` module and 119 blocked consumers. Whole causal/name/type/owned acceptance did not run. The previous EndpointColliderActivation proof and complete22-source early boundary now compile.
+Latest full1435-source target at73c84c99 is REJECTED:1316 successful objects (85 compiled/1231 reused), one failed LiteralSelectedMAG and118 blocked consumers. The previous inducing-path carrier and complete23-source early boundary compile. No whole causal/name/type/owned acceptance follows.
 
-The actual diagnostic cannot infer S/L for the original untyped hcondition binder. The selected compatibility supplies ONLY `a : SourceVertex X S L`, retaining all latent/selection/source/activity hypotheses and the original proposition. COMPLETE original and current-main bodies were read and match. All146 frozen vendor bodies remain unchanged. Next: early23-source boundary then the SAME combined target, now1,435 sources because of the one new G4 formal use-site. [Actual failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
+The four actual errors need the SAME baseline condition functions and actual canonicalIndicatorEquiv application exposed before original label rewriting. COMPLETE original and later same-path bodies match. The selected proof-only variant unfolds those original definitions and derives the actual application by rfl; every original marked-target/source/selection/latent hypothesis and all146 vendor originals remain. Next: early24-source boundary then SAME complete1435-source/291-name target. [Failures](causal-compiler-rejections.json), [preflight](CAUSAL-REUSE-PREFLIGHT.md).
 
-## Next rated formal use-site: no completed mathematics reopened
-
-Rank14 CB-G4-006's all-profile algebraic descent/stopping reduction is already HAND proved. Its COMPLETE predecessor, scoped review, mandatory exterior clarification and later current-main source were read and hashed; the later same-path body is unchanged. The new three-declaration module formalizes only the finite ORIGINAL generator/equation step using the existing pinned Mathlib Hilbert basis/finite-span results. It is SOURCE ONLY, awaiting complete kernel/owned/exact-name checks. The original source/menu/RCF transfer, effective enumeration and all-real-unknown-size-rival forcing joins remain separate. No effective finite-prefix algorithm or full G4 closure is claimed. [Preflight](G4-ALGEBRAIC-PROFILE-REUSE-PREFLIGHT.md).
+All five earlier scoped dependency/hash sets (9,5,245,836,1 modules) were compared with current source: every hash matches and the changed LiteralSelectedMAG is absent. They are reused; separate prechecks are manual/explicit rather than repeated before each unrelated proof repair. The mandatory combined source/export/owned/actual-caller/strict gates are retained unchanged. [Exact reuse](scoped-check-source-reuse.json), [CI contract](SCOPED-CHECK-REUSE.md).
 
 ## Genuine remaining implementation and formal joins
 

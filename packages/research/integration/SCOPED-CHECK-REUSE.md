@@ -1,0 +1,9 @@
+# Reuse accepted scoped contexts; retain the mandatory combined gate
+
+The model9+5/85-name contexts passed atfe0dccd2; exact-query245/21 at61027b35; NANUQ836/34 at0958975a; and the new G4 finite-equation1-module/3-name/4-owned context at73c84c99. Their exact source/type/owner/axiom receipts remain pinned and linked in README. The original complete proof statements are not reopened.
+
+Current changes only replace LiteralSelectedMAG proof reduction, its metadata and published evidence. This module is absent from those accepted scoped dependency sets. Accepted library/renderer/native-word bytes remain unchanged. The default mandatory combined export target STILL compiles all1435 selected sources and checks ALL291 selected names/owners and the COMPLETE selected owned environment before downstream actual callers. The strict ALL118 gate remains mandatory and incomplete. No failure can be relabelled a pass.
+
+The five already accepted redundant prechecks now run for manual dispatch or an explicit [check scoped contexts] commit. Commands remain available through the existing CLI. This avoids checking an unchanged small context again before every unrelated causal proof repair; it does not skip any required combined source/export/caller/strict gate or transfer historical acceptance to changed code. If an accepted component or its dependency/API/compiler changes, select its scoped check again or use the mandatory complete combined check. Skipped scoped steps supply no new receipt.
+
+The expensive BOTH natural-word lane stays unchanged and is not selected by this correction. Its complete accepted source118 result is reused; no old job is replayed.

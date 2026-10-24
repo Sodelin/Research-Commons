@@ -588,27 +588,32 @@ jobs:
           restore-keys: |
             retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
       - name: Check finite original response equations from retained algebraic-profile descent
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.G4.AlgebraicProfile
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.G4.AlgebraicProfile --claim CB-G4-006
       - name: Check complete original foundations and solidarity claim interfaces
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target SocialScience.Audit
           cargo run --locked -p research-commons-package -- check-exports --target SocialScience.Audit --claim CB-SOFTSCI-001 --claim CB-SOFTSCI-002 --claim CB-SOFTSCI-003 --claim CB-SOFTSCI-004
       - name: Check complete original clinical model claim interface
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ClinicalModels.Audit
           cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
       - name: Check original exact-query source and full recursive geometry
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.ExactQuery.Source
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.ExactQuery.Source --claim CB-EXACTQUERY-001
       - name: Check original NANUQ source geometry and scoped all-level components
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.NANUQ
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.NANUQ --claim CB-NANUQ-001 --claim CB-NANUQ-002 --claim CB-NANUQ-003
       - name: Compile the exact original causal compatibility boundary
-        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target InducingPathSeparation
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target LiteralSelectedMAG
       - name: Compile the actual receiver dependency closure in the full package context
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports
       - name: Validate all exact export dependencies, audit and kernel-check named declarations
