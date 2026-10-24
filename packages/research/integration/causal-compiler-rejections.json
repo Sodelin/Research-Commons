@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE35_MARKED_ACCEPTED; FULL1478_REJECTED_AT_CONDITIONED_EDGE_WALKS101_BLOCKED",
+  "status": "COMPLETE36_CONDITIONED_EDGE_ACCEPTED; FULL1485_REJECTED_AT_MAG_LIFTING100_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15426,6 +15426,24 @@
         "2026-10-24T19:07:16.9275382Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ConditionedEdgeWalks.lean:112:10: error: Type mismatch: After simplification, term\n2026-10-24T19:07:16.9276551Z   hy\n2026-10-24T19:07:16.9276741Z  has type\n2026-10-24T19:07:16.9276952Z   Z y\n2026-10-24T19:07:16.9277173Z but is expected to have type\n2026-10-24T19:07:16.9277463Z   SelectedCondition Z (Observed y)\n2026-10-24T19:07:17.0181195Z BLOCKED LEAN MAGPathLifting: ConditionedEdgeWalks\n2026-10-24T19:07:17.0311191Z BLOCKED LEAN MAGMaximality: MAGPathLifting"
       ],
       "disposition": "Full1478 REJECTED; independent scoped33-source36-name ownership and COMPLETE35-source marked-walk contexts ACCEPTED, not whole package."
+    },
+    {
+      "source": "ca04aea16c23e2c3f44bb49383bfcd1c16f0f081",
+      "run_id": 40124344051,
+      "job_id": 120962623654,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1485,
+      "successful": 1384,
+      "compiled": 109,
+      "reused": 1275,
+      "failed_module": "MAGPathLifting",
+      "blocked": 100,
+      "diagnostics": [
+        "2026-10-24T19:24:01.1894829Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:60:4: error: Type mismatch: After simplification, term\n2026-10-24T19:24:01.1896003Z   hn\n2026-10-24T19:24:01.1896260Z  has type\n2026-10-24T19:24:01.1896517Z   Not (Z x)\n2026-10-24T19:24:01.1897054Z but is expected to have type\n2026-10-24T19:24:01.1897442Z   Not (SelectedCondition Z (Observed x))\n2026-10-24T19:24:01.1898655Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:126:48: warning: Try `simp at compatible` instead of `simpa using compatible`\n2026-10-24T19:24:01.1899724Z ",
+        "2026-10-24T19:24:01.1901460Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:145:34: error(lean.unknownIdentifier): Unknown identifier `hn.symm.trans`\n2026-10-24T19:24:01.1903332Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:146:8: error: Type mismatch: After simplification, term\n2026-10-24T19:24:01.1904837Z   rightBound\n2026-10-24T19:24:01.1905110Z  has type\n2026-10-24T19:24:01.1905453Z   BoundaryCompatible D Z next.vertex incoming right\n2026-10-24T19:24:01.1905923Z but is expected to have type\n2026-10-24T19:24:01.1906500Z   ¬Z next.vertex\n2026-10-24T19:24:01.2988108Z BLOCKED LEAN MAGMaximality: MAGPathLifting",
+        "2026-10-24T19:24:01.1903332Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:146:8: error: Type mismatch: After simplification, term\n2026-10-24T19:24:01.1904837Z   rightBound\n2026-10-24T19:24:01.1905110Z  has type\n2026-10-24T19:24:01.1905453Z   BoundaryCompatible D Z next.vertex incoming right\n2026-10-24T19:24:01.1905923Z but is expected to have type\n2026-10-24T19:24:01.1906500Z   ¬Z next.vertex\n2026-10-24T19:24:01.2988108Z BLOCKED LEAN MAGMaximality: MAGPathLifting\n2026-10-24T19:24:01.3137447Z BLOCKED LEAN ObservedMAGAncestry: MAGMaximality"
+      ],
+      "disposition": "FULL1485_REJECTED; separate complete36-source conditioned and7-source/32-name original recovery contexts accepted; not whole package."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16711,6 +16729,37 @@
         ]
       ],
       "status": "PENDING_COMPLETE36_SOURCE_AND_FULL1485_CHECK"
+    },
+    {
+      "module": "MAGPathLifting",
+      "original": {
+        "bytes": 8852,
+        "git_blob": "8e738b4f859888202ac90932b01153fa49557e37",
+        "sha256": "2bb182c2f5f6b02f08cdd9f4b5ba36ebd41d6259758358ca138abdc4512b1496"
+      },
+      "successor": {
+        "bytes": 8852,
+        "git_blob": "8e738b4f859888202ac90932b01153fa49557e37",
+        "sha256": "2bb182c2f5f6b02f08cdd9f4b5ba36ebd41d6259758358ca138abdc4512b1496"
+      },
+      "selected": {
+        "bytes": 9191,
+        "git_blob": "8dedd689570cdbe3eab7283afe2140bec8f39f0f",
+        "sha256": "a8e86eafd3b6ba451907fbd21df07240d474f017fa9a151dbe75992dfe47c6c2"
+      },
+      "all5_original_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "    simpa only [ActiveAt, if_neg rawCollider] using hn",
+          "    simpa only [ActiveAt, if_neg rawCollider] using\n      (show ¬ SelectedCondition (S := S) (L := L) Z (Observed x) from hn)"
+        ],
+        [
+          "      apply ih hq (fun hn => ?_) (some «right»)\n        («prefix» ++ (⟨«first», some firstIncoming⟩ :: tail)) (hp.append segment)\n      · exact Option.noConfusion (hn.symm.trans hmark)\n      · simpa only [IncomingCompatible, hmark] using rightBound",
+          "      have nextUnconditioned : «next».incoming = none → ¬ Z «next».vertex := by\n        intro hn\n        have impossible : (none : Option Mark) = some incoming := hn.symm.trans hmark\n        cases impossible\n      have nextCompatible : IncomingCompatible D Z «next» (some «right») := by\n        simpa only [IncomingCompatible, hmark] using rightBound\n      exact ih hq nextUnconditioned (some «right»)\n        («prefix» ++ (⟨«first», some firstIncoming⟩ :: tail)) (hp.append segment)\n        nextCompatible"
+        ]
+      ],
+      "status": "PENDING_COMPLETE37_SOURCE_AND_FULL1497_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

@@ -2465,21 +2465,24 @@
         "git_blob": "388a6b9482ee69a97695a453e7b60b52fe6a38b8",
         "source_sha256": "1b7b90eb9ea5656db9b7a9bfc788df7997a19fb6e162d0d68597076ece497e93",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE36_SOURCE_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE36_SOURCE_OWNED_CONTEXT",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "actual_complete_original_and_successor_read": true,
         "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
         "all10_theorem_headers_unchanged": true,
-        "variant": "Direct reverse rewrite of SAME arrival equality; explicitly type original selected conditioning witness; expose exact local endpoint predicate before rewriting. All original10 statements/source/conditioning/incidence premises unchanged."
+        "variant": "Direct reverse rewrite of SAME arrival equality; explicitly type original selected conditioning witness; expose exact local endpoint predicate before rewriting. All original10 statements/source/conditioning/incidence premises unchanged.",
+        "accepted_source": "ca04aea16c23e2c3f44bb49383bfcd1c16f0f081",
+        "accepted_run": 40124344051,
+        "current_component_verification": "integration/causal-conditioned-edge-component-verification.json"
       }
     },
     {
       "module": "MAGPathLifting",
-      "path": "vendor/restricted-causal-source/MAGPathLifting.lean",
-      "sha256": "2bb182c2f5f6b02f08cdd9f4b5ba36ebd41d6259758358ca138abdc4512b1496",
+      "path": "lean/ResearchCommons/Compatibility/MAGPathLifting.lean",
+      "sha256": "a8e86eafd3b6ba451907fbd21df07240d474f017fa9a151dbe75992dfe47c6c2",
       "imports": [
         "ConditionedEdgeWalks"
       ],
@@ -2492,9 +2495,14 @@
         "source_sha256": "2bb182c2f5f6b02f08cdd9f4b5ba36ebd41d6259758358ca138abdc4512b1496",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE37_SOURCE_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "actual_complete_original_and_successor_read": true,
+        "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "all5_theorem_headers_unchanged": true,
+        "variant": "Explicitly type SAME negative selected-condition witness; explicitly derive SAME next-none and incoming-compatibility proofs before original induction hypothesis. Avoid tactic-created goal-order dependence; no statement/source assumption changed."
       }
     },
     {
@@ -5128,14 +5136,37 @@
         "source_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
         "actual_complete_original_and_later_source_review": true,
         "preflight": "integration/BLOCK-RECOVERY-REUSE-PREFLIGHT.md",
+        "current_context_verified": true,
+        "new_mathematical_discovery": false,
+        "verification_record": "integration/genome-block-recovery-component-verification.json",
+        "accepted_source": "ca04aea16c23e2c3f44bb49383bfcd1c16f0f081",
+        "accepted_run": 40124344051
+      }
+    },
+    {
+      "module": "ResearchCommons.Claims.FounderWindow",
+      "path": "lean/ResearchCommons/Claims/FounderWindow.lean",
+      "sha256": "3233121ce99825ee9f05f0264f706676b66125f087d1a8153cd2b963d11b96a7",
+      "imports": [
+        "RealSpeciesTheorem"
+      ],
+      "provenance": {
+        "role": "Import-only original complete founder-window source: actual graph, literal real dates, proved seed and SAME-duration constrained maximality",
+        "source_repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+        "earlier_accepted_source": "1592b89731d10fc49019ff22cf2f93c7bc799118",
+        "later_source": "e2502c82ab9a77c00543932f775a71e5374221f7",
+        "actual_complete_four_main_source_bodies_read": true,
+        "main_and_seed_byte_equal_across_both_refs": true,
+        "all8_frozen_packet_later_retained_source_hashes_match": true,
         "current_context_verified": false,
-        "new_mathematical_discovery": false
+        "new_mathematical_discovery": false,
+        "preflight": "integration/FOUNDER-WINDOW-REUSE-PREFLIGHT.md"
       }
     },
     {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "52555f2d3896fc3916f9b9499eab94a38709623d462c545a16de00bc5f3ac5a3",
+      "sha256": "d295aa38169c0d484245ca4f178bbabf75a17bc753a16cab19957ef66e55df5c",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -5167,6 +5198,7 @@
         "ResearchCommons.Claims.Genome",
         "ResearchCommons.Claims.Ownership",
         "ResearchCommons.Claims.BlockRecovery",
+        "ResearchCommons.Claims.FounderWindow",
         "ResearchCommons.Menu.FiniteForcing",
         "SocialScience.Audit",
         "ClinicalModels.Audit",
@@ -5186,7 +5218,7 @@
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v16.json",
         "source_commit": "c79deb202cadfae269f06dedd8c724648b497856",
-        "current_candidate_scope": "Existing exact typed claim union plus OLD complete ownership/sampling and finite-family recovery results. Actual names/owners/owned/combined checking remains required; no new scientific theorem or native source admission.",
+        "current_candidate_scope": "Existing exact typed claim union, OLD ownership/recovery laws and OLD actual founder-window maximality. All source/named/owned/actual-caller checks and genuine remaining obligations stay explicit.",
         "current_context_verified": false
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"
