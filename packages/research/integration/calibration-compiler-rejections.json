@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "ORIGINAL_SOURCE144_WHOLE_MODULE_REJECTED; FOLLOWON_PENDING",
+  "status": "SOURCE145_ONE_EQUAL_PRIOR_BETA_ERROR; WHOLE_MODULE_REJECTED",
   "source_commit": "38d7e4186e3eaa15623758787b12d296101dcedf",
   "run_id": 40116373354,
   "job_id": 120938566217,
@@ -34,5 +34,23 @@
   "no_desired_risk_or_model_premise_added": true,
   "whole_module_or_audit_acceptance": false,
   "particular_Rust_literal_caller_reached": false,
-  "current_full1473_reached": false
+  "current_full1473_reached": false,
+  "followon_attempts": [
+    {
+      "source": "56bbb7e959a59f2ee6a1da53917996f9705ee4f7",
+      "run_id": 40117197618,
+      "job_id": 120940956344,
+      "diagnostics": [
+        "2026-10-24T17:43:38.9829691Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/Calibration/RareEvent.lean:181:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n2026-10-24T17:43:38.9830388Z   nullError (thresholdRule n zeroProbability)\n2026-10-24T17:43:38.9830646Z in the target expression\n2026-10-24T17:43:38.9830984Z   (fun d => (nullError d + alternativeError e d) / 2) (thresholdRule n zeroProbability) = miss e n / 2\n2026-10-24T17:43:38.9831261Z \n2026-10-24T17:43:38.9831334Z case left\n2026-10-24T17:43:38.9831712Z e : ↑EventRate\n2026-10-24T17:43:38.9831895Z n : ℕ\n2026-10-24T17:43:38.9832175Z ha : nullError (thresholdRule n zeroProbability) = ↑zeroProbability\n2026-10-24T17:43:38.9832675Z hb : alternativeError e (thresholdRule n zeroProbability) = miss e n * (1 - ↑zeroProbability)\n2026-10-24T17:43:38.9833434Z ⊢ (fun d => (nullError d + alternativeError e d) / 2) (thresholdRule n zeroProbability) = miss e n / 2"
+      ],
+      "whole_module_accepted": false,
+      "owned_named_caller_or_full1473_reached": false,
+      "new_source": {
+        "bytes": 9993,
+        "git_blob": "4b5ad5752b74964779927fc0b30ff3176a7a561f",
+        "sha256": "861e3adc5ed892a4f52eeaee27802f162885ee9cfc34ca777218d2b908243456"
+      },
+      "all20_statement_headers_unchanged": true
+    }
+  ]
 }

@@ -178,6 +178,7 @@ theorem sharp_equal_prior_error (e : EventRate) (n : ℕ) :
   constructor
   · refine ⟨thresholdRule n zeroProbability, ?_⟩
     obtain ⟨ha, hb⟩ := threshold_rule_errors e n zeroProbability
+    dsimp only
     rw [ha, hb]
     simp [zeroProbability]
   · rintro _ ⟨d, rfl⟩

@@ -104,10 +104,14 @@ impl Calibration {
         let worst = literal(&self.worst);
         let equal_prior = literal(&self.equal_prior);
         let n = self.trials;
+        // Canonical positive numerals make distinct inputs disjoint when their
+        // checked modules are imported together. No externally supplied name.
+        let namespace = format!("ResearchCommons.Generated.RareEvent.N{n}P{}Q{}",
+            self.rate.numer(), self.rate.denom());
         let source = format!(r#"import ResearchCommons.Calibration.RareEvent
 import Mathlib.Tactic.NormNum
 
-namespace ResearchCommons.Generated.RareEvent
+namespace {namespace}
 open ResearchCommons.Calibration
 noncomputable def rate : EventRate := ⟨{rate}, by constructor <;> norm_num⟩
 theorem actual_miss : miss rate {n} = {miss} := by
@@ -140,7 +144,7 @@ theorem balanced_rule :
 theorem finite_error_positive (d : Decision {n}) :
     0 < max (nullError d) (alternativeError rate d) :=
   no_finite_certain_decision rate d
-end ResearchCommons.Generated.RareEvent
+end {namespace}
 "#);
         if source.len() > limits.render_bytes {
             return Err(Error::Limit { kind: "render_bytes", cap: limits.render_bytes });
@@ -180,6 +184,17 @@ mod tests {
         assert_eq!(worst_rule, (q(27, 91), q(27, 91)));
         assert!(sum_rule.1 > worst_rule.1);
         assert!(worst_rule.0 + worst_rule.1 > *c.minimum_sum_error());
+    }
+    #[test]
+    fn distinct_inputs_have_disjoint_proof_namespaces() {
+        let l = Limits::default();
+        let inputs = [(q(1, 4), 0), (q(1, 4), 3), (q(1, 7), 3)];
+        let namespaces = inputs.into_iter().map(|(rate, n)| {
+            let source = Calibration::new(rate, n, l).unwrap().lean_certificate(l).unwrap();
+            source.lines().find_map(|line| line.strip_prefix("namespace "))
+                .unwrap().to_owned()
+        }).collect::<std::collections::BTreeSet<_>>();
+        assert_eq!(namespaces.len(), 3);
     }
     #[test]
     fn invalid_models_and_resource_refusals_are_explicit() {
