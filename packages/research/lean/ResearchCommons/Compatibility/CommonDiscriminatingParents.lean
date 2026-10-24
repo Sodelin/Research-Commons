@@ -2,8 +2,9 @@ import OriginalMAGConnection
 
 
 /- Pinned-context spelling variant: explicit original List.Sublist relation.
-All proof scripts outside these annotation spellings, source predicates and
-conclusion semantics are unchanged; frozen original retained separately. -/
+The actual terminal edge/arrival witnesses are named explicitly, and the
+SAME cons/append identity normalizes the existing two Nodup witnesses.
+Source predicates/headers/conclusion semantics are unchanged; original frozen. -/
 /-!
 Author: dot (OpenAI), 2026-10-22.
 SOURCE-ONLY CANDIDATE. No elaboration or execution.
@@ -110,10 +111,13 @@ theorem parent_of_separated_terminal_conditioned {V : Type u} (G : MarkedGraph V
     cases hp : p.incoming with
     | none => trivial
     | some previous => simpa [DepartureAllowed, hp, ActiveAt] using notConditioned
+  have parentEdge : G.edge p.vertex y .tail .head := parent
+  have finalStep : RealStep G Z p ⟨y, some .head⟩ :=
+    ⟨.tail, .head, parentEdge, rfl, ready⟩
   apply sep
   refine ⟨some .head, xs ++ [⟨y, some .head⟩],
-    h.append (.cons ⟨.tail, .head, parent, rfl, ready⟩ (.nil _)), ?_⟩
-  simpa only [List.map_cons, List.map_append, List.map_nil] using nodup
+    h.append (.cons finalStep (.nil _)), ?_⟩
+  simpa only [List.map_cons, List.map_append, List.map_nil, List.cons_append] using nodup
 
 theorem real_terminal_head_incidence {V : Type u} (G : MarkedGraph V)
     (symmetric : ∀ a b ma mb, G.edge a b ma mb → G.edge b a mb ma)
@@ -176,7 +180,7 @@ theorem collider_prefix_parent_transfer {V : Type u} (G H : MarkedGraph V)
             conditioned_ancestor H Z r.vertex (allConditioned r mem)
         refine ⟨some incoming, «prefix» ++ [⟨y, some incoming⟩],
           route.append (.cons ⟨.head, incoming, edge, rfl, ready⟩ (.nil _)), ?_⟩
-        simpa only [List.map_cons, List.map_append, List.map_nil] using shortNodup
+        simpa only [List.map_cons, List.map_append, List.map_nil, List.cons_append] using shortNodup
   subst outgoing
   cases incoming with
   | head => exact edge

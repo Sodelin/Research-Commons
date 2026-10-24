@@ -15517,6 +15517,24 @@
         "2026-10-24T20:48:52.4300957Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/OriginalMAGConnection.lean:107:33: error(lean.unknownIdentifier): Unknown identifier `p`\n2026-10-24T20:48:52.5098746Z BLOCKED LEAN CommonDiscriminatingParents: OriginalMAGConnection\n2026-10-24T20:48:52.5217560Z BLOCKED LEAN VertexActivePaths: CommonDiscriminatingParents\n2026-10-24T20:48:52.5335118Z BLOCKED LEAN MinimalActivePaths: VertexActivePaths\n2026-10-24T20:48:52.5451596Z BLOCKED LEAN AncestralShortcutGeometry: MinimalActivePaths\n2026-10-24T20:48:52.5569619Z BLOCKED LEAN ColliderMinimalActivePaths: MinimalActivePaths\n2026-10-24T20:48:52.5684910Z BLOCKED LEAN MinimalPathChord: AncestralShortcutGeometry\n2026-10-24T20:48:52.5801057Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T20:48:52.5917410Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T20:48:52.6033316Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T20:48:52.6147592Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T20:48:52.6263061Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency\n2026-10-24T20:48:52.6380140Z BLOCKED LEAN DiscriminatingIntervalGeometry: LiteralMAGInducingChains\n2026-10-24T20:48:52.6493730Z BLOCKED LEAN IndexedDiscriminatingSections: DiscriminatingIntervalGeometry\n2026-10-24T20:48:52.6611047Z BLOCKED LEAN ReversedPositionTrace: IndexedDiscriminatingSections\n2026-10-24T20:48:52.6728497Z BLOCKED LEAN MinimalPathOrderDependencies: ReversedPositionTrace\n2026-10-24T20:48:52.6848797Z BLOCKED LEAN FiniteDependencyInduction: MinimalPathOrderDependencies\n2026-10-24T20:48:52.6965582Z BLOCKED LEAN DiscriminatingStatusTransport: FiniteDependencyInduction\n2026-10-24T20:48:52.7082104Z BLOCKED LEAN IndexedPrefixColliders: DiscriminatingStatusTransport"
       ],
       "disposition": "FULL1498_REJECTED; actual42-source weak context plus6-name NANUQ core and BOTH complete actual callers/owned audit accepted separately."
+    },
+    {
+      "source": "f57399b45e76f2ca1dabd93715d7988835053573",
+      "run_id": 40131833642,
+      "job_id": 120985165591,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1498,
+      "successful": 1405,
+      "compiled": 119,
+      "reused": 1286,
+      "failed_module": "CommonDiscriminatingParents",
+      "blocked": 92,
+      "diagnostics": [
+        "2026-10-24T21:04:34.6867730Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:115:35: error: Application type mismatch: The argument\n2026-10-24T21:04:34.6879282Z   parent\n2026-10-24T21:04:34.6879616Z has type\n2026-10-24T21:04:34.6880006Z   CanonicalSelection.Directed G p.vertex y\n2026-10-24T21:04:34.6880460Z but is expected to have type\n2026-10-24T21:04:34.6880787Z   G.edge p.vertex (Arrival.vertex ?m.87) Mark.tail Mark.head\n2026-10-24T21:04:34.6881132Z in the application\n2026-10-24T21:04:34.6881349Z   And.intro parent\n2026-10-24T21:04:34.6882090Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:116:2: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6882893Z   nodup\n2026-10-24T21:04:34.6883070Z  has type\n2026-10-24T21:04:34.6889930Z   @List.Nodup V (x :: List.map Arrival.vertex xs ++ [y])\n2026-10-24T21:04:34.6890321Z but is expected to have type\n2026-10-24T21:04:34.6890677Z   @List.Nodup V (x :: (List.map Arrival.vertex xs ++ [y]))\n2026-10-24T21:04:34.6891624Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:179:8: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6892494Z   shortNodup\n2026-10-24T21:04:34.6892693Z  has type\n2026-10-24T21:04:34.6893237Z   @List.Nodup V (x :: List.map Arrival.vertex «prefix» ++ [y])\n2026-10-24T21:04:34.6893616Z but is expected to have type\n2026-10-24T21:04:34.6894037Z   @List.Nodup V (x :: (List.map Arrival.vertex «prefix» ++ [y]))\n2026-10-24T21:04:34.7967844Z BLOCKED LEAN VertexActivePaths: CommonDiscriminatingParents\n2026-10-24T21:04:34.8132802Z BLOCKED LEAN MinimalActivePaths: VertexActivePaths",
+        "2026-10-24T21:04:34.6882090Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:116:2: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6882893Z   nodup\n2026-10-24T21:04:34.6883070Z  has type\n2026-10-24T21:04:34.6889930Z   @List.Nodup V (x :: List.map Arrival.vertex xs ++ [y])\n2026-10-24T21:04:34.6890321Z but is expected to have type\n2026-10-24T21:04:34.6890677Z   @List.Nodup V (x :: (List.map Arrival.vertex xs ++ [y]))\n2026-10-24T21:04:34.6891624Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:179:8: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6892494Z   shortNodup\n2026-10-24T21:04:34.6892693Z  has type\n2026-10-24T21:04:34.6893237Z   @List.Nodup V (x :: List.map Arrival.vertex «prefix» ++ [y])\n2026-10-24T21:04:34.6893616Z but is expected to have type\n2026-10-24T21:04:34.6894037Z   @List.Nodup V (x :: (List.map Arrival.vertex «prefix» ++ [y]))\n2026-10-24T21:04:34.7967844Z BLOCKED LEAN VertexActivePaths: CommonDiscriminatingParents\n2026-10-24T21:04:34.8132802Z BLOCKED LEAN MinimalActivePaths: VertexActivePaths\n2026-10-24T21:04:34.8283759Z BLOCKED LEAN AncestralShortcutGeometry: MinimalActivePaths\n2026-10-24T21:04:34.8434757Z BLOCKED LEAN ColliderMinimalActivePaths: MinimalActivePaths\n2026-10-24T21:04:34.8586754Z BLOCKED LEAN MinimalPathChord: AncestralShortcutGeometry\n2026-10-24T21:04:34.8738584Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T21:04:34.8891711Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T21:04:34.9043731Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T21:04:34.9218584Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T21:04:34.9367584Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency",
+        "2026-10-24T21:04:34.6891624Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/CommonDiscriminatingParents.lean:179:8: error: Type mismatch: After simplification, term\n2026-10-24T21:04:34.6892494Z   shortNodup\n2026-10-24T21:04:34.6892693Z  has type\n2026-10-24T21:04:34.6893237Z   @List.Nodup V (x :: List.map Arrival.vertex «prefix» ++ [y])\n2026-10-24T21:04:34.6893616Z but is expected to have type\n2026-10-24T21:04:34.6894037Z   @List.Nodup V (x :: (List.map Arrival.vertex «prefix» ++ [y]))\n2026-10-24T21:04:34.7967844Z BLOCKED LEAN VertexActivePaths: CommonDiscriminatingParents\n2026-10-24T21:04:34.8132802Z BLOCKED LEAN MinimalActivePaths: VertexActivePaths\n2026-10-24T21:04:34.8283759Z BLOCKED LEAN AncestralShortcutGeometry: MinimalActivePaths\n2026-10-24T21:04:34.8434757Z BLOCKED LEAN ColliderMinimalActivePaths: MinimalActivePaths\n2026-10-24T21:04:34.8586754Z BLOCKED LEAN MinimalPathChord: AncestralShortcutGeometry\n2026-10-24T21:04:34.8738584Z BLOCKED LEAN DiscriminatingSectionExtraction: MinimalPathChord\n2026-10-24T21:04:34.8891711Z BLOCKED LEAN ActivePathReversal: DiscriminatingSectionExtraction\n2026-10-24T21:04:34.9043731Z BLOCKED LEAN VertexDiscriminatingSections: ActivePathReversal\n2026-10-24T21:04:34.9218584Z BLOCKED LEAN IntervalDependency: VertexDiscriminatingSections\n2026-10-24T21:04:34.9367584Z BLOCKED LEAN LiteralMAGInducingChains: IntervalDependency\n2026-10-24T21:04:34.9516498Z BLOCKED LEAN DiscriminatingIntervalGeometry: LiteralMAGInducingChains\n2026-10-24T21:04:34.9665940Z BLOCKED LEAN IndexedDiscriminatingSections: DiscriminatingIntervalGeometry\n2026-10-24T21:04:34.9816358Z BLOCKED LEAN ReversedPositionTrace: IndexedDiscriminatingSections\n2026-10-24T21:04:34.9965335Z BLOCKED LEAN MinimalPathOrderDependencies: ReversedPositionTrace\n2026-10-24T21:04:35.0114283Z BLOCKED LEAN FiniteDependencyInduction: MinimalPathOrderDependencies\n2026-10-24T21:04:35.0263954Z BLOCKED LEAN DiscriminatingStatusTransport: FiniteDependencyInduction"
+      ],
+      "disposition": "FULL1498_REJECTED; complete44-source original MAG and exact current two-output contour contexts accepted separately."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16928,6 +16946,29 @@
       ],
       "scope": "Use SAME forced initial Arrival ⟨x,none⟩ after dependent route elimination; the source constructor index p is inaccessible. Same source/conditioning/route/witness/statement; no new mathematical premise.",
       "status": "PENDING_COMPLETE44_SOURCE_AND_FULL1498_CHECK"
+    },
+    {
+      "module": "CommonDiscriminatingParents",
+      "selected": {
+        "bytes": 8851,
+        "sha256": "f909f27ed4547413a9e555610f6ec585af86db3fab530f7f95feb9e484ae6b9d",
+        "git_blob": "17ef78e172bc01d3e81f841b47bb901fdd3147a9"
+      },
+      "all7_selected_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "  apply sep\n  refine ⟨some .head, xs ++ [⟨y, some .head⟩],\n    h.append (.cons ⟨.tail, .head, parent, rfl, ready⟩ (.nil _)), ?_⟩",
+          "  have parentEdge : G.edge p.vertex y .tail .head := parent\n  have finalStep : RealStep G Z p ⟨y, some .head⟩ :=\n    ⟨.tail, .head, parentEdge, rfl, ready⟩\n  apply sep\n  refine ⟨some .head, xs ++ [⟨y, some .head⟩],\n    h.append (.cons finalStep (.nil _)), ?_⟩"
+        ],
+        [
+          "simpa only [List.map_cons, List.map_append, List.map_nil] using ",
+          "simpa only [List.map_cons, List.map_append, List.map_nil, List.cons_append] using ",
+          2
+        ]
+      ],
+      "scope": "Derive literal terminal edge from SAME Directed parent; instantiate actual final Arrival before appending. Normalize SAME actual cons/append list at both original Nodup witnesses. No source/conditioned vertex/ancestral/parent/route assumption changed.",
+      "status": "PENDING_COMPLETE45_SOURCE_AND_FULL1498_CHECK"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

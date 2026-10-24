@@ -9,6 +9,8 @@ def taxon : Fin 9 → Fin 4 := ![1, 1, 2, 2, 2, 3, 0, 0, 0]
 def kept : Finset (Fin 9) := {0, 1, 2, 4, 5, 6, 8}
 def keptOriginal : Finset (Fin 9) := {2, 3, 4, 6, 7, 8, 1}
 theorem actual_names : Function.Injective globalTaxa := by decide
+theorem actual_taxon_carrier : Function.Surjective taxon := by decide
+theorem actual_label_count : (Finset.univ.image originalLabels).card = 4 := by decide
 theorem actual_original_positions : Function.Bijective originalPosition := by decide
 theorem actual_cyclic_rotation (i : Fin 9) :
     (originalPosition i).val = (2 + i.val) % 9 := by
@@ -29,6 +31,10 @@ theorem actual_extremes (i : Fin 9) :
 theorem actual_returned_positions :
     kept.image originalPosition = keptOriginal := by decide
 theorem actual_bound : keptOriginal.card ≤ 2 * 4 := by decide
+theorem bound_by_original_labels :
+    keptOriginal.card ≤ 2 * (Finset.univ.image originalLabels).card := by
+  rw [actual_label_count]
+  exact actual_bound
 theorem uniform_extreme_bound :
     Nat.card {i : Fin 9 // Extreme taxon i} ≤ 2 * 4 := by
   simpa only [Fintype.card_fin] using extreme_card_le_two taxon
