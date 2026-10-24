@@ -11,6 +11,45 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
+## Exact biased full-band calibration branch — PROVED HAND at source scope
+
+[G3-BIASED-FULL-BAND-CALIBRATION-01](../2026-10-24-g3-asymptotic-root-grid/BIASED-FULL-BAND-CALIBRATION-BRANCH.md),
+10445B/SHA25619dc9dbfab09f887b5c7bf47f986526ba30e67471c2ad9ce260bcc70d802e629,
+is PROVED HAND/self-reviewed, independently unreviewed/not Lean formalized.
+No source/tuple/coefficient/model/solver/native execution.
+
+A strict biased equal-arm actual source matches EXACTLY the reference
+F7/xi and Psi7/xi ratios for every sufficiently small algebraic epsilon=1-t.
+xi=b2/q-1 is rational, not additive ell; F7=J7/15 differs from F9.
+OLD source jets give X=x^2,Y=x^2-6xz, Y=4 and (X-4)(X-7)=0.
+The secondary root X=7,Y=4 has Jacobian-7/360. Analytic IFT for the
+actual rational map gives q=1-sqrt7*epsilon+O(epsilon^2),
+beta=epsilon/(2sqrt7)+O(epsilon^2), with algebraic q,beta,g at ALG epsilon.
+
+The OLD full7 source-band relation L1=-(5/4)F7 and independent Psi7 make
+the ENTIRE U74 source direction proportional to the fair reference.
+Phi/(h^4 ell)->21/4>0. At EVERY fixed n, the same branch has reference
+leading F_n/ell and Psi_n/ell ratios; exact higher-n/arity-uniform
+remainders are not claimed. No new all-n coefficient table was produced.
+
+REUSE completed homogeneous-FAIR/full7 source orientation00332ce...,
+all-n quadratic/fair source rule a28a9c35..., fixed-n Psi law41a45227...,
+calibrated action01f74919... and all-coin source jets4fc27769....
+Relevant complete statements/branches and later pointwise exclusion
+374202a6... were compared. The fair theorem is not reopened or falsified.
+
+Changed frontier: the two source calibrations cannot force fairness/
+zero action. Full U74 magnitude, other forest equations, actual chronology
+and whole-word same-tuple paired budgets remain essential. This is NOT
+complete cap7 commutation, a full population/register Code equality,
+a fixed-target rival or original AG/G3/G4 closure. No replacement
+NEW AND FULL attack, next-Psi-cap or coefficient factory is selected.
+Missing independent review/Lean does not reopen this hand theorem.
+
+Aliases: biased U74 direction; secondary sqrt7 branch; exact ALG source
+calibration; F7 not F9; xi not ell; Jacobian-7/360; positive action21/4;
+all-n leading ambiguity; homogeneous-FAIR scope retained.
+
 ## Latest source-certificate correction — bounded Psi family refuted
 
 [G3-SHARP-PSI-CERTIFICATE-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/SHARP-PSI-CERTIFICATE-OBSTRUCTION.md),
