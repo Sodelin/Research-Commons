@@ -1,3 +1,10 @@
+> Current successor —24October2026: [COMPENSATED-SOURCE-JUMPS.md](COMPENSATED-SOURCE-JUMPS.md)
+> now PROVES uniform all-coin source-jump bounds and a horizontal compensation
+> with residual reference forcing O(h^6). Signed accumulated coercivity,
+> V_h and the original index/termination claim remain UNPROVED.
+> The8059B body below follows UNCHANGED from980c2d0e; its older missing-
+> source-bounds wording is historical, not the current open frontier.
+
 # General affine-storage identities — algebra verified
 
 Stable key: G3-FORMAL-AFFINE-STORAGE-01. Authored24October2026UTC.

@@ -1115,8 +1115,8 @@ general affine version keeps unequal top entries, the central jump and both
 linear corrections: PROVED algebraically, with one exact formal polynomial
 check and two rejected omission controls. The old main was not run; no
 physical source/model/solver/native research job was selected. This verifies
-the algebra only. Actual source forcing/error bounds, V_h and AG-Pair remain
-unproved. Missing Lean does not reopen the proved generic identity.
+the algebra only. The later compensated-source note supplies uniform source bounds; signed
+chronological coercivity, V_h and AG-Pair remain unproved. Missing Lean does not reopen the proved generic identity.
 Aliases: reference eigenbasis, conjugated storage, d1*v, unequal-square
 correction, affine la/lb, forced ordinary drift. Do not reuse the old special
 jump formula after conjugation or treat diagonal endpoint storage as a
@@ -1127,3 +1127,34 @@ eta=-4*h^4/76545+O(h^5)<0 by HAND from OLD source jets and exact
 eigenvectors. This supersedes the prior tentative coefficient label.
 It does not bound arbitrary-source cell errors or prove an index; no new
 source/coefficient execution was used for that addendum.
+
+## Uniform compensated source jumps: PROVED HAND, coercivity separate
+
+Stable key G3-COMPENSATED-SOURCE-JUMPS-01.
+[Complete source estimate and exact all-length balance](../2026-10-24-g3-asymptotic-root-grid/COMPENSATED-SOURCE-JUMPS.md).
+This derives global equal-arm polynomial factors from OLD reviewed source
+jets; no source coefficient is rediscovered or executed. For v=g(1-g),
+beta=(2g-1)^2, actual arm exposure u, r=v(beta*u^2+u^3) and
+s=v(beta^2*u^3+beta*u^4+u^5), pair-normalized source deviations are O(r)
+and transverse errors O(s), uniformly over ALL strict coins including
+arbitrarily rare ones. No common scale/count/coin-margin premise.
+
+In the exact active reference basis, Xi=Phi+2*kappa*B*a-(10*kappa/3)*B*b
+cancels the large constant jump term. The complete error bound is
+C[r(a^2+b^2)+(s+h^2*r)(|a|+|b|)+h^4*r+h^2*s].
+Its exact drift is -6*kappa*b^2+30*kappa*B*(b-a)+Theta, with
+Theta=eta-30*kappa*A*B+70*kappa*B^2=O(h^6). The one-reference-cycle
+proof of this residual uses OLD jets, no new producer.
+
+On any actual full capped commutator word the endpoints vanish and the
+exact ordered integrating-factor balance has c^36<=w<=1, independent of
+length/coins/scales. This is PROVED HAND; independent review/Lean absent.
+The bare inverse is only proof normalization. R9's no-return theorem is
+not extended to arbitrary coins. Signed cancellation, the b-a term, V_h,
+AG-Pair and original G3 remain unproved; an absolute error sum is insufficient.
+This supersedes the older missing-uniform-source-bounds wording of the
+generic affine note, whose8059B mathematical body remains unchanged.
+
+Aliases: whole-coin polynomial divisibility, v beta^2 u^3 transverse,
+pair normalization, horizontal compensation, Xi, Theta O(h^6),
+h^4 r+h^2 s constant jump, actual-source all-length weighted balance.
