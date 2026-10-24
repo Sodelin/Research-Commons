@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "source_commit": "de98e8e5742bcd95a2c52e70e18dbfa78e4c2b2c",
+  "run_id": 40125845902,
+  "job_id": 120967100420,
+  "all24_complete_actual_types_read": true,
+  "actual_owners_and_axioms_independently_matched": true,
+  "types": [
+    {
+      "name": "RealFounderWindow.nonempty_has_earliest",
+      "printed_type": "@RealFounderWindow.nonempty_has_earliest : ∀ {birth : ℕ → ℝ},\n  RealFounderWindow.StrictFiniteSublevels birth →\n    ∀ (S : SpeciesBridge.NatSet), (∃ v, S v) → ∃ start, S start ∧ ∀ (v : ℕ), S v → birth start ≤ birth v",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.earliest_is_founder",
+      "printed_type": "@RealFounderWindow.earliest_is_founder : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.Chronological E birth →\n    ∀ {S : SpeciesBridge.NatSet} {start : ℕ},\n      S start → (∀ (v : ℕ), S v → birth start ≤ birth v) → FounderWindowResearch.Founder E S start",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.founder_covers",
+      "printed_type": "@RealFounderWindow.founder_covers : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.StrictFiniteSublevels birth →\n    RealFounderWindow.Chronological E birth →\n      ∀ (S : SpeciesBridge.NatSet) (v : ℕ),\n        S v → ∃ r, FounderWindowResearch.Founder E S r ∧ (r = v ∨ SpeciesBridge.Descendant E r v)",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.window_finite_founders",
+      "printed_type": "@RealFounderWindow.window_finite_founders : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.StrictFiniteSublevels birth →\n    ∀ {duration : ℝ} {S : SpeciesBridge.NatSet},\n      RealFounderWindow.Window E birth duration S → SpeciesBridge.FiniteSupport (FounderWindowResearch.Founder E S)",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.commonAncestor_window",
+      "printed_type": "@RealFounderWindow.commonAncestor_window : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.Chronological E birth →\n    ∀ {S : SpeciesBridge.NatSet},\n      SpeciesBridge.CommonAncestor E S → ∀ (duration : ℝ), 0 ≤ duration → RealFounderWindow.Window E birth duration S",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.window_nonnegative",
+      "printed_type": "@RealFounderWindow.window_nonnegative : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.Chronological E birth →\n    ∀ {duration : ℝ} {S : SpeciesBridge.NatSet}, RealFounderWindow.Window E birth duration S → 0 ≤ duration",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.window_directed_union",
+      "printed_type": "@RealFounderWindow.window_directed_union : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.StrictFiniteSublevels birth →\n    ∀ {I : Type} [Nonempty I] {C : I → SpeciesBridge.NatSet} {duration : ℝ},\n      FounderWindowResearch.Directed C →\n        (∀ (i : I), RealFounderWindow.Window E birth duration (C i)) →\n          RealFounderWindow.Window E birth duration (FounderWindowResearch.Union C)",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealFounderWindow.directed_union_finite_founders",
+      "printed_type": "@RealFounderWindow.directed_union_finite_founders : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  RealFounderWindow.StrictFiniteSublevels birth →\n    ∀ {I : Type} [Nonempty I] {C : I → SpeciesBridge.NatSet} {duration : ℝ},\n      FounderWindowResearch.Directed C →\n        (∀ (i : I), RealFounderWindow.Window E birth duration (C i)) →\n          SpeciesBridge.FiniteSupport (FounderWindowResearch.Founder E (FounderWindowResearch.Union C))",
+      "module": "RealFounderWindow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "FounderMaximal.directed_union_connected",
+      "printed_type": "@FounderMaximal.directed_union_connected : ∀ {E : SpeciesBridge.Graph} {I : Type} [Nonempty I]\n  {C : I → SpeciesBridge.NatSet},\n  FounderWindowResearch.Directed C →\n    (∀ (i : I), SpeciesBridge.WeaklyConnected E (C i)) → SpeciesBridge.WeaklyConnected E (FounderWindowResearch.Union C)",
+      "module": "FounderMaximal",
+      "axioms": []
+    },
+    {
+      "name": "FounderMaximal.union_reflection",
+      "printed_type": "@FounderMaximal.union_reflection : ∀ {E : SpeciesBridge.Graph} {I : Type} {C : I → SpeciesBridge.NatSet},\n  (∀ (i : I), SpeciesBridge.Reflection E (C i)) → SpeciesBridge.Reflection E (FounderWindowResearch.Union C)",
+      "module": "FounderMaximal",
+      "axioms": []
+    },
+    {
+      "name": "FounderMaximal.windowSpecies_directed_union",
+      "printed_type": "@FounderMaximal.windowSpecies_directed_union : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      RealFounderWindow.StrictFiniteSublevels birth →\n        ∀ {duration : ℝ} {I : Type} [Nonempty I] {C : I → SpeciesBridge.NatSet},\n          FounderWindowResearch.Directed C →\n            (∀ (i : I), FounderMaximal.WindowSpecies E birth duration (C i)) →\n              FounderMaximal.WindowSpecies E birth duration (FounderWindowResearch.Union C)",
+      "module": "FounderMaximal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "FounderMaximal.maximal_extension_of_directed_union",
+      "printed_type": "FounderMaximal.maximal_extension_of_directed_union : ∀ (P : SpeciesBridge.NatSet → Prop),\n  (∀ {I : Type} [Nonempty I] (C : I → SpeciesBridge.NatSet),\n      FounderWindowResearch.Directed C → (∀ (i : I), P (C i)) → P (FounderWindowResearch.Union C)) →\n    ∀ (S : SpeciesBridge.NatSet),\n      P S →\n        ∃ M,\n          (∀ (v : ℕ), S v → M v) ∧\n            P M ∧ ∀ (T : SpeciesBridge.NatSet), (∀ (v : ℕ), M v → T v) → P T → ∀ (v : ℕ), T v → M v",
+      "module": "FounderMaximal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "FounderMaximal.maximal_window_extension_ordered",
+      "printed_type": "@FounderMaximal.maximal_window_extension_ordered : ∀ {E : SpeciesBridge.Graph} {birth : ℕ → ℝ},\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      RealFounderWindow.StrictFiniteSublevels birth →\n        ∀ (duration : ℝ) (S : SpeciesBridge.NatSet),\n          FounderMaximal.WindowSpecies E birth duration S →\n            ∃ M, (∀ (v : ℕ), S v → M v) ∧ FounderMaximal.MaximalWindowSpecies E birth duration M",
+      "module": "FounderMaximal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "SpeciesSeed.anchored_minimal_exists",
+      "printed_type": "SpeciesSeed.anchored_minimal_exists : ∀ (E : SpeciesBridge.Graph),\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      ∀ (v : ℕ),\n        ∃ S,\n          SpeciesSeed.Anchored E v S ∧\n            ∀ (T : SpeciesBridge.NatSet), (∀ (w : ℕ), T w → S w) → SpeciesSeed.Anchored E v T → ∀ (w : ℕ), S w → T w",
+      "module": "SpeciesSeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "SpeciesSeed.productivePart_convex",
+      "printed_type": "@SpeciesSeed.productivePart_convex : ∀ {E : SpeciesBridge.Graph} {B : SpeciesBridge.NatSet},\n  SpeciesBridge.Convex E B → SpeciesBridge.Convex E (SpeciesSeed.ProductivePart E B)",
+      "module": "SpeciesSeed",
+      "axioms": []
+    },
+    {
+      "name": "SpeciesSeed.productivePart_internal_infinite",
+      "printed_type": "SpeciesSeed.productivePart_internal_infinite : ∀ (E : SpeciesBridge.Graph),\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      ∀ (B : SpeciesBridge.NatSet) (x : ℕ),\n        SpeciesSeed.ProductivePart E B x →\n          SpeciesBridge.InfiniteSupport fun w => SpeciesSeed.ProductivePart E B w ∧ SpeciesBridge.Descendant E x w",
+      "module": "SpeciesSeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "SpeciesSeed.minimal_anchored_iap",
+      "printed_type": "SpeciesSeed.minimal_anchored_iap : ∀ (E : SpeciesBridge.Graph),\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      ∀ (v : ℕ) (S : SpeciesBridge.NatSet),\n        SpeciesSeed.Anchored E v S →\n          (∀ (T : SpeciesBridge.NatSet), (∀ (w : ℕ), T w → S w) → SpeciesSeed.Anchored E v T → ∀ (w : ℕ), S w → T w) →\n            SpeciesBridge.IAP E S",
+      "module": "SpeciesSeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "SpeciesSeed.exists_anchored_seed",
+      "printed_type": "SpeciesSeed.exists_anchored_seed : ∀ (E : SpeciesBridge.Graph),\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) → ∀ (v : ℕ), ∃ S, SpeciesSeed.Anchored E v S ∧ SpeciesBridge.IAP E S",
+      "module": "SpeciesSeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "SpeciesSeed.exists_seed",
+      "printed_type": "SpeciesSeed.exists_seed : ∀ (E : SpeciesBridge.Graph),\n  (∀ (a b : ℕ), E a b → a < b) →\n    (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) →\n      ∀ (v : ℕ),\n        ∃ S, S v ∧ SpeciesBridge.Specieslike E S ∧ SpeciesBridge.CommonAncestor E S ∧ SpeciesBridge.Reflection E S",
+      "module": "SpeciesSeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealSpeciesTheorem.windowSpecies_iff",
+      "printed_type": "@RealSpeciesTheorem.windowSpecies_iff : ∀ {birth : ℕ → ℝ} (e : BirthOrder.OrderedEnumeration birth)\n  (E : SpeciesBridge.Graph) (S : SpeciesBridge.NatSet) (duration : ℝ),\n  FounderMaximal.WindowSpecies (SpeciesReindex.pullGraph e E) (SpeciesReindex.pulledBirth e) duration\n      (SpeciesReindex.pullSet e S) ↔\n    FounderMaximal.WindowSpecies E birth duration S",
+      "module": "RealSpeciesTheorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealSpeciesTheorem.push_maximal",
+      "printed_type": "@RealSpeciesTheorem.push_maximal : ∀ {birth : ℕ → ℝ} (e : BirthOrder.OrderedEnumeration birth) (E : SpeciesBridge.Graph)\n  (duration : ℝ) (T : SpeciesBridge.NatSet),\n  FounderMaximal.MaximalWindowSpecies (SpeciesReindex.pullGraph e E) (SpeciesReindex.pulledBirth e) duration T →\n    FounderMaximal.MaximalWindowSpecies E birth duration (SpeciesReindex.pushSet e T)",
+      "module": "RealSpeciesTheorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealSpeciesTheorem.maximal_window_extension",
+      "printed_type": "RealSpeciesTheorem.maximal_window_extension : ∀ (E : SpeciesBridge.Graph) (birth : ℕ → ℝ),\n  RealFounderWindow.StrictFiniteSublevels birth →\n    RealFounderWindow.Chronological E birth →\n      (∀ (v : ℕ), SpeciesBridge.FiniteSupport (E v)) →\n        ∀ (duration : ℝ) (S : SpeciesBridge.NatSet),\n          FounderMaximal.WindowSpecies E birth duration S →\n            ∃ M, (∀ (v : ℕ), S v → M v) ∧ FounderMaximal.MaximalWindowSpecies E birth duration M",
+      "module": "RealSpeciesTheorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealSpeciesTheorem.every_vertex_has_seed",
+      "printed_type": "RealSpeciesTheorem.every_vertex_has_seed : ∀ (E : SpeciesBridge.Graph) (birth : ℕ → ℝ),\n  RealFounderWindow.StrictFiniteSublevels birth →\n    RealFounderWindow.Chronological E birth →\n      (∀ (v : ℕ), SpeciesBridge.FiniteSupport (E v)) →\n        ∀ (v : ℕ),\n          ∃ S, S v ∧ SpeciesBridge.Specieslike E S ∧ SpeciesBridge.CommonAncestor E S ∧ SpeciesBridge.Reflection E S",
+      "module": "RealSpeciesTheorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "RealSpeciesTheorem.every_vertex_in_maximal_real_window",
+      "printed_type": "RealSpeciesTheorem.every_vertex_in_maximal_real_window : ∀ (E : SpeciesBridge.Graph) (birth : ℕ → ℝ),\n  RealFounderWindow.StrictFiniteSublevels birth →\n    RealFounderWindow.Chronological E birth →\n      (∀ (v : ℕ), SpeciesBridge.FiniteSupport (E v)) →\n        ∀ (duration : ℝ), 0 ≤ duration → ∀ (v : ℕ), ∃ M, M v ∧ FounderMaximal.MaximalWindowSpecies E birth duration M",
+      "module": "RealSpeciesTheorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

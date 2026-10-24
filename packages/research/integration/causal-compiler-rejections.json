@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE36_CONDITIONED_EDGE_ACCEPTED; FULL1485_REJECTED_AT_MAG_LIFTING100_BLOCKED",
+  "status": "COMPLETE37_MAG_LIFTING_ACCEPTED; FULL1497_REJECTED_AT_CLOSED_COLLIDER_OPEN_COMMAND97_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15444,6 +15444,22 @@
         "2026-10-24T19:24:01.1903332Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/MAGPathLifting.lean:146:8: error: Type mismatch: After simplification, term\n2026-10-24T19:24:01.1904837Z   rightBound\n2026-10-24T19:24:01.1905110Z  has type\n2026-10-24T19:24:01.1905453Z   BoundaryCompatible D Z next.vertex incoming right\n2026-10-24T19:24:01.1905923Z but is expected to have type\n2026-10-24T19:24:01.1906500Z   ¬Z next.vertex\n2026-10-24T19:24:01.2988108Z BLOCKED LEAN MAGMaximality: MAGPathLifting\n2026-10-24T19:24:01.3137447Z BLOCKED LEAN ObservedMAGAncestry: MAGMaximality"
       ],
       "disposition": "FULL1485_REJECTED; separate complete36-source conditioned and7-source/32-name original recovery contexts accepted; not whole package."
+    },
+    {
+      "source": "de98e8e5742bcd95a2c52e70e18dbfa78e4c2b2c",
+      "run_id": 40125845902,
+      "job_id": 120967100420,
+      "attempted_target": "ResearchCommons.Integration.Exports",
+      "selected": 1497,
+      "successful": 1399,
+      "compiled": 113,
+      "reused": 1286,
+      "failed_module": "ClosedColliderWalks",
+      "blocked": 97,
+      "diagnostics": [
+        "2026-10-24T19:43:28.8553006Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ClosedColliderWalks.lean:16:41: error: unexpected token '('; expected command\n2026-10-24T19:43:28.9612715Z BLOCKED LEAN WeakInducingEdges: ClosedColliderWalks"
+      ],
+      "disposition": "FULL1497_REJECTED; separate complete37-source lifting and24-source/24-name original founder-window context accepted, not whole package."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16760,6 +16776,39 @@
         ]
       ],
       "status": "PENDING_COMPLETE37_SOURCE_AND_FULL1497_CHECK"
+    },
+    {
+      "module": "ClosedColliderWalks",
+      "original": {
+        "bytes": 6889,
+        "git_blob": "a516bcb6d8a963f94cb38d489b92667bf1697bb7",
+        "sha256": "015d2bc62a79e95088037bbd3f958dac7d4a596211bd0156303cca162c53bd7e"
+      },
+      "successor": {
+        "bytes": 6889,
+        "git_blob": "a516bcb6d8a963f94cb38d489b92667bf1697bb7",
+        "sha256": "015d2bc62a79e95088037bbd3f958dac7d4a596211bd0156303cca162c53bd7e"
+      },
+      "selected": {
+        "bytes": 6905,
+        "git_blob": "298dd9e1fb1019d5dd817bf035232e424f5d238b",
+        "sha256": "a0937459bfc4f44cc5a51f30971918b35d6c9bc4f1af0ed6a2fdc859265e1ccb"
+      },
+      "all6_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "open ActiveWalkReduction SourceSelection (AncestorOf)",
+          "open ActiveWalkReduction\nopen SourceSelection (AncestorOf)"
+        ],
+        [
+          "        have short := nodup.sublist (List.Sublist.map Arrival.vertex sublist)",
+          "        have short := List.Nodup.sublist (List.Sublist.map Arrival.vertex sublist) nodup"
+        ]
+      ],
+      "status": "PENDING_COMPLETE40_SOURCE_AND_FULL1497_CHECK",
+      "later_forward_API_ports_selected": false,
+      "existing_notation_variants_reused": true
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."
