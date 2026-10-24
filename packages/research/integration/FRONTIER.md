@@ -22,6 +22,8 @@ The four actual errors need the SAME baseline condition functions and actual can
 
 All five earlier scoped dependency/hash sets (9,5,245,836,1 modules) were compared with current source: every hash matches and the changed LiteralSelectedMAG is absent. They are reused; separate prechecks are manual/explicit rather than repeated before each unrelated proof repair. The mandatory combined source/export/owned/actual-caller/strict gates are retained unchanged. [Exact reuse](scoped-check-source-reuse.json), [CI contract](SCOPED-CHECK-REUSE.md).
 
+Latest early24-source follow-up at457f1d90/run40098926539 fixes all3 indicator-wrapper diagnostics but rejects ONE baseline condition-function equality. No new full1435/291-name/owned result follows. The new exact funext/cases/rfl equality retains the actual canonical carrier and original connection theorem. All earlier rejected complete attempts stay rejected.
+
 ## Genuine remaining implementation and formal joins
 
 - Complete original causal upper/lower/zero-parameter contexts and ten exact exports at the pinned APIs, followed by native causal input/provider/response/game/selector/result links.

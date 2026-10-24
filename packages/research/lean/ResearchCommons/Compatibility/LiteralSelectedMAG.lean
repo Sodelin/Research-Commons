@@ -97,8 +97,15 @@ theorem canonical_baseline_preserves {X : Type u} {S : Type v} {L : Type w}
     [LinearOrder (CanonicalSelection.Vertex (sourceProfile D))] :
     SourcePreserves D (canonicalSource D) where
   connection Z x y := by
-    simpa only [canonicalSource, SelectedCondition, retainedCondition, liftCondition,
-      dagGraph, arrowGraph] using original_canonical_baseline_connection D Z x y
+    have hcondition :
+        (liftCondition (SourceSelection.Condition Z) :
+          SourceVertex X (Selector (sourceProfile D))
+            (Root (canonicalRetainedGraph D)) → Prop) = SelectedCondition Z := by
+      funext a
+      cases a <;> rfl
+    have h := original_canonical_baseline_connection D Z x y
+    rw [hcondition] at h
+    exact h
   observed_ancestry := original_canonical_baseline_observed_ancestry D
   selection_ancestry := original_canonical_baseline_selection_ancestry D
 

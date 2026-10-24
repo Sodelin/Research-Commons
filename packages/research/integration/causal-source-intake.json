@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_CONDITION_EQUIV_PROOF_REDUCTION_COMPATIBILITY_PENDING",
+  "status": "EARLY24_SOURCE_REJECTED_ONE_BASELINE_CONDITION_FUNCTION_EQUALITY",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -803,7 +803,7 @@
     {
       "module": "LiteralSelectedMAG",
       "path": "lean/ResearchCommons/Compatibility/LiteralSelectedMAG.lean",
-      "sha256": "3abde844ce0ad4a7c0f72cbf0a3a10943350e48d6a294b64bd134996dfea5efd",
+      "sha256": "e58cefc32a673b228c3dba02bdc10e990b26524bff0421d0426bc46b716ad63d",
       "imports": [
         "InducingPathSeparation"
       ],
@@ -820,8 +820,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Unfold the SAME baseline condition functions and original graph constructors; expose the actual canonicalIndicatorEquiv.toEquiv by a private rfl lemma before the existing observed-label rewrites. Every original theorem/target/source/latent/selection hypothesis remains.",
-        "actual_rejected_source": "73c84c99f46e7a977f99efefde174871d2d4f7f8"
+        "variant": "Derive the SAME liftCondition/SelectedCondition equality at the literal canonical source carrier by funext and cases/rfl, then rewrite the original baseline theorem. Preserve the previously compiled actual-indicator-equivalence helper and every original source/target/latent/selection statement.",
+        "actual_rejected_source": "457f1d9016783ec02d51a4f2d0b9420c6c777e38"
       }
     },
     {
@@ -4911,6 +4911,22 @@
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false,
       "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+    },
+    {
+      "module": "LiteralSelectedMAG",
+      "original_sha256": "ceeb94ca337205a26471fe18b187ef1b423029110d099887ebf7aa141f13df34",
+      "selected_sha256": "e58cefc32a673b228c3dba02bdc10e990b26524bff0421d0426bc46b716ad63d",
+      "selected_bytes": 11493,
+      "selected_git_blob": "97b050f7cd5c1a8989c9ceef6a8077e843322ec7",
+      "edit": "Derive the SAME liftCondition/SelectedCondition equality at the literal canonical source carrier by funext and cases/rfl, then rewrite the original baseline theorem. Preserve the previously compiled actual-indicator-equivalence helper and every original source/target/latent/selection statement.",
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "actual_rejected_source": "457f1d9016783ec02d51a4f2d0b9420c6c777e38",
+      "actual_complete_original_body_read": true,
+      "current_main_equal_pinned": true,
+      "original_vendor_body_unchanged": true,
+      "statement_semantics_unchanged": true,
+      "new_source_law_or_axiom": false,
+      "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
     }
   ],
   "first_full_context_rejection": {
@@ -4991,10 +5007,19 @@
     "source_inventory_unchanged": true
   },
   "latest_early_projection_result": {
-    "source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
-    "run": 40096997969,
-    "job": 120881390655,
-    "target": "InducingPathSeparation",
-    "status": "PASSED_23_SOURCE_COMPILATION_NOT_WHOLE_OWNED_NAME_ACCEPTANCE"
+    "source": "457f1d9016783ec02d51a4f2d0b9420c6c777e38",
+    "run": 40098926539,
+    "job": 120887031955,
+    "status": "TERMINAL_REJECTED_ONE_BASELINE_FUNCTION_EXTENSITONALITY_TERM",
+    "target": "LiteralSelectedMAG",
+    "selected_sources": 24,
+    "compiler_errors": 1,
+    "diagnostic": "100:4 condition predicates remain distinct higher-order constants after simp; prove their literal function equality by funext/cases/rfl before reusing the original source connection",
+    "all_three_original_indicator_equiv_diagnostics_repaired": true,
+    "complete_module_accepted": false,
+    "full1435_source_target_reached": false,
+    "whole_causal_owned_and_exact_name_audit_ran": false,
+    "last_actual_full_target_source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
+    "originals_unchanged": true
   }
 }

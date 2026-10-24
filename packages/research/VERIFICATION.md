@@ -1,5 +1,7 @@
 # Actual portable package verification
 
+Source127457f1d90/run40098926539/job120887031955: early24-source LiteralSelectedMAG is REJECTED at one baseline higher-order condition-function equality. The three original indicator-wrapper diagnostics are repaired, but the COMPLETE module is not accepted and the combined1435-source/name/owned/caller stages are skipped. The next exact proof derives the SAME function equality by funext/cases/rfl at the actual canonical carrier before reusing the original theorem. Every source/marked-target/latent/selection hypothesis and frozen vendor body remains. Unchanged accepted scoped contexts are reused; no new scientific or native result is inferred. Exact diagnostics/source variant remain in causal-compiler-rejections.json.
+
 ## Source126 actual accepted component and remaining failure
 
 Source73c84c99/run40096997969/job120881390655 PASSES the three finite-original-equation names in the complete selected module. Actual owned audit:4 declarations/4 theorems including one generated simp lemma, zero owned/nonstandard/missing. Public artifact12561880360 was independently downloaded/hash-checked:9072779B/SHA104adfde578f2da8bc371ee5bc0ae164a444f0d8eeb4711bdc4330d60ca0c1eb. All three COMPLETE printed types, exact module owners and four actual axiom rows were read. This is a downstream formal use-site of the completed HAND descent theorem, not full source/RCF/O⇔D/stopping closure. Exact receipt: integration/g4-algebraic-profile-component-verification.json.
