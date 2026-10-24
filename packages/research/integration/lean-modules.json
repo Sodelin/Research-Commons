@@ -724,6 +724,23 @@
       }
     },
     {
+      "module": "ResearchCommons.MSCI.JC69Tree",
+      "path": "lean/ResearchCommons/MSCI/JC69Tree.lean",
+      "sha256": "02ee07a42eaa5d85d01cfbd2e0e13f7fc0f4978d8285a796ccef9b335de1d85f",
+      "imports": [
+        "ResearchCommons.MSCI.JC69",
+        "G2ChronologicalDecoration",
+        "Mathlib.Data.Fintype.Pi"
+      ],
+      "provenance": {
+        "role": "Constructed all-finite original-tree JC pattern/locus PMF with SAME-matrix clock decoding",
+        "preflight": "integration/JC69-TREE-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "proof_derivation": "Downstream formalization of retained complete forest Fourier/channel law; no new mathematical result",
+        "scope": "Original Genealogy/Decoration, every finite labelled tree and locus size, normalized exact branch channel, full Fourier factorization, original-ID readout, actual Valid/TimedBound decoder. Whole unranked metric-law/source mixture, bounded recurrence and observation-equivalence endpoint remain separate."
+      }
+    },
+    {
       "module": "ResearchCommons.MSCI.Alignment",
       "path": "lean/ResearchCommons/MSCI/Alignment.lean",
       "sha256": "fac046e5adc609d934a998e03e2b1d81ed95c95b257b3e45113f7ddf7f4c98a3",
@@ -746,13 +763,14 @@
     {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "d969552615a690389cc1b2e2f759726bd6b797977002eeb0a90ac6866cf19c18",
+      "sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
         "ResearchCommons.Integration.WordCache",
         "ResearchCommons.MSCI.KilledClocks",
         "ResearchCommons.MSCI.JC69",
+        "ResearchCommons.MSCI.JC69Tree",
         "ResearchCommons.MSCI.Alignment",
         "ResearchCommons.Claims.G1",
         "ResearchCommons.Claims.G2",
@@ -778,7 +796,8 @@
         "prior_verified_sha256": "62ea93a647d525d479355beab645f78512967d8b1ef147fb5cff8a2c26518462",
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v8.json",
-        "source_commit": "9278a34a62b15198deefd5883baa20a7c21d9230"
+        "source_commit": "9278a34a62b15198deefd5883baa20a7c21d9230",
+        "current_candidate_scope": "Prior115 exact names remain accepted at source9278; the new all-finite tree/locus/actual-matrix component is pending complete current-context checking."
       }
     }
   ]
