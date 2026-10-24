@@ -646,7 +646,7 @@ jobs:
         if: contains(github.event.head_commit.message, '[check causal]') || contains(github.event.head_commit.message, '[check scoped contexts]')
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target VertexDiscriminatingSections
-          cargo run --locked -p research-commons-package -- audit-target ActivePathReversal
+          cargo run --locked -p research-commons-package -- audit-target VertexDiscriminatingSections
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
