@@ -644,8 +644,8 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
       - name: Compile and audit the next exact original causal compatibility boundary
         run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target AncestralShortcutGeometry
-          cargo run --locked -p research-commons-package -- audit-target AncestralShortcutGeometry
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target MinimalPathChord
+          cargo run --locked -p research-commons-package -- audit-target MinimalPathChord
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Reuse checked contiguous physical-tip component (explicit scoped refresh only)

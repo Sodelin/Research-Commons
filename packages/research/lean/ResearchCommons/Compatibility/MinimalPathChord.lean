@@ -89,7 +89,7 @@ theorem shortest_chord_conditioned_parent {V : Type u} (G : MarkedGraph V)
   · cases ht with
     | nil =>
         exact (shortest_chord_cannot_connect G single Z x y hp hs long chord leftReady (.nil _) minimal).elim
-    | @cons q «next» end rest «first» tail =>
+    | @cons q «next» «end» rest «first» tail =>
         obtain ⟨following, nextIncoming, edge, mark, originalReady⟩ := «first»
         by_cases rightReady : ActiveAt Z (AncestorOf G Z) q.vertex incoming following
         · have rebased : RealStep G Z ⟨q.vertex, some incoming⟩ «next» :=
