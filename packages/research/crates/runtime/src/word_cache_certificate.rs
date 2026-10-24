@@ -410,7 +410,7 @@ theorem coefficient_fibres_checked :
       let typeLevels := (Lean.collectLevelParams {} target).params
       let lemmaLevels := (← Lean.Elab.Term.getLevelNames).reverse.filter typeLevels.contains
       let lemmaName ← Lean.withOptions (fun opts => opts.setBool `Elab.async false) do
-        Lean.Elab.Term.mkAuxLemma lemmaLevels target proof
+        Lean.Meta.mkAuxLemma lemmaLevels target proof
       pure (Lean.mkConst lemmaName (lemmaLevels.map Lean.Level.param))
 #check coefficient_fibres_checked
 end {stage_namespace}

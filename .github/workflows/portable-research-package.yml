@@ -426,7 +426,9 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check word]')
     concurrency:
       group: portable-whole-word-20261023
-      cancel-in-progress: false
+      # Only an explicitly named obsolete public proof-rendering attempt is superseded.
+      # Ordinary pushes preserve the existing non-cancelling word lane.
+      cancel-in-progress: ${{ contains(github.event.head_commit.message, '[supersede word source102]') }}
     name: Actual natural hybrid-word output to total Lean coefficient certificate
     needs: rust
     runs-on: ubuntu-24.04

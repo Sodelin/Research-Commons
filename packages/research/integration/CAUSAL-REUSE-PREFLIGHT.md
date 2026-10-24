@@ -44,3 +44,6 @@ Source9852c346/run40066477177 was REJECTED at the package-owned documentation he
 
 
 Source29f998f5/run40067030245 compiled the rational-density repair, then REJECTED the next original SelectedWalkReduction at append's unapplied induction hypothesis and four inactive <+ notations. Its explicit compatibility variant applies ih to the already-present k and uses List.Sublist for the same propositions. All original146 vendor bodies remain frozen and the full1077-source target/ten causal endpoints stay selected. No source predicate, physical tuple, theorem scope or desired-law premise is weakened. Exact rejection is retained; full causal acceptance remains pending.
+
+
+Source2674eebd/run40067614347 compiled the repaired walk module, then REJECTED BinaryCPTPolynomials because five mathematical MvPolynomial constructors use Mathlib's existing noncomputable ring/finite algebra structures. The selected copy marks ONLY those five definitions noncomputable; all definition bodies and theorem statements/proofs stay unchanged. This is mathematical formalization, not an executable/native CPT engine or a new source oracle. All146 original vendor bodies and the full1077-source target stay selected. Whole causal owned/name/type acceptance remains pending.

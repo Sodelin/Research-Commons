@@ -77,6 +77,40 @@
       "owned_audit_ran": false,
       "rust_job": 120792340703,
       "rust_status": "success"
+    },
+    {
+      "source": "2674eebd0db164e39737eae1c8fb5503b71a45f3",
+      "run": 40067614347,
+      "job": 120794203353,
+      "module": "BinaryCPTPolynomials",
+      "errors": [
+        {
+          "line": 34,
+          "diagnostic": "bernoulliPolynomial depends on noncomputable AddMonoidAlgebra.ring"
+        },
+        {
+          "line": 55,
+          "diagnostic": "jointPolynomial depends on noncomputable AddMonoidAlgebra.commRing"
+        },
+        {
+          "line": 79,
+          "diagnostic": "cylinderPolynomial depends on noncomputable AddMonoidAlgebra.instAddCommMonoid"
+        },
+        {
+          "line": 114,
+          "diagnostic": "cellPolynomial depends on noncomputable cylinderPolynomial"
+        },
+        {
+          "line": 130,
+          "diagnostic": "minorPolynomial depends on noncomputable AddMonoidAlgebra.ring"
+        }
+      ],
+      "previous_walk_variant_compiled": true,
+      "causal_theorem_acceptance": false,
+      "owned_audit_ran": false,
+      "rust_job": 120794052133,
+      "rust_tests": 102,
+      "rust_status": "success"
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -146,6 +180,23 @@
       "original_vendor_body_unchanged": true,
       "statement_semantics_unchanged": true,
       "new_source_law_or_axiom": false
+    },
+    {
+      "module": "BinaryCPTPolynomials",
+      "original_sha256": "04c4de1048ab891198cd48d2e72876655aa0b4146fafff8bcc8c88f255cadaca",
+      "selected_sha256": "e9d051a0cb404a01d32407be8f3639f05cc6e380694f1bcff3acf1e99d8e9aa3",
+      "edit": "Add noncomputable ONLY to five mathematical MvPolynomial construction definitions; all bodies/statements/proof scripts unchanged. Rational mass functions remain executable; native polynomial correspondence is separate.",
+      "definitions": [
+        "bernoulliPolynomial",
+        "jointPolynomial",
+        "cylinderPolynomial",
+        "cellPolynomial",
+        "minorPolynomial"
+      ],
+      "all_definition_bodies_unchanged": true,
+      "all_theorem_statements_and_proofs_unchanged": true,
+      "original_vendor_body_unchanged": true,
+      "native_executable_provider_supplied": false
     }
   ]
 }
