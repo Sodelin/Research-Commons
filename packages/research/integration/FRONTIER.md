@@ -22,3 +22,5 @@ Before new implementation, read actual predecessor AND later successor, compare 
 New downstream candidate: JC69Tree constructs the ORIGINAL all-finite tree/pattern/locus channel, reuses the actual G2 same-matrix Decoration/Chronological decoder and derives the full Fourier factor. Thirteen additional exact names are pending current-context checks; the previous115-name acceptance stays at its immutable source. No duplicate coalescent engine or new biological theorem is selected. See JC69-TREE-REUSE-PREFLIGHT.md.
 
 A native complete JC column implementation/certificate now follows the same original Tree/branch bank. The fixed3-tip64-entry/clock/matrix caller and three new test groups await fresh Linux/Rust/Lean results. No native exponential/log or new genealogy engine is used. Existing word/full job handles remain unchanged.
+
+Actual Rust tree implementation/emitter now passed97 tests at33a6163e. The new complete Lean tree component rejected dependent-type/sum proof elaboration at9e032e80; its exact proof-term repair is pending, with no partial acceptance. Whole original source/measure/recurrence and95 unnamed claims remain distinct.

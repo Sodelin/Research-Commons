@@ -10,13 +10,14 @@ canonical MSci source admission, or the complete observation-equivalence claim.
 -/
 noncomputable section
 set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 5000000
 namespace ResearchCommons.MSCI.JC69Tree
 open GProgram.SourceForest
 open GProgram.G2.FaithfulPairAgeDecoration
 open GProgram.G2.ChronologicalDecoration
 open ResearchCommons.MSCI.JC69
-open scoped BigOperators NNReal
+open scoped BigOperators NNReal Classical
 variable {Copy : Type*} [Fintype Copy] [DecidableEq Copy]
 
 /-- One base at each leaf OCCURRENCE of the original complete genealogy.
@@ -53,7 +54,10 @@ def likelihood : (t : Genealogy Copy) → Survivals t → Base → Pattern t →
 private theorem sum_product {A B : Type*} [Fintype A] [Fintype B]
     (f : A → ℝ) (g : B → ℝ) :
     (∑ p : A × B, f p.1 * g p.2) = (∑ a : A, f a) * (∑ b : B, g b) := by
-  simp only [Fintype.sum_prod_type, Finset.mul_sum, Finset.sum_mul]
+  rw [Fintype.sum_prod_type, Finset.sum_mul]
+  apply Finset.sum_congr rfl
+  intro a _
+  rw [Finset.mul_sum]
 
 private theorem message_sum {A : Type*} [Fintype A]
     (f : Base → A → ℝ) (h : ∀ b, (∑ p : A, f b p) = 1) (x : ℝ) (a : Base) :
@@ -70,7 +74,10 @@ theorem likelihood_sum (t : Genealogy Copy) (x : Survivals t) (a : Base) :
       change (∑ p : Pattern l × Pattern r,
         (∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p.1) *
         (∑ b : Base, probability x.2.1 a b * likelihood r x.2.2.2 b p.2)) = 1
-      rw [sum_product, message_sum _ (fun b => hl _ b),
+      rw [sum_product
+        (fun p => ∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p)
+        (fun p => ∑ b : Base, probability x.2.1 a b * likelihood r x.2.2.2 b p),
+        message_sum _ (fun b => hl _ b),
         message_sum _ (fun b => hr _ b), one_mul]
 
 theorem likelihood_nonnegative (t : Genealogy Copy) (x : Survivals t)
@@ -109,8 +116,15 @@ theorem root_likelihood_sum (t : Genealogy Copy) (x : Survivals t) :
     (∑ p : Pattern t, rootLikelihood t x p) = 1 := by
   unfold rootLikelihood
   rw [Finset.sum_comm]
-  simp_rw [← Finset.mul_sum, likelihood_sum, mul_one]
-  norm_num [Fintype.sum_prod_type, Fin.sum_univ_two]
+  calc
+    (∑ a : Base, ∑ p : Pattern t, (1/4 : ℝ) * likelihood t x a p) =
+        ∑ a : Base, (1/4 : ℝ) * ∑ p : Pattern t, likelihood t x a p := by
+      apply Finset.sum_congr rfl
+      intro a _
+      rw [Finset.mul_sum]
+    _ = 1 := by
+      simp_rw [likelihood_sum, mul_one]
+      norm_num [Fintype.sum_prod_type, Fin.sum_univ_two]
 
 theorem root_likelihood_nonnegative (t : Genealogy Copy) (x : Survivals t)
     (hx : Admitted t x) (p : Pattern t) : 0 ≤ rootLikelihood t x p := by
@@ -183,7 +197,7 @@ private theorem product_fourier {A B : Type*} [Fintype A] [Fintype B]
       apply Finset.sum_congr rfl
       intro p _
       ring
-    _ = _ := sum_product _ _
+    _ = _ := sum_product (fun a => f a * c a) (fun b => g b * d b)
 
 /-- Complete all-finite-tree Fourier law of the constructed branch channel.
 No conditional expectation or target Fourier identity is an input field. -/
@@ -198,7 +212,10 @@ theorem tree_fourier (t : Genealogy Copy) (x : Survivals t)
         ((∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p.1) *
          (∑ b : Base, probability x.2.1 a b * likelihood r x.2.2.2 b p.2)) *
         (patternCharacter charges l p.1 * patternCharacter charges r p.2)) = _
-      rw [product_fourier,
+      rw [product_fourier
+        (fun p => ∑ b : Base, probability x.1 a b * likelihood l x.2.2.1 b p)
+        (fun p => ∑ b : Base, probability x.2.1 a b * likelihood r x.2.2.2 b p)
+        (patternCharacter charges l) (patternCharacter charges r),
         message_fourier _ _ _ _ _ (fun b => hl _ b),
         message_fourier _ _ _ _ _ (fun b => hr _ b)]
       rw [amplitude, totalCharge, character_add]
@@ -218,11 +235,11 @@ theorem root_fourier (t : Genealogy Copy) (x : Survivals t) (charges : Copy → 
   rw [Finset.sum_comm]
   simp_rw [mul_assoc, ← Finset.mul_sum, tree_fourier]
   calc
-    (∑ a : Base, (1/4 : ℝ) *
-      (amplitude charges t x * character (totalCharge charges t) a)) =
+    ((1/4 : ℝ) * ∑ a : Base,
+      amplitude charges t x * character (totalCharge charges t) a) =
         amplitude charges t x * ∑ a : Base, (1/4 : ℝ) *
           character (totalCharge charges t) a := by
-      rw [Finset.mul_sum]
+      rw [Finset.mul_sum, Finset.mul_sum]
       apply Finset.sum_congr rfl
       intro a _
       ring
@@ -398,7 +415,11 @@ theorem locus_fourier (L : Nat) (t : Genealogy Copy) (x : Survivals t)
       locusLikelihood L t x p * ∏ j, patternCharacter (charges j) t (p j)) =
       ∏ j, if totalCharge (charges j) t = 0 then amplitude (charges j) t x else 0 := by
   simp only [locusLikelihood, ← Finset.prod_mul_distrib]
-  rw [← Fintype.prod_sum]
-  simp_rw [root_fourier]
+  calc
+    _ = ∏ j : Fin L, ∑ p : Pattern t,
+        rootLikelihood t x p * patternCharacter (charges j) t p :=
+      (Fintype.prod_sum (fun (j : Fin L) (p : Pattern t) =>
+        rootLikelihood t x p * patternCharacter (charges j) t p)).symm
+    _ = _ := by simp_rw [root_fourier]
 
 end ResearchCommons.MSCI.JC69Tree
