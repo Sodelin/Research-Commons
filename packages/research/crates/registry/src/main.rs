@@ -149,7 +149,8 @@ fn build_certificates(root:&std::path::Path)->Result<()> {
 /// dependency closure. Scoped success never substitutes for full-profile PASS.
 fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
  let reuse=args.iter().any(|a|a=="--reuse-retained");
- args.retain(|a|a!="--reuse-retained");
+ let keep_going=args.iter().any(|a|a=="--keep-going");
+ args.retain(|a|a!="--reuse-retained"&&a!="--keep-going");
  let plan=prepare_lean(root)?;
  let lean=root.join("lean").canonicalize().map_err(|e|e.to_string())?;
  let out=lean.join(".lake/build/lib/lean");
@@ -158,7 +159,7 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
   []=>(None,None),
   [flag,name] if flag=="--target" => (None,Some(name.as_str())),
   [n]=>(Some(n.parse::<usize>().map_err(|_|"invalid module cap".to_owned())?),None),
-  _=>return Err("usage: build [--reuse-retained] [module-cap|--target Module]".into()),
+  _=>return Err("usage: build [--reuse-retained] [--keep-going] [module-cap|--target Module]".into()),
  };
  let all=plan["order"].as_array().ok_or("missing order")?.iter()
     .map(|v|v.as_str().map(str::to_owned).ok_or("non-string module".to_owned())).collect::<Result<Vec<_>>>()?;
@@ -172,9 +173,12 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
  let receipt_path=root.join(if target.is_some(){"build/lean-target-build.json"}else{"build/lean-build.json"});
  let mut objects=Vec::new();
  let mut reused=0usize;
+ let mut failures=Vec::<serde_json::Value>::new();
+ let mut blocked=Vec::<serde_json::Value>::new();
+ let mut unavailable=std::collections::BTreeSet::<String>::new();
  let mut cache=if reuse {Some(research_commons_package::object_cache::RetainedObjects::open(root,&plan)?)} else {None};
  let mut receipt=json!({"status":"RUNNING","compiler_exit_success":false,"complete_profile":false,
-   "target":target,"selected_source_modules":source_count,"full_profile_source_modules":all.len(),
+   "target":target,"keep_going":keep_going,"failed_modules":[],"blocked_modules":[],"selected_source_modules":source_count,"full_profile_source_modules":all.len(),
    "source_graph_sha256":plan["source_graph_sha256"],"module_hashes":plan["module_hashes"],
    "objects":objects});
  let write_receipt=|value:&serde_json::Value|->Result<()> {
@@ -182,6 +186,20 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
  };
  write_receipt(&receipt)?;
  for (i,name) in names.iter().enumerate(){
+  // Continue only across independent ORIGINAL modules. A failed import is
+  // unavailable, so no dependent compiler/audit can silently use a stale object.
+  let blockers=if plan["module_imports"][name].is_array() {
+    research_commons_package::failed_imports(&plan,name,&unavailable)?
+  } else if name=="ResearchCommons.Registry" || name=="ResearchCommons" {
+    unavailable.iter().cloned().collect::<Vec<_>>()
+  } else {return Err(format!("missing import metadata: {name}"));};
+  if !blockers.is_empty() {
+    println!("BLOCKED LEAN {name}: {}",blockers.join(", "));
+    unavailable.insert(name.clone());
+    blocked.push(json!({"module":name,"unavailable_imports":blockers}));
+    receipt["blocked_modules"]=json!(blocked);write_receipt(&receipt)?;
+    continue;
+  }
   let relative=research_commons_package::module_path(name)?;
   let object=out.join(&relative).with_extension("olean");
   fs::create_dir_all(object.parent().ok_or("no object parent")?).map_err(|e|e.to_string())?;
@@ -193,13 +211,29 @@ fn build_lean(root:&std::path::Path,mut args:Vec<String>)->Result<()> {
     .arg("--root=.generated").arg("-o").arg(&object).arg(&source).current_dir(&lean)
     .stdin(Stdio::null()).status().map_err(|e|format!("lean spawn: {e}"))?;
   if !status.success(){
-   receipt["status"]=json!("FAILED");receipt["failed_module"]=json!(name);write_receipt(&receipt)?;
-   return Err(format!("Lean failed on {name}: {status}"));
+   failures.push(json!({"module":name,"compiler_exit":status.to_string()}));
+   unavailable.insert(name.clone());
+   receipt["status"]=json!(if keep_going {"RUNNING_WITH_FAILURES"}else{"FAILED"});
+   receipt["failed_module"]=failures[0]["module"].clone();
+   receipt["failed_modules"]=json!(failures);write_receipt(&receipt)?;
+   if !keep_going {return Err(format!("Lean failed on {name}: {status}"));}
+   continue;
   }
   if let Some(c)=cache.as_mut(){c.capture(name)?;}
   }
   objects.push(json!({"module":name,"reused_retained_object":cached,"sha256":research_commons_package::sha256(&fs::read(object).map_err(|e|e.to_string())?)}));
   receipt["objects"]=json!(objects);receipt["reused_retained_objects"]=json!(reused);write_receipt(&receipt)?;
+ }
+ if !failures.is_empty() || !blocked.is_empty() {
+  receipt["status"]=json!("FAILED");
+  receipt["failed_modules"]=json!(failures);receipt["blocked_modules"]=json!(blocked);
+  receipt["compiled_modules"]=json!(objects.len()-reused);
+  receipt["checked_or_reused_modules"]=json!(objects.len());
+  receipt["reused_retained_objects"]=json!(reused);
+  receipt["compiler_exit_success"]=json!(false);receipt["complete_profile"]=json!(false);
+  receipt["owned_axiom_audit_passed"]=json!(false);write_receipt(&receipt)?;
+  println!("{receipt}");
+  return Err(format!("Lean dependency build rejected {} failed modules and {} blocked consumers",failures.len(),blocked.len()));
  }
  let mut owned_audit=false;
  if complete {

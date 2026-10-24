@@ -398,3 +398,30 @@ mod tests {
 pub mod exports;
 
 pub mod certificate_bundle;
+
+/// Direct unavailable imports in the ORIGINAL validated topological plan.
+/// External imports remain governed by source preparation, not this scheduler.
+pub fn failed_imports(plan:&Value,module:&str,unavailable:&std::collections::BTreeSet<String>)->Result<Vec<String>> {
+ let imports=plan["module_imports"][module].as_array().ok_or("missing module imports")?;
+ imports.iter().map(|v|v.as_str().ok_or("non-string module import".to_owned()))
+   .filter_map(|v|match v {Ok(name) if unavailable.contains(name)=>Some(Ok(name.to_owned())),
+     Ok(_)=>None,Err(error)=>Some(Err(error))}).collect()
+}
+
+#[cfg(test)]mod failed_import_tests {
+ use super::*;
+ #[test]fn failure_propagates_to_consumers_but_not_independent_modules(){
+  let plan=json!({"module_imports":{"A":["Mathlib.Data.Real.Basic"],"B":["A"],"C":[],"Target":["B","C"]}});
+  let mut unavailable=std::collections::BTreeSet::from(["A".to_owned()]);
+  assert_eq!(failed_imports(&plan,"B",&unavailable).unwrap(),vec!["A"]);
+  assert!(failed_imports(&plan,"C",&unavailable).unwrap().is_empty());
+  unavailable.insert("B".to_owned());
+  assert_eq!(failed_imports(&plan,"Target",&unavailable).unwrap(),vec!["B"]);
+  assert!(failed_imports(&plan,"A",&unavailable).unwrap().is_empty());
+ }
+ #[test]fn malformed_import_metadata_is_fatal_not_independent_success(){
+  let unavailable=std::collections::BTreeSet::new();
+  assert!(failed_imports(&json!({"module_imports":{}}),"A",&unavailable).is_err());
+  assert!(failed_imports(&json!({"module_imports":{"A":[17]}}),"A",&unavailable).is_err());
+ }
+}

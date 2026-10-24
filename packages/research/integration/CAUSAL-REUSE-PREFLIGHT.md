@@ -47,3 +47,6 @@ Source29f998f5/run40067030245 compiled the rational-density repair, then REJECTE
 
 
 Source2674eebd/run40067614347 compiled the repaired walk module, then REJECTED BinaryCPTPolynomials because five mathematical MvPolynomial constructors use Mathlib's existing noncomputable ring/finite algebra structures. The selected copy marks ONLY those five definitions noncomputable; all definition bodies and theorem statements/proofs stay unchanged. This is mathematical formalization, not an executable/native CPT engine or a new source oracle. All146 original vendor bodies and the full1077-source target stay selected. Whole causal owned/name/type acceptance remains pending.
+
+
+Source282a95e1/run40068226649 compiled BinaryCPTPolynomials after its five mathematical noncomputable markers, then REJECTED CanonicalSelectionProfile at two under-specified nil-route sum constructors and one universe-sensitive impossible-equality eliminator. The explicit copy supplies the SAME original route/Vertex type and cases the SAME impossible equality; no statement/source profile is changed. Full original146-source/1077-target acceptance remains pending. The existing Rust builder now optionally collects independent module failures and blocks every dependent module before returning exit2; see BUILD-FAILURE-COLLECTION-REUSE-PREFLIGHT.md. No clean partial is promoted.

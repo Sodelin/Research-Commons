@@ -161,6 +161,28 @@
           "all_theorem_statements_and_proofs_unchanged": true,
           "original_vendor_body_unchanged": true,
           "native_executable_provider_supplied": false
+        },
+        {
+          "module": "CanonicalSelectionProfile",
+          "original_sha256": "54259697a10a2c9c776e35037c8b0086c7eb7205c0286c17ddf09ea9a55878dd",
+          "selected_sha256": "3dd72f0a8b850ef71f0528556a26f7f1e051072590b1d6d89fc5560276887b7c",
+          "edit": "Give two existing Route.nil terms their original relation/Vertex sum type; cases the original impossible inl=inr equality. No statement/hypothesis/source-profile change.",
+          "exact_edits": [
+            [
+              "| nil x => exact .nil (.inl x)",
+              "| nil x => exact Route.nil (R := Directed (graph Q)) (Sum.inl x : Vertex Q)"
+            ],
+            [
+              "· exact Sum.noConfusion hbad",
+              "· cases hbad"
+            ],
+            [
+              "(lift_observed_route Q h).append (.cons hlast (.nil (.inr s)))",
+              "(lift_observed_route Q h).append\n      (.cons hlast (Route.nil (R := Directed (graph Q)) (Sum.inr s : Vertex Q)))"
+            ]
+          ],
+          "all_theorem_statements_unchanged": true,
+          "original_vendor_body_unchanged": true
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "FULL_CONTEXT_REJECTED_MVPOLYNOMIAL_COMPUTABILITY_MARKERS_VARIANT_PENDING",
+  "status": "FULL_CONTEXT_REJECTED_CANONICAL_ROUTE_TYPE_ANNOTATIONS_VARIANT_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -145,13 +145,19 @@
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "variant": "Add noncomputable ONLY to five mathematical MvPolynomial construction definitions; all bodies/statements/proof scripts unchanged. Rational mass functions remain executable; native polynomial correspondence is separate.",
-        "rejected_source": "2674eebd0db164e39737eae1c8fb5503b71a45f3"
+        "rejected_source": "2674eebd0db164e39737eae1c8fb5503b71a45f3",
+        "module_compiled_in_rejected_full_context": {
+          "source": "282a95e11a1bada72c9f396557f24446f72829f1",
+          "run": 40068226649,
+          "job": 120795981189,
+          "whole_causal_acceptance": false
+        }
       }
     },
     {
       "module": "CanonicalSelectionProfile",
-      "path": "vendor/restricted-causal-source/CanonicalSelectionProfile.lean",
-      "sha256": "54259697a10a2c9c776e35037c8b0086c7eb7205c0286c17ddf09ea9a55878dd",
+      "path": "lean/ResearchCommons/Compatibility/CanonicalSelectionProfile.lean",
+      "sha256": "3dd72f0a8b850ef71f0528556a26f7f1e051072590b1d6d89fc5560276887b7c",
       "imports": [
         "SelectedWalkReduction",
         "Mathlib.Order.Defs.LinearOrder"
@@ -167,7 +173,10 @@
         "selected_current_context_verified": false,
         "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Give two existing Route.nil terms their original relation/Vertex sum type; cases the original impossible inl=inr equality. No statement/hypothesis/source-profile change.",
+        "rejected_source": "282a95e11a1bada72c9f396557f24446f72829f1"
       }
     },
     {
@@ -3994,6 +4003,28 @@
       "all_theorem_statements_and_proofs_unchanged": true,
       "original_vendor_body_unchanged": true,
       "native_executable_provider_supplied": false
+    },
+    {
+      "module": "CanonicalSelectionProfile",
+      "original_sha256": "54259697a10a2c9c776e35037c8b0086c7eb7205c0286c17ddf09ea9a55878dd",
+      "selected_sha256": "3dd72f0a8b850ef71f0528556a26f7f1e051072590b1d6d89fc5560276887b7c",
+      "edit": "Give two existing Route.nil terms their original relation/Vertex sum type; cases the original impossible inl=inr equality. No statement/hypothesis/source-profile change.",
+      "exact_edits": [
+        [
+          "| nil x => exact .nil (.inl x)",
+          "| nil x => exact Route.nil (R := Directed (graph Q)) (Sum.inl x : Vertex Q)"
+        ],
+        [
+          "· exact Sum.noConfusion hbad",
+          "· cases hbad"
+        ],
+        [
+          "(lift_observed_route Q h).append (.cons hlast (.nil (.inr s)))",
+          "(lift_observed_route Q h).append\n      (.cons hlast (Route.nil (R := Directed (graph Q)) (Sum.inr s : Vertex Q)))"
+        ]
+      ],
+      "all_theorem_statements_unchanged": true,
+      "original_vendor_body_unchanged": true
     }
   ],
   "first_full_context_rejection": {
