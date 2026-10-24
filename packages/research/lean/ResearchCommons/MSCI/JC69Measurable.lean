@@ -67,7 +67,7 @@ theorem clock_likelihood_measurable (leafAge : Copy → ℝ) (t : Genealogy Copy
               likelihood r (clockSurvivals leafAge r d.2.2) b p.2) :=
         Finset.measurable_sum Finset.univ (fun b _ =>
           (branch_probability_measurable _ hrightX a b).mul ((hr b p.2).comp hright))
-      simpa only [Decoration, decorationMeasurable, clockSurvivals, likelihood] using hL.mul hR
+      convert hL.mul hR using 1 <;> rfl
 
 theorem root_probability_measurable (leafAge : Copy → ℝ) (t : Genealogy Copy)
     (p : Pattern t) :

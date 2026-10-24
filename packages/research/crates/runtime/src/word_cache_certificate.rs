@@ -252,7 +252,7 @@ def certificate : CertifiedInitial N sample encodeVariable :=
 #check certificate
 end {initial_namespace}
 "#,header=header(&[context_module.clone(),data],&initial_namespace,&context_namespace),
- rows=rows_declaration(&rows,dimension,copies));
+ rows=rows_declaration(&rows,dimension,copies).replace("private ",""));
  append(&mut bundle,initial_module.clone(),src,limits)?;
  let mut certificates=Vec::new();let mut imports=vec![context_module.clone(),initial_module];
  for (i,entry) in entries.iter().enumerate(){
@@ -333,9 +333,29 @@ end {cache_namespace}
  let mut previous_module=format!("{final_module}Initial");
  let mut previous_rows=format!("{initial_namespace}.certificate.rows");
  let mut stage_names=Vec::new();let mut stage_definitions=Vec::new();let mut stage_checks=Vec::new();
+ let mut previous_namespace=initial_namespace.clone();
+ let mut previous_views=initial.transitions.iter().map(|t|t.view.clone()).collect::<Vec<_>>();
  for (letter,&operation) in request.word.iter().enumerate(){
   let stage_module=format!("{final_module}Stage{letter}");
   let stage_namespace=format!("{}.Stage{letter}",bindings.namespace);
+  // Native full-view matches are only hints. Every exact typed source/cache
+  // identity below must be proved by the kernel before it can simplify the
+  // unchanged total coefficient-fibre check.
+  let mut hit_proofs=String::new();let mut hit_names=Vec::new();
+  for (input,view) in previous_views.iter().enumerate(){
+   let index=entries.iter().position(|e|e.operation==operation && &e.view==view)
+    .ok_or(Error::Invalid("complete current-prefix cache match"))?;
+   let name=format!("cached_input{input}_exact");
+   hit_names.push(format!("{stage_namespace}.{name}"));
+   hit_proofs.push_str(&format!(r#"
+theorem {name} :
+    cachedStep N sample parentRegistry common encodeVariable {cache_namespace}.cache
+      ({operation}) {previous_namespace}.destination{input} =
+        {namespace}.Step{index}.certificate.entry.rows := by
+  rfl
+"#,operation=symbol(operation),namespace=bindings.namespace));
+  }
+  let mut next_views=Vec::new();
   let (declarations,rows)=if letter+1==request.word.len(){
    // These are the EXACT original complete native final rows already obtained
    // by direct::emit. No second final query, fitting or independent bank.
@@ -345,11 +365,16 @@ end {cache_namespace}
    let table=query(&prefix,Some(letter))?;observe_work(&mut extra_work,&table,request)?;
    if table.variables!=variables{return Err(Error::Invalid("prefix complete original variable bank"));}
    let (declarations,rows)=direct::table_body(request,&table,render_all).map_err(Error::Direct)?;
+   next_views=table.transitions.iter().map(|t|t.view.clone()).collect();
    (declarations,rows_declaration(&rows,dimension,copies).replace("private ",""))
   };
   let data=data_parts(&mut bundle,&stage_module,&stage_namespace,&context_module,
    &context_namespace,&declarations,limits)?;
-  let source=format!(r#"{header}{rows}
+  let previous_definitions=if letter==0 {
+   format!("{initial_namespace}.certificate, {initial_namespace}.rows")
+  }else{format!("{previous_namespace}.rows")};
+  let hit_rules=hit_names.join(",\n    ");
+  let source=format!(r#"{header}{rows}{hit_proofs}
 def stage : WordStage N sample (Fin {dimension}) (Fin {slots}) where
   operation := {operation}
   rows := rows
@@ -358,6 +383,9 @@ theorem coefficient_fibres_checked :
       (GProgram.G7.SparseWordComposition.bindRows {previous_rows}
         (cachedStep N sample parentRegistry common encodeVariable {cache_namespace}.cache
           ({operation}))) rows = true := by
+  simp only [{previous_definitions}, GProgram.G7.SparseWordComposition.bindRows,
+    List.flatMap_cons, List.flatMap_nil, List.map_cons, List.map_nil,
+    {hit_rules}]
   decide +kernel
 #check coefficient_fibres_checked
 end {stage_namespace}
@@ -368,6 +396,7 @@ end {stage_namespace}
   stage_definitions.push(format!("{stage_namespace}.stage"));
   stage_checks.push(format!("{stage_namespace}.coefficient_fibres_checked"));
   previous_module=stage_module;previous_rows=format!("{stage_namespace}.rows");
+  previous_namespace=stage_namespace;previous_views=next_views;
  }
  let proof_rules=stage_definitions.into_iter().chain(stage_checks).collect::<Vec<_>>().join(",\n    ");
  let source=format!(r#"{header}
