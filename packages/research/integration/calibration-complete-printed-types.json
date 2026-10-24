@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "status": "ALL20_COMPLETE_ACTUAL_PRINTED_TYPES_OWNERS_AND_AXIOMS_REVIEWED",
+  "source_commit": "3c6f7a27db9e6a6869d3e3142b82b8a43f8f0ed7",
+  "run_id": 40117862133,
+  "job_id": 120942984824,
+  "rows": [
+    {
+      "name": "ResearchCommons.Calibration.sample_mass_nonnegative",
+      "printed_type": "Calibration.sample_mass_nonnegative : ∀ (e : ↑Calibration.EventRate) {n : ℕ} (w : Calibration.Sample n),\n  0 ≤ Calibration.sampleMass e w",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.sample_mass_normalized",
+      "printed_type": "Calibration.sample_mass_normalized : ∀ (e : ↑Calibration.EventRate) (n : ℕ), ∑ w, Calibration.sampleMass e w = 1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.all_zero_mass",
+      "printed_type": "Calibration.all_zero_mass : ∀ (e : ↑Calibration.EventRate) (n : ℕ),\n  Calibration.sampleMass e (Calibration.zeroSample n) = Calibration.miss e n",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.miss_positive",
+      "printed_type": "Calibration.miss_positive : ∀ (e : ↑Calibration.EventRate) (n : ℕ), 0 < Calibration.miss e n",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.miss_le_one",
+      "printed_type": "Calibration.miss_le_one : ∀ (e : ↑Calibration.EventRate) (n : ℕ), Calibration.miss e n ≤ 1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.null_error_at_zero",
+      "printed_type": "@Calibration.null_error_at_zero : ∀ {n : ℕ} (d : Calibration.Decision n),\n  Calibration.nullError d = ↑(d (Calibration.zeroSample n))",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.all_zero_error_contribution",
+      "printed_type": "Calibration.all_zero_error_contribution : ∀ (e : ↑Calibration.EventRate) {n : ℕ} (d : Calibration.Decision n),\n  Calibration.miss e n * (1 - Calibration.nullError d) ≤ Calibration.alternativeError e d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.sum_error_lower",
+      "printed_type": "Calibration.sum_error_lower : ∀ (e : ↑Calibration.EventRate) {n : ℕ} (d : Calibration.Decision n),\n  Calibration.miss e n ≤ Calibration.nullError d + Calibration.alternativeError e d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.worst_error_lower",
+      "printed_type": "Calibration.worst_error_lower : ∀ (e : ↑Calibration.EventRate) {n : ℕ} (d : Calibration.Decision n),\n  Calibration.miss e n / (1 + Calibration.miss e n) ≤ max (Calibration.nullError d) (Calibration.alternativeError e d)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.threshold_rule_errors",
+      "printed_type": "Calibration.threshold_rule_errors : ∀ (e : ↑Calibration.EventRate) (n : ℕ) (a : ↑Calibration.Probability),\n  Calibration.nullError (Calibration.thresholdRule n a) = ↑a ∧\n    Calibration.alternativeError e (Calibration.thresholdRule n a) = Calibration.miss e n * (1 - ↑a)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.balanced_rule_errors",
+      "printed_type": "Calibration.balanced_rule_errors : ∀ (e : ↑Calibration.EventRate) (n : ℕ),\n  Calibration.nullError (Calibration.thresholdRule n (Calibration.balancedProbability e n)) =\n      Calibration.miss e n / (1 + Calibration.miss e n) ∧\n    Calibration.alternativeError e (Calibration.thresholdRule n (Calibration.balancedProbability e n)) =\n      Calibration.miss e n / (1 + Calibration.miss e n)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.sharp_sum_error",
+      "printed_type": "Calibration.sharp_sum_error : ∀ (e : ↑Calibration.EventRate) (n : ℕ),\n  IsLeast (Set.range fun d => Calibration.nullError d + Calibration.alternativeError e d) (Calibration.miss e n)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.sharp_worst_error",
+      "printed_type": "Calibration.sharp_worst_error : ∀ (e : ↑Calibration.EventRate) (n : ℕ),\n  IsLeast (Set.range fun d => max (Calibration.nullError d) (Calibration.alternativeError e d))\n    (Calibration.miss e n / (1 + Calibration.miss e n))",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.sharp_equal_prior_error",
+      "printed_type": "Calibration.sharp_equal_prior_error : ∀ (e : ↑Calibration.EventRate) (n : ℕ),\n  IsLeast (Set.range fun d => (Calibration.nullError d + Calibration.alternativeError e d) / 2)\n    (Calibration.miss e n / 2)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.no_finite_certain_decision",
+      "printed_type": "Calibration.no_finite_certain_decision : ∀ (e : ↑Calibration.EventRate) {n : ℕ} (d : Calibration.Decision n),\n  0 < max (Calibration.nullError d) (Calibration.alternativeError e d)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.zero_trials_miss",
+      "printed_type": "Calibration.zero_trials_miss : ∀ (e : ↑Calibration.EventRate), Calibration.miss e 0 = 1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.fixed_rate_arbitrarily_accurate",
+      "printed_type": "Calibration.fixed_rate_arbitrarily_accurate : ∀ (e : ↑Calibration.EventRate) (η : ℝ),\n  0 < η → ∃ n d, max (Calibration.nullError d) (Calibration.alternativeError e d) < η",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.miss_lower_rate_bound",
+      "printed_type": "Calibration.miss_lower_rate_bound : ∀ (lower e : ↑Calibration.EventRate),\n  ↑lower ≤ ↑e → ∀ (n : ℕ), Calibration.miss e n ≤ Calibration.miss lower n",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.bernoulli_lower",
+      "printed_type": "Calibration.bernoulli_lower : ∀ (e : ↑Calibration.EventRate) (n : ℕ), 1 - ↑n * ↑e ≤ Calibration.miss e n",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    },
+    {
+      "name": "ResearchCommons.Calibration.no_uniform_finite_guarantee",
+      "printed_type": "Calibration.no_uniform_finite_guarantee : ∀ (n : ℕ) (r : ℝ),\n  0 ≤ r →\n    r < 1 / 2 →\n      ∃ e, ∀ (d : Calibration.Decision n), r < max (Calibration.nullError d) (Calibration.alternativeError e d)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Calibration.RareEvent"
+    }
+  ]
+}

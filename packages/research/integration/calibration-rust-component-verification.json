@@ -1,34 +1,39 @@
 {
   "schema": 1,
-  "status": "ACTUAL_RUST_BUILD_TESTS_PASS_LEAN_CALLER_PENDING",
-  "source_commit": "1ce057b032f2a693626abe0949c1668b426e86c8",
-  "run_id": 40115859604,
-  "job_id": 120936870921,
-  "workspace_passed_tests": 114,
-  "new_calibration_tests": 3,
+  "status": "ACTUAL_RUST115_TESTS_AND_BOTH_COMPLETE_LITERAL_CALLER_CONTEXT_PASS",
+  "source_commit": "3c6f7a27db9e6a6869d3e3142b82b8a43f8f0ed7",
+  "run_id": 40117862133,
+  "job_id": 120942843031,
+  "workspace_passed_tests": 115,
+  "new_calibration_tests": 4,
   "tests": [
     "empty_sample_keeps_the_two_criteria_distinct",
     "exact_rate_and_both_attaining_rules",
-    "invalid_models_and_resource_refusals_are_explicit"
+    "invalid_models_and_resource_refusals_are_explicit",
+    "distinct_inputs_have_disjoint_proof_namespaces"
   ],
   "source_hashes": {
+    "runtime": {
+      "bytes": 9220,
+      "git_blob": "8ce413212f04c23fe3271602d7e2fb42eb33297a",
+      "sha256": "9c1bd953c5f1e487558c17763a7ac7921f772d4b62fc629e4d3474fcdf574ea4"
+    },
     "bin": {
       "bytes": 488,
       "git_blob": "e2f2333ba5d1ab12401484e7efe3a8903a339f9d",
       "sha256": "75dc04453e74f25ef43bd63b3bee169f687a538d6e6453a6c8a5e3899a55e803"
-    },
-    "runtime": {
-      "bytes": 8436,
-      "git_blob": "11a9b724060ca1c30ba6bd3053254c9ff20b49bb",
-      "sha256": "05c55f5b84be171017ecf8a08c20fc32af0db71b94f3937fa3eb7363a2d92ac1"
     }
   },
   "rate_and_sample_count_immutable": true,
   "old_archived_checker_rerun": false,
   "new_scientific_claim": false,
   "universal_Rust_semantic_refinement_proved": false,
-  "particular_literal_Lean_caller_checked": false,
-  "actual_full_probability_formalization_verified": false,
+  "particular_literal_Lean_caller_checked": true,
+  "actual_full_probability_formalization_verified": true,
   "resource_refusal_scope": "BigRational operation size checked after each bounded operation; not a global allocator guarantee and never statistical NO.",
-  "scope": "Actual new Rust engine compiled/tested inside existing workspace. Sharp values retain separate criteria, n=0 and strict known rate. Lean all-sample product-law/named/full-owned/caller check remains pending."
+  "scope": "Actual new Rust engine compiled/tested inside existing workspace. Sharp values retain separate criteria, n=0 and strict known rate. Lean all-sample product-law/named/full-owned/caller check remains pending.",
+  "prior_source_commit": "1ce057b032f2a693626abe0949c1668b426e86c8",
+  "prior_workspace_passed_tests": 114,
+  "distinct_namespace_regression_executed": true,
+  "complete_verification": "integration/calibration-component-verification.json"
 }

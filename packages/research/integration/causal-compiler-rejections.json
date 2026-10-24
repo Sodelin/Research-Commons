@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMMON_OBSERVED32_ACCEPTED; CALIBRATION_WHOLE_MODULE_REJECTED_BEFORE_FULL1473",
+  "status": "CALIBRATION_ACCEPTED; FULL1473_REJECTED_NEXT_DISCRIMINATING_STATUS_104_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15337,6 +15337,27 @@
       "actual31_transcript_decoder_compile_passed": true,
       "later_Lean_calibration_rejected": true,
       "full1473_reached": false
+    },
+    {
+      "source": "3c6f7a27db9e6a6869d3e3142b82b8a43f8f0ed7",
+      "run_id": 40117862133,
+      "job_id": 120942984824,
+      "full_target_sources": 1473,
+      "successful_objects": 1368,
+      "compiled": 103,
+      "reused": 1265,
+      "failed_module": "DiscriminatingSeparatorStatus",
+      "diagnostic_headers": [
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:39:8: error: Invalid field notation: `List.Nodup.sublist` has a parameter with expected type",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:40:2: error: No goals to be solved",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:80:14: error: Type mismatch: After simplification, term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:82:12: error: Type mismatch: After simplification, term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:85:6: error: Type mismatch: After simplification, term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:95:2: error: Type mismatch: After simplification, term",
+        "/home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/DiscriminatingSeparatorStatus.lean:127:4: error: Type mismatch: After simplification, term"
+      ],
+      "blocked_modules": 104,
+      "disposition": "FULL_UNION_REJECTED; separate generic calibration/20 names/BOTH caller contexts ACCEPTED"
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -16460,6 +16481,61 @@
       "remaining_previous_diagnostics": 2,
       "actual_accepted_source": "38d7e4186e3eaa15623758787b12d296101dcedf",
       "verification": "integration/causal-common-observed-component-verification.json"
+    },
+    {
+      "module": "DiscriminatingSeparatorStatus",
+      "original": {
+        "bytes": 11759,
+        "git_blob": "ea4e435254a1914708144730b1e81a0402a30175",
+        "sha256": "375a2a855156c64a21876fd76a24a80a4bd6096fde8d0b0e0658177a02889f3b"
+      },
+      "successor": {
+        "bytes": 11759,
+        "git_blob": "ea4e435254a1914708144730b1e81a0402a30175",
+        "sha256": "375a2a855156c64a21876fd76a24a80a4bd6096fde8d0b0e0658177a02889f3b"
+      },
+      "selected": {
+        "bytes": 11817,
+        "git_blob": "64e706e9be33c4798ff01d53fc206c458b9f883f",
+        "sha256": "a4a05910112ca2e0f562232b62638019fb8d6f493a9beab005354304c49cdc5f"
+      },
+      "actual_core_API": {
+        "bytes": 15601,
+        "git_blob": "b5c871145893536bb158d5d18de06fedb5ac1fb8",
+        "sha256": "0dbf6798e805477e651b1ff6fe472f5fb14beb37d6883167d36a81cba9c122ed"
+      },
+      "core_ref": "v4.33.1",
+      "core_path": "src/Init/Data/List/Pairwise.lean",
+      "actual_literal_core_lemma_read": "List.Nodup.sublist : l1 <+ l2 -> Nodup l2 -> Nodup l1",
+      "all12_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "  apply h.sublist\n",
+          "  refine List.Nodup.sublist ?_ h\n"
+        ],
+        [
+          "[List.map_cons, List.map_append, List.map_nil] using nd",
+          "[List.map_cons, List.map_append, List.map_nil, List.cons_append] using nd"
+        ],
+        [
+          "[List.map_cons, List.map_append, List.map_nil] using hnd",
+          "[List.map_cons, List.map_append, List.map_nil, List.cons_append] using hnd"
+        ],
+        [
+          "simpa only [DepartureAllowed, hm, triple.1, triple.2.1, ActiveAt] using ha",
+          "simpa [DepartureAllowed, hm, triple.1, triple.2.1, ActiveAt] using ha"
+        ],
+        [
+          "simpa only [DepartureAllowed, hin, hout, ActiveAt] using conditioned_ancestor",
+          "simpa [DepartureAllowed, hin, hout, ActiveAt] using conditioned_ancestor"
+        ],
+        [
+          "[List.cons_append, List.append_assoc, List.singleton_append] using hnd",
+          "[List.cons_append, List.append_assoc, List.singleton_append, List.nil_append] using hnd"
+        ]
+      ],
+      "status": "PENDING_COMPLETE33_SOURCE_AND_FULL1473_CHECK"
     }
   ]
 }
