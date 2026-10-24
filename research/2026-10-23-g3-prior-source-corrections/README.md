@@ -11,24 +11,27 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
-## Fixed-graph coefficient comparator: completed scoped admission
+## All-core passive commutation reduction: conditional hand theorem completed
 
-[G3-FIXED-GRAPH-COEFFICIENT-COMPARATOR-01](../2026-10-23-g3-fixed-graph-comparator/PROOF.md)
-is **PROVED BY HAND (not Lean formalized)** under its explicit licensed
-private-chain/public-menu premises. Its [source status](../2026-10-23-g3-fixed-graph-comparator/SOURCE-STATUS.json)
-keeps independent review, execution and original-G3 transfer separate.
-The joint marker decoder retains the actual ancestral process; finite
-physically distinct ordinary populations carry the unknown polynomial
-coefficients. One fixed graph/allocation tests O*P_A-P_B*O=0 rather than
-the already-rejected bare equality P_A=P_B. No physical inverse, unknown
-box duplication or hidden-bit observation is used.
+[G3-ALL-CORE-COMMUTATION-REDUCTION-01](../2026-10-24-g3-all-core-commutation-reduction/PROOF.md)
+and its [separate status](../2026-10-24-g3-all-core-commutation-reduction/SOURCE-STATUS.json)
+are **PROVED BY HAND (not Lean formalized)** at the stated original-input
+scope. OLD COMMON calibration supplies the actual tree-edge structure.
+Finite original controls and small-arm relations force the auxiliary bank
+across ALL fitting original cores; one passive I topology channel then
+tests the true commutator with W(t)=E(t)B_I(t^2,t^2,1/2)E(t).
+There is no supplied whole template or configuration-aware readout.
 
-The actual source-rigidity claim CP* remains UNPROVED for arbitrary word
-lengths. An untyped all-core invocation also still needs its all-core
-transfer; passive data are not asserted to fix the licensed scaffold.
-This completed admission result is not original G3 closure or a certified
-full attack. Reuse it at scope; do not reopen its proof because Lean or
-independent review is missing.
+For every finite M>=4 the source/word equivalence is complete. Conditional
+on CP-W at some fixed M, it gives a full original-input root-order reduction.
+**CP-W itself remains UNPROVED**, so original G3 stays unresolved. This is
+a full-scope attempt with an explicit missing source theorem.
+
+The earlier [fixed-graph coefficient comparator](../2026-10-23-g3-fixed-graph-comparator/PROOF.md),
+G3-FIXED-GRAPH-COEFFICIENT-COMPARATOR-01, remains PROVED at its own premises
+and is reused. Its extra typed-scaffold/channel gates are removed for
+the stronger constructed family; the old node-started CP* prospect is
+historical, not a second active task. No original G3 closure is claimed.
 
 ## Global COMMON log guards: completed old result
 
