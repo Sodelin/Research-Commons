@@ -11,6 +11,46 @@ finite rational/effectively algebraic joint input, one original source and
 one bank across all rows, with terminating NO over every unknown finite
 size/core. None of the following results supplies that whole implication.
 
+## Latest source-certificate correction — bounded Psi family refuted
+
+[G3-SHARP-PSI-CERTIFICATE-ADMISSION-01](../2026-10-24-g3-asymptotic-root-grid/SHARP-PSI-CERTIFICATE-OBSTRUCTION.md),
+10279B/SHA256374202a6bb6b42909deb067bf26e0f41e65ba948ca26e64648157d435f77e763,
+is PROVED HAND/self-reviewed. Independent correctness review/Lean and
+source/tuple execution have not been performed.
+
+Exact remaining G3 claim is still total recognition/terminating NO or a
+source-complete impossibility. At the active AG use-site, the completed
+sharp Gamma balance, energy and action LOWER bound do not yet supply an
+action upper/variance/phase implication. This successor retires one
+precisely stated shortcut rather than replacing original acceptance.
+
+For ANY fixed finite n_j>=6 and bounded l_j(h), the adjusted exact source
+Gamma_h-(h^2/945)sum l_j(h)Psi_nj+O(h^4)F+O(h^6)ell fails the displayed
+POINTWISE negative h^2*Phi_h certificate at actual strict algebraic cells.
+The OLD deletion/counting law gives J12-J9-18sigma=O(us); the resulting
+quadratic P_l has a negative rational argument for EVERY real l.
+The profile q=1-eta^43,t=1-eta^50,beta=z*eta^43 makes both existing
+source and Hh^(19/3) state errors smaller. Bounded coefficients need
+no continuity. Gamma itself has BOTH signs at strict source scope.
+
+REUSE exact sharp receiver41a45227..., compensated jumps794bcb58...,
+all-coin sigma/rho jets4fc27769..., and OLD all-n deletion/fair source
+law a28a9c35.... The relevant statements were reread; the G4 mixed-rare
+statement/prefix comparison did not claim a complete proof review.
+No new source engine, coefficient/model/tuple/solver/native run occurred.
+
+Changed frontier: stop the entire bounded finite-Psi pointwise family,
+not another cap or coefficient search. This does NOT refute AG-Pair,
+produce a fully commuting word or exclude singular/unbounded or truly
+joint FULL-word comparisons. No replacement NEW AND FULL mechanism is
+certified. Energy/source/action-relative remainder suppliers remain
+PROVED, unchanged; missing independent review/Lean does not reopen them.
+Only the original action/phase or source-complete endpoint remains.
+
+Aliases: sharp Gamma sign; bounded all-n Psi certificate; pointwise
+action closing test; J12-J9-18sigma; P_l quadratic; algebraic outlier;
+Gamma BOTH signs; not full-word commutation; no Psi-cap ladder.
+
 ## Active sufficient source premise — power-accurate root grid
 
 [G3-ASYMPTOTIC-ROOT-GRID-REDUCTION-01](../2026-10-24-g3-asymptotic-root-grid/PROOF.md)
