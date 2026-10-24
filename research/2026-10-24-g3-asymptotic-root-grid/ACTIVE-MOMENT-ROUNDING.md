@@ -15,6 +15,10 @@ optional sufficient test inside the existing AG-Pair attempt, not an
 additional original acceptance condition, a second goal, an observed
 kernel identity or a completed G3 endpoint.
 
+Current optional source test: Section7 below uses the EXACT pair-gap
+budget and a single reference-gap variance. Section4's former two-moment
+criterion remains proved as a conditional statement but is not selected.
+
 ## 1. Exact finite-array statement
 
 Take ANY finite family a_i>0,0<u_i<=1, including an empty family. Define
@@ -224,3 +228,124 @@ No local Git, new chat/subagent/peer turn, scientific/source/solver/QE/
 model/native/compiler/Lean/Cargo/Lake/CI action, writer bypass or held/
 USED/UNKNOWN replay. Existing owners, original legal menus/source fields,
 one identity and encryption-before-runtime-persistence remain unchanged.
+
+## 7. Exact pair-gap normalization: the current optional source test
+
+This successor REUSES the old physical pair product and the proved
+finite-array bound. It removes the separate P3-calibration obligation.
+Section4's two-estimate test remains a valid historical sufficient test;
+it is not a second selected target or an original requirement.
+
+For actual equal-arm cell i, write q_i=exp(-h_i),p_i=g_i(1-g_i).
+The OLD SAME-source pair formulas are
+
+    C_i=q_i,
+    Q_i=q_i+2p_i*(1-q_i).
+
+Its literal paired logarithmic gap is therefore
+
+    ell_i=log(Q_i/C_i)
+         =log(1+2p_i*(exp(h_i)-1)) in(0,h_i).          (11)
+
+All ordinary populations have gap0. They cancel from the ratio, so
+the original exact main pair budget gives
+
+    sum_i ell_i=log(b2I(K)/b2C(K))
+               =-(log c)/4=:L>0.                    (12)
+
+This is already a physical source identity; no new source-law proof or
+root-count observation is needed. For the existing fair reference
+q(t)=t/(2-t), its bare Q/q=1/t. Thus its cell gap is exactly
+
+    h=-log t,
+    nu=L/h,
+    x_i=ell_i/h>0,          sum_i x_i=nu.             (13)
+
+Define a function of the LITERAL SOURCE PRESENTATION
+
+    V_h=sum_i ell_i*(ell_i-h)^2>=0,
+    D_gap=V_h/h^3=sum_i x_i*(x_i-1)^2.                 (14)
+
+It is not declared a function of the finite endpoint kernel. A global
+clock/source energy cannot be assumed to descend merely by naming it.
+
+Apply Sections1--2's already-proved lemma to the auxiliary finite array
+
+    a_i=x_i^(1/3),       u_i=1.
+
+These u_i are auxiliary marks in that lemma, NOT assertions that the
+physical coins are fair. Their P3 is EXACTLY nu by(13). Since
+
+    |x_i^(1/3)-1|
+       =|x_i-1|/(x_i^(2/3)+x_i^(1/3)+1)<=|x_i-1|,
+
+the lemma's defect is at most D_gap. Consequently the following source
+application is PROVED for EVERY actual word satisfying the pair budget:
+
+    dist(nu,Z)<=4D_gap+30*sqrt(nu*D_gap)
+               =4V_h/h^3+30*sqrt(nu*V_h/h^3).        (15)
+
+The selected integer counts ell_i>h/8; no bound on total cell count is
+asserted. Arbitrarily many smaller gaps and arbitrarily rare original
+coins are permitted. The exact total in(12) is why there is no additional
+moment-calibration estimate in this application.
+
+One concrete actual-witness selection estimate would now suffice:
+
+    for SOME fixed integers m>=1,M>=4 and constants C_0,h_0>0,
+    at EACH0<h<=h_0 in the active c<t^4<1 domain,
+    IF the ORIGINAL commutant/SAME-pair word fibre is nonempty,
+    THEN it contains ONE actual finite strict word with
+                      V_h<=C_0*h^5.                 (16)
+
+**(16) is UNPROVED and OPTIONAL.** The selected word must obey the SAME
+c,t, full capped commutator, paired budget and declared source fields.
+It need not reproduce every off-diagonal coordinate of an initially
+given word beyond those constraints. This is NOT a demand that every
+presentation have small variance. A stronger all-presentation estimate
+would suffice too, but is not selected as a separate target.
+
+The witness in(16) is actual and finite. An infimum or a positive coherent
+kernel reached only in the closure is insufficient. No normal-form/
+selection theorem or exact physical correction is assumed. The estimate
+must be proved or rejected inside the FULL original source equations,
+with arbitrary strict coins/scales/count. It is not an input constraint,
+new original requirement or consequence of the matrix bound. The
+NONZERO storage boundary remains.
+
+If the fibre is nonempty and(16) holds, apply(15) to its selected ACTUAL
+word. The number nu depends only on c,t, so the resulting estimate also
+bounds the index of every original fitting presentation at that c,t.
+Substituting h=L/nu gives for nu>=1
+
+    dist(nu,Z)
+      <=4C_0*L^2*nu^(-2)+30L*sqrt(C_0)*nu^(-1/2)
+      <=[4C_0*L^2+30L*sqrt(C_0)]*nu^(-1/2).          (17)
+
+Thus(16) would prove AG-Pair with k=2, a fixed integer A above the
+displayed constant, and a fixed threshold covering h<=h_0. The fifth
+power is an order in REFERENCE EXPOSURE h, not a root-count cap or a
+request to compute successively higher degrees.
+
+On every intended actual S(t)^N each ell_i=h, so V_h=0 and nu=N.
+These are the old reverse physical witnesses, not newly executed ones.
+Conversely V_h=0 on any strict source would force each ell_i=h, hence
+an integer nu, without first proving fair coins or equal cell durations.
+No such zero/coercivity premise has been acquired from commutation.
+
+The controlling OLD pair source is G3-PAIRED-CAP2-STRICT-IMAGE.md,
+8640B/SHAb7d8bf1ab66d57a28acab6f5ea0186de81bf695e208d1176e7c7e3822dbbdc1b;
+its all-length products and equal-arm clauses were read. The later
+paired-tube4e4fd3e2... and cubic-face866acf4a... sources also already
+use these positive log ratios; their different closure/concentration
+claims are not rederived or turned into a multi-cell phase estimate.
+The reference's exact Q/q=1/t is Section2 of the completed pair-calibrated
+addendum atd0b46e3e. No old coefficient, one-cell guard or paired image
+is claimed new.
+
+Completed here: exact source normalization and application(15), and
+the conditional consequence(16)=>(17)=>AG-Pair. The single remaining
+original source/index implication is STILL UNPROVED. This is a simpler
+candidate inside the existing full-scope route, not another full attack
+or a new master acceptance condition. All source/observation/privacy/
+ownership and execution holds stated above remain unchanged.

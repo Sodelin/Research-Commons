@@ -44,36 +44,41 @@ form. The selected integer is not claimed to be an arbitrary source's
 actual cell count. This is a weakening of the existing full-scope route,
 not a new standalone full attack or a solved finite-cap rigidity theorem.
 
-## Weighted active-cell rounding: proved bound, optional source estimate unproved
+## Exact pair-gap calibration and rounding: one optional coercivity test
 
 [G3-ACTIVE-MOMENT-ROUNDING-01](../2026-10-24-g3-asymptotic-root-grid/ACTIVE-MOMENT-ROUNDING.md)
-PROVES the finite-array estimate
-|P3-N_J|<=4F+30sqrt(P3 F), for Pj=sum u_i*a_i^j and
-F=sum u_i*a_i^3*((a_i-1)^2+(1-u_i)^2).
-Here J selects a_i>1/2,u_i>1/2 and N_J is an actual integer.
-There is no word-length, coin/activity floor or maximum-scale promise.
-Small/inactive cells contribute bounded mass rather than being counted.
+retains its PROVED HAND finite-array rounding bound. Its later Section7
+now integrates the OLD physical pair product EXACTLY, removing the
+separate moment-calibration premise. No new source law/discovery count.
 
-For actual source cells put a_i=h_i/h_B(t),u_i=4g_i(1-g_i).
-The activity defect is exactly -4*sum third_i/h_B(t)^3, by the OLD
-equal-arm definition third_i=-g_i(1-g_i)*(2g_i-1)^4*h_i^3.
-These are physical-parameter quantities, NOT assumed observed rows.
+For equal-arm cells let ell_i=log(Q_i/C_i)>0. The SAME pair budget gives
+sum ell_i=-(log c)/4=L exactly. The actual reference cell has ell_ref=h,
+h=-log t. Thus x_i=ell_i/h have sum x_i=nu=L/h.
+Applying the completed rounding lemma to a_i=x_i^(1/3),u_i=1 gives
 
-An OPTIONAL sufficient source test is |P3-nu|<=Bnu^(-1/2),
-F<=Bnu^(-2) under the active full commutator/SAME pair budget.
-It would give AG-Pair with k=2,A>=5B+30sqrt(2B) by the proved rounding
-bound. Every intended S(t)^N has a=u=1,P3=N=nu,F=0.
-**The source test is UNPROVED**, is stronger than the conclusion and
-is NOT a new original requirement or another active goal. If it fails,
-AG-Pair may still hold. No actual source-to-moment equality, kernel
-observable, full index estimate or bound on all presentation lengths
-has been supplied. The existing nonzero storage boundary is retained.
+    V_h=sum ell_i*(ell_i-h)^2,
+    dist(nu,Z)<=4V_h/h^3+30sqrt(nu*V_h/h^3).
 
-This is supporting HAND mathematics, not a new full attack or a new
-source-coefficient discovery. Independent review/Lean unperformed;
-no scientific/source/solver/native run. Classical Cauchy-Schwarz reused.
-The old synthetic variance model and root-count Hankel obstruction
-have different carriers and are not physical suppliers for this test.
+The auxiliary marks u_i=1 do NOT assume fair physical coins. There is
+no count, coin margin or relative arm-scale promise; ordinary gaps cancel.
+V_h is a literal source-presentation quantity, NOT an assumed endpoint
+cocycle or a new original observable/input constraint.
+
+The ONE selected optional sufficient test is now that each NONEMPTY
+original FULL-commutator/SAME-pair fibre contains ONE actual finite
+strict word with V_h<=C_0*h^5, at fixed m,M,C_0,h_0 and0<h<=h_0.
+It is not an all-presentation bound or a closure-only/infimum selector. It would give AG-Pair with k=2 and
+A>=4C_0*L^2+30Lsqrt(C_0). **This source coercivity is UNPROVED**.
+The fifth power is reference-exposure order, not a root-count cap.
+The source theorem must retain the nonzero commuting storage boundary.
+
+The earlier physical-cell P3/F two-estimate test remains a valid
+historical sufficient criterion in Section4, but is NOT another selected
+task/required supplier. Its proved rounding math is unchanged.
+All intended S(t)^N have ell_i=h,V_h=0 by OLD source substitution.
+No full index estimate, bound on all presentation lengths or original
+G3 endpoint follows without the missing source implication. This is a
+simpler candidate inside the same full-scope route, not a new attack.
 
 ## Joint diagonal log guards: weak-source admission corollary proved
 

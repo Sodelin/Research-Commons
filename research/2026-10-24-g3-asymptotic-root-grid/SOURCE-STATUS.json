@@ -126,7 +126,7 @@
     }
   ],
   "stable_key": "G3-ASYMPTOTIC-ROOT-GRID-REDUCTION-01",
-  "supporting_estimate_updated_utc": "2026-10-24T08:29:00Z",
+  "supporting_estimate_updated_utc": "2026-10-24T08:47:00Z",
   "supporting_proofs": [
     {
       "evidence": {
@@ -177,17 +177,25 @@
         "lean_formalization": "not_performed",
         "scientific_or_native_execution": "none"
       },
+      "historical_optional_source_test": "Under the SAME original full commutator and paired budget, |P3-nu|<=Bnu^(-1/2),F<=Bnu^(-2) for some fixed B and threshold, uniformly in all actual finite presentations. This is not a necessary original requirement or another active goal. Historical sufficient test only; no longer selected after exact pair-gap normalization.",
       "key": "G3-ACTIVE-MOMENT-ROUNDING-01",
-      "limits": "No source-to-moment estimate, actual observed row identity, general phase bound, source count/one-witness H, or original endpoint. Integer reference powers give P3=nu,F=0, by hand substitution only.",
-      "mathematical_status": "proved_by_hand_rounding_and_explicit_conditional_AG_implication",
+      "limits": "No source coercivity estimate, no endpoint descent/observable for V_h, no full phase theorem or source count/one-witness H. Auxiliary u_i=1 in the new application does not assume fair physical coins. Reference integer powers have V_h=0; original G3 remains unresolved.",
+      "mathematical_status": "proved_by_hand_rounding_exact_pair_gap_normalization_and_conditional_AG_implication",
       "proof": {
-        "bytes": 9718,
-        "git_blob": "49fe8f00f1489c8d407d64c24270ff631e7b6c15",
+        "bytes": 15350,
+        "git_blob": "67bc3b555f6bbeb7eadc51e8e38a839b658f3106",
         "path": "ACTIVE-MOMENT-ROUNDING.md",
-        "sha256": "4b5a197773f98a908f7bed89069f7d5c596ffb75b29431e71bfde96de30974bb"
+        "sha256": "1f9ed5290b70ad46f6f30133a4e36a8f67323d9abc2c95e038b759783f519de9"
       },
-      "statement": "For arbitrary finite a_i>0,0<u_i<=1, Pj=sum u_i*a_i^j and F=sum u_i*a_i^3*((a_i-1)^2+(1-u_i)^2) give distance(P3,Z)<=4F+30sqrt(P3 F). For actual cells a_i=h_i/h_B(t),u_i=4g_i(1-g_i), the stated optional moment estimates would imply AG-Pair with k=2.",
-      "unproved_optional_source_test": "Under the SAME original full commutator and paired budget, |P3-nu|<=Bnu^(-1/2),F<=Bnu^(-2) for some fixed B and threshold, uniformly in all actual finite presentations. This is not a necessary original requirement or another active goal."
+      "source_revision": {
+        "classification": "exact integration of OLD paired product/reference with completed rounding; no new source law",
+        "old_math": "retained unchanged; only former optional source test no longer selected",
+        "previous_bytes": 9718,
+        "previous_commit": "5f30a4ab0bff4f1a74ba9242ef8c7f37a94894a3",
+        "previous_sha256": "4b5a197773f98a908f7bed89069f7d5c596ffb75b29431e71bfde96de30974bb"
+      },
+      "statement": "The original finite-array rounding bound remains proved. OLD exact source pair products give sum ell_i=L, ell_ref=h and sum x_i=nu for x_i=ell_i/h. Applying the proved bound to a_i=x_i^(1/3),u_i=1 gives dist(nu,Z)<=4V_h/h^3+30sqrt(nu*V_h/h^3). The optional V_h<=C_0*h^5 would imply AG-Pair with k=2.",
+      "unproved_optional_source_test": "For fixed m>=1,M>=4,C_0,h_0>0, at every0<h=-log t<=h_0 in the active domain, each nonempty ORIGINAL commutant/SAME-pair word fibre contains ONE actual finite strict fitting word with V_h=sum ell_i*(ell_i-h)^2<=C_0*h^5. No all-presentation bound or closure-only selection is assumed."
     }
   ]
 }
