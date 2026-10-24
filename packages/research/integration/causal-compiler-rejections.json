@@ -15609,6 +15609,19 @@
         "2026-10-24T22:16:27.8652603Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ActivePathReversal.lean:62:67: error: unsolved goals\n2026-10-24T22:16:27.8653265Z V : Type u\n2026-10-24T22:16:27.8653463Z G : MarkedGraph V\n2026-10-24T22:16:27.8653866Z symmetric : ∀ (a b : V) (ma mb : Mark), G.edge a b ma mb → G.edge b a mb ma\n2026-10-24T22:16:27.8654279Z C A : V → Prop\n2026-10-24T22:16:27.8654546Z p✝ q✝ : Arrival V\n2026-10-24T22:16:27.8655169Z xs : List (Arrival V)\n2026-10-24T22:16:27.8655405Z p next q : Arrival V\n2026-10-24T22:16:27.8655648Z rest : List (Arrival V)\n2026-10-24T22:16:27.8655904Z tail : Route (Transition G C A) next rest q\n2026-10-24T22:16:27.8656204Z outgoing incoming : Mark\n2026-10-24T22:16:27.8656502Z edge : G.edge p.vertex next.vertex outgoing incoming\n2026-10-24T22:16:27.8656849Z mark : next.incoming = some incoming\n2026-10-24T22:16:27.8657114Z active :\n2026-10-24T22:16:27.8657313Z   match p.incoming with\n2026-10-24T22:16:27.8657543Z   | none => True\n2026-10-24T22:16:27.8657863Z   | some previous => ActiveAt C A p.vertex previous outgoing\n2026-10-24T22:16:27.8658261Z last : Option Mark\n2026-10-24T22:16:27.8658495Z ys : List (Arrival V)\n2026-10-24T22:16:27.8658741Z reversed :\n2026-10-24T22:16:27.8659256Z   Route (Transition G C A) { vertex := q.vertex, incoming := none } ys { vertex := next.vertex, incoming := last }\n2026-10-24T22:16:27.8660179Z ready :\n2026-10-24T22:16:27.8660400Z   match next.incoming with\n2026-10-24T22:16:27.8660670Z   | none => True\n2026-10-24T22:16:27.8661011Z   | some previous => DepartureAllowed C A next.vertex last previous\n2026-10-24T22:16:27.8668464Z trace : q.vertex :: List.map Arrival.vertex ys = (List.map Arrival.vertex (next :: rest)).reverse\n2026-10-24T22:16:27.8669028Z backward :\n2026-10-24T22:16:27.8669704Z   Transition G C A { vertex := next.vertex, incoming := last } { vertex := p.vertex, incoming := some outgoing }\n2026-10-24T22:16:27.8671272Z ⊢ q.vertex :: (List.map Arrival.vertex ys ++ [sorry.vertex]) = q.vertex :: (List.map Arrival.vertex ys ++ [p.vertex])"
       ],
       "disposition": "FULL1498_REJECTED. Complete50-source extraction owned context accepted separately. Later NEW noise module absent from this exact run."
+    },
+    {
+      "source": "cc67e2390e6d6ec4260eda398a0aac6ccc56b864",
+      "run_id": 40138376155,
+      "job_id": 121004836563,
+      "attempted_target": "ActivePathReversal",
+      "selected": 51,
+      "failed_module": "ActivePathReversal",
+      "diagnostics": [
+        "2026-10-24T22:28:28.1772473Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ActivePathReversal.lean:52:8: error: Type mismatch: After simplification, term"
+      ],
+      "actual_detail": "DepartureAllowed.match_1 vs Transition.match_1 at SAME abstract last, after old mark substitution and unfold. Tuple inference fixed; only this one error remains.",
+      "disposition": "ENTIRE51_SOURCE_CONTEXT_REJECTED, no new partial-PASS. Prior immutable50-source context remains CLOSED; NEW noise step and full1499/512 names/actual callers skipped, not rejected or accepted."
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -17143,6 +17156,25 @@
         ]
       ],
       "scope": "Unfold SAME DepartureAllowed after original mark substitution; give one existing arrival literal its original Arrival V type in trace calc. Actual graph symmetry, undirected edges, readiness, exact reversed vertices and shortestness hypotheses/conclusions unchanged.",
+      "status": "PENDING_COMPLETE51_SOURCE_AND_FULL1499_CHECK"
+    },
+    {
+      "module": "ActivePathReversal",
+      "selected": {
+        "bytes": 5384,
+        "git_blob": "239acae483322d96370a44fb6dbf1da31f212571",
+        "sha256": "52bc570eea06ec4ce61f13c7184ed110467fa8a164b03e3f8b280f96f29b26f5"
+      },
+      "prior_rejected_sha256": "d89370922780f8dfadb2cbd1bb61316fa9a78fff91e1b3dad72e85f7d906603c",
+      "all4_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "edits": [
+        [
+          "        simpa only [mark, DepartureAllowed] using ready",
+          "        cases last <;> simpa only [mark, DepartureAllowed] using ready"
+        ]
+      ],
+      "scope": "After unfold, DepartureAllowed.match_1 and Transition.match_1 remain distinct on abstract last; case SAME last Option to reduce both existing branches. No source/relation/graph/precondition change.",
       "status": "PENDING_COMPLETE51_SOURCE_AND_FULL1499_CHECK"
     }
   ],

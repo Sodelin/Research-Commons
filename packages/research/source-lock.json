@@ -1026,10 +1026,10 @@
         {
           "module": "ActivePathReversal",
           "original_sha256": "92b814be234a94c16080ae143efc330b7a510e25b62dbc84d23a6ed0904c8abc",
-          "selected_sha256": "d89370922780f8dfadb2cbd1bb61316fa9a78fff91e1b3dad72e85f7d906603c",
-          "selected_bytes": 5369,
-          "selected_git_blob": "0a4aa266b0393d795b20b811f1a7fc1af9a30722",
-          "edit": "Unfold SAME DepartureAllowed after original mark substitution; give one existing arrival literal its original Arrival V type in trace calc. Actual graph symmetry, undirected edges, readiness, exact reversed vertices and shortestness hypotheses/conclusions unchanged.",
+          "selected_sha256": "52bc570eea06ec4ce61f13c7184ed110467fa8a164b03e3f8b280f96f29b26f5",
+          "selected_bytes": 5384,
+          "selected_git_blob": "239acae483322d96370a44fb6dbf1da31f212571",
+          "edit": "After unfold, DepartureAllowed.match_1 and Transition.match_1 remain distinct on abstract last; case SAME last Option to reduce both existing branches. No source/relation/graph/precondition change.",
           "exact_edits": [
             [
               "        simpa only [mark] using ready",
@@ -1046,7 +1046,16 @@
           "status": "PENDING_COMPLETE51_SOURCE_AND_FULL1499_CHECK",
           "all4_theorem_headers_unchanged": true,
           "actual_original_and_successor_read": true,
-          "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc"
+          "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+          "prior_rejected_sha256": "d89370922780f8dfadb2cbd1bb61316fa9a78fff91e1b3dad72e85f7d906603c",
+          "current_proof_edits": [
+            [
+              "        simpa only [mark, DepartureAllowed] using ready",
+              "        cases last <;> simpa only [mark, DepartureAllowed] using ready"
+            ]
+          ],
+          "latest_rejected_source": "cc67e2390e6d6ec4260eda398a0aac6ccc56b864",
+          "latest_rejected_run": 40138376155
         }
       ]
     },

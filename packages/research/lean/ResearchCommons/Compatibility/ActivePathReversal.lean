@@ -49,7 +49,7 @@ theorem reverse_active_route_trace {V : Type u} (G : MarkedGraph V)
       obtain ⟨last, ys, reversed, ready, «trace»⟩ := ih
       have backward : Transition G C A ⟨«next».vertex, last⟩ ⟨p.vertex, some outgoing⟩ := by
         refine ⟨incoming, outgoing, symmetric _ _ _ _ edge, rfl, ?_⟩
-        simpa only [mark, DepartureAllowed] using ready
+        cases last <;> simpa only [mark, DepartureAllowed] using ready
       refine ⟨some outgoing, ys ++ [⟨p.vertex, some outgoing⟩],
         reversed.append (.cons backward (.nil _)), ?_, ?_⟩
       · cases hp : p.incoming with

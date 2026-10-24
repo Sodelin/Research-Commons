@@ -132,7 +132,7 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
-Current compatibility checkpoint: source163/run40137112536 accepts complete50-source actual section extraction1244/751, ALL6 original statements unchanged (four generated proof helpers),0 owned/nonstandard axioms/missing. Entire644104B artifact/every source/row checked. Full1498 REJECTED:1412success/85blocked at ActivePathReversal. Current51-source proof-only port keeps ALL4 statements; NEW noise adds full1499/512 names. Source164 Rust compiled but asymmetric-fixture test failed; fixture corrected without engine/test changes, fresh check required. Whole118 remains incomplete.
+Current compatibility checkpoint: accepted source163 complete50-source extraction1244/751, ALL6 original headers unchanged,0 owned/nonstandard/missing. Source165 Rust122 tests PASS (all3 noise tests); ENTIRE51-source reversal still REJECTED at generated readiness matchers. Current fix cases SAME original Option, ALL4 headers unchanged. Noise six-name/TWO literal proof outputs and mandatory full1499/512-name/owned/actual callers remain pending; original whole118/source/native gaps explicit.
 
 ## Exact known-rate calibration component
 
