@@ -19,6 +19,7 @@ import ResearchCommons.Claims.G5
 import ResearchCommons.Claims.G6
 import ResearchCommons.Claims.G7
 import ResearchCommons.ExactQuery.Rectangle
+import ResearchCommons.ExactQuery.Source
 import ResearchCommons.Claims.NANUQ
 import ResearchCommons.Claims.RNA
 import ResearchCommons.Claims.Wong

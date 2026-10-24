@@ -43,11 +43,13 @@ fn run() -> Result<Value,String> {
         .ok_or("missing exact support answer"),Limits { taxa:128,unique_queries:16384,..Limits::default() })
         .map_err(|e|format!("UNKNOWN/REFUSED: {e:?}"))?;
     let trace:Vec<_>=recovered.cache.iter().map(|(q,m)|json!({"quartet":q,"mask":m})).collect();
+    let chronological:Vec<_>=recovered.query_trace.iter().map(|(q,m)|json!({"quartet":q,"mask":m})).collect();
     Ok(json!({"status":"conditional_recovery","circle":circle,
         "gap_pairs":recovered.gap_pairs,"unique_queries":recovered.cache.len(),
         "rectangle_tests":recovered.rectangle_tests,
         "positive_internal_nodes":recovered.positive_internal_nodes,
         "max_search_depth":recovered.max_search_depth,"original_answer_cache":trace,
+        "chronological_query_trace":chronological,
         "assumptions":["supplied order is common to the complete binary displayed-tree family",
             "every oracle mask is its COMPLETE distinct resolved topology set"],
         "not_established":["global original-source admission","unknown-order learner",

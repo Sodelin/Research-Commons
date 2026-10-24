@@ -31,3 +31,6 @@ Example from packages/research:
 The expected conditional result has gap[0,2], one distinct original-label query and two rectangle predicates. Its source/circle/completeness assumptions remain explicit. Python3 is a STANDARD-LIBRARY test/reference dependency; production recovery is Rust. No installer, cloud identity or phone runtime is selected.
 
 Changed frontier: reuse the supplied-circle algorithm and prior all-size proof; do not claim another mathematical solution or a practical full all-size minimax solver. Next genuine join is the whole Rust search-to-formal original source/query contract and integration of the retained unknown-order/shared-cache caller. Other owners and all private/model/native/held history remain; this public fixed-synthetic CI does not bind the private controller.
+
+
+Actual successor status: source63d8bd98/run40060620084 PASSED102 Rust tests and COMPLETE929-source/156-name/owned checking, including all6 geometric endpoints; see exact-query-verification.json. Original unknown-order/source/algorithm/query-bound/minimax refinement stays separate. The next OLD actual source API/chronological trace join is documented in EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md and requires fresh checks; no acceptance transfer to changed trace/API bytes.

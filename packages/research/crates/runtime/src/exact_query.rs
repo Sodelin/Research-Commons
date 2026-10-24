@@ -35,6 +35,8 @@ pub struct Recovery {
     pub gap_pairs: Vec<GapPair>,
     /// Original-label sorted quartets and original 1/2/4 masks.
     pub cache: BTreeMap<Quartet, u8>,
+    /// Actual first-query order; distinct from the sorted lookup/cache view.
+    pub query_trace: Vec<(Quartet,u8)>,
     pub rectangle_tests: usize,
     pub positive_internal_nodes: usize,
     pub max_search_depth: usize,
@@ -120,6 +122,7 @@ impl<F, E> Search<'_, F> where F: FnMut(Quartet) -> Result<u8, E> {
             // Validate before entering the cache; no false NO or partial result.
             remap_support::<E>(labelled,mask)?;
             self.result.cache.insert(original,mask);
+            self.result.query_trace.push((original,mask));
             mask
         };
         remap_support(labelled,mask)
@@ -172,7 +175,7 @@ where F: FnMut(Quartet) -> Result<u8, E> {
     if labels.len() != n { return Err(Error::Invalid("distinct original circle labels")); }
     n.checked_mul(n-3).ok_or(Error::Unknown("candidate count overflow"))?;
     let mut search = Search { circle,oracle,limits,found:BTreeSet::new(),
-        result:Recovery { gap_pairs:vec![],cache:BTreeMap::new(),rectangle_tests:0,
+        result:Recovery { gap_pairs:vec![],cache:BTreeMap::new(),query_trace:vec![],rectangle_tests:0,
             positive_internal_nodes:0,max_search_depth:0 } };
     for i in 1..n-2 {
         search.count()?;
@@ -263,10 +266,15 @@ from sparse_quartet import recover,split_support_oracle
 out=[]
 for case in json.load(sys.stdin):
     n=len(case["circle"])
-    reference=recover(n,split_support_oracle(n,map(tuple,case["splits"])))
+    calls=[]
+    supplied=split_support_oracle(n,map(tuple,case["splits"]))
+    def ask(q):
+        calls.append(q)
+        return supplied(q)
+    reference=recover(n,ask)
     out.append({"splits":sorted(reference.splits),"queries":reference.oracle_calls,
       "tests":reference.rectangle_tests,"positive":reference.positive_internal_nodes,
-      "depth":reference.max_search_depth})
+      "depth":reference.max_search_depth,"trace":calls})
 json.dump(out,sys.stdout)
 "#;
         let reference = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
@@ -287,6 +295,12 @@ json.dump(out,sys.stdout)
             assert_eq!(serde_json::json!(r.rectangle_tests),e["tests"]);
             assert_eq!(serde_json::json!(r.positive_internal_nodes),e["positive"]);
             assert_eq!(serde_json::json!(r.max_search_depth),e["depth"]);
+            let expected_trace:Vec<_>=e["trace"].as_array().unwrap().iter().map(|q|{
+                let mut original:[u64;4]=std::array::from_fn(|i|
+                    circle[q[i].as_u64().unwrap() as usize]);
+                original.sort_unstable();original
+            }).collect();
+            assert_eq!(r.query_trace.iter().map(|(q,_)|*q).collect::<Vec<_>>(),expected_trace);
         }
     }
 }

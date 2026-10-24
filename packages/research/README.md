@@ -1,6 +1,6 @@
 # Research Commons: portable Lean and Rust
 
-This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus47 integration modules. Registry accounting is complete; actual integration of all118 is not.
+This is the user-requested portable end-to-end package for the canonical118 claims, in reuse/dependency order:75 rated and43 explicitly unranked. Existing mathematics/engines are reused; unresolved questions retain exact obligations. The goal is ACTIVE. Current source selects1,613 retained modules plus48 integration modules. Registry accounting is complete; actual integration of all118 is not.
 
 ## Build on a development host
 
@@ -25,11 +25,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Current actual verification
 
-- **Sourcef1cd000c/run40059355260 passed97 Rust tests and the COMPLETE928-source selected Lean/owned context.**40 integration modules compiled/888 exact retained objects reused;22309 declarations/14939 theorems, zero owned axioms/nonstandard rows/missing modules.
-- **23 SCOPED mappings/150 exact declaration names and owners passed**, including the five new original timed-unranked congruence endpoints.95 claims remain unnamed at that accepted source. Every later positive-signature/JC16/native64/BOTH entire parameter-filter command and owned audit passed. [Exact receipt](integration/claim-export-verification-v14.json).
-- The **full1,657-source library+2roots** remains separately accepted at766c83b3:105185 declarations/94755 theorems, zero rejects. [Receipt](integration/coherent-library-verification-v6.json). This library-only check skipped its expensive caller sequence; it is not fresh full1660-library/word/118 acceptance.
+- **Source63d8bd98/run40060620084 passed102 Rust tests and the COMPLETE929-source selected Lean/owned context.**41 integration modules compiled/888 exact retained objects reused;22324 declarations/14950 theorems, zero owned axioms/nonstandard rows/missing modules.
+- **24 SCOPED mappings/156 exact declaration names and owners passed**, including all6 new geometric exact-query endpoints.94 claims remain unnamed at that accepted source. Every later positive-signature/JC16/native64/BOTH entire parameter-filter command and owned audit passed. [Exact receipt](integration/claim-export-verification-v15.json).
+- The **full1,657-source library+2roots** remains separately accepted at766c83b3:105185 declarations/94755 theorems, zero rejects. [Receipt](integration/coherent-library-verification-v6.json). This library-only check skipped its expensive caller sequence; it is not fresh full1661-library/word/118 acceptance.
 - Historical source67ef70da passed the complete eleven-caller sequence and1,638-source library. [Receipt](integration/full-profile-verification.json). Acceptance never transfers automatically to changed source.
-- The new exact-query Rust/Lean component below is **PENDING** fresh compilation/tests/owned audit. Its six candidate names are not included in the150 accepted count. The separate source96 complete-word job is still running.
+- The bounded exact-query Rust/Lean geometric component below PASSED its recorded actual checks. Nine OLD original-source typed API exports and added chronological trace now require fresh checks; they are outside156 accepted names. The separate source96 complete-word job is still running.
 
 Raw receipts retain their phase boundaries: source build precedes owned audit, and initial owned=false stays literal even when the later actual owned audit passes. Actual artifacts/hashes/counts and every rejected predecessor remain in [VERIFICATION.md](VERIFICATION.md). [Retained-object validation](integration/RETAINED-OBJECT-REUSE.md) checks compiler/dependency/source/object-companion identities.
 
@@ -73,7 +73,7 @@ cargo run --locked -p research-commons-runtime --bin msci-cutoff -- 3 2 3
 
 [Cutoff/source component](integration/msci-source-component-verification.json) and [entire coherent filters](integration/msci-alignment-verification.json) keep their distinct contracts. A computed sufficient cutoff is not empirical inference or a finite-data recommendation.
 
-## Exact quartet component — new source, verification pending
+## Exact quartet component — bounded port and geometric proofs accepted
 
 Reuse-priority10 CB-EXACTQUERY-001 already has a completed supplied-circle search, unknown-order learner, shared cache and later accepted query theorem. The original supplied-circle decoder is retained byte-identically. The Rust component ports its exact rectangle search/cache and provides the bounded command below; it does not derive another algorithm or replace complete displayed-topology support with coalescent probabilities.
 
@@ -84,7 +84,9 @@ printf '%s\n' '{"circle":[40,10,30,20],"answers":[{"quartet":[10,20,30,40],"mask
 
 Expected conditional output: gap[0,2] in the supplied circle, one original-label query and two predicates. Original masks use SORTED labels, not circle positions. Local mask checks do not validate a hidden graph/source or common circle. Missing answers/resources refuse the entire run as UNKNOWN; no successful prefix or source NO is returned.
 
-The candidate Lean module proves the old all-position rectangle/split-union/subdivision/singleton/wrap primitives. Whole search/query-charge induction, original graph/circle/source admission, retained unknown-order caller and exact finite minimax remain separate. The eight fixed differential and actual stdin controls are NEW interface verification, not replay of old graph/producer/main suites. [Exact source/component/limits/test contract](integration/EXACT-QUERY-RUST-INTEGRATION.md) · [predecessor/successor comparison](integration/EXACT-QUERY-REUSE-PREFLIGHT.md).
+The accepted Lean module proves the old all-position rectangle/split-union/subdivision/singleton/wrap primitives. Whole search/query-charge induction, original graph/circle/source admission, retained unknown-order caller and exact finite minimax remain separate. The eight fixed differential and actual stdin controls PASSED, as NEW interface verification rather than replay of old graph/producer/main suites. [Exact accepted scope](integration/exact-query-verification.json). [Exact source/component/limits/test contract](integration/EXACT-QUERY-RUST-INTEGRATION.md) · [predecessor/successor comparison](integration/EXACT-QUERY-REUSE-PREFLIGHT.md).
+
+The next source exports the ALREADY-existing original split/quartet/all-compatible-circle providers and preserves chronological first-query trace separately from the sorted cache. These changed API/trace bytes are pending fresh checks; no source/oracle/circle admission or whole algorithm refinement is inferred. [Provider/reuse/remaining-join contract](integration/EXACT-QUERY-ORIGINAL-SOURCE-REUSE.md).
 
 ## Complete word: exact remaining blocker
 
