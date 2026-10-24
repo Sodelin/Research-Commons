@@ -2287,18 +2287,21 @@
         "git_blob": "a5f83469df9aa57d61bf83bd6e83ae3b7c22e5cf",
         "source_sha256": "029fa2d53a219c30fc3ef49e6b0cce561674106dfc3ea59bd2fbe9e261beb879",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE31_SOURCE_OWNED_CONTEXT",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Reuse accepted observed-query Fintype.subtype/univ.filter and inherited DecidableEq for the SAME original one-endpoint predicate; cases only the original impossible none=some equality. All5 original theorem statements/query coordinates/count/source/selection/latent/target hypotheses remain unchanged. Follow-on: eliminate the SAME literal Observed-none/Observed-some contradiction by cases, avoiding inference through nested Sum.inl.injectivity."
+        "variant": "Reuse accepted observed-query Fintype.subtype/univ.filter and inherited DecidableEq for the SAME original one-endpoint predicate; cases only the original impossible none=some equality. All5 original theorem statements/query coordinates/count/source/selection/latent/target hypotheses remain unchanged. Follow-on: eliminate the SAME literal Observed-none/Observed-some contradiction by cases, avoiding inference through nested Sum.inl.injectivity.",
+        "current_verification": "integration/causal-indicator-family-component-verification.json",
+        "accepted_source": "dc84dc084beba1f80f77f35ddbc59ff395ecc5c6",
+        "accepted_run": 40114331789
       }
     },
     {
       "module": "CommonObservedMAG",
-      "path": "vendor/restricted-causal-source/CommonObservedMAG.lean",
-      "sha256": "4c8d2976862881434fc55173129635a00e8941d1e89daf5efede06c3c8fdf6ba",
+      "path": "lean/ResearchCommons/Compatibility/CommonObservedMAG.lean",
+      "sha256": "b1374b898086d6287806fe8333ba69f68ac178ef6f4fbf0f07e23606533a63c9",
       "imports": [
         "PartialIndicatorQueryFamily"
       ],
@@ -2311,9 +2314,14 @@
         "source_sha256": "4c8d2976862881434fc55173129635a00e8941d1e89daf5efede06c3c8fdf6ba",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "original_and_later_successor_complete_read": true,
+        "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+        "source_theorem_headers_unchanged": 15,
+        "proof_only_api_edits": "Literal root-option contradiction; preserve endpoint argument in route induction; reduce incoming fields after cases; explicit original forget/oldSource/Observed constructor reduction. No new CI/MAG/source law or assumption."
       }
     },
     {
@@ -5016,9 +5024,35 @@
       }
     },
     {
+      "module": "ResearchCommons.Calibration.RareEvent",
+      "path": "lean/ResearchCommons/Calibration/RareEvent.lean",
+      "sha256": "2caa1ac7ebbec582ffad9eb99444a70fbbd2102f4b52e190dc81a15059354cd9",
+      "imports": [
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Real.Archimedean",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring"
+      ],
+      "provenance": {
+        "role": "NEW formalization of OLD complete sharp known-rate independent-trial testing theorem; actual full-sample product law, not a conditional risk oracle",
+        "original_proof_repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+        "original_ref": "e2502c82ab9a77c00543932f775a71e5374221f7",
+        "original_path": "research/open-problems/time-self-reference/CALIBRATION-BOUND.md",
+        "original_sha256": "1811bd4d72437666562e2ec95c005f55ac0527e4ed92a633d6a06271de049624",
+        "preflight": "integration/CALIBRATION-REUSE-PREFLIGHT.md",
+        "selected_current_context_verified": false,
+        "new_scientific_discovery": false,
+        "status": "SOURCE_ONLY_PENDING_KERNEL_CHECK"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "e0fb6081ce32f943a7369d4ea1ddbdf215b11864d207f3070bdefd2d67116d23",
+      "sha256": "fab85c6d3eaee5e888084397cc5dc35176112364ec21e452bc16d0c94cf28dbe",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -5053,7 +5087,8 @@
         "ClinicalModels.Audit",
         "AllLevelParameterDomain",
         "StochasticExamples",
-        "ResearchCommons.Claims.Memory"
+        "ResearchCommons.Claims.Memory",
+        "ResearchCommons.Calibration.RareEvent"
       ],
       "provenance": {
         "role": "Import-only actual dependency union of every currently named claim binding",
@@ -5066,7 +5101,7 @@
         "prior_verification": "integration/claim-export-verification-v2.json",
         "verification": "integration/claim-export-verification-v16.json",
         "source_commit": "c79deb202cadfae269f06dedd8c724648b497856",
-        "current_candidate_scope": "Existing exact typed claim union plus54 OLD deterministic quotient/controlled-memory/legal-merge endpoints; no new mathematics, minimizer or native controller.",
+        "current_candidate_scope": "Existing exact typed claim union plus OLD calibration theorem's concrete new full-sample formalization. All original completed scopes remain; no invented scientific proof or native origin.",
         "current_context_verified": false
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

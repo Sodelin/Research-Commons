@@ -5682,13 +5682,38 @@
         }
       ],
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "source_binding_pending_kernel_check",
+        "module": "ResearchCommons.Calibration.RareEvent",
+        "declarations": [
+          "ResearchCommons.Calibration.sample_mass_nonnegative",
+          "ResearchCommons.Calibration.sample_mass_normalized",
+          "ResearchCommons.Calibration.all_zero_mass",
+          "ResearchCommons.Calibration.miss_positive",
+          "ResearchCommons.Calibration.miss_le_one",
+          "ResearchCommons.Calibration.null_error_at_zero",
+          "ResearchCommons.Calibration.all_zero_error_contribution",
+          "ResearchCommons.Calibration.sum_error_lower",
+          "ResearchCommons.Calibration.worst_error_lower",
+          "ResearchCommons.Calibration.threshold_rule_errors",
+          "ResearchCommons.Calibration.balanced_rule_errors",
+          "ResearchCommons.Calibration.sharp_sum_error",
+          "ResearchCommons.Calibration.sharp_worst_error",
+          "ResearchCommons.Calibration.sharp_equal_prior_error",
+          "ResearchCommons.Calibration.no_finite_certain_decision",
+          "ResearchCommons.Calibration.zero_trials_miss",
+          "ResearchCommons.Calibration.fixed_rate_arbitrarily_accurate",
+          "ResearchCommons.Calibration.miss_lower_rate_bound",
+          "ResearchCommons.Calibration.bernoulli_lower",
+          "ResearchCommons.Calibration.no_uniform_finite_guarantee"
+        ],
+        "scope": "Formalization of OLD completed known-rate iid fully observed Bernoulli two-model theorem for every n>=0 and ALL randomized rules on the complete sample: actual product-law normalization/all-zero contribution, both sharp criteria/attaining rules, equal-prior risk, no finite certainty, fixed-rate arbitrary accuracy, no uniform small-rate guarantee and lower-rate bound. SOURCE ONLY until exact owned/named/caller verification; no new scientific result, unknown/dependent/biological admission.",
+        "whole_claim_formal_binding": false,
+        "preflight": "integration/CALIBRATION-REUSE-PREFLIGHT.md"
       },
       "rust": {
-        "state": "pending_binding",
-        "module": null
+        "state": "source_binding_pending_build_and_caller",
+        "module": "research_commons_runtime::calibration",
+        "scope": "Uses retained exact BigRational arithmetic; ONE immutable rational rate, all-zero mass, distinct optimal decisions and bounded literal Lean emitter. New Rust is uncompiled/unexecuted until this source's CI. Resource refusals are not statistical NO."
       },
       "source_artifacts": [
         {

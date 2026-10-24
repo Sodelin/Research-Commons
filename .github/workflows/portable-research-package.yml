@@ -629,8 +629,8 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Memory --claim CB-MEMORY-001 --claim CB-MEMORY-002
       - name: Compile and audit the exact original causal compatibility boundary
         run: |
-          cargo run --locked -p research-commons-package -- build --reuse-retained --target PartialIndicatorQueryFamily
-          cargo run --locked -p research-commons-package -- audit-target PartialIndicatorQueryFamily
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target CommonObservedMAG
+          cargo run --locked -p research-commons-package -- audit-target CommonObservedMAG
           cp build/lean-target-build.json build/causal-boundary-build.json
           cp -R build/retained-target-audit build/causal-boundary-owned-audit
       - name: Check original stochastic full-history and predictive-profile proofs
@@ -640,6 +640,12 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target StochasticExamples --claim CB-MEMORY-003
       - name: Compile the exact original finite transcript decoder
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --target FiniteTranscriptDecoder
+      - name: Check OLD rare-event calibration at its full product-law interface
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Calibration.RareEvent
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Calibration.RareEvent --claim CB-MEMORY-004
+          cp build/lean-target-build.json build/calibration-component-build.json
+          cargo run --locked -p research-commons-package -- check-calibration-callers
       - name: Compile the actual receiver dependency closure in the full package context
         run: cargo run --locked -p research-commons-package -- build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports
       - name: Validate all exact export dependencies, audit and kernel-check named declarations

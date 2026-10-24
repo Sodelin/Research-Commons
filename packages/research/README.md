@@ -2,7 +2,7 @@
 
 This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
 
-The current graph selects 1,613 retained modules plus 213 integration modules. There are 41 named claim mappings and 388 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
+The current graph selects 1,613 retained modules plus 214 integration modules. There are 42 named claim mappings and 408 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -26,6 +26,9 @@ cargo run --locked -p research-commons-package -- coverage --strict
 The final per-claim completion gate currently exits2 because required bindings remain missing. A successful selected build or source preparation must not suppress that result.
 
 ## Verified components and current build boundary
+
+- **Original finite indicator query family passes its complete31-source owned context**, source`dc84dc08`, [run40114331789](https://github.com/Sodelin/Research-Commons/actions/runs/40114331789):1024 declarations/577 theorems, zero rejects. Full1472 remains rejected at the next CommonObservedMAG proof interface (1366 successful/105 blocked); no full package claim. [Receipt](integration/causal-indicator-family-component-verification.json).
+- **Old rare-event calibration is being formally integrated**, with the actual all-sample product distribution and both different optimal decisions. New Lean/Rust sources are pending their complete checks. Resource refusals stay UNKNOWN. [Source and scope](integration/calibration-source-intake.json).
 
 - **The complete natural-word caller passes in BOTH modes.** Source `ed4ed337`, [run40084273155](https://github.com/Sodelin/Research-Commons/actions/runs/40084273155), job120844040087: all 1,280 generated Lean documents, 69,238 owned declarations /57,433 theorems, zero owned axioms, nonstandard axioms or missing modules. This is the actual original 9-vertex/9-edge/4-taxon/1-hybrid source, three copies, seven operations and 21-variable correlated bank. Both complete natural laws and the SAME returned physical bank are checked. The natural register is sampled once. [Exact receipt and limits](integration/whole-natural-word-verification.json), [complete printed endpoint types](integration/whole-natural-word-complete-printed-types.json), [all generated source hashes](integration/whole-natural-word-source-manifest.json). The full original calendar, final observer, universal native/parser/provider refinement and complete source/action/target/QE/origin binding remain separate. This fixed word is CLOSED and is not selected for an identical rerun.
 - **Three raw-tensor/readout receiver proofs pass.** Source `0958975a`, [run40090840783](https://github.com/Sodelin/Research-Commons/actions/runs/40090840783), job120863151776: complete 836-source/34-name context, 80,346 declarations /77,444 theorems, zero rejects. The original raw tensor equals actual quartet data on every label tuple, including repeated labels, and reuses the existing weighted/source blob-composition laws. The all-level circularity, exact-support and complete-source-coverage theorem remains a separate formal binding. Completed HAND mathematics is unchanged. [Receipt](integration/nanuq-raw-actual-join-verification.json), [complete printed types](integration/nanuq-complete-printed-types-v2.json), [reuse comparison](integration/NANUQ-RAW-ACTUAL-REUSE-PREFLIGHT.md).
@@ -129,3 +132,15 @@ Remaining original source/target/action coverage, native row/word/raw-root/compl
 G1/G2/G5 baseline, P5 HAND completion, G6/G7 completed science and exact G3/G4 owner-HAND successors keep their original scopes. Recovery, aliases, ports and fresh checking are integration or validation, not new scientific discoveries. The original private writer/controller/transitive hooks remain UNBOUND; public fixed-synthetic Linux CI supplies no private execution permit. Existing owners and private/model/held/USED/UNKNOWN stops remain. Phone deployment is not a deliverable.
 
 Current compatibility checkpoint: source69a85a7e accepts the54-name memory and30-source indicator components, then rejects ONE original indicator-query finite-subtype/constructor module. The new31-source boundary and complete combined/388-name/owned/caller gates remain mandatory; accepted standalone scopes are reused.
+
+## Exact known-rate calibration component
+
+`research_commons_runtime::calibration::Calibration` computes the OLD sharp finite-sample bounds with the retained BigRational engine. It keeps one immutable strict rate, sample count and both optimal decisions. The zero-sample case is supported; it makes no dependent/unknown-rate or empirical guarantee.
+
+```sh
+cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Calibration.RareEvent
+cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Calibration.RareEvent --claim CB-MEMORY-004
+cargo run --locked -p research-commons-package -- check-calibration-callers
+```
+
+The last command executes the existing literal proof checker on both a three-trial and an empty-sample output, followed by the full owned audit. Successful rendering alone supplies no acceptance. Current source is pending that exact check.

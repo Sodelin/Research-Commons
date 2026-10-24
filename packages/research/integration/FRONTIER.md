@@ -1,6 +1,6 @@
 # Current integration frontier
 
-The user-requested portable end-to-end Lean/Rust goal remains ACTIVE. All 118 canonical claims are accounted for: 75 reuse-rated and 43 unranked. The latest current-main body and ranking blobs were actually rechecked at 2026-10-24T15:12:00Z and match the pinned inputs. Current selection is1,826 sources (1,613 retained+213 added),41 named claim mappings/388 exact declaration requests. The staged combined dependency target has1,472 sources; the latest actual full result is1,466 sources. Accounting and selection are not complete claim integration.
+The user-requested portable end-to-end Lean/Rust goal remains ACTIVE. All 118 canonical claims are accounted for: 75 reuse-rated and 43 unranked. The latest current-main body and ranking blobs were actually rechecked at 2026-10-24T16:57:11Z and match the pinned inputs. Current selection is1,827 sources (1,613 retained+214 added),42 named claim mappings/408 exact declaration requests. The staged combined dependency target has1,473 sources; the latest actual full result is1,472 sources. Accounting and selection are not complete claim integration.
 
 ## Closed formal integration items: reuse, do not repeat
 
@@ -20,7 +20,11 @@ Source69a85a7e/run40112282119/job120926461213 ACCEPTS the complete30-source refi
 
 ALL54 original deterministic/merge names also PASS their complete36-source context:2051 declarations/1422 theorems, zero rejects. ALL actual complete printed types/owners/axioms and every source/audit/document hash independently checked. Seven original proofs unchanged; one330B import root only. Exact mathematical core is CLOSED; no automatic minimizer, n−m termination, biological/marked-process/native/controller admission. Rust remains an explicit proof interface. [Receipt](memory-deterministic-component-verification.json), [types](memory-deterministic-complete-printed-types.json).
 
-The SAME full1472-source target stays REJECTED:1365 successful objects (100 compiled/1265 reused), ONE PartialIndicatorQueryFamily/3 diagnostics,106blocked. Complete original/later4723B sources match029fa2d5. Reuse the accepted observed-family exact finite-subtype/equality construction on the ONE-endpoint predicate and cases the same impossible Option equality. All5 original theorem statements, query coordinates/count and146 frozen source bodies stay unchanged. Source04af94f6 now compiles the finite carrier/equality/count but rejects ONE Observed-none/Observed-some contradiction at102:55. The next edit uses the existing cases proof on that exact equality. Next complete31-source indicator-family boundary, mandatory full1472/388-name/owned/actual callers/strict. [Failures](causal-compiler-rejections.json), [reuse](CAUSAL-REUSE-PREFLIGHT.md).
+Source`dc84dc084beba1f80f77f35ddbc59ff395ecc5c6`/run40114331789/job120932549920 ACCEPTS the complete31-source original indicator-family context:1024 declarations/577 theorems, zero rejects. The downloaded579785B artifact SHA420b0601... independently matches; every owned row and every selected source hash was checked. This exact finite-family/count item is CLOSED/reuse. [Receipt](causal-indicator-family-component-verification.json).
+
+The full1472-source target remains REJECTED:1366 successful objects (101 compiled/1265 reused), ONE CommonObservedMAG/10 proof-conversion diagnostics,105 blocked. COMPLETE original aa57b6e8 and later b1fd4801 CommonObservedMAG bodies match4c8d2976; new selected compatibility proof preserves all15 original statements. The next32-source boundary, full1473/408-name/owned/actual callers and strict all118 gate remain required. [Failures](causal-compiler-rejections.json), [reuse](CAUSAL-REUSE-PREFLIGHT.md).
+
+CB-MEMORY-004's OLD completed written theorem is now selected for actual formalization, not rederivation: full Bernoulli product law, arbitrary randomized full-sample decisions, separate sharp sum/worst/equal-prior criteria and attaining rules, n=0, no finite certainty, fixed-rate accuracy, no uniform tiny-rate guarantee and lower-rate bound. New Lean20-endpoint/Rust exact-rational/certificate sources are UNCHECKED until the selected CI. No archived checker, simulation or private/model job is run. [Preflight](CALIBRATION-REUSE-PREFLIGHT.md), [source](calibration-source-intake.json).
 
 The original20 stochastic names remain accepted4-source207/115 at24578364. Genome32/20 (1773/1306), root-pair3/3 (44/36), separator27 (920/523), observed-query28 (932/530), new indicator30 (1014/571) and all earlier accepted scopes are CLOSED. Accepted9 named standalone scopes are unchanged-source reuse; their mandatory combined checks remain. No identical whole-word rerun.
 
@@ -30,7 +34,7 @@ Latest G3 full-band bias15692B/a427c3de was COMPLETE read/hash-matched at owner-
 
 ## Genuine remaining implementation and formal joins
 
-- Complete original causal upper/lower/zero-parameter contexts and ten exact exports at the pinned APIs, followed by native causal input/provider/response/game/selector/result links.
+- Complete original causal old-observed/upper/lower/zero-parameter contexts and ten exact exports at the pinned APIs, followed by native causal input/provider/response/game/selector/result links.
 - NANUQ original arbitrary-level/global circularity, exact-support, finite source-certificate coverage and authorized observer/native refinement. The completed HAND result is reused rather than reopened.
 - Exact-query whole stack/search and source/circle/complete displayed-topology oracle transport, actual query charging, unknown-order and minimax refinements. Local mask validation does not admit a hidden graph; missing resources/answers stay UNKNOWN.
 - Actual full-calendar/raw-root/phase/completion/readout composition and general native/parser/state-fibre refinement, beyond the accepted fixed natural word. Do not infer universal source coverage from one generated fixture.
