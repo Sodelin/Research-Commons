@@ -65,7 +65,7 @@ theorem uniform_walk_to_simple_path {V : Type u} {G : MarkedGraph V}
       List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs) := by
   obtain ⟨ys, hy, hnd, hsub⟩ := h.exists_simple_subroute
   have marks := uniform_arrival_marks uniform h (fun hh => (hx hh).elim)
-  refine ⟨ys, hy, uniform_vertex_nodup hnd (hobs.sublist hsub) ?_, hsub⟩
+  refine ⟨ys, hy, uniform_vertex_nodup (mark := mark) hnd (hobs.sublist hsub) ?_, hsub⟩
   intro p hp hh
   exact marks p (hsub.subset hp) hh
 

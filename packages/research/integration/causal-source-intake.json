@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "SAME_FULL_TARGET_REJECTED_ROOT_SEPARATION_AND_SMALL_TRIANGLE_PROOF_REPAIRS_PENDING",
+  "status": "SAME_FULL_TARGET_REJECTED_ONE_BOUND_MARK_ARGUMENT_REPAIR_PENDING",
   "repository": "Sodelin/Research-Commons",
   "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
   "tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
@@ -454,7 +454,7 @@
     {
       "module": "CanonicalRootSeparation",
       "path": "lean/ResearchCommons/Compatibility/CanonicalRootSeparation.lean",
-      "sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
+      "sha256": "43f48200996cc1a040ed2a8aa4ee3a2af4e844066addff2a0c0aa94d5a6f4ed7",
       "imports": [
         "FiniteProfileRegistry"
       ],
@@ -471,8 +471,8 @@
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
-        "variant": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added.",
-        "rejected_source": "d39f9490d179d8565755f5241a2e2d5f38cf143d"
+        "variant": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added. Explicitly supply the SAME already-bound mark to uniform_vertex_nodup.",
+        "rejected_source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998"
       }
     },
     {
@@ -4190,12 +4190,7 @@
       "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
     },
     {
-      "module": "CanonicalRootSeparation",
-      "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
-      "selected_sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
-      "selected_bytes": 18731,
-      "selected_git_blob": "db71d50e063380c5469349041f844caa504ab605",
-      "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added.",
+      "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added. Explicitly supply the SAME already-bound mark to uniform_vertex_nodup.",
       "exact_edits": [
         [
           "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
@@ -4228,12 +4223,30 @@
         [
           "  have hobs := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hobs",
           "  have hselected := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: xs) := by\n    rw [hidden_eq_isSelected G]\n    simpa only [retainedState] using hselected\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hselected"
+        ],
+        [
+          "uniform_vertex_nodup hnd (hobs.sublist hsub)",
+          "uniform_vertex_nodup (mark := mark) hnd (hobs.sublist hsub)"
         ]
       ],
-      "original_vendor_body_unchanged": true,
-      "statement_semantics_unchanged": true,
+      "module": "CanonicalRootSeparation",
       "new_source_law_or_axiom": false,
-      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+      "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
+      "original_vendor_body_unchanged": true,
+      "selected_bytes": 18746,
+      "selected_git_blob": "2e3744dd7159ff4b68b0c0152a846b1efdd6be8b",
+      "selected_sha256": "43f48200996cc1a040ed2a8aa4ee3a2af4e844066addff2a0c0aa94d5a6f4ed7",
+      "statement_semantics_unchanged": true,
+      "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+      "rejected_predecessor_variants": [
+        {
+          "source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998",
+          "sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
+          "run": 40073754206,
+          "job": 120812751977,
+          "diagnostic": "uniform_vertex_nodup could not infer its existing mark"
+        }
+      ]
     }
   ],
   "first_full_context_rejection": {
@@ -4260,38 +4273,18 @@
     }
   },
   "latest_full_context_result": {
-    "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
-    "run": 40072807852,
-    "job": 120809856986,
-    "status": "REJECTED_COMPLETE_ORIGINAL_TARGET",
-    "target": "ResearchCommons.Integration.Exports",
+    "source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998",
+    "run": 40073754206,
+    "job": 120812751977,
     "selected_sources": 1077,
-    "successful_objects": 942,
-    "newly_compiled": 54,
-    "reused_retained": 888,
+    "successful_objects": 943,
+    "compiled": 55,
+    "reused": 888,
     "failed_modules": [
-      "ResearchCommons.ExactQuery.Rectangle",
       "CanonicalRootSeparation"
     ],
     "blocked_modules": 133,
-    "compiler_errors": 9,
-    "keep_going": true,
     "compiler_exit_success": false,
-    "complete_profile": false,
-    "owned_audit_ran": false,
-    "exact_name_audit_ran": false,
-    "whole_causal_acceptance": false,
-    "rust": {
-      "actual_complete_log_read": true,
-      "emitted_stage_regression_in_existing_BOTH_fixture": true,
-      "failed": 0,
-      "job": 120809704083,
-      "named_format_warning_present": false,
-      "run": 40072807852,
-      "scope": "Rust lint/actual emitted-stage syntax regression plus existing bounded native port/caller tests; no Lean coefficient acceptance",
-      "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
-      "status": "success",
-      "tests": 107
-    }
+    "whole_owned_audit_ran": false
   }
 }

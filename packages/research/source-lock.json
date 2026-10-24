@@ -269,12 +269,7 @@
           "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
         },
         {
-          "module": "CanonicalRootSeparation",
-          "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
-          "selected_sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
-          "selected_bytes": 18731,
-          "selected_git_blob": "db71d50e063380c5469349041f844caa504ab605",
-          "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added.",
+          "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added. Explicitly supply the SAME already-bound mark to uniform_vertex_nodup.",
           "exact_edits": [
             [
               "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
@@ -307,12 +302,30 @@
             [
               "  have hobs := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hobs",
               "  have hselected := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: xs) := by\n    rw [hidden_eq_isSelected G]\n    simpa only [retainedState] using hselected\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hselected"
+            ],
+            [
+              "uniform_vertex_nodup hnd (hobs.sublist hsub)",
+              "uniform_vertex_nodup (mark := mark) hnd (hobs.sublist hsub)"
             ]
           ],
-          "original_vendor_body_unchanged": true,
-          "statement_semantics_unchanged": true,
+          "module": "CanonicalRootSeparation",
           "new_source_law_or_axiom": false,
-          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+          "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
+          "original_vendor_body_unchanged": true,
+          "selected_bytes": 18746,
+          "selected_git_blob": "2e3744dd7159ff4b68b0c0152a846b1efdd6be8b",
+          "selected_sha256": "43f48200996cc1a040ed2a8aa4ee3a2af4e844066addff2a0c0aa94d5a6f4ed7",
+          "statement_semantics_unchanged": true,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "rejected_predecessor_variants": [
+            {
+              "source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998",
+              "sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
+              "run": 40073754206,
+              "job": 120812751977,
+              "diagnostic": "uniform_vertex_nodup could not infer its existing mark"
+            }
+          ]
         }
       ]
     }
