@@ -1,6 +1,14 @@
 # Current integration frontier
 
-## Latest staged source integration
+## Latest source correction and reused algebra
+
+Source114 `aaadd989b58e96bfe82e817c8f11e28ed29e00cc`, [run40079280942](https://github.com/Sodelin/Research-Commons/actions/runs/40079280942):107 Rust tests PASSED and ALL14 byte-identical soft/model modules (85 original theorem proofs) compiled under the new pin. The causal WithBot proof compiled too. The full1091-source target remains REJECTED at two definitional-equivalence proof terms in CommonSelectedIndicatorSource:960 successful objects (72 compiled/888 reused),130 blocked consumers. Whole owned/name/type audit did not run; no new five-card binding acceptance is inferred from those clean modules.
+
+The next exact proof-only variant explicitly identifies the original ActivePath/ActiveConnection definitions and computes the original selector equivalence by rfl. Original source/graph/condition/endpoint hypotheses and every original vendor body stay unchanged. The independent full source113 BOTH word remains running and is not reselected/cancelled.
+
+The all-level NANUQ predecessor/current successor and formal handoff were read COMPLETE. Existing AllLevelParameterDomain already supplies five exact real-algebra results; the new claim mapping reuses their actual names/owner and no alias proof. It is a PARTIAL component for rank22 CB-NANUQ-003, not the full all-level source/cutoff theorem. Original arbitrary-level/multiple-blob HAND completion is retained; typed source opening/DISTINCT quartet restriction, finite coverage, actual composition/positive port/support joins remain downstream. [Exact source/scope preflight](NANUQ-ALL-LEVEL-REUSE-PREFLIGHT.md).
+
+## Prior source integration
 
 Source113 `4f45368c705390c65b2a74bd80d9095f7dcd6ddb` passed107 Rust tests (complete log read) and compiled the appended SAME-Boolean key-decomposition helper. Its complete1077-source export target remains REJECTED:945 successful objects (57 compiled/888 reused), four coercion-name diagnostics in CommonIndicatorRoots and131 blocked consumers. The source113 repair mistakenly called the WithBot Coe INSTANCE as a function. The exact pinned Mathlib WithBot.coe_inj body was now read; the new repair uses typed coercions and that original theorem. No original graph/root/statement change or whole-context PASS is claimed. The independent source113 full BOTH word remains running; it is not reselected or cancelled.
 
@@ -14,7 +22,7 @@ The selected repair proves that exact coe-incidence equivalence by congruence/in
 
 Source109's independent full word is now TERMINAL REJECTED at the Stage3 kernel excessive-memory guard, after416 primitive modules and Stage0/1/2 compiled. Its exact artifact and complete46,624B source are recovered/hash-matched and retained. This establishes neither false coefficients nor OS OOM. The next source decomposes the SAME checker over ALL keys from BOTH original lists, preserving duplicate sums, all exponent keys, the entire word/bank/modes and physical/owned consumers. Original finite checker and soundness proofs are byte-unchanged. See [WORD-KEY-CHECK-DECOMPOSITION-REUSE.md](WORD-KEY-CHECK-DECOMPOSITION-REUSE.md). Changed-source acceptance remains pending; no private/controller/model/held action or unchanged replay is selected.
 
-The portable Lean/Rust goal is ACTIVE. All118 canonical IDs remain (75 rated/43 unranked).24 claims have165 ACCEPTED SCOPED named endpoints. Current source selects32 named claim mappings/266 exact declaration requests;8 new mappings remain unaccepted and86 cards have no selected names. All94 cards without accepted bindings still need their actual interfaces. Completed HAND mathematics is not reopened. Nine OLD actual original-source API aliases passed fresh owner/context checking. Full existing causal roots are newly selected, not accepted yet; this is downstream formal checking, not new mathematics.
+The portable Lean/Rust goal is ACTIVE. All118 canonical IDs remain (75 rated/43 unranked).24 claims have165 ACCEPTED SCOPED named endpoints. Current source selects33 named claim mappings/271 exact declaration requests;9 new mappings remain unaccepted and85 cards have no selected names. All94 cards without accepted bindings still need their actual interfaces. Completed HAND mathematics is not reopened. Nine OLD actual original-source API aliases passed fresh owner/context checking. Full existing causal roots are newly selected, not accepted yet; this is downstream formal checking, not new mathematics.
 
 ## Accepted actual package scope
 

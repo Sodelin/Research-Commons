@@ -1456,8 +1456,8 @@
     },
     {
       "module": "CommonSelectedIndicatorSource",
-      "path": "vendor/restricted-causal-source/CommonSelectedIndicatorSource.lean",
-      "sha256": "485c979e0d1502665827e8bb5c516114470451b7fd4dc6ca739460bbd8317e20",
+      "path": "lean/ResearchCommons/Compatibility/CommonSelectedIndicatorSource.lean",
+      "sha256": "44fc27348f6778b2e9c5dd4c0de3fe116db256b4106c27821aebd38530abb16a",
       "imports": [
         "CommonIndicatorRoots"
       ],
@@ -1470,9 +1470,12 @@
         "source_sha256": "485c979e0d1502665827e8bb5c516114470451b7fd4dc6ca739460bbd8317e20",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "variant": "Expose the ORIGINAL ActivePath as the definitionally same ActiveConnection, and derive the ORIGINAL selector-equivalence application by rfl instead of unfolding its whole Equiv structure into a stuck match. No graph/source/condition/endpoint or theorem premise/conclusion change.",
+        "rejected_source": "aaadd989b58e96bfe82e817c8f11e28ed29e00cc"
       }
     },
     {
@@ -4585,7 +4588,7 @@
     {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/ResearchCommons/Integration/Exports.lean",
-      "sha256": "3df6cf837fe752021fe1f32e40a4b6129194a1447beacdf7c20190782e0a8903",
+      "sha256": "25840963e2cfdec81d49962b7870ab33659ab26b23fe8f3bda99ac571c105df0",
       "imports": [
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -4615,7 +4618,8 @@
         "ResearchCommons.Claims.Wong",
         "ResearchCommons.Menu.FiniteForcing",
         "SocialScience.Audit",
-        "ClinicalModels.Audit"
+        "ClinicalModels.Audit",
+        "AllLevelParameterDomain"
       ],
       "provenance": {
         "role": "Import-only actual dependency union of every currently named claim binding",
