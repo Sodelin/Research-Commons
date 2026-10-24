@@ -1453,3 +1453,33 @@ Return to actual signed source/energy/phase work; no generic decoder
 factory or peer proof/build/review/model job is selected.
 Aliases: calibrated action diagonal non-descent, fair q=-1 pole,
 simple log poles, exact paired fair compensator, full endpoint unproved.
+
+
+## Exact FULL-band matched receiver and completed source-LINEAR absorption
+
+[MATCHED-FULL-BAND-LINEAR-ABSORPTION.md](../2026-10-24-g3-asymptotic-root-grid/MATCHED-FULL-BAND-LINEAR-ABSORPTION.md),
+12383B/SHA5801efb496cf76f7a0259513bb334c12b9688645792d7a32b35861bbb696a8e1,
+Gitblobcf49b419fc4aa2ca52e87385c6a08f829903a424.
+Stable key G3-MATCHED-FULL-BAND-LINEAR-ABSORPTION-01.
+PROVED HAND/self-reviewed; independent review/Lean/source execution absent.
+
+For the ORIGINAL full-cap9 paired commutator, arbitrary strict coins/scales/
+counts and one fixed small budget, completed jets give the derived cost
+T15=9Psi7(C)-sigma(C)>=s/256. The actual reference-shifted full Psi7
+prefix p and Z7 share EXACTLY the b4/b7 transport. Y=9p-kappa Z7 has a
+zero-endpoint positive-cost receiver, removing the old signed M_h supplier.
+
+Consequences: S_cost<=C(E_b+Hh^4), E_b<=C H^3h^4, L5<=S_cost<=C Hh^4.
+The actual source-LINEAR sum is <=epsilon E_b+C_epsilon Hh^6; constants
+and quadratics were already complete. Reuse them all, no new source-linear
+derivation or old M_h task. Proof reuses own-PRECEDING traces and the
+uniform elementary sum s_i^2/u_i<=C S_cost^(5/3), with no rare-coin inverse.
+
+The exact residual balance retains30kappa B_h integral w(b-a). That
+ORDINARY forcing, relative action/variance/index and total original NO
+remain UNPROVED. No E_b=O(Hh^6), A_h upper bound or source count follows.
+R-only phase flexibility, signed Psi, and finite-diagonal nonrecovery
+remain true. The new proof uses the full equation, beyond its coarse bias
+bound. No source/model/coefficient/tuple/native/build/solver/peer job ran.
+Aliases: T15,9Psi-sigma,matched positive rate15,source mean removed,
+L5 Hh4,linear source absorption,ordinary forcing remains.
