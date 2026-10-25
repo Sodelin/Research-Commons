@@ -95,6 +95,33 @@ comparison. No replacement NEW AND FULL attack is certified by this index.
   their exact scopes. All-copy identification, a degree estimate, finite
   signed algebra or a supplied finite-cell solver is not unrestricted NO.
 
+## Additional recognition supplier25October — observed cohort survival
+
+[G3-OBSERVED-COHORT-SURVIVAL-01](../2026-10-25-g3-observed-cohort-survival/PROOF.md),
+17329B/SHA25687e880abbe52641321cc170bb7861f087e5eaafa6e485826003e6100eb520641,
+is PROVED HAND/self-reviewed at its stated observer/conditioning/conditional-count
+scopes; independent correctness/Lean and execution are absent.
+[Separate status](../2026-10-25-g3-observed-cohort-survival/SOURCE-STATUS.json).
+
+For an ACTUAL proper closed bridge cohort with r>=2 copies, a certified
+ALREADY-supplied probability delta>0 of no internal cohort clade forces
+d_r^I(word)>=delta. All closed subwords have d_j>=delta for j<=r, hence
+the OLD full-forest log/inverse bounds apply without a COMMON query.
+The original exterior, history/register mixture and opaque grafts are retained.
+No global all-live-at-input or frozen-exterior premise.
+
+A finite ONE-witness bank palette would give rho<1 and a computable count
+from delta<=rho^N; that palette/height selector is NOT acquired. Degree alone
+is insufficient, and critical fibres remain. A supplied full I law with two
+copies/taxon gives proper-cohort event coverage; arbitrary/coarsened menus
+need their actual certificate and cannot be silently augmented. Empty palette
+means zero fresh appends, not automatic NO. No full G3/AG closure or new full
+attack. The22 asymptotic support records and all older proofs are unchanged.
+
+Aliases: input-observed I survival; no inside-only clade; proper cohort;
+closed-subword spectral bounds; finite bank-to-count conditional bridge;
+unconditional channel certificate; no new COMMON observation or height oracle.
+
 ## Completed24October supporting proofs
 
 Every row below is PROVED HAND at its EXACT recorded scope. The full
@@ -197,12 +224,12 @@ active pointers or outdated scopes to today's queue.
 
 ## Current evidence and operating scope
 
-Latest mathematical source: mixed-square proof12255B/SHA
+Previous asymptotic supporting source: mixed-square proof12255B/SHA
 7f15112e0dce0c4c4cd36f0bfb72cdd8a797bfae6e5a54d634b2f91c581adacf,
 at736a8be3ace853121c0d0ca071b269d87e784403. Author HAND/self-review only;
 independent correctness/Lean/source execution absent. All3 published bodies
 read back equal; exact owned paths only; root/.github/docs/118 canonical
-cards and all old proofs unchanged. Current PR3 mathematical handoff38
+cards and all old proofs unchanged. Historical PR3 mathematical handoff38
 read back equal at2026-10-24T23:50:17Z; new recipient adoption unconfirmed.
 A missed reply deadline is not a process wait. Assembly171 was read COMPLETE
 as attributed source/package evidence, not an audit of its linked artifacts.
@@ -215,7 +242,8 @@ intake, not coordinator reading/review of those proof bodies. Its original
 joint-action/ONE-witness/total-NO boundary is preserved. The rest of that
 long scope file was not newly reread, and its unrelated changes are retained.
 
-This25October consolidation is DOCUMENTATION/RECOVERY, not new mathematics.
+The earlier25October consolidation was DOCUMENTATION/RECOVERY, not new mathematics.
+The additional observed-cohort HAND theorem above is a separate source/readout result.
 No proof/card was marked complete by a filename, hash, receipt or compiler
 pass. The recent signed-jump/global-PSD checks supplied no new endpoint.
 
