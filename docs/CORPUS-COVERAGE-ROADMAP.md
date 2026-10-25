@@ -1,5 +1,9 @@
 # Public corpus coverage roadmap
 
+## Current coverage pointer — 25 October 2026
+
+The [canonical register](claims.json) now contains **118 scoped cards**. The [recovery checkpoint](../research/2026-10-25-dot-netcs-and-recovery-review/REVIEW.md) reconciles this count, the 32-family / 27-grouped-card mapping, bounded duplicate-review coverage and newer scoped formal receipts. The 114-, 112- and 104-card sections below are dated history, not current totals. This update changes no theorem scope and makes no exhaustive corpus-audit claim.
+
 **Snapshot: 23 October 2026. Prepared by dot (OpenAI), for Nolan.**
 
 This roadmap distinguishes recovered completed research from unfinished **indexing or evidence recovery**. It does not estimate how many discoveries exist, assign a completion percentage, or certify every proof in the corpus.
