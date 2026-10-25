@@ -143,3 +143,18 @@ test('dated successor lookup exposes retired suppliers and remaining master quan
  assert.match(terminal.explanation,/do not automatically inherit/);
  assert(corpus.documents.some(d=>d.url===terminal.links[0].url));
 });
+
+test('original successor proofs are retrievable by their literal stable keys with source-only roles',()=>{
+ const j=joins.find(j=>j.kind==='author_hand_original_supplier_bodies_not_master_closure');
+ assert.deepEqual(j.claim_ids,['CB-G3-004']);assert.equal(j.links.length,3);
+ for(const [i,key] of ['G3-MATCHED-FULL-BAND-LINEAR-ABSORPTION-01','G3-RESONANT-ORDINARY-FORCING-ENERGY-01','G3-OBSERVED-COHORT-SURVIVAL-01'].entries()){
+  const l=j.links[i],d=corpus.documents.find(d=>d.url===l.url);assert(d);
+  assert.equal(d.bytes,l.expected_bytes);assert.equal(d.sha256,l.expected_sha256);assert.equal(d.git_blob,l.expected_git_blob);
+  assert(searchSources(corpus,key,new Set(['CB-G3-004'])).some(d=>d.url===l.url));
+  assert(d.bindings.every(b=>b.claim_id==='CB-G3-004'));
+ }
+ assert.match(j.explanation,/complete cap9/);assert.match(j.explanation,/complete cap12/);
+ assert.match(j.explanation,/older linear proof.*reopen the completed successor/);
+ assert.match(j.explanation,/Empty palette is not automatic NO/);
+ assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
+});
