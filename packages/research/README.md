@@ -27,11 +27,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest [source179/run40150260761](https://github.com/Sodelin/Research-Commons/actions/runs/40150260761):
+Latest [source180/run40152284328](https://github.com/Sodelin/Research-Commons/actions/runs/40152284328):
 
-- Complete58-source actual shortest-path dependency owned context PASSES:1532declarations965theorems,0owned/nonstandard/missing. ALL4 original headers unchanged; actual physical trace/shortestness/chord/witness/source hypotheses and derived acyclic dependency system retained. Entire720920B archive/all58 source/object/owned sets/every row verified. [Receipt](integration/causal-shortest-dependency-component-verification.json).
+- Complete59-source finite actual-dependency induction owned context PASSES:1540declarations973theorems,0owned/nonstandard/missing. ALL3 original headers unchanged; existing descending-chain/pigeonhole proof, actual bounded positions/Route acyclicity and source shortest-path witnesses retained. Entire723538B archive/all59 source/object/owned sets/every row/all220 integration hashes verified. [Receipt](integration/causal-finite-dependency-component-verification.json).
 - Actual count receiver remains CLOSED at source178:Rust125tests and BOTH whole native proofs, joint3-source92/67/0rejects; original count engine unchanged. [Receipt](integration/count-prefix-component-verification-v2.json).
-- Full1500 REJECTED at FiniteDependencyInduction:1422successful (136compiled+1286reused),77blocked; combined520-name/owned/actual callers not run. Current59-source candidate only quotes SAME proof-local matches twice; ALL3 original headers/proof logic unchanged. Existing pinned descending-chain and pigeonhole APIs were read and already match. [Failure/frontier](integration/FRONTIER.md).
+- Full1500 REJECTED at DiscriminatingStatusTransport:1423successful (137compiled+1286reused),76blocked; combined520-name/owned/actual callers not run. Current60-source candidate removes ONE redundant recursive implicit argument, inferred from SAME literal final step; ALL8 original headers unchanged. COMPLETE prior/later11022B sources equal; no graph/separator/prefix/parent invariance oracle. [Failure/frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).

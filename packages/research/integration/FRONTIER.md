@@ -4,13 +4,13 @@ The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ran
 
 ## Actual current build boundary
 
-Latest source1798940f035/[run40150260761](https://github.com/Sodelin/Research-Commons/actions/runs/40150260761):
+Latest source180012cb57b/[run40152284328](https://github.com/Sodelin/Research-Commons/actions/runs/40152284328):
 
-- COMPLETE58-source actual shortest-path dependency context PASSES:1532decl965theorems,0owned/nonstandard/missing. ALL4 original headers unchanged; actual source vertices/Trace/shortestness/chord/witness/bounds and derived dependency acyclicity preserved. Entire720920B archive/all58 source/object/owned sets/every row validated.16generated/projection theorem rows are not new discoveries. [Receipt](causal-shortest-dependency-component-verification.json).
-- Full1500 ENTIRE REJECTED at FiniteDependencyInduction line75 reserved matches:1422successful136compiled1286reused,77blocked. No combined520-name/owned/actual callers. [History](causal-compiler-rejections.json), [full rejection](causal-latest-full-union-rejection.json).
-- Current59-source candidate changes only TWO local matches quotations (one obtain binder/one use). Complete original/later3920B/6f126724/blobe398aa80 were read byte-equal; ALL3 literal theorem headers/proof steps/bounded relation/actual finite-path construction/WellFounded conclusion unchanged. Reversing quotes recovers entire original. Actual pinned descending-chain equivalence and infinite-to-finite pigeonhole declarations/proofs read and already match; no new finite-DAG oracle. [API/predecessor record](causal-downstream-source-reuse.json).
-- Existing ONE step-local target supplies BOTH guarded build and owned audit. Next59-source then mandatory1500/520-name/full-owned/actual callers. No identical standalone count/closed58 retry selected. Count3-source92/67 and all prior CLOSED scopes/BOTH natural word are reused; its full-context caller remains required after a successful full union.
-- Strict118 completion still FAILS. No scientific completion is inferred from selected module/name counts or an uploaded artifact.
+- COMPLETE59-source finite actual-dependency induction context PASSES:1540decl973theorems,0owned/nonstandard/missing. ALL3 original headers unchanged; existing descending-chain/pigeonhole proofs and actual finite positions/Route/source path retained. Entire723538B archive/all59 source/object/owned sets/every row and all220 integration hashes verified.5generated theorem rows are not discoveries. [Receipt](causal-finite-dependency-component-verification.json).
+- Full1500 ENTIRE REJECTED at DiscriminatingStatusTransport line77:17:1423successful137compiled1286reused,76blocked. No combined520-name/full-owned/actual callers. [History](causal-compiler-rejections.json), [full rejection](causal-latest-full-union-rejection.json).
+- Current60-source candidate changes only ONE recursive implicit-argument call. COMPLETE original/later11022B/7a3cf32b/blob649801b8 read byte-equal; ALL8 literal headers/source/marks/skeleton/separator/ancestry/prefix-collider premises unchanged. Target parent arrows and discriminating prefix are derived by OLD proof; no final invariance oracle. SAME endpoint r is inferred from SAME last : ColliderParentStep G y q r. Reversing this edit recovers entire original. [Predecessor record](causal-downstream-source-reuse.json).
+- ONE step-local target still supplies BOTH guarded build and owned audit. Next60-source then mandatory1500/520-name/full-owned/actual callers. CLOSED59/count/BOTH natural word reused, no identical standalone repeats.
+- Strict118 completion still FAILS. No uploaded artifact or selected count substitutes for all-claim acceptance.
 
 ## Count receiver: CLOSED at exact checked scope
 
@@ -25,6 +25,7 @@ These results are source-specific. Their receipts retain exact hypotheses, rejec
 | Component | Actual checked scope | Evidence |
 | --- | --- | --- |
 | OLD normalized count engine + NEW actual owning proof receiver | Core1-source/8names24/19 plus BOTH actual documents, complete3-source92/67/0rejects. ALL native fields/FIRST cutoff/inspection/weights/sum/scalar error. Universal native/parser/source-PMF-TV separate. | [Receipt](count-prefix-component-verification-v2.json), [types](count-prefix-complete-printed-types.json) |
+| OLD finite actual-path dependency induction | Complete59-source1540/973, ALL3 statements/bounded Route/source witnesses retained;5generated proof rows not new mathematics. | [Receipt](causal-finite-dependency-component-verification.json) |
 | OLD actual shortest-path dependency system | Complete58-source1532/965, all4 original statements/source/path/Trace/chord/witness/bounds retained;16generated/projection rows not new mathematics. | [Receipt](causal-shortest-dependency-component-verification.json) |
 | OLD bounded physical reverse trace | Complete57-source1511/945, all7 original statements/source/bounds/labels/witness/fallback semantics retained.39generated/projection rows are not new mathematics. | [Receipt](causal-reversed-trace-component-verification.json) |
 | OLD actual original-list indexed sections | Complete56-source1458/899, all6 original headers/source/witness semantics retained. Full graph/native identification still separate. | [Receipt](causal-indexed-sections-component-verification.json) |

@@ -642,10 +642,10 @@ jobs:
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
-      - name: Check next OLD finite dependency induction (explicit scoped selection)
+      - name: Check next OLD discriminating-status transport (explicit scoped selection)
         if: contains(github.event.head_commit.message, '[check causal]') || contains(github.event.head_commit.message, '[check scoped contexts]')
         env:
-          COMMONS_CAUSAL_TARGET: FiniteDependencyInduction
+          COMMONS_CAUSAL_TARGET: DiscriminatingStatusTransport
         run: |
           cargo run --locked -p research-commons-package -- build --reuse-retained --target "$COMMONS_CAUSAL_TARGET"
           cargo run --locked -p research-commons-package -- audit-target "$COMMONS_CAUSAL_TARGET"
