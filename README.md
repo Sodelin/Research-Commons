@@ -1,5 +1,7 @@
 # Research Commons
 
+**Audited remaining obligations — 25 October, 11:16 UTC:** [G3/G4 exact frontier, completed suppliers, lookup coverage and immediate continuation](research/2026-10-25-master-obligation-audit/README.md). Read this before proposing another attack. AG-Pair is the existing negative G3 route's missing premise; finite natural-I all-rival forcing remains the G4 gate. Completed clocks, cap-three compression, source construction and arithmetic must not be restarted.
+
 **Current end-to-end goals — 25 October, 10:09 UTC:** [four research responsibilities and two biological project contracts](research/2026-10-25-end-to-end-evolutionary-inference/README.md). G3 and G4 retain their original masters; the two additional projects connect biological observations, identifiability, finite-data uncertainty, measurement design and reproducible implementation. This supersedes the earlier reserve allocation, not accepted results or original assumptions.
 
 
