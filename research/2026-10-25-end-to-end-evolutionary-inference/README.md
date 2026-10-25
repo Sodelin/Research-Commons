@@ -49,3 +49,8 @@ G3/G4 remain OPEN at their original master statements. Neither project changes t
 At commit 2d2c54ba3f273c84d1bb952c6a44ef21533453b3, all eleven initial files across the two project packets were read back and matched their prepared content. This is publication verification, not mathematical or empirical verification. The canonical 118-card inventory is not inflated by this checkpoint.
 
 Full-scope reconciliation should append a dated reference to this contract and preserve prior accepted results. Incremental work belongs in project notes and coordination comments; do not repeatedly rewrite the complete scope.
+
+
+## Executed restricted pipeline — 25 October, 10:19 UTC
+
+The [two-source biological split benchmark](../2026-10-25-biological-split-benchmark/README.md) implements positive source → exact genealogy channel → ambiguity → finite-registry confidence → comparison of four additional-copy designs. [Coordinator replay](../2026-10-25-biological-split-benchmark/COORDINATOR-REPLAY.md) reproduced 12 local checks and the reported gaps. This is an actual small end-to-end ideal-genealogy example, not an arbitrary-source solver, a DNA pipeline, a universal finite sample guarantee or an SF/G4 solution.
