@@ -69,7 +69,13 @@ impl Certificate{
   let weights=self.raw.weights();
   if weights.len()!=width{return Err(Error::Invalid("native weight arity"));}
   for w in &weights{bounded(w,limits)?;}
-  let vector=format!("![{}]",weights.iter().map(literal).collect::<Vec<_>>().join(", "));
+  // Serialize the SAME complete finite table by its original numeric positions.
+  // The default is outside the declared Fin carrier; every actual point is proved.
+  let mut table = "(0 : ℝ)".to_owned();
+  for (i,w) in weights.iter().enumerate().rev(){
+   table=format!("if i.val = {i} then {} else {table}",literal(w));
+  }
+  let vector=format!("fun i => {table}");
   let c=&self.raw;
   let mut out=format!(
    "import ResearchCommons.Numerics.CountPrefix\nimport Mathlib.Data.Fin.VecNotation\nnoncomputable section\nopen scoped BigOperators\n\
@@ -104,9 +110,9 @@ theorem actual_first_cutoff :
 theorem actual_complete_weights :
     ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff := by
   intro i
-  fin_cases i <;> norm_num [{defs}, Matrix.cons_val_zero, Matrix.cons_val_zero', Matrix.cons_val_succ, Matrix.cons_val_succ']
+  fin_cases i <;> norm_num [{defs}]
 theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by
-  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_zero', Matrix.cons_val_succ, Matrix.cons_val_succ']
+  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]
 theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by
   have accuracy : deficit inputA cutoff ≤ epsilon := by
     rw [← actual_fields.2.2.2.1]
@@ -137,6 +143,9 @@ pub fn example(zero:bool,limits:Limits)->Result<Certificate,Error>{
   let out=c.lean("CountPrefixOrdinary",Limits::default()).unwrap();
   assert!(out.contains("def requestedBudget : ℕ := 3"));
   assert!(out.contains("def returnedS : ℝ := (193 / 98 : ℝ)"));
+  assert!(out.contains("if i.val = 0 then (98 / 193 : ℝ)"));
+  assert!(out.contains("if i.val = 1 then (70 / 193 : ℝ)"));
+  assert!(out.contains("if i.val = 2 then (25 / 193 : ℝ)"));
   assert!(out.contains("theorem actual_first_cutoff"));
   assert!(out.contains("theorem actual_complete_weights"));
   assert!(out.contains("theorem actual_error"));

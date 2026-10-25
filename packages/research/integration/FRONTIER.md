@@ -1,14 +1,14 @@
 # Current integration frontier
 
-The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ranked and43 explicitly unranked. Canonical registry/ranking blobs remain ebe7a376/21cdafec, last checked23:23:32UTC24October2026. Selected1833 modules =1613 retained+220 integration;48 SCOPED named mappings/520 declaration requests. Whole-package/all-claim acceptance is incomplete; completed HAND mathematics is preserved separately.
+The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ranked and43 explicitly unranked. Canonical registry/ranking blobs remain ebe7a376/21cdafec, rechecked00:43:25UTC25October2026; all118/75ranked/43unranked unchanged. Selected1833 modules =1613 retained+220 integration;48 SCOPED named mappings/520 declaration requests. Whole-package/all-claim acceptance is incomplete; completed HAND mathematics is preserved separately.
 
 ## Actual current build boundary
 
 Latest causal source1755426f2e796af9c8ed9957fbfdacc279006c0ce92, [run40146941800](https://github.com/Sodelin/Research-Commons/actions/runs/40146941800):
 
 - COMPLETE57-source actual bounded reversed-trace owned context PASSES:1511declarations945theorems,0owned/nonstandard/missing. ALL7 original source headers unchanged; ONE record layout plus SAME reversed-function goal spelling. Entire639469B archive/all57 source/object/owned sets/every row independently validated.39generated/projection theorem rows are not new discoveries. [Receipt](causal-reversed-trace-component-verification.json).
-- Source175 Rust125tests incl3 owning-count/indent assertions PASSES, exact Cargo.lock match. Count scalar core remains accepted COMPLETE1-source/8names24/19 at source174 and was rechecked unchanged.
-- Source175 ENTIRE actual native count caller context REJECTED at FIRST ordinary output: literal vector entries/full sum did not reduce. Zero caller did not run; no partial PASS. Whole2882B/d8828cd7 document retained. Source176 only reuses existing pinned Matrix.cons_val_zero/zero'/succ/succ' proofs explicitly; SAME7 statements/engine/values/whole weights remain. [Rejections](count-prefix-compiler-rejections.json).
+- Source176 Rust125tests incl3 owning-count/indent assertions PASSES, exact Cargo.lock match. Count scalar core remains accepted COMPLETE1-source/8names24/19 at source174 and was rechecked unchanged.
+- Source175 ENTIRE actual native count caller context REJECTED at FIRST ordinary output: literal vector entries/full sum did not reduce. Zero caller did not run; no partial PASS. Whole2882B/d8828cd7 document retained. Source176 explicit existing vector point lemmas still did not close those actual applications. Source177 serializes SAME complete values by explicit original index cases; SAME7 statements/engine/Fin carrier/ALL weights remain, no missing-point substitute. [Rejections](count-prefix-compiler-rejections.json).
 - Full1500/520-name/combined-owned/actual-callers were NOT EXECUTED after that actual caller rejection. Historical full1499/source1731419success/79blocked retains its exact rejected scope; fixing the prior reversal failure does not confer a fresh full-union PASS.
 - CLOSED56/55/54/52/51/etc and all other accepted scopes, including BOTH natural word, are REUSED. No identical word/cache/key work.
 - Strict118 completion still FAILS.
@@ -17,7 +17,7 @@ Next own action is corrected TWO whole actual count proof documents and joint ow
 
 ## Count receiver: exact current scope
 
-OLD rank38 engine BYTE-IDENTICAL. New scalar formal component1source/8names24/19 ACCEPTED, THREE owning tests pass. The actual native caller context is still WHOLLY REJECTED, now on vector evaluation after indentation repair. Pinned17K VecNotation source/proofs were read; no new table/weight evaluator or alternative engine is implemented. Original native/core/PMF/TV/refinement boundaries remain. [Use-site](COUNT-PREFIX-RECEIVER.md), [preflight](COUNT-PREFIX-REUSE-PREFLIGHT.md).
+OLD rank38 engine BYTE-IDENTICAL. New scalar formal component1source/8names24/19 ACCEPTED, THREE owning tests pass. The actual native caller context is still WHOLLY REJECTED at source176, on vector evaluation after indentation repair. Pinned17K VecNotation source/proofs were read; no new table/weight evaluator or alternative engine is implemented. Original native/core/PMF/TV/refinement boundaries remain. [Use-site](COUNT-PREFIX-RECEIVER.md), [preflight](COUNT-PREFIX-REUSE-PREFLIGHT.md).
 
 ## Closed integration components: reuse them
 

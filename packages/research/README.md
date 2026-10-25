@@ -30,7 +30,7 @@ The final per-claim completion gate currently exits2 because required bindings r
 Latest [source175/run40146941800](https://github.com/Sodelin/Research-Commons/actions/runs/40146941800):
 
 - COMPLETE57-source bounded actual physical-trace reversal owned context PASSES:1511declarations945theorems,0owned/nonstandard/missing. ALL7 original headers unchanged; exact compatibility edits only. Entire639469B artifact/all sources/objects/owned rows validated. [Receipt](integration/causal-reversed-trace-component-verification.json).
-- Actual Rust125tests incl3 owning-count/indent assertions pass; generic1source/8names24/19 count component remains accepted. Entire actual count caller REJECTED at literal weight vector reductions, zero caller not run. Source176 only explicitly reuses pinned existing finite-vector evaluation lemmas;7 statements/values unchanged. [Core](integration/count-prefix-component-verification.json), [rejections](integration/count-prefix-compiler-rejections.json).
+- Actual Rust125tests incl3 owning-count/indent assertions pass; generic1source/8names24/19 count component remains accepted. Entire actual count caller REJECTED at literal weight vector reductions, zero caller not run. Source176 explicit lemmas did not close those applications; source177 serializes SAME complete table by original numeric index cases, preserving all7 statements/every value/Fin coverage. [Core](integration/count-prefix-component-verification.json), [rejections](integration/count-prefix-compiler-rejections.json).
 - Full1500/520-name/owned/actual-callers did NOT EXECUTE after that rejection. Latest historical1499/source173 rejects1419success/79blocked at the former reversal module; no new combined acceptance is inferred. [Frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
@@ -43,7 +43,7 @@ The strict118 completion gate still fails. Completed HAND science is preserved; 
 
 ## Current count integration candidate
 
-The OLD exact normalized-count engine remains BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component passed at their recorded scopes. The actual emitted proof context is WHOLLY REJECTED on vector-notation reductions; explicit existing Mathlib evaluation lemmas are now selected for checking. This changes no native values/indices/statements. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
+The OLD exact normalized-count engine remains BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component passed at their recorded scopes. The actual emitted proof context is WHOLLY REJECTED on vector-notation reductions; the SAME full finite table is now serialized by its original numeric index cases for checking. This changes no native values/indices/statements. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
 
 ## Actual Rust-to-Lean callers
 
