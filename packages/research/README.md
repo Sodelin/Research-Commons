@@ -2,7 +2,7 @@
 
 This package assembles the canonical 118 research claims in dependency and reuse-priority order: 75 rated and 43 explicitly unranked. Existing proofs and engines are reused. Unresolved scientific statements retain their exact obligations. The end-to-end goal remains ACTIVE; all-claim integration is incomplete.
 
-The current graph selects 1,613 retained modules plus 219 integration modules. There are 47 scoped named claim mappings and 512 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
+The current graph selects 1,613 retained modules plus 220 integration modules. There are 48 scoped named claim mappings and 520 declaration requests. Selection, separately checked components, a combined package build and all-claim completion are distinct gates.
 
 ## Build on a development host
 
@@ -39,6 +39,10 @@ Latest exact [source172/run40144549050](https://github.com/Sodelin/Research-Comm
 - Historical complete930-source/24-mapping/165-name context and1659-source full library remain tied to their original sources; they do not confer current whole-package acceptance. [930-source receipt](integration/claim-export-verification-v16.json).
 
 The strict118 completion gate still fails. Completed HAND science is preserved; actual formal/native/source/action/observer/target/QE joins remain explicit. No standalone context or selected source count substitutes for end-to-end acceptance.
+
+## Current count integration candidate
+
+The OLD exact normalized-count engine is reused byte-identically. A new owning wrapper and eight-declaration Lean scalar receiver are selected for actual checks, with THREE new Rust tests and TWO whole emitted proof documents. Source-only until those exact checks pass; no universal native refinement or actual source/TV admission is inferred. [Source/reuse/commands](integration/COUNT-PREFIX-RECEIVER.md).
 
 ## Actual Rust-to-Lean callers
 

@@ -2775,15 +2775,31 @@
       "claim_id": "CB-SOFTWARE-002",
       "dependencies": [],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "module": "ResearchCommons.Numerics.CountPrefix",
+        "state": "source_component_unverified",
+        "declarations": [
+          "ResearchCommons.Numerics.CountPrefix.term_nonneg",
+          "ResearchCommons.Numerics.CountPrefix.prefix_pos",
+          "ResearchCommons.Numerics.CountPrefix.prefix_le_exp",
+          "ResearchCommons.Numerics.CountPrefix.exp_le_upper",
+          "ResearchCommons.Numerics.CountPrefix.normalized_prefix_sum",
+          "ResearchCommons.Numerics.CountPrefix.lostMass_nonneg",
+          "ResearchCommons.Numerics.CountPrefix.lostMass_le_deficit",
+          "ResearchCommons.Numerics.CountPrefix.certified_error"
+        ],
+        "whole_claim_formal_binding": false,
+        "current_formal_acceptance": false,
+        "preflight": "integration/COUNT-PREFIX-REUSE-PREFLIGHT.md",
+        "scope": "NEW partial formal/use-site integration of the OLD count pilot. Reuse unchanged arbitrary-precision engine and existing Mathlib geometric exponential remainder. Scalar lost exponential mass; first actual cutoff/fields/complete weights will be checked by an owning caller. Universal implementation/parser and actual source PMF/TV refinement remain explicit.",
+        "verification": "integration/count-prefix-component-verification.json"
       },
       "obligation": "A universal end-to-end Lean-to-native refinement needs its own theorem and interface.",
       "reuse_rank": 38,
       "rust": {
-        "module": null,
-        "state": "pending_binding"
+        "module": "research_commons_runtime::count_prefix",
+        "state": "source_component_unverified",
+        "qualification": "SOURCE ONLY owning wrapper calls original exact-count-certificate::certify once; original engine unchanged, exact result/budget retained and complete Lean document emitted. New three tests and TWO actual emitted callers are NOT yet accepted.",
+        "whole_claim_refinement": false
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [

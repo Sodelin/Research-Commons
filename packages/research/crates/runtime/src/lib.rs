@@ -95,3 +95,5 @@ pub mod calibration;
 pub mod contiguous_copies;
 
 pub mod nanuq_noise;
+
+pub mod count_prefix;

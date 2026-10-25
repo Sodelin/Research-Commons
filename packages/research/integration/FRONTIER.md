@@ -1,6 +1,6 @@
 # Current integration frontier
 
-The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ranked and43 explicitly unranked. Canonical registry/ranking blobs remain ebe7a376/21cdafec, last checked23:23:32UTC24October2026. Selected1832 modules =1613 retained+219 integration;47 SCOPED named mappings/512 declaration requests. Whole-package/all-claim acceptance is incomplete; completed HAND mathematics is preserved separately.
+The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ranked and43 explicitly unranked. Canonical registry/ranking blobs remain ebe7a376/21cdafec, last checked23:23:32UTC24October2026. Selected1833 modules =1613 retained+220 integration;48 SCOPED named mappings/520 declaration requests. Whole-package/all-claim acceptance is incomplete; completed HAND mathematics is preserved separately.
 
 ## Actual current build boundary
 
@@ -12,6 +12,10 @@ Latest actual source172 c3571be278b50bd6b1ec55f867f707b13ff38ad7, [run4014454905
 - Strict118 completion FAILS; no component suppresses it.
 
 Current source173 layout-only56-source candidate changes ONE IndexedWitness constructor to uniform field layout. Complete earlier/later10689B sources match131dfcd2/blobcbb38c4e; reverse layout reconstructs ENTIRE original. ALL6 theorem headers/source/vertex/route/offset/neighbour/parent/collider/physical occurrence remain unchanged. SAME single step-local target supplies both existing guarded commands. Next56-source owned then mandatory1499/512-name/combined-owned/actual callers.
+
+## Count receiver: actual integration candidate
+
+OLD rank38 count engine is unchanged. NEW partial eight-theorem scalar Lean receiver plus owning Rust result/budget wrapper, THREE semantic tests and TWO complete actual-output documents are SOURCE ONLY/UNCOMPILED/UNELABORATED/UNEXECUTED pending the existing guarded checks. Original Mathlib exponential-tail theorem is reused; no second count algorithm/corpus/source producer. Selected count adds one module; full current union becomes1500 and named requests520. Universal Rust/parser/source/TV refinement stays open. [Exact use-site](COUNT-PREFIX-RECEIVER.md), [prior/later source comparison](COUNT-PREFIX-REUSE-PREFLIGHT.md).
 
 ## Closed integration components: reuse them
 
