@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "status": "ACCEPTED_COMPLETE_ORIGINAL_TIMED_UNRANKED_CONGRUENCE_COMPONENT",
+  "source_commit": "f1cd000c9918aac5a91b75dca95d0612fcd7fa03",
+  "source": {
+    "path": "lean/ResearchCommons/MSCI/JC69Unranked.lean",
+    "bytes": 10388,
+    "sha256": "9423f4a98c5d5e236f102ded70006e103db3ceb4395eab9b04410f299c22bca0"
+  },
+  "run_id": 40059355260,
+  "job_id": 120769448670,
+  "lean": "4.33.1 / 819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "selected_names": [
+    "ResearchCommons.MSCI.JC69Unranked.unordered_decoration_transport",
+    "ResearchCommons.MSCI.JC69Unranked.decoded_root_probability_unordered",
+    "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton",
+    "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation",
+    "ResearchCommons.MSCI.JC69Unranked.conditional_locus_same_timed_observation"
+  ],
+  "complete_printed_types": {
+    "ResearchCommons.MSCI.JC69Unranked.unordered_decoration_transport": "@MSCI.JC69Unranked.unordered_decoration_transport : ∀ {Copy : Type u_1} [Fintype Copy] [inst : DecidableEq Copy]\n  (leafAge : Copy → ℝ) {a b : GProgram.SourceForest.Genealogy Copy},\n  UnifiedLean.Source.UnrankedGenealogyObservation.UnorderedEquiv a b →\n    a.WellLabelled → ∃ e, MSCI.JC69Unranked.Preserves leafAge e",
+    "ResearchCommons.MSCI.JC69Unranked.decoded_root_probability_unordered": "@MSCI.JC69Unranked.decoded_root_probability_unordered : ∀ {Copy : Type u_1} [Fintype Copy] [inst : DecidableEq Copy]\n  (leafAge : Copy → ℝ) {a b : GProgram.SourceForest.Genealogy Copy},\n  UnifiedLean.Source.UnrankedGenealogyObservation.UnorderedEquiv a b →\n    a.WellLabelled →\n      ∀ (d : GProgram.G2.FaithfulPairAgeDecoration.Decoration a) (M : Copy → Copy → ℝ),\n        (∀ x ∈ a.leaves, ∀ y ∈ a.leaves, M x y = GProgram.G2.FaithfulPairAgeDecoration.pairAge leafAge a d x y) →\n          ∀ (p : Copy → MSCI.JC69.Base),\n            MSCI.JC69Tree.rootLikelihood a\n                (MSCI.JC69Tree.clockSurvivals leafAge a (GProgram.G2.FaithfulPairAgeDecoration.decode M a))\n                (MSCI.JC69Tree.labelPattern a p) =\n              MSCI.JC69Tree.rootLikelihood b\n                (MSCI.JC69Tree.clockSurvivals leafAge b (GProgram.G2.FaithfulPairAgeDecoration.decode M b))\n                (MSCI.JC69Tree.labelPattern b p)",
+    "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton": "@MSCI.JC69Unranked.completed_forest_singleton : ∀ {Copy : Type u_1} [inst : Fintype Copy] [inst_1 : DecidableEq Copy]\n  {V : Type u_2} {E : Type u_3} {X : Type u_4} [inst_2 : DecidableEq V] [DecidableEq E] [inst_4 : Fintype V]\n  [inst_5 : Fintype E] [inst_6 : Fintype X] [inst_7 : Nonempty Copy] (N : Nanuq.Source.RootedBinary V E X)\n  {sample : Copy → X} (d : UnifiedLean.Source.UniformizedSourceStep.Code N sample),\n  (UnifiedLean.Source.UniformizedSourceStep.state d).live.card ≤ 1 →\n    UnifiedLean.Source.UnrankedGenealogyObservation.sourceUnrankedForest\n        (UnifiedLean.Source.UniformizedSourceStep.state d) Finset.univ =\n      {UnifiedLean.Source.UnrankedGenealogyObservation.toUnranked\n          ((UnifiedLean.Source.UniformizedSourceStep.state d).genealogy (MSCI.JC69Source.selectedRoot N d))}",
+    "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation": "@MSCI.JC69Unranked.conditional_kernel_same_timed_observation : ∀ {Copy : Type u_1} [inst : Fintype Copy]\n  [inst_1 : DecidableEq Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [inst_2 : DecidableEq V]\n  [inst_3 : DecidableEq E] [inst_4 : Fintype V] [inst_5 : Fintype E] [inst_6 : Fintype X] [inst_7 : Nonempty Copy]\n  {V' : Type u_5} {E' : Type u_6} {X' : Type u_7} [inst_8 : DecidableEq V'] [inst_9 : DecidableEq E']\n  [inst_10 : Fintype V'] [inst_11 : Fintype E'] [inst_12 : Fintype X'] (N : Nanuq.Source.RootedBinary V E X)\n  (N' : Nanuq.Source.RootedBinary V' E' X') {sample : Copy → X} {sample' : Copy → X'} (leafAge : Copy → ℝ)\n  (a : UnifiedLean.Source.UniformizedSourceStep.Code N sample)\n  (b : UnifiedLean.Source.UniformizedSourceStep.Code N' sample') (M : Copy → Copy → ℝ),\n  MSCI.JC69Source.GoodPoint N leafAge (a, M) →\n    MSCI.JC69Source.GoodPoint N' leafAge (b, M) →\n      UnifiedLean.Source.UnrankedGenealogyObservation.sourceUnrankedForest\n            (UnifiedLean.Source.UniformizedSourceStep.state a) Finset.univ =\n          UnifiedLean.Source.UnrankedGenealogyObservation.sourceUnrankedForest\n            (UnifiedLean.Source.UniformizedSourceStep.state b) Finset.univ →\n        MSCI.JC69Source.conditionalKernel N leafAge (a, M) = MSCI.JC69Source.conditionalKernel N' leafAge (b, M)",
+    "ResearchCommons.MSCI.JC69Unranked.conditional_locus_same_timed_observation": "@MSCI.JC69Unranked.conditional_locus_same_timed_observation : ∀ {Copy : Type u_1} [inst : Fintype Copy]\n  [inst_1 : DecidableEq Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [inst_2 : DecidableEq V]\n  [inst_3 : DecidableEq E] [inst_4 : Fintype V] [inst_5 : Fintype E] [inst_6 : Fintype X] [inst_7 : Nonempty Copy]\n  {V' : Type u_5} {E' : Type u_6} {X' : Type u_7} [inst_8 : DecidableEq V'] [inst_9 : DecidableEq E']\n  [inst_10 : Fintype V'] [inst_11 : Fintype E'] [inst_12 : Fintype X'] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)\n  (N' : Nanuq.Source.RootedBinary V' E' X') {sample : Copy → X} {sample' : Copy → X'} (leafAge : Copy → ℝ)\n  (a : UnifiedLean.Source.UniformizedSourceStep.Code N sample)\n  (b : UnifiedLean.Source.UniformizedSourceStep.Code N' sample') (M : Copy → Copy → ℝ),\n  MSCI.JC69Source.GoodPoint N leafAge (a, M) →\n    MSCI.JC69Source.GoodPoint N' leafAge (b, M) →\n      UnifiedLean.Source.UnrankedGenealogyObservation.sourceUnrankedForest\n            (UnifiedLean.Source.UniformizedSourceStep.state a) Finset.univ =\n          UnifiedLean.Source.UnrankedGenealogyObservation.sourceUnrankedForest\n            (UnifiedLean.Source.UniformizedSourceStep.state b) Finset.univ →\n        MSCI.JC69Source.conditionalLocusKernel L N leafAge (a, M) =\n          MSCI.JC69Source.conditionalLocusKernel L N' leafAge (b, M)"
+  },
+  "owned_audit": {
+    "actual_artifact_id": 12547002623,
+    "artifact_bytes": 20594807,
+    "artifact_sha256": "10dfc60acfcc96765697537431ed236f7a710b12f1417a6f09f5d43f7ca36c4c",
+    "actual_archive_recovered_in_memory": true,
+    "raw_audit_path": "build/retained-target-audit/caller-audit.json",
+    "raw_audit_bytes": 33800543,
+    "raw_audit_sha256": "38c47c507e336b7fc623aeb7615a5b7cfc0f0cd1a02d4d7c439c5e67f4007012",
+    "declarations": 22309,
+    "theorems": 14939,
+    "selected_modules": 928,
+    "owned_axioms": [],
+    "nonstandard_axiom_rows": [],
+    "missing_modules": [],
+    "inspection_scope": "Complete audit JSON decoded in RAM, every failure list/count inspected. All5 selected new exact theorem name/owner/kind/standard3-axiom rows and full printed types read; helper rows retained separately. No manual full reading of every old declaration/reference is asserted.",
+    "new_declarations": {
+      "ResearchCommons.MSCI.JC69Unranked.decoded_root_probability_unordered": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.decoded_root_probability_unordered",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.Preserves": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.Preserves",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "definition",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton._simp_1_1": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.completed_forest_singleton._simp_1_1",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.conditional_locus_same_timed_observation": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.conditional_locus_same_timed_observation",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.unordered_decoration_transport": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.unordered_decoration_transport",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation._simp_1_1": {
+        "name": "ResearchCommons.MSCI.JC69Unranked.conditional_kernel_same_timed_observation._simp_1_1",
+        "module": "ResearchCommons.MSCI.JC69Unranked",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  },
+  "scope": "COMPLETE928-source target/owned context and23 SCOPED mappings/150 exact names/owners, including all5 original child-swap/decorated-clock/unranked-observation congruence endpoints. NONEMPTY Copy remains explicit for actual completed Code PMFs; different original graph/taxon/population carriers share the SAME Copy labels, leafAge and observed full forest/matrix. This is conditional/locus congruence, not yet measurable whole-source quotient factorization, empty observer, canonical source/event/recurrence/reconstruction, universal native/provider/parser/AST/history/QE/selector/result or full118 integration. Separate full1657+2root acceptance is unchanged; no new full1659-library result.",
+  "preflight": "integration/JC69-UNRANKED-REUSE-PREFLIGHT.md",
+  "first_attempt_accepted": true,
+  "prior_source_measure_record": "integration/jc69-source-mixture-verification.json",
+  "separate_completed_commands": [
+    {
+      "certificates": [
+        {
+          "kernel_check_passed": true,
+          "module": "PositiveMomentSignature",
+          "source_bytes": 2874,
+          "source_sha256": "c4e3f625499d8de9bfd484ac68dea90aac6cb7e6d751672df563088a697fc3fc"
+        }
+      ],
+      "owned_axiom_audit_passed": true,
+      "profile": "moment-signature-callers",
+      "scope": "Actual supplied rational positive target, complete M0..M2r signature, total mass equality against EVERY finite positive atomic rival and all further moments, under the explicit matching-signature premise. The stochastic reaction/stopped-law/derivative acquisition and general native refinement joins are separate."
+    },
+    {
+      "certificates": [
+        {
+          "kernel_check_passed": true,
+          "module": "JC69Branch",
+          "source_bytes": 1860,
+          "source_sha256": "8c41689baca9fa1025203d7bb9c6cd8359dd0df25e9cf4c65c34de5394a67616"
+        }
+      ],
+      "owned_axiom_audit_passed": true,
+      "profile": "jc69-branch-callers",
+      "scope": "Actual complete sixteen-entry rational JC branch table on the literal four-base/character encoding; every probability and row normalization checked against the constructed normalized clock-JC PMF at ONE returned finite time. Whole original timed-genealogy/event/locus/source admission and universal parser/native/channel refinement remain separate."
+    },
+    {
+      "certificates": [
+        {
+          "kernel_check_passed": true,
+          "module": "JC69TreeColumn",
+          "source_bytes": 6483,
+          "source_sha256": "5dda9e40698ac2014f45f823f3b2cf9cf05087e81c85cfeade5b842f851e0a9b"
+        }
+      ],
+      "owned_axiom_audit_passed": true,
+      "profile": "jc69-tree-callers",
+      "scope": "Actual complete64-entry native mutation channel on ONE retained labelled tree, coherent branch bank and SAME returned chronological ages/decoded pair matrix. All-finite conditional locus product is on that SAME tree. This is not actual demographic source admission, measure-level tree/source/channel law, bounded recurrence/observation equivalence or universal native/parser refinement."
+    },
+    {
+      "certificates": [
+        {
+          "kernel_check_passed": true,
+          "module": "MSCIAlignmentCoherent",
+          "source_bytes": 2336,
+          "source_sha256": "ba44b00766ceacf99b39cf1a7b9f758a197be2b61ebdac2cf2d57036ca9a9c0b"
+        },
+        {
+          "kernel_check_passed": true,
+          "module": "MSCIAlignmentIncoherent",
+          "source_bytes": 2083,
+          "source_sha256": "ce699e336c2d55916bf0b141e2830d2f8685a86bf2f08b2a1bf69e02eca67f7e"
+        }
+      ],
+      "owned_axiom_audit_passed": true,
+      "profile": "msci-alignment-callers",
+      "scope": "Complete actual native finite coherent-parameter filters on supplied rational histories, including every omitted map. One epoch renaming is shared by both adjacent matrices and initial/root names stay fixed. This is not actual canonical physical-source admission, a genealogy-law equivalence proof, observability/coverage or universal native/parser refinement."
+    }
+  ],
+  "word_job": {
+    "id": 120769448710,
+    "status": "in_progress_no_acceptance"
+  },
+  "whole_scientific_claim": false,
+  "warnings": [
+    "Lean reports an unused automatically included section variable in unordered_decoration_transport; no zero-warning claim."
+  ],
+  "next": "Reuse accepted conditional/locus congruence for actual measurable source-observation factorization; empty observer, canonical event coverage/recurrence/reconstruction/native joins remain separate. Exact-query priority10 implementation proceeds independently."
+}

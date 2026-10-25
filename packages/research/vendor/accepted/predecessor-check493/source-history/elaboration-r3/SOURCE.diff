@@ -1,0 +1,85 @@
+--- elaboration-r2b/G4PairedNaturalTreeCertificate.lean
++++ elaboration-r3/G4PairedNaturalTreeCertificate.lean
+@@ -511,7 +511,7 @@
+   have heB := selected_path_unique N (coinSelector N H b) hbiP hbjP
+     (selB i bi pi hbi) (selB j bj pj hbj)
+   obtain ⟨F⟩ := selected_path_fork N (coinSelector N H a) hpi hpj hpiS hpjS
+-  have FA : PathFork N N.root (N.leaf i) (N.leaf j)
++  let FA : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H a).edges i) ((commonRoutes N C H a).edges j) := by
+     exact {
+       vertex := F.vertex
+@@ -522,7 +522,7 @@
+       right_eq := by simpa only [heA,List.append_assoc] using haj.trans (congrArg (aj ++ ·) F.right_eq)
+       stem_path := haiP.append F.stem_path
+       left_path := F.left_path, right_path := F.right_path, separate := F.separate }
+-  have FB : PathFork N N.root (N.leaf i) (N.leaf j)
++  let FB : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H b).edges i) ((commonRoutes N C H b).edges j) := by
+     exact {
+       vertex := F.vertex
+@@ -717,7 +717,7 @@
+       (hpre.append hf)
+       (compiledRoute_source_spec N C (coinSelector N H coin) (N.leaf j)).2
+       (hs _ (respects_append N P hspre hsf))
+-  have G : PathFork N N.root (N.leaf i) (N.leaf j)
++  let G : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H coin).edges i) ((commonRoutes N C H coin).edges j) :=
+     { vertex := F.vertex, stem := pre ++ F.stem, left := F.left, right := F.right,
+       left_eq := by simpa only [List.append_assoc] using hei.trans (congrArg (pre ++ ·) F.left_eq)
+@@ -2232,6 +2232,7 @@
+       apply tsum_congr
+       intro d
+       rw [ENNReal.tsum_mul_left,ih]
++      rfl
+ 
+ open GProgram.G5.SafePrefixRouteBridge
+ 
+@@ -2990,7 +2991,7 @@
+       simpa only [prescribedTrace,List.map_cons,positionTrace] using
+         (congrArg (List.cons (copyLocation (state s) x)) (ih ht hst s hs))
+     | boundary b =>
+-      have hb : IndependentBoundary N b := ho _ (by simp)
++      have hb : IndependentBoundary N b := ho (.boundary b) (List.mem_cons_self ..)
+       simp only [prescribedTrace,List.map_cons,positionTrace]
+       rw [ih ht hst.2 _ (prescribedBoundary_full_card N reg b hst.1 s hs),
+         prescribedBoundary_copyLocation N reg b hb s hs x]
+@@ -3226,7 +3227,7 @@
+       prefixThrough N C H gamma common pre guard ++
+         .interval (Real.toNNReal (next-guard)) :: tail := by
+   rw [literalPrefix,beforeBoundaryProgram_after_guard N C H gamma common pre post guard next (C.age v) hsplit hlt]
+-  let exits := ((originalExits N C (C.age v)).take (lastChildCutLength N C v ei ej)).map
++  let exits := ((G1OriginalCalendarDecomposition.originalExits N C (C.age v)).take (lastChildCutLength N C v ei ej)).map
+     (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+   by_cases hn : next = C.age v
+   · refine ⟨exits,?_⟩
+@@ -3573,7 +3574,8 @@
+       (literalPrefix N C H (originalGamma p) (fun _ => false) v ei ej)
+       (initialCode N sample ρ)) s = 0
+   · simp only [hs,zero_mul,ite_self]
+-  · rw [actual_independent_literal_crossed_reader N C H p r hg sample h0 h1 h2 ρ s
++  · dsimp only
++    rw [actual_independent_literal_crossed_reader N C H p r hg sample h0 h1 h2 ρ s
+       ((PMF.mem_support_iff _ _).mpr hs)]
+     by_cases hc : liveCard s = 3 <;> simp only [hc,eq_comm,if_true,if_false,mul_zero,zero_mul]
+ 
+@@ -3861,8 +3863,8 @@
+     exact Finset.mem_image.mpr ⟨_,hs.ancestor_live (e.symm x),rfl⟩
+   · intro l hl
+     obtain ⟨k,hk,rfl⟩ := Finset.mem_image.mp hl
+-    change e (s.ancestor k) = e k
+-    exact congrArg e (hs.representative k hk)
++    simpa only [decodeSnapshot,renameSnapshot,Equiv.symm_apply_apply] using
++      congrArg e (hs.representative k hk)
+   · intro l hl x
+     obtain ⟨k,hk,rfl⟩ := Finset.mem_image.mp hl
+     rw [renameSnapshot_genealogy,mapLabels_leaves]
+@@ -3872,7 +3874,7 @@
+       obtain ⟨y,hy,hyx⟩ := Finset.mem_image.mp hx
+       have ha := (hs.leaf_fiber k hk y).mp hy
+       subst x
+-      simpa only [Equiv.symm_apply_apply] using congrArg e ha
++      simpa only [decodeSnapshot,Equiv.symm_apply_apply] using congrArg e ha
+     · intro hx
+       have ha : (decodeSnapshot root s).ancestor (e.symm x) = k := e.injective hx
+       exact Finset.mem_image.mpr ⟨e.symm x,(hs.leaf_fiber k hk _).mpr ha,e.apply_symm_apply x⟩

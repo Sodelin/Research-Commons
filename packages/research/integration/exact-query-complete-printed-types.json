@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
+  "run": 40088841986,
+  "job": 120857307451,
+  "unique_names": 21,
+  "rows": [
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.interval_displays_iff_rectangle",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.interval_displays_iff_rectangle",
+      "type": "ExactQuery.Rectangle.interval_displays_iff_rectangle : ∀ (a b c d i j : ℕ),\n  a < b → b < c → c < d → (ExactQuery.Rectangle.DisplaysADBC i j a b c d ↔ ExactQuery.Rectangle.InRectangle a b c d i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.split_union_rectangle_oracle",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.split_union_rectangle_oracle",
+      "type": "ExactQuery.Rectangle.split_union_rectangle_oracle : ∀ (S : Finset (ℕ × ℕ)) (a b c d : ℕ),\n  a < b →\n    b < c →\n      c < d →\n        ((∃ g ∈ S, ExactQuery.Rectangle.DisplaysADBC g.1 g.2 a b c d) ↔\n          ∃ g ∈ S, ExactQuery.Rectangle.InRectangle a b c d g.1 g.2)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_left_partition",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.rectangle_left_partition",
+      "type": "ExactQuery.Rectangle.rectangle_left_partition : ∀ (a m b c d i j : ℕ),\n  a ≤ m →\n    m ≤ b →\n      (ExactQuery.Rectangle.InRectangle a b c d i j ↔\n        ExactQuery.Rectangle.InRectangle a m c d i j ∨ ExactQuery.Rectangle.InRectangle m b c d i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_right_partition",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.rectangle_right_partition",
+      "type": "ExactQuery.Rectangle.rectangle_right_partition : ∀ (a b c m d i j : ℕ),\n  c ≤ m →\n    m ≤ d →\n      (ExactQuery.Rectangle.InRectangle a b c d i j ↔\n        ExactQuery.Rectangle.InRectangle a b c m i j ∨ ExactQuery.Rectangle.InRectangle a b m d i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.rectangle_singleton",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.rectangle_singleton",
+      "type": "ExactQuery.Rectangle.rectangle_singleton : ∀ (a c i j : ℕ),\n  ExactQuery.Rectangle.InRectangle a (a + 1) c (c + 1) i j ↔ i = a ∧ j = c"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.wrap_query_singleton",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.wrap_query_singleton",
+      "type": "ExactQuery.Rectangle.wrap_query_singleton : ∀ (n k i j : ℕ),\n  1 ≤ k → k + 2 < n → i < j → j < n → (ExactQuery.Rectangle.DisplaysABCD i j 0 k (k + 1) (n - 1) ↔ i = k ∧ j = n - 1)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.OriginalRepresentative",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.OriginalRepresentative",
+      "type": "ExactQuery.Source.OriginalRepresentative : (X : Type u_1) → [Fintype X] → Type u_1"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.OriginalCircle",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.OriginalCircle",
+      "type": "ExactQuery.Source.OriginalCircle : (X : Type u_1) → [Fintype X] → Type u_1"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_circle_identity",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_circle_identity",
+      "type": "ExactQuery.Source.original_circle_identity : ∀ (X : Type u_1) [inst : Fintype X]\n  (r s : G1ExactCircularOrderCarrier.Representative X),\n  G1ExactCircularOrderCarrier.circleOf X r = G1ExactCircularOrderCarrier.circleOf X s ↔ ↑r ~r ↑s ∨ (↑r).reverse ~r ↑s"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_split_target",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_split_target",
+      "type": "@ExactQuery.Source.original_split_target : {V : Type u_1} →\n  {E : Type u_2} →\n    {X : Type u_3} →\n      [inst : Fintype V] →\n        [inst_1 : Fintype E] →\n          [inst_2 : Fintype X] →\n            [inst_3 : DecidableEq V] → Nanuq.Source.RootedBinary V E X → Finset X → Finset (Finset (Finset X))"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_split_evaluator",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_split_evaluator",
+      "type": "@ExactQuery.Source.original_split_evaluator : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] [DecidableEq E]\n  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (panel : Finset X) (cut : Finset (Finset X)),\n  cut ∈ G1AcceptedNontrivialSplitTarget.acceptedDisplayedSplits N panel ↔\n    ∃ S T,\n      GProgram.G5.Normalization.PrunedAt N S panel N.root (some T) ∧\n        cut ∈ G1AcceptedNontrivialSplitTarget.acceptedRootSuppressedSplits T"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_source_orders",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_source_orders",
+      "type": "@ExactQuery.Source.original_source_orders : {V : Type u_1} →\n  {E : Type u_2} →\n    {X : Type u_3} →\n      [inst : Fintype V] →\n        [inst_1 : Fintype E] →\n          [inst_2 : Fintype X] →\n            [inst_3 : DecidableEq V] →\n              Nanuq.Source.RootedBinary V E X → Finset (G1ExactCircularOrderCarrier.TaxonCircle X)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_orders_normalized",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_orders_normalized",
+      "type": "@ExactQuery.Source.original_orders_normalized : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] [DecidableEq E]\n  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph)\n  (circle : G1ExactCircularOrderCarrier.TaxonCircle X),\n  circle ∈ G1AcceptedAllCompatibleCircularOrders.sourceCompatibleOrders N ↔\n    ∀ (switching : N.Switching) (tree : GProgram.SourceForest.Genealogy X),\n      GProgram.G5.Normalization.PrunedAt N switching Finset.univ N.root (some tree) →\n        ∀ cut ∈ G1AcceptedNontrivialSplitTarget.acceptedRootSuppressedSplits tree,\n          G1ActualCircularSplitCompatibility.SplitCompatible circle cut"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_bounded_targets_and_circles",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_bounded_targets_and_circles",
+      "type": "@ExactQuery.Source.original_bounded_targets_and_circles : ∀ {Y : Type u_1} [inst : Fintype Y]\n  (O : G1ActualGraphNormalization.Source Y)\n  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry O.network),\n  ∃ T D,\n    G1ActualGraphNormalization.Steps O T ∧\n      G1FiniteOriginalDecoratedCore.Originated O H D ∧\n        G1ActualGraphNormalization.Reduced T ∧\n          (G1ReducedCoreCounts.hybrids T.network).card ≤ 2 * Fintype.card Y - 2 ∧\n            Fintype.card T.Vertex ≤ 6 * Fintype.card Y - 5 ∧\n              Fintype.card T.Edge ≤ 8 * Fintype.card Y - 8 ∧\n                (∀ (panel : Finset Y),\n                    G1ActualDisplayedClusterSplitTransport.actualDisplayedClusters T.network panel =\n                        G1ActualDisplayedClusterSplitTransport.actualDisplayedClusters O.network panel ∧\n                      G1AcceptedNontrivialSplitTarget.acceptedDisplayedSplits T.network panel =\n                        G1AcceptedNontrivialSplitTarget.acceptedDisplayedSplits O.network panel) ∧\n                  (∀ (q : Fin 4 ↪ Y),\n                      GProgram.G5.Normalization.normalizedDisplayedCutQuartets T.network q =\n                        GProgram.G5.Normalization.normalizedDisplayedCutQuartets O.network q) ∧\n                    G1AcceptedAllCompatibleCircularOrders.sourceCompatibleOrders T.network =\n                      G1AcceptedAllCompatibleCircularOrders.sourceCompatibleOrders O.network"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.ExactQuery.Source.original_quartet_splice",
+      "owning_module": "ResearchCommons.ExactQuery.Source",
+      "printed_name": "ExactQuery.Source.original_quartet_splice",
+      "type": "@ExactQuery.Source.original_quartet_splice : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] [inst_4 : DecidableEq E]\n  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (hc : G1CutChildPorts.CutChild N)\n  (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : G1ActualTwoPortBlob.ActualBlobBigon N b) (q : Fin 4 ↪ X),\n  GProgram.G5.Normalization.normalizedDisplayedCutQuartets (G1SplicedSourceAdmission.splicedNetwork N hc b hb A) q =\n    GProgram.G5.Normalization.normalizedDisplayedCutQuartets N q"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.triangle_mid_partition",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.triangle_mid_partition",
+      "type": "ExactQuery.Rectangle.triangle_mid_partition : ∀ (l m r i j : ℕ),\n  l < m →\n    m < r →\n      (ExactQuery.Rectangle.Triangle l r i j ↔\n        ExactQuery.Rectangle.InRectangle l (m - 1) m r i j ∨\n          ExactQuery.Rectangle.InRectangle (m - 1) m (m + 1) r i j ∨\n            ExactQuery.Rectangle.Triangle l m i j ∨ ExactQuery.Rectangle.Triangle m r i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.triangle_mid_disjoint",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.triangle_mid_disjoint",
+      "type": "ExactQuery.Rectangle.triangle_mid_disjoint : ∀ (l m r i j : ℕ),\n  (ExactQuery.Rectangle.InRectangle l (m - 1) m r i j →\n      ¬ExactQuery.Rectangle.InRectangle (m - 1) m (m + 1) r i j ∧\n        ¬ExactQuery.Rectangle.Triangle l m i j ∧ ¬ExactQuery.Rectangle.Triangle m r i j) ∧\n    (ExactQuery.Rectangle.InRectangle (m - 1) m (m + 1) r i j →\n        ¬ExactQuery.Rectangle.Triangle l m i j ∧ ¬ExactQuery.Rectangle.Triangle m r i j) ∧\n      (ExactQuery.Rectangle.Triangle l m i j → ¬ExactQuery.Rectangle.Triangle m r i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.seed_covered_iff_triangle",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.seed_covered_iff_triangle",
+      "type": "ExactQuery.Rectangle.seed_covered_iff_triangle : ∀ (l r i j : ℕ),\n  ExactQuery.Rectangle.SeedCovered l r i j ↔ ExactQuery.Rectangle.Triangle l r i j"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.all_candidates_covered",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.all_candidates_covered",
+      "type": "ExactQuery.Rectangle.all_candidates_covered : ∀ (n i j : ℕ),\n  4 ≤ n →\n    (ExactQuery.Rectangle.CandidateSplit n i j ↔\n      ExactQuery.Rectangle.SeedCovered 0 (n - 1) i j ∨ ExactQuery.Rectangle.WrapCandidate n i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.wrap_and_nonwrap_disjoint",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.wrap_and_nonwrap_disjoint",
+      "type": "ExactQuery.Rectangle.wrap_and_nonwrap_disjoint : ∀ (n i j : ℕ),\n  ¬(ExactQuery.Rectangle.SeedCovered 0 (n - 1) i j ∧ ExactQuery.Rectangle.WrapCandidate n i j)"
+    },
+    {
+      "axiom_source": "actual complete owned audit collectAxioms record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.ExactQuery.Rectangle.emitted_roots_have_distinct_query_positions",
+      "owning_module": "ResearchCommons.ExactQuery.Rectangle",
+      "printed_name": "ExactQuery.Rectangle.emitted_roots_have_distinct_query_positions",
+      "type": "ExactQuery.Rectangle.emitted_roots_have_distinct_query_positions : ∀ (l m r : ℕ),\n  l < m → m < r → (l < m - 1 → l < m - 1 ∧ m - 1 < m ∧ m < r) ∧ (m + 1 < r → m - 1 < m ∧ m < m + 1 ∧ m + 1 < r)"
+    }
+  ]
+}

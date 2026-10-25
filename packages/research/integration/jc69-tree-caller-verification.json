@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "status": "COMPLETE_ACTUAL_NATIVE_64_PATTERN_TREE_CALLER_ACCEPTED",
+  "source_commit": "631dbaa0f795381368c88d4326e3f8b84b3821c5",
+  "run_id": 40047327555,
+  "job_id": 120732128776,
+  "url": "https://github.com/Sodelin/Research-Commons/actions/runs/40047327555/job/120732128776",
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "rust": "1.90.0",
+  "rust_tests": 97,
+  "rust_job_id": 120731934341,
+  "caller_receipt": {
+    "certificates": [
+      {
+        "kernel_check_passed": true,
+        "module": "JC69TreeColumn",
+        "source_bytes": 6483,
+        "source_sha256": "5dda9e40698ac2014f45f823f3b2cf9cf05087e81c85cfeade5b842f851e0a9b"
+      }
+    ],
+    "owned_axiom_audit_passed": true,
+    "profile": "jc69-tree-callers",
+    "scope": "Actual complete64-entry native mutation channel on ONE retained labelled tree, coherent branch bank and SAME returned chronological ages/decoded pair matrix. All-finite conditional locus product is on that SAME tree. This is not actual demographic source admission, measure-level tree/source/channel law, bounded recurrence/observation equivalence or universal native/parser refinement."
+  },
+  "source_bytes": 6483,
+  "source_sha256": "5dda9e40698ac2014f45f823f3b2cf9cf05087e81c85cfeade5b842f851e0a9b",
+  "actual_source": "import ResearchCommons.MSCI.JC69Tree\nimport Mathlib.Tactic\n\nset_option maxRecDepth 10000\nset_option maxHeartbeats 8000000\nset_option backward.isDefEq.respectTransparency false\nnamespace ResearchCommons.Generated.JC69TreeColumn\nnoncomputable section\nopen ResearchCommons.MSCI.JC69\nopen ResearchCommons.MSCI.JC69Tree\nopen GProgram.SourceForest\nopen GProgram.G2.FaithfulPairAgeDecoration GProgram.G2.ChronologicalDecoration\nopen scoped BigOperators NNReal Classical\ndef originalTree : Genealogy (Fin 3) := .graft (.graft (.leaf 0) (.leaf 1)) (.leaf 2)\ndef suppliedSurvivals : Survivals originalTree :=\n  ((2/3 : ℝ), (2/5 : ℝ), ((3/5 : ℝ), (3/5 : ℝ), PUnit.unit, PUnit.unit), PUnit.unit)\ndef nativeRows : Fin 4 → Fin 4 → Fin 4 → ℚ := ![![![(113 / 2000 : ℚ), (49 / 2000 : ℚ), (49 / 2000 : ℚ), (49 / 2000 : ℚ)], ![(3 / 250 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ), (1 / 125 : ℚ)], ![(3 / 250 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ)], ![(3 / 250 : ℚ), (1 / 125 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ)]],\n  ![![(3 / 250 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ), (1 / 125 : ℚ)], ![(49 / 2000 : ℚ), (113 / 2000 : ℚ), (49 / 2000 : ℚ), (49 / 2000 : ℚ)], ![(1 / 125 : ℚ), (3 / 250 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ)], ![(1 / 125 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ)]],\n  ![![(3 / 250 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ)], ![(1 / 125 : ℚ), (3 / 250 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ)], ![(49 / 2000 : ℚ), (49 / 2000 : ℚ), (113 / 2000 : ℚ), (49 / 2000 : ℚ)], ![(1 / 125 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ), (3 / 250 : ℚ)]],\n  ![![(3 / 250 : ℚ), (1 / 125 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ)], ![(1 / 125 : ℚ), (3 / 250 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ)], ![(1 / 125 : ℚ), (1 / 125 : ℚ), (3 / 250 : ℚ), (3 / 250 : ℚ)], ![(49 / 2000 : ℚ), (49 / 2000 : ℚ), (49 / 2000 : ℚ), (113 / 2000 : ℚ)]]]\ntheorem every_native_pattern_checked (a b c : Base) :\n    (nativeRows (number a) (number b) (number c) : ℝ) =\n      rootLikelihood originalTree suppliedSurvivals ((a,b),c) := by\n  dsimp only [originalTree, suppliedSurvivals, rootLikelihood, likelihood, Pattern, patternFintype]\n  rcases a with ⟨a0,a1⟩\n  rcases b with ⟨b0,b1⟩\n  rcases c with ⟨c0,c1⟩\n  fin_cases a0 <;> fin_cases a1 <;> fin_cases b0 <;> fin_cases b1 <;>\n    fin_cases c0 <;> fin_cases c1 <;>\n    norm_num [nativeRows, originalTree, suppliedSurvivals, rootLikelihood, likelihood,\n      probability, number, Fintype.sum_prod_type, Fin.sum_univ_two]\ntheorem complete_native_column_normalized :\n    (∑ a : Base, ∑ b : Base, ∑ c : Base,\n      (nativeRows (number a) (number b) (number c) : ℝ)) = 1 := by\n  simp_rw [every_native_pattern_checked]\n  have h := root_likelihood_sum originalTree suppliedSurvivals\n  simpa only [originalTree, Pattern, patternFintype, Fintype.sum_prod_type] using h\n\nnoncomputable def innerTime : ℝ≥0 := timeOfSurvival ⟨(3/5 : ℝ), by norm_num⟩\nnoncomputable def rootTime : ℝ≥0 := timeOfSurvival ⟨(2/5 : ℝ), by norm_num⟩\ndef leafAge : Fin 3 → ℝ := fun _ => 0\nnoncomputable def actualDecoration : Decoration originalTree :=\n  ((rootTime : ℝ), ((innerTime : ℝ), PUnit.unit, PUnit.unit), PUnit.unit)\ntheorem inner_positive : 0 < (innerTime : ℝ) := by\n  change 0 < -((3/4 : ℝ)) * Real.log (3/5 : ℝ)\n  have h := Real.log_neg (by norm_num : (0 : ℝ) < 3/5) (by norm_num : (3/5 : ℝ) < 1)\n  nlinarith\ntheorem times_ordered : (innerTime : ℝ) < (rootTime : ℝ) := by\n  change -((3/4 : ℝ)) * Real.log (3/5 : ℝ) < -((3/4 : ℝ)) * Real.log (2/5 : ℝ)\n  have h := Real.log_lt_log (by norm_num : (0 : ℝ) < 2/5) (by norm_num : (2/5 : ℝ) < 3/5)\n  nlinarith\ntheorem actual_chronology : Chronological leafAge originalTree actualDecoration := by\n  change (True ∧ True ∧ (0 : ℝ) < innerTime ∧ (0 : ℝ) < innerTime) ∧\n    True ∧ (innerTime : ℝ) < rootTime ∧ (0 : ℝ) < rootTime\n  exact ⟨⟨True.intro,True.intro,inner_positive,inner_positive⟩,\n    True.intro,times_ordered,inner_positive.trans times_ordered⟩\ntheorem inner_clock : (clockSurvival innerTime : ℝ) = 3/5 :=\n  clock_survival_timeOfSurvival ⟨(3/5 : ℝ), by norm_num⟩\ntheorem root_clock : (clockSurvival rootTime : ℝ) = 2/5 :=\n  clock_survival_timeOfSurvival ⟨(2/5 : ℝ), by norm_num⟩\ntheorem branch_clock :\n    Real.exp (-((4/3 : ℝ) * ((rootTime : ℝ) - innerTime))) = 2/3 := by\n  have h : Real.exp (-((4/3 : ℝ) * ((rootTime : ℝ) - innerTime))) =\n      (clockSurvival rootTime : ℝ) / (clockSurvival innerTime : ℝ) := by\n    change Real.exp _ = Real.exp _ / Real.exp _\n    rw [← Real.exp_sub]\n    congr 1\n    ring\n  rw [h,root_clock,inner_clock]\n  norm_num\ntheorem same_returned_clock :\n    clockSurvivals leafAge originalTree actualDecoration = suppliedSurvivals := by\n  have hi : Real.exp (-((4/3 : ℝ) * (innerTime : ℝ))) = 3/5 := inner_clock\n  have hr : Real.exp (-((4/3 : ℝ) * (rootTime : ℝ))) = 2/5 := root_clock\n  simp only [originalTree, actualDecoration, clockSurvivals, rootAge, leafAge, sub_zero,\n    branch_clock, hi, hr, suppliedSurvivals] <;> rfl\ntheorem original_tree_valid : originalTree.WellLabelled := by\n  simp [originalTree, Genealogy.WellLabelled, Genealogy.leaves]\nnoncomputable def originalPairMatrix : Fin 3 → Fin 3 → ℝ :=\n  pairAge leafAge originalTree actualDecoration\ntheorem same_decoded_matrix_clock :\n    clockSurvivals leafAge originalTree (decode originalPairMatrix originalTree) = suppliedSurvivals := by\n  rw [originalPairMatrix,decode_pairAge leafAge originalTree original_tree_valid]\n  exact same_returned_clock\ntheorem same_decoded_clock_column (a b c : Base) :\n    (nativeRows (number a) (number b) (number c) : ℝ) =\n      rootLikelihood originalTree\n        (clockSurvivals leafAge originalTree (decode originalPairMatrix originalTree)) ((a,b),c) := by\n  rw [same_decoded_matrix_clock]\n  exact every_native_pattern_checked a b c\ntheorem same_tree_conditional_locus (L : Nat) (p : Fin L → Pattern originalTree) :\n    locusLikelihood L originalTree\n      (clockSurvivals leafAge originalTree (decode originalPairMatrix originalTree)) p =\n        ∏ j, rootLikelihood originalTree suppliedSurvivals (p j) := by\n  rw [same_decoded_matrix_clock]\n  rfl\n#check every_native_pattern_checked\n#check complete_native_column_normalized\n#check same_decoded_clock_column\n#check same_tree_conditional_locus\nend\nend ResearchCommons.Generated.JC69TreeColumn\n",
+  "independent_complete_source_read_and_hash_check": true,
+  "actual_input": {
+    "original_tree": "((0,1),2)",
+    "original_copy_order": [
+      0,
+      1,
+      2
+    ],
+    "branch_preorder_survivals": [
+      "2/3",
+      "2/5",
+      "3/5",
+      "3/5"
+    ],
+    "rootTime": "timeOfSurvival(2/5)",
+    "innerTime": "timeOfSurvival(3/5)",
+    "leaf_ages": "0",
+    "all_patterns": 64,
+    "one_same_pair_matrix": true
+  },
+  "owned_audit": {
+    "all_imported_module_names": {
+      "entries": 6379
+    },
+    "declaration_count": 22293,
+    "declarations": {
+      "entries": 22293
+    },
+    "missing_modules": [],
+    "nonstandard_axiom_rows": [],
+    "owned_axioms": [],
+    "selected_modules": {
+      "entries": 924
+    },
+    "theorem_declaration_count": 14924
+  },
+  "artifact": {
+    "id": 12541883851,
+    "bytes": 20508432,
+    "sha256": "0846ba6cdbaceeaf94a9eddb1488b859dbed1ce9c346f56264f8aa47a253def9",
+    "actual_zip_recovered_and_hash_matched": true
+  },
+  "scope": "Actual complete64-entry native mutation channel on ONE retained labelled tree, coherent branch bank and SAME returned chronological ages/decoded pair matrix. All-finite conditional locus product is on that SAME tree. This is not actual demographic source admission, measure-level tree/source/channel law, bounded recurrence/observation equivalence or universal native/parser refinement.",
+  "whole_CBMScI001_formalized": false,
+  "scientific_discovery_count": 0,
+  "previous_rejected_attempts_remain": "integration/jc69-tree-caller-rejection.json",
+  "genuine_remaining": [
+    "Original unranked/timed observable quotient and measurable actual source/channel mixture",
+    "Full original source/event class admission and two-sided coverage",
+    "Epoch/root expansion, uniform recurrence and metric-law reconstruction",
+    "Universal native/parser and full118 integration"
+  ]
+}

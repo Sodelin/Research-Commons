@@ -1,0 +1,14 @@
+--- preserved/proposal/build_paired492.py
++++ current/proposal/build_paired492.py
+@@ -3,9 +3,9 @@
+ import hashlib,json,sys,types,shutil
+ ROOT=Path(__file__).resolve().parents[1]
+ TARGET='candidate/g4-paired-natural-tree-certificate'
+-GRAPH_SHA='cef2740f0faa2faebc9ef315e9f7a4794cec3b2cde8d6af74750ecb14174d0b1'
++GRAPH_SHA='76503141a0842b6d7c5049394b7776b09a989f1efe88355e52252935b7b388c5'
+ STREAMED_SHA='748ea65d03736c89f6f868e431e00cdc9e21937273c227e9b5cc5c16a1e37ea1'
+-FRESH={'G4PairedNaturalTreeCertificate': '44126fb4acb9b8543182c317c3cfa810758ea59f6270e0df8a7ba513fb1a2edf'}
++FRESH={'G4PairedNaturalTreeCertificate': 'dddf7d62071fe76dfb4d7459381a547864254ea82a5a3f68031e5b37a66a3096'}
+ OWNED={'Mathlib.Algebra.MvPolynomial.Polynomial': '43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650', 'Mathlib.Algebra.MvPolynomial.Funext': 'cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e', 'Mathlib.Algebra.Polynomial.CoeffList': '98bacb29fe3175fbb3f17544b09c1bf1324871d12bee6551638c5e42e713b269', 'Mathlib.Data.List.Destutter': 'adaa2255e20191805154bda8e146bc419cbd4550f36fb5f63dfee289f9342134', 'Mathlib.Algebra.Polynomial.RuleOfSigns': '7e8c440db1d4d9ecdeb248f2caac59cbd71351f10f1ffdd82d66daebcfe84b3e', 'Mathlib.Algebra.Polynomial.Basis': '75b326d7f4d3216da9e58dce0bd38d97bd55c41ab016e6deafd74eb82e7bca8d', 'Mathlib.Analysis.Asymptotics.SpecificAsymptotics': '1e238d248bacb49378e0961d34e99f4ba9a876498ceaed7ce27e654a4334b738', 'Mathlib.Analysis.Polynomial.Basic': '6cd16c6cc5450af245e00c691f20dd2a63f072f54ad0361e0c3fea3a08b76d00', 'Mathlib.Analysis.Polynomial.Order': 'bf05560594215319b7288b07403bd818d378f6f8e2ea59da58d31cde31ae6d27'}
+ def require(x,msg):
+  if not x:raise ValueError(msg)

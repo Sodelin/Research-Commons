@@ -1,0 +1,1167 @@
+{
+  "schema": 1,
+  "canonical_registry": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "447e188def18d91133260f14baf9bdc8ffd5b4df",
+    "git_blob": "ebe7a376366fbd787767275404371d4497d1128e",
+    "claims": 118
+  },
+  "ranking": {
+    "commit": "fa5e0a00c839a27fce603aba8050cd32c1f10c7c",
+    "git_blob": "21cdafecd9835c396af2a084351dfe100b1b4e48",
+    "subjective": true,
+    "ranked": 75,
+    "unranked": 43
+  },
+  "lean_profile": {
+    "directory": "vendor/accepted",
+    "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+    "tree": "28afdbeea826fca05f677eeb7d37a0325d185d31",
+    "graph_sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13",
+    "module_count": 1613,
+    "source_store_count": 1614,
+    "historical_acceptance_transferred": false
+  },
+  "rust_engine": {
+    "commit": "3b1019b68e2838cfc4085783a37c3ab0d7736273",
+    "tree": "0d3c2c770fc49491a07995afefba7975d0c7ecba",
+    "library": "vendor/g7-source/native/g7-formula",
+    "source_only_at_import": true,
+    "variants": [
+      {
+        "path": "vendor/g7-source/native/g7_exact_law_formula.rs",
+        "original_sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40",
+        "edit": "Formula::Exists(_) -> Formula::Exists(..)",
+        "reason": "Actual rustc1.90 E0023 at line1349: Exists(Vec<Symbol>,FormulaId) has two fields.",
+        "evidence_run": 39940552120,
+        "evidence_job": 120370631442,
+        "canonical_original_changed": false
+      },
+      {
+        "path": "vendor/g7-source/native/g7_population_certificate.rs",
+        "original_sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c",
+        "current_sha256": "6805ce771af8b97d100a4c0a33d3b52e0c253b698d84b2e0913f0e9dfd7f710d",
+        "edit": "Factor existing context-declaration rendering without changing emitted bytes; expose bounded read-only context/snapshot/selected-view literal renderers.",
+        "reason": "The original private literal renderers are needed by the actual mixed-population epoch caller. Reusing them avoids a duplicate source/snapshot format. Population/epoch engines, parser, arithmetic, protocol, caps and existing prepare semantics are unchanged.",
+        "original_reconstruction_checked": true,
+        "canonical_original_changed": false,
+        "current_variant_compiled": true,
+        "prior_compiled_sha256": "3c6066f85cd9a6ad0b5ae41bf68c62a732dfd6ce953c261a9011abfc100ac9c7",
+        "prior_compiled_run": 39980748827,
+        "prior_compiled_job": 120507078259,
+        "current_compile_evidence": {
+          "source_commit": "67ef70da6fe13bce5e43faf028f864b33c2d56e7",
+          "run_id": 39981685853,
+          "rust_job": 120510313499,
+          "native_epoch_job": 120510640202,
+          "full_profile_job": 120510640198
+        },
+        "actual_scope": "Read-only rendering variant compiles, legacy population documents remain byte-identical, and actual mixed-epoch literal proof/caller audit passed. No universal native implementation/refinement is inferred."
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "vendor/accepted/DEPENDENCY-GRAPH.json",
+      "sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13"
+    },
+    {
+      "path": "registry/claims.json",
+      "sha256": "b4c4f52a5e25d7c82df329a403dbacc3a12afd337a847d9f492bf4fe465738c9"
+    },
+    {
+      "path": "registry/reuse-ranking.json",
+      "sha256": "37ae6e57f9a62022bcb4d4c9fbc8c347257d0b85ef2a3ba6179504c8b11bf8a4"
+    },
+    {
+      "path": "vendor/g7-source/native/g7_population_certificate.rs",
+      "sha256": "6805ce771af8b97d100a4c0a33d3b52e0c253b698d84b2e0913f0e9dfd7f710d"
+    }
+  ],
+  "compiler_release": {
+    "lean_version": "4.33.1",
+    "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+    "url": "https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst",
+    "sha256": "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235",
+    "observed_job": 120389497407
+  },
+  "additional_source_integrations": [
+    {
+      "programme": "CB-CAUSAL-001/002/003",
+      "repository": "Sodelin/Research-Commons",
+      "commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
+      "directory": "vendor/restricted-causal-source",
+      "git_tree": "452930b20b5db3f500ffa4d25fe97428b95ca2eb",
+      "source_modules": 146,
+      "inventory": "integration/causal-source-intake.json",
+      "historical_hand_status_transferred_as_hand_only": true,
+      "existing_kernel_acceptance": false,
+      "variants": [
+        "G7ResourceGamePort selects an explicit import of existing checked game; original port remains unchanged in vendor snapshot",
+        {
+          "module": "RationalPolynomialAvoidance",
+          "original_sha256": "9969f3c5fdb2344d5136f4e109a293fee4771d3d09d4f22cccb7c2b8adda7ce6",
+          "selected_sha256": "36a72240fdc35223449c801013ad61c0dfa28820f49ca10b7cf94b08f69eb5ec",
+          "edit": "ONE pinned Mathlib.Algebra.Order.Field.Basic import provides existing LinearOrderedSemiField.toDenselyOrdered; all original theorem statements/proof bodies byte-identical",
+          "pinned_instance_source": {
+            "repository": "leanprover-community/mathlib4",
+            "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+            "path": "Mathlib/Algebra/Order/Field/Basic.lean",
+            "bytes": 34578,
+            "git_blob": "f50b2c06f3020b5def59b4fb74ea6f05bd27f13e",
+            "sha256": "1d6672beae57890d355067ff20de13b715bece8e87e0d088b7e959e773025f57"
+          },
+          "statements_and_proof_bodies_byte_identical": true,
+          "rejected_prior_variant_sha256": "c32894724ec85eb921f2a031bc3c57514f26a552124530338d907ee76f644ac0"
+        },
+        {
+          "module": "SelectedWalkReduction",
+          "original_sha256": "e5ff79d7cbc1870319baaf30d89f29cd77a96346ce2cf7b0f29e3d1c80450288",
+          "selected_sha256": "723b258cab7519cb867f88bc5a75ed29055c9aad3da5fdf1ce485378ddf637f5",
+          "edit": "Apply append induction hypothesis ih to its existing suffix k; replace four inactive <+ spellings by definitionally identical List.Sublist propositions. No hypotheses/conclusion semantics or source predicate change.",
+          "exact_edits": [
+            [
+              "| cons hstep htail ih => exact .cons hstep ih",
+              "| cons hstep htail ih => exact .cons hstep (ih k)"
+            ],
+            [
+              "(x :: ys) <+ (a :: xs)",
+              "List.Sublist (x :: ys) (a :: xs)"
+            ],
+            [
+              "(a :: ys) <+ (a :: xs)",
+              "List.Sublist (a :: ys) (a :: xs)"
+            ],
+            [
+              "(a :: («prefix» ++ suffix)) <+ (a :: («prefix» ++ (loop ++ suffix)))",
+              "List.Sublist (a :: («prefix» ++ suffix)) (a :: («prefix» ++ (loop ++ suffix)))"
+            ],
+            [
+              "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
+              "List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs)"
+            ]
+          ],
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false
+        },
+        {
+          "module": "BinaryCPTPolynomials",
+          "original_sha256": "04c4de1048ab891198cd48d2e72876655aa0b4146fafff8bcc8c88f255cadaca",
+          "selected_sha256": "e9d051a0cb404a01d32407be8f3639f05cc6e380694f1bcff3acf1e99d8e9aa3",
+          "edit": "Add noncomputable ONLY to five mathematical MvPolynomial construction definitions; all bodies/statements/proof scripts unchanged. Rational mass functions remain executable; native polynomial correspondence is separate.",
+          "definitions": [
+            "bernoulliPolynomial",
+            "jointPolynomial",
+            "cylinderPolynomial",
+            "cellPolynomial",
+            "minorPolynomial"
+          ],
+          "all_definition_bodies_unchanged": true,
+          "all_theorem_statements_and_proofs_unchanged": true,
+          "original_vendor_body_unchanged": true,
+          "native_executable_provider_supplied": false
+        },
+        {
+          "module": "CanonicalSelectionProfile",
+          "original_sha256": "54259697a10a2c9c776e35037c8b0086c7eb7205c0286c17ddf09ea9a55878dd",
+          "selected_sha256": "3dd72f0a8b850ef71f0528556a26f7f1e051072590b1d6d89fc5560276887b7c",
+          "edit": "Give two existing Route.nil terms their original relation/Vertex sum type; cases the original impossible inl=inr equality. No statement/hypothesis/source-profile change.",
+          "exact_edits": [
+            [
+              "| nil x => exact .nil (.inl x)",
+              "| nil x => exact Route.nil (R := Directed (graph Q)) (Sum.inl x : Vertex Q)"
+            ],
+            [
+              "· exact Sum.noConfusion hbad",
+              "· cases hbad"
+            ],
+            [
+              "(lift_observed_route Q h).append (.cons hlast (.nil (.inr s)))",
+              "(lift_observed_route Q h).append\n      (.cons hlast (Route.nil (R := Directed (graph Q)) (Sum.inr s : Vertex Q)))"
+            ]
+          ],
+          "all_theorem_statements_unchanged": true,
+          "original_vendor_body_unchanged": true
+        },
+        {
+          "module": "BinaryBoundaryCircuit",
+          "original_sha256": "750d8a37090ce4202599c6284ca7466ffd7058b409693f53846c0183203f441d",
+          "selected_sha256": "36c066e0c123026590d16baa578737d6ad50e6a9838cb3f9a3aaec410b62528d",
+          "selected_bytes": 9452,
+          "selected_git_blob": "defe5bac183f2784d0e442d9a6793f14f6052f41",
+          "edit": "Name original Boolean case equations, unfold the existing row/parameter before gate cases, and expose the same XOR match before rewriting original parent values. No gate/rank/CPT/source definition or theorem scope changed.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "FiniteQueryPlan",
+          "original_sha256": "7f49a04e94ef82e27bbba5c5c52ab2ade05f1049f580eeb6b72ddf10d07c925c",
+          "selected_sha256": "a6111e7956623bdc59191716a2d11dc087426efc69eebd8b40e47d4b57aae841",
+          "selected_bytes": 6001,
+          "selected_git_blob": "8b939dccb8b2f0dbd2431725d54574d1a700e3b2",
+          "edit": "Simplify the existing literal writeReply equality and remove an omega after simp already closes the positive-length goal. All statements/source fields unchanged.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "SelectedSourceProfile",
+          "original_sha256": "68e7a904ca2a8dc43e307e3ea005d55105578e24396a48894ed503be8756bc31",
+          "selected_sha256": "0aae5e993d860f436dcc0d6fe646b21219579ac5680c7a4a293991fc01246bf6",
+          "selected_bytes": 20311,
+          "selected_git_blob": "3cefc8aa3a5a438fe2dd9b4161c92e2d81d2132f",
+          "edit": "Supply the existing selectedArrival/List carrier and original Sum.inl argument explicitly, spell four existing sublist propositions as List.Sublist, and expose the same original boundary/Component formulas for augmentation. Statement semantics and actual source/mark/selection hypotheses unchanged.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "BinaryCircuitMinor",
+          "original_sha256": "14f0fccc4c14e388bf06a97e7e54d532c7c3e25c505bc39dcc590ff1bfb23fb1",
+          "selected_sha256": "f7441a7a78b98e5b657564998bdb847ce4bacfe826877d00c366efe1662a4d1c",
+          "selected_bytes": 7861,
+          "selected_git_blob": "cd65f0280eb9c1f942b9cefe8c62fcfe3ebdebee",
+          "edit": "Use standard if simplification in the original four endpoint equality proof steps; literal circuit/CPT/minor/slice/source statements unchanged.",
+          "original_vendor_body_unchanged": true,
+          "all_theorem_statements_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "SelectedAncestry",
+          "original_sha256": "5908e9aaf1dd45bfab3b4b84b93c6f3e3db5f3d7951d4f06d32b176cd9c0429b",
+          "selected_sha256": "4baa089b70502d1e44a325b38414011fedf5df4a04c37ae986eb8e87bd16b4a7",
+          "selected_bytes": 6240,
+          "selected_git_blob": "cd295ac0355793efff2ba254e8bd33f9ef564843",
+          "edit": "Give original nil routes the existing Directed(graph H)/Sum X S carrier explicitly and cases the same impossible inl=inr equality; theorem/source hypotheses unchanged.",
+          "original_vendor_body_unchanged": true,
+          "all_theorem_statements_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "CanonicalLatentRoots",
+          "original_sha256": "9b2d3b016d46cd0b799fc7c68bc29f7ba6dc2875f27d5c84bfdc7086df4ce590",
+          "selected_sha256": "8c84dc08cd26826ee7ccf6d1995b2090f5b8045f4ff8b215e6124e2ffdbe0bee",
+          "selected_bytes": 14004,
+          "selected_git_blob": "7368b0f30dee3c635bf6d7c9cc877b45e36aa112",
+          "edit": "Type the SAME identity map (fun x : Vertex G => x) in the original Route.map and use the standard list/identity simplifier. All graph/source data and theorem statements unchanged.",
+          "original_vendor_body_unchanged": true,
+          "all_theorem_statements_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "module": "FiniteProfileRegistry",
+          "original_sha256": "ea27690ca47633687233849cff528bbafd017fe58548d081d9dbcffecde8e94a",
+          "selected_sha256": "360d4fba826f5c1fd672f6c9892cd76e6030c05b73a07aaa1ba635f4d4ea0509",
+          "selected_bytes": 8536,
+          "selected_git_blob": "9f7a020c83f4269577a1a193755bb67ed65b6ca7",
+          "edit": "Import the existing NormNum tactic and close the original remaining literal equality 3*2*2^(2*2)=96. Registry encoding/source hypotheses/cardinality theorem statements unchanged.",
+          "original_vendor_body_unchanged": true,
+          "all_theorem_statements_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK"
+        },
+        {
+          "edit": "Spell original List.Sublist proposition explicitly; type/simplify original identity route and retained optional state activity; derive equality of the existing identical hidden/isSelected predicates and use it explicitly. Original graph/activity/separation statements preserve their semantics; no source law/hypothesis added. Explicitly supply the SAME already-bound mark to uniform_vertex_nodup.",
+          "exact_edits": [
+            [
+              "(⟨x, none⟩ :: ys) <+ (⟨x, none⟩ :: xs)",
+              "List.Sublist (⟨x, none⟩ :: ys) (⟨x, none⟩ :: xs)"
+            ],
+            [
+              "have hp := h.map id (fun a b hab => (dag_directed_exact G a b).mp hab)",
+              "have hp := h.map (fun z : Vertex G => z) (fun a b hab => (dag_directed_exact G a b).mp hab)"
+            ],
+            [
+              "simpa only [List.map_id] using hp",
+              "simpa using hp"
+            ],
+            [
+              "  have hleft : match previous with\n      | none => True\n      | some m => ActiveAt (liftCondition C)\n          (AncestorOf (dagGraph G) (liftCondition C)) (.inl x) m mx := by\n    cases previous with\n    | none => trivial\n    | some m => exact (retained_activity_iff G C x m mx).mpr hactive",
+              "  have hleft : match (retainedState (G := G) ⟨x, previous⟩).incoming with\n      | none => True\n      | some m => ActiveAt (liftCondition C)\n          (AncestorOf (dagGraph G) (liftCondition C))\n          (retainedState (G := G) ⟨x, previous⟩).vertex m mx := by\n    cases previous with\n    | none => trivial\n    | some m =>\n        simpa only [retainedState] using\n          (retained_activity_iff G C x m mx).mpr hactive"
+            ],
+            [
+              "SourceSelection.selected_trace_nil hhidden",
+              "SourceSelection.selected_trace_nil (by simpa only [hidden_eq_isSelected G] using hhidden)"
+            ],
+            [
+              "  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: ys) := by\n    apply (SourceSelection.noObservedRepeat_iff_trace_nodup _).mpr",
+              "  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: ys) := by\n    rw [hidden_eq_isSelected G]\n    apply (SourceSelection.noObservedRepeat_iff_trace_nodup _).mpr"
+            ],
+            [
+              "uniform_walk_to_simple_path (root_incidence_tails G)\n    (fun hfalse => hfalse) hy hobs",
+              "uniform_walk_to_simple_path (root_incidence_tails G)\n    (x := (Sum.inl x : Vertex G)) (fun hfalse => hfalse) hy hobs"
+            ],
+            [
+              "  have hobs := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hobs",
+              "  have hselected := SourceSelection.noObservedRepeat_of_vertex_nodup hsimple\n  have hobs : NoObservedRepeat hidden (retainedState ⟨x, none⟩ :: xs) := by\n    rw [hidden_eq_isSelected G]\n    simpa only [retainedState] using hselected\n  obtain ⟨ys, hy, htrace⟩ := contract_root_route G laws C hp hobs\n  have hnd := (SourceSelection.noObservedRepeat_iff_trace_nodup _).mp hselected"
+            ],
+            [
+              "uniform_vertex_nodup hnd (hobs.sublist hsub)",
+              "uniform_vertex_nodup (mark := mark) hnd (hobs.sublist hsub)"
+            ]
+          ],
+          "module": "CanonicalRootSeparation",
+          "new_source_law_or_axiom": false,
+          "original_sha256": "37790a348399a980e141cec84cafedeff26a2d2bbe6917cbab773d21b9ef296a",
+          "original_vendor_body_unchanged": true,
+          "selected_bytes": 18746,
+          "selected_git_blob": "2e3744dd7159ff4b68b0c0152a846b1efdd6be8b",
+          "selected_sha256": "43f48200996cc1a040ed2a8aa4ee3a2af4e844066addff2a0c0aa94d5a6f4ed7",
+          "statement_semantics_unchanged": true,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "rejected_predecessor_variants": [
+            {
+              "source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998",
+              "sha256": "ec7f3625aa7dbab1d2c752047fc5f68fa7dc8390b8dc161fb3a06c995aae1cce",
+              "run": 40073754206,
+              "job": 120812751977,
+              "diagnostic": "uniform_vertex_nodup could not infer its existing mark"
+            }
+          ]
+        },
+        {
+          "module": "ClosestFirstArrowContradiction",
+          "original_sha256": "3a24af563c8bd535b73d1539d85baf7e7547f42d83cd21eabed623c71dc82dec",
+          "selected_sha256": "543fa49ae316ea451872e1eee8fca1d782ef9f227c14e101b54690f892d54069",
+          "selected_bytes": 7375,
+          "selected_git_blob": "706ccaade02dbbf419f7c6647a11991bbbb42168",
+          "edit": "Replace ONLY original sublist annotation spelling with List.Sublist, as already required/compiled by the same pinned context in earlier modules. Reverse replacement recovers all original source bytes before the explicit compatibility comment. No source predicate/proof-step/statement-semantic change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "exact_edits": [
+            [
+              "keptLeft ++ keptRight <+ x :: old",
+              "List.Sublist (keptLeft ++ keptRight) (x :: old)"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 26,
+              "to_line": 120,
+              "chars": 5959
+            }
+          ],
+          "compiler_error_in_this_unreached_module_not_claimed": true,
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md"
+        },
+        {
+          "module": "CommonDiscriminatingParents",
+          "original_sha256": "a6e3406596a8b2b1b0fb8bc94b7e4eb07dd7ab8fa58aedafc3b00320f6a7dea1",
+          "selected_sha256": "22202a597d67cdc9d346e0df6e3f862c7350c9e7bf148aa87bef4a30d049cdf3",
+          "selected_bytes": 8606,
+          "selected_git_blob": "267c96377540d9f7781c37700ad570343a6732b1",
+          "edit": "Replace ONLY original sublist annotation spelling with List.Sublist, as already required/compiled by the same pinned context in earlier modules. Reverse replacement recovers all original source bytes before the explicit compatibility comment. No source predicate/proof-step/statement-semantic change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "exact_edits": [
+            [
+              "(a :: ys) <+ (a :: xs)",
+              "List.Sublist (a :: ys) (a :: xs)"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 18,
+              "to_line": 35,
+              "chars": 671
+            }
+          ],
+          "compiler_error_in_this_unreached_module_not_claimed": true,
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md"
+        },
+        {
+          "module": "CommonIndicatorRoots",
+          "original_sha256": "9cdf2cd713e7a37ef16194a728f8cbf949a24c3f9b2d42f3989f7baedb694ea6",
+          "selected_sha256": "6e78a0bca0c84269364fe69842edcfb57ed78358e41736747aa464ab033e51b1",
+          "selected_bytes": 10658,
+          "selected_git_blob": "90f4d3338cdf8f4a1145e085ca97c72eb15a41c5",
+          "edit": "Retain the original indicator/root map, source112 WithBot tactic cases and explicit identity simplifications. Spell the remaining WithBot embeddings as typed coercions and apply ACTUAL pinned WithBot.coe_inj. Source113's WithBot.coe function spelling was invalid (a Coe instance). No definition/hypothesis/conclusion change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": true,
+          "future_blocked_module_compatibility_review": false,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            "indicator_arrow_equiv"
+          ],
+          "actual_rejected_source": "4f45368c705390c65b2a74bd80d9095f7dcd6ddb",
+          "prior_selected_sha256": "6d3ce688252e1b1905490b6ab99a93de03beb711423cec2ebaac9d817f6f85ab",
+          "pinned_original_api": {
+            "repository": "leanprover-community/mathlib4",
+            "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+            "path": "Mathlib/Order/WithBot.lean",
+            "git_blob": "330fe865bdd45f57b53eae43347a7d2cbe105adf",
+            "sha256": "1167c56b29f831e2dbc02a98bd73734867f047b67ba111bc9dba5c9a2bfbbf93",
+            "actual_coe_injective_and_coe_inj_bodies_read": true,
+            "complete_source_manual_read_claimed": false
+          }
+        },
+        {
+          "module": "DirectedBranchSplices",
+          "original_sha256": "c4b73baa4af85cd0f4f809cc83ea2cdc155d1935725bb3b72dfb1c1f081abe7a",
+          "selected_sha256": "0cc519f81521de053a2b7ad4fab8ce53ba597012b5854318825d3625602ff18b",
+          "selected_bytes": 11417,
+          "selected_git_blob": "58b8e02573eeb17d5cd3f8b2bc8a83373b9b3532",
+          "edit": "Replace ONLY original sublist annotation spelling with List.Sublist, as already required/compiled by the same pinned context in earlier modules. Reverse replacement recovers all original source bytes before the explicit compatibility comment. No source predicate/proof-step/statement-semantic change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "exact_edits": [
+            [
+              "«left» ++ «right» <+ «left» ++ (old ++ «right»)",
+              "List.Sublist («left» ++ «right») («left» ++ (old ++ «right»))"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 44,
+              "to_line": 57,
+              "chars": 784
+            }
+          ],
+          "compiler_error_in_this_unreached_module_not_claimed": true,
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md"
+        },
+        {
+          "module": "DiscriminatingSectionExtraction",
+          "original_sha256": "96220eb72990bc7fa90b84d4c2e7338a5b0df3946314bcfcc04c1f86ef886bb7",
+          "selected_sha256": "75220aa044f416e6357c45267f3dddeff2425fbaeed193f37c8dd764502dc334",
+          "selected_bytes": 12589,
+          "selected_git_blob": "106bf49d3f87c390db08307bf87303e3a02f7745",
+          "edit": "Separate existing empty-tail forall proof from its adjacent conjunction; name Route.cons before append; eliminate original impossible mark equality by cases; add existing nil_append normalization at the three actual list mismatches.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE50_SOURCE_AND_FULL1498_CONTEXT",
+          "exact_edits": [
+            [
+              "(b :: suffix) <+ (p :: xs)",
+              "List.Sublist (b :: suffix) (p :: xs)"
+            ],
+            [
+              "(((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [b.vertex, y.vertex]) <+\n            ((((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [b.vertex, y.vertex]) ++ suffix.map Arrival.vertex)",
+              "List.Sublist (((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [b.vertex, y.vertex])\n            ((((⟨x, none⟩ :: «prefix»).map Arrival.vertex) ++ [b.vertex, y.vertex]) ++ suffix.map Arrival.vertex)"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": false,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 25,
+              "to_line": 51,
+              "chars": 1225
+            },
+            {
+              "from_line": 142,
+              "to_line": 218,
+              "chars": 4914
+            }
+          ],
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md",
+          "prior_spelling_variant_sha256": "27c52aa2e62be6f31d448b3709ba4d097a3926425271c87adeee58ba82d25686",
+          "all6_selected_theorem_headers_unchanged": true,
+          "complete_original_and_successor_byte_equal": true,
+          "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+          "actual_compile_rejection": {
+            "source": "d2d71e9bef8aff67d48b6e3fefeccc9b97198b6f",
+            "run": 40135877177,
+            "job": 120997310447
+          },
+          "current_proof_edits": [
+            [
+              "      · exact Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp,\n          by intro r hr; cases hr, List.Sublist.refl _⟩",
+              "      · refine Or.inr ⟨p, [], [], .nil p, .nil p, rfl, hp, ?_, List.Sublist.refl _⟩\n        intro r hr\n        cases hr"
+            ],
+            [
+              "    (.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))",
+              "    (Route.cons originalStep hq).append (.cons qb (.cons byStep (.nil y)))"
+            ],
+            [
+              "    exact (Mark.noConfusion «impossible»).elim",
+              "    cases «impossible»"
+            ],
+            [
+              "            List.append_assoc, List.singleton_append] using fullNodup.sublist",
+              "            List.append_assoc, List.singleton_append, List.nil_append] using fullNodup.sublist"
+            ],
+            [
+              "            simpa only [List.cons_append, List.append_assoc, List.singleton_append] using",
+              "            simpa only [List.cons_append, List.append_assoc, List.singleton_append, List.nil_append] using"
+            ],
+            [
+              "            List.append_assoc, List.singleton_append] using congrArg (List.map Arrival.vertex) fullStateEq",
+              "            List.append_assoc, List.singleton_append, List.nil_append] using congrArg (List.map Arrival.vertex) fullStateEq"
+            ]
+          ]
+        },
+        {
+          "module": "MinimalPathChord",
+          "original_sha256": "18c2e7800c0ecf20a0271a6b67babe72039435919d34ac0f3584d9b679be6e64",
+          "selected_sha256": "647e694c299fc068756eda5f6940916ea8bc93b930f8279602ff03aa803c5a9b",
+          "selected_bytes": 5876,
+          "selected_git_blob": "9484b0bd2483677b0f6d49c4b781edb05eac4f4a",
+          "edit": "Quote SAME reserved end constructor binder after existing List.Sublist annotation variant. ALL3 selected theorem headers byte-unchanged.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "ACCEPTED_COMPLETE49_SOURCE_COMPONENT_FULL1498_SEPARATELY_REJECTED",
+          "exact_edits": [
+            [
+              "[b] <+ xs",
+              "List.Sublist [b] xs"
+            ],
+            [
+              "[q.vertex] <+ «section».map Arrival.vertex",
+              "List.Sublist [q.vertex] («section».map Arrival.vertex)"
+            ],
+            [
+              "(x :: («prefix».map Arrival.vertex ++ [q.vertex] ++ suffix.map Arrival.vertex)) <+\n      (x :: («prefix».map Arrival.vertex ++ «section».map Arrival.vertex ++ suffix.map Arrival.vertex))",
+              "List.Sublist (x :: («prefix».map Arrival.vertex ++ [q.vertex] ++ suffix.map Arrival.vertex))\n      (x :: («prefix».map Arrival.vertex ++ «section».map Arrival.vertex ++ suffix.map Arrival.vertex))"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 17,
+              "to_line": 27,
+              "chars": 420
+            },
+            {
+              "from_line": 38,
+              "to_line": 72,
+              "chars": 2536
+            }
+          ],
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md",
+          "prior_spelling_variant_sha256": "cf17b7002c20c413e7171de66304c34904475402d00b8dc05ed8b0a655837045",
+          "verification": "integration/causal-minimal-chord-component-verification.json",
+          "current_proof_edits": [
+            [
+              "    | @cons q «next» end rest «first» tail =>",
+              "    | @cons q «next» «end» rest «first» tail =>"
+            ]
+          ]
+        },
+        {
+          "module": "OriginalProjectionContraction",
+          "original_sha256": "30f282163e2674552464b293ff33144fc0e00790a76bbdb944a44253a45abfe5",
+          "selected_sha256": "0ad728e92cbf267495ada05dc843edc8d1bd1bb8fcc39777f37db9982acfd2d8",
+          "selected_bytes": 8690,
+          "selected_git_blob": "3ddb38407097f34f69af532ace3f7fde4c067f15",
+          "edit": "Replace ONLY original sublist annotation spelling with List.Sublist, as already required/compiled by the same pinned context in earlier modules. Reverse replacement recovers all original source bytes before the explicit compatibility comment. No source predicate/proof-step/statement-semantic change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "exact_edits": [
+            [
+              "(⟨.inl z, some finalMark⟩ :: rest) <+ tail",
+              "List.Sublist (⟨.inl z, some finalMark⟩ :: rest) tail"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 70,
+              "to_line": 127,
+              "chars": 3063
+            }
+          ],
+          "compiler_error_in_this_unreached_module_not_claimed": true,
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md"
+        },
+        {
+          "module": "WeakRouteNormalization",
+          "original_sha256": "9b0f95742bfff0de79355f9d5363865afa37d4b374b852cd590c65c89eb700d7",
+          "selected_sha256": "f8ce8210e29dd55a1321267ecb0435f6122ba065ee7853d0284240ef534eb16d",
+          "selected_bytes": 6454,
+          "selected_git_blob": "67373589d2752caf39c15acd2905dd0562c15d9c",
+          "edit": "Replace ONLY original sublist annotation spelling with List.Sublist, as already required/compiled by the same pinned context in earlier modules. Reverse replacement recovers all original source bytes before the explicit compatibility comment. No source predicate/proof-step/statement-semantic change.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "exact_edits": [
+            [
+              "(p :: ys) <+ (p :: xs)",
+              "List.Sublist (p :: ys) (p :: xs)"
+            ],
+            [
+              "(p :: b :: ys) <+ (p :: b :: rest)",
+              "List.Sublist (p :: b :: ys) (p :: b :: rest)"
+            ],
+            [
+              "(p :: c :: zs) <+ (p :: b :: c :: zs)",
+              "List.Sublist (p :: c :: zs) (p :: b :: c :: zs)"
+            ]
+          ],
+          "original_non_annotation_text_verified_unchanged": true,
+          "complete_matched_theorem_and_proof_reads": [
+            {
+              "from_line": 58,
+              "to_line": 111,
+              "chars": 3097
+            },
+            {
+              "from_line": 112,
+              "to_line": 120,
+              "chars": 508
+            }
+          ],
+          "compiler_error_in_this_unreached_module_not_claimed": true,
+          "preflight": "integration/CAUSAL-LIST-NOTATION-REUSE.md"
+        },
+        {
+          "module": "BinaryTrekDecomposition",
+          "original_sha256": "12c70d9063368cb8b9cf53e63811600a80bdf48090471ef44f6f33544ff0deb3",
+          "selected_sha256": "a699f7f677980354b500f8516eba1dd7ab1e53a4f50d0333ecd3506bce84894b",
+          "selected_bytes": 8505,
+          "selected_git_blob": "60bbdfa3726ed335845bc4c208b8f80a7fb8519b",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 34,
+              "to": 41
+            }
+          ]
+        },
+        {
+          "module": "ClosestPathAncestry",
+          "original_sha256": "bba7e186add204adecfd80d230502e1e6e83b67ee25e6c20f3c7cb984b67155b",
+          "selected_sha256": "f9bd5e16d6cc1445755db3daec1d383b3ebe2b6e2d3a6b8b42c69a6c65da4f4d",
+          "selected_bytes": 7815,
+          "selected_git_blob": "09cd0a8513b706350cc6d841cb9b3b5cc93f37bd",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 102,
+              "to": 133
+            }
+          ]
+        },
+        {
+          "module": "InducingPathSeparation",
+          "original_sha256": "77b22400f1621d0a5abaa3c78bc31c607951fdbf16dd6e488164484c0a386d2e",
+          "selected_sha256": "56d9ea5f0a25910834418f0fbbc08176c380e3fd16c44ec48a849bfb462013d6",
+          "selected_bytes": 13502,
+          "selected_git_blob": "7bf78c0ffb056879a4874586c377fa32a29f70f9",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 126,
+              "to": 175
+            }
+          ]
+        },
+        {
+          "module": "MarkedActiveWalks",
+          "original_sha256": "57a6fd8d1aca2a456c3e2cefcf2716ceeb1c8783e7cc5af4d98966938052a32f",
+          "selected_sha256": "55a37a550cc486479da37b0291f24882b668eb18ddfcf69fb6241263a76994ec",
+          "selected_bytes": 8197,
+          "selected_git_blob": "322f5c9f1f4b247d6fc1726c7ce104adcacbabd5",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 90,
+              "to": 99
+            }
+          ]
+        },
+        {
+          "module": "OriginalIndicatorProjection",
+          "original_sha256": "17ba5ec70943a85a67ec0aa3e60b59eea5ebd0078cc44d4e0e04c832b239a07b",
+          "selected_sha256": "4440b31a3f8628a9fefc3238230b0bcf1755635a2c7893dba044aede33740196",
+          "selected_bytes": 10782,
+          "selected_git_blob": "e2253352257f8559b6c06742bde9fcabb1f82e7a",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification; close the original impossible Sum equality by cases. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 149,
+              "to": 170
+            }
+          ]
+        },
+        {
+          "module": "OriginalProjectionAncestry",
+          "original_sha256": "d1c48bb61acc429efea324b04a913c558ba8d70f6b87590567f7e038be00df1a",
+          "selected_sha256": "1b4bc6779f7094354ff92f3a85348e687bb2eab0999418d7f751fa873707f5f6",
+          "selected_bytes": 6160,
+          "selected_git_blob": "a9fecd0a0031cd429f36d06bcabad6895e637314",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained. Also give the original nested singleton-route endpoint its explicit Sum/SourceVertex type; source116 rejects only the ambiguous .inl notation.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": true,
+          "future_blocked_module_compatibility_review": false,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 106,
+              "to": 119
+            }
+          ],
+          "actual_rejected_source": "ae3fe2fa0267b83f0c0cb46f101d53b54d4a403c",
+          "prior_selected_sha256": "819b4243bf7fdb9d057d9efc909dc60e27869419fde74b2115f225a964475b5d"
+        },
+        {
+          "module": "ReadyRetainedNormalization",
+          "original_sha256": "8a84a5288f168b0148a1e03245bf7b9e507c3064c3aa4cb4a7a32d38a410e0ca",
+          "selected_sha256": "9b59ca1b665000f05b7478e80a37cb83be6d02dca444dcc1b6d1bb04e12673db",
+          "selected_bytes": 6197,
+          "selected_git_blob": "2fe42e63ea9a72f8ff32cf01e823d4b6f9e083d4",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 41,
+              "to": 49
+            }
+          ]
+        },
+        {
+          "module": "RefinedObservedSeparator",
+          "original_sha256": "228459647fc9ca0c870571af755b73b6a12647e0a1fcda15cd876752314a7cdf",
+          "selected_sha256": "9e5b6f44ec52e67da0a3535b651ee7e5ce89bbdf6c01a35a6d1481011805c52b",
+          "selected_bytes": 13620,
+          "selected_git_blob": "b1e6fc617255ca8587acb13a6719c3d328955eb0",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 116,
+              "to": 163
+            }
+          ]
+        },
+        {
+          "module": "SelectedMAGValidity",
+          "original_sha256": "1a8f57d78b0d80e7ed81ce612d1a5514fb00fb4ad4fed430abf895a8eca3cf4c",
+          "selected_sha256": "9eccf0c66eb35b11db95e22a07703cc4a6a919eb876818974a2f0135a92716b4",
+          "selected_bytes": 10115,
+          "selected_git_blob": "2f791f6747a2126b309fd0b6d499ed1f72dea4a2",
+          "edit": "In the COMPLETE inspected original proof blocks only, spell the identity map as a lambda and use the same definitional list-map simplification. Original definitions, hypotheses and theorem conclusions are retained.",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "actual_rejected_module": false,
+          "future_blocked_module_compatibility_review": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "reviewed_complete_proof_blocks": [
+            {
+              "from": 69,
+              "to": 75
+            }
+          ]
+        },
+        {
+          "module": "CommonSelectedIndicatorSource",
+          "original_sha256": "485c979e0d1502665827e8bb5c516114470451b7fd4dc6ca739460bbd8317e20",
+          "selected_sha256": "44fc27348f6778b2e9c5dd4c0de3fe116db256b4106c27821aebd38530abb16a",
+          "selected_bytes": 9466,
+          "selected_git_blob": "cec1581b3e337defab90df52e80ff4a548c7c6ea",
+          "edit": "Expose the ORIGINAL ActivePath as the definitionally same ActiveConnection, and derive the ORIGINAL selector-equivalence application by rfl instead of unfolding its whole Equiv structure into a stuck match. No graph/source/condition/endpoint or theorem premise/conclusion change.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "aaadd989b58e96bfe82e817c8f11e28ed29e00cc",
+          "actual_complete_original_body_read": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalLatentProjection",
+          "original_sha256": "b89518f45b05dcd0b40a2807ed660d93545df4587e06c8dce58be14c8324153d",
+          "selected_sha256": "907c489dd8f043860b47b26d6e9ab74b535dfd639267937e7c46f1ac085bb889",
+          "selected_bytes": 10717,
+          "selected_git_blob": "5be029bd4ae989bcbf3216ad458a40b0b3879402",
+          "edit": "In the COMPLETE original module, apply the dependent snoc induction hypothesis to its actual edge/active arguments; eliminate the actual hma equality rather than the unrelated outer binder; substitute the derived endpoint head mark before forming the original boundary; give the lifted observed route its actual projection relation. No DAG, latent carrier, graph, source law or theorem statement change.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "4ab958ebdd152635753f1793c4a87588094973b1",
+          "actual_complete_original_body_read": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalProjectionLifting",
+          "original_sha256": "ec0dd4f7a9fdc2fb285ff6905ebd09b4374fccab97f6b59da6f93f8791d4e6a8",
+          "selected_sha256": "456df899e95449caf73a01ea0176fa61f71fbf248bc579e96382b146cefe51e4",
+          "selected_bytes": 6068,
+          "selected_git_blob": "40c0b79410134790761403532e162e13a9dabab6",
+          "edit": "Instantiate the ORIGINAL generalized previous-arrival induction argument as some incoming before passing its active-step proof. The original graph, latent path, conditioning predicate and theorem statement are unchanged.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "c778f3a734f66fb546446d289a91f7f48156f9b1",
+          "actual_complete_original_body_read": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalProjectionContraction",
+          "original_sha256": "30f282163e2674552464b293ff33144fc0e00790a76bbdb944a44253a45abfe5",
+          "selected_sha256": "febafaf7b54ace470ce6544c797eb602fe09f4bd3779deb0b81c3dbcb7cae70e",
+          "selected_bytes": 8975,
+          "selected_git_blob": "df1f7a190c214aa3490ade2adb5527cd31dccb3e",
+          "edit": "Type the original latent-list existential explicitly; at both original retained transition constructors case-split the actual optional previous mark before applying the SAME original retained-activity theorem, avoiding dependent-match elaboration ambiguity. No theorem proposition/source law changes.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "fe0dccd2b7fab243abe40c373bfcc55e2dca066d",
+          "actual_complete_original_body_read": true,
+          "current_main_body_equal_pinned": true,
+          "current_main_blob": "ebda4669c75173405634a2216d088d4ea9ff5a8e",
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalProjectionContraction",
+          "original_sha256": "30f282163e2674552464b293ff33144fc0e00790a76bbdb944a44253a45abfe5",
+          "selected_sha256": "473043be80e3f515a1ce9ea3a1d59afe88cf169877b5ce08110ba8a09598ec51",
+          "selected_bytes": 8985,
+          "selected_git_blob": "42708054a8c286091d79deeb944bf9ad73029e57",
+          "edit": "Spell the typed latent-list existential as nested existing Exists binders; preserve both actual optional-mark cases and every original theorem/source/path hypothesis. Repairs the actual rejected mixed-binder grammar introduced in a2524c3c, not a new projection result.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "a2524c3c8f4daa061a7ce18c066836fe77432a39",
+          "actual_complete_original_body_read": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalIndicatorProjection",
+          "original_sha256": "17ba5ec70943a85a67ec0aa3e60b59eea5ebd0078cc44d4e0e04c832b239a07b",
+          "selected_sha256": "aa8da155e8ca466bd91184f6c39d966b0d9c6c3049ebf42b5b6dd1afb7cedced",
+          "selected_bytes": 11062,
+          "selected_git_blob": "831ef419fdbef5041b6e43549a16d1a37314c161",
+          "edit": "Use actual WithBot bot/coe constructors in the original sum-carrier proof; eliminate the original impossible sum/Option equality; expose the SAME fixed selectedIndicatorVertexEquiv map before the original graph equality rewrite, avoiding a dependent MarkedEquiv motive. All original source, latent, selected-carrier and endpoint-mark hypotheses/conclusions remain.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "d27a952f63ec7a06bae5fc20680a2677708cc47b",
+          "actual_complete_original_body_read": true,
+          "current_main_equal_pinned": true,
+          "current_blob": "e2f7290522d8932dd457c3a1a5a46268d1a2d165",
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "OriginalIndicatorProjection",
+          "original_sha256": "17ba5ec70943a85a67ec0aa3e60b59eea5ebd0078cc44d4e0e04c832b239a07b",
+          "selected_sha256": "46f6a078ba689f92f591974b217b91dbd90d6cce795ea1ef23b78318c3b8f4ac",
+          "selected_bytes": 11399,
+          "selected_git_blob": "0fd7412d094bf62649a665d4f4ffc1c2effaeb11",
+          "edit": "Derive the actual selectedIndicatorVertexEquiv inverse on a coerced old Sum label by cases on that SAME label, then rewrite its inverse chart at the original three WithBot branch sites. This avoids assuming the generic inverse is definitionally oldRetained. Graph/source/latent/selection/mark statements and frozen vendor bodies unchanged.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
+          "actual_complete_original_body_read": true,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "EndpointColliderActivation",
+          "original_sha256": "ef993fc2991ff1ec37e87049130c817c74df2fd0327b61365319709384c59354",
+          "selected_sha256": "44cef59ada9bf6a4898dd5a5a016425b27fa5a0b8ed00edf2f426a53e67c4831",
+          "selected_bytes": 9551,
+          "selected_git_blob": "1a8b610e91ab94c2a9d203a72ceda865549b62bf",
+          "edit": "Use rfl for the already rewritten incoming=head equality in the ORIGINAL departure dichotomy. Keep hpm for its other actual uses; no theorem/source/activity change.",
+          "status": "PENDING_COMPLETE_TARGET_KERNEL_AND_OWNED_CHECK",
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "actual_rejected_source": "0958975aaa7d9d65b77821283c1b31922433b24c",
+          "actual_complete_original_body_read": true,
+          "current_main_equal_pinned": true,
+          "current_git_blob": "ede95691448c73dd55200dcbed8aa7e669b2fd11",
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "RefinedIndicatorSeparator",
+          "original_sha256": "7215d17549e9b64378a2fe24a940e3f4354e4ed0d25dca3064aef061f7a63f60",
+          "selected_sha256": "7e5c102d6754d0abca1da28c3b39b990e7d4b63f10fb98036cf9dd066a57ff15",
+          "selected_bytes": 14937,
+          "selected_git_blob": "cf8770dad9e59147a52de21641d997bf6500c482",
+          "edit": "Reuse the already-checked explicit Route(AddIndicator) map target and original hm/mapArrival reductions; close the SAME concrete forgetIndicator/oldSource constructors definitionally and cases the impossible original Option equality. All original source/latent/selection/conditioning/path/query/target theorem statements stay unchanged. Follow-on: rewrite the existing indicator_equiv_oldSource BEFORE any equivalence unfolding; eliminate literal some/none equality by cases; expose the actual original oldRetained constructor.",
+          "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+          "actual_rejected_source": "11f17e5eb2f378b3bf4688577bdc4c52703ab109",
+          "actual_complete_original_body_read": true,
+          "current_main_equal_pinned": true,
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
+          "exact_edits": [
+            [
+              "  have raw := hp.map sourceIndicatorEquiv (fun x y hxy =>\n    (arrow_directed_exact (augmentSource D t).arrow x y).mp hxy)",
+              "  have raw : Route (AddIndicator D.arrow (Observed t))\n      (sourceIndicatorEquiv (oldSource a)) (xs.map sourceIndicatorEquiv)\n      (sourceIndicatorEquiv (Observed none)) :=\n    hp.map sourceIndicatorEquiv (fun x y hxy =>\n      (arrow_directed_exact (augmentSource D t).arrow x y).mp hxy)"
+            ],
+            [
+              "  | none => trivial\n  | some previous =>\n      by_cases hc",
+              "  | none => simpa only [mapArrival, hm] using hactive\n  | some previous =>\n      by_cases hc"
+            ],
+            [
+              "        simpa only [mapArrival, ActiveAt, if_pos hc] using ha'",
+              "        simpa only [mapArrival, hm, ActiveAt, if_pos hc] using ha'"
+            ],
+            [
+              "        simpa only [mapArrival, ActiveAt, if_neg hc] using hn'",
+              "        simpa only [mapArrival, hm, ActiveAt, if_neg hc] using hn'"
+            ],
+            [
+              "                        simp only [mapArrival, hv, forgetIndicator, sourceIndicatorEquiv]",
+              "                        change forgetIndicator t p.vertex = Observed z\n                        rw [hv]\n                        rfl"
+            ],
+            [
+              "                        simp only [mapArrival, hq, forgetIndicator, sourceIndicatorEquiv]",
+              "                        change forgetIndicator t q.vertex = Observed x\n                        rw [hq]\n                        rfl"
+            ],
+            [
+              "                        (by simpa only [hv] using hsupport p List.mem_cons_self)",
+              "                        (by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)"
+            ],
+            [
+              "    refine ⟨(fun h => Option.noConfusion h), last, xs, ?_, hnd⟩",
+              "    refine ⟨(by intro h; cases h), last, xs, ?_, hnd⟩"
+            ],
+            [
+              "    simpa only [indicator_equiv_oldSource, sourceIndicatorEquiv] using raw",
+              "    rw [indicator_equiv_oldSource] at raw\n    exact raw"
+            ],
+            [
+              "  exact Option.noConfusion hbad",
+              "  cases hbad"
+            ],
+            [
+              "(by simpa only [hv, oldSource, Observed] using hsupport p List.mem_cons_self)",
+              "(by simpa only [hv, oldSource, oldRetained, Observed] using hsupport p List.mem_cons_self)"
+            ]
+          ]
+        },
+        {
+          "module": "PartialIndicatorQueryFamily",
+          "original_sha256": "029fa2d53a219c30fc3ef49e6b0cce561674106dfc3ea59bd2fbe9e261beb879",
+          "selected_sha256": "e0d3d2f4977bba4c440f230fd73be8f314606ed4319873675bd111ba27834128",
+          "selected_bytes": 5381,
+          "selected_git_blob": "76b3bcf6632819b2490e68f94420f7f9ae0f5f04",
+          "edit": "Reuse accepted observed-query Fintype.subtype/univ.filter and inherited DecidableEq for the SAME original one-endpoint predicate; cases only the original impossible none=some equality. All5 original theorem statements/query coordinates/count/source/selection/latent/target hypotheses remain unchanged. Follow-on: eliminate the SAME literal Observed-none/Observed-some contradiction by cases, avoiding inference through nested Sum.inl.injectivity.",
+          "status": "SOURCE_VARIANT_PENDING_COMPLETE_KERNEL_CHECK",
+          "actual_rejected_source": "04af94f60ae46f283dbbb073a7966935f8987b88",
+          "actual_complete_original_body_read": true,
+          "current_main_equal_pinned": true,
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md"
+        },
+        {
+          "module": "ActivePathReversal",
+          "original_sha256": "92b814be234a94c16080ae143efc330b7a510e25b62dbc84d23a6ed0904c8abc",
+          "selected_sha256": "52bc570eea06ec4ce61f13c7184ed110467fa8a164b03e3f8b280f96f29b26f5",
+          "selected_bytes": 5384,
+          "selected_git_blob": "239acae483322d96370a44fb6dbf1da31f212571",
+          "edit": "After unfold, DepartureAllowed.match_1 and Transition.match_1 remain distinct on abstract last; case SAME last Option to reduce both existing branches. No source/relation/graph/precondition change.",
+          "exact_edits": [
+            [
+              "        simpa only [mark] using ready",
+              "        simpa only [mark, DepartureAllowed] using ready"
+            ],
+            [
+              "          q.vertex :: (ys ++ [⟨p.vertex, some outgoing⟩]).map Arrival.vertex =",
+              "          q.vertex :: (ys ++ [(⟨p.vertex, some outgoing⟩ : Arrival V)]).map Arrival.vertex ="
+            ]
+          ],
+          "original_vendor_body_unchanged": true,
+          "statement_semantics_unchanged": true,
+          "new_source_law_or_axiom": false,
+          "status": "PENDING_COMPLETE51_SOURCE_AND_FULL1499_CHECK",
+          "all4_theorem_headers_unchanged": true,
+          "actual_original_and_successor_read": true,
+          "successor_ref": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+          "prior_rejected_sha256": "d89370922780f8dfadb2cbd1bb61316fa9a78fff91e1b3dad72e85f7d906603c",
+          "current_proof_edits": [
+            [
+              "        simpa only [mark, DepartureAllowed] using ready",
+              "        cases last <;> simpa only [mark, DepartureAllowed] using ready"
+            ]
+          ],
+          "latest_rejected_source": "cc67e2390e6d6ec4260eda398a0aac6ccc56b864",
+          "latest_rejected_run": 40138376155
+        }
+      ]
+    },
+    {
+      "programme": "CB-SOFTSCI-001/002/003/004/005",
+      "repository": "Sodelin/Formalizing-Soft-Sciences",
+      "commit": "8e665d2a9f6168e6448b2ca49fccbec87d57d3ad",
+      "checked_predecessor": "099908b5d781adc2d5bcdecfe909e57ec75776c4",
+      "current_main_comparison": "Exact current main equals source commit at bounded read; all9 selected source blobs also match checked predecessor and historical raw receipt hashes.",
+      "directory": "vendor/soft-science-source",
+      "source_modules": 14,
+      "unique_theorems": 85,
+      "inventory": "integration/soft-science-source-intake.json",
+      "historical_toolchain": "Lean4.19.0",
+      "new_pinned_toolchain": "Lean4.33.1",
+      "current_kernel_acceptance": true,
+      "variants": [],
+      "clinical_checked_predecessor": "0cbdcf85ad2f528cd544797345931c51b33cf6d4",
+      "clinical_historical_receipt": "https://github.com/Sodelin/Formalizing-Soft-Sciences/actions/runs/36408149787",
+      "current_owned_type_name_acceptance": true,
+      "verification_record": "integration/soft-science-component-verification.json",
+      "accepted_source": "fe0dccd2b7fab243abe40c373bfcc55e2dca066d",
+      "accepted_run": 40085312861
+    },
+    {
+      "programme": "CB-NANUQ-002 scoped formal components",
+      "repository": "Sodelin/Research-Commons",
+      "commit": "0f1056ab3506fc521d5f2023f2599bf637df36d9",
+      "new_sources": 0,
+      "original_components": 4,
+      "source_identity_record": "integration/nanuq-rank11-source-components.json",
+      "originals_unchanged": true,
+      "whole_all_level_theorem_formalized": false,
+      "accepted_component_record": "integration/nanuq-scoped-component-verification.json",
+      "actual_836_source31_name_context_accepted": true
+    },
+    {
+      "programme": "CB-G4-006 partial finite-original-response-equation formal receiver; completed HAND descent reused",
+      "repository": "Sodelin/Research-Commons",
+      "commit": "9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5",
+      "later_same_path_commit": "b1fd4801188ccf19e43c04989eddd6b5fd3cfddc",
+      "new_sources": 1,
+      "inventory": "integration/g4-algebraic-profile-source-reuse.json",
+      "original_hand_mathematics_complete": true,
+      "current_kernel_acceptance": true,
+      "whole_original_claim_binding": false,
+      "accepted_component_record": "integration/g4-algebraic-profile-component-verification.json",
+      "accepted_source": "73c84c99f46e7a977f99efefde174871d2d4f7f8"
+    },
+    {
+      "programme": "MSci two-site nine-feature theorem, original root-pair partial formal use-site",
+      "repository": "Sodelin/Research-Commons",
+      "commit": "8b4c6508a81dc4c2c146a811adaa0cc01067db60",
+      "later_successor": "ebcb33d435eb82f8f18e7f586d8c1f92fe4f32af",
+      "prior_hand_proof_sha256": "cff80cc135de68fde525c29f05c82c7f86081397fc84066479909acc1942fdbf",
+      "successor_hand_proof_sha256": "0cc4ca6c62066e59be9709bcc10c9188dc9d712f3aae28409d37941b1280249a",
+      "new_sources": 1,
+      "source_identity_record": "integration/msci-two-site-source-intake.json",
+      "whole_nine_parameter_formal_binding": false,
+      "current_kernel_acceptance": "ROOT_PAIR_SCOPED_COMPONENT_ACCEPTED",
+      "accepted_source": "b094ae8555e58091faf132a4ffc4530c86db1445",
+      "accepted_run": 40105632721,
+      "accepted_record": "integration/msci-root-pair-component-verification.json"
+    },
+    {
+      "programme": "Original finite-gARG obstruction and prescribed three-taxon exact/finite-evidence claims",
+      "repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "e2502c82ab9a77c00543932f775a71e5374221f7",
+      "existing_source_modules": 4,
+      "originals_unchanged": true,
+      "new_sources": 1,
+      "source_identity_record": "integration/genome-original-source-intake.json",
+      "scope": "Reuse18 existing endpoints; new2 literal nominal-carrier transports; no new biological law or Hoeffding Lean endpoint",
+      "current_kernel_acceptance": true,
+      "accepted_source": "b094ae8555e58091faf132a4ffc4530c86db1445",
+      "accepted_run": 40105632721,
+      "accepted_record": "integration/genome-original-components-verification.json"
+    },
+    {
+      "programme": "Original exact stochastic state/history quotient and predictive-profile counterexamples",
+      "repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "e2502c82ab9a77c00543932f775a71e5374221f7",
+      "existing_source_modules": 2,
+      "originals_unchanged": true,
+      "new_sources": 0,
+      "new_engines": 0,
+      "source_identity_record": "integration/memory-stochastic-source-intake.json",
+      "current_named_kernel_acceptance": true,
+      "accepted_source": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+      "accepted_run": 40109765011,
+      "accepted_record": "integration/memory-stochastic-component-verification.json"
+    },
+    {
+      "programme": "Completed original deterministic predictive-state, arbitrary-history parity and admissible split obstruction",
+      "repository": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "e2502c82ab9a77c00543932f775a71e5374221f7",
+      "existing_source_modules": 7,
+      "originals_unchanged": true,
+      "new_sources": 1,
+      "new_proofs": 0,
+      "new_engines": 0,
+      "source_identity_record": "integration/memory-deterministic-source-intake.json",
+      "current_named_kernel_acceptance": true,
+      "accepted_source": "69a85a7e30abfd24c6e99a53eed2202e48fcd044",
+      "accepted_run": 40112282119,
+      "accepted_record": "integration/memory-deterministic-component-verification.json"
+    }
+  ]
+}

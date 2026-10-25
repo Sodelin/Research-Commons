@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "source": "0c22b76b4154141759cc495e0bb793882e55c8ab",
+  "run": 40105218988,
+  "job": 120905581426,
+  "status": "WORKFLOW_PRECONDITION_FAILURE_NO_NEW_KERNEL_RESULT",
+  "failed_command": "check-exports --target ResearchCommons.Claims.Genome --claim CB-GENOME-001 --claim CB-GENOME-002",
+  "diagnostic": "PACKAGE_INCOMPLETE: build/lean-target-build.json: No such file or directory (os error 2)",
+  "cause": "New scope called existing exact-export auditor without first invoking the existing target builder that writes its required receipt.",
+  "repair": "Use the SAME established build --reuse-retained --target then check-exports sequence for each new scope. No API/auditor/theorem changed.",
+  "new_genome_or_root_pair_proofs_compiled": false,
+  "causal_repairs_compiled": false,
+  "previous_actual_combined_result_preserved": {
+    "source": "339b676b814b925f2958955a18ee40798e790452",
+    "selected": 1435,
+    "success": 1324,
+    "failed": 2,
+    "blocked": 109
+  },
+  "next": "Build/check the SAME new scopes and exact causal compatibility, then full1462/314-name/owned/caller gates.",
+  "new_scientific_result": false,
+  "private_native_controller": "UNBOUND"
+}

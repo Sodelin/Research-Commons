@@ -1,0 +1,22 @@
+# Paired492 R2b proof repair and diagnostic review
+
+Reviewed 2026-10-12 15:47 UTC. PASS for the exact bounded diagnostic retry after fresh owner gates. This verdict does not accept a mathematical theorem or a compiled paired certificate.
+
+Marker-free repair source: 1d265bd24c68d4dea2efdbdc172f5b98182feeeffaa2d780a050599de44f68cd.
+Diagnostic source: ffa361300e6bee08f24651c33e7134f697ed4e33f54a805fb2c4fa2f49f5fe74.
+Graph: aba63bcc0b5291b66f10af5a09d4c27aa5cfc066c27292ec96c9ed75759549f2.
+Driver: a3bcc59d74c421c025254442f2cb50b3d6c3ffc45e2d4a83381b4bf7afdf0555.
+Preparation script: d58aaa305d1544fab1fb678d0d5251d9aa6fc03fc11a1beecb6ac247b0695860.
+Staged preparation: 4dfabd9a7b6f2a9980ff223977c202e3b502cc7abab3aea3554bbcd55af33d2b.
+
+Attempt3 was independently rechecked: the component exited -6 after 28.266 seconds, with lean::memory_exception at interpreter in stderr. Its 49,152-byte stdout contains 54 partial error headers and stops mid-goal at line4162. Outer Lake exit1 is distinct. The earlier description of an ordinary failure reaching final endpoints was corrected. Serial scheduling alone has not eliminated the memory abort, and its precise trigger remains unknown. All exact attempt3 evidence is bound in ATTEMPT3-MEMORY-AND-DIAGNOSTICS.json.
+
+The R1d-to-R2 cumulative proof diff and final sigma/e correction were read. All 364 original declaration headers remain literal; no import, provider or physical assumption changes. The derived merger-validity helper from the previous review remains the sole added declaration. In particular the avoidance path equality now directly reuses accepted UpPath.eq_of_same_selector after transporting selector agreement on the existing path; it does not force the avoided vertex to be the root or invent a new route premise. Typed records, current carrier permutation/renaming, actual pulse/trace and finite expectation repairs retain their original claims. Unknown API names are replaced by exact selected source or pinned Mathlib/Core suppliers. This is a proof repair based on partial diagnostics, not a claim that all later errors have been eliminated.
+
+The diagnostic adds 49 flushed IO.eprintln marker commands. Standalone stderrAsMessages=false appears immediately after imports, before any marker; true is restored after the final marker at EOF. Removing the complete diagnostic blocks, including the restoration separator, recovers the separately frozen marker-free source byte-for-byte. Every marker is outside comments. Source-local Elab.async=false is retained.
+
+Pinned Lean API inspection justifies this stream route: Command.liftIO is defined in Lean/Elab/Command.lean222; run_cmd invokes elabEvalCore in BuiltinEvalCommand.lean274-279, whose withIsolatedStreams at228 consults stderrAsMessages. The outer command wrapper also reads this option before elaborating the command (Lean/Language/Lean.lean767), which is why the option is standalone before the markers. CoreM.lean581 declares it and Init/System/IO.lean1799-1805 leaves stderr unredirected when false. Actual emitted evidence, not this expectation, will determine whether the markers localize any later abort. A reached marker is not proof that previous declarations succeeded.
+
+Independent checks confirm exact graph/source rebinding only, source/graph pins only in the driver, and the corresponding preparation pins/folder/byte totals. All other resource, compiler, namespace, cache and transport scripts remain literal. All 491 prerequisite component names, the marker-free candidate and all prior candidate hashes reject compilation under the diagnostic allowlist. No dependency compilation, guard increase, maxErrors change or kernel/trust relaxation is introduced. The 180-second/4096-MiB source limit and 2-GiB monitored package/8-GiB free-floor profile remain unchanged. The cumulative diagnostic source grows by 12,896 bytes over the original marker-free revision1, and 9,192 bytes over R1d.
+
+All three actual failed attempts and unrun repair/diagnostic predecessors remain preserved. The author may perform the already authorized bounded diagnostic retry after immediate fresh resource and coordinated no-competing-compiler gates. Even a diagnostic source PASS remains provisional: final acceptance requires a fresh exact marker-free source check, aggregate, complete audit and independent terminal review of the entire end-to-end paired claim. Accepted full1611 remains current. No compiler was invoked by this review.

@@ -1,0 +1,2128 @@
+PAIRED_DIAGNOSTIC after imports
+PAIRED_DIAGNOSTIC before original line 29: noncomputable def edgeHazard
+PAIRED_DIAGNOSTIC before original line 33: lemma edgeHazard_pos
+PAIRED_DIAGNOSTIC before original line 37: lemma realSurvival_eq_selected_path
+PAIRED_DIAGNOSTIC before original line 46: theorem actual_calibration_selected_path_constant
+PAIRED_DIAGNOSTIC before original line 58: lemma selected_path_unique
+PAIRED_DIAGNOSTIC before original line 68: lemma respects_sublist
+G4PairedNaturalTreeCertificate.lean:76:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.respects_sublist`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 73: def SelectorsAgreeExcept
+PAIRED_DIAGNOSTIC before original line 76: lemma coin_selectors_agree_except
+PAIRED_DIAGNOSTIC before original line 88: lemma selected_edges_eq_away
+G4PairedNaturalTreeCertificate.lean:99:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.selected_edges_eq_away`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 105: lemma upPath_prefix_agreement
+G4PairedNaturalTreeCertificate.lean:130:57: error: Application type mismatch: The argument
+  hPQ
+has type
+  SelectorsAgreeExcept N P Q z
+but is expected to have type
+  SelectorsAgreeExcept N P Q h
+in the application
+  @selected_edges_eq_away V E X inst✝⁴ inst✝³ inst✝² inst✝¹ ?m.261 N P Q h hPQ
+G4PairedNaturalTreeCertificate.lean:134:32: error: Application type mismatch: The argument
+  tail
+has type
+  UpPath N.graph (fun x => True) (N.graph.source e) N.root fs
+but is expected to have type
+  SelectorsAgreeExcept N P Q z
+in the application
+  @ih tail
+G4PairedNaturalTreeCertificate.lean:136:50: error: Application type mismatch: The argument
+  hd
+has type
+  d ∈ es
+but is expected to have type
+  d ∈ fs
+in the application
+  List.mem_cons_of_mem e hd
+G4PairedNaturalTreeCertificate.lean:137:21: error: Type mismatch
+  havoid d (List.mem_cons_of_mem e hd)
+has type
+  N.graph.target d ≠ z
+but is expected to have type
+  ∃ (h : N.graph.target d ≠ N.root), Q.edge ⟨N.graph.target d, h⟩ = d
+G4PairedNaturalTreeCertificate.lean:134:13: error: Tactic `rcases` failed: `x✝ : (∀ e ∈ es, N.graph.target e ≠ z) →
+  ∃ tail, es = es ++ tail ∧ UpPath N.graph (fun x => True) z N.root tail` is not an inductive datatype
+PAIRED_DIAGNOSTIC before original line 128: lemma upPath_target_younger
+G4PairedNaturalTreeCertificate.lean:141:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.upPath_target_younger`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 134: lemma upPath_ending_avoids_target
+G4PairedNaturalTreeCertificate.lean:153:2: warning: Try `simp at hz` instead of `simpa using hz`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+PAIRED_DIAGNOSTIC before original line 141: lemma upPath_prefix_agreement_calendar
+PAIRED_DIAGNOSTIC before original line 150: lemma upPath_avoiding_agreement
+G4PairedNaturalTreeCertificate.lean:173:2: error: Invalid target: Index in target's type is not a variable (consider using the `cases` tactic instead)
+  N.root
+PAIRED_DIAGNOSTIC before original line 175: lemma edgePath_nodup
+G4PairedNaturalTreeCertificate.lean:192:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.edgePath_nodup`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 186: lemma selected_prefix_to_target
+G4PairedNaturalTreeCertificate.lean:210:42: error(lean.invalidField): Invalid field `split_at_original_edge`: The environment does not contain `GProgram.G5.EdgePath.split_at_original_edge`, so it is not possible to project the field `split_at_original_edge` from an expression
+  p
+of type `EdgePath N.graph a b es`
+G4PairedNaturalTreeCertificate.lean:210:9: error: Tactic `rcases` failed: `x✝ : ?m.84` is not an inductive datatype
+PAIRED_DIAGNOSTIC before original line 203: lemma first_edges_eq_of_shared_target
+PAIRED_DIAGNOSTIC before original line 224: structure PathFork
+PAIRED_DIAGNOSTIC before original line 236: lemma selected_path_fork
+PAIRED_DIAGNOSTIC before original line 261: noncomputable def pathHazard
+PAIRED_DIAGNOSTIC before original line 264: lemma pathHazard_append
+G4PairedNaturalTreeCertificate.lean:287:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.pathHazard_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 269: lemma pathHazard_nonneg
+PAIRED_DIAGNOSTIC before original line 277: lemma pathHazard_pos
+PAIRED_DIAGNOSTIC before original line 285: lemma pathHazard_zero_iff
+PAIRED_DIAGNOSTIC before original line 296: lemma suffix_eq_of_hazard_eq
+PAIRED_DIAGNOSTIC before original line 312: lemma edgePath_source_unique
+G4PairedNaturalTreeCertificate.lean:340:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.edgePath_source_unique`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 320: def PathFork.swap
+PAIRED_DIAGNOSTIC before original line 335: lemma PathFork.left_difference
+G4PairedNaturalTreeCertificate.lean:371:6: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => e ∈ _a ∧ e ∉ fs ↔ e ∈ F.left
+Error: Application type mismatch: The argument
+  F
+has type
+  PathFork N a b c es fs
+but is expected to have type
+  PathFork N a b c _a fs
+in the application
+  F.left
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+a b c : V
+es fs : List E
+F : PathFork N a b c es fs
+e : E
+hn : (F.stem ++ F.left).Nodup
+hd : ∀ a_1 ∈ F.stem, ∀ b_1 ∈ F.left, a_1 ≠ b_1
+⊢ e ∈ es ∧ e ∉ fs ↔ e ∈ F.left
+PAIRED_DIAGNOSTIC before original line 351: lemma PathFork.difference_hazard
+PAIRED_DIAGNOSTIC before original line 364: noncomputable def bankFork
+PAIRED_DIAGNOSTIC before original line 375: noncomputable def bankMeeting
+PAIRED_DIAGNOSTIC before original line 379: lemma bankFork_left_hazard
+PAIRED_DIAGNOSTIC before original line 386: lemma bankFork_right_hazard
+PAIRED_DIAGNOSTIC before original line 393: lemma meeting_eq_of_fixed_right_route
+PAIRED_DIAGNOSTIC before original line 410: lemma PathFork.vertex_unique
+PAIRED_DIAGNOSTIC before original line 421: lemma bankMeeting_swap
+PAIRED_DIAGNOSTIC before original line 427: def PathFork.prepend
+G4PairedNaturalTreeCertificate.lean:473:20: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => pre ++ _a = pre ++ F.stem ++ F.left
+Error: Application type mismatch: The argument
+  F
+has type
+  PathFork N h b c es fs
+but is expected to have type
+  PathFork N h b c _a fs
+in the application
+  F.stem
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+a h b c : V
+pre es fs : List E
+hp : EdgePath N.graph a h pre
+F : PathFork N h b c es fs
+⊢ pre ++ es = pre ++ F.stem ++ F.left
+G4PairedNaturalTreeCertificate.lean:474:21: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => pre ++ _a = pre ++ F.stem ++ F.right
+Error: Application type mismatch: The argument
+  F
+has type
+  PathFork N h b c es fs
+but is expected to have type
+  PathFork N h b c es _a
+in the application
+  F.stem
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+a h b c : V
+pre es fs : List E
+hp : EdgePath N.graph a h pre
+F : PathFork N h b c es fs
+⊢ pre ++ fs = pre ++ F.stem ++ F.right
+PAIRED_DIAGNOSTIC before original line 441: lemma route_avoiding_changed_site
+PAIRED_DIAGNOSTIC before original line 460: lemma route_through_changed_site
+G4PairedNaturalTreeCertificate.lean:517:44: error(lean.invalidField): Invalid field `split_at_original_edge`: The environment does not contain `GProgram.G5.EdgePath.split_at_original_edge`, so it is not possible to project the field `split_at_original_edge` from an expression
+  hpa
+of type
+  EdgePath N.graph N.root (N.leaf i) (compiledRoute N C (coinSelector N H a) (N.leaf i))
+G4PairedNaturalTreeCertificate.lean:517:9: error: Tactic `rcases` failed: `x✝ : ?m.328` is not an inductive datatype
+PAIRED_DIAGNOSTIC before original line 494: lemma meeting_eq_when_both_visit
+G4PairedNaturalTreeCertificate.lean:568:86: error: unexpected identifier; expected '}'
+G4PairedNaturalTreeCertificate.lean:552:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (commonRoutes N C H a).edges x
+in the target expression
+  e ∈ compiledRoute N C (coinSelector N H a) (N.leaf x)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+a b : Hybrid N → Bool
+h : Hybrid N
+hab : ∀ (k : Hybrid N), k ≠ h → a k = b k
+i j : X
+hi : ∃ e ∈ (commonRoutes N C H a).edges i, N.graph.target e = ↑h
+hj : ∃ e ∈ (commonRoutes N C H a).edges j, N.graph.target e = ↑h
+ai bi pi : List E
+hai : (commonRoutes N C H a).edges i = ai ++ pi
+hbi : (commonRoutes N C H b).edges i = bi ++ pi
+haiP : EdgePath N.graph N.root (↑h) ai
+hbiP : EdgePath N.graph N.root (↑h) bi
+hpi : EdgePath N.graph (↑h) (N.leaf i) pi
+hpiS : RespectsSelector N (coinSelector N H a) pi
+aj bj pj : List E
+haj : (commonRoutes N C H a).edges j = aj ++ pj
+hbj : (commonRoutes N C H b).edges j = bj ++ pj
+hajP : EdgePath N.graph N.root (↑h) aj
+hbjP : EdgePath N.graph N.root (↑h) bj
+hpj : EdgePath N.graph (↑h) (N.leaf j) pj
+hpjS : RespectsSelector N (coinSelector N H a) pj
+x : X
+pre post : List E
+he : (commonRoutes N C H a).edges x = pre ++ post
+e : E
+hee : e ∈ pre
+⊢ e ∈ compiledRoute N C (coinSelector N H a) (N.leaf x)
+G4PairedNaturalTreeCertificate.lean:559:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (commonRoutes N C H b).edges x
+in the target expression
+  e ∈ compiledRoute N C (coinSelector N H b) (N.leaf x)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+a b : Hybrid N → Bool
+h : Hybrid N
+hab : ∀ (k : Hybrid N), k ≠ h → a k = b k
+i j : X
+hi : ∃ e ∈ (commonRoutes N C H a).edges i, N.graph.target e = ↑h
+hj : ∃ e ∈ (commonRoutes N C H a).edges j, N.graph.target e = ↑h
+ai bi pi : List E
+hai : (commonRoutes N C H a).edges i = ai ++ pi
+hbi : (commonRoutes N C H b).edges i = bi ++ pi
+haiP : EdgePath N.graph N.root (↑h) ai
+hbiP : EdgePath N.graph N.root (↑h) bi
+hpi : EdgePath N.graph (↑h) (N.leaf i) pi
+hpiS : RespectsSelector N (coinSelector N H a) pi
+aj bj pj : List E
+haj : (commonRoutes N C H a).edges j = aj ++ pj
+hbj : (commonRoutes N C H b).edges j = bj ++ pj
+hajP : EdgePath N.graph N.root (↑h) aj
+hbjP : EdgePath N.graph N.root (↑h) bj
+hpj : EdgePath N.graph (↑h) (N.leaf j) pj
+hpjS : RespectsSelector N (coinSelector N H a) pj
+selA :
+  ∀ (x : X) (pre post : List E),
+    (commonRoutes N C H a).edges x = pre ++ post → RespectsSelector N (coinSelector N H a) pre
+x : X
+pre post : List E
+he : (commonRoutes N C H b).edges x = pre ++ post
+e : E
+hee : e ∈ pre
+⊢ e ∈ compiledRoute N C (coinSelector N H b) (N.leaf x)
+G4PairedNaturalTreeCertificate.lean:568:10: error: Fields missing: `left_eq`, `right_eq`, `stem_path`, `left_path`, `right_path`, `separate`
+G4PairedNaturalTreeCertificate.lean:542:57: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+a b : Hybrid N → Bool
+h : Hybrid N
+hab : ∀ (k : Hybrid N), k ≠ h → a k = b k
+i j : X
+hi : ∃ e ∈ (commonRoutes N C H a).edges i, N.graph.target e = ↑h
+hj : ∃ e ∈ (commonRoutes N C H a).edges j, N.graph.target e = ↑h
+ai bi pi : List E
+hai : (commonRoutes N C H a).edges i = ai ++ pi
+hbi : (commonRoutes N C H b).edges i = bi ++ pi
+haiP : EdgePath N.graph N.root (↑h) ai
+hbiP : EdgePath N.graph N.root (↑h) bi
+hpi : EdgePath N.graph (↑h) (N.leaf i) pi
+hpiS : RespectsSelector N (coinSelector N H a) pi
+aj bj pj : List E
+haj : (commonRoutes N C H a).edges j = aj ++ pj
+hbj : (commonRoutes N C H b).edges j = bj ++ pj
+hajP : EdgePath N.graph N.root (↑h) aj
+hbjP : EdgePath N.graph N.root (↑h) bj
+hpj : EdgePath N.graph (↑h) (N.leaf j) pj
+hpjS : RespectsSelector N (coinSelector N H a) pj
+selA :
+  ∀ (x : X) (pre post : List E),
+    (commonRoutes N C H a).edges x = pre ++ post → RespectsSelector N (coinSelector N H a) pre
+selB :
+  ∀ (x : X) (pre post : List E),
+    (commonRoutes N C H b).edges x = pre ++ post → RespectsSelector N (coinSelector N H b) pre
+heA : ai = aj
+heB : bi = bj
+F : PathFork N (↑h) (N.leaf i) (N.leaf j) pi pj
+FA : PathFork N N.root (N.leaf i) (N.leaf j) ((commonRoutes N C H a).edges i) ((commonRoutes N C H a).edges j)
+⊢ bankMeeting N C H a i j = bankMeeting N C H b i j
+PAIRED_DIAGNOSTIC before original line 542: lemma one_bit_meeting_invariance
+PAIRED_DIAGNOSTIC before original line 563: lemma finite_bank_function_constant {I A : Type*} [Fintype I] [DecidableEq I]
+PAIRED_DIAGNOSTIC before original line 594: theorem actual_calibrations_bank_meeting_constant
+PAIRED_DIAGNOSTIC before original line 608: lemma hybrid_ne_root
+G4PairedNaturalTreeCertificate.lean:654:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.hybrid_ne_root`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 616: lemma coin_realizes_selector
+PAIRED_DIAGNOSTIC before original line 632: lemma descendant_parent_exists
+G4PairedNaturalTreeCertificate.lean:685:19: error: Type mismatch: After simplification, term
+  hu
+ has type
+  Relation.ReflTransGen N.graph.DStep w u
+but is expected to have type
+  N.graph.DReach w u
+PAIRED_DIAGNOSTIC before original line 641: noncomputable def descendantSelector
+PAIRED_DIAGNOSTIC before original line 649: lemma descendantSelector_parent
+G4PairedNaturalTreeCertificate.lean:702:40: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+G4PairedNaturalTreeCertificate.lean:703:2: error: Type mismatch
+  (Classical.choose_spec (descendant_parent_exists N hv hr)).right
+has type
+  N.graph.DReach w (N.graph.source (Classical.choose ⋯))
+but is expected to have type
+  N.graph.DReach w
+    (N.graph.source (if hv : ↑v ≠ w ∧ N.graph.DReach w ↑v then Classical.choose ⋯ else (defaultSelector N).edge v))
+PAIRED_DIAGNOSTIC before original line 655: lemma descendant_selected_path
+PAIRED_DIAGNOSTIC before original line 685: lemma respects_append
+G4PairedNaturalTreeCertificate.lean:737:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.respects_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 693: lemma common_ancestor_selected_meeting
+G4PairedNaturalTreeCertificate.lean:778:28: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => pre ++ _a = pre ++ F.stem ++ F.left
+Error: Application type mismatch: The argument
+  F
+has type
+  PathFork N w (N.leaf i) (N.leaf j) es fs
+but is expected to have type
+  PathFork N w (N.leaf i) (N.leaf j) _a fs
+in the application
+  F.stem
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+i j : X
+w : V
+hi : N.graph.DReach w (N.leaf i)
+hj : N.graph.DReach w (N.leaf j)
+P : IncomingSelector N := descendantSelector N w
+es : List E
+he : EdgePath N.graph w (N.leaf i) es
+hse : RespectsSelector N (descendantSelector N w) es
+fs : List E
+hf : EdgePath N.graph w (N.leaf j) fs
+hsf : RespectsSelector N (descendantSelector N w) fs
+F : PathFork N w (N.leaf i) (N.leaf j) es fs
+pre : List E := compiledRoute N C P w
+hpre : EdgePath N.graph N.root w (compiledRoute N C P w)
+hspre : RespectsSelector N P (compiledRoute N C P w)
+coin : Hybrid N → Bool
+hcoin : ∀ (v : Nonroot N), (coinSelector N H coin).edge v = P.edge v
+hs : ∀ (xs : List E), RespectsSelector N P xs → RespectsSelector N (coinSelector N H coin) xs
+hei : (commonRoutes N C H coin).edges i = pre ++ es
+hej : (commonRoutes N C H coin).edges j = pre ++ fs
+⊢ pre ++ es = pre ++ F.stem ++ F.left
+G4PairedNaturalTreeCertificate.lean:779:29: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => pre ++ _a = pre ++ F.stem ++ F.right
+Error: Application type mismatch: The argument
+  F
+has type
+  PathFork N w (N.leaf i) (N.leaf j) es fs
+but is expected to have type
+  PathFork N w (N.leaf i) (N.leaf j) es _a
+in the application
+  F.stem
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+i j : X
+w : V
+hi : N.graph.DReach w (N.leaf i)
+hj : N.graph.DReach w (N.leaf j)
+P : IncomingSelector N := descendantSelector N w
+es : List E
+he : EdgePath N.graph w (N.leaf i) es
+hse : RespectsSelector N (descendantSelector N w) es
+fs : List E
+hf : EdgePath N.graph w (N.leaf j) fs
+hsf : RespectsSelector N (descendantSelector N w) fs
+F : PathFork N w (N.leaf i) (N.leaf j) es fs
+pre : List E := compiledRoute N C P w
+hpre : EdgePath N.graph N.root w (compiledRoute N C P w)
+hspre : RespectsSelector N P (compiledRoute N C P w)
+coin : Hybrid N → Bool
+hcoin : ∀ (v : Nonroot N), (coinSelector N H coin).edge v = P.edge v
+hs : ∀ (xs : List E), RespectsSelector N P xs → RespectsSelector N (coinSelector N H coin) xs
+hei : (commonRoutes N C H coin).edges i = pre ++ es
+hej : (commonRoutes N C H coin).edges j = pre ++ fs
+⊢ pre ++ fs = pre ++ F.stem ++ F.right
+G4PairedNaturalTreeCertificate.lean:783:14: error: invalid `▸` notation, expected result type of cast is 
+  N.graph.DReach w (bankMeeting N C H coin i j)
+however, the equality 
+  Eq.symm hm
+of type 
+  G.vertex = (bankFork N C H coin i j).vertex
+does not contain the expected result type on either the left or the right hand side
+PAIRED_DIAGNOSTIC before original line 732: lemma calibrated_common_ancestor_above
+PAIRED_DIAGNOSTIC before original line 741: lemma leaf_no_outgoing
+G4PairedNaturalTreeCertificate.lean:796:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.leaf_no_outgoing`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 750: lemma leaf_dreach_eq
+PAIRED_DIAGNOSTIC before original line 756: lemma bankMeeting_ne_left_leaf
+PAIRED_DIAGNOSTIC before original line 765: lemma original_outdegree_le_two
+G4PairedNaturalTreeCertificate.lean:826:4: error: Tactic `assumption` failed
+
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+v : V
+hv : v = N.root
+⊢ 2 ≤ 2
+PAIRED_DIAGNOSTIC before original line 778: noncomputable def meetingChildSet
+PAIRED_DIAGNOSTIC before original line 781: lemma calibrated_child_sets_disjoint
+PAIRED_DIAGNOSTIC before original line 794: lemma original_path_has_meeting_child
+G4PairedNaturalTreeCertificate.lean:871:4: error: Dependent elimination failed: Failed to solve equation
+  N.leaf.1 i = F.1
+G4PairedNaturalTreeCertificate.lean:878:4: error: Dependent elimination failed: Failed to solve equation
+  N.leaf.1 i = F.1
+PAIRED_DIAGNOSTIC before original line 827: theorem actual_calibrations_route_meeting_geometry
+G4PairedNaturalTreeCertificate.lean:918:4: error: unsolved goals
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+hij : i ≠ j
+hi : 18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2) ^ 3
+hj : 18 * combProbability N C H p r j i 3 = (3 * combProbability N C H p r j i 2) ^ 3
+coin : Hybrid N → Bool := fun x => false
+v : V := bankMeeting N C H coin i j
+hc : ∀ (a b : Hybrid N → Bool), bankMeeting N C H a i j = bankMeeting N C H b i j
+hc' : ∀ (a b : Hybrid N → Bool), bankMeeting N C H a j i = bankMeeting N C H b j i
+hv : bankMeeting N C H coin j i = v
+pi : List E
+hpi : EdgePath N.graph N.root (N.leaf i) pi
+pj : List E
+hpj : EdgePath N.graph N.root (N.leaf j) pj
+ej : E
+hej : ej ∈ pj
+hjSet : ej ∈ meetingChildSet N v j
+hd : Disjoint (meetingChildSet N (bankMeeting N C H coin i j) i) (meetingChildSet N (bankMeeting N C H coin i j) j)
+hjs : N.graph.source ej = v
+outs : Finset E := {e | N.graph.source e = v}
+e : E
+hei : e ∈ pi
+hiSet : e ∈ meetingChildSet N (bankMeeting N C H coin i j) i
+hne : e ≠ ej
+his : N.graph.source e = bankMeeting N C H coin i j
+⊢ bankMeeting N C H coin i j = v
+PAIRED_DIAGNOSTIC before original line 889: section Permutations
+PAIRED_DIAGNOSTIC before original line 900: def CommonDescendants
+PAIRED_DIAGNOSTIC before original line 904: lemma commonDescendants_of_colocated
+G4PairedNaturalTreeCertificate.lean:969:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.commonDescendants_of_colocated`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 911: lemma commonDescendants_destination
+PAIRED_DIAGNOSTIC before original line 918: lemma commonDescendants_time
+G4PairedNaturalTreeCertificate.lean:986:35: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4PairedNaturalTreeCertificate.lean:986:37: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4PairedNaturalTreeCertificate.lean:988:92: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+t : sorry
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+d : Code N sample
+hd : d ∈ (sourceTimeKernel N r sorry s).support
+x y : Copy
+⊢ DescendsTo N (copyLocation (state d) x) (sample y)
+PAIRED_DIAGNOSTIC before original line 926: lemma commonDescendants_exit
+PAIRED_DIAGNOSTIC before original line 939: lemma commonDescendants_ordinary
+PAIRED_DIAGNOSTIC before original line 951: lemma commonDescendants_root
+PAIRED_DIAGNOSTIC before original line 962: lemma commonDescendants_pulse
+PAIRED_DIAGNOSTIC before original line 978: lemma commonDescendants_boundary
+PAIRED_DIAGNOSTIC before original line 999: lemma commonDescendants_program
+G4PairedNaturalTreeCertificate.lean:1072:6: warning: declaration uses `sorry`
+PAIRED_DIAGNOSTIC before original line 1014: lemma mapLabels_compose {A B D : Type*}
+PAIRED_DIAGNOSTIC before original line 1020: lemma mapLabels_identity {A : Type*}
+PAIRED_DIAGNOSTIC before original line 1025: lemma mapLabels_inverse
+G4PairedNaturalTreeCertificate.lean:1101:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.mapLabels_inverse`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1031: noncomputable def permuteTree
+PAIRED_DIAGNOSTIC before original line 1034: lemma permuteTree_inverse
+PAIRED_DIAGNOSTIC before original line 1042: noncomputable def permuteSnapshot
+PAIRED_DIAGNOSTIC before original line 1050: lemma permuteSnapshot_inverse
+G4PairedNaturalTreeCertificate.lean:1130:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_inverse`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1067: lemma permuteSnapshot_live
+G4PairedNaturalTreeCertificate.lean:1148:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_live`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1070: lemma permuteSnapshot_ancestor
+G4PairedNaturalTreeCertificate.lean:1152:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_ancestor`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1074: lemma permuteSnapshot_genealogy
+G4PairedNaturalTreeCertificate.lean:1162:14: error: Tactic `rfl` failed: The left-hand side
+  (decodeSnapshot root (permuteSnapshot σ s)).genealogy x
+is not definitionally equal to the right-hand side
+  mapLabels (⇑σ) ((decodeSnapshot root s).genealogy ((Equiv.symm σ) x))
+
+case some
+V : Type u_1
+E : Type u_2
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+root : V
+σ : Equiv.Perm Copy
+s : Snapshot V E Copy
+x : Copy
+t : WellLabelledTree Copy
+h : s.genealogy ((Equiv.symm σ) x) = some t
+⊢ (decodeSnapshot root (permuteSnapshot σ s)).genealogy x =
+    mapLabels (⇑σ) ((decodeSnapshot root s).genealogy ((Equiv.symm σ) x))
+PAIRED_DIAGNOSTIC before original line 1081: lemma permuteSnapshot_location
+G4PairedNaturalTreeCertificate.lean:1165:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_location`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1085: lemma permuteSnapshot_copyLocation
+G4PairedNaturalTreeCertificate.lean:1170:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_copyLocation`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1090: lemma permuteSnapshot_valid
+G4PairedNaturalTreeCertificate.lean:1193:6: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+PAIRED_DIAGNOSTIC before original line 1116: lemma permuteSnapshot_commonDescendants
+PAIRED_DIAGNOSTIC before original line 1124: noncomputable def permuteCode
+PAIRED_DIAGNOSTIC before original line 1131: lemma permuteCode_val
+PAIRED_DIAGNOSTIC before original line 1136: lemma permuteCode_commonDescendants
+PAIRED_DIAGNOSTIC before original line 1143: lemma permuteCode_inverse
+PAIRED_DIAGNOSTIC before original line 1151: noncomputable def permuteCodeEquiv
+G4PairedNaturalTreeCertificate.lean:1248:18: error: Type mismatch: After simplification, term
+  permuteCode_inverse N (Equiv.symm σ)
+ has type
+  ∀ (a : Snapshot V E Copy) (b : SourceValid N sample (decodeSnapshot N.root a)),
+    permuteCode N σ (permuteCode N (Equiv.symm σ) ⟨a, b⟩) = ⟨a, b⟩
+but is expected to have type
+  Function.RightInverse (permuteCode N (Equiv.symm σ)) (permuteCode N σ)
+PAIRED_DIAGNOSTIC before original line 1158: lemma permuteCode_live
+PAIRED_DIAGNOSTIC before original line 1165: lemma permuteCode_location
+PAIRED_DIAGNOSTIC before original line 1172: lemma permuteCode_population_member
+PAIRED_DIAGNOSTIC before original line 1187: lemma permuteCode_population_pair
+PAIRED_DIAGNOSTIC before original line 1196: noncomputable def permuteChoiceEquiv
+PAIRED_DIAGNOSTIC before original line 1207: lemma permuteChoice_rate
+PAIRED_DIAGNOSTIC before original line 1213: lemma permuteCode_totalRate
+PAIRED_DIAGNOSTIC before original line 1221: lemma permuteChoice_mass
+PAIRED_DIAGNOSTIC before original line 1230: lemma map_equiv_mass {A B : Type*} [Fintype A]
+PAIRED_DIAGNOSTIC before original line 1244: lemma permuteChoice_pmf
+PAIRED_DIAGNOSTIC before original line 1258: lemma permuteCode_ancestor
+PAIRED_DIAGNOSTIC before original line 1265: lemma permuteCode_genealogy
+PAIRED_DIAGNOSTIC before original line 1272: lemma permuteCode_register
+PAIRED_DIAGNOSTIC before original line 1279: lemma permuteCode_destination
+G4PairedNaturalTreeCertificate.lean:1396:85: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+q : Choice N s
+⊢ Valid (merge (state (permuteCode N σ s)) (σ (↑q.snd).1) (σ (↑q.snd).2))
+G4PairedNaturalTreeCertificate.lean:1395:83: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+q : Choice N s
+⊢ Valid (merge (state s) (↑q.snd).1 (↑q.snd).2)
+PAIRED_DIAGNOSTIC before original line 1330: lemma permuteCode_sourceStep
+PAIRED_DIAGNOSTIC before original line 1340: lemma permuteCode_iteration
+PAIRED_DIAGNOSTIC before original line 1355: lemma permuteCode_time
+G4PairedNaturalTreeCertificate.lean:1465:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4PairedNaturalTreeCertificate.lean:1465:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+PAIRED_DIAGNOSTIC before original line 1365: lemma permuteCode_transport
+G4PairedNaturalTreeCertificate.lean:1487:65: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+f g : Copy → Location V E
+ev ev' : SourceEvent V E Copy
+hv : SourceValid N sample (transport (state s) f ev)
+hv' : SourceValid N sample (transport (state (permuteCode N σ s)) g ev')
+hd : CommonDescendants N sample (state (admittedCode N sample (transport (state s) f ev) hv))
+hfg : ∀ (x : Copy), g (σ x) = f x
+⊢ Valid (transport (state (permuteCode N σ s)) g ev')
+G4PairedNaturalTreeCertificate.lean:1486:70: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+f g : Copy → Location V E
+ev ev' : SourceEvent V E Copy
+hv : SourceValid N sample (transport (state s) f ev)
+hv' : SourceValid N sample (transport (state (permuteCode N σ s)) g ev')
+hd : CommonDescendants N sample (state (admittedCode N sample (transport (state s) f ev) hv))
+hfg : ∀ (x : Copy), g (σ x) = f x
+⊢ Valid (transport (state s) f ev)
+G4PairedNaturalTreeCertificate.lean:1483:81: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+f g : Copy → Location V E
+ev ev' : SourceEvent V E Copy
+hv : SourceValid N sample (transport (state s) f ev)
+hv' : SourceValid N sample (transport (state (permuteCode N σ s)) g ev')
+hd : CommonDescendants N sample (state (admittedCode N sample (transport (state s) f ev) hv))
+hfg : ∀ (x : Copy), g (σ x) = f x
+⊢ permuteSnapshot σ ↑(admittedCode N sample (transport (state s) f ev) hv) =
+    ↑(admittedCode N sample (transport (state (permuteCode N σ s)) g ev') hv')
+PAIRED_DIAGNOSTIC before original line 1406: lemma permuteCode_exit
+PAIRED_DIAGNOSTIC before original line 1414: lemma permuteCode_ordinary
+PAIRED_DIAGNOSTIC before original line 1422: lemma permuteCode_root
+PAIRED_DIAGNOSTIC before original line 1430: lemma permuteCode_node_member
+PAIRED_DIAGNOSTIC before original line 1438: noncomputable def permuteNodeEquiv
+PAIRED_DIAGNOSTIC before original line 1448: lemma permuteCode_pulse
+G4PairedNaturalTreeCertificate.lean:1575:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : GProgram.G2.OriginalHybridParents N
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+coin : AtNode (state s) H.hybrid → Bool
+x : Copy
+hx : x ∈ (state s).live ∧ (state s).location x = Location.node H.hybrid
+hx' : σ x ∈ (state (permuteCode N σ s)).live ∧ (state (permuteCode N σ s)).location (σ x) = Location.node H.hybrid
+⊢ Location.edge
+      (H.parent
+        (coin
+          ({ toFun := fun a => ⟨σ ↑a, ⋯⟩, invFun := fun a => ⟨(Equiv.symm σ) ↑a, ⋯⟩, left_inv := ⋯,
+                right_inv := ⋯ }.symm
+            ⟨σ x, ⋯⟩))) =
+    Location.edge (H.parent (coin ⟨x, hx⟩))
+G4PairedNaturalTreeCertificate.lean:1578:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : GProgram.G2.OriginalHybridParents N
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+coin : AtNode (state s) H.hybrid → Bool
+x : Copy
+hx : ¬(x ∈ (state s).live ∧ (state s).location x = Location.node H.hybrid)
+hx' : ¬(σ x ∈ (state (permuteCode N σ s)).live ∧ (state (permuteCode N σ s)).location (σ x) = Location.node H.hybrid)
+⊢ (if h : σ x ∈ (state (permuteCode N σ s)).live ∧ (state s).location x = Location.node H.hybrid then
+      Location.edge
+        (H.parent (GProgram.G7.CoinReindexing.coinTransport (permuteNodeEquiv N σ s hs H.hybrid) coin ⟨σ x, ⋯⟩))
+    else (state s).location x) =
+    (state s).location x
+G4PairedNaturalTreeCertificate.lean:1577:25: warning: This simp argument is unused:
+  Equiv.symm_apply_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dif_pos hx, dif_pos hx', GProgram.G7.CoinReindexing.coinTransport, permuteNodeEquiv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:1579:28: warning: This simp argument is unused:
+  dif_neg hx'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dif_neg hx, permuteCode_location N σ s hs, Equiv.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PAIRED_DIAGNOSTIC before original line 1465: lemma permuteCode_independentPulse
+PAIRED_DIAGNOSTIC before original line 1479: def IndependentBoundary
+PAIRED_DIAGNOSTIC before original line 1483: lemma permuteCode_boundary
+PAIRED_DIAGNOSTIC before original line 1495: def IndependentWord
+PAIRED_DIAGNOSTIC before original line 1498: lemma permuteCode_program
+G4PairedNaturalTreeCertificate.lean:1636:51: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  boundaryKernel N b (permuteCode N σ s)
+in the target expression
+  ((sourceProgramStep N r (ProgramStep.boundary b) s).bind fun a =>
+      PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (permuteCode N σ s)).bind (sourceProgram N r ops)
+
+case cons.boundary
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+σ : Equiv.Perm Copy
+ops : List (ProgramStep N)
+ih :
+  IndependentWord N ops →
+    ∀ (s : Code N sample),
+      CommonDescendants N sample (state s) →
+        PMF.map (permuteCode N σ) (sourceProgram N r ops s) = sourceProgram N r ops (permuteCode N σ s)
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+ht : IndependentWord N ops
+b : BoundaryOperation N
+hops : IndependentWord N (ProgramStep.boundary b :: ops)
+hh :
+  match ProgramStep.boundary b with
+  | ProgramStep.interval duration => True
+  | ProgramStep.boundary b => IndependentBoundary N b
+⊢ ((sourceProgramStep N r (ProgramStep.boundary b) s).bind fun a =>
+      PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (permuteCode N σ s)).bind (sourceProgram N r ops)
+PAIRED_DIAGNOSTIC before original line 1522: lemma permuteChoice_jumpMass
+PAIRED_DIAGNOSTIC before original line 1531: lemma permuteChoice_jumpPMF
+PAIRED_DIAGNOSTIC before original line 1545: lemma permuteCode_jumpStep
+PAIRED_DIAGNOSTIC before original line 1555: lemma commonDescendants_jump
+PAIRED_DIAGNOSTIC before original line 1562: lemma permuteCode_completion
+PAIRED_DIAGNOSTIC before original line 1579: theorem independent_completed_program_permutation
+PAIRED_DIAGNOSTIC before original line 1590: section TripletReadout
+PAIRED_DIAGNOSTIC before original line 1597: lemma wellLabelled_two_tree
+G4PairedNaturalTreeCertificate.lean:1730:11: error: unsolved goals
+case leaf
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x : Copy
+ht : (Genealogy.leaf x).WellLabelled
+hc : 1 = 2
+⊢ ∃ a b, a ≠ b ∧ Genealogy.leaf x = (Genealogy.leaf a).graft (Genealogy.leaf b)
+PAIRED_DIAGNOSTIC before original line 1617: def tripletTree
+PAIRED_DIAGNOSTIC before original line 1619: lemma wellLabelled_three_tree
+G4PairedNaturalTreeCertificate.lean:1754:11: error: unsolved goals
+case leaf
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x : Copy
+ht : (Genealogy.leaf x).WellLabelled
+hc : 1 = 3
+⊢ ∃ a b c, a ≠ b ∧ a ≠ c ∧ b ≠ c ∧ UnorderedEquiv (Genealogy.leaf x) (tripletTree a b c)
+G4PairedNaturalTreeCertificate.lean:1768:60: error: unsolved goals
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+u v : Genealogy Copy
+ht : (u.graft v).WellLabelled
+hc✝ : (u.graft v).leaves.card = 3
+hu✝ : 0 < u.leaves.card
+hv✝ : 0 < v.leaves.card
+hh : u.leaves.card + v.leaves.card = 3
+a b : Copy
+hab : a ≠ b
+hwu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).WellLabelled
+hu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves.card = 2
+hwv : (Genealogy.leaf a).WellLabelled
+hv : (Genealogy.leaf a).leaves.card = 1
+hd : Disjoint ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves (Genealogy.leaf a).leaves
+hc : (Genealogy.leaf a).leaves = {a}
+⊢ ?m.234 = a ∨ ?m.234 = b
+G4PairedNaturalTreeCertificate.lean:1768:89: error: unsolved goals
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+u v : Genealogy Copy
+ht : (u.graft v).WellLabelled
+hc✝ : (u.graft v).leaves.card = 3
+hu✝ : 0 < u.leaves.card
+hv✝ : 0 < v.leaves.card
+hh : u.leaves.card + v.leaves.card = 3
+a b : Copy
+hab : a ≠ b
+hwu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).WellLabelled
+hu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves.card = 2
+hwv : (Genealogy.leaf a).WellLabelled
+hv : (Genealogy.leaf a).leaves.card = 1
+hd : Disjoint ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves (Genealogy.leaf a).leaves
+hc : (Genealogy.leaf a).leaves = {a}
+⊢ ?m.234 = a
+G4PairedNaturalTreeCertificate.lean:1769:60: error: unsolved goals
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+u v : Genealogy Copy
+ht : (u.graft v).WellLabelled
+hc✝ : (u.graft v).leaves.card = 3
+hu✝ : 0 < u.leaves.card
+hv✝ : 0 < v.leaves.card
+hh : u.leaves.card + v.leaves.card = 3
+a b : Copy
+hab : a ≠ b
+hwu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).WellLabelled
+hu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves.card = 2
+hwv : (Genealogy.leaf b).WellLabelled
+hv : (Genealogy.leaf b).leaves.card = 1
+hd : Disjoint ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves (Genealogy.leaf b).leaves
+hc : (Genealogy.leaf b).leaves = {b}
+⊢ ?m.254 = a ∨ ?m.254 = b
+G4PairedNaturalTreeCertificate.lean:1769:89: error: unsolved goals
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+u v : Genealogy Copy
+ht : (u.graft v).WellLabelled
+hc✝ : (u.graft v).leaves.card = 3
+hu✝ : 0 < u.leaves.card
+hv✝ : 0 < v.leaves.card
+hh : u.leaves.card + v.leaves.card = 3
+a b : Copy
+hab : a ≠ b
+hwu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).WellLabelled
+hu : ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves.card = 2
+hwv : (Genealogy.leaf b).WellLabelled
+hv : (Genealogy.leaf b).leaves.card = 1
+hd : Disjoint ((Genealogy.leaf a).graft (Genealogy.leaf b)).leaves (Genealogy.leaf b).leaves
+hc : (Genealogy.leaf b).leaves = {b}
+⊢ ?m.254 = b
+G4PairedNaturalTreeCertificate.lean:1750:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.wellLabelled_three_tree`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1646: def threeCherry : Fin 3 → UnrankedTree
+PAIRED_DIAGNOSTIC before original line 1651: lemma triplet_swap
+G4PairedNaturalTreeCertificate.lean:1784:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.triplet_swap`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1656: lemma threeCherry_covers
+PAIRED_DIAGNOSTIC before original line 1667: noncomputable def observedClusters : UnrankedTree Copy → Finset
+PAIRED_DIAGNOSTIC before original line 1670: lemma threeCherry_pair12
+G4PairedNaturalTreeCertificate.lean:1807:75: error: unsolved goals
+case «1»
+⊢ (∃ x, ¬(x = 1 ∨ x = 2 ↔ x = 0 ∨ x = 2 ∨ x = 1)) ∧
+    (∃ x, ¬(x = 1 ∨ x = 2 ↔ x = 0 ∨ x = 2)) ∧ ∃ x, ¬(x = 1 ∨ x = 2 ↔ x = 0)
+
+case «2»
+⊢ (∃ x, ¬(x = 1 ∨ x = 2 ↔ x = 0 ∨ x = 1)) ∧ ∃ x, ¬(x = 1 ∨ x = 2 ↔ x = 0)
+PAIRED_DIAGNOSTIC before original line 1675: lemma threeCherry_pair02
+G4PairedNaturalTreeCertificate.lean:1813:75: error: unsolved goals
+case «0»
+⊢ (∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 1 ∨ x = 2 ∨ x = 0)) ∧
+    (∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 1 ∨ x = 2)) ∧ ∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 1)
+
+case «2»
+⊢ (∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 0 ∨ x = 1 ∨ x = 2)) ∧
+    (∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 0 ∨ x = 1)) ∧ ∃ x, ¬(x = 0 ∨ x = 2 ↔ x = 1)
+PAIRED_DIAGNOSTIC before original line 1680: lemma threeCherry_injective : Function.Injective threeCherry := by
+PAIRED_DIAGNOSTIC before original line 1693: lemma triplet_canonical
+PAIRED_DIAGNOSTIC before original line 1699: lemma threeCherry_permutation
+PAIRED_DIAGNOSTIC before original line 1705: lemma fullForest_image {V E : Type*}
+PAIRED_DIAGNOSTIC before original line 1718: lemma permuteCode_fullForest
+PAIRED_DIAGNOSTIC before original line 1735: lemma terminal_threeCherry
+G4PairedNaturalTreeCertificate.lean:1886:60: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+s : Code N sample
+hc : liveCard s ≤ 1
+l : Fin 3 := (state s).ancestor 0
+hl : l ∈ (state s).live
+ha : ∀ (x : Fin 3), (state s).ancestor x = l
+x : Fin 3
+⊢ x ∈ ((state s).genealogy l).leaves ↔ True
+G4PairedNaturalTreeCertificate.lean:1888:15: warning: This simp argument is unused:
+  s.property.forest.leaf_fiber l hl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ha, Finset.mem_univ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:1888:49: warning: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [s.property.forest.leaf_fiber l hl, Finset.mem_univ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PAIRED_DIAGNOSTIC before original line 1752: noncomputable def tripleForestMass
+PAIRED_DIAGNOSTIC before original line 1756: lemma threeCherry_mass_sum
+PAIRED_DIAGNOSTIC before original line 1772: lemma threeCherry_mass_permutation
+G4PairedNaturalTreeCertificate.lean:1937:4: error: 'change' tactic failed, pattern
+  @ite ℝ≥0∞ (?m.265 = obs (permuteCode N σ s)) (Finset.decidableEq ?m.265 (obs (permuteCode N σ s))) (p s) 0 = ?m.286
+is not definitionally equal to target
+  @ite ℝ≥0∞ ({threeCherry (σ j)} = (obs ∘ permuteCode N σ) s)
+      (Classical.propDecidable ({threeCherry (σ j)} = (obs ∘ permuteCode N σ) s)) (p s) 0 =
+    if {threeCherry j} = obs s then p s else 0
+PAIRED_DIAGNOSTIC before original line 1798: theorem threeCherry_uniform
+G4PairedNaturalTreeCertificate.lean:1955:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∑ a ∈ ?m.163, (?m.174 a) (?m.175 a)).toReal
+in the target expression
+  (∑ j, tripleForestMass N p j).toReal = ENNReal.toReal 1
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+p : PMF (Code N sample)
+hterm : ∀ s ∈ p.support, liveCard s ≤ 1
+hgood : ∀ s ∈ p.support, CommonDescendants N sample (state s)
+hsym : ∀ (σ : Equiv.Perm (Fin 3)), PMF.map (permuteCode N σ) p = p
+j : Fin 3
+heq : ∀ (i : Fin 3), tripleForestMass N p i = tripleForestMass N p j
+hsum : (∑ j, tripleForestMass N p j).toReal = ENNReal.toReal 1
+⊢ (tripleForestMass N p j).toReal = 1 / 3
+PAIRED_DIAGNOSTIC before original line 1817: noncomputable def colocatedState
+PAIRED_DIAGNOSTIC before original line 1825: lemma colocatedState_valid
+G4PairedNaturalTreeCertificate.lean:1974:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.colocatedState_valid`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 1833: noncomputable def colocatedCode
+PAIRED_DIAGNOSTIC before original line 1837: lemma colocatedCode_commonDescendants
+G4PairedNaturalTreeCertificate.lean:1992:100: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+place : Location V E
+ρ : V → Bool
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+x y : Copy
+⊢ Valid (colocatedState place ρ)
+G4PairedNaturalTreeCertificate.lean:1990:82: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+place : Location V E
+ρ : V → Bool
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+x y : Copy
+⊢ DescendsTo N (copyLocation (state (colocatedCode N sample place ρ hplace)) x) (sample y)
+PAIRED_DIAGNOSTIC before original line 1845: lemma colocatedCode_permutation
+G4PairedNaturalTreeCertificate.lean:2004:44: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+place : Location V E
+ρ : V → Bool
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+σ : Equiv.Perm Copy
+⊢ Valid (colocatedState place ρ)
+G4PairedNaturalTreeCertificate.lean:2003:68: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+place : Location V E
+ρ : V → Bool
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+σ : Equiv.Perm Copy
+⊢ Valid (colocatedState place ρ)
+G4PairedNaturalTreeCertificate.lean:2000:103: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+place : Location V E
+ρ : V → Bool
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+σ : Equiv.Perm Copy
+⊢ permuteSnapshot σ ↑(colocatedCode N sample place ρ hplace) = ↑(colocatedCode N sample place ρ hplace)
+PAIRED_DIAGNOSTIC before original line 1867: lemma commonDescendants_completion
+PAIRED_DIAGNOSTIC before original line 1882: theorem independent_colocated_triplet_reader
+PAIRED_DIAGNOSTIC before original line 1906: section ActualTripletCut
+PAIRED_DIAGNOSTIC before original line 1917: lemma step_canonical
+G4PairedNaturalTreeCertificate.lean:2078:50: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Canonical s
+q : Choice N s
+⊢ SourceValid N sample (merge (state s) (↑q.snd).1 (↑q.snd).2)
+PAIRED_DIAGNOSTIC before original line 1924: lemma iteration_canonical
+PAIRED_DIAGNOSTIC before original line 1934: lemma time_canonical
+G4PairedNaturalTreeCertificate.lean:2093:35: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4PairedNaturalTreeCertificate.lean:2093:37: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+PAIRED_DIAGNOSTIC before original line 1940: lemma boundary_canonical
+PAIRED_DIAGNOSTIC before original line 1952: lemma program_canonical
+G4PairedNaturalTreeCertificate.lean:2112:6: warning: declaration uses `sorry`
+PAIRED_DIAGNOSTIC before original line 1964: lemma canonical_colocated_full_card
+G4PairedNaturalTreeCertificate.lean:2130:67: error: Application type mismatch: The argument
+  hcard
+has type
+  liveCard s = Fintype.card Copy
+of sort `Prop` but is expected to have type
+  Finset ?m.109
+of sort `Type ?u.86` in the application
+  Finset.eq_univ_of_card hcard
+G4PairedNaturalTreeCertificate.lean:2132:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state s).live
+in the target expression
+  x ∈ (decodeSnapshot N.root ↑s).live
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Canonical s
+hcard : liveCard s = Fintype.card Copy
+place : Location V E
+hloc : ∀ (x : Copy), copyLocation (state s) x = place
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+hl : (state s).live = Finset.univ
+x : Copy
+⊢ x ∈ (decodeSnapshot N.root ↑s).live
+G4PairedNaturalTreeCertificate.lean:2136:48: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state s).live
+in the target expression
+  x ∈ (decodeSnapshot N.root ↑s).live
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Canonical s
+hcard : liveCard s = Fintype.card Copy
+place : Location V E
+hloc : ∀ (x : Copy), copyLocation (state s) x = place
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Copy), (state s).ancestor x = x
+x : Copy
+⊢ x ∈ (decodeSnapshot N.root ↑s).live
+G4PairedNaturalTreeCertificate.lean:2138:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state s).live
+in the target expression
+  x ∈ (decodeSnapshot N.root ↑s).live
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Canonical s
+hcard : liveCard s = Fintype.card Copy
+place : Location V E
+hloc : ∀ (x : Copy), copyLocation (state s) x = place
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Copy), (state s).ancestor x = x
+x y : Copy
+⊢ x ∈ (decodeSnapshot N.root ↑s).live
+G4PairedNaturalTreeCertificate.lean:2138:77: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state s).ancestor ?x
+in the target expression
+  (decodeSnapshot N.root ↑s).ancestor y = x ↔ y ∈ {x}
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Canonical s
+hcard : liveCard s = Fintype.card Copy
+place : Location V E
+hloc : ∀ (x : Copy), copyLocation (state s) x = place
+hplace : ∀ (x : Copy), DescendsTo N place (sample x)
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Copy), (state s).ancestor x = x
+x y : Copy
+⊢ (decodeSnapshot N.root ↑s).ancestor y = x ↔ y ∈ {x}
+PAIRED_DIAGNOSTIC before original line 1994: lemma independentWord_append
+G4PairedNaturalTreeCertificate.lean:2156:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.independentWord_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 2002: lemma independentWord_boundary_map
+G4PairedNaturalTreeCertificate.lean:2165:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.independentWord_boundary_map`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 2009: lemma actual_independent_node
+PAIRED_DIAGNOSTIC before original line 2016: lemma actual_independent_batch
+PAIRED_DIAGNOSTIC before original line 2024: lemma actual_independent_tail
+PAIRED_DIAGNOSTIC before original line 2036: lemma actual_independent_calendar
+G4PairedNaturalTreeCertificate.lean:2209:20: error: Type mismatch
+  (independentWord_append N ?m.128 ?m.129).mpr
+has type
+  IndependentWord N ?m.128 ∧ IndependentWord N ?m.129 → IndependentWord N (?m.128 ++ ?m.129)
+but is expected to have type
+  IndependentWord N
+    (match a :: dates with
+    | [] => []
+    | a :: as => boundaryOperations N C H gamma (fun x => false) a ++ calendarTail N C H gamma (fun x => false) a as)
+G4PairedNaturalTreeCertificate.lean:2210:6: error: unexpected token '⟨'; expected command
+PAIRED_DIAGNOSTIC before original line 2048: theorem actual_independent_cut_triplet_reader
+G4PairedNaturalTreeCertificate.lean:2229:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  copyLocation (state s) x
+in the target expression
+  DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Fin 3 → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+ρ : V → Bool
+past future : List (ProgramStep N)
+hp : (compiledCalendarProgram N C H gamma fun x => false) = past ++ future
+s : Code N sample
+hs : s ∈ (sourceProgram N r past (initialCode N sample ρ)).support
+hcard : liveCard s = Fintype.card (Fin 3)
+place : Location V E
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = place
+j : Fin 3
+hcan : Canonical s
+x : Fin 3
+hx : DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+⊢ DescendsTo N place (sample x)
+PAIRED_DIAGNOSTIC before original line 2076: section IndependentRouteTrace
+PAIRED_DIAGNOSTIC before original line 2089: noncomputable def positiveExpectation {A : Type*}
+PAIRED_DIAGNOSTIC before original line 2092: lemma positiveExpectation_pure {A : Type*}
+PAIRED_DIAGNOSTIC before original line 2097: lemma positiveExpectation_bind {A B : Type*}
+PAIRED_DIAGNOSTIC before original line 2109: lemma positiveExpectation_map {A B : Type*}
+G4PairedNaturalTreeCertificate.lean:2283:71: error: unsolved goals
+A : Type u_5
+B : Type u_6
+p : PMF A
+g : A → B
+f : B → ℝ≥0∞
+⊢ (positiveExpectation p fun a => f (g a)) = positiveExpectation p (f ∘ g)
+PAIRED_DIAGNOSTIC before original line 2114: lemma positiveExpectation_mul {A : Type*}
+G4PairedNaturalTreeCertificate.lean:2294:2: error: Tactic `rfl` failed: equality lhs
+  p a * (fun a => c * f a) a
+is not definitionally equal to rhs
+  c * (f a * p a)
+
+A : Type u_5
+p : PMF A
+c : ℝ≥0∞
+f : A → ℝ≥0∞
+a : A
+⊢ p a * (fun a => c * f a) a = c * (f a * p a)
+PAIRED_DIAGNOSTIC before original line 2125: noncomputable def routingTrace
+PAIRED_DIAGNOSTIC before original line 2132: noncomputable def traceExposure
+PAIRED_DIAGNOSTIC before original line 2139: lemma traceExposure_nonnegative
+PAIRED_DIAGNOSTIC before original line 2152: lemma routingTrace_shape
+PAIRED_DIAGNOSTIC before original line 2175: theorem actual_no_loss_trace_mixture
+G4PairedNaturalTreeCertificate.lean:2361:8: error: unsolved goals
+case nil
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+⊢ (∑ d, if d = s then 1 else 0) = 1
+G4PairedNaturalTreeCertificate.lean:2367:6: error: `simp` made no progress
+G4PairedNaturalTreeCertificate.lean:2373:6: error: `simp` made no progress
+PAIRED_DIAGNOSTIC before original line 2204: def boundarySite
+PAIRED_DIAGNOSTIC before original line 2209: def wordSites
+PAIRED_DIAGNOSTIC before original line 2214: noncomputable def positionTrace
+PAIRED_DIAGNOSTIC before original line 2220: lemma fixedBoundaryLocation_agrees
+PAIRED_DIAGNOSTIC before original line 2230: lemma positionTrace_agrees
+PAIRED_DIAGNOSTIC before original line 2245: lemma positionTrace_update_unused
+G4PairedNaturalTreeCertificate.lean:2436:13: error(lean.unknownIdentifier): Unknown identifier `Function.update_noteq`
+G4PairedNaturalTreeCertificate.lean:2436:2: error: `simp` made no progress
+PAIRED_DIAGNOSTIC before original line 2253: lemma independent_boundary_copy_bit
+G4PairedNaturalTreeCertificate.lean:2449:4: error: Type mismatch: After simplification, term
+  hbit
+ has type
+  @Eq (Location V E) (copyLocation (state (pulseCode H s coin)) x) (Location.edge (H.parent bit))
+but is expected to have type
+  @Eq (Location V E) (copyLocation (state (pulseCode H s coin)) x)
+    (if True then Location.edge (H.parent bit) else Location.node H.hybrid)
+PAIRED_DIAGNOSTIC before original line 2270: theorem routingTrace_copy_selector
+G4PairedNaturalTreeCertificate.lean:2473:20: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2487:25: error(lean.unknownIdentifier): Unknown identifier `Function.update_same`
+G4PairedNaturalTreeCertificate.lean:2492:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2497:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2502:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+PAIRED_DIAGNOSTIC before original line 2321: lemma wordSites_append
+G4PairedNaturalTreeCertificate.lean:2509:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.wordSites_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 2327: lemma wordSites_boundary_map
+G4PairedNaturalTreeCertificate.lean:2516:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.wordSites_boundary_map`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 2335: noncomputable def hybridAtomSite
+PAIRED_DIAGNOSTIC before original line 2339: lemma originalNode_boundarySite
+PAIRED_DIAGNOSTIC before original line 2350: lemma actual_batch_wordSites
+PAIRED_DIAGNOSTIC before original line 2362: lemma actual_tail_wordSites
+PAIRED_DIAGNOSTIC before original line 2372: lemma actual_calendar_wordSites
+PAIRED_DIAGNOSTIC before original line 2385: theorem actual_calendar_sites_nodup
+G4PairedNaturalTreeCertificate.lean:2592:6: error: Tactic `split_ifs` failed: no if-then-else conditions to split
+
+case node
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+a b : Atom V E
+v : V
+ha : v ∈ hybridAtomSite N a
+hb : v ∈ hybridAtomSite N b
+u : V
+h :
+  v ∈
+    match Atom.node u with
+    | Atom.exit edge => none
+    | Atom.node v => if v = N.root then none else if N.graph.IsHybrid v then some v else none
+⊢ Atom.node u = Atom.node v
+PAIRED_DIAGNOSTIC before original line 2406: theorem actual_independent_prefix_trace_selector
+G4PairedNaturalTreeCertificate.lean:2607:41: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+PAIRED_DIAGNOSTIC before original line 2422: noncomputable def singleLocationRate
+PAIRED_DIAGNOSTIC before original line 2425: lemma singleLocationRate_nonnegative
+PAIRED_DIAGNOSTIC before original line 2433: lemma actual_three_separated_rate
+G4PairedNaturalTreeCertificate.lean:2639:44: error: Type mismatch
+  Finset.eq_univ_of_card ?m.198
+has type
+  Finset.card ?m.198 = Fintype.card ?m.196 → ?m.198 = Finset.univ
+but is expected to have type
+  (state s).live = Finset.univ
+G4PairedNaturalTreeCertificate.lean:2639:71: error: Type mismatch: After simplification, term
+  hc
+ has type
+  liveCard s = 3
+of sort `Prop` but is expected to have type
+  Finset ?m.196
+of sort `Type ?u.124`
+G4PairedNaturalTreeCertificate.lean:2641:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state s).live
+in the target expression
+  x ∈ (decodeSnapshot N.root ↑s).live
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+h02 : copyLocation (state s) 0 ≠ copyLocation (state s) 2
+h12 : copyLocation (state s) 1 ≠ copyLocation (state s) 2
+hl : (state s).live = Finset.univ
+x : Fin 3
+⊢ x ∈ (decodeSnapshot N.root ↑s).live
+G4PairedNaturalTreeCertificate.lean:2647:112: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Fin 3), (state s).ancestor x = x
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = (state s).location x
+h02 : (state s).location 0 ≠ (state s).location 2
+h12 : (state s).location 1 ≠ (state s).location 2
+i : Option E
+hu : Finset.univ = {0, 1, 2}
+h0 : (state s).location 0 = originalPlace N i
+h1 : (state s).location 1 = originalPlace N i
+h2 : ¬(state s).location 2 = originalPlace N i
+⊢ {a ∈ {0, 1, 2} | (state s).location a = originalPlace N i}.card.choose 2 = 1
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Fin 3), (state s).ancestor x = x
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = (state s).location x
+h02 : (state s).location 0 ≠ (state s).location 2
+h12 : (state s).location 1 ≠ (state s).location 2
+i : Option E
+hu : Finset.univ = {0, 1, 2}
+h0 : (state s).location 0 = originalPlace N i
+h1 : ¬(state s).location 1 = originalPlace N i
+h2 : ¬(state s).location 2 = originalPlace N i
+⊢ {a ∈ {0, 1, 2} | (state s).location a = originalPlace N i}.card.choose 2 = 0
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Fin 3), (state s).ancestor x = x
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = (state s).location x
+h02 : (state s).location 0 ≠ (state s).location 2
+h12 : (state s).location 1 ≠ (state s).location 2
+i : Option E
+hu : Finset.univ = {0, 1, 2}
+h0 : ¬(state s).location 0 = originalPlace N i
+h1 : (state s).location 1 = originalPlace N i
+h2 : ¬(state s).location 2 = originalPlace N i
+⊢ {a ∈ {0, 1, 2} | (state s).location a = originalPlace N i}.card.choose 2 = 0
+
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Fin 3), (state s).ancestor x = x
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = (state s).location x
+h02 : (state s).location 0 ≠ (state s).location 2
+h12 : (state s).location 1 ≠ (state s).location 2
+i : Option E
+hu : Finset.univ = {0, 1, 2}
+h0 : ¬(state s).location 0 = originalPlace N i
+h1 : ¬(state s).location 1 = originalPlace N i
+h2 : (state s).location 2 = originalPlace N i
+⊢ {a ∈ {0, 1, 2} | (state s).location a = originalPlace N i}.card.choose 2 = 0
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+r : PositivePairRates E
+s : Code N sample
+hc : liveCard s = 3
+hl : (state s).live = Finset.univ
+ha : ∀ (x : Fin 3), (state s).ancestor x = x
+hloc : ∀ (x : Fin 3), copyLocation (state s) x = (state s).location x
+h02 : (state s).location 0 ≠ (state s).location 2
+h12 : (state s).location 1 ≠ (state s).location 2
+i : Option E
+hu : Finset.univ = {0, 1, 2}
+h0 : ¬(state s).location 0 = originalPlace N i
+h1 : ¬(state s).location 1 = originalPlace N i
+h2 : ¬(state s).location 2 = originalPlace N i
+⊢ {a ∈ {0, 1, 2} | (state s).location a = originalPlace N i}.card.choose 2 = 0
+G4PairedNaturalTreeCertificate.lean:2655:42: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hl, hu, h0, h1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PAIRED_DIAGNOSTIC before original line 2471: lemma actual_three_separated_rate_le
+PAIRED_DIAGNOSTIC before original line 2481: noncomputable def locationExposure
+PAIRED_DIAGNOSTIC before original line 2490: lemma traceExposure_le_copy_clock
+PAIRED_DIAGNOSTIC before original line 2514: noncomputable def TraceStrictSplit
+PAIRED_DIAGNOSTIC before original line 2523: lemma traceExposure_lt_copy_clock
+PAIRED_DIAGNOSTIC before original line 2555: def referenceBoundary
+PAIRED_DIAGNOSTIC before original line 2559: def referenceStep
+PAIRED_DIAGNOSTIC before original line 2563: lemma fixedBoundary_reference
+PAIRED_DIAGNOSTIC before original line 2568: lemma readoutExposure_reference
+PAIRED_DIAGNOSTIC before original line 2576: lemma reference_originalNode
+PAIRED_DIAGNOSTIC before original line 2586: lemma reference_batch
+G4PairedNaturalTreeCertificate.lean:2799:58: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+a : ℝ
+⊢ List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) {e | C.age (N.graph.source e) = a}.toList ++
+      List.map
+        (fun x =>
+          ProgramStep.boundary
+            (match originalNodeOperation N H gamma common x with
+            | BoundaryOperation.independent H gamma => BoundaryOperation.common H
+            | b => b))
+        {v | C.age v = a}.toList =
+    List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) {e | C.age (N.graph.source e) = a}.toList ++
+      List.map (fun v => ProgramStep.boundary (originalNodeOperation N H gamma (fun x => true) v))
+        {v | C.age v = a}.toList
+G4PairedNaturalTreeCertificate.lean:2801:36: warning: This simp argument is unused:
+  reference_originalNode
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [boundaryOperations, List.map_append, List.map_map, Function.comp_def, referenceStep,
+    referenceBoundary]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PAIRED_DIAGNOSTIC before original line 2593: lemma reference_tail
+PAIRED_DIAGNOSTIC before original line 2603: lemma reference_calendar
+PAIRED_DIAGNOSTIC before original line 2612: lemma readoutExposure_calendar_mode
+PAIRED_DIAGNOSTIC before original line 2619: lemma locationExposure_positionTrace
+PAIRED_DIAGNOSTIC before original line 2636: lemma boundarySite_isHybrid
+G4PairedNaturalTreeCertificate.lean:2851:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.boundarySite_isHybrid`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PAIRED_DIAGNOSTIC before original line 2647: lemma wordSites_isHybrid
+PAIRED_DIAGNOSTIC before original line 2662: lemma positionTrace_original_bank
+PAIRED_DIAGNOSTIC before original line 2670: theorem actual_independent_prefix_trace_bank
+G4PairedNaturalTreeCertificate.lean:2893:41: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+PAIRED_DIAGNOSTIC before original line 2681: lemma readoutExposure_nonnegative
+PAIRED_DIAGNOSTIC before original line 2691: lemma readoutExposure_prefix_le
+PAIRED_DIAGNOSTIC before original line 2701: lemma separatedRate_nonnegative
+PAIRED_DIAGNOSTIC before original line 2708: lemma separated_agenda_single_clock
+PAIRED_DIAGNOSTIC before original line 2730: lemma reference_stopBeforeTail
+PAIRED_DIAGNOSTIC before original line 2743: lemma reference_beforeBoundaryProgram
+PAIRED_DIAGNOSTIC before original line 2756: lemma reference_literalPrefix
+PAIRED_DIAGNOSTIC before original line 2767: lemma literal_single_clock_le_selected_path
+G4PairedNaturalTreeCertificate.lean:3001:11: error(lean.unknownIdentifier): Unknown identifier `initialCode`
+G4PairedNaturalTreeCertificate.lean:3000:51: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+coin : Hybrid N → Bool
+⊢ locationExposure N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej)
+      (positionTrace N (originalRegister N coin) (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej)
+        (Location.node (N.leaf i))) ≤
+    selectedDirectedExposure N C H r coin i j
+PAIRED_DIAGNOSTIC before original line 2800: theorem actual_independent_trace_hazard_le
+G4PairedNaturalTreeCertificate.lean:3035:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4PairedNaturalTreeCertificate.lean:3042:58: error: No goals to be solved
+G4PairedNaturalTreeCertificate.lean:3042:5: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+sample : Fin 3 → X
+h0 : sample 0 = i
+h1 : sample 1 = i
+h2 : sample 2 = j
+ρ : V → Bool
+base : Hybrid N → Bool
+hcal : 18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2) ^ 3
+states : List (Code N sample)
+hs : states ∈ (routingTrace N (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) sorry).support
+ops : List (ProgramStep N) := literalPrefix N C H (originalGamma p) (fun x => false) v ei ej
+x : Fin 3
+hx : x ∈ {2}
+he : x = 2
+⊢ sample x = j
+G4PairedNaturalTreeCertificate.lean:3043:22: error: Function expected at
+  initialCode
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4PairedNaturalTreeCertificate.lean:3037:51: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+sample : Fin 3 → X
+h0 : sample 0 = i
+h1 : sample 1 = i
+h2 : sample 2 = j
+ρ : V → Bool
+base : Hybrid N → Bool
+hcal : 18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2) ^ 3
+states : List (Code N sample)
+hs : states ∈ (routingTrace N (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) sorry).support
+ops : List (ProgramStep N) := literalPrefix N C H (originalGamma p) (fun x => false) v ei ej
+ha :
+  SeparatedAgenda N r {0, 1} {2} (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej)
+    (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample ρ)
+⊢ traceExposure N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) states ≤
+    selectedDirectedExposure N C H r base i j
+PAIRED_DIAGNOSTIC before original line 2833: theorem actual_independent_trace_hazard_lt
+G4PairedNaturalTreeCertificate.lean:3069:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4PairedNaturalTreeCertificate.lean:3078:58: error: No goals to be solved
+G4PairedNaturalTreeCertificate.lean:3078:5: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+sample : Fin 3 → X
+h0 : sample 0 = i
+h1 : sample 1 = i
+h2 : sample 2 = j
+ρ : V → Bool
+base : Hybrid N → Bool
+hcal : 18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2) ^ 3
+states : List (Code N sample)
+hs : states ∈ (routingTrace N (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) sorry).support
+hstrict : TraceStrictSplit N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) states
+ops : List (ProgramStep N) := literalPrefix N C H (originalGamma p) (fun x => false) v ei ej
+x : Fin 3
+hx : x ∈ {2}
+he : x = 2
+⊢ sample x = j
+G4PairedNaturalTreeCertificate.lean:3079:22: error: Function expected at
+  initialCode
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4PairedNaturalTreeCertificate.lean:3073:51: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+sample : Fin 3 → X
+h0 : sample 0 = i
+h1 : sample 1 = i
+h2 : sample 2 = j
+ρ : V → Bool
+base : Hybrid N → Bool
+hcal : 18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2) ^ 3
+states : List (Code N sample)
+hs : states ∈ (routingTrace N (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) sorry).support
+hstrict : TraceStrictSplit N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) states
+ops : List (ProgramStep N) := literalPrefix N C H (originalGamma p) (fun x => false) v ei ej
+ha :
+  SeparatedAgenda N r {0, 1} {2} (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej)
+    (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample ρ)
+⊢ traceExposure N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) states <
+    selectedDirectedExposure N C H r base i j
+PAIRED_DIAGNOSTIC before original line 2871: noncomputable def prescribedBoundary
+PAIRED_DIAGNOSTIC before original line 2877: noncomputable def prescribedTrace
+PAIRED_DIAGNOSTIC before original line 2883: lemma prescribedBoundary_support
+PAIRED_DIAGNOSTIC before original line 2890: lemma prescribedTrace_support
+PAIRED_DIAGNOSTIC before original line 2905: lemma prescribedBoundary_full_card
+PAIRED_DIAGNOSTIC before original line 2911: lemma prescribedBoundary_copyLocation
+G4PairedNaturalTreeCertificate.lean:3156:46: error: Type mismatch
+  Finset.eq_univ_of_card ?m.263
+has type
+  Finset.card ?m.263 = Fintype.card ?m.261 → ?m.263 = Finset.univ
+but is expected to have type
+  (state s).live = Finset.univ
+G4PairedNaturalTreeCertificate.lean:3156:73: error: maximum number of errors (100; from option `maxErrors`) reached, exiting

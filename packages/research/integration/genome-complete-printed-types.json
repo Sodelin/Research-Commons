@@ -1,0 +1,230 @@
+{
+  "schema": 1,
+  "source": "b094ae8555e58091faf132a4ffc4530c86db1445",
+  "run": 40105632721,
+  "job": 120906767687,
+  "records": [
+    {
+      "actual_complete_printed_type": "@FiniteGenomeIdentifiability.opposite_compatible_completions : ∀ {Node : Type u_1} {Coord : Type u_2}\n  [inst : Fintype Node] [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord),\n  ∃ A B,\n    FiniteGenomeIdentifiability.Compatible G A ∧\n      FiniteGenomeIdentifiability.Compatible G B ∧\n        SpeciesBridge.Specieslike A SpeciesBridge.Whole ∧ ¬SpeciesBridge.Specieslike B SpeciesBridge.Whole",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-001",
+      "module": "FiniteGenomeIdentifiability",
+      "name": "FiniteGenomeIdentifiability.opposite_compatible_completions"
+    },
+    {
+      "actual_complete_printed_type": "@FiniteGenomeIdentifiability.no_exact_specieslike_verdict : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord),\n  ¬∃ verdict,\n      ∀ (E : SpeciesBridge.Graph),\n        FiniteGenomeIdentifiability.Compatible G E → (verdict ↔ SpeciesBridge.Specieslike E SpeciesBridge.Whole)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-001",
+      "module": "FiniteGenomeIdentifiability",
+      "name": "FiniteGenomeIdentifiability.no_exact_specieslike_verdict"
+    },
+    {
+      "actual_complete_printed_type": "@FiniteGenomeIdentifiability.no_exact_specieslike_decoder : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord) (decode : WongGARG.GARG Node Coord → Prop),\n  ¬∀ (E : SpeciesBridge.Graph),\n      FiniteGenomeIdentifiability.Compatible G E → (decode G ↔ SpeciesBridge.Specieslike E SpeciesBridge.Whole)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-001",
+      "module": "FiniteGenomeIdentifiability",
+      "name": "FiniteGenomeIdentifiability.no_exact_specieslike_decoder"
+    },
+    {
+      "actual_complete_printed_type": "@WongAlexander.actual_garg_opposite_infinite_completions : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord),\n  ∃ code A B,\n    Function.Injective code ∧\n      WongAlexander.RealDatedBiosphere A ∧\n        WongAlexander.RealDatedBiosphere B ∧\n          SpeciesBridge.NaturalDateBiosphere A ∧\n            SpeciesBridge.NaturalDateBiosphere B ∧\n              SpeciesBridge.FiniteSupport (SpeciesBridge.Root A) ∧\n                SpeciesBridge.FiniteSupport (SpeciesBridge.Root B) ∧\n                  SpeciesBridge.WeaklyConnected A SpeciesBridge.Whole ∧\n                    SpeciesBridge.WeaklyConnected B SpeciesBridge.Whole ∧\n                      (∀ (a b : Node),\n                          (A (code a) (code b) ↔ G.Topology a b) ∧ (B (code a) (code b) ↔ G.Topology a b)) ∧\n                        (∀ (a b : Node),\n                            (SpeciesBridge.Descendant A (code a) (code b) ↔ AncestryViews.Reach G.Topology a b) ∧\n                              (SpeciesBridge.Descendant B (code a) (code b) ↔ AncestryViews.Reach G.Topology a b)) ∧\n                          SpeciesGlobalIAP.Inspecies A SpeciesBridge.Whole ∧\n                            SpeciesBridge.MaximalSpecieslike A SpeciesBridge.Whole ∧\n                              ¬SpeciesBridge.IAP B SpeciesBridge.Whole",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-001",
+      "module": "WongAlexander",
+      "name": "WongAlexander.actual_garg_opposite_infinite_completions"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.law_nonnegative : ∀ (s g : ThreeTaxonIdentifiability.Topology) (c : ℝ),\n  0 ≤ c → c ≤ 1 → 0 ≤ ThreeTaxonIdentifiability.law s c g",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.law_nonnegative"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.law_normalized : ∀ (s : ThreeTaxonIdentifiability.Topology) (c : ℝ),\n  ThreeTaxonIdentifiability.law s c ThreeTaxonIdentifiability.Topology.ab_c +\n        ThreeTaxonIdentifiability.law s c ThreeTaxonIdentifiability.Topology.ac_b +\n      ThreeTaxonIdentifiability.law s c ThreeTaxonIdentifiability.Topology.bc_a =\n    1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.law_normalized"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.unique_maximizer : ∀ (s g : ThreeTaxonIdentifiability.Topology),\n  ∀ c < 1,\n    (∀ (k : ThreeTaxonIdentifiability.Topology),\n        ThreeTaxonIdentifiability.law s c k ≤ ThreeTaxonIdentifiability.law s c g) ↔\n      g = s",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.unique_maximizer"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.law_identifiable : ∀ (s r : ThreeTaxonIdentifiability.Topology) (c d : ℝ),\n  c < 1 → d < 1 → (ThreeTaxonIdentifiability.law s c = ThreeTaxonIdentifiability.law r d ↔ s = r ∧ c = d)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.law_identifiable"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.boundary_uniform : ∀ (s g : ThreeTaxonIdentifiability.Topology),\n  ThreeTaxonIdentifiability.law s 1 g = 1 / 3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.boundary_uniform"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonIdentifiability.no_boundary_decoder : ∀\n  (decode : (ThreeTaxonIdentifiability.Topology → ℝ) → ThreeTaxonIdentifiability.Topology),\n  ¬∀ (s : ThreeTaxonIdentifiability.Topology), decode (ThreeTaxonIdentifiability.law s 1) = s",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonIdentifiability",
+      "name": "ThreeTaxonIdentifiability.no_boundary_decoder"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.sampleMass_positive : ∀ (s : ThreeTaxonFiniteEvidence.Topology) (c : ℝ),\n  0 < c → c ≤ 1 → ∀ (xs : List ThreeTaxonFiniteEvidence.Topology), 0 < ThreeTaxonFiniteEvidence.sampleMass s c xs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.sampleMass_positive"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.sampleMass_lower_bound : ∀ (s : ThreeTaxonFiniteEvidence.Topology) (c : ℝ),\n  0 ≤ c →\n    c ≤ 1 →\n      ∀ (xs : List ThreeTaxonFiniteEvidence.Topology), (c / 3) ^ xs.length ≤ ThreeTaxonFiniteEvidence.sampleMass s c xs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.sampleMass_lower_bound"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.finite_sample_support_overlap : ∀ (s r : ThreeTaxonFiniteEvidence.Topology) (c d : ℝ),\n  0 < c →\n    c ≤ 1 →\n      0 < d →\n        d ≤ 1 →\n          ∀ (xs : List ThreeTaxonFiniteEvidence.Topology),\n            0 < ThreeTaxonFiniteEvidence.sampleMass s c xs ∧ 0 < ThreeTaxonFiniteEvidence.sampleMass r d xs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.finite_sample_support_overlap"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.no_uniform_certain_decoder : ∀ (n : ℕ) (c : ℝ),\n  0 < c →\n    c ≤ 1 →\n      ∀ (decode : List ThreeTaxonFiniteEvidence.Topology → ThreeTaxonFiniteEvidence.Topology),\n        ¬∀ (s : ThreeTaxonFiniteEvidence.Topology) (xs : List ThreeTaxonFiniteEvidence.Topology),\n            xs.length = n → 0 < ThreeTaxonFiniteEvidence.sampleMass s c xs → decode xs = s",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.no_uniform_certain_decoder"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.quantitative_error_witness : ∀ (n : ℕ) (c : ℝ),\n  0 ≤ c →\n    c ≤ 1 →\n      ∀ (decode : List ThreeTaxonFiniteEvidence.Topology → ThreeTaxonFiniteEvidence.Topology),\n        ∃ s xs, xs.length = n ∧ decode xs ≠ s ∧ (c / 3) ^ n ≤ ThreeTaxonFiniteEvidence.sampleMass s c xs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.quantitative_error_witness"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.robust_strict_mode : ∀ (s g : ThreeTaxonFiniteEvidence.Topology) (c ε : ℝ)\n  (q : ThreeTaxonFiniteEvidence.Topology → ℝ),\n  2 * ε < 1 - c →\n    (∀ (k : ThreeTaxonFiniteEvidence.Topology), |q k - ThreeTaxonFiniteEvidence.law s c k| ≤ ε) → g ≠ s → q g < q s",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.robust_strict_mode"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.robust_maximizer_recovers : ∀ (s r : ThreeTaxonFiniteEvidence.Topology) (c ε : ℝ)\n  (q : ThreeTaxonFiniteEvidence.Topology → ℝ),\n  2 * ε < 1 - c →\n    (∀ (k : ThreeTaxonFiniteEvidence.Topology), |q k - ThreeTaxonFiniteEvidence.law s c k| ≤ ε) →\n      (∀ (k : ThreeTaxonFiniteEvidence.Topology), q k ≤ q r) → r = s",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.robust_maximizer_recovers"
+    },
+    {
+      "actual_complete_printed_type": "ThreeTaxonFiniteEvidence.half_gap_tie : ∀ (c : ℝ),\n  0 ≤ c →\n    c ≤ 1 →\n      (∀ (g : ThreeTaxonFiniteEvidence.Topology), 0 ≤ ThreeTaxonFiniteEvidence.boundaryEstimate c g) ∧\n        ThreeTaxonFiniteEvidence.boundaryEstimate c ThreeTaxonFiniteEvidence.Topology.ab_c +\n                ThreeTaxonFiniteEvidence.boundaryEstimate c ThreeTaxonFiniteEvidence.Topology.ac_b +\n              ThreeTaxonFiniteEvidence.boundaryEstimate c ThreeTaxonFiniteEvidence.Topology.bc_a =\n            1 ∧\n          (∀ (g : ThreeTaxonFiniteEvidence.Topology),\n              |ThreeTaxonFiniteEvidence.boundaryEstimate c g -\n                    ThreeTaxonFiniteEvidence.law ThreeTaxonFiniteEvidence.Topology.ab_c c g| ≤\n                (1 - c) / 2) ∧\n            ThreeTaxonFiniteEvidence.boundaryEstimate c ThreeTaxonFiniteEvidence.Topology.ab_c =\n              ThreeTaxonFiniteEvidence.boundaryEstimate c ThreeTaxonFiniteEvidence.Topology.ac_b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ThreeTaxonFiniteEvidence",
+      "name": "ThreeTaxonFiniteEvidence.half_gap_tie"
+    },
+    {
+      "actual_complete_printed_type": "Claims.Genome.law_transport : ∀ (s g : ThreeTaxonFiniteEvidence.Topology) (c : ℝ),\n  ThreeTaxonIdentifiability.law (Claims.Genome.exactTopology s) c (Claims.Genome.exactTopology g) =\n    ThreeTaxonFiniteEvidence.law s c g",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ResearchCommons.Claims.Genome",
+      "name": "ResearchCommons.Claims.Genome.law_transport"
+    },
+    {
+      "actual_complete_printed_type": "Claims.Genome.evidence_law_identifiable : ∀ (s r : ThreeTaxonFiniteEvidence.Topology) (c d : ℝ),\n  c < 1 → d < 1 → (ThreeTaxonFiniteEvidence.law s c = ThreeTaxonFiniteEvidence.law r d ↔ s = r ∧ c = d)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-GENOME-002",
+      "module": "ResearchCommons.Claims.Genome",
+      "name": "ResearchCommons.Claims.Genome.evidence_law_identifiable"
+    }
+  ],
+  "actual_terminal_printed_types": true,
+  "all_actual_source_owner_axiom_rows_matched": true
+}

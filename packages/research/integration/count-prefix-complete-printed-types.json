@@ -1,0 +1,99 @@
+{
+  "source_commit": "48172f78490db2e75578ef208db747ee9be1cb97",
+  "run_id": 40146416119,
+  "job_id": 121028764184,
+  "requested_names": [
+    "ResearchCommons.Numerics.CountPrefix.term_nonneg",
+    "ResearchCommons.Numerics.CountPrefix.prefix_pos",
+    "ResearchCommons.Numerics.CountPrefix.prefix_le_exp",
+    "ResearchCommons.Numerics.CountPrefix.exp_le_upper",
+    "ResearchCommons.Numerics.CountPrefix.normalized_prefix_sum",
+    "ResearchCommons.Numerics.CountPrefix.lostMass_nonneg",
+    "ResearchCommons.Numerics.CountPrefix.lostMass_le_deficit",
+    "ResearchCommons.Numerics.CountPrefix.certified_error"
+  ],
+  "complete_printed_types": "Numerics.CountPrefix.term_nonneg : ∀ (a : ℝ), 0 ≤ a → ∀ (n : ℕ), 0 ≤ Numerics.CountPrefix.poissonTerm a n\nNumerics.CountPrefix.prefix_pos : ∀ (a : ℝ), 0 ≤ a → ∀ (k : ℕ), 0 < Numerics.CountPrefix.prefixSum a k\nNumerics.CountPrefix.prefix_le_exp : ∀ (a : ℝ), 0 ≤ a → ∀ (k : ℕ), Numerics.CountPrefix.prefixSum a k ≤ Real.exp a\nNumerics.CountPrefix.exp_le_upper : ∀ (a : ℝ),\n  0 ≤ a → ∀ (k : ℕ), 2 * a ≤ ↑(k + 2) → Real.exp a ≤ Numerics.CountPrefix.upper a k\nNumerics.CountPrefix.normalized_prefix_sum : ∀ (a : ℝ),\n  0 ≤ a →\n    ∀ (k : ℕ), ∑ j ∈ Finset.range (k + 1), Numerics.CountPrefix.poissonTerm a j / Numerics.CountPrefix.prefixSum a k = 1\nNumerics.CountPrefix.lostMass_nonneg : ∀ (a : ℝ), 0 ≤ a → ∀ (k : ℕ), 0 ≤ Numerics.CountPrefix.lostMass a k\nNumerics.CountPrefix.lostMass_le_deficit : ∀ (a : ℝ),\n  0 ≤ a → ∀ (k : ℕ), 2 * a ≤ ↑(k + 2) → Numerics.CountPrefix.lostMass a k ≤ Numerics.CountPrefix.deficit a k\nNumerics.CountPrefix.certified_error : ∀ (a epsilon : ℝ) (k : ℕ),\n  0 ≤ a →\n    2 * a ≤ ↑(k + 2) →\n      Numerics.CountPrefix.deficit a k ≤ epsilon →\n        0 ≤ Numerics.CountPrefix.lostMass a k ∧ Numerics.CountPrefix.lostMass a k ≤ epsilon\n",
+  "dispositions": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.lostMass_le_deficit"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.prefix_le_exp"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.term_nonneg"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.exp_le_upper"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.lostMass_nonneg"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.prefix_pos"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.normalized_prefix_sum"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.certified_error"
+    }
+  ],
+  "scope": "Complete eight actual printed types and standard-axiom dispositions in accepted whole1-source24-declaration19-theorem scalar context. Eleven generated/projection theorems are not new mathematics; the actual native caller context remains wholly rejected."
+}

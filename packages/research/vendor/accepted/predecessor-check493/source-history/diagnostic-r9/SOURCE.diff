@@ -1,0 +1,10 @@
+--- diagnostic-r8/G4PairedNaturalTreeCertificate.lean
++++ diagnostic-r9/G4PairedNaturalTreeCertificate.lean
+@@ -4142,6 +4142,7 @@
+ run_cmd Lean.Elab.Command.liftIO do
+   IO.eprintln "PAIRED_RAW_DIAGNOSTIC before clean line 4065: lemma renameSnapshot_transport"
+   (← IO.getStderr).flush
++set_option linter.unusedSectionVars false in
+ /-- The corresponding raw transport identity retains every encoded field;
+ only the prescribed new population functions need to agree after relabelling. -/
+ lemma renameSnapshot_transport (e : A ≃ B) (s : State V E A) (t : State V E B)

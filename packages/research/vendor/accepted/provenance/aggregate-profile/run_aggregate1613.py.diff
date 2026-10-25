@@ -1,0 +1,29 @@
+--- run_aggregate1611.py
++++ run_aggregate1613.py
+@@ -30,7 +30,7 @@
+     graph=json.loads((ROOT/'DEPENDENCY-GRAPH.json').read_bytes())
+     assert args.target in graph['targets']
+     prep=json.loads((ROOT/'PREPARATION.json').read_bytes())
+-    required_scripts={'run_aggregate1611.py','build_aggregate1611.py','build_streamed_audit.py','audit_stream.py','build_desktop.py','build_with_authenticated_overlay.py','build_with_mathlib_overlay.py','build_connected.py','completed_trace_transport.py','AuditTemplate.lean'}
++    required_scripts={'run_aggregate1613.py','build_aggregate1613.py','build_streamed_audit.py','audit_stream.py','build_desktop.py','build_with_authenticated_overlay.py','build_with_mathlib_overlay.py','build_connected.py','completed_trace_transport.py','AuditTemplate.lean'}
+     if not required_scripts.issubset(prep['scripts']):raise ValueError('Missing exact staged script pins')
+     for name in required_scripts:
+         script=ROOT/'scripts'/name
+@@ -47,7 +47,7 @@
+     if initial_limit:raise ValueError('Initial pretransport resource limit: '+initial_limit)
+     compress_completed(ROOT,force=True)
+     start_size,largest=allocated(ROOT)
+-    storage={'status':'PASS_PREFLIGHT_GUARDED_ALLOCATION_NOT_UNKNOWN_OUTPUT_CERTIFICATION','package_initial_allocated_bytes':start_size,'source_bytes':prep['source_bytes'],'new_g3_source_bytes':prep['new_source_bytes'],'package_path_counted_limit_bytes':cap,'per_file_hard_limit_bytes':perfile,'free_floor_bytes':floor,'package_filesystem_free':shutil.disk_usage(ROOT).free,'backing_store_free':shutil.disk_usage(args.backing_store).free,'dependency_checkout_allocated_bytes':allocated(args.mathlib)[0],'existing_g3_external_observed_peak_bytes':1932623872,'output_reserve_explanation':'3 GiB monitored aggregate-only1611 package allocation; preserved dependency cache separately measured. Unknown compiler output is guarded rather than inferred from source size. No CPU/kernel/memory/time policy changes.'}
++    storage={'status':'PASS_PREFLIGHT_GUARDED_ALLOCATION_NOT_UNKNOWN_OUTPUT_CERTIFICATION','package_initial_allocated_bytes':start_size,'source_bytes':prep['source_bytes'],'new_g3_source_bytes':prep['new_source_bytes'],'package_path_counted_limit_bytes':cap,'per_file_hard_limit_bytes':perfile,'free_floor_bytes':floor,'package_filesystem_free':shutil.disk_usage(ROOT).free,'backing_store_free':shutil.disk_usage(args.backing_store).free,'dependency_checkout_allocated_bytes':allocated(args.mathlib)[0],'existing_g3_external_observed_peak_bytes':1932623872,'output_reserve_explanation':'3 GiB monitored aggregate-only1613 package allocation; preserved dependency cache separately measured. Unknown compiler output is guarded rather than inferred from source size. No CPU/kernel/memory/time policy changes.'}
+     assert min(storage['package_filesystem_free'],storage['backing_store_free'])>cap+floor
+     initial_limit=limit_event(start_size,largest,min(storage['package_filesystem_free'],storage['backing_store_free']),available(),cap,floor,perfile)
+     if initial_limit:raise ValueError('Initial resource limit: '+initial_limit)
+@@ -57,7 +57,7 @@
+     storage['script_pins_verified']=sorted(required_scripts)
+     save(ROOT/'STORAGE-PREFLIGHT.json',storage)
+     env=dict(os.environ,CONNECTED_LEAN_BIN=str(args.lean_bin.resolve()),CONNECTED_MATHLIB=str(args.mathlib.resolve()),PYTHONUNBUFFERED='1')
+-    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_aggregate1611.py'),args.target]
++    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_aggregate1613.py'),args.target]
+     def limits():resource.setrlimit(resource.RLIMIT_FSIZE,(perfile,perfile))
+     stamp=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())
+     stdout=ROOT/('SUPERVISOR-'+stamp+'.stdout');stderr=ROOT/('SUPERVISOR-'+stamp+'.stderr')

@@ -1,0 +1,439 @@
+{
+  "schema": 1,
+  "source_commit": "69a85a7e30abfd24c6e99a53eed2202e48fcd044",
+  "run_id": 40112282119,
+  "job_id": 120926461213,
+  "actual_complete_types_from_terminal_log": true,
+  "entries": [
+    {
+      "module": "ExactAbstraction",
+      "name": "ExactAbstraction.exact_factor_iff",
+      "printed_type": "@ExactAbstraction.exact_factor_iff : ∀ {A : Type u_1} {X : Type u_2} {Z : Type u_3} (F : A → X → X) (c : X → Z),\n  Function.Surjective c → ((∃ Fbar, ∀ (a : A) (x : X), c (F a x) = Fbar a (c x)) ↔ ExactAbstraction.FibreCompatible F c)",
+      "axioms": [
+        "Classical.choice"
+      ]
+    },
+    {
+      "module": "ExactAbstraction",
+      "name": "ExactAbstraction.exact_factor_unique",
+      "printed_type": "@ExactAbstraction.exact_factor_unique : ∀ {A : Type u_1} {X : Type u_2} {Z : Type u_3} (F : A → X → X) (c : X → Z),\n  Function.Surjective c →\n    ∀ (G H : A → Z → Z), (∀ (a : A) (x : X), c (F a x) = G a (c x)) → (∀ (a : A) (x : X), c (F a x) = H a (c x)) → G = H",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "ExactAbstraction",
+      "name": "ExactAbstraction.trajectory_preservation",
+      "printed_type": "@ExactAbstraction.trajectory_preservation : ∀ {A : Type u_1} {X : Type u_2} {Z : Type u_3} (F : A → X → X)\n  (Fbar : A → Z → Z) (c : X → Z),\n  (∀ (a : A) (x : X), c (F a x) = Fbar a (c x)) →\n    ∀ (input : ℕ → A) (x : X) (t : ℕ),\n      c (ExactAbstraction.trajectory F input x t) = ExactAbstraction.trajectory Fbar input (c x) t",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ExactAbstraction",
+      "name": "ExactAbstraction.compatible_gives_trajectories",
+      "printed_type": "@ExactAbstraction.compatible_gives_trajectories : ∀ {A : Type u_1} {X : Type u_2} {Z : Type u_3} (F : A → X → X)\n  (c : X → Z),\n  Function.Surjective c →\n    ExactAbstraction.FibreCompatible F c →\n      ∃ Fbar,\n        (∀ (a : A) (x : X), c (F a x) = Fbar a (c x)) ∧\n          ∀ (input : ℕ → A) (x : X) (t : ℕ),\n            c (ExactAbstraction.trajectory F input x t) = ExactAbstraction.trajectory Fbar input (c x) t",
+      "axioms": [
+        "propext",
+        "Classical.choice"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.encode_eq_iff",
+      "printed_type": "@PredictiveState.encode_eq_iff : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O) (x y : X),\n  PredictiveState.encode T p x = PredictiveState.encode T p y ↔ PredictiveState.FutureEq T p x y",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.quotient_observe",
+      "printed_type": "@PredictiveState.quotient_observe : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O) (x : X),\n  PredictiveState.observe T p (PredictiveState.encode T p x) = p x",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.quotient_step",
+      "printed_type": "@PredictiveState.quotient_step : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O) (a : A)\n  (x : X), PredictiveState.encode T p (T a x) = PredictiveState.step T p a (PredictiveState.encode T p x)",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.run_commutes",
+      "printed_type": "@PredictiveState.run_commutes : ∀ {A : Type u_1} {X : Type u_2} {R : Type u_3} (T : A → X → X) (G : A → R → R)\n  (c : X → R),\n  (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n    ∀ (word : List A) (x : X), c (PredictiveState.run T word x) = PredictiveState.run G word (c x)",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.exact_refinement_future",
+      "printed_type": "@PredictiveState.exact_refinement_future : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {R : Type u_4} (T : A → X → X)\n  (p : X → O) (c : X → R) (G : A → R → R) (d : R → O),\n  (∀ (x : X), d (c x) = p x) →\n    (∀ (a : A) (x : X), c (T a x) = G a (c x)) → ∀ {x y : X}, c x = c y → PredictiveState.FutureEq T p x y",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.factors_iff",
+      "printed_type": "@PredictiveState.factors_iff : ∀ {X : Type u_1} {O : Type u_2} {R : Type u_3} (c : X → R) (p : X → O),\n  Function.Surjective c → ((∃ d, ∀ (x : X), d (c x) = p x) ↔ ∀ (x y : X), c x = c y → p x = p y)",
+      "axioms": [
+        "Classical.choice"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.coarsest_exact",
+      "printed_type": "@PredictiveState.coarsest_exact : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {R : Type u_4} (T : A → X → X)\n  (p : X → O) (c : X → R) (G : A → R → R) (d : R → O),\n  Function.Surjective c →\n    (∀ (x : X), d (c x) = p x) →\n      (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n        ∃ H,\n          Function.Surjective H ∧\n            (∀ (x : X), H (c x) = PredictiveState.encode T p x) ∧\n              (∀ (a : A) (z : R), H (G a z) = PredictiveState.step T p a (H z)) ∧\n                (∀ (z : R), PredictiveState.observe T p (H z) = d z) ∧\n                  ∀ (K : R → PredictiveState.State T p), (∀ (x : X), K (c x) = PredictiveState.encode T p x) → K = H",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.distinguishing_word",
+      "printed_type": "@PredictiveState.distinguishing_word : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O)\n  (x y : X),\n  PredictiveState.encode T p x ≠ PredictiveState.encode T p y →\n    ∃ word, p (PredictiveState.run T word x) ≠ p (PredictiveState.run T word y)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.distinguishable_injective",
+      "printed_type": "@PredictiveState.distinguishable_injective : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {R : Type u_4}\n  {I : Type u_5} (T : A → X → X) (p : X → O) (c : X → R) (G : A → R → R) (d : R → O),\n  (∀ (x : X), d (c x) = p x) →\n    (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n      ∀ (xs : I → X), (∀ (j k : I), j ≠ k → ¬PredictiveState.FutureEq T p (xs j) (xs k)) → Function.Injective (c ∘ xs)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.distinguishable_card_le",
+      "printed_type": "@PredictiveState.distinguishable_card_le : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {R : Type u_4} {I : Type u_5}\n  [inst : Fintype I] [inst_1 : Fintype R] (T : A → X → X) (p : X → O) (c : X → R) (G : A → R → R) (d : R → O),\n  (∀ (x : X), d (c x) = p x) →\n    (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n      ∀ (xs : I → X),\n        (∀ (j k : I), j ≠ k → ¬PredictiveState.FutureEq T p (xs j) (xs k)) → Fintype.card I ≤ Fintype.card R",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.restrict_actions",
+      "printed_type": "@PredictiveState.restrict_actions : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {B : Type u_4} (T : A → X → X)\n  (p : X → O) (includeAction : B → A) {x y : X},\n  PredictiveState.FutureEq T p x y → PredictiveState.FutureEq (fun b => T (includeAction b)) p x y",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.depth_iff_words",
+      "printed_type": "@PredictiveState.depth_iff_words : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O) (n : ℕ)\n  (x y : X),\n  PredictiveState.DepthEq T p n x y ↔\n    ∀ (word : List A), word.length ≤ n → p (PredictiveState.run T word x) = p (PredictiveState.run T word y)",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.future_depth",
+      "printed_type": "@PredictiveState.future_depth : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O) {x y : X},\n  PredictiveState.FutureEq T p x y → ∀ (n : ℕ), PredictiveState.DepthEq T p n x y",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.stabilization_complete",
+      "printed_type": "@PredictiveState.stabilization_complete : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} (T : A → X → X) (p : X → O)\n  (n : ℕ),\n  (∀ (x y : X), PredictiveState.DepthEq T p n x y → PredictiveState.DepthEq T p (n + 1) x y) →\n    ∀ (x y : X), PredictiveState.DepthEq T p n x y ↔ PredictiveState.FutureEq T p x y",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.feedback_commutes",
+      "printed_type": "@PredictiveState.feedback_commutes : ∀ {A : Type u_1} {X : Type u_2} {R : Type u_3} (T : A → X → X) (G : A → R → R)\n  (c : X → R),\n  (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n    ∀ (policy : R → A) (x : X), c (T (policy (c x)) x) = G (policy (c x)) (c x)",
+      "axioms": []
+    },
+    {
+      "module": "PredictiveState",
+      "name": "PredictiveState.feedback_trajectories",
+      "printed_type": "@PredictiveState.feedback_trajectories : ∀ {A : Type u_1} {X : Type u_2} {R : Type u_3} (T : A → X → X) (G : A → R → R)\n  (c : X → R),\n  (∀ (a : A) (x : X), c (T a x) = G a (c x)) →\n    ∀ (choose : X → A) (policy : R → A),\n      (∀ (x : X), choose x = policy (c x)) →\n        ∀ (x : X) (t : ℕ),\n          c (ExactAbstraction.trajectory (fun x y => T (choose y) y) (fun x => ()) x t) =\n            ExactAbstraction.trajectory (fun x z => G (policy z) z) (fun x => ()) (c x) t",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.cell_commutes",
+      "printed_type": "ControlledMemory.cell_commutes : ∀ (a : ControlledMemory.Action) (s : ControlledMemory.Cell),\n  ControlledMemory.cellSummary (ControlledMemory.cellStep a s) =\n    ControlledMemory.summaryStep a (ControlledMemory.cellSummary s)",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.history_commutes",
+      "printed_type": "ControlledMemory.history_commutes : ∀ (a : ControlledMemory.Action) (s : ControlledMemory.History),\n  ControlledMemory.historySummary (ControlledMemory.historyStep a s) =\n    ControlledMemory.summaryStep a (ControlledMemory.historySummary s)",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.no_finite_suffix_decoder",
+      "printed_type": "ControlledMemory.no_finite_suffix_decoder : ∀ (n : ℕ),\n  ¬∃ decode, ∀ (h : List Bool), decode (ControlledMemory.recent n h) = ControlledMemory.parity h",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.cross_model_all_words",
+      "printed_type": "ControlledMemory.cross_model_all_words : ∀ (s : ControlledMemory.Cell) (h : ControlledMemory.History),\n  ControlledMemory.cellSummary s = ControlledMemory.historySummary h →\n    ∀ (word : List ControlledMemory.Action),\n      ControlledMemory.cellSummary (PredictiveState.run ControlledMemory.cellStep word s) =\n        ControlledMemory.historySummary (PredictiveState.run ControlledMemory.historyStep word h)",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.cross_model_all_times",
+      "printed_type": "ControlledMemory.cross_model_all_times : ∀ (s : ControlledMemory.Cell) (h : ControlledMemory.History),\n  ControlledMemory.cellSummary s = ControlledMemory.historySummary h →\n    ∀ (input : ℕ → ControlledMemory.Action) (t : ℕ),\n      ControlledMemory.cellSummary (ExactAbstraction.trajectory ControlledMemory.cellStep input s t) =\n        ControlledMemory.historySummary (ExactAbstraction.trajectory ControlledMemory.historyStep input h t)",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.probe_refinement_factor",
+      "printed_type": "@ControlledMemory.probe_refinement_factor : ∀ {A : Type u_1} {X : Type u_2} {O : Type u_3} {R : Type u_4}\n  (T : A → X → X) (p : X → O) (probe : A) (c : X → R) (G : A → R → R) (d : R → O),\n  (∀ (x : X), d (c x) = p x) →\n    (∀ (a : A) (x : X), c (T a x) = G a (c x)) → ∀ (x : X), (p x, p (T probe x)) = (d (c x), d (G probe (c x)))",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.cell_future_iff",
+      "printed_type": "ControlledMemory.cell_future_iff : ∀ (s t : ControlledMemory.Cell),\n  PredictiveState.FutureEq ControlledMemory.cellStep ControlledMemory.Cell.visible s t ↔\n    ControlledMemory.cellSummary s = ControlledMemory.cellSummary t",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.history_future_iff",
+      "printed_type": "ControlledMemory.history_future_iff : ∀ (s t : ControlledMemory.History),\n  PredictiveState.FutureEq ControlledMemory.historyStep Prod.fst s t ↔\n    ControlledMemory.historySummary s = ControlledMemory.historySummary t",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.at_least_four",
+      "printed_type": "@ControlledMemory.at_least_four : ∀ {R : Type u_1} [inst : Fintype R] (c : ControlledMemory.Cell → R)\n  (G : ControlledMemory.Action → R → R) (d : R → Bool),\n  (∀ (s : ControlledMemory.Cell), d (c s) = s.visible) →\n    (∀ (a : ControlledMemory.Action) (s : ControlledMemory.Cell), c (ControlledMemory.cellStep a s) = G a (c s)) →\n      4 ≤ Fintype.card R",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.memory_required_at_fixed_visible",
+      "printed_type": "@ControlledMemory.memory_required_at_fixed_visible : ∀ {R : Type u_1} (c : ControlledMemory.Cell → R)\n  (G : ControlledMemory.Action → R → R) (d : R → Bool),\n  (∀ (s : ControlledMemory.Cell), d (c s) = s.visible) →\n    (∀ (a : ControlledMemory.Action) (s : ControlledMemory.Cell), c (ControlledMemory.cellStep a s) = G a (c s)) →\n      ∀ (v : Bool),\n        c { visible := v, memory := false, nuisance := false } ≠ c { visible := v, memory := true, nuisance := false }",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.reachable_probe_witness",
+      "printed_type": "ControlledMemory.reachable_probe_witness : (PredictiveState.run ControlledMemory.cellStep\n        [ControlledMemory.Action.reset, ControlledMemory.Action.wait]\n        { visible := false, memory := false, nuisance := false }).visible =\n    (PredictiveState.run ControlledMemory.cellStep [ControlledMemory.Action.reset, ControlledMemory.Action.prime]\n        { visible := false, memory := false, nuisance := false }).visible ∧\n  (PredictiveState.run ControlledMemory.cellStep\n        [ControlledMemory.Action.reset, ControlledMemory.Action.wait, ControlledMemory.Action.probe]\n        { visible := false, memory := false, nuisance := false }).visible ≠\n    (PredictiveState.run ControlledMemory.cellStep\n        [ControlledMemory.Action.reset, ControlledMemory.Action.prime, ControlledMemory.Action.probe]\n        { visible := false, memory := false, nuisance := false }).visible",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.all_summaries_reachable",
+      "printed_type": "ControlledMemory.all_summaries_reachable : ∀ (z : ControlledMemory.Summary),\n  ∃ word,\n    ControlledMemory.cellSummary\n        (PredictiveState.run ControlledMemory.cellStep word { visible := false, memory := false, nuisance := false }) =\n      z",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.passive_visible_exact",
+      "printed_type": "ControlledMemory.passive_visible_exact : ∀ (a : ControlledMemory.PassiveAction) (s : ControlledMemory.Cell),\n  (ControlledMemory.cellStep (ControlledMemory.admit a) s).visible = ControlledMemory.passiveStep a s.visible",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.passive_future_iff",
+      "printed_type": "ControlledMemory.passive_future_iff : ∀ (s t : ControlledMemory.Cell),\n  PredictiveState.FutureEq (fun a => ControlledMemory.cellStep (ControlledMemory.admit a)) ControlledMemory.Cell.visible\n      s t ↔\n    s.visible = t.visible",
+      "axioms": []
+    },
+    {
+      "module": "ControlledMemory",
+      "name": "ControlledMemory.changed_probe_refutes_summary",
+      "printed_type": "ControlledMemory.changed_probe_refutes_summary : ControlledMemory.cellSummary\n      { visible := false, memory := false, nuisance := false } =\n    ControlledMemory.cellSummary { visible := false, memory := false, nuisance := true } ∧\n  ControlledMemory.changedProbe { visible := false, memory := false, nuisance := false } ≠\n    ControlledMemory.changedProbe { visible := false, memory := false, nuisance := true }",
+      "axioms": []
+    },
+    {
+      "module": "HistoryObservation",
+      "name": "HistoryObservation.stable_type_matched_history_null",
+      "printed_type": "@HistoryObservation.stable_type_matched_history_null : ∀ {A U O : Type} (g : ℕ → U → O) (left right : List A),\n  left.length = right.length →\n    ∀ (s : ℕ × U),\n      (fun z => g z.1 z.2) (PredictiveState.run HistoryObservation.stableStep left s) =\n        (fun z => g z.1 z.2) (PredictiveState.run HistoryObservation.stableStep right s)",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "HistoryObservation",
+      "name": "HistoryObservation.selection_no_history_effect",
+      "printed_type": "HistoryObservation.selection_no_history_effect : ∀ (h k permanentType : Bool),\n  HistoryObservation.selectionResponse h permanentType = HistoryObservation.selectionResponse k permanentType",
+      "axioms": []
+    },
+    {
+      "module": "HistoryObservation",
+      "name": "HistoryObservation.selected_history_perfectly_predicts",
+      "printed_type": "HistoryObservation.selected_history_perfectly_predicts : ∀ (h permanentType : Bool),\n  HistoryObservation.selectionVisible h permanentType = false → HistoryObservation.selectionResponse h permanentType = h",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "HistoryObservation",
+      "name": "HistoryObservation.arbitrary_delayed_distinction",
+      "printed_type": "HistoryObservation.arbitrary_delayed_distinction : ∀ (n : ℕ),\n  (∀ (word : List Unit),\n      word.length ≤ n →\n        HistoryObservation.delayedObserve (PredictiveState.run HistoryObservation.delayedStep word (some (n + 1))) =\n          HistoryObservation.delayedObserve (PredictiveState.run HistoryObservation.delayedStep word none)) ∧\n    HistoryObservation.delayedObserve\n        (PredictiveState.run HistoryObservation.delayedStep (List.replicate (n + 1) ()) (some (n + 1))) ≠\n      HistoryObservation.delayedObserve\n        (PredictiveState.run HistoryObservation.delayedStep (List.replicate (n + 1) ()) none)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "AncestryObservation",
+      "name": "AncestryObservation.restriction_commutes",
+      "printed_type": "@AncestryObservation.restriction_commutes : ∀ {V : Type u_1} (S : V → Prop) (a : AncestryObservation.Action S)\n  (R : AncestryObservation.Rel V),\n  AncestryObservation.compress S (AncestryObservation.restrictStep S a R) =\n    AncestryObservation.restrictStep S a (AncestryObservation.compress S R)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "AncestryObservation",
+      "name": "AncestryObservation.restriction_all_words",
+      "printed_type": "@AncestryObservation.restriction_all_words : ∀ {V : Type u_1} (S : V → Prop)\n  (word : List (AncestryObservation.Action S)) (R : AncestryObservation.Rel V),\n  AncestryObservation.compress S (PredictiveState.run (AncestryObservation.restrictStep S) word R) =\n    PredictiveState.run (AncestryObservation.restrictStep S) word (AncestryObservation.compress S R)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "AncestryObservation",
+      "name": "AncestryObservation.sample_query_factors",
+      "printed_type": "@AncestryObservation.sample_query_factors : ∀ {V : Type u_1} (S : V → Prop) (R : AncestryObservation.Rel V) (s : V),\n  S s → ∀ (a : V), AncestryViews.Reach (AncestryObservation.compress S R) a s ↔ AncestryViews.Reach R a s",
+      "axioms": []
+    },
+    {
+      "module": "AncestryObservation",
+      "name": "AncestryObservation.no_universal_sample_expansion",
+      "printed_type": "AncestryObservation.no_universal_sample_expansion : ¬∃ recover,\n    ∀ (R : Bool → ℕ → ℕ → Prop),\n      recover (AncestryObservation.indexedCompress (fun n => n = 2) R) =\n        AncestryObservation.indexedCompress (fun n => n = 1 ∨ n = 2) R",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "WongPredictiveBridge",
+      "name": "WongPredictiveBridge.extracted_is_compress",
+      "printed_type": "@WongPredictiveBridge.extracted_is_compress : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord) (x : Coord),\n  G.ExtractedAt x = AncestryObservation.compress (fun s => s ∈ G.samples) (G.AtLocus x)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "WongPredictiveBridge",
+      "name": "WongPredictiveBridge.actual_garg_restriction_all_words",
+      "printed_type": "@WongPredictiveBridge.actual_garg_restriction_all_words : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord) (x : Coord)\n  (word : List (AncestryObservation.Action fun s => s ∈ G.samples)),\n  AncestryObservation.compress (fun s => s ∈ G.samples)\n      (PredictiveState.run (AncestryObservation.restrictStep fun s => s ∈ G.samples) word (G.AtLocus x)) =\n    PredictiveState.run (AncestryObservation.restrictStep fun s => s ∈ G.samples) word (G.ExtractedAt x)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "WongPredictiveBridge",
+      "name": "WongPredictiveBridge.no_global_iap_decoder",
+      "printed_type": "@WongPredictiveBridge.no_global_iap_decoder : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype Node]\n  [inst_1 : LinearOrder Coord] (G : WongGARG.GARG Node Coord),\n  ∃ code,\n    Function.Injective code ∧\n      ¬∃ decode,\n          ∀ (E : SpeciesBridge.Graph),\n            WongAlexander.RealDatedBiosphere E →\n              SpeciesBridge.FiniteSupport (SpeciesBridge.Root E) →\n                SpeciesBridge.WeaklyConnected E SpeciesBridge.Whole →\n                  WongPredictiveBridge.finiteView code E = (G.Topology, fun a b => AncestryViews.Reach G.Topology a b) →\n                    (decode (WongPredictiveBridge.finiteView code E) ↔ SpeciesBridge.IAP E SpeciesBridge.Whole)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.split_preserves_legal",
+      "printed_type": "MergeHistoryProjection.split_preserves_legal : ∀ (f : MergeHistoryProjection.Forest),\n  MergeHistoryProjection.Legal f → MergeHistoryProjection.Legal (MergeHistoryProjection.splitFirst f)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.adjacent_merge_histories",
+      "printed_type": "MergeHistoryProjection.adjacent_merge_histories : MergeHistoryProjection.mergeAdjacent 0\n      MergeHistoryProjection.initial =\n    MergeHistoryProjection.leftIntermediate ∧\n  MergeHistoryProjection.mergeAdjacent 0 MergeHistoryProjection.leftIntermediate = MergeHistoryProjection.leftForest ∧\n    MergeHistoryProjection.mergeAdjacent 1 MergeHistoryProjection.initial = MergeHistoryProjection.rightIntermediate ∧\n      MergeHistoryProjection.mergeAdjacent 0 MergeHistoryProjection.rightIntermediate =\n        MergeHistoryProjection.rightForest",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.legal_histories",
+      "printed_type": "MergeHistoryProjection.legal_histories : MergeHistoryProjection.Legal MergeHistoryProjection.initial ∧\n  MergeHistoryProjection.Legal MergeHistoryProjection.leftIntermediate ∧\n    MergeHistoryProjection.Legal MergeHistoryProjection.rightIntermediate ∧\n      MergeHistoryProjection.Legal MergeHistoryProjection.leftForest ∧\n        MergeHistoryProjection.Legal MergeHistoryProjection.rightForest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.admissible_splits_with_spectator",
+      "printed_type": "MergeHistoryProjection.admissible_splits_with_spectator : MergeHistoryProjection.canSplit\n      ↑MergeHistoryProjection.leftState =\n    true ∧\n  MergeHistoryProjection.canSplit ↑MergeHistoryProjection.rightState = true ∧\n    List.length ↑MergeHistoryProjection.leftState = 2 ∧ List.length ↑MergeHistoryProjection.rightState = 2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.same_current_partition",
+      "printed_type": "MergeHistoryProjection.same_current_partition : MergeHistoryProjection.blocks ↑MergeHistoryProjection.leftState =\n    {{0, 1, 2}, {3}} ∧\n  MergeHistoryProjection.blocks ↑MergeHistoryProjection.rightState = {{0, 1, 2}, {3}}",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.distinct_restored_partitions",
+      "printed_type": "MergeHistoryProjection.distinct_restored_partitions : MergeHistoryProjection.blocks\n      ↑(MergeHistoryProjection.splitState MergeHistoryProjection.leftState) =\n    {{0, 1}, {2}, {3}} ∧\n  MergeHistoryProjection.blocks ↑(MergeHistoryProjection.splitState MergeHistoryProjection.rightState) =\n      {{0}, {1, 2}, {3}} ∧\n    MergeHistoryProjection.blocks ↑(MergeHistoryProjection.splitState MergeHistoryProjection.leftState) ≠\n      MergeHistoryProjection.blocks ↑(MergeHistoryProjection.splitState MergeHistoryProjection.rightState)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.no_exact_partition_model",
+      "printed_type": "MergeHistoryProjection.no_exact_partition_model : ¬∃ reduced,\n    ∀ (action : MergeHistoryProjection.Action) (s : MergeHistoryProjection.State),\n      MergeHistoryProjection.observe (MergeHistoryProjection.update action s) =\n        reduced action (MergeHistoryProjection.observe s)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "MergeHistoryProjection",
+      "name": "MergeHistoryProjection.no_partition_only_admissible_split",
+      "printed_type": "MergeHistoryProjection.no_partition_only_admissible_split : ¬∃ reduced,\n    ∀ (s : MergeHistoryProjection.State),\n      MergeHistoryProjection.canSplit ↑s = true →\n        MergeHistoryProjection.blocks ↑(MergeHistoryProjection.splitState s) =\n          reduced (MergeHistoryProjection.blocks ↑s)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Actual54 complete printed types with literal owner/axiom rows; no native/process/scientific extension."
+}

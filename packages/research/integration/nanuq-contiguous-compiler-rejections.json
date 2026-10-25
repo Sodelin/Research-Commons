@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "source": "40910626dd104a6f2ab00be56f1fd376216444c0",
+      "run_id": 40128718963,
+      "job_id": 120975809371,
+      "target": "ResearchCommons.NANUQ.ContiguousCopies",
+      "disposition": "ENTIRE1_SOURCE_CONTEXT_REJECTED; no named/owned/caller/combined acceptance",
+      "diagnostic": "1/1 ResearchCommons.NANUQ.ContiguousCopies\n2026-10-24T20:15:24.3873491Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ResearchCommons/NANUQ/ContiguousCopies.lean:96:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n2026-10-24T20:15:24.3875108Z   Fintype { i // Extreme taxon i }\n2026-10-24T20:15:24.3876036Z \n2026-10-24T20:15:24.3876939Z Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n2026-10-24T20:15:24.5062662Z PACKAGE_INCOMPLETE: Lean failed on ResearchCommons.NANUQ.ContiguousCopies: exit status: 1\n2026-10-24T20:15:24.5094735Z ##[error]Process completed with exit code 2.\n2026-10-24T20:15:24.5828763Z ##[group]Run actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830\n2026-10-24T20:15:24.5829182Z with:\n2026-10-24T20:15:24.5829445Z   path: packages/research/build/retained-objects\n2026-10-24T20:15:24.5830062Z   key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131",
+      "actual_error": "The theorem statement needs Fintype of retained subtype before classical proof begins.",
+      "correction": {
+        "original": "theorem extreme_card_le_two [Fintype Taxon] (taxon : Fin m → Taxon) :\n    Fintype.card {i : Fin m // Extreme taxon i} ≤ 2 * Fintype.card Taxon := by",
+        "proof": "Resolve Fintype subtype inside the existing classical proof and rewrite Nat.card_eq_fintype_card. No additional taxon-equality or desired-law premise.",
+        "selected": "theorem extreme_card_le_two [Fintype Taxon] (taxon : Fin m → Taxon) :\n    Nat.card {i : Fin m // Extreme taxon i} ≤ 2 * Fintype.card Taxon := by"
+      },
+      "new_source": {
+        "bytes": 5360,
+        "sha256": "21b969d013fb30ebf1c704527e478d5804896d2ec5075d570516a13bcee6f139",
+        "git_blob": "583d757e24eaac96b8035cdbefd404bcedc8ef1b"
+      },
+      "source154_rust_suite": "115 existing tests passed before new Rust component was added",
+      "later_steps": "Causal42 and full1498 were NOT executed after this earlier step failure."
+    },
+    {
+      "source": "45721d18d4a201b284abe1ea6584e383a3745b57",
+      "run_id": 40129214406,
+      "job_id": 120977294377,
+      "disposition": "COMPLETE1_SOURCE3_NAME8_DECLARATION3_THEOREM core accepted; ENTIRE actual ContiguousLinear caller rejected. No partial caller PASS or wrapped/causal42/full1498 acceptance.",
+      "diagnostics": [
+        "2026-10-24T20:22:20.2112674Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ContiguousLinear.lean:17:51: error: failed to synthesize\n2026-10-24T20:22:20.2113912Z   Decidable (Contiguous taxon)\n2026-10-24T20:22:20.2114197Z \n2026-10-24T20:22:20.2114727Z Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n2026-10-24T20:22:20.2116234Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ContiguousLinear.lean:21:2: error: failed to synthesize\n2026-10-24T20:22:20.2117714Z   Decidable (∀ (i : Fin 8), i ∈ kept ↔ Extreme taxon i)\n2026-10-24T20:22:20.2118106Z \n2026-10-24T20:22:20.2118623Z Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n2026-10-24T20:22:20.3393671Z PACKAGE_INCOMPLETE: Lean rejected ContiguousLinear: exit status: 1\n2026-10-24T20:22:20.3515443Z ##[error]Process completed with exit code 2.\n2026-10-24T20:22:20.4293679Z ##[group]Run actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830\n2026-10-24T20:22:20.4294104Z with:\n2026-10-24T20:22:20.4294348Z   path: packages/research/build/retained-objects\n2026-10-24T20:22:20.4294978Z   key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129214406-declaration_exports\n2026-10-24T20:22:20.4295593Z   enableCrossOsArchive: false\n2026-10-24T20:22:20.4295844Z ##[endgroup]\n2026-10-24T20:22:20.5389564Z (node:4551) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-10-24T20:22:20.5390498Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-10-24T20:22:20.5573280Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Research-Commons/Research-Commons --files-from manifest.txt --use-compress-program zstdmt\n2026-10-24T20:22:22.8072421Z (node:4551) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n2026-10-24T20:22:23.7943985Z Sent 0 of 215087319 (0.0%), 0.0 MBs/sec\n2026-10-24T20:22:24.7944170Z Sent 13760727 of 215087319 (6.4%), 6.6 MBs/sec\n2026-10-24T20:22:25.2143185Z Sent 215087319 of 215087319 (100.0%), 84.7 MBs/sec\n2026-10-24T20:22:25.3778555Z Cache saved with key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129214406-declaration_exports",
+        "2026-10-24T20:22:20.2116234Z /home/runner/work/Research-Commons/Research-Commons/packages/research/lean/.generated/ContiguousLinear.lean:21:2: error: failed to synthesize\n2026-10-24T20:22:20.2117714Z   Decidable (∀ (i : Fin 8), i ∈ kept ↔ Extreme taxon i)\n2026-10-24T20:22:20.2118106Z \n2026-10-24T20:22:20.2118623Z Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n2026-10-24T20:22:20.3393671Z PACKAGE_INCOMPLETE: Lean rejected ContiguousLinear: exit status: 1\n2026-10-24T20:22:20.3515443Z ##[error]Process completed with exit code 2.\n2026-10-24T20:22:20.4293679Z ##[group]Run actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830\n2026-10-24T20:22:20.4294104Z with:\n2026-10-24T20:22:20.4294348Z   path: packages/research/build/retained-objects\n2026-10-24T20:22:20.4294978Z   key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129214406-declaration_exports\n2026-10-24T20:22:20.4295593Z   enableCrossOsArchive: false\n2026-10-24T20:22:20.4295844Z ##[endgroup]\n2026-10-24T20:22:20.5389564Z (node:4551) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-10-24T20:22:20.5390498Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-10-24T20:22:20.5573280Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Research-Commons/Research-Commons --files-from manifest.txt --use-compress-program zstdmt\n2026-10-24T20:22:22.8072421Z (node:4551) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n2026-10-24T20:22:23.7943985Z Sent 0 of 215087319 (0.0%), 0.0 MBs/sec\n2026-10-24T20:22:24.7944170Z Sent 13760727 of 215087319 (6.4%), 6.6 MBs/sec\n2026-10-24T20:22:25.2143185Z Sent 215087319 of 215087319 (100.0%), 84.7 MBs/sec\n2026-10-24T20:22:25.3778555Z Cache saved with key: retained-v1-Linux-1e1104ccce81431b56c9fc732cc9374fa131ad7688dff22480aad2d485224ace-40129214406-declaration_exports\n2026-10-24T20:22:25.3913529Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n2026-10-24T20:22:25.3914070Z with:\n2026-10-24T20:22:25.3914480Z   name: portable-claim-exports-evidence\n2026-10-24T20:22:25.3915370Z   path: packages/research/build/"
+      ],
+      "actual_failed_input": {
+        "module": "ContiguousLinear",
+        "bytes": 1950,
+        "sha256": "9b1dcd580f6a65153f0500b69848394ddebaf30500f9bb02decb3363153bd842"
+      },
+      "correction": "Unfold actual Contiguous and Extreme/First/Last before existing finite decide checks. Rust retention/IDs/limits/tests byte-identical; new supplied-cut dependent output remains explicit pending."
+    }
+  ]
+}

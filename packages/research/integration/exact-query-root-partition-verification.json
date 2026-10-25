@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "status": "ACCEPTED_ALL_DEPTH_ROOT_GEOMETRY_AND_ORIGINAL_SOURCE_COMPONENT",
+  "claim": "CB-EXACTQUERY-001",
+  "source_path": "lean/ResearchCommons/ExactQuery/Rectangle.lean",
+  "bytes": 6639,
+  "git_blob": "ee197ff545e4a94fa6f488770ebf6a3c0661bc91",
+  "sha256": "e0d8c23a739761cd30e6c07760afce9166b44784d6138f50c76ec97255b61f8e",
+  "selected_new_names": [
+    "ResearchCommons.ExactQuery.Rectangle.triangle_mid_partition",
+    "ResearchCommons.ExactQuery.Rectangle.triangle_mid_disjoint",
+    "ResearchCommons.ExactQuery.Rectangle.seed_covered_iff_triangle",
+    "ResearchCommons.ExactQuery.Rectangle.all_candidates_covered",
+    "ResearchCommons.ExactQuery.Rectangle.wrap_and_nonwrap_disjoint",
+    "ResearchCommons.ExactQuery.Rectangle.emitted_roots_have_distinct_query_positions"
+  ],
+  "preflight": "integration/EXACT-QUERY-ROOT-PARTITION-REUSE.md",
+  "prior_accepted_local_geometry_sha256": "adc992824b608c4d6ddf5383772ae10bdc83a1f12f10fbea9c562afe06f00431",
+  "retained_mathematics": "OLD/REUSE",
+  "actual_complete_predecessor_read": {
+    "bytes": 21055,
+    "git_blob": "91fd2d4f02e677cca731e4cbd61945333cda3ce5",
+    "sha256": "61eb7598d36cb636e6033b53469ad46b049761b18d50cf94499a580a44102d09"
+  },
+  "prior_source_commit": "78ef5c855146cc88afdad78cd3475eae2399f141",
+  "same_full1077_source_target": true,
+  "owned_audit_required": true,
+  "actual_checker_result": false,
+  "whole_native_algorithm_refinement": false,
+  "whole_query_charge_proof": false,
+  "source_circle_oracle_admission": false,
+  "whole_canonical_claim_formal_binding": false,
+  "first_selected_sha256": "5eb402b5e0bec5f22fe2017359ddd01ca51e0a9b651b09504808581df34f5349",
+  "rejections": [
+    {
+      "source": "a6d03cf1a30ab39daa138f626c7a0c7a3981d41e",
+      "run": 40072008848,
+      "job": 120807400116,
+      "lines": [
+        118,
+        121
+      ],
+      "diagnostic": "Named recursion guard is a dependent if; use dif_pos/dif_neg rather than if_pos/if_neg.",
+      "whole_component_accepted": false
+    },
+    {
+      "source": "d39f9490d179d8565755f5241a2e2d5f38cf143d",
+      "run": 40072807852,
+      "job": 120809856986,
+      "line": 120,
+      "diagnostic": "omega alone did not close the False iff empty triangle branch; explicit False.elim and the arithmetic impossibility are now supplied.",
+      "whole_component_accepted": false
+    }
+  ],
+  "repair": "Construct the SAME small-interval equivalence explicitly from False.elim and a derived contradiction with its actual l/i/j/r inequalities. Recursion and all theorem statements unchanged.",
+  "module_compile_result": {
+    "source": "75aed82f4f9cc8242ae78459a54d4ce500c2f998",
+    "run": 40073754206,
+    "job": 120812751977,
+    "all_six_new_theorem_proofs_compiled": true,
+    "whole_selected_target_rejected": true,
+    "whole_owned_audit_ran": false,
+    "exact_named_type_and_owner_audit_ran": false
+  },
+  "whole_component_accepted": true,
+  "actual_complete_scoped_check": {
+    "source": "61027b35206d7da06f7073def120ba1e7c8eb5b0",
+    "run": 40088841986,
+    "job": 120857307451,
+    "record": "integration/exact-query-scoped-context-verification.json",
+    "names": 21,
+    "sources": 245
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "source_commit": "245783641450ea9c0fad157d0b9a7c6872ed1049",
+  "run_id": 40109765011,
+  "job_id": 120919015883,
+  "actual_complete_types_from_terminal_log": true,
+  "entries": [
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.exact_iff",
+      "printed_type": "@StochasticAbstraction.exact_iff : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X) (q : X → R),\n  Function.Surjective q → ((∃ L, StochasticAbstraction.Exact K q L) ↔ StochasticAbstraction.Compatible K q)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.exact_unique",
+      "printed_type": "@StochasticAbstraction.exact_unique : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X) (q : X → R),\n  Function.Surjective q →\n    ∀ (L M : A → R → PMF R), StochasticAbstraction.Exact K q L → StochasticAbstraction.Exact K q M → L = M",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.exact_iff_all_initial_laws",
+      "printed_type": "@StochasticAbstraction.exact_iff_all_initial_laws : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X)\n  (q : X → R) (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L ↔ ∀ (a : A) (μ : PMF X), PMF.map q (μ.bind (K a)) = (PMF.map q μ).bind (L a)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.runLaw_preserves",
+      "printed_type": "@StochasticAbstraction.runLaw_preserves : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X) (q : X → R)\n  (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (word : List A) (x : X),\n      PMF.map q (StochasticAbstraction.runLaw K word x) = StochasticAbstraction.runLaw L word (q x)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.runLaw_initial",
+      "printed_type": "@StochasticAbstraction.runLaw_initial : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X) (q : X → R)\n  (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (word : List A) (μ : PMF X),\n      PMF.map q (μ.bind (StochasticAbstraction.runLaw K word)) =\n        (PMF.map q μ).bind (StochasticAbstraction.runLaw L word)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.experiment_preserves",
+      "printed_type": "@StochasticAbstraction.experiment_preserves : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X)\n  (q : X → R) (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (choose : StochasticAbstraction.Policy X A) (chooseR : StochasticAbstraction.Policy R A),\n      (∀ (past : List (X × A)) (x : X), choose past x = chooseR (StochasticAbstraction.mapHistory q past) (q x)) →\n        ∀ (n : ℕ) (past : List (X × A)) (x : X),\n          PMF.map (StochasticAbstraction.view q) (StochasticAbstraction.experiment K choose n past x) =\n            StochasticAbstraction.experiment L chooseR n (StochasticAbstraction.mapHistory q past) (q x)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.experimentLaw_preserves",
+      "printed_type": "@StochasticAbstraction.experimentLaw_preserves : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (K : A → X → PMF X)\n  (q : X → R) (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (choose : StochasticAbstraction.Policy X A) (chooseR : StochasticAbstraction.Policy R A),\n      (∀ (past : List (X × A)) (x : X), choose past x = chooseR (StochasticAbstraction.mapHistory q past) (q x)) →\n        ∀ (n : ℕ) (μ : PMF X),\n          PMF.map (StochasticAbstraction.view q) (StochasticAbstraction.experimentLaw K choose n μ) =\n            StochasticAbstraction.experimentLaw L chooseR n (PMF.map q μ)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.observationPolicy_factors",
+      "printed_type": "@StochasticAbstraction.observationPolicy_factors : ∀ {X : Type u_1} {R : Type u_2} {O : Type u_3} {A : Type u_4}\n  (q : X → R) (p : X → O) (d : R → O),\n  (∀ (x : X), d (q x) = p x) →\n    ∀ (chooseO : StochasticAbstraction.Policy O A) (past : List (X × A)) (x : X),\n      StochasticAbstraction.observationPolicy p chooseO past x =\n        StochasticAbstraction.observationPolicy d chooseO (StochasticAbstraction.mapHistory q past) (q x)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.observed_experiment_law",
+      "printed_type": "@StochasticAbstraction.observed_experiment_law : ∀ {X : Type u_1} {R : Type u_2} {O : Type u_3} {A : Type u_4}\n  (K : A → X → PMF X) (q : X → R) (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (p : X → O) (d : R → O),\n      (∀ (x : X), d (q x) = p x) →\n        ∀ (chooseO : StochasticAbstraction.Policy O A) (n : ℕ) (μ : PMF X),\n          PMF.map (StochasticAbstraction.view p)\n              (StochasticAbstraction.experimentLaw K (StochasticAbstraction.observationPolicy p chooseO) n μ) =\n            PMF.map (StochasticAbstraction.view d)\n              (StochasticAbstraction.experimentLaw L (StochasticAbstraction.observationPolicy d chooseO) n\n                (PMF.map q μ))",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.observed_statistic_preserves",
+      "printed_type": "@StochasticAbstraction.observed_statistic_preserves : ∀ {X : Type u_1} {R : Type u_2} {O : Type u_3} {A : Type u_4}\n  {B : Type u_5} (K : A → X → PMF X) (q : X → R) (L : A → R → PMF R),\n  StochasticAbstraction.Exact K q L →\n    ∀ (p : X → O) (d : R → O),\n      (∀ (x : X), d (q x) = p x) →\n        ∀ (chooseO : StochasticAbstraction.Policy O A) (n : ℕ) (μ : PMF X) (statistic : List (O × A) × O → B),\n          PMF.map statistic\n              (PMF.map (StochasticAbstraction.view p)\n                (StochasticAbstraction.experimentLaw K (StochasticAbstraction.observationPolicy p chooseO) n μ)) =\n            PMF.map statistic\n              (PMF.map (StochasticAbstraction.view d)\n                (StochasticAbstraction.experimentLaw L (StochasticAbstraction.observationPolicy d chooseO) n\n                  (PMF.map q μ)))",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.deterministic_instance",
+      "printed_type": "@StochasticAbstraction.deterministic_instance : ∀ {X : Type u_1} {R : Type u_2} {A : Type u_3} (T : A → X → X)\n  (q : X → R) (G : A → R → R),\n  (∀ (a : A) (x : X), q (T a x) = G a (q x)) →\n    StochasticAbstraction.Exact (fun a x => PMF.pure (T a x)) q fun a r => PMF.pure (G a r)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.joint_sensor_exact",
+      "printed_type": "@StochasticAbstraction.joint_sensor_exact : ∀ {X : Type u_1} {R : Type u_2} {O : Type u_3} {A : Type u_4}\n  (J : A → X → PMF (X × O)) (q : X → R) (Jbar : A → R → PMF (R × O)),\n  (∀ (a : A) (x : X), PMF.map (StochasticAbstraction.sensorCode q) (J a x) = Jbar a (q x)) →\n    StochasticAbstraction.Exact (StochasticAbstraction.sensorStep J) (StochasticAbstraction.sensorCode q)\n      (StochasticAbstraction.sensorStep Jbar)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticAbstraction",
+      "name": "StochasticAbstraction.joint_sensor_observed_law",
+      "printed_type": "@StochasticAbstraction.joint_sensor_observed_law : ∀ {X : Type u_1} {R : Type u_2} {O : Type u_3} {A : Type u_4}\n  (J : A → X → PMF (X × O)) (q : X → R) (Jbar : A → R → PMF (R × O)),\n  (∀ (a : A) (x : X), PMF.map (StochasticAbstraction.sensorCode q) (J a x) = Jbar a (q x)) →\n    ∀ (chooseO : StochasticAbstraction.Policy O A) (n : ℕ) (μ : PMF (X × O)),\n      PMF.map (StochasticAbstraction.view Prod.snd)\n          (StochasticAbstraction.experimentLaw (StochasticAbstraction.sensorStep J)\n            (StochasticAbstraction.observationPolicy Prod.snd chooseO) n μ) =\n        PMF.map (StochasticAbstraction.view Prod.snd)\n          (StochasticAbstraction.experimentLaw (StochasticAbstraction.sensorStep Jbar)\n            (StochasticAbstraction.observationPolicy Prod.snd chooseO) n\n            (PMF.map (StochasticAbstraction.sensorCode q) μ))",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.matching_marginals_different_joint",
+      "printed_type": "StochasticExamples.matching_marginals_different_joint : PMF.map Prod.fst StochasticExamples.correlated =\n    PMF.map Prod.fst StochasticExamples.anticorrelated ∧\n  PMF.map Prod.snd StochasticExamples.correlated = PMF.map Prod.snd StochasticExamples.anticorrelated ∧\n    StochasticExamples.correlated ≠ StochasticExamples.anticorrelated",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.c_is_mixture",
+      "printed_type": "StochasticExamples.c_is_mixture : ∀ (n : ℕ),\n  StochasticExamples.trace n StochasticExamples.State.c =\n    StochasticExamples.coin.bind fun bit =>\n      StochasticExamples.trace n (if bit = true then StochasticExamples.State.b else StochasticExamples.State.u)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.same_all_traces",
+      "printed_type": "StochasticExamples.same_all_traces : ∀ (n : ℕ),\n  StochasticExamples.trace n StochasticExamples.State.s = StochasticExamples.trace n StochasticExamples.State.t",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.no_trace_based_test_separates",
+      "printed_type": "@StochasticExamples.no_trace_based_test_separates : ∀ {D : Type u_1} (n : ℕ) (test : List Bool → PMF D),\n  (StochasticExamples.trace n StochasticExamples.State.s).bind test =\n    (StochasticExamples.trace n StochasticExamples.State.t).bind test",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.same_profile",
+      "printed_type": "StochasticExamples.same_profile : StochasticExamples.profile StochasticExamples.State.s =\n  StochasticExamples.profile StochasticExamples.State.t",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.profile_pushes_differ",
+      "printed_type": "StochasticExamples.profile_pushes_differ : PMF.map StochasticExamples.profile\n    (StochasticExamples.next StochasticExamples.State.s) ≠\n  PMF.map StochasticExamples.profile (StochasticExamples.next StochasticExamples.State.t)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "StochasticExamples",
+      "name": "StochasticExamples.no_commuting_profile_kernel",
+      "printed_type": "StochasticExamples.no_commuting_profile_kernel : ¬∃ L,\n    StochasticAbstraction.Exact (fun x => StochasticExamples.next) StochasticExamples.profile L",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Printed types plus actual owner/axiom rows; no native/general-source promotion."
+}

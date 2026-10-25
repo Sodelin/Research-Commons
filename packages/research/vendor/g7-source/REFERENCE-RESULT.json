@@ -1,0 +1,44 @@
+{
+  "schema": "support_reference_experiments_v1",
+  "executed_utc": "2026-10-21 20:20:30 UTC",
+  "runtime": "functions.exec V8 JavaScript BigInt; no phone source/materialization or compiler",
+  "reference_source_sha256": "36ad1a50012db001e1f1d8bee0d817176b5c68fd14b6c18c712820c9c9ec1914",
+  "case_count": 205,
+  "outcomes": {
+    "generated": 183,
+    "mutation_rejections": 252,
+    "permutation_equalities": 84,
+    "refused": 19,
+    "unknown": 3
+  },
+  "claims": {
+    "reference_algorithm_executed": true,
+    "Rust_compiled": false,
+    "Rust_tests_executed": false,
+    "canonical_Python_checker_executed": false,
+    "codec_executed": false,
+    "Lean_emitter_executed": false,
+    "Lean_compiled": false,
+    "native_refinement_proved": false,
+    "source_existence_certified": false
+  },
+  "limits": "Finite reference experiments. Not a native differential replay or universal acquisition theorem.",
+  "fixture_file": "fixtures/native-cases.json",
+  "fixture_sha256": "194934c52bec4b5e3f3af972ce42eed9de3c209e5ea7648eb652b64de1681a35",
+  "scope_checks": [
+    "Endpoint1 included",
+    "Equivalent rational literal moments retained",
+    "Duplicate candidate values rejected after rational normalization",
+    "Exact proposed-node permutation invariance",
+    "Zero and negative nodes refused",
+    "Positive-support data mismatch stays UNKNOWN",
+    "Derived coefficient cap stays UNKNOWN",
+    "Changed coefficients, moments and negative weights rejected"
+  ],
+  "authored_source_corrections": [
+    {
+      "claim": "Source-only fixture correction, not a Rust test result",
+      "detail": "The initially transcribed three-node unit-test moments at exponents15/21 were corrected from the actually executed exact reference before publication. Earlier guessed literals are not preserved as a successful result."
+    }
+  ]
+}

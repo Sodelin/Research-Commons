@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "source_commit": "ca04aea16c23e2c3f44bb49383bfcd1c16f0f081",
+  "run_id": 40124344051,
+  "job_id": 120962623654,
+  "all32_complete_types_read": true,
+  "actual_owned_modules_and_axioms_independently_matched": true,
+  "types": [
+    {
+      "name": "PedigreeBlock.complement_ne",
+      "printed_type": "@PedigreeBlock.complement_ne : ∀ {B : ℕ}, 0 < B → ∀ (v : PedigreeBlock.Code B), PedigreeBlock.complement v ≠ v",
+      "module": "PedigreeBlockModel",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.not_share_iff_complement",
+      "printed_type": "@PedigreeBlock.not_share_iff_complement : ∀ {n B : ℕ} (x : PedigreeBlock.Config n B) (a b : Fin (n + 1)),\n  a ≠ b → (¬PedigreeBlock.Share x a b ↔ x b = PedigreeBlock.complement (x a))",
+      "module": "PedigreeBlockGraph",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.not_connected_iff_bad",
+      "printed_type": "@PedigreeBlock.not_connected_iff_bad : ∀ {n B : ℕ},\n  0 < B → ∀ (x : PedigreeBlock.Config n B), ¬PedigreeBlock.Connected x ↔ PedigreeBlock.Bad x",
+      "module": "PedigreeBlockGraph",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.reachable_of_restrict",
+      "printed_type": "@PedigreeBlock.reachable_of_restrict : ∀ {n B D : ℕ} (hBD : B ≤ D) (x : PedigreeBlock.Config n D) {a b : Fin (n + 1)},\n  Relation.ReflTransGen (PedigreeBlock.Share (PedigreeBlock.restrictBlocks hBD x)) a b →\n    Relation.ReflTransGen (PedigreeBlock.Share x) a b",
+      "module": "PedigreeBlockGraph",
+      "kind": "theorem",
+      "axioms": []
+    },
+    {
+      "name": "PedigreeBlock.connected_of_restrict",
+      "printed_type": "@PedigreeBlock.connected_of_restrict : ∀ {n B D : ℕ} (hBD : B ≤ D) (x : PedigreeBlock.Config n D),\n  PedigreeBlock.Connected (PedigreeBlock.restrictBlocks hBD x) → PedigreeBlock.Connected x",
+      "module": "PedigreeBlockGraph",
+      "kind": "theorem",
+      "axioms": []
+    },
+    {
+      "name": "PedigreeBlock.badEquiv",
+      "printed_type": "PedigreeBlock.badEquiv : (n B : ℕ) →\n  0 < B → { x // PedigreeBlock.Bad x } ≃ PedigreeBlock.Code B × PedigreeBlock.NonzeroTail n",
+      "module": "PedigreeBlockProbability",
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.bad_card",
+      "printed_type": "PedigreeBlock.bad_card : ∀ (n B : ℕ), 0 < B → Fintype.card { x // PedigreeBlock.Bad x } = 2 ^ B * (2 ^ n - 1)",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.configLaw_probability",
+      "printed_type": "PedigreeBlock.configLaw_probability : ∀ (n B : ℕ), MeasureTheory.IsProbabilityMeasure (PedigreeBlock.configLaw n B)",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.configPMF_mass",
+      "printed_type": "PedigreeBlock.configPMF_mass : ∀ (n B : ℕ) (x : PedigreeBlock.Config n B),\n  (PedigreeBlock.configPMF n B) x = (2 ^ (B * (n + 1)))⁻¹",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.bad_probability",
+      "printed_type": "PedigreeBlock.bad_probability : ∀ (n B : ℕ),\n  0 < B → (PedigreeBlock.configLaw n B) {x | PedigreeBlock.Bad x} = ↑(2 ^ n - 1) / 2 ^ (B * n)",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.uniform_pi_event",
+      "printed_type": "@PedigreeBlock.uniform_pi_event : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {α : ι → Type u_2}\n  [inst_2 : (i : ι) → Fintype (α i)] [inst_3 : ∀ (i : ι), Nonempty (α i)] [inst_4 : (i : ι) → MeasurableSpace (α i)]\n  [∀ (i : ι), MeasurableSingletonClass (α i)] (p : (i : ι) → α i → Prop),\n  (PMF.uniformOfFintype ((i : ι) → α i)).toMeasure {x | ∀ (i : ι), p i (x i)} =\n    ∏ i, (PMF.uniformOfFintype (α i)).toMeasure {a | p i a}",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.config_bit_cylinder",
+      "printed_type": "PedigreeBlock.config_bit_cylinder : ∀ (n B : ℕ) (p : Fin (n + 1) → Fin B → Bool → Prop),\n  (PedigreeBlock.configLaw n B) {x | ∀ (i : Fin (n + 1)) (b : Fin B), p i b (x i b)} =\n    ∏ i, ∏ b, (PMF.uniformOfFintype Bool).toMeasure {a | p i b a}",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.fair_bit_singleton",
+      "printed_type": "PedigreeBlock.fair_bit_singleton : ∀ (a : Bool), (PMF.uniformOfFintype Bool).toMeasure {a} = 2⁻¹",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.good_probability",
+      "printed_type": "PedigreeBlock.good_probability : ∀ (n B : ℕ),\n  0 < B → (PedigreeBlock.configLaw n B) {x | ¬PedigreeBlock.Bad x} = 1 - ↑(2 ^ n - 1) / 2 ^ (B * n)",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.familyLaw_probability",
+      "printed_type": "@PedigreeBlock.familyLaw_probability : ∀ {ι : Type u_1} [inst : Fintype ι] (n : ι → ℕ) (B : ℕ),\n  MeasureTheory.IsProbabilityMeasure (PedigreeBlock.familyLaw n B)",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.family_event_product",
+      "printed_type": "@PedigreeBlock.family_event_product : ∀ {ι : Type u_1} [inst : Fintype ι] (n : ι → ℕ) (B : ℕ)\n  (p : (i : ι) → PedigreeBlock.Config (n i) B → Prop),\n  (PedigreeBlock.familyLaw n B) {x | ∀ (i : ι), p i (x i)} = ∏ i, (PedigreeBlock.configLaw (n i) B) {x | p i x}",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.families_good_probability",
+      "printed_type": "@PedigreeBlock.families_good_probability : ∀ {ι : Type u_1} [inst : Fintype ι] (n : ι → ℕ) (B : ℕ),\n  0 < B →\n    (PedigreeBlock.familyLaw n B) {x | ∀ (i : ι), ¬PedigreeBlock.Bad (x i)} = ∏ i, (1 - ↑(2 ^ n i - 1) / 2 ^ (B * n i))",
+      "module": "PedigreeBlockProbability",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.observedShare_iff",
+      "printed_type": "@PedigreeBlock.observedShare_iff : ∀ {Child : Type u_1} {Family : Type u_2} {Symbol : Type u_3} {B : ℕ}\n  (family : Child → Family) (choices : Child → PedigreeBlock.Code B) (symbols : Fin B → Family × Bool → Symbol),\n  (∀ (j : Fin B), Function.Injective (symbols j)) →\n    ∀ (a b : Child),\n      PedigreeBlock.ObservedShare (PedigreeBlock.display family choices symbols) a b ↔\n        a ≠ b ∧ family a = family b ∧ ∃ j, choices a j = choices b j",
+      "module": "PedigreeBlockObservation",
+      "kind": "theorem",
+      "axioms": []
+    },
+    {
+      "name": "PedigreeBlock.observed_path_preserves_family",
+      "printed_type": "@PedigreeBlock.observed_path_preserves_family : ∀ {Child : Type u_1} {Family : Type u_2} {Symbol : Type u_3} {B : ℕ}\n  (family : Child → Family) (choices : Child → PedigreeBlock.Code B) (symbols : Fin B → Family × Bool → Symbol),\n  (∀ (j : Fin B), Function.Injective (symbols j)) →\n    ∀ {a b : Child},\n      Relation.ReflTransGen (PedigreeBlock.ObservedShare (PedigreeBlock.display family choices symbols)) a b →\n        family a = family b",
+      "module": "PedigreeBlockObservation",
+      "kind": "theorem",
+      "axioms": []
+    },
+    {
+      "name": "PedigreeBlock.family_path_iff",
+      "printed_type": "@PedigreeBlock.family_path_iff : ∀ {Family : Type u_1} {Symbol : Type u_2} {B : ℕ} {n : Family → ℕ}\n  (x : (f : Family) → PedigreeBlock.Config (n f) B) (symbols : Fin B → Family × Bool → Symbol),\n  (∀ (j : Fin B), Function.Injective (symbols j)) →\n    ∀ (f : Family) (a b : Fin (n f + 1)),\n      Relation.ReflTransGen (PedigreeBlock.ObservedShare (PedigreeBlock.familyObservations x symbols)) ⟨f, a⟩ ⟨f, b⟩ ↔\n        Relation.ReflTransGen (PedigreeBlock.Share (x f)) a b",
+      "module": "PedigreeBlockObservation",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.recovered_iff_connected",
+      "printed_type": "@PedigreeBlock.recovered_iff_connected : ∀ {Family : Type u_1} {Symbol : Type u_2} {B : ℕ} {n : Family → ℕ}\n  (x : (f : Family) → PedigreeBlock.Config (n f) B) (symbols : Fin B → Family × Bool → Symbol),\n  (∀ (j : Fin B), Function.Injective (symbols j)) →\n    (PedigreeBlock.Recovered x symbols ↔ ∀ (f : Family), PedigreeBlock.Connected (x f))",
+      "module": "PedigreeBlockObservation",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.connected_probability",
+      "printed_type": "PedigreeBlock.connected_probability : ∀ (n B : ℕ),\n  0 < B → (PedigreeBlock.configLaw n B) {x | PedigreeBlock.Connected x} = 1 - ↑(2 ^ n - 1) / 2 ^ (B * n)",
+      "module": "PedigreeBlockRecovery",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.recovered_probability",
+      "printed_type": "@PedigreeBlock.recovered_probability : ∀ {Family : Type u_1} [inst : Fintype Family] {Symbol : Type u_2}\n  (n : Family → ℕ) (B : ℕ),\n  0 < B →\n    ∀ (symbols : Fin B → Family × Bool → Symbol),\n      (∀ (j : Fin B), Function.Injective (symbols j)) →\n        (PedigreeBlock.familyLaw n B) {x | PedigreeBlock.Recovered x symbols} =\n          ∏ i, (1 - ↑(2 ^ n i - 1) / 2 ^ (B * n i))",
+      "module": "PedigreeBlockRecovery",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.observationLaw_probability",
+      "printed_type": "@PedigreeBlock.observationLaw_probability : ∀ {Family : Type u_1} [inst : Fintype Family] {Symbol : Type u_2}\n  [inst_1 : Fintype Symbol] [inst_2 : MeasurableSpace Symbol] [inst_3 : MeasurableSingletonClass Symbol]\n  (n : Family → ℕ) (B : ℕ) (symbols : Fin B → Family × Bool → Symbol),\n  MeasureTheory.IsProbabilityMeasure (PedigreeBlock.observationLaw n B symbols)",
+      "module": "PedigreeBlockRecovery",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.output_recovery_probability",
+      "printed_type": "@PedigreeBlock.output_recovery_probability : ∀ {Family : Type u_1} [inst : Fintype Family] {Symbol : Type u_2}\n  [inst_1 : Fintype Symbol] [inst_2 : MeasurableSpace Symbol] [inst_3 : MeasurableSingletonClass Symbol]\n  (n : Family → ℕ) (B : ℕ),\n  0 < B →\n    ∀ (symbols : Fin B → Family × Bool → Symbol),\n      (∀ (j : Fin B), Function.Injective (symbols j)) →\n        (PedigreeBlock.observationLaw n B symbols) {obs | PedigreeBlock.OutputRecovered n obs} =\n          ∏ i, (1 - ↑(2 ^ n i - 1) / 2 ^ (B * n i))",
+      "module": "PedigreeBlockRecovery",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatBlock_share_iff",
+      "printed_type": "@PedigreeBlock.repeatBlock_share_iff : ∀ {n B : ℕ},\n  0 < B →\n    ∀ (x : PedigreeBlock.Config n 1) (a b : Fin (n + 1)),\n      PedigreeBlock.Share (PedigreeBlock.repeatBlock B x) a b ↔ PedigreeBlock.Share x a b",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatBlock_connected_iff",
+      "printed_type": "@PedigreeBlock.repeatBlock_connected_iff : ∀ {n B : ℕ},\n  0 < B →\n    ∀ (x : PedigreeBlock.Config n 1),\n      PedigreeBlock.Connected (PedigreeBlock.repeatBlock B x) ↔ PedigreeBlock.Connected x",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatedLaw_probability",
+      "printed_type": "PedigreeBlock.repeatedLaw_probability : ∀ (n B : ℕ), MeasureTheory.IsProbabilityMeasure (PedigreeBlock.repeatedLaw n B)",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatedLaw_block_marginal",
+      "printed_type": "PedigreeBlock.repeatedLaw_block_marginal : ∀ (n B : ℕ) (b : Fin B),\n  MeasureTheory.Measure.map (PedigreeBlock.readBlock b) (PedigreeBlock.repeatedLaw n B) = PedigreeBlock.configLaw n 1",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatedLaw_connected_eq_one_block",
+      "printed_type": "PedigreeBlock.repeatedLaw_connected_eq_one_block : ∀ (n B : ℕ),\n  0 < B →\n    (PedigreeBlock.repeatedLaw n B) {x | PedigreeBlock.Connected x} =\n      (PedigreeBlock.configLaw n 1) {x | PedigreeBlock.Connected x}",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PedigreeBlock.repeatedLaw_connected_probability",
+      "printed_type": "PedigreeBlock.repeatedLaw_connected_probability : ∀ (n B : ℕ),\n  0 < B → (PedigreeBlock.repeatedLaw n B) {x | PedigreeBlock.Connected x} = 1 - ↑(2 ^ n - 1) / 2 ^ n",
+      "module": "PedigreeBlockDependence",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "ResearchCommons.Claims.BlockRecovery.recovered_of_restrict",
+      "printed_type": "@Claims.BlockRecovery.recovered_of_restrict : ∀ {Family : Type u_1} {Symbol : Type u_2} {n : Family → ℕ} {B D : ℕ}\n  (hBD : B ≤ D) (x : (i : Family) → PedigreeBlock.Config (n i) D) (symbols : Fin D → Family × Bool → Symbol),\n  (∀ (j : Fin D), Function.Injective (symbols j)) →\n    (PedigreeBlock.Recovered (fun i => PedigreeBlock.restrictBlocks hBD (x i)) fun j => symbols (Fin.castLE hBD j)) →\n      PedigreeBlock.Recovered x symbols",
+      "module": "ResearchCommons.Claims.BlockRecovery",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    }
+  ]
+}

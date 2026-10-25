@@ -1,0 +1,817 @@
+name: Portable research package
+on:
+  push:
+    branches: [codex/portable-lean-rust-registry-20261023]
+    paths:
+      - 'packages/research/**'
+      - '.github/workflows/portable-research-package.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+# Pushes run exact Rust/source accounting, current export dependencies/owned
+# audits and the strict claim gate. Full/word/completion jobs use explicit commit
+# markers or manual dispatch; [check library] reuses the existing full library/
+# owned/export checks without selecting its expensive caller sequence. That mode
+# has a separate serial group so it cannot cancel/replace the live full caller.
+# Every required whole-package result remains needed
+# before closure. Skipping an unchanged job never supplies a fresh receipt.
+jobs:
+  rust:
+    name: Exact Rust engines and source assembly (not full claim closure)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Build and test actual workspace
+        run: cargo test --workspace --locked
+      - name: Retain exact dependency lock
+        if: always()
+        run: |
+          if [ -f Cargo.lock ]; then
+            echo REPRODUCIBLE_CARGO_LOCK_BEGIN
+            cat Cargo.lock
+            echo REPRODUCIBLE_CARGO_LOCK_END
+            sha256sum Cargo.lock
+          fi
+      - name: Check complete registry accounting
+        run: |
+          mkdir -p build
+          cargo run --locked -p research-commons-package -- check > build/coverage.json
+          cargo run --locked -p research-commons-package -- prepare > build/preparation.json
+          cargo run --locked -p research-commons-package -- prepare-certificates > build/certificate-preparation.json
+          cargo run --locked -p research-commons-package -- emit-index > build/Registry.lean
+          cmp build/Registry.lean lean/ResearchCommons/Registry.lean
+          cargo run --locked -p research-commons-runtime --bin cm-certificate > build/CMExample.lean
+          cargo run --locked -p research-commons-runtime --bin moment-signature-certificate > build/PositiveMomentSignature.lean
+          cargo run --locked -p research-commons-runtime --bin jc69-certificate > build/JC69Branch.lean
+          cargo run --locked -p research-commons-runtime --bin jc69-tree-certificate > build/JC69TreeColumn.lean
+          cargo run --locked -p research-commons-runtime --bin alignment-certificate -- coherent > build/MSCIAlignmentCoherent.lean
+          cargo run --locked -p research-commons-runtime --bin alignment-certificate -- incoherent > build/MSCIAlignmentIncoherent.lean
+          cargo run --locked -p research-commons-runtime --bin affine-certificate -- sat > build/AffineSAT.lean
+          cargo run --locked -p research-commons-runtime --bin affine-certificate -- unsat > build/AffineUNSAT.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- tree > build/OriginalTreeBank.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- parallel > build/OriginalParallelBank.lean
+          cargo run --locked -p research-commons-runtime --bin source-certificate -- infeasible > build/OriginalCellExclusion.lean
+          cargo run --locked -p research-commons-runtime --bin population-certificate -- edge > build/EdgePopulation.lean
+          cargo run --locked -p research-commons-runtime --bin population-certificate -- ancestral > build/AncestralPopulation.lean
+          cargo run --locked -p research-commons-runtime --bin population-certificate -- path > build/PathPopulation.lean
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-rust-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/Cargo.lock
+          if-no-files-found: warn
+  lean:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]') || contains(github.event.head_commit.message, '[check library]')
+    concurrency:
+      group: portable-research-package-20261023${{ github.event_name != 'workflow_dispatch' && contains(github.event.head_commit.message, '[check library]') && !contains(github.event.head_commit.message, '[check full]') && '-library' || '' }}
+      cancel-in-progress: false
+    name: Coherent retained Lean profile (not all 118 formalizations)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install pinned Lean on hosted Linux
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          sha256sum "$RUNNER_TEMP/lean.tar.zst"
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Prepare exact retained sources
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire exact mathlib dependency and cache
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile actual module order and aggregate
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained
+      - name: Check exact canonical-ID to Lean-declaration interfaces
+        run: cargo run --locked -p research-commons-package -- check-exports
+      - name: Kernel-check Rust-emitted positive and negative certificates
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check full]')
+        run: cargo run --locked -p research-commons-package -- check-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-lean-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  certificates:
+    if: github.event_name == 'workflow_dispatch'
+    name: End-to-end certificate callers (isolated finite-input scope)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same pinned Lean
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          sha256sum "$RUNNER_TEMP/lean.tar.zst"
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Prepare exact isolated proof sources
+        run: cargo run --locked -p research-commons-package -- prepare-certificates
+      - name: Acquire the same exact mathlib
+        working-directory: packages/research/certificates
+        run: |
+          lake update
+          lake exe cache get
+      - name: Compile core, check actual emitted proofs and audit all owned declarations
+        run: cargo run --locked -p research-commons-package -- build-certificates
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-certificate-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/certificates/.generated/build-plan.json
+            packages/research/certificates/lake-manifest.json
+          if-no-files-found: warn
+  source_cells:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: portable-original-source-cell-20261023
+      cancel-in-progress: false
+    name: Original CHART to actual Lean source and shared physical bank
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target OriginalCodeChartReceiver
+      - name: Check actual Code fields, returned vectors, physical banks and complete exclusions
+        run: cargo run --locked -p research-commons-package -- check-source-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-original-source-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  population_coefficients:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: portable-population-coefficient-20261023
+      cancel-in-progress: false
+    name: Retained total population coefficient checker (owned closure)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Population
+      - name: Audit every owned coefficient-checker dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.Population
+      - name: Check actual native edge, ancestral and original-path table exports on the captured original source
+        run: cargo run --locked -p research-commons-package -- check-population-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-population-coefficient-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  qualified_menu:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: portable-qualified-menu-20261023
+      cancel-in-progress: false
+    name: Qualified menu finite-selection theorem (explicit source qualifiers)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Menu.FiniteForcing
+      - name: Audit every owned coefficient-checker dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Menu.FiniteForcing
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-qualified-menu-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  sparse_epoch:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: portable-sparse-epoch-20261023
+      cancel-in-progress: false
+    name: Total multivariate sparse/epoch certificate context
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Epoch
+      - name: Audit every owned sparse/epoch dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.Epoch
+      - name: Kernel-check the actual full mixed-population native epoch table
+        run: cargo run --locked -p research-commons-package -- check-epoch-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-sparse-epoch-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  whole_word:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check word]')
+    concurrency:
+      group: portable-whole-word-20261023
+      # Only an explicitly named obsolete public proof-rendering attempt is superseded.
+      # Ordinary pushes preserve the existing non-cancelling word lane.
+      cancel-in-progress: ${{ contains(github.event.head_commit.message, '[supersede word source102]') }}
+    name: Actual natural hybrid-word output to total Lean coefficient certificate
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.WordCache
+      - name: Audit every owned whole-word dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.WordCache
+      - name: Kernel-check every cached primitive and SAME independent/COMMON natural word
+        run: cargo run --locked -p research-commons-package -- check-word-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-whole-word-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  completion_observer:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check completion]')
+    concurrency:
+      group: portable-completion-observer-20261023
+      cancel-in-progress: false
+    name: Native ancestral completion to actual passive topology
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Integration.Completion
+      - name: Audit every owned completion/observer dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Integration.Completion
+      - name: Kernel-check complete native constant rows and the SAME-bank passive comb event
+        run: cargo run --locked -p research-commons-package -- check-completion-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-completion-observer-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  declaration_exports:
+    concurrency:
+      group: portable-claim-exports-20261023
+      cancel-in-progress: false
+    name: Canonical claim IDs to actual retained Lean declarations
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Check finite original response equations from retained algebraic-profile descent
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.G4.AlgebraicProfile
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.G4.AlgebraicProfile --claim CB-G4-006
+      - name: Check complete original foundations and solidarity claim interfaces
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target SocialScience.Audit
+          cargo run --locked -p research-commons-package -- check-exports --target SocialScience.Audit --claim CB-SOFTSCI-001 --claim CB-SOFTSCI-002 --claim CB-SOFTSCI-003 --claim CB-SOFTSCI-004
+      - name: Check complete original clinical model claim interface
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ClinicalModels.Audit
+          cargo run --locked -p research-commons-package -- check-exports --target ClinicalModels.Audit --claim CB-SOFTSCI-005
+      - name: Check original exact-query source and full recursive geometry
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.ExactQuery.Source
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.ExactQuery.Source --claim CB-EXACTQUERY-001
+      - name: Check original NANUQ source geometry and scoped all-level components
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.NANUQ
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.NANUQ --claim CB-NANUQ-001 --claim CB-NANUQ-002 --claim CB-NANUQ-003
+      - name: Reuse exact genome obstruction and finite-evidence proofs on one carrier
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Genome
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Genome --claim CB-GENOME-001 --claim CB-GENOME-002
+      - name: Check actual shifted-exponential root-pair moments and identification
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.MSCI.RootPair
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.MSCI.RootPair --claim CB-MSCI-003
+      - name: Reuse original predictive-state and admissible split proofs
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Memory
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Memory --claim CB-MEMORY-001 --claim CB-MEMORY-002
+      - name: Reuse original complete ownership and exact sampling proofs
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.Ownership
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.Ownership --claim CB-GENOME-003
+      - name: Reuse complete observed-family probability and SAME-array block restriction
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.BlockRecovery
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.BlockRecovery --claim CB-GENOME-004
+      - name: Reuse original real-birthdate founder-window maximality and proved seed
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.FounderWindow
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Claims.FounderWindow --claim CB-ALEXANDER-004
+      - name: Check next OLD discriminating-status transport (explicit scoped selection)
+        if: contains(github.event.head_commit.message, '[check causal]') || contains(github.event.head_commit.message, '[check scoped contexts]')
+        env:
+          COMMONS_CAUSAL_TARGET: DiscriminatingStatusTransport
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target "$COMMONS_CAUSAL_TARGET"
+          cargo run --locked -p research-commons-package -- audit-target "$COMMONS_CAUSAL_TARGET"
+          cp build/lean-target-build.json build/causal-boundary-build.json
+          cp -R build/retained-target-audit build/causal-boundary-owned-audit
+      - name: Check retained exact count engine through the new owning Lean receiver
+        if: contains(github.event.head_commit.message, '[check count]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Numerics.CountPrefix
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Numerics.CountPrefix --claim CB-SOFTWARE-002
+          cp build/lean-target-build.json build/count-prefix-component-build.json
+          cargo run --locked -p research-commons-package -- check-count-prefix-callers
+      - name: Retain exact count proof evidence before the later combined gate
+        if: always() && contains(github.event.head_commit.message, '[check count]') && hashFiles('packages/research/build/count-prefix-component-build.json') != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: portable-count-prefix-evidence
+          path: |
+            packages/research/build/count-prefix-component-build.json
+            packages/research/build/count-prefix-callers/
+            packages/research/build/claim-exports-*/
+            packages/research/build/retained-target-audit/
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: error
+      - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
+        if: contains(github.event.head_commit.message, '[check noise]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.NANUQ.RawNoise
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.RawNoise --claim CB-NANUQ-005
+          cp build/lean-target-build.json build/nanuq-raw-noise-component-build.json
+          cargo run --locked -p research-commons-package -- check-nanuq-noise-callers
+      - name: Reuse checked contiguous physical-tip component (explicit scoped refresh only)
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]') || contains(github.event.head_commit.message, '[check contiguous]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.NANUQ.ContiguousCopies
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.NANUQ.ContiguousCopies --claim CB-NANUQ-004
+          cp build/lean-target-build.json build/nanuq-contiguous-component-build.json
+          cargo run --locked -p research-commons-package -- check-contiguous-callers
+      - name: Check original stochastic full-history and predictive-profile proofs
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target StochasticExamples
+          cargo run --locked -p research-commons-package -- check-exports --target StochasticExamples --claim CB-MEMORY-003
+      - name: Compile the exact original finite transcript decoder
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target FiniteTranscriptDecoder
+      - name: Check OLD rare-event calibration at its full product-law interface
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[check scoped contexts]')
+        run: |
+          cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Calibration.RareEvent
+          cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Calibration.RareEvent --claim CB-MEMORY-004
+          cp build/lean-target-build.json build/calibration-component-build.json
+          cargo run --locked -p research-commons-package -- check-calibration-callers
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --keep-going --target ResearchCommons.Integration.Exports
+      - name: Validate all exact export dependencies, audit and kernel-check named declarations
+        run: cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Integration.Exports
+      - name: Check actual original count-prefix output in the SAME combined proof context
+        run: cargo run --locked -p research-commons-package -- check-count-prefix-callers --in-exports
+      - name: Check actual RAW NANUQ rounded values in the SAME combined proof context
+        run: cargo run --locked -p research-commons-package -- check-nanuq-noise-callers --in-exports
+      - name: Check actual returned contiguous tips in the SAME combined proof context
+        run: cargo run --locked -p research-commons-package -- check-contiguous-callers --in-exports
+      - name: Check exact Rust calibration values against the SAME combined proof context
+        run: cargo run --locked -p research-commons-package -- check-calibration-callers --in-exports
+      - name: Check complete Rust target signature and ALL-finite-positive-rival consumer
+        run: cargo run --locked -p research-commons-package -- check-moment-callers --in-exports
+      - name: Check complete Rust JC branch output at its SAME returned finite clock
+        run: cargo run --locked -p research-commons-package -- check-jc-callers --in-exports
+      - name: Check complete Rust JC tree column at its SAME decoded matrix clock
+        run: cargo run --locked -p research-commons-package -- check-jc-tree-callers --in-exports
+      - name: Check ENTIRE coherent parameter filters on both supplied histories
+        run: cargo run --locked -p research-commons-package -- check-alignment-callers --in-exports
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-claim-exports-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  rna_results:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: portable-rna-results-20261023
+      cancel-in-progress: false
+    name: Retained RNA schema, grid and certificate results (explicit premises)
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Install the same exact Lean compiler
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst
+          echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.33.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Validate the same complete source graph
+        run: cargo run --locked -p research-commons-package -- prepare
+      - name: Acquire the same exact Mathlib
+        working-directory: packages/research/lean
+        run: |
+          lake update
+          lake exe cache get
+      - name: Restore retained-source objects from prior public builds
+        id: retained_restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            retained-v1-${{ runner.os }}-${{ hashFiles('packages/research/vendor/accepted/DEPENDENCY-GRAPH.json', 'packages/research/lean/lakefile.lean', 'packages/research/lean/lean-toolchain', 'packages/research/crates/registry/src/object_cache.rs') }}-
+      - name: Compile the actual receiver dependency closure in the full package context
+        run: cargo run --locked -p research-commons-package -- build --reuse-retained --target ResearchCommons.Claims.RNA
+      - name: Audit every owned RNA dependency and declaration
+        run: cargo run --locked -p research-commons-package -- audit-target ResearchCommons.Claims.RNA
+      - name: Kernel-check the actual Rust finite-ensemble residual certificate
+        run: cargo run --locked -p research-commons-package -- check-residual-callers
+      - name: Retain exact completed source objects even after a later module failure
+        if: always() && hashFiles('packages/research/build/retained-objects/manifest.json') != ''
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: packages/research/build/retained-objects
+          key: ${{ steps.retained_restore.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: portable-rna-results-evidence
+          path: |
+            packages/research/build/
+            !packages/research/build/retained-objects/**
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: warn
+  completeness:
+    name: Full per-claim integration gate
+    needs: rust
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: packages/research
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: packages/research
+          sparse-checkout-cone-mode: true
+      - name: Select pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Reject unbound claims as whole-package completion
+        run: cargo run --locked -p research-commons-package -- coverage --strict

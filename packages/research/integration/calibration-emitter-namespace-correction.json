@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "status": "ACTUAL115_TESTS_AND_BOTH_LITERAL_JOINT_OWNED_AUDIT_ACCEPTED",
+  "prior_source": "56bbb7e959a59f2ee6a1da53917996f9705ee4f7",
+  "prior_namespace": "ResearchCommons.Generated.RareEvent",
+  "prior_collision": "Both fixed n=0/n=3 proof documents declared the SAME rate, sharp-risk and error theorem names; the existing caller audit imports BOTH documents.",
+  "actual_collision_execution_before_fix": false,
+  "corrected_namespace": "ResearchCommons.Generated.RareEvent.N{trials}P{canonical_positive_rate_numerator}Q{canonical_positive_rate_denominator}",
+  "source_only_name_safety": "The validated strict Rational has canonical positive integer numerator/denominator and sample count is u32; no external identifier/route is accepted.",
+  "exact_arithmetic_and_threshold_error_prefix_byte_unchanged": true,
+  "new_runtime": {
+    "bytes": 9220,
+    "git_blob": "8ce413212f04c23fe3271602d7e2fb42eb33297a",
+    "sha256": "9c1bd953c5f1e487558c17763a7ac7921f772d4b62fc629e4d3474fcdf574ea4"
+  },
+  "regression": "distinct_inputs_have_disjoint_proof_namespaces covers empty/nonempty/same-count-different-rate sources",
+  "new_regression_executed": true,
+  "prior114_tests_acceptance_preserved_at_original_byte_scope": true,
+  "Lean_emitted_literal_caller_pending": false,
+  "no_new_statistical_model_or_mathematics": true,
+  "actual_rust_verification": "integration/calibration-rust-component-verification.json",
+  "both_checked_proof_hashes": [
+    {
+      "module": "RareEventFinite",
+      "sha256": "8ff27b535a22c4ba7d59d322cec55c985fe0e12f9d0abcb93e11007cd6192adc"
+    },
+    {
+      "module": "RareEventEmpty",
+      "sha256": "8f0984fd07a4f1e7c1551c8f0afb7bea0094c8ad6ba600d31719a3e3bc839936"
+    }
+  ],
+  "verification": "integration/calibration-component-verification.json"
+}
