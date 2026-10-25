@@ -82,5 +82,31 @@
       "new_derivation_or_implementation_selected": false
     }
   ],
-  "next": "Only repair actual observed compiler/type diagnostics at exact original scope; preserve statements/vendor, then existing complete dependency/owned/combined/name/caller guards. Do not speculate on unreached failures."
+  "next": "Only repair actual observed compiler/type diagnostics at exact original scope; preserve statements/vendor, then existing complete dependency/owned/combined/name/caller guards. Do not speculate on unreached failures.",
+  "pinned_next_dependency_apis": [
+    {
+      "repository": "leanprover-community/mathlib4",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Order/WellFounded.lean",
+      "bytes": 16724,
+      "git_blob": "9aec1f0dfcf2a0764b1ae735f5d71167003e7124",
+      "sha256": "51e96625f2ea719cc9575cf623a1d4169cda879fd06a12e8f003b0b2cae0f039",
+      "declaration": "wellFounded_iff_isEmpty_descending_chain",
+      "read_scope": "Complete exact signature and both proof directions; not a full-file review.",
+      "supplies": "WellFounded r iff no infinite Nat-indexed descending chain, exactly as retained FiniteDependencyInduction uses it.",
+      "new_derivation_or_wrapper": false
+    },
+    {
+      "repository": "leanprover-community/mathlib4",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Data/Fintype/Pigeonhole.lean",
+      "bytes": 3056,
+      "git_blob": "19ebeb40518e099dc572d5b3b627ce2f62c0745a",
+      "sha256": "fa4604d2b1ae480f910e6000ca8814a632299082b48a14f598314303b68cc582",
+      "declaration": "Finite.exists_ne_map_eq_of_infinite",
+      "read_scope": "Complete exact declaration and proof, with finite/infinite carrier assumptions.",
+      "supplies": "Any map from an infinite type to a finite type identifies distinct inputs; Fin0 case retains its empty-carrier contradiction, no Nonempty premise added.",
+      "new_derivation_or_wrapper": false
+    }
+  ]
 }

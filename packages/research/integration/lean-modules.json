@@ -3091,28 +3091,29 @@
         "git_blob": "0f97ad7bc060c3dc2908e592ae282abddbc6bf37",
         "source_sha256": "184c18fc45c20f4256c29de779765df70ae89248762ab0aa90c11520a02aedca",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
-        "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE58_SOURCE_AND_FULL1500_CHECK",
+        "selected_current_context_verified": true,
+        "status": "ACCEPTED_COMPLETE58_SOURCE_OWNED_CONTEXT",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
         "original_body_unchanged": false,
         "original_vendor_body_unchanged": true,
         "all4_original_theorem_headers_byte_unchanged": true,
         "complete_prior_and_later_source_equal": true,
         "later_read_ref": "0dbf73a71c0c282e19d389549f83caae716a1b51",
-        "edit": "Explicit existing Nat.add_sub_cancel for SAME one-step trace index; rewrite only goal along already derived sameIndex rather than dependent elimination across full context; quote SAME matches local binder/uses. No new source/graph/index/witness/target hypothesis or conclusion."
+        "edit": "Explicit existing Nat.add_sub_cancel for SAME one-step trace index; rewrite only goal along already derived sameIndex rather than dependent elimination across full context; quote SAME matches local binder/uses. No new source/graph/index/witness/target hypothesis or conclusion.",
+        "verification": "integration/causal-shortest-dependency-component-verification.json"
       }
     },
     {
       "module": "FiniteDependencyInduction",
-      "path": "vendor/restricted-causal-source/FiniteDependencyInduction.lean",
-      "sha256": "6f126724234660041d4ea85f12c08aa679bf54663ef9849af964c7b6e317af40",
+      "path": "lean/ResearchCommons/Compatibility/FiniteDependencyInduction.lean",
+      "sha256": "5029b8f70c88ebe8fcc778bb3504cdbc4da43839f72b143f6a5b9fe83298b26d",
       "imports": [
         "MinimalPathOrderDependencies",
         "Mathlib.Order.WellFounded",
         "Mathlib.Data.Fintype.Pigeonhole"
       ],
       "provenance": {
-        "role": "OLD author-complete restricted-causal source proposal; new formal check required",
+        "role": "OLD exact finite actual-path dependency well-founded induction; local reserved binder quotation only",
         "source_repository": "Sodelin/Research-Commons",
         "source_commit": "aa57b6e8d46e06a185baf1951129f0ea3789a787",
         "source_path": "research/2026-10-22-dot-restricted-causal-interventions/lean/FiniteDependencyInduction.lean",
@@ -3120,9 +3121,18 @@
         "source_sha256": "6f126724234660041d4ea85f12c08aa679bf54663ef9849af964c7b6e317af40",
         "source_status": "HAND_ACCEPTED_MATHEMATICS_SOURCE_ONLY_UNELABORATED",
         "selected_current_context_verified": false,
-        "status": "SOURCE_ONLY_PENDING_COMPLETE_KERNEL_CHECK",
+        "status": "SOURCE_ONLY_PENDING_COMPLETE59_SOURCE_AND_FULL1500_CHECK",
         "preflight": "integration/CAUSAL-REUSE-PREFLIGHT.md",
-        "original_body_unchanged": true
+        "original_body_unchanged": false,
+        "original_vendor_body_unchanged": true,
+        "all3_original_theorem_headers_byte_unchanged": true,
+        "complete_prior_and_later_bodies_equal": true,
+        "later_ref": "0dbf73a71c0c282e19d389549f83caae716a1b51",
+        "pinned_primary_apis_actual_statements_and_proofs_read": [
+          "wellFounded_iff_isEmpty_descending_chain",
+          "Finite.exists_ne_map_eq_of_infinite"
+        ],
+        "edit": "Quote SAME matches in ONE obtain pattern and its ONE use. Every mathematical proof step/bounded relation/actual source path/WellFounded conclusion unchanged; no finite-DAG oracle or new hypothesis."
       }
     },
     {

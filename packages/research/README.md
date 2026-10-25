@@ -27,11 +27,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest [source178/run40148897830](https://github.com/Sodelin/Research-Commons/actions/runs/40148897830):
+Latest [source179/run40150260761](https://github.com/Sodelin/Research-Commons/actions/runs/40150260761):
 
-- BOTH complete actual native count proofs PASS, joint3-source92declarations67theorems,0owned/nonstandard/missing. Generic8-name scalar proof and unchanged OLD Rust engine reused; ALL returned fields/FIRST cutoff/inspection/weights/sum/error checked. Whole339996B artifact/ALL92 rows/22source endpoints/actual two documents independently validated. Rust125tests pass. [Receipt](integration/count-prefix-component-verification-v2.json).
-- Original bounded actual trace reversal57-source context remains CLOSED1511/945, all7 original statements unchanged. [Receipt](integration/causal-reversed-trace-component-verification.json).
-- Full1500 REJECTED at MinimalPathOrderDependencies:1421successful (135compiled+1286reused),78blocked. Combined520-name/owned/actual callers did not run. Current58-source compatibility candidate preserves ALL4 original headers; only SAME index subtraction, goal equality transport and local matches quoting. [Full rejection](integration/causal-latest-full-union-rejection.json), [frontier](integration/FRONTIER.md).
+- Complete58-source actual shortest-path dependency owned context PASSES:1532declarations965theorems,0owned/nonstandard/missing. ALL4 original headers unchanged; actual physical trace/shortestness/chord/witness/source hypotheses and derived acyclic dependency system retained. Entire720920B archive/all58 source/object/owned sets/every row verified. [Receipt](integration/causal-shortest-dependency-component-verification.json).
+- Actual count receiver remains CLOSED at source178:Rust125tests and BOTH whole native proofs, joint3-source92/67/0rejects; original count engine unchanged. [Receipt](integration/count-prefix-component-verification-v2.json).
+- Full1500 REJECTED at FiniteDependencyInduction:1422successful (136compiled+1286reused),77blocked; combined520-name/owned/actual callers not run. Current59-source candidate only quotes SAME proof-local matches twice; ALL3 original headers/proof logic unchanged. Existing pinned descending-chain and pigeonhole APIs were read and already match. [Failure/frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).
