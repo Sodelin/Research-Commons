@@ -46,3 +46,7 @@ Dot's [later subjective110-card top-ten assessment](https://github.com/Sodelin/R
 ## Completed conditional P1 transfer
 
 The reader’s P1 cards now link the original19October proof/scoped hand review and Dot’s later correction at342f2ed3d5b2628f846f54b80d07d8305afa1723/docs/P1-P5-ACCEPTED-WORK-ADDENDUM.md. Finite minimax/off-net/two-source conversion is completed CONDITIONAL on the stated uniform squared-Bures risk premise, with exactly n copies per source and explicit finite-precision slack. The sharper uniform original-class risk/increment premise remains unsupplied; do not rederive the completed conversion. Upper13, lower domains and P5 remain unchanged.
+
+## Latest completed suppliers and evidence corrections
+
+Read the [25 October G3/G4 progress adoption](https://github.com/Sodelin/Research-Commons/blob/f5de412d0bfea6e4c94e973e9f912294c203b826/research/2026-10-25-dot-g3-g4-progress-adoption/REVIEW.md) before deriving another source-linear, ordinary-energy or generic spectral/count supplier. Cap9 and cap12 differ; the total ONE-witness bank selector and original finite-I gate remain open. Calibration now has its complete original known-rate IID formal binding; G4 has partial finite-original-equation checking. These are evidence corrections, not new discoveries or full-package acceptance. The same reader and agent source search retain exact dated owner notes and immutable identities.

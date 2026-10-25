@@ -177,3 +177,15 @@ test('bibliography normalizes host/default-port spelling but retains distinct sc
  assert.equal(c.accepted_artifacts[0].url,'https://EXAMPLE.org:443/paper');
  assert(before.includes('EXAMPLE.org:443'));
 });
+
+test('later calibration and G4 formal receipts survive reuse export without master upgrades',()=>{
+ const calibration=reusePacket(card('CB-MEMORY-004'),meta);
+ assert.equal(calibration.formal_status.status,'kernel_checked_selected_release');
+ assert.match(calibration.formal_status.detail,/known-rate IID/);
+ assert.match(calibration.formal_status.detail,/Universal Rust\/parser refinement/);
+ const g4=reusePacket(card('CB-G4-006'),meta);
+ assert.equal(g4.formal_status.status,'partially_kernel_checked');
+ assert.match(g4.formal_status.detail,/finite-original-equation/i);
+ assert.match(g4.formal_status.detail,/NOT check the whole/);
+ assert.equal(card('CB-G3-004').mathematical_status,'open');
+});

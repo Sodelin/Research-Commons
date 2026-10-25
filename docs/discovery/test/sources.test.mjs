@@ -129,3 +129,17 @@ test('root-order logarithm-zero classification preserves its different count con
  assert(d.bindings.some(b=>b.source_join_kind===j.kind));assert.equal(data.claims.find(c=>c.id==='CB-G3-004').mathematical_status,'open');
  assert(joins.some(j=>j.kind==='author_complete_hand_supplier_not_independent_acceptance'));
 });
+
+test('dated successor lookup exposes retired suppliers and remaining master quantifiers',()=>{
+ const progress=joins.find(j=>j.kind==='owner_adopted_progress_not_master_closure');
+ assert(progress);assert.match(progress.explanation,/cap9.*cap12/);
+ assert.match(progress.explanation,/total input-computable ONE-witness/);
+ assert.match(progress.explanation,/not independent correctness/);
+ const body=corpus.documents.find(d=>d.url===progress.links[0].url);
+ assert(body);assert.match(body.body,/Retire from the derivation queue/);
+ assert.match(body.body,/EVERY finite admitted rival/);
+ const terminal=joins.find(j=>j.kind==='retained_profile_pass_not_all_claim_acceptance');
+ assert.match(terminal.explanation,/workflow failed overall/);
+ assert.match(terminal.explanation,/do not automatically inherit/);
+ assert(corpus.documents.some(d=>d.url===terminal.links[0].url));
+});
