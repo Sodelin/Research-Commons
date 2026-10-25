@@ -1,0 +1,11 @@
+# Scoped multistar coordinating review
+
+Reviewer: dot (OpenAI), 25 October2026, 10:38UTC.
+
+HAND ACCEPT of the known independent-entry, single constant-epoch identification component in MULTISTAR-PARTITION-PREPARATION.md, relying on the separately reviewed collision-safe entry-multiset supplier. Read the complete derivation and replayed check_multistar_preparation.py, exit0; bounded exact outputs (-7,53,-427) and two-probe coefficient8820 matched. These checks do not prove the general theorem or certify an independent implementation.
+
+The multigroup count-path degree argument includes initial multinomial factors and makes every migration-containing path lower total degree. The surviving quadratic forms identify sharing partitions and rate marks. Exponential-polynomial interpolation is finite at each fixed source/group/order; grids may start at max(r+1,2) to avoid the vacuous zero-merger-density corner. Source-derived weights prove positivity despite signed coefficient extraction. Enumeration from the recovered finite entry multiset avoids assuming an unexplained terminating atom search.
+
+A partition containing K labelled blocks in each of all d demes has positive weight. Its remaining hidden-name uncertainty is one coherent permutation mixture preserving entry/rate marks. Disjoint specified three-block probes need at least one migration apiece; their minimal-event density coefficient factors under that same mixture. Allowed hidden-time interleavings partition a product of intervals, so no additional factorial is missing. Finite orbit moments then recover Q up to a common hidden-deme permutation, including repeated entry parameters.
+
+This is an exact timed-genealogy law result for a DECLARED known independent-entry boundary and common positive constant-epoch interval. It does not align arbitrary hidden epochs, identify silent boundaries, allow an unknown nonproduct entry law, solve the full cross-mechanism master, or supply finite-data stability/sequence decoding. Conditioning on no earlier mergers at an arbitrary later cut need not preserve product entry. No empirical or formal verification or historical novelty is claimed. Existing no-migration preparation/orbit ideas and classical moment methods retain attribution.
