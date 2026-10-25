@@ -62,3 +62,10 @@ The [two-source biological split benchmark](../2026-10-25-biological-split-bench
 - [G4 clock-prior correction](../2026-10-25-g4-chronological-invariants/CLOCK-PRIOR-CORRECTION.md): full-hierarchy effective clock/order recovery was already accepted. Do not reopen it or confuse a new numerical/algebraic check with a new missing supplier. The finite all-rival implication remains open.
 - [Known-entry single migration epoch](../2026-10-25-cross-mechanism-identifiability/MULTISTAR-REVIEW.md): scoped exact timed-law identification, including repeated entry parameters. Unknown boundaries, general history alignment and finite-data/sequence bridges remain separate.
 - [Recovered regular-quartet split certificate](../2026-10-25-biological-split-observations/RECOVERED-REGULAR-CERTIFICATE-REVIEW.md): credits the September30 ASTRA-OBS source. This is a newly scoped applicability review of prior mathematics, not an October25 discovery or full SF/G4 solution.
+
+
+## Nonduplication gate — 25 October, 10:46 UTC
+
+Before reporting a result as new programme progress, compare its exact statement against the recovered source catalogue, nearest predecessor AND broader accepted results that may imply it. Record the prior source, precise implication/restriction, and remaining contribution. Correctness review, new proof exposition, new execution, explicit fixture construction and a genuinely stronger mathematical result are different outcomes. An empty keyword search is not an exhaustive nonduplication certificate.
+
+The G3 rank-bank comparison now shows that the broad existence of a four-dimensional open image for the chosen rational projection follows from the older accepted rank18 bank after a projection-rank check. Do not count that abstract existence again. The explicit one-cell realization, homomorphic coordinate formulas and equal-dilation fixture are narrower construction/check contributions, with their remaining source-adapter obligations. G4 effective chronology and the regular-quartet SF branch likewise have identified older suppliers. Preserve and reuse them instead of restarting their proofs.
