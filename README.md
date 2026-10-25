@@ -1,5 +1,10 @@
 # Research Commons
 
+## New G3/G4 progress and retired tasks — 25 October 2026
+
+The [incremental progress adoption](research/2026-10-25-dot-g3-g4-progress-adoption/REVIEW.md) and [structured delta](research/2026-10-25-dot-g3-g4-progress-adoption/DELTA.json) distinguish new author-hand mathematics from new formal evidence. Source-linear absorption (cap 9), ordinary forcing/energy (cap 12), and the supplied I-only cohort-survival implication are completed at their stated hand scopes, not missing generic suppliers. G4's finite-original-equation component has a scoped formal receipt; earlier COMMON/BOTH/descent results remain reusable. Original G3 total recognition and G4 finite-I/all-rival forcing are still separate unresolved implications. Do not restart the completed components because the master remains OPEN.
+
+
 ## Recovery and verification checkpoint — 25 October 2026
 
 The [current recovery review and NetCS prior-work comparison](research/2026-10-25-dot-netcs-and-recovery-review/REVIEW.md) reconciles **118 scoped claim cards**, the completed **32-family / 27-grouped-card mapping**, and the bounded duplicate review. This is substantial recovered coverage, not an exhaustive whole-corpus proof or novelty audit.
