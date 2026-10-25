@@ -54,3 +54,11 @@ Full-scope reconciliation should append a dated reference to this contract and p
 ## Executed restricted pipeline — 25 October, 10:19 UTC
 
 The [two-source biological split benchmark](../2026-10-25-biological-split-benchmark/README.md) implements positive source → exact genealogy channel → ambiguity → finite-registry confidence → comparison of four additional-copy designs. [Coordinator replay](../2026-10-25-biological-split-benchmark/COORDINATOR-REPLAY.md) reproduced 12 local checks and the reported gaps. This is an actual small end-to-end ideal-genealogy example, not an arbitrary-source solver, a DNA pipeline, a universal finite sample guarantee or an SF/G4 solution.
+
+
+## Reviewed changes and recovered work — 25 October, 10:40 UTC
+
+- [G3 local physical two-channel construction](../2026-10-25-g3-physical-affine-recoding/NONADJACENT-REVIEW.md): scoped hand review and exact controls; not a general recognition algorithm or undecidability reduction. Full corpus-overlap/novelty remains separately audited.
+- [G4 clock-prior correction](../2026-10-25-g4-chronological-invariants/CLOCK-PRIOR-CORRECTION.md): full-hierarchy effective clock/order recovery was already accepted. Do not reopen it or confuse a new numerical/algebraic check with a new missing supplier. The finite all-rival implication remains open.
+- [Known-entry single migration epoch](../2026-10-25-cross-mechanism-identifiability/MULTISTAR-REVIEW.md): scoped exact timed-law identification, including repeated entry parameters. Unknown boundaries, general history alignment and finite-data/sequence bridges remain separate.
+- [Recovered regular-quartet split certificate](../2026-10-25-biological-split-observations/RECOVERED-REGULAR-CERTIFICATE-REVIEW.md): credits the September30 ASTRA-OBS source. This is a newly scoped applicability review of prior mathematics, not an October25 discovery or full SF/G4 solution.
