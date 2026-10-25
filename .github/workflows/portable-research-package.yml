@@ -658,6 +658,19 @@ jobs:
           cargo run --locked -p research-commons-package -- check-exports --target ResearchCommons.Numerics.CountPrefix --claim CB-SOFTWARE-002
           cp build/lean-target-build.json build/count-prefix-component-build.json
           cargo run --locked -p research-commons-package -- check-count-prefix-callers
+      - name: Retain exact count proof evidence before the later combined gate
+        if: always() && contains(github.event.head_commit.message, '[check count]') && hashFiles('packages/research/build/count-prefix-component-build.json') != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: portable-count-prefix-evidence
+          path: |
+            packages/research/build/count-prefix-component-build.json
+            packages/research/build/count-prefix-callers/
+            packages/research/build/claim-exports-*/
+            packages/research/build/retained-target-audit/
+            packages/research/lean/.generated/build-plan.json
+            packages/research/lean/lake-manifest.json
+          if-no-files-found: error
       - name: Check exact RAW NANUQ strict-half recovery and actual returned coefficients
         if: contains(github.event.head_commit.message, '[check noise]')
         run: |

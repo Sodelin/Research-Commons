@@ -1,0 +1,47 @@
+import ResearchCommons.Numerics.CountPrefix
+import Mathlib.Data.Fin.VecNotation
+noncomputable section
+open scoped BigOperators
+namespace ResearchCommons.Generated.«CountPrefixOrdinary»
+open ResearchCommons.Numerics.CountPrefix
+def inputA : ℝ := (5 / 7 : ℝ)
+def epsilon : ℝ := (1 / 9 : ℝ)
+def cutoff : ℕ := 2
+def requestedBudget : ℕ := 3
+def inspected : ℕ := 3
+def returnedS : ℝ := (193 / 98 : ℝ)
+def returnedT : ℝ := (125 / 2058 : ℝ)
+def returnedU : ℝ := (4303 / 2058 : ℝ)
+def returnedDelta : ℝ := (250 / 4303 : ℝ)
+def returnedWeights : Fin (cutoff+1) → ℝ := fun i => if i.val = 0 then (98 / 193 : ℝ) else if i.val = 1 then (70 / 193 : ℝ) else if i.val = 2 then (25 / 193 : ℝ) else (0 : ℝ)
+theorem actual_domain : 0 ≤ inputA ∧ 0 < epsilon ∧ epsilon < 1 := by
+  norm_num [inputA, epsilon]
+theorem actual_fields :
+    returnedS = prefixSum inputA cutoff ∧
+    returnedT = poissonTerm inputA (cutoff+1) ∧
+    returnedU = upper inputA cutoff ∧
+    returnedDelta = deficit inputA cutoff ∧
+    inspected = cutoff+1 ∧ inspected ≤ requestedBudget := by
+  norm_num [inputA, epsilon, cutoff, requestedBudget, inspected, returnedS, returnedT, returnedU, returnedDelta, returnedWeights, prefixSum, poissonTerm, upper, deficit, Finset.sum_range_succ, Nat.factorial]
+theorem actual_guards :
+    2*inputA ≤ ((cutoff+2 : ℕ) : ℝ) ∧ returnedDelta ≤ epsilon := by
+  norm_num [inputA, epsilon, cutoff, requestedBudget, inspected, returnedS, returnedT, returnedU, returnedDelta, returnedWeights, prefixSum, poissonTerm, upper, deficit, Finset.sum_range_succ, Nat.factorial]
+theorem actual_first_cutoff :
+    ∀ j ∈ Finset.range cutoff,
+      ¬ (2*inputA ≤ ((j+2 : ℕ) : ℝ) ∧ deficit inputA j ≤ epsilon) := by
+  intro j hj
+  have bound : j < cutoff := Finset.mem_range.mp hj
+  unfold cutoff at bound
+  interval_cases j <;> norm_num [inputA, epsilon, cutoff, requestedBudget, inspected, returnedS, returnedT, returnedU, returnedDelta, returnedWeights, prefixSum, poissonTerm, upper, deficit, Finset.sum_range_succ, Nat.factorial]
+theorem actual_complete_weights :
+    ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff := by
+  intro i
+  fin_cases i <;> norm_num [inputA, epsilon, cutoff, requestedBudget, inspected, returnedS, returnedT, returnedU, returnedDelta, returnedWeights, prefixSum, poissonTerm, upper, deficit, Finset.sum_range_succ, Nat.factorial]
+theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by
+  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]
+theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by
+  have accuracy : deficit inputA cutoff ≤ epsilon := by
+    rw [← actual_fields.2.2.2.1]
+    exact actual_guards.2
+  exact certified_error inputA epsilon cutoff actual_domain.1 actual_guards.1 accuracy
+end ResearchCommons.Generated.«CountPrefixOrdinary»

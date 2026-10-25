@@ -78,7 +78,7 @@ impl Certificate{
   let vector=format!("fun i => {table}");
   let c=&self.raw;
   let mut out=format!(
-   "import ResearchCommons.Numerics.CountPrefix\nimport Mathlib.Data.Fin.VecNotation\nnoncomputable section\nopen scoped BigOperators\n\
+   "import ResearchCommons.Numerics.CountPrefix\nimport Mathlib.Data.Fintype.BigOperators\nnoncomputable section\nopen scoped BigOperators\n\
     namespace ResearchCommons.Generated.«{namespace}»\n\
     open ResearchCommons.Numerics.CountPrefix\n\
     def inputA : ℝ := {}\ndef epsilon : ℝ := {}\ndef cutoff : ℕ := {}\n\
@@ -112,7 +112,15 @@ theorem actual_complete_weights :
   intro i
   fin_cases i <;> norm_num [{defs}]
 theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by
-  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]
+  calc
+    (∑ i : Fin (cutoff+1), returnedWeights i) =
+        ∑ i : Fin (cutoff+1), poissonTerm inputA i.val / prefixSum inputA cutoff := by
+      apply Finset.sum_congr rfl
+      intro i hi
+      exact actual_complete_weights i
+    _ = ∑ j ∈ Finset.range (cutoff+1), poissonTerm inputA j / prefixSum inputA cutoff :=
+      Fin.sum_univ_eq_sum_range (fun j => poissonTerm inputA j / prefixSum inputA cutoff) (cutoff+1)
+    _ = 1 := normalized_prefix_sum inputA actual_domain.1 cutoff
 theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by
   have accuracy : deficit inputA cutoff ≤ epsilon := by
     rw [← actual_fields.2.2.2.1]

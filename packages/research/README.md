@@ -43,7 +43,7 @@ The strict118 completion gate still fails. Completed HAND science is preserved; 
 
 ## Current count integration candidate
 
-The OLD exact normalized-count engine remains BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component passed at their recorded scopes. The actual emitted proof context is WHOLLY REJECTED on vector-notation reductions; the SAME full finite table is now serialized by its original numeric index cases for checking. This changes no native values/indices/statements. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
+The OLD exact normalized-count engine remains BYTE-IDENTICAL. The generic eight-name scalar component and THREE owning Rust tests passed at their recorded scopes. The ENTIRE actual native proof caller remains rejected, now only at its whole-sum proof. Source178 joins the SAME checked per-index weights through EXISTING Fin.sum_univ_eq_sum_range to ALREADY accepted normalized_prefix_sum. It changes no native values/cutoff/indices/7 statements or engine. Exact component proof files are retained before the later combined gate; upload alone is not acceptance. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md), [rejections](integration/count-prefix-compiler-rejections.json).
 
 ## Actual Rust-to-Lean callers
 
