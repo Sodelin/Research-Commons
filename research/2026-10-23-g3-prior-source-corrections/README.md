@@ -122,6 +122,33 @@ Aliases: input-observed I survival; no inside-only clade; proper cohort;
 closed-subword spectral bounds; finite bank-to-count conditional bridge;
 unconditional channel certificate; no new COMMON observation or height oracle.
 
+## Completed25October source corollary — near-fair log locality
+
+[G3-NEAR-FAIR-LOG-LOCALITY-01](../2026-10-25-g3-near-fair-locality/PROOF.md),
+13550B/SHA2561ff9c4e0f17c87c15d8e82f686031a3cb69aac714cfc2d8d30bb8ed647efb75c,
+is PROVED HAND/self-reviewed as an integration corollary; independent
+correctness/Lean and source execution are absent.
+[Separate status](../2026-10-25-g3-near-fair-locality/SOURCE-STATUS.json).
+
+For actual equal-arm I sources, [u^a beta^b]log C has support<=a+b
+INITIAL CURRENT tokens, beta=(2g-1)^2, with LEFT pair normalization.
+A FIXED FINITE analytic word with u_i,beta_i and all ordinary gaps
+O(epsilon) inherits support<=d at degree d, so complete fresh forest
+rows through d detect that coefficient at EVERY arity. Holding terms,
+opaque grafts, chronology and the same original parent0/native complement
+are retained. This combines G4's OLD weak d+1 locality with G3's OLD
+ENTIRE matrix C_beta|0=-2*C_u|0 by a first-order log chain rule; neither
+supplier is newly solved. It also gives [u^6 beta]log C=-14[u^7]log C_fair,
+so that beta-linear term is not an independent projected control.
+
+No pointwise near-fairness of every fitting word, uniform remainder for
+growing word count, physical return, proper covariance receiver, action
+upper/phase/H or total NO follows. Generic biased/unequal-arm weak sources
+retain the d+1 limitation. This is a source-jet corollary, not a NEW AND
+FULL G3 attack. The22 asymptotic records and48-card archive are unchanged.
+Aliases: equal-arm near-fair locality; fair-tangent log chain rule;
+all-order CURRENT-token support; fixed-architecture finite detection.
+
 ## Completed24October supporting proofs
 
 Every row below is PROVED HAND at its EXACT recorded scope. The full
@@ -234,6 +261,15 @@ read back equal at2026-10-24T23:50:17Z; new recipient adoption unconfirmed.
 A missed reply deadline is not a process wait. Assembly171 was read COMPLETE
 as attributed source/package evidence, not an audit of its linked artifacts.
 Not every new G3 file in the corpus has been reviewed.
+
+Later coordinator [progress adoption](https://github.com/Sodelin/Research-Commons/blob/f5de412d0bfea6e4c94e973e9f912294c203b826/research/2026-10-25-dot-g3-g4-progress-adoption/REVIEW.md)
+and its DELTA.json were read COMPLETE here. Dot explicitly read the entire
+observed-cohort proof and adopted its SOURCE/status scope. This confirms
+that recipient's reading for that supplier, not independent correctness
+or Lean. Its cap9/cap12 intake reuses earlier complete readings. Shared
+README/Start Here/acceptance additions were read as exact diffs and are
+preserved. Other owner intake and the present locality-corollary reading
+remain unconfirmed; no exhaustive corpus audit is claimed.
 
 Later Dot reconciliation [f6f47aa2](https://github.com/Sodelin/Research-Commons/commit/f6f47aa2c9ba7368383e6c7c3e1dbaae23df6af5)
 has29 new lines, read COMPLETE here. It records coordinator reading of
