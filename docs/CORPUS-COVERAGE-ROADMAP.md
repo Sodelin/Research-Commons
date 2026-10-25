@@ -4,6 +4,11 @@
 
 The [canonical register](claims.json) now contains **118 scoped cards**. The [recovery checkpoint](../research/2026-10-25-dot-netcs-and-recovery-review/REVIEW.md) reconciles this count, the 32-family / 27-grouped-card mapping, bounded duplicate-review coverage and newer scoped formal receipts. The 114-, 112- and 104-card sections below are dated history, not current totals. This update changes no theorem scope and makes no exhaustive corpus-audit claim.
 
+
+### M05 evidence reconciliation — 25 October 2026, 06:01 UTC
+
+The later [calibration receipt](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/calibration-component-verification.json) supersedes M05's historical no-general-Lean label at the original known-rate IID scope (all n>=0, real 0<e<1 and randomized complete-sample decisions). Its 20 printed endpoint types and scoped owned audits were reviewed in the earlier card update; this pass reconciles the overlooked coverage row and companion TSV. Receipt reading is not a new build or artifact replay. Unknown/dependent rates, empirical sampling and universal Rust/parser refinement remain outside the receipt. The 32 original source identities and mathematical claims are unchanged.
+
 **Snapshot: 23 October 2026. Prepared by dot (OpenAI), for Nolan.**
 
 This roadmap distinguishes recovered completed research from unfinished **indexing or evidence recovery**. It does not estimate how many discoveries exist, assign a completion percentage, or certify every proof in the corpus.
@@ -79,7 +84,7 @@ The [original publication ledger][samuel-ledger] is an organizing list of **32 f
 | [M02: Predecessor-restoring splits][sam-M02] | Scoped body/status reconciled | [CB-MEMORY-002][CB-MEMORY-002] | Predecessor-restoring split needs more than current membership; full source game is separate. |
 | [M03: Predictive state and memory][sam-M03] | Scoped body/status reconciled | [CB-MEMORY-001][CB-MEMORY-001] | Coarsest exact controlled predictive state and full-history/feedback suppliers; not automatic state discovery. |
 | [M04: Exact stochastic preservation][sam-M04] | Scoped body/status reconciled | [CB-MEMORY-003][CB-MEMORY-003] | Exact countably supported PMF/adaptive-record theorem, not general continuous kernels or the unmechanized approximate-TV proposal. |
-| [M05: Rare-event calibration][sam-M05] | Written proof read; formal/review limit | [CB-MEMORY-004][CB-MEMORY-004] | Completed general written calibration bound; no general Lean proof and no separately recovered calibration-review body. |
+| [M05: Rare-event calibration][sam-M05] | Original written proof plus later scoped formal receipt reconciled (25 October) | [CB-MEMORY-004](CLAIM-BOARD.md#cb-memory-004) | Original known-rate IID mathematical scope Lean checked per [receipt](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/calibration-component-verification.json); not unknown/dependent rates, empirical sampling or universal native refinement. |
 | [W01: Wong representation/process][sam-W01] | Bounded full-body/receipt recovery complete for W-A/W-B; 12 marked-history and 15 deterministic source/provider bodies | Published [CB-WONG-001][CB-WONG-001], [CB-WONG-002][CB-WONG-002], [CB-WONG-003][CB-WONG-003] | Continuous marked law and almost-sure absorption; actual-record extraction and conditional sample-support round trip; noncomputable full normal form with protected samples and storage-only idempotence. No Little-ARG, full generator, native runtime or whole-paper closure. |
 | [W02: Owner-map and robust-IAP transfer][sam-W02] | Bounded body/receipt recovery complete; 8 fresh full bodies plus 2 called provider proofs, exact final receipt | Published [CB-WONG-004][CB-WONG-004] | Supplied finite-fibre owner map; exact ancestry hierarchy. Finite-error extension is IAP-only; maximality equivalence is among saturated candidates. No inferred ownership, biological validation or whole-proof review upgrade. |
 
@@ -89,7 +94,7 @@ The [original publication ledger][samuel-ledger] is an organizing list of **32 f
 - T08/T09 share a card, but productive pruning preserves the **entire infinite language** while deletion-only repair preserves **avoidance** and can disconnect the graph.
 - A01 is not an alias of the already-published capped-host [CB-ALEXANDER-001][CB-ALEXANDER-001]. Terminal cloning and A03's complete blow-up preserve different properties. A02/A03 retain the [public classical-method/novelty qualification][ordinal-entry], without downgrading the completed mathematics.
 - B05 is a preserved precursor within B06's completed group, not another full result. B04's written source-transport/common-limit proof is not silently promoted into its narrower Lean components.
-- M01/M03 are predecessor and continuation. M04's countably supported PMF theorem is not a general continuous-kernel result. M05 is a completed general written proof, not a Lean endpoint.
+- M01/M03 are predecessor and continuation. M04's countably supported PMF theorem is not a general continuous-kernel result. M05's historical written-only label is superseded by the 25 October original-scope formal receipt above; its source assumptions are unchanged.
 - Formal audit totals are endpoint/declaration counts with reused suppliers, not discovery counts. New archival reading does not constitute a new compiler run or external peer review.
 
 ## Wong: historical 104-card recovery stage, retained
