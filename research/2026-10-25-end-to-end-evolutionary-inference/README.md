@@ -37,7 +37,7 @@ Recover the complete displayed-split union of the original admitted all-level cl
 
 Completed scoped components: two positive admitted four-taxon sources have the same full unrooted one-copy law but different displayed-split unions; exact rational arithmetic and exhaustive switching enumeration were executed and replayed. The coalescent formula is attributed prior work. Rare inheritance gives a separate no-uniform-fixed-sampling-budget lower bound, not a counterexample to exact finite-panel forcing at a fixed target.
 
-The new rooted-admission/positive-mixture applicability audit is submitted for coordinator review. The entire-rooted-hierarchy implication remains a composition of inherited theorems, not a new independent proof or a finite stopping procedure.
+The [rooted-admission/positive-mixture applicability audit has scoped coordinator hand acceptance](../2026-10-25-biological-split-observations/COMPOSITION-REVIEW.md), published at 3c96bfbb2504fbd1fa25fb22873c68429392d428. The entire-rooted-hierarchy implication remains a composition of inherited theorems, not a new independent proof or a finite stopping procedure.
 
 Next decisive obligation (SF): for every fixed admitted target T, does some finite rooted natural-INDEPENDENT panel force the same split union against EVERY finite admitted unknown-size rival? This is weaker than G4 whole-law forcing. A negative requires one fixed T and exact matching rivals after every finite panel, not changing targets or approximate limits. Because the split target set is finite, one wrong split/system can be fixed in such a negative alternative.
 
