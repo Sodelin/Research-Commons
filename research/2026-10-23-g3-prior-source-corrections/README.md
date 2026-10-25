@@ -249,6 +249,17 @@ active pointers or outdated scopes to today's queue.
 | [Completed resonant ORDINARY forcing and chronological energy](G3-REUSE-CARDS-THROUGH-20261025.md?plain=1#L1689) | 1689 |
 | [Sharp weighted source balance; action-controlled source remainders](G3-REUSE-CARDS-THROUGH-20261025.md?plain=1#L1723) | 1723 |
 
+## Human-requested capture check25October
+
+[Capture check](CAPTURE-CHECK-20261025.md): ALL75 manifest originals,
+public projections and immutable GitHub blob identities match. ALL36
+proof records from14 owned status files (including22 supporting records)
+match exact retained source. ALL48 archive links remain valid. Those are
+source-retention/integrity counts, not discoveries or fresh proof reviews.
+Public projection differences are mapped, not treated as lost mathematics.
+This is bounded coverage; exhaustive all-history capture is not certified.
+The original total-NO/whole-word implication remains unresolved.
+
 ## Current evidence and operating scope
 
 Previous asymptotic supporting source: mixed-square proof12255B/SHA
