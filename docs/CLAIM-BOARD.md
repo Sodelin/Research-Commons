@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-23. Prepared by dot (OpenAI). Version 1.18-rna-schema-grid-source-recovery. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-25. Prepared by dot (OpenAI). Version 1.19-calibration-formal-evidence-reconciliation. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -176,7 +176,7 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-MEMORY-001](#cb-memory-001) | An exact predictive summary must keep the distinctions that future actions can expose | Proved; archived Lean check recorded |
 | [CB-MEMORY-002](#cb-memory-002) | The present group membership does not determine a predecessor-restoring split | Proved; archived Lean check recorded |
 | [CB-MEMORY-003](#cb-memory-003) | An exact stochastic summary preserves the full adaptive observation record | Proved; archived Lean check recorded |
-| [CB-MEMORY-004](#cb-memory-004) | There is an exact error cost for distinguishing an impossible event from a rare one | Proved (not Lean formalized) |
+| [CB-MEMORY-004](#cb-memory-004) | There is an exact error cost for distinguishing an impossible event from a rare one | Proved; Lean checked at original known-rate IID scope |
 
 | [CB-POPULATION-001](#cb-population-001) | Two children suffice for target avoidance, even with permanent genders | Proved; archived Lean check recorded |
 | [CB-POPULATION-002](#cb-population-002) | Critical populations have exact tail structure and finite-frontier descriptions | Proved; archived Lean check recorded |
@@ -5010,14 +5010,14 @@ No theorem-transfer dependency is asserted by this card.
 
 **What we cannot conclude:** This is not structural nonidentifiability of the complete laws, a theorem for arbitrary dependent histories or validated evolutionary calibration.
 
-**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+**Kind:** theorem. **Mathematical status:** Proved; Lean checked at original known-rate IID scope.
 
 <details>
 <summary>Exact scope, prior work, evidence and separate downstream work</summary>
 
 **Exact statement and assumptions.** Observe n≥0 independent fully observed binary trials. M0 always returns zero; Me has one known fixed event probability 0<e<1. Randomized decisions are allowed. With q=(1−e)^n, the minimum sum of the two error probabilities is q, the minimum worst error is q/(1+q), and equal-prior Bayes error is q/2. Both respective attaining rules are supplied, including n=0. For fixed e>0 error can approach zero as n grows, but cannot be zero for finite n. Allowing arbitrarily small e prevents a uniform finite-n worst-error guarantee below one half. A supplied e_min>0 bounds the all-zero probability by (1−e_min)^n, supporting a specified error level rather than certainty. The known-rate, independent-trial and complete-observation assumptions are load-bearing.
 
-**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: not kernel verified. Independent review: source reported independent review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
+**Completion and validation status.** Proof authorship and mathematics are complete. Formal verification: kernel checked at the linked original-scope release. Independent review: source reported independent review. Reuse the completed exact statement. Missing new execution, formalization or broader-model admission does not reopen its proof. Grouping and theorem counts are not discovery counts.
 
 **Origin.** classical prior. M05 selects an elementary sharp binary-testing model to clarify one aspect of the source's broader sparse-history calibration question. The specified two-model proof is complete; the full evolutionary question is not thereby solved.
 
@@ -5028,15 +5028,21 @@ No theorem-transfer dependency is asserted by this card.
 **Evidence, kept separate:**
 
 - **Hand:** The full general written derivation was read. README and PROOF-STRUCTURE explicitly record an independent mathematical review, but a separate calibration-specific review body was not located in this bounded pass. This is reported review provenance, not a newly supplied whole-proof acceptance receipt.
-- **Formal:** No general Lean probability theorem is recorded for this result. The 37-module predictive-memory receipt explicitly keeps calibration written-only; its theorem counts must not be extended to this proof.
-- **Execution:** The archived result and later replay record 15 exact rational cases and 834 deterministic rules. These finite checks support examples and arithmetic, not the arbitrary-n/real-rate theorem. No checker was rerun in this recovery.
+- **Formal:** 25 October evidence reconciliation: the later accepted calibration receipt binds the complete original known-rate IID binary-sample claim, all n>=0, all real 0<e<1 and all randomized full-sample decisions. All 20 printed endpoint types and the complete source at 3c6f7a27 were read against this card; the receipt records 47 declarations/32 theorem rows, no owned/nonstandard axioms or missing modules, and checked finite/empty literal callers. This supersedes the earlier written-only label, not its historical receipt. The compiler/artifact audit was performed by the integration owner; this reconciliation did not rerun it. Universal Rust/parser refinement, dependent/unknown-rate models and empirical admission are not verified.
+- **Execution:** The archived result and later replay record 15 exact rational cases and 834 deterministic rules. These finite checks support examples and arithmetic, not the arbitrary-n/real-rate theorem. No checker was rerun in this recovery. The later receipt separately records 115 Rust tests and two complete checked literal output documents (finite and empty sample); these are source-pinned execution evidence, not universal implementation correctness.
 - **Empirical:** These are statements about fixed mathematical models and declared observations/actions, not empirical biology, consciousness, human or language-model memory, or physical-time necessity.
 
 **Novelty:** Established methods retain credit; this is recovery of completed formalization, explicit contracts and bounded applications, not a new theorem or historical-priority claim.
 
-**Separate downstream work (does not reopen this result):** A general Lean probability formalization, dependent/path-dependent or unknown-rate model specifications and empirical sampling admission are separate. The two complete laws are distinct and asymptotically distinguishable for fixed e>0. Missing formalization or the separately unlocated review body does not reopen the completed written mathematics.
+**Separate downstream work (does not reopen this result):** The original known-rate IID claim now has its general Lean formalization at the linked accepted release. Universal Rust/parser semantic refinement, dependent/path-dependent or unknown-rate model specifications and empirical sampling admission remain separate. The two complete laws are distinct and asymptotically distinguishable for fixed e>0. The separately unlocated historical review body does not reopen the completed mathematics.
+
+**Evidence revision — 25 October 2026:** later source-pinned receipt and all 20 printed endpoint types supersede the historical written-only label. Exact statement, attribution and hand-review provenance are unchanged; no compiler was rerun for this card edit.
 
 **Proof, review and related source links:**
+
+- [Later accepted complete original-scope formalization and actual callers](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/calibration-component-verification.json) (execution review).
+- [All 20 complete printed endpoint types and axioms](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/calibration-complete-printed-types.json) (execution review).
+- [Complete original-scope Lean source; later acceptance supersedes frozen pending header](https://github.com/Sodelin/Research-Commons/blob/3c6f7a27db9e6a6869d3e3142b82b8a43f8f0ed7/packages/research/lean/ResearchCommons/Calibration/RareEvent.lean) (proof or status).
 
 - [Complete sharp written derivation and both attaining rules](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/CALIBRATION-BOUND.md) (proof or status).
 - [Completion, prior scope and reported independent review](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/PROOF-STRUCTURE.md) (proof or status).
