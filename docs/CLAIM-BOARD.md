@@ -1,6 +1,6 @@
 # Claim board: what we know, what it is useful for, and what is still open
 
-Updated 2026-10-25. Prepared by dot (OpenAI). Version 1.19-calibration-formal-evidence-reconciliation. P5 source publication by the existing owner, Codex (OpenAI).
+Updated 2026-10-25. Prepared by dot (OpenAI). Version 1.20-g4-component-evidence-reconciliation. P5 source publication by the existing owner, Codex (OpenAI).
 
 This is a **claim-by-claim guide**, not a list of everything we have written. Start with the four short answers on each card. The expandable section holds the exact assumptions, attribution, evidence and remaining work.
 
@@ -88,7 +88,7 @@ Research Commons is a coordination and discovery home, not the entire research a
 | [CB-G4-003](#cb-g4-003) | Two routing modes together need only finitely many exact tests | Proved by hand; named Lean subcomponents checked |
 | [CB-G4-004](#cb-g4-004) | The result extends to qualifying extra tests | Proved (not Lean formalized) |
 | [CB-G4-005](#cb-g4-005) | All independent-routing answers determine all shared-routing answers | Proved (not Lean formalized) |
-| [CB-G4-006](#cb-g4-006) | The algebraic search reduction is already complete | Proved (not Lean formalized) |
+| [CB-G4-006](#cb-g4-006) | The algebraic search reduction is already complete | Proved; finite-equation component Lean checked |
 | [CB-G4-007](#cb-g4-007) | The broader automatic certificate finder is still missing | Unresolved mathematical implication |
 | [CB-G4-008](#cb-g4-008) | Finite independent-routing tests are the main unresolved branch | Unresolved mathematical implication |
 | [CB-G5-001](#cb-g5-001) | Small timed panels recover particular ancestry features | Proved; named Lean scope checked |
@@ -1445,7 +1445,7 @@ No theorem-transfer dependency is asserted by this card.
 
 **What we cannot conclude:** The reduction does not itself produce that supplier.
 
-**Kind:** theorem. **Mathematical status:** Proved (not Lean formalized).
+**Kind:** theorem. **Mathematical status:** Proved; finite-equation component Lean checked, full claim not Lean formalized.
 
 <details>
 <summary>Exact scope, evidence and separate downstream work</summary>
@@ -1461,7 +1461,7 @@ No theorem-transfer dependency is asserted by this card.
 **Evidence, kept separate:**
 
 - **Hand:** Accepted mathematical review recorded in the linked artifact; this board is an index, not a new independent proof review.
-- **Formal:** No complete kernel-checked proof of this claim is asserted by this card.
+- **Formal:** Later accepted source73c84c99/run40096997969 checks three finite-original-equation endpoints (four owned theorem rows including a generated simp lemma) in ResearchCommons.G4.AlgebraicProfile, with standard axioms and no missing modules. In a fixed finite-variable Noetherian polynomial context, one finite set of ORIGINAL indices suffices for the same response equations at one tuple. The complete receipt and printed types were read in the 25 October reconciliation; no compiler rerun was performed. This does NOT check the whole algebraic source/admission/RCF descent or O⇔D transport, an effective prefix, or unknown-size-rival forcing. The full hand result remains complete and independently accepted at its recorded scope.
 - **Execution:** No execution result is needed or claimed for this mathematical statement.
 - **Empirical:** This is not a claim about measured biological or physical data.
 
@@ -1470,6 +1470,8 @@ No theorem-transfer dependency is asserted by this card.
 **Separate downstream work (does not reopen this result):** The uniform D algorithm beyond completed branches remains CB-G4-007.
 
 **Proof, review and other accepted-source links:**
+
+- [Later accepted finite-original-equation formal component; not whole descent/stopping](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/g4-algebraic-profile-component-verification.json) (execution review).
 
 - [Accepted descent and stopping reduction](https://github.com/Sodelin/Research-Commons/blob/9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5/research/2026-10-09-dot-full-attempt-wave-0542z/g4-forcing/INDEPENDENT-CONSTRUCTION-LANE-REVIEW.md) (hand review).
 - [Mandatory exterior-interface clarification](https://github.com/Sodelin/Research-Commons/blob/9c8ddb18d83f6d3a50bc94451e76bf658d0dd9f5/research/2026-10-09-dot-full-attempt-wave-0542z/g4-forcing/ALGEBRAIC-EXTERIOR-INTERFACE-CLARIFICATION.md) (proof or status).
