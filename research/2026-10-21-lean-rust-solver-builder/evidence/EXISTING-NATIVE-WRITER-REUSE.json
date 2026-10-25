@@ -1,0 +1,105 @@
+{
+  "schema": "existing_privacy_owner_native_writer_source_review_v1",
+  "status": "READ_ONLY_SOURCE_RECOVERY;NO_NEW_EXECUTION_ADMISSION",
+  "observed_utc": "2026-10-21T23:18:34Z",
+  "origin": "Existing phone privacy owner's source; observed exact file hashes, not a clean Git/deployed Linux/installed-profile claim. No new source was authored on the phone.",
+  "reviewed_sources": [
+    {
+      "path": "privacy-core/src/frames.rs",
+      "sha256": "80103a05b4cf96c48c051c196727785233a2305a634420accbb74c527e0ff4e9",
+      "source_bytes": 11308
+    },
+    {
+      "path": "src/frame_cli.rs",
+      "sha256": "95cb067cbddc697d0c084afa689ec559ad52c4ffa6c84a2c5477cfc3fac2fb86",
+      "source_bytes": 8271
+    },
+    {
+      "path": "src/encrypted_process.rs",
+      "sha256": "e3c3814acb53a932f0b97e29ead32d3ebd1cba31c6435afabeee2cc95f590ad1",
+      "source_bytes": 20707
+    },
+    {
+      "path": "feature-admission/src/write_coverage.rs",
+      "sha256": "493150b8d408905a3297e72b20a5415da397fef1a662a740fee082c3a7a4dbb5",
+      "source_bytes": 11349
+    }
+  ],
+  "frame_codec": {
+    "api": "encrypt_frame_for_recipient(&str, &FrameBinding, &[u8]) -> Result<EncryptedFrame, FrameError>",
+    "public_only": true,
+    "requires_authenticated_recipient_and_context": true,
+    "FrameBinding_fields": [
+      "domain",
+      "stream",
+      "operation_binding",
+      "sequence",
+      "previous_encoded_frame_sha256"
+    ],
+    "sequence_or_operation_allocated": false,
+    "writer_or_journal_or_access_grant_supplied": false,
+    "existing_codec_not_reimplemented": true
+  },
+  "existing_frame_CLI": {
+    "requires_existing_local_Vault": true,
+    "public_recipient_export_binding_supplied": false,
+    "invoked": false
+  },
+  "existing_helper_capture": {
+    "api": "capture_owned_command(&mut Command, &Vault, &Path, &str, Duration)",
+    "RAM_capture_then_encrypt_and_readback": true,
+    "stream_limit_bytes": 262144,
+    "max_helper_seconds": 50,
+    "stdin_closed": true,
+    "controlled_grandchild_tree": false,
+    "caller_still_owns_original_operation_and_Vault": true,
+    "not_a_drop_in_for_serial_core180s_or_compiler_descendant_writers": true,
+    "new_key_or_fixture_initialization_invoked": false
+  },
+  "existing_write_coverage": {
+    "policy": "purple.write-coverage.v2",
+    "exact_sink_artifact_pairs": true,
+    "original_operation_fingerprint": true,
+    "partial_acceptance_permits_zero_writes": true,
+    "permit_nonserializable": true,
+    "permit_is_comparison_not_writing_API_or_cryptographic_attestation": true,
+    "ReceiverVerified_must_be_actual_owner_evidence": true,
+    "source_observation_not_installed_Linux_or_current_featurectl_acceptance": true
+  },
+  "selected_scientific_job_sink_join": {
+    "status": "REQUIRED_MAPPING_NOT_AN_INVENTORY_COMPLETE_OR_RECEIVER_VERIFIED_CLAIM",
+    "available_existing_sink_kinds": [
+      "captured_stdout",
+      "captured_stderr",
+      "native_bridge_journal",
+      "generated_output",
+      "diagnostics",
+      "refusal_record",
+      "failure_record",
+      "temporary_material"
+    ],
+    "exact_ArtifactKind_and_original_operation_and_writer_bindings": "UNBOUND;actual receiving owner must supply them with complete transitive coverage",
+    "source_build_objects": "Separate classification/custody; cannot silently count raw compiler/Lake/runtime diagnostics as authored source",
+    "unrelated_app_or_chat_database_coverage": "Not added to this scientific-job scope and not claimed covered"
+  },
+  "first_missing_real_binding": {
+    "authenticated_existing_public_recipient": "UNBOUND",
+    "original_controller_domain_stream_operation_sequence_previous_hash": "UNBOUND",
+    "Linux_writer_journal_and_original_transport": "UNBOUND",
+    "complete_first_writer_and_failure_recovery_receivers": "UNBOUND",
+    "existing_Vault_secret_to_Linux": "NOT_REQUESTED_NOT_PERMITTED_BY_THIS_SOURCE_REVIEW"
+  },
+  "preserved": {
+    "existing_one_identity": true,
+    "no_key_recipient_export": true,
+    "no_owner_route_retry": true,
+    "no_owner_takeover": true,
+    "no_new_chat_or_worker": true,
+    "no_model_test": true,
+    "no_local_Git_or_project_artifact_write": true,
+    "prior_plaintext_runtime_limitation_retained": true,
+    "no_new_solver_crypto_compiler_Lean_or_CI_execution": true
+  },
+  "bounded_next_source_need": "The actual owner/controller must supply the exact authenticated public recipient plus original frame/sequence/journal/transport and writer hooks; a schema, opaque pure-policy permit, callback returning true or helper ciphertext receipt cannot substitute. No duplicate codec, new identity or guessed binding is proposed.",
+  "native_admission": "HELD;mandatory quiet outer refusal remains in force"
+}

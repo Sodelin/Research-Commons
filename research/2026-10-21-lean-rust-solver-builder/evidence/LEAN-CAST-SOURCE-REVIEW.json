@@ -1,0 +1,214 @@
+{
+  "schema": "rational_bank_cast_source_statement_review_v1",
+  "peer_commit": "029a729402d349fb771f7c00435d4f8465ab0b6e",
+  "all30manifest_entries_and_manifest_itself_read": true,
+  "manifest_checks": [
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "CHECKED-FOLLOWONS.json"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "CHECKED-STATEMENTS.json"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "README.md"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "SOURCE-PROVENANCE.json"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "check_online.py"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/Astra/CommonCertificateKernel.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/G4PairedCoinRank.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/G4PositiveArrays.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/OnlineCertificate-three.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/OnlineCertificate-two.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/OnlineP1ScalarStatistic.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/OnlineTransportProbe.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/P1BinomialMoments.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/P1ScalarStatistic.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/P5OrderedTriangle.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/P5SquareTriangle.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/RationalBankMoments.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/controls/RejectFalse.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/controls/RejectSorry.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/generated/Certificate_776e5a30f4a0190153c23bcad5c5d4bddbf2998a6fdcc690f7810eac99134939.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/generated/Certificate_e49c1e3d6bffee594b99574d3364e700e8f25342933fe31add2aa6129729bc6b.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "lean/generated/SOURCE-MAP.json"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/PROPOSAL.md"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/RATIONAL-BANK-CONTRACT.md"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/pinned/AuditTemplate.lean"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/pinned/build_connected.py"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/pinned/guard.py"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/pinned/hosted_guard.py"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "native/prepare_project.py"
+    },
+    {
+      "bytes_match": true,
+      "hash_match": true,
+      "path": "online_lean.mjs"
+    }
+  ],
+  "cast_review": {
+    "axioms": [
+      {
+        "messages": [
+          "'Astra.RationalBankMoments.cast_moment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+        ],
+        "name": "Astra.RationalBankMoments.cast_moment"
+      },
+      {
+        "messages": [
+          "'Astra.RationalBankMoments.cast_normalized_bank' depends on axioms: [propext, Classical.choice, Quot.sound]"
+        ],
+        "name": "Astra.RationalBankMoments.cast_normalized_bank"
+      }
+    ],
+    "commit": "029a729402d349fb771f7c00435d4f8465ab0b6e",
+    "disposition": "PASS_REMOTE_LEAN_CHECK",
+    "printed_types": [
+      {
+        "name": "Astra.RationalBankMoments.cast_moment",
+        "printed_type": "Astra.RationalBankMoments.cast_moment.{u_1} {A : Type u_1} [Fintype.{u_1} A] (weight value : A → Rat) (k : Nat) :\n  @Eq.{1} Real\n    (@Astra.RationalBankMoments.realMoment.{u_1} A inst✝ (fun a => @Rat.cast.{0} Real Real.instRatCast (weight a))\n      (fun a => @Rat.cast.{0} Real Real.instRatCast (value a)) k)\n    (@Rat.cast.{0} Real Real.instRatCast (@Astra.RationalBankMoments.rationalMoment.{u_1} A inst✝ weight value k))"
+      },
+      {
+        "name": "Astra.RationalBankMoments.cast_normalized_bank",
+        "printed_type": "Astra.RationalBankMoments.cast_normalized_bank.{u_1} {A : Type u_1} [Fintype.{u_1} A] (weight value : A → Rat)\n  (hw : ∀ (a : A), @LE.le.{0} Rat Rat.instLE (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))) (weight a))\n  (hx :\n    ∀ (a : A),\n      And (@LT.lt.{0} Rat Rat.instLT (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))) (value a))\n        (@LE.le.{0} Rat Rat.instLE (value a) (@OfNat.ofNat.{0} Rat (nat_lit 1) (@Rat.instOfNat (nat_lit 1)))))\n  (hmass : @Eq.{1} Rat (∑ a, weight a) (@OfNat.ofNat.{0} Rat (nat_lit 1) (@Rat.instOfNat (nat_lit 1)))) :\n  And\n    (∀ (a : A),\n      @LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n        (@Rat.cast.{0} Real Real.instRatCast (weight a)))\n    (And\n      (∀ (a : A),\n        And\n          (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n            (@Rat.cast.{0} Real Real.instRatCast (value a)))\n          (@LE.le.{0} Real Real.instLE (@Rat.cast.{0} Real Real.instRatCast (value a))\n            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))\n      (And\n        (@Eq.{1} Real (∑ a, @Rat.cast.{0} Real Real.instRatCast (weight a))\n          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))\n        (∀ (k : Nat),\n          @Eq.{1} Real\n            (@Astra.RationalBankMoments.realMoment.{u_1} A inst✝\n              (fun a => @Rat.cast.{0} Real Real.instRatCast (weight a))\n              (fun a => @Rat.cast.{0} Real Real.instRatCast (value a)) k)\n            (@Rat.cast.{0} Real Real.instRatCast\n              (@Astra.RationalBankMoments.rationalMoment.{u_1} A inst✝ weight value k)))))"
+      }
+    ],
+    "selected_theorems": [
+      "Astra.RationalBankMoments.cast_moment",
+      "Astra.RationalBankMoments.cast_normalized_bank"
+    ],
+    "source_hash_matches": true,
+    "source_sha256": "3a09d2a5d30c0d346484802c5e18ecc20c33efe3aabb50849f0b3efcaf4976af",
+    "submitted_hash_matches": true,
+    "versions": {
+      "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+      "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "toolchain": "leanprover/lean4:v4.35.0"
+    }
+  },
+  "alignment": "One fixed rational family, all k at k.choose2; normalized domain is filtered/grouped retained Ioc carrier",
+  "remaining": [
+    "Strict positive grouped weights/distinct-image FinitePositiveLaw packaging",
+    "Native parser/grouping refinement",
+    "Physical PMF/readout/source admission",
+    "Pinned4.33.1 module/object/full aggregate"
+  ],
+  "pinned_import_observation": {
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "hosted_import": "Mathlib.Basic.Real.Basic",
+    "path_absent_in_pinned": true,
+    "existing_pinned_import": "Mathlib.Data.Real.Basic",
+    "existing_blob": "e632e98c8667f52aee0727090ad56fba8dcc41ba",
+    "no_peer_source_modified": true
+  },
+  "independent_Lean_reexecution": false,
+  "new_runtime_execution": false
+}

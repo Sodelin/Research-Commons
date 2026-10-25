@@ -1,0 +1,201 @@
+{
+  "schema": "existing_original_code_to_ordered_native_bank_source_contract_v1",
+  "status": "ORIGINAL_ADMISSION_LAYOUT_COMPONENT_HOSTED_PASS;CAPTURED_CODE_INSTANCE_AND_PINNED_NATIVE_OPEN",
+  "peer_commit": "ba7ee06c6fa0a537951b1dfeb8abb966d3dd02dc",
+  "original_sources": [
+    {
+      "module": "G7OriginalAdmission",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+      "complete_body_read_and_hash_verified": true
+    },
+    {
+      "module": "G7OriginalFiniteEncoding",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+      "complete_body_read_and_hash_verified": true
+    },
+    {
+      "module": "G7NamedCalendarSourceAdmission",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "7c365d3d7d7c75a7b592443fb82d68a89a8df7000347dcbb8352b988b47f780e",
+      "git_blob": "90334575d192432fc3a329b4936e98c6c0f37d0c",
+      "complete_body_read_and_hash_verified": true
+    }
+  ],
+  "accepted_as_source_reuse_only": {
+    "generic_decoder": "GProgram.G7.OriginalAdmission.sourceOfValid",
+    "all_hybrid_ID_bijection": "decodedIDs",
+    "original_parent_registry": "decodedRegistry",
+    "exact_M0_endpoint": "decoded_parent_exact",
+    "additional_Rust_API_or_RootedBinary_factory_needed": false
+  },
+  "captured_Code_contract": {
+    "X": "Fin n_taxa, preserving original LEAF record IDs",
+    "ID": "Fin h_hybrids, preserving original HYBRID record IDs",
+    "required_count_equalities": [
+      "source.vertices = vertexCount n_taxa h_hybrids",
+      "source.edges.len() = edgeCount n_taxa h_hybrids"
+    ],
+    "fields_in_order": [
+      "Original edge source function in EDGE occurrence order",
+      "Original edge target function in the SAME occurrence order",
+      "Original root vertex",
+      "Original LEAF index -> vertex",
+      "Original HYBRID index -> site vertex",
+      "Original incoming[0] for Bool false, incoming[1] for Bool true"
+    ],
+    "must_supply_for_exact_captured_Code": [
+      "BinaryValid c",
+      "RegistryValid c"
+    ],
+    "separate": [
+      "CutChild c where required",
+      "Outer-labelled planarity/cofacial admission where required",
+      "Actual exposure/chart/source-menu/readout/history premises"
+    ]
+  },
+  "important_numbering_boundary": {
+    "existing_encode": "G7OriginalFiniteEncoding.encode uses vertexNumbering/edgeNumbering, defined through noncomputable Fintype.equivFinOfCardEq.",
+    "consequence": "Calling encode does not by itself preserve the captured native integer order. Construct the literal Code on the exact census carriers, or carry the explicit relabelling/layout proof.",
+    "proof_status": "Source observation; no new checked theorem"
+  },
+  "explicit_layout": {
+    "V": "Fin nv, nv=vertexCount n_taxa h_hybrids",
+    "E": "Fin ne, ne=edgeCount n_taxa h_hybrids",
+    "N": "sourceOfValid c hb",
+    "D": "nv+ne+1+h_hybrids",
+    "bank_type": "V ⊕ (Option E ⊕ Hybrid N)",
+    "entries": [
+      {
+        "typed": "Sum.inl v",
+        "native_index": "v.val",
+        "native_label": "AGE:v"
+      },
+      {
+        "typed": "Sum.inr (Sum.inl (some e))",
+        "native_index": "nv+e.val",
+        "native_label": "RATE:e (inverse u)"
+      },
+      {
+        "typed": "Sum.inr (Sum.inl none)",
+        "native_index": "nv+ne",
+        "native_label": "RATE:A (ONE ancestral inverse u)"
+      },
+      {
+        "typed": "Sum.inr (Sum.inr hybrid)",
+        "native_index": "nv+ne+1+((decodedIDs c hb hr).symm hybrid).val",
+        "native_label": "COIN:original hybrid ID (prospective gamma_Lean)"
+      }
+    ],
+    "Option_order_boundary": "Original edges precede the ancestral none slot. An arbitrary Option enumeration/equivFin must not be assumed to use this order.",
+    "chronology_exposure_coin_reflection_proved": false,
+    "exact_emitted_set_hemit_proved": false,
+    "positive_next_use": "Reuse the checked generic construction and source-only Code wrapper with explicit captured occurrence equivalences; remaining concrete Code/import/reflected-field/ordered-emission relations must be discharged.",
+    "duplicate_rows": "Preserve original list positions and full multiplier length before finite-set erasure.",
+    "generic_bijection_and_positions_checked": true,
+    "generic_check_scope": {
+      "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+      "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "toolchain": "leanprover/lean4:v4.35.0"
+    },
+    "concrete_Code_wrapper_full_import_checked": false,
+    "captured_native_occurrence_equivalences_proved": false,
+    "checked_generic_source": "lean/NativeOrderedBankLayout.lean",
+    "source_only_Code_use_site": "lean/OriginalCodeBankLayout.lean",
+    "hosted_review": "evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json"
+  },
+  "peer_source_review_of_Rust_adapter": {
+    "guarded_sha256": "9e458889c66b3070ebe29cd93387030f6ecd6ffa20a169830af3d428eef81da3",
+    "attributed_peer_complete_source_review": true,
+    "guard_M0_width_or_ownership_correction_reported": false,
+    "compiled": false,
+    "executed": false,
+    "staged_test_groups": 5
+  },
+  "physical_context_metadata_review": {
+    "added": [
+      "NativeOrderedBankLayout",
+      "OriginalCodeBankLayout"
+    ],
+    "all_bodies_independently_read": false,
+    "bad": [],
+    "bytes": 4504069,
+    "changed": [],
+    "graph_sha256": "7aa989d9168e75dacdd935d5a26d01c977c932b8a04457084ae32021ce70ef7d",
+    "modules": 543,
+    "orderCount": 543,
+    "roots": [
+      "G7RawCalendarRoot",
+      "G7OriginalCarrierCoverage",
+      "G7OriginalFamilyCalendarNormalization",
+      "G6RationalNaturalCellWitness",
+      "G6OriginalWholeEdgeChartConsumer",
+      "G4WholeProfileDetermination",
+      "G6NaturalCellOrderedCompiler",
+      "G7OriginalAdmission",
+      "CMFinitePMF",
+      "Astra.Generated.BankWitness_4efaf02ca21e032cc08c26d2901d8fe3d11a5d2909894a3c0caea77bffe0c8e8",
+      "Astra.Generated.BankWitness_d71c2bf0e0153f8103feb7a65084e462c4b20ea5bc823ace0312057491697979",
+      "OriginalCodeBankLayout"
+    ],
+    "selection_sha256": "057119e4f674334245c75214c648ce7d6ec522e35d0347d6a56f3abd5ccadf76",
+    "uniqueHashes": 543
+  },
+  "named_parallel_scope": "Existing parallel_parent_exact maps false->edge2,true->edge3. Fixed fixture source with original pending proof-status header retained; no generic parser or new acceptance inferred.",
+  "first_missing_real_typed_join": "Exact captured original_chart -> literal Code with counts/bounds/arrays and BinaryValid/RegistryValid, then the explicit native-order bijective layout, reflected original lists and emission equality.",
+  "native_parser_validator_refinement": false,
+  "physical_admission_or_master_closed": false,
+  "writer_controller_binding": "UNBOUND;new native/compiler/CI execution held",
+  "no_new_small_suite_or_worker": true,
+  "native_validator_predicate_source_review": "evidence/NATIVE-VALIDATOR-TO-CODE.json",
+  "native_validator_formally_refined": false,
+  "hosted_component_review": "evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json",
+  "hosted_original_decoder_and_wrapper_checked": true,
+  "captured_native_Code_instance_proved": false,
+  "current_wrapper_sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208",
+  "current_physical_context_metadata": {
+    "all_bodies_independently_retrieved": false,
+    "bad": [],
+    "bytes": 4518041,
+    "changed_from_prior_545": [
+      "OriginalCodeBankLayout"
+    ],
+    "graph_sha256": "c1ef9ea4959d640c363b3773f11d37bfc36b0658e40d8391cf92298d62ac3b81",
+    "modules": 545,
+    "pinned_original_G4_retained": true,
+    "pinned_original_PMF_retained": true,
+    "selection_sha256": "23f709474e3cd145693ac8297e072eac5242a799b36ad28e6dbc05731b4369dd"
+  },
+  "current_prepared_context_metadata": {
+    "added": [
+      {
+        "bytes": 8194,
+        "module": "OriginalCodeChartReflection",
+        "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+        "source": "explicit owned source or import-only variant"
+      },
+      {
+        "bytes": 4463,
+        "module": "OriginalCodeChartReceiver",
+        "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+        "source": "explicit owned source or import-only variant"
+      }
+    ],
+    "all_bodies_independently_retrieved": false,
+    "bytes": 4543496,
+    "graph_sha256": "00d22f308224bd95fb5feabcaaf70559c07c45e145ad5077022927dd321dece1",
+    "modules": 548,
+    "native_run": false,
+    "prior_546_changed": [],
+    "selection_sha256": "1898edabf01297e64a1f8d2ba4b19d302bdc3abf9c3af03668a25a377dfc1343"
+  },
+  "aggregate_hosted_review": "evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json",
+  "generic_aggregate_ordered_emission_checked_conditionally": true,
+  "concrete_captured_FieldReflection_proved": false,
+  "current_Code_CHART_physical_receiver_review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
+  "forward_Code_FieldReflection_and_existing_physical_receiver_hosted_checked": true,
+  "actual_captured_request_equality_and_result_origin_proved": false
+}

@@ -1,0 +1,93 @@
+name: Isolated rational-support Rust proposal
+# Source-only until a real existing encrypted record writer is bound BEFORE persistence.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: rust-support-proposal-20261021
+  cancel-in-progress: false
+jobs:
+  verify-rust:
+    if: ${{ false }} # RECORD_WRITER_BINDING_UNAVAILABLE; source-only, no manual bypass
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      CARGO_BUILD_JOBS: "1"
+      CARGO_INCREMENTAL: "0"
+      CARGO_TARGET_DIR: target/rust-support-proposal
+      RUSTFLAGS: "-C debuginfo=0"
+    steps:
+      - name: Capture this exact public proposal and its pinned dependencies
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/rust-support-proposal.yml
+            research/2026-10-21-lean-rust-solver-builder/**
+            research/2026-10-07-rust-count-pilot/src/**
+            research/2026-10-07-rust-count-pilot/Cargo.toml
+            research/2026-10-13-astra-unified-solver-0645z/*.py
+            research/2026-10-13-astra-unified-solver-0645z/rust/src/main.rs
+            research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean
+            research/2026-10-13-astra-unified-runtime-2350z/runtime.py
+            applications/research-solver-interop/*.py
+            applications/research-solver-interop/SOURCE-PINS.json
+      - name: Verify current-group counter path parsing
+        run: python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --self-test
+      - name: Select official Rust1.90 without changing an old research profile
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.90.0 --profile minimal --no-self-update
+          rustc +1.90.0 -Vv
+          cargo +1.90.0 --version
+          cargo +1.90.0 fetch --locked --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
+      - name: Run inherited and new native unit groups under existing guard
+        run: |
+          set -euo pipefail
+          python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --out "$RUNNER_TEMP/rust-support-units" --cwd "$GITHUB_WORKSPACE" --wall 180 --cpu 120 --memory-mib 2048 --file-mib 64 -- cargo +1.90.0 test --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml -- --test-threads=1
+      - name: Build proposed native executable under existing guard
+        run: |
+          set -euo pipefail
+          python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --out "$RUNNER_TEMP/rust-support-build" --cwd "$GITHUB_WORKSPACE" --wall 180 --cpu 120 --memory-mib 2048 --file-mib 64 -- cargo +1.90.0 build --release --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
+      - name: Run original checker corpus against the new executable
+        run: |
+          set -euo pipefail
+          python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --out "$RUNNER_TEMP/rust-support-inherited" --cwd "$GITHUB_WORKSPACE" --wall 90 --cpu 60 --memory-mib 512 --file-mib 16 -- python3 -B research/2026-10-13-astra-unified-solver-0645z/test_native.py --binary "$CARGO_TARGET_DIR/release/common-support-proposer"
+      - name: Check request binding, new vectors and literal Lean emission
+        run: |
+          set -euo pipefail
+          python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --out "$RUNNER_TEMP/rust-support-composition" --cwd "$GITHUB_WORKSPACE" --wall 90 --cpu 60 --memory-mib 512 --file-mib 16 -- python3 -B research/2026-10-21-lean-rust-solver-builder/ci_verify.py --binary "$CARGO_TARGET_DIR/release/common-support-proposer" --output "$RUNNER_TEMP/rust-support-result"
+      - name: Check exact finite banks and original runtime composition
+        run: |
+          set -euo pipefail
+          python3 -B research/2026-10-21-lean-rust-solver-builder/hosted_guard.py --out "$RUNNER_TEMP/rust-bank-composition" --cwd "$GITHUB_WORKSPACE" --wall 90 --cpu 60 --memory-mib 512 --file-mib 16 -- python3 -B research/2026-10-21-lean-rust-solver-builder/ci_bank.py --binary "$CARGO_TARGET_DIR/release/common-bank-moments" --proposer "$CARGO_TARGET_DIR/release/common-support-proposer" --output "$RUNNER_TEMP/rust-bank-result"
+      - name: Verify unchanged stdio MCP in a bounded namespaced Linux context
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+          docker pull python:3.12-slim-bookworm
+          SUPPORT_IMAGE_REF=$(docker image inspect --format '{{index .RepoDigests 0}}' python:3.12-slim-bookworm)
+          SUPPORT_CONTAINER_NAME="rust-support-mcp-$GITHUB_RUN_ID"
+          trap 'docker rm --force "$SUPPORT_CONTAINER_NAME" >/dev/null 2>&1 || true' EXIT
+          mkdir "$RUNNER_TEMP/rust-support-connector"
+          timeout 120s docker run --rm --name "$SUPPORT_CONTAINER_NAME" --memory=2g --memory-swap=2g --cpus=1 --pids-limit=128 --network=none --read-only --cap-drop=ALL --security-opt=no-new-privileges --user "$(id -u):$(id -g)" --tmpfs /tmp:rw,nosuid,noexec,size=64m --mount "type=bind,source=$GITHUB_WORKSPACE,target=/src,readonly" --mount "type=bind,source=$RUNNER_TEMP/rust-support-connector,target=/output" --workdir /src "$SUPPORT_IMAGE_REF" python3 -I -B research/2026-10-21-lean-rust-solver-builder/ci_connector.py --binary /src/target/rust-support-proposal/release/common-support-proposer --output /output/cases --image-ref "$SUPPORT_IMAGE_REF"
+      - name: Preserve public synthetic scientific evidence and emitted source
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rust-support-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/rust-support-units/
+            ${{ runner.temp }}/rust-support-build/
+            ${{ runner.temp }}/rust-support-inherited/
+            ${{ runner.temp }}/rust-support-composition/
+            ${{ runner.temp }}/rust-support-result/
+            ${{ runner.temp }}/rust-bank-composition/
+            ${{ runner.temp }}/rust-bank-result/
+            ${{ runner.temp }}/rust-support-connector/
+          if-no-files-found: warn
+          retention-days: 30
