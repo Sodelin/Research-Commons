@@ -1,0 +1,55 @@
+# G3/G4 progress that must not disappear behind an OPEN label
+25 October 2026. Contributor: dot (OpenAI). Requested by Nolan during the continuing recovery audit.
+
+This is an incremental source/status adoption, not a new mathematical proof or an assertion that the exhaustive audit is finished. The [canonical acceptance matrix](../../docs/G3-G4-ACCEPTANCE-AUDIT.md) preserves earlier accepted branches; [structured delta records](DELTA.json) record these successors separately without increasing the 118-card count.
+
+## New mathematical components and what they retire
+### G3-LINEAR-ABSORPTION
+[Original source](https://github.com/Sodelin/Research-Commons/blob/fe1f8a75c954df864bb5d8f8bbe4aba50a7590f4/research/2026-10-24-g3-asymptotic-root-grid/MATCHED-FULL-BAND-LINEAR-ABSORPTION.md). Status: author-complete, self-reviewed hand proof; independent correctness, Lean and execution are separate and not established by this adoption.
+
+**Completed:** Matched source-linear absorption and source-cost dependency at full cap 9.
+
+**Retire from the derivation queue:** Do not derive source-linear absorption or the old signed M_h source-cost supplier again.
+
+**Still missing:** Joint full-source relative action/variance/phase or actual one-witness implication; no total recognition follows.
+
+### G3-ORDINARY-FORCING
+[Original source](https://github.com/Sodelin/Research-Commons/blob/b0be735cd697bafd5ee98e629107e2fc8ff6a2e2/research/2026-10-24-g3-asymptotic-root-grid/RESONANT-ORDINARY-FORCING-ENERGY.md). Status: author-complete, self-reviewed hand proof; independent correctness, Lean and execution are separate and not established by this adoption.
+
+**Completed:** Signed ordinary forcing and chronological energy E_a+E_b <= C H h^6 at COMPLETE cap 12.
+
+**Retire from the derivation queue:** Ordinary forcing and chronological energy are no longer missing suppliers. Do not advertise this successor at cap 9.
+
+**Still missing:** Energy is not the required action upper bound, phase rigidity, word-length bound or terminating NO.
+
+### G3-OBSERVED-COHORT-SURVIVAL-01
+[Original source](https://github.com/Sodelin/Research-Commons/blob/bb9521bade4ec414ee722c55377369e0063bf30e/research/2026-10-25-g3-observed-cohort-survival/PROOF.md). Status: author-complete, self-reviewed hand proof; independent correctness, Lean and execution are separate and not established by this adoption.
+
+**Completed:** Already-supplied unconditional I event lower bound delta implies d_r(W)>=delta for eligible proper closed bridge cohorts; closed-subword spectral bounds require no COMMON query.
+
+**Retire from the derivation queue:** Do not invent a missing generic spectral/count consumer or add an unprovided COMMON observation.
+
+**Still missing:** A TOTAL input-computable ONE-witness finite bank/height selector and general-menu slot coverage are not supplied. The two-copies-per-taxon full-I coverage corollary is conditional on that input actually being supplied.
+
+
+The observed-cohort proof was read in full for this update. Its event excludes internal clades within a proper sampled cohort. Opaque grafting preserves any such merger, so a positive supplied event probability bounds no-merger survival. This is a genuine I-only observable-to-source restriction, not just another unobservable spectral bound. A known coarsened channel must actually certify the event; failure to do so is not NO. An assumed finite parameter palette yields a conditional count bound, but deriving that palette remains essential.
+
+The cap-9 and cap-12 proofs were read in the earlier source-adoption checkpoints linked from the current scope; this update reuses those readings rather than claiming a new independent proof review. A stronger sufficient h^7 action screen is not mandatory: the existing route permits any fixed h^(6+epsilon), epsilon>0, where its other premises hold. No such general action estimate is supplied here.
+
+## G4: distinguish recovered completed branches from new formal evidence
+Already completed at their exact accepted hand scopes: whole-network COMMON finite forcing and effective stopping; natural BOTH finite forcing and its qualifying menu extension; entire-I-law to entire-COMMON-law transfer; algebraic all-profile descent and the observation-only/supplied-source stopping equivalence. These must remain reusable completed results, not be described only as “G4 open.”
+
+The [new scoped formal receipt](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/g4-algebraic-profile-component-verification.json) checks the finite-ORIGINAL-equation component. Its three endpoints and generated fourth row are not four new scientific discoveries. The entire existing hand descent/stopping result is not thereby fully formalized.
+
+The precise original remaining finite-I gate is still: for each fixed admitted target T, find a finite legal I panel forcing its required COMMON certificate against EVERY finite admitted rival N, with one N/parameter tuple across all rows and no rival-size bound assumed. Its negative alternative needs ONE fixed T with an exact later-inequivalent rival after EVERY finite panel. Neither infinite-law agreement nor a fixed finite-variable Hilbert-basis result supplies this gate.
+
+## Other contributions not to hide
+The [integration frontier](https://github.com/Sodelin/Research-Commons/blob/8940f035a0bbf2f7855a8247517fc3033ab59c7c/packages/research/integration/FRONTIER.md) records checked, separately scoped reuse of exact-query geometry, NANUQ components, original genome/ownership/block results, deterministic/stochastic memory, calibration, founder-window and causal-chain components, plus actual native output certificates. These are important new integration/verification accomplishments, not automatically new mathematics or a completed all-claim package. The preceding [recovery review](../2026-10-25-dot-netcs-and-recovery-review/REVIEW.md) records remaining combined-build and archive gaps.
+
+P5's original author-hand goal remains complete. P1's uniform Gibbs/minimax supplier and nanowire's original same-device identification obligations are not closed by these General results. No new empirical evidence is asserted.
+
+## State the all-level structural advance positively and precisely
+Within the admitted outer-labelled planar galled class, the recorded all-level NANUQ structural theorem extends the structural guarantee across arbitrary finite reticulation levels and blob counts, preserving the complete displayed-split union and compatible circular geometry. That is a substantive strengthening, not merely “different work.” It is not a blanket replacement of NANUQ's estimated gene-tree/concordance pipeline: the observation object, source assumptions and statistical acquisition guarantee must also match. Preserve Holtgrefe and other published antecedents and do not infer historical novelty from the stronger stated scope.
+
+## Continuing audit rule
+Before allocating work, compare the exact missing implication with both its predecessor and latest source/acceptance. Label each delta as new mathematics, recovered old mathematics, new formal/native evidence, or a retired failed route. A master OPEN badge must never erase completed subresults; a completed component must never erase the remaining master quantifier. Next recovery passes should add source-backed deltas to this shared trail, not restart completed suppliers or maintain a competing theorem list.
