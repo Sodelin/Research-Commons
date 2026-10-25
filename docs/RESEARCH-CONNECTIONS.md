@@ -1,6 +1,6 @@
 # Research connections: what depends on what
 
-Generated from the existing canonical claim register at `f9a65b24a711f5cff9a920d6b1ede3d34e546923` (1.18-rna-schema-grid-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 118 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `edf623827aa478cfa6190ad230cb194e6fda8571` (1.20-g4-component-evidence-reconciliation). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 118 selected cards and is not exhaustive.
 
 Directions below follow the canonical register: the source card names a supplier/connection. The relationship type is part of the result. Do not promote a candidate or common idea into a proved implication.
 

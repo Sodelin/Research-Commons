@@ -1,6 +1,6 @@
 # Find an answer in Research Commons
 
-Generated from the existing canonical claim register at `f9a65b24a711f5cff9a920d6b1ede3d34e546923` (1.18-rna-schema-grid-source-recovery). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 118 selected cards and is not exhaustive.
+Generated from the existing canonical claim register at `edf623827aa478cfa6190ad230cb194e6fda8571` (1.20-g4-component-evidence-reconciliation). Attribution and scientific statuses remain with its authors. This is a discovery view, not a new proof audit. The register contains 118 selected cards and is not exhaustive.
 
 Begin with the question you need answered. Each link opens the exact claim, assumptions, proof/review sources and remaining obligation. You do not need to reconstruct commit history.
 
@@ -69,7 +69,7 @@ Origin is taken from the canonical card. This table does not assert a new histor
 | [**CB-G4-003**](CLAIM-BOARD.md#cb-g4-003) · If we can observe both routing modes, can finitely many tests settle the whole model response? | Yes, for every fixed admitted target, against all finite rivals, even without a preset rival-size limit. Know that a finite distinguishing certificate exists for that target. | Proved by hand; named Lean subcomponents checked |
 | [**CB-G4-004**](CLAIM-BOARD.md#cb-g4-004) · Can we add controls and shared programmes without losing the finite-certificate result? | Yes, when the enlarged test menu satisfies two explicit requirements. Reuse the finite-forcing theorem for those genuinely admitted menus. | Proved (not Lean formalized) |
 | [**CB-G4-005**](CLAIM-BOARD.md#cb-g4-005) · Would complete knowledge of independent routing also determine shared routing? | Yes, in the original natural model class. Transfer equality of the entire independent observation law to the shared law. | Proved (not Lean formalized) |
-| [**CB-G4-006**](CLAIM-BOARD.md#cb-g4-006) · Is there a clean way to turn the remaining stopping question into a certificate-production question? | Yes, with the exact algebraic interface. That reduction should be reused, not treated as another gap. Focus effort on the genuinely missing certificate supplier. | Proved (not Lean formalized) |
+| [**CB-G4-006**](CLAIM-BOARD.md#cb-g4-006) · Is there a clean way to turn the remaining stopping question into a certificate-production question? | Yes, with the exact algebraic interface. That reduction should be reused, not treated as another gap. Focus effort on the genuinely missing certificate supplier. | Proved; finite-equation component Lean checked, full claim not Lean formalized |
 | [**CB-G4-007**](CLAIM-BOARD.md#cb-g4-007) · Beyond the completed shared-routing case, can one method always find the required finite certificate? | The inspected results do not yet supply that method. Keep a precise algorithmic target without denying the existing existence theorems. | Unresolved mathematical implication |
 | [**CB-G4-008**](CLAIM-BOARD.md#cb-g4-008) · Can finitely many independent-routing tests do what all such tests can do? | That exact step remains unresolved. State a decisive goal rather than confusing approximation or changing examples with a solution. | Unresolved mathematical implication |
 
@@ -343,7 +343,7 @@ Origin is taken from the canonical card. This table does not assert a new histor
 
 | Question | Result / use | Disposition |
 |---|---|---|
-| [**CB-MEMORY-004**](CLAIM-BOARD.md#cb-memory-004) · Does seeing no event prove that it is impossible? | Not in the stated independent-trial model. The unavoidable finite-sample error and the distinct rules attaining its two sharp optima are already derived. State precisely what a zero-count observation does and does not establish, including what a known lower event-rate bound buys. | Proved (not Lean formalized) |
+| [**CB-MEMORY-004**](CLAIM-BOARD.md#cb-memory-004) · Does seeing no event prove that it is impossible? | Not in the stated independent-trial model. The unavoidable finite-sample error and the distinct rules attaining its two sharp optima are already derived. State precisely what a zero-count observation does and does not establish, including what a known lower event-rate bound buys. | Proved; Lean checked at original known-rate IID scope |
 
 ### Infinite populations
 
