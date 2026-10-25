@@ -82,31 +82,38 @@ impl Certificate{
    literal(c.a()),literal(c.epsilon()),c.k(),self.budget,c.inspected(),
    literal(c.s()),literal(c.t()),literal(c.u()),literal(c.delta()));
   let defs="inputA, epsilon, cutoff, requestedBudget, inspected, returnedS, returnedT, returnedU, returnedDelta, returnedWeights, prefixSum, poissonTerm, upper, deficit, Finset.sum_range_succ, Nat.factorial";
-  out.push_str(&format!(
-   "theorem actual_domain : 0 ≤ inputA ∧ 0 < epsilon ∧ epsilon < 1 := by\n  norm_num [inputA, epsilon]\n\
-    theorem actual_fields :\n\
-      returnedS = prefixSum inputA cutoff ∧\n\
-      returnedT = poissonTerm inputA (cutoff+1) ∧\n\
-      returnedU = upper inputA cutoff ∧\n\
-      returnedDelta = deficit inputA cutoff ∧\n\
-      inspected = cutoff+1 ∧ inspected ≤ requestedBudget := by\n  norm_num [{defs}]\n\
-    theorem actual_guards :\n\
-      2*inputA ≤ ((cutoff+2 : ℕ) : ℝ) ∧ returnedDelta ≤ epsilon := by\n  norm_num [{defs}]\n\
-    theorem actual_first_cutoff :\n\
-      ∀ j ∈ Finset.range cutoff,\n\
-        ¬ (2*inputA ≤ ((j+2 : ℕ) : ℝ) ∧ deficit inputA j ≤ epsilon) := by\n\
-      intro j hj\n      have bound : j < cutoff := Finset.mem_range.mp hj\n\
-      unfold cutoff at bound\n      interval_cases j <;> norm_num [{defs}]\n\
-    theorem actual_complete_weights :\n\
-      ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff := by\n\
-      intro i\n      fin_cases i <;> norm_num [{defs}]\n\
-    theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by\n\
-      norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]\n\
-    theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by\n\
-      have accuracy : deficit inputA cutoff ≤ epsilon := by\n\
-        rw [← actual_fields.2.2.2.1]\n        exact actual_guards.2\n\
-      exact certified_error inputA epsilon cutoff actual_domain.1 actual_guards.1 accuracy\n\
-    end ResearchCommons.Generated.«{namespace}»\n"));
+  out.push_str(&format!(r#"theorem actual_domain : 0 ≤ inputA ∧ 0 < epsilon ∧ epsilon < 1 := by
+  norm_num [inputA, epsilon]
+theorem actual_fields :
+    returnedS = prefixSum inputA cutoff ∧
+    returnedT = poissonTerm inputA (cutoff+1) ∧
+    returnedU = upper inputA cutoff ∧
+    returnedDelta = deficit inputA cutoff ∧
+    inspected = cutoff+1 ∧ inspected ≤ requestedBudget := by
+  norm_num [{defs}]
+theorem actual_guards :
+    2*inputA ≤ ((cutoff+2 : ℕ) : ℝ) ∧ returnedDelta ≤ epsilon := by
+  norm_num [{defs}]
+theorem actual_first_cutoff :
+    ∀ j ∈ Finset.range cutoff,
+      ¬ (2*inputA ≤ ((j+2 : ℕ) : ℝ) ∧ deficit inputA j ≤ epsilon) := by
+  intro j hj
+  have bound : j < cutoff := Finset.mem_range.mp hj
+  unfold cutoff at bound
+  interval_cases j <;> norm_num [{defs}]
+theorem actual_complete_weights :
+    ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff := by
+  intro i
+  fin_cases i <;> norm_num [{defs}]
+theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by
+  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]
+theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by
+  have accuracy : deficit inputA cutoff ≤ epsilon := by
+    rw [← actual_fields.2.2.2.1]
+    exact actual_guards.2
+  exact certified_error inputA epsilon cutoff actual_domain.1 actual_guards.1 accuracy
+end ResearchCommons.Generated.«{namespace}»
+"#));
   if out.len()>limits.render_bytes{return Err(Error::Unknown("render_bytes"));}
   Ok(out)
  }
@@ -133,6 +140,9 @@ pub fn example(zero:bool,limits:Limits)->Result<Certificate,Error>{
   assert!(out.contains("theorem actual_first_cutoff"));
   assert!(out.contains("theorem actual_complete_weights"));
   assert!(out.contains("theorem actual_error"));
+  assert!(out.contains(":= by\n  intro j hj\n  have bound"));
+  assert!(out.contains(":= by\n  intro i\n  fin_cases i"));
+  assert!(out.contains(":= by\n  have accuracy"));
  }
  #[test]fn zero_source_and_original_domain_before_zero_budget_remain_distinct(){
   let c=example(true,Limits::default()).unwrap();

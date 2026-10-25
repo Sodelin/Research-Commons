@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE55_ACTUAL_INTERVAL_GEOMETRY_OWNED_ACCEPTED; FULL1499_REJECTED_AT_INDEXED_RECORD80_BLOCKED",
+  "status": "COMPLETE56_ACTUAL_ORIGINAL_LIST_INDEXED_CONTEXT_ACCEPTED; FULL1499_REJECTED_AT_REVERSED_TRACE79_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15720,6 +15720,37 @@
       },
       "correction": "Reuse accepted vertex-section record layout: one field per uniformly indented line for ONE IndexedWitness constructor. ALL6 original theorem headers/proof data/semantics unchanged; reverse formatting recovers entire original source.",
       "new_graph_or_source_hypothesis": false
+    },
+    {
+      "source": "4af181f2397c9f482ff11747a9760cccb99ed4d7",
+      "run": 40145761199,
+      "job": 121026774413,
+      "module": "ReversedPositionTrace",
+      "diagnostics": [
+        {
+          "line": 142,
+          "column": 71,
+          "message": "unexpected identifier; expected }; cascaded Exists.intro/missing fields"
+        },
+        {
+          "line": 174,
+          "column": 4,
+          "message": "Trace with literal reversed-index lambda versus Trace with ReverseVertex on abstract whole.reverse after simplification"
+        }
+      ],
+      "disposition": "ENTIRE reversed module/full1499 REJECTED;1419 successful133compiled1286reused,79 blocked. Complete56-source1458/899 owned component accepted separately.",
+      "original_sha256": "77a4fa5c9afd033d9792850d831fedcfbdfc3aeee3fedcfa16038812ab16099c",
+      "original_git_blob": "6db91cb6eb170004d8082db008fe9821d2821f98",
+      "original_bytes": 9667,
+      "selected": {
+        "bytes": 9747,
+        "git_blob": "1224aef49b5f4d9996a70fa47a7986c2ea740636",
+        "sha256": "4f8bff2a133c117fce9ec63d55f321d63b68ba60a83c7a0e028be76bb28f585c"
+      },
+      "all7_original_headers_byte_unchanged": true,
+      "reverse_edits_recovers_entire_original_source": true,
+      "correction": "ONE record layout uniform fields and explicit change to SAME literal reversed vertex function, then reuse unchanged trace_reverse at zero offset. No hypothesis, graph/source/parent/bound/witness/operation order/conclusion change.",
+      "new_graph_or_source_hypothesis": false
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -17274,6 +17305,29 @@
       ],
       "scope": "After unfold, DepartureAllowed.match_1 and Transition.match_1 remain distinct on abstract last; case SAME last Option to reduce both existing branches. No source/relation/graph/precondition change.",
       "status": "PENDING_COMPLETE51_SOURCE_AND_FULL1499_CHECK"
+    },
+    {
+      "module": "ReversedPositionTrace",
+      "selected": {
+        "bytes": 9747,
+        "git_blob": "1224aef49b5f4d9996a70fa47a7986c2ea740636",
+        "sha256": "4f8bff2a133c117fce9ec63d55f321d63b68ba60a83c7a0e028be76bb28f585c"
+      },
+      "all7_original_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "complete_original_and_later_successor_equal": true,
+      "status": "PENDING_COMPLETE57_SOURCE_AND_FULL1500_CHECK",
+      "edits": [
+        [
+          "  refine ⟨{ start := size - 1 - w.start, before := size - 1 - w.before,\n    finish := size - 1 - w.finish, orientation := ?_, witness := w.witness,\n    start_vertex := w.start_vertex, position_trace := ?_,\n    span := ?_, parents := ?_, colliders := ?_ }, rfl, rfl, rfl⟩",
+          "  refine ⟨{\n    start := size - 1 - w.start\n    before := size - 1 - w.before\n    finish := size - 1 - w.finish\n    orientation := ?_\n    witness := w.witness\n    start_vertex := w.start_vertex\n    position_trace := ?_\n    span := ?_\n    parents := ?_\n    colliders := ?_\n  }, rfl, rfl, rfl⟩"
+        ],
+        [
+          "    simpa only [ReverseVertex, Nat.zero_add] using trace_reverse vertex whole 0 «trace»",
+          "    change Trace (fun i => vertex (whole.length - 1 - i)) 0 whole.reverse\n    simpa only [Nat.zero_add] using trace_reverse vertex whole 0 «trace»"
+        ]
+      ],
+      "original_sha256": "77a4fa5c9afd033d9792850d831fedcfbdfc3aeee3fedcfa16038812ab16099c"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

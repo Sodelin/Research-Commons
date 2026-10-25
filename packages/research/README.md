@@ -27,10 +27,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest exact [source172/run40144549050](https://github.com/Sodelin/Research-Commons/actions/runs/40144549050):
+Latest exact causal [source173/run40145761199](https://github.com/Sodelin/Research-Commons/actions/runs/40145761199) and count [source174/run40146416119](https://github.com/Sodelin/Research-Commons/actions/runs/40146416119):
 
-- COMPLETE55-source actual source-MAG interval geometry owned context PASSES:1428 declarations/870 theorems, zero owned/nonstandard/missing. ALL4 statement semantics and proof logic unchanged; only existing matches identifier quoted. [Receipt](integration/causal-interval-geometry-component-verification.json).
-- Full1499 source build REJECTED at IndexedDiscriminatingSections:1418 successful/80 blocked; combined512-name/owned/actual callers did not run. Current layout-only56-source candidate keeps ALL6 original statement headers/source/route/witness data. [Current frontier](integration/FRONTIER.md).
+- COMPLETE56-source actual original-list indexed-section owned context PASSES:1458declarations899theorems,0owned/nonstandard/missing. ALL6 headers unchanged, ONE record-layout repair. Entire artifact/every source/object/owned row validated. [Receipt](integration/causal-indexed-sections-component-verification.json).
+- Full1499 REJECTED at ReversedPositionTrace1419successful/79blocked. Current57-source compatibility candidate retains ALL7 source statements; ONE record layout and SAME reversed-function goal spelling. No combined520-name/full1500/owned/actual-caller acceptance. [Frontier](integration/FRONTIER.md).
+- Actual Rust125tests pass incl3 new count receiver tests; generic count core1source/8names24declarations19theorems passes. ENTIRE actual count proof caller REJECTED on stripped proof indentation; corrected raw-string layout pending. [Core](integration/count-prefix-component-verification.json), [types](integration/count-prefix-complete-printed-types.json), [Rust](integration/count-prefix-rust-verification.json), [rejected output](integration/count-prefix-compiler-rejections.json).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).
@@ -42,7 +43,7 @@ The strict118 completion gate still fails. Completed HAND science is preserved; 
 
 ## Current count integration candidate
 
-The OLD exact normalized-count engine is reused byte-identically. A new owning wrapper and eight-declaration Lean scalar receiver are selected for actual checks, with THREE new Rust tests and TWO whole emitted proof documents. Source-only until those exact checks pass; no universal native refinement or actual source/TV admission is inferred. [Source/reuse/commands](integration/COUNT-PREFIX-RECEIVER.md).
+The OLD exact normalized-count engine is BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component have actual scoped PASSES above; the first emitted proof document is WHOLLY REJECTED on indentation. SAME7 statements now render with literal indentation; current correction is not yet accepted. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
 
 ## Actual Rust-to-Lean callers
 
