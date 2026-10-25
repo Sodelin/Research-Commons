@@ -27,11 +27,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest exact causal [source173/run40145761199](https://github.com/Sodelin/Research-Commons/actions/runs/40145761199) and count [source174/run40146416119](https://github.com/Sodelin/Research-Commons/actions/runs/40146416119):
+Latest [source175/run40146941800](https://github.com/Sodelin/Research-Commons/actions/runs/40146941800):
 
-- COMPLETE56-source actual original-list indexed-section owned context PASSES:1458declarations899theorems,0owned/nonstandard/missing. ALL6 headers unchanged, ONE record-layout repair. Entire artifact/every source/object/owned row validated. [Receipt](integration/causal-indexed-sections-component-verification.json).
-- Full1499 REJECTED at ReversedPositionTrace1419successful/79blocked. Current57-source compatibility candidate retains ALL7 source statements; ONE record layout and SAME reversed-function goal spelling. No combined520-name/full1500/owned/actual-caller acceptance. [Frontier](integration/FRONTIER.md).
-- Actual Rust125tests pass incl3 new count receiver tests; generic count core1source/8names24declarations19theorems passes. ENTIRE actual count proof caller REJECTED on stripped proof indentation; corrected raw-string layout pending. [Core](integration/count-prefix-component-verification.json), [types](integration/count-prefix-complete-printed-types.json), [Rust](integration/count-prefix-rust-verification.json), [rejected output](integration/count-prefix-compiler-rejections.json).
+- COMPLETE57-source bounded actual physical-trace reversal owned context PASSES:1511declarations945theorems,0owned/nonstandard/missing. ALL7 original headers unchanged; exact compatibility edits only. Entire639469B artifact/all sources/objects/owned rows validated. [Receipt](integration/causal-reversed-trace-component-verification.json).
+- Actual Rust125tests incl3 owning-count/indent assertions pass; generic1source/8names24/19 count component remains accepted. Entire actual count caller REJECTED at literal weight vector reductions, zero caller not run. Source176 only explicitly reuses pinned existing finite-vector evaluation lemmas;7 statements/values unchanged. [Core](integration/count-prefix-component-verification.json), [rejections](integration/count-prefix-compiler-rejections.json).
+- Full1500/520-name/owned/actual-callers did NOT EXECUTE after that rejection. Latest historical1499/source173 rejects1419success/79blocked at the former reversal module; no new combined acceptance is inferred. [Frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).
@@ -43,7 +43,7 @@ The strict118 completion gate still fails. Completed HAND science is preserved; 
 
 ## Current count integration candidate
 
-The OLD exact normalized-count engine is BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component have actual scoped PASSES above; the first emitted proof document is WHOLLY REJECTED on indentation. SAME7 statements now render with literal indentation; current correction is not yet accepted. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
+The OLD exact normalized-count engine remains BYTE-IDENTICAL. New owning receiver's THREE tests and generic eight-name scalar component passed at their recorded scopes. The actual emitted proof context is WHOLLY REJECTED on vector-notation reductions; explicit existing Mathlib evaluation lemmas are now selected for checking. This changes no native values/indices/statements. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md).
 
 ## Actual Rust-to-Lean callers
 

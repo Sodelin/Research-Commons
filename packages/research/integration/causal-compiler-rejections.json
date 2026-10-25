@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE56_ACTUAL_ORIGINAL_LIST_INDEXED_CONTEXT_ACCEPTED; FULL1499_REJECTED_AT_REVERSED_TRACE79_BLOCKED",
+  "status": "COMPLETE57_ACTUAL_BOUNDED_REVERSE_TRACE_OWNED_ACCEPTED; FULL1500_NOT_RUN_COUNT_CALLER_REJECTION",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -17316,7 +17316,7 @@
       "all7_original_headers_byte_unchanged": true,
       "original146_vendor_bodies_unchanged": true,
       "complete_original_and_later_successor_equal": true,
-      "status": "PENDING_COMPLETE57_SOURCE_AND_FULL1500_CHECK",
+      "status": "ACCEPTED_COMPLETE57_SOURCE_OWNED_SOURCE175",
       "edits": [
         [
           "  refine ⟨{ start := size - 1 - w.start, before := size - 1 - w.before,\n    finish := size - 1 - w.finish, orientation := ?_, witness := w.witness,\n    start_vertex := w.start_vertex, position_trace := ?_,\n    span := ?_, parents := ?_, colliders := ?_ }, rfl, rfl, rfl⟩",
@@ -17327,7 +17327,8 @@
           "    change Trace (fun i => vertex (whole.length - 1 - i)) 0 whole.reverse\n    simpa only [Nat.zero_add] using trace_reverse vertex whole 0 «trace»"
         ]
       ],
-      "original_sha256": "77a4fa5c9afd033d9792850d831fedcfbdfc3aeee3fedcfa16038812ab16099c"
+      "original_sha256": "77a4fa5c9afd033d9792850d831fedcfbdfc3aeee3fedcfa16038812ab16099c",
+      "verification": "integration/causal-reversed-trace-component-verification.json"
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

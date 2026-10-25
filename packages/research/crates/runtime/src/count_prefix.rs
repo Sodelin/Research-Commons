@@ -104,9 +104,9 @@ theorem actual_first_cutoff :
 theorem actual_complete_weights :
     ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff := by
   intro i
-  fin_cases i <;> norm_num [{defs}]
+  fin_cases i <;> norm_num [{defs}, Matrix.cons_val_zero, Matrix.cons_val_zero', Matrix.cons_val_succ, Matrix.cons_val_succ']
 theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 := by
-  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ]
+  norm_num [returnedWeights, cutoff, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_zero', Matrix.cons_val_succ, Matrix.cons_val_succ']
 theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon := by
   have accuracy : deficit inputA cutoff ≤ epsilon := by
     rw [← actual_fields.2.2.2.1]
