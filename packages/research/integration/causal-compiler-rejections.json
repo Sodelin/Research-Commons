@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "COMPLETE57_ACTUAL_BOUNDED_REVERSE_TRACE_OWNED_ACCEPTED; FULL1500_NOT_RUN_COUNT_CALLER_REJECTION",
+  "status": "COMPLETE57_AND_NATIVE_COUNT3_SOURCE_ACCEPTED; FULL1500_REJECTED_AT_MINIMAL_PATH_DEPENDENCIES78_BLOCKED",
   "records": [
     {
       "source": "1a5582e20ff412c951f4a378cc8ebb76cb24413f",
@@ -15751,6 +15751,44 @@
       "reverse_edits_recovers_entire_original_source": true,
       "correction": "ONE record layout uniform fields and explicit change to SAME literal reversed vertex function, then reuse unchanged trace_reverse at zero offset. No hypothesis, graph/source/parent/bound/witness/operation order/conclusion change.",
       "new_graph_or_source_hypothesis": false
+    },
+    {
+      "source": "f539b1848b1eb2bc13a61755a815a5b99020b0f8",
+      "run": 40148897830,
+      "job": 121036238621,
+      "module": "MinimalPathOrderDependencies",
+      "diagnostics": [
+        {
+          "line": 35,
+          "column": 26,
+          "message": "SAME one-step trace index offset+1-1 remains under restricted simp, original parent equality not reduced."
+        },
+        {
+          "line": 70,
+          "column": 4,
+          "message": "Dependent elimination across context fails for already proved sameIndex:offset+w.parents.length+1=i."
+        },
+        {
+          "line": 112,
+          "column": 7,
+          "message": "matches is reserved syntax; parser cascades into missing cases/unsolved end proof."
+        }
+      ],
+      "disposition": "ENTIRE module/full1500 REJECTED;1421successful135compiled1286reused,78blocked. Standalone57-source owned and actual count3-source92/67 remain ACCEPTED separately; no combined520-name/owned/callers.",
+      "original_bytes": 7790,
+      "original_sha256": "184c18fc45c20f4256c29de779765df70ae89248762ab0aa90c11520a02aedca",
+      "original_git_blob": "0f97ad7bc060c3dc2908e592ae282abddbc6bf37",
+      "later_ref": "0dbf73a71c0c282e19d389549f83caae716a1b51",
+      "complete_prior_later_equal": true,
+      "selected": {
+        "bytes": 7828,
+        "git_blob": "67169a8ef8f3444ea60e070ef38206bf632dc6b1",
+        "sha256": "7432ac146450d51662d2bd60686b31820871951e1d5bb12c78ffc8773082b97d"
+      },
+      "all4_original_theorem_headers_byte_unchanged": true,
+      "reverse_edits_reconstruct_entire_original": true,
+      "correction": "Existing Nat.add_sub_cancel for same literal index; rewrite GOAL with existing sameIndex instead of dependent cases across full context, BOTH actual branches; quote SAME matches binder/uses.",
+      "new_source_graph_witness_or_hypothesis": false
     }
   ],
   "original_all146_vendor_bodies_unchanged": true,
@@ -17329,6 +17367,19 @@
       ],
       "original_sha256": "77a4fa5c9afd033d9792850d831fedcfbdfc3aeee3fedcfa16038812ab16099c",
       "verification": "integration/causal-reversed-trace-component-verification.json"
+    },
+    {
+      "module": "MinimalPathOrderDependencies",
+      "selected": {
+        "bytes": 7828,
+        "git_blob": "67169a8ef8f3444ea60e070ef38206bf632dc6b1",
+        "sha256": "7432ac146450d51662d2bd60686b31820871951e1d5bb12c78ffc8773082b97d"
+      },
+      "status": "PENDING_COMPLETE58_SOURCE_AND_FULL1500_CHECK",
+      "all4_original_theorem_headers_byte_unchanged": true,
+      "original146_vendor_bodies_unchanged": true,
+      "prior_and_later_complete_sources_equal": true,
+      "scope": "Only Nat subtraction/goal equality transport/reserved-identifier compatibility. Original source/physical path/chord/Trace/Nodup/witness/bounds and actual chosen dependency system conclusions unchanged."
     }
   ],
   "selection_change": "Independent import-only OLD CB-GENOME-003 ownership root adds5 required export sources; original146 causal vendor bodies unchanged."

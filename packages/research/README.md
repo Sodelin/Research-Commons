@@ -27,11 +27,11 @@ The final per-claim completion gate currently exits2 because required bindings r
 
 ## Verified components and current build boundary
 
-Latest [source175/run40146941800](https://github.com/Sodelin/Research-Commons/actions/runs/40146941800):
+Latest [source178/run40148897830](https://github.com/Sodelin/Research-Commons/actions/runs/40148897830):
 
-- COMPLETE57-source bounded actual physical-trace reversal owned context PASSES:1511declarations945theorems,0owned/nonstandard/missing. ALL7 original headers unchanged; exact compatibility edits only. Entire639469B artifact/all sources/objects/owned rows validated. [Receipt](integration/causal-reversed-trace-component-verification.json).
-- Actual Rust125tests incl3 owning-count/indent assertions pass; generic1source/8names24/19 count component remains accepted. Entire actual count caller REJECTED at literal weight vector reductions, zero caller not run. Source176 explicit lemmas did not close those applications; source177 serializes SAME complete table by original numeric index cases, preserving all7 statements/every value/Fin coverage. [Core](integration/count-prefix-component-verification.json), [rejections](integration/count-prefix-compiler-rejections.json).
-- Full1500/520-name/owned/actual-callers did NOT EXECUTE after that rejection. Latest historical1499/source173 rejects1419success/79blocked at the former reversal module; no new combined acceptance is inferred. [Frontier](integration/FRONTIER.md).
+- BOTH complete actual native count proofs PASS, joint3-source92declarations67theorems,0owned/nonstandard/missing. Generic8-name scalar proof and unchanged OLD Rust engine reused; ALL returned fields/FIRST cutoff/inspection/weights/sum/error checked. Whole339996B artifact/ALL92 rows/22source endpoints/actual two documents independently validated. Rust125tests pass. [Receipt](integration/count-prefix-component-verification-v2.json).
+- Original bounded actual trace reversal57-source context remains CLOSED1511/945, all7 original statements unchanged. [Receipt](integration/causal-reversed-trace-component-verification.json).
+- Full1500 REJECTED at MinimalPathOrderDependencies:1421successful (135compiled+1286reused),78blocked. Combined520-name/owned/actual callers did not run. Current58-source compatibility candidate preserves ALL4 original headers; only SAME index subtraction, goal equality transport and local matches quoting. [Full rejection](integration/causal-latest-full-union-rejection.json), [frontier](integration/FRONTIER.md).
 - Actual Rust122 tests and OLD RAW-noise core plus BOTH actual native proofs jointly28-source458/309 are CLOSED/reused at source168. [Receipt](integration/nanuq-noise-component-verification-v2.json).
 - Complete54-source original-DAG chain1373/837 and52-source actual vertex sections1322/792 are CLOSED/reused. [Chain receipt](integration/causal-literal-chain-component-verification.json), [sections](integration/causal-vertex-section-component-verification.json).
 - Complete51-source actual causal reversal is CLOSED at source166:1251 declarations/757 theorems, all4 statements unchanged. [Receipt](integration/causal-active-reversal-component-verification.json).
@@ -41,9 +41,9 @@ Latest [source175/run40146941800](https://github.com/Sodelin/Research-Commons/ac
 
 The strict118 completion gate still fails. Completed HAND science is preserved; actual formal/native/source/action/observer/target/QE joins remain explicit. No standalone context or selected source count substitutes for end-to-end acceptance.
 
-## Current count integration candidate
+## Verified count receiver
 
-The OLD exact normalized-count engine remains BYTE-IDENTICAL. The generic eight-name scalar component and THREE owning Rust tests passed at their recorded scopes. The ENTIRE actual native proof caller remains rejected, now only at its whole-sum proof. Source178 joins the SAME checked per-index weights through EXISTING Fin.sum_univ_eq_sum_range to ALREADY accepted normalized_prefix_sum. It changes no native values/cutoff/indices/7 statements or engine. Exact component proof files are retained before the later combined gate; upload alone is not acceptance. No universal native/parser/source/TV admission is inferred. [Use-site/commands](integration/COUNT-PREFIX-RECEIVER.md), [rejections](integration/count-prefix-compiler-rejections.json).
+The OLD exact normalized-count engine remains BYTE-IDENTICAL. Source178's actual Rust125 tests and BOTH complete native proof documents passed: whole3-source92-declaration67-theorem owned context, zero owned/nonstandard axioms or missing modules. All returned fields, FIRST cutoff/inspection budget, EVERY weight, total normalization and scalar lost exponential mass bound are checked. The generic1-source/8-name24/19 component is reused. This closes that scoped receiver; the combined1500 package check and universal Rust/parser/source-PMF-TV refinement remain separate. [Receipt](integration/count-prefix-component-verification-v2.json), [ordinary output](integration/verified-public-source/CountPrefixOrdinary-source178.lean.txt), [zero output](integration/verified-public-source/CountPrefixZero-source178.lean.txt), [source/commands](integration/COUNT-PREFIX-RECEIVER.md).
 
 ## Actual Rust-to-Lean callers
 
@@ -51,6 +51,7 @@ Each caller below produced a complete native-output proof document and passed it
 
 | Caller | Checked input and conclusion | Evidence |
 | --- | --- | --- |
+| `count-prefix-certificate [zero]` | Unchanged native count result; ALL fields/FIRST cutoff/inspection budget/complete original-index weights, normalization and real-exponential scalar error | [Count receiver](integration/count-prefix-component-verification-v2.json) |
 | `cm-certificate` | Grouped rational positive laws; literal sparse-moment separation | [CM/affine](integration/certificate-verification.json) |
 | `alignment-certificate coherent/incoherent` | ENTIRE supplied rational coherent-parameter filters, EVERY map and omission, SAME adjacent-layer ties | [Alignment](integration/msci-alignment-verification.json) |
 | `jc69-certificate` | All16 actual four-base branch probabilities/row sums, SAME returned finite normalized-clock time | [JC branch](integration/jc69-branch-verification.json) |

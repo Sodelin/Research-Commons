@@ -4,20 +4,20 @@ The portable Lean/Rust goal remains ACTIVE: all118 canonical claims,75 reuse-ran
 
 ## Actual current build boundary
 
-Latest causal source1755426f2e796af9c8ed9957fbfdacc279006c0ce92, [run40146941800](https://github.com/Sodelin/Research-Commons/actions/runs/40146941800):
+Latest source178 f539b184/[run40148897830](https://github.com/Sodelin/Research-Commons/actions/runs/40148897830):
 
-- COMPLETE57-source actual bounded reversed-trace owned context PASSES:1511declarations945theorems,0owned/nonstandard/missing. ALL7 original source headers unchanged; ONE record layout plus SAME reversed-function goal spelling. Entire639469B archive/all57 source/object/owned sets/every row independently validated.39generated/projection theorem rows are not new discoveries. [Receipt](causal-reversed-trace-component-verification.json).
-- Source176 Rust125tests incl3 owning-count/indent assertions PASSES, exact Cargo.lock match. Count scalar core remains accepted COMPLETE1-source/8names24/19 at source174 and was rechecked unchanged.
-- Source177 ENTIRE actual native caller remains REJECTED, now ONLY at whole sum after one successor expansion. Zero caller/full root did not run; no partial PASS. Whole2965B/f0a0935d document retained. Source178 reuses complete per-index correspondence + EXISTING Fin.sum_univ_eq_sum_range + ALREADY accepted normalized_prefix_sum; SAME7 statements/engine/data/Fin carrier and all native weights. [Rejections](count-prefix-compiler-rejections.json).
-- Full1500/520-name/combined-owned/actual-callers were NOT EXECUTED after that actual caller rejection. Historical full1499/source1731419success/79blocked retains its exact rejected scope; fixing the prior reversal failure does not confer a fresh full-union PASS.
-- CLOSED56/55/54/52/51/etc and all other accepted scopes, including BOTH natural word, are REUSED. No identical word/cache/key work.
-- Strict118 completion still FAILS.
+- BOTH complete actual count output documents ACCEPTED; whole3-source92decl67theorems/0owned-nonstandard-missing, ALL22 source endpoints/45generated rows and complete documents/digests/owners checked. Generic1-source8names24/19 and original count engine byte-identical; Rust125tests pass. Entire339996B early artifact/all92 rows/1833source plan/220 integration hashes validated. [Receipt](count-prefix-component-verification-v2.json).
+- Complete57-source bounded physical reverse-trace1511/945 remains CLOSED; all7 original headers retained, original source/labels/bounds/witness/finite trace semantics unchanged. [Receipt](causal-reversed-trace-component-verification.json).
+- Full1500 ENTIRE REJECTED at MinimalPathOrderDependencies:1421successful135compiled1286reused,78blocked. Final495330B artifact/full module/object/hash plan and unchanged accepted count proof/digest records verified. No combined520-name/owned/actual callers. [Full rejection](causal-latest-full-union-rejection.json), [failure history](causal-compiler-rejections.json).
+- Current58-source candidate reuses COMPLETE original/later7790B/184c18fc/blob0f97ad7b body: existing Nat.add_sub_cancel normalizes SAME index; rewrite ONLY goal along already derived sameIndex instead of dependent cases over whole context, BOTH branches; quote SAME matches local binder/uses. ALL4 original theorem headers byte-identical, reverse edits reconstruct ENTIRE original. No new source/graph/chord/Trace/shortestness/witness/bounds/target premise or conclusion.
+- Existing ONE step-local target supplies BOTH build and owned audit. Next actual58-source then mandatory1500/520-name/full-owned/actual callers. CLOSED standalone Count and reversal are not reselected for identical checks. Existing full-context count caller remains required after a successful complete union.
+- Strict118 completion still FAILS; no component suppresses it. All other CLOSED scopes/BOTH natural word reused, no identical word/cache/key work.
 
-Next own action is the SAME TWO complete actual count proof documents/joint owned context with that normalization join, then mandatory full1500/520-name/owned/actual callers. Exact existing component artifacts are now retained before the later full root; upload alone grants no PASS. Closed57-source causal scope is not reselected for an identical standalone rerun. MinimalPathOrderDependencies/FiniteDependencyInduction COMPLETE original plus later successor at0dbf73a7 match original blobs; OLD mathematics is reused, not recreated. No speculative future edit.
+## Count receiver: CLOSED at exact checked scope
 
-## Count receiver: exact current scope
+Source178 f539b184/run40148897830/job121036238621 BOTH actual complete count proof documents accepted. Whole3-source92decl67theorems/0owned-nonstandard-missing; ALL22 named source endpoints and45generated/projection rows checked. Entire339996B archive/digests/1833-source plan/220integration hashes/owners/ALL92 rows and COMPLETE2source docs independently validated. Actual Rust125/three owning tests match lock bytes. Original count engine/generic scalar source byte-identical. Every field/FIRST cutoff/inspection budget/actual Fin coordinate/full sum/scalar exp error retained. [Receipt](count-prefix-component-verification-v2.json).
 
-OLD rank38 engine BYTE-IDENTICAL. New scalar formal component1source/8names24/19 ACCEPTED, THREE owning tests pass. The actual native caller context remains WHOLLY REJECTED at source177 on its whole sum; source178 reuses the already checked normalization proof through the existing finite-sum conversion. Pinned17K VecNotation source/proofs were read; no new table/weight evaluator or alternative engine is implemented. Original native/core/PMF/TV/refinement boundaries remain. [Use-site](COUNT-PREFIX-RECEIVER.md), [preflight](COUNT-PREFIX-REUSE-PREFLIGHT.md).
+No identical standalone retry or vector-notation debugging project remains. The already mandatory combined1500/520-name/owned/actual-caller gate is running separately; no universal Rust/parser/compiler/source-PMF-TV or whole118 acceptance follows. Original scientific scopes/holds remain.
 
 ## Closed integration components: reuse them
 
@@ -25,7 +25,7 @@ These results are source-specific. Their receipts retain exact hypotheses, rejec
 
 | Component | Actual checked scope | Evidence |
 | --- | --- | --- |
-| NEW partial OLD normalized count scalar receiver | Complete1-source/8-name24/19. Reuses existing Mathlib exponential tail and original count engine; ENTIRE actual native caller context rejected on layout, corrected candidate pending. | [Core](count-prefix-component-verification.json), [types](count-prefix-complete-printed-types.json), [Rust125](count-prefix-rust-verification.json) |
+| OLD normalized count engine + NEW actual owning proof receiver | Core1-source/8names24/19 plus BOTH actual documents, complete3-source92/67/0rejects. ALL native fields/FIRST cutoff/inspection/weights/sum/scalar error. Universal native/parser/source-PMF-TV separate. | [Receipt](count-prefix-component-verification-v2.json), [types](count-prefix-complete-printed-types.json) |
 | OLD bounded physical reverse trace | Complete57-source1511/945, all7 original statements/source/bounds/labels/witness/fallback semantics retained.39generated/projection rows are not new mathematics. | [Receipt](causal-reversed-trace-component-verification.json) |
 | OLD actual original-list indexed sections | Complete56-source1458/899, all6 original headers/source/witness semantics retained. Full graph/native identification still separate. | [Receipt](causal-indexed-sections-component-verification.json) |
 | Complete independent+COMMON natural word | All1280 documents;69238 declarations/57433 theorems. Same original three-copy/seven-operation/21-variable bank, register drawn once. No identical rerun/key rewrite selected. | [Receipt](whole-natural-word-verification.json) |
