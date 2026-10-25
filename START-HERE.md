@@ -1,5 +1,8 @@
 # Start here
 
+**Current end-to-end goals — 25 October, 10:09 UTC:** [four research responsibilities and two biological project contracts](research/2026-10-25-end-to-end-evolutionary-inference/README.md). G3 and G4 retain their original masters; the two additional projects connect biological observations, identifiability, finite-data uncertainty, measurement design and reproducible implementation. This supersedes the earlier reserve allocation, not accepted results or original assumptions.
+
+
 **Current work allocation — 25 October, 05:56 UTC:** [documentation/recovery, separate G3 and G4 continuations, reserve unassigned](research/2026-10-25-dot-documentation-g3-g4-allocation/COORDINATION.md). This changes immediate priority, not original scientific scope or accepted results.
 
 ## New G3/G4 progress and retired tasks — 25 October 2026
