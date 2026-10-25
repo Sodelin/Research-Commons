@@ -71,7 +71,7 @@ The reader compares the validated loaded register with its exact bundled snapsho
 
 ```sh
 node tools/query.mjs --changes --refresh --limit 25
-node tools/query.mjs --changes --refresh --programme 'original.G3' --limit 10
+node tools/query.mjs --changes --refresh --topic G3 --limit 10
 ```
 
 The same comparison engine powers browser and agent output. CLI results have bounded limit/offset/next_offset and separate baseline/current source metadata. Claim facets apply to the current card, or the older card when absent; source-body/archive lookup and subjective sorting remain separate views. Network source stays in RAM; canonical source is never written by this command. If a later refresh fails, the browser identifies the actual retained loaded source and keeps its previous comparison rather than labelling it as the bundled fallback.
@@ -111,3 +111,14 @@ The same G3 reading/source/reuse join now links three complete ORIGINAL supplier
 Older linear proof’s then-missing ordinary-forcing paragraph is superseded by its completed cap12 successor; cap9 is not silently upgraded. The I-only theorem requires a supplied unconditional event/known channel, actual proper CLOSED bridge and same original source/tuple; no new observation or total ONE-witness finite-bank selector is supplied. These author-hand/self-reviewed proofs remain separate from independent correctness/Lean/execution and total G3. Canonical118/board1.20 unchanged, no competing claim IDs.
 
 Corpus334immutable URLreferences/3,372,943UTF8B/zero unavailable:331prior verified bodies reused,3original proofs fetched plus existing catalogue metadata. Frozen58-note census and5829path inventory remain separate, dated/non-exhaustive.63consumer records pass across6explicitmodules, including all3stable-key retrievals, exact identities/claim bindings and successor-gap distinction. No proof/compiler/native/model/device job or original-owner task was repeated. Actual visual/device acceptance remains unverified.
+
+
+## Lookup safeguards verified — 25 October 2026, 11:09 UTC
+
+The documented programme example has been corrected: `--programme` matches the full literal display field, such as `G3 · finding a real source`; `--topic G3` selects the G3 cards. `--programme original.G3` returns zero and must not be interpreted as an empty research programme.
+
+For comprehensive supplier-body discovery, run `--sources --query ...` WITHOUT claim facets first. Catalogue-only recovery bodies intentionally carry catalogue keys rather than claim IDs; adding `--topic G3`, `--status open`, or another claim facet can exclude those completed supplier bodies. In a verified runtime check, G3-UNIFORM-FOREST-RECEIVER returned14 unfiltered source hits versus6 with the G3 topic facet. The narrower filtered view is not a full programme-source inventory.
+
+Paginate using total/next_offset. Distinguish card freshness, immutable body snapshot freshness, and the older archive path pin. A zero `--changes` result only compares card objects; it does not say no proofs or source-status records changed. JSON status documents, issue comments and source-only Lean files require their own linked checks outside this Markdown-body index.
+
+Current copied runtime and all334 corpus body byte counts/SHA256/Gitblob identities were checked during the coordinating audit. This verifies retrieval integrity, not mathematical correctness or exhaustive coverage. Latest research additions after the archive pin require a Git-tree delta check; contents-directory listing can cap at1000 entries. Do not infer missing mathematics from an empty/truncated retrieval.
