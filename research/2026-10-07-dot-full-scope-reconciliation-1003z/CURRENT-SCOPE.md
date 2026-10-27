@@ -3901,3 +3901,8 @@ Original G3 total recognition and G4 finite natural-I all-rival forcing remain o
 The fixed biological rooted one-copy fibre computation has a replayable partial certificate checkpoint, not an all-target split theorem. Its frozen public packet retains seven distinct unresolved systems; subsequent local exclusions and normal-covector/fair-only developments need their own dated reviews and are not retroactively accepted here. Exact backend decisions, explicit algebraic certificates, synthetic author execution, coordinator replays and formal verification remain distinct.
 
 Keep the four authorized scientific responsibilities and coordinating review. Earlier materials, dynamics, nanowire, formal-integration and historical accepted results are preserved unchanged; LLM research remains paused. No canonical card-count increase, new whole-package build, empirical biological validation, measured-device claim or general master closure is implied. Subsequent increments belong in ordinary checkpoints until the next substantive reconciliation.
+
+
+## Dated organizational reconciliation — 27 October 2026
+
+Read the [programme/publication and pause-status reconciliation](../2026-10-27-scope-navigation-reconciliation/CHECKPOINT.md) before acting on historical staffing instructions above. The 25 October pause remains authoritative for the old mathematical frontier assignments. The owner's current programme/result/deliverable separation and Get It Out publication pipeline change navigation and finish criteria, not accepted theorem scope. All earlier text and canonical claim objects are preserved; no new mathematical, formal, empirical or novelty acceptance is implied. Incremental work stays in ordinary checkpoints.
