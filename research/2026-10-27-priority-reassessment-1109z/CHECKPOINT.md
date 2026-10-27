@@ -16,4 +16,4 @@ The [mathematical pause](../2026-10-25-research-pause-2024z/CHECKPOINT.md) remai
 
 ## Review boundary and handoff
 
-Reviewed main at `745b36f781e30bcbf3fdf82ebfa25d45539ed552` and issue #1 comments: no newer main commit or issue #1 update after the preceding 10:09 review was found. No new prior-work discovery or mathematical proof is claimed. Keep this incremental decision outside the full scientific-scope rewrite. The next decisive obligation is the Episode 1 readiness gate, not resuming paused master-problem work from an older schedule.
+Reviewed main at `745b36f781e30bcbf3fdf82ebfa25d45539ed552` and issue #1 comments: no main commit newer than that pin and no issue #1 update after 10:09 UTC was found. No new prior-work discovery or mathematical proof is claimed. Keep this incremental decision outside the full scientific-scope rewrite. The next decisive obligation is the Episode 1 readiness gate, not resuming paused master-problem work from an older schedule.
