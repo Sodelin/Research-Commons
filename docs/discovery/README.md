@@ -122,3 +122,16 @@ For comprehensive supplier-body discovery, run `--sources --query ...` WITHOUT c
 Paginate using total/next_offset. Distinguish card freshness, immutable body snapshot freshness, and the older archive path pin. A zero `--changes` result only compares card objects; it does not say no proofs or source-status records changed. JSON status documents, issue comments and source-only Lean files require their own linked checks outside this Markdown-body index.
 
 Current copied runtime and all334 corpus body byte counts/SHA256/Gitblob identities were checked during the coordinating audit. This verifies retrieval integrity, not mathematical correctness or exhaustive coverage. Latest research additions after the archive pin require a Git-tree delta check; contents-directory listing can cap at1000 entries. Do not infer missing mathematics from an empty/truncated retrieval.
+
+
+## Programme and output navigation
+
+The read-only companion uses `docs/programmes.json`, `docs/dissemination.json` and the SAME current checkout's `docs/claims.json`. It does not rename existing claim facets or alter mathematical acceptance. Run from the repository root:
+
+```sh
+node docs/discovery/tools/programmes.mjs --programmes
+node docs/discovery/tools/programmes.mjs --programmes --id PROG-G1-G7
+node docs/discovery/tools/programmes.mjs --outputs --id OUT-NANUQ-001
+```
+
+Results include exact local file SHA256 identities, bounded output states and the joined canonical claim objects. This is a local-checkout view, not automatic remote refresh or evidence that any worker is executing. Empty claim bindings mean “not mapped here,” not “no work exists.” The older `tools/query.mjs` and deployed reader remain unchanged. See [definitions and gates](../PROGRAMMES-AND-DISSEMINATION.md).

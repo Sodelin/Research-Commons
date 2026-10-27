@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "scope": "Read-only programme/output companion, nine positive/negative invocations and syntax check; not full existing discovery UI or build suite",
+  "tests": [
+    {
+      "args": [
+        "--programmes"
+      ],
+      "expected_success": true,
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--outputs",
+        "--id",
+        "OUT-NANUQ-001"
+      ],
+      "expected_success": true,
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--programmes",
+        "--id",
+        "PROG-G1-G7"
+      ],
+      "expected_success": true,
+      "exit_code": 0
+    },
+    {
+      "args": [],
+      "expected_success": false,
+      "exit_code": 1
+    },
+    {
+      "args": [
+        "--outputs",
+        "--programmes"
+      ],
+      "expected_success": false,
+      "exit_code": 1
+    },
+    {
+      "args": [
+        "--outputs",
+        "--id"
+      ],
+      "expected_success": false,
+      "exit_code": 1
+    },
+    {
+      "args": [
+        "--outputs",
+        "--id",
+        "no-such-output"
+      ],
+      "expected_success": false,
+      "exit_code": 1
+    },
+    {
+      "args": [
+        "--refresh"
+      ],
+      "expected_success": false,
+      "exit_code": 1
+    },
+    {
+      "args": [
+        "--outputs"
+      ],
+      "expected_success": false,
+      "exit_code": 1
+    }
+  ],
+  "canonical_claim_count": 118,
+  "canonical_claim_file_sha256": "092fd2729486b3b860763a1c962dfe837c93f5a02f3f6af6f44abc53a05a420b",
+  "preserved": "Existing query.mjs, claim objects and deployed reader unchanged",
+  "new_paths": [
+    "docs/PROGRAMMES-AND-DISSEMINATION.md",
+    "docs/programmes.json",
+    "docs/dissemination.json",
+    "docs/discovery/tools/programmes.mjs"
+  ]
+}

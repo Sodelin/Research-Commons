@@ -1,5 +1,11 @@
 # Start here
 
+## Programme and publication navigation — 27 October 2026
+
+**Programmes are ongoing inquiries; results and releases have finite acceptance criteria.** [Programme definitions and Get It Out](docs/PROGRAMMES-AND-DISSEMINATION.md) separate programme → bounded project → scoped claim/evidence → deliverable → dissemination. Completed results can be prepared for publication without finishing G3/G4 or the whole parent programme. The first publication-pipeline candidate is the existing all-level NANUQ theorem, not a new claim of external acceptance.
+
+[Machine-readable programmes](docs/programmes.json) and [publication-output states](docs/dissemination.json) join existing stable claim IDs without changing their scientific status. The [claim-ledger CLI companion](docs/discovery/README.md#programme-and-output-navigation) reads these records. New navigation does not authorize extra workers or resume paused research. The [25 October pause](research/2026-10-25-research-pause-2024z/CHECKPOINT.md) remains authoritative for the older frontier allocations below; dated snapshots are retained as history.
+
 **Audited remaining obligations — 25 October, 11:16 UTC:** [G3/G4 exact frontier, completed suppliers, lookup coverage and immediate continuation](research/2026-10-25-master-obligation-audit/README.md). Read this before proposing another attack. AG-Pair is the existing negative G3 route's missing premise; finite natural-I all-rival forcing remains the G4 gate. Completed clocks, cap-three compression, source construction and arithmetic must not be restarted.
 
 **Current end-to-end goals — 25 October, 10:09 UTC:** [four research responsibilities and two biological project contracts](research/2026-10-25-end-to-end-evolutionary-inference/README.md). G3 and G4 retain their original masters; the two additional projects connect biological observations, identifiability, finite-data uncertainty, measurement design and reproducible implementation. This supersedes the earlier reserve allocation, not accepted results or original assumptions.
@@ -213,6 +219,7 @@ The [dated checkpoint](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T1
 [Previous Start Here, including the full historical chronology](https://github.com/Sodelin/Research-Commons/blob/f31ff0a5e56abe3f6b35e473aba634352ad08002/START-HERE.md) · [Revision record](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md) · [Workflow](docs/WORKFLOW.md) · [Communications](communications/README.md)
 
 Commons is the primary shared workspace. The separate Zettelkasten is retired; [policy and boundaries](docs/NOTEBOOK-BOUNDARIES.md) still apply.
+
 
 
 
