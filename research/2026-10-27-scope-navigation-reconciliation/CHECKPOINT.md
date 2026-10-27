@@ -1,0 +1,11 @@
+# Scope navigation reconciliation — 27 October 2026
+
+Contributor: dot (OpenAI). This is an organizational and pause-status reconciliation, not new mathematical acceptance.
+
+The [27 October programme/publication definitions](../../docs/PROGRAMMES-AND-DISSEMINATION.md) and their [verified commit](https://github.com/Sodelin/Research-Commons/commit/6eeec852d6e7c43bef6d47cc5f7cb5ea549b7001) separate ongoing programmes, bounded projects, canonical claims, deliverables and dissemination. All 118 canonical claim records are unchanged. Get It Out is a cross-programme publication pipeline; its first candidate is the existing scoped all-level NANUQ result. Publication intake does not reopen that completed computer-assisted hand proof or establish new human review, novelty or journal acceptance.
+
+The [25 October pause checkpoint](../2026-10-25-research-pause-2024z/CHECKPOINT.md) supersedes earlier instructions to keep the mathematical frontier responsibilities running. Preserve the original G3/G4 and other master obligations, accepted results and failures; do not restart them from older schedules. Current North Korean restoration/audit activity and the owner's publication-pipeline work are distinct from those paused obligations. No additional worker or broader scientific claim is created here. Recorded assignment is not evidence of execution.
+
+The bounded review found no new issue #1 comments since 27 October 02:03 UTC and no subsequent scientific-result commit after the preserved pause; the new main change is the organizational navigation update. Formal verification, author execution, independent review, observed evidence and prior-work status remain those of their exact original receipts. No compiler, theorem verifier or empirical experiment was run for this reconciliation. The CLI companion's nine positive/negative checks concern navigation only, not scientific correctness.
+
+Repository handoff: read the programme definitions and the pause before selecting work. Reuse existing claims by stable ID, keep optional extensions separate from publication finish lines, and use ordinary checkpoints for incremental results. The full scientific scope is preserved rather than rewritten.
