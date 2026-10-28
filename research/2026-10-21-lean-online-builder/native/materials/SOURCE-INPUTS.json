@@ -1,0 +1,244 @@
+{
+  "kind": "source_only_materials_import_identity",
+  "dot_commit": "ae0777ba38660a3e30da6b01f07e3874afb7b785",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "roots": [
+    "P1FiniteThreshold",
+    "P5OrderedLambShift"
+  ],
+  "order": [
+    "P1BinomialMoments",
+    "P1ScalarStatistic",
+    "FiniteProductMoments",
+    "P1ProductStatistic",
+    "P1FiniteThreshold",
+    "P5OrderedTriangle",
+    "P5SquareTriangle",
+    "P5OmegaIntegrability",
+    "BoundedTriangleIntegral",
+    "P5OrderedLambShift"
+  ],
+  "sources": [
+    {
+      "module": "P1BinomialMoments",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1BinomialMoments.lean",
+      "original_sha256": "6059e1080c3f6c34d8b3473f295b847198b19de0d034fcae1c5b9594b8667dbf",
+      "sha256": "eecaff38bc4c06db7ada58189259f364b892ee6fc01571ce75522fb97ac52e68",
+      "bytes": 6238,
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Nat.Choose.Sum"
+      ]
+    },
+    {
+      "module": "P1ScalarStatistic",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1ScalarStatistic.lean",
+      "original_sha256": "d1cc877dafb298a52593c6bbc0787822d138944057ac4ff82d719e44caf57d32",
+      "sha256": "d1cc877dafb298a52593c6bbc0787822d138944057ac4ff82d719e44caf57d32",
+      "bytes": 8320,
+      "changes": [],
+      "imports": [
+        "P1BinomialMoments",
+        "Mathlib.Tactic.FieldSimp"
+      ]
+    },
+    {
+      "module": "FiniteProductMoments",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/FiniteProductMoments.lean",
+      "original_sha256": "d636b9859989bdf84a3879ef0f5976d7bcf47f72d0a198f65811ba9d0ad4601b",
+      "sha256": "611524c858ad5b162690f3027f1e61201b3e2c214721ae030ae7540b356e38a7",
+      "bytes": 4886,
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    {
+      "module": "P1ProductStatistic",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1ProductStatistic.lean",
+      "original_sha256": "6d96dabddd85894f09604b4cacd701a87525481162a0dcf9f50afc64f97e280d",
+      "sha256": "6d96dabddd85894f09604b4cacd701a87525481162a0dcf9f50afc64f97e280d",
+      "bytes": 5576,
+      "changes": [],
+      "imports": [
+        "P1ScalarStatistic",
+        "FiniteProductMoments",
+        "Mathlib.Algebra.BigOperators.Fin"
+      ]
+    },
+    {
+      "module": "P1FiniteThreshold",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1FiniteThreshold.lean",
+      "original_sha256": "3f1b15851a7a0d32cd0aa7312ab32f3172f5c107672610f0622a63ea04d0cc0c",
+      "sha256": "273783f8d88cad1591dedad762f523ea2953c5009df5cb3b13432b32d32f2159",
+      "bytes": 5593,
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring",
+        "P1ProductStatistic"
+      ]
+    },
+    {
+      "module": "P5OrderedTriangle",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OrderedTriangle.lean",
+      "original_sha256": "b4fb0f37c86595b2da7875e91478b20569315ca160131e052537476858d8df40",
+      "sha256": "a93742acb8ca9c194784141a6480756f0bc0785145855b8e0a1b2b72ae6d635e",
+      "bytes": 975,
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Complex.Basic",
+          "to": "Mathlib.Data.Complex.Basic"
+        }
+      ],
+      "imports": [
+        "Mathlib.Algebra.Algebra.Basic",
+        "Mathlib.Data.Complex.Basic",
+        "Mathlib.Tactic.Module"
+      ]
+    },
+    {
+      "module": "P5SquareTriangle",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5SquareTriangle.lean",
+      "original_sha256": "ad6f170ff9691b390c4a9e73e7e6b2f894117ecb5d0a3033be7da6dd553feaef",
+      "sha256": "ad6f170ff9691b390c4a9e73e7e6b2f894117ecb5d0a3033be7da6dd553feaef",
+      "bytes": 7132,
+      "changes": [],
+      "imports": [
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+        "Mathlib.Tactic.Linarith"
+      ]
+    },
+    {
+      "module": "P5OmegaIntegrability",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OmegaIntegrability.lean",
+      "original_sha256": "a71630c8b66667065776022d36b989dff29b711e2b2ec32a2315e99038e9d515",
+      "sha256": "9dd4eeeff8dcaa262ec9dec7fe7d6dc12c166030dfda245f87cf9330b37d5c0f",
+      "bytes": 4224,
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Complex.Basic",
+          "to": "Mathlib.Data.Complex.Basic"
+        }
+      ],
+      "imports": [
+        "P5SquareTriangle",
+        "Mathlib.Analysis.Normed.Algebra.Basic",
+        "Mathlib.Data.Complex.Basic",
+        "Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic",
+        "Mathlib.MeasureTheory.Function.L1Space.Integrable",
+        "Mathlib.Tactic.FunProp",
+        "Mathlib.Tactic.NormNum"
+      ]
+    },
+    {
+      "module": "BoundedTriangleIntegral",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/BoundedTriangleIntegral.lean",
+      "original_sha256": "e500127aa5f9451716ab5e01a937b31fd77e621e9e7e2001f1c831a365ca1610",
+      "sha256": "e500127aa5f9451716ab5e01a937b31fd77e621e9e7e2001f1c831a365ca1610",
+      "bytes": 3083,
+      "changes": [],
+      "imports": [
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+        "Mathlib.Tactic.Linarith"
+      ]
+    },
+    {
+      "module": "P5OrderedLambShift",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OrderedLambShift.lean",
+      "original_sha256": "c30985345a729e18fd2039d01580b2b6eae19e4e70d7f3262acadb52fce0d320",
+      "sha256": "c30985345a729e18fd2039d01580b2b6eae19e4e70d7f3262acadb52fce0d320",
+      "bytes": 5967,
+      "changes": [],
+      "imports": [
+        "P5OmegaIntegrability",
+        "P5OrderedTriangle",
+        "BoundedTriangleIntegral",
+        "Mathlib.Analysis.Normed.Operator.Mul",
+        "Mathlib.Tactic.Positivity"
+      ]
+    }
+  ],
+  "selected_endpoints": [
+    "P1ScalarMoments.binomialMean_moments",
+    "P1ScalarMoments.quadratic_mean_variance",
+    "P1ScalarMoments.finite_binomial_quadratic_moments",
+    "P5OriginalGenerator.upper_triangle_section",
+    "P5OriginalGenerator.lower_triangle_swap",
+    "P5OriginalGenerator.square_to_triangles",
+    "P5OriginalGenerator.bath_square_to_triangles",
+    "P5OriginalGenerator.ordered_triangle_identity",
+    "P1ScalarMoments.coordinate_statistics",
+    "P1ScalarMoments.bounded_scalar_variance",
+    "P1ScalarMoments.finite_product_quadratic_moments",
+    "P5OriginalGenerator.omega_unit_bound",
+    "P5OriginalGenerator.omega_square_integrable",
+    "P5OriginalGenerator.omega_square_to_triangles",
+    "P1FiniteThreshold.weighted_bad_mass",
+    "P1FiniteThreshold.sample_budget_bounds",
+    "P1FiniteThreshold.finite_threshold_errors",
+    "P1FiniteThreshold.finite_product_threshold_errors",
+    "BoundedTriangleIntegral.bounded_triangle_integrable",
+    "P5OriginalGenerator.ordered_lamb_shift_identity"
+  ],
+  "external_imports": [
+    "Mathlib.Algebra.Algebra.Basic",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Analysis.Normed.Algebra.Basic",
+    "Mathlib.Analysis.Normed.Operator.Mul",
+    "Mathlib.Data.Complex.Basic",
+    "Mathlib.Data.Nat.Choose.Sum",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.MeasureTheory.Function.L1Space.Integrable",
+    "Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Module",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring"
+  ],
+  "pinned_tree_truncated": false,
+  "pinned_tree_sha256": "9da52ac664b955a180cf9b0c78bb30f329ba7dc0b0b8c0cf911830aed9019d42",
+  "pinned_tree_entries": 10301,
+  "mathematical_bodies_preserved": true,
+  "compiler_invoked": false,
+  "historical_hosted_endpoint_count": 20,
+  "native_imports_checked": false
+}

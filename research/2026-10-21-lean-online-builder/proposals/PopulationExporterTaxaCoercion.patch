@@ -1,0 +1,15 @@
+--- a/native/g7_population_certificate.rs
++++ b/native/g7_population_certificate.rs
+@@ -273,7 +273,11 @@
+     function(&mut out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].source))?;
+     out.put(" := by decide\n\ntheorem edge_targets_exact : N.graph.target = ")?;
+     function(&mut out,context.source.edges.len(),|out,i| fin(out,context.source.edges[i].target))?;
+-    out.put(" := by decide\n\ntheorem taxa_exact : N.leaf = ")?;
++    out.put(" := by decide\n\ntheorem taxa_exact : (N.leaf : Fin ")?;
++    out.number(context.source.leaves.len())?;
++    out.put(" → Fin ")?;
++    out.number(context.source.vertices)?;
++    out.put(") = ")?;
+     function(&mut out,context.source.leaves.len(),|out,i| fin(out,context.source.leaves[i]))?;
+     out.put(" := by decide\n\n")?;
+     snapshot(&mut out,"entering",context,entering)?;

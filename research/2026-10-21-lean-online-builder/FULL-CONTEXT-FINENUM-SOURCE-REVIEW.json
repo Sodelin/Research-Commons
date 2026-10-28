@@ -1,0 +1,14 @@
+{
+  "schema": "hosted_finenum_library_reuse_v1",
+  "original_source_sha256": "381c6f445637fdf6bc04a77f062ed2079d9856eeb260b30b609f3c098a3e430a",
+  "hosted_source_sha256": "9a7bffed9df4a55b650ef196d70fc5f5188f97c522445fc93e0c66dd4776fdc5",
+  "hosted_git_blob": "dd961bc2d207b8adb60b95cdef14e5ddb2f490d2",
+  "hosted_mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "hosted_source_path": "Mathlib/Data/FinEnum.lean",
+  "hosted_source_url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Data/FinEnum.lean",
+  "complete_relevant_bodies_read": true,
+  "full_source_diff": "--- original-pinned-FinEnum\n+++ hosted56a005-FinEnum\n@@ -5,12 +5,12 @@\n -/\n module\n \n-public import Mathlib.Data.Fintype.Basic\n public import Mathlib.Data.Fintype.EquivFin\n-public import Mathlib.Data.List.ProdSigma\n public import Mathlib.Data.List.Pi\n \n /-!\n+# Finitely enumerable types\n+\n Type class for finitely enumerable types. The property is stronger\n than `Fintype` in that it assigns each element a rank in a finite\n enumeration.\n@@ -236,7 +236,7 @@\n     congr 1\n     \u00b7 exact card_eq_zero\n     \u00b7 refine heq_of_cast_eq ?_ (Subsingleton.allEq _ _)\n-      exact congrArg (\u03b1 \u2243 Fin \u00b7) <| card_eq_zero\n+      exact congrArg (\u03b1 \u2243 Fin \u00b7) card_eq_zero\n     \u00b7 funext x\n       exact \u2039IsEmpty \u03b1\u203a.elim x\n \n",
+  "selection": "Import the exact hosted standard-library module instead of flattening its module/public-import header inside a section. Native original source remains unchanged.",
+  "status": "SOURCE_REVIEW; full context not accepted yet",
+  "encrypted_read_ciphertext_sha256": "996cf76e184788ce8129af60a75e614ed48da365ebdc4f1339d524d6e9669162"
+}
