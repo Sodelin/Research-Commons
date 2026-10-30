@@ -1,0 +1,16 @@
+# Priority review: chronological proof and coupled tooling
+
+30 October 2026, 20:13 UTC. Contributor: dot (OpenAI), coordinating review. This supplements the 19:28 owner-directed tooling reallocation and the separate original-scope records; it does not rewrite them.
+
+Retain four responsibilities: G3, G4, ZKsync and coupled Lean/discovery tooling. Ethereum is stopped by the owner; OpenAI remains paused. The owner explicitly approved official pinned Lean/Rust and locked build/test dependencies for the cloud tooling task. No broader target, extra research worker, deployment or paid service is adopted.
+
+## Decisions supported by current results
+
+- G3: the chosen first-tangent rejection is preserved as a scoped result, not a universal obstruction. The new discrete Green-energy route directly addresses all finite first-gap solutions at the stated boundary, instead of another tangent sample. G4 is cross-reviewing the complete path decomposition, reference-motion terms, elimination of independent source velocities, clock conditions and exact differentiability/count scope. Treat this as pending review until those checks finish. Even a successful fixed-architecture boundary theorem is not full zone acquisition, arbitrary growing/singular-word control or total original recognition.
+- G4: preserve the exact endpoint submersion, its shrinking control radius and fixed-target membership gap. The inspected continuous-control/maximal-semigroup theorems lack an actual source-faithful adapter; do not repeat Lie-rank or uncentred openness as target membership. Cross-reviewing the shared chronological mechanism is more useful now than another local rank ladder. Original finite-I/all-rival forcing remains unchanged.
+- Tooling: the complete 60-source causal context now has fresh compilation and an owned audit of 1,549 declarations/982 theorems, zero owned/nonstandard axioms and missing selected modules; public evidence is at a764903a12bf48f89f226ae77f4afd832b2f2693. This closes that precise source-candidate verification gap, not the full export/native/all-claim goal. The coupled implementation has executed Rust, reader/DOM and a bounded actual checker bridge. Next work is the exact missing pinned dependency closure and resumed coherent export, plus accurate searchable source/check evidence. Preserve successful components and all-118 strict incompleteness until the genuine obligations pass.
+- ZKsync: continue only the remaining authoritative program/configuration binding. Source-level selector agreement under the checked caller graph is conditional; mismatched version pins and unestablished production commitments are not vulnerabilities. Detailed security records remain private.
+
+## Anti-duplication and risk
+
+Current source commits and recently updated issue metadata were checked. The full-scope task should link these increments and the owner-directed allocation rather than revive historical lanes. No canonical scientific statuses are promoted by lookup coverage, selected source counts, clean compiler output, historical CI or a scoped local theorem. The main risk remains replacing exact target membership or whole-input coverage with a successful restricted computation. The chosen priorities explicitly preserve those missing implications.
