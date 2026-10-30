@@ -154,3 +154,13 @@ Queries support `--offset` and `--limit` across all shards. Source-only results 
 The deterministic `--check` verifies complete tree accounting, every body hash/Git blob, shard bytes and path correspondence; it also fails when the requested current research tree differs from the indexed tree. Run it after publishing results. Rebuild after a failure; an unchanged claim-card diff does not establish source freshness. Preserve the original source and publish corrections with supersedes links.
 
 The tools and coverage receipt can be committed independently of generated local body shards. A successful local query or a committed receipt does not update the hosted reader, its bundled334-body corpus, or its older archive-path snapshot. No deployed full-text refresh is claimed by this change.
+
+For a publication that only adds paths, extend an existing index without replacing its earlier immutable source bindings:
+
+```sh
+python3 docs/discovery/tools/index-research-results.py --repo . --commit NEW_COMMIT40 --base /tmp/commons-result-index --output /tmp/commons-result-index-next
+node docs/discovery/tools/query.mjs --research-results /tmp/commons-result-index-next/manifest.json --research-path research/2026-10-30-clock-jc-bounded-qa-2350z --query counterexample
+python3 docs/discovery/tools/check-result-publications.py --repo . --index /tmp/commons-result-index-next --publication NEW_COMMIT40
+```
+
+Extension refuses modified or deleted prior paths; use a full rebuild in that case. Hash-verified unchanged shards are reused with their original immutable URLs. Incremental additions may repeat a previously stored body under a new path; distinct body hashes and search document counts are separate. `--research-path` is an explicit optional prefix filter; unfiltered search remains available. Publication coverage reports original versions that differ from the current tree as explicit gaps rather than silently equating them. Private inventories are not copied into this public index.

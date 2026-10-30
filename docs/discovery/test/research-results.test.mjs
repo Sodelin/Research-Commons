@@ -12,6 +12,7 @@ test('source-only proofs and failed receipts are searchable without claim edits'
  const script=fileURLToPath(new URL('../tools/index-research-results.py',import.meta.url));execFileSync('python3',[script,'--repo',repo,'--commit',pin,'--output',index]);execFileSync('python3',[script,'--repo',repo,'--output',index,'--check']);
  const r=await queryResearchResults(join(index,'manifest.json'),'XenonNeedle',{offset:1,limit:1});assert.equal(r.total,3);assert.equal(r.results.length,1);assert.equal(r.next_offset,2);assert.equal(r.coverage.path_only_paths,1);assert.equal(r.results[0].canonical_claim_references.length,0);
  await writeFile(join(repo,'research/later.md'),'Later source only');git('add','.');git('commit','-m','New result without card edit');assert.throws(()=>execFileSync('python3',[script,'--repo',repo,'--output',index,'--check'],{stdio:'pipe'}));
+ const extended=join(root,'extended');execFileSync('python3',[script,'--repo',repo,'--base',index,'--output',extended]);const scoped=await queryResearchResults(join(extended,'manifest.json'),'XenonNeedle',{pathPrefix:'research/proof.lean'});assert.equal(scoped.total,1);
  const file=join(index,'manifest.json'),m=JSON.parse(await readFile(file));m.inventory=m.inventory.filter(x=>x.path!=='research/proof.lean');await writeFile(file,JSON.stringify(m));await assert.rejects(queryResearchResults(file,'XenonNeedle'),/inventory/i);
  }finally{await rm(root,{recursive:true,force:true});}
 });

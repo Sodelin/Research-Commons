@@ -1,24 +1,32 @@
 #!/usr/bin/env python3
 """Deterministic immutable Git-tree inventory and deduplicated UTF-8 body shards."""
-import argparse,collections,gzip,hashlib,json,pathlib,subprocess
+import argparse,collections,gzip,hashlib,json,pathlib,subprocess,os
 ROOTS=['research','handoffs','communications']
 DEPENDENCIES={'.git','.lake','node_modules','__pycache__','target'}
 BINARY={'.gz','.xz','.zip','.tar','.pdf','.png','.jpg','.jpeg','.gif','.webp','.olean','.private','.server','.ir','.sig','.pyc','.wasm','.so','.a','.bin','.b64'}
 def digest(b):return hashlib.sha256(b).hexdigest()
 def encode(x):return (json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n').encode()
-def build(repo,commit,output):
+def build(repo,commit,output,base=None):
  def git(*a):return subprocess.check_output(['git','-C',str(repo),*a])
  origin=git('remote','get-url','origin').decode().strip()
  if origin not in ['https://github.com/Sodelin/Research-Commons.git','https://github.com/Sodelin/Research-Commons','git@github.com:Sodelin/Research-Commons.git']:raise ValueError('Unsupported repository origin')
  pin=git('rev-parse',commit+'^{commit}').decode().strip();assert len(pin)==40
+ prior=json.loads((base/'manifest.json').read_bytes()) if base else None
+ prior_rows={r['path']:r for r in prior['inventory']} if prior else {}
  tree=git('ls-tree','-rlz','--full-tree',pin,*ROOTS);inventory=[];groups=collections.defaultdict(list)
  for raw in tree.split(b'\0'):
   if not raw:continue
   meta,path=raw.split(b'\t',1);mode,kind,blob,size=meta.decode().split();path=path.decode();row={'path':path,'git_blob':blob,'bytes':int(size) if size!='-' else None};inventory.append(row)
+  if path in prior_rows:
+   old=prior_rows[path];assert old['git_blob']==blob and old['bytes']==row['bytes'],'Modified source: full rebuild required';row.update(old);continue
   reason='nonregular Git entry' if mode not in ['100644','100755'] or kind!='blob' else 'dependency/cache subtree' if set(path.split('/'))&DEPENDENCIES else 'binary/archive representation' if pathlib.PurePosixPath(path).suffix.lower() in BINARY else 'body exceeds 16MiB' if int(size)>16*1024*1024 else None
   if reason:row.update(coverage='path_only',reason=reason)
   else:groups[blob].append(row)
- output.mkdir(parents=True,exist_ok=False);shards=[];documents=[];total=0
+ assert set(prior_rows).issubset({r['path'] for r in inventory}),'Deleted source: full rebuild required'
+ output.mkdir(parents=True,exist_ok=False);shards=list(prior['shards']) if prior else [];documents=[];total=0
+ if prior:
+  for shard in shards:
+   source=base/shard['path'];assert digest(source.read_bytes())==shard['sha256'];os.link(source,output/shard['path'])
  def flush():
   nonlocal documents,total
   if not documents:return
@@ -36,7 +44,7 @@ def build(repo,commit,output):
   for row in rows:row.update(coverage='full_text',sha256=digest(body),shard=shard,document_url=url)
   documents.append({'url':url,'title':next((line[2:] for line in text.splitlines() if line.startswith('# ')),paths[0]),'body':text,'bytes':size,'sha256':digest(body),'git_blob':blob,'source_paths':paths,'bindings':[{'role':'published_source_body_status_not_inferred','label':' '.join(paths)}]});total+=size
  proc.stdin.close();assert proc.wait()==0;flush()
- manifest={'schema':1,'repository':'Sodelin/Research-Commons','commit':pin,'roots':ROOTS,'git_tree_inventory_sha256':digest(tree),'coverage':{'paths':len(inventory),'full_text_paths':sum(r['coverage']=='full_text' for r in inventory),'path_only_paths':sum(r['coverage']=='path_only' for r in inventory),'unique_text_bodies':sum(s['documents'] for s in shards)},'limitation':'Published tree at the exact pin only; no private tasks, deleted historical commits or linked external repositories. Path-only reasons are explicit. Authorship, review, Lean, execution, novelty and supersession must be read from the original source; no acceptance is inferred. Generated local CLI index is not a deployed website refresh.','shards':shards,'inventory':inventory};(output/'manifest.json').write_bytes(encode(manifest));print(json.dumps({'commit':pin,'coverage':manifest['coverage'],'shards':len(shards)}))
+ manifest={'schema':1,'source_commits':list(dict.fromkeys((prior.get('source_commits',[prior['commit']]) if prior else [])+[pin])),'repository':'Sodelin/Research-Commons','commit':pin,'roots':ROOTS,'git_tree_inventory_sha256':digest(tree),'coverage':{'paths':len(inventory),'full_text_paths':sum(r['coverage']=='full_text' for r in inventory),'path_only_paths':sum(r['coverage']=='path_only' for r in inventory),'unique_text_bodies':len({r['git_blob'] for r in inventory if r['coverage']=='full_text'}),'indexed_documents':sum(s['documents'] for s in shards)},'limitation':'Published tree at the exact pin only; no private tasks, deleted historical commits or linked external repositories. Path-only reasons are explicit. Authorship, review, Lean, execution, novelty and supersession must be read from the original source; no acceptance is inferred. Generated local CLI index is not a deployed website refresh.','shards':shards,'inventory':inventory};(output/'manifest.json').write_bytes(encode(manifest));print(json.dumps({'commit':pin,'coverage':manifest['coverage'],'shards':len(shards)}))
 def check(repo,index,expected):
  m=json.loads((index/'manifest.json').read_bytes());raw=subprocess.check_output(['git','-C',str(repo),'ls-tree','-rlz','--full-tree',m['commit'],*m['roots']]);assert digest(raw)==m['git_tree_inventory_sha256'],'tree differs';current=subprocess.check_output(['git','-C',str(repo),'ls-tree','-rlz','--full-tree',expected,*m['roots']]);assert digest(current)==m['git_tree_inventory_sha256'],'Published research changed: rebuild the index before claiming freshness';expected={r['path'] for r in m['inventory']};actual={r.split(b'\t',1)[1].decode() for r in raw.split(b'\0') if r};assert expected==actual and len(expected)==len(m['inventory']);seen={}
  for shard in m['shards']:
@@ -54,4 +62,4 @@ def check(repo,index,expected):
   else:assert row['reason']
  assert len(seen)==m['coverage']['full_text_paths'];print(json.dumps({'verified':True,'commit':m['commit'],'coverage':m['coverage']}))
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--repo',type=pathlib.Path,default=pathlib.Path('.'));p.add_argument('--commit',default='HEAD');p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--check',action='store_true');a=p.parse_args();check(a.repo,a.output,a.commit) if a.check else build(a.repo,a.commit,a.output)
+ p=argparse.ArgumentParser();p.add_argument('--repo',type=pathlib.Path,default=pathlib.Path('.'));p.add_argument('--commit',default='HEAD');p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--check',action='store_true');p.add_argument('--base',type=pathlib.Path);a=p.parse_args();check(a.repo,a.output,a.commit) if a.check else build(a.repo,a.commit,a.output,a.base)
