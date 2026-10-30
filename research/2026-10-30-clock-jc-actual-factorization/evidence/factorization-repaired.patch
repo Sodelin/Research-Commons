@@ -1,0 +1,254 @@
+diff --git a/packages/research/lean/ResearchCommons/MSCI/JC69Factorization.lean b/packages/research/lean/ResearchCommons/MSCI/JC69Factorization.lean
+new file mode 100644
+index 0000000..e07ed02
+--- /dev/null
++++ b/packages/research/lean/ResearchCommons/MSCI/JC69Factorization.lean
+@@ -0,0 +1,248 @@
++import ResearchCommons.MSCI.JC69Unranked
++import Mathlib.MeasureTheory.Integral.Lebesgue.Map
++
++/-!
++Graph-independent measurable readout of the actual flagged unranked timed
++observation, followed by actual complete-source factorization.
++Contributor: dot (OpenAI), 30 October 2026. BUILD PENDING.
++No finite-window recurrence/reconstruction or full CB-MSCI-001 claim.
++The readout is an ENNReal mass function, not claimed normalized off support.
++-/
++noncomputable section
++set_option autoImplicit false
++set_option backward.isDefEq.respectTransparency false
++namespace ResearchCommons.MSCI.JC69Factorization
++open MeasureTheory ProbabilityTheory Nanuq.Source GProgram.SourceForest GProgram.G5
++open UnifiedLean.Source.UniformizedSourceStep UnifiedLean.Source.FiniteSourceSnapshot
++open UnifiedLean.Source.UnrankedGenealogyObservation UnifiedLean.Source.SourceProgramTransport
++open UnifiedLean.Source.SourceCrossCarrierEpoch
++open UnifiedLean.Source.SourceCalendarCompiler UnifiedLean.Source.SourceInitializedCalendar
++open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
++open GProgram.G2.FaithfulPairAgeDecoration GProgram.G2.ChronologicalDecoration
++open GProgram.G2.CompleteCalendarAttachment GProgram.G2.CompleteDecoration
++open GProgram.G2.JointTimedObservation GProgram.G2.FaithfulTimedOutput
++open GProgram.G2.ChronologicalPathReadout GProgram.G2.CompletedPathProjection
++open GProgram.G2.ControlledTraceAssembly GProgram.G2.RootedTimedOutputSupport
++open GProgram.G2.ActualTimedAllPanelLaw
++open ResearchCommons.MSCI.JC69 ResearchCommons.MSCI.JC69Tree
++open ResearchCommons.MSCI.JC69Measurable ResearchCommons.MSCI.JC69Source
++open ResearchCommons.MSCI.JC69Unranked
++open scoped Classical BigOperators NNReal ENNReal
++variable {Copy : Type*} [Fintype Copy] [DecidableEq Copy] [Nonempty Copy]
++attribute [local instance] GProgram.G2.CompleteCalendarAttachment.unrankedForestMeasurable
++  GProgram.G2.LiteralMarkedClockTrace.codeMeasurable
++  GProgram.G2.CalendarHistoryBinding.joinedMeasurable
++  GProgram.G2.EventualPathReadout.terminalOptionMeasurable
++
++/-- Choice depends only on countable topology, never on real dates or a
++source graph. On singleton output it represents exactly its child-swap class. -/
++def representative (f : Option (Finset (UnrankedTree Copy))) : Genealogy Copy :=
++  if h : ∃ t : Genealogy Copy, f = some {toUnranked t} then h.choose
++  else .leaf (Classical.choice (inferInstance : Nonempty Copy))
++
++lemma representative_singleton (t : Genealogy Copy) :
++    UnorderedEquiv t (representative (some {toUnranked t})) := by
++  have h : ∃ a : Genealogy Copy, some ({toUnranked t} : Finset (UnrankedTree Copy)) = some {toUnranked a} := ⟨t,rfl⟩
++  have he : toUnranked t = toUnranked h.choose := by
++    simpa only [Option.some.injEq,Finset.singleton_inj] using h.choose_spec
++  simpa only [representative,dif_pos h] using (toUnranked_eq_iff _ _).mp he
++
++/-- Invalid flags are not interpreted as genuine zero ages. Values away from
++the actual full-mass support are harmless total-function extensions only. -/
++def timedMass (leafAge : Copy → ℝ) (p : Copy → Base)
++    (o : TimedObservation Copy) : ℝ≥0∞ :=
++  if ∀ x y, (o.2 x y).1 = true then
++    ENNReal.ofReal (rootLikelihood (representative o.1)
++      (clockSurvivals leafAge _ (decode (fun x y => (o.2 x y).2) _))
++      (labelPattern (representative o.1) p))
++  else 0
++
++lemma timed_mass_measurable (leafAge : Copy → ℝ) (p : Copy → Base) :
++    Measurable (timedMass leafAge p) := by
++  apply measurable_from_prod_countable_right
++  intro f
++  have hm : Measurable (fun M : Copy → Copy → Bool × ℝ => fun x y => (M x y).2) := by
++    apply measurable_pi_lambda
++    intro x
++    apply measurable_pi_lambda
++    intro y
++    exact ((measurable_pi_apply y).comp (measurable_pi_apply x)).snd
++  have hf : Measurable (fun M : Copy → Copy → Bool × ℝ => ∀ x y, (M x y).1 = true) := by
++    apply Measurable.forall
++    intro x
++    apply Measurable.forall
++    intro y
++    exact (((measurable_pi_apply y).comp (measurable_pi_apply x)).fst).eq measurable_const
++  exact Measurable.ite hf.setOf
++    (((decoded_probability_measurable leafAge (representative f)
++      (labelPattern (representative f) p)).comp hm).ennreal_ofReal) measurable_const
++
++def timedLocusMass (L : ℕ) (leafAge : Copy → ℝ)
++    (p : Fin L → Copy → Base) (o : TimedObservation Copy) : ℝ≥0∞ :=
++  ∏ j, timedMass leafAge (p j) o
++
++lemma timed_locus_mass_measurable (L : ℕ) (leafAge : Copy → ℝ)
++    (p : Fin L → Copy → Base) : Measurable (timedLocusMass L leafAge p) :=
++  Finset.measurable_prod Finset.univ (fun j _ => timed_mass_measurable leafAge (p j))
++
++variable {V E X : Type*}
++variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
++
++/-- The equality is derived from actual decoration transport, not a desired
++channel-factorization assumption. The same observed matrix is decoded. -/
++theorem timed_mass_matrixObservation (N : RootedBinary V E X) {sample : Copy → X}
++    (leafAge : Copy → ℝ) (d : Code N sample) (M : Copy → Copy → ℝ)
++    (hd : GoodPoint N leafAge (d,M)) (p : Copy → Base) :
++    timedMass leafAge p (matrixObservation N Finset.univ d M) =
++      conditionalKernel N leafAge (d,M) p := by
++  rw [conditional_kernel_probability N leafAge (d,M) hd p]
++  have hf := completed_forest_singleton N d hd.1
++  have hflags : ∀ x y, ((matrixObservation N Finset.univ d M).2 x y).1 = true := by
++    intro x y
++    simp [matrixObservation]
++  unfold timedMass
++  rw [if_pos hflags]
++  simp only [matrixObservation,Finset.mem_univ,and_self,if_true]
++  rw [hf]
++  obtain ⟨dec,hdec,_,_⟩ := hd.2.choose_spec (selectedRoot N d) (selected_root_live N d)
++  apply congrArg ENNReal.ofReal
++  exact (decoded_root_probability_unordered leafAge
++    (representative_singleton ((state d).genealogy (selectedRoot N d)))
++    (d.property.forest.wellLabelled _ (selected_root_live N d)) dec M hdec p).symm
++
++theorem timed_locus_mass_matrixObservation (L : ℕ) (N : RootedBinary V E X)
++    {sample : Copy → X} (leafAge : Copy → ℝ) (d : Code N sample)
++    (M : Copy → Copy → ℝ) (hd : GoodPoint N leafAge (d,M))
++    (p : Fin L → Copy → Base) :
++    timedLocusMass L leafAge p (matrixObservation N Finset.univ d M) =
++      conditionalLocusKernel L N leafAge (d,M) p := by
++  change (∏ j, timedMass leafAge (p j) (matrixObservation N Finset.univ d M)) =
++    ∏ j, conditionalKernel N leafAge (d,M) (p j)
++  exact Finset.prod_congr rfl (fun j _ => timed_mass_matrixObservation N leafAge d M hd (p j))
++
++/-- Literal existing chronological-path observer; no replacement source law. -/
++def recordReadout (N : RootedBinary V E X) (C : Calendar N.graph)
++    (sample : Copy → X) (register : V → Bool) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)
++    (z : CompleteCalendarRecord N sample (compiledCalendarProgram N C H gamma common)) :
++    TimedObservation Copy :=
++  timedObservation N C sample Finset.univ
++    (chronologicalPath N (compiledCalendarProgram N C H gamma common)
++      (observeCompleted N (fun d => joinedProjection N Finset.univ (.inl d))
++        (compiledCalendarProgram N C H gamma common) (initialCode N sample register) z))
++
++/-- Pointwise on the PROVED original full-mass support, including actual finite
++flags, original sampling ages and actual completed topology. -/
++theorem actual_readout_mass_ae (L : ℕ) (N : RootedBinary V E X) (C : Calendar N.graph)
++    (sample : Copy → X) (register : V → Bool) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)
++    (r : PositivePairRates E) (p : Fin L → Copy → Base) :
++    ∀ᵐ z ∂completeCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
++      (initialCode N sample register),
++      timedLocusMass L (fun x => C.age (N.leaf (sample x))) p
++        (recordReadout N C sample register H gamma common z) =
++      conditionalLocusKernel L N (fun x => C.age (N.leaf (sample x)))
++        (originalPoint N C sample register H gamma common z) p := by
++  filter_upwards [actual_original_faithful_output N C sample register H gamma common r Finset.univ,
++    actual_original_point_support N C sample register H gamma common r] with z ho hz
++  unfold recordReadout
++  rw [ho]
++  exact timed_locus_mass_matrixObservation L N _ _ _ hz p
++
++
++lemma record_readout_measurable (N : RootedBinary V E X) (C : Calendar N.graph)
++    (sample : Copy → X) (register : V → Bool) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool) :
++    Measurable (recordReadout N C sample register H gamma common) := by
++  change Measurable (fun z =>
++    (fullReadout N C sample Finset.univ (compiledCalendarProgram N C H gamma common)
++      (register,z)).2)
++  exact (full_readout_measurable N C sample Finset.univ _).snd.comp
++    (measurable_const.prodMk measurable_id)
++
++/-- Actual source integral, with the site product still inside its ONE trace. -/
++theorem actual_source_readout_integral (L : ℕ) (N : RootedBinary V E X)
++    (C : Calendar N.graph) (sample : Copy → X) (register : V → Bool)
++    (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval)
++    (common : Hybrid N → Bool) (r : PositivePairRates E)
++    (p : Fin L → Copy → Base) :
++    actualLocusLaw L N C sample register H gamma common r p =
++      ∫⁻ z, timedLocusMass L (fun x => C.age (N.leaf (sample x))) p
++        (recordReadout N C sample register H gamma common z)
++      ∂completeCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
++        (initialCode N sample register) := by
++  change (∫⁻ z, conditionalLocusKernel L N (fun x => C.age (N.leaf (sample x)))
++    (originalPoint N C sample register H gamma common z) p
++    ∂completeCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
++      (initialCode N sample register)) = _
++  exact (lintegral_congr_ae (actual_readout_mass_ae L N C sample register H gamma common r p)).symm
++
++/-- Existing whole registered trace pushed to the EXISTING flagged timed
++observer; only the register is forgotten, not source randomization repeated. -/
++def observedTimedLaw (N : RootedBinary V E X) (C : Calendar N.graph)
++    (sample : Copy → X) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)
++    (r : PositivePairRates E) (ρ : PMF (V → Bool)) : Measure (TimedObservation Copy) :=
++  (registeredTraceLaw N sample r (compiledCalendarProgram N C H gamma common) ρ).map
++    (fun z => (fullReadout N C sample Finset.univ
++      (compiledCalendarProgram N C H gamma common) z).2)
++
++/-- Genuine whole-source factorization, with original rates, dates, parent
++registry, routing probabilities and once-only entering bank all retained. -/
++theorem registered_source_factorization (L : ℕ) (N : RootedBinary V E X)
++    (C : Calendar N.graph) (sample : Copy → X) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)
++    (r : PositivePairRates E) (ρ : PMF (V → Bool)) (p : Fin L → Copy → Base) :
++    registeredLocusLaw L N C sample H gamma common r ρ p =
++      ∫⁻ o, timedLocusMass L (fun x => C.age (N.leaf (sample x))) p o
++        ∂observedTimedLaw N C sample H gamma common r ρ := by
++  rw [registered_locus_probability,observedTimedLaw,
++    lintegral_map (timed_locus_mass_measurable L _ p)
++      (full_readout_measurable N C sample Finset.univ _).snd,
++    registeredTraceLaw,lintegral_finsetSum_measure]
++  apply Finset.sum_congr rfl
++  intro reg _
++  rw [lintegral_smul_measure,smul_eq_mul]
++  have hmap := lintegral_map
++      (μ := completeCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
++        (initialCode N sample reg))
++      (g := fun z => (reg, z))
++      ((timed_locus_mass_measurable L (fun x => C.age (N.leaf (sample x))) p).comp
++        (full_readout_measurable N C sample Finset.univ
++          (compiledCalendarProgram N C H gamma common)).snd)
++      (measurable_const.prodMk measurable_id)
++  simp only [Function.comp_apply] at hmap
++  rw [hmap]
++  exact congrArg (fun a : ℝ≥0∞ => ρ reg * a)
++    (actual_source_readout_integral L N C sample reg H gamma common r p)
++
++variable {V' E' X' : Type*}
++variable [DecidableEq V'] [DecidableEq E'] [Fintype V'] [Fintype E'] [Fintype X']
++
++/-- Reverse direction at EVERY finite locus length, across different source
++carriers on the SAME complete labelled copy panel and same sampling dates.
++No equality of source routes/registers/graphs is demanded. This does not prove
++the finite-window forward direction or the full scientific catalogue bridge. -/
++theorem equal_timed_law_equal_locus (L : ℕ)
++    (N : RootedBinary V E X) (C : Calendar N.graph) (sample : Copy → X)
++    (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval)
++    (common : Hybrid N → Bool) (r : PositivePairRates E) (ρ : PMF (V → Bool))
++    (N' : RootedBinary V' E' X') (C' : Calendar N'.graph) (sample' : Copy → X')
++    (H' : OriginalParentRegistry N') (gamma' : Hybrid N' → unitInterval)
++    (common' : Hybrid N' → Bool) (r' : PositivePairRates E') (ρ' : PMF (V' → Bool))
++    (hAge : (fun x => C.age (N.leaf (sample x))) =
++      (fun x => C'.age (N'.leaf (sample' x))))
++    (hLaw : observedTimedLaw N C sample H gamma common r ρ =
++      observedTimedLaw N' C' sample' H' gamma' common' r' ρ') :
++    registeredLocusLaw L N C sample H gamma common r ρ =
++      registeredLocusLaw L N' C' sample' H' gamma' common' r' ρ' := by
++  apply PMF.ext
++  intro p
++  rw [registered_source_factorization,registered_source_factorization,hAge,hLaw]
++
++#print axioms timed_mass_measurable
++#print axioms timed_locus_mass_matrixObservation
++#print axioms actual_readout_mass_ae
++#print axioms registered_source_factorization
++#print axioms equal_timed_law_equal_locus
++end ResearchCommons.MSCI.JC69Factorization

@@ -1,0 +1,21 @@
+import ResearchCommons.MSCI.JC69Factorization
+#check ResearchCommons.MSCI.JC69Factorization.representative_singleton
+#print axioms ResearchCommons.MSCI.JC69Factorization.representative_singleton
+#check ResearchCommons.MSCI.JC69Factorization.timed_mass_measurable
+#print axioms ResearchCommons.MSCI.JC69Factorization.timed_mass_measurable
+#check ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_measurable
+#print axioms ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_measurable
+#check ResearchCommons.MSCI.JC69Factorization.timed_mass_matrixObservation
+#print axioms ResearchCommons.MSCI.JC69Factorization.timed_mass_matrixObservation
+#check ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_matrixObservation
+#print axioms ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_matrixObservation
+#check ResearchCommons.MSCI.JC69Factorization.actual_readout_mass_ae
+#print axioms ResearchCommons.MSCI.JC69Factorization.actual_readout_mass_ae
+#check ResearchCommons.MSCI.JC69Factorization.record_readout_measurable
+#print axioms ResearchCommons.MSCI.JC69Factorization.record_readout_measurable
+#check ResearchCommons.MSCI.JC69Factorization.actual_source_readout_integral
+#print axioms ResearchCommons.MSCI.JC69Factorization.actual_source_readout_integral
+#check ResearchCommons.MSCI.JC69Factorization.registered_source_factorization
+#print axioms ResearchCommons.MSCI.JC69Factorization.registered_source_factorization
+#check ResearchCommons.MSCI.JC69Factorization.equal_timed_law_equal_locus
+#print axioms ResearchCommons.MSCI.JC69Factorization.equal_timed_law_equal_locus

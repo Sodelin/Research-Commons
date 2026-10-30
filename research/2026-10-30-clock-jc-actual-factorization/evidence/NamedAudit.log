@@ -1,0 +1,133 @@
+ResearchCommons.MSCI.JC69Factorization.representative_singleton.{u_1} {Copy : Type u_1} [Fintype Copy]
+  [DecidableEq Copy] [Nonempty Copy] (t : GProgram.SourceForest.Genealogy Copy) :
+  UnifiedLean.Source.UnrankedGenealogyObservation.UnorderedEquiv t
+    (ResearchCommons.MSCI.JC69Factorization.representative
+      (some {UnifiedLean.Source.UnrankedGenealogyObservation.toUnranked t}))
+'ResearchCommons.MSCI.JC69Factorization.representative_singleton' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.timed_mass_measurable.{u_1} {Copy : Type u_1} [Fintype Copy] [DecidableEq Copy]
+  [Nonempty Copy] (leafAge : Copy → ℝ) (p : Copy → ResearchCommons.MSCI.JC69.Base) :
+  Measurable (ResearchCommons.MSCI.JC69Factorization.timedMass leafAge p)
+'ResearchCommons.MSCI.JC69Factorization.timed_mass_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_measurable.{u_1} {Copy : Type u_1} [Fintype Copy]
+  [DecidableEq Copy] [Nonempty Copy] (L : ℕ) (leafAge : Copy → ℝ) (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  Measurable (ResearchCommons.MSCI.JC69Factorization.timedLocusMass L leafAge p)
+'ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.timed_mass_matrixObservation.{u_1, u_2, u_3, u_4} {Copy : Type u_1}
+  [Fintype Copy] [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V]
+  [DecidableEq E] [Fintype V] [Fintype E] [Fintype X] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (leafAge : Copy → ℝ) (d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (M : Copy → Copy → ℝ)
+  (hd : ResearchCommons.MSCI.JC69Source.GoodPoint N leafAge (d, M)) (p : Copy → ResearchCommons.MSCI.JC69.Base) :
+  ResearchCommons.MSCI.JC69Factorization.timedMass leafAge p
+      (GProgram.G2.FaithfulTimedOutput.matrixObservation N Finset.univ d M) =
+    (ResearchCommons.MSCI.JC69Source.conditionalKernel N leafAge (d, M)) p
+'ResearchCommons.MSCI.JC69Factorization.timed_mass_matrixObservation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_matrixObservation.{u_1, u_2, u_3, u_4} {Copy : Type u_1}
+  [Fintype Copy] [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V]
+  [DecidableEq E] [Fintype V] [Fintype E] [Fintype X] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (leafAge : Copy → ℝ) (d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (M : Copy → Copy → ℝ)
+  (hd : ResearchCommons.MSCI.JC69Source.GoodPoint N leafAge (d, M))
+  (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  ResearchCommons.MSCI.JC69Factorization.timedLocusMass L leafAge p
+      (GProgram.G2.FaithfulTimedOutput.matrixObservation N Finset.univ d M) =
+    (ResearchCommons.MSCI.JC69Source.conditionalLocusKernel L N leafAge (d, M)) p
+'ResearchCommons.MSCI.JC69Factorization.timed_locus_mass_matrixObservation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.actual_readout_mass_ae.{u_1, u_2, u_3, u_4} {Copy : Type u_1} [Fintype Copy]
+  [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E]
+  [Fintype V] [Fintype E] [Fintype X] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph)
+  (sample : Copy → X) (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  ∀ᵐ (z :
+    GProgram.G2.CompleteCalendarAttachment.CompleteCalendarRecord N sample
+      (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma
+        common)) ∂GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r
+      (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+      (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register),
+    ResearchCommons.MSCI.JC69Factorization.timedLocusMass L (fun x => C.age (N.leaf (sample x))) p
+        (ResearchCommons.MSCI.JC69Factorization.recordReadout N C sample register H gamma common z) =
+      (ResearchCommons.MSCI.JC69Source.conditionalLocusKernel L N (fun x => C.age (N.leaf (sample x)))
+          (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common z))
+        p
+'ResearchCommons.MSCI.JC69Factorization.actual_readout_mass_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.record_readout_measurable.{u_1, u_2, u_3, u_4} {Copy : Type u_1} [Fintype Copy]
+  [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E]
+  [Fintype V] [Fintype E] [Fintype X] (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph)
+  (sample : Copy → X) (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool) :
+  Measurable (ResearchCommons.MSCI.JC69Factorization.recordReadout N C sample register H gamma common)
+'ResearchCommons.MSCI.JC69Factorization.record_readout_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.actual_source_readout_integral.{u_1, u_2, u_3, u_4} {Copy : Type u_1}
+  [Fintype Copy] [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V]
+  [DecidableEq E] [Fintype V] [Fintype E] [Fintype X] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  (ResearchCommons.MSCI.JC69Source.actualLocusLaw L N C sample register H gamma common r) p =
+    ∫⁻ (z :
+      GProgram.G2.CompleteCalendarAttachment.CompleteCalendarRecord N sample
+        (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)),
+      ResearchCommons.MSCI.JC69Factorization.timedLocusMass L (fun x => C.age (N.leaf (sample x))) p
+        (ResearchCommons.MSCI.JC69Factorization.recordReadout N C sample register H gamma common
+          z) ∂GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r
+        (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+        (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register)
+'ResearchCommons.MSCI.JC69Factorization.actual_source_readout_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.registered_source_factorization.{u_1, u_2, u_3, u_4} {Copy : Type u_1}
+  [Fintype Copy] [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V]
+  [DecidableEq E] [Fintype V] [Fintype E] [Fintype X] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (ρ : PMF (V → Bool))
+  (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  (ResearchCommons.MSCI.JC69Source.registeredLocusLaw L N C sample H gamma common r ρ) p =
+    ∫⁻ (o : GProgram.G2.JointTimedObservation.TimedObservation Copy),
+      ResearchCommons.MSCI.JC69Factorization.timedLocusMass L (fun x => C.age (N.leaf (sample x))) p
+        o ∂ResearchCommons.MSCI.JC69Factorization.observedTimedLaw N C sample H gamma common r ρ
+'ResearchCommons.MSCI.JC69Factorization.registered_source_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Factorization.equal_timed_law_equal_locus.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {Copy : Type u_1}
+  [Fintype Copy] [DecidableEq Copy] [Nonempty Copy] {V : Type u_2} {E : Type u_3} {X : Type u_4} [DecidableEq V]
+  [DecidableEq E] [Fintype V] [Fintype E] [Fintype X] {V' : Type u_5} {E' : Type u_6} {X' : Type u_7} [DecidableEq V']
+  [DecidableEq E'] [Fintype V'] [Fintype E'] [Fintype X'] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (ρ : PMF (V → Bool))
+  (N' : Nanuq.Source.RootedBinary V' E' X') (C' : GProgram.G5.Calendar N'.graph) (sample' : Copy → X')
+  (H' : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N')
+  (gamma' : UnifiedLean.Source.NativeParentRouting.Hybrid N' → ↑unitInterval)
+  (common' : UnifiedLean.Source.NativeParentRouting.Hybrid N' → Bool)
+  (r' : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E') (ρ' : PMF (V' → Bool))
+  (hAge : (fun x => C.age (N.leaf (sample x))) = fun x => C'.age (N'.leaf (sample' x)))
+  (hLaw :
+    ResearchCommons.MSCI.JC69Factorization.observedTimedLaw N C sample H gamma common r ρ =
+      ResearchCommons.MSCI.JC69Factorization.observedTimedLaw N' C' sample' H' gamma' common' r' ρ') :
+  ResearchCommons.MSCI.JC69Source.registeredLocusLaw L N C sample H gamma common r ρ =
+    ResearchCommons.MSCI.JC69Source.registeredLocusLaw L N' C' sample' H' gamma' common' r' ρ'
+'ResearchCommons.MSCI.JC69Factorization.equal_timed_law_equal_locus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
