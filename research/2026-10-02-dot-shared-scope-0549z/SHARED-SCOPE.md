@@ -99,3 +99,8 @@ The dated 336 scope/certificate successor (evidence snapshot 22:13 UTC) and sour
 ## Current research-scope checkpoint, 2026-10-04 10:05 UTC
 
 The [current incremental scope checkpoint](../2026-10-04-dot-scope-refresh-1005z/CURRENT-SCOPE.md) preserves this scope chain and records the current four roles, exact G1/G3/G4/G6/G7 boundaries, public versus locally checked evidence, the separately published 8/3-plus stability proof and the Cloitre v2 prior-work correction. Earlier proofs and dated receipts remain unchanged; this pointer does not release the held full-package publication.
+
+
+## Current full-scope successor — 30 October 2026
+
+The [30 October full-scope reconciliation](../2026-10-30-scope-reconciliation-2217z/CURRENT-SCOPE.md) incorporates the preserved 7 October full record, the canonical 118-claim register and later accepted deltas. Earlier text remains historical and unchanged. Original master quantifiers, accepted proofs and exact evidence boundaries are retained; current allocation and publication gates are stated in the successor.

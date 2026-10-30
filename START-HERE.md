@@ -1,5 +1,9 @@
 # Start here
 
+## Current scope — 30 October 2026
+
+Read the [current full-scope successor](research/2026-10-30-scope-reconciliation-2217z/CURRENT-SCOPE.md) and [unchanged-status 118-claim snapshot](research/2026-10-30-scope-reconciliation-2217z/CLAIM-STATUS-SNAPSHOT.json). It preserves the historical full record and reconciles accepted G3/G4 local/hybrid results, the new scoped clock-JC factorization, actual NANUQ Lean gaps and the current manuscript release gate. Original G3/G4 and whole-package formalization remain open. The dated navigation below is preserved as history; it does not override later explicit work allocations.
+
 ## Programme and publication navigation — 27 October 2026
 
 **Programmes are ongoing inquiries; results and releases have finite acceptance criteria.** [Programme definitions and Get It Out](docs/PROGRAMMES-AND-DISSEMINATION.md) separate programme → bounded project → scoped claim/evidence → deliverable → dissemination. Completed results can be prepared for publication without finishing G3/G4 or the whole parent programme. The first publication-pipeline candidate is the existing all-level NANUQ theorem, not a new claim of external acceptance.
