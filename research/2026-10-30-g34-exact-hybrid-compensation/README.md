@@ -15,3 +15,7 @@ Replay with already available Python and SymPy:
     python check_hybrid.py
 
 check.json and hybrid-check.log are the author's executed receipts. These are formula controls, not arbitrary-parameter physical realization tests or a new full-source rebuild. SOURCE-ADAPTATION.json records exact local-to-public content hashes; originals remain preserved. No private conversation transcript is included.
+
+## Reviewed source-projectivity refinement
+
+PROJECTIVE-TWO-BAND-SHAPE-REDUCTION.md reuses the inherited one-dimensional two-drop top-band relation in the SAME reference frame. For the expressly natural, exchangeable, opaque-root serial subclass it removes the hybrid shape residual exactly. Source scalar-profile/prefix and direct local terms remain uncontrolled on the complete target fibre. See the dated review addendum; no extension to every original network is asserted.
