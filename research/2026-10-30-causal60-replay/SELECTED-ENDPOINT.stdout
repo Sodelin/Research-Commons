@@ -1,0 +1,105 @@
+RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish.{u} {V : Type u}
+  {G : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V} {a b c : V}
+  (w : RestrictedCausal.VertexActivePaths.DiscriminatingWitness.{u} G a b c) :
+  Ne.{u + 1} (RestrictedCausal.VertexActivePaths.DiscriminatingWitness.start.{u} w) c
+'RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish' depends on axioms: [propext]
+RestrictedCausal.SelectedWalk.Route.endpoint_mem_of_nonempty.{u} {V : Type u} {R : V → V → Prop} {a b : V}
+  {xs : List.{u} V} (route : RestrictedCausal.SelectedWalk.Route.{u} R a xs b) (nonempty : Ne.{u + 1} xs List.nil.{u}) :
+  Membership.mem.{u, u} xs b
+'RestrictedCausal.SelectedWalk.Route.endpoint_mem_of_nonempty' does not depend on any axioms
+RestrictedCausal.DiscriminatingStatus.rebuild_parent_prefix.{u} {V : Type u}
+  {R : RestrictedCausal.SelectedWalk.Arrival.{u} V → RestrictedCausal.SelectedWalk.Arrival.{u} V → Prop}
+  (H : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V)
+  (single : RestrictedCausal.DiscriminatingStatus.SingleEdges.{u} H) (x b : V)
+  {q : RestrictedCausal.SelectedWalk.Arrival.{u} V} {xs : List.{u} (RestrictedCausal.SelectedWalk.Arrival.{u} V)}
+  (shape : RestrictedCausal.SelectedWalk.Route.{u} R (RestrictedCausal.SelectedWalk.Arrival.mk.{u} x none.{0}) xs q)
+  (nonempty : Ne.{u + 1} xs List.nil.{u})
+  (allHeads :
+    ∀ (r : RestrictedCausal.SelectedWalk.Arrival.{u} V),
+      Membership.mem.{u, u} xs r →
+        Eq.{1} (RestrictedCausal.SelectedWalk.Arrival.incoming.{u} r)
+          (some.{0} RestrictedCausal.SelectedWalk.Mark.head))
+  (colliders :
+    RestrictedCausal.WeakInducing.AllTriples.{u} (RestrictedCausal.DiscriminatingStatus.Collider.{u} H)
+      (HAppend.hAppend.{u, u, u}
+        (List.map.{u, u} RestrictedCausal.SelectedWalk.Arrival.vertex.{u}
+          (List.cons.{u} (RestrictedCausal.SelectedWalk.Arrival.mk.{u} x none.{0}) xs))
+        (List.cons.{u} b List.nil.{u}))) :
+  RestrictedCausal.SelectedWalk.Route.{u} (RestrictedCausal.DiscriminatingStatus.ColliderStep.{u} H)
+      (RestrictedCausal.SelectedWalk.Arrival.mk.{u} x none.{0}) xs q ∧
+    ∃ incoming,
+      RestrictedCausal.SelectedWalk.MarkedGraph.edge.{u} H (RestrictedCausal.SelectedWalk.Arrival.vertex.{u} q) b
+        RestrictedCausal.SelectedWalk.Mark.head incoming
+'RestrictedCausal.DiscriminatingStatus.rebuild_parent_prefix' depends on axioms: [propext]
+RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish._simp_1_1.{u_1} {α : Type u_1} {a b : α} :
+  Eq.{1} (Membership.mem.{u_1, u_1} (List.cons.{u_1} b List.nil.{u_1}) a) (Eq.{u_1 + 1} a b)
+'RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish._simp_1_1' depends on axioms: [propext]
+RestrictedCausal.DiscriminatingStatus.extended_parent_details.{u} {V : Type u}
+  (G : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V) (y : V) {p q r : RestrictedCausal.SelectedWalk.Arrival.{u} V}
+  {xs : List.{u} (RestrictedCausal.SelectedWalk.Arrival.{u} V)}
+  (route :
+    RestrictedCausal.SelectedWalk.Route.{u} (RestrictedCausal.DiscriminatingStatus.ColliderParentStep.{u} G y) p xs q)
+  (last : RestrictedCausal.DiscriminatingStatus.ColliderParentStep.{u} G y q r)
+  (state : RestrictedCausal.SelectedWalk.Arrival.{u} V) :
+  Membership.mem.{u, u} xs state →
+    Eq.{1} (RestrictedCausal.SelectedWalk.Arrival.incoming.{u} state)
+        (some.{0} RestrictedCausal.SelectedWalk.Mark.head) ∧
+      RestrictedCausal.CanonicalSelection.Directed.{u} G (RestrictedCausal.SelectedWalk.Arrival.vertex.{u} state) y
+'RestrictedCausal.DiscriminatingStatus.extended_parent_details' depends on axioms: [propext]
+RestrictedCausal.DiscriminatingStatus.parent_route_forget.{u} {V : Type u}
+  (G : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V) (y : V) {p q : RestrictedCausal.SelectedWalk.Arrival.{u} V}
+  {xs : List.{u} (RestrictedCausal.SelectedWalk.Arrival.{u} V)}
+  (route :
+    RestrictedCausal.SelectedWalk.Route.{u} (RestrictedCausal.DiscriminatingStatus.ColliderParentStep.{u} G y) p xs q) :
+  RestrictedCausal.SelectedWalk.Route.{u} (RestrictedCausal.DiscriminatingStatus.ColliderStep.{u} G) p xs q
+'RestrictedCausal.DiscriminatingStatus.parent_route_forget' does not depend on any axioms
+RestrictedCausal.DiscriminatingStatus.witness_status_transfer.{u} {V : Type u}
+  (G H : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V) (lawsH : RestrictedCausal.HPLTarget.AncestralLaws.{u} H)
+  (singleG : RestrictedCausal.DiscriminatingStatus.SingleEdges.{u} G)
+  (singleH : RestrictedCausal.DiscriminatingStatus.SingleEdges.{u} H)
+  (skeleton :
+    ∀ (x y : V),
+      RestrictedCausal.DiscriminatingStatus.Adjacent.{u} G x y ↔
+        RestrictedCausal.DiscriminatingStatus.Adjacent.{u} H x y)
+  (shared : RestrictedCausal.DiscriminatingStatus.SharedSeparators.{u} G H) {a b c : V}
+  (w : RestrictedCausal.VertexActivePaths.DiscriminatingWitness.{u} G a b c)
+  (prefixColliders :
+    RestrictedCausal.WeakInducing.AllTriples.{u} (RestrictedCausal.DiscriminatingStatus.Collider.{u} H)
+      (HAppend.hAppend.{u, u, u}
+        (List.map.{u, u} RestrictedCausal.SelectedWalk.Arrival.vertex.{u}
+          (List.cons.{u}
+            (RestrictedCausal.SelectedWalk.Arrival.mk.{u}
+              (RestrictedCausal.VertexActivePaths.DiscriminatingWitness.start.{u} w) none.{0})
+            (RestrictedCausal.VertexActivePaths.DiscriminatingWitness.parents.{u} w)))
+        (List.cons.{u} b List.nil.{u}))) :
+  RestrictedCausal.DiscriminatingStatus.Collider.{u} G a b c ↔
+    RestrictedCausal.DiscriminatingStatus.Collider.{u} H a b c
+'RestrictedCausal.DiscriminatingStatus.witness_status_transfer' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+RestrictedCausal.DiscriminatingStatus.parent_step_forget.{u} {V : Type u}
+  (G : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V) (y : V) {p q : RestrictedCausal.SelectedWalk.Arrival.{u} V}
+  (step : RestrictedCausal.DiscriminatingStatus.ColliderParentStep.{u} G y p q) :
+  RestrictedCausal.DiscriminatingStatus.ColliderStep.{u} G p q
+'RestrictedCausal.DiscriminatingStatus.parent_step_forget' does not depend on any axioms
+RestrictedCausal.DiscriminatingStatus.rebuild_head_prefix.{u} {V : Type u}
+  {R : RestrictedCausal.SelectedWalk.Arrival.{u} V → RestrictedCausal.SelectedWalk.Arrival.{u} V → Prop}
+  (H : RestrictedCausal.SelectedWalk.MarkedGraph.{u} V)
+  (single : RestrictedCausal.DiscriminatingStatus.SingleEdges.{u} H) {p q : RestrictedCausal.SelectedWalk.Arrival.{u} V}
+  {xs : List.{u} (RestrictedCausal.SelectedWalk.Arrival.{u} V)}
+  (shape : RestrictedCausal.SelectedWalk.Route.{u} R p xs q) (previous b : V) :
+  Eq.{1} (RestrictedCausal.SelectedWalk.Arrival.incoming.{u} p) (some.{0} RestrictedCausal.SelectedWalk.Mark.head) →
+    (∀ (r : RestrictedCausal.SelectedWalk.Arrival.{u} V),
+        Membership.mem.{u, u} xs r →
+          Eq.{1} (RestrictedCausal.SelectedWalk.Arrival.incoming.{u} r)
+            (some.{0} RestrictedCausal.SelectedWalk.Mark.head)) →
+      RestrictedCausal.WeakInducing.AllTriples.{u} (RestrictedCausal.DiscriminatingStatus.Collider.{u} H)
+          (List.cons.{u} previous
+            (HAppend.hAppend.{u, u, u}
+              (List.map.{u, u} RestrictedCausal.SelectedWalk.Arrival.vertex.{u} (List.cons.{u} p xs))
+              (List.cons.{u} b List.nil.{u}))) →
+        RestrictedCausal.SelectedWalk.Route.{u} (RestrictedCausal.DiscriminatingStatus.ColliderStep.{u} H) p xs q ∧
+          ∃ incoming,
+            RestrictedCausal.SelectedWalk.MarkedGraph.edge.{u} H (RestrictedCausal.SelectedWalk.Arrival.vertex.{u} q) b
+              RestrictedCausal.SelectedWalk.Mark.head incoming
+'RestrictedCausal.DiscriminatingStatus.rebuild_head_prefix' depends on axioms: [propext]

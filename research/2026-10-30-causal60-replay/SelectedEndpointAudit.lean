@@ -1,0 +1,20 @@
+import DiscriminatingStatusTransport
+set_option pp.universes true
+#check RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish
+#print axioms RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish
+#check RestrictedCausal.SelectedWalk.Route.endpoint_mem_of_nonempty
+#print axioms RestrictedCausal.SelectedWalk.Route.endpoint_mem_of_nonempty
+#check RestrictedCausal.DiscriminatingStatus.rebuild_parent_prefix
+#print axioms RestrictedCausal.DiscriminatingStatus.rebuild_parent_prefix
+#check RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish._simp_1_1
+#print axioms RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish._simp_1_1
+#check RestrictedCausal.DiscriminatingStatus.extended_parent_details
+#print axioms RestrictedCausal.DiscriminatingStatus.extended_parent_details
+#check RestrictedCausal.DiscriminatingStatus.parent_route_forget
+#print axioms RestrictedCausal.DiscriminatingStatus.parent_route_forget
+#check RestrictedCausal.DiscriminatingStatus.witness_status_transfer
+#print axioms RestrictedCausal.DiscriminatingStatus.witness_status_transfer
+#check RestrictedCausal.DiscriminatingStatus.parent_step_forget
+#print axioms RestrictedCausal.DiscriminatingStatus.parent_step_forget
+#check RestrictedCausal.DiscriminatingStatus.rebuild_head_prefix
+#print axioms RestrictedCausal.DiscriminatingStatus.rebuild_head_prefix
