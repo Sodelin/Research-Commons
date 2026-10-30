@@ -2,11 +2,13 @@
 import {readFile} from 'node:fs/promises';
 import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters,validateAssessments} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
+import {queryResearchResults} from './research-results.mjs';
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
-let limit=25,offset=0;
+let limit=25,offset=0,researchResults=null;
 for(let i=0;i<args.length;i++){
   const k=args[i];
   if(k==='--limit'||k==='--offset'){const value=Number(args[++i]);if(!Number.isSafeInteger(value)||value<0||(k==='--limit'&&(value<1||value>100)))throw Error('Use --limit 1..100 and nonnegative --offset.');if(k==='--limit')limit=value;else offset=value;continue;}
+  if(k==='--research-results'){if(researchResults||!args[i+1])throw Error('Use one --research-results MANIFEST');researchResults=args[++i];continue;}
   if(k==='--refresh'){refresh=true;continue;}
   if(k==='--sources'){sources=true;continue;}
   if(k==='--archive'){archive=true;continue;}
@@ -14,6 +16,7 @@ for(let i=0;i<args.length;i++){
   if(!['--query','--status','--origin','--topic','--programme','--kind','--review','--formal-status','--novelty','--sort'].includes(k) || !args[i+1]) throw Error('Use --query TEXT, combinable --topic/--programme/--kind/--status/--origin/--review/--formal-status/--novelty, --sort subjective_reuse, [--refresh | --sources | --archive].');
   f[k==='--query'?'q':k.slice(2).replaceAll('-','_')]=args[++i];
 }
+if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit}),null,2));process.exit(0);}
 if(f.status && !Object.hasOwn(STATUS,f.status)) throw Error('Unknown status filter.');
 if(f.origin && !Object.hasOwn(ORIGIN,f.origin)) throw Error('Unknown origin filter.');
 if(changes&&(!refresh||sources||archive||f.sort))throw Error('--changes requires --refresh and compares claim snapshots; --sources, --archive and --sort belong to separate views.');

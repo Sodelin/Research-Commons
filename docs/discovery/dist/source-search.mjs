@@ -51,6 +51,13 @@ export function recoveredReferences(catalogue,manifest,baseURL){
         [{role:'recovered_manifest_note',label:f.title,catalogue_key:null}]};
   });
 }
+// Conservative necessary-condition filter using this engine's own query tokenizer.
+// Substring matches may over-select; final matching always uses searchSources.
+export function sourceQueryCandidates(documents,query){
+ const terms=MiniSearch.getDefault('tokenize')(String(query).trim()).map(MiniSearch.getDefault('processTerm')).filter(Boolean);
+ if(!terms.length)return documents;
+ return documents.filter(d=>{const fields=[d.title,d.body,d.url,...d.bindings.flatMap(b=>[b.claim_id,b.catalogue_key,b.label,b.catalogue_record?.scope])].filter(Boolean).join(' ').toLowerCase();return terms.every(t=>fields.includes(t));});
+}
 export function searchSources(corpus,query,claimIds=null){
   if(!indexes.has(corpus)){
     const index=new MiniSearch({idField:'url',fields:['title','body','claims']});

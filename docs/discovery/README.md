@@ -135,3 +135,22 @@ node docs/discovery/tools/programmes.mjs --outputs --id OUT-NANUQ-001
 ```
 
 Results include exact local file SHA256 identities, bounded output states and the joined canonical claim objects. This is a local-checkout view, not automatic remote refresh or evidence that any worker is executing. Empty claim bindings mean “not mapped here,” not “no work exists.” The older `tools/query.mjs` and deployed reader remain unchanged. See [definitions and gates](../PROGRAMMES-AND-DISSEMINATION.md).
+
+## Every published result: full-tree CLI search
+
+Follow the shared [every-result completion workflow](../../communications/2026-10-30-every-result-discoverable-2341z.md). The 118 claim IDs and their status fields remain the canonical claim register. A source body can be useful without having a claim card: partial proofs, failed approaches, counterexamples and superseded results belong in discovery with their original labels and correction links.
+
+The complete local body index uses the existing `source-search.mjs` engine. It inventories every Git entry under `research/`, `handoffs/` and `communications/` at an immutable commit, deduplicates identical blobs while retaining every path, and shards UTF-8 bodies. It includes Markdown, Lean, JSON receipts, logs and source code; it executes none of them. Dependency/cache subtrees, binary/archive representations, non-UTF8 bodies and files larger than16MiB remain path-only with explicit reasons in `manifest.json`. Linked external repositories and deleted historical commits need their own pinned inventories. This is complete accounting of the selected tree, not a claim that binary or oversized bodies have full-text coverage.
+
+```sh
+# Use a fresh output directory outside the checkout; the full corpus can be large.
+python3 docs/discovery/tools/index-research-results.py --repo . --commit HEAD --output /tmp/commons-result-index
+python3 docs/discovery/tools/index-research-results.py --repo . --commit HEAD --output /tmp/commons-result-index --check
+node docs/discovery/tools/query.mjs --research-results /tmp/commons-result-index/manifest.json --query JC69Factorization --limit 10
+```
+
+Queries support `--offset` and `--limit` across all shards. Source-only results have no inherited claim acceptance; output joins existing canonical claim references by source path where available. Claim-status/topic facets are deliberately refused in this body view because they can hide unbound suppliers. Read the returned source's authorship, review, formal/execution evidence and supersession text before reuse. A source hit is neither a new discovery count nor proof acceptance.
+
+The deterministic `--check` verifies complete tree accounting, every body hash/Git blob, shard bytes and path correspondence; it also fails when the requested current research tree differs from the indexed tree. Run it after publishing results. Rebuild after a failure; an unchanged claim-card diff does not establish source freshness. Preserve the original source and publish corrections with supersedes links.
+
+The tools and coverage receipt can be committed independently of generated local body shards. A successful local query or a committed receipt does not update the hosted reader, its bundled334-body corpus, or its older archive-path snapshot. No deployed full-text refresh is claimed by this change.
