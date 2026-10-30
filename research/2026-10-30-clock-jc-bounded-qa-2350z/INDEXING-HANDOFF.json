@@ -1,0 +1,60 @@
+{
+  "schema": "indexing-handoff-v1-not-a-registry",
+  "destination": "existing discoveries CLI; sole owner ingests",
+  "records": [
+    {
+      "record_key": "clock-jc.recurrence-exact-rational-regression.20261030",
+      "title": "2043 exact-rational recurrence/count-vector regression checks",
+      "proof_status": "PASS_BOUNDED_REGRESSION_NOT_LEAN",
+      "scope": "Bounded exact-rational checks only; candidate Lean inputs remain uncompiled at this checkpoint. No actual scientific expansion or full theorem.",
+      "source_files": [
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/tests/check_recurrence.py",
+          "sha256": "714a56c7832a2f0c960b3765df15d5103db6242fc6e311a4f87a6b083fc774ba"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/evidence/RESULT.json",
+          "sha256": "f3187aa553e09089b87370de5fb37d0b373acfaff3dd99b6a56c8f1e9fc6d9b3"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/evidence/ORIGINAL-REGRESSION-RECEIPT.json",
+          "sha256": "4b706addaa9bcfff9aca5e04f0ae0dfda3a4682dec87cdd6df2441bfb94d39a3"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/candidate-inputs/JC69ExponentialPolynomial.lean",
+          "sha256": "b7d54f1426aea3faacbb633b746d3cb2eeb73c9baf685327778e5c030b3545cb"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/candidate-inputs/JC69CountVectorGrid.lean",
+          "sha256": "d3f72429b6a66181512fd367db0e96d1ad4d1178ad65da3e4e5f781b00f35897"
+        }
+      ],
+      "publication_commit": "Resolve from the immutable commit containing this handoff; no branch-tip claim.",
+      "full_scientific_theorem_status": "HOLD_FULL_LEAN_PROOF_PENDING",
+      "ingest_action": "Upsert scoped/versioned record in existing discoveries CLI; no full theorem promotion."
+    },
+    {
+      "record_key": "clock-jc.rejected-scalar-epoch-composition",
+      "title": "Two-copy JC source rejects scalar epoch-product shortcut",
+      "proof_status": "HAND_COUNTEREXAMPLE_AND_EXACT_RATIONAL_CHECK_NOT_LEAN",
+      "scope": "W(2t)=5/8 while W(t)^2=9/16; actual exit-state resolution gives5/8. Rejects a shortcut, not the finite-window theorem.",
+      "source_files": [
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/SCALAR-EPOCH-COMPOSITION-COUNTEREXAMPLE.md",
+          "sha256": "d320e443e8581de36a450a34b2c9ff10ba7286af8ae1f45b07de8b6c765902c0"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/tests/check_counterexample.py",
+          "sha256": "d57f514df0812736525cdf8618894b5fbdda3913abdd655ac46f190f6214d73a"
+        },
+        {
+          "repository_path": "research/2026-10-30-clock-jc-bounded-qa-2350z/evidence/COUNTEREXAMPLE-ARITHMETIC.json",
+          "sha256": "baddc471a96b16832ee0b692439acd9ce642a1c9c102fa2a5a22d1956f05a0ea"
+        }
+      ],
+      "publication_commit": "Resolve from the immutable commit containing this handoff; no branch-tip claim.",
+      "full_scientific_theorem_status": "HOLD_FULL_LEAN_PROOF_PENDING",
+      "ingest_action": "Upsert scoped/versioned record in existing discoveries CLI; no full theorem promotion."
+    }
+  ]
+}
