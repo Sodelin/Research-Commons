@@ -28,3 +28,7 @@ Correct current entrypoints and their machine-readable records together; preserv
 ## Research discovery before new work
 
 Before allocating a proof, test or integration, use [reuse-before-work](docs/REUSE-BEFORE-WORK.md): query the canonical claim register, read matching accepted suppliers and later corrections, preserve current owners/holds, and name the exact new implication or added value. Missing formalization does not reopen completed hand mathematics. Record status-unverified when a lookup fails. The [shared reader/agent interface](docs/discovery/README.md) exposes stable claim IDs, exact evidence, provenance and typed relationships; no discovery result grants execution authority. Choose tools under the user's Why not Rust protocol: justify capability, integration, security, performance and maintainability per component rather than language familiarity or a Rust-only rule.
+
+## Result discovery completion
+
+Follow the [shared every-result workflow](communications/2026-10-30-every-result-discoverable-2341z.md) and the [full-tree CLI coverage check](docs/discovery/README.md#every-published-result-full-tree-cli-search) when publishing a result. Verify the exact source identity in a real paginated query; unchanged claim cards and nonzero related hit counts do not establish ingestion.
