@@ -1,0 +1,195 @@
+{
+  "root_module": "RestrictionEndpoints",
+  "module_count": 24,
+  "order": [
+    "Pruning",
+    "RootRotation",
+    "Reroot",
+    "AdjacentBlocks",
+    "Relabel",
+    "CanonicalRestriction",
+    "CyclicGaps",
+    "IntervalBridge",
+    "FiniteEdgeBridge",
+    "FiniteRestriction",
+    "SixLabels",
+    "RankOrder",
+    "QuartetLookup",
+    "QueryExists",
+    "QuartetRelabel",
+    "CodeBridge",
+    "QueryTransport",
+    "AnchorTransport",
+    "Decorate",
+    "ConstructTransport",
+    "CoefficientTransport",
+    "AllSizeCodes",
+    "ZeroTransport",
+    "RestrictionEndpoints"
+  ],
+  "modules": {
+    "Pruning": {
+      "source_sha256": "fb9fa92c9cd6b4c9a7fca3f70f3658cba962db708abc2f57270b14cfff698130",
+      "imports": [
+        "Mathlib.Data.List.Basic",
+        "Lean.Elab.Tactic.Omega"
+      ]
+    },
+    "RootRotation": {
+      "source_sha256": "ff23924c043918192856c6c278a2f79e9b048035100cc9c893ec338245ced44e",
+      "imports": [
+        "Pruning"
+      ]
+    },
+    "Reroot": {
+      "source_sha256": "d980d67aee1380aed2638490d86c4d1a61d8b6f47a83f3023507dd6f0208d572",
+      "imports": [
+        "RootRotation"
+      ]
+    },
+    "AdjacentBlocks": {
+      "source_sha256": "922f71773e7bf5b0bc695ebc37f2e008f97189d36a141e9783c4e32794655ebc",
+      "imports": [
+        "Reroot",
+        "AdjacentSemantics",
+        "Init.Data.BitVec.Lemmas"
+      ]
+    },
+    "Relabel": {
+      "source_sha256": "92a5d3bbf2aebc25004d2eb5d0d63042944dc5fd6536591eb2cfdb1b65732353",
+      "imports": [
+        "AdjacentBlocks"
+      ]
+    },
+    "CanonicalRestriction": {
+      "source_sha256": "215e0955257b4d46bc0d5744eea95b14051f1e2162a75220e3fa393f44c8a21c",
+      "imports": [
+        "Relabel"
+      ]
+    },
+    "CyclicGaps": {
+      "source_sha256": "59d3adfa87d04931c0abc1d8013c05332733ebc52e00ff7dff6cd7351fa324b9",
+      "imports": [
+        "CanonicalRestriction"
+      ]
+    },
+    "IntervalBridge": {
+      "source_sha256": "aed93946e872dc8d08f21dfc03e4e75dd431746a60654f1060cf1a8a4fffe196",
+      "imports": [
+        "CyclicGaps",
+        "TreeEdgeSemantics"
+      ]
+    },
+    "FiniteEdgeBridge": {
+      "source_sha256": "80ead3e62d046dcd49026d9c5aae13de23242bf86f32a34ffee9e8647c06ae00",
+      "imports": [
+        "IntervalBridge"
+      ]
+    },
+    "FiniteRestriction": {
+      "source_sha256": "a72068a163782cedd870b8d561145fb4ded2a1e62ff0a9d221ff1aa9ba081b3e",
+      "imports": [
+        "FiniteEdgeBridge",
+        "FiniteProvider"
+      ]
+    },
+    "SixLabels": {
+      "source_sha256": "5f7b032a46cba59cd64b86c3d6f1d47bea836e358a348f85ac3bc8de9f5bca21",
+      "imports": [
+        "FiniteRestriction"
+      ]
+    },
+    "RankOrder": {
+      "source_sha256": "f2de3c115b9f479b3885009716a4d471dd2ba7725be79325702246a546021cfc",
+      "imports": [
+        "SixLabels"
+      ]
+    },
+    "QuartetLookup": {
+      "source_sha256": "d683df4a02adbc5e4e335b0e1ed2026bdaa86ac2bfd01abae9c70400fd305559",
+      "imports": [
+        "RankOrder"
+      ]
+    },
+    "QueryExists": {
+      "source_sha256": "3c9170326a03e53d6dc086fd6b23de4d02718b21f936c536affb907d0a09bf13",
+      "imports": [
+        "QuartetLookup"
+      ]
+    },
+    "QuartetRelabel": {
+      "source_sha256": "14f3e7b742541379d3e70ed85763d66f56c34f3d793fb1a1723dfe6623c8a923",
+      "imports": [
+        "QueryExists"
+      ]
+    },
+    "CodeBridge": {
+      "source_sha256": "c4b32dfc26649957377292dcae3c945891d306ff982f7461abecd31cbb0b5a79",
+      "imports": [
+        "FiniteEdgeBridge",
+        "BitWitness"
+      ]
+    },
+    "QueryTransport": {
+      "source_sha256": "6b1f81c419f162dd6db59085ce841644ac42aff035e491794c6c09b5a8a852b7",
+      "imports": [
+        "QuartetRelabel",
+        "CodeBridge"
+      ]
+    },
+    "AnchorTransport": {
+      "source_sha256": "5123a24c57d22edcd105c55e23ea82d6b5e7b14ee9c84116fa8ae83dfd7d88d7",
+      "imports": [
+        "QueryTransport"
+      ]
+    },
+    "Decorate": {
+      "source_sha256": "6e0acb8e4ea20fb146b7d1ea95f9d63d9fc4d3063000f14b9580f8c24cbc47b9",
+      "imports": [
+        "SixLabels"
+      ]
+    },
+    "ConstructTransport": {
+      "source_sha256": "9060300dc69f26fe8f394e738b2760b28504f29ae06185a203228ccc7f5e4fd4",
+      "imports": [
+        "Decorate",
+        "QueryTransport"
+      ]
+    },
+    "CoefficientTransport": {
+      "source_sha256": "578bb3f09cbf84677f853ffd8143b1331df1ae8ad36f6af2f330b493272a4b49",
+      "imports": [
+        "AnchorTransport",
+        "ConstructTransport"
+      ]
+    },
+    "AllSizeCodes": {
+      "source_sha256": "6e56d2096b8a80a835de6bf0cd216ac12d070f81a4c57c53a414b86cc2590d0c",
+      "imports": [
+        "CoefficientTransport"
+      ]
+    },
+    "ZeroTransport": {
+      "source_sha256": "10dc20c1a3c0647dbcf29f495af90716fbf95853bb28bfce898f757c9def92d8",
+      "imports": [
+        "CoefficientTransport"
+      ]
+    },
+    "RestrictionEndpoints": {
+      "source_sha256": "35112790d4ee43fc5a654a1dbaad8fb58d5b24c2c0f631be625b6bf351ac18b7",
+      "imports": [
+        "AllSizeCodes",
+        "ZeroTransport"
+      ]
+    }
+  },
+  "external_imports": [
+    "AdjacentSemantics",
+    "BitWitness",
+    "FiniteProvider",
+    "Init.Data.BitVec.Lemmas",
+    "Lean.Elab.Tactic.Omega",
+    "Mathlib.Data.List.Basic",
+    "TreeEdgeSemantics"
+  ]
+}
