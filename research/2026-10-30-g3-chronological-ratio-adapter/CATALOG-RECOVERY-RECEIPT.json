@@ -1,0 +1,69 @@
+{
+  "author": "dot (OpenAI)",
+  "date_utc": "2026-10-30",
+  "purpose": "G3 actual catalog-use and bounded source-recovery receipt, not proof completeness",
+  "local_cli_root": "audit-20261025/discovery (existing local checkout; relative locator)",
+  "local_file_sha256": {
+    "tools/query.mjs": "523ab830d24d6b81b34ef79b2e292fa8ac8e4226d8664168b68efd6469504d7f",
+    "dist/model.mjs": "a73a896e3bf67250fb643084fdb15daf58aeb33543dcc35861a72ec7a59687d8",
+    "dist/source-search.mjs": "67e16d44cf9f8ac11128b0f64a18551f8794b63cf42947b563bd0c4bc475242a",
+    "dist/vendor/minisearch.mjs": "0393b3ba253b809d5e55707c7b0875ef9b518a296a006c6739b28876e154edb3",
+    "dist/claims.json": "092fd2729486b3b860763a1c962dfe837c93f5a02f3f6af6f44abc53a05a420b",
+    "dist/source.json": "723c4638918edad5d7ab8102c5d976e1d9169a821a2aed7f8e1fed6819f8dbcc",
+    "dist/source-corpus.json": "c9237a5f7b2aef6db1adbec1c72cb756711ca5dbc1447edda922c2af15ff60dd",
+    "dist/reading-joins.json": "3fce620df36bc28faeca93e4132ca6e7233777d8c8d94c7b17c4024bb00017a0"
+  },
+  "commands": [
+    {
+      "command": "timeout 20s node audit-20261025/discovery/tools/query.mjs --sources --query 'ONE witness' --limit 100",
+      "output": "catalog-one-witness.json",
+      "total": 160,
+      "offset": 0,
+      "next_offset": 100,
+      "output_sha256": "ec2466f8830de06c7a451f9c396c406d39e41e19bc8b9170fd837f821e056f2b"
+    },
+    {
+      "command": "timeout 20s node audit-20261025/discovery/tools/query.mjs --sources --query 'ONE witness' --limit 100 --offset 100",
+      "output": "catalog-one-witness-page2.json",
+      "total": 160,
+      "offset": 100,
+      "next_offset": null,
+      "output_sha256": "69e577e9afbe0891e19031786c6f4e23e04fdd0ffa3ce4f63b02bb49794e24a0"
+    },
+    {
+      "command": "timeout 20s node audit-20261025/discovery/tools/query.mjs --sources --query 'transport ratio' --limit 100",
+      "output": "catalog-transport-ratio.json",
+      "total": 27,
+      "offset": 0,
+      "next_offset": null,
+      "output_sha256": "0c45d0d0504e36a29ed402ae09fbc7a8f73d81860dfc0bdab5091a06f8713411"
+    }
+  ],
+  "bundled_registry": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "edf623827aa478cfa6190ad230cb194e6fda8571",
+    "path": "docs/claims.json",
+    "git_blob": "2916937c16974b610f1548deae19465694c63fc1",
+    "sha256": "092fd2729486b3b860763a1c962dfe837c93f5a02f3f6af6f44abc53a05a420b",
+    "board_version": "1.20-g4-component-evidence-reconciliation",
+    "source_updated_utc": "2026-10-25T02:06:40Z",
+    "retrieved_utc": "2026-10-25T02:09:17Z",
+    "claim_count": 118,
+    "canonical_author": "dot (OpenAI)"
+  },
+  "independent_latest_source_pin": "0d67f9fc3d3e713574ced24d727c9013ea66d31c",
+  "latest_board": "1.20-g4-component-evidence-reconciliation",
+  "latest_board_updated_utc": "2026-10-27T10:18:00Z",
+  "research_tree_sha": "4a1092e87bc97a14890ec9a9f3ece1f526ed6b70",
+  "research_tree_entry_count": 1042,
+  "research_tree_truncated": false,
+  "latest_relevant_checkpoint": "3e60be364b8d5286a59c87be5a0fac17544904f2",
+  "coverage_limits": [
+    "160 paginated query hits do not establish program completeness",
+    "334 immutable source bodies are selected25Octsnapshot; archive5829paths older",
+    "Research-root tree and selected later G3 subtrees checked, not exhaustive all-branch/history audit",
+    "Catalog-only suppliers intentionally searched WITHOUT claim facets",
+    "Existing accepted hand components not reopened for absent Lean",
+    "Root resumption commit e8fd7ecdf4b893701107b837553b31793d6d68d0 changes allocation, not mathematical frontier"
+  ]
+}
