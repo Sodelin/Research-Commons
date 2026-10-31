@@ -17,3 +17,16 @@ test('source-only proofs and failed receipts are searchable without claim edits'
  const file=join(index,'manifest.json'),m=JSON.parse(await readFile(file));m.inventory=m.inventory.filter(x=>x.path!=='research/proof.lean');await writeFile(file,JSON.stringify(m));await assert.rejects(queryResearchResults(file,'XenonNeedle'),/inventory/i);
  }finally{await rm(root,{recursive:true,force:true});}
 });
+
+test('an explicit source prefix selects its immutable alias without transferring acceptance',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'result-alias-'));const repo=join(root,'repo'),index=join(root,'index');await mkdir(repo);const git=(...a)=>execFileSync('git',['-C',repo,...a]);
+ try{
+  git('init');git('config','user.name','Fixture');git('config','user.email','fixture@example.invalid');git('remote','add','origin','https://github.com/Sodelin/Research-Commons.git');await mkdir(join(repo,'research'));
+  const body='theorem preserved_source : True := by trivial';
+  await writeFile(join(repo,'research/a-candidate.lean'),body);await writeFile(join(repo,'research/z-reviewed.lean'),body);git('add','.');git('commit','-m','Same source, separate evidence locations');const pin=git('rev-parse','HEAD').toString().trim();
+  execFileSync('python3',[fileURLToPath(new URL('../tools/index-research-results.py',import.meta.url)),'--repo',repo,'--output',index]);
+  const manifest=join(index,'manifest.json');const ordinary=await queryResearchResults(manifest,'preserved_source');assert.equal(ordinary.total,1);assert(ordinary.results[0].url.endsWith('/research/a-candidate.lean'));
+  const selected=await queryResearchResults(manifest,'preserved_source',{pathPrefix:'research/z-reviewed.lean'});const hit=selected.results[0];assert.equal(selected.total,1);assert.equal(hit.url,`https://github.com/Sodelin/Research-Commons/blob/${pin}/research/z-reviewed.lean`);assert.equal(hit.body_document_url,ordinary.results[0].url);assert.equal(hit.sha256,ordinary.results[0].sha256);assert.deepEqual(hit.source_paths,['research/a-candidate.lean','research/z-reviewed.lean']);assert.deepEqual(hit.canonical_claim_references,[]);assert.match(hit.evidence_role,/No claim status inferred/);
+  assert.equal(hit.title,'research/z-reviewed.lean');const exact=await queryResearchResults(manifest,hit.url,{pathPrefix:'research/z-reviewed.lean'});assert.equal(exact.total,1);assert.equal(exact.results[0].url,hit.url);
+ }finally{await rm(root,{recursive:true,force:true});}
+});

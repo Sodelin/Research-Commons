@@ -20,8 +20,16 @@ export async function queryResearchResults(manifestPath,query,{offset=0,limit=25
   const raw=gunzipSync(bytes,{maxOutputLength:96*1024*1024}),corpus=JSON.parse(raw);if(corpus.schema!==1||corpus.documents.length!==entry.documents)throw Error('Invalid body shard');
   for(const doc of corpus.documents){const bytes=Buffer.from(doc.body);if(sha(bytes)!==doc.sha256||bytes.length!==doc.bytes||createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')!==doc.git_blob||!(manifest.source_commits??[manifest.commit]).some(pin=>doc.url.startsWith(`https://github.com/Sodelin/Research-Commons/blob/${pin}/`)))throw Error('Body identity mismatch');}
   for(const doc of corpus.documents)for(const path of doc.source_paths){if(pathPrefix&&!path.startsWith(pathPrefix))continue;const row=inventory.get(path);if(seen.has(path)||!row||row.coverage!=='full_text'||row.git_blob!==doc.git_blob||row.sha256!==doc.sha256||row.shard!==entry.path)throw Error('Body inventory mismatch');seen.add(path);}
-  for(const doc of searchSources({documents:sourceQueryCandidates(corpus.documents.filter(d=>!pathPrefix||d.source_paths.some(p=>p.startsWith(pathPrefix))),query)},query)){
-   const priority=sourceExactness(doc,query);if(buckets[priority].length<offset+limit)buckets[priority].push({url:doc.url,title:doc.title,git_blob:doc.git_blob,sha256:doc.sha256,bytes:doc.bytes,source_paths:doc.source_paths,canonical_claim_references:[...new Set(doc.source_paths.flatMap(p=>[...(claims.get(p)??[])]))],evidence_role:'Published source; authored labels and later corrections must be read. No claim status inferred.',excerpt:sourceExcerpt(doc.body,query)});total++;
+  const searchable=corpus.documents.filter(d=>!pathPrefix||d.source_paths.some(p=>p.startsWith(pathPrefix))).map(d=>{
+   if(!pathPrefix)return d;
+   // A deduplicated body may occur in both a frozen candidate and an accepted
+   // packet. Select the explicitly requested, inventory-verified source link;
+   // preserve the original body URL instead of transferring either status.
+   const path=d.source_paths.find(p=>p.startsWith(pathPrefix));
+   return {...d,title:d.title===d.source_paths[0]?path:d.title,body_document_url:d.url,url:`https://github.com/Sodelin/Research-Commons/blob/${manifest.commit}/${path.split('/').map(encodeURIComponent).join('/')}`};
+  });
+  for(const doc of searchSources({documents:sourceQueryCandidates(searchable,query)},query)){
+   const priority=sourceExactness(doc,query);if(buckets[priority].length<offset+limit)buckets[priority].push({url:doc.url,body_document_url:doc.body_document_url??doc.url,title:doc.title,git_blob:doc.git_blob,sha256:doc.sha256,bytes:doc.bytes,source_paths:doc.source_paths,canonical_claim_references:[...new Set(doc.source_paths.flatMap(p=>[...(claims.get(p)??[])]))],evidence_role:'Published source; authored labels and later corrections must be read. No claim status inferred.',excerpt:sourceExcerpt(doc.body,query)});total++;
   }
  }
  if(seen.size!==relevant.length)throw Error('Incomplete body inventory');

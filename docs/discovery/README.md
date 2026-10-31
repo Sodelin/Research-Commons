@@ -4,7 +4,35 @@ A question-first product over the existing canonical claim register. Search by q
 
 Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintained by Dot and scientific owners. This reader preserves that source and adds navigation, search and exact owner-supplied evidence joins. It does not generate scientific answers or certify novelty.
 
+## Start here: current results and the CLI
+
+Use the **full-result CLI** below to find current published proof sources, partial results, failed approaches, candidates and correction notes. The older **118-card view**, **334-body bundled source view** and **archive-path view** are separate, narrower snapshots. Installing or running one does not populate the full-result body cache.
+
+The executable tools are available in this repository. They require Git, Python3 and Node.js; the commands below were checked here with Git 2.52, Python 3.12 and Node 24. No npm installation, Lean compiler, background service or account connection is needed for these local searches. This does not mean the tools or cache are already installed on another device.
+
+Run from the **repository root**, after obtaining the repository with its Git history. Choose a fresh output directory for the generated cache:
+
+```sh
+cd /path/to/Research-Commons
+python3 docs/discovery/tools/index-research-results.py --repo . --commit d5515eec4d629c8106c8a77af3a692335bc017ef --output /tmp/commons-results-0603
+node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-0603/manifest.json \
+  --query actual_root_weight_shifted_limit \
+  --research-path research/2026-10-31-clock-jc-root-fuel-composition-verified/source/ResearchCommons/MSCI/JC69RootFuelComposition.lean --limit 10
+```
+
+Build the cache once, then reuse the last command with another query. Omit `--research-path` to search across every shard; `--offset` and `--limit` paginate the results. The optional path prefix selects the exact source link, useful when an unchanged candidate body also occurs in an accepted packet. `body_document_url` preserves its original deduplicated body link, and `source_paths` lists the shared locations; equal bytes do not transfer status between packets. A machine without this generated manifest **and its body shards** must build them first; the committed receipt alone is not the cache. To verify the same cache:
+
+```sh
+python3 docs/discovery/tools/index-research-results.py --repo . --commit d5515eec4d629c8106c8a77af3a692335bc017ef --output /tmp/commons-results-0603 --check
+```
+
+The latest checked local snapshot here is `d5515eec` (including the 06:03 scope and older scope correction links): **98,578 full-text paths, 1,063 explicitly path-only paths, 32,927 distinct text bodies**. Its [coverage receipt](result-coverage.json), [exact-source query history](result-query-receipt.json) and [publication-version checks](result-publications.json) record their own immutable input pins. Code availability, a published receipt, a generated local cache and a hosted reader deployment are distinct states. **The hosted reader and its bundled historical corpus have not been refreshed by this work.** This tree index covers the selected public roots, not all Git history, binary bodies, private chats or complete linked repositories; the [reference coverage inventory](result-reference-coverage.json) accounts for those separate source-reference gaps and the optional [exact public-reference body supplement](#exact-referenced-public-bodies-beyond-the-tree-roots).
+
+To see what has been completed and what remains, start with the [current full-scope checkpoint](../../research/2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md), then follow the [canonical scientific claim register](../claims.json) and [exact Lean declaration/binding guide](../EXISTING-LEAN-CLAIM-BINDINGS.md). The scope checkpoint distinguishes the completed 1,833-module build and 520 named requests from the then-running caller gate and incomplete all-118 gate; it is a dated observation, not live process status. Individual accepted packets retain their exact theorem and audit scope. Frozen candidates and failed versions remain searchable with later acceptance/correction links; a search hit does not transfer acceptance or close an original master question.
+
 ## Run and verify
+
+These older reader commands run from `docs/discovery/` (`cd docs/discovery` from the repository root). They use the selected card/bundled-source views described below. Use the repository-root full-result commands above for the wider current public research tree.
 
 - `npm ci --ignore-scripts --no-audit --no-fund --logs-max=0` installs the locked DOM-test dependency; production has no package installation/build step.
 - `node tools/check.mjs` checks the model and actual DOM journeys.
