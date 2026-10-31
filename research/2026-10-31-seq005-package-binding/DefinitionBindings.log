@@ -1,0 +1,21 @@
+def FiniteEditStability.AgreeFrom : (Nat → Bool) → (Nat → Bool) → Nat → Prop :=
+fun s t m => ∀ (k : Nat), m ≤ k → s k = t k
+def BinaryAvoidance.Edge : (Nat → Bool) → Nat → Nat → Bool → Prop :=
+fun s u w label => 2 ≤ w ∧ (w = u + 1 ∧ label = BinaryAvoidance.row s w ∨ w = u + 2 ∧ label = !BinaryAvoidance.row s w)
+def FiniteEditStability.IsMaximumPrefix : (Nat → Bool) → Nat → Nat → Prop :=
+fun s v ell => FiniteEditStability.HasPrefix s v ell ∧ ∀ (len : Nat), FiniteEditStability.HasPrefix s v len → len ≤ ell
+def FiniteEditExact.height : (Nat → Bool) → Nat → Nat → Nat :=
+fun s m v =>
+  if PhaseHeight.frontier s v m = [] then PhaseHeight.boundedHeight s v m
+  else m + FiniteEditExact.maxSuffix m (PhaseHeight.frontier s v m)
+def FiniteEditAlgorithm.cutoff : Nat → Nat :=
+fun m => 3 * 2 ^ (m + 3) + m
+def FiniteEditAlgorithm.residual : (Nat → Bool) → Nat → Nat → Int :=
+fun s m v => 3 * ↑(FiniteEditExact.height s m v) - 8 * ↑v
+def FiniteEditAlgorithm.best : (Nat → Bool) → Nat → Nat → Int :=
+fun s m x => Nat.brecOn x (FiniteEditAlgorithm.best._f s m)
+def FiniteEditExact.UniversalAdditiveBound : Nat → Int → Prop :=
+fun m B =>
+  ∀ (s : Nat → Bool),
+    FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+      ∀ (v len : Nat), 1 ≤ v → FiniteEditStability.IsMaximumPrefix s v len → 3 * ↑len ≤ 8 * ↑v + B

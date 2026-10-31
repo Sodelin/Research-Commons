@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Individual finite-edit successor — 31 October 2026
+
+[SEQ-005 adoption](../../../research/2026-10-31-seq005-package-binding/README.md) adds the parent-reviewed individual finite-edit global optimum interface. Actual **52 mapped claims/549 names/66 unbound**; strict exits2 with116incomplete integrations and all118scientific statuses unchanged. Public target19:12reused+7compiled, seven names and complete owned audit pass.
+
+[Current aggregate receipt](finite-edit-optimum-aggregate-verification.json) binds both changed roots,549names,1,523owned modules (102,646decl/92,787theorems/zero rejects),1,839primary objects and7,319resolved modules in an explicitly coherent qualified context. Two different objects in the separate public target remain recorded, not silently mixed. No fresh full1,837build/audit/native or master closure. Earlier dated records below retain their exact historical scopes.
+
 ## Current binding and aggregate successor — 31 October 2026
 
 [SEQ-004 adoption](../../../research/2026-10-31-seq004-package-binding/README.md) adds the reviewed original matching-height interface after SEQ-001 and WONG-002. Actual coverage: **51 mapped claims, 542 named requests, 67 unbound IDs**; strict exits2 with116 incomplete integrations. All118 scientific statuses remain unchanged. Native runtime is pending.

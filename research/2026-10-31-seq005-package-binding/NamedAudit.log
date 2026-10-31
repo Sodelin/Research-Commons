@@ -1,0 +1,61 @@
+ResearchCommons.Claims.FiniteEditOptimum.actual_height : ∀ (s : Nat → Bool) (m : Nat),
+  FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+    ∀ (v : Nat), FiniteEditStability.IsMaximumPrefix s v (FiniteEditExact.height s m v)
+'ResearchCommons.Claims.FiniteEditOptimum.actual_height' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.FiniteEditOptimum.cutoff_formula : ∀ (m : Nat),
+  Eq.{1} (FiniteEditAlgorithm.cutoff m)
+    (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 3 (HPow.hPow.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} m 3))) m)
+'ResearchCommons.Claims.FiniteEditOptimum.cutoff_formula' does not depend on any axioms
+ResearchCommons.Claims.FiniteEditOptimum.finite_maximum : ∀ (s : Nat → Bool) (m : Nat),
+  (∀ (v : Nat),
+      LE.le.{0} 1 v →
+        LE.le.{0} v (FiniteEditAlgorithm.cutoff m) →
+          LE.le.{0} (FiniteEditAlgorithm.residual s m v)
+            (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1))) ∧
+    Exists.{1} fun v =>
+      LE.le.{0} 1 v ∧
+        LE.le.{0} v (FiniteEditAlgorithm.cutoff m) ∧
+          Eq.{1} (FiniteEditAlgorithm.residual s m v)
+            (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1))
+'ResearchCommons.Claims.FiniteEditOptimum.finite_maximum' depends on axioms: [propext, Quot.sound.{u}]
+ResearchCommons.Claims.FiniteEditOptimum.global_optimum : ∀ (s : Nat → Bool) (m : Nat),
+  FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+    (∀ (v : Nat),
+        LE.le.{0} 1 v →
+          LE.le.{0} (FiniteEditAlgorithm.residual s m v)
+            (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1))) ∧
+      Exists.{1} fun v =>
+        LE.le.{0} 1 v ∧
+          LE.le.{0} v (FiniteEditAlgorithm.cutoff m) ∧
+            Eq.{1} (FiniteEditAlgorithm.residual s m v)
+              (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1))
+'ResearchCommons.Claims.FiniteEditOptimum.global_optimum' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.FiniteEditOptimum.integer_allowance_iff : ∀ (s : Nat → Bool) (m : Nat),
+  FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+    ∀ (B : Int),
+      (∀ (v len : Nat),
+          LE.le.{0} 1 v →
+            FiniteEditStability.IsMaximumPrefix s v len →
+              LE.le.{0} (HMul.hMul.{0, 0, 0} 3 ↑len) (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 ↑v) B)) ↔
+        LE.le.{0} (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1)) B
+'ResearchCommons.Claims.FiniteEditOptimum.integer_allowance_iff' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.FiniteEditOptimum.allowance_bounds : ∀ (s : Nat → Bool) (m : Nat),
+  FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+    LE.le.{0} (-1) (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1)) ∧
+      LE.le.{0} (FiniteEditAlgorithm.best s m (HSub.hSub.{0, 0, 0} (FiniteEditAlgorithm.cutoff m) 1))
+        (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 ↑m) 1)
+'ResearchCommons.Claims.FiniteEditOptimum.allowance_bounds' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.FiniteEditOptimum.maximum_iff_actual_height : ∀ (s : Nat → Bool) (m : Nat),
+  FiniteEditStability.AgreeFrom s ThueMorseBits.t m →
+    ∀ (v len : Nat), FiniteEditStability.IsMaximumPrefix s v len ↔ Eq.{1} len (FiniteEditExact.height s m v)
+'ResearchCommons.Claims.FiniteEditOptimum.maximum_iff_actual_height' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

@@ -4528,15 +4528,32 @@
         }
       ],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.FiniteEditOptimum",
+        "declarations": [
+          "ResearchCommons.Claims.FiniteEditOptimum.actual_height",
+          "ResearchCommons.Claims.FiniteEditOptimum.cutoff_formula",
+          "ResearchCommons.Claims.FiniteEditOptimum.finite_maximum",
+          "ResearchCommons.Claims.FiniteEditOptimum.global_optimum",
+          "ResearchCommons.Claims.FiniteEditOptimum.integer_allowance_iff",
+          "ResearchCommons.Claims.FiniteEditOptimum.allowance_bounds",
+          "ResearchCommons.Claims.FiniteEditOptimum.maximum_iff_actual_height"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Actual own-target finite-edit height, exact location cutoff and integer finite maximum, global positive-start optimum/attainment/iff under AgreeFrom, integer allowance -1..8m-1 including m=0. No practical/minimal cutoff or native runtime."
       },
       "obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
       "reuse_rank": null,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.FiniteEditOptimum --claim CB-SEQ-005",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/finite-edit-optimum-verification.json",
+          "scope": "Rust-to-Lean named type/owner interface only; no native runtime implementation or new algorithm complexity claim."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -4561,7 +4578,15 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
       ],
-      "verification": []
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "328661e7f89d5e2b76f545f496eee595ea1f35a30d97ae42a95f1eaa3d2d6fcc",
+          "record": "integration/finite-edit-optimum-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Full card/seven types/definitions and prototype-to-explicit-interface diff accepted. Initial failed alias prototype had no complete accepted types; do not claim elaborated signature identity. Provider/19-module audit evidence remains compiler-attributed."
+        }
+      ]
     },
     {
       "claim_id": "CB-SEQ-006",

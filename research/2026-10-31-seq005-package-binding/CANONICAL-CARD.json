@@ -1,0 +1,86 @@
+{
+  "mathematical_status": "proved_at_stated_scope",
+  "novelty_status": "Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.",
+  "remaining_obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
+  "evidence_basis": "Recovered from the actual source/status notes, complete October reading editions where applicable, named archived formal endpoint entries and public review records. Compared against the fresh 75-card schema 1.1 register, blob 921c25a32d7b7ecde3f1e0e50d749c6d224941f7. This is source recovery, not a new proof review, build or novelty audit.",
+  "claim_kind": "theorem",
+  "origin": {
+    "category": "project_posed",
+    "detail": "A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions."
+  },
+  "id": "CB-SEQ-005",
+  "canonical_key": "sequences.FINITE_EDIT_INDIVIDUAL_OPTIMUM",
+  "title": "Finite prefix changes have an exactly computable global cost",
+  "programme": "Sequences \u00b7 finite-edit robustness",
+  "plain_language": {
+    "question": "If the beginning of the target pattern changes, can its worst global matching penalty still be found exactly?",
+    "what_we_learned": "Yes. An explicit finite search finds the smallest additive allowance that works at every positive start, and a start inside the search attains it.",
+    "what_it_lets_someone_do": "Certify the exact robustness cost for one specified finite prefix edit, not just use a universal overestimate.",
+    "what_cannot_conclude": "The theorem does not give a fast practical search or cover arbitrary edits indefinitely far along the sequence."
+  },
+  "exact_statement_and_scope": "Let m\u22650 and let a binary target s agree with digit-parity Thue\u2013Morse at every index k\u2265m, with no restrictions on its first m bits. Let L_s(v) be the attained maximum matching length in the original own-target BinaryAvoidance graph. Set N(m)=3\u00b72^(m+3)+m and B_s=max_{1\u2264v\u2264N(m)}(3L_s(v)\u22128v), in the integers. Every positive v satisfies 3L_s(v)\u22648v+B_s, some positive v\u2264N(m) attains equality, and an integer B is valid at every positive start iff B_s\u2264B. Also \u22121\u2264B_s\u22648m\u22121. FiniteEditExact.height computes the needed maximum; FiniteEditOptimum.individual_optimum_attained and individual_additive_constant_iff supply the global finite-reduction endpoint.",
+  "prior_work": "The own-target graph and unedited/phase matching results are inherited from the Samuel programme and its attributed population construction. The finite-path transport theorem, actual maximum and sharp uniform bound are suppliers, not independently recounted discoveries.",
+  "our_contribution": "The original continuation strengthens uniform allowance 8m\u22121 to the exact optimum for each individual edited target, with a proved finite cutoff and attainment. Five promoted modules and selected endpoint counts describe proof organization, not five distinct discoveries.",
+  "accepted_artifacts": [
+    {
+      "label": "Finite-edit transport and uniform stability",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FINITE-EDIT-STABILITY-FORMALIZATION.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Complete individual finite-edit optimum",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/REFINEMENT-INDIVIDUAL-FINITE-EDIT.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Integrated September source coverage",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Archived exact endpoint and axiom receipt",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+      "role": "formal_receipt"
+    }
+  ],
+  "separate_downstream_or_validation_work": "The cutoff is deliberately generous and exponential in m; minimal cutoff and practical runtime are not asserted. m bounds the location of possible edits, not merely their number. No new execution is needed to retain the completed theorem.",
+  "aliases": [
+    "Samuel T03",
+    "FiniteEditOptimum"
+  ],
+  "dependencies": [
+    {
+      "claim_id": "CB-SEQ-004",
+      "relation_type": "reused_theorem",
+      "detail": "The actual all-start height and phase/extremal structure supply the finite reduction and its sharp tail witness."
+    }
+  ],
+  "completion": {
+    "display": "Proved; archived Lean check recorded",
+    "formal_verification": "kernel_checked_selected_release",
+    "independent_review": "recorded_source_and_formal_audit",
+    "mathematical_claim_complete": true,
+    "proof_authorship_complete": true,
+    "proof_derivation_required": false,
+    "remaining_work_role": "separate_downstream_extension_or_validation",
+    "rule": "A missing new build, missing original component receipt or broader extension does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+  },
+  "evidence": {
+    "hand": {
+      "status": "recorded_source_and_formal_audit",
+      "detail": "The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed."
+    },
+    "formal": {
+      "status": "kernel_checked_selected_release",
+      "detail": "The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun."
+    },
+    "execution": {
+      "status": "archived_build_receipt",
+      "detail": "Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery."
+    },
+    "empirical": {
+      "status": "not_empirical_claim",
+      "detail": "An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied."
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "claim_id": "CB-SEQ-005",
+  "status": "READY_FOR_PARENT_FULL_CARD_CORRESPONDENCE_REVIEW_NOT_ADOPTED",
+  "source_sha256": "328661e7f89d5e2b76f545f496eee595ea1f35a30d97ae42a95f1eaa3d2d6fcc",
+  "original_proof_authorship_retained": true,
+  "clauses": [
+    {
+      "canonical_clause": "Arbitrary binary s agrees with digit-parity target at every k>=m, unrestricted first m bits",
+      "definitions": [
+        "FiniteEditStability.AgreeFrom",
+        "BinaryAvoidance.Edge"
+      ],
+      "correspondence": "Printed actual definitions preserve own-target graph and location cutoff, not number of changed bits."
+    },
+    {
+      "canonical_clause": "Attained original maximum L_s(v), including every natural start",
+      "exports": [
+        "actual_height",
+        "maximum_iff_actual_height"
+      ],
+      "supplier": "FiniteEditExact.height_isMaximum/maximum_iff_height",
+      "correspondence": "Exact original finite-frontier/shifted-height algorithm and attained maximum predicate, not a candidate table or supplied bound."
+    },
+    {
+      "canonical_clause": "N(m)=3*2^(m+3)+m, B_s exact integer maximum over 1<=v<=N(m)",
+      "exports": [
+        "cutoff_formula",
+        "finite_maximum"
+      ],
+      "definitions": [
+        "FiniteEditAlgorithm.cutoff",
+        "FiniteEditAlgorithm.best",
+        "FiniteEditAlgorithm.residual"
+      ],
+      "correspondence": "best n ranges over exactly1..n+1; cutoff_pos licenses cutoff-1. Residual is Int 3*height-8*v, never clipped Nat subtraction."
+    },
+    {
+      "canonical_clause": "Every positive start bounded, one positive start within cutoff attains",
+      "exports": [
+        "global_optimum"
+      ],
+      "supplier": "FiniteEditOptimum.individual_optimum_attained",
+      "correspondence": "All positive starts and actual global finite reduction retained; no finite table assumed as global proof."
+    },
+    {
+      "canonical_clause": "Integer B valid at every positive start iff B_s<=B",
+      "exports": [
+        "integer_allowance_iff"
+      ],
+      "supplier": "FiniteEditOptimum.individual_additive_constant_iff",
+      "correspondence": "Quantifies actual original IsMaximumPrefix and arbitrary Int B, positive starts only."
+    },
+    {
+      "canonical_clause": "-1<=B_s<=8*m-1 including m=0",
+      "exports": [
+        "allowance_bounds"
+      ],
+      "supplier": "FiniteEditAlgorithm.best_at_cutoff_ge_neg_one and FiniteEditExact.optimal_universal_additive_constant",
+      "correspondence": "Only specialize already accepted universal allowance and exact individual iff; no new asymptotic bound proof."
+    }
+  ],
+  "scope_limits": [
+    "Original proofs reused; no novelty judgment or new mathematics",
+    "No native Rust runtime or production extractor",
+    "Generous exponential location cutoff, no practical/minimal cutoff or bit complexity claim",
+    "No arbitrary indefinitely distant edits"
+  ],
+  "failure_history": "Initial alias syntax lacked explicit types; Int.le_refl qualified. New wrapper semantic interfaces are explicit in final source. Audit helper import and local receipt path errors retained; source/name/audit data each passed once, not rerun to hide failures.",
+  "binding_adopted": false,
+  "canonical_scientific_status_unchanged": true
+}
