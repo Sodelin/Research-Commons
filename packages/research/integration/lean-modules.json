@@ -6145,10 +6145,25 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.CriticalTailPorts",
+      "path": "lean/Compatibility/ResearchCommons.Claims.CriticalTailPorts.lean",
+      "sha256": "5f3a7614608e6a1855e4d2298227c3b00fef38da0368fcbb9e31f293426e0b56",
+      "imports": [
+        "SamuelAlexanderResearch.GeneralRigidity",
+        "PortEncoding"
+      ],
+      "provenance": {
+        "role": "Reviewed original CB-POPULATION-002 actual critical tail adjacency/fair encoder/conditional periodic same-schedule interface",
+        "proof_derivation": false,
+        "verification": "integration/critical-tail-ports-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "f43ead630e9bb6c54ffc77124994f60e8fa75627845088abefe30b4518eeec00",
+      "sha256": "61407fb28144c25a124ab2a08e975628d2c2e734b87c017c8584ef709fbbc382",
       "imports": [
+        "ResearchCommons.Claims.CriticalTailPorts",
         "ResearchCommons.Claims.CapTwoPopulation",
         "ResearchCommons.Claims.OwnerAncestry",
         "ResearchCommons.Claims.WongNormalForm",
@@ -6310,6 +6325,10 @@
         "cap_two_population_successor": {
           "prior_source_sha256": "e08e207ef98790a13464c6d3d44c3bd24bd543fa999dcb5efab8d79791b8edbb",
           "scope": "Reviewed original retained positive-port cap-two actual population/threshold/full-language/same-witness species join; enlarged aggregate pending."
+        },
+        "critical_tail_ports_successor": {
+          "prior_source_sha256": "f43ead630e9bb6c54ffc77124994f60e8fa75627845088abefe30b4518eeec00",
+          "scope": "Reviewed original critical tail and actual encoder/conditional periodic realization join; enlarged aggregate pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

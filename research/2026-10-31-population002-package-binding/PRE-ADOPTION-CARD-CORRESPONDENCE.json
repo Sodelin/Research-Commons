@@ -1,0 +1,107 @@
+{
+  "claim_id": "CB-POPULATION-002",
+  "binding_adopted": false,
+  "canonical_exact_scope": "Three distinct statements concern the existing naturally indexed simple InfiniteLabeledPopulation k k, with finite root support, a parent of every required label at each nonroot and child cap k. (1) Rigidity: if every sufficiently late actual cut has crossing count k(k+1)/2, the eventual adjacency is exactly u\u2192v iff u<v\u2264u+k. One attaining cut does not give this tail conclusion, and adjacency alone does not establish arbitrary-label universality. (2) Encoding, without minimum-width or periodicity assumptions: eventual_encoding constructs a root-free base, C equal to the actual crossing count, initial tokens and a legal fair C-slot schedule; decoded labelled edges agree exactly for every target beyond the base, including edges from pre-base sources, and every actual tail label is below k. Classical finite bijections are used; no regularity, enumeration or fairness is an extra population premise. (3) Conditional realization: if the constructed full named-slot/replacement-label schedule is eventually periodic with positive period p, every infinite word has a strict actual path beginning within one period of that tail. Finite slots do not imply periodicity. The pre-base graph is not reconstructed by the decoder.",
+  "wrapper_sha256": "5f3a7614608e6a1855e4d2298227c3b00fef38da0368fcbb9e31f293426e0b56",
+  "endpoint_map": [
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.persistent_minimum_tail",
+      "provider_module": "SamuelAlexanderResearch.GeneralRigidity",
+      "original_endpoint": "GeneralRigidity.minimum_tail_edges",
+      "complete_header": "theorem persistent_minimum_tail {k : Nat} (p : InfiniteLabeledPopulation k k)\n    (start : Nat) (hr : p.rootSupport \u2264 start)\n    (hc : \u2200 n, start \u2264 n \u2192 crossingCount p n = triangular k) :\n    \u2200 u, start \u2264 u \u2192 \u2200 v,\n      (p.edge u v).isSome = true \u2194 u < v \u2227 v \u2264 u+k "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.eventual_minimum_rigidity",
+      "provider_module": "SamuelAlexanderResearch.GeneralRigidity",
+      "original_endpoint": "GeneralRigidity.eventually_minimum_tail_edges",
+      "complete_header": "theorem eventual_minimum_rigidity {k : Nat} (p : InfiniteLabeledPopulation k k)\n    (hc : \u2203 start, \u2200 n, start \u2264 n \u2192 crossingCount p n = k*(k+1)/2) :\n    \u2203 start, \u2200 u, start \u2264 u \u2192 \u2200 v,\n      (p.edge u v).isSome = true \u2194 u < v \u2227 v \u2264 u+k "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.actual_eventual_fair_encoding",
+      "provider_module": "PortEncoding",
+      "original_endpoint": "PortEncoding.eventual_encoding",
+      "complete_header": "theorem actual_eventual_fair_encoding {k : Nat} (p : InfiniteLabeledPopulation k k) :\n    \u2203 base C, \u2203 S : PortDynamics.Schedule C (Fin k),\n      \u2203 init : Fin C \u2192 PortDynamics.Token (Fin k),\n      p.rootSupport \u2264 base \u2227 C = Fintype.card (Cut p base) \u2227\n      Nonempty (PortDynamics.Legal S base init) \u2227 PortDynamics.Fair S \u2227\n      (\u2200 u v (a : Fin k), base \u2264 v \u2192\n        (p.edge u v = some a.val \u2194 PortDynamics.DecodedEdge S base init u v a)) \u2227\n      (\u2200 u v label, base \u2264 v \u2192 p.edge u v = some label \u2192 label < k) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.actual_tail_labelled_edge_iff",
+      "provider_module": "PortEncoding",
+      "original_endpoint": "PortEncoding.encoding_exact",
+      "complete_header": "theorem actual_tail_labelled_edge_iff {k : Nat} (p : InfiniteLabeledPopulation k k) (base : Nat) (hr : Regular p base) (u v : Nat) (a : Fin k)\n    (hv : base \u2264 v) :\n    p.edge u v = some a.val \u2194\n      PortDynamics.DecodedEdge (schedule p base hr) base (initial p base hr) u v a "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.actual_schedule_fair",
+      "provider_module": "PortEncoding",
+      "original_endpoint": "PortEncoding.encoding_fair",
+      "complete_header": "theorem actual_schedule_fair {k : Nat} (p : InfiniteLabeledPopulation k k) (base : Nat) (hr : Regular p base) :\n    PortDynamics.Fair (schedule p base hr) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.actual_encoded_periodic_realization",
+      "provider_module": "PortEncoding",
+      "original_endpoint": "PortEncoding.encoded_periodic_realizes",
+      "complete_header": "theorem actual_encoded_periodic_realization {k : Nat} (p : InfiniteLabeledPopulation k k) (base : Nat) (hr : Regular p base)\n    {M period : Nat} (hp : 0 < period)\n    (hperiod : PortDynamics.PeriodicAfter (schedule p base hr) M period)\n    (s : Nat \u2192 Fin k) :\n    \u2203 path : Nat \u2192 Nat, base+M \u2264 path 0 \u2227 path 0 < base+M+period \u2227\n      \u2200 n, path n < path (n+1) \u2227 p.edge (path n) (path (n+1)) = some (s n).val "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CriticalTailPorts.full_labelled_periodic_schedule_realizes_strict",
+      "provider_module": "SamuelAlexanderResearch.PortDynamics",
+      "original_endpoint": "PortDynamics.periodic_schedule_realizes_strict",
+      "complete_header": "theorem full_labelled_periodic_schedule_realizes_strict {C : Nat} {A : Type} {S : Schedule C A}\n    (base : Nat) (initial : Fin C \u2192 Token A) {M p : Nat}\n    (hp : 0 < p) (period : PeriodicAfter S M p)\n    (coverage : IncomingCoverage S base initial) (s : Nat \u2192 A) :\n    \u2203 path : Nat \u2192 Nat, base+M \u2264 path 0 \u2227 path 0 < base+M+p \u2227\n      \u2200 n, path n < path (n+1) \u2227\n        DecodedEdge S base initial (path n) (path (n+1)) (s n) "
+    }
+  ],
+  "new_correspondence_join": {
+    "endpoint": "ResearchCommons.Claims.CriticalTailPorts.same_constructed_actual_schedule",
+    "role": "Exact reuse composition of original eventual_structure/encoding_legal/fair/exact/tail_label_lt/encoded_periodic_realizes; no new mathematical supplier or definition. Outputs Regular witness from actual p, then ties ONE explicit schedule/init pair to fair exact decoding AND conditional actual paths, avoiding conjunction of unrelated existentials."
+  },
+  "clause_map": [
+    {
+      "clause": "Persistent minimum ACTUAL cuts yield eventual exact kth-power-of-ray adjacency including k=0",
+      "exports": [
+        "persistent_minimum_tail",
+        "eventual_minimum_rigidity"
+      ],
+      "limits": "Every sufficiently late cut, not one attaining cut. Adjacency iff Option label isSome, not an unconditional labelled-language theorem."
+    },
+    {
+      "clause": "Unconditional ACTUAL critical-population fair encoding derives rootfree base/regularity/enumeration/legal inputs/fairness",
+      "exports": [
+        "actual_eventual_fair_encoding",
+        "actual_tail_labelled_edge_iff",
+        "actual_schedule_fair",
+        "same_constructed_actual_schedule"
+      ],
+      "actual_definitions": "Input only original naturally-indexed simple InfiniteLabeledPopulation k k (functional Option Nat labels, rootSupport, each required incoming label, childSupport/cap). C is Fintype.card of the literal actual cut edge subtype Cut p base: source<base<=target and actual edge. This actual cut cardinality is printed, not an ambient schedule dimension guessed as a count. No added minimum-width, periodicity or regularity premise in existential encoder/join."
+    },
+    {
+      "clause": "Exact labelled edge equivalence for EVERY target at/beyond base, including sources before base; all actual tail labels <k",
+      "exports": [
+        "actual_eventual_fair_encoding",
+        "actual_tail_labelled_edge_iff",
+        "same_constructed_actual_schedule"
+      ],
+      "limits": "No reconstruction of arbitrary pre-base edges. Classical finite bijections supply actual slots; no effective oracle/infinite-graph algorithm asserted."
+    },
+    {
+      "clause": "Positive-period full named-slot AND meaningful replacement-label periodicity yields strict actual paths for every word, start in one period",
+      "exports": [
+        "actual_encoded_periodic_realization",
+        "full_labelled_periodic_schedule_realizes_strict",
+        "same_constructed_actual_schedule"
+      ],
+      "actual_definitions": "PeriodicAfter repeats selected slots and newLabel ONLY on selected slots; inactive labels immaterial. Legal supplies old sources/simple consumption/actual distinct incoming labels. Generic periodic supplier needs IncomingCoverage, not fairness; actual constructed encoder separately proves fairness."
+    }
+  ],
+  "actual_definition_output": "29 actual original definitions/structures and five full underlying supplier types/axioms printed. No new wrapper definitions. Initial definition-view producer used wrong namespace for fullOutDegree; corrected to actual PopulationCounting.fullOutDegree, failed probe/log retained. This is not a mathematical source failure.",
+  "source_reading": "All1332lines of principal GeneralRigidity134/PortEncoding502/PortDynamics696 read. Three complete proof/scope notes read at exacte2502 pin. Selected finite-port and primary-method audit sections read; full public notes included/hashbound, not falsely labelled full fresh audit reread. Ten supplier source bodies included/hashbound, no full transitive proof rereview.",
+  "historical_scope_correction": "Older PortDynamics/audit notes still mark actual encoder required; actual PortEncoding supplies that adapter at the exact source hash. Canonical sorted encoder/converse written companions remain separately NOT named formal endpoints, not silently imposed as missing mathematics of this card.",
+  "prior_work": "Original population-specific adapters and exact rigidity theorem reuse conservation/finite counting, classical finite-frontier/slice methods and compactness. Recorded comparison credits Oliveira and established omega-regular periodic-fragment results. No invention of these methods or worldwide-priority claim.",
+  "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+  "classical_credit": "Original population-specific source proofs retain authorship. Conservation/finite counting, finite-frontier/slice machinery, finite-graph compactness and established periodic-fragment arguments are not inventions here. Original Oliveira and omega-regular comparisons attributed; no new primary-paper verification or worldwide priority adjudication.",
+  "separate_limits": [
+    "No finite-slots-imply-periodicity inference",
+    "No arbitrary critical-population universality",
+    "No rigidity-implies-arbitrary-label universality",
+    "No effective infinite input encoder",
+    "No new canonical sorted/converse formalization",
+    "No empirical population interpretation"
+  ],
+  "verification": "Unchanged8-target wrapper,10qualifiedoriginalprovider objects reused; actual11-module audit980declarations724theorems/zero rejects,29definitionprintouts/fiveunderlyingfulltypes. No claim binding/scientific status adopted."
+}

@@ -6222,13 +6222,31 @@
       "reuse_rank": null,
       "dependencies": [],
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.CriticalTailPorts",
+        "declarations": [
+          "ResearchCommons.Claims.CriticalTailPorts.persistent_minimum_tail",
+          "ResearchCommons.Claims.CriticalTailPorts.eventual_minimum_rigidity",
+          "ResearchCommons.Claims.CriticalTailPorts.actual_eventual_fair_encoding",
+          "ResearchCommons.Claims.CriticalTailPorts.actual_tail_labelled_edge_iff",
+          "ResearchCommons.Claims.CriticalTailPorts.actual_schedule_fair",
+          "ResearchCommons.Claims.CriticalTailPorts.actual_encoded_periodic_realization",
+          "ResearchCommons.Claims.CriticalTailPorts.full_labelled_periodic_schedule_realizes_strict",
+          "ResearchCommons.Claims.CriticalTailPorts.same_constructed_actual_schedule"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Persistent minimum actual cuts give eventual exact adjacency only, including k=0 with declared finite root support. Actual critical population fair encoding derives Regular/base with exact tail edges/labels. Same constructed schedule plus separate positive-period full selected-slot/replacement-label periodicity gives arbitrary-word strict realization."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.CriticalTailPorts --claim CB-POPULATION-002",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/critical-tail-ports-verification.json",
+          "scope": "Named owner/type proof interface; no finite-slots-implies-periodicity, pre-base reconstruction, canonical sorted converse, native infinite encoder or novelty assertion."
+        }
       },
       "source_artifacts": [
         {
@@ -6289,7 +6307,15 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them.",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_complete_card_owner_type_correspondence",
+          "module_source_sha256": "5f3a7614608e6a1855e4d2298227c3b00fef38da0368fcbb9e31f293426e0b56",
+          "record": "integration/critical-tail-ports-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Full card/unchangedwrapper/eight full namedtypes/29actualdefinitions/fiveunderlyingsupplierprints accepted; native verified40manifestfiles/ten originalproviders. Three distinct adjacency/actualfairencoding/conditionalperiodic realization scopes retained, same constructed schedule. Original classical credit/novelty limits retained."
+        }
+      ],
       "obligation": "None for these exact completed mathematical subclaims. Separately named written-only companions, validation and broader extensions do not reopen them."
     },
     {

@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Critical tail and actual encoder successor — 31 October 2026
+
+[POPULATION-002 adoption](../../../research/2026-10-31-population002-package-binding/README.md): **60 mapped IDs/635 names/58 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Three exact scopes retained: persistent-minimum adjacency; actual unconditional fair encoder deriving Regular; SAME schedule conditional positive-period realization. No finite slots imply periodicity or native infinite encoder.
+
+[Current aggregate](critical-tail-ports-aggregate-verification.json) records changed roots,635 complete named checks, selected owned audit and actual resolved source/object bindings. Explicit coherent qualified reuse, not fresh whole1845 build/audit. Older receipts historical.
+
 ## Actual cap-two population successor — 31 October 2026
 
 [POPULATION-001 adoption](../../../research/2026-10-31-population001-package-binding/README.md): **59 mapped IDs/627 names/59 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Retained positive ports, exactthree roots/twochildren/opposite-gender parents, full unshifted language and SAME witness specieslike/inspecies/reflection preserved. Classical line graph/P_s attribution and no least-root/native/biological/novelty claim.

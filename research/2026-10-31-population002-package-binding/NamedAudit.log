@@ -1,0 +1,111 @@
+@ResearchCommons.Claims.CriticalTailPorts.persistent_minimum_tail : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) (start : ℕ),
+  LE.le.{0} p.rootSupport start →
+    (∀ (n : ℕ),
+        LE.le.{0} start n → Eq.{1} (InfiniteConservation.crossingCount p n) (InfiniteConservation.triangular k)) →
+      ∀ (u : ℕ),
+        LE.le.{0} start u →
+          ∀ (v : ℕ),
+            Eq.{1} (Option.isSome.{0} (p.edge u v)) true ↔ LT.lt.{0} u v ∧ LE.le.{0} v (HAdd.hAdd.{0, 0, 0} u k)
+'ResearchCommons.Claims.CriticalTailPorts.persistent_minimum_tail' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.eventual_minimum_rigidity : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k),
+  (∃ start,
+      ∀ (n : ℕ),
+        LE.le.{0} start n →
+          Eq.{1} (InfiniteConservation.crossingCount p n)
+            (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} k (HAdd.hAdd.{0, 0, 0} k 1)) 2)) →
+    ∃ start,
+      ∀ (u : ℕ),
+        LE.le.{0} start u →
+          ∀ (v : ℕ),
+            Eq.{1} (Option.isSome.{0} (p.edge u v)) true ↔ LT.lt.{0} u v ∧ LE.le.{0} v (HAdd.hAdd.{0, 0, 0} u k)
+'ResearchCommons.Claims.CriticalTailPorts.eventual_minimum_rigidity' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.actual_eventual_fair_encoding : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k),
+  ∃ base C S init,
+    LE.le.{0} p.rootSupport base ∧
+      Eq.{1} C (Fintype.card.{0} (PortEncoding.Cut p base)) ∧
+        Nonempty.{1} (PortDynamics.Legal S base init) ∧
+          PortDynamics.Fair.{0} S ∧
+            (∀ (u v : ℕ) (a : Fin k),
+                LE.le.{0} base v →
+                  (Eq.{1} (p.edge u v) (some.{0} ↑a) ↔ PortDynamics.DecodedEdge.{0} S base init u v a)) ∧
+              ∀ (u v label : ℕ), LE.le.{0} base v → Eq.{1} (p.edge u v) (some.{0} label) → LT.lt.{0} label k
+'ResearchCommons.Claims.CriticalTailPorts.actual_eventual_fair_encoding' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.actual_tail_labelled_edge_iff : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) (base : ℕ) (hr : PortEncoding.Regular p base) (u v : ℕ)
+  (a : Fin k),
+  LE.le.{0} base v →
+    (Eq.{1} (p.edge u v) (some.{0} ↑a) ↔
+      PortDynamics.DecodedEdge.{0} (PortEncoding.schedule p base hr) base (PortEncoding.initial p base hr) u v a)
+'ResearchCommons.Claims.CriticalTailPorts.actual_tail_labelled_edge_iff' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.actual_schedule_fair : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) (base : ℕ) (hr : PortEncoding.Regular p base),
+  PortDynamics.Fair.{0} (PortEncoding.schedule p base hr)
+'ResearchCommons.Claims.CriticalTailPorts.actual_schedule_fair' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.actual_encoded_periodic_realization : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) (base : ℕ) (hr : PortEncoding.Regular p base) {M period : ℕ},
+  LT.lt.{0} 0 period →
+    PortDynamics.PeriodicAfter.{0} (PortEncoding.schedule p base hr) M period →
+      ∀ (s : ℕ → Fin k),
+        ∃ path,
+          LE.le.{0} (HAdd.hAdd.{0, 0, 0} base M) (path 0) ∧
+            LT.lt.{0} (path 0) (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} base M) period) ∧
+              ∀ (n : ℕ),
+                LT.lt.{0} (path n) (path (HAdd.hAdd.{0, 0, 0} n 1)) ∧
+                  Eq.{1} (p.edge (path n) (path (HAdd.hAdd.{0, 0, 0} n 1))) (some.{0} ↑(s n))
+'ResearchCommons.Claims.CriticalTailPorts.actual_encoded_periodic_realization' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.full_labelled_periodic_schedule_realizes_strict : ∀ {C : ℕ} {A : Type}
+  {S : PortDynamics.Schedule.{0} C A} (base : ℕ) (initial : Fin C → PortDynamics.Token.{0} A) {M p : ℕ},
+  LT.lt.{0} 0 p →
+    PortDynamics.PeriodicAfter.{0} S M p →
+      PortDynamics.IncomingCoverage.{0} S base initial →
+        ∀ (s : ℕ → A),
+          ∃ path,
+            LE.le.{0} (HAdd.hAdd.{0, 0, 0} base M) (path 0) ∧
+              LT.lt.{0} (path 0) (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} base M) p) ∧
+                ∀ (n : ℕ),
+                  LT.lt.{0} (path n) (path (HAdd.hAdd.{0, 0, 0} n 1)) ∧
+                    PortDynamics.DecodedEdge.{0} S base initial (path n) (path (HAdd.hAdd.{0, 0, 0} n 1)) (s n)
+'ResearchCommons.Claims.CriticalTailPorts.full_labelled_periodic_schedule_realizes_strict' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CriticalTailPorts.same_constructed_actual_schedule : ∀ {k : ℕ}
+  (p : PopulationCounting.InfiniteLabeledPopulation k k),
+  ∃ base,
+    ∃ (hr : PortEncoding.Regular p base),
+      LE.le.{0} p.rootSupport base ∧
+        Nonempty.{1} (PortDynamics.Legal (PortEncoding.schedule p base hr) base (PortEncoding.initial p base hr)) ∧
+          PortDynamics.Fair.{0} (PortEncoding.schedule p base hr) ∧
+            (∀ (u v : ℕ) (a : Fin k),
+                LE.le.{0} base v →
+                  (Eq.{1} (p.edge u v) (some.{0} ↑a) ↔
+                    PortDynamics.DecodedEdge.{0} (PortEncoding.schedule p base hr) base (PortEncoding.initial p base hr)
+                      u v a)) ∧
+              (∀ (u v label : ℕ), LE.le.{0} base v → Eq.{1} (p.edge u v) (some.{0} label) → LT.lt.{0} label k) ∧
+                ∀ (M period : ℕ),
+                  LT.lt.{0} 0 period →
+                    PortDynamics.PeriodicAfter.{0} (PortEncoding.schedule p base hr) M period →
+                      ∀ (s : ℕ → Fin k),
+                        ∃ path,
+                          LE.le.{0} (HAdd.hAdd.{0, 0, 0} base M) (path 0) ∧
+                            LT.lt.{0} (path 0) (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} base M) period) ∧
+                              ∀ (n : ℕ),
+                                LT.lt.{0} (path n) (path (HAdd.hAdd.{0, 0, 0} n 1)) ∧
+                                  Eq.{1} (p.edge (path n) (path (HAdd.hAdd.{0, 0, 0} n 1))) (some.{0} ↑(s n))
+'ResearchCommons.Claims.CriticalTailPorts.same_constructed_actual_schedule' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

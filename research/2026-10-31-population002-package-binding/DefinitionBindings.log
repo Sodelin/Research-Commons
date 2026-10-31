@@ -1,0 +1,231 @@
+structure PopulationCounting.InfiniteLabeledPopulation (k d : ℕ) : Type
+number of parameters: 2
+fields:
+  PopulationCounting.InfiniteLabeledPopulation.edge : ℕ → ℕ → Option.{0} ℕ
+  PopulationCounting.InfiniteLabeledPopulation.root : ℕ → Bool
+  PopulationCounting.InfiniteLabeledPopulation.birth_order : ∀ (u v : ℕ),
+      Eq.{1} (Option.isSome.{0} (self.edge u v)) true → LT.lt.{0} u v
+  PopulationCounting.InfiniteLabeledPopulation.root_no_parents : ∀ (v : ℕ),
+      Eq.{1} (self.root v) true → ∀ (u : ℕ), Eq.{1} (self.edge u v) none.{0}
+  PopulationCounting.InfiniteLabeledPopulation.parent_of_label : ∀ (v : ℕ),
+      Eq.{1} (self.root v) false → ∀ (l : ℕ), LT.lt.{0} l k → ∃ u, Eq.{1} (self.edge u v) (some.{0} l)
+  PopulationCounting.InfiniteLabeledPopulation.childSupport : ℕ → ℕ
+  PopulationCounting.InfiniteLabeledPopulation.no_children_after : ∀ (u v : ℕ),
+      LE.le.{0} (self.childSupport u) v → Eq.{1} (self.edge u v) none.{0}
+  PopulationCounting.InfiniteLabeledPopulation.child_cap : ∀ (u : ℕ),
+      LE.le.{0} (PopulationCounting.sumBelow (self.childSupport u) fun v => PopulationCounting.edgeBit (self.edge u v))
+        d
+  PopulationCounting.InfiniteLabeledPopulation.rootSupport : ℕ
+  PopulationCounting.InfiniteLabeledPopulation.no_roots_after : ∀ (v : ℕ),
+      LE.le.{0} self.rootSupport v → Eq.{1} (self.root v) false
+constructor:
+  PopulationCounting.InfiniteLabeledPopulation.mk {k d : ℕ} (edge : ℕ → ℕ → Option.{0} ℕ) (root : ℕ → Bool)
+    (birth_order : ∀ (u v : ℕ), Eq.{1} (Option.isSome.{0} (edge u v)) true → LT.lt.{0} u v)
+    (root_no_parents : ∀ (v : ℕ), Eq.{1} (root v) true → ∀ (u : ℕ), Eq.{1} (edge u v) none.{0})
+    (parent_of_label :
+      ∀ (v : ℕ), Eq.{1} (root v) false → ∀ (l : ℕ), LT.lt.{0} l k → ∃ u, Eq.{1} (edge u v) (some.{0} l))
+    (childSupport : ℕ → ℕ) (no_children_after : ∀ (u v : ℕ), LE.le.{0} (childSupport u) v → Eq.{1} (edge u v) none.{0})
+    (child_cap :
+      ∀ (u : ℕ),
+        LE.le.{0} (PopulationCounting.sumBelow (childSupport u) fun v => PopulationCounting.edgeBit (edge u v)) d)
+    (rootSupport : ℕ) (no_roots_after : ∀ (v : ℕ), LE.le.{0} rootSupport v → Eq.{1} (root v) false) :
+    PopulationCounting.InfiniteLabeledPopulation k d
+def InfiniteConservation.crossingCount : {k d : ℕ} → PopulationCounting.InfiniteLabeledPopulation k d → ℕ → ℕ :=
+fun {k d} p n =>
+  PopulationCounting.sumBelow n fun u =>
+    PopulationCounting.sumBelow (p.childSupport u) fun v =>
+      ite.{1} (LE.le.{0} n v) (PopulationCounting.edgeBit (p.edge u v)) 0
+def InfiniteConservation.triangular : ℕ → ℕ :=
+fun k => PopulationCounting.sumBelow k fun i => HSub.hSub.{0, 0, 0} k i
+def InfiniteConservation.fullInDegree : {k d : ℕ} → PopulationCounting.InfiniteLabeledPopulation k d → ℕ → ℕ :=
+fun {k d} p v => PopulationCounting.sumBelow v fun u => PopulationCounting.edgeBit (p.edge u v)
+def PopulationCounting.fullOutDegree : {k d : ℕ} → PopulationCounting.InfiniteLabeledPopulation k d → ℕ → ℕ :=
+fun {k d} p u => PopulationCounting.sumBelow (p.childSupport u) fun v => PopulationCounting.edgeBit (p.edge u v)
+def PortEncoding.Regular : {k : ℕ} → PopulationCounting.InfiniteLabeledPopulation k k → ℕ → Prop :=
+fun {k} p base =>
+  ∀ (v : ℕ),
+    LE.le.{0} base v →
+      Eq.{1} (p.root v) false ∧
+        Eq.{1} (InfiniteConservation.fullInDegree p v) k ∧ Eq.{1} (PopulationCounting.fullOutDegree p v) k
+@[reducible] def PortEncoding.Cut : {k : ℕ} → PopulationCounting.InfiniteLabeledPopulation k k → ℕ → Type :=
+fun {k} p b => Subtype.{1} fun e => LT.lt.{0} e.1 b ∧ LE.le.{0} b e.2 ∧ Eq.{1} (Option.isSome.{0} (p.edge e.1 e.2)) true
+def PortEncoding.cutKey : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (b : ℕ) → PortEncoding.Cut p b → Prod.{0, 0} (Fin b) (Fin (InfiniteConservation.ambientBound p b)) :=
+fun {k} p b x => Prod.mk.{0, 0} ⟨(↑x).1, ⋯⟩ ⟨(↑x).2, ⋯⟩
+@[reducible] def PortEncoding.Incoming : {k : ℕ} → PopulationCounting.InfiniteLabeledPopulation k k → ℕ → Type :=
+fun {k} p b => Subtype.{1} fun u => Eq.{1} (Option.isSome.{0} (p.edge (↑u) b)) true
+@[reducible] def PortEncoding.Outgoing : {k : ℕ} → PopulationCounting.InfiniteLabeledPopulation k k → ℕ → Type :=
+fun {k} p b => Subtype.{1} fun v => Eq.{1} (Option.isSome.{0} (p.edge b ↑v)) true
+def PortEncoding.parentEquiv : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (b : ℕ) →
+      Eq.{1} (p.root b) false →
+        Eq.{1} (InfiniteConservation.fullInDegree p b) k → Equiv.{1, 1} (Fin k) (PortEncoding.Incoming p b) :=
+fun {k} p b hr hi => Equiv.ofBijective.{1, 1} (PortEncoding.parentMap p b hr) ⋯
+def PortEncoding.birthEquiv : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (b : ℕ) →
+      Eq.{1} (p.root b) false →
+        Eq.{1} (InfiniteConservation.fullInDegree p b) k →
+          Eq.{1} (PopulationCounting.fullOutDegree p b) k →
+            Equiv.{1, 1} (PortEncoding.Incoming p b) (PortEncoding.Outgoing p b) :=
+fun {k} p b hr hi ho =>
+  Equiv.trans.{1, 1, 1} (Equiv.symm.{1, 1} (PortEncoding.parentEquiv p b hr hi))
+    (Equiv.symm.{1, 1} (Fintype.equivFinOfCardEq.{0} ⋯))
+def PortEncoding.cutStep : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (b : ℕ) →
+      Equiv.{1, 1} (PortEncoding.Incoming p b) (PortEncoding.Outgoing p b) →
+        Equiv.{1, 1} (PortEncoding.Cut p b) (PortEncoding.Cut p (HAdd.hAdd.{0, 0, 0} b 1)) :=
+fun {k} p b e => Equiv.mk.{1, 1} (PortEncoding.advance p b e) (PortEncoding.retreat p b e) ⋯ ⋯
+def PortEncoding.states : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (base : ℕ) →
+      PortEncoding.Regular p base →
+        (n : ℕ) →
+          Equiv.{1, 1} (Fin (Fintype.card.{0} (PortEncoding.Cut p base)))
+            (PortEncoding.Cut p (HAdd.hAdd.{0, 0, 0} base n)) :=
+fun {k} p base hr x => Nat.brecOn.{1} x (PortEncoding.states._f p base hr)
+def PortEncoding.cutLabel : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    {base b : ℕ} → PortEncoding.Regular p base → LE.le.{0} base b → PortEncoding.Cut p b → Fin k :=
+fun {k} p {base b} hr hb x => Classical.choose.{1} ⋯
+def PortEncoding.storedToken : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    {base b : ℕ} →
+      PortEncoding.Regular p base → LE.le.{0} base b → PortEncoding.Cut p b → PortDynamics.Token.{0} (Fin k) :=
+fun {k} p {base b} hr hb x => PortDynamics.Token.mk.{0} (↑x).1 (PortEncoding.cutLabel p hr hb x)
+def PortEncoding.schedule : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (base : ℕ) →
+      PortEncoding.Regular p base → PortDynamics.Schedule.{0} (Fintype.card.{0} (PortEncoding.Cut p base)) (Fin k) :=
+fun {k} p base hr =>
+  PortDynamics.Schedule.mk.{0}
+    (fun n i => Eq.{1} (↑((PortEncoding.states p base hr n) i)).2 (HAdd.hAdd.{0, 0, 0} base n)) fun n i =>
+    PortEncoding.cutLabel p hr ⋯ ((PortEncoding.states p base hr (HAdd.hAdd.{0, 0, 0} n 1)) i)
+def PortEncoding.initial : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (base : ℕ) →
+      PortEncoding.Regular p base → Fin (Fintype.card.{0} (PortEncoding.Cut p base)) → PortDynamics.Token.{0} (Fin k) :=
+fun {k} p base hr i => PortEncoding.storedToken p hr ⋯ ((PortEncoding.states p base hr 0) i)
+structure PortDynamics.Schedule.{u} (C : ℕ) (A : Type u) : Type u
+number of parameters: 2
+fields:
+  PortDynamics.Schedule.selected.{u} : ℕ → Fin C → Prop
+  PortDynamics.Schedule.newLabel.{u} : ℕ → Fin C → A
+constructor:
+  PortDynamics.Schedule.mk.{u} {C : ℕ} {A : Type u} (selected : ℕ → Fin C → Prop) (newLabel : ℕ → Fin C → A) :
+    PortDynamics.Schedule.{u} C A
+structure PortDynamics.Token.{u} (A : Type u) : Type u
+number of parameters: 1
+fields:
+  PortDynamics.Token.source.{u} : ℕ
+  PortDynamics.Token.label.{u} : A
+constructor:
+  PortDynamics.Token.mk.{u} {A : Type u} (source : ℕ) (label : A) : PortDynamics.Token.{u} A
+def PortDynamics.run.{u} : {C : ℕ} →
+  {A : Type u} →
+    PortDynamics.Schedule.{u} C A → ℕ → (Fin C → PortDynamics.Token.{u} A) → ℕ → Fin C → PortDynamics.Token.{u} A :=
+fun {C} {A} S base initial x =>
+  Nat.brecOn.{u + 1} (motive := fun x => Fin C → PortDynamics.Token.{u} A) x (PortDynamics.run._f.{u} S base initial)
+def PortDynamics.Fair.{u} : {C : ℕ} → {A : Type u} → PortDynamics.Schedule.{u} C A → Prop :=
+fun {C} {A} S => ∀ (n : ℕ) (i : Fin C), ∃ m, LE.le.{0} n m ∧ PortDynamics.Schedule.selected.{u} S m i
+def PortDynamics.PeriodicAfter.{u} : {C : ℕ} → {A : Type u} → PortDynamics.Schedule.{u} C A → ℕ → ℕ → Prop :=
+fun {C} {A} S M p =>
+  ∀ (n : ℕ),
+    LE.le.{0} M n →
+      ∀ (i : Fin C),
+        (PortDynamics.Schedule.selected.{u} S (HAdd.hAdd.{0, 0, 0} n p) i ↔ PortDynamics.Schedule.selected.{u} S n i) ∧
+          (PortDynamics.Schedule.selected.{u} S n i →
+            Eq.{u + 1} (PortDynamics.Schedule.newLabel.{u} S (HAdd.hAdd.{0, 0, 0} n p) i)
+              (PortDynamics.Schedule.newLabel.{u} S n i))
+def PortDynamics.DecodedEdge.{u} : {C : ℕ} →
+  {A : Type u} → PortDynamics.Schedule.{u} C A → ℕ → (Fin C → PortDynamics.Token.{u} A) → ℕ → ℕ → A → Prop :=
+fun {C} {A} S base initial u v a =>
+  ∃ n i,
+    Eq.{1} v (HAdd.hAdd.{0, 0, 0} base n) ∧
+      PortDynamics.Schedule.selected.{u} S n i ∧
+        Eq.{1} (PortDynamics.Token.source.{u} (PortDynamics.run.{u} S base initial n i)) u ∧
+          Eq.{u + 1} (PortDynamics.Token.label.{u} (PortDynamics.run.{u} S base initial n i)) a
+def PortDynamics.InitialOld.{u} : {C : ℕ} → {A : Type u} → ℕ → (Fin C → PortDynamics.Token.{u} A) → Prop :=
+fun {C} {A} base initial => ∀ (i : Fin C), LT.lt.{0} (PortDynamics.Token.source.{u} (initial i)) base
+def PortDynamics.SimpleConsumption.{u} : {C : ℕ} →
+  {A : Type u} → PortDynamics.Schedule.{u} C A → ℕ → (Fin C → PortDynamics.Token.{u} A) → Prop :=
+fun {C} {A} S base initial =>
+  ∀ (n : ℕ) (i j : Fin C),
+    PortDynamics.Schedule.selected.{u} S n i →
+      PortDynamics.Schedule.selected.{u} S n j →
+        Eq.{1} (PortDynamics.Token.source.{u} (PortDynamics.run.{u} S base initial n i))
+            (PortDynamics.Token.source.{u} (PortDynamics.run.{u} S base initial n j)) →
+          Eq.{1} i j
+def PortDynamics.IncomingCoverage.{u} : {C : ℕ} →
+  {A : Type u} → PortDynamics.Schedule.{u} C A → ℕ → (Fin C → PortDynamics.Token.{u} A) → Prop :=
+fun {C} {A} S base initial =>
+  ∀ (n : ℕ) (a : A),
+    ∃ i,
+      PortDynamics.Schedule.selected.{u} S n i ∧
+        Eq.{u + 1} (PortDynamics.Token.label.{u} (PortDynamics.run.{u} S base initial n i)) a
+structure PortDynamics.Legal {C k : ℕ} (S : PortDynamics.Schedule.{0} C (Fin k)) (base : ℕ)
+  (initial : Fin C → PortDynamics.Token.{0} (Fin k)) : Type
+number of parameters: 5
+fields:
+  PortDynamics.Legal.old : PortDynamics.InitialOld.{0} base initial
+  PortDynamics.Legal.simple : PortDynamics.SimpleConsumption.{0} S base initial
+  PortDynamics.Legal.inputs : ℕ → Fin k → Fin C
+  PortDynamics.Legal.selected_iff : ∀ (n : ℕ) (i : Fin C),
+      PortDynamics.Schedule.selected.{0} S n i ↔ ∃ a, Eq.{1} (self.inputs n a) i
+  PortDynamics.Legal.incoming_label : ∀ (n : ℕ) (a : Fin k),
+      Eq.{1} (PortDynamics.Token.label.{0} (PortDynamics.run.{0} S base initial n (self.inputs n a))) a
+constructor:
+  PortDynamics.Legal.mk {C k : ℕ} {S : PortDynamics.Schedule.{0} C (Fin k)} {base : ℕ}
+    {initial : Fin C → PortDynamics.Token.{0} (Fin k)} (old : PortDynamics.InitialOld.{0} base initial)
+    (simple : PortDynamics.SimpleConsumption.{0} S base initial) (inputs : ℕ → Fin k → Fin C)
+    (selected_iff : ∀ (n : ℕ) (i : Fin C), PortDynamics.Schedule.selected.{0} S n i ↔ ∃ a, Eq.{1} (inputs n a) i)
+    (incoming_label :
+      ∀ (n : ℕ) (a : Fin k),
+        Eq.{1} (PortDynamics.Token.label.{0} (PortDynamics.run.{0} S base initial n (inputs n a))) a) :
+    PortDynamics.Legal S base initial
+def PortDynamics.PhaseEdge.{u} : {C : ℕ} →
+  {A : Type u} → PortDynamics.Schedule.{u} C A → ℕ → (p : ℕ) → Fin p → Fin p → A → Prop :=
+fun {C} {A} S M p r q a =>
+  ∃ d,
+    LT.lt.{0} 0 d ∧
+      LE.le.{0} d p ∧
+        PortDynamics.BornEdge.{u} S (HAdd.hAdd.{0, 0, 0} M ↑r) (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} M ↑r) d) a ∧
+          Eq.{1} (↑q) (HMod.hMod.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (↑r) d) p)
+@InfiniteConservation.eventual_structure : ∀ {k : ℕ} (p : PopulationCounting.InfiniteLabeledPopulation k k),
+  ∃ start,
+    LE.le.{0} p.rootSupport start ∧
+      (∀ (v : ℕ),
+          LE.le.{0} start v →
+            Eq.{1} (p.root v) false ∧
+              Eq.{1} (InfiniteConservation.fullInDegree p v) k ∧ Eq.{1} (PopulationCounting.fullOutDegree p v) k) ∧
+        (∀ (n : ℕ),
+            LE.le.{0} start n →
+              Eq.{1} (InfiniteConservation.crossingCount p n) (InfiniteConservation.crossingCount p start)) ∧
+          LE.le.{0} k (InfiniteConservation.crossingCount p start) ∧
+            LE.le.{0} (InfiniteConservation.crossingCount p start)
+              (HMul.hMul.{0, 0, 0} k (PopulationCounting.fullRootCount p))
+'InfiniteConservation.eventual_structure' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@PortEncoding.cut_width_constant : ∀ {k : ℕ} (p : PopulationCounting.InfiniteLabeledPopulation k k) (base : ℕ),
+  PortEncoding.Regular p base →
+    ∀ (n : ℕ),
+      Eq.{1} (Fintype.card.{0} (PortEncoding.Cut p (HAdd.hAdd.{0, 0, 0} base n)))
+        (Fintype.card.{0} (PortEncoding.Cut p base))
+'PortEncoding.cut_width_constant' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@PortEncoding.incoming_label_lt : ∀ {k : ℕ} (p : PopulationCounting.InfiniteLabeledPopulation k k) (b : ℕ),
+  Eq.{1} (p.root b) false →
+    Eq.{1} (InfiniteConservation.fullInDegree p b) k →
+      ∀ (u label : ℕ), Eq.{1} (p.edge u b) (some.{0} label) → LT.lt.{0} label k
+'PortEncoding.incoming_label_lt' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@PortEncoding.encoding_legal : {k : ℕ} →
+  (p : PopulationCounting.InfiniteLabeledPopulation k k) →
+    (base : ℕ) →
+      (hr : PortEncoding.Regular p base) →
+        PortDynamics.Legal (PortEncoding.schedule p base hr) base (PortEncoding.initial p base hr)
+'PortEncoding.encoding_legal' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@PortDynamics.Legal.coverage : ∀ {C k : ℕ} {S : PortDynamics.Schedule.{0} C (Fin k)} {base : ℕ}
+  {initial : Fin C → PortDynamics.Token.{0} (Fin k)} (legal : PortDynamics.Legal S base initial),
+  PortDynamics.IncomingCoverage.{0} S base initial
+'PortDynamics.Legal.coverage' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
