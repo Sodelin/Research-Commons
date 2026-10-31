@@ -1,0 +1,101 @@
+--- original/ResolutionMeanCoordinates.lean
++++ current/ResolutionMeanCoordinates.lean
+@@ -7,13 +7,15 @@
+ namespace Nanuq.ActualFinite
+ open Nanuq.AdjacentCertificate Nanuq.Quartet
+ 
++local instance meanCoordinatePermFintype : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
++
+ def resolutionFin (r : Resolution) : Fin 3 :=
+   ⟨resolutionIndex r,by cases r <;> decide⟩
+ 
+ def presentIndices (g : Fin 3 → Bool) : List (Fin 3) := ([0,1,2] : List (Fin 3)).filter g
+ 
+ def indexedMean (g : Fin 3 → Bool) : ℚ :=
+-  ((presentIndices g).filter (fun r => r!=0)).length / ((presentIndices g).length : ℚ)
++  ((presentIndices g).filter (fun r => r != 0)).length / ((presentIndices g).length : ℚ)
+ 
+ def indexedPairMean (g : Fin 3 → Bool) (i j : Fin 4) : ℚ :=
+   ((presentIndices g).filter (fun r => indexSide r i != indexSide r j)).length /
+@@ -26,7 +28,6 @@
+ 
+ theorem indexedMean_permutation : ∀ (σ : Equiv.Perm (Fin 4)) (g : Fin 3 → Bool),
+     indexedMean (fun r => g (reindexResolution σ r))=indexedPairMean g (σ 0) (σ 1) := by
+-  letI : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
+   decide +kernel
+ 
+ def finiteWitnessMask (T : Tree) (tips : List Nat) (v : Fin 4 → Nat) (r : Fin 3) : Bool :=
+--- original/ActualSortedAnchor.lean
++++ current/ActualSortedAnchor.lean
+@@ -18,6 +18,7 @@
+   N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)
+     (coordinateQuartet (fun i => (rank (q i)).val))))
+ 
++include hs hm in
+ theorem actual_sorted_query_mean (q : Fin 4 ↪ X) :
+     (twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n)
+       (rank (q 0)).val (rank (q 1)).val (rank (q 2)).val (rank (q 3)).val : ℚ)=
+@@ -25,6 +26,7 @@
+   rw [hm q]
+   exact sorted_query_mean n mask T hs (q.trans rank.toEmbedding)
+ 
++include hs hm in
+ theorem actual_sorted_anchor (v : Fin 4 → X) (hpq : v 2≠v 3) :
+     (anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n)
+       (rank (v 2)).val (rank (v 3)).val (rank (v 0)).val (rank (v 1)).val : ℚ)=
+--- original/ResolutionCoordinates.lean
++++ current/ResolutionCoordinates.lean
+@@ -9,6 +9,8 @@
+ set_option maxRecDepth 10000
+ namespace Nanuq.ActualFinite
+ open Nanuq.AdjacentCertificate
++
++local instance coordinatePermFintype : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
+ 
+ def coordinateQuartet (v : Fin 4 → Nat) : Quartet := ⟨v 0,v 1,v 2,v 3⟩
+ 
+@@ -26,21 +28,18 @@
+ 
+ theorem reindexResolution_bijective :
+     ∀ σ : Equiv.Perm (Fin 4), Function.Bijective (reindexResolution σ) := by
+-  letI : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
+   decide +kernel
+ 
+ theorem reindexResolution_sides :
+     ∀ (σ : Equiv.Perm (Fin 4)) (r : Fin 3) (i j : Fin 4),
+       (indexSide r i == indexSide r j)=
+         (indexSide (reindexResolution σ r) (σ i) == indexSide (reindexResolution σ r) (σ j)) := by
+-  letI : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
+   decide +kernel
+ 
+ theorem reindexResolution_cut :
+     ∀ (σ : Equiv.Perm (Fin 4)) (r : Fin 3) (L R : Fin 4 → Bool),
+       indexCut r (fun i => L (σ i)) (fun i => R (σ i))=
+         indexCut (reindexResolution σ r) L R := by
+-  letI : Fintype (Equiv.Perm (Fin 4)) := fintypePerm
+   decide +kernel
+ 
+ theorem coordinate_edgeWitness (tips : List Nat) (lo len : Nat)
+@@ -55,7 +54,9 @@
+     edgeWitness tips lo len (coordinateQuartet (fun i => v (σ i))) r.val=
+       edgeWitness tips lo len (coordinateQuartet v) (reindexResolution σ r).val := by
+   rw [coordinate_edgeWitness,coordinate_edgeWitness]
+-  exact reindexResolution_cut σ r _ _
++  exact reindexResolution_cut σ r
++    (fun i => ((tips.drop lo).take len).contains (v i))
++    (fun i => (tips.take lo++tips.drop (lo+len)).contains (v i))
+ 
+ theorem coordinate_side (v : Fin 4 ↪ Nat) (r : Fin 3) (i : Fin 4) :
+     (coordinateQuartet v).side r.val (v i)=indexSide r i := by
+--- original/QueryCoordinates.lean
++++ current/QueryCoordinates.lean
+@@ -50,7 +50,8 @@
+   have ho := ((mem_quartets_iff n Q).mp hQ).1
+   have hi : Function.Injective (![Q.a,Q.b,Q.c,Q.d] : Fin 4 → Nat) := by
+     intro i j hij
+-    fin_cases i <;> fin_cases j <;> simp_all [QuartetOrdered] <;> omega
++    obtain ⟨hab,hbc,hcd⟩ := ho
++    fin_cases i <;> fin_cases j <;> norm_num at hij ⊢ <;> omega
+   let v : Fin 4 ↪ Nat := ⟨![Q.a,Q.b,Q.c,Q.d],hi⟩
+   have hr : ∀ z, (∃ i, query i=z) ↔ ∃ j, v j=z := by
+     intro z

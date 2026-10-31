@@ -1,0 +1,120 @@
+{
+  "status": "UNCOMPILED literal headers, not accepted elaborated signatures",
+  "headers": [
+    {
+      "module": "ActualCanonicalSortedAnchor",
+      "name": "actual_canonical_sorted_anchor_receiver",
+      "header": "theorem actual_canonical_sorted_anchor_receiver\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 (n mask : Nat) (rank : N.BlobPort b \u2243 Fin n)\n      (C : Set Plane) (f : \u211d \u2192 Plane) (\u03b8 : (M).OpenedTip \u2192 \u211d)\n      (xs : List (M).OpenedTip) (k : Nat) (T : Tree),\n      2\u2264n \u2227 mask<2^n \u2227 IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside)=outside C \u2227\n      IsLoop f \u2227 f '' unitInterval=C \u2227\n      (\u2200 t, \u03b8 t\u2208Ico (0:\u211d) 1 \u2227 f (\u03b8 t)=tipPoint N D b hg hb t) \u2227\n      Function.Injective \u03b8 \u2227 xs.Nodup \u2227 (\u2200 t, t\u2208xs) \u2227\n      xs.Pairwise (fun a c => \u03b8 a\u2264\u03b8 c) \u2227 k\u22641 \u2227\n      (xs.rotate k).map (fun t => (rank ((M).openedTipLabel hl t)).val)=occurrenceLabels n mask \u2227\n      T.size=(occurrenceLabels n mask).length-1 \u2227\n      (\u2200 q : Fin 4 \u21aa N.BlobPort b,\n        (M).rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9 \u2227\n        (M).rawQuartetMean q=Nanuq.Quartet.distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)) \u2227\n      (\u2200 (q : Fin 4 \u21aa X) (hinj : Function.Injective (fun i => N.blobProjection b hb (q i))),\n        N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (N.blobProjection b hb (q 0))).val,(rank (N.blobProjection b hb (q 1))).val,\n           (rank (N.blobProjection b hb (q 2))).val,(rank (N.blobProjection b hb (q 3))).val\u27e9 \u2227\n        N.rawQuartetMean q=Nanuq.Quartet.distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (N.blobProjection b hb (q 0))).val,(rank (N.blobProjection b hb (q 1))).val,\n           (rank (N.blobProjection b hb (q 2))).val,(rank (N.blobProjection b hb (q 3))).val\u27e9)) \u2227\n      (\u2200 q : Fin 4 \u21aa N.BlobPort b,\n        (twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n          (rank (q 0)).val (rank (q 1)).val (rank (q 2)).val (rank (q 3)).val : \u211a)=\n          2*(M).rawQuartetMean q) \u2227\n      (\u2200 v : Fin 4 \u2192 N.BlobPort b, v 2\u2260v 3 \u2192\n        (anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n          (rank (v 2)).val (rank (v 3)).val (rank (v 0)).val (rank (v 1)).val : \u211a)=\n          (M).actualTupleAnchor v)"
+    },
+    {
+      "module": "ActualSortedAnchor",
+      "name": "actual_sorted_query_mean",
+      "header": "theorem actual_sorted_query_mean (q : Fin 4 \u21aa X) :\n    (twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      (rank (q 0)).val (rank (q 1)).val (rank (q 2)).val (rank (q 3)).val : \u211a)=\n      2*N.rawQuartetMean q"
+    },
+    {
+      "module": "ActualSortedAnchor",
+      "name": "actual_sorted_anchor",
+      "header": "theorem actual_sorted_anchor (v : Fin 4 \u2192 X) (hpq : v 2\u2260v 3) :\n    (anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      (rank (v 2)).val (rank (v 3)).val (rank (v 0)).val (rank (v 1)).val : \u211a)=\n      N.actualTupleAnchor v"
+    },
+    {
+      "module": "ActualSortedAnchor",
+      "name": "actual_diagonal_anchor",
+      "header": "theorem actual_diagonal_anchor (v : Fin 4 \u2192 X) (hpq : v 2=v 3) :\n    N.actualTupleAnchor v=0"
+    },
+    {
+      "module": "QueryCoordinates",
+      "name": "tuple_range_iff",
+      "header": "theorem tuple_range_iff (v : Fin 4 \u2192 Nat) (z : Nat) :\n    (\u2203 i, v i=z) \u2194 z\u2208[v 0,v 1,v 2,v 3]"
+    },
+    {
+      "module": "QueryCoordinates",
+      "name": "equal_range_permutation",
+      "header": "theorem equal_range_permutation (v w : Fin 4 \u21aa Nat)\n    (h : \u2200 z, (\u2203 i, v i=z) \u2194 \u2203 j, w j=z) :\n    \u2203 \u03c3 : Equiv.Perm (Fin 4), \u2200 i, v i=w (\u03c3 i)"
+    },
+    {
+      "module": "QueryCoordinates",
+      "name": "sorted_query_coordinates",
+      "header": "theorem sorted_query_coordinates (n : Nat) (q : Fin 4 \u21aa Fin n) :\n    \u2203 (v : Fin 4 \u21aa Nat) (\u03c3 : Equiv.Perm (Fin 4)),\n      (\u2200 i, (q i).val=v (\u03c3 i)) \u2227\n      (quartets n)[quartetIndex (quartets n) (q 0).val (q 1).val (q 2).val (q 3).val]?=\n        some (coordinateQuartet v)"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "reindexResolution_bijective",
+      "header": "theorem reindexResolution_bijective :\n    \u2200 \u03c3 : Equiv.Perm (Fin 4), Function.Bijective (reindexResolution \u03c3)"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "reindexResolution_sides",
+      "header": "theorem reindexResolution_sides :\n    \u2200 (\u03c3 : Equiv.Perm (Fin 4)) (r : Fin 3) (i j : Fin 4),\n      (indexSide r i == indexSide r j)=\n        (indexSide (reindexResolution \u03c3 r) (\u03c3 i) == indexSide (reindexResolution \u03c3 r) (\u03c3 j))"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "reindexResolution_cut",
+      "header": "theorem reindexResolution_cut :\n    \u2200 (\u03c3 : Equiv.Perm (Fin 4)) (r : Fin 3) (L R : Fin 4 \u2192 Bool),\n      indexCut r (fun i => L (\u03c3 i)) (fun i => R (\u03c3 i))=\n        indexCut (reindexResolution \u03c3 r) L R"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "coordinate_edgeWitness",
+      "header": "theorem coordinate_edgeWitness (tips : List Nat) (lo len : Nat)\n    (v : Fin 4 \u2192 Nat) (r : Fin 3) :\n    edgeWitness tips lo len (coordinateQuartet v) r.val =\n      indexCut r (fun i => ((tips.drop lo).take len).contains (v i))\n        (fun i => (tips.take lo++tips.drop (lo+len)).contains (v i))"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "edgeWitness_coordinate_permutation",
+      "header": "theorem edgeWitness_coordinate_permutation (tips : List Nat) (lo len : Nat)\n    (v : Fin 4 \u2192 Nat) (\u03c3 : Equiv.Perm (Fin 4)) (r : Fin 3) :\n    edgeWitness tips lo len (coordinateQuartet (fun i => v (\u03c3 i))) r.val=\n      edgeWitness tips lo len (coordinateQuartet v) (reindexResolution \u03c3 r).val"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "coordinate_side",
+      "header": "theorem coordinate_side (v : Fin 4 \u21aa Nat) (r : Fin 3) (i : Fin 4) :\n    (coordinateQuartet v).side r.val (v i)=indexSide r i"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "mask_distinctMean_exact",
+      "header": "theorem mask_distinctMean_exact : \u2200 g : Fin 3 \u2192 Bool,\n    distinctMean (({.xy_zw,.xz_yw,.xw_yz} : Finset Resolution).filter\n      (fun r => g (resolutionFin r)=true))=indexedMean g"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "indexedMean_permutation",
+      "header": "theorem indexedMean_permutation : \u2200 (\u03c3 : Equiv.Perm (Fin 4)) (g : Fin 3 \u2192 Bool),\n    indexedMean (fun r => g (reindexResolution \u03c3 r))=indexedPairMean g (\u03c3 0) (\u03c3 1)"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "finiteWitnessMask_iff",
+      "header": "theorem finiteWitnessMask_iff (T : Tree) (tips : List Nat) (v : Fin 4 \u2192 Nat) (r : Fin 3) :\n    finiteWitnessMask T tips v r=true \u2194\n      \u2203 e\u2208T.internalIntervals 1, edgeWitness tips e.1 e.2 (coordinateQuartet v) r.val=true"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "finiteResolutionSet_mean",
+      "header": "theorem finiteResolutionSet_mean (T : Tree) (tips : List Nat) (v : Fin 4 \u2192 Nat) :\n    distinctMean (finiteResolutionSet T tips (coordinateQuartet v))=\n      indexedMean (finiteWitnessMask T tips v)"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "finiteWitnessMask_permutation",
+      "header": "theorem finiteWitnessMask_permutation (T : Tree) (tips : List Nat) (v : Fin 4 \u2192 Nat)\n    (\u03c3 : Equiv.Perm (Fin 4)) (r : Fin 3) :\n    finiteWitnessMask T tips (fun i => v (\u03c3 i)) r=\n      finiteWitnessMask T tips v (reindexResolution \u03c3 r)"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "finite_distinctMean_permutation",
+      "header": "theorem finite_distinctMean_permutation (T : Tree) (tips : List Nat) (v : Fin 4 \u2192 Nat)\n    (\u03c3 : Equiv.Perm (Fin 4)) :\n    distinctMean (finiteResolutionSet T tips (coordinateQuartet (fun i => v (\u03c3 i))))=\n      indexedPairMean (finiteWitnessMask T tips v) (\u03c3 0) (\u03c3 1)"
+    },
+    {
+      "module": "SortedQueryMean",
+      "name": "sorted_query_mean",
+      "header": "theorem sorted_query_mean (n mask : Nat) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1) (q : Fin 4 \u21aa Fin n) :\n    (twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      (q 0).val (q 1).val (q 2).val (q 3).val : \u211a)=\n      2 * distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (q i).val)))"
+    },
+    {
+      "module": "StoredMeanCoordinates",
+      "name": "three_filter_ratio",
+      "header": "theorem three_filter_ratio (g h : Nat \u2192 Bool) :\n    ((((List.range 3).filter g).filter h).length : \u211a) / (((List.range 3).filter g).length : \u211a)=\n      (((presentIndices (fun r => g r.val)).filter (fun r => h r.val)).length : \u211a) /\n        ((presentIndices (fun r => g r.val)).length : \u211a)"
+    },
+    {
+      "module": "StoredMeanCoordinates",
+      "name": "finiteWitnessMask_code",
+      "header": "theorem finiteWitnessMask_code (T : Tree) (tips : List Nat) (qs : List Quartet)\n    (idx : Nat) (v : Fin 4 \u2192 Nat) (hv : qs[idx]?=some (coordinateQuartet v)) (r : Fin 3) :\n    finiteWitnessMask T tips v r=\n      (code (T.summary (edgeContribution tips qs) 1) idx).testBit r.val"
+    },
+    {
+      "module": "StoredMeanCoordinates",
+      "name": "indexedPairMean_code",
+      "header": "theorem indexedPairMean_code (T : Tree) (tips : List Nat) (qs : List Quartet)\n    (idx : Nat) (v : Fin 4 \u21aa Nat) (hv : qs[idx]?=some (coordinateQuartet v)) (i j : Fin 4) :\n    indexedPairMean (finiteWitnessMask T tips v) i j=\n      ((((List.range 3).filter (fun r => (code (T.summary (edgeContribution tips qs) 1) idx).testBit r)).filter\n        (fun r => (coordinateQuartet v).side r (v i) != (coordinateQuartet v).side r (v j))).length : \u211a) /\n        (((List.range 3).filter (fun r => (code (T.summary (edgeContribution tips qs) 1) idx).testBit r)).length : \u211a)"
+    }
+  ]
+}

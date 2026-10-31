@@ -1,0 +1,128 @@
+{
+  "status": "SCOPED_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_commit": "7478ac26019e4ff3e22e646baf1553996bd21434",
+  "named_targets": [
+    "Nanuq.ActualFinite.reindexResolution_cut",
+    "Nanuq.ActualFinite.finite_distinctMean_permutation",
+    "Nanuq.ActualFinite.sorted_query_coordinates",
+    "Nanuq.ActualFinite.sorted_query_mean",
+    "Nanuq.ActualFinite.actual_sorted_query_mean",
+    "Nanuq.ActualFinite.actual_sorted_anchor",
+    "Nanuq.ActualFinite.actual_diagonal_anchor",
+    "Nanuq.OpenedCore.actual_canonical_sorted_anchor_receiver"
+  ],
+  "named_owners": {
+    "Nanuq.ActualFinite.finite_distinctMean_permutation": "ResolutionMeanCoordinates",
+    "Nanuq.OpenedCore.actual_canonical_sorted_anchor_receiver": "ActualCanonicalSortedAnchor",
+    "Nanuq.ActualFinite.sorted_query_coordinates": "QueryCoordinates",
+    "Nanuq.ActualFinite.sorted_query_mean": "SortedQueryMean",
+    "Nanuq.ActualFinite.actual_sorted_query_mean": "ActualSortedAnchor",
+    "Nanuq.ActualFinite.actual_sorted_anchor": "ActualSortedAnchor",
+    "Nanuq.ActualFinite.actual_diagonal_anchor": "ActualSortedAnchor",
+    "Nanuq.ActualFinite.reindexResolution_cut": "ResolutionCoordinates"
+  },
+  "owned_modules": 1943,
+  "declarations": 36731,
+  "theorems": 31445,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "local_full_audit_sha256": "7cd63f17664576236b495aace0858ac2021bed807ab5e78f5fe67fb52a791d5d",
+  "raw_full_audit_local_only": true,
+  "frozen_complete_headers_preserved": true,
+  "definition_repair": "indexedMean Bool inequality spacing fixed failed tokenization; original retained",
+  "scope": "SAME actual boundary/rank/mask/finiteTree across all sorted-query means and distinct-anchor comparisons; resolution bits and queried pair permuted TOGETHER, kernel-reduction finite identities. Source diagonal zero separate; equal-anchor finite/source mismatch excluded. No globalgivenC/singleton/full theorem.",
+  "new_module_identities": {
+    "ResolutionMeanCoordinates": {
+      "source_sha256": "0e44199a9c0d4f28ec30ef78266a56b3b454fd22c3d41ec217a58ee0a0f429d8",
+      "own_import_object_hashes": {
+        "ResolutionCoordinates": "608cfd95177edf40a9ac2af3fabc339fc537c6516a6bc7a3127d97b6715bf20a"
+      },
+      "object_sha256": "f970aa52e6b26b16a7a08b875d5b648b86519c2fc302d0adbc61e93dbce3e34a",
+      "reuse": "qualified independent coordinate phase"
+    },
+    "ActualSortedAnchor": {
+      "source_sha256": "63c7580b17b4f4293c9894776f1030cc7fd1378e95b1bf88443232b0ccb52f97",
+      "own_import_object_hashes": {
+        "SortedQueryMean": "3cb3ac33b922f0fc23246de496281291aa5add41adc4e9ddd3f26b41ce990ca9",
+        "ActualCanonicalDistinctReceiver": "bdedc015ea30c8e54dbcab72aa633d705de9861f87b59220a9c8affe839b5678",
+        "NanuqActualFullAnchor": "306279bd4c1d31989cc234b7098387a8c848efec3f624a15ccb514a3843f6c27"
+      },
+      "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "object_sha256": "79fb37b5f5fd34719ec483d2081a00d91525cee8408f8f2ca1632842f3f49b3f",
+      "object_family": {
+        "ActualSortedAnchor.olean": "79fb37b5f5fd34719ec483d2081a00d91525cee8408f8f2ca1632842f3f49b3f"
+      },
+      "compile_exit_code": 0,
+      "reuse": false
+    },
+    "ResolutionCoordinates": {
+      "source_sha256": "47754d0bcf06e4731a59a65fff34ba2632d2c26e8d94bc5b5df0cf851d2574ab",
+      "own_import_object_hashes": {},
+      "object_sha256": "608cfd95177edf40a9ac2af3fabc339fc537c6516a6bc7a3127d97b6715bf20a",
+      "reuse": "qualified independent coordinate phase"
+    },
+    "ActualCanonicalSortedAnchor": {
+      "source_sha256": "c21b0095966f00b6fc4a8f1b08ae622d8b7fa9c31eb7f2eede95d502c96a443e",
+      "own_import_object_hashes": {
+        "ActualSortedAnchor": "79fb37b5f5fd34719ec483d2081a00d91525cee8408f8f2ca1632842f3f49b3f"
+      },
+      "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "object_sha256": "1c157fe8d2f17a7f46486dfcbb506ca4485f93e873e65d4a1e0465de54a2a2a9",
+      "object_family": {
+        "ActualCanonicalSortedAnchor.olean": "1c157fe8d2f17a7f46486dfcbb506ca4485f93e873e65d4a1e0465de54a2a2a9"
+      },
+      "compile_exit_code": 0,
+      "reuse": false
+    },
+    "SortedQueryMean": {
+      "source_sha256": "b480cab2302613240aff3798a8d642079fb7f81a906b63cc5527576644943b89",
+      "own_import_object_hashes": {
+        "StoredMeanCoordinates": "db0ffd9c117ba1c5e195086920acbb2101d238740f0af7f6562fb88239cd9a3a",
+        "RestrictionEndpoints": "578cb2dbe991b2f5317ea4d5cda1fa1032eaa673c8c3a31620a053176413ae55"
+      },
+      "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "object_sha256": "3cb3ac33b922f0fc23246de496281291aa5add41adc4e9ddd3f26b41ce990ca9",
+      "object_family": {
+        "SortedQueryMean.olean": "3cb3ac33b922f0fc23246de496281291aa5add41adc4e9ddd3f26b41ce990ca9"
+      },
+      "compile_exit_code": 0,
+      "reuse": false
+    },
+    "QueryCoordinates": {
+      "source_sha256": "debcf501fde994c6ddd772dc0b3273ccd55ed06ae0dc8bacfe04acf8cc252192",
+      "own_import_object_hashes": {
+        "ResolutionMeanCoordinates": "f970aa52e6b26b16a7a08b875d5b648b86519c2fc302d0adbc61e93dbce3e34a",
+        "QueryExists": "6d445af4d4525e83e033d7bca1eaf80c9aeb06d9388cb2f62bcab078c1519f6e"
+      },
+      "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "object_sha256": "21e3bdbb60005da83b7d3728b58797cee6164a8d475f05523f10d3385d266ad7",
+      "object_family": {
+        "QueryCoordinates.olean": "21e3bdbb60005da83b7d3728b58797cee6164a8d475f05523f10d3385d266ad7"
+      },
+      "compile_exit_code": 0,
+      "reuse": false
+    },
+    "StoredMeanCoordinates": {
+      "source_sha256": "0e3b75fc5ed25b56b35ed83c6e10fb79c3055d0e15b084470bcceba1a3a92a82",
+      "own_import_object_hashes": {
+        "QueryCoordinates": "21e3bdbb60005da83b7d3728b58797cee6164a8d475f05523f10d3385d266ad7"
+      },
+      "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "object_sha256": "db0ffd9c117ba1c5e195086920acbb2101d238740f0af7f6562fb88239cd9a3a",
+      "object_family": {
+        "StoredMeanCoordinates.olean": "db0ffd9c117ba1c5e195086920acbb2101d238740f0af7f6562fb88239cd9a3a"
+      },
+      "compile_exit_code": 0,
+      "reuse": false
+    }
+  },
+  "build_counts": {
+    "retained_base": 715,
+    "fresh_public_providers": 1221,
+    "fresh_new_scientific_modules": 5,
+    "qualified_coordinate_phase_reuse": 2,
+    "selected_total": 1943
+  },
+  "independent_review": "PENDING; full recursive audit and provider admission compiler-attributed local-only"
+}

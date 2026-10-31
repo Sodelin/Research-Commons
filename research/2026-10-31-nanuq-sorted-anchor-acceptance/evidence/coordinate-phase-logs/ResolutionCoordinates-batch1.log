@@ -1,0 +1,46 @@
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:29:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:30:2: error: Tactic `decide` failed. The elaborator is able to reduce the `Decidable` instance, but the kernel fails with:
+
+  (kernel) declaration has free variables 'Nanuq.ActualFinite.reindexResolution_bijective._proof_1_1', expression: 
+    of_decide_eq_true (id (Eq.refl true))
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:36:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:37:2: error: (kernel) declaration has free variables 'Nanuq.ActualFinite.reindexResolution_sides._proof_1_1', expression: 
+  of_decide_eq_true (id (Eq.refl true))
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:43:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:44:2: error: (kernel) declaration has free variables 'Nanuq.ActualFinite.reindexResolution_cut._proof_1_1', expression: 
+  of_decide_eq_true (id (Eq.refl true))
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionCoordinates.lean:58:2: error: Type mismatch
+  reindexResolution_cut σ r ?m.25 ?m.26
+has type
+  (indexCut r (fun i => ?m.25 (σ i)) fun i => ?m.26 (σ i)) = indexCut (reindexResolution σ r) ?m.25 ?m.26
+but is expected to have type
+  (indexCut r (fun i => (List.take len (List.drop lo tips)).contains (v (σ i))) fun i =>
+      (List.take lo tips ++ List.drop (lo + len) tips).contains (v (σ i))) =
+    indexCut (reindexResolution σ r) (fun i => (List.take len (List.drop lo tips)).contains (v i)) fun i =>
+      (List.take lo tips ++ List.drop (lo + len) tips).contains (v i)
+'Nanuq.ActualFinite.reindexResolution_cut' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.ActualFinite.edgeWitness_coordinate_permutation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

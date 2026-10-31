@@ -1,0 +1,120 @@
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionMeanCoordinates.lean:18:39: error(lean.unknownIdentifier): Unknown identifier `r!`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionMeanCoordinates.lean:27:2: error: Tactic `decide` failed for proposition
+  ∀ (g : Fin 3 → Bool),
+    distinctMean ({r ∈ {Resolution.xy_zw, Resolution.xz_yw, Resolution.xw_yz} | g (resolutionFin r) = true}) =
+      indexedMean g
+because its `Decidable` instance
+  Fintype.decidableForallFintype
+did not reduce to `isTrue` or `isFalse`.
+
+Reduction got stuck at the `Decidable` instance
+  match
+    ((∑ t ∈ {Resolution.xy_zw, Resolution.xz_yw, Resolution.xw_yz} with
+            ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                      (Multiset.Pi.cons
+                        ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                        ((fun i => i) ⟨0, ⋯⟩) true
+                        (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                    ⋯⟩
+                (resolutionFin t) =
+              true,
+            separatesFirstPair t).mul
+        (↑{r ∈ {Resolution.xy_zw, Resolution.xz_yw, Resolution.xw_yz} |
+                ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                          (Multiset.Pi.cons
+                            ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩
+                                ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                            ((fun i => i) ⟨0, ⋯⟩) true
+                            (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩)
+                              true
+                              (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                        ⋯⟩
+                    (resolutionFin r) =
+                  true}.card).inv).num,
+    ((↑(List.filter (fun r => decide (sorry = 0))
+                (presentIndices
+                  ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                        (Multiset.Pi.cons
+                          ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                          ((fun i => i) ⟨0, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                            (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                      ⋯⟩)).length).mul
+        (↑(presentIndices
+                ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                      (Multiset.Pi.cons
+                        ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                        ((fun i => i) ⟨0, ⋯⟩) true
+                        (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                    ⋯⟩).length).inv).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+<WORKSPACE>/tasks/lean-completion/sorted-anchor-coordinate-phase/source/ResolutionMeanCoordinates.lean:31:2: error: Tactic `decide` failed for proposition
+  ∀ (σ : Equiv.Perm (Fin 4)) (g : Fin 3 → Bool),
+    (indexedMean fun r => g (reindexResolution σ r)) = indexedPairMean g (σ 0) (σ 1)
+because its `Decidable` instance
+  Fintype.decidableForallFintype
+did not reduce to `isTrue` or `isFalse`.
+
+Reduction got stuck at the `Decidable` instance
+  match
+    ((↑(List.filter (fun r => decide (sorry = 0))
+                (presentIndices fun r =>
+                  ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                          (Multiset.Pi.cons
+                            ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩
+                                ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                            ((fun i => i) ⟨0, ⋯⟩) true
+                            (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩)
+                              true
+                              (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                        ⋯⟩
+                    (reindexResolution (↑⟨1, ⋯⟩) r))).length).mul
+        (↑(presentIndices fun r =>
+                ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                        (Multiset.Pi.cons
+                          ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                          ((fun i => i) ⟨0, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                            (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                      ⋯⟩
+                  (reindexResolution (↑⟨1, ⋯⟩) r)).length).inv).num,
+    ((↑(List.filter (fun r => indexSide r (↑⟨1, ⋯⟩ 0) != indexSide r (↑⟨1, ⋯⟩ 1))
+                (presentIndices
+                  ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                        (Multiset.Pi.cons
+                          ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                          ((fun i => i) ⟨0, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                            (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                      ⋯⟩)).length).mul
+        (↑(presentIndices
+                ↑⟨{ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                      (Multiset.Pi.cons
+                        ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ [])⟧
+                        ((fun i => i) ⟨0, ⋯⟩) true
+                        (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩ []⟧ ((fun i => i) ⟨1, ⋯⟩) true
+                          (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨2, ⋯⟩) true (Multiset.Pi.empty fun a => Bool)))),
+                    ⋯⟩).length).inv).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Nanuq.ActualFinite.indexedMean_permutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.ActualFinite.finite_distinctMean_permutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
