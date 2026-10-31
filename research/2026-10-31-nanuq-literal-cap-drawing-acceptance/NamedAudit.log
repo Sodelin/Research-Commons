@@ -1,0 +1,19 @@
+@Nanuq.CapCurves.actualRootedCapCurves : {V : Type u_1} →
+  {E : Type u_2} →
+    {X : Type u_3} →
+      [inst : Fintype V] →
+        [inst_1 : Fintype E] →
+          [inst_2 : Fintype X] →
+            [inst_3 : DecidableEq V] →
+              (N : Nanuq.Source.RootedBinary V E X) →
+                G1OuterLabelledMultigraphCurves.PlanarCurves N.graph →
+                  (b : N.graph.Blob) →
+                    N.NonleafBlob b → G1OuterLabelledMultigraphCurves.PlanarCurves (N.actualRootedCapGraph b)
+'Nanuq.CapCurves.actualRootedCapCurves' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CapCurves.actualRootedCapCurves_drawing_subset : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V]
+  (N : Nanuq.Source.RootedBinary V E X) (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob)
+  (hb : N.NonleafBlob b),
+  G1OuterLabelledMultigraphCurves.drawing (Nanuq.CapCurves.actualRootedCapCurves N D b hb) ⊆
+    G1OuterLabelledMultigraphCurves.drawing D
+'Nanuq.CapCurves.actualRootedCapCurves_drawing_subset' depends on axioms: [propext, Classical.choice, Quot.sound]

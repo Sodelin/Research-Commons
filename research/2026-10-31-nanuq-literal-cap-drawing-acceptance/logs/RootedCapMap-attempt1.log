@@ -1,0 +1,149 @@
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:116:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+p : N.BlobPort b
+hp : ¬N.graph.bridgeQuotient.source ↑p = b
+hn : b ≠ N.graph.blobOf N.root
+he : p = N.originalIncomingBlobPort b ⋯
+⊢ (if N.graph.bridgeQuotient.source ↑(N.originalIncomingBlobPort b ⋯) = b then
+      D.point (N.graph.source ↑↑(N.originalIncomingBlobPort b ⋯))
+    else (D.arc ↑↑p) twoThirds) =
+    match
+      if N.graph.bridgeQuotient.source ↑(N.originalIncomingBlobPort b ⋯) = b then
+        Sum.inl (N.originalPortInner b (N.originalIncomingBlobPort b ⋯))
+      else Sum.inr (Sum.inr ⟨(), ⋯⟩) with
+    | Sum.inl v => D.point ↑v
+    | Sum.inr (Sum.inl p) => (D.arc ↑↑p) (portParameter N b p)
+    | Sum.inr (Sum.inr r) => (D.arc ↑↑(N.originalIncomingBlobPort b ⋯)) twoThirds
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:118:65: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [capRawArc, capPoint, RootedBinary.actualRootedCapGraph, RootedBinary.actualRootedCapRoot, hn, he]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:136:6: error: `simp` made no progress
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:138:6: error: `simp` made no progress
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:155:6: error: `simp` made no progress
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:159:6: error: `simp` made no progress
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:182:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+t : ↑unitInterval
+p : N.BlobPort b
+hp : N.graph.bridgeQuotient.source ↑p = b
+⊢ (D.arc ↑↑p) (affineParameter 0 oneHalf t) = (D.arc ↑↑p) (affineParameter 0 oneHalf t)
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+t : ↑unitInterval
+p : N.BlobPort b
+hp : ¬N.graph.bridgeQuotient.source ↑p = b
+⊢ (D.arc ↑↑p) (affineParameter twoThirds oneThird t) = (D.arc ↑↑p) (affineParameter twoThirds oneThird t)
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:198:14: error: linarith failed to find a contradiction
+case pos.left
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+t : ↑unitInterval
+ht0 : t ≠ 0
+ht1 : t ≠ 1
+ht : 0 < ↑t ∧ ↑t < 1
+p : N.BlobPort b
+hp : N.graph.bridgeQuotient.source ↑p = b
+h : capParameter N b (Sum.inr (Sum.inl p)) t = 0
+he : t = 0
+⊢ False
+failed
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:221:37: error: invalid `▸` notation, expected result type of cast is 
+  N.graph.IsBridge ↑e
+however, the equality 
+  Eq.symm hc
+of type 
+  capCarrier N b (Sum.inr (Sum.inl q)) = capCarrier N b (Sum.inl e)
+does not contain the expected result type on either the left or the right hand side
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:222:37: error: invalid `▸` notation, expected result type of cast is 
+  N.graph.IsBridge ↑e
+however, the equality 
+  Eq.symm hc
+of type 
+  capCarrier N b (Sum.inr (Sum.inr s)) = capCarrier N b (Sum.inl e)
+does not contain the expected result type on either the left or the right hand side
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:223:37: error: invalid `▸` notation, expected result type of cast is 
+  N.graph.IsBridge ↑f
+however, the equality 
+  hc
+of type 
+  capCarrier N b (Sum.inr (Sum.inl p)) = capCarrier N b (Sum.inl f)
+does not contain the expected result type on either the left or the right hand side
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:232:37: error: invalid `▸` notation, expected result type of cast is 
+  N.graph.IsBridge ↑f
+however, the equality 
+  hc
+of type 
+  capCarrier N b (Sum.inr (Sum.inr r)) = capCarrier N b (Sum.inl f)
+does not contain the expected result type on either the left or the right hand side
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:248:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:251:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:283:6: error: Type mismatch: After simplification, term
+  Eq.symm (Path.source (capArc N D b f))
+ has type
+  capPoint N D b ((N.actualRootedCapGraph b).source f) = (capArc N D b f) 0
+but is expected to have type
+  capPoint N D b v = (capArc N D b f) 0
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:285:6: error: Type mismatch: After simplification, term
+  Eq.symm (Path.target (capArc N D b f))
+ has type
+  capPoint N D b ((N.actualRootedCapGraph b).target f) = (capArc N D b f) 1
+but is expected to have type
+  capPoint N D b v = (capArc N D b f) 1
+'Nanuq.CapCurves.actualRootedCapCurves' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.CapCurves.actualRootedCapCurves_drawing_subset' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

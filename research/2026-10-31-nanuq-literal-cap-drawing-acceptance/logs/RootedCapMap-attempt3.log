@@ -1,0 +1,29 @@
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:119:65: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [capRawArc, capPoint, RootedBinary.actualRootedCapGraph, hp', RootedBinary.actualRootedCapRoot, hn, he]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:138:6: warning: Unused tactic linter: `change Continuous (capRawArc N D b (.inr (.inl p)))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:149:6: warning: Unused tactic linter: `change Continuous (capRawArc N D b (.inr (.inl p)))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:294:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/workspace/tasks/lean-completion/cap-drawing/source/RootedCapMap.lean:297:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'Nanuq.CapCurves.actualRootedCapCurves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.CapCurves.actualRootedCapCurves_drawing_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
