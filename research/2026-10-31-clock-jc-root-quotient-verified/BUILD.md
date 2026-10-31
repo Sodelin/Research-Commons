@@ -1,0 +1,5 @@
+# Reproduce the scoped source check
+
+Use Lean4.33.1 commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6 and Mathlib0df444a360eaa60ab8c11dca51a86af692955474 with pinned dependencies. Use the original selected source at14be42189b8a72fcaced51ceda4e86445dc09e90 plus accepted occupation CurrentPartition edcb4758572cbcd0ea0e58c60611a7f32c95aedd6fcbfa62e6be7cc86c4ed80f. Check all75 provider identities in evidence/provider-context.json, and reconstruct their exact module paths/import closure rather than substituting unrelated cached objects.
+
+Copy lean/ResearchCommons to an isolated exact-context source root. Compile ResearchCommons.MSCI.JC69SourceRootQuotient with the pinned Lean environment, then execute audit/NamedAudit.lean and audit/OwnedAudit.portable.lean in the same context. Compare the selected source hash, ten named types/axioms, exact76 owned modules and full audit rejection lists. These are reproduction instructions; no second build was performed for publication. The full audited declaration metadata is compressed only for storage.

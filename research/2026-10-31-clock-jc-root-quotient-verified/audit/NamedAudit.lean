@@ -1,0 +1,21 @@
+import ResearchCommons.MSCI.JC69SourceRootQuotient
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.actual_totalRate_eq
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.actual_totalRate_eq
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_population
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_population
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_rate
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_rate
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.matching_root_exists
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.matching_root_exists
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_bijective
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_bijective
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.location_eq_of_same_block
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.location_eq_of_same_block
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_location
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_location
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.decode_encode_blocks
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.decode_encode_blocks
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_blocks
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_blocks
+#check ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_copyLocation
+#print axioms ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_copyLocation

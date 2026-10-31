@@ -1,0 +1,130 @@
+ResearchCommons.MSCI.JC69SourceRootQuotient.actual_totalRate_eq.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state s) =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state t))
+  (hLoc :
+    ∀ (x : Copy),
+      GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state s) x =
+        GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state t) x) :
+  UnifiedLean.Source.UniformizedSourceStep.totalRate N r t = UnifiedLean.Source.UniformizedSourceStep.totalRate N r s
+'ResearchCommons.MSCI.JC69SourceRootQuotient.actual_totalRate_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_population.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state s) =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state t))
+  (hLoc :
+    ∀ (x : Copy),
+      GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state s) x =
+        GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state t) x)
+  (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) :
+  ((ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv N s t hB hLoc) p).fst = p.fst
+'ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_rate.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state s) =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state t))
+  (hLoc :
+    ∀ (x : Copy),
+      GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state s) x =
+        GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state t) x)
+  (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) :
+  UnifiedLean.Source.UniformizedSourceStep.choiceRate N r t
+      ((ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv N s t hB hLoc) p) =
+    UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p
+'ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv_rate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.matching_root_exists.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy]
+  (s t : GProgram.SourceForest.State V E Copy)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks t)
+  (a : ResearchCommons.MSCI.JC69SourceRootQuotient.LiveRoot s) :
+  ∃ b ∈ t.live, (t.genealogy b).leaves = (s.genealogy ↑a).leaves
+'ResearchCommons.MSCI.JC69SourceRootQuotient.matching_root_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_bijective.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy]
+  (s t : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (ht : GProgram.SourceForest.Valid t)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks t) :
+  Function.Bijective (ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot s t hB)
+'ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_bijective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.location_eq_of_same_block.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy]
+  (s t : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (ht : GProgram.SourceForest.Valid t)
+  (hLoc : ∀ (x : Copy), GProgram.SourceForest.copyLocation s x = GProgram.SourceForest.copyLocation t x)
+  (a : ResearchCommons.MSCI.JC69SourceRootQuotient.LiveRoot s)
+  (b : ResearchCommons.MSCI.JC69SourceRootQuotient.LiveRoot t)
+  (hB : (s.genealogy ↑a).leaves = (t.genealogy ↑b).leaves) : s.location ↑a = t.location ↑b
+'ResearchCommons.MSCI.JC69SourceRootQuotient.location_eq_of_same_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_location.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy]
+  (s t : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (ht : GProgram.SourceForest.Valid t)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks t)
+  (hLoc : ∀ (x : Copy), GProgram.SourceForest.copyLocation s x = GProgram.SourceForest.copyLocation t x)
+  (a : ResearchCommons.MSCI.JC69SourceRootQuotient.LiveRoot s) :
+  t.location ↑(ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot s t hB a) = s.location ↑a
+'ResearchCommons.MSCI.JC69SourceRootQuotient.matchingRoot_location' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.decode_encode_blocks.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy] (root : V)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) :
+  ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks
+      (UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot root
+        (UnifiedLean.Source.FiniteSourceSnapshot.encodeSnapshot s hs)) =
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s
+'ResearchCommons.MSCI.JC69SourceRootQuotient.decode_encode_blocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_blocks.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) :
+  ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks
+      (UnifiedLean.Source.UniformizedSourceStep.state
+        (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))) =
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks
+      (GProgram.SourceForest.merge (UnifiedLean.Source.UniformizedSourceStep.state s) (↑p.snd).1 (↑p.snd).2)
+'ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_blocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_copyLocation.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s)
+  (x : Copy) :
+  GProgram.SourceForest.copyLocation
+      (UnifiedLean.Source.UniformizedSourceStep.state
+        (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)))
+      x =
+    GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state s) x
+'ResearchCommons.MSCI.JC69SourceRootQuotient.actual_coded_merge_copyLocation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

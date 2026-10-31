@@ -1,0 +1,52 @@
+--- a/ResearchCommons/MSCI/JC69SourceRootQuotient.lean
++++ b/ResearchCommons/MSCI/JC69SourceRootQuotient.lean
+@@ -96,11 +96,13 @@
+     {p : Copy × Copy // p ∈ (populationRoots s place).offDiag} ≃
+       LivePopulationPair s place where
+   toFun p := by
+-    obtain ⟨ha,hb,hne⟩ := Finset.mem_offDiag.mp p.property
+-    obtain ⟨hal,haloc⟩ := Finset.mem_filter.mp ha
+-    obtain ⟨hbl,hbloc⟩ := Finset.mem_filter.mp hb
+-    exact ⟨(⟨p.val.1,hal⟩,⟨p.val.2,hbl⟩),haloc,hbloc,
+-      fun he => hne (congrArg Subtype.val he)⟩
++    refine ⟨(⟨p.val.1, ?_⟩, ⟨p.val.2, ?_⟩), ?_, ?_, ?_⟩
++    · exact (Finset.mem_filter.mp (Finset.mem_offDiag.mp p.property).1).1
++    · exact (Finset.mem_filter.mp (Finset.mem_offDiag.mp p.property).2.1).1
++    · exact (Finset.mem_filter.mp (Finset.mem_offDiag.mp p.property).1).2
++    · exact (Finset.mem_filter.mp (Finset.mem_offDiag.mp p.property).2.1).2
++    · intro he
++      exact (Finset.mem_offDiag.mp p.property).2.2 (congrArg Subtype.val he)
+   invFun p := ⟨(p.val.1.val,p.val.2.val),Finset.mem_offDiag.mpr
+     ⟨Finset.mem_filter.mpr ⟨p.val.1.property,p.property.1⟩,
+       Finset.mem_filter.mpr ⟨p.val.2.property,p.property.2.1⟩,
+@@ -122,7 +124,7 @@
+   change t.location (e p.1).val = s.location p.1.val at h1
+   change t.location (e p.2).val = s.location p.2.val at h2
+   rw [h1,h2]
+-  simp only [e.injective.eq_iff]
++  exact and_congr Iff.rfl (and_congr Iff.rfl (not_congr e.injective.eq_iff).symm)
+ 
+ /-- Genuine equivalence of the ACTUAL original Choice types. It preserves
+ the original Option E population index, rather than inventing a P-code. -/
+@@ -166,14 +168,19 @@
+   unfold currentBlocks
+   apply Finset.image_congr
+   intro a ha
++  dsimp only
+   rw [decode_encode_live_genealogy root s hs ha]
+ 
+ lemma actual_coded_merge_blocks (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (p : Choice N s) :
+     currentBlocks (state (stepDestination N s (some p))) =
+       currentBlocks (merge (state s) p.2.val.1 p.2.val.2) := by
+-  unfold state stepDestination admittedCode
+-  exact decode_encode_blocks _ _ _
++  have hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
++    (originalPlace_not_node N p.1) p.2.property
++  change currentBlocks (decodeSnapshot N.root
++    (encodeSnapshot (merge (state s) p.2.val.1 p.2.val.2)
++      (merge_valid (state s) s.property.forest hm))) = _
++  exact decode_encode_blocks N.root _ (merge_valid (state s) s.property.forest hm)
+ 
+ lemma actual_coded_merge_copyLocation (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (p : Choice N s) (x : Copy) :

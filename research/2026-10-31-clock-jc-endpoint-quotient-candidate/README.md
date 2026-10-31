@@ -1,0 +1,9 @@
+# Actual endpoint-weight quotient — uncompiled composition candidate
+
+AI-assisted proof implementation by dot (OpenAI),31 October2026. Four requested endpoints, one new module. This is NOT accepted Lean evidence. Exact source hash and accepted provider versions are in BUILD-REQUEST.json. No local build was run; no new compiler context requested.
+
+The candidate first connects corresponding actual coded merge destinations using actual matched blocks and original decode/encode suppliers. It identifies the actual killing coefficient from the accepted partition charge sum. At fuel zero it integrates the original successful no-event indicator, preserving the false flag outside that event. It then proves equality of actualResolvedWeight by finite-fuel induction, reindexing ORIGINAL ordered Choice types and retaining the SAME endpoint target and shared locus trace. The induction uses t-u≥0 only on the actual holding measure's restricted support u≤t. No final likelihood expansion, alternate scalar response, success-conditioned law, boundary/hidden-register factorization, or P-sized coding is assumed.
+
+Fixed N/sample/r and all original labelled copies are mandatory. This is same-epoch equality, not equality between different demographic models. Empty Choice/zero total rate needs no artificial positive-total-rate premise; the source renewal already supplies its convention. The mathematical intended equality includes failed finite-fuel traces with their original zero weight, not only full-success fuel.
+
+Compiler/API diagnostics are still required. Root-adapter repaired definition presentation and all inherited source identities must remain exact. Full source calendar/terminal scientific composition, finite representation, exact manuscript bounds and forward reconstruction remain separate. Existing normalization, actual root completion and balanced tree Fourier suppliers are reused, not claimed missing or re-proved. HOLD_FULL_LEAN_PROOF_PENDING.
