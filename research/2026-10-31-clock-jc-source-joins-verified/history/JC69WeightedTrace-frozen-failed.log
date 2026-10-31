@@ -1,0 +1,83 @@
+source/ResearchCommons/MSCI/JC69WeightedTrace.lean:122:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69WeightedTrace.lean:125:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69WeightedTrace.lean:141:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫⁻ (a : Choice N (stepDestination N s (some p)) → ℝ),
+    ?m.645 *
+      (locusTraceWeight N L q n (stepDestination N s (some p)) (↑t - u) ∘
+          literalMarkedTrace N n (↑t - u) (stepDestination N s (some p)))
+        a ∂?m.644
+in the target expression
+  ∫⁻ (y : Choice N (stepDestination N s (some p)) → ℝ),
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * (u, y).1))) *
+        locusTraceWeight N L q n (stepDestination N s (some p)) (↑t - (u, y).1)
+          (literalMarkedTrace N n (↑t - (u, y).1) (stepDestination N s (some p))
+            (u, y).2) ∂currentPairClockMeasure N r (stepDestination N s (some p)) =
+    ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+      actualLocusWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+
+case e_a
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+n : ℕ
+s : Code N sample
+t : ℝ≥0
+p : Choice N s
+a✝ : p ∈ Finset.univ
+this✝ : ∀ (v : Choice N (stepDestination N s (some p))),
+  IsProbabilityMeasure (expMeasure (choiceRate N r (stepDestination N s (some p)) v)) :=
+  fun v =>
+    isProbabilityMeasure_expMeasure
+      (div_pos (pairRate_pos r v.fst)
+        (Mathlib.Meta.NormNum.isNat_lt_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)
+          (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2)) (Eq.refl false)))
+this : IsProbabilityMeasure (currentPairClockMeasure N r (stepDestination N s (some p))) := id inferInstance
+hf :
+  Measurable fun z =>
+    ENNReal.ofReal (Real.exp (-(locusKill N L q s * z.1))) *
+      locusTraceWeight N L q n (stepDestination N s (some p)) (↑t - z.1)
+        (literalMarkedTrace N n (↑t - z.1) (stepDestination N s (some p)) z.2)
+u : ℝ
+⊢ ∫⁻ (y : Choice N (stepDestination N s (some p)) → ℝ),
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * (u, y).1))) *
+        locusTraceWeight N L q n (stepDestination N s (some p)) (↑t - (u, y).1)
+          (literalMarkedTrace N n (↑t - (u, y).1) (stepDestination N s (some p))
+            (u, y).2) ∂currentPairClockMeasure N r (stepDestination N s (some p)) =
+    ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+      actualLocusWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+'ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_prepend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_first_jump_branches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_renewal' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

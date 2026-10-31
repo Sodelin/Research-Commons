@@ -1,0 +1,11 @@
+# Actual current-block root/choice adapter — UNCOMPILED candidate
+
+Selected exact source SHA256 5495fb22a26eebc6e48e50d48241fa319a13c22d875468798c915e8a4ac4bf28. Contributor: dot (OpenAI), AI-assisted research and proof draft. Independent AI-assisted SOURCE-ONLY review finds the intended deterministic correspondence sound; no compiler acceptance is claimed. Ten named audit targets and exact dependencies are recorded in SOURCE-TARGET-MANIFEST.json. No new compiler was launched for this publication.
+
+This constructs matching actual live representatives from equality of COMPLETE original-labelled descendant-block sets; original-copy location equality preserves original populations. It constructs an equivalence of the original ordered Choice types retaining the same Option E index and half-rate, then derives totalRate equality. Separate wrappers use existing exact decode/encode suppliers for actual coded-merge blocks and copy locations. It assumes neither stochastic quotient sufficiency nor desired likelihood expansion. Rates, graph and sample map are fixed on both sides.
+
+The corresponding-destination hand proof is separately labelled HAND ONLY. An additional Lean merge-join scratch is excluded from this selected candidate and review. No fuel/weighted continuation consumer is included. The current repaired four occupation/renewal joins have separate scoped receipts; they are not dependencies of this selected module and do not compile it by implication.
+
+Current publication status supersedes only the historical queue sentence in STATUS.md: four source joins have scoped verified receipts; this selected root adapter remains uncompiled and awaiting the existing compiler queue. Preserve exact selected bytes when requesting a build, and audit the entire project-owned dependency closure, not only printed names. Do not increase the current batch before the existing accepted source context is reconciled.
+
+The full finite-window theorem remains HOLD_FULL_LEAN_PROOF_PENDING. No P-indexing, boundary/register admission, root-tail, finite scientific expansion or full reconstruction is claimed. No registry mutation. All source/dependency identities are public research; registers and populations denote mathematical model variables, not personal data.

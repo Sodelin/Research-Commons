@@ -1,0 +1,147 @@
+--- a/source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean
++++ b/source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean
+@@ -49,16 +49,25 @@
+   cases b with
+   | exit e =>
+       rw [boundaryKernel,PMF.toMeasure_pure,ae_dirac_iff hm]
+-      rw [snapshot_potential]
+-      rfl
++      rw [show state (exitCode N s e) =
++        decodeSnapshot N.root (encodeSnapshot (exitEdge N (state s) e)
++          (exitEdge_source_valid N sample _ s.property e).forest) from rfl]
++      exact (snapshot_potential q leafAge N.root (exitEdge N (state s) e)
++        (exitEdge_source_valid N sample (state s) s.property e).forest M T).trans rfl
+   | ordinary e degree =>
+       rw [boundaryKernel,PMF.toMeasure_pure,ae_dirac_iff hm]
+-      rw [snapshot_potential]
+-      rfl
++      rw [show state (ordinaryCode N s e) =
++        decodeSnapshot N.root (encodeSnapshot (enterEdge N (state s) e)
++          (enterEdge_source_valid N sample _ s.property e).forest) from rfl]
++      exact (snapshot_potential q leafAge N.root (enterEdge N (state s) e)
++        (enterEdge_source_valid N sample (state s) s.property e).forest M T).trans rfl
+   | root =>
+       rw [boundaryKernel,PMF.toMeasure_pure,ae_dirac_iff hm]
+-      rw [snapshot_potential]
+-      rfl
++      rw [show state (rootCode N s) =
++        decodeSnapshot N.root (encodeSnapshot (enterRoot N (state s))
++          (enterRoot_source_valid N sample _ s.property).forest) from rfl]
++      exact (snapshot_potential q leafAge N.root (enterRoot N (state s))
++        (enterRoot_source_valid N sample (state s) s.property).forest M T).trans rfl
+   | common H =>
+       rw [boundaryKernel,PMF.toMeasure_pure,ae_dirac_iff hm]
+       exact hp H (fun _ => (state s).register H.hybrid)
+--- a/source/ResearchCommons/MSCI/JC69CalendarOccupation.lean
++++ b/source/ResearchCommons/MSCI/JC69CalendarOccupation.lean
+@@ -42,6 +42,9 @@
+       forestPotential q leafAge (state z.2) z.1.1 z.1.2) := by
+   apply measurable_from_prod_countable_left
+   intro s
++  change Measurable (fun x : (Copy → Copy → ℝ) × ℝ =>
++    ∑ l ∈ (state s).live, potential q leafAge ((state s).genealogy l)
++      (decode x.1 ((state s).genealogy l)) x.2)
+   apply Finset.measurable_sum
+   intro l _
+   exact potential_decode_measurable q leafAge ((state s).genealogy l)
+@@ -57,7 +60,9 @@
+     (q : Copy → Base) (op : ProgramStep N) (s : Code N sample) :
+     Measurable (segmentOccupation N q op s) := by
+   cases op with
+-  | interval h => exact (occupation_joint_measurable N q (Fintype.card Copy) s).comp (by fun_prop)
++  | interval h =>
++      exact (occupation_joint_measurable N q (Fintype.card Copy) s).comp
++        (measurable_const.prodMk (measurable_const.prodMk measurable_fst.snd))
+   | boundary b => exact measurable_const
+ 
+ /-- Actual finite-segment law, with no conditioning on its stored success
+@@ -88,12 +93,12 @@
+       apply Filter.Eventually.of_forall
+       intro c
+       simpa only [segmentMatrix,segmentOffset,segmentOccupation,attachEndpoint,
+-        actual_trace_occupation] using
++        Function.comp_apply, actual_trace_occupation] using
+         actual_literal_occupation_identity N q leafAge (Fintype.card Copy) s h offset c M
+   | boundary b =>
+       rw [actualSegmentLaw]
+       apply (ae_map_iff (boundary_record_measurable N).aemeasurable hm).mpr
+-      simpa only [segmentMatrix,segmentOffset,segmentOccupation,add_zero] using
++      simpa only [segmentMatrix,segmentOffset,segmentOccupation,boundaryRecord,add_zero] using
+         actual_boundary_exposure N q leafAge M b s offset
+ 
+ def calendarTime (N : RootedBinary V E X) : List (ProgramStep N) → ℝ → ℝ
+@@ -116,7 +121,8 @@
+       have hd : Measurable (fun z : Code N sample × (Fin ops.length → SegmentRecord N sample) =>
+           calendarOccupation N q ops z.1 z.2) := measurable_from_prod_countable_right ih
+       exact ((segment_occupation_measurable N q op s).comp (measurable_pi_apply 0)).add
+-        (hd.comp (by fun_prop))
++        (hd.comp (((measurable_pi_apply 0).snd).prodMk
++          (measurable_pi_lambda _ (fun i => measurable_pi_apply i.succ))))
+ 
+ lemma calendar_exposure_measurable (N : RootedBinary V E X) {sample : Copy → X}
+     (q : Copy → Base) (leafAge : Copy → ℝ) (ops : List (ProgramStep N))
+@@ -201,7 +207,7 @@
+       have hm : MeasurableSet {past : Fin (op::ops).length → SegmentRecord N sample |
+           ∀ i, (past i).1.1 = true} := by
+         simpa only [Set.setOf_forall] using
+-          measurableSet_iInter (fun i : Fin (op::ops).length =>
++          MeasurableSet.iInter (fun i : Fin (op::ops).length =>
+             measurableSet_eq_fun (measurable_pi_apply i).fst.fst measurable_const)
+       have hmap := record_cons_measurable N (sample := sample) ops.length
+       apply (ae_map_iff hmap.aemeasurable hm).mpr
+--- a/source/ResearchCommons/MSCI/JC69WeightedTrace.lean
++++ b/source/ResearchCommons/MSCI/JC69WeightedTrace.lean
+@@ -138,10 +138,17 @@
+   rw [lintegral_prod _ hf.aemeasurable]
+   apply lintegral_congr
+   intro u
+-  rw [lintegral_const_mul _ ((locus_trace_weight_measurable N L q n
++  dsimp only [Prod.fst, Prod.snd]
++  have hc := lintegral_const_mul
++    (μ := currentPairClockMeasure N r (stepDestination N s (some p)))
++    (ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))))
++    ((locus_trace_weight_measurable N L q n
+       (stepDestination N s (some p)) ((t : ℝ)-u)).comp
+-        (marked_trace_measurable N n (stepDestination N s (some p)) ((t : ℝ)-u))),
+-    ← actual_locus_weight_clock_integral]
++        (marked_trace_measurable N n (stepDestination N s (some p)) ((t : ℝ)-u)))
++  exact hc.trans (congrArg
++    (fun z => ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))) * z)
++    (actual_locus_weight_clock_integral N r L q n (stepDestination N s (some p)) ((t : ℝ)-u)).symm)
++
+ 
+ #print axioms locus_weight_prepend
+ #print axioms locus_weight_empty
+--- a/source/ResearchCommons/MSCI/JC69EndpointWeight.lean
++++ b/source/ResearchCommons/MSCI/JC69EndpointWeight.lean
+@@ -141,14 +141,26 @@
+     unfold currentPairClockMeasure
+     infer_instance
+   rw [lintegral_map hw (first_jump_future_measurable N n s p t)]
+-  rw [lintegral_prod _ (hw.comp (first_jump_future_measurable N n s p t)).aemeasurable]
++  have hprod := lintegral_prod
++    (μ := (ENNReal.ofReal (choiceRate N r s p/totalRate N r s) •
++      expMeasure (totalRate N r s)).restrict (Iic (t : ℝ)))
++    (ν := currentPairClockMeasure N r (stepDestination N s (some p)))
++    _ (hw.comp (first_jump_future_measurable N n s p t)).aemeasurable
++  simp only [Function.comp_apply] at hprod
++  rw [hprod]
+   apply lintegral_congr
+   intro u
+   simp_rw [firstJumpFuture,resolved_weight_prepend]
+-  rw [lintegral_const_mul _ ((resolved_weight_measurable N L q n
++  have hc := lintegral_const_mul
++    (μ := currentPairClockMeasure N r (stepDestination N s (some p)))
++    (ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))))
++    ((resolved_weight_measurable N L q n
+       (stepDestination N s (some p)) ((t : ℝ)-u) target).comp
+-        (marked_trace_measurable N n (stepDestination N s (some p)) ((t : ℝ)-u))),
+-    ← actual_resolved_clock_integral]
++        (marked_trace_measurable N n (stepDestination N s (some p)) ((t : ℝ)-u)))
++  exact hc.trans (congrArg
++    (fun z => ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))) * z)
++    (actual_resolved_clock_integral N r L q n (stepDestination N s (some p)) ((t : ℝ)-u) target).symm)
++
+ 
+ #print axioms actual_block_population_constant
+ #print axioms actual_merge_observation_orientation

@@ -1,0 +1,142 @@
+source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:24:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:53:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (exitEdge N (decodeSnapshot N.root ↑s) e) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+case exit
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+e : E
+⊢ forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (exitEdge N (decodeSnapshot N.root ↑s) e) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    exitCode._proof_1 N s e
+  has type
+    @SourceValid Copy V E X inst✝¹ inst✝⁴ inst✝³ inst✝² inst✝⁶ N sample (exitEdge N (decodeSnapshot N.root ↑s) e)
+  but is expected to have type
+    @SourceValid Copy V E X inst✝¹ inst✝⁴ inst✝³ inst✝² inst✝⁶ N sample (exitEdge N (state s) e)
+  in the application
+    (exitCode._proof_1 N s e).forest
+source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:58:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (enterEdge N (decodeSnapshot N.root ↑s) e) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+case ordinary
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+e : E
+degree : N.graph.inDegree (N.graph.target e) = 1
+⊢ forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (enterEdge N (decodeSnapshot N.root ↑s) e) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    ordinaryCode._proof_1 N s e
+  has type
+    @SourceValid Copy V E X inst✝¹ inst✝⁴ inst✝³ inst✝² inst✝⁶ N sample (enterEdge N (decodeSnapshot N.root ↑s) e)
+  but is expected to have type
+    @SourceValid Copy V E X inst✝¹ inst✝⁴ inst✝³ inst✝² inst✝⁶ N sample (enterEdge N (state s) e)
+  in the application
+    (ordinaryCode._proof_1 N s e).forest
+source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:63:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (enterRoot N (decodeSnapshot N.root ↑s)) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+case root
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+⊢ forestPotential q leafAge (decodeSnapshot N.root (encodeSnapshot (enterRoot N (decodeSnapshot N.root ↑s)) ⋯)) M T =
+    forestPotential q leafAge (decodeSnapshot N.root ↑s) M T
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    (rootCode._proof_1 N s).forest
+  has type
+    @Valid Copy V E inst✝¹ (enterRoot N (state s))
+  but is expected to have type
+    @Valid Copy V E inst✝¹ (enterRoot N (decodeSnapshot N.root ↑s))
+  in the application
+    encodeSnapshot (enterRoot N (decodeSnapshot N.root ↑s)) ⋯
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_boundary_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

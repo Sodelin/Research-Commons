@@ -1,0 +1,114 @@
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:38:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:48:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:137:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:140:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:144:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫⁻ (z : ℝ × (Choice N (stepDestination N s (some p)) → ℝ)),
+    (resolvedTraceWeight N L q (n + 1) s (↑t) target ∘ firstJumpFuture N n s p ↑t) z ∂Measure.prod ?m.470 ?m.471
+in the target expression
+  ∫⁻ (a : ℝ × (Choice N (stepDestination N s (some p)) → ℝ)),
+      resolvedTraceWeight N L q (n + 1) s (↑t) target
+        (firstJumpFuture N n s p (↑t)
+          a) ∂((ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s)).restrict
+            (Iic ↑t)).prod
+        (currentPairClockMeasure N r (stepDestination N s (some p))) =
+    ∫⁻ (u : ℝ) in Iic ↑t,
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+        actualResolvedWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+          target ∂ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s)
+
+case e_a
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+n : ℕ
+s : Code N sample
+t : ℝ≥0
+target : BlockPopulationObservation Copy V E
+hw : Measurable (resolvedTraceWeight N L q (n + 1) s (↑t) target)
+p : Choice N s
+a✝ : p ∈ Finset.univ
+this✝ : ∀ (v : Choice N (stepDestination N s (some p))),
+  IsProbabilityMeasure (expMeasure (choiceRate N r (stepDestination N s (some p)) v)) :=
+  fun v =>
+    isProbabilityMeasure_expMeasure
+      (div_pos (pairRate_pos r v.fst)
+        (Mathlib.Meta.NormNum.isNat_lt_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)
+          (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2)) (Eq.refl false)))
+this : IsProbabilityMeasure (currentPairClockMeasure N r (stepDestination N s (some p))) := id inferInstance
+⊢ ∫⁻ (a : ℝ × (Choice N (stepDestination N s (some p)) → ℝ)),
+      resolvedTraceWeight N L q (n + 1) s (↑t) target
+        (firstJumpFuture N n s p (↑t)
+          a) ∂((ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s)).restrict
+            (Iic ↑t)).prod
+        (currentPairClockMeasure N r (stepDestination N s (some p))) =
+    ∫⁻ (u : ℝ) in Iic ↑t,
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+        actualResolvedWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+          target ∂ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s)
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.exit_indicator_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_prepend' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_resolved_weight_renewal' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

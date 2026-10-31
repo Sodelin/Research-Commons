@@ -1,0 +1,266 @@
+ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) (sample : Copy → X) (register : V → Bool)
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (M : Copy → Copy → ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q (fun x => 0) (GProgram.SourceForest.initial N sample register) M
+      0 =
+    0
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69BoundaryOccupation.actual_boundary_exposure.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) (M : Copy → Copy → ℝ)
+  (b : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (T : ℝ) :
+  ∀ᵐ (d :
+    UnifiedLean.Source.UniformizedSourceStep.Code N
+      sample) ∂(UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N b s).toMeasure,
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state d) M
+        T =
+      ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s) M
+        T
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_boundary_exposure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable.{u_3} {Copy : Type u_3} [DecidableEq Copy]
+  [Fintype Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (tree : GProgram.SourceForest.Genealogy Copy) :
+  Measurable fun z =>
+    ResearchCommons.MSCI.JC69Occupation.potential q leafAge tree (GProgram.G2.FaithfulPairAgeDecoration.decode z.1 tree)
+      z.2
+'ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.forest_potential_joint_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) :
+  Measurable fun z =>
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state z.2)
+      z.1.1 z.1.2
+'ResearchCommons.MSCI.JC69CalendarOccupation.forest_potential_joint_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_exposure.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (q : Copy → ResearchCommons.MSCI.JC69.Base)
+  (leafAge : Copy → ℝ) (op : UnifiedLean.Source.SourceProgramTransport.ProgramStep N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (offset : ℝ) (M : Copy → Copy → ℝ) :
+  ∀ᵐ (z :
+    GProgram.G2.ActualCalendarTrace.SegmentRecord N sample) ∂GProgram.G2.ActualCalendarTrace.actualSegmentLaw N r op s,
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state z.2)
+        (GProgram.G2.CalendarDecoration.segmentMatrix N op s offset M z)
+        (GProgram.G2.CalendarDecoration.segmentOffset N op offset) =
+      ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s) M
+          offset +
+        ResearchCommons.MSCI.JC69CalendarOccupation.segmentOccupation N q op s z
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_exposure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_exposure.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (q : Copy → ResearchCommons.MSCI.JC69.Base)
+  (leafAge : Copy → ℝ) (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (offset : ℝ) (M : Copy → Copy → ℝ) :
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s,
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge
+        (UnifiedLean.Source.UniformizedSourceStep.state (GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past))
+        (GProgram.G2.CalendarDecoration.calendarMatrix N ops s offset M past)
+        (ResearchCommons.MSCI.JC69CalendarOccupation.calendarTime N ops offset) =
+      ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s) M
+          offset +
+        ResearchCommons.MSCI.JC69CalendarOccupation.calendarOccupation N q ops s past
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_exposure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_success_ae.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (op : UnifiedLean.Source.SourceProgramTransport.ProgramStep N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) :
+  ∀ᵐ (z :
+    GProgram.G2.ActualCalendarTrace.SegmentRecord N sample) ∂GProgram.G2.ActualCalendarTrace.actualSegmentLaw N r op s,
+    z.1.1 = true
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_success_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_success_ae.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) :
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s,
+    ∀ (i : Fin ops.length), (past i).1.1 = true
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_success_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_prepend.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (age t : ℝ)
+  (z : Bool × GProgram.G2.LiteralMarkedClockTrace.ClockTrace N sample n) :
+  ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q (n + 1) s t
+      (z.1, GProgram.G2.LiteralMarkedClockTrace.prependTrace N age d z.2) =
+    ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * age))) *
+      ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n d (t - age) z
+'ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_prepend' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_empty.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ) :
+  ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n s t
+      (true, GProgram.G2.LiteralMarkedClockTrace.emptyTrace N n s) =
+    ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * t)))
+'ResearchCommons.MSCI.JC69WeightedTrace.locus_weight_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_first_jump_branches.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal) :
+  ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q (n + 1) s ↑t =
+    ENNReal.ofReal (Real.exp (-(UnifiedLean.Source.UniformizedSourceStep.totalRate N r s * ↑t))) *
+        ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * ↑t))) +
+      ∑ p,
+        ∫⁻ (z :
+          ℝ ×
+            (UnifiedLean.Source.UniformizedSourceStep.Choice N
+                (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) →
+              ℝ)),
+          ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * z.1))) *
+            ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n
+              (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) (↑t - z.1)
+              (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n (↑t - z.1)
+                (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))
+                z.2) ∂((ENNReal.ofReal
+                      (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                        UnifiedLean.Source.UniformizedSourceStep.totalRate N r s) •
+                    ProbabilityTheory.expMeasure (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s)).restrict
+                (Set.Iic ↑t)).prod
+            (UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r
+              (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)))
+'ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_first_jump_branches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_renewal.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal) :
+  ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q (n + 1) s ↑t =
+    ENNReal.ofReal (Real.exp (-(UnifiedLean.Source.UniformizedSourceStep.totalRate N r s * ↑t))) *
+        ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * ↑t))) +
+      ∑ p,
+        ∫⁻ (u : ℝ) in Set.Iic ↑t,
+          ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * u))) *
+            ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n
+              (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))
+              (↑t -
+                u) ∂ENNReal.ofReal
+              (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                UnifiedLean.Source.UniformizedSourceStep.totalRate N r s) •
+            ProbabilityTheory.expMeasure (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s)
+'ResearchCommons.MSCI.JC69WeightedTrace.actual_weighted_trace_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] [Fintype Copy]
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) {B : Finset Copy}
+  (hB : B ∈ ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s) {x y : Copy} (hx : x ∈ B) (hy : y ∈ B) :
+  GProgram.SourceForest.copyLocation s x = GProgram.SourceForest.copyLocation s y
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation.{u_1, u_2, u_3} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy]
+  [Fintype Copy] (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) {a b : Copy}
+  (hm : GProgram.SourceForest.LegalMerge s a b) :
+  ResearchCommons.MSCI.JC69EndpointWeight.observeState (GProgram.SourceForest.merge s a b) =
+    ResearchCommons.MSCI.JC69EndpointWeight.observeState (GProgram.SourceForest.merge s b a)
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.exit_indicator_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E) :
+  Measurable (ResearchCommons.MSCI.JC69EndpointWeight.exitIndicator N n s target)
+'ResearchCommons.MSCI.JC69EndpointWeight.exit_indicator_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E) :
+  Measurable (ResearchCommons.MSCI.JC69EndpointWeight.resolvedTraceWeight N L q n s t target)
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_prepend.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (age t : ℝ)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E)
+  (z : Bool × GProgram.G2.LiteralMarkedClockTrace.ClockTrace N sample n) :
+  ResearchCommons.MSCI.JC69EndpointWeight.resolvedTraceWeight N L q (n + 1) s t target
+      (z.1, GProgram.G2.LiteralMarkedClockTrace.prependTrace N age d z.2) =
+    ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * age))) *
+      ResearchCommons.MSCI.JC69EndpointWeight.resolvedTraceWeight N L q n d (t - age) target z
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_prepend' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_empty.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E) :
+  ResearchCommons.MSCI.JC69EndpointWeight.resolvedTraceWeight N L q n s t target
+      (true, GProgram.G2.LiteralMarkedClockTrace.emptyTrace N n s) =
+    ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * t))) *
+      if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointWeight.actual_resolved_weight_renewal.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E) :
+  ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q (n + 1) s (↑t) target =
+    ENNReal.ofReal (Real.exp (-(UnifiedLean.Source.UniformizedSourceStep.totalRate N r s * ↑t))) *
+        (ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * ↑t))) *
+          if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0) +
+      ∑ p,
+        ∫⁻ (u : ℝ) in Set.Iic ↑t,
+          ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * u))) *
+            ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n
+              (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) (↑t - u)
+              target ∂ENNReal.ofReal
+              (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                UnifiedLean.Source.UniformizedSourceStep.totalRate N r s) •
+            ProbabilityTheory.expMeasure (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s)
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_resolved_weight_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

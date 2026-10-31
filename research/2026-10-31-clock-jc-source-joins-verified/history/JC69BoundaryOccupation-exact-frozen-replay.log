@@ -1,0 +1,103 @@
+original-failed-source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:24:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+original-failed-source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:52:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (state (exitCode N s e)) M T = forestPotential q leafAge (state s) M T
+
+case exit
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+e : E
+⊢ forestPotential q leafAge (state (exitCode N s e)) M T = forestPotential q leafAge (state s) M T
+original-failed-source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:56:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (state (ordinaryCode N s e)) M T = forestPotential q leafAge (state s) M T
+
+case ordinary
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+e : E
+degree : N.graph.inDegree (N.graph.target e) = 1
+⊢ forestPotential q leafAge (state (ordinaryCode N s e)) M T = forestPotential q leafAge (state s) M T
+original-failed-source/ResearchCommons/MSCI/JC69BoundaryOccupation.lean:60:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential ?q ?leafAge (decodeSnapshot ?root (encodeSnapshot ?s ?hs)) ?M ?T
+in the target expression
+  forestPotential q leafAge (state (rootCode N s)) M T = forestPotential q leafAge (state s) M T
+
+case root
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+M : Copy → Copy → ℝ
+s : Code N sample
+T : ℝ
+hm : MeasurableSet {d | forestPotential q leafAge (state d) M T = forestPotential q leafAge (state s) M T}
+hp :
+  ∀ (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid → Bool),
+    forestPotential q leafAge (state (pulseCode H s coin)) M T = forestPotential q leafAge (state s) M T
+⊢ forestPotential q leafAge (state (rootCode N s)) M T = forestPotential q leafAge (state s) M T
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_initial_exposure_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryOccupation.actual_boundary_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

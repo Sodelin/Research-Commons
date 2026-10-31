@@ -1,0 +1,102 @@
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:26:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:46:2: error: Tactic `apply` failed: could not unify the conclusion of `@Finset.measurable_sum`
+  Measurable fun a => ∑ i ∈ ?s, ?f i a
+with the goal
+  Measurable fun x =>
+    ∑ l ∈ (state (x, s).2).live,
+      potential q leafAge ((state (x, s).2).genealogy l) (decode (x, s).1.1 ((state (x, s).2).genealogy l)) (x, s).1.2
+
+Note: The full type of `@Finset.measurable_sum` is
+  ∀ {M : Type ?u.73} {ι : Type ?u.72} {α : Type ?u.71} [inst : AddCommMonoid M] [inst_1 : MeasurableSpace M]
+    [MeasurableAdd₂ M] {m : MeasurableSpace α} {f : ι → α → M} (s : Finset ι),
+    (∀ i ∈ s, Measurable (f i)) → Measurable fun a => ∑ i ∈ s, f i a
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+s : Code N sample
+⊢ Measurable fun x =>
+    ∑ l ∈ (state (x, s).2).live,
+      potential q leafAge ((state (x, s).2).genealogy l) (decode (x, s).1.1 ((state (x, s).2).genealogy l)) (x, s).1.2
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:61:18: error: Type mismatch
+  Measurable.comp (occupation_joint_measurable N q (Fintype.card Copy) s)
+has type
+  Measurable ?m.92 → Measurable ((fun z => occupationAt N q (Fintype.card Copy) s z.1 z.2.1 z.2.2) ∘ ?m.92)
+but is expected to have type
+  Measurable (segmentOccupation N q (ProgramStep.interval h) s)
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:60:2: error: Alternative `boundary` has not been provided
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:62:6: error: unexpected token '('; expected command
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:153:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:154:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:202:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:203:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:206:20: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:207:10: error(lean.unknownIdentifier): Unknown identifier `measurableSet_iInter`
+'ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.forest_potential_joint_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_success_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_success_ae' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,63 @@
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:38:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:48:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:137:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:140:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69EndpointWeight.lean:144:16: error: typeclass instance problem is stuck
+  SFinite ?m.472
+
+Note: Lean will not try to resolve this typeclass instance problem because the third type argument to `SFinite` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_block_population_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_merge_observation_orientation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.exit_indicator_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_prepend' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.resolved_weight_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointWeight.actual_resolved_weight_renewal' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

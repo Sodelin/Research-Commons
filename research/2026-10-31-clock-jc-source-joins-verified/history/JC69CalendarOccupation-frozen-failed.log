@@ -1,0 +1,123 @@
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:26:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:45:2: error: Tactic `apply` failed: could not unify the conclusion of `@Finset.measurable_sum`
+  Measurable fun a => ∑ i ∈ ?s, ?f i a
+with the goal
+  Measurable fun x => forestPotential q leafAge (state (x, s).2) (x, s).1.1 (x, s).1.2
+
+Note: The full type of `@Finset.measurable_sum` is
+  ∀ {M : Type ?u.70} {ι : Type ?u.69} {α : Type ?u.68} [inst : AddCommMonoid M] [inst_1 : MeasurableSpace M]
+    [MeasurableAdd₂ M] {m : MeasurableSpace α} {f : ι → α → M} (s : Finset ι),
+    (∀ i ∈ s, Measurable (f i)) → Measurable fun a => ∑ i ∈ s, f i a
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+leafAge : Copy → ℝ
+s : Code N sample
+⊢ Measurable fun x => forestPotential q leafAge (state (x, s).2) (x, s).1.1 (x, s).1.2
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:60:89: error: `fun_prop` was unable to prove `Measurable ?m.92`
+
+Issues:
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:90:6: error: Type mismatch: After simplification, term
+  actual_literal_occupation_identity N q leafAge (Fintype.card Copy) s (↑h) offset c M
+ has type
+  forestPotential q leafAge
+      (state (traceEndpoint N (Fintype.card Copy) s (literalMarkedTrace N (Fintype.card Copy) (↑h) s c).2))
+      (foldMatrix N (Fintype.card Copy) s offset M (literalMarkedTrace N (Fintype.card Copy) (↑h) s c).2)
+      (offset + ↑h) =
+    forestPotential q leafAge (state s) M offset + literalOccupation N q (Fintype.card Copy) (↑h) s c
+but is expected to have type
+  forestPotential q leafAge (state ((attachEndpoint N s ∘ literalMarkedTrace N (Fintype.card Copy) (↑h) s) c).2)
+      (foldMatrix N (Fintype.card Copy) s offset M
+        ((attachEndpoint N s ∘ literalMarkedTrace N (Fintype.card Copy) (↑h) s) c).1.2)
+      (offset + ↑h) =
+    forestPotential q leafAge (state s) M offset +
+      occupationAt N q (Fintype.card Copy) s 0 (↑h)
+        ((attachEndpoint N s ∘ literalMarkedTrace N (Fintype.card Copy) (↑h) s) c).1.2
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:96:6: error: Type mismatch: After simplification, term
+  actual_boundary_exposure N q leafAge M b s offset
+ has type
+  @Filter.Eventually (Code N sample)
+    (fun d => forestPotential q leafAge (state d) M offset = forestPotential q leafAge (state s) M offset)
+    (ae (boundaryKernel N b s).toMeasure)
+but is expected to have type
+  @Filter.Eventually (Code N sample)
+    (fun x =>
+      forestPotential q leafAge (state (boundaryRecord N x).2) M offset = forestPotential q leafAge (state s) M offset)
+    (ae (boundaryKernel N b s).toMeasure)
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:119:21: error: `fun_prop` was unable to prove `Measurable ?m.150`
+
+Issues:
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:150:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:151:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:199:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:200:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:203:20: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+source/ResearchCommons/MSCI/JC69CalendarOccupation.lean:204:10: error(lean.unknownIdentifier): Unknown identifier `measurableSet_iInter`
+'ResearchCommons.MSCI.JC69CalendarOccupation.potential_decode_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.forest_potential_joint_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_exposure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_segment_success_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CalendarOccupation.actual_calendar_success_ae' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
