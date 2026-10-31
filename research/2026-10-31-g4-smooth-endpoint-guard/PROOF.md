@@ -101,6 +101,6 @@ Even a successful positive guard on private words would still need the actual fi
 
 ## Evidence and status
 
-The degree-ten/five-row identity is supplied in [the exact complementary handoff](https://drive.google.com/file/d/1g5juHRm60TCsy4ZIFFe2KMW0-XaqyQo_/view). Its proof SHA is d7104a58bfbd489573648805ff86543065ff77f8b290019875244da88c798d03. The new source files in that handoff are explicitly LOCAL, not falsely attributed to the checkout commit. I did not independently rebuild that identity or inherited quotient.
+The degree-ten/five-row identity was supplied by the existing G4 general-closure research contributor on 31 October 2026 (source artifact awaiting public reference). Its proof SHA is d7104a58bfbd489573648805ff86543065ff77f8b290019875244da88c798d03. The new source files in that handoff are explicitly LOCAL, not falsely attributed to the checkout commit. I did not independently rebuild that identity or inherited quotient.
 
 Source correspondence uses the [original compiler §§1,3,5](https://github.com/Sodelin/Research-Commons/blob/5e01a8e727478a2f22686d31f71304126e345116/research/2026-10-01-g4-admitted-testers-0819z/PROOF.md): joint current-root routing, colour-preserving coalescence, opaque subtree grafting, one physical tuple and projection after the full source calculation. Equation(1) is established here directly on that source carrier. Classical Taylor expansion and differentiation of conjugation are not novelty claims. Original G4/G3 masters remain OPEN.
