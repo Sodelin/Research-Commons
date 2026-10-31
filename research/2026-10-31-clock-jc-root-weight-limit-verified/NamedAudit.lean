@@ -1,0 +1,11 @@
+import ResearchCommons.MSCI.JC69RootWeightLimit
+#check @ResearchCommons.MSCI.JC69RootWeightLimit.literal_occupation_nonnegative
+#print axioms ResearchCommons.MSCI.JC69RootWeightLimit.literal_occupation_nonnegative
+#check @ResearchCommons.MSCI.JC69RootWeightLimit.actual_clock_weight_le_one
+#print axioms ResearchCommons.MSCI.JC69RootWeightLimit.actual_clock_weight_le_one
+#check @ResearchCommons.MSCI.JC69RootWeightLimit.balanced_root_occupation_stable
+#print axioms ResearchCommons.MSCI.JC69RootWeightLimit.balanced_root_occupation_stable
+#check @ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_stable
+#print axioms ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_stable
+#check @ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_limit
+#print axioms ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_limit

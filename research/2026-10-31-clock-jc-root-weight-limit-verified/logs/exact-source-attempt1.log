@@ -1,0 +1,61 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootWeightLimit.lean:27:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69RootWeightLimit.code_charge_nonnegative`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootWeightLimit.lean:98:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  (if (literalMarkedTrace N (Fintype.card Copy) (↑(clockCover N s c)) s c).1 = true then
+      some
+        (traceEndpoint N (Fintype.card Copy) s (literalMarkedTrace N (Fintype.card Copy) (↑(clockCover N s c)) s c).2)
+    else none) =
+    some e
+but is expected to have type
+  out = e
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootWeightLimit.lean:153:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootWeightLimit.lean:155:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootWeightLimit.lean:176:36: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  hevent
+has type
+  Filter.atTop.1
+    {x |
+      (fun m =>
+          locusTraceWeight N L q (Fintype.card Copy) s (↑m) (literalMarkedTrace N (Fintype.card Copy) (↑m) s c) =
+            completeRootWeight N L q s c)
+        x}
+which does not have the necessary form.
+'ResearchCommons.MSCI.JC69RootWeightLimit.literal_occupation_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_clock_weight_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootWeightLimit.balanced_root_occupation_stable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_stable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_limit' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

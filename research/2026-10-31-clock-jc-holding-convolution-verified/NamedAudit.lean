@@ -1,0 +1,7 @@
+import ResearchCommons.MSCI.JC69HoldingConvolution
+#check @ResearchCommons.MSCI.JC69HoldingConvolution.two_holding_convolution
+#print axioms ResearchCommons.MSCI.JC69HoldingConvolution.two_holding_convolution
+#check @ResearchCommons.MSCI.JC69HoldingConvolution.convolve_finite_exponential_sum
+#print axioms ResearchCommons.MSCI.JC69HoldingConvolution.convolve_finite_exponential_sum
+#check @ResearchCommons.MSCI.JC69HoldingConvolution.actual_one_merger_holding_integral
+#print axioms ResearchCommons.MSCI.JC69HoldingConvolution.actual_one_merger_holding_integral

@@ -1,0 +1,41 @@
+ResearchCommons.MSCI.JC69HoldingConvolution.two_holding_convolution : ∀ (a b T : ℝ),
+  b < a →
+    ∫ (u : ℝ) in 0..T, Real.exp (-a * u) * Real.exp (-b * (T - u)) = (Real.exp (-b * T) - Real.exp (-a * T)) / (a - b)
+'ResearchCommons.MSCI.JC69HoldingConvolution.two_holding_convolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69HoldingConvolution.convolve_finite_exponential_sum : ∀ {I : Type u_1} [inst : Fintype I]
+  (a T : ℝ) (b coefficient : I → ℝ),
+  (∀ (i : I), b i < a) →
+    ∫ (u : ℝ) in 0..T, Real.exp (-a * u) * ∑ i, coefficient i * Real.exp (-b i * (T - u)) =
+      ∑ i, coefficient i / (a - b i) * Real.exp (-b i * T) - (∑ i, coefficient i / (a - b i)) * Real.exp (-a * T)
+'ResearchCommons.MSCI.JC69HoldingConvolution.convolve_finite_exponential_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69HoldingConvolution.actual_one_merger_holding_integral : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} {Site : Type u_5} {G : Type u_6} [inst : DecidableEq V] [inst_1 : DecidableEq E]
+  [inst_2 : DecidableEq Copy] [inst_3 : Fintype V] [inst_4 : Fintype E] [inst_5 : Fintype Copy] [inst_6 : Fintype X]
+  [inst_7 : Fintype Site] [inst_8 : AddCommMonoid G] [inst_9 : DecidableEq G] (N : Nanuq.Source.RootedBinary V E X)
+  {sample : Copy → X} (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (mu : ℝ),
+  0 ≤ mu →
+    ∀ (characters : Copy → Site → G) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+      (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) (T : ℝ),
+      ∫ (u : ℝ) in 0..T,
+          UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p *
+            (Real.exp (-ResearchCommons.MSCI.killedRate N r mu characters s * u) *
+              Real.exp
+                (-ResearchCommons.MSCI.killedRate N r mu characters
+                      (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) *
+                  (T - u))) =
+        UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p *
+          ((Real.exp
+                (-ResearchCommons.MSCI.killedRate N r mu characters
+                      (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) *
+                  T) -
+              Real.exp (-ResearchCommons.MSCI.killedRate N r mu characters s * T)) /
+            (ResearchCommons.MSCI.killedRate N r mu characters s -
+              ResearchCommons.MSCI.killedRate N r mu characters
+                (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))))
+'ResearchCommons.MSCI.JC69HoldingConvolution.actual_one_merger_holding_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,13 @@
+--- frozen/ResearchCommons/MSCI/JC69HoldingConvolution.lean
++++ source/ResearchCommons/MSCI/JC69HoldingConvolution.lean
+@@ -14,8 +14,8 @@
+ lemma exp_scaled_interval (c T : ℝ) (hc : c ≠ 0) :
+     (∫ u in (0:ℝ)..T, Real.exp (c*u)) = (Real.exp (c*T)-1)/c := by
+   have hd (x : ℝ) : HasDerivAt (fun u : ℝ => Real.exp (c*u)/c) (Real.exp (c*x)) x := by
+-    convert (((Real.hasDerivAt_exp (c*x)).comp x ((hasDerivAt_id x).const_mul c)).div_const c) using 1 <;>
+-      field_simp [hc] <;> ring
++    simpa [Function.comp_def,hc] using
++      (((Real.hasDerivAt_exp (c*x)).comp x ((hasDerivAt_id x).const_mul c)).div_const c)
+   have hint : IntervalIntegrable (fun u : ℝ => Real.exp (c*u)) volume 0 T :=
+     (by fun_prop : Continuous (fun u : ℝ => Real.exp (c*u))).intervalIntegrable 0 T
+   rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ => hd x) hint]

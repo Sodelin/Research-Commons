@@ -1,0 +1,22 @@
+--- frozen/ResearchCommons/MSCI/JC69RootWeightLimit.lean
++++ source/ResearchCommons/MSCI/JC69RootWeightLimit.lean
+@@ -94,8 +94,9 @@
+   obtain ⟨e,he,_,hcard⟩ := complete_ancestral_trace_terminal N s c hs hc
+   have hg := marked_trace_success_on_regular N n s (clockCover N s c : ℝ) c
+     (Finset.card_le_univ s.val.live) hc
++  dsimp only [n] at hg
+   have hout : out = e := by
+-    simpa only [decodedEndpoint,completeAncestralTrace,hg,if_true,Option.some.injEq] using he
++    simpa only [out,z,n,decodedEndpoint,completeAncestralTrace,hg,if_true,Option.some.injEq] using he
+   have hcard' : (state out).live.card ≤ 1 := by
+     change liveCard out ≤ 1
+     rw [hout]
+@@ -173,7 +174,7 @@
+       filter_upwards [Filter.eventually_ge_atTop m] with k hk
+       exact actual_root_weight_stable N L q hbal s hs c hc (k:ℝ)
+         (hm.trans (by exact_mod_cast hk))
+-    exact tendsto_const_nhds.congr' hevent.symm
++    exact tendsto_const_nhds.congr' (Filter.EventuallyEq.symm hevent)
+ 
+ end Nonempty
+ #print axioms literal_occupation_nonnegative

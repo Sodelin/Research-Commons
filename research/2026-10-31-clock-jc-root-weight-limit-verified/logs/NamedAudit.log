@@ -1,0 +1,79 @@
+@ResearchCommons.MSCI.JC69RootWeightLimit.literal_occupation_nonnegative : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ),
+  0 ≤ t →
+    ∀ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+      GProgram.G2.LiteralMarkedClockTrace.ClockRegular c →
+        0 ≤ ResearchCommons.MSCI.JC69Occupation.literalOccupation N q n t s c
+'ResearchCommons.MSCI.JC69RootWeightLimit.literal_occupation_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootWeightLimit.actual_clock_weight_le_one : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] (N : Nanuq.Source.RootedBinary V E X)
+  {sample : Copy → X} (L : ℕ) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ),
+  0 ≤ t →
+    ∀ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+      GProgram.G2.LiteralMarkedClockTrace.ClockRegular c →
+        ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n s t
+            (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c) ≤
+          1
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_clock_weight_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootWeightLimit.balanced_root_occupation_stable : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (q : Copy → ResearchCommons.MSCI.JC69.Base),
+  ∑ x, q x = 0 →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        ∀ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+          GProgram.G2.LiteralMarkedClockTrace.ClockRegular c →
+            ∀ (t : ℝ),
+              ↑(GProgram.G2.FiniteAncestralTrace.clockCover N s c) ≤ t →
+                ResearchCommons.MSCI.JC69Occupation.literalOccupation N q (Fintype.card Copy) t s c =
+                  ResearchCommons.MSCI.JC69Occupation.literalOccupation N q (Fintype.card Copy)
+                    (↑(GProgram.G2.FiniteAncestralTrace.clockCover N s c)) s c
+'ResearchCommons.MSCI.JC69RootWeightLimit.balanced_root_occupation_stable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_stable : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        ∀ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+          GProgram.G2.LiteralMarkedClockTrace.ClockRegular c →
+            ∀ (t : ℝ),
+              ↑(GProgram.G2.FiniteAncestralTrace.clockCover N s c) ≤ t →
+                ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q (Fintype.card Copy) s t
+                    (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N (Fintype.card Copy) t s c) =
+                  ResearchCommons.MSCI.JC69RootWeightLimit.completeRootWeight N L q s c
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_stable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_limit : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        Filter.Tendsto
+          (fun m => ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q (Fintype.card Copy) s ↑m)
+          Filter.atTop
+          (nhds
+            (∫⁻ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+              ResearchCommons.MSCI.JC69RootWeightLimit.completeRootWeight N L q s
+                c ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r s))
+'ResearchCommons.MSCI.JC69RootWeightLimit.actual_root_weight_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
