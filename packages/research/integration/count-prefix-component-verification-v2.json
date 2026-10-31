@@ -1,0 +1,321 @@
+{
+  "schema": 2,
+  "status": "ACCEPTED_COMPLETE_NATIVE_COUNT_COMPONENT_AND_TWO_ACTUAL_PROOF_DOCUMENTS",
+  "source_commit": "f539b1848b1eb2bc13a61755a815a5b99020b0f8",
+  "run_id": 40148897830,
+  "job_id": 121036238621,
+  "artifact_id": 12582165971,
+  "actual_declarations": 92,
+  "actual_modules": 3,
+  "actual_source_named_theorems": 22,
+  "actual_theorems": 67,
+  "artifact_bytes": 339996,
+  "artifact_sha256": "16ab817426c7e834ce649986ffe5a9c2aa044bfb79865479eaf3ffb55cf1a91f",
+  "audit_bytes": 318177,
+  "audit_sha256": "0b39aa05b71e708abce9d9b21ec7936d3d62437675afc8b5cbe34d9cbc2228f4",
+  "audit_source_sha256": "42f61b0f021d794b510cd808021588483d7d26aba41d1378e1ed543c0cc0f268",
+  "core_audit_sha256": "2b86a2729abcfa023e8650dd06519ee57349319e2f1dd1bb8aa81bbc06f1f02f",
+  "core_declarations": 24,
+  "core_modules": 1,
+  "core_names": [
+    "ResearchCommons.Numerics.CountPrefix.term_nonneg",
+    "ResearchCommons.Numerics.CountPrefix.prefix_pos",
+    "ResearchCommons.Numerics.CountPrefix.prefix_le_exp",
+    "ResearchCommons.Numerics.CountPrefix.exp_le_upper",
+    "ResearchCommons.Numerics.CountPrefix.normalized_prefix_sum",
+    "ResearchCommons.Numerics.CountPrefix.lostMass_nonneg",
+    "ResearchCommons.Numerics.CountPrefix.lostMass_le_deficit",
+    "ResearchCommons.Numerics.CountPrefix.certified_error"
+  ],
+  "core_theorems": 19,
+  "documents": [
+    {
+      "all7_declaration_headers": [
+        "theorem actual_domain : 0 ≤ inputA ∧ 0 < epsilon ∧ epsilon < 1 :=",
+        "theorem actual_fields :\n    returnedS = prefixSum inputA cutoff ∧\n    returnedT = poissonTerm inputA (cutoff+1) ∧\n    returnedU = upper inputA cutoff ∧\n    returnedDelta = deficit inputA cutoff ∧\n    inspected = cutoff+1 ∧ inspected ≤ requestedBudget :=",
+        "theorem actual_guards :\n    2*inputA ≤ ((cutoff+2 : ℕ) : ℝ) ∧ returnedDelta ≤ epsilon :=",
+        "theorem actual_first_cutoff :\n    ∀ j ∈ Finset.range cutoff,\n      ¬ (2*inputA ≤ ((j+2 : ℕ) : ℝ) ∧ deficit inputA j ≤ epsilon) :=",
+        "theorem actual_complete_weights :\n    ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff :=",
+        "theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 :=",
+        "theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon :="
+      ],
+      "complete_actual_source_read": true,
+      "kernel_check_passed": true,
+      "module": "CountPrefixOrdinary",
+      "source_bytes": 3407,
+      "source_sha256": "201ad2da4c36af1c78241fa27d079649b665dbd0bbb5c97d1110a8f73ca9450f"
+    },
+    {
+      "all7_declaration_headers": [
+        "theorem actual_domain : 0 ≤ inputA ∧ 0 < epsilon ∧ epsilon < 1 :=",
+        "theorem actual_fields :\n    returnedS = prefixSum inputA cutoff ∧\n    returnedT = poissonTerm inputA (cutoff+1) ∧\n    returnedU = upper inputA cutoff ∧\n    returnedDelta = deficit inputA cutoff ∧\n    inspected = cutoff+1 ∧ inspected ≤ requestedBudget :=",
+        "theorem actual_guards :\n    2*inputA ≤ ((cutoff+2 : ℕ) : ℝ) ∧ returnedDelta ≤ epsilon :=",
+        "theorem actual_first_cutoff :\n    ∀ j ∈ Finset.range cutoff,\n      ¬ (2*inputA ≤ ((j+2 : ℕ) : ℝ) ∧ deficit inputA j ≤ epsilon) :=",
+        "theorem actual_complete_weights :\n    ∀ i : Fin (cutoff+1), returnedWeights i = poissonTerm inputA i.val / prefixSum inputA cutoff :=",
+        "theorem actual_weights_sum_one : (∑ i : Fin (cutoff+1), returnedWeights i) = 1 :=",
+        "theorem actual_error : 0 ≤ lostMass inputA cutoff ∧ lostMass inputA cutoff ≤ epsilon :="
+      ],
+      "complete_actual_source_read": true,
+      "kernel_check_passed": true,
+      "module": "CountPrefixZero",
+      "source_bytes": 3297,
+      "source_sha256": "b60af284f4b4cf722ba5008750ed5239debe53c8e8b5acbd7d5a023d372c69ed"
+    }
+  ],
+  "generated_or_projection_theorems": 45,
+  "missing_modules": 0,
+  "named_rows": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.lostMass_le_deficit"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_first_cutoff"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_guards"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_first_cutoff"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_error"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_weights_sum_one"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_domain"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_fields"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.prefix_le_exp"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_weights_sum_one"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_fields"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_guards"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.term_nonneg"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.exp_le_upper"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.lostMass_nonneg"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.prefix_pos"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_complete_weights"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_complete_weights"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixOrdinary",
+      "name": "ResearchCommons.Generated.CountPrefixOrdinary.actual_error"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "CountPrefixZero",
+      "name": "ResearchCommons.Generated.CountPrefixZero.actual_domain"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.normalized_prefix_sum"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "module": "ResearchCommons.Numerics.CountPrefix",
+      "name": "ResearchCommons.Numerics.CountPrefix.certified_error"
+    }
+  ],
+  "nonstandard_axioms": 0,
+  "owned_axioms": 0,
+  "validated": true,
+  "rust_verification": {
+    "job_id": 121036054291,
+    "lock_bytes_equal": true,
+    "new_count_receiver_tests": 3,
+    "run_id": 40148897830,
+    "source_commit": "f539b1848b1eb2bc13a61755a815a5b99020b0f8",
+    "tests_passed": 125
+  },
+  "source_hashes": {
+    "count_receiver": {
+      "bytes": 9524,
+      "git_blob": "99275eb700f61f307aacafc3d2dbe4f556663ebb",
+      "sha256": "c1780dc2d37e75a7da643b69d43696bc21067527a394bf7559bf6075d39d41c9"
+    },
+    "pinned_fin_sum_supplier": {
+      "bytes": 12349,
+      "git_blob": "cbf19a0177656e09af2bf6d87ab2a8a672895817",
+      "sha256": "bfa35992c02f47d7c78a5425ea3c4eecba0ad54de1b5752db565b37de11148c0"
+    }
+  },
+  "scalar_source_sha256": "783797eeb17e0425e141661b17b3a5639e468934eb04dc3efffa69cd521f04e6",
+  "original_engine_sha256": "6f9ee623a64b356b7c28a09a91de3eff50425c67d3555ff43752023355e18ce0",
+  "original_engine_byte_identical": true,
+  "whole_claim_formal_binding": false,
+  "universal_native_refinement": false,
+  "scope": "NEW actual owning interface to OLD normalized count engine, not new count mathematics. Complete two public synthetic native results, FIRST cutoff/full field/inspection budget/ALL Fin-index weights/normalization/scalar lost exponential mass proofs and whole3-source92-declaration67-theorem owned context accepted. Core8+native14 source statements22,45generated/projection theorem rows not discoveries. Neither original source PMF/TV composition, biological/source input admission nor universal Rust/parser/compiler equivalence follows.",
+  "combined_package_context": "COMPLETE1500_BUILD_REJECTED_AT_MinimalPathOrderDependencies1421_SUCCESS78_BLOCKED; combined520-name/owned/actual callers not run",
+  "private_native_controller": "UNBOUND; public fixed-synthetic authorized CI does not grant private/held execution.",
+  "full_union_rejection": "integration/causal-latest-full-union-rejection.json"
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "status": "REJECTED",
+  "source_commit": "2501afd688a42084ec76db39c2a9beccd9815bf1",
+  "run_id": 40034692509,
+  "job_id": 120691434958,
+  "url": "https://github.com/Sodelin/Research-Commons/actions/runs/40034692509/job/120691434958",
+  "scope": "Full newly selected JC69 component rejected. No clean subdeclaration promoted.",
+  "errors": [
+    {
+      "line": 154,
+      "kind": "convert generated unmatched Real additive/module instances and function-composition equality"
+    },
+    {
+      "line": 158,
+      "kind": "convert generated unmatched Real additive/module instances"
+    },
+    {
+      "line": 161,
+      "kind": "convert generated unmatched Real additive/module instances"
+    }
+  ],
+  "rust": {
+    "job_id": 120691169633,
+    "tests": 92,
+    "status": "PASS"
+  },
+  "repair": "Use the pinned HasDerivAt.exp receiver directly and rewrite only explicit scalar derivative arithmetic; no statement, probability, alphabet, clock or source premise changes.",
+  "new_complete_check_required": true,
+  "prior_accepted_scope_retained": true,
+  "successor_rejection": {
+    "source": "407772bb4dbb11e09f76d3cdbc08ba4951b5db15",
+    "run_id": 40035516503,
+    "job_id": 120694079062,
+    "lines": [
+      162,
+      166
+    ],
+    "reason": "HasDerivAt from the pinned div_const lemma carries different scalar additive/module instance paths; whole receiver rejected",
+    "repair": "Explicit convert hd using1, every resulting instance/function equality must close by rfl."
+  }
+}

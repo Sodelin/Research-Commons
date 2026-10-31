@@ -1,0 +1,20 @@
+import ClinicalModels
+
+#print axioms ClinicalModels.PublishedCBT.approach_trajectory
+#print axioms ClinicalModels.PublishedCBT.avoidance_trajectory
+#print axioms ClinicalModels.PublishedCBT.avoidance_observational_equivalence
+#print axioms ClinicalModels.PublishedCBT.avoidance_no_perfect_classifier
+#print axioms ClinicalModels.PublishedCBT.approach_observations_differ
+#print axioms ClinicalModels.PublishedCBT.approach_identifies_state
+#print axioms ClinicalModels.PublishedCBT.safe_columns_total_mass
+#print axioms ClinicalModels.PublishedCBT.danger_columns_total_mass
+#print axioms ClinicalModels.PublishedCBT.safe_columns_nonnegative
+#print axioms ClinicalModels.PublishedCBT.danger_columns_nonnegative
+#print axioms ClinicalModels.PublishedCBT.implicit_mappings_equal_at_tenth
+#print axioms ClinicalModels.PublishedCBT.approach_implicit_equality_iff
+#print axioms ClinicalModels.PublishedCBT.avoidance_implicit_columns_equal
+#print axioms ClinicalModels.PublishedCBT.explicit_prior_weights
+#print axioms ClinicalModels.SourceBridge.source_sensory_columns
+#print axioms ClinicalModels.SourceBridge.source_affective_columns
+#print axioms ClinicalModels.SourceBridge.source_transition_columns
+#print axioms ClinicalModels.SourceBridge.source_implicit_columns

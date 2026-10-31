@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "source_commit": "45721d18d4a201b284abe1ea6584e383a3745b57",
+  "run_id": 40129214406,
+  "all3_complete_printed_types_actual_read": true,
+  "types": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.extreme_bounds",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.extreme_bounds : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon) (i : Fin m),\n  ∃ f g,\n    taxon f = taxon i ∧\n      taxon g = taxon i ∧ NANUQ.ContiguousCopies.First taxon f ∧ NANUQ.ContiguousCopies.Last taxon g ∧ f ≤ i ∧ i ≤ g"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.same_interval_side_extreme",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.same_interval_side_extreme : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon),\n  NANUQ.ContiguousCopies.Contiguous taxon →\n    ∀ (l r : Fin m),\n      (∃ a b, NANUQ.ContiguousCopies.InInterval l r a ∧ NANUQ.ContiguousCopies.InInterval l r b ∧ taxon a ≠ taxon b) →\n        ∀ (i : Fin m),\n          ∃ e,\n            NANUQ.ContiguousCopies.Extreme taxon e ∧\n              taxon e = taxon i ∧ (NANUQ.ContiguousCopies.InInterval l r e ↔ NANUQ.ContiguousCopies.InInterval l r i)"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.extreme_card_le_two",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.extreme_card_le_two : ∀ {Taxon : Type u_1} {m : ℕ} [inst : Fintype Taxon]\n  (taxon : Fin m → Taxon), Nat.card { i // NANUQ.ContiguousCopies.Extreme taxon i } ≤ 2 * Fintype.card Taxon"
+    }
+  ],
+  "whole_claim_formal_binding": false
+}

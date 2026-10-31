@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "source": "b094ae8555e58091faf132a4ffc4530c86db1445",
+  "run": 40105632721,
+  "job": 120906767687,
+  "records": [
+    {
+      "actual_complete_printed_type": "@MSCI.RootPair.moment_formula : ∀ {c onset rate : ℝ},\n  0 < c → 0 < rate → MSCI.RootPair.moment c onset rate = Real.exp (-c * onset) * rate / (rate + c)",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-MSCI-003",
+      "module": "ResearchCommons.MSCI.RootPair",
+      "name": "ResearchCommons.MSCI.RootPair.moment_formula"
+    },
+    {
+      "actual_complete_printed_type": "@MSCI.RootPair.scaled_moments_injective : ∀ {c b b' r r' : ℝ},\n  0 < c →\n    0 < b →\n      0 < b' →\n        0 < r →\n          0 < r' →\n            b * r / (r + c) = b' * r' / (r' + c) →\n              b ^ 2 * r / (r + 2 * c) = b' ^ 2 * r' / (r' + 2 * c) → b = b' ∧ r = r'",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-MSCI-003",
+      "module": "ResearchCommons.MSCI.RootPair",
+      "name": "ResearchCommons.MSCI.RootPair.scaled_moments_injective"
+    },
+    {
+      "actual_complete_printed_type": "@MSCI.RootPair.moments_injective : ∀ {c t t' r r' : ℝ},\n  0 < c →\n    0 < r →\n      0 < r' →\n        MSCI.RootPair.moment c t r = MSCI.RootPair.moment c t' r' →\n          MSCI.RootPair.moment (2 * c) t r = MSCI.RootPair.moment (2 * c) t' r' → t = t' ∧ r = r'",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "claim_id": "CB-MSCI-003",
+      "module": "ResearchCommons.MSCI.RootPair",
+      "name": "ResearchCommons.MSCI.RootPair.moments_injective"
+    }
+  ],
+  "actual_terminal_printed_types": true,
+  "all_actual_source_owner_axiom_rows_matched": true
+}

@@ -1,0 +1,37 @@
+import ResearchCommons.Calibration.RareEvent
+import Mathlib.Tactic.NormNum
+
+namespace ResearchCommons.Generated.RareEvent.N0P1Q4
+open ResearchCommons.Calibration
+noncomputable def rate : EventRate := ⟨(1 / 4 : ℝ), by constructor <;> norm_num⟩
+theorem actual_miss : miss rate 0 = (1 / 1 : ℝ) := by
+  norm_num [miss, rate]
+theorem minimum_sum :
+    IsLeast (Set.range (fun d : Decision 0 => nullError d + alternativeError rate d))
+      (1 / 1 : ℝ) := by
+  simpa only [actual_miss] using sharp_sum_error rate 0
+theorem minimum_worst :
+    IsLeast (Set.range (fun d : Decision 0 => max (nullError d) (alternativeError rate d)))
+      (1 / 2 : ℝ) := by
+  have h := sharp_worst_error rate 0
+  rw [actual_miss] at h
+  norm_num at h ⊢
+  exact h
+theorem minimum_equal_prior :
+    IsLeast (Set.range (fun d : Decision 0 => (nullError d + alternativeError rate d) / 2))
+      (1 / 2 : ℝ) := by
+  have h := sharp_equal_prior_error rate 0
+  rw [actual_miss] at h
+  norm_num at h ⊢
+  exact h
+theorem balanced_rule :
+    nullError (thresholdRule 0 (balancedProbability rate 0)) = (1 / 2 : ℝ) ∧
+    alternativeError rate (thresholdRule 0 (balancedProbability rate 0)) = (1 / 2 : ℝ) := by
+  have h := balanced_rule_errors rate 0
+  rw [actual_miss] at h
+  norm_num at h ⊢
+  exact h
+theorem finite_error_positive (d : Decision 0) :
+    0 < max (nullError d) (alternativeError rate d) :=
+  no_finite_certain_decision rate d
+end ResearchCommons.Generated.RareEvent.N0P1Q4

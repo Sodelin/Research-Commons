@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "status": "ACTUAL111_RUST_PASS_AND_BOTH_COMPLETE_MODEL_COMPONENT_CHECKS_PASS",
+  "preflight": "integration/CLAIM-SCOPED-CHECK-REUSE-PREFLIGHT.md",
+  "source_hashes": {
+    "planner": {
+      "bytes": 11821,
+      "sha256": "420127ed5c9ab3343fec25eb45e2929a4d8b534d559360d90db61613c3856eb5",
+      "git_blob": "b51546bec95b02672c00819f58d3507a23f7c2d7"
+    },
+    "main": {
+      "bytes": 32041,
+      "sha256": "130391db430107c2ce048c83e8e92f9d8a47866cdbc7ff5682f6032d187096a2",
+      "git_blob": "773659c30dcfbc3cea45ace3317073bdd6a21d72"
+    },
+    "workflow": {
+      "bytes": 41543,
+      "git_blob": "b10f448522157b1169b0a7eee578dd5bd17a5971",
+      "sha256": "1fda757ea2ecb2af45577ffbb72bb5621a2edc7cdbd20ab21d47e886897c6e06"
+    }
+  },
+  "original_full_plan_body_unchanged": true,
+  "original_default_document_and_receipt_path_preserved": false,
+  "full_canonical_and_binding_validation_before_selection": true,
+  "requested_unknown_duplicate_and_unbound_ids_refuse": true,
+  "explicit_checked_target_required": true,
+  "original_context_objects_and_whole_owned_audit_reused": true,
+  "actual_original_owners_checked_in_Lean": true,
+  "selected_receipts_archive_complete_owned_and_named_source": true,
+  "selected_receipts_explicitly_not_full_registry": true,
+  "regressions_added": [
+    "selected original names/owners/scopes preserved",
+    "unknown/duplicate/unbound selection refuses",
+    "empty selection exactly matches original full plan",
+    "malformed unselected binding still refuses"
+  ],
+  "ci_selected_full_components": [
+    {
+      "target": "SocialScience.Audit",
+      "claims": [
+        "CB-SOFTSCI-001",
+        "CB-SOFTSCI-002",
+        "CB-SOFTSCI-003",
+        "CB-SOFTSCI-004"
+      ],
+      "original_theorems": 67
+    },
+    {
+      "target": "ClinicalModels.Audit",
+      "claims": [
+        "CB-SOFTSCI-005"
+      ],
+      "original_theorems": 18
+    }
+  ],
+  "same_full1092_export_target_and_strict_gate_retained": true,
+  "no_new_domain_engine_or_proof": true,
+  "word_path_not_filtered_by_claims": true,
+  "actual_results": {
+    "source": "fe0dccd2b7fab243abe40c373bfcc55e2dca066d",
+    "run": 40085312861,
+    "rust_job": 120846932903,
+    "rust_tests": 111,
+    "selected_component_job": 120847091562,
+    "both_complete_scoped_checks_passed": true,
+    "foundation_modules": 9,
+    "foundation_names": 67,
+    "clinical_modules": 5,
+    "clinical_names": 18,
+    "record": "integration/soft-science-component-verification.json",
+    "later_full1092_target_failed_elsewhere": true,
+    "all118_gate_unchanged_incomplete": true
+  },
+  "previous_source118_result": {
+    "source": "ed4ed3375ecadefc024c86c38baecd214ff06f0d",
+    "run": 40084273155,
+    "rust_job": 120843879383,
+    "tests": 111,
+    "rust_pass": true,
+    "model_group_target_modules": 9,
+    "compiler_exit_success": true,
+    "model_owned_name_type_check_passed": false,
+    "first_failed_audit": "CallerAudit.lean: unknown Command namespace / run_cmd needs compiler elaboration",
+    "job": 120844040288,
+    "full1092_target_reached": false,
+    "clinical_check_reached": false
+  },
+  "default_document_delta": "Explicit standard import Lean; original named/type/owner commands and default receipt path unchanged.",
+  "audit_import_repair": {
+    "actual_error": "Minimal Std-only source roots did not transitively import the compiler command frontend used by the existing owned/name audit.",
+    "selected": "import Lean in BOTH generators",
+    "primary": {
+      "repository": "leanprover/lean4",
+      "commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+      "path": "src/Lean.lean",
+      "bytes": 1524,
+      "sha256": "b5c1c5190efdd590cc2e7464acd39b2e926a8ebd816377bf7c5b48dc85e73b28",
+      "git_blob": "db1d56fbd201eae72ad393ad94929d0602e80fa2"
+    },
+    "import_provides": [
+      "Lean.Elab",
+      "Lean.Meta",
+      "Lean.Parser",
+      "Lean.Util"
+    ],
+    "mathematical_modules_changed": false,
+    "new_axiom": false,
+    "actual_result_pending": false
+  },
+  "audit_source_capture": {
+    "actual_generated_CallerAudit_saved_before_execution": true,
+    "successful_scoped_receipt_includes_OwnedAudit_source_and_sha": true,
+    "source118_failed_source_not_claimed_recovered": true
+  }
+}

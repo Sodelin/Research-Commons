@@ -1,0 +1,629 @@
+{
+  "schema": 1,
+  "status": "EXTERNALLY_VERIFIED_EXACT60_SOURCE_COMPILE_AND_OWNED_CONTEXT_FULL1500_PENDING",
+  "source_commit": "14be42189b8a72fcaced51ceda4e86445dc09e90",
+  "source_module": "DiscriminatingStatusTransport",
+  "source_sha256": "9b83cfe9b81313f7b94a709b03f4df30ec30a26a948411023237a59dda734764",
+  "source_git_blob": "948387c83f5571b7f379238de6f47c0a4c120c6e",
+  "receipt_repository": "Sodelin/Research-Commons",
+  "receipt_commit": "a764903a12bf48f89f226ae77f4afd832b2f2693",
+  "receipt_path": "research/2026-10-30-causal60-replay",
+  "receipt_url": "https://github.com/Sodelin/Research-Commons/blob/a764903a12bf48f89f226ae77f4afd832b2f2693/research/2026-10-30-causal60-replay/README.md",
+  "compiler": "Lean4.33.1 / 819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "source_modules": 60,
+  "all60_source_bytes_sha256_and_git_blobs_match_current_package": true,
+  "all60_actual_recorded_module_exits_pass": true,
+  "owned_declarations": 1549,
+  "owned_theorems": 982,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "full_audit_bytes": 1926839,
+  "full_audit_sha256": "00f23624d63095af4551554feb2efa13d1c54118ce775c913e58310126db79b1",
+  "all1549_rows_checked_for_standard_axioms": true,
+  "selected_names": [
+    "RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish",
+    "RestrictedCausal.SelectedWalk.Route.endpoint_mem_of_nonempty",
+    "RestrictedCausal.DiscriminatingStatus.rebuild_parent_prefix",
+    "RestrictedCausal.DiscriminatingStatus.witness_start_ne_finish._simp_1_1",
+    "RestrictedCausal.DiscriminatingStatus.extended_parent_details",
+    "RestrictedCausal.DiscriminatingStatus.parent_route_forget",
+    "RestrictedCausal.DiscriminatingStatus.witness_status_transfer",
+    "RestrictedCausal.DiscriminatingStatus.parent_step_forget",
+    "RestrictedCausal.DiscriminatingStatus.rebuild_head_prefix"
+  ],
+  "authored_target_theorems": 8,
+  "generated_simp_theorems": 1,
+  "packet_files": [
+    {
+      "path": "SOURCE-MANIFEST.json",
+      "bytes": 18158,
+      "sha256": "dc1eb6b40ac9eb94dbb1a3ad424427d81b11810ab90076d0e3ff8bd19aa5d36a",
+      "git_blob": "ae8be7e9b319ed8d77261a2bdd3239cfef944508"
+    },
+    {
+      "path": "BUILD-RESULTS.json",
+      "bytes": 58453,
+      "sha256": "4c84330bd9cd928ceb6b124521b1c13bb9d7e8a5b9b500828157dced4d80d07d",
+      "git_blob": "3ae34c8227ae1b90838317710cb1c21e83e4be16"
+    },
+    {
+      "path": "AUDIT-SUMMARY.json",
+      "bytes": 2264,
+      "sha256": "dfc61dc1ef01bc889ac577fefa72203f5f8580201caec26da7d168267785d23b",
+      "git_blob": "7bfcc783412967dc19c4fb7f3fba53d2b4cc09d8"
+    },
+    {
+      "path": "SELECTED-ENDPOINT.stdout",
+      "bytes": 7701,
+      "sha256": "6f331e71ccb4b0c22a2fd0dfbbced298610595a4d661673bb55e4f8c01a96c89",
+      "git_blob": "ee1c2893d0f8aad1607dc88d536fd1bd05c17129"
+    }
+  ],
+  "verification_role": "Current exact60-source compilation/ownership evidence independently recovered and matched. Parent executed compiler/audits; this intake did not rerun them. Original source/theorem statements unchanged.",
+  "full1500_build_passed": false,
+  "all520_named_exports_passed": false,
+  "whole118_complete": false,
+  "cache_objects_admitted": false,
+  "scope": "Supersedes source-only/unverified wording only for this exact selected source within its complete60-source owned context. It is not new mathematics, full1500/export/caller/native/source acceptance, a cache grant or G3/G4 closure.",
+  "selected_sources": [
+    {
+      "module": "DiscriminatingStatusTransport",
+      "imports": [
+        "FiniteDependencyInduction"
+      ],
+      "sha256": "9b83cfe9b81313f7b94a709b03f4df30ec30a26a948411023237a59dda734764",
+      "git_blob": "948387c83f5571b7f379238de6f47c0a4c120c6e",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/DiscriminatingStatusTransport.lean"
+    },
+    {
+      "module": "FiniteDependencyInduction",
+      "imports": [
+        "MinimalPathOrderDependencies",
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Data.Fintype.Pigeonhole"
+      ],
+      "sha256": "5029b8f70c88ebe8fcc778bb3504cdbc4da43839f72b143f6a5b9fe83298b26d",
+      "git_blob": "23acfd1a7bd9c4f6d189a2690cd3cc8e93d2dc26",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/FiniteDependencyInduction.lean"
+    },
+    {
+      "module": "MinimalPathOrderDependencies",
+      "imports": [
+        "ReversedPositionTrace"
+      ],
+      "sha256": "7432ac146450d51662d2bd60686b31820871951e1d5bb12c78ffc8773082b97d",
+      "git_blob": "67169a8ef8f3444ea60e070ef38206bf632dc6b1",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/MinimalPathOrderDependencies.lean"
+    },
+    {
+      "module": "ReversedPositionTrace",
+      "imports": [
+        "IndexedDiscriminatingSections"
+      ],
+      "sha256": "4f8bff2a133c117fce9ec63d55f321d63b68ba60a83c7a0e028be76bb28f585c",
+      "git_blob": "1224aef49b5f4d9996a70fa47a7986c2ea740636",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/ReversedPositionTrace.lean"
+    },
+    {
+      "module": "IndexedDiscriminatingSections",
+      "imports": [
+        "DiscriminatingIntervalGeometry"
+      ],
+      "sha256": "0c72eec2e647d4654282587557a8c204999e1b26190113953f19980f412088f7",
+      "git_blob": "7a3cc9f6b0dd3d8db738e3ceb318515955e65420",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/IndexedDiscriminatingSections.lean"
+    },
+    {
+      "module": "DiscriminatingIntervalGeometry",
+      "imports": [
+        "LiteralMAGInducingChains"
+      ],
+      "sha256": "a21865243777da013d55441233d93d882179530acf040db7d826c16890baa58f",
+      "git_blob": "0b769298fbbdace6879f56c736cb8a9d735193d6",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/DiscriminatingIntervalGeometry.lean"
+    },
+    {
+      "module": "LiteralMAGInducingChains",
+      "imports": [
+        "IntervalDependency",
+        "WeakInducingEdges"
+      ],
+      "sha256": "49cc5db3b1c77a36e7eafd12b402a7622ca0400117b689238f386059f1c0a891",
+      "git_blob": "eaed3ab29861b753fc4a5c105e72e55b3a55c060",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/LiteralMAGInducingChains.lean"
+    },
+    {
+      "module": "IntervalDependency",
+      "imports": [
+        "VertexDiscriminatingSections"
+      ],
+      "sha256": "69a5163eb17c2f8ed95e238097c3e73b423d67f164da8d5a39c84453b104ce0c",
+      "git_blob": "582e34cb50cac3a9e8dfdc1593f9c97bfc72927f",
+      "path": "packages/research/vendor/restricted-causal-source/IntervalDependency.lean"
+    },
+    {
+      "module": "WeakInducingEdges",
+      "imports": [
+        "ClosedColliderWalks"
+      ],
+      "sha256": "9be69074797b4e91e825b4cca09f5fdc3f73dfde5a842574414683de45ff5c25",
+      "git_blob": "39c627ac31c13e0d96cc33fe6d8cdd972ebd965c",
+      "path": "packages/research/vendor/restricted-causal-source/WeakInducingEdges.lean"
+    },
+    {
+      "module": "VertexDiscriminatingSections",
+      "imports": [
+        "ActivePathReversal"
+      ],
+      "sha256": "f1a43f0caca8a9cc7bda66cc15f5396a944a1c9b9dee12913707a310d6ba52d3",
+      "git_blob": "78a3189c3935affd86acc3385e1494653eaf53b4",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/VertexDiscriminatingSections.lean"
+    },
+    {
+      "module": "ClosedColliderWalks",
+      "imports": [
+        "ObservedMAGAncestry"
+      ],
+      "sha256": "a0937459bfc4f44cc5a51f30971918b35d6c9bc4f1af0ed6a2fdc859265e1ccb",
+      "git_blob": "298dd9e1fb1019d5dd817bf035232e424f5d238b",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/ClosedColliderWalks.lean"
+    },
+    {
+      "module": "ActivePathReversal",
+      "imports": [
+        "DiscriminatingSectionExtraction"
+      ],
+      "sha256": "52bc570eea06ec4ce61f13c7184ed110467fa8a164b03e3f8b280f96f29b26f5",
+      "git_blob": "239acae483322d96370a44fb6dbf1da31f212571",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/ActivePathReversal.lean"
+    },
+    {
+      "module": "ObservedMAGAncestry",
+      "imports": [
+        "MAGMaximality"
+      ],
+      "sha256": "c52006542e81d27cf4281d2f122184888ff96eb8f6d84b4214065c8f3236bdb1",
+      "git_blob": "cae58ef3df04efb9411c52d44aea63296ddadedb",
+      "path": "packages/research/vendor/restricted-causal-source/ObservedMAGAncestry.lean"
+    },
+    {
+      "module": "DiscriminatingSectionExtraction",
+      "imports": [
+        "MinimalPathChord"
+      ],
+      "sha256": "75220aa044f416e6357c45267f3dddeff2425fbaeed193f37c8dd764502dc334",
+      "git_blob": "106bf49d3f87c390db08307bf87303e3a02f7745",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/DiscriminatingSectionExtraction.lean"
+    },
+    {
+      "module": "MAGMaximality",
+      "imports": [
+        "MAGPathLifting"
+      ],
+      "sha256": "459d89294543a56aae56d5eac4702dd850221b1a08c690467aea45a992bee550",
+      "git_blob": "ba0b816e2a48dc8d7a4f28b028e857c14b3d7d64",
+      "path": "packages/research/vendor/restricted-causal-source/MAGMaximality.lean"
+    },
+    {
+      "module": "MinimalPathChord",
+      "imports": [
+        "AncestralShortcutGeometry"
+      ],
+      "sha256": "647e694c299fc068756eda5f6940916ea8bc93b930f8279602ff03aa803c5a9b",
+      "git_blob": "9484b0bd2483677b0f6d49c4b781edb05eac4f4a",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/MinimalPathChord.lean"
+    },
+    {
+      "module": "MAGPathLifting",
+      "imports": [
+        "ConditionedEdgeWalks"
+      ],
+      "sha256": "a8e86eafd3b6ba451907fbd21df07240d474f017fa9a151dbe75992dfe47c6c2",
+      "git_blob": "8dedd689570cdbe3eab7283afe2140bec8f39f0f",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/MAGPathLifting.lean"
+    },
+    {
+      "module": "AncestralShortcutGeometry",
+      "imports": [
+        "MinimalActivePaths"
+      ],
+      "sha256": "d96d8264fcab56b21e08670977079da34dde2cbca9b53679abd06d91faa4c21c",
+      "git_blob": "e36424cb8091ab17b18b1b98e13c9180f1e5663a",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/AncestralShortcutGeometry.lean"
+    },
+    {
+      "module": "ConditionedEdgeWalks",
+      "imports": [
+        "MarkedActiveWalks"
+      ],
+      "sha256": "c045f10d241f90c65ab86e01d49974cb9b4826e6f10c142099574fef7e4cf32b",
+      "git_blob": "9f725ce27b9ad3ba3ba78ec59d0fb71415f2261a",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/ConditionedEdgeWalks.lean"
+    },
+    {
+      "module": "MinimalActivePaths",
+      "imports": [
+        "VertexActivePaths"
+      ],
+      "sha256": "2f7459d2c48ce8332526f5a171008671a4f9d7910026288ea8d255834190881a",
+      "git_blob": "df7275c5138979d67c64c4e885b977c9021fb71b",
+      "path": "packages/research/vendor/restricted-causal-source/MinimalActivePaths.lean"
+    },
+    {
+      "module": "MarkedActiveWalks",
+      "imports": [
+        "InducingEndpointMarks"
+      ],
+      "sha256": "e5830945f73f32763e259d57bd49fd83d388a3d5db1ca959fa1df97bcae8b92f",
+      "git_blob": "75162ee13343211ebb244cbd8d892db5bf4c0189",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/MarkedActiveWalks.lean"
+    },
+    {
+      "module": "VertexActivePaths",
+      "imports": [
+        "CommonDiscriminatingParents"
+      ],
+      "sha256": "2b82367aaeaeeeecdff8ca309477e89402b1495b77452d5e4c170b14bcc58050",
+      "git_blob": "ed33793cbc60a709f006fcb9b58cbaa741dafac3",
+      "path": "packages/research/vendor/restricted-causal-source/VertexActivePaths.lean"
+    },
+    {
+      "module": "InducingEndpointMarks",
+      "imports": [
+        "DiscriminatingSeparatorStatus"
+      ],
+      "sha256": "de6ca22009ffdbd8ee23b03042ee3a76518c9a71c42ea35b6601bb4e5262e416",
+      "git_blob": "e82adc7d1d69efb0fe6ff1dc8ff14b7ff5b3a734",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/InducingEndpointMarks.lean"
+    },
+    {
+      "module": "CommonDiscriminatingParents",
+      "imports": [
+        "OriginalMAGConnection"
+      ],
+      "sha256": "f909f27ed4547413a9e555610f6ec585af86db3fab530f7f95feb9e484ae6b9d",
+      "git_blob": "17ef78e172bc01d3e81f841b47bb901fdd3147a9",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CommonDiscriminatingParents.lean"
+    },
+    {
+      "module": "DiscriminatingSeparatorStatus",
+      "imports": [
+        "CommonObservedMAG"
+      ],
+      "sha256": "a4a05910112ca2e0f562232b62638019fb8d6f493a9beab005354304c49cdc5f",
+      "git_blob": "64e706e9be33c4798ff01d53fc206c458b9f883f",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/DiscriminatingSeparatorStatus.lean"
+    },
+    {
+      "module": "OriginalMAGConnection",
+      "imports": [
+        "WeakRouteNormalization"
+      ],
+      "sha256": "e8d9f5d08d7f9b814e870c5035d8a38ceccf9b4610de9e0db748120a5d7125d3",
+      "git_blob": "01add843b56b1781092836cb5a5fc6ac5c20f476",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalMAGConnection.lean"
+    },
+    {
+      "module": "CommonObservedMAG",
+      "imports": [
+        "PartialIndicatorQueryFamily"
+      ],
+      "sha256": "d54520e8243a5792a9af812d3a725cccebad05aa9fe54009b380491eb442118d",
+      "git_blob": "d896337087a43d7ac1a39aae61eb588bd99297d0",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CommonObservedMAG.lean"
+    },
+    {
+      "module": "WeakRouteNormalization",
+      "imports": [
+        "OriginalWeakConnection"
+      ],
+      "sha256": "f8ce8210e29dd55a1321267ecb0435f6122ba065ee7853d0284240ef534eb16d",
+      "git_blob": "67373589d2752caf39c15acd2905dd0562c15d9c",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/WeakRouteNormalization.lean"
+    },
+    {
+      "module": "PartialIndicatorQueryFamily",
+      "imports": [
+        "RefinedIndicatorSeparator"
+      ],
+      "sha256": "e0d3d2f4977bba4c440f230fd73be8f314606ed4319873675bd111ba27834128",
+      "git_blob": "76b3bcf6632819b2490e68f94420f7f9ae0f5f04",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/PartialIndicatorQueryFamily.lean"
+    },
+    {
+      "module": "OriginalWeakConnection",
+      "imports": [
+        "WeakInducingEdges"
+      ],
+      "sha256": "9b0de8822abbc6f87aab4a8a766ebc4664d008505c40539011d3790272a6690a",
+      "git_blob": "8687a7652ce7b7c1077c42812c6af6eef313941c",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalWeakConnection.lean"
+    },
+    {
+      "module": "RefinedIndicatorSeparator",
+      "imports": [
+        "PartialObservedQueryFamily",
+        "FiniteOriginalTargetImage"
+      ],
+      "sha256": "7e5c102d6754d0abca1da28c3b39b990e7d4b63f10fb98036cf9dd066a57ff15",
+      "git_blob": "cf8770dad9e59147a52de21641d997bf6500c482",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/RefinedIndicatorSeparator.lean"
+    },
+    {
+      "module": "PartialObservedQueryFamily",
+      "imports": [
+        "RefinedObservedSeparator",
+        "Mathlib.Data.Fintype.BigOperators"
+      ],
+      "sha256": "71ffbb836db53525d8599ed92d9035f2375c17786c33c7d23ba913f37cfd7cf6",
+      "git_blob": "6abd513b28e35278106e225af578a46138a30353",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/PartialObservedQueryFamily.lean"
+    },
+    {
+      "module": "FiniteOriginalTargetImage",
+      "imports": [
+        "SelectedMAGValidity",
+        "Mathlib.Data.Finset.Image",
+        "Mathlib.Data.Finset.Filter",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "sha256": "ea39cc094e76f67e8c13fd9d0536ea96efff3664c0f9bc6389f74db6f746a1df",
+      "git_blob": "bb119e1658feaad3e0881203d92b18c4548be9b9",
+      "path": "packages/research/vendor/restricted-causal-source/FiniteOriginalTargetImage.lean"
+    },
+    {
+      "module": "RefinedObservedSeparator",
+      "imports": [
+        "MarginalIndicatorAncestry"
+      ],
+      "sha256": "a44011c7d7fde4951a0414dfef591e26b4e8f213a60ef8357e3c988c0c7ab05d",
+      "git_blob": "71513e3ba137e076ff33e0ec5798d0d5a7b8a995",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/RefinedObservedSeparator.lean"
+    },
+    {
+      "module": "SelectedMAGValidity",
+      "imports": [
+        "LiteralSelectedMAG"
+      ],
+      "sha256": "6da039d160ed39d6fbfa553354db43870dfd3f4e604a3089f091c1beaf0e89cc",
+      "git_blob": "e50834f5198c254f41030fc83ecfe423c8bb4f9c",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/SelectedMAGValidity.lean"
+    },
+    {
+      "module": "MarginalIndicatorAncestry",
+      "imports": [
+        "SelectedMAGValidity"
+      ],
+      "sha256": "28655a39db4f5ded8c5242214c6d3ca469aa0c083e10dcb2a5d67938c4e196bb",
+      "git_blob": "36390fa0b2b763cc4fa0b1d41145ecf042884748",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/MarginalIndicatorAncestry.lean"
+    },
+    {
+      "module": "LiteralSelectedMAG",
+      "imports": [
+        "InducingPathSeparation"
+      ],
+      "sha256": "e58cefc32a673b228c3dba02bdc10e990b26524bff0421d0426bc46b716ad63d",
+      "git_blob": "97b050f7cd5c1a8989c9ceef6a8077e843322ec7",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/LiteralSelectedMAG.lean"
+    },
+    {
+      "module": "InducingPathSeparation",
+      "imports": [
+        "EndpointColliderActivation"
+      ],
+      "sha256": "9da59447652aa95d8eb1cb5bb784d51637bd88f58fe835e4799003a68f4d3e73",
+      "git_blob": "651d64725e9adc6c08af9db372721112bea08ee4",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/InducingPathSeparation.lean"
+    },
+    {
+      "module": "EndpointColliderActivation",
+      "imports": [
+        "OriginalCanonicalSourceAdapter"
+      ],
+      "sha256": "44cef59ada9bf6a4898dd5a5a016425b27fa5a0b8ed00edf2f426a53e67c4831",
+      "git_blob": "1a8b610e91ab94c2a9d203a72ceda865549b62bf",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/EndpointColliderActivation.lean"
+    },
+    {
+      "module": "OriginalCanonicalSourceAdapter",
+      "imports": [
+        "OriginalIndicatorProjection"
+      ],
+      "sha256": "2111e1b0b8cbdecc6b7bc980021dd973d08751f8413dc8f73665d5979159ef6b",
+      "git_blob": "6ac251050c0ab494cfc0f45911e0565b4e707c07",
+      "path": "packages/research/vendor/restricted-causal-source/OriginalCanonicalSourceAdapter.lean"
+    },
+    {
+      "module": "OriginalIndicatorProjection",
+      "imports": [
+        "OriginalProjectionContraction"
+      ],
+      "sha256": "46f6a078ba689f92f591974b217b91dbd90d6cce795ea1ef23b78318c3b8f4ac",
+      "git_blob": "0fd7412d094bf62649a665d4f4ffc1c2effaeb11",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalIndicatorProjection.lean"
+    },
+    {
+      "module": "OriginalProjectionContraction",
+      "imports": [
+        "ReadyRetainedNormalization"
+      ],
+      "sha256": "473043be80e3f515a1ce9ea3a1d59afe88cf169877b5ce08110ba8a09598ec51",
+      "git_blob": "42708054a8c286091d79deeb944bf9ad73029e57",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalProjectionContraction.lean"
+    },
+    {
+      "module": "ReadyRetainedNormalization",
+      "imports": [
+        "LatentColliderDetours"
+      ],
+      "sha256": "9b59ca1b665000f05b7478e80a37cb83be6d02dca444dcc1b6d1bb04e12673db",
+      "git_blob": "2fe42e63ea9a72f8ff32cf01e823d4b6f9e083d4",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/ReadyRetainedNormalization.lean"
+    },
+    {
+      "module": "LatentColliderDetours",
+      "imports": [
+        "OriginalProjectionLifting"
+      ],
+      "sha256": "34aed95e4d511eda3214d501691e686940652e9985c9bf87dceae73dd05370aa",
+      "git_blob": "563da4973aa63e6ab4f0a8f9ca31888b5f1c34bc",
+      "path": "packages/research/vendor/restricted-causal-source/LatentColliderDetours.lean"
+    },
+    {
+      "module": "OriginalProjectionLifting",
+      "imports": [
+        "GeneralActiveWalkReduction"
+      ],
+      "sha256": "456df899e95449caf73a01ea0176fa61f71fbf248bc579e96382b146cefe51e4",
+      "git_blob": "40c0b79410134790761403532e162e13a9dabab6",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalProjectionLifting.lean"
+    },
+    {
+      "module": "GeneralActiveWalkReduction",
+      "imports": [
+        "OriginalProjectionAncestry"
+      ],
+      "sha256": "6ab484712685f01c75cfdaeb6fd0aba6be949788263b7f6df4234074734743d6",
+      "git_blob": "34d1c250ab6dab553376e5189da4468ebf6bf180",
+      "path": "packages/research/vendor/restricted-causal-source/GeneralActiveWalkReduction.lean"
+    },
+    {
+      "module": "OriginalProjectionAncestry",
+      "imports": [
+        "OriginalLatentProjection"
+      ],
+      "sha256": "1b4bc6779f7094354ff92f3a85348e687bb2eab0999418d7f751fa873707f5f6",
+      "git_blob": "a9fecd0a0031cd429f36d06bcabad6895e637314",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalProjectionAncestry.lean"
+    },
+    {
+      "module": "OriginalLatentProjection",
+      "imports": [
+        "CommonSelectedIndicatorSource"
+      ],
+      "sha256": "907c489dd8f043860b47b26d6e9ab74b535dfd639267937e7c46f1ac085bb889",
+      "git_blob": "5be029bd4ae989bcbf3216ad458a40b0b3879402",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/OriginalLatentProjection.lean"
+    },
+    {
+      "module": "CommonSelectedIndicatorSource",
+      "imports": [
+        "CommonIndicatorRoots"
+      ],
+      "sha256": "44fc27348f6778b2e9c5dd4c0de3fe116db256b4106c27821aebd38530abb16a",
+      "git_blob": "cec1581b3e337defab90df52e80ff4a548c7c6ea",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CommonSelectedIndicatorSource.lean"
+    },
+    {
+      "module": "CommonIndicatorRoots",
+      "imports": [
+        "MarkedGraphEquivalence",
+        "Mathlib.Order.WithBot"
+      ],
+      "sha256": "6e78a0bca0c84269364fe69842edcfb57ed78358e41736747aa464ab033e51b1",
+      "git_blob": "90f4d3338cdf8f4a1145e085ca97c72eb15a41c5",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CommonIndicatorRoots.lean"
+    },
+    {
+      "module": "MarkedGraphEquivalence",
+      "imports": [
+        "CanonicalRootSeparation"
+      ],
+      "sha256": "9f78366806d70df26a592941b16c0a32ce6376caa2a42c546826d7dc3139c190",
+      "git_blob": "91508fa7a09aa9d7198ba63aaab7c9903a54075f",
+      "path": "packages/research/vendor/restricted-causal-source/MarkedGraphEquivalence.lean"
+    },
+    {
+      "module": "CanonicalRootSeparation",
+      "imports": [
+        "FiniteProfileRegistry"
+      ],
+      "sha256": "43f48200996cc1a040ed2a8aa4ee3a2af4e844066addff2a0c0aa94d5a6f4ed7",
+      "git_blob": "2e3744dd7159ff4b68b0c0152a846b1efdd6be8b",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CanonicalRootSeparation.lean"
+    },
+    {
+      "module": "FiniteProfileRegistry",
+      "imports": [
+        "CanonicalFiniteBounds",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "sha256": "360d4fba826f5c1fd672f6c9892cd76e6030c05b73a07aaa1ba635f4d4ea0509",
+      "git_blob": "9f7a020c83f4269577a1a193755bb67ed65b6ca7",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/FiniteProfileRegistry.lean"
+    },
+    {
+      "module": "CanonicalFiniteBounds",
+      "imports": [
+        "CanonicalLatentRoots",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.Sym.Card",
+        "Mathlib.Order.Basic"
+      ],
+      "sha256": "d2a405e38c6a961650dff02065ff5e29de5aafad7e9e464a8a61ce26f571be52",
+      "git_blob": "3a3a4e28e37ad71767b6cc329a19a88c4351d77b",
+      "path": "packages/research/vendor/restricted-causal-source/CanonicalFiniteBounds.lean"
+    },
+    {
+      "module": "CanonicalLatentRoots",
+      "imports": [
+        "SelectedProfileSeparation"
+      ],
+      "sha256": "8c84dc08cd26826ee7ccf6d1995b2090f5b8045f4ff8b215e6124e2ffdbe0bee",
+      "git_blob": "7368b0f30dee3c635bf6d7c9cc877b45e36aa112",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CanonicalLatentRoots.lean"
+    },
+    {
+      "module": "SelectedProfileSeparation",
+      "imports": [
+        "SelectedAncestry"
+      ],
+      "sha256": "6057d88bf99dff5c1db26f2a997cd37a0f2cfcf445c4ede7407f999108e4323c",
+      "git_blob": "558ac518279f8be56cb45529d0d67aaf13d1f231",
+      "path": "packages/research/vendor/restricted-causal-source/SelectedProfileSeparation.lean"
+    },
+    {
+      "module": "SelectedAncestry",
+      "imports": [
+        "SelectedSourceProfile"
+      ],
+      "sha256": "4baa089b70502d1e44a325b38414011fedf5df4a04c37ae986eb8e87bd16b4a7",
+      "git_blob": "cd295ac0355793efff2ba254e8bd33f9ef564843",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/SelectedAncestry.lean"
+    },
+    {
+      "module": "SelectedSourceProfile",
+      "imports": [
+        "CanonicalSelectionProfile"
+      ],
+      "sha256": "0aae5e993d860f436dcc0d6fe646b21219579ac5680c7a4a293991fc01246bf6",
+      "git_blob": "3cefc8aa3a5a438fe2dd9b4161c92e2d81d2132f",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/SelectedSourceProfile.lean"
+    },
+    {
+      "module": "CanonicalSelectionProfile",
+      "imports": [
+        "SelectedWalkReduction",
+        "Mathlib.Order.Defs.LinearOrder"
+      ],
+      "sha256": "3dd72f0a8b850ef71f0528556a26f7f1e051072590b1d6d89fc5560276887b7c",
+      "git_blob": "a2cb856a7a03db45a2ac0498634b233180faf5f5",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/CanonicalSelectionProfile.lean"
+    },
+    {
+      "module": "SelectedWalkReduction",
+      "imports": [
+        "Mathlib.Data.List.Nodup"
+      ],
+      "sha256": "723b258cab7519cb867f88bc5a75ed29055c9aad3da5fdf1ce485378ddf637f5",
+      "git_blob": "5b57d58201c431c1987f8214684333e73d047d8f",
+      "path": "packages/research/lean/ResearchCommons/Compatibility/SelectedWalkReduction.lean"
+    }
+  ]
+}

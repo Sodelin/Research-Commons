@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "source": "0958975aaa7d9d65b77821283c1b31922433b24c",
+  "run": 40090840783,
+  "job": 120863151776,
+  "unique_names": 34,
+  "rows": [
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.rooted_cap_distinct_set_and_mean",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.rooted_cap_distinct_set_and_mean",
+      "type": "@Claims.NANUQ.rooted_cap_distinct_set_and_mean : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)\n  (q : Fin 4 ↪ X) (b : N.graph.Blob) (hb : N.NonleafBlob b)\n  (hinj : Function.Injective fun i => N.blobProjection b hb (q i)),\n  N.rawDisplayedQuartets q =\n      (N.actualEveryNonleafRootedCapSource b hb).rawDisplayedQuartets (N.actualRootedCapQuartet q b hb hinj) ∧\n    N.rawQuartetMean q =\n      (N.actualEveryNonleafRootedCapSource b hb).rawQuartetMean (N.actualRootedCapQuartet q b hb hinj)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.repeated_label_anchor",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.repeated_label_anchor",
+      "type": "@Claims.NANUQ.repeated_label_anchor : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)\n  (v : Fin 4 → X), N.actualTupleAnchor v = ∑ b, N.actualBlobTupleAnchor ↑b ⋯ v"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.weighted_anchor_composition",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.weighted_anchor_composition",
+      "type": "@Claims.NANUQ.weighted_anchor_composition : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X) (m : X → ℚ)\n  (x y : X),\n  N.actualWeightedAnchorDistance m x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.weightedPortMass (N.blobProjection ↑b ⋯) m) (N.blobProjection ↑b ⋯ x)\n        (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.unit_anchor_composition",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.unit_anchor_composition",
+      "type": "@Claims.NANUQ.unit_anchor_composition : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X) (x y : X),\n  N.actualWeightedAnchorDistance (fun x => 1) x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.portMass (N.blobProjection ↑b ⋯)) (N.blobProjection ↑b ⋯ x) (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.opened_choice_distinct_set_and_mean",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.opened_choice_distinct_set_and_mean",
+      "type": "@Claims.NANUQ.opened_choice_distinct_set_and_mean : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)\n  (hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x) (q : Fin 4 ↪ X),\n  N.rawDisplayedQuartets q = Nanuq.Quartet.displayed (N.actualOpenedChoiceResolve hleaf q) ∧\n    N.rawQuartetMean q = Nanuq.Quartet.sourceMean (N.actualOpenedChoiceResolve hleaf q)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.galled_cap_opened_family_and_mean",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.galled_cap_opened_family_and_mean",
+      "type": "@Claims.NANUQ.galled_cap_opened_family_and_mean : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)\n  (hg : N.graph.GalledDetour) (q : Fin 4 ↪ X) (b : N.graph.Blob) (hb : N.NonleafBlob b)\n  (hinj : Function.Injective fun i => N.blobProjection b hb (q i)),\n  N.rawDisplayedQuartets q =\n      Nanuq.Quartet.displayed\n        ((N.actualEveryNonleafRootedCapSource b hb).actualOpenedChoiceResolve ⋯\n          (N.actualRootedCapQuartet q b hb hinj)) ∧\n    N.rawQuartetMean q =\n      Nanuq.Quartet.sourceMean\n        ((N.actualEveryNonleafRootedCapSource b hb).actualOpenedChoiceResolve ⋯ (N.actualRootedCapQuartet q b hb hinj))"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.actual_opened_curve_drawing",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.actual_opened_curve_drawing",
+      "type": "@Claims.NANUQ.actual_opened_curve_drawing : {V : Type u_1} →\n  {E : Type u_2} →\n    {X : Type u_3} →\n      {P : Type u_4} →\n        [inst : TopologicalSpace P] →\n          [inst_1 : Fintype V] →\n            [inst_2 : Fintype E] →\n              [inst_3 : Fintype X] →\n                [inst_4 : DecidableEq V] →\n                  (N : Nanuq.Source.RootedBinary V E X) →\n                    N.graph.CurveDrawing →\n                      (hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x) →\n                        (N.openedHybridGraph hleaf).CurveDrawing"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.actual_opened_curve_subset",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.actual_opened_curve_subset",
+      "type": "@Claims.NANUQ.actual_opened_curve_subset : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} {P : Type u_4}\n  [inst : TopologicalSpace P] [inst_1 : Fintype V] [inst_2 : Fintype E] [inst_3 : Fintype X] [inst_4 : DecidableEq V]\n  (N : Nanuq.Source.RootedBinary V E X) (D : N.graph.CurveDrawing)\n  (hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x),\n  Set.range (N.actualOpenedCurveDrawing D hleaf).point ∪ ⋃ e, Set.range ⇑((N.actualOpenedCurveDrawing D hleaf).arc e) ⊆\n    Set.range D.point ∪ ⋃ e, Set.range ⇑(D.arc e)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.original_curve_adapter_roundtrip",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.original_curve_adapter_roundtrip",
+      "type": "@Claims.NANUQ.original_curve_adapter_roundtrip : ∀ {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}\n  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G),\n  G1OuterLabelledMultigraphCurves.ofCurveDrawing D.toCurveDrawing = D"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.actual_opened_planar_curves",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.actual_opened_planar_curves",
+      "type": "@Claims.NANUQ.actual_opened_planar_curves : {V : Type u_1} →\n  {E : Type u_2} →\n    {X : Type u_3} →\n      [inst : Fintype V] →\n        [inst_1 : Fintype E] →\n          [inst_2 : Fintype X] →\n            [inst_3 : DecidableEq V] →\n              (N : Nanuq.Source.RootedBinary V E X) →\n                G1OuterLabelledMultigraphCurves.PlanarCurves N.graph →\n                  (hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x) →\n                    G1OuterLabelledMultigraphCurves.PlanarCurves (N.openedHybridGraph hleaf)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.actual_opened_planar_subset",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.actual_opened_planar_subset",
+      "type": "@Claims.NANUQ.actual_opened_planar_subset : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)\n  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph)\n  (hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x),\n  G1OuterLabelledMultigraphCurves.drawing (G1OuterLabelledMultigraphCurves.actualOpenedPlanarCurves N D hleaf) ⊆\n    G1OuterLabelledMultigraphCurves.drawing D"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "definition",
+      "name": "ResearchCommons.Claims.NANUQ.actual_source_cycle_circle",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.actual_source_cycle_circle",
+      "type": "@Claims.NANUQ.actual_source_cycle_circle : ∀ {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}\n  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) {a b : V} (w z : G.OccurrenceWalk a b),\n  w.Simple →\n    z.Simple →\n      w.Nonempty →\n        z.Nonempty →\n          Disjoint w.edges z.edges →\n            (∀ v ∈ w.vertices, v ∈ z.vertices → v = a ∨ v = b) →\n              ∃ r,\n                Continuous r ∧\n                  Function.Injective r ∧\n                    Set.range r =\n                      Set.range ⇑(Nanuq.Source.EdgeGraph.OccurrenceWalk.curve D.toCurveDrawing w) ∪\n                        Set.range ⇑(Nanuq.Source.EdgeGraph.OccurrenceWalk.curve D.toCurveDrawing z)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Canonical.theta_source",
+      "owning_module": "CanonicalTheta",
+      "printed_name": "Nanuq.Canonical.theta_source",
+      "type": "Nanuq.Canonical.theta_source : ∀ (t : Nanuq.Theta.Counts),\n  1 ≤ t.total →\n    Nanuq.Reconstruction.CircularDecomposable (Nanuq.Weighted.sourceNanuq (Nanuq.Theta.rhoFin t)) ∧\n      Nanuq.Reconstruction.PseudometricLaws (Nanuq.Weighted.sourceNanuq (Nanuq.Theta.rhoFin t)) ∧\n        (∀ (x y : Fin (Nanuq.Theta.circular t).length),\n            x ≠ y → 0 < Nanuq.Weighted.sourceNanuq (Nanuq.Theta.rhoFin t) x y) ∧\n          ∀ (i j : Fin (Nanuq.Theta.circular t).length),\n            i < j →\n              (0 < Nanuq.Weighted.circularAlpha (Nanuq.Weighted.sourceNanuq (Nanuq.Theta.rhoFin t)) i j ↔\n                Nanuq.Theta.displayedSplit t ↑i ↑j = true)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Canonical.theta_weighted",
+      "owning_module": "CanonicalTheta",
+      "printed_name": "Nanuq.Canonical.theta_weighted",
+      "type": "Nanuq.Canonical.theta_weighted : ∀ (t : Nanuq.Theta.Counts),\n  1 ≤ t.total →\n    ∀ (mass : Fin (Nanuq.Theta.circular t).length → ℚ),\n      (∀ (x : Fin (Nanuq.Theta.circular t).length), 0 < mass x) →\n        Nanuq.Reconstruction.CircularDecomposable (Nanuq.Weighted.weightedNanuq (Nanuq.Theta.rhoFin t) mass) ∧\n          Nanuq.Reconstruction.PseudometricLaws (Nanuq.Weighted.weightedNanuq (Nanuq.Theta.rhoFin t) mass) ∧\n            ∀ (i j : Fin (Nanuq.Theta.circular t).length),\n              i < j →\n                (0 < Nanuq.Weighted.circularAlpha (Nanuq.Weighted.weightedNanuq (Nanuq.Theta.rhoFin t) mass) i j ↔\n                  Nanuq.Theta.displayedSplit t ↑i ↑j = true)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Canonical.theta_exact_quartet_mean",
+      "owning_module": "CanonicalTheta",
+      "printed_name": "Nanuq.Canonical.theta_exact_quartet_mean",
+      "type": "Nanuq.Canonical.theta_exact_quartet_mean : ∀ (t : Nanuq.Theta.Counts) (a b c d : Fin (Nanuq.Theta.circular t).length),\n  a ≠ b →\n    a ≠ c →\n      a ≠ d →\n        b ≠ c →\n          b ≠ d →\n            c ≠ d →\n              Nanuq.Theta.rhoFin t a b c d =\n                Nanuq.Quartet.sourceMean\n                  (Nanuq.Theta.sourceResolution t (Nanuq.Theta.leafIndex t a) (Nanuq.Theta.leafIndex t b)\n                    (Nanuq.Theta.leafIndex t c) (Nanuq.Theta.leafIndex t d))"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawRho_valid",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawRho_valid",
+      "type": "@Nanuq.Source.RootedBinary.rawRho_valid : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)) (x y p q : Fin n)\n  (h : Nanuq.Source.RootedBinary.ValidFour x y p q),\n  N.rawRho x y p q = N.rawQuartetMean (Nanuq.Source.RootedBinary.fourTaxa x y p q h)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawRho_nonneg",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawRho_nonneg",
+      "type": "@Nanuq.Source.RootedBinary.rawRho_nonneg : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)) (x y p q : Fin n), 0 ≤ N.rawRho x y p q"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawRho_witness_symmetric",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawRho_witness_symmetric",
+      "type": "@Nanuq.Source.RootedBinary.rawRho_witness_symmetric : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  Nanuq.Composition.WitnessSymmetric N.rawRho"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawRho_endpoint_symmetric",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawRho_endpoint_symmetric",
+      "type": "@Nanuq.Source.RootedBinary.rawRho_endpoint_symmetric : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  Nanuq.Weighted.QuartetEndpointSymmetric N.rawRho"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawNanuq_symmetric",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawNanuq_symmetric",
+      "type": "@Nanuq.Source.RootedBinary.rawNanuq_symmetric : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)) (x y : Fin n),\n  N.rawNanuq x y = N.rawNanuq y x"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawNanuq_positive",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawNanuq_positive",
+      "type": "@Nanuq.Source.RootedBinary.rawNanuq_positive : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  3 ≤ n → ∀ (x y : Fin n), x ≠ y → 0 < N.rawNanuq x y"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.rawNanuq_ordered_formula",
+      "owning_module": "RawNanuq",
+      "printed_name": "Nanuq.Source.RootedBinary.rawNanuq_ordered_formula",
+      "type": "@Nanuq.Source.RootedBinary.rawNanuq_ordered_formula : ∀ {V : Type u_1} {E : Type u_2} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] {n : ℕ} (N : Nanuq.Source.RootedBinary V E (Fin n)) (x y : Fin n),\n  N.rawNanuq x y = Nanuq.Composition.sourceDistance (Nanuq.Composition.maskedRho N.rawRho) x y"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.actualQuartetData_witness_symmetric",
+      "owning_module": "NanuqActualNanuqAnchorBridge",
+      "printed_name": "Nanuq.Source.RootedBinary.actualQuartetData_witness_symmetric",
+      "type": "@Nanuq.Source.RootedBinary.actualQuartetData_witness_symmetric : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ}\n  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)),\n  Nanuq.Composition.WitnessSymmetric N.actualQuartetData"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.actual_weightedNanuq_eq_anchor",
+      "owning_module": "NanuqActualNanuqAnchorBridge",
+      "printed_name": "Nanuq.Source.RootedBinary.actual_weightedNanuq_eq_anchor",
+      "type": "@Nanuq.Source.RootedBinary.actual_weightedNanuq_eq_anchor : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)) (m : Fin n → ℚ)\n  (x y : Fin n), Nanuq.Weighted.weightedNanuq N.actualQuartetData m x y = N.actualWeightedAnchorDistance m x y"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition",
+      "owning_module": "NanuqActualNanuqAnchorBridge",
+      "printed_name": "Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition",
+      "type": "@Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ}\n  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n))\n  (m : Fin n → ℚ) (x y : Fin n),\n  Nanuq.Weighted.weightedNanuq N.actualQuartetData m x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.weightedPortMass (N.blobProjection ↑b ⋯) m) (N.blobProjection ↑b ⋯ x)\n        (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition",
+      "owning_module": "NanuqActualNanuqAnchorBridge",
+      "printed_name": "Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition",
+      "type": "@Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ}\n  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n))\n  (x y : Fin n),\n  Nanuq.Weighted.sourceNanuq N.actualQuartetData x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.portMass (N.blobProjection ↑b ⋯)) (N.blobProjection ↑b ⋯ x) (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.Claims.NANUQ.raw_tensor_eq_actual",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.raw_tensor_eq_actual",
+      "type": "@Claims.NANUQ.raw_tensor_eq_actual : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V] [inst_1 : Fintype E]\n  [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)), N.rawRho = N.actualQuartetData"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.Claims.NANUQ.raw_weighted_blob_composition",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.raw_weighted_blob_composition",
+      "type": "@Claims.NANUQ.raw_weighted_blob_composition : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)) (m : Fin n → ℚ)\n  (x y : Fin n),\n  Nanuq.Weighted.weightedNanuq N.rawRho m x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.weightedPortMass (N.blobProjection ↑b ⋯) m) (N.blobProjection ↑b ⋯ x)\n        (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "ResearchCommons.Claims.NANUQ.raw_source_blob_composition",
+      "owning_module": "ResearchCommons.Claims.NANUQ",
+      "printed_name": "Claims.NANUQ.raw_source_blob_composition",
+      "type": "@Claims.NANUQ.raw_source_blob_composition : ∀ {V : Type u_1} {E : Type u_2} {n : ℕ} [inst : Fintype V]\n  [inst_1 : Fintype E] [inst_2 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E (Fin n)) (x y : Fin n),\n  N.rawNanuq x y =\n    ∑ b,\n      (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualWeightedAnchorDistance\n        (Nanuq.Composition.portMass (N.blobProjection ↑b ⋯)) (N.blobProjection ↑b ⋯ x) (N.blobProjection ↑b ⋯ y)"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.AllLevelParameters.all_rows_iff_exact_domain",
+      "owning_module": "AllLevelParameterDomain",
+      "printed_name": "Nanuq.AllLevelParameters.all_rows_iff_exact_domain",
+      "type": "Nanuq.AllLevelParameters.all_rows_iff_exact_domain : ∀ (c s a o : ℝ),\n  Nanuq.AllLevelParameters.AllRows c s a o ↔ Nanuq.AllLevelParameters.ExactDomain c s a o"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.AllLevelParameters.four_taxon_rows_iff_box",
+      "owning_module": "AllLevelParameterDomain",
+      "printed_name": "Nanuq.AllLevelParameters.four_taxon_rows_iff_box",
+      "type": "Nanuq.AllLevelParameters.four_taxon_rows_iff_box : ∀ (c s a o : ℝ),\n  Nanuq.AllLevelParameters.FourTaxonRows c s a o ↔ s = 1 ∧ o = 1 ∧ 0 ≤ a ∧ a ≤ 1 ∧ 0 ≤ c ∧ c ≤ 1"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.AllLevelParameters.four_taxon_certificate_insufficient",
+      "owning_module": "AllLevelParameterDomain",
+      "printed_name": "Nanuq.AllLevelParameters.four_taxon_certificate_insufficient",
+      "type": "Nanuq.AllLevelParameters.four_taxon_certificate_insufficient : Nanuq.AllLevelParameters.FourTaxonRows 1 1 (1 / 2) 1 ∧\n  ¬Nanuq.AllLevelParameters.AllRows 1 1 (1 / 2) 1"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.AllLevelParameters.four_taxon_certificate_misses_adjacent_lower_bound",
+      "owning_module": "AllLevelParameterDomain",
+      "printed_name": "Nanuq.AllLevelParameters.four_taxon_certificate_misses_adjacent_lower_bound",
+      "type": "Nanuq.AllLevelParameters.four_taxon_certificate_misses_adjacent_lower_bound : Nanuq.AllLevelParameters.FourTaxonRows 0 1\n    0 1 ∧\n  ¬Nanuq.AllLevelParameters.AllRows 0 1 0 1"
+    },
+    {
+      "axiom_source": "complete actual owned audit collectAxioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "kind": "theorem",
+      "name": "Nanuq.AllLevelParameters.original_and_modified_in_domain",
+      "owning_module": "AllLevelParameterDomain",
+      "printed_name": "Nanuq.AllLevelParameters.original_and_modified_in_domain",
+      "type": "Nanuq.AllLevelParameters.original_and_modified_in_domain : Nanuq.AllLevelParameters.ExactDomain 0 1 (1 / 2) 1 ∧\n  Nanuq.AllLevelParameters.ExactDomain (1 / 2) 1 (1 / 2) 1"
+    }
+  ]
+}

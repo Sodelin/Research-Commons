@@ -1,0 +1,797 @@
+--- elaboration-r5/G4PairedNaturalTreeCertificate.lean
++++ diagnostic-r5/G4PairedNaturalTreeCertificate.lean
+@@ -3,6 +3,10 @@
+ import G5NativeOriginalRouteCoverage
+ import G1ActualWholeUnrootedCutTreeFamily
+ import G7CalendarFrontierOrder
++set_option stderrAsMessages false
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC after imports"
++  (← IO.getStderr).flush
+ 
+ /-!
+ # Actual paired natural ordinary-tree certificate
+@@ -3823,6 +3827,9 @@
+ 
+ end IndependentRouteTrace
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3824: section EnumeratedCopyTransport"
++  (← IO.getStderr).flush
+ section EnumeratedCopyTransport
+ open GProgram.SourceForest GProgram.SourceForestKingmanPopulationProjection
+ open UnifiedLean.Source.FiniteSourceSnapshot UnifiedLean.Source.FiniteGenealogyEncoding
+@@ -3834,11 +3841,17 @@
+ open UnifiedLean.Source.SourceUnrankedCopyProjectivity
+ variable {A B : Type*} [Fintype A] [Fintype B] [DecidableEq A] [DecidableEq B]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3837: noncomputable def renameTree"
++  (← IO.getStderr).flush
+ /-- Pure finite label transport needed to identify an enumerated selected
+ three-copy carrier. No source-law equality is a field of this construction. -/
+ noncomputable def renameTree (e : A ≃ B) (t : WellLabelledTree A) : WellLabelledTree B :=
+   ⟨mapLabels e t.val,mapLabels_wellLabelled e e.injective t.val t.property⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3840: noncomputable def renameSnapshot"
++  (← IO.getStderr).flush
+ noncomputable def renameSnapshot (e : A ≃ B) (s : Snapshot V E A) : Snapshot V E B where
+   live := s.live.image e
+   ancestor x := e (s.ancestor (e.symm x))
+@@ -3846,6 +3859,9 @@
+   population x := s.population (e.symm x)
+   register := s.register
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3847: lemma renameSnapshot_genealogy"
++  (← IO.getStderr).flush
+ lemma renameSnapshot_genealogy (root : V) (e : A ≃ B) (s : Snapshot V E A) (x : B) :
+     (decodeSnapshot root (renameSnapshot e s)).genealogy x =
+       mapLabels e ((decodeSnapshot root s).genealogy (e.symm x)) := by
+@@ -3853,11 +3869,17 @@
+   | none => simp [decodeSnapshot,renameSnapshot,h,mapLabels]
+   | some t => simp [decodeSnapshot,renameSnapshot,h,renameTree]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3854: lemma renameSnapshot_copyLocation"
++  (← IO.getStderr).flush
+ lemma renameSnapshot_copyLocation (root : V) (e : A ≃ B) (s : Snapshot V E A) (x : B) :
+     copyLocation (decodeSnapshot root (renameSnapshot e s)) x =
+       copyLocation (decodeSnapshot root s) (e.symm x) := by
+   simp only [copyLocation,decodeSnapshot,renameSnapshot,Equiv.symm_apply_apply]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3859: lemma renameSnapshot_valid"
++  (← IO.getStderr).flush
+ lemma renameSnapshot_valid (root : V) (e : A ≃ B) (s : Snapshot V E A)
+     (hs : Valid (decodeSnapshot root s)) : Valid (decodeSnapshot root (renameSnapshot e s)) := by
+   constructor
+@@ -3885,6 +3907,9 @@
+     rw [renameSnapshot_genealogy,Equiv.symm_apply_apply]
+     exact mapLabels_wellLabelled e e.injective _ (hs.wellLabelled k hk)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3886: noncomputable def renameCode"
++  (← IO.getStderr).flush
+ noncomputable def renameCode (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : Code N (sample ∘ e.symm) :=
+   ⟨renameSnapshot e s.val,⟨renameSnapshot_valid N.root e s.val (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest),by
+@@ -3892,21 +3917,39 @@
+     rw [renameSnapshot_copyLocation]
+     exact s.property.original_descendant (e.symm x)⟩⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3893: lemma renameCode_live"
++  (← IO.getStderr).flush
+ lemma renameCode_live (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : (state (renameCode N e s)).live = (state s).live.image e := rfl
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3895: lemma renameCode_ancestor"
++  (← IO.getStderr).flush
+ lemma renameCode_ancestor (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (x : B) :
+     (state (renameCode N e s)).ancestor x = e ((state s).ancestor (e.symm x)) := rfl
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3898: lemma renameCode_location"
++  (← IO.getStderr).flush
+ lemma renameCode_location (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (x : B) :
+     (state (renameCode N e s)).location x = (state s).location (e.symm x) := rfl
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3901: lemma renameCode_register"
++  (← IO.getStderr).flush
+ lemma renameCode_register (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : (state (renameCode N e s)).register = (state s).register := rfl
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3903: lemma renameCode_genealogy"
++  (← IO.getStderr).flush
+ lemma renameCode_genealogy (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (x : B) :
+     (state (renameCode N e s)).genealogy x = mapLabels e ((state s).genealogy (e.symm x)) :=
+   renameSnapshot_genealogy N.root e s.val x
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3908: lemma renameCode_population_member"
++  (← IO.getStderr).flush
+ lemma renameCode_population_member (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (place : Location V E) (x : A) :
+     e x ∈ populationRoots (state (renameCode N e s)) place ↔ x ∈ populationRoots (state s) place := by
+@@ -3918,12 +3961,18 @@
+   · rintro ⟨hx,hplace⟩
+     exact ⟨Finset.mem_image.mpr ⟨x,hx,rfl⟩,hplace⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3919: lemma renameCode_population_pair"
++  (← IO.getStderr).flush
+ lemma renameCode_population_pair (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (place : Location V E) (a b : A) :
+     (e a,e b) ∈ (populationRoots (state (renameCode N e s)) place).offDiag ↔
+       (a,b) ∈ (populationRoots (state s) place).offDiag := by
+   simp only [Finset.mem_offDiag,renameCode_population_member,e.injective.ne_iff]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3925: noncomputable def renameChoiceEquiv"
++  (← IO.getStderr).flush
+ noncomputable def renameChoiceEquiv (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : Choice N s ≃ Choice N (renameCode N e s) where
+   toFun p := ⟨p.1,⟨(e p.2.val.1,e p.2.val.2),(renameCode_population_pair N e s _ _ _).mpr p.2.property⟩⟩
+@@ -3933,22 +3982,34 @@
+   left_inv p := by cases p; simp
+   right_inv p := by cases p; simp
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3934: lemma renameCode_totalRate"
++  (← IO.getStderr).flush
+ lemma renameCode_totalRate (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) :
+     totalRate N r (renameCode N e s) = totalRate N r s := by
+   unfold totalRate
+   exact (Fintype.sum_equiv (renameChoiceEquiv N e s) _ _ (fun p => rfl)).symm
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3940: lemma rename_globalRateBound"
++  (← IO.getStderr).flush
+ lemma rename_globalRateBound (r : PositivePairRates E) (e : A ≃ B) :
+     globalRateBound (Copy := B) r = globalRateBound (Copy := A) r := by
+   simp only [globalRateBound,Fintype.card_congr e]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3944: lemma renameChoice_mass"
++  (← IO.getStderr).flush
+ lemma renameChoice_mass (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) (q : Option (Choice N s)) :
+     choiceMass N r (renameCode N e s) (q.map (renameChoiceEquiv N e s)) = choiceMass N r s q := by
+   cases q <;> simp only [Option.map_none,Option.map_some,choiceMass,renameCode_totalRate,
+     rename_globalRateBound r e,choiceRate,renameChoiceEquiv] <;> rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3950: lemma renameChoice_pmf"
++  (← IO.getStderr).flush
+ lemma renameChoice_pmf (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) :
+     (choicePMF N r s).map (Equiv.optionCongr (renameChoiceEquiv N e s)) = choicePMF N r (renameCode N e s) := by
+@@ -3961,6 +4022,9 @@
+   rw [he] at hm
+   simpa only [choicePMF,PMF.ofFintype_apply] using congrArg ENNReal.ofReal hm.symm
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 3962: lemma renameCode_destination"
++  (← IO.getStderr).flush
+ lemma renameCode_destination (N : RootedBinary V E X) {sample : A → X}
+     (σ : A ≃ B) (s : Code N sample)
+     (q : Option (Choice N s)) :
+@@ -3969,19 +4033,37 @@
+   cases q with
+   | none => rfl
+   | some q =>
++    run_tac do
++      IO.eprintln "PAIRED_INNER_DIAGNOSTIC step 1"
++      (← IO.getStderr).flush
+     apply Subtype.ext
++    run_tac do
++      IO.eprintln "PAIRED_INNER_DIAGNOSTIC step 2"
++      (← IO.getStderr).flush
+     change renameSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) (actual_choice_merge_valid N s q)) =
+       encodeSnapshot (merge (state (renameCode N σ s)) (σ q.2.val.1) (σ q.2.val.2))
+         (actual_choice_merge_valid N (renameCode N σ s) (renameChoiceEquiv N σ s q))
++    run_tac do
++      IO.eprintln "PAIRED_INNER_DIAGNOSTIC step 3"
++      (← IO.getStderr).flush
+     apply Snapshot.ext
+-    · simp only [renameSnapshot,encodeSnapshot,merge,renameCode_live N σ s]
++    · run_tac do
++        IO.eprintln "PAIRED_INNER_DIAGNOSTIC field 4"
++        (← IO.getStderr).flush
++      simp only [renameSnapshot,encodeSnapshot,merge,renameCode_live N σ s]
+       exact Finset.image_erase σ.injective _ _
+-    · funext x
++    · run_tac do
++        IO.eprintln "PAIRED_INNER_DIAGNOSTIC field 5"
++        (← IO.getStderr).flush
++      funext x
+       obtain ⟨y,rfl⟩ := σ.surjective x
+       simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+         renameCode_ancestor N σ s,σ.injective.eq_iff]
+       split <;> rfl
+-    · funext x
++    · run_tac do
++        IO.eprintln "PAIRED_INNER_DIAGNOSTIC field 6"
++        (← IO.getStderr).flush
++      funext x
+       obtain ⟨y,rfl⟩ := σ.surjective x
+       have hl : σ y ∈ (state (renameCode N σ s)).live ↔ y ∈ (state s).live := by
+         rw [renameCode_live N σ s]
+@@ -3992,6 +4074,9 @@
+         simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+           dif_pos hy,dif_pos hy',Option.map_some]
+         apply congrArg some
++        run_tac do
++          IO.eprintln "PAIRED_INNER_DIAGNOSTIC step 7"
++          (← IO.getStderr).flush
+         apply Subtype.ext
+         by_cases ha : y = q.2.val.1
+         · subst y
+@@ -4003,16 +4088,28 @@
+           simpa only [Finset.mem_erase,σ.injective.ne_iff,hl] using hy
+         simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+           dif_neg hy,dif_neg hy',Option.map_none]
+-    · funext x
++    · run_tac do
++        IO.eprintln "PAIRED_INNER_DIAGNOSTIC field 8"
++        (← IO.getStderr).flush
++      funext x
+       obtain ⟨y,rfl⟩ := σ.surjective x
+       have hl : σ y ∈ (state (renameCode N σ s)).live ↔ y ∈ (state s).live := by
+         rw [renameCode_live N σ s]
+         simp only [Finset.mem_image,σ.injective.eq_iff,exists_eq_right]
+       simp only [renameSnapshot,encodeSnapshot,merge,Equiv.symm_apply_apply,
+         Finset.mem_erase,σ.injective.ne_iff,hl,renameCode_location N σ s]
+-    · rfl
+-
+-
++    · run_tac do
++        IO.eprintln "PAIRED_INNER_DIAGNOSTIC field 9"
++        (← IO.getStderr).flush
++      rfl
++    run_tac do
++      IO.eprintln "PAIRED_INNER_DIAGNOSTIC after final register proof"
++      (← IO.getStderr).flush
++
++
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4014: lemma renameCode_sourceStep"
++  (← IO.getStderr).flush
+ lemma renameCode_sourceStep (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) :
+     (sourceStep N r s).map (renameCode N e) = sourceStep N r (renameCode N e s) := by
+@@ -4022,6 +4119,9 @@
+   funext q
+   exact renameCode_destination N e s q
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4023: lemma renameCode_iteration"
++  (← IO.getStderr).flush
+ lemma renameCode_iteration (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (k : Nat) (s : Code N sample) :
+     (sourceIteration N r k s).map (renameCode N e) = sourceIteration N r k (renameCode N e s) := by
+@@ -4033,11 +4133,17 @@
+     funext d
+     exact ih d
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4034: lemma rename_globalClockRate"
++  (← IO.getStderr).flush
+ lemma rename_globalClockRate (r : PositivePairRates E) (e : A ≃ B) :
+     globalClockRate (Copy := B) r = globalClockRate (Copy := A) r := by
+   apply Subtype.ext
+   exact rename_globalRateBound r e
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4039: lemma renameCode_time"
++  (← IO.getStderr).flush
+ lemma renameCode_time (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (t : ℝ≥0) (s : Code N sample) :
+     (sourceTimeKernel N r t s).map (renameCode N e) = sourceTimeKernel N r t (renameCode N e s) := by
+@@ -4046,6 +4152,9 @@
+   funext k
+   exact renameCode_iteration N r e k s
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4047: lemma renameCode_transport"
++  (← IO.getStderr).flush
+ lemma renameCode_transport (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (f : A → Location V E) (g : B → Location V E)
+     (ev : SourceEvent V E A) (ev' : SourceEvent V E B)
+@@ -4084,24 +4193,36 @@
+     simp only [renameSnapshot,encodeSnapshot,transport,Equiv.symm_apply_apply,hl,hfg]
+   · exact (renameCode_register N e s).symm
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4085: lemma renameCode_exit"
++  (← IO.getStderr).flush
+ lemma renameCode_exit (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (edge : E) :
+     renameCode N e (exitCode N s edge) = exitCode N (renameCode N e s) edge := by
+   apply renameCode_transport N e s
+   intro x
+   simp only [renameCode_location,Equiv.symm_apply_apply]
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4091: lemma renameCode_ordinary"
++  (← IO.getStderr).flush
+ lemma renameCode_ordinary (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) (edge : E) :
+     renameCode N e (ordinaryCode N s edge) = ordinaryCode N (renameCode N e s) edge := by
+   apply renameCode_transport N e s
+   intro x
+   simp only [renameCode_location,Equiv.symm_apply_apply]
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4097: lemma renameCode_root"
++  (← IO.getStderr).flush
+ lemma renameCode_root (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : renameCode N e (rootCode N s) = rootCode N (renameCode N e s) := by
+   apply renameCode_transport N e s
+   intro x
+   simp only [renameCode_location,Equiv.symm_apply_apply]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4103: lemma renameCode_node_member"
++  (← IO.getStderr).flush
+ lemma renameCode_node_member (N : RootedBinary V E X) {sample : A → X}
+     (σ : A ≃ B) (s : Code N sample)
+     (v : V) (x : A) :
+@@ -4110,6 +4231,9 @@
+   simpa only [populationRoots,Finset.mem_filter] using
+     renameCode_population_member N σ s (.node v) x
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4111: noncomputable def renameNodeEquiv"
++  (← IO.getStderr).flush
+ noncomputable def renameNodeEquiv (N : RootedBinary V E X) {sample : A → X}
+     (σ : A ≃ B) (s : Code N sample)
+     (v : V) : AtNode (state s) v ≃ AtNode (state (renameCode N σ s)) v where
+@@ -4120,6 +4244,9 @@
+   left_inv a := by apply Subtype.ext; exact σ.symm_apply_apply a.val
+   right_inv a := by apply Subtype.ext; exact σ.apply_symm_apply a.val
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4121: lemma renameCode_pulse"
++  (← IO.getStderr).flush
+ lemma renameCode_pulse (N : RootedBinary V E X) {sample : A → X}
+     (H : GProgram.G2.OriginalHybridParents N)
+     (σ : A ≃ B) (s : Code N sample)
+@@ -4140,6 +4267,9 @@
+     rw [dif_neg hx',dif_neg hx]
+     simpa only [Equiv.symm_apply_apply] using renameCode_location N σ s (σ x)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4141: lemma renameCode_independentPulse"
++  (← IO.getStderr).flush
+ lemma renameCode_independentPulse (N : RootedBinary V E X) {sample : A → X}
+     (H : GProgram.G2.OriginalHybridParents N) (gamma : unitInterval)
+     (σ : A ≃ B) (s : Code N sample) :
+@@ -4152,6 +4282,9 @@
+   funext coin
+   exact renameCode_pulse N H σ s coin
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4153: lemma renameCode_boundary"
++  (← IO.getStderr).flush
+ lemma renameCode_boundary (N : RootedBinary V E X) {sample : A → X}
+     (op : BoundaryOperation N) (hop : IndependentBoundary N op) (e : A ≃ B) (s : Code N sample) :
+     (boundaryKernel N op s).map (renameCode N e) = boundaryKernel N op (renameCode N e s) := by
+@@ -4162,6 +4295,9 @@
+   | independent H gamma => exact renameCode_independentPulse N H gamma e s
+   | common H => exact False.elim hop
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4163: lemma renameCode_program"
++  (← IO.getStderr).flush
+ lemma renameCode_program (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (ops : List (ProgramStep N)) (hops : IndependentWord N ops)
+     (e : A ≃ B) (s : Code N sample) :
+@@ -4185,11 +4321,17 @@
+       funext d
+       exact ih ht d
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4186: lemma renameChoice_jumpMass"
++  (← IO.getStderr).flush
+ lemma renameChoice_jumpMass (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) (q : Option (Choice N s)) :
+     jumpMass N r (renameCode N e s) (q.map (renameChoiceEquiv N e s)) = jumpMass N r s q := by
+   cases q <;> simp only [Option.map_none,Option.map_some,jumpMass,renameCode_totalRate,choiceRate,renameChoiceEquiv] <;> rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4191: lemma renameChoice_jumpPMF"
++  (← IO.getStderr).flush
+ lemma renameChoice_jumpPMF (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) :
+     (sourceJumpChoice N r s).map (Equiv.optionCongr (renameChoiceEquiv N e s)) =
+@@ -4203,6 +4345,9 @@
+   rw [he] at hm
+   simpa only [sourceJumpChoice,PMF.ofFintype_apply] using congrArg ENNReal.ofReal hm.symm
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4204: lemma renameCode_jumpStep"
++  (← IO.getStderr).flush
+ lemma renameCode_jumpStep (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (s : Code N sample) :
+     (sourceJumpStep N r s).map (renameCode N e) = sourceJumpStep N r (renameCode N e s) := by
+@@ -4212,6 +4357,9 @@
+   funext q
+   exact renameCode_destination N e s q
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4213: lemma renameCode_completion"
++  (← IO.getStderr).flush
+ lemma renameCode_completion (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (e : A ≃ B) (fuel : Nat) (s : Code N sample) :
+     (ancestralCompletion N r fuel s).map (renameCode N e) =
+@@ -4224,6 +4372,9 @@
+     funext d
+     exact ih d
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4225: lemma renameCode_completed_program"
++  (← IO.getStderr).flush
+ lemma renameCode_completed_program (N : RootedBinary V E X) {sample : A → X}
+     (r : PositivePairRates E) (ops : List (ProgramStep N)) (hops : IndependentWord N ops)
+     (e : A ≃ B) (s : Code N sample) :
+@@ -4236,6 +4387,9 @@
+ 
+ open UnifiedLean.Source.SourceInitializedCalendar UnifiedLean.Source.SourceCalendarCompiler
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4237: lemma renameCode_initial"
++  (← IO.getStderr).flush
+ lemma renameCode_initial (N : RootedBinary V E X) (sample : A → X) (e : A ≃ B) (ρ : V → Bool) :
+     renameCode N e (initialCode N sample ρ) = initialCode N (sample ∘ e.symm) ρ := by
+   apply Subtype.ext
+@@ -4252,6 +4406,9 @@
+   · rfl
+   · rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4253: lemma renameCode_fullForest"
++  (← IO.getStderr).flush
+ lemma renameCode_fullForest (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) :
+     sourceUnrankedForest (state (renameCode N e s)) Finset.univ =
+@@ -4266,6 +4423,9 @@
+   · rintro ⟨x,hx⟩
+     exact ⟨e x,by simpa only [Equiv.symm_apply_apply] using hx⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4270: theorem independent_completed_copy_enumeration"
++  (← IO.getStderr).flush
+ /-- The actual completed independent source law is equivariant under this
+ explicit copy enumeration, including initialization, original register,
+ current-owner pulses, ordered mergers and rate-free completion. -/
+@@ -4288,6 +4448,9 @@
+   funext s
+   exact (renameCode_fullForest N e s).symm
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4290: theorem natural_independent_copy_enumeration"
++  (← IO.getStderr).flush
+ /-- One original bank average, unchanged by the selected-copy enumeration. -/
+ theorem natural_independent_copy_enumeration (N : RootedBinary V E X) (C : Calendar N.graph)
+     (sample : A → X) (H : OriginalParentRegistry N) (p : HybridProbabilities N)
+@@ -4304,6 +4467,9 @@
+ 
+ end EnumeratedCopyTransport
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4305: section SharedLegalQueries"
++  (← IO.getStderr).flush
+ section SharedLegalQueries
+ open UnifiedLean.Source.UniformizedSourceStep G1CutChildPorts
+ open UnifiedLean.Source.SourceNaturalInitialization UnifiedLean.Source.SourceCompletedUnrankedTree
+@@ -4314,6 +4480,9 @@
+ open DotG4.ActualLegalPanelComb DotG34.SpecifiedCombEvent
+ variable {Copy : Type*} [Fintype Copy] [DecidableEq Copy]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4317: lemma actual_selected_independent_crossed"
++  (← IO.getStderr).flush
+ /-- The all-taxon observed forest is pruned by an explicit passive function;
+ its selected three-copy event is identified by a proved source enumeration. -/
+ lemma actual_selected_independent_crossed (N : RootedBinary V E X) (C : Calendar N.graph)
+@@ -4347,13 +4516,22 @@
+   rw [pmf_map_injective_mass _ _ (Finset.image_injective hinj)]
+   rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4348: noncomputable def sharedSample"
++  (← IO.getStderr).flush
+ noncomputable def sharedSample (i : X) (m : Nat) : X ⊕ Fin m → X := Sum.elim id (fun _ => i)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4350: def sharedEmbedding"
++  (← IO.getStderr).flush
+ def sharedEmbedding (i j : X) (m : Nat) : Fin m ⊕ Bool → X ⊕ Fin m
+   | .inl a => .inr a
+   | .inr true => .inl i
+   | .inr false => .inl j
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4355: lemma sharedEmbedding_injective"
++  (← IO.getStderr).flush
+ lemma sharedEmbedding_injective (i j : X) (hij : i ≠ j) (m : Nat) :
+     Function.Injective (sharedEmbedding i j m) := by
+   intro a b h
+@@ -4363,21 +4541,39 @@
+     | inl b => simp [sharedEmbedding] at h
+     | inr b => cases a <;> cases b <;> simp_all [sharedEmbedding,Ne.symm hij]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4364: noncomputable def sharedKeep"
++  (← IO.getStderr).flush
+ noncomputable def sharedKeep (i j : X) (m : Nat) : Finset (X ⊕ Fin m) :=
+   Finset.univ.image (sharedEmbedding i j m)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4367: noncomputable def sharedSelected"
++  (← IO.getStderr).flush
+ noncomputable def sharedSelected (i j : X) (m : Nat) (a : Fin m ⊕ Bool) : SelectedCopy (sharedKeep i j m) :=
+   ⟨sharedEmbedding i j m a,Finset.mem_image.mpr ⟨a,Finset.mem_univ a,rfl⟩⟩
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4369: noncomputable def sharedB"
++  (← IO.getStderr).flush
+ noncomputable def sharedB (i j : X) (m : Nat) : SelectedCopy (sharedKeep i j m) :=
+   sharedSelected i j m (.inr false)
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4371: noncomputable def sharedA"
++  (← IO.getStderr).flush
+ noncomputable def sharedA (i j : X) (m : Nat) : List (SelectedCopy (sharedKeep i j m)) :=
+   (List.finRange m).map (fun a => sharedSelected i j m (.inl a)) ++ [sharedSelected i j m (.inr true)]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4374: lemma sharedSelected_injective"
++  (← IO.getStderr).flush
+ lemma sharedSelected_injective (i j : X) (hij : i ≠ j) (m : Nat) :
+     Function.Injective (sharedSelected i j m) := by
+   intro a b h
+   exact sharedEmbedding_injective i j hij m (congrArg Subtype.val h)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4379: lemma shared_cover"
++  (← IO.getStderr).flush
+ lemma shared_cover (i j : X) (m : Nat) (x : SelectedCopy (sharedKeep i j m)) :
+     x = sharedB i j m ∨ x ∈ sharedA i j m := by
+   obtain ⟨a,ha,he⟩ := Finset.mem_image.mp x.property
+@@ -4387,6 +4583,9 @@
+   | inl a => exact Or.inr (List.mem_append_left _ (List.mem_map.mpr ⟨a,List.mem_finRange a,rfl⟩))
+   | inr a => cases a <;> simp [sharedB,sharedA]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4388: lemma shared_A_samples"
++  (← IO.getStderr).flush
+ lemma shared_A_samples (i j : X) (hij : i ≠ j) (m : Nat)
+     (x : SelectedCopy (sharedKeep i j m)) (hx : x ≠ sharedB i j m) : sharedSample i m x.val = i := by
+   obtain ⟨a,ha,he⟩ := Finset.mem_image.mp x.property
+@@ -4398,6 +4597,9 @@
+     | true => rfl
+     | false => exact False.elim (hx hxe)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4399: lemma sharedA_nodup"
++  (← IO.getStderr).flush
+ lemma sharedA_nodup (i j : X) (hij : i ≠ j) (m : Nat) : (sharedA i j m).Nodup := by
+   apply List.nodup_append.mpr
+   refine ⟨(List.nodup_finRange m).map ((sharedSelected_injective i j hij m).comp Sum.inl_injective),by simp,?_⟩
+@@ -4408,6 +4610,9 @@
+   have hf := sharedSelected_injective i j hij m he
+   cases hf
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4409: lemma sharedA_excludes_B"
++  (← IO.getStderr).flush
+ lemma sharedA_excludes_B (i j : X) (hij : i ≠ j) (m : Nat) : sharedB i j m ∉ sharedA i j m := by
+   intro h
+   rcases List.mem_append.mp h with h | h
+@@ -4418,15 +4623,30 @@
+     have hf := sharedSelected_injective i j hij m he
+     cases hf
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4419: lemma sharedA_length"
++  (← IO.getStderr).flush
+ lemma sharedA_length (i j : X) (m : Nat) : (sharedA i j m).length = m+1 := by simp [sharedA]
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4420: lemma sharedA_nonempty"
++  (← IO.getStderr).flush
+ lemma sharedA_nonempty (i j : X) (m : Nat) : sharedA i j m ≠ [] := by simp [sharedA]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4422: noncomputable def sharedCombEvent"
++  (← IO.getStderr).flush
+ noncomputable def sharedCombEvent (i j : X) (m : Nat) : Finset (UnrankedTree (X ⊕ Fin m)) :=
+   {toUnranked (comb (sharedB i j m).val ((sharedA i j m).map Subtype.val))}
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4425: lemma sharedSample_surjective"
++  (← IO.getStderr).flush
+ lemma sharedSample_surjective (i : X) (m : Nat) : Function.Surjective (sharedSample i m) :=
+   fun x => ⟨Sum.inl x,rfl⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4428: lemma actual_shared_common_comb"
++  (← IO.getStderr).flush
+ lemma actual_shared_common_comb (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i j : X) (hij : i ≠ j) (m : Nat) :
+@@ -4440,11 +4660,17 @@
+     (sharedA_nodup i j hij m) (sharedA_excludes_B i j hij m) (sharedA_nonempty i j m),
+     sharedA_length,actual_natural_completed_comb_moment N C H p r i j (m+1) (by omega)]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4441: noncomputable def sharedTripleMap"
++  (← IO.getStderr).flush
+ noncomputable def sharedTripleMap (i j : X) : Fin 3 → SelectedCopy (sharedKeep i j 1)
+   | 0 => sharedSelected i j 1 (.inr true)
+   | 1 => sharedSelected i j 1 (.inl 0)
+   | 2 => sharedSelected i j 1 (.inr false)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4446: lemma sharedTripleMap_bijective"
++  (← IO.getStderr).flush
+ lemma sharedTripleMap_bijective (i j : X) (hij : i ≠ j) :
+     Function.Bijective (sharedTripleMap i j) := by
+   constructor
+@@ -4461,13 +4687,22 @@
+       | false => exact ⟨2,hx⟩
+       | true => exact ⟨0,hx⟩
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4462: noncomputable def sharedTripleEquiv"
++  (← IO.getStderr).flush
+ noncomputable def sharedTripleEquiv (i j : X) (hij : i ≠ j) : Fin 3 ≃ SelectedCopy (sharedKeep i j 1) :=
+   Equiv.ofBijective (sharedTripleMap i j) (sharedTripleMap_bijective i j hij)
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4465: lemma sharedTriple_sample"
++  (← IO.getStderr).flush
+ lemma sharedTriple_sample (i j : X) (hij : i ≠ j) (a : Fin 3) :
+     sharedSample i 1 (sharedTripleEquiv i j hij a).val = tripleSample i j a := by
+   fin_cases a <;> rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4469: lemma sharedTriple_event"
++  (← IO.getStderr).flush
+ lemma sharedTriple_event (i j : X) (hij : i ≠ j) :
+     ((({threeCherry 0} : Finset (UnrankedTree (Fin 3))).image
+       (mapUnranked (sharedTripleEquiv i j hij))).image (mapUnranked Subtype.val)) =
+@@ -4476,6 +4711,9 @@
+   simp only [Finset.image_singleton,mapUnranked_toUnranked,mapLabels_comb,List.map_cons,List.map_nil]
+   rfl
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4477: lemma actual_shared_independent_crossed"
++  (← IO.getStderr).flush
+ lemma actual_shared_independent_crossed (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i j : X) (hij : i ≠ j) :
+@@ -4487,28 +4725,49 @@
+   rw [sharedTriple_event] at h
+   exact congrArg ENNReal.toReal h
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4490: def pairedQueryExtras"
++  (← IO.getStderr).flush
+ /-- Three full-law requests per taxon: COMMON with one extra, COMMON with two
+ extras, and INDEPENDENT with one extra. No request depends on the other taxon. -/
+ def pairedQueryExtras (q : Fin 3) : Nat := if q = 1 then 2 else 1
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4492: def pairedQueryMode"
++  (← IO.getStderr).flush
+ def pairedQueryMode (q : Fin 3) : Bool := if q = 2 then false else true
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4494: noncomputable def pairedQueryLaw"
++  (← IO.getStderr).flush
+ noncomputable def pairedQueryLaw (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i : X) (q : Fin 3) : PMF (Finset (UnrankedTree (X ⊕ Fin (pairedQueryExtras q)))) :=
+   naturalCompletedUnrankedLaw N C (sharedSample i (pairedQueryExtras q)) H p
+     (fun _ => pairedQueryMode q) r
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4500: lemma pairedQuery_all_taxa"
++  (← IO.getStderr).flush
+ lemma pairedQuery_all_taxa (i : X) (q : Fin 3) :
+     Function.Surjective (sharedSample i (pairedQueryExtras q)) := sharedSample_surjective i _
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4503: lemma pairedQuery_copy_budget"
++  (← IO.getStderr).flush
+ lemma pairedQuery_copy_budget (q : Fin 3) :
+     Fintype.card (X ⊕ Fin (pairedQueryExtras q)) ≤ Fintype.card X + 2 := by
+   fin_cases q <;> simp [pairedQueryExtras]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4507: lemma pairedQuery_menu_budget : Fintype.card"
++  (← IO.getStderr).flush
+ lemma pairedQuery_menu_budget : Fintype.card (X × Fin 3) = 3 * Fintype.card X := by
+   simp [Nat.mul_comm]
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4512: noncomputable def pairedQueryReadout"
++  (← IO.getStderr).flush
+ /-- A scalar reader of a full shared query; pruning is a function of the
+ observed unranked forest and does not expose a latent route or bank. -/
+ noncomputable def pairedQueryReadout (N : RootedBinary V E X) (C : Calendar N.graph)
+@@ -4517,30 +4776,45 @@
+   (((pairedQueryLaw N C H p r i q).map (pruneForest (sharedKeep i j (pairedQueryExtras q))))
+     (sharedCombEvent i j (pairedQueryExtras q))).toReal
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4518: def LegalPairedCertificate"
++  (← IO.getStderr).flush
+ def LegalPairedCertificate (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E) : Prop :=
+   ∀ i j, i ≠ j →
+     18 * pairedQueryReadout N C H p r i j 1 = (3 * pairedQueryReadout N C H p r i j 0)^3 ∧
+     pairedQueryReadout N C H p r i j 2 = pairedQueryReadout N C H p r i j 0
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4524: lemma pairedQueryReadout_zero"
++  (← IO.getStderr).flush
+ lemma pairedQueryReadout_zero (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i j : X) (hij : i ≠ j) :
+     pairedQueryReadout N C H p r i j 0 = combProbability N C H p r i j 2 := by
+   exact actual_shared_common_comb N C H p r i j hij 1
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4530: lemma pairedQueryReadout_one"
++  (← IO.getStderr).flush
+ lemma pairedQueryReadout_one (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i j : X) (hij : i ≠ j) :
+     pairedQueryReadout N C H p r i j 1 = combProbability N C H p r i j 3 := by
+   exact actual_shared_common_comb N C H p r i j hij 2
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4536: lemma pairedQueryReadout_two"
++  (← IO.getStderr).flush
+ lemma pairedQueryReadout_two (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
+     (i j : X) (hij : i ≠ j) :
+     pairedQueryReadout N C H p r i j 2 = independentCrossedProbability N C H p r i j := by
+   exact actual_shared_independent_crossed N C H p r i j hij
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4544: theorem actual_legal_paired_certificate_iff_noHybrids"
++  (← IO.getStderr).flush
+ /-- Physical ordinary-tree recognition by the actual legal shared full laws.
+ No calibrated geometry, route mixture or exchangeable-reader value is an input. -/
+ theorem actual_legal_paired_certificate_iff_noHybrids
+@@ -4558,6 +4832,9 @@
+ 
+ variable {V' E' : Type*} [Fintype V'] [Fintype E'] [DecidableEq V'] [DecidableEq E']
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4559: lemma pairedQuery_equal_scalar_data"
++  (← IO.getStderr).flush
+ lemma pairedQuery_equal_scalar_data
+     (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
+     (p : HybridProbabilities N) (r : PositivePairRates E)
+@@ -4585,6 +4862,9 @@
+       actual_shared_independent_crossed N C H p r i j hij,
+       actual_shared_independent_crossed N' C' H' p' r' i j hij] using h
+ 
++run_cmd Lean.Elab.Command.liftIO do
++  IO.eprintln "PAIRED_COPY_DIAGNOSTIC before clean line 4589: theorem actual_ordinary_target_shared_queries_all_future"
++  (← IO.getStderr).flush
+ /-- The inherited ordinary-target contract: the three shared all-taxon laws per
+ taxon force every future natural response in BOTH modes, against arbitrary
+ finite rival graph carriers. The query budget is proved above, not assumed. -/
+@@ -4606,3 +4886,5 @@
+ end SharedLegalQueries
+ 
+ end DotG4.PairedNaturalTreeCertificate
++
++set_option stderrAsMessages true

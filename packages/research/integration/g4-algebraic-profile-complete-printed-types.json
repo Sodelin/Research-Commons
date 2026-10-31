@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "source": "73c84c99f46e7a977f99efefde174871d2d4f7f8",
+  "run": 40096997969,
+  "job": 120881390655,
+  "types": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "module": "ResearchCommons.G4.AlgebraicProfile",
+      "name": "ResearchCommons.G4.AlgebraicProfile.finite_original_generators",
+      "printed_type": "@G4.AlgebraicProfile.finite_original_generators : ∀ {R : Type u_1} [inst : CommRing R] [IsNoetherianRing R]\n  {ι : Type u_2} (f : ι → R), ∃ J, Ideal.span (Set.range f) = Ideal.span (f '' ↑J)"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "module": "ResearchCommons.G4.AlgebraicProfile",
+      "name": "ResearchCommons.G4.AlgebraicProfile.finite_vanishing_equations",
+      "printed_type": "@G4.AlgebraicProfile.finite_vanishing_equations : ∀ {R : Type u_1} {S : Type u_2} [inst : CommRing R]\n  [IsNoetherianRing R] [inst_2 : CommRing S] {ι : Type u_3} (f : ι → R),\n  ∃ J, ∀ (φ : R →+* S), (∀ (i : ι), φ (f i) = 0) ↔ ∀ i ∈ J, φ (f i) = 0"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "module": "ResearchCommons.G4.AlgebraicProfile",
+      "name": "ResearchCommons.G4.AlgebraicProfile.finite_response_equations",
+      "printed_type": "@G4.AlgebraicProfile.finite_response_equations : ∀ {K : Type u_1} {L : Type u_2} {σ : Type u_3} {ι : Type u_4}\n  [inst : CommRing K] [IsNoetherianRing K] [inst_2 : CommRing L] [Finite σ] (P : ι → MvPolynomial σ K) (a : ι → K)\n  (coeff : K →+* L),\n  ∃ J,\n    ∀ (η : σ → L),\n      (∀ (i : ι), (MvPolynomial.eval₂Hom coeff η) (P i) = coeff (a i)) ↔\n        ∀ i ∈ J, (MvPolynomial.eval₂Hom coeff η) (P i) = coeff (a i)"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Attempt5 localizes memory abort to renameCode_destination. The only two visible ordinary errors are repaired by the explicit exits list type and both orientations of the liveCard equality. Statements, proof scope and numeric guards unchanged; memory remains unresolved.

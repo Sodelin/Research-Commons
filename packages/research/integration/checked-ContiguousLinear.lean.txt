@@ -1,0 +1,63 @@
+import ResearchCommons.NANUQ.ContiguousCopies
+
+namespace ResearchCommons.Generated.Contiguous.N8C0X7X7X40X90X90X90X120X120
+open ResearchCommons.NANUQ.ContiguousCopies
+def originalLabels : Fin 8 → Nat := ![7, 7, 40, 90, 90, 90, 120, 120]
+def globalTaxa : Fin 4 → Nat := ![7, 40, 90, 120]
+def originalPosition : Fin 8 → Fin 8 := ![0, 1, 2, 3, 4, 5, 6, 7]
+def taxon : Fin 8 → Fin 4 := ![0, 0, 1, 2, 2, 2, 3, 3]
+def kept : Finset (Fin 8) := {0, 1, 2, 3, 5, 6, 7}
+def keptOriginal : Finset (Fin 8) := {0, 1, 2, 3, 5, 6, 7}
+theorem actual_names : Function.Injective globalTaxa := by decide
+theorem actual_taxon_carrier : Function.Surjective taxon := by decide
+theorem actual_label_count : (Finset.univ.image originalLabels).card = 4 := by decide
+theorem actual_original_positions : Function.Bijective originalPosition := by decide
+theorem actual_cyclic_rotation (i : Fin 8) :
+    (originalPosition i).val = (0 + i.val) % 8 := by
+  revert i
+  decide
+theorem same_original_label (i : Fin 8) :
+    globalTaxa (taxon i) = originalLabels (originalPosition i) := by
+  revert i
+  decide
+theorem actual_contiguous : Contiguous taxon := by
+  unfold Contiguous
+  decide
+theorem actual_extremes (i : Fin 8) :
+    i ∈ kept ↔ Extreme taxon i := by
+  revert i
+  unfold Extreme First Last
+  decide
+theorem actual_returned_positions :
+    kept.image originalPosition = keptOriginal := by decide
+theorem actual_bound : keptOriginal.card ≤ 2 * 4 := by decide
+theorem bound_by_original_labels :
+    keptOriginal.card ≤ 2 * (Finset.univ.image originalLabels).card := by
+  rw [actual_label_count]
+  exact actual_bound
+theorem uniform_extreme_bound :
+    Nat.card {i : Fin 8 // Extreme taxon i} ≤ 2 * 4 := by
+  simpa only [Fintype.card_fin] using extreme_card_le_two taxon
+theorem every_original_taxon_retained (i : Fin 8) :
+    ∃ e ∈ kept, taxon e = taxon i := by
+  obtain ⟨f, g, hf, hg, hfirst, hlast, hfi, hig⟩ := extreme_bounds taxon i
+  exact ⟨f, (actual_extremes f).mpr (Or.inl hfirst), hf⟩
+theorem same_interval_side (l r i : Fin 8)
+    (h : ∃ a b, InInterval l r a ∧ InInterval l r b ∧ taxon a ≠ taxon b) :
+    ∃ e ∈ kept, taxon e = taxon i ∧
+      (InInterval l r e ↔ InInterval l r i) := by
+  obtain ⟨e, he, ht, hs⟩ := same_interval_side_extreme taxon actual_contiguous l r h i
+  exact ⟨e, (actual_extremes e).mpr he, ht, hs⟩
+theorem complete_supplied_cut_quartets (l r : Fin 8) (a b c d : Fin 4)
+    (hab : a ≠ b) :
+    CutQuartet taxon (fun i => i ∈ kept) l r a b c d ↔
+      CutQuartet taxon (fun _ => True) l r a b c d := by
+  simpa only [CutQuartet, actual_extremes] using
+    cut_quartet_extremes_iff taxon actual_contiguous l r a b c d hab
+theorem complete_supplied_cut_splits (l r : Fin 8) (left : Fin 4 → Prop)
+    (h : ∃ a b, left a ∧ left b ∧ a ≠ b) :
+    CutSplit taxon (fun i => i ∈ kept) l r left ↔
+      CutSplit taxon (fun _ => True) l r left := by
+  simpa only [CutSplit, actual_extremes] using
+    cut_split_extremes_iff taxon actual_contiguous l r left h
+end ResearchCommons.Generated.Contiguous.N8C0X7X7X40X90X90X90X120X120

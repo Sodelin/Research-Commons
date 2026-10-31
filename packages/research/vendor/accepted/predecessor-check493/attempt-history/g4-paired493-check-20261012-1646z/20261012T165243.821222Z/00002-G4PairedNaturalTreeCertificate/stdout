@@ -1,0 +1,225 @@
+G4PairedNaturalTreeCertificate.lean:39:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_genealogy`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:46:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_copyLocation`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:132:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.rename_globalRateBound`:
+  [DecidableEq E]
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:140:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4PairedNaturalTreeCertificate.lean:156:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_merge`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:187:30: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [renameTree, hTree, Equiv.symm_apply_apply, mapLabels, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:256:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_transport`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:411:117: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4PairedNaturalTreeCertificate.lean:451:100: error: unsolved goals
+case e_f
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+r : PositivePairRates E
+ops : List (ProgramStep N)
+hops : IndependentWord N ops
+e : A ≃ B
+s d : Code N sample
+⊢ ancestralCompletion N r (Fintype.card B) (renameCode N e d) =
+    (ancestralCompletion N r (Fintype.card B) ∘ renameCode N e) d
+G4PairedNaturalTreeCertificate.lean:472:4: error: Tactic `rfl` failed: The left-hand side
+  (↑(renameCode N e (initialCode N sample ρ))).population
+is not definitionally equal to the right-hand side
+  (↑(initialCode N (sample ∘ ⇑e.symm) ρ)).population
+
+case population
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+e : A ≃ B
+ρ : V → Bool
+⊢ (↑(renameCode N e (initialCode N sample ρ))).population = (↑(initialCode N (sample ∘ ⇑e.symm) ρ)).population
+G4PairedNaturalTreeCertificate.lean:503:59: error: unexpected token ':='; expected ')', ',' or ':'
+G4PairedNaturalTreeCertificate.lean:581:10: error: unsolved goals
+case inl.inr
+X : Type u_3
+inst✝ : Fintype X
+i j : X
+m : ℕ
+a : Fin m
+val✝ : Bool
+hij : ¬i = j
+h :
+  Sum.inr a =
+    match Sum.inr val✝ with
+    | Sum.inl a => Sum.inr a
+    | Sum.inr true => Sum.inl i
+    | Sum.inr false => Sum.inl j
+⊢ False
+G4PairedNaturalTreeCertificate.lean:583:12: error: unsolved goals
+case inr.inl
+X : Type u_3
+inst✝ : Fintype X
+i j : X
+hij : i ≠ j
+m : ℕ
+a : Bool
+b : Fin m
+h :
+  (match Sum.inr a with
+    | Sum.inl a => Sum.inr a
+    | Sum.inr true => Sum.inl i
+    | Sum.inr false => Sum.inl j) =
+    Sum.inr b
+⊢ Sum.inr a = Sum.inl b
+G4PairedNaturalTreeCertificate.lean:601:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.shared_cover`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:610:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.shared_A_samples`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:610:34: warning: Variable name `hij` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hij
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4PairedNaturalTreeCertificate.lean:641:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.sharedA_length`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:642:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.sharedA_nonempty`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:647:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.sharedSample_surjective`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:656:25: error: ambiguous term, use fully qualified name, possible interpretations [DotG34.SpecifiedCombEvent.combProbability,
+ @ActualObservableBankCertificate.combProbability]
+G4PairedNaturalTreeCertificate.lean:794:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  ((PMF.map (pruneForest (sharedKeep i j 1))
+          (naturalCompletedUnrankedLaw N' C' (sharedSample i (if 0 = 1 then 2 else 1)) H' p'
+            (fun x => if 0 = 2 then false else true) r'))
+        (sharedCombEvent i j 1)).toReal =
+    ((PMF.map (pruneForest (sharedKeep i j 1))
+          (naturalCompletedUnrankedLaw N C (sharedSample i (if 0 = 1 then 2 else 1)) H p
+            (fun x => if 0 = 2 then false else true) r))
+        (sharedCombEvent i j 1)).toReal
+but is expected to have type
+  ActualObservableBankCertificate.combProbability N' C' H' p' r' i j 2 =
+    ActualObservableBankCertificate.combProbability N C H p r i j 2
+G4PairedNaturalTreeCertificate.lean:799:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  ((PMF.map (pruneForest (sharedKeep i j 2))
+          (naturalCompletedUnrankedLaw N' C' (sharedSample i (if 1 = 1 then 2 else 1)) H' p'
+            (fun x => if 1 = 2 then false else true) r'))
+        (sharedCombEvent i j 2)).toReal =
+    ((PMF.map (pruneForest (sharedKeep i j 2))
+          (naturalCompletedUnrankedLaw N C (sharedSample i (if 1 = 1 then 2 else 1)) H p
+            (fun x => if 1 = 2 then false else true) r))
+        (sharedCombEvent i j 2)).toReal
+but is expected to have type
+  ActualObservableBankCertificate.combProbability N' C' H' p' r' i j 3 =
+    ActualObservableBankCertificate.combProbability N C H p r i j 3
+G4PairedNaturalTreeCertificate.lean:804:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  ((PMF.map (pruneForest (sharedKeep i j 1))
+          (naturalCompletedUnrankedLaw N' C' (sharedSample i (if 2 = 1 then 2 else 1)) H' p' (fun x => false) r'))
+        (sharedCombEvent i j 1)).toReal =
+    ((PMF.map (pruneForest (sharedKeep i j 1))
+          (naturalCompletedUnrankedLaw N C (sharedSample i (if 2 = 1 then 2 else 1)) H p (fun x => false) r))
+        (sharedCombEvent i j 1)).toReal
+but is expected to have type
+  independentCrossedProbability N' C' H' p' r' i j = independentCrossedProbability N C H p r i j
+G4PairedNaturalTreeCertificate.lean:822:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`

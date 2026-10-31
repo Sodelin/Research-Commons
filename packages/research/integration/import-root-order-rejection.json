@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARATION_REJECTED_BEFORE_ANY_NEW_LEAN_CHECK",
+  "source": "ac899fbd4889f55b473194235b03e574b41bb5d4",
+  "run": 40111270587,
+  "job": 120923315139,
+  "failing_step": "Check complete registry accounting",
+  "diagnostic": "added dependency not yet built: ResearchCommons.Integration.Exports -> ResearchCommons.Claims.Memory",
+  "new_Lean_compilation": false,
+  "new_proof_rejection": false,
+  "new_kernel_or_owned_acceptance": false,
+  "Rust_build_test_step_passed": true,
+  "cause": "Import-only root was appended after its consumer in the explicit topological source manifest.",
+  "closest_implementation_read": "Complete added-source validation loop in crates/registry/src/lib.rs::prepare checks sequential dependency presence before writing generated source.",
+  "correction": "Move unchanged ResearchCommons.Claims.Memory entry immediately before unchanged ResearchCommons.Integration.Exports; preserve every source byte/hash/import/declaration and all118 canonical IDs.",
+  "all213_added_dependency_positions_checked_in_RAM": true,
+  "new_proof_or_native_input": false,
+  "prior_accepted_query28_and_stochastic4_20_unchanged": true,
+  "next": "Use the existing source preparation and CURRENT proof/context/caller workflow on the corrected manifest. Do not infer any new Lean PASS from source138."
+}

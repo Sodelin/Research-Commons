@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "source_commit": "d964f52826c3e91fed556a07be74028936aaf44a",
+  "run_id": 40130693959,
+  "all6_actual_complete_types_read": true,
+  "types": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.extreme_bounds",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.extreme_bounds : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon) (i : Fin m),\n  ∃ f g,\n    taxon f = taxon i ∧\n      taxon g = taxon i ∧ NANUQ.ContiguousCopies.First taxon f ∧ NANUQ.ContiguousCopies.Last taxon g ∧ f ≤ i ∧ i ≤ g"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.same_interval_side_extreme",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.same_interval_side_extreme : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon),\n  NANUQ.ContiguousCopies.Contiguous taxon →\n    ∀ (l r : Fin m),\n      (∃ a b, NANUQ.ContiguousCopies.InInterval l r a ∧ NANUQ.ContiguousCopies.InInterval l r b ∧ taxon a ≠ taxon b) →\n        ∀ (i : Fin m),\n          ∃ e,\n            NANUQ.ContiguousCopies.Extreme taxon e ∧\n              taxon e = taxon i ∧ (NANUQ.ContiguousCopies.InInterval l r e ↔ NANUQ.ContiguousCopies.InInterval l r i)"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.extreme_card_le_two",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.extreme_card_le_two : ∀ {Taxon : Type u_1} {m : ℕ} [inst : Fintype Taxon]\n  (taxon : Fin m → Taxon), Nat.card { i // NANUQ.ContiguousCopies.Extreme taxon i } ≤ 2 * Fintype.card Taxon"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.cut_quartet_extremes_iff",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.cut_quartet_extremes_iff : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon),\n  NANUQ.ContiguousCopies.Contiguous taxon →\n    ∀ (l r : Fin m) (a b c d : Taxon),\n      a ≠ b →\n        (NANUQ.ContiguousCopies.CutQuartet taxon (NANUQ.ContiguousCopies.Extreme taxon) l r a b c d ↔\n          NANUQ.ContiguousCopies.CutQuartet taxon (fun x => True) l r a b c d)"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.selection_side_extremes",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.selection_side_extremes : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon),\n  NANUQ.ContiguousCopies.Contiguous taxon →\n    ∀ (pick : Taxon → Fin m),\n      (∀ (t : Taxon), taxon (pick t) = t) →\n        ∀ (l r : Fin m),\n          (∃ a b,\n              NANUQ.ContiguousCopies.InInterval l r a ∧ NANUQ.ContiguousCopies.InInterval l r b ∧ taxon a ≠ taxon b) →\n            ∃ chosen,\n              (∀ (t : Taxon), NANUQ.ContiguousCopies.Extreme taxon (chosen t)) ∧\n                (∀ (t : Taxon), taxon (chosen t) = t) ∧\n                  ∀ (t : Taxon),\n                    NANUQ.ContiguousCopies.InInterval l r (chosen t) ↔ NANUQ.ContiguousCopies.InInterval l r (pick t)"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "ResearchCommons.NANUQ.ContiguousCopies.cut_split_extremes_iff",
+      "owner": "ResearchCommons.NANUQ.ContiguousCopies",
+      "printed_type": "@NANUQ.ContiguousCopies.cut_split_extremes_iff : ∀ {Taxon : Type u_1} {m : ℕ} (taxon : Fin m → Taxon),\n  NANUQ.ContiguousCopies.Contiguous taxon →\n    ∀ (l r : Fin m) (left : Taxon → Prop),\n      (∃ a b, left a ∧ left b ∧ a ≠ b) →\n        (NANUQ.ContiguousCopies.CutSplit taxon (NANUQ.ContiguousCopies.Extreme taxon) l r left ↔\n          NANUQ.ContiguousCopies.CutSplit taxon (fun x => True) l r left)"
+    }
+  ],
+  "whole_claim_formal_binding": false
+}

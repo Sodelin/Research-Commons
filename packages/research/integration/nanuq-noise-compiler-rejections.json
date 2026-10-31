@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "Lean_context_executed": false,
+  "records": [
+    {
+      "actual_failure": "Runtime61passed/1failed: the intended asymmetric fixture condition i+2j=0 mod3 was symmetric, yielding observed01=observed10=13/3. Entire new Rust compiled; other two new tests passed. No Lean job ran.",
+      "edit": [
+        "if (i + 2*j) % 3 == 0 { q(-1,4) } else { q(1,3) }",
+        "if i <= j { q(-1,4) } else { q(1,3) }"
+      ],
+      "job": 121003246129,
+      "original_source": "654285444dd21c909527a58a54cf75721ee5c8ba",
+      "run": 40137904477,
+      "scope": "Correct only newly authored synthetic noise fixture to have negative diagonal and strict asymmetric errors. OLD tree/cycle truth matrices, exact rounding/cut/public API, three tests and every Lean statement unchanged.",
+      "original_rust_sha256": "f72641ed53241fdbd9d00f8cc595bbd1325ce2b74b3c1739aae1e4eaa85dfeaa",
+      "corrected_rust": {
+        "bytes": 11875,
+        "git_blob": "ed70c226b82fd8723519e90d93a96c7e95e3a859",
+        "sha256": "26e0a8804c741425e47b32a3ca1a339dfd3bb33f8c7ed36db90c1717849aaa9a"
+      }
+    },
+    {
+      "source": "ef9a36ed3f7da650fa3460d0b26167bd46c279ec",
+      "run_id": 40138932026,
+      "job_id": 121006499472,
+      "attempted_target": "ResearchCommons.NANUQ.RawNoise",
+      "rejected_Lean_sha256": "f5778018578a57e141d28985a1e147fd24c4c67098e88722a00b567e9c3bf381",
+      "disposition": "ENTIRE_NOISE_CONTEXT_REJECTED; NO six-name/owned/generated caller/full1499 acceptance. Earlier51-source causal context accepted separately.",
+      "actual_errors": "Finite membership classification not split, concrete finite sums/card not simplified under classical DecidableEq, residual reflexive cast equality, missing FloorRing Rat/Real imports.",
+      "selected_correction": "Explicit finite membership splits and kernel-decided8 concrete resolution cases using original computational DecidableEq (remove unnecessary classical override), rfl after cast normalization, import existing pinned Rat/Real floor instances. Same6 statements/source/cardinality/error hypotheses; no new axiom/source assumption.",
+      "all6_original_statement_headers_unchanged": true,
+      "corrected_source": {
+        "bytes": 4609,
+        "git_blob": "4319ae84c69ca6a5883b48ff75a1c9a2d9518892",
+        "sha256": "cf612e52770ab2ebfc01667e8e56f89c8e22d52f42de342172840a0c543a279c"
+      }
+    },
+    {
+      "source": "d042d398b741354d8781e3c7930c92f1b614a7e7",
+      "run_id": 40139844272,
+      "job_id": 121009246191,
+      "attempted": "RawNoiseTree ENTIRE first actual Rust output",
+      "proof": {
+        "bytes": 1819,
+        "sha256": "f7c570f2ff1285f6f703812c27b97bcbf0601d985c5735323f680e904e3bfa0e"
+      },
+      "disposition": "ENTIRE_NATIVE_CALLER_REJECTED; cycle not attempted. Six-name/26-source component accepted separately; full1499/512-name skipped.",
+      "actual_error": "![...] parsed as Boolean ! applied to a List because generated module lacked the actual vector notation import. Literal labels/matrix cascade all rejected.",
+      "correction": "Import actual pinned Mathlib.Data.Fin.VecNotation (![..] -> vecCons); kernel-decide complete finite Rational strict errors and ALL original circularAlpha returned-support predicates. Original input/output/label/theorem semantics and arithmetic engine unchanged; no new source law/native_decide/oracle.",
+      "corrected_Rust": {
+        "bytes": 11728,
+        "git_blob": "b8ee427797a2d16e34b0adbd3ddec604c1d500b9",
+        "sha256": "7a485c062a8ade676daf5c21a1c0b6c492642aca5439c80dbf9a8eb0c9d21670"
+      }
+    }
+  ],
+  "relaxed_test_or_hypothesis": false,
+  "source164_whole_Rust_context_accepted": false,
+  "status": "PRESERVED_SOURCE164_RUST_AND_SOURCE166_ENTIRE_NOISE_REJECTIONS",
+  "later_Rust_verification": "integration/nanuq-noise-rust-verification.json"
+}
