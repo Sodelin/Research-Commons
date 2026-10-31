@@ -1,0 +1,263 @@
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2,
+    u_3} : {V : Type u_1} →
+  {E : Type u_2} →
+    {X : Type u_3} →
+      [inst : DecidableEq.{u_1 + 1} V] →
+        [inst_1 : Fintype.{u_1} V] →
+          [inst_2 : Fintype.{u_2} E] →
+            [inst_3 : Fintype.{u_3} X] →
+              (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) →
+                GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) → ℕ → List.{0} ℝ
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_dates_nonempty.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Ne.{1} (UnifiedLean.Source.SourceCalendarCompiler.sortedOriginalDates.{u_1, u_2, u_3} N C) List.nil.{0}
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_dates_nonempty' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_date_upper.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) {b : ℝ},
+  Membership.mem.{0, 0} (UnifiedLean.Source.SourceCalendarCompiler.sortedOriginalDates.{u_1, u_2, u_3} N C) b →
+    LE.le.{0} b (GProgram.G5.Calendar.age.{u_1, u_2} C (Nanuq.Source.RootedBinary.root.{u_1, u_2, u_3} N))
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_date_upper' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_initial_suffix.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) {a : ℝ}
+  {dates : List.{0} ℝ},
+  Eq.{1} (UnifiedLean.Source.SourceCalendarCompiler.sortedOriginalDates.{u_1, u_2, u_3} N C) (List.cons.{0} a dates) →
+    ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix.{u_1, u_2, u_3} N C a dates
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_initial_suffix' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.source_suffix_take_drop.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) (a : ℝ)
+  (dates : List.{0} ℝ),
+  ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix.{u_1, u_2, u_3} N C a dates →
+    ∀ (k : ℕ),
+      ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix.{u_1, u_2, u_3} N C
+        (UnifiedLean.Source.SourceInitializedCalendar.finalDate a (List.take.{0} k dates)) (List.drop.{0} k dates)
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.source_suffix_take_drop' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) (k : ℕ),
+  ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix.{u_1, u_2, u_3} N C
+    (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_3} N C k)
+    (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_3} N C k)
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_suffix_original.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_3} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} N → Bool) (k : ℕ),
+  Eq.{max (u_2 + 1) (u_1 + 1)}
+    (ResearchCommons.MSCI.JC69SamplingReduction.samplingSuffix.{u_1, u_2, u_3} N C H gamma common k)
+    (UnifiedLean.Source.SourceCalendarCompiler.calendarTail.{u_1, u_2, u_3} N C H gamma common
+      (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_3} N C k)
+      (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_3} N C k))
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_suffix_original' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) (k : ℕ),
+  LE.le.{0} (List.length.{0} (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_3} N C k))
+    (HSub.hSub.{0, 0, 0}
+      (Finset.card.{0} (UnifiedLean.Source.SourceCalendarCompatibility.originalDates.{u_1, u_2, u_3} N C)) 1)
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3,
+    u_4} : {V : Type u_1} →
+  {E : Type u_2} →
+    {Copy : Type u_3} →
+      {X : Type u_4} →
+        [inst : DecidableEq.{u_1 + 1} V] →
+          [DecidableEq.{u_2 + 1} E] →
+            [inst_2 : Fintype.{u_1} V] →
+              [inst_3 : Fintype.{u_2} E] →
+                [inst_4 : Fintype.{u_4} X] →
+                  [inst_5 : DecidableEq.{u_3 + 1} Copy] →
+                    [Fintype.{u_3} Copy] →
+                      (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) →
+                        (sample : Copy → X) →
+                          UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.reference_rebank_observation.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) (sample : Copy → X) (sigma : V → Bool),
+  Eq.{max (max (u_3 + 1) (u_2 + 1)) (u_1 + 1)}
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N
+        (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank.{u_1, u_2, u_3, u_4} N
+          (ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3, u_4} N sample) sigma))
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N
+        (ResearchCommons.MSCI.JC69SamplingReduction.activatedCode.{u_1, u_2, u_3, u_4} N sample sigma)) ∧
+    Eq.{u_1 + 1}
+      (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+        (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4}
+          (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank.{u_1, u_2, u_3, u_4} N
+            (ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3, u_4} N sample) sigma)))
+      (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+        (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4}
+          (ResearchCommons.MSCI.JC69SamplingReduction.activatedCode.{u_1, u_2, u_3, u_4} N sample sigma)))
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.reference_rebank_observation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_reference_active.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (x : Copy),
+      Membership.mem.{max u_2 u_1, max u_2 u_1}
+        (ResearchCommons.MSCI.JC69ActiveStage.stageLocations.{u_1, u_2, u_4} N C c)
+        (GProgram.SourceForest.copyLocation.{u_3, u_1, u_2}
+          (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4}
+            (ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3, u_4} N sample))
+          x)
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_reference_active' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_3} Copy] [Nonempty.{u_3 + 1} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (P : ℕ),
+      (∀ (t : ℝ),
+          LE.le.{0} c t →
+            LT.lt.{0} t (GProgram.G5.Calendar.age.{u_1, u_2} C (Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} N)) →
+              LE.le.{0}
+                (Finset.card.{u_2} (Finset.filter.{u_2} (GProgram.G5.Calendar.Active.{u_1, u_2} C t) Finset.univ.{u_2}))
+                P) →
+        LE.le.{0} 1 P
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy] [Nonempty.{u_3 + 1} Copy]
+  (e : Equiv.{u_3 + 1, 1} Copy (Fin (Fintype.card.{u_3} Copy))) (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (k : ℕ),
+      Eq.{1} (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) c →
+        ∀ (P : ℕ),
+          (∀ (t : ℝ),
+              LE.le.{0} c t →
+                LT.lt.{0} t (GProgram.G5.Calendar.age.{u_1, u_2} C (Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} N)) →
+                  LE.le.{0}
+                    (Finset.card.{u_2}
+                      (Finset.filter.{u_2} (GProgram.G5.Calendar.Active.{u_1, u_2} C t) Finset.univ.{u_2}))
+                    P) →
+            have n := Fintype.card.{u_3} Copy;
+            have B := ∑ j ∈ Finset.range n, HPow.hPow.{0, 0, 0} (n.choose 2) j;
+            have S :=
+              HMul.hMul.{0, 0, 0} (ResearchCommons.MSCI.JC69CurrentPartition.BellCount n) (HPow.hPow.{0, 0, 0} P n);
+            LE.le.{0}
+              (Fintype.card.{max (max u_3 u_2) u_1}
+                (ResearchCommons.MSCI.JC69GlobalStageTuples.TupleIndex.{u_1, u_2, u_3, u_4} e N C
+                  (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_4} N C k)
+                  (ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3, u_4} N sample)))
+              (HMul.hMul.{0, 0, 0} B
+                (HPow.hPow.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} n B) S)
+                  (List.length.{0}
+                    (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_4} N C k))))
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy] [inst_7 : Nonempty.{u_3 + 1} Copy]
+  (e : Equiv.{u_3 + 1, 1} Copy (Fin (Fintype.card.{u_3} Copy))) (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∃ k,
+      Eq.{1} (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) c ∧
+        ∀ (sigma : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+          (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+          (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+          (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+          (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+          (∀ (j : Fin L), Eq.{1} (∑ x, q j x) 0) →
+            Eq.{1}
+              (ResearchCommons.MSCI.JC69ObservedFourier.observedFourier.{u_1, u_2, u_3, u_4} L N C sample sigma H gamma
+                common r q)
+              (∑ t,
+                ResearchCommons.MSCI.JC69GlobalStageTuples.tupleTerm.{u_1, u_2, u_3, u_4} e N C H gamma common r L q
+                  sigma c (ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{u_1, u_2, u_4} N C k)
+                  (ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{u_1, u_2, u_3, u_4} N sample) t)
+'ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+def ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates.{uV, uE, uX} : {V : Type uV} →
+  {E : Type uE} →
+    {X : Type uX} →
+      [inst : DecidableEq.{uV + 1} V] →
+        [inst_1 : Fintype.{uV} V] →
+          [inst_2 : Fintype.{uE} E] →
+            [inst_3 : Fintype.{uX} X] →
+              (N : Nanuq.Source.RootedBinary.{uV, uE, uX} V E X) →
+                GProgram.G5.Calendar.{uV, uE} (Nanuq.Source.RootedBinary.graph.{uV, uE, uX} N) → ℕ → List.{0} ℝ :=
+fun {V} {E} {X} [DecidableEq.{uV + 1} V] [Fintype.{uV} V] [Fintype.{uE} E] [Fintype.{uX} X] N C k =>
+  List.drop.{0} k (List.tail.{0} (UnifiedLean.Source.SourceCalendarCompiler.sortedOriginalDates.{uV, uE, uX} N C))
+def ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference.{uV, uE, uCopy, uX} : {V : Type uV} →
+  {E : Type uE} →
+    {Copy : Type uCopy} →
+      {X : Type uX} →
+        [inst : DecidableEq.{uV + 1} V] →
+          [DecidableEq.{uE + 1} E] →
+            [inst_2 : Fintype.{uV} V] →
+              [inst_3 : Fintype.{uE} E] →
+                [inst_4 : Fintype.{uX} X] →
+                  [inst_5 : DecidableEq.{uCopy + 1} Copy] →
+                    [Fintype.{uCopy} Copy] →
+                      (N : Nanuq.Source.RootedBinary.{uV, uE, uX} V E X) →
+                        (sample : Copy → X) →
+                          UnifiedLean.Source.UniformizedSourceStep.Code.{uV, uE, uCopy, uX} N sample :=
+fun {V} {E} {Copy} {X} [DecidableEq.{uV + 1} V] [DecidableEq.{uE + 1} E] [Fintype.{uV} V] [Fintype.{uE} E]
+    [Fintype.{uX} X] [DecidableEq.{uCopy + 1} Copy] [Fintype.{uCopy} Copy] N sample =>
+  ResearchCommons.MSCI.JC69SamplingReduction.activatedCode.{uV, uE, uCopy, uX} N sample fun x => false

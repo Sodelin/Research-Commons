@@ -1,0 +1,32 @@
+import ResearchCommons.MSCI.JC69OriginalAgendaTuples
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_dates_nonempty
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_dates_nonempty
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_date_upper
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_date_upper
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_initial_suffix
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.original_initial_suffix
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.source_suffix_take_drop
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.source_suffix_take_drop
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_suffix_original
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_suffix_original
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.reference_rebank_observation
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.reference_rebank_observation
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_reference_active
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.sampling_reference_active
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple
+#print ResearchCommons.MSCI.JC69OriginalAgendaTuples.originalPostDates
+#print ResearchCommons.MSCI.JC69OriginalAgendaTuples.samplingReference

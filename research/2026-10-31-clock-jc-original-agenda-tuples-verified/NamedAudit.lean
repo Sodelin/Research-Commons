@@ -1,0 +1,12 @@
+import ResearchCommons.MSCI.JC69OriginalAgendaTuples
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_post_suffix
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_post_dates_length
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_population_bound_positive
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_tuple_card
+#check @ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple
+#print axioms ResearchCommons.MSCI.JC69OriginalAgendaTuples.actual_original_observed_tuple
