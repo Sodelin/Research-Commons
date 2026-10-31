@@ -1,0 +1,44 @@
+{
+  "claim_id": "CB-ALEXANDER-002",
+  "canonical_exact_scope": "Fix an actual Alexander population P avoiding an infinite label word s. For every countable family of actual population hosts U_j, there is one positive finite-fibre terminal clone Q of a one-parent-per-label selection of P such that Q avoids s, its actual roots are canonically equivalent to P's, and every nonroot has exactly one incoming parent of every label. Every infinite word realized by Q is realized by P. For every j, every finite global stretch L and every injective map Q\u2192U_j, some source edge does not map to an undirected host path of length at most L. Hosts need not avoid s or have exact parent counts. The actual population assumptions are infinitude, real chronological birthdates with finite birth sublevels, finitely many roots and children per vertex, functional edge labels and parent coverage at each nonroot. Parent selection can shrink the original language; terminal cloning preserves the selected language exactly. For an already exact-parent P, cloning preserves the whole original language. There is no uniform child cap, no terminal-free condition and no uncountable-host or unbounded-stretch conclusion.",
+  "binding_adopted": false,
+  "wrapper_sha256": "2f880a427602dddd7d89a98aeaef014aed7eddad427f65b64f948d8137db559d",
+  "clause_map": [
+    {
+      "card_clause": "Actual infinite real-chronological population, finite birth sublevels, finitely many roots/children, functional labels and parent coverage",
+      "binding": "GenericUniversalAvoiders.Population actual definition printed; no abstract certificate substituted. All these axioms carried by source p and each actual host."
+    },
+    {
+      "card_clause": "One parent per label selection may shrink language, roots unchanged",
+      "binding": "selected_exact_parents and selection_language_inclusion; original selectParents and selectedClone_rootsEquiv definitions printed."
+    },
+    {
+      "card_clause": "Positive finite-fibre terminal cloning preserves selected language",
+      "binding": "selected_clone_language with m:V\u2192Nat, hm:\u2200x,0<m x; Fibre uses Fin(m x); terminalClone population uses original real birthdates. Exact selected-language equality, not automatic original-language equality."
+    },
+    {
+      "card_clause": "Canonical equivalence of actual root sets",
+      "binding": "selected_clone_actual_roots and the Nonempty equivalence conjunct constructed via exact selectedClone_rootsEquiv in one_clone_escapes_countable_hosts. Root singleton fibre property is derived by source endpoint for the SAME existential m."
+    },
+    {
+      "card_clause": "Same Q avoids fixed s, every realized word belongs to p, exact incoming parent per label",
+      "binding": "one_clone_escapes_countable_hosts retains all three conjuncts for a single m and hm, with exact original selected/terminal population."
+    },
+    {
+      "card_clause": "Every j, every finite global L, every injective map fails to preserve some original source edge as host path\u2264L",
+      "binding": "one_clone_escapes_countable_hosts orders \u2203m hm before \u2200j L f; negated PreservesEdges actual definition printed. populationHost symmetrizes actual host edges; power uses finite balls. Host Encodable/local finiteness derived by original actual-population theorem, not added as assumptions."
+    },
+    {
+      "card_clause": "Already exact-parent P preserves complete original language",
+      "binding": "exact_parent_original_language_escape reuses actual endpoint with ExactlyOneParentPerLabel p and iff language; no unjustified equality for arbitrary parent selection."
+    }
+  ],
+  "limits": [
+    "No prescribed uniform child cap or terminal-free result",
+    "No uncountable host family or unbounded-stretch/noninjective embedding claim",
+    "No requirement host avoids s or has exact incoming parent counts",
+    "Classical diagonal principle attributed; exact population strengthening historical priority unresolved",
+    "No native executable population generator or new scientific theorem/proof authorship claim"
+  ],
+  "source_review": "Complete canonical card and all460 GenericUniversalAvoiders plus376 TerminalCloneAvoiders lines read before wrapping. Six whole types, actual definitions and coherent22-module owned scope supplied. Provider history/audit attribution retained."
+}

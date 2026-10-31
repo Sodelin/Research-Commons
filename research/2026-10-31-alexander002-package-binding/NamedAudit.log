@@ -1,0 +1,107 @@
+@ResearchCommons.Claims.CountableHosts.selected_exact_parents.{u_1,
+    u_2} : ∀ {Label : Type u_2} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label),
+  TerminalCloneAvoiders.ExactlyOneParentPerLabel.{u_1, u_2} (TerminalCloneAvoiders.selectParents.{u_1, u_2} p)
+'ResearchCommons.Claims.CountableHosts.selected_exact_parents' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CountableHosts.selection_language_inclusion.{u_1,
+    u_2} : ∀ {Label : Type u_2} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label)
+  (s : ℕ → Label),
+  GenericUniversalAvoiders.Realizes.{u_1, u_2} (TerminalCloneAvoiders.selectParents.{u_1, u_2} p) s →
+    GenericUniversalAvoiders.Realizes.{u_1, u_2} p s
+'ResearchCommons.Claims.CountableHosts.selection_language_inclusion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CountableHosts.selected_clone_language.{u_1,
+    u_2} : ∀ {Label : Type u_2} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ)
+  (hm : ∀ (x : V), LT.lt.{0} 0 (m x)) (s : ℕ → Label),
+  GenericUniversalAvoiders.Realizes.{u_1, u_2}
+      (TerminalCloneAvoiders.terminalClone.{u_1, u_2} (TerminalCloneAvoiders.selectParents.{u_1, u_2} p) m hm) s ↔
+    GenericUniversalAvoiders.Realizes.{u_1, u_2} (TerminalCloneAvoiders.selectParents.{u_1, u_2} p) s
+'ResearchCommons.Claims.CountableHosts.selected_clone_language' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CountableHosts.selected_clone_actual_roots.{u_1,
+    u_2} : ∀ {Label : Type u_2} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ)
+  (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+  (∀ (x : V), (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_2} p y x b) → Eq.{1} (m x) 1) →
+    Nonempty.{u_1 + 1}
+      (Equiv.{u_1 + 1, u_1 + 1}
+        (Subtype.{u_1 + 1} fun x =>
+          ∀ (y : GenericUniversalAvoiders.Fibre.{u_1} V m) (b : Label),
+            ¬GenericUniversalAvoiders.Population.edge.{u_1, u_2}
+                (TerminalCloneAvoiders.terminalClone.{u_1, u_2} (TerminalCloneAvoiders.selectParents.{u_1, u_2} p) m hm)
+                y x b)
+        (Subtype.{u_1 + 1} fun x =>
+          ∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_2} p y x b))
+'ResearchCommons.Claims.CountableHosts.selected_clone_actual_roots' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CountableHosts.one_clone_escapes_countable_hosts.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label)
+  (s : ℕ → Label),
+  ¬GenericUniversalAvoiders.Realizes.{u_1, u_3} p s →
+    ∀ (W : ℕ → Type u_2) (hosts : (j : ℕ) → GenericUniversalAvoiders.Population.{u_2, u_3} (W j) Label),
+      ∃ m,
+        ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+          ¬GenericUniversalAvoiders.Realizes.{u_1, u_3}
+                (TerminalCloneAvoiders.terminalClone.{u_1, u_3} (TerminalCloneAvoiders.selectParents.{u_1, u_3} p) m hm)
+                s ∧
+            (∀ (t : ℕ → Label),
+                GenericUniversalAvoiders.Realizes.{u_1, u_3}
+                    (TerminalCloneAvoiders.terminalClone.{u_1, u_3} (TerminalCloneAvoiders.selectParents.{u_1, u_3} p) m
+                      hm)
+                    t →
+                  GenericUniversalAvoiders.Realizes.{u_1, u_3} p t) ∧
+              Nonempty.{u_1 + 1}
+                  (Equiv.{u_1 + 1, u_1 + 1}
+                    (Subtype.{u_1 + 1} fun x =>
+                      ∀ (y : GenericUniversalAvoiders.Fibre.{u_1} V m) (b : Label),
+                        ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3}
+                            (TerminalCloneAvoiders.terminalClone.{u_1, u_3}
+                              (TerminalCloneAvoiders.selectParents.{u_1, u_3} p) m hm)
+                            y x b)
+                    (Subtype.{u_1 + 1} fun x =>
+                      ∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b)) ∧
+                TerminalCloneAvoiders.ExactlyOneParentPerLabel.{u_1, u_3}
+                    (TerminalCloneAvoiders.terminalClone.{u_1, u_3} (TerminalCloneAvoiders.selectParents.{u_1, u_3} p) m
+                      hm) ∧
+                  ∀ (j L : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+                    Function.Injective.{u_1 + 1, u_2 + 1} f →
+                      ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                          (TerminalCloneAvoiders.terminalClone.{u_1, u_3}
+                            (TerminalCloneAvoiders.selectParents.{u_1, u_3} p) m hm)
+                          (GenericUniversalAvoiders.LocallyFiniteHost.power.{u_2}
+                            (GenericUniversalAvoiders.populationHost.{u_2, u_3} (hosts j)) L)
+                          f
+'ResearchCommons.Claims.CountableHosts.one_clone_escapes_countable_hosts' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CountableHosts.exact_parent_original_language_escape.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label),
+  TerminalCloneAvoiders.ExactlyOneParentPerLabel.{u_1, u_3} p →
+    ∀ (s : ℕ → Label),
+      ¬GenericUniversalAvoiders.Realizes.{u_1, u_3} p s →
+        ∀ (W : ℕ → Type u_2) (hosts : (j : ℕ) → GenericUniversalAvoiders.Population.{u_2, u_3} (W j) Label),
+          ∃ m,
+            ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+              ¬GenericUniversalAvoiders.Realizes.{u_1, u_3} (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm) s ∧
+                (∀ (t : ℕ → Label),
+                    GenericUniversalAvoiders.Realizes.{u_1, u_3} (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm)
+                        t ↔
+                      GenericUniversalAvoiders.Realizes.{u_1, u_3} p t) ∧
+                  (∀ (x : V),
+                      (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b) →
+                        Eq.{1} (m x) 1) ∧
+                    TerminalCloneAvoiders.ExactlyOneParentPerLabel.{u_1, u_3}
+                        (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm) ∧
+                      ∀ (j L : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+                        Function.Injective.{u_1 + 1, u_2 + 1} f →
+                          ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                              (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm)
+                              (GenericUniversalAvoiders.LocallyFiniteHost.power.{u_2}
+                                (GenericUniversalAvoiders.populationHost.{u_2, u_3} (hosts j)) L)
+                              f
+'ResearchCommons.Claims.CountableHosts.exact_parent_original_language_escape' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

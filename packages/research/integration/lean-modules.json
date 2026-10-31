@@ -6078,10 +6078,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.CountableHosts",
+      "path": "lean/Compatibility/ResearchCommons.Claims.CountableHosts.lean",
+      "sha256": "2f880a427602dddd7d89a98aeaef014aed7eddad427f65b64f948d8137db559d",
+      "imports": [
+        "TerminalCloneAvoiders"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed CB-ALEXANDER-002 exact actual-population parent-selection/terminal-clone countable-host interface",
+        "proof_derivation": false,
+        "verification": "integration/countable-hosts-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "e324d455199ca47d828eb3ab2c4b67b77bc7954afdad2fd129250d3c4fbaf45a",
+      "sha256": "0fbebc59abe8da6e83c6e5c7d49753d604094beec8e9859d484b71a1a29652dc",
       "imports": [
+        "ResearchCommons.Claims.CountableHosts",
         "ResearchCommons.Claims.StatefulCertificates",
         "ResearchCommons.Claims.AperiodicModulus",
         "ResearchCommons.Claims.FiniteEditOptimum",
@@ -6218,6 +6232,10 @@
         "stateful_certificates_successor": {
           "prior_source_sha256": "f4b742219c7509690f6a722b9111611cc8659641c1ad4ad10b180b30ab753f23",
           "scope": "Reviewed POPULATION004 synthetic actual rule/global dynamics and full real-hull join; actual enlarged aggregate check pending."
+        },
+        "countable_hosts_successor": {
+          "prior_source_sha256": "e324d455199ca47d828eb3ab2c4b67b77bc7954afdad2fd129250d3c4fbaf45a",
+          "scope": "Reviewed ALEXANDER002 one-clone/countable actual hosts/all finite stretch join; actual enlarged aggregate check pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

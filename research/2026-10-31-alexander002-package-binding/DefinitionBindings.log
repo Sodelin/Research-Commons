@@ -1,0 +1,81 @@
+structure GenericUniversalAvoiders.Population.{u, w} (V : Type u) (Label : Type w) : Type (max u w)
+number of parameters: 2
+fields:
+  GenericUniversalAvoiders.Population.edge : V → V → Label → Prop
+  GenericUniversalAvoiders.Population.birth : V → ℝ
+  GenericUniversalAvoiders.Population.infinite : BirthOrder.InfiniteVertices V
+  GenericUniversalAvoiders.Population.sublevels : ∀ (r : ℝ), BirthOrder.FiniteCover fun x => self.birth x ≤ r
+  GenericUniversalAvoiders.Population.chronological : ∀ (x y : V) (b : Label),
+      self.edge x y b → self.birth x < self.birth y
+  GenericUniversalAvoiders.Population.unique : ∀ (x y : V) (a b : Label), self.edge x y a → self.edge x y b → a = b
+  GenericUniversalAvoiders.Population.roots : BirthOrder.FiniteCover fun y => ∀ (x : V) (b : Label), ¬self.edge x y b
+  GenericUniversalAvoiders.Population.children : ∀ (x : V), BirthOrder.FiniteCover fun y => ∃ b, self.edge x y b
+  GenericUniversalAvoiders.Population.parents : ∀ (y : V),
+      (¬∀ (x : V) (b : Label), ¬self.edge x y b) → ∀ (b : Label), ∃ x, self.edge x y b
+constructor:
+  GenericUniversalAvoiders.Population.mk.{u, w} {V : Type u} {Label : Type w} (edge : V → V → Label → Prop)
+    (birth : V → ℝ) (infinite : BirthOrder.InfiniteVertices V)
+    (sublevels : ∀ (r : ℝ), BirthOrder.FiniteCover fun x => birth x ≤ r)
+    (chronological : ∀ (x y : V) (b : Label), edge x y b → birth x < birth y)
+    (unique : ∀ (x y : V) (a b : Label), edge x y a → edge x y b → a = b)
+    (roots : BirthOrder.FiniteCover fun y => ∀ (x : V) (b : Label), ¬edge x y b)
+    (children : ∀ (x : V), BirthOrder.FiniteCover fun y => ∃ b, edge x y b)
+    (parents : ∀ (y : V), (¬∀ (x : V) (b : Label), ¬edge x y b) → ∀ (b : Label), ∃ x, edge x y b) :
+    GenericUniversalAvoiders.Population V Label
+@[reducible] def GenericUniversalAvoiders.Fibre.{u} : (V : Type u) → (V → ℕ) → Type (max u 0) :=
+fun V m => (x : V) × Fin (m x)
+def GenericUniversalAvoiders.Realizes.{u, w} : {Label : Type w} →
+  {V : Type u} → GenericUniversalAvoiders.Population V Label → (ℕ → Label) → Prop :=
+fun {Label} {V} p s => ∃ path, ∀ (k : ℕ), p.edge (path k) (path (k + 1)) (s k)
+def GenericUniversalAvoiders.PreservesEdges.{u, v, w} : {Label : Type w} →
+  {V : Type u} →
+    {W : Type v} →
+      GenericUniversalAvoiders.Population V Label → GenericUniversalAvoiders.LocallyFiniteHost W → (V → W) → Prop :=
+fun {Label} {V} {W} p H f => ∀ (x y : V) (b : Label), p.edge x y b → H.adjacent (f x) (f y)
+def GenericUniversalAvoiders.populationHost.{u, w} : {Label : Type w} →
+  {V : Type u} → GenericUniversalAvoiders.Population V Label → GenericUniversalAvoiders.LocallyFiniteHost V :=
+fun {Label} {V} p => { adjacent := fun x y => (∃ b, p.edge x y b) ∨ ∃ b, p.edge y x b, neighbours_finite := ⋯ }
+def GenericUniversalAvoiders.LocallyFiniteHost.ball.{v} : {W : Type v} →
+  GenericUniversalAvoiders.LocallyFiniteHost W → W → ℕ → Finset W :=
+fun {W} H x x_1 => Nat.brecOn x_1 (GenericUniversalAvoiders.LocallyFiniteHost.ball._f H x)
+def GenericUniversalAvoiders.LocallyFiniteHost.power.{v} : {W : Type v} →
+  GenericUniversalAvoiders.LocallyFiniteHost W → ℕ → GenericUniversalAvoiders.LocallyFiniteHost W :=
+fun {W} H L => { adjacent := fun x y => y ∈ H.ball x L, neighbours_finite := ⋯ }
+def TerminalCloneAvoiders.terminalEdge.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population V Label →
+      (m : V → ℕ) → GenericUniversalAvoiders.Fibre V m → GenericUniversalAvoiders.Fibre V m → Label → Prop :=
+fun {Label} {V} p m x y b => ↑x.snd = 0 ∧ p.edge x.fst y.fst b
+def TerminalCloneAvoiders.terminalClone.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population V Label →
+      (m : V → ℕ) →
+        (∀ (x : V), 0 < m x) → GenericUniversalAvoiders.Population (GenericUniversalAvoiders.Fibre V m) Label :=
+fun {Label} {V} p m hm =>
+  { edge := TerminalCloneAvoiders.terminalEdge p m, birth := fun x => p.birth x.fst, infinite := ⋯, sublevels := ⋯,
+    chronological := ⋯, unique := ⋯, roots := ⋯, children := ⋯, parents := ⋯ }
+def TerminalCloneAvoiders.ExactlyOneParentPerLabel.{u, w} : {Label : Type w} →
+  {V : Type u} → GenericUniversalAvoiders.Population V Label → Prop :=
+fun {Label} {V} p => ∀ (y : V), (¬∀ (x : V) (b : Label), ¬p.edge x y b) → ∀ (b : Label), ∃! x, p.edge x y b
+def TerminalCloneAvoiders.selectedEdge.{u, w} : {Label : Type w} →
+  {V : Type u} → GenericUniversalAvoiders.Population V Label → V → V → Label → Prop :=
+fun {Label} {V} p x y b =>
+  ∃ (hy : ¬∀ (z : V) (a : Label), ¬p.edge z y a), x = TerminalCloneAvoiders.chosenParent p y hy b
+def TerminalCloneAvoiders.selectParents.{u, w} : {Label : Type w} →
+  {V : Type u} → GenericUniversalAvoiders.Population V Label → GenericUniversalAvoiders.Population V Label :=
+fun {Label} {V} p =>
+  { edge := TerminalCloneAvoiders.selectedEdge p, birth := p.birth, infinite := ⋯, sublevels := ⋯, chronological := ⋯,
+    unique := ⋯, roots := ⋯, children := ⋯, parents := ⋯ }
+def TerminalCloneAvoiders.selectedClone_rootsEquiv.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    (p : GenericUniversalAvoiders.Population V Label) →
+      (m : V → ℕ) →
+        (hm : ∀ (x : V), 0 < m x) →
+          (∀ (x : V), (∀ (y : V) (b : Label), ¬p.edge y x b) → m x = 1) →
+            { x //
+                ∀ (y : GenericUniversalAvoiders.Fibre V m) (b : Label),
+                  ¬(TerminalCloneAvoiders.terminalClone (TerminalCloneAvoiders.selectParents p) m hm).edge y x b } ≃
+              { x // ∀ (y : V) (b : Label), ¬p.edge y x b } :=
+fun {Label} {V} p m hm hroot =>
+  (TerminalCloneAvoiders.rootsEquiv (TerminalCloneAvoiders.selectParents p) m hm ⋯).trans
+    (TerminalCloneAvoiders.selectParents_rootsEquiv p)

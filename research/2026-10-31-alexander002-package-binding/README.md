@@ -1,0 +1,9 @@
+# CB-ALEXANDER-002 package binding — 31 October 2026
+
+The reviewed original countable-host obstruction now has an exact owner/type/export interface. One positive finite-fibre terminal clone of an actual one-parent-per-label selection is chosen BEFORE all countably listed actual population hosts and all finite global stretch bounds/maps. Original population axioms, canonical root equivalence and fixed target avoidance remain. Parent selection gives language inclusion; cloning preserves the selected language exactly. For an already exact-parent population, cloning preserves the original language. Terminal vertices are allowed; no uniform child cap, terminal-free, unbounded-stretch or uncountable-host conclusion is inferred. Classical authorship and unresolved novelty remain; there is no executable infinite-population generator claim.
+
+Actual package target: **12 fresh compilations /10 qualified retained objects reused**,22 selected modules. All resulting objects equal the independently reviewed coherent context. Six named exports and the complete22-module audit pass:1,477declarations/1,135theorems/zero rejects. The checked wrapper remains byte-identical; its pending-review header is historical.
+
+Both changed aggregate/library roots compile with qualified coherent reuse. All **567 names**, selected **1,532-module owned audit** (103,134 declarations/93,149 theorems/zero rejects), **1,842 primary objects** and **7,322 resolved bindings** pass. Exact original ContextB plus seven checked wrapper contexts are retained; no fresh whole1,840build/audit is claimed. Raw full audits remain local and compiler-attributed.
+
+Coverage: **55mapped IDs,567names,63unbound IDs**. Strict coverage remains exit2/full116incomplete; all118canonical scientific statuses are unchanged. See the complete card, clause map and verification receipts here.

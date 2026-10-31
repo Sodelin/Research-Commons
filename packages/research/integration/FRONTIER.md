@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Actual countable-host successor — 31 October 2026
+
+[ALEXANDER-002 adoption](../../../research/2026-10-31-alexander002-package-binding/README.md) adds the original actual-population terminal-clone/countable-host interface: **55 mapped claims/567 names/63 unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Public target22:12compiled/10reused, six full named exports and complete22-module owned audit pass. One clone before all hosts/finite stretches, canonical roots and selection versus original-language distinction retained; terminal vertices allowed, no uniform child cap or native/novelty claim.
+
+[Current aggregate](countable-hosts-aggregate-verification.json): both changed roots,567names,1,532owned modules (103,134declarations/93,149theorems/zero rejects),1,842primary objects/7,322resolved hashes pass in exact coherent qualified context. No fresh whole1,840build/audit or scientific master closure. Earlier dated records preserve their scope.
+
 ## Synthetic full-real-hull/stateful successor — 31 October 2026
 
 [POPULATION-004 adoption](../../../research/2026-10-31-population004-package-binding/README.md) adds the reviewed actual synthetic-rule interface: **54 mapped claims/561 names/64 unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Actual target3 compiled/0reused, all six full exports and complete3-module audit pass. Full real hull, global evolution, finite nonempty/full dead exterior, arbitrary vertical displacement and positive-period physical interpretation retained; native simulator/Life-like/priority claims excluded.

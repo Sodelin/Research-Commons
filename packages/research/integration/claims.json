@@ -6421,13 +6421,29 @@
         }
       ],
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.CountableHosts",
+        "declarations": [
+          "ResearchCommons.Claims.CountableHosts.selected_exact_parents",
+          "ResearchCommons.Claims.CountableHosts.selection_language_inclusion",
+          "ResearchCommons.Claims.CountableHosts.selected_clone_language",
+          "ResearchCommons.Claims.CountableHosts.selected_clone_actual_roots",
+          "ResearchCommons.Claims.CountableHosts.one_clone_escapes_countable_hosts",
+          "ResearchCommons.Claims.CountableHosts.exact_parent_original_language_escape"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Actual population parent selection and positive finite terminal cloning: canonical actual roots, selected-language inclusion, exact-parent original-language equality, one clone before all countable actual hosts and all finite global stretches. Terminal vertices allowed; no uniform child cap or unbounded-stretch/native/novelty claim."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.CountableHosts --claim CB-ALEXANDER-002",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/countable-hosts-verification.json",
+          "scope": "Named type/owner proof interface only; classical choices do not supply an executable infinite-population generator."
+        }
       },
       "source_artifacts": [
         {
@@ -6478,7 +6494,15 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for this exact completed mathematical claim. Separately stated broader-model, formal or priority work does not reopen it.",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "2f880a427602dddd7d89a98aeaef014aed7eddad427f65b64f948d8137db559d",
+          "record": "integration/countable-hosts-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Complete canonical card, full correspondence, unchanged wrapper, six complete types/axioms and actual source definitions accepted. Original proof authorship and22-module audit remain attributed, historical priority unresolved."
+        }
+      ],
       "obligation": "None for this exact completed mathematical claim. Separately stated broader-model, formal or priority work does not reopen it."
     },
     {
