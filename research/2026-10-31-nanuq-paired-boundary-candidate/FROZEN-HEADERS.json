@@ -1,0 +1,60 @@
+{
+  "status": "UNCOMPILED intended explicit headers, not checked elaborated types",
+  "headers": [
+    {
+      "module": "ActualPairedBoundary",
+      "name": "equal_label_distinct_are_hybrid_occurrences",
+      "header": "theorem equal_label_distinct_are_hybrid_occurrences\n    (a c : (M).OpenedTip) (hac : a\u2260c)\n    (hlab : (M).openedTipLabel hl a=(M).openedTipLabel hl c) :\n    \u2203 e f : (M).HybridParentOccurrence, a=Sum.inr e \u2227 c=Sum.inr f \u2227 e\u2260f \u2227\n      (M).graph.target e.val=(M).graph.target f.val"
+    },
+    {
+      "module": "ActualPairedBoundary",
+      "name": "actual_paired_tip_empty_boundary_arc",
+      "header": "theorem actual_paired_tip_empty_boundary_arc\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v)\n    {C : Set Schoenflies.Plane} (hC : IsJordanCurve C)\n    (hface : Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n      (coordinates face.outside)=outside C)\n    (a c : (M).OpenedTip) (hac : a\u2260c)\n    (hlab : (M).openedTipLabel hl a=(M).openedTipLabel hl c) :\n    \u2203 B : Set Schoenflies.Plane, B\u2286C \u2227\n      IsArcBetween B (tipPoint N D b hg hb a) (tipPoint N D b hg hb c) \u2227\n      \u2200 w : (M).OpenedTip, tipPoint N D b hg hb w\u2208B \u2194 w=a \u2228 w=c"
+    },
+    {
+      "module": "ActualPairedBoundary",
+      "name": "actual_one_boundary_paired_tip_arcs",
+      "header": "theorem actual_one_boundary_paired_tip_arcs\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 C : Set Schoenflies.Plane, IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside)=outside C \u2227\n      (\u2200 t : (M).OpenedTip, tipPoint N D b hg hb t\u2208C) \u2227\n      \u2200 a c : (M).OpenedTip, a\u2260c \u2192 (M).openedTipLabel hl a=(M).openedTipLabel hl c \u2192\n        \u2203 B : Set Schoenflies.Plane, B\u2286C \u2227\n          IsArcBetween B (tipPoint N D b hg hb a) (tipPoint N D b hg hb c) \u2227\n          \u2200 w : (M).OpenedTip, tipPoint N D b hg hb w\u2208B \u2194 w=a \u2228 w=c"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "half_curve",
+      "header": "private theorem half_curve (e : E) : curve D e (1/2 : \u211d)=coordinates (D.arc e oneHalf)"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "incomingTail_arc",
+      "header": "theorem incomingTail_arc (e : CoreTip N b) :\n    IsArcBetween (incomingTail N D b e)\n      (coordinates (D.arc e.val.val oneHalf))\n      (coordinates (D.point (N.graph.target e.val.val)))"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "incoming_tail_parameter_only_core_tip",
+      "header": "theorem incoming_tail_parameter_only_core_tip (e : CoreTip N b) (v : CoreVertex N b)\n    (t : unitInterval) (ht : (1/2:\u211d)\u2264(t:\u211d))\n    (heq : D.arc e.val.val t=corePoint N D b v) : v=Sum.inr e"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "incomingTail_only_core_tip",
+      "header": "theorem incomingTail_only_core_tip (e : CoreTip N b) (v : CoreVertex N b)\n    (hv : coordinates (corePoint N D b v)\u2208incomingTail N D b e) : v=Sum.inr e"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "incomingTails_meet_only_target",
+      "header": "theorem incomingTails_meet_only_target (e f : CoreTip N b) (hef : e\u2260f)\n    {z : Schoenflies.Plane} (hz : z\u2208incomingTail N D b e)\n    (hz' : z\u2208incomingTail N D b f) : z=coordinates (D.point (N.graph.target e.val.val))"
+    },
+    {
+      "module": "HybridTailGeometry",
+      "name": "paired_incoming_tail_arc",
+      "header": "theorem paired_incoming_tail_arc (e f : CoreTip N b) (hef : e\u2260f)\n    (ht : N.graph.target e.val.val=N.graph.target f.val.val) :\n    IsArcBetween (incomingTail N D b e \u222a incomingTail N D b f)\n      (coordinates (D.arc e.val.val oneHalf))\n      (coordinates (D.arc f.val.val oneHalf))"
+    },
+    {
+      "module": "NamedBoundaryIncoming",
+      "name": "jordan_eq_of_same_outside",
+      "header": "private theorem jordan_eq_of_same_outside {C C' : Set Schoenflies.Plane}\n    (hC : IsJordanCurve C) (hC' : IsJordanCurve C')\n    (h : outside C=outside C') : C=C'"
+    },
+    {
+      "module": "NamedBoundaryIncoming",
+      "name": "named_boundary_incoming_full",
+      "header": "theorem named_boundary_incoming_full\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v)\n    {C : Set Schoenflies.Plane} (hC : IsJordanCurve C)\n    (hface : Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n      (coordinates face.outside)=outside C)\n    (e : CoreTip N b) (t : unitInterval) : coordinates (D.arc e.val.val t)\u2208C"
+    }
+  ]
+}
