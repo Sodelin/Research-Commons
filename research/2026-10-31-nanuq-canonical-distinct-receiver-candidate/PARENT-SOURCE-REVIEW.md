@@ -1,0 +1,3 @@
+# Parent static source review
+
+31 October2026. Parent read README and all seven complete sources. Approved freezing/publication for the sole compiler: distinct-labelled occurrences extend one original parent choice; existing switching/readout reused; terminal completeness excludes phantom labels; canonical rank is support-restricted and all-label syntax reapplied before finiteTree. ONE SAME-boundary rank/mask/Tree precedes all original distinct SET/mean queries and four-port transport. Literal queried tuple coordinates retained. No arbitrary sorted quartetAt/twiceMean/anchor permutation, repeated/diagonal branch, global C or singleton closure. This is mathematical/source review, NOT Lean qualification.
