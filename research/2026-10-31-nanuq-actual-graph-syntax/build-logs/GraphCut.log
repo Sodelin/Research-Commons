@@ -1,0 +1,9 @@
+GraphCut.lean:7:0: warning: automatically included section variable(s) unused in theorem `Nanuq.GraphSyntax.descendant_step_iff`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'Nanuq.GraphSyntax.target_cut_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

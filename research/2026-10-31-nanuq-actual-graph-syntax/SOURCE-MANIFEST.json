@@ -1,0 +1,141 @@
+{
+  "module_count": 15,
+  "new_modules": 9,
+  "inherited_modules": 6,
+  "source_pin": "14be42189b8a72fcaced51ceda4e86445dc09e90",
+  "order": [
+    "SourceNetwork",
+    "GraphLeaves",
+    "GraphCuts",
+    "GraphBridgeSplits",
+    "QuartetSemantics",
+    "SourceQuartetRelation",
+    "GraphUnfold",
+    "GraphReach",
+    "GraphUnique",
+    "GraphNoDup",
+    "GraphCut",
+    "GraphSourceCut",
+    "GraphSubtree",
+    "GraphQuartet",
+    "GraphFrontier"
+  ],
+  "modules": {
+    "SourceNetwork": {
+      "source_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "GraphLeaves": {
+      "source_sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "GraphCuts": {
+      "source_sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "imports": [
+        "GraphLeaves"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "GraphBridgeSplits": {
+      "source_sha256": "4ccf9c017dcbcccfcd967e5870e942318f9ef82758f6a9bbdeeb1a9e42e5d95d",
+      "imports": [
+        "GraphCuts"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "QuartetSemantics": {
+      "source_sha256": "dd403a92e23ccf13fcb3c68bd109b28bd64b64774bd5ed0db26c3c7ce9c2adc8",
+      "imports": [
+        "Mathlib.Data.Rat.BigOperators",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "SourceQuartetRelation": {
+      "source_sha256": "defffabb0a8147a0c857889d3c6be386f79399b6c0e4b45b6aa22dff7794a91e",
+      "imports": [
+        "GraphBridgeSplits",
+        "QuartetSemantics"
+      ],
+      "origin": "PR14be421 exact retained source"
+    },
+    "GraphUnfold": {
+      "source_sha256": "91196a4780971d0f2d0bd504ec5bc01196904176edab5996f0407785462f0db0",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "origin": "new provider"
+    },
+    "GraphReach": {
+      "source_sha256": "910720762350155c320ec2e33df433245f32296b6f013662f64800fa9b8c726e",
+      "imports": [
+        "GraphUnfold"
+      ],
+      "origin": "new provider"
+    },
+    "GraphUnique": {
+      "source_sha256": "204a3e0add40cb33e38659307dcccdcd4df0b60857995e47c1d17763e89658ad",
+      "imports": [
+        "GraphReach"
+      ],
+      "origin": "new provider"
+    },
+    "GraphNoDup": {
+      "source_sha256": "e0a384d6da2c5c99fbb57fb190177541e22d764980b95b95bd19a4e6d27dde31",
+      "imports": [
+        "GraphUnique"
+      ],
+      "origin": "new provider"
+    },
+    "GraphCut": {
+      "source_sha256": "65dd863bad21878e23334d45f91a83bd2f09ba916efc04e70dc23524af4b1af6",
+      "imports": [
+        "GraphNoDup"
+      ],
+      "origin": "new provider"
+    },
+    "GraphSourceCut": {
+      "source_sha256": "a9bc51e069af6ae0b676d5744e61c35f343d04ae82121311e7e687ddd24e6c8c",
+      "imports": [
+        "GraphCut"
+      ],
+      "origin": "new provider"
+    },
+    "GraphSubtree": {
+      "source_sha256": "0a34c816f1382e192ab46d3a7d840fa1e409adaf574dc3611a9ec19a2ca9c755",
+      "imports": [
+        "GraphSourceCut"
+      ],
+      "origin": "new provider"
+    },
+    "GraphQuartet": {
+      "source_sha256": "c3e514041a7c91d3003b95c7bff2780af1343cb75adbe5b92e74a8afa507ddd0",
+      "imports": [
+        "GraphSubtree",
+        "SourceQuartetRelation"
+      ],
+      "origin": "new provider"
+    },
+    "GraphFrontier": {
+      "source_sha256": "6a36e378182415ef52c489faf72550b97599c42bb0d7062c96b63bf3ec8ec156",
+      "imports": [
+        "GraphQuartet"
+      ],
+      "origin": "new provider"
+    }
+  }
+}
