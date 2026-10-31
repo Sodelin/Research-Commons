@@ -1,0 +1,7 @@
+# Parent source-only review
+
+2026-10-31 05:52 UTC. Read the complete JC69RootResolvent.lean candidate, source SHA256 2318e3a46a46d326c8b9283f504ee638a192b35cf3cd934a674eb4ec83979d48. Mathematical route is coherent and suitable for actual compiler qualification; UNCOMPILED.
+
+Time measurability is derived from actual joint trace/occupation measurability. Nonnegative-horizon bounds use the original regular-clock event and source probability measure. The holding density is exactly reweighted by a finite positive killed-rate exponential measure; the future law is not replaced. The moving Iic(m) indicator ensures m-u is nonnegative wherever domination is applied. Accepted shifted adequate-fuel convergence gives pointwise limits, and finite mass supplies dominated convergence. Nonterminal ancestry/live-card hypotheses produce an actual positive-rate choice; the no-event term then tends to zero. The equation is obtained by uniqueness of limits of the original renewal.
+
+Terminal readout one is the stopped complete-clock integral at cover zero, not an unbalanced infinite-horizon limit. The nonterminal limiting equation retains per-site balance and ancestry. No terminal 0/0, success renormalization, discarded prefix exposure or assumed resolvent appears. Actual elaboration, unchanged complete named types and recursive audit remain necessary. Finite path expansion, source quotient/count bounds and the full finite-window theorem remain separate.
