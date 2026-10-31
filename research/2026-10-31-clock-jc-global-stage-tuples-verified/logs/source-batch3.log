@@ -1,0 +1,233 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:41:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:48:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:87:4: error: stuck at solving universe constraint
+  max (max (uCopy + 1) (uE + 1)) (uV + 1) =?= max (max (max (uCopy + 1) (uE + 1)) (?u.52 + 1)) (?u.53 + 1)
+while trying to unify
+  Type (max uV uE uCopy) : Type ((max uV uE uCopy) + 1)
+with
+  Type (max 0 (max (max uE uCopy) ?u.53) ?u.52) : Type (max 1 (max (max (uE + 1) (uCopy + 1)) (?u.53 + 1)) (?u.52 + 1))
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:86:2: error: stuck at solving universe constraint
+  max (max (uCopy + 1) (uE + 1)) (uV + 1) =?= max (max (max (uCopy + 1) (uE + 1)) (?u.52 + 1)) (?u.53 + 1)
+while trying to unify
+  Type (max uV uE uCopy) : Type ((max uV uE uCopy) + 1)
+with
+  Type (max 0 (max (max uE uCopy) ?u.53) ?u.52) : Type (max 1 (max (max (uE + 1) (uCopy + 1)) (?u.53 + 1)) (?u.52 + 1))
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:95:17: error: stuck at solving universe constraint
+  max (max (max uCopy uE) ?u.53) ?u.54 =?= max (max uCopy uE) uV
+while trying to unify
+  Fintype (TupleIndex e N C [] s) : Type (max (max uCopy uE) uV)
+with
+  Fintype.{max (max (max uCopy uE) ?u.53) ?u.54} (TupleIndex e N C [] s) : Type (max (max (max uCopy uE) ?u.53) ?u.54)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:97:6: error: stuck at solving universe constraint
+  max (max (max uCopy uE) ?u.53) ?u.54 =?= max (max uCopy uE) uV
+while trying to unify
+  Fintype (TupleIndex e N C [] s) : Type (max (max uCopy uE) uV)
+with
+  Fintype.{max (max (max uCopy uE) ?u.53) ?u.54} (TupleIndex e N C [] s) : Type (max (max (max uCopy uE) ?u.53) ?u.54)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:93:81: error: stuck at solving universe constraint
+  max (max (max uCopy uE) ?u.53) ?u.54 =?= max (max uCopy uE) uV
+while trying to unify
+  Fintype (TupleIndex e N C [] s) : Type (max (max uCopy uE) uV)
+with
+  Fintype.{max (max (max uCopy uE) ?u.53) ?u.54} (TupleIndex e N C [] s) : Type (max (max (max uCopy uE) ?u.53) ?u.54)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:93:78: error: stuck at solving universe constraint
+  max (max (max uCopy uE) ?u.53) ?u.54 =?= max (max uCopy uE) uV
+while trying to unify
+  Fintype (TupleIndex e N C [] s) : Type (max (max uCopy uE) uV)
+with
+  Fintype.{max (max (max uCopy uE) ?u.53) ?u.54} (TupleIndex e N C [] s) : Type (max (max (max uCopy uE) ?u.53) ?u.54)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:95:17: error: (kernel) application type mismatch
+  Finset (@TupleIndex V E Copy X inst✝⁶ inst✝⁴ inst✝³ inst✝² inst✝¹ inst✝ e N C sample [] s)
+argument has type
+  Type (max u_5 u_2 u_1)
+but function has type
+  Type (max (max (max u_1 u_2) u_3) u_4) → Type (max (max (max u_1 u_2) u_3) u_4)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:95:17: error: (kernel) application type mismatch
+  @Membership.mem (@TupleIndex V E Copy X inst✝⁶ inst✝⁴ inst✝³ inst✝² inst✝¹ inst✝ e N C sample [] s)
+argument has type
+  Type (max u_1 u_2 u_3)
+but function has type
+  {α : outParam (Type (max (max (max u_3 u_2) u_5) u_6))} →
+    {γ : Type (max (max (max u_3 u_2) u_5) u_6)} → [self : Membership α γ] → γ → α → Prop
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:104:4: warning: declaration uses `sorry`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:148:6: error: 'change' tactic failed, pattern
+  Fintype.card
+      (CommonTermIndex e N (Fintype.card Copy) s ×
+        (o : SupportedObservation N sample (stageLocations N C b)) × TupleIndex e N C dates (representative N o)) ≤
+    ?m.385
+is not definitionally equal to target
+  Fintype.card (TupleIndex e N C (b :: dates) s) ≤ B * (n * B * S) ^ (b :: dates).length
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:137:18: warning: declaration uses `sorry`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:192:31: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫⁻ (past : Fin (List.length ?ops) → GProgram.G2.ActualCalendarTrace.SegmentRecord ?N ?sample),
+    calendarWeight ?N ?L ?q ?ops ?s past *
+      ?terminal
+        (GProgram.G2.ActualCalendarTrace.calendarEnd ?N ?ops ?s
+          past) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw ?N ?r ?ops ?s
+in the target expression
+  ∫⁻ (past : Fin (stageProgram N C H gamma common a b).length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample),
+      calendarWeight N L q (stageProgram N C H gamma common a b) s past *
+        if
+            observeCode N (GProgram.G2.ActualCalendarTrace.calendarEnd N (stageProgram N C H gamma common a b) s past) =
+              o then
+          1
+        else 0 ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r (stageProgram N C H gamma common a b) s =
+    intervalBoundaryCoefficient N r L q (b - a).toNNReal (originalBoundaryWord N C H gamma common b) s o
+
+V : Type uV
+E : Type uE
+Copy : Type uCopy
+X : Type uX
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+a b : ℝ
+s : Code N sample
+o : BlockPopulationObservation Copy V E
+⊢ ∫⁻ (past : Fin (stageProgram N C H gamma common a b).length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample),
+      calendarWeight N L q (stageProgram N C H gamma common a b) s past *
+        if
+            observeCode N (GProgram.G2.ActualCalendarTrace.calendarEnd N (stageProgram N C H gamma common a b) s past) =
+              o then
+          1
+        else 0 ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r (stageProgram N C H gamma common a b) s =
+    intervalBoundaryCoefficient N r L q (b - a).toNNReal (originalBoundaryWord N C H gamma common b) s o
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:219:16: error(lean.unknownIdentifier): Unknown identifier `liveCard`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:269:6: error: unsolved goals
+case cons.right
+V : Type uV
+E : Type uE
+Copy : Type uCopy
+X : Type uX
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+e : Copy ≃ Fin (Fintype.card Copy)
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+sigma : V → Bool
+b : ℝ
+dates : List ℝ
+ih :
+  ∀ (a : ℝ),
+    SourceSuffix N C a dates →
+      ∀ (s : Code N sample),
+        (∀ (x : Copy), copyLocation (state s) x ∈ stageLocations N C a) →
+          let value :=
+            calendarValue N r L q (guardedRoot N r L q) (calendarTail N C H gamma common a dates) (reBank N s sigma);
+          value ≠ ∞ ∧ value.toReal = ∑ t, tupleTerm e N C H gamma common r L q sigma a dates s t
+a : ℝ
+hdates : SourceSuffix N C a (b :: dates)
+s : Code N sample
+hs : ∀ (x : Copy), copyLocation (state s) x ∈ stageLocations N C a
+hab : a < b
+hb : b ≤ C.age N.root
+hgap : ∀ (v : V), a < C.age v → b ≤ C.age v
+htail : SourceSuffix N C b dates
+ha : a < C.age N.root
+hactive : ActiveCode N C a (reBank N s sigma)
+A : Type (max 0 (max uV uE) uCopy) := SupportedObservation N sample (stageLocations N C b)
+R : A → Code N sample := fun o => representative N o
+d : A → Code N sample := fun o => reBank N (R o) sigma
+post : List (ProgramStep N) := calendarTail N C H gamma common b dates
+future : A → ℝ≥0∞ := fun o => calendarValue N r L q (guardedRoot N r L q) post (d o)
+coefficient : A → ℝ≥0∞ :=
+  fun o =>
+    intervalBoundaryCoefficient N r L q (b - a).toNNReal (originalBoundaryWord N C H gamma common b) (reBank N s sigma)
+      ↑o
+hind : ∀ (o : A), future o ≠ ∞ ∧ (future o).toReal = ∑ t, tupleTerm e N C H gamma common r L q sigma b dates (R o) t
+F : BlockPopulationObservation Copy V E → ℝ≥0∞
+hF :
+  ∀ (d : Code N sample),
+    (state d).register = (state (reBank N s sigma)).register →
+      calendarValue N r L q (guardedRoot N r L q) post d = F (observeCode N d)
+hstage :
+  calendarValue N r L q (guardedRoot N r L q) (stageProgram N C H gamma common a b ++ post) (reBank N s sigma) =
+    ∑ o, programObservationWeight N r L q (stageProgram N C H gamma common a b) (reBank N s sigma) ↑o * F ↑o
+hf : ∀ (o : A), F ↑o = future o
+hrec :
+  calendarValue N r L q (guardedRoot N r L q) (calendarTail N C H gamma common a (b :: dates)) (reBank N s sigma) =
+    ∑ o, coefficient o * future o
+hcf : ∀ (o : A), coefficient o ≠ ∞
+hprod : ∀ (o : A), coefficient o * future o ≠ ∞
+hc :
+  ∀ (o : A),
+    (coefficient o).toReal =
+      ∑ i,
+        commonCoefficient e N r L q (Fintype.card Copy) s (observeCode N (pathEnd N (Fintype.card Copy) s ↑i.fst)) i *
+            (boundaryCoefficient N (originalBoundaryWord N C H gamma common b)
+                (reBank N (pathEnd N (Fintype.card Copy) s ↑i.fst) sigma) ↑o).toReal *
+          Real.exp (-commonRate e N r L q (Fintype.card Copy) s i * (b - a))
+⊢ ∑ x,
+      ∑ x_1,
+        ∑ x_2,
+          ∑ x_3,
+            commonCoefficient e N r L q (Fintype.card Copy) s (observeCode N (pathEnd N (Fintype.card Copy) s ↑x))
+                    ⟨x, x_1⟩ *
+                  (boundaryCoefficient N (originalBoundaryWord N C H gamma common b)
+                      (reBank N (pathEnd N (Fintype.card Copy) s ↑x) sigma) ↑x_2).toReal *
+                Real.exp (-commonRate e N r L q (Fintype.card Copy) s ⟨x, x_1⟩ * (b - a)) *
+              sorry e N C H gamma common r L q sigma b dates (representative N x_2) x_3 =
+    ∑ x, sorry e N C H gamma common r L q sigma a (b :: dates) s x
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:285:19: warning: declaration uses `sorry`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:285:70: warning: declaration uses `sorry`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GlobalStageTuples.lean:285:30: warning: This simp argument is unused:
+  Fintype.sum_prod_type
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [TupleIndex, Fintype.sum_sigma, tupleTerm, R]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GlobalStageTuples.original_boundary_word_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GlobalStageTuples.actual_tuple_index_card' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GlobalStageTuples.actual_calendar_tuple_expansion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

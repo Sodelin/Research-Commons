@@ -1,0 +1,12 @@
+import ResearchCommons.MSCI.JC69GlobalStageTuples
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.original_boundary_word_map
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.original_boundary_word_map
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.actual_tuple_index_card
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.actual_tuple_index_card
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.actual_calendar_tuple_expansion
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.actual_calendar_tuple_expansion
