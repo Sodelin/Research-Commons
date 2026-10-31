@@ -90,3 +90,8 @@ This full reconciliation supersedes stale status statements, not historical rece
 - 31 October 02:07: prior full reconciliation, retained as an immutable historical snapshot.
 - 31 October 05:08: [incremental original-source coordination](../../communications/2026-10-31-original-source-coordination-0508z.md).
 - 31 October 06:03: reconcile 67 new commits through the stated cutoff, later scoped source acceptances, explicit candidate boundaries, current four-lane ownership, selected build/caller distinctions and discovery deployment limits. No original master or canonical claim status promoted.
+
+
+## Current full-scope successor — 31 October 2026, 10:03 reassessment
+
+The [10:03 reconciliation](../2026-10-31-scope-reconciliation-1003z/CURRENT-SCOPE.md) preserves this dated record and all accepted claims. It updates public G3 source components and the generic approximate-stability counterexample, scoped NANUQ/clock-JC acceptances versus candidates, completed historical package caller evidence versus the enlarged unrebuilt aggregate, the adopted sequence binding, and exact discovery limits. Original masters and all canonical scientific statuses remain unchanged.
