@@ -1,0 +1,48 @@
+{
+  "frozen_utc": "2026-10-30T22:08:20Z",
+  "status": "SCOPED_TWO_MODULE_EIGHT_NAMED_AND_OWNED_AUDIT_PASSED",
+  "lean": "4.33.1 / 819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "build_order": [
+    "ResearchCommons.MSCI.JC69ExponentialPolynomial",
+    "ResearchCommons.MSCI.JC69CountVectorGrid"
+  ],
+  "sources": [
+    {
+      "module": "ResearchCommons.MSCI.JC69ExponentialPolynomial",
+      "path": "ResearchCommons/MSCI/JC69ExponentialPolynomial.lean",
+      "sha256": "78de5d15af0169eed00293f2d1ac3cc45d9f3cc12f13eb31c6f6826df6aebb16",
+      "historical_original_sha256": "b7d54f1426aea3faacbb633b746d3cb2eeb73c9baf685327778e5c030b3545cb"
+    },
+    {
+      "module": "ResearchCommons.MSCI.JC69CountVectorGrid",
+      "path": "ResearchCommons/MSCI/JC69CountVectorGrid.lean",
+      "sha256": "d3f72429b6a66181512fd367db0e96d1ad4d1178ad65da3e4e5f781b00f35897",
+      "historical_original_sha256": "d3f72429b6a66181512fd367db0e96d1ad4d1178ad65da3e4e5f781b00f35897"
+    }
+  ],
+  "external_direct_imports": [
+    "Mathlib.Algebra.Group.ForwardDiff",
+    "Mathlib.Algebra.LinearRecurrence",
+    "Mathlib.Tactic",
+    "Mathlib.Algebra.Polynomial.BigOperators"
+  ],
+  "research_project_imports": [],
+  "audit_targets": {
+    "ResearchCommons.MSCI.JC69ExponentialPolynomial": [
+      "polynomial_term_annihilated",
+      "expPolySum_annihilated",
+      "expPolySum_zero_of_grid",
+      "count_vector_zero_of_annihilated_cube"
+    ],
+    "ResearchCommons.MSCI.JC69CountVectorGrid": [
+      "term_section",
+      "actual_count_vector_annihilator",
+      "value_zero_of_count_cube",
+      "value_zero_of_manuscript_cube"
+    ]
+  },
+  "scientific_gate": "Actual killed-calendar Fourier representation, S/E/F/M count and denominator bounds, source-to-array adapter, finite-locus cube acquisition and full measure reconstruction remain unproved here. No likelihood expansion premise is used.",
+  "owned_audit_sha256": "6682d4411c094380d4074070f5d7831e68ea847d1077f36691ac0cf8ef5beddf",
+  "named_audit_sha256": "89d7dcd9d6859f6216396d1c812f436629773837270f046a844515245bd0aaaa"
+}

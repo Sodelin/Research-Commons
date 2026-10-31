@@ -1,0 +1,29 @@
+--- a/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean
++++ b/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean
+@@ -49,7 +49,7 @@
+     (hP : P.natDegree < r) :
+     (weightedDiff b)^[r] (fun n => b^n*P.eval (n:ℝ)) = 0 := by
+   funext n
+-  rw [iterate_geometric_mul,Polynomial.fwdDiff_iter_eq_zero_of_degree_lt hP]
++  rw [iterate_geometric_mul b (fun x : ℝ => P.eval x) r n,Polynomial.fwdDiff_iter_eq_zero_of_degree_lt hP]
+   simp
+ 
+ /-- A literal product of monic first-order shift factors. -/
+@@ -108,7 +108,7 @@
+     (factors r ts).length = ts.length*r := by
+   induction ts with
+   | nil => simp [factors]
+-  | cons t ts ih => simp [factors,List.length_flatMap] at *; omega
++  | cons t ts ih => simp [factors,List.length_flatMap, Nat.succ_mul, Nat.add_comm] at *
+ 
+ /-- The actual product annihilator is derived for every concrete summand.
+ The resulting order is termCount*r, including repeated bases. -/
+@@ -125,7 +125,7 @@
+       rw [annihilate_replicate]
+       exact polynomial_term_annihilated b P r hP
+     have he : expPolySum ((b,P)::ts) =
+-        (fun n => b^n*P.eval (n:ℝ)) + expPolySum ts := rfl
++        (fun n : ℕ => b^n*P.eval (n:ℝ)) + expPolySum ts := rfl
+     rw [he,annihilate_add]
+     change annihilate (List.replicate r b ++ factors r ts) _ +
+       annihilate (List.replicate r b ++ factors r ts) _ = 0

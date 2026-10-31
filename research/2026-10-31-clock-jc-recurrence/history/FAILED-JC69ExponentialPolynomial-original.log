@@ -1,0 +1,47 @@
+original-source/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean:52:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (weightedDiff ?b)^[?k] (fun m => ?b ^ m * ?g ↑m) ?n
+in the target expression
+  (weightedDiff b)^[r] (fun n => b ^ n * Polynomial.eval (↑n) P) n = 0 n
+
+b : ℝ
+P : Polynomial ℝ
+r : ℕ
+hP : P.natDegree < r
+n : ℕ
+⊢ (weightedDiff b)^[r] (fun n => b ^ n * Polynomial.eval (↑n) P) n = 0 n
+original-source/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean:111:61: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b - c ≥ 1
+where
+ a := ↑(ts.length + 1) * ↑r
+ b := ↑r
+ c := ↑ts.length * ↑r
+original-source/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean:128:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HAdd (ℝ → ℝ) (ℕ → ℝ) ?m.103
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+original-source/ResearchCommons/MSCI/JC69ExponentialPolynomial.lean:151:27: warning: This simp argument is unused:
+  Nat.add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.length_cons, Nat.add_comm, Nat.add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.polynomial_term_annihilated' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_annihilated' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_zero_of_grid' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.count_vector_zero_of_annihilated_cube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,62 @@
+ResearchCommons.MSCI.JC69ExponentialPolynomial.polynomial_term_annihilated (b : ℝ) (P : Polynomial ℝ) (r : ℕ)
+  (hP : P.natDegree < r) :
+  ((ResearchCommons.MSCI.JC69ExponentialPolynomial.weightedDiff b)^[r] fun n => b ^ n * Polynomial.eval (↑n) P) = 0
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.polynomial_term_annihilated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_annihilated (r : ℕ) (ts : List (ℝ × Polynomial ℝ))
+  (hdeg : ∀ t ∈ ts, t.2.natDegree < r) :
+  ResearchCommons.MSCI.JC69ExponentialPolynomial.annihilate
+      (ResearchCommons.MSCI.JC69ExponentialPolynomial.factors r ts)
+      (ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum ts) =
+    0
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_annihilated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_zero_of_grid (r : ℕ) (ts : List (ℝ × Polynomial ℝ))
+  (hdeg : ∀ t ∈ ts, t.2.natDegree < r)
+  (hz : ∀ n < ts.length * r, ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum ts n = 0) :
+  ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum ts = 0
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.expPolySum_zero_of_grid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69ExponentialPolynomial.count_vector_zero_of_annihilated_cube (A K : ℕ) (H : (Fin A → ℕ) → ℝ)
+  (bs : Fin A → List ℝ) (hlen : ∀ (i : Fin A), (bs i).length ≤ K)
+  (ha :
+    ∀ (v : Fin A → ℕ) (i : Fin A),
+      (ResearchCommons.MSCI.JC69ExponentialPolynomial.annihilate (bs i) fun n => H (Function.update v i n)) = 0)
+  (hz : ∀ (v : Fin A → ℕ), (∀ (i : Fin A), v i < K) → H v = 0) : H = 0
+'ResearchCommons.MSCI.JC69ExponentialPolynomial.count_vector_zero_of_annihilated_cube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CountVectorGrid.term_section {A r : ℕ} (t : ResearchCommons.MSCI.JC69CountVectorGrid.Term A r)
+  (i : Fin A) (v : Fin A → ℕ) (n : ℕ) :
+  ResearchCommons.MSCI.JC69CountVectorGrid.termValue t (Function.update v i n) =
+    t.beta i ^ n * Polynomial.eval (↑n) (ResearchCommons.MSCI.JC69CountVectorGrid.sectionPolynomial t i v)
+'ResearchCommons.MSCI.JC69CountVectorGrid.term_section' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69CountVectorGrid.actual_count_vector_annihilator {A r : ℕ} (hr : 0 < r)
+  (ts : List (ResearchCommons.MSCI.JC69CountVectorGrid.Term A r)) (i : Fin A) (v : Fin A → ℕ) :
+  (ResearchCommons.MSCI.JC69ExponentialPolynomial.annihilate
+      (ResearchCommons.MSCI.JC69CountVectorGrid.coordinateFactors ts i) fun n =>
+      ResearchCommons.MSCI.JC69CountVectorGrid.value ts (Function.update v i n)) =
+    0
+'ResearchCommons.MSCI.JC69CountVectorGrid.actual_count_vector_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CountVectorGrid.value_zero_of_count_cube {A r : ℕ} (hr : 0 < r)
+  (ts : List (ResearchCommons.MSCI.JC69CountVectorGrid.Term A r))
+  (hz :
+    ∀ (v : Fin A → ℕ), (∀ (i : Fin A), v i < ts.length * r) → ResearchCommons.MSCI.JC69CountVectorGrid.value ts v = 0) :
+  ResearchCommons.MSCI.JC69CountVectorGrid.value ts = 0
+'ResearchCommons.MSCI.JC69CountVectorGrid.value_zero_of_count_cube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CountVectorGrid.value_zero_of_manuscript_cube (A F M : ℕ)
+  (ts : List (ResearchCommons.MSCI.JC69CountVectorGrid.Term A (2 * F + 1))) (hm : ts.length ≤ 2 * M)
+  (hz :
+    ∀ (v : Fin A → ℕ),
+      (∀ (i : Fin A), v i < 2 * M * (2 * F + 1)) → ResearchCommons.MSCI.JC69CountVectorGrid.value ts v = 0) :
+  ResearchCommons.MSCI.JC69CountVectorGrid.value ts = 0
+'ResearchCommons.MSCI.JC69CountVectorGrid.value_zero_of_manuscript_cube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
