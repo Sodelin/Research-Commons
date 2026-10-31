@@ -1,0 +1,65 @@
+{
+  "source_sha256": "e92fb97b5b5983196c24639976bdc628e52d14a91a8beb56c25816b840fa87d4",
+  "declarations": [
+    {
+      "name": "boundaryReadout",
+      "complete_frozen_text": "def boundaryReadout (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (sigma : V \u2192 Bool)\n    (target o : BlockPopulationObservation Copy V E) : \u211d\u22650\u221e :=\n  if h : \u2203 s : Code N sample, observeCode N s = o then\n    boundaryCoefficient N bs (reBank N (Classical.choose h) sigma) target else 0",
+      "sha256": "5df3d1c97c10ef63c7c53124dea792fd7fb738bac11473e550fa19b7b0e89992"
+    },
+    {
+      "name": "boundary_readout_finite",
+      "complete_frozen_text": "lemma boundary_readout_finite (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (sigma : V \u2192 Bool)\n    (target o : BlockPopulationObservation Copy V E) : boundaryReadout (sample := sample) N bs sigma target o \u2260 \u221e := by\n  unfold boundaryReadout\n  split_ifs with h\n  \u00b7 exact actual_boundary_coefficient_finite N bs _ target\n  \u00b7 exact ENNReal.zero_ne_top",
+      "sha256": "7107810ea326c55df7eac5de44d7f4cd86cd1c569528626c749ce75119150f3a"
+    },
+    {
+      "name": "boundary_readout_actual",
+      "complete_frozen_text": "lemma boundary_readout_actual (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (sigma : V \u2192 Bool)\n    (target : BlockPopulationObservation Copy V E) (s : Code N sample)\n    (hs : (state s).register = sigma) :\n    boundaryReadout (sample := sample) N bs sigma target (observeCode N s) = boundaryCoefficient N bs s target := by\n  have h : \u2203 d : Code N sample, observeCode N d = observeCode N s := \u27e8s,rfl\u27e9\n  rw [boundaryReadout,dif_pos h]\n  apply actual_boundary_word_quotient\n  \u00b7 exact (actual_reBank_observation N (Classical.choose h) sigma).1.trans (Classical.choose_spec h)\n  \u00b7 exact (actual_reBank_observation N (Classical.choose h) sigma).2.trans hs.symm",
+      "sha256": "a792d28e4a3478dc45656d82a634158a0d2e2bee18176a0c43e684141c2a3662"
+    },
+    {
+      "name": "boundary_readout_rebank",
+      "complete_frozen_text": "lemma boundary_readout_rebank (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (sigma : V \u2192 Bool)\n    (target : BlockPopulationObservation Copy V E) (s : Code N sample) :\n    boundaryReadout (sample := sample) N bs sigma target (observeCode N s) =\n      boundaryCoefficient N bs (reBank N s sigma) target := by\n  have h := boundary_readout_actual N bs sigma target (reBank N s sigma)\n    (actual_reBank_observation N s sigma).2\n  simpa only [(actual_reBank_observation N s sigma).1] using h\n\n/-- The physical source coefficient, not an assumed scalar expansion. -/",
+      "sha256": "3492e6d96d560ca979eb212da820ed5399a5f5d4e2d06402efca59619febdd0b"
+    },
+    {
+      "name": "intervalBoundaryCoefficient",
+      "complete_frozen_text": "def intervalBoundaryCoefficient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (T : \u211d\u22650) (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) : \u211d\u22650\u221e :=\n  calendarValue N r L q (fun d => if observeCode N d = target then 1 else 0)\n    (.interval T :: bs.map ProgramStep.boundary) s\n\n/-- Actual unnormalized interval fibres, SAME original bank in the whole\nboundary word, and any fixed admitted incoming observation representative. -/",
+      "sha256": "9f67a0b12736c26c5771481e3276c7469bbbb8dacb996b3d016150c790d9c8f1"
+    },
+    {
+      "name": "actual_interval_boundary_sum",
+      "complete_frozen_text": "theorem actual_interval_boundary_sum (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (T : \u211d\u22650) (bs : List (BoundaryOperation N)) (s reference : Code N sample)\n    (ho : observeCode N s = observeCode N reference)\n    (target : BlockPopulationObservation Copy V E) :\n    intervalBoundaryCoefficient N r L q T bs s target =\n      \u2211 o : BlockPopulationObservation Copy V E,\n        actualResolvedWeight N r L q (Fintype.card Copy) reference T o *\n          boundaryReadout (sample := sample) N bs (state s).register target o := by\n  let F := boundaryReadout (sample := sample) N bs (state s).register target\n  have hs : intervalBoundaryCoefficient N r L q T bs s target =\n      \u2211 d : Code N sample, segmentFibreWeight N r L q (.interval T) s d * F (observeCode N d) := by\n    rw [intervalBoundaryCoefficient,calendarValue]\n    apply Finset.sum_congr rfl\n    intro d _\n    rw [actual_boundary_word_readout]\n    by_cases hz : sourceProgramStep N r (.interval T) s d = 0\n    \u00b7 rw [actual_fibre_zero_of_source_zero N r L q (.interval T) s d hz,zero_mul,zero_mul]\n    \u00b7 have hd := program_step_support_register N r (.interval T) s d ((PMF.mem_support_iff _ _).mpr hz)\n      exact congrArg (segmentFibreWeight N r L q (.interval T) s d * \u00b7)\n        (boundary_readout_actual N bs (state s).register target d hd).symm\n  rw [hs,actual_observation_readout_sum]\n  apply Finset.sum_congr rfl\n  intro o _\n  rw [actual_interval_observation_weight,\n    actual_resolved_weight_quotient N r L q (Fintype.card Copy) s reference T o ho]",
+      "sha256": "b77bb1d618f937bcb16a1653c19a5dba7ca47aa29147008201256c64f1f52f73"
+    },
+    {
+      "name": "interval_boundary_summand_finite",
+      "complete_frozen_text": "lemma interval_boundary_summand_finite (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (T : \u211d\u22650) (bs : List (BoundaryOperation N)) (sigma : V \u2192 Bool)\n    (reference : Code N sample) (target o : BlockPopulationObservation Copy V E) :\n    actualResolvedWeight N r L q (Fintype.card Copy) reference T o *\n      boundaryReadout (sample := sample) N bs sigma target o \u2260 \u221e :=\n  ENNReal.mul_ne_top\n    (ne_of_lt ((actual_resolved_weight_le_one N r L q (Fintype.card Copy) reference T T.property o).trans_lt\n      ENNReal.one_lt_top)) (boundary_readout_finite N bs sigma target o)\n\n/-- Finiteness is proved for the actual coefficient before any toReal step. -/",
+      "sha256": "37db70e037f1fb33c6bdc6ca98112d4fccc0f07a6fdfafea3a432f022e5bcfe5"
+    },
+    {
+      "name": "actual_interval_boundary_finite",
+      "complete_frozen_text": "theorem actual_interval_boundary_finite (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (T : \u211d\u22650) (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) :\n    intervalBoundaryCoefficient N r L q T bs s target \u2260 \u221e := by\n  rw [actual_interval_boundary_sum N r L q T bs s s rfl target]\n  exact ENNReal.sum_ne_top.mpr (fun o _ => interval_boundary_summand_finite N r L q T bs _ s target o)",
+      "sha256": "1ce17aaf6cb8040de4bd56ba124d13d62f7aabecb15dd03e9c1f12f16e76f419"
+    },
+    {
+      "name": "common_coefficient_indicator",
+      "complete_frozen_text": "lemma common_coefficient_indicator {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) (target : BlockPopulationObservation Copy V E) :\n    commonCoefficient e N r L q fuel s target i =\n      commonCoefficient e N r L q fuel s (observeCode N (pathEnd N fuel s i.1.val)) i *\n        (if observeCode N (pathEnd N fuel s i.1.val) = target then 1 else 0) := by\n  simp [commonCoefficient,termCoefficient,commonTermEquiv]\n\n/-- The intermediate observation target collapses at the actual path END.\nSigned coefficients remain in R; no ofReal is applied term by term. -/",
+      "sha256": "420f82b3ee37d9cbd1bb1c999051d874e8acf55669c313240dafaf5e8ebcdff6"
+    },
+    {
+      "name": "common_coefficient_readout",
+      "complete_frozen_text": "lemma common_coefficient_readout {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) (T : \u211d) (F : BlockPopulationObservation Copy V E \u2192 \u211d) :\n    (\u2211 o : BlockPopulationObservation Copy V E,\n      (commonCoefficient e N r L q fuel s o i * Real.exp (-commonRate e N r L q fuel s i*T)) * F o) =\n      commonCoefficient e N r L q fuel s (observeCode N (pathEnd N fuel s i.1.val)) i *\n        F (observeCode N (pathEnd N fuel s i.1.val)) * Real.exp (-commonRate e N r L q fuel s i*T) := by\n  rw [Finset.sum_eq_single (observeCode N (pathEnd N fuel s i.1.val))]\n  \u00b7 ring\n  \u00b7 intro o _ hne\n    rw [common_coefficient_indicator]\n    simp only [Ne.symm hne,if_false,mul_zero,zero_mul]\n  \u00b7 simp\n\n/-- CONSTRUCTED actual interval/whole-boundary coefficient expansion on a\ncount-independent path-position index. The original bank appears only in the\nboundary probability; a fixed reference may have a different bank. -/",
+      "sha256": "f8b8d283c4c5643a6b7e7fede4d481990ecd8e2e11e1966a485647180533acdc"
+    },
+    {
+      "name": "actual_interval_boundary_path_expansion",
+      "complete_frozen_text": "theorem actual_interval_boundary_path_expansion {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (T : \u211d\u22650)\n    (bs : List (BoundaryOperation N)) (s reference : Code N sample)\n    (ho : observeCode N s = observeCode N reference)\n    (target : BlockPopulationObservation Copy V E) :\n    (intervalBoundaryCoefficient N r L q T bs s target).toReal =\n      \u2211 i : CommonTermIndex e N (Fintype.card Copy) reference,\n        commonCoefficient e N r L q (Fintype.card Copy) reference\n          (observeCode N (pathEnd N (Fintype.card Copy) reference i.1.val)) i *\n        (boundaryCoefficient N bs\n          (reBank N (pathEnd N (Fintype.card Copy) reference i.1.val) (state s).register) target).toReal *\n        Real.exp (-commonRate e N r L q (Fintype.card Copy) reference i*(T:\u211d)) := by\n  rw [actual_interval_boundary_sum N r L q T bs s reference ho target]\n  rw [ENNReal.toReal_sum (fun o _ => interval_boundary_summand_finite N r L q T bs _ reference target o)]\n  simp_rw [ENNReal.toReal_mul,actual_common_index_expansion e,Finset.sum_mul]\n  rw [Finset.sum_comm]\n  apply Finset.sum_congr rfl\n  intro i _\n  rw [common_coefficient_readout,boundary_readout_rebank]\n\n/-- The derived coefficient uses at most nE terms, without an extra\nintermediate-state S factor. This is not the global calendar count. -/",
+      "sha256": "54bfe18834f0b5cfbb0db1dbc2d5a6b39f3b7ef31e5af4327889203f433348b7"
+    },
+    {
+      "name": "actual_interval_boundary_index_card",
+      "complete_frozen_text": "theorem actual_interval_boundary_index_card [Nonempty Copy]\n    (e : Copy \u2243 Fin (Fintype.card Copy)) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (reference : Code N sample) :\n    Fintype.card (CommonTermIndex e N (Fintype.card Copy) reference) \u2264\n      Fintype.card Copy * \u2211 k \u2208 Finset.range (Fintype.card Copy), ((Fintype.card Copy).choose 2)^k :=\n  actual_common_index_card_le e N (Fintype.card Copy) reference",
+      "sha256": "626cf3ee60cf235bacd8ea6ab069a7f559e0e87fc94d1e4077e0cc3e800c10fb"
+    }
+  ]
+}

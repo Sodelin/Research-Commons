@@ -1,0 +1,46 @@
+{
+  "status": "EXACT_ACCEPTED_SOURCE_BINDING_NOT_NEW_AUDIT",
+  "suppliers": [
+    {
+      "commit": "14aab8275caf39665a7baadae18641d35ea94ed4",
+      "source_url": "https://github.com/Sodelin/Research-Commons/blob/14aab8275caf39665a7baadae18641d35ea94ed4/research/2026-10-31-clock-jc-common-count-index-verified/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean",
+      "source_sha256": "4445684ca74191a5e733dd7423c2c725891d8bbdf136e0093498401841ae410c",
+      "declarations": [
+        {
+          "name": "commonCoefficient",
+          "full_definition_or_theorem": "def commonCoefficient {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (target : BlockPopulationObservation Copy V E)\n    (i : CommonTermIndex e N fuel s) : \u211d :=\n  termCoefficient e N r L q fuel s target (commonTermEquiv e N r L q fuel s i)"
+        },
+        {
+          "name": "commonTermEquiv",
+          "full_definition_or_theorem": "def commonTermEquiv {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) :\n    CommonTermIndex e N fuel s \u2243 CanonicalTermIndex e N r L q fuel s :=\n  Equiv.sigmaCongrRight (fun h => finCongr (pathTerms_size N r L q fuel s h.val).symm)"
+        },
+        {
+          "name": "actual_common_index_expansion",
+          "full_definition_or_theorem": "theorem actual_common_index_expansion {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (T : \u211d\u22650) (target : BlockPopulationObservation Copy V E) :\n    (actualResolvedWeight N r L q fuel s T target).toReal =\n      \u2211 i : CommonTermIndex e N fuel s,\n        commonCoefficient e N r L q fuel s target i *\n          Real.exp (-commonRate e N r L q fuel s i*(T:\u211d)) := by\n  rw [actual_resolved_canonical_exponential_sum e]\n  exact ((commonTermEquiv e N r L q fuel s).sum_comp\n    (fun i => termCoefficient e N r L q fuel s target i *\n      Real.exp (-termRate e N r L q fuel s i*(T:\u211d)))).symm"
+        }
+      ]
+    },
+    {
+      "commit": "8cb9fcb0b0763e50eb68cb8657a0cb64c7deed40",
+      "source_url": "https://github.com/Sodelin/Research-Commons/blob/8cb9fcb0b0763e50eb68cb8657a0cb64c7deed40/research/2026-10-31-clock-jc-canonical-weighted-sum-verified/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean",
+      "source_sha256": "a6214f99fd428324946310de0205573fdb30fb64567811b48429026993160614",
+      "declarations": [
+        {
+          "name": "termCoefficient",
+          "full_definition_or_theorem": "def termCoefficient {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (target : BlockPopulationObservation Copy V E)\n    (i : CanonicalTermIndex e N r L q fuel s) : \u211d :=\n  (2:\u211d)^pathLength N fuel s i.1.val * (pathTerms N r L q fuel s i.1.val).coefficient i.2 *\n    (if observeCode N (pathEnd N fuel s i.1.val) = target then 1 else 0)\n\n/-- CONSTRUCTED original finite-fuel single-epoch exponential sum. -/"
+        }
+      ]
+    },
+    {
+      "commit": "9a8e100f5bf757ab9c6c455d8062fa813d86b50d",
+      "source_url": "https://github.com/Sodelin/Research-Commons/blob/9a8e100f5bf757ab9c6c455d8062fa813d86b50d/research/2026-10-31-clock-jc-endpoint-quotient-verified/lean/ResearchCommons/MSCI/JC69EndpointQuotient.lean",
+      "source_sha256": "9a29045621d7e570f6e3a46464b4e0d778c2ad3562f58cf6954fb318878e0b1c",
+      "declarations": [
+        {
+          "name": "actual_resolved_weight_quotient",
+          "full_definition_or_theorem": "theorem actual_resolved_weight_quotient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (n : \u2115)\n    (s t : Code N sample) (T : \u211d\u22650) (target : BlockPopulationObservation Copy V E)\n    (hobs : observeCode N s = observeCode N t) :\n    actualResolvedWeight N r L q n s T target = actualResolvedWeight N r L q n t T target := by\n  induction n generalizing s t T with\n  | zero =>\n      have hB : currentBlocks (state s) = currentBlocks (state t) := congrArg Prod.fst hobs\n      have hLoc : \u2200 x, copyLocation (state s) x = copyLocation (state t) x :=\n        fun x => congrFun (congrArg Prod.snd hobs) x\n      rw [actual_resolved_weight_zero,actual_resolved_weight_zero,\n        actual_totalRate_eq N r s t hB hLoc,actual_locusKill_eq N L q s t hB,hobs]\n  | succ n ih =>\n      have hB : currentBlocks (state s) = currentBlocks (state t) := congrArg Prod.fst hobs\n      have hLoc : \u2200 x, copyLocation (state s) x = copyLocation (state t) x :=\n        fun x => congrFun (congrArg Prod.snd hobs) x\n      let e := actualChoiceEquiv N s t hB hLoc\n      rw [actual_resolved_weight_renewal,actual_resolved_weight_renewal]\n      have hC := actual_totalRate_eq N r s t hB hLoc\n      have hK := actual_locusKill_eq N L q s t hB\n      have hzero :\n          ENNReal.ofReal (Real.exp (-(totalRate N r s*(T : \u211d)))) *\n            (ENNReal.ofReal (Real.exp (-(locusKill N L q s*(T : \u211d)))) *\n              (if observeCode N s = target then 1 else 0)) =\n          ENNReal.ofReal (Real.exp (-(totalRate N r t*(T : \u211d)))) *\n            (ENNReal.ofReal (Real.exp (-(locusKill N L q t*(T : \u211d)))) *\n              (if observeCode N t = target then 1 else 0)) := by rw [hC,hK,hobs]\n      rw [hzero]\n      congr 1\n      rw [\u2190 e.sum_comp (fun p : Choice N t =>\n        \u222b\u207b u : \u211d, ENNReal.ofReal (Real.exp (-(locusKill N L q t*u))) *\n          actualResolvedWeight N r L q n (stepDestination N t (some p)) ((T : \u211d)-u) target\n          \u2202((ENNReal.ofReal (choiceRate N r t p/totalRate N r t) \u2022\n            expMeasure (totalRate N r t)).restrict (Iic (T : \u211d))))]\n      apply Finset.sum_congr rfl\n      intro p _\n      have hR : choiceRate N r t (e p) = choiceRate N r s p :=\n        actualChoiceEquiv_rate N r s t hB hLoc p\n      rw [hR,hC,hK]\n      apply lintegral_congr_ae\n      filter_upwards [ae_restrict_mem measurableSet_Iic] with u hu\n      have htime : 0 \u2264 (T : \u211d)-u := sub_nonneg.mpr hu\n      have hd := actual_matched_destinations_observation N s t hB hLoc p\n      have hfuture := ih (stepDestination N s (some p))\n        (stepDestination N t (some (e p))) \u27e8(T : \u211d)-u,htime\u27e9 hd\n      exact congrArg (fun w => ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))) * w) hfuture"
+        }
+      ]
+    }
+  ]
+}

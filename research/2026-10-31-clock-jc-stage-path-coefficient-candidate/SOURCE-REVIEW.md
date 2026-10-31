@@ -1,0 +1,3 @@
+# Separate source-only semantic review
+
+31 October2026. Separate AI-assisted mathematical review read all180 lines at e92fb97b5b5983196c24639976bdc628e52d14a91a8beb56c25816b840fa87d4. The source construction is suitable for compilation: original source support enforces the SAME bank; only the interval kernel is replaced by the equal-observation reference. Actual nonnegative sum finiteness precedes conversion to real values and the endpoint indicator collapses before the signed expansion is collected. Exact commonCoefficient/termCoefficient/interval quotient bindings are supplied. No successful Lean check, global window result, expert peer review or novelty certification is claimed.
