@@ -1,0 +1,80 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:48:0: warning: `OrderedPath`: universes `u_5`, `u_6` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:148:79: warning: This simp argument is unused:
+  Nat.add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pathTerms, prependTerms, pathLength, ih, Nat.add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:205:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69OrderedPathExpansion.liveCard_pos`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:267:67: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+target : BlockPopulationObservation Copy V E
+n : ℕ
+ih :
+  ∀ (s : Code N sample) (t : ℝ≥0),
+    (actualResolvedWeight N r L q n s (↑t) target).toReal =
+      ∑ h, pathMass N r L q n s h ↑t * if observeCode N (pathEnd N n s h) = target then 1 else 0
+s : Code N sample
+t : ℝ≥0
+p : Choice N s
+a✝ : p ∈ Finset.univ
+d : Code N sample := stepDestination N s (some p)
+terminal : OrderedPath N n d → ℝ := fun h => if observeCode N (pathEnd N n d h) = target then 1 else 0
+u : ℝ
+hu : u ∈ Icc 0 ↑t
+hh :
+  (actualResolvedWeight N r L q n d (↑t - u) target).toReal =
+    ∑ h, pathMass N r L q n d h ↑⟨↑t - u, ⋯⟩ * if observeCode N (pathEnd N n d h) = target then 1 else 0
+⊢ ∑ i,
+      choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * u)) *
+        (pathMass N r L q n d i ↑⟨↑t - u, ⋯⟩ * if observeCode N (pathEnd N n d i) = target then 1 else 0) =
+    ∑ x,
+      choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * u)) *
+        (pathMass N r L q n d x (↑t - u) * terminal x)
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.holdingRate_strict_merger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathLength_add_liveCard' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_path_mass_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathLength_lt_original_copies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathTerms_size_le_original_copies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_resolved_ordered_path_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_resolved_finite_exponential_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
