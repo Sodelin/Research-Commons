@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Actual owner-ancestry successor — 31 October 2026
+
+[WONG-004 adoption](../../../research/2026-10-31-wong004-package-binding/README.md): **58 mapped IDs/619 names/60 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Original exact/sound/finite-error/connected-fibre hypotheses remain separate; IAP-only errors, saturated reverse maximality and credited finite-coarsening reuse retained.
+
+[Current aggregate](owner-ancestry-aggregate-verification.json) records changed roots,619 full named checks, selected owned audit and every actual resolved binding with qualified coherent reuse. No fresh whole1,843 build/audit or biological/native/novelty claim. Earlier dated receipts remain historical.
+
 ## Actual finite-GARG normal-form successor — 31 October 2026
 
 [WONG-003 adoption](../../../research/2026-10-31-wong003-package-binding/README.md): **57 mapped IDs/602 names/61 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Original finite GARG/sampleIDs, total truncation versus conditional MRCA uniqueness, original breakpoint-cell retention, full indexed canonical storage and Ordered merger scopes retained. Storage-only idempotence, not a whole computable production exporter.

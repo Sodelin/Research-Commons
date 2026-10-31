@@ -7630,16 +7630,51 @@
       "claim_id": "CB-WONG-004",
       "reuse_rank": null,
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.OwnerAncestry",
+        "declarations": [
+          "ResearchCommons.Claims.OwnerAncestry.sound_path_projects",
+          "ResearchCommons.Claims.OwnerAncestry.fixed_locus_path_projects",
+          "ResearchCommons.Claims.OwnerAncestry.coordinate_erased_path_projects",
+          "ResearchCommons.Claims.OwnerAncestry.exact_owner_iap",
+          "ResearchCommons.Claims.OwnerAncestry.exact_owner_reflection",
+          "ResearchCommons.Claims.OwnerAncestry.sound_common_ancestor_descends",
+          "ResearchCommons.Claims.OwnerAncestry.sound_convex_pullback",
+          "ResearchCommons.Claims.OwnerAncestry.exact_owner_convexity",
+          "ResearchCommons.Claims.OwnerAncestry.sound_connectedness_descends",
+          "ResearchCommons.Claims.OwnerAncestry.exact_owner_specieslike_descends",
+          "ResearchCommons.Claims.OwnerAncestry.connected_fibre_specieslike_iff",
+          "ResearchCommons.Claims.OwnerAncestry.saturated_maximality_iff",
+          "ResearchCommons.Claims.OwnerAncestry.unrestricted_rich_maximality_descends",
+          "ResearchCommons.Claims.OwnerAncestry.same_carrier_finite_ancestry_errors_iap",
+          "ResearchCommons.Claims.OwnerAncestry.finite_projection_errors_iap",
+          "ResearchCommons.Claims.OwnerAncestry.soundness_countercontrol",
+          "ResearchCommons.Claims.OwnerAncestry.reused_finite_garg_coarsening_obstruction"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Supplied graphs/onto owner/finite fibres, every representative pair with distinct owners has exact strict ancestry; separate soundness/convexity/acyclicity/connected-fibre hierarchy. Finite candidate-local transitive ancestry answer errors transfer IAP only. Reverse maximality saturated-only; abstract fork/chain countercontrol; finite coarsening obstruction credited CB-GENOME-001 reuse."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.OwnerAncestry --claim CB-WONG-004",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/owner-ancestry-verification.json",
+          "scope": "Named type/owner proof interface, not ownership inference, biological likelihood/admission, native runtime or novelty."
+        }
       },
       "scope_owner": "canonical_registry",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_complete_card_owner_type_correspondence",
+          "module_source_sha256": "bc81edf2a18a47d3fca9f156bc510353e88a4edeb490c9c919208d8b6a1c374e",
+          "record": "integration/owner-ancestry-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Full card/wrapper/17full namedtypes/29actual definitions accepted; native verified33manifestfiles/eight exact immutableproviders. Original authorship/classical attribution retained. Added original namespace repairs failed path names; no valid failed elaborated signature claimed."
+        }
+      ],
       "dependencies": [
         {
           "claim_id": "CB-GENOME-001",

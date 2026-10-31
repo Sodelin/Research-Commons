@@ -1,0 +1,11 @@
+--- frozen/OwnerAncestry.lean
++++ source/OwnerAncestry.lean
+@@ -13,7 +13,7 @@
+ namespace ResearchCommons.Claims.OwnerAncestry
+ universe u v w
+ open SpeciesBridge SpeciesGlobalIAP HistoryProjection FiniteHistoryCompletion
+-open WongPedigreeBridge
++open WongPedigreeBridge AncestryViews
+ 
+ theorem sound_path_projects {Genome : Type u} {R : Genome -> Genome -> Prop}
+     {E : SpeciesBridge.Graph} (owner : Genome -> Nat)

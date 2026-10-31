@@ -6119,10 +6119,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.OwnerAncestry",
+      "path": "lean/Compatibility/ResearchCommons.Claims.OwnerAncestry.lean",
+      "sha256": "bc81edf2a18a47d3fca9f156bc510353e88a4edeb490c9c919208d8b6a1c374e",
+      "imports": [
+        "WongPedigreeRobust"
+      ],
+      "provenance": {
+        "role": "Reviewed exact CB-WONG-004 original conditional owner ancestry transfer hierarchy and finite-error IAP interface",
+        "proof_derivation": false,
+        "verification": "integration/owner-ancestry-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "83f19276d8bd57f2c50019840a0ac614ec5bafbe6379c8b943cff563e223d45d",
+      "sha256": "e08e207ef98790a13464c6d3d44c3bd24bd543fa999dcb5efab8d79791b8edbb",
       "imports": [
+        "ResearchCommons.Claims.OwnerAncestry",
         "ResearchCommons.Claims.WongNormalForm",
         "ResearchCommons.Claims.MatchingCore",
         "ResearchCommons.Claims.CountableHosts",
@@ -6274,6 +6288,10 @@
         "matching_core_successor": {
           "prior_source_sha256": "0fbebc59abe8da6e83c6e5c7d49753d604094beec8e9859d484b71a1a29652dc",
           "scope": "Reviewed ALEXANDER003 exact reachable-state classical certificate/core/height and complete-blow-up join; actual enlarged aggregate check pending."
+        },
+        "owner_ancestry_successor": {
+          "prior_source_sha256": "83f19276d8bd57f2c50019840a0ac614ec5bafbe6379c8b943cff563e223d45d",
+          "scope": "Reviewed original conditional owner ancestry / saturated maximality / candidate-local finite-error IAP interface; enlarged aggregate pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

@@ -1,0 +1,191 @@
+{
+  "claim_id": "CB-WONG-004",
+  "binding_adopted": false,
+  "canonical_exact_scope": "The identical-ancestors property (IAP) means that each member has finitely many descendants or finitely many nondescendants inside the candidate. It is a mathematical graph predicate, not an empirical species label. Let R and E be supplied directed graphs on Nat, let q:Nat\u2192Nat be a supplied owner map, let S be an organism candidate, and let C=q\u207b\u00b9(S) contain all rich representatives of those owners. Ancestry means nonempty directed paths. If q is onto, every owner fibre is finite, and ancestry is equivalent for every pair of representatives with different owners, then IAP and reflection agree between C in R and S in E. No uniform fibre bound is required. Reflection means that each candidate member with infinitely many ambient descendants also has infinitely many descendants within the candidate. The exact ancestry hypothesis is both directions for every such representative pair, not mere soundness, exact image edges or an existential lift. Under path soundness alone, an R ancestry path maps to owner equality or E ancestry, and convexity pulls back. With an onto owner map, soundness also transfers a common ancestor downward; weak connectivity descends when S is convex. With onto ownership, exact different-owner ancestry and acyclic E, convexity is equivalent. Adding finite fibres gives descent of the source-defined specieslike predicate, namely nonempty induced-undirected connectivity plus IAP plus ancestral convexity. Adding internal weak connectivity of every owner fibre gives specieslike equivalence on saturated candidates C. Under those stronger premises, target maximality is equivalent to rich maximality among all saturated inverse-image candidates. Unrestricted rich maximality of a saturated C also descends. The reverse implication to unrestricted rich maximality is not asserted. Neither the full biosphere/date/child-count conditions nor the fixed founder-window property is automatically transported. The later finite-error extension proves IAP(R,C) iff IAP(E,S) assuming only onto q, finite fibres and, for each a\u2208C, finitely many b\u2208C whose R-ancestry answer differs from E-ancestry(q(a),q(b)). The finite error set and its size may vary with a; no common bound is needed. Errors between different owners are permitted and no agreement outside C is required. This IAP theorem needs neither acyclicity, soundness nor connected fibres. It does not transfer reflection, convexity, connectivity, maximality or specieslike status under those relaxed premises. \u201cFinite errors\u201d refers to transitive ancestry answers, not finitely many edited immediate-parent edges. A proved countercontrol fixes one infinite connected rich fork history and identity ownership. Both the fork pedigree and a chain pedigree are sound interpretations, with onto singleton fibres and the stated natural/real-date biosphere properties; the chain is whole-population specieslike and the fork fails IAP. It shows why soundness cannot replace ancestry equivalence. It is an abstract ancestry countermodel, not identical DNA distributions under a specified diploid inheritance law. The same source also composes the previously indexed finite-gARG opposite-completion theorem with elementary observation-fibre recovery to show that arbitrary deterministic coarsening cannot remove that existing ambiguity. This is credited reuse of CB-GENOME-001, not another newly counted obstruction. The graphs, owners and candidate are mathematical inputs. A finite sampled ARG cannot be onto an infinite organism history. An R path after coordinate erasure can switch loci and need not represent one DNA segment. No owner inference, biological validity, observation likelihood, effective decision procedure or empirical species assignment follows.",
+  "wrapper_sha256": "bc81edf2a18a47d3fca9f156bc510353e88a4edeb490c9c919208d8b6a1c374e",
+  "endpoint_map": [
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.sound_path_projects",
+      "provider_module": "SamuelAlexanderResearch.HistoryProjection",
+      "original_endpoint": "HistoryProjection.path_projects",
+      "complete_header": "theorem sound_path_projects {Genome : Type u} {R : Genome -> Genome -> Prop}\n    {E : SpeciesBridge.Graph} (owner : Genome -> Nat)\n    (edgeSound : forall g h, R g h -> SameOrDescendant E (owner g) (owner h))\n    {g h : Genome} (path : Reach R g h) :\n    SameOrDescendant E (owner g) (owner h) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.fixed_locus_path_projects",
+      "provider_module": "SamuelAlexanderResearch.HistoryProjection",
+      "original_endpoint": "HistoryProjection.locus_path_projects",
+      "complete_header": "theorem fixed_locus_path_projects {Genome : Type u} {Locus : Type v}\n    {R : Locus -> Genome -> Genome -> Prop} {E : SpeciesBridge.Graph}\n    (owner : Genome -> Nat)\n    (edgeSound : forall locus g h,\n      R locus g h -> SameOrDescendant E (owner g) (owner h))\n    {locus : Locus} {g h : Genome} (path : Reach (R locus) g h) :\n    SameOrDescendant E (owner g) (owner h) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.coordinate_erased_path_projects",
+      "provider_module": "SamuelAlexanderResearch.HistoryProjection",
+      "original_endpoint": "HistoryProjection.erased_path_projects",
+      "complete_header": "theorem coordinate_erased_path_projects {Genome : Type u} {Locus : Type v}\n    {R : Locus -> Genome -> Genome -> Prop} {E : SpeciesBridge.Graph}\n    (owner : Genome -> Nat)\n    (edgeSound : forall locus g h,\n      R locus g h -> SameOrDescendant E (owner g) (owner h))\n    {g h : Genome} (path : Reach (EraseIndex R) g h) :\n    SameOrDescendant E (owner g) (owner h) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.exact_owner_iap",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.iap_iff",
+      "complete_header": "theorem exact_owner_iap (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E) (S : NatSet) :\n    IAP R (Pull owner S) \u2194 IAP E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.exact_owner_reflection",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.reflection_iff",
+      "complete_header": "theorem exact_owner_reflection (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E) (S : NatSet) :\n    Reflection R (Pull owner S) \u2194 Reflection E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.sound_common_ancestor_descends",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.commonAncestor_descends",
+      "complete_header": "theorem sound_common_ancestor_descends (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (sound : PathSound owner R E)\n    {S : NatSet} (ancestor : CommonAncestor R (Pull owner S)) :\n    CommonAncestor E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.sound_convex_pullback",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.convex_pullback",
+      "complete_header": "theorem sound_convex_pullback (owner : Nat \u2192 Nat) {R E : Graph}\n    (sound : PathSound owner R E) {S : NatSet} (convex : Convex E S) :\n    Convex R (Pull owner S) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.exact_owner_convexity",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.convex_iff",
+      "complete_header": "theorem exact_owner_convexity (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner)\n    (faithful : AncestryExactAwayFromFibres owner R E)\n    (acyclic : \u2200 v, \u00ac Descendant E v v)\n    (S : NatSet) : Convex R (Pull owner S) \u2194 Convex E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.sound_connectedness_descends",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.weaklyConnected_descends",
+      "complete_header": "theorem sound_connectedness_descends (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (sound : PathSound owner R E)\n    {S : NatSet} (convex : Convex E S)\n    (connected : WeaklyConnected R (Pull owner S)) : WeaklyConnected E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.exact_owner_specieslike_descends",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.specieslike_descends",
+      "complete_header": "theorem exact_owner_specieslike_descends (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E)\n    (acyclic : \u2200 v, \u00ac Descendant E v v)\n    {S : NatSet} (cluster : Specieslike R (Pull owner S)) : Specieslike E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.connected_fibre_specieslike_iff",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.specieslike_iff",
+      "complete_header": "theorem connected_fibre_specieslike_iff (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E)\n    (acyclic : \u2200 v, \u00ac Descendant E v v)\n    (connectedFibres : ConnectedFibres owner R) (S : NatSet) :\n    Specieslike R (Pull owner S) \u2194 Specieslike E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.saturated_maximality_iff",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.maximal_saturated_iff",
+      "complete_header": "theorem saturated_maximality_iff (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E)\n    (acyclic : \u2200 v, \u00ac Descendant E v v)\n    (connectedFibres : ConnectedFibres owner R) (S : NatSet) :\n    MaximalAmongSaturated owner R S \u2194 MaximalSpecieslike E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.unrestricted_rich_maximality_descends",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.maximalSpecieslike_descends",
+      "complete_header": "theorem unrestricted_rich_maximality_descends (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner)\n    (faithful : AncestryExactAwayFromFibres owner R E)\n    (acyclic : \u2200 v, \u00ac Descendant E v v)\n    (connectedFibres : ConnectedFibres owner R) {S : NatSet}\n    (maximal : MaximalSpecieslike R (Pull owner S)) : MaximalSpecieslike E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.same_carrier_finite_ancestry_errors_iap",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.iap_iff_of_finite_ancestry_errors",
+      "complete_header": "theorem same_carrier_finite_ancestry_errors_iap {R E : Graph} {S : NatSet}\n    (errors : \u2200 a, S a \u2192 FiniteSupport\n      (fun b => S b \u2227 \u00ac (Descendant R a b \u2194 Descendant E a b))) :\n    IAP R S \u2194 IAP E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.finite_projection_errors_iap",
+      "provider_module": "WongPedigreeRobust",
+      "original_endpoint": "WongPedigreeRobust.iap_iff_of_finite_projection_errors",
+      "complete_header": "theorem finite_projection_errors_iap (owner : Nat \u2192 Nat) {R E : Graph}\n    (onto : Function.Surjective owner) (fibres : FiniteFibres owner) (S : NatSet)\n    (errors : \u2200 a, Pull owner S a \u2192 FiniteSupport\n      (fun b => Pull owner S b \u2227\n        \u00ac (Descendant R a b \u2194 Descendant E (owner a) (owner b)))) :\n    IAP R (Pull owner S) \u2194 IAP E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.soundness_countercontrol",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.sound_projection_does_not_determine_iap",
+      "complete_header": "theorem soundness_countercontrol :\n    \u2203 R A B : Graph,\n      Function.Surjective (id : Nat \u2192 Nat) \u2227 FiniteFibres id \u2227\n      NaturalDateBiosphere R \u2227 NaturalDateBiosphere A \u2227 NaturalDateBiosphere B \u2227\n      WongAlexander.RealDatedBiosphere R \u2227 WongAlexander.RealDatedBiosphere A \u2227\n      WongAlexander.RealDatedBiosphere B \u2227\n      WeaklyConnected R Whole \u2227\n      PathSound id R A \u2227 PathSound id R B \u2227\n      Specieslike A Whole \u2227 \u00ac IAP B Whole "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.OwnerAncestry.reused_finite_garg_coarsening_obstruction",
+      "provider_module": "WongPedigreeBridge",
+      "original_endpoint": "WongPedigreeBridge.no_specieslike_recovery_from_garg_coarsening",
+      "complete_header": "theorem reused_finite_garg_coarsening_obstruction\n    {Node : Type u} {Coord : Type v} [Fintype Node] [LinearOrder Coord]\n    (G : WongGARG.GARG Node Coord) {Observation : Type w}\n    (observe : WongGARG.GARG Node Coord \u2192 Observation) :\n    \u00ac ObservationPrediction.Recoverable\n      (fun h : AbstractCompletionObservation Node Coord => observe h.observed)\n      (fun h : AbstractCompletionObservation Node Coord => Specieslike h.completion Whole) "
+    }
+  ],
+  "clause_map": [
+    {
+      "clause": "Nonempty strict ancestry paths, sound path projection may collapse within one owner; coordinate erasure may switch loci",
+      "exports": [
+        "sound_path_projects",
+        "fixed_locus_path_projects",
+        "coordinate_erased_path_projects"
+      ],
+      "limits": "Supplied edge soundness, no converse/ownership inference or sameDNAsegment claim."
+    },
+    {
+      "clause": "IAP and REF iff for saturated Pull owner S under onto finite fibres and every distinct-owner pair exact ancestry",
+      "exports": [
+        "exact_owner_iap",
+        "exact_owner_reflection"
+      ],
+      "limits": "Finite individual fibres, no uniform bound. Exact ancestry is representative-wise not existential edge lift."
+    },
+    {
+      "clause": "Common ancestor descends under onto/soundness; convexity pulls back under soundness; equivalence adds onto/exact/acyclictarget; connectedness descends with convex target",
+      "exports": [
+        "sound_common_ancestor_descends",
+        "sound_convex_pullback",
+        "exact_owner_convexity",
+        "sound_connectedness_descends"
+      ],
+      "limits": "Common ancestor converse not asserted; targetacyclicity retained where required."
+    },
+    {
+      "clause": "Specieslike descent and connected-fibre saturated equivalence",
+      "exports": [
+        "exact_owner_specieslike_descends",
+        "connected_fibre_specieslike_iff"
+      ],
+      "definitions": "Actual nonempty induced weak connectivity AND IAP AND ambient ancestral convexity, not empirical species assignment."
+    },
+    {
+      "clause": "Maximality iff only among saturated rich candidates; unrestricted rich maximality of saturated source descends",
+      "exports": [
+        "saturated_maximality_iff",
+        "unrestricted_rich_maximality_descends"
+      ],
+      "limits": "No reverse unrestricted rich-maximality assertion. ConnectedFibres/full exact ancestry hypotheses retained."
+    },
+    {
+      "clause": "Candidate-local row-wise finite ancestry answer disagreement tolerates different-owner errors; no common error bound/agreement outside candidate",
+      "exports": [
+        "same_carrier_finite_ancestry_errors_iap",
+        "finite_projection_errors_iap"
+      ],
+      "limits": "IAP ONLY. Onto finitefibres retained in projection variant. No soundness/acyclicity/connectedfibres premise there. Finitely edited immediate edges do not suffice automatically. Written swapped-vertices strict-weakening example not newly compiled as separate theorem."
+    },
+    {
+      "clause": "Same infinite rich fork and identityowners, fork versus chain soundpedigrees, natural and realdate biospheres, oppositeIAP and specieslike chain",
+      "exports": [
+        "soundness_countercontrol"
+      ],
+      "limits": "Abstract graph countermodel, no same distribution under diploid likelihood or actual biological admission."
+    },
+    {
+      "clause": "Deterministic finite-gARG coarsening cannot remove existing opposite-completion ambiguity",
+      "exports": [
+        "reused_finite_garg_coarsening_obstruction"
+      ],
+      "limits": "Credited CB-GENOME-001 reuse plus elementary collision factorization, not another discovery or statistical identifiability theorem."
+    }
+  ],
+  "actual_definition_output": "29 actual original definitions/inductive interfaces printed by compiler in logs/DefinitionBindings-final.log. Wrapper contains no new definitions.",
+  "source_reading": "Complete principal Bridge494+Robust74+History113 lines, full FiniteGenomeIdentifiability and ObservationPrediction bodies, full SpeciesAdapter, exact two called ProductiveCore proof bodies, and actual primitive predicate/biosphere definitions read. Two original bridge attribution/scope ledgers read in full from pinned hash-bound cached public bodies. Not an independent full36-provider proof replay or primary-paper re-review.",
+  "attribution": "Credit Alexander's stated identical-ancestors, reflection and specieslike definitions; Wong and coauthors' genome/cell representation; elementary finite-set calculus, path projection and observation-fibre factorization; and Lean/Mathlib. Gravel\u2013Steel's model-specific ghost-ancestor work and Thatte's model-specific statistical identifiability are credited by the original source ledger as distinct prior work, not as suppliers of the strong owner hypothesis. The original author reports checking those papers; the located bounded source reviewer did not independently recheck those two citations. Historical novelty is not adjudicated.",
+  "novelty_status": "Historical novelty is not adjudicated. Classical suppliers and source definitions retain attribution; archival recovery creates neither new proof authorship nor an empirical result.",
+  "not_transported": [
+    "biosphere/date/child-count axioms",
+    "fixed founder-window property",
+    "empirical species identity",
+    "owner inference",
+    "finite-error reflection/convexity/connectivity/maximality/specieslike",
+    "unrestricted reverse rich maximality"
+  ],
+  "historical_context": "Earlier pending snapshots superseded only for hash-matched source by final proof1ac3dd receipt; no new proof authorship or classical novelty adjudication.",
+  "current_verification": "17 complete named types/standard axioms,35 exact qualified providers plus new wrapper,36-module complete owned audit2023decl1540theorems/zero rejects. Not package adoption or native execution."
+}

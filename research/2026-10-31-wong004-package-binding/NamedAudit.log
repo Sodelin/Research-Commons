@@ -1,0 +1,155 @@
+@ResearchCommons.Claims.OwnerAncestry.sound_path_projects.{u_1} : ∀ {Genome : Type u_1} {R : Genome → Genome → Prop}
+  {E : SpeciesBridge.Graph} (owner : Genome → ℕ),
+  (∀ (g h : Genome), R g h → HistoryProjection.SameOrDescendant E (owner g) (owner h)) →
+    ∀ {g h : Genome}, AncestryViews.Reach.{u_1} R g h → HistoryProjection.SameOrDescendant E (owner g) (owner h)
+'ResearchCommons.Claims.OwnerAncestry.sound_path_projects' does not depend on any axioms
+@ResearchCommons.Claims.OwnerAncestry.fixed_locus_path_projects.{u_1,
+    u_2} : ∀ {Genome : Type u_1} {Locus : Type u_2} {R : Locus → Genome → Genome → Prop} {E : SpeciesBridge.Graph}
+  (owner : Genome → ℕ),
+  (∀ (locus : Locus) (g h : Genome), R locus g h → HistoryProjection.SameOrDescendant E (owner g) (owner h)) →
+    ∀ {locus : Locus} {g h : Genome},
+      AncestryViews.Reach.{u_1} (R locus) g h → HistoryProjection.SameOrDescendant E (owner g) (owner h)
+'ResearchCommons.Claims.OwnerAncestry.fixed_locus_path_projects' does not depend on any axioms
+@ResearchCommons.Claims.OwnerAncestry.coordinate_erased_path_projects.{u_1,
+    u_2} : ∀ {Genome : Type u_1} {Locus : Type u_2} {R : Locus → Genome → Genome → Prop} {E : SpeciesBridge.Graph}
+  (owner : Genome → ℕ),
+  (∀ (locus : Locus) (g h : Genome), R locus g h → HistoryProjection.SameOrDescendant E (owner g) (owner h)) →
+    ∀ {g h : Genome},
+      AncestryViews.Reach.{u_1} (AncestryViews.EraseIndex.{u_1, u_2} R) g h →
+        HistoryProjection.SameOrDescendant E (owner g) (owner h)
+'ResearchCommons.Claims.OwnerAncestry.coordinate_erased_path_projects' does not depend on any axioms
+ResearchCommons.Claims.OwnerAncestry.exact_owner_iap : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        ∀ (S : SpeciesBridge.NatSet), SpeciesBridge.IAP R (WongPedigreeBridge.Pull owner S) ↔ SpeciesBridge.IAP E S
+'ResearchCommons.Claims.OwnerAncestry.exact_owner_iap' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.exact_owner_reflection : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        ∀ (S : SpeciesBridge.NatSet),
+          SpeciesBridge.Reflection R (WongPedigreeBridge.Pull owner S) ↔ SpeciesBridge.Reflection E S
+'ResearchCommons.Claims.OwnerAncestry.exact_owner_reflection' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.sound_common_ancestor_descends : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.PathSound owner R E →
+      ∀ {S : SpeciesBridge.NatSet},
+        SpeciesBridge.CommonAncestor R (WongPedigreeBridge.Pull owner S) → SpeciesBridge.CommonAncestor E S
+'ResearchCommons.Claims.OwnerAncestry.sound_common_ancestor_descends' does not depend on any axioms
+ResearchCommons.Claims.OwnerAncestry.sound_convex_pullback : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  WongPedigreeBridge.PathSound owner R E →
+    ∀ {S : SpeciesBridge.NatSet}, SpeciesBridge.Convex E S → SpeciesBridge.Convex R (WongPedigreeBridge.Pull owner S)
+'ResearchCommons.Claims.OwnerAncestry.sound_convex_pullback' does not depend on any axioms
+ResearchCommons.Claims.OwnerAncestry.exact_owner_convexity : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+      (∀ (v : ℕ), ¬SpeciesBridge.Descendant E v v) →
+        ∀ (S : SpeciesBridge.NatSet),
+          SpeciesBridge.Convex R (WongPedigreeBridge.Pull owner S) ↔ SpeciesBridge.Convex E S
+'ResearchCommons.Claims.OwnerAncestry.exact_owner_convexity' does not depend on any axioms
+ResearchCommons.Claims.OwnerAncestry.sound_connectedness_descends : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.PathSound owner R E →
+      ∀ {S : SpeciesBridge.NatSet},
+        SpeciesBridge.Convex E S →
+          SpeciesBridge.WeaklyConnected R (WongPedigreeBridge.Pull owner S) → SpeciesBridge.WeaklyConnected E S
+'ResearchCommons.Claims.OwnerAncestry.sound_connectedness_descends' does not depend on any axioms
+ResearchCommons.Claims.OwnerAncestry.exact_owner_specieslike_descends : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        (∀ (v : ℕ), ¬SpeciesBridge.Descendant E v v) →
+          ∀ {S : SpeciesBridge.NatSet},
+            SpeciesBridge.Specieslike R (WongPedigreeBridge.Pull owner S) → SpeciesBridge.Specieslike E S
+'ResearchCommons.Claims.OwnerAncestry.exact_owner_specieslike_descends' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.connected_fibre_specieslike_iff : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        (∀ (v : ℕ), ¬SpeciesBridge.Descendant E v v) →
+          WongPedigreeBridge.ConnectedFibres owner R →
+            ∀ (S : SpeciesBridge.NatSet),
+              SpeciesBridge.Specieslike R (WongPedigreeBridge.Pull owner S) ↔ SpeciesBridge.Specieslike E S
+'ResearchCommons.Claims.OwnerAncestry.connected_fibre_specieslike_iff' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.saturated_maximality_iff : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        (∀ (v : ℕ), ¬SpeciesBridge.Descendant E v v) →
+          WongPedigreeBridge.ConnectedFibres owner R →
+            ∀ (S : SpeciesBridge.NatSet),
+              WongPedigreeBridge.MaximalAmongSaturated owner R S ↔ SpeciesBridge.MaximalSpecieslike E S
+'ResearchCommons.Claims.OwnerAncestry.saturated_maximality_iff' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.unrestricted_rich_maximality_descends : ∀ (owner : ℕ → ℕ)
+  {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      WongPedigreeBridge.AncestryExactAwayFromFibres owner R E →
+        (∀ (v : ℕ), ¬SpeciesBridge.Descendant E v v) →
+          WongPedigreeBridge.ConnectedFibres owner R →
+            ∀ {S : SpeciesBridge.NatSet},
+              SpeciesBridge.MaximalSpecieslike R (WongPedigreeBridge.Pull owner S) →
+                SpeciesBridge.MaximalSpecieslike E S
+'ResearchCommons.Claims.OwnerAncestry.unrestricted_rich_maximality_descends' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.OwnerAncestry.same_carrier_finite_ancestry_errors_iap : ∀ {R E : SpeciesBridge.Graph}
+  {S : SpeciesBridge.NatSet},
+  (∀ (a : ℕ),
+      S a →
+        SpeciesBridge.FiniteSupport fun b => S b ∧ ¬(SpeciesBridge.Descendant R a b ↔ SpeciesBridge.Descendant E a b)) →
+    (SpeciesBridge.IAP R S ↔ SpeciesBridge.IAP E S)
+'ResearchCommons.Claims.OwnerAncestry.same_carrier_finite_ancestry_errors_iap' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.finite_projection_errors_iap : ∀ (owner : ℕ → ℕ) {R E : SpeciesBridge.Graph},
+  Function.Surjective.{1, 1} owner →
+    WongPedigreeBridge.FiniteFibres owner →
+      ∀ (S : SpeciesBridge.NatSet),
+        (∀ (a : ℕ),
+            WongPedigreeBridge.Pull owner S a →
+              SpeciesBridge.FiniteSupport fun b =>
+                WongPedigreeBridge.Pull owner S b ∧
+                  ¬(SpeciesBridge.Descendant R a b ↔ SpeciesBridge.Descendant E (owner a) (owner b))) →
+          (SpeciesBridge.IAP R (WongPedigreeBridge.Pull owner S) ↔ SpeciesBridge.IAP E S)
+'ResearchCommons.Claims.OwnerAncestry.finite_projection_errors_iap' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.OwnerAncestry.soundness_countercontrol : ∃ R A B,
+  Function.Surjective.{1, 1} id.{1} ∧
+    WongPedigreeBridge.FiniteFibres id.{1} ∧
+      SpeciesBridge.NaturalDateBiosphere R ∧
+        SpeciesBridge.NaturalDateBiosphere A ∧
+          SpeciesBridge.NaturalDateBiosphere B ∧
+            WongAlexander.RealDatedBiosphere R ∧
+              WongAlexander.RealDatedBiosphere A ∧
+                WongAlexander.RealDatedBiosphere B ∧
+                  SpeciesBridge.WeaklyConnected R SpeciesBridge.Whole ∧
+                    WongPedigreeBridge.PathSound id.{1} R A ∧
+                      WongPedigreeBridge.PathSound id.{1} R B ∧
+                        SpeciesBridge.Specieslike A SpeciesBridge.Whole ∧ ¬SpeciesBridge.IAP B SpeciesBridge.Whole
+'ResearchCommons.Claims.OwnerAncestry.soundness_countercontrol' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.OwnerAncestry.reused_finite_garg_coarsening_obstruction.{u_1, u_2,
+    u_3} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) {Observation : Type u_3}
+  (observe : WongGARG.GARG.{u_1, u_2} Node Coord → Observation),
+  ¬ObservationPrediction.Recoverable.{max u_1 u_2, u_3, 0}
+      (fun h => observe (WongPedigreeBridge.AbstractCompletionObservation.observed.{u_1, u_2} h)) fun h =>
+      SpeciesBridge.Specieslike (WongPedigreeBridge.AbstractCompletionObservation.completion.{u_1, u_2} h)
+        SpeciesBridge.Whole
+'ResearchCommons.Claims.OwnerAncestry.reused_finite_garg_coarsening_obstruction' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

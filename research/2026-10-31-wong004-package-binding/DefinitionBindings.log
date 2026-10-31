@@ -1,0 +1,128 @@
+@[reducible] def SpeciesBridge.Graph : Type :=
+ℕ → ℕ → Prop
+@[reducible] def SpeciesBridge.NatSet : Type :=
+ℕ → Prop
+inductive SpeciesBridge.Descendant : SpeciesBridge.Graph → ℕ → ℕ → Prop
+number of parameters: 2
+constructors:
+SpeciesBridge.Descendant.edge : ∀ {E : SpeciesBridge.Graph} {u v : ℕ}, E u v → SpeciesBridge.Descendant E u v
+SpeciesBridge.Descendant.snoc : ∀ {E : SpeciesBridge.Graph} {u v w : ℕ},
+  SpeciesBridge.Descendant E u v → E v w → SpeciesBridge.Descendant E u w
+def SpeciesBridge.FiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => ∃ xs, ∀ (n : ℕ), S n → Membership.mem.{0, 0} xs n
+def SpeciesBridge.InfiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => ¬SpeciesBridge.FiniteSupport S
+def SpeciesBridge.Whole : SpeciesBridge.NatSet :=
+fun x => True
+def SpeciesBridge.IAP : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : ℕ),
+    S v →
+      (SpeciesBridge.FiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w) ∨
+        SpeciesBridge.FiniteSupport fun w => S w ∧ ¬SpeciesBridge.Descendant E v w
+def SpeciesBridge.Reflection : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : ℕ),
+    S v →
+      SpeciesBridge.InfiniteSupport (SpeciesBridge.Descendant E v) →
+        SpeciesBridge.InfiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w
+def SpeciesBridge.Convex : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => ∀ (v : ℕ), (∃ a, S a ∧ SpeciesBridge.Descendant E a v) → (∃ d, S d ∧ SpeciesBridge.Descendant E v d) → S v
+inductive SpeciesBridge.WeakReach : SpeciesBridge.Graph → SpeciesBridge.NatSet → ℕ → ℕ → Prop
+number of parameters: 2
+constructors:
+SpeciesBridge.WeakReach.refl : ∀ {E : SpeciesBridge.Graph} {S : SpeciesBridge.NatSet} {u : ℕ},
+  S u → SpeciesBridge.WeakReach E S u u
+SpeciesBridge.WeakReach.edge : ∀ {E : SpeciesBridge.Graph} {S : SpeciesBridge.NatSet} {u v : ℕ},
+  S u → S v → E u v ∨ E v u → SpeciesBridge.WeakReach E S u v
+SpeciesBridge.WeakReach.trans : ∀ {E : SpeciesBridge.Graph} {S : SpeciesBridge.NatSet} {u v w : ℕ},
+  SpeciesBridge.WeakReach E S u v → SpeciesBridge.WeakReach E S v w → SpeciesBridge.WeakReach E S u w
+def SpeciesBridge.WeaklyConnected : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => (∃ u, S u) ∧ ∀ (u v : ℕ), S u → S v → SpeciesBridge.WeakReach E S u v
+def SpeciesBridge.Specieslike : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => SpeciesBridge.WeaklyConnected E S ∧ SpeciesBridge.IAP E S ∧ SpeciesBridge.Convex E S
+def SpeciesBridge.CommonAncestor : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => ∃ v, S v ∧ ∀ (w : ℕ), S w → Ne.{1} w v → SpeciesBridge.Descendant E v w
+def SpeciesBridge.MaximalSpecieslike : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesBridge.Specieslike E S ∧
+    ∀ (T : SpeciesBridge.NatSet), (∀ (v : ℕ), S v → T v) → SpeciesBridge.Specieslike E T → ∀ (v : ℕ), T v → S v
+def SpeciesBridge.NaturalDateBiosphere : SpeciesBridge.Graph → Prop :=
+fun E =>
+  (∀ (u w : ℕ), E u w → LT.lt.{0} u w) ∧
+    (∀ (date : ℕ), SpeciesBridge.FiniteSupport fun v => LT.lt.{0} v date) ∧
+      (∀ (v : ℕ), SpeciesBridge.FiniteSupport (E v)) ∧ SpeciesBridge.InfiniteSupport SpeciesBridge.Whole
+def WongAlexander.RealDatedBiosphere : SpeciesBridge.Graph → Prop :=
+fun E =>
+  ∃ birth,
+    (∀ (a b : ℕ), E a b → LT.lt.{0} (birth a) (birth b)) ∧
+      (∀ (r : ℝ), BirthOrder.FiniteCover.{0} fun a => LE.le.{0} (birth a) r) ∧
+        (∀ (a : ℕ), SpeciesBridge.FiniteSupport (E a)) ∧ SpeciesBridge.InfiniteSupport SpeciesBridge.Whole
+def WongPedigreeBridge.Pull : (ℕ → ℕ) → SpeciesBridge.NatSet → SpeciesBridge.NatSet :=
+fun owner S a => S (owner a)
+def WongPedigreeBridge.FiniteFibres : (ℕ → ℕ) → Prop :=
+fun owner => ∀ (v : ℕ), SpeciesBridge.FiniteSupport fun a => Eq.{1} (owner a) v
+def WongPedigreeBridge.AncestryExactAwayFromFibres : (ℕ → ℕ) → SpeciesBridge.Graph → SpeciesBridge.Graph → Prop :=
+fun owner R E =>
+  ∀ (a b : ℕ),
+    Ne.{1} (owner a) (owner b) → (SpeciesBridge.Descendant R a b ↔ SpeciesBridge.Descendant E (owner a) (owner b))
+def WongPedigreeBridge.PathSound : (ℕ → ℕ) → SpeciesBridge.Graph → SpeciesBridge.Graph → Prop :=
+fun owner R E => ∀ (a b : ℕ), SpeciesBridge.Descendant R a b → HistoryProjection.SameOrDescendant E (owner a) (owner b)
+def WongPedigreeBridge.ConnectedFibres : (ℕ → ℕ) → SpeciesBridge.Graph → Prop :=
+fun owner R =>
+  ∀ (a b : ℕ), Eq.{1} (owner a) (owner b) → SpeciesBridge.WeakReach R (fun c => Eq.{1} (owner c) (owner a)) a b
+def WongPedigreeBridge.MaximalAmongSaturated : (ℕ → ℕ) → SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun owner R S =>
+  SpeciesBridge.Specieslike R (WongPedigreeBridge.Pull owner S) ∧
+    ∀ (U : SpeciesBridge.NatSet),
+      (∀ (a : ℕ), WongPedigreeBridge.Pull owner S a → WongPedigreeBridge.Pull owner U a) →
+        SpeciesBridge.Specieslike R (WongPedigreeBridge.Pull owner U) →
+          ∀ (a : ℕ), WongPedigreeBridge.Pull owner U a → WongPedigreeBridge.Pull owner S a
+structure WongPedigreeBridge.AbstractCompletionObservation.{u, v} (Node : Type u) (Coord : Type v) [Fintype.{u} Node]
+  [LinearOrder.{v} Coord] : Type (max u v)
+number of parameters: 4
+fields:
+  WongPedigreeBridge.AbstractCompletionObservation.observed.{u, v} : WongGARG.GARG.{u, v} Node Coord
+  WongPedigreeBridge.AbstractCompletionObservation.completion.{u, v} : SpeciesBridge.Graph
+  WongPedigreeBridge.AbstractCompletionObservation.compatible.{u,
+    v} : FiniteGenomeIdentifiability.Compatible.{u, v}
+      (WongPedigreeBridge.AbstractCompletionObservation.observed.{u, v} self)
+      (WongPedigreeBridge.AbstractCompletionObservation.completion.{u, v} self)
+constructor:
+  WongPedigreeBridge.AbstractCompletionObservation.mk.{u, v} {Node : Type u} {Coord : Type v} [Fintype.{u} Node]
+    [LinearOrder.{v} Coord] (observed : WongGARG.GARG.{u, v} Node Coord) (completion : SpeciesBridge.Graph)
+    (compatible : FiniteGenomeIdentifiability.Compatible.{u, v} observed completion) :
+    WongPedigreeBridge.AbstractCompletionObservation.{u, v} Node Coord
+def HistoryProjection.SameOrDescendant : SpeciesBridge.Graph → ℕ → ℕ → Prop :=
+fun E a b => Eq.{1} a b ∨ SpeciesBridge.Descendant E a b
+inductive AncestryViews.Reach.{u} : {V : Type u} → (V → V → Prop) → V → V → Prop
+number of parameters: 3
+constructors:
+AncestryViews.Reach.edge : ∀ {V : Type u} {R : V → V → Prop} {a b : V}, R a b → AncestryViews.Reach.{u} R a b
+AncestryViews.Reach.snoc : ∀ {V : Type u} {R : V → V → Prop} {a b c : V},
+  AncestryViews.Reach.{u} R a b → R b c → AncestryViews.Reach.{u} R a c
+def AncestryViews.EraseIndex.{u, v} : {V : Type u} → {I : Type v} → (I → V → V → Prop) → V → V → Prop :=
+fun {V} {I} R a b => ∃ i, R i a b
+def FiniteGenomeIdentifiability.Compatible.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] →
+      [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → SpeciesBridge.Graph → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G E =>
+  ∃ code,
+    Function.Injective.{u + 1, 1} code ∧
+      WongAlexander.RealDatedBiosphere E ∧
+        SpeciesBridge.NaturalDateBiosphere E ∧
+          SpeciesBridge.FiniteSupport (SpeciesBridge.Root E) ∧
+            SpeciesBridge.WeaklyConnected E SpeciesBridge.Whole ∧
+              (∀ (a b : Node), E (code a) (code b) ↔ WongGARG.GARG.Topology.{u, v} G a b) ∧
+                ∀ (a b : Node),
+                  SpeciesBridge.Descendant E (code a) (code b) ↔
+                    AncestryViews.Reach.{u} (WongGARG.GARG.Topology.{u, v} G) a b
+def ObservationPrediction.Recoverable.{u, v, w} : {State : Type u} →
+  {Observation : Type v} → {Answer : Type w} → (State → Observation) → (State → Answer) → Prop :=
+fun {State} {Observation} {Answer} observe target =>
+  ∃ decode, ∀ (state : State), Eq.{w + 1} (decode (observe state)) (some.{w} (target state))
+def ObservationPrediction.ConstantOnFibres.{u, v, w} : {State : Type u} →
+  {Observation : Type v} → {Answer : Type w} → (State → Observation) → (State → Answer) → Prop :=
+fun {State} {Observation} {Answer} observe target =>
+  ∀ (a b : State), Eq.{v + 1} (observe a) (observe b) → Eq.{w + 1} (target a) (target b)

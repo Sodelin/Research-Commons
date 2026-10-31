@@ -1,0 +1,156 @@
+{
+  "id": "CB-WONG-004",
+  "canonical_key": "wong.CONDITIONAL_OWNER_ANCESTRY_TRANSFER",
+  "programme": "Wong/Alexander \u00b7 conditional owner and ancestry transfer",
+  "title": "A supplied owner map can preserve ancestry properties under explicit conditions",
+  "claim_kind": "theorem",
+  "plain_language": {
+    "question": "When can a supplied map from a rich history to organism owners preserve precise ancestry properties?",
+    "what_we_learned": "Exact ancestry correspondence and finite owner fibres transfer the stated properties under their separate hypotheses. The identical-ancestors property even tolerates finitely many wrong ancestry answers per representative. A merely sound owner map is not enough.",
+    "what_it_lets_someone_do": "Check the exact assumptions needed before transferring a graph-level ancestry conclusion, and distinguish a valid conditional theorem from a claim that owners can be inferred from genomic data.",
+    "what_cannot_conclude": "This does not infer ownership, validate a biological model or classify species empirically. The finite-error relaxation transfers only the identical-ancestors property; maximality equivalence is restricted to whole-owner, saturated candidates."
+  },
+  "exact_statement_and_scope": "The identical-ancestors property (IAP) means that each member has finitely many descendants or finitely many nondescendants inside the candidate. It is a mathematical graph predicate, not an empirical species label. Let R and E be supplied directed graphs on Nat, let q:Nat\u2192Nat be a supplied owner map, let S be an organism candidate, and let C=q\u207b\u00b9(S) contain all rich representatives of those owners. Ancestry means nonempty directed paths. If q is onto, every owner fibre is finite, and ancestry is equivalent for every pair of representatives with different owners, then IAP and reflection agree between C in R and S in E. No uniform fibre bound is required. Reflection means that each candidate member with infinitely many ambient descendants also has infinitely many descendants within the candidate. The exact ancestry hypothesis is both directions for every such representative pair, not mere soundness, exact image edges or an existential lift. Under path soundness alone, an R ancestry path maps to owner equality or E ancestry, and convexity pulls back. With an onto owner map, soundness also transfers a common ancestor downward; weak connectivity descends when S is convex. With onto ownership, exact different-owner ancestry and acyclic E, convexity is equivalent. Adding finite fibres gives descent of the source-defined specieslike predicate, namely nonempty induced-undirected connectivity plus IAP plus ancestral convexity. Adding internal weak connectivity of every owner fibre gives specieslike equivalence on saturated candidates C. Under those stronger premises, target maximality is equivalent to rich maximality among all saturated inverse-image candidates. Unrestricted rich maximality of a saturated C also descends. The reverse implication to unrestricted rich maximality is not asserted. Neither the full biosphere/date/child-count conditions nor the fixed founder-window property is automatically transported. The later finite-error extension proves IAP(R,C) iff IAP(E,S) assuming only onto q, finite fibres and, for each a\u2208C, finitely many b\u2208C whose R-ancestry answer differs from E-ancestry(q(a),q(b)). The finite error set and its size may vary with a; no common bound is needed. Errors between different owners are permitted and no agreement outside C is required. This IAP theorem needs neither acyclicity, soundness nor connected fibres. It does not transfer reflection, convexity, connectivity, maximality or specieslike status under those relaxed premises. \u201cFinite errors\u201d refers to transitive ancestry answers, not finitely many edited immediate-parent edges. A proved countercontrol fixes one infinite connected rich fork history and identity ownership. Both the fork pedigree and a chain pedigree are sound interpretations, with onto singleton fibres and the stated natural/real-date biosphere properties; the chain is whole-population specieslike and the fork fails IAP. It shows why soundness cannot replace ancestry equivalence. It is an abstract ancestry countermodel, not identical DNA distributions under a specified diploid inheritance law. The same source also composes the previously indexed finite-gARG opposite-completion theorem with elementary observation-fibre recovery to show that arbitrary deterministic coarsening cannot remove that existing ambiguity. This is credited reuse of CB-GENOME-001, not another newly counted obstruction. The graphs, owners and candidate are mathematical inputs. A finite sampled ARG cannot be onto an infinite organism history. An R path after coordinate erasure can switch loci and need not represent one DNA segment. No owner inference, biological validity, observation likelihood, effective decision procedure or empirical species assignment follows.",
+  "origin": {
+    "category": "project_posed",
+    "detail": "The existing Samuel Wong programme separates a supplied genome/cell owner projection from the extra hypotheses required to transfer Alexander's ancestry predicates. Its ledger labels these as elementary conditional extensions, not theorems attributed to the source papers. This is archival recovery of completed work."
+  },
+  "prior_work": "Credit Alexander's stated identical-ancestors, reflection and specieslike definitions; Wong and coauthors' genome/cell representation; elementary finite-set calculus, path projection and observation-fibre factorization; and Lean/Mathlib. Gravel\u2013Steel's model-specific ghost-ancestor work and Thatte's model-specific statistical identifiability are credited by the original source ledger as distinct prior work, not as suppliers of the strong owner hypothesis. The original author reports checking those papers; the located bounded source reviewer did not independently recheck those two citations. Historical novelty is not adjudicated.",
+  "our_contribution": "The existing Samuel source supplies the exact conditional ancestry-transfer hierarchy, its candidate-local finite-disagreement strengthening for IAP, the saturated-maximality qualification and a countercontrol against replacing ancestry equivalence with soundness. Its deterministic coarsening consequence explicitly reuses the already indexed opposite-completion supplier. This card restores completed authorship and historical checking, not new derivation or priority.",
+  "mathematical_status": "proved_at_stated_scope",
+  "novelty_status": "Historical novelty is not adjudicated. Classical suppliers and source definitions retain attribution; archival recovery creates neither new proof authorship nor an empirical result.",
+  "remaining_obligation": "None identified for the exact conditional statements in the bounded source recovery. Missing biological admission, owner inference, broader transport or fresh execution does not reopen these completed theorems.",
+  "separate_downstream_or_validation_work": "Establishing the supplied owner/ancestry hypotheses in a specific biological or statistical model; inference of owners from observations; likelihood-level or empirical species identification; transport of biosphere dates, child counts and fixed founder-window conditions; a finite-error theorem for reflection, convexity, connectivity, maximality or specieslike status; unrestricted rich-maximality equivalence; and native implementation remain separate. No such downstream result is claimed here.",
+  "completion": {
+    "display": "Proved; archived Lean check recorded",
+    "formal_verification": "kernel_checked_selected_release",
+    "independent_review": "recorded_source_and_formal_audit",
+    "mathematical_claim_complete": true,
+    "proof_authorship_complete": true,
+    "proof_derivation_required": false,
+    "remaining_work_role": "separate_downstream_extension_or_validation",
+    "rule": "Reuse the exact completed conditional statement. Historical formal checking, bounded source-correspondence review and whole-proof independent review are different evidence levels. Unestablished model premises or later implementation work do not reopen its proof."
+  },
+  "evidence": {
+    "hand": {
+      "status": "recorded_source_and_formal_audit",
+      "detail": "Eight complete source/provider bodies were read, totaling 1,731 lines, plus the two actual called ProductiveCore proof bodies; WongAlexander's full provider body was already read in W-B and reused. The archived SOURCE-REVIEW reports a bounded independent statement/source-correspondence check, not an independent whole-proof or compiler check. No separate whole-proof review of the robust extension was located in this bounded evidence set. The nearby COMBINED-STATEMENT-REVIEW concerns W-A's stochastic recorder and is not assigned to this theorem. Current recovery is bounded coordinating AI source review, not human/external peer review, a full 77-module transitive review or a full primary-paper reread."
+    },
+    "formal": {
+      "status": "kernel_checked_selected_release",
+      "detail": "All nine freshly retrieved source-file hashes, including the partly read ProductiveCore supplier, match the final combined historical receipt. Both actual bridge/robust modules and all 15 selected endpoint axiom reports match final PASS_LOCAL_EXACT_COMMIT at proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, checked 2026-09-27T04:15:54.070684+00:00, with Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. The final release records 77 project import-closure modules and 415 selected reports; the 15 here overlap that total and include helpers/reused results. Three bridge endpoints use no axioms; the others use only propext, Classical.choice and Quot.sound. Recorded compiler exits are zero. Earlier 34/35-module source snapshots marked pending integrated commit are superseded for these matching bytes by the final exact-commit receipt. The written swapped-vertices strict-weakening example is not promoted into a separately checked Lean endpoint."
+    },
+    "execution": {
+      "status": "archived_build_receipt",
+      "detail": "Historical source/object/log identities, selected axiom logs and recorded compiler exits were inspected. This recovery performed document/source integrity checks only, not a fresh compilation, scientific execution, native implementation test, likelihood calculation or empirical reproduction."
+    },
+    "empirical": {
+      "status": "not_empirical_claim",
+      "detail": "Conditional mathematical graph statements and abstract countercontrols, not a validated genome-to-pedigree model, empirical species classifier or observed biological experiment."
+    }
+  },
+  "evidence_basis": "Full-body/source recovery at e2502c82ab9a77c00543932f775a71e5374221f7, with exact final historical source binding. Fresh insertion-only ID/key/alias comparison uses all 112 current claim objects at Commons 21ff917bdd0154376fc94d2a78eef63e6cb40123, claims blob 85ab95b98c3f231e0db6f116223528021ff42990, including published W-B cards 002/003. Relevant genome, memory, population, Alexander, Wong and transfer scopes were compared in the accepted recovery report. The accepted W-C grouping is one conditional theorem hierarchy; reused finite-completion and elementary providers are not counted as new groups.",
+  "accepted_artifacts": [
+    {
+      "label": "Exact owner-map IAP transfer",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L125",
+      "role": "proof_source"
+    },
+    {
+      "label": "Reflection transfer",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L142",
+      "role": "proof_source"
+    },
+    {
+      "label": "Specieslike equivalence with connected fibres",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L332",
+      "role": "proof_source"
+    },
+    {
+      "label": "Saturated-maximality equivalence",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L352",
+      "role": "proof_source"
+    },
+    {
+      "label": "Stronger finite-error IAP transfer",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeRobust.lean#L26",
+      "role": "proof_source"
+    },
+    {
+      "label": "Fixed-owner soundness countercontrol",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L421",
+      "role": "proof_source"
+    },
+    {
+      "label": "Reused finite-coarsening consequence",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean#L464",
+      "role": "proof_source"
+    },
+    {
+      "label": "Full original statement and assumption hierarchy",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/EXPLANATION.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Finite-error scope and written strict-weakening example",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ROBUST-IAP.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Bounded independent source review",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/SOURCE-REVIEW.md",
+      "role": "hand_review"
+    },
+    {
+      "label": "Exact attribution and ownership ledger",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/ledger.json",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Robust extension's exact scope ledger",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/bridge/robust-ledger.json",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Final exact-commit acceptance",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json",
+      "role": "formal_receipt"
+    },
+    {
+      "label": "Exact source/object/log binding",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json",
+      "role": "formal_receipt"
+    },
+    {
+      "label": "Exact path-soundness provider",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/HistoryProjection.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Reused finite-completion supplier",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FiniteGenomeIdentifiability.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Elementary observation-fibre supplier",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/lean/SamuelAlexanderResearch/ObservationPrediction.lean",
+      "role": "proof_source"
+    }
+  ],
+  "aliases": [
+    "Wong W-C owner-ancestry transfer",
+    "WongPedigreeBridge and WongPedigreeRobust"
+  ],
+  "dependencies": [
+    {
+      "claim_id": "CB-GENOME-001",
+      "relation_type": "reused_theorem",
+      "detail": "Only the finite-gARG deterministic-coarsening consequence imports the already indexed opposite_compatible_completions result, composed with observation-fibre recovery. It does not supply the positive owner-transfer hypotheses and is not counted again."
+    },
+    {
+      "claim_id": "CB-POPULATION-003",
+      "relation_type": "reused_theorem",
+      "detail": "Only two elementary proofs in its ProductiveCore source, weakReach_mono_set and descendant_weakReach_convex, are used for connectivity transport. This is not a dependency on the full productive-pruning or boundary-repair theorem."
+    }
+  ]
+}
