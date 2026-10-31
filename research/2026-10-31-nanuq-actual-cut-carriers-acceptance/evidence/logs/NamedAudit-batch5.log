@@ -1,0 +1,186 @@
+@Nanuq.CutSideCarrier.carrier_connected.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} G) (k : E) (a : V),
+  IsConnected.{0} (Nanuq.CutSideCarrier.carrier.{u_1, u_2} G D k a)
+'Nanuq.CutSideCarrier.carrier_connected' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.CutSideCarrier.carrier_compact.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E) [Finite.{u_1 + 1} V]
+  [Finite.{u_2 + 1} E] (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} G) (k : E) (a : V),
+  IsCompact.{0} (Nanuq.CutSideCarrier.carrier.{u_1, u_2} G D k a)
+'Nanuq.CutSideCarrier.carrier_compact' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.CutSideCarrier.carriers_disjoint.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} G) (k : E) (a c : V),
+  ¬Nanuq.Source.EdgeGraph.ReachWithout.{u_1, u_2} G k a c →
+    Disjoint.{0} (Nanuq.CutSideCarrier.carrier.{u_1, u_2} G D k a) (Nanuq.CutSideCarrier.carrier.{u_1, u_2} G D k c)
+'Nanuq.CutSideCarrier.carriers_disjoint' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_opened_quartet_core_id.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (f :
+    Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+  (a c d e :
+    Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+  Ne.{u_2 + 1} a c →
+    Ne.{u_2 + 1} d e →
+      Nanuq.Source.EdgeGraph.OrientedQuartet.{max u_1 u_2, u_2}
+          (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+          f
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            a)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            c)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            d)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            e) →
+        ∃ k, Eq.{u_2 + 1} f (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb k)
+'Nanuq.OpenedCore.actual_opened_quartet_core_id' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_core_all_bridges.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b →
+    ∀ (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b),
+      Nanuq.Source.EdgeGraph.IsBridge.{max u_1 u_2, u_2} (Nanuq.OpenedCore.coreGraph.{u_1, u_2, u_3} N b hg) k
+'Nanuq.OpenedCore.actual_core_all_bridges' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.collapse_opened_tips_injective.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    Function.Injective.{u_2 + 1, max (u_1 + 1) (u_2 + 1)} fun t =>
+      Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb
+        ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+          t)
+'Nanuq.OpenedCore.collapse_opened_tips_injective' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_cut_carriers.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b →
+    ∀ (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b),
+      IsCompact.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+        IsConnected.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+          IsCompact.{0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+            IsConnected.{0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+              Disjoint.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k)
+                (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k)
+'Nanuq.OpenedCore.actual_cut_carriers' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_quartet_carrier_membership.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (f :
+    Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+  (a c d e :
+    Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+  Ne.{u_2 + 1} a c →
+    Ne.{u_2 + 1} d e →
+      Nanuq.Source.EdgeGraph.OrientedQuartet.{max u_1 u_2, u_2}
+          (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+          f
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            a)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            c)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            d)
+          ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+            e) →
+        ∃ k,
+          Eq.{u_2 + 1} f (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb k) ∧
+            Membership.mem.{0, 0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k)
+                (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb a) ∧
+              Membership.mem.{0, 0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k)
+                  (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb c) ∧
+                Membership.mem.{0, 0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k)
+                    (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb d) ∧
+                  Membership.mem.{0, 0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k)
+                    (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb e)
+'Nanuq.OpenedCore.actual_quartet_carrier_membership' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_nontrivial_tip_boundary.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ C,
+      Schoenflies.IsJordanCurve C ∧
+        Eq.{1}
+            (Graph.face.{u_2}
+              (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.coordinates
+                (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+            (Schoenflies.outside C) ∧
+          ∀
+            (t :
+              Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+            Membership.mem.{0, 0} C (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)
+'Nanuq.OpenedCore.actual_nontrivial_tip_boundary' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_all_cut_carriers_one_boundary.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ C,
+      Schoenflies.IsJordanCurve C ∧
+        Function.Injective.{u_2 + 1, 1} (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb) ∧
+          (∀
+              (t :
+                Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+              Membership.mem.{0, 0} C (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)) ∧
+            ∀ (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b),
+              IsCompact.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+                IsConnected.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+                  IsCompact.{0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+                    IsConnected.{0} (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+                      Disjoint.{0} (Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k)
+                          (Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k) ∧
+                        Nanuq.OpenedCore.sourceCarrier.{u_1, u_2, u_3} N D b hg k ⊆
+                            Union.union.{0} C (Schoenflies.inside C) ∧
+                          Nanuq.OpenedCore.targetCarrier.{u_1, u_2, u_3} N D b hg k ⊆
+                            Union.union.{0} C (Schoenflies.inside C)
+'Nanuq.OpenedCore.actual_all_cut_carriers_one_boundary' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

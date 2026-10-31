@@ -1,0 +1,84 @@
+{
+  "status": "SCOPED_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_commit": "74398388cc72b760b83f824afad84a4f9584540b",
+  "sources": {
+    "CutSideCarrier": {
+      "source_sha256": "f800efcef6d7b9eb71b04c7e38a490511f94d587cb79d56287025f4bc331e604",
+      "own_import_object_hashes": {},
+      "object_sha256": "bc0ae4fe8927330e52649c5e2740fea9bf151eb9cb288f4b9f29718bd1624287"
+    },
+    "OpenedCutLeaf": {
+      "source_sha256": "2077a3e33467fd4b8d45796be0addbea4022d0cb6f6f7b4d22d649fc9bf16036",
+      "own_import_object_hashes": {},
+      "object_sha256": "5d4187766a7dae332e47ed4b0bc0f8ea8658af50652a30c49ac53dec3648eab7"
+    },
+    "ActualOpenedCutLocality": {
+      "source_sha256": "d2f55e05ff5ed5a8431554bf1c6dafeb9ed1da29b40abb309636c7f0af0a2b41",
+      "own_import_object_hashes": {
+        "OpenedCutLeaf": "5d4187766a7dae332e47ed4b0bc0f8ea8658af50652a30c49ac53dec3648eab7"
+      },
+      "object_sha256": "f8e9ae5d6ce3b9e3ca52c29ed0203fcc97a5308a9a7edafac6cf1ee9dbb3ae77"
+    },
+    "ActualCoreCutClasses": {
+      "source_sha256": "a07dfaa731937a5cc30442ea48ad79485ae34b08d1f1cf8d2680ae892f221203",
+      "own_import_object_hashes": {},
+      "object_sha256": "72e58bb55e1c02bb04b6fabaf7f42fabc99484c361fc0fc983b2479cad5ed9ab"
+    },
+    "ActualCoreTipIdentity": {
+      "source_sha256": "e21e137868e7cca3314fd4cd45cbe2179e75cc14cca5cb37ff8d244a17f692c0",
+      "own_import_object_hashes": {},
+      "object_sha256": "5dc42cfe50b26ab0a290f733f72d522f70ef1d560da4cfc30e0da8b07f0fc3b5"
+    },
+    "ActualCutCarriers": {
+      "source_sha256": "9c2d43e48641e40df115c37e2d38ac958d9d49b262ad180480ae15fba2b28ff4",
+      "own_import_object_hashes": {
+        "CutSideCarrier": "bc0ae4fe8927330e52649c5e2740fea9bf151eb9cb288f4b9f29718bd1624287",
+        "ActualOpenedCutLocality": "f8e9ae5d6ce3b9e3ca52c29ed0203fcc97a5308a9a7edafac6cf1ee9dbb3ae77",
+        "ActualCoreCutClasses": "72e58bb55e1c02bb04b6fabaf7f42fabc99484c361fc0fc983b2479cad5ed9ab",
+        "ActualCoreTipIdentity": "5dc42cfe50b26ab0a290f733f72d522f70ef1d560da4cfc30e0da8b07f0fc3b5"
+      },
+      "object_sha256": "6b6a15d173550d387688418ec1303590081360630df1e4b1628069d30eaf6459"
+    },
+    "ActualTipBoundary": {
+      "source_sha256": "207c549098b6984aa77b4819da5baf289cdf4ecb9d9124b077635871e9266aaf",
+      "own_import_object_hashes": {
+        "ActualCutCarriers": "6b6a15d173550d387688418ec1303590081360630df1e4b1628069d30eaf6459"
+      },
+      "object_sha256": "91cc82b7ce55bb36b134a14062b71d5c09b64f47c0c1fb6414a596e123a003bf"
+    }
+  },
+  "named_targets": [
+    "Nanuq.CutSideCarrier.carrier_connected",
+    "Nanuq.CutSideCarrier.carrier_compact",
+    "Nanuq.CutSideCarrier.carriers_disjoint",
+    "Nanuq.OpenedCore.actual_opened_quartet_core_id",
+    "Nanuq.OpenedCore.actual_core_all_bridges",
+    "Nanuq.OpenedCore.collapse_opened_tips_injective",
+    "Nanuq.OpenedCore.actual_cut_carriers",
+    "Nanuq.OpenedCore.actual_quartet_carrier_membership",
+    "Nanuq.OpenedCore.actual_nontrivial_tip_boundary",
+    "Nanuq.OpenedCore.actual_all_cut_carriers_one_boundary"
+  ],
+  "named_owners": {
+    "Nanuq.OpenedCore.actual_nontrivial_tip_boundary": "ActualTipBoundary",
+    "Nanuq.CutSideCarrier.carrier_compact": "CutSideCarrier",
+    "Nanuq.OpenedCore.actual_core_all_bridges": "ActualCoreCutClasses",
+    "Nanuq.CutSideCarrier.carriers_disjoint": "CutSideCarrier",
+    "Nanuq.OpenedCore.collapse_opened_tips_injective": "ActualCoreTipIdentity",
+    "Nanuq.OpenedCore.actual_all_cut_carriers_one_boundary": "ActualTipBoundary",
+    "Nanuq.OpenedCore.actual_quartet_carrier_membership": "ActualCutCarriers",
+    "Nanuq.OpenedCore.actual_opened_quartet_core_id": "ActualOpenedCutLocality",
+    "Nanuq.CutSideCarrier.carrier_connected": "CutSideCarrier",
+    "Nanuq.OpenedCore.actual_cut_carriers": "ActualCutCarriers"
+  },
+  "owned_modules": 647,
+  "declarations": 16854,
+  "theorems": 12420,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "local_full_audit_sha256": "81550611398ce9e3a4a374f0db9dac6531240ffe163825045c73b6ea18276fe6",
+  "raw_full_audit_local_only": true,
+  "frozen_all_headers_and_definitions_preserved": true,
+  "scope": "Actual original-ID cut locality, deletion-class compact connected disjoint carriers, occurrence-tip identity and one raw Jordan boundary chosen before all cuts. Rooted gall/nonleaf/nontrivial/TaxonOuterFace premises preserved; no assumed order/noncrossing/collar, singleton/globalC separate."
+}

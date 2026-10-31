@@ -1,0 +1,72 @@
+@ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_interval_observation_weight : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (h : NNReal) (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  ResearchCommons.MSCI.JC69CalendarObservationKernel.segmentObservedWeight N r L q
+      (UnifiedLean.Source.SourceProgramTransport.ProgramStep.interval h) s target =
+    ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q (Fintype.card Copy) s (↑h) target
+'ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_interval_observation_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_boundary_observation_weight : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (b : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  ResearchCommons.MSCI.JC69CalendarObservationKernel.segmentObservedWeight N r L q
+      (UnifiedLean.Source.SourceProgramTransport.ProgramStep.boundary b) s target =
+    (PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+        (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N b s))
+      target
+'ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_boundary_observation_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_segment_observation_quotient : ∀ {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (op : UnifiedLean.Source.SourceProgramTransport.ProgramStep N)
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = ResearchCommons.MSCI.JC69EndpointWeight.observeCode N t →
+    (UnifiedLean.Source.UniformizedSourceStep.state s).register =
+        (UnifiedLean.Source.UniformizedSourceStep.state t).register →
+      ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+        ResearchCommons.MSCI.JC69CalendarObservationKernel.segmentObservedWeight N r L q op s target =
+          ResearchCommons.MSCI.JC69CalendarObservationKernel.segmentObservedWeight N r L q op t target
+'ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_segment_observation_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_observation_readout_sum : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (op : UnifiedLean.Source.SourceProgramTransport.ProgramStep N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (F : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E → ENNReal),
+  ∑ d,
+      ResearchCommons.MSCI.JC69WeightedCalendar.segmentFibreWeight N r L q op s d *
+        F (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N d) =
+    ∑ target, ResearchCommons.MSCI.JC69CalendarObservationKernel.segmentObservedWeight N r L q op s target * F target
+'ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_observation_readout_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_fibre_zero_of_source_zero : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (op : UnifiedLean.Source.SourceProgramTransport.ProgramStep N)
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  (UnifiedLean.Source.SourceProgramTransport.sourceProgramStep N r op s) d = 0 →
+    ResearchCommons.MSCI.JC69WeightedCalendar.segmentFibreWeight N r L q op s d = 0
+'ResearchCommons.MSCI.JC69CalendarObservationKernel.actual_fibre_zero_of_source_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

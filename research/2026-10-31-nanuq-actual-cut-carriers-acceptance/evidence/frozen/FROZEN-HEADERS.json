@@ -1,0 +1,160 @@
+{
+  "status": "UNCOMPILED frozen intended complete explicit headers; elaborated binders not yet certified",
+  "headers": [
+    {
+      "module": "ActualCoreCutClasses",
+      "name": "actual_core_all_bridges",
+      "header": "theorem actual_core_all_bridges (k : N.OriginalBlobArc b) :\n    (coreGraph N b hg).IsBridge k"
+    },
+    {
+      "module": "ActualCoreTipIdentity",
+      "name": "collapse_opened_tips_injective",
+      "header": "theorem collapse_opened_tips_injective\n    (hnt : \u2203 u v : BlobVertex N.graph b, u \u2260 v) :\n    Function.Injective (fun t : (M).OpenedTip =>\n      collapse N b hg hb ((M).openedTipVertex t))"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "tipPoint_injective",
+      "header": "theorem tipPoint_injective (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    Function.Injective (tipPoint N D b hg hb)"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "tip_sourceCarrier_iff",
+      "header": "theorem tip_sourceCarrier_iff (k : N.OriginalBlobArc b) (t : (M).OpenedTip) :\n    tipPoint N D b hg hb t \u2208 sourceCarrier N D b hg k \u2194\n      (OG).ReachWithout (coreEdgeLift N b hg hb k)\n        ((OG).source (coreEdgeLift N b hg hb k)) ((M).openedTipVertex t)"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "tip_targetCarrier_iff",
+      "header": "theorem tip_targetCarrier_iff (k : N.OriginalBlobArc b) (t : (M).OpenedTip) :\n    tipPoint N D b hg hb t \u2208 targetCarrier N D b hg k \u2194\n      (OG).ReachWithout (coreEdgeLift N b hg hb k)\n        ((OG).target (coreEdgeLift N b hg hb k)) ((M).openedTipVertex t)"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "actual_cut_carriers",
+      "header": "theorem actual_cut_carriers (k : N.OriginalBlobArc b) :\n    IsCompact (sourceCarrier N D b hg k) \u2227 IsConnected (sourceCarrier N D b hg k) \u2227\n    IsCompact (targetCarrier N D b hg k) \u2227 IsConnected (targetCarrier N D b hg k) \u2227\n    Disjoint (sourceCarrier N D b hg k) (targetCarrier N D b hg k)"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "actual_cut_carriers_closed_disk",
+      "header": "theorem actual_cut_carriers_closed_disk (k : N.OriginalBlobArc b)\n    (o : Schoenflies.Plane) (C : Set Schoenflies.Plane)\n    (hface : Graph.face (graph (blobCurves D b)) (curve (blobCurves D b)) o =\n      Schoenflies.outside C) :\n    sourceCarrier N D b hg k \u2286 C \u222a Schoenflies.inside C \u2227\n    targetCarrier N D b hg k \u2286 C \u222a Schoenflies.inside C"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "actual_quartet_carrier_membership",
+      "header": "theorem actual_quartet_carrier_membership (f : (M).OpenedHybridEdge)\n    (a c d e : (M).OpenedTip) (hac : a\u2260c) (hde : d\u2260e)\n    (hq : (OG).OrientedQuartet f ((M).openedTipVertex a) ((M).openedTipVertex c)\n      ((M).openedTipVertex d) ((M).openedTipVertex e)) :\n    \u2203 k : N.OriginalBlobArc b, f=coreEdgeLift N b hg hb k \u2227\n      tipPoint N D b hg hb a \u2208 sourceCarrier N D b hg k \u2227\n      tipPoint N D b hg hb c \u2208 sourceCarrier N D b hg k \u2227\n      tipPoint N D b hg hb d \u2208 targetCarrier N D b hg k \u2227\n      tipPoint N D b hg hb e \u2208 targetCarrier N D b hg k"
+    },
+    {
+      "module": "ActualOpenedCutLocality",
+      "name": "two_outgoing_exhaust",
+      "header": "private theorem two_outgoing_exhaust {W F : Type*} [Fintype F]\n    (G : EdgeGraph W F) (r : W) (hd : G.outDegree r = 2)\n    (f k : F) (hfk : f\u2260k) (hf : G.source f=r) (hk : G.source k=r) :\n    \u2200 e, G.source e=r \u2192 e=f \u2228 e=k"
+    },
+    {
+      "module": "ActualOpenedCutLocality",
+      "name": "actual_stem_quartet_false",
+      "header": "theorem actual_stem_quartet_false (r : N.RootedCapRootTag b)\n    (s : (M).SkeletonEdge) (hs : s.val = Sum.inr (Sum.inr r))\n    (a c d e : (M).OpenedTip) (hac : a \u2260 c)\n    (hq : (OG).OrientedQuartet (Sum.inl s)\n      ((M).openedTipVertex a) ((M).openedTipVertex c)\n      ((M).openedTipVertex d) ((M).openedTipVertex e)) : False"
+    },
+    {
+      "module": "ActualOpenedCutLocality",
+      "name": "actual_opened_quartet_core_id",
+      "header": "theorem actual_opened_quartet_core_id (f : (M).OpenedHybridEdge)\n    (a c d e : (M).OpenedTip) (hac : a \u2260 c) (hde : d \u2260 e)\n    (hq : (OG).OrientedQuartet f\n      ((M).openedTipVertex a) ((M).openedTipVertex c)\n      ((M).openedTipVertex d) ((M).openedTipVertex e)) :\n    \u2203 k : N.OriginalBlobArc b, f = coreEdgeLift N b hg hb k"
+    },
+    {
+      "module": "ActualTipBoundary",
+      "name": "all_tip_points_on_boundary",
+      "header": "theorem all_tip_points_on_boundary {C : Set Schoenflies.Plane}\n    (hp : \u2200 p : N.BlobPort b, coordinates (D.point (N.originalPortInner b p).val) \u2208 C)\n    (he : \u2200 e : CoreTip N b, coordinates (D.arc e.val.val Nanuq.CapCurves.oneHalf) \u2208 C) :\n    \u2200 t : (M).OpenedTip, tipPoint N D b hg hb t \u2208 C"
+    },
+    {
+      "module": "ActualTipBoundary",
+      "name": "actual_nontrivial_tip_boundary",
+      "header": "theorem actual_nontrivial_tip_boundary (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 C : Set Schoenflies.Plane, Schoenflies.IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside) = Schoenflies.outside C \u2227\n      \u2200 t : (M).OpenedTip, tipPoint N D b hg hb t \u2208 C"
+    },
+    {
+      "module": "ActualTipBoundary",
+      "name": "actual_all_cut_carriers_one_boundary",
+      "header": "theorem actual_all_cut_carriers_one_boundary (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 C : Set Schoenflies.Plane, Schoenflies.IsJordanCurve C \u2227\n      Function.Injective (tipPoint N D b hg hb) \u2227\n      (\u2200 t : (M).OpenedTip, tipPoint N D b hg hb t \u2208 C) \u2227\n      \u2200 k : N.OriginalBlobArc b,\n        IsCompact (sourceCarrier N D b hg k) \u2227 IsConnected (sourceCarrier N D b hg k) \u2227\n        IsCompact (targetCarrier N D b hg k) \u2227 IsConnected (targetCarrier N D b hg k) \u2227\n        Disjoint (sourceCarrier N D b hg k) (targetCarrier N D b hg k) \u2227\n        sourceCarrier N D b hg k \u2286 C \u222a Schoenflies.inside C \u2227\n        targetCarrier N D b hg k \u2286 C \u222a Schoenflies.inside C"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "side_walk_lift",
+      "header": "theorem side_walk_lift (k : E) (a : V) {u v : V}\n    (h : G.ReachWithout k u v) : \u2200 hu : G.ReachWithout k a u,\n    \u2200 hv : G.ReachWithout k a v,\n    (sideGraph G k a).UReach (fun _ => True) \u27e8u,hu\u27e9 \u27e8v,hv\u27e9"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "side_connected",
+      "header": "theorem side_connected (k : E) (a : V) (u v : SideVertex G k a) :\n    (sideGraph G k a).UReach (fun _ => True) u v"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "sideCurves_subset",
+      "header": "lemma sideCurves_subset (D : PlanarCurves G) (k : E) (a : V) :\n    drawing (sideCurves G D k a) \u2286 drawing D"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "point_mem_side_iff",
+      "header": "theorem point_mem_side_iff (D : PlanarCurves G) (k : E) (a v : V) :\n    D.point v \u2208 drawing (sideCurves G D k a) \u2194 G.ReachWithout k a v"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "side_of_edge_point",
+      "header": "theorem side_of_edge_point (D : PlanarCurves G) (k : E) (a : V)\n    (e : E) (he : e \u2260 k) (t : unitInterval)\n    (hz : D.arc e t \u2208 drawing (sideCurves G D k a)) :\n    G.ReachWithout k a (G.source e)"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "side_drawings_disjoint",
+      "header": "theorem side_drawings_disjoint (D : PlanarCurves G) (k : E) (a c : V)\n    (hac : \u00ac G.ReachWithout k a c) :\n    Disjoint (drawing (sideCurves G D k a)) (drawing (sideCurves G D k c))"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "point_mem_carrier_iff",
+      "header": "theorem point_mem_carrier_iff (D : PlanarCurves G) (k : E) (a v : V) :\n    coordinates (D.point v) \u2208 carrier G D k a \u2194 G.ReachWithout k a v"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "carrier_subset",
+      "header": "theorem carrier_subset (D : PlanarCurves G) (k : E) (a : V) :\n    carrier G D k a \u2286 coordinates '' drawing D"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "carrier_connected",
+      "header": "theorem carrier_connected (D : PlanarCurves G) (k : E) (a : V) :\n    IsConnected (carrier G D k a)"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "carrier_compact",
+      "header": "theorem carrier_compact [Finite V] [Finite E] (D : PlanarCurves G) (k : E) (a : V) :\n    IsCompact (carrier G D k a)"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "carriers_disjoint",
+      "header": "theorem carriers_disjoint (D : PlanarCurves G) (k : E) (a c : V)\n    (hac : \u00ac G.ReachWithout k a c) :\n    Disjoint (carrier G D k a) (carrier G D k c)"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "terminal_cut_walk_constant",
+      "header": "theorem terminal_cut_walk_constant (G : EdgeGraph V E)\n    (hin : G.UniqueIncoming) (e : E) (hout : G.outDegree (G.target e)=0)\n    {v : V} (h : G.ReachWithout e (G.target e) v) : v=G.target e"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "terminal_oriented_quartet_false",
+      "header": "theorem terminal_oriented_quartet_false (G : EdgeGraph V E)\n    (hin : G.UniqueIncoming) (e : E) (hout : G.outDegree (G.target e)=0)\n    {a b c d : V} (hcd : c\u2260d) (h : G.OrientedQuartet e a b c d) : False"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "root_leaf_branch_cut_walk",
+      "header": "theorem root_leaf_branch_cut_walk (G : EdgeGraph V E)\n    (hin : G.UniqueIncoming) (f k : E) (r l : V)\n    (hkr : G.source k=r) (hkl : G.target k=l)\n    (hroot : \u2200 e, G.target e\u2260r)\n    (hexhaust : \u2200 e, G.source e=r \u2192 e=f \u2228 e=k)\n    (hleaf : G.outDegree l=0)\n    {v : V} (h : G.ReachWithout f r v) : v=r \u2228 v=l"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "root_leaf_branch_oriented_quartet_false",
+      "header": "theorem root_leaf_branch_oriented_quartet_false (G : EdgeGraph V E)\n    (hin : G.UniqueIncoming) (f k : E) (r l : V)\n    (hfr : G.source f=r) (hkr : G.source k=r) (hkl : G.target k=l)\n    (hroot : \u2200 e, G.target e\u2260r)\n    (hexhaust : \u2200 e, G.source e=r \u2192 e=f \u2228 e=k)\n    (hleaf : G.outDegree l=0)\n    {a b c d : V} (hab : a\u2260b) (har : a\u2260r) (hbr : b\u2260r)\n    (h : G.OrientedQuartet f a b c d) : False"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "opened_nontrivial_cut_skeleton",
+      "header": "theorem opened_nontrivial_cut_skeleton\n    (f : N.OpenedHybridEdge) {a b c d : N.OpenedHybridVertex}\n    (hcd : c\u2260d) (h : (N.openedHybridGraph hleaf).OrientedQuartet f a b c d) :\n    \u2203 e : N.SkeletonEdge, f=Sum.inl e"
+    },
+    {
+      "module": "OpenedCutLeaf",
+      "name": "opened_nontrivial_cut_target_not_tip",
+      "header": "theorem opened_nontrivial_cut_target_not_tip\n    (f : N.OpenedHybridEdge) {a b c d : N.OpenedHybridVertex}\n    (hcd : c\u2260d) (h : (N.openedHybridGraph hleaf).OrientedQuartet f a b c d)\n    (t : N.OpenedTip) :\n    (N.openedHybridGraph hleaf).target f \u2260 N.openedTipVertex t"
+    }
+  ]
+}

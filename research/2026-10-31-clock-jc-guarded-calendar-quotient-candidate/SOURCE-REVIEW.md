@@ -1,0 +1,3 @@
+# Separate source-only mathematical review
+
+31 October 2026. A separate AI-assisted review read all217 lines. Intended semantics approved for compilation: global auxiliary quotient derived by same-bank backward induction; non-support weighted fibres killed by original zero source mass; reBank representative used under the induction's proved quotient; original endpoint ancestry support establishes guard equality; original initialPotentialWeight retained. This is not compiler qualification, expert peer review, novelty certification or a full finite-window theorem. Exact headers/defining values and all elaboration failures must be preserved.
