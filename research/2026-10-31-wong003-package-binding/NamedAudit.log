@@ -1,0 +1,201 @@
+@ResearchCommons.Claims.WongNormalForm.actual_canonical_resolved_normal_form.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord),
+  ∃ H,
+    Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} H) (WongGARG.GARG.samples.{u_1, u_2} G) ∧
+      WongGARG.GARG.NonemptyAnnotations.{u_1, u_2} H ∧
+        WongGARG.GARG.CanonicalRecords.{u_1, u_2} H ∧
+          (∀ (x : Coord) (a b : Node),
+              WongGARG.GARG.AtLocus.{u_1, u_2} H x a b ↔
+                AncestryContraction.Contract.{u_1}
+                  (WongGARG.GARG.ExtractedAt.{u_1, u_2} (WongMRCATruncation.truncate.{u_1, u_2} G) x)
+                  (WongLocalSimplification.KeepSamplesAndBranching.{u_1, u_2} (WongMRCATruncation.truncate.{u_1, u_2} G)
+                    x)
+                  a b) ∧
+            (∀ (x : Coord),
+                WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x →
+                  WongGARG.GARG.UniqueParentAt.{u_1, u_2} H x ∧
+                    WongSimplificationNormalForm.NoNonsampleUnary.{u_1, u_2} H x) ∧
+              WongGARG.GARG.SampleSupported.{u_1, u_2} H ∧
+                WongGARG.GARG.breakpoints.{u_1, u_2} H ⊆ WongGARG.GARG.breakpoints.{u_1, u_2} G ∧
+                  (∀ (x : Coord) (a s : Node),
+                      Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) a →
+                        Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s →
+                          (AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} H x) a s ↔
+                            AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} G x) a s)) ∧
+                    (∀ (x : Coord) (m s : Node),
+                        Finset.Nonempty.{u_1} (WongGARG.GARG.samples.{u_1, u_2} G) →
+                          WongMRCATruncation.IsMRCA.{u_1, u_2} G x m →
+                            Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s →
+                              (AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} H x) m s ↔
+                                AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} G x) m s)) ∧
+                      (∀ (e : WongGARG.EdgeRecord.{u_1, u_2} Node Coord),
+                          Membership.mem.{max u_1 u_2, max u_1 u_2} (WongGARG.GARG.records.{u_1, u_2} H) e →
+                            ∀ (I : WongGARG.Interval.{u_2} Coord),
+                              Membership.mem.{u_2, u_2} (WongGARG.EdgeRecord.regions.{u_1, u_2} e) I →
+                                ∀ (J : WongGARG.Interval.{u_2} Coord),
+                                  Membership.mem.{u_2, u_2} (WongGARG.EdgeRecord.regions.{u_1, u_2} e) J →
+                                    Ne.{u_2 + 1} I J →
+                                      LT.lt.{u_2} (WongGARG.Interval.hi.{u_2} I) (WongGARG.Interval.lo.{u_2} J) ∨
+                                        LT.lt.{u_2} (WongGARG.Interval.hi.{u_2} J) (WongGARG.Interval.lo.{u_2} I)) ∧
+                        Eq.{max (u_1 + 1) (u_2 + 1)} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} H) H
+'ResearchCommons.Claims.WongNormalForm.actual_canonical_resolved_normal_form' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.total_mrca_truncation.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord),
+  ∃ H,
+    Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} H) (WongGARG.GARG.samples.{u_1, u_2} G) ∧
+      WongGARG.GARG.NonemptyAnnotations.{u_1, u_2} H ∧
+        WongGARG.GARG.CanonicalRecords.{u_1, u_2} H ∧
+          (∀ (y : Coord) (p c : Node),
+              WongGARG.GARG.AtLocus.{u_1, u_2} H y p c ↔ WongMRCATruncation.TruncatedAt.{u_1, u_2} G y p c) ∧
+            WongGARG.GARG.SampleSupported.{u_1, u_2} H ∧
+              (∀ (y : Coord),
+                  WongGARG.GARG.UniqueParentAt.{u_1, u_2} G y → WongGARG.GARG.UniqueParentAt.{u_1, u_2} H y) ∧
+                WongGARG.GARG.breakpoints.{u_1, u_2} H ⊆ WongGARG.GARG.breakpoints.{u_1, u_2} G ∧
+                  (∀ (y : Coord) (a s : Node),
+                      Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) a →
+                        Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s →
+                          (AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} H y) a s ↔
+                            AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} G y) a s)) ∧
+                    ∀ (y : Coord) (m s : Node),
+                      WongMRCATruncation.IsMRCA.{u_1, u_2} G y m →
+                        Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s →
+                          (AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} H y) m s ↔
+                            AncestryViews.Reach.{u_1} (WongGARG.GARG.AtLocus.{u_1, u_2} G y) m s)
+'ResearchCommons.Claims.WongNormalForm.total_mrca_truncation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.mrca_unique_under_source_premises.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  Finset.Nonempty.{u_1} (WongGARG.GARG.samples.{u_1, u_2} G) →
+    WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x →
+      (∃ a, WongMRCATruncation.Common.{u_1, u_2} G x a) →
+        ExistsUnique.{u_1 + 1} fun m => WongMRCATruncation.IsMRCA.{u_1, u_2} G x m
+'ResearchCommons.Claims.WongNormalForm.mrca_unique_under_source_premises' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.empty_samples_no_truncated_edges.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} G) EmptyCollection.emptyCollection.{u_1} →
+    ∀ (p c : Node), ¬WongMRCATruncation.TruncatedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongNormalForm.empty_samples_no_truncated_edges' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.singleton_samples_no_truncated_edges.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord) {s : Node},
+  Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} G) (singleton.{u_1, u_1} s) →
+    ∀ (p c : Node), ¬WongMRCATruncation.TruncatedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongNormalForm.singleton_samples_no_truncated_edges' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.without_common_is_sample_support.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  (¬∃ a, WongMRCATruncation.Common.{u_1, u_2} G x a) →
+    ∀ (p c : Node), WongMRCATruncation.TruncatedAt.{u_1, u_2} G x p c ↔ WongGARG.GARG.ExtractedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongNormalForm.without_common_is_sample_support' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.supported_material_can_be_removed.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  Finset.Nonempty.{u_1} (WongGARG.GARG.samples.{u_1, u_2} G) →
+    ∀ {p c : Node},
+      WongMRCATruncation.Common.{u_1, u_2} G x c →
+        WongGARG.GARG.AtLocus.{u_1, u_2} G x p c →
+          WongGARG.GARG.ExtractedAt.{u_1, u_2} G x p c ∧ ¬WongMRCATruncation.TruncatedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongNormalForm.supported_material_can_be_removed' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.canonical_storage_full_local_relation.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord) (a b : Node),
+  WongGARG.GARG.AtLocus.{u_1, u_2} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G) x a b ↔
+    WongGARG.GARG.AtLocus.{u_1, u_2} G x a b
+'ResearchCommons.Claims.WongNormalForm.canonical_storage_full_local_relation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.canonical_storage_semantic_unique.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G H : WongGARG.GARG.{u_1, u_2} Node Coord),
+  Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} G) (WongGARG.GARG.samples.{u_1, u_2} H) →
+    (∀ (x : Coord) (a b : Node), WongGARG.GARG.AtLocus.{u_1, u_2} G x a b ↔ WongGARG.GARG.AtLocus.{u_1, u_2} H x a b) →
+      Eq.{max (u_1 + 1) (u_2 + 1)} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G)
+        (WongIntervalCanonicalization.canonicalize.{u_1, u_2} H)
+'ResearchCommons.Claims.WongNormalForm.canonical_storage_semantic_unique' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.canonical_storage_idempotent.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord),
+  Eq.{max (u_1 + 1) (u_2 + 1)}
+    (WongIntervalCanonicalization.canonicalize.{u_1, u_2} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G))
+    (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G)
+'ResearchCommons.Claims.WongNormalForm.canonical_storage_idempotent' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.canonical_storage_active_topology.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (a b : Node),
+  WongGARG.GARG.Topology.{u_1, u_2} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G) a b ↔
+    ∃ x, WongGARG.GARG.AtLocus.{u_1, u_2} G x a b
+'ResearchCommons.Claims.WongNormalForm.canonical_storage_active_topology' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.list_merge_union_for_every_list.{u_1} : ∀ {Coord : Type u_1}
+  [inst : LinearOrder.{u_1} Coord] (L : List.{u_1} (WongGARG.Interval.{u_1} Coord)) (x : Coord),
+  WongIntervalCanonicalization.Covers.{u_1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} L) x ↔
+    WongIntervalCanonicalization.Covers.{u_1} L x
+'ResearchCommons.Claims.WongNormalForm.list_merge_union_for_every_list' depends on axioms: [propext, Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.ordered_merge_strictly_separated.{u_1} : ∀ {Coord : Type u_1}
+  [inst : LinearOrder.{u_1} Coord] (L : List.{u_1} (WongGARG.Interval.{u_1} Coord)),
+  WongIntervalCanonicalization.Ordered.{u_1} L →
+    WongIntervalCanonicalization.Separated.{u_1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} L)
+'ResearchCommons.Claims.WongNormalForm.ordered_merge_strictly_separated' depends on axioms: [propext, Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.ordered_merge_semantic_unique.{u_1} : ∀ {Coord : Type u_1}
+  [inst : LinearOrder.{u_1} Coord] (L M : List.{u_1} (WongGARG.Interval.{u_1} Coord)),
+  WongIntervalCanonicalization.Ordered.{u_1} L →
+    WongIntervalCanonicalization.Ordered.{u_1} M →
+      (∀ (x : Coord), WongIntervalCanonicalization.Covers.{u_1} L x ↔ WongIntervalCanonicalization.Covers.{u_1} M x) →
+        Eq.{u_1 + 1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} L)
+          (WongIntervalCanonicalization.mergeAdjacent.{u_1} M)
+'ResearchCommons.Claims.WongNormalForm.ordered_merge_semantic_unique' depends on axioms: [propext, Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.ordered_merge_idempotent.{u_1} : ∀ {Coord : Type u_1}
+  [inst : LinearOrder.{u_1} Coord] (L : List.{u_1} (WongGARG.Interval.{u_1} Coord)),
+  WongIntervalCanonicalization.Ordered.{u_1} L →
+    Eq.{u_1 + 1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} L))
+      (WongIntervalCanonicalization.mergeAdjacent.{u_1} L)
+'ResearchCommons.Claims.WongNormalForm.ordered_merge_idempotent' depends on axioms: [propext, Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.canonical_storage_same_samples.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord),
+  Eq.{u_1 + 1} (WongGARG.GARG.samples.{u_1, u_2} (WongIntervalCanonicalization.canonicalize.{u_1, u_2} G))
+    (WongGARG.GARG.samples.{u_1, u_2} G)
+'ResearchCommons.Claims.WongNormalForm.canonical_storage_same_samples' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongNormalForm.list_merge_reuses_input_endpoints.{u_1} : ∀ {Coord : Type u_1}
+  [inst : LinearOrder.{u_1} Coord] (L : List.{u_1} (WongGARG.Interval.{u_1} Coord)) {J : WongGARG.Interval.{u_1} Coord},
+  Membership.mem.{u_1, u_1} (WongIntervalCanonicalization.mergeAdjacent.{u_1} L) J →
+    (∃ I, Membership.mem.{u_1, u_1} L I ∧ Eq.{u_1 + 1} (WongGARG.Interval.lo.{u_1} J) (WongGARG.Interval.lo.{u_1} I)) ∧
+      ∃ I, Membership.mem.{u_1, u_1} L I ∧ Eq.{u_1 + 1} (WongGARG.Interval.hi.{u_1} J) (WongGARG.Interval.hi.{u_1} I)
+'ResearchCommons.Claims.WongNormalForm.list_merge_reuses_input_endpoints' depends on axioms: [propext]
+@ResearchCommons.Claims.WongNormalForm.truncated_retention_on_original_source_cells.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (I : WongGARG.Interval.{u_2} Coord),
+  Membership.mem.{u_2, u_2} (WongBreakpointCells.cells.{u_2} (WongGARG.GARG.breakpoints.{u_1, u_2} G)) I →
+    ∀ (x : Coord),
+      WongGARG.Interval.Contains.{u_2} I x →
+        ∀ (a : Node),
+          WongLocalSimplification.KeepSamplesAndBranching.{u_1, u_2} (WongMRCATruncation.truncate.{u_1, u_2} G) x a ↔
+            WongLocalSimplification.KeepSamplesAndBranching.{u_1, u_2} (WongMRCATruncation.truncate.{u_1, u_2} G)
+              (WongGARG.Interval.lo.{u_2} I) a
+'ResearchCommons.Claims.WongNormalForm.truncated_retention_on_original_source_cells' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

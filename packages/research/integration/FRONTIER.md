@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Actual finite-GARG normal-form successor — 31 October 2026
+
+[WONG-003 adoption](../../../research/2026-10-31-wong003-package-binding/README.md): **57 mapped IDs/602 names/61 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Original finite GARG/sampleIDs, total truncation versus conditional MRCA uniqueness, original breakpoint-cell retention, full indexed canonical storage and Ordered merger scopes retained. Storage-only idempotence, not a whole computable production exporter.
+
+[Current aggregate](wong-normal-form-aggregate-verification.json) records actual changed roots/named/owned/resolved scope and explicit qualified reuse; no fresh whole1,842 build/audit. Initial failed shorthand wrapper and all original proof attribution preserved. Earlier receipts remain historical.
+
 ## Actual matching-core successor — 31 October 2026
 
 [ALEXANDER-003 adoption](../../../research/2026-10-31-alexander003-package-binding/README.md): **56 mapped IDs/584 names/62 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Actual target26:6 compiled/20 reused,17 named exports pass. Exact reachable-state, classical core/mortal and COMPLETE blow-up scope is retained, including both global WF premises in the height endpoint. No native infinite-input decision algorithm or new novelty claim.

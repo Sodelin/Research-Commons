@@ -1,0 +1,149 @@
+structure WongGARG.Interval.{v} (Coord : Type v) [LinearOrder Coord] : Type v
+number of parameters: 2
+fields:
+  WongGARG.Interval.lo : Coord
+  WongGARG.Interval.hi : Coord
+  WongGARG.Interval.proper : self.lo < self.hi
+constructor:
+  WongGARG.Interval.mk.{v} {Coord : Type v} [LinearOrder Coord] (lo hi : Coord) (proper : lo < hi) :
+    WongGARG.Interval Coord
+def WongGARG.Interval.Contains.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → WongGARG.Interval Coord → Coord → Prop :=
+fun {Coord} [LinearOrder Coord] I x => I.lo ≤ x ∧ x < I.hi
+def WongGARG.Interval.Disjoint.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → WongGARG.Interval Coord → WongGARG.Interval Coord → Prop :=
+fun {Coord} [LinearOrder Coord] I J => ∀ (x : Coord), ¬(I.Contains x ∧ J.Contains x)
+structure WongGARG.EdgeRecord.{u, v} (Node : Type u) (Coord : Type v) [LinearOrder Coord] : Type (max u v)
+number of parameters: 3
+fields:
+  WongGARG.EdgeRecord.parent : Node
+  WongGARG.EdgeRecord.child : Node
+  WongGARG.EdgeRecord.regions : Finset (WongGARG.Interval Coord)
+  WongGARG.EdgeRecord.disjoint : ∀ I ∈ self.regions, ∀ J ∈ self.regions, I ≠ J → I.Disjoint J
+constructor:
+  WongGARG.EdgeRecord.mk.{u, v} {Node : Type u} {Coord : Type v} [LinearOrder Coord] (parent child : Node)
+    (regions : Finset (WongGARG.Interval Coord)) (disjoint : ∀ I ∈ regions, ∀ J ∈ regions, I ≠ J → I.Disjoint J) :
+    WongGARG.EdgeRecord Node Coord
+structure WongGARG.GARG.{u, v} (Node : Type u) (Coord : Type v) [Fintype Node] [LinearOrder Coord] : Type (max u v)
+number of parameters: 4
+fields:
+  WongGARG.GARG.samples : Finset Node
+  WongGARG.GARG.records : Finset (WongGARG.EdgeRecord Node Coord)
+  WongGARG.GARG.acyclic : ∀ (a : Node), ¬AncestryViews.Reach (WongGARG.RecordTopology self.records) a a
+constructor:
+  WongGARG.GARG.mk.{u, v} {Node : Type u} {Coord : Type v} [Fintype Node] [LinearOrder Coord] (samples : Finset Node)
+    (records : Finset (WongGARG.EdgeRecord Node Coord))
+    (acyclic : ∀ (a : Node), ¬AncestryViews.Reach (WongGARG.RecordTopology records) a a) : WongGARG.GARG Node Coord
+def WongGARG.GARG.AtLocus.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x parent child =>
+  ∃ e ∈ G.records, e.parent = parent ∧ e.child = child ∧ e.Covers x
+def WongGARG.GARG.CanonicalRecords.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G =>
+  ∀ e ∈ G.records, ∀ f ∈ G.records, e.parent = f.parent → e.child = f.child → e = f
+def WongGARG.GARG.NonemptyAnnotations.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G => ∀ e ∈ G.records, e.regions.Nonempty
+def WongGARG.GARG.UniqueParentAt.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x =>
+  ∀ (child a b : Node), G.AtLocus x a child → G.AtLocus x b child → a = b
+def WongGARG.GARG.SampleAncestral.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x a =>
+  ∃ s ∈ G.samples, a = s ∨ AncestryViews.Reach (G.AtLocus x) a s
+def WongGARG.GARG.ExtractedAt.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x parent child =>
+  G.AtLocus x parent child ∧ G.SampleAncestral x child
+def WongGARG.GARG.SampleSupported.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G =>
+  ∀ (x : Coord) (a b : Node), G.AtLocus x a b → G.SampleAncestral x b
+def WongGARG.GARG.breakpoints.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Finset Coord :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G =>
+  G.records.biUnion fun e => e.regions.biUnion fun I => {I.lo, I.hi}
+inductive AncestryViews.Reach.{u} : {V : Type u} → (V → V → Prop) → V → V → Prop
+number of parameters: 3
+constructors:
+AncestryViews.Reach.edge : ∀ {V : Type u} {R : V → V → Prop} {a b : V}, R a b → AncestryViews.Reach R a b
+AncestryViews.Reach.snoc : ∀ {V : Type u} {R : V → V → Prop} {a b c : V},
+  AncestryViews.Reach R a b → R b c → AncestryViews.Reach R a c
+inductive AncestryContraction.HiddenPath.{u} : {V : Type u} → (V → V → Prop) → (V → Prop) → V → V → Prop
+number of parameters: 4
+constructors:
+AncestryContraction.HiddenPath.edge : ∀ {V : Type u} {R : V → V → Prop} {K : V → Prop} {a b : V},
+  R a b → AncestryContraction.HiddenPath R K a b
+AncestryContraction.HiddenPath.snoc : ∀ {V : Type u} {R : V → V → Prop} {K : V → Prop} {a b c : V},
+  AncestryContraction.HiddenPath R K a b → ¬K b → R b c → AncestryContraction.HiddenPath R K a c
+def AncestryContraction.Contract.{u} : {V : Type u} → (V → V → Prop) → (V → Prop) → V → V → Prop :=
+fun {V} R K a b => K a ∧ K b ∧ AncestryContraction.HiddenPath R K a b
+def WongMRCATruncation.Anc.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x a b => a = b ∨ AncestryViews.Reach (G.AtLocus x) a b
+def WongMRCATruncation.Common.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x a => ∀ s ∈ G.samples, WongMRCATruncation.Anc G x a s
+def WongMRCATruncation.IsMRCA.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x m =>
+  WongMRCATruncation.Common G x m ∧ ∀ (a : Node), WongMRCATruncation.Common G x a → WongMRCATruncation.Anc G x a m
+def WongMRCATruncation.TruncatedAt.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x p c => G.ExtractedAt x p c ∧ ¬WongMRCATruncation.Common G x c
+def WongMRCATruncation.truncate.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → WongGARG.GARG Node Coord :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G =>
+  (WongMRCATruncation.truncatedPresentation G).toGARG G.samples ⋯
+def WongLocalSimplification.KeepSamplesAndBranching.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Node → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x a =>
+  a ∈ G.samples ∨ ∃ b c, b ≠ c ∧ G.ExtractedAt x a b ∧ G.ExtractedAt x a c
+def WongLocalSimplification.CellwiseRetained.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → (Coord → Node → Prop) → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G K =>
+  ∀ I ∈ WongBreakpointCells.cells G.breakpoints, ∀ (x : Coord), I.Contains x → ∀ (a : Node), K x a ↔ K I.lo a
+def WongSimplificationNormalForm.NoNonsampleUnary.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : Fintype Node] → [inst_1 : LinearOrder Coord] → WongGARG.GARG Node Coord → Coord → Prop :=
+fun {Node} {Coord} [Fintype Node] [LinearOrder Coord] G x =>
+  ∀ a ∉ G.samples, (∃ b, G.AtLocus x a b ∨ G.AtLocus x b a) → ∃ b c, b ≠ c ∧ G.AtLocus x a b ∧ G.AtLocus x a c
+def WongIntervalCanonicalization.Covers.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → List (WongGARG.Interval Coord) → Coord → Prop :=
+fun {Coord} [LinearOrder Coord] L x => ∃ I ∈ L, I.Contains x
+def WongIntervalCanonicalization.Ordered.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → List (WongGARG.Interval Coord) → Prop :=
+fun {Coord} [LinearOrder Coord] L => List.Pairwise (fun I J => I.hi ≤ J.lo) L
+def WongIntervalCanonicalization.Separated.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → List (WongGARG.Interval Coord) → Prop :=
+fun {Coord} [LinearOrder Coord] L => List.Pairwise (fun I J => I.hi < J.lo) L
+def WongIntervalCanonicalization.prepend.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] →
+    WongGARG.Interval Coord → List (WongGARG.Interval Coord) → List (WongGARG.Interval Coord) :=
+fun {Coord} [LinearOrder Coord] I x =>
+  match x with
+  | [] => [I]
+  | J :: L => if h : I.hi = J.lo then WongIntervalCanonicalization.join I J h :: L else I :: J :: L
+def WongIntervalCanonicalization.mergeAdjacent.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → List (WongGARG.Interval Coord) → List (WongGARG.Interval Coord) :=
+fun {Coord} [LinearOrder Coord] x => List.brecOn x WongIntervalCanonicalization.mergeAdjacent._f
+def WongIntervalCanonicalization.canonicalize.{u, v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] →
+    {Node : Type u} → [inst_1 : Fintype Node] → WongGARG.GARG Node Coord → WongGARG.GARG Node Coord :=
+fun {Coord} [LinearOrder Coord] {Node} [Fintype Node] G =>
+  WongIntervalCanonicalization.CellPresentation.canonicalGARG (WongSimplification.automaticPresentation G) G.samples ⋯
+def WongIntervalCanonicalization.canonicalRegions.{v} : {Coord : Type v} →
+  [inst : LinearOrder Coord] → Finset (WongGARG.Interval Coord) → List (WongGARG.Interval Coord) :=
+fun {Coord} [LinearOrder Coord] F =>
+  WongIntervalCanonicalization.mergeAdjacent (WongIntervalCanonicalization.sortedRegions F)

@@ -7407,16 +7407,52 @@
       "claim_id": "CB-WONG-003",
       "reuse_rank": null,
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.WongNormalForm",
+        "declarations": [
+          "ResearchCommons.Claims.WongNormalForm.actual_canonical_resolved_normal_form",
+          "ResearchCommons.Claims.WongNormalForm.total_mrca_truncation",
+          "ResearchCommons.Claims.WongNormalForm.mrca_unique_under_source_premises",
+          "ResearchCommons.Claims.WongNormalForm.empty_samples_no_truncated_edges",
+          "ResearchCommons.Claims.WongNormalForm.singleton_samples_no_truncated_edges",
+          "ResearchCommons.Claims.WongNormalForm.without_common_is_sample_support",
+          "ResearchCommons.Claims.WongNormalForm.supported_material_can_be_removed",
+          "ResearchCommons.Claims.WongNormalForm.canonical_storage_full_local_relation",
+          "ResearchCommons.Claims.WongNormalForm.canonical_storage_semantic_unique",
+          "ResearchCommons.Claims.WongNormalForm.canonical_storage_idempotent",
+          "ResearchCommons.Claims.WongNormalForm.canonical_storage_active_topology",
+          "ResearchCommons.Claims.WongNormalForm.list_merge_union_for_every_list",
+          "ResearchCommons.Claims.WongNormalForm.ordered_merge_strictly_separated",
+          "ResearchCommons.Claims.WongNormalForm.ordered_merge_semantic_unique",
+          "ResearchCommons.Claims.WongNormalForm.ordered_merge_idempotent",
+          "ResearchCommons.Claims.WongNormalForm.canonical_storage_same_samples",
+          "ResearchCommons.Claims.WongNormalForm.list_merge_reuses_input_endpoints",
+          "ResearchCommons.Claims.WongNormalForm.truncated_retention_on_original_source_cells"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Finite actual GARG/sample IDs/arbitrary linear coordinates, total MRCA truncation versus conditional unique existence, coordinate-dependent contraction with original-source breakpoint retention, full indexed relation canonical storage and storage-only idempotence. Touching-list coverage unconditional; separated/unique/idempotent merger retains Ordered. No full computable exporter/stochastic/time/runtime/new novelty claim."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.WongNormalForm --claim CB-WONG-003",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/wong-normal-form-verification.json",
+          "scope": "Named type/owner proof interface only. Full preparation remains noncomputable; original touching-list merger is executable but no production exporter/native runtime is supplied."
+        }
       },
       "scope_owner": "canonical_registry",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "b7e711be9e79b38bb70d3d487f57679e741d9d2bb879b08659bf07de24ef221c",
+          "record": "integration/wong-normal-form-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Complete canonical card, full correspondence, eighteen full types/axioms and actual definitions accepted. Existing proof authorship and36-module audit remain attributed. autoImplicit false/original namespace repairs preserve18 literal headers; failed shorthand prototype had no accepted elaborated types."
+        }
+      ],
       "dependencies": [],
       "source_artifacts": [
         {

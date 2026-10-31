@@ -6106,10 +6106,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.WongNormalForm",
+      "path": "lean/Compatibility/ResearchCommons.Claims.WongNormalForm.lean",
+      "sha256": "b7e711be9e79b38bb70d3d487f57679e741d9d2bb879b08659bf07de24ef221c",
+      "imports": [
+        "WongSimplificationNormalForm"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed CB-WONG-003 exact original finite GARG normal form, total MRCA truncation, original-cell retention and interval storage interface",
+        "proof_derivation": false,
+        "verification": "integration/wong-normal-form-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "f3e72e3f3e36b4084973f96e5eff00ae57cc6133b4e7c8f2cd2003a7a6a67077",
+      "sha256": "83f19276d8bd57f2c50019840a0ac614ec5bafbe6379c8b943cff563e223d45d",
       "imports": [
+        "ResearchCommons.Claims.WongNormalForm",
         "ResearchCommons.Claims.MatchingCore",
         "ResearchCommons.Claims.CountableHosts",
         "ResearchCommons.Claims.StatefulCertificates",
@@ -6252,6 +6266,10 @@
         "countable_hosts_successor": {
           "prior_source_sha256": "e324d455199ca47d828eb3ab2c4b67b77bc7954afdad2fd129250d3c4fbaf45a",
           "scope": "Reviewed ALEXANDER002 one-clone/countable actual hosts/all finite stretch join; actual enlarged aggregate check pending."
+        },
+        "wong_normal_form_successor": {
+          "prior_source_sha256": "f3e72e3f3e36b4084973f96e5eff00ae57cc6133b4e7c8f2cd2003a7a6a67077",
+          "scope": "Reviewed ALEXANDER003 exact reachable-state classical certificate/core/height and complete-blow-up join; actual enlarged aggregate check pending."
         },
         "matching_core_successor": {
           "prior_source_sha256": "0fbebc59abe8da6e83c6e5c7d49753d604094beec8e9859d484b71a1a29652dc",

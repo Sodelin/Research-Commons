@@ -1,3 +1,4 @@
+import ResearchCommons.Claims.WongNormalForm
 import ResearchCommons.Claims.MatchingCore
 import ResearchCommons.Claims.CountableHosts
 import ResearchCommons.Claims.StatefulCertificates

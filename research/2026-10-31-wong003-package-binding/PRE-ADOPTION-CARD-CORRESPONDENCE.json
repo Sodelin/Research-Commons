@@ -1,0 +1,71 @@
+{
+  "claim_id": "CB-WONG-003",
+  "canonical_exact_scope": "For every finite GARG with globally acyclic union topology, a fixed finite node catalogue and sample set, and each record annotated by a finite family of proper pairwise-disjoint half-open intervals in an arbitrary linear order, first retain precisely the active edges whose child is sample-ancestral but is not a reflexive common ancestor of all designated samples at that coordinate. Then contract paths through nodes that are neither samples nor locally branching vertices of that truncated sample ancestry. The retained set may depend on coordinate; its constancy on automatically derived source breakpoint cells is proved for this rule. The composed theorem constructs an actual finite H on the same node type and sample set. Its local edges are exactly that contraction. H is sample-supported, introduces no new breakpoints and has one nonempty record per active ordered parent-child pair, with strictly separated maximal intervals. Sample-to-sample ancestry paths are exactly preserved. For nonempty samples and a supplied IsMRCA witness, paths from that MRCA to each sample are exactly preserved. At each coordinate where the original graph has unique parents, H also has unique parents and every incident nonsample node has at least two distinct children. Protected sampled ancestors may remain unary, and unused original IDs may remain isolated. An MRCA means a common ancestor below every common ancestor. Unique existence is proved under nonempty samples, unique local parents and existence of some common ancestor; it is not presumed for arbitrary DAGs. The truncation construction is total without an MRCA-existence assumption. Empty and singleton sample sets give no retained edges; without a common ancestor it reduces to ordinary sample-support filtering. This operation deliberately removes supported material above a local MRCA and is not identical to support restriction. Independently, canonical interval storage preserves the full indexed local-edge relation and sample set. Equal full local-edge semantics and samples yield exactly equal canonical graphs; empty-annotation ghost records can disappear. Canonicalizing H again gives H. This is storage idempotence, not a claim of full truncation/contraction-pipeline idempotence. The executable touching-interval list merge preserves union membership for every list and, on sorted nonoverlapping inputs, produces the unique strictly separated interval list, is idempotent and reuses input endpoints. The whole-graph canonicalization and composed normal form use classical finite enumeration/activity decisions. No computable whole-exporter or runtime conclusion follows. No probability law, physical dates, event history or empirical ancestry inference is claimed preserved.",
+  "binding_adopted": false,
+  "current_wrapper_sha256": "b7e711be9e79b38bb70d3d487f57679e741d9d2bb879b08659bf07de24ef221c",
+  "clause_map": [
+    {
+      "clause": "One actual finite H, same finite Node catalogue and samples, exact coordinate-dependent truncation/contraction, no new breakpoints, canonical maximal records, supported output, protected sample/MRCA paths and conditional local unique-parent/no-unary",
+      "exports": [
+        "actual_canonical_resolved_normal_form"
+      ],
+      "definitions": "Actual GARG, TruncatedAt, truncate, Contract/HiddenPath, KeepSamplesAndBranching and NoNonsampleUnary printed. The complete original composed theorem is exported, not a generic substitute."
+    },
+    {
+      "clause": "Retention constant on automatically derived ORIGINAL source breakpoint cells without extra K constancy premise",
+      "exports": [
+        "truncated_retention_on_original_source_cells"
+      ],
+      "definition_join": "Reuses actual truncatedPresentation.constant and truncate_at_iff; truncate_sample_supported converts extracted/local relations. Exact samples-and-branching rule transported through same source cells; new wrapper proof is only this existing-definition correspondence."
+    },
+    {
+      "clause": "Total finite truncation; unique MRCA only under nonempty samples/unique local parents/some common ancestor",
+      "exports": [
+        "total_mrca_truncation",
+        "mrca_unique_under_source_premises"
+      ],
+      "definitions": "Reflexive Anc/Common/IsMRCA printed. Global union DAG and finite catalogue belong to original GARG structure; total truncation does NOT require MRCA existence."
+    },
+    {
+      "clause": "Empty/singleton sample sets remove all truncated edges; no common ancestor gives ordinary support filtering; supported material can still be removed",
+      "exports": [
+        "empty_samples_no_truncated_edges",
+        "singleton_samples_no_truncated_edges",
+        "without_common_is_sample_support",
+        "supported_material_can_be_removed"
+      ],
+      "scope": "Preserves sampled-ancestor boundary cases, supported-but-above-MRCA distinction and unused isolated original IDs."
+    },
+    {
+      "clause": "Canonical storage preserves complete indexed edge relation and samples, is determined by those semantics, omits inactive ghost topology and is idempotent",
+      "exports": [
+        "canonical_storage_full_local_relation",
+        "canonical_storage_same_samples",
+        "canonical_storage_semantic_unique",
+        "canonical_storage_active_topology",
+        "canonical_storage_idempotent"
+      ],
+      "scope": "Idempotence is canonical interval STORAGE only. No full truncation/contraction pipeline idempotence asserted."
+    },
+    {
+      "clause": "Executable touching-list merge preserves union for EVERY input list; sorted nonoverlapping input gives unique separated output/idempotence and input endpoint reuse",
+      "exports": [
+        "list_merge_union_for_every_list",
+        "ordered_merge_strictly_separated",
+        "ordered_merge_semantic_unique",
+        "ordered_merge_idempotent",
+        "list_merge_reuses_input_endpoints"
+      ],
+      "scope": "Ordered premises retained exactly. mergeAdjacent implementation printed but NOT run here; no new byte exporter/runtime bound, arbitrary-overlap canonicalization or input sorting implementation claimed."
+    }
+  ],
+  "distinct_from_existing_CB_WONG_002": "Existing WONG002 exports actual record scan/memoized sample extraction/roundtrip and abstract counts. This joins MRCA stopping, protected coordinate-dependent contraction and maximal interval storage with full composed finite H; no duplicate record-extraction claim or new claim ID.",
+  "limits": [
+    "Whole graph construction remains noncomputable classical enumeration/activity decision",
+    "No timestamps, physical event history, stochastic Big/Little law, empirical ancestry or production exporter certification",
+    "Arbitrary linear-order coordinates, proper half-open finite per-record families and GLOBAL union acyclicity preserved",
+    "Sampled ancestors may be unary; unused IDs may be isolated; unique-parent/no-nonsample-unary only at coords with original unique local parents",
+    "No historical novelty/priority or new proof authorship claim; Wong et al and original Samuel suppliers retain attribution"
+  ],
+  "source_review": "Five principal sources1611lines plus GARG429/Simplification157/IntervalNormalization311 read completely; actual primitive definitions printed. This is bounded exact-interface inspection and36-module kernel scope, not new independent full77-module historical hand/compiler replay."
+}
