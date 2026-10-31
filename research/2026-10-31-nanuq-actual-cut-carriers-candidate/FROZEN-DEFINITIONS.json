@@ -1,0 +1,44 @@
+{
+  "definitions": [
+    {
+      "module": "ActualCutCarriers",
+      "name": "tipPoint",
+      "source": "def tipPoint (t : (M).OpenedTip) : Schoenflies.Plane :=\n  coordinates (corePoint N D b (collapse N b hg hb ((M).openedTipVertex t)))"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "sourceCarrier",
+      "source": "def sourceCarrier (k : N.OriginalBlobArc b) : Set Schoenflies.Plane :=\n  Nanuq.CutSideCarrier.carrier (coreGraph N b hg) (actualCoreCurves N D b hg)\n    k ((coreGraph N b hg).source k)"
+    },
+    {
+      "module": "ActualCutCarriers",
+      "name": "targetCarrier",
+      "source": "def targetCarrier (k : N.OriginalBlobArc b) : Set Schoenflies.Plane :=\n  Nanuq.CutSideCarrier.carrier (coreGraph N b hg) (actualCoreCurves N D b hg)\n    k ((coreGraph N b hg).target k)"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "SideVertex",
+      "source": "abbrev SideVertex (k : E) (a : V) := {v : V // G.ReachWithout k a v}\nabbrev SideEdge (k : E) (a : V) := {e : E // e \u2260 k \u2227 G.ReachWithout k a (G.source e)}"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "SideEdge",
+      "source": "abbrev SideEdge (k : E) (a : V) := {e : E // e \u2260 k \u2227 G.ReachWithout k a (G.source e)}"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "sideGraph",
+      "source": "def sideGraph (k : E) (a : V) : EdgeGraph (SideVertex G k a) (SideEdge G k a) where\n  source e := \u27e8G.source e.val,e.property.2\u27e9\n  target e := \u27e8G.target e.val,e.property.2.tail \u27e8e.val,e.property.1,Or.inl \u27e8rfl,rfl\u27e9\u27e9\u27e9"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "sideCurves",
+      "source": "def sideCurves (D : PlanarCurves G) (k : E) (a : V) : PlanarCurves (sideGraph G k a) where\n  point v := D.point v.val\n  point_injective := fun _ _ h => Subtype.ext (D.point_injective h)\n  arc e := D.arc e.val\n  arc_injective e := D.arc_injective e.val\n  vertex_incidence e v t h := by\n    rcases D.vertex_incidence e.val v.val t h with hs | ht\n    \u00b7 exact Or.inl (Subtype.ext hs)\n    \u00b7 exact Or.inr (Subtype.ext ht)\n  edge_incidence e f hef t u h :=\n    D.edge_incidence e.val f.val (fun hh => hef (Subtype.ext hh)) t u h"
+    },
+    {
+      "module": "CutSideCarrier",
+      "name": "carrier",
+      "source": "def carrier (D : PlanarCurves G) (k : E) (a : V) : Set Schoenflies.Plane :=\n  Graph.pointSet (graph (sideCurves G D k a)) (curve (sideCurves G D k a))"
+    }
+  ]
+}
