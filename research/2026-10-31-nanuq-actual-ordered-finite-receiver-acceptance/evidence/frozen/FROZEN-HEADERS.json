@@ -1,0 +1,85 @@
+{
+  "status": "UNCOMPILED literal headers, not checked elaborated signatures",
+  "headers": [
+    {
+      "module": "ActualOrderedBlockReceiver",
+      "name": "actual_ordered_block_finite_receiver",
+      "header": "theorem actual_ordered_block_finite_receiver\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 (code : N.BlobPort b \u21aa Nat) (C : Set Plane) (f : \u211d \u2192 Plane) (\u03b8 : (M).OpenedTip \u2192 \u211d) (xs : List (M).OpenedTip)\n      (k : Nat) (base : List Nat) (dup : Nat \u2192 Bool)\n      (s : BinarySyntax (M).OpenedHybridVertex) (label : (M).OpenedHybridVertex \u2192 Nat) (T : Tree),\n      IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside)=outside C \u2227\n      IsLoop f \u2227 f '' unitInterval=C \u2227\n      (\u2200 t, \u03b8 t\u2208Ico (0:\u211d) 1 \u2227 f (\u03b8 t)=tipPoint N D b hg hb t) \u2227\n      Function.Injective \u03b8 \u2227 xs.Nodup \u2227 (\u2200 t, t\u2208xs) \u2227\n      xs.Pairwise (fun a c => \u03b8 a\u2264\u03b8 c) \u2227\n      (\u2200 (k : (M).OpenedHybridEdge) (a c d e : (M).OpenedTip),\n        (OG).OrientedQuartet k ((M).openedTipVertex a) ((M).openedTipVertex c)\n          ((M).openedTipVertex d) ((M).openedTipVertex e) \u2192\n        \u00ac((\u03b8 a<\u03b8 d \u2227 \u03b8 d<\u03b8 c \u2227 \u03b8 c<\u03b8 e) \u2228\n          (\u03b8 d<\u03b8 a \u2227 \u03b8 a<\u03b8 e \u2227 \u03b8 e<\u03b8 c))) \u2227\n      (\u2200 a c : (M).OpenedTip, \u03b8 a<\u03b8 c \u2192\n        (M).openedTipLabel hl a=(M).openedTipLabel hl c \u2192\n        (\u2200 w, \u00ac(\u03b8 a<\u03b8 w \u2227 \u03b8 w<\u03b8 c)) \u2228\n          (\u2200 w, \u00ac(\u03b8 w<\u03b8 a \u2228 \u03b8 c<\u03b8 w))) \u2227\n      (\u2200 a c : (M).OpenedTip, a\u2260c \u2192\n        (M).openedTipLabel hl a=(M).openedTipLabel hl c \u2192\n        Nanuq.Restriction.CyclicGap (xs.map (fun t => code ((M).openedTipLabel hl t)))\n          (code ((M).openedTipLabel hl a)) (code ((M).openedTipLabel hl a))) \u2227\n      k\u22641 \u2227 base.Nodup \u2227\n      (xs.rotate k).map (fun t => code ((M).openedTipLabel hl t))=Nanuq.Restriction.blocks base dup \u2227\n      s.frontier=xs.map (M).openedTipVertex \u2227\n      (\u2200 (lab : (M).OpenedHybridVertex \u2192 Nat) a b c d,\n        LabelledQuartet (OG) lab a b c d \u2194 (encode lab s).Witness [] a b c d) \u2227\n      (\u2200 t, label ((M).openedTipVertex t)=code ((M).openedTipLabel hl t)) \u2227\n      T.size=(Nanuq.Restriction.blocks base dup).length-1 \u2227\n      (\u2200 (q : Quartet) (r a b c d : Nat), q.parts r=(a,b,c,d) \u2192 a\u2260b \u2192 c\u2260d \u2192\n        (LabelledQuartet (OG) label a b c d \u2194\n          \u2203 e\u2208T.internalIntervals 1,\n            edgeWitness (Nanuq.Restriction.blocks base dup) e.1 e.2 q r=true))"
+    },
+    {
+      "module": "AnchoredIntervals",
+      "name": "anchored_frontier_convex",
+      "header": "theorem anchored_frontier_convex (v anchor : V) (rest : BinarySyntax V)\n    (rank : V \u2192 R) (code : V \u2192 Nat)\n    (hnd : (.fork v (.tip anchor) rest : BinarySyntax V).frontier.Nodup)\n    (hfirst : \u2200 x\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier,\n      x\u2260anchor \u2192 rank anchor<rank x)\n    (hno : \u2200 a c d e,\n      a\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier \u2192\n      c\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier \u2192\n      d\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier \u2192\n      e\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier \u2192\n      (encode code (.fork v (.tip anchor) rest)).Witness [] (code a) (code c) (code d) (code e) \u2192\n      \u00ac((rank a<rank d \u2227 rank d<rank c \u2227 rank c<rank e) \u2228\n        (rank d<rank a \u2227 rank a<rank e \u2227 rank e<rank c)))\n    {u : BinarySyntax V} {out : List V} (hu : Context rest u out) :\n    \u2200 a\u2208u.frontier, \u2200 c\u2208u.frontier,\n      \u2200 b\u2208(.fork v (.tip anchor) rest : BinarySyntax V).frontier,\n        rank a<rank b \u2192 rank b<rank c \u2192 b\u2208u.frontier"
+    },
+    {
+      "module": "ConvexSeparation",
+      "name": "convex_sides_separated",
+      "header": "theorem convex_sides_separated (ambient l r : List V) (rank : V \u2192 R)\n    (hl : \u2200 x\u2208l, x\u2208ambient) (hr : \u2200 x\u2208r, x\u2208ambient)\n    (hi : \u2200 a\u2208ambient, \u2200 b\u2208ambient, rank a=rank b \u2192 a=b)\n    (hd : \u2200 x\u2208l, x\u2209r) (hnl : l\u2260[]) (hnr : r\u2260[])\n    (hcl : RankConvex ambient rank l) (hcr : RankConvex ambient rank r) :\n    (\u2200 a\u2208l, \u2200 c\u2208r, rank a<rank c) \u2228\n      (\u2200 c\u2208r, \u2200 a\u2208l, rank c<rank a)"
+    },
+    {
+      "module": "ConvexSeparation",
+      "name": "frontier_nonempty",
+      "header": "theorem frontier_nonempty (t : BinarySyntax V) : t.frontier\u2260[]"
+    },
+    {
+      "module": "OccurrenceOrderReceiver",
+      "name": "occurrence_order_receiver",
+      "header": "theorem occurrence_order_receiver (t : BinarySyntax V) (xs : List V)\n    (rank : V \u2192 R) (code : V \u2192 Nat)\n    (hp : t.frontier.Perm xs) (hnd : xs.Nodup) (hs : 2\u2264xs.length)\n    (hsort : xs.Pairwise (fun a b => rank a<rank b))\n    (hi : \u2200 a\u2208xs, \u2200 b\u2208xs, rank a=rank b \u2192 a=b)\n    (hno : \u2200 a c d e, a\u2208xs \u2192 c\u2208xs \u2192 d\u2208xs \u2192 e\u2208xs \u2192\n      (encode code t).Witness [] (code a) (code c) (code d) (code e) \u2192\n      \u00ac((rank a<rank d \u2227 rank d<rank c \u2227 rank c<rank e) \u2228\n        (rank d<rank a \u2227 rank a<rank e \u2227 rank e<rank c))) :\n    \u2203 s : BinarySyntax V, s.frontier=xs \u2227\n      \u2200 (label : V \u2192 Nat) a b c d,\n        (encode label s).Witness [] a b c d \u2194 (encode label t).Witness [] a b c d"
+    },
+    {
+      "module": "OrderedSyntax",
+      "name": "witness_fork_right_congr",
+      "header": "theorem witness_fork_right_congr (l r r' : LTree)\n    (hleaves : \u2200 x, x\u2208r.leaves \u2194 x\u2208r'.leaves)\n    (hw : \u2200 out a b c d, r.Witness out a b c d \u2194 r'.Witness out a b c d)\n    (out : List Nat) (a b c d : Nat) :\n    (LTree.fork l r).Witness out a b c d \u2194\n      (LTree.fork l r').Witness out a b c d"
+    },
+    {
+      "module": "OrderedSyntax",
+      "name": "order_convex_syntax",
+      "header": "theorem order_convex_syntax (ambient : List V) (rank : V \u2192 R)\n    (hi : \u2200 a\u2208ambient, \u2200 b\u2208ambient, rank a=rank b \u2192 a=b)\n    (t : BinarySyntax V)\n    (hall : \u2200 x\u2208t.frontier, x\u2208ambient) (hnd : t.frontier.Nodup)\n    (hconv : \u2200 u out, Context t u out \u2192 RankConvex ambient rank u.frontier) :\n    \u2203 s : BinarySyntax V, s.frontier.Perm t.frontier \u2227\n      s.frontier.Pairwise (fun a b => rank a<rank b) \u2227\n      \u2200 (label : V \u2192 Nat) out a b c d,\n        (encode label s).Witness out a b c d \u2194 (encode label t).Witness out a b c d"
+    },
+    {
+      "module": "RootedTreeOrder",
+      "name": "tree_binary_outdegree",
+      "header": "theorem tree_binary_outdegree (N : RootedBinary V E X)\n    (hui : Function.Injective N.graph.target) :\n    \u2200 v, N.graph.outDegree v=0 \u2228 N.graph.outDegree v=2"
+    },
+    {
+      "module": "RootedTreeOrder",
+      "name": "rooted_tree_order_receiver",
+      "header": "theorem rooted_tree_order_receiver (N : RootedBinary V E X)\n    (hui : Function.Injective N.graph.target)\n    (xs : List X) (\u03b8 : X \u2192 \u211d) (hnd : xs.Nodup) (hall : \u2200 x, x\u2208xs)\n    (h\u03b8 : Function.Injective \u03b8) (horder : xs.Pairwise (fun a b => \u03b8 a\u2264\u03b8 b))\n    (hcuts : \u2200 (e : E) (a c d f : X),\n      N.graph.OrientedQuartet e (N.leaf a) (N.leaf c) (N.leaf d) (N.leaf f) \u2192\n      \u00ac((\u03b8 a<\u03b8 d \u2227 \u03b8 d<\u03b8 c \u2227 \u03b8 c<\u03b8 f) \u2228\n        (\u03b8 d<\u03b8 a \u2227 \u03b8 a<\u03b8 f \u2227 \u03b8 f<\u03b8 c))) :\n    \u2203 s : BinarySyntax V, s.frontier=xs.map N.leaf \u2227\n      \u2200 (label : V \u2192 Nat) a b c d,\n        LabelledQuartet N.graph label a b c d \u2194 (encode label s).Witness [] a b c d"
+    },
+    {
+      "module": "RotatedFiniteReceiver",
+      "name": "rotate_whole_leaves",
+      "header": "theorem rotate_whole_leaves (t : LTree) (hsize : 2\u2264t.leaves.length) :\n    \u2203 u : LTree, u.leaves=t.leaves.rotate 1 \u2227\n      \u2200 a b c d, u.Witness [] a b c d \u2194 t.Witness [] a b c d"
+    },
+    {
+      "module": "RotatedFiniteReceiver",
+      "name": "rotated_finite_receiver",
+      "header": "theorem rotated_finite_receiver (t : LTree) (hsize : 2\u2264t.leaves.length)\n    (k : Nat) (hk : k\u22641) :\n    \u2203 T : Tree, T.size=(t.leaves.rotate k).length-1 \u2227\n      \u2200 (q : Quartet) (r a b c d : Nat), q.parts r=(a,b,c,d) \u2192 a\u2260b \u2192 c\u2260d \u2192\n        (t.Witness [] a b c d \u2194\n          \u2203 e\u2208T.internalIntervals 1, edgeWitness (t.leaves.rotate k) e.1 e.2 q r=true)"
+    },
+    {
+      "module": "SyntaxFocus",
+      "name": "cut_left_membership_congr",
+      "header": "theorem cut_left_membership_congr (l l' r : List Nat) (a b c d : Nat)\n    (h : \u2200 x, x\u2208l \u2194 x\u2208l') : Cut l r a b c d \u2194 Cut l' r a b c d"
+    },
+    {
+      "module": "SyntaxFocus",
+      "name": "witness_fork_swap",
+      "header": "theorem witness_fork_swap (l r : LTree) (out : List Nat) (a b c d : Nat) :\n    (LTree.fork l r).Witness out a b c d \u2194\n      (LTree.fork r l).Witness out a b c d"
+    },
+    {
+      "module": "SyntaxFocus",
+      "name": "witness_fork_left_congr",
+      "header": "theorem witness_fork_left_congr (l l' r : LTree)\n    (hleaves : \u2200 x, x\u2208l.leaves \u2194 x\u2208l'.leaves)\n    (hw : \u2200 out a b c d, l.Witness out a b c d \u2194 l'.Witness out a b c d)\n    (out : List Nat) (a b c d : Nat) :\n    (LTree.fork l r).Witness out a b c d \u2194\n      (LTree.fork l' r).Witness out a b c d"
+    },
+    {
+      "module": "SyntaxFocus",
+      "name": "focus_left",
+      "header": "theorem focus_left (l : BinarySyntax V) (a : V) (ha : a\u2208l.frontier)\n    (root : V) (r : BinarySyntax V) :\n    \u2203 v rest, (.fork v (.tip a) rest : BinarySyntax V).frontier.Perm\n        (.fork root l r).frontier \u2227\n      \u2200 (label : V \u2192 Nat) i j k m,\n        (encode label (.fork v (.tip a) rest)).Witness [] i j k m \u2194\n          (encode label (.fork root l r)).Witness [] i j k m"
+    },
+    {
+      "module": "SyntaxFocus",
+      "name": "focus_occurrence",
+      "header": "theorem focus_occurrence (t : BinarySyntax V) (a : V) (ha : a\u2208t.frontier)\n    (hsize : 2\u2264t.frontier.length) :\n    \u2203 v rest, (.fork v (.tip a) rest : BinarySyntax V).frontier.Perm t.frontier \u2227\n      \u2200 (label : V \u2192 Nat) i j k m,\n        (encode label (.fork v (.tip a) rest)).Witness [] i j k m \u2194\n          (encode label t).Witness [] i j k m"
+    }
+  ]
+}

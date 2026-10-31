@@ -1,0 +1,65 @@
+{
+  "source_sha256": "f894850f43dd8b90595157923eafe042805f432215e91a72bab5b2d054038808",
+  "declarations": [
+    {
+      "name": "boundaryLaw",
+      "complete_frozen_text": "def boundaryLaw (N : RootedBinary V E X) {sample : Copy \u2192 X} :\n    List (BoundaryOperation N) \u2192 Code N sample \u2192 PMF (Code N sample)\n  | [],s => PMF.pure s\n  | b::bs,s => (boundaryKernel N b s).bind (boundaryLaw N bs)",
+      "sha256": "a637e98f0ac3af5503ca8389bedf2160c78170feefc16054d7408e8edce02695"
+    },
+    {
+      "name": "boundaryBackward",
+      "complete_frozen_text": "def boundaryBackward (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (f : Code N sample \u2192 \u211d\u22650\u221e) : List (BoundaryOperation N) \u2192 Code N sample \u2192 \u211d\u22650\u221e\n  | [],s => f s\n  | b::bs,s => \u2211 d : Code N sample, boundaryKernel N b s d * boundaryBackward N f bs d",
+      "sha256": "b29ff6ead190c10e8a86cbbe1d3d76da2b0e1dbf90a03018274456462b4184c4"
+    },
+    {
+      "name": "boundaryCoefficient",
+      "complete_frozen_text": "def boundaryCoefficient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) : \u211d\u22650\u221e :=\n  ((boundaryLaw N bs s).map (observeCode N)) target",
+      "sha256": "99178453494e283739c525c086d2b8c62917c1075074ec876b73cc776334f43e"
+    },
+    {
+      "name": "actual_boundary_word_source",
+      "complete_frozen_text": "theorem actual_boundary_word_source (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (bs : List (BoundaryOperation N)) (s : Code N sample) :\n    sourceProgram N r (bs.map ProgramStep.boundary) s = boundaryLaw N bs s := by\n  induction bs generalizing s with\n  | nil => rfl\n  | cons b bs ih => simp only [List.map_cons,sourceProgram,sourceProgramStep,boundaryLaw,ih]",
+      "sha256": "e320f3ff493d9e64ae7586d05eb3218512adedddcac566fa7c55a1c53f73e40d"
+    },
+    {
+      "name": "boundary_backward_expectation",
+      "complete_frozen_text": "lemma boundary_backward_expectation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (f : Code N sample \u2192 \u211d\u22650\u221e) (bs : List (BoundaryOperation N)) (s : Code N sample) :\n    boundaryBackward N f bs s = \u2211 d : Code N sample, boundaryLaw N bs s d * f d := by\n  induction bs generalizing s with\n  | nil => simp [boundaryBackward,boundaryLaw,PMF.pure_apply]\n  | cons b bs ih =>\n      simp only [boundaryBackward,boundaryLaw,PMF.bind_apply,tsum_fintype,ih]\n      simp_rw [Finset.sum_mul]\n      rw [Finset.sum_comm]\n      apply Finset.sum_congr rfl\n      intro d _\n      rw [Finset.mul_sum]\n      apply Finset.sum_congr rfl\n      intro e _\n      exact (mul_assoc _ _ _).symm",
+      "sha256": "88ede0c264300249f31753502981bc72bf1e0ae932a45b87d39c0b7c32afdc1c"
+    },
+    {
+      "name": "pmf_observation_readout",
+      "complete_frozen_text": "lemma pmf_observation_readout (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (p : PMF (Code N sample)) (F : BlockPopulationObservation Copy V E \u2192 \u211d\u22650\u221e) :\n    (\u2211 d : Code N sample, p d * F (observeCode N d)) =\n      \u2211 o : BlockPopulationObservation Copy V E, (p.map (observeCode N)) o * F o := by\n  simp only [PMF.map_apply,tsum_fintype,Finset.sum_mul]\n  rw [Finset.sum_comm]\n  apply Finset.sum_congr rfl\n  intro d _\n  simp only [ite_mul,zero_mul]\n  simp",
+      "sha256": "54b27f111247c6579c99a6420a463d246d4a6b5c809746fc8b0932af777f4616"
+    },
+    {
+      "name": "boundary_backward_quotient",
+      "complete_frozen_text": "lemma boundary_backward_quotient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (f : Code N sample \u2192 \u211d\u22650\u221e)\n    (hf : \u2200 s t, observeCode N s = observeCode N t \u2192\n      (state s).register = (state t).register \u2192 f s = f t)\n    (bs : List (BoundaryOperation N)) (s t : Code N sample)\n    (ho : observeCode N s = observeCode N t)\n    (hr : (state s).register = (state t).register) :\n    boundaryBackward N f bs s = boundaryBackward N f bs t := by\n  induction bs generalizing s t with\n  | nil => exact hf s t ho hr\n  | cons b bs ih =>\n      obtain \u27e8F,hF\u27e9 := exists_bank_readout N (boundaryBackward N f bs)\n        (fun u v huo hur => ih u v huo hur) (state s).register\n      have he (u : Code N sample) (hu : (state u).register = (state s).register) :\n          boundaryBackward N f (b::bs) u =\n            \u2211 o : BlockPopulationObservation Copy V E, ((boundaryKernel N b u).map (observeCode N)) o * F o := by\n        rw [boundaryBackward,\u2190 pmf_observation_readout]\n        apply Finset.sum_congr rfl\n        intro d _\n        by_cases hz : boundaryKernel N b u d = 0\n        \u00b7 simp only [hz,zero_mul]\n        \u00b7 have hd : (state d).register = (state u).register := by\n            have hm : (state d).register \u2208 ((boundaryKernel N b u).map (fun v => (state v).register)).support :=\n              (PMF.mem_support_map_iff _ _ _).mpr \u27e8d,(PMF.mem_support_iff _ _).mpr hz,rfl\u27e9\n            rw [actual_boundary_register_law] at hm\n            simpa using hm\n          exact congrArg (boundaryKernel N b u d * \u00b7) (hF d (hd.trans hu))\n      rw [he s rfl,he t hr.symm,actual_fixed_bank_boundary_quotient N b s t ho hr]",
+      "sha256": "701691fe44466c07a5d3244d5aaf26d001ac9b709e1f0f48f1f65762b4cce0bb"
+    },
+    {
+      "name": "boundary_coefficient_backward",
+      "complete_frozen_text": "lemma boundary_coefficient_backward (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) :\n    boundaryCoefficient N bs s target =\n      boundaryBackward N (fun d => if observeCode N d = target then 1 else 0) bs s := by\n  rw [boundary_backward_expectation,boundaryCoefficient,PMF.map_apply,tsum_fintype]\n  apply Finset.sum_congr rfl\n  intro d _\n  by_cases h : observeCode N d = target\n  \u00b7 simp [h]\n  \u00b7 simp [h,Ne.symm h]\n\n/-- Arbitrary endpoint indicators, not only the specialized guarded root.\nThe proof derives the whole-word quotient from the original one-step laws. -/",
+      "sha256": "1ef9b7cd592a3846c506b9107fcd006bf39b26b6f8b6da83b78f907c6558eb70"
+    },
+    {
+      "name": "actual_boundary_word_quotient",
+      "complete_frozen_text": "theorem actual_boundary_word_quotient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (s t : Code N sample)\n    (ho : observeCode N s = observeCode N t)\n    (hr : (state s).register = (state t).register)\n    (target : BlockPopulationObservation Copy V E) :\n    boundaryCoefficient N bs s target = boundaryCoefficient N bs t target := by\n  rw [boundary_coefficient_backward,boundary_coefficient_backward]\n  apply boundary_backward_quotient N _ _ bs s t ho hr\n  intro u v huv _\n  rw [huv]\n\n/-- Same actual bank, with any fixed admitted observation representative.\nNo reachability or raw snapshot identity is asserted. -/",
+      "sha256": "bc5d375afac3acb0aa5c4b6ca8eb4e55fe53cf0187bc394e9a720fc48cce9662"
+    },
+    {
+      "name": "actual_boundary_word_representative",
+      "complete_frozen_text": "theorem actual_boundary_word_representative (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (s representative : Code N sample)\n    (ho : observeCode N s = observeCode N representative)\n    (target : BlockPopulationObservation Copy V E) :\n    boundaryCoefficient N bs s target =\n      boundaryCoefficient N bs (reBank N representative (state s).register) target := by\n  apply actual_boundary_word_quotient\n  \u00b7 exact ho.trans (actual_reBank_observation N representative (state s).register).1.symm\n  \u00b7 exact (actual_reBank_observation N representative (state s).register).2.symm\n\n/-- Original weighted recursion on a boundary word is this count-independent\nordinary PMF recursion; no interval or failure factor is silently removed. -/",
+      "sha256": "3b5d42a6ce7021210a216c0bc28063a8a5fdf676899a31003a474d943a1d9de6"
+    },
+    {
+      "name": "actual_boundary_word_readout",
+      "complete_frozen_text": "theorem actual_boundary_word_readout (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) :\n    calendarValue N r L q (fun d => if observeCode N d = target then 1 else 0)\n      (bs.map ProgramStep.boundary) s = boundaryCoefficient N bs s target := by\n  rw [boundary_coefficient_backward]\n  induction bs generalizing s with\n  | nil => rfl\n  | cons b bs ih =>\n      simp only [List.map_cons,calendarValue,boundaryBackward,actual_boundary_fibre_weight,ih]\n\n/-- Finite original PMF coefficient; this is not a sign claim for any\nfinite-epoch exponential coefficient. -/",
+      "sha256": "0b0788a35f2ef2c8e6ebd867e7eafdfd8c7a11f7c283462731e14fd49f27c07f"
+    },
+    {
+      "name": "actual_boundary_coefficient_finite",
+      "complete_frozen_text": "theorem actual_boundary_coefficient_finite (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) : boundaryCoefficient N bs s target \u2260 \u221e :=\n  PMF.apply_ne_top _ _",
+      "sha256": "63255de80a327b0d78110ee153630697889cdb1821af7ed02e7eb678cef87157"
+    }
+  ]
+}

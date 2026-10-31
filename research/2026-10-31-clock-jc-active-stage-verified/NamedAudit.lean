@@ -1,0 +1,12 @@
+import ResearchCommons.MSCI.JC69ActiveStage
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69ActiveStage.actual_stage_support
+#print axioms ResearchCommons.MSCI.JC69ActiveStage.actual_stage_support
+#check @ResearchCommons.MSCI.JC69ActiveStage.actual_next_date_stage_support
+#print axioms ResearchCommons.MSCI.JC69ActiveStage.actual_next_date_stage_support
+#check @ResearchCommons.MSCI.JC69ActiveStage.stage_supported_card
+#print axioms ResearchCommons.MSCI.JC69ActiveStage.stage_supported_card
+#check @ResearchCommons.MSCI.JC69ActiveStage.actual_stage_finite_readout
+#print axioms ResearchCommons.MSCI.JC69ActiveStage.actual_stage_finite_readout
+#check @ResearchCommons.MSCI.JC69ActiveStage.actual_stage_guarded_transfer
+#print axioms ResearchCommons.MSCI.JC69ActiveStage.actual_stage_guarded_transfer
