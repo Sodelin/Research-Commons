@@ -1,0 +1,3 @@
+import ContinuousRegionCrosscut
+#check Nanuq.ContinuousRegionCrosscut.continuous_crosscut_region
+#print axioms Nanuq.ContinuousRegionCrosscut.continuous_crosscut_region

@@ -1,0 +1,15 @@
+Nanuq.ContinuousRegionCrosscut.continuous_crosscut_region {C P A₁ A₂ Ω : Set Schoenflies.Plane}
+  {p q : Schoenflies.Plane} (hC : Schoenflies.IsJordanCurve C) (hcut : Schoenflies.IsCutPair C p q A₁ A₂)
+  (hP : Schoenflies.IsArcBetween P p q) (hPC : P ∩ C = {p, q}) (hΩ : Schoenflies.IsRegionOf C Ω)
+  (hPD : P \ {p, q} ⊆ Ω) :
+  ∃ V₁ V₂,
+    Schoenflies.IsRegionOf (A₁ ∪ P) V₁ ∧
+      Schoenflies.IsRegionOf (A₂ ∪ P) V₂ ∧
+        Ω \ P = V₁ ∪ V₂ ∧
+          Disjoint V₁ V₂ ∧
+            V₁.Nonempty ∧
+              V₂.Nonempty ∧
+                V₁ ≠ V₂ ∧
+                  (∀ z ∈ V₁, connectedComponentIn (Ω \ P) z = V₁) ∧
+                    (∀ z ∈ V₂, connectedComponentIn (Ω \ P) z = V₂) ∧ closure V₁ ∩ C = A₁ ∧ closure V₂ ∩ C = A₂
+'Nanuq.ContinuousRegionCrosscut.continuous_crosscut_region' depends on axioms: [propext, Classical.choice, Quot.sound]
