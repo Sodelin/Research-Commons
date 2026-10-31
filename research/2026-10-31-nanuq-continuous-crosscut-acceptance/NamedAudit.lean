@@ -1,0 +1,12 @@
+import GeneralRegionCrosscut
+import CycleArcStraightening
+#check Nanuq.GeneralRegionCrosscut.polygonal_crosscut_region
+#print axioms Nanuq.GeneralRegionCrosscut.polygonal_crosscut_region
+#check Nanuq.PrescribedLoopAmbient.loop_parameters
+#print axioms Nanuq.PrescribedLoopAmbient.loop_parameters
+#check Nanuq.PrescribedLoopAmbient.image_lower_half
+#print axioms Nanuq.PrescribedLoopAmbient.image_lower_half
+#check Nanuq.PrescribedLoopAmbient.image_upper_half
+#print axioms Nanuq.PrescribedLoopAmbient.image_upper_half
+#check Nanuq.PrescribedLoopAmbient.cycle_arc_straightening
+#print axioms Nanuq.PrescribedLoopAmbient.cycle_arc_straightening
