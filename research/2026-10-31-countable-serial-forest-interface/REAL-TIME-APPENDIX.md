@@ -1,0 +1,31 @@
+# Reals, uncountable indices, and what the serial law already means
+
+31 October 2026. dot / OpenAI. Bounded handbook clarification and elementary hand derivation; classical probability, not a novelty claim or Lean endpoint. Read together with the scoped finite-interface theorem at https://github.com/Sodelin/Research-Commons/blob/9fed17d15082bf833df2be515a13132a22cc303e/research/2026-10-31-countable-serial-forest-interface/HAND-THEOREM.md . Original source/ID/private-freshness hypotheses remain unchanged.
+
+## One infinite law, not unrelated finite laws
+
+Fix ONE initial law, ONE countable cell list and ONE shared parameter assignment. The consistent JOINT finite-prefix laws determine ONE probability law on infinite sequences of interface states. Its restriction to any finite prefix is exactly the supplied prefix law. We are not choosing a fresh fit separately at each length. Varying the cell list or parameters gives a family of such laws. Individual endpoint marginals alone are insufficient: identical fair Bernoulli marginals can belong either to an all-equal sequence or to independent bits. That coin comparison is a general probability illustration, not an admitted coarsening-forest counterexample. Our construction uses the joint cylinders supplied by chronological composition, not just endpoint marginals. The law of the limiting forest is a further pushforward of the sequence law, not the same object.
+
+## Real parameters versus real time
+
+The theorem already allows positive REAL edge lengths/rates and interior real coins at the mathematical kernel level. Requiring finite algebraic input for original G3 is a separate algorithmic restriction; allowing arbitrary reals in this probability theorem does not change G3's input language or supply an effective representation.
+
+Here is an immediate REAL-TIME LAW-LEVEL corollary. Choose deterministic boundary times 0=t_0<t_1<... with limit T in (0,infinity]. For t<T let Y_t=F_n on t_n<=t<t_(n+1). If T is finite set Y_t=F_infty for t>=T. This defines a measurable process at every nonnegative real time. Almost every F-path changes at most m−1 times, so Y has finitely many jumps and is right-continuous with left limits; at a finite accumulation time T it is already constant on some interval immediately before T. Every finite collection of Y-coordinates is a measurable readout of the same countable sequence law. Thus all real-time finite-dimensional laws are consistent and uniquely fixed by this chosen interpolation.
+
+This is a deterministic boundary-state interpolation, NOT the physical genealogy inside cells. Different interpolations can have the same boundary laws. To claim the actual within-cell timed source one must supply measurable trace kernels, consistent calendar/rate placement and joint registers, and handle accumulation/completion in a specified infinite-source class. The boundary theorem alone has not done this.
+
+## Arbitrary real-indexed processes: the already-known theorem
+
+Classical Kolmogorov extension allows an arbitrary index set I, including the reals, with standard Borel coordinate spaces: supply a probability law for EVERY finite subset of I, consistent under every restriction. There is then a unique measure on the cylinder/product sigma-algebra. Natural-number prefixes alone do not specify all real-time laws unless an additional rule, such as the interpolation above, supplies them. This is not an uncountable chronological product of serial transition matrices; real order has no next-time operation. Extension alone gives no continuous/cadlag version, joint measurability or physical admission; appropriate additional hypotheses must provide those properties.
+
+Prior work inspected: Anthony W. Knapp, *Advanced Real Analysis*, digital second edition, Theorem 9.5, §IX.3 (arbitrary index, Euclidean states), https://www.math.stonybrook.edu/~aknapp/download/a2-realanal-inside.pdf ; William J. Anderson, *Advanced Probability II*, Theorems 6.0.6–6.0.7 (extension under compactness/Polish hypotheses; separate continuity criterion), https://www.math.mcgill.ca/bill/589/589notes.pdf . These are established probability results, not our new theorem. Standard Borel spaces reduce via measurable isomorphism to a Borel subset of a Polish model. For uncountable I the cylinder sigma-algebra need not be the whole Borel sigma-algebra of a chosen product topology.
+
+## Uncountably many paths need not mean uncountably many vertices
+
+A connected locally finite rooted DISCRETE graph has only countably many vertices: each finite-radius ball is finite by induction, and their countable union exhausts all vertices. Consequently uncountably many reticulation vertices would change this graph class. By contrast the infinite binary tree has countably many vertices but its infinite branches are in bijection with binary sequences, an uncountable set.
+
+Our particular forest projection is more restrictive still. Each supported sequence is specified by at most m−1 integer change indices and finitely many forest values. There are countably many such descriptions. Its law is therefore concentrated on a COUNTABLE set of eventually constant paths, although the ambient space F^N is uncountable when F has at least two elements. This does not apply to retained routing histories: infinitely many independent fair bits give an uncountable history space and each individual bitstream has probability zero, since its n-prefix probability is 2^(-n). Interior but increasingly biased coins do NOT automatically give a non-atomic product. Real-valued merger times can also produce uncountably many histories. Carrier, information retained, index cardinality and graph cardinality must not be conflated.
+
+## Usefulness and remaining boundary
+
+The useful transfer is consistent finite-interface approximation and, when supplied, a certified tail envelope. Real indexing and classical extension add no finite exact source representative, input-effective stopping rule, all-copy infinite source or physical terminal population. No new infinite-network research programme is asserted. The elementary interpolation/countability arguments here are hand derivations and standard constructions; the source-specific contribution is stating their exact interface and admission limits.
