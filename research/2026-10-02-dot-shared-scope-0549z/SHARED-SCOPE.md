@@ -109,3 +109,8 @@ The [30 October full-scope reconciliation](../2026-10-30-scope-reconciliation-22
 ## Current scope successor — 31 October 2026, 02:07 UTC
 
 The [31 October incremental reconciliation](../2026-10-31-scope-reconciliation-0207z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims while updating scoped NANUQ/clock-JC providers, exact remaining joins, four independent research responsibilities plus two engineering contexts, discovery coverage and current release holds. No original master closure or whole-package acceptance is asserted.
+
+
+## Current full-scope successor — 31 October 2026, 06:03 UTC
+
+The [06:03 reconciliation](../2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md) preserves this historical snapshot and accepted claims while incorporating later scoped NANUQ/clock-JC source joins, public G3/G4 source and conditioning results, current ownership, selected-profile versus unfinished caller evidence, and exact discovery limits. Original masters and canonical claim statuses remain unchanged. Historical pending/paused statements above must be read at their dated cutoff, not as current status.
