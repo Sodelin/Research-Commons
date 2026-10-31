@@ -1,0 +1,3 @@
+# Sole-compiler request (not started)
+
+Use exact existing qualified FULL G1/source context, not the extracted toy interface. No new supplier closure, installation or duplicate audit export. Compile AffineSubpath then RootedCapMap; preserve all failures and repair diffs. Check complete types and transitive axioms for Nanuq.CapCurves.actualRootedCapCurves and Nanuq.CapCurves.actualRootedCapCurves_drawing_subset. Verify all existing source hashes; no extra order/face/polygonality/collar assumptions may be introduced. Preserve exact nonleaf-blob premise and original N/D/b tags. Report scoped direct named receipts and source hashes; keep full provider audit payload local, summary only in any thin response. No held raw-audit rows. No full NANUQ conclusion.
