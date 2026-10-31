@@ -1,0 +1,32 @@
+[
+  {
+    "file": "ActualMarkedGallAdmission.lean",
+    "name": "actual_marked_simple_galls_to_detour",
+    "header": "theorem actual_marked_simple_galls_to_detour\n    (hg : MarkedSimpleGalls N ports) : N.graph.GalledDetour"
+  },
+  {
+    "file": "GuardedCycleDetour.lean",
+    "name": "guarded_cycle_detour",
+    "header": "theorem guarded_cycle_detour {h a b : V} {e f : E} {W : List E} {keep : E \u2192 Prop}\n    (hc : (originalGraph G).IsCycleThrough e h a W)\n    (hf : (originalGraph G).IsLink f h b) (hfm : f\u2208W)\n    (hkeep : \u2200 d \u2208 e::W, d\u2260e \u2192 d\u2260f \u2192 keep d) :\n    G.UReach (fun d => keep d \u2227 G.source d\u2260h \u2227 G.target d\u2260h) a b"
+  },
+  {
+    "file": "OriginalIncomingTransport.lean",
+    "name": "incoming_ids_distinct",
+    "header": "theorem incoming_ids_distinct {h : V} {e f : E} (hef : e\u2260f)\n    (he : N.graph.target e=h) (hf : N.graph.target f=h) :\n    incomingID N e \u2260 incomingID N f"
+  },
+  {
+    "file": "OriginalIncomingTransport.lean",
+    "name": "incoming_parent_transport",
+    "header": "theorem incoming_parent_transport {h : V} (hh : N.graph.IsHybrid h) {e : E}\n    (he : N.graph.target e=h) :\n    \u2203 a : SuppressedVertex N,\n      (originalGraph (suppressedGraph N ports)).IsLink (incomingID N e)\n        \u27e8h,actual_hybrid_nonroot N h hh\u27e9 a \u2227\n      MarkedIncoming N ports (incomingID N e) \u27e8h,actual_hybrid_nonroot N h hh\u27e9 \u2227\n      N.graph.UReach (OrdinaryAvoid N h) (N.graph.source e) a.val"
+  },
+  {
+    "file": "SuppressedOrdinaryWalk.lean",
+    "name": "ordinary_suppressed_edge_expansion",
+    "header": "theorem ordinary_suppressed_edge_expansion {h : V} (hroot : h\u2260N.root)\n    (e : SuppressedEdge N) (he : SuppressedOrdinaryAvoid N ports h e) :\n    N.graph.UReach (OrdinaryAvoid N h)\n      ((suppressedGraph N ports).source e).val ((suppressedGraph N ports).target e).val"
+  },
+  {
+    "file": "SuppressedOrdinaryWalk.lean",
+    "name": "ordinary_suppressed_walk_expansion",
+    "header": "theorem ordinary_suppressed_walk_expansion {h : V} (hroot : h\u2260N.root)\n    {a b : SuppressedVertex N}\n    (hw : (suppressedGraph N ports).UReach (SuppressedOrdinaryAvoid N ports h) a b) :\n    N.graph.UReach (OrdinaryAvoid N h) a.val b.val"
+  }
+]
