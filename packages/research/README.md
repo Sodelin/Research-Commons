@@ -1,5 +1,9 @@
 # Research Commons: portable Lean and Rust
 
+## Latest integration successor — 31 October 2026
+
+[Reviewed productive-pruning/fixed-S repair adoption](../../research/2026-10-31-population003-package-binding/README.md) now records **61 mapped IDs, 662 named declarations and 57 unbound IDs**. Its exact target/export and [aggregate/import-binding receipt](integration/productive-pruning-repair-aggregate-verification.json) pass using qualified coherent reuse. Strict coverage remains exit2/full116 incomplete, all118 canonical scientific statuses unchanged; no fresh whole1846-profile replay or native infinite pruning/repair algorithm is claimed. The earlier60/635/58 navigation note and historical48/520/70 ContextB baseline remain intact below. Use [current discovery commands and dated cache coverage](../../docs/discovery/README.md) and the [14:03 original-goal scope](../../research/2026-10-31-scope-reconciliation-1403z/CURRENT-SCOPE.md) for their respective purposes.
+
 ## Current navigation — 31 October 2026, 15:18 UTC
 
 The **historical ContextB baseline below** is 1,833 sources, 48 mappings and 520 named requests. Later reviewed bindings extend that software interface. The latest verified [critical-tail/actual-encoder integration](../../research/2026-10-31-population002-package-binding/README.md) records **60 mapped IDs, 635 named declarations and 58 unbound IDs**, with [exact target/export evidence](integration/critical-tail-ports-verification.json) and [changed-aggregate/import-binding evidence](integration/critical-tail-ports-aggregate-verification.json). This uses exact qualified objects plus newly checked wrappers and roots; it is **not a fresh whole 1,845-source profile replay**. Strict coverage remains exit 2/full 116 incomplete; all 118 canonical scientific statuses are unchanged.

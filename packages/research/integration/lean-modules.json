@@ -6159,10 +6159,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.ProductivePruningRepair",
+      "path": "lean/Compatibility/ResearchCommons.Claims.ProductivePruningRepair.lean",
+      "sha256": "a3ffa73d3ffd0d725ecdf2ee4731a40357a17055db5e3f0f7384fe2d3f1fd836",
+      "imports": [
+        "SamuelAlexanderResearch.BoundaryRepair"
+      ],
+      "provenance": {
+        "role": "Reviewed original CB-POPULATION-003 actual productive pruning and canonical fixed-S boundary repair interface",
+        "proof_derivation": false,
+        "verification": "integration/productive-pruning-repair-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "61407fb28144c25a124ab2a08e975628d2c2e734b87c017c8584ef709fbbc382",
+      "sha256": "f23c88fd2f03a7df4ef08bc680b3448d55a4c81bf110121d8ba01a7734f98b3d",
       "imports": [
+        "ResearchCommons.Claims.ProductivePruningRepair",
         "ResearchCommons.Claims.CriticalTailPorts",
         "ResearchCommons.Claims.CapTwoPopulation",
         "ResearchCommons.Claims.OwnerAncestry",
@@ -6329,6 +6343,10 @@
         "critical_tail_ports_successor": {
           "prior_source_sha256": "f43ead630e9bb6c54ffc77124994f60e8fa75627845088abefe30b4518eeec00",
           "scope": "Reviewed original critical tail and actual encoder/conditional periodic realization join; enlarged aggregate pending."
+        },
+        "productive_pruning_repair_successor": {
+          "prior_source_sha256": "61407fb28144c25a124ab2a08e975628d2c2e734b87c017c8584ef709fbbc382",
+          "scope": "Reviewed original productive pruning/full-language and fixed-S repair/avoidance-only join; enlarged aggregate pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

@@ -1,0 +1,211 @@
+ResearchCommons.Claims.ProductivePruningRepair.core_infinite : ∀ (E : SpeciesBridge.Graph),
+  (∀ (u v : Nat), E u v → LT.lt.{0} u v) →
+    SpeciesBridge.FiniteSupport (SpeciesBridge.Root E) →
+      (∀ (v : Nat), SpeciesBridge.FiniteSupport (E v)) → SpeciesBridge.InfiniteSupport (ProductiveCore.Core E)
+'ResearchCommons.Claims.ProductivePruningRepair.core_infinite' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.core_population : ∀ {E : BinaryPopulation.LabelledGraph},
+  BinaryPopulation.BinaryNatPopulation E →
+    ProductiveCore.PopulationOn E (ProductiveCore.Core (BinaryPopulation.ForgetLabels E))
+'ResearchCommons.Claims.ProductivePruningRepair.core_population' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_inspecies : ∀ {E : BinaryPopulation.LabelledGraph}
+  (p : BinaryPopulation.BinaryNatPopulation E),
+  SpeciesBridge.IAP (BinaryPopulation.ForgetLabels E) SpeciesBridge.Whole →
+    SpeciesGlobalIAP.Inspecies (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed ⋯)) SpeciesBridge.Whole
+'ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_inspecies' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_specieslike : ∀
+  {E : BinaryPopulation.LabelledGraph} (p : BinaryPopulation.BinaryNatPopulation E),
+  SpeciesBridge.IAP (BinaryPopulation.ForgetLabels E) SpeciesBridge.Whole →
+    SpeciesBridge.Specieslike (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed ⋯)) SpeciesBridge.Whole
+'ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_specieslike' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_language_iff : ∀ {E : BinaryPopulation.LabelledGraph}
+  (p : BinaryPopulation.BinaryNatPopulation E) (s : Nat → Bool),
+  BinaryPopulation.Realizes (ProductiveCore.reindexed ⋯) s ↔ BinaryPopulation.Realizes E s
+'ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_language_iff' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.productive_core_theorem : ∀ {E : BinaryPopulation.LabelledGraph}
+  (p : BinaryPopulation.BinaryNatPopulation E),
+  SpeciesBridge.IAP (BinaryPopulation.ForgetLabels E) SpeciesBridge.Whole →
+    ∀ (d : Nat),
+      FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels E) SpeciesBridge.Whole d →
+        BinaryPopulation.BinaryNatPopulation (ProductiveCore.reindexed ⋯) ∧
+          SpeciesGlobalIAP.Inspecies
+              (ProductiveCore.Induced (BinaryPopulation.ForgetLabels E)
+                (ProductiveCore.Core (BinaryPopulation.ForgetLabels E)))
+              (ProductiveCore.Core (BinaryPopulation.ForgetLabels E)) ∧
+            FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed ⋯)) SpeciesBridge.Whole
+                d ∧
+              ∀ (s : Nat → Bool),
+                ¬BinaryPopulation.Realizes E s → ¬BinaryPopulation.Realizes (ProductiveCore.reindexed ⋯) s
+'ResearchCommons.Claims.ProductivePruningRepair.productive_core_theorem' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.maximal_specieslike_descendantClosed : ∀ (E : SpeciesBridge.Graph)
+  (S : SpeciesBridge.NatSet),
+  (∀ (u v : Nat), E u v → LT.lt.{0} u v) → SpeciesBridge.MaximalSpecieslike E S → ProductiveCore.DescendantClosed E S
+'ResearchCommons.Claims.ProductivePruningRepair.maximal_specieslike_descendantClosed' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.maximal_cluster_pruning_commutes : ∀ (E : SpeciesBridge.Graph)
+  (S : SpeciesBridge.NatSet),
+  (∀ (u v : Nat), E u v → LT.lt.{0} u v) →
+    SpeciesBridge.MaximalSpecieslike E S →
+      Eq.{1} (ProductiveCore.RelativeCore E S) fun v => S v ∧ ProductiveCore.Core E v
+'ResearchCommons.Claims.ProductivePruningRepair.maximal_cluster_pruning_commutes' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.four_axioms_pruning_commutes : ∀ (E : SpeciesBridge.Graph)
+  (S : SpeciesBridge.NatSet),
+  SpeciesRootCriterion.FourAxioms E S → Eq.{1} (ProductiveCore.RelativeCore E S) fun v => S v ∧ ProductiveCore.Core E v
+'ResearchCommons.Claims.ProductivePruningRepair.four_axioms_pruning_commutes' depends on axioms: [propext,
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.nonmaximal_cluster_productivity_counterexample : (SpeciesBridge.Specieslike
+    SpeciesBridge.PsEdge fun v => Eq.{1} v 0) ∧
+  ProductiveCore.Core SpeciesBridge.PsEdge 0 ∧ ¬ProductiveCore.RelativeCore SpeciesBridge.PsEdge (fun v => Eq.{1} v 0) 0
+'ResearchCommons.Claims.ProductivePruningRepair.nonmaximal_cluster_productivity_counterexample' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.constrained_maximum_not_descendantClosed : SpeciesBridge.NaturalDateBiosphere
+    ProductiveCore.ForkEdge ∧
+  SpeciesRootCriterion.MaximalFourAxioms ProductiveCore.ForkEdge ProductiveCore.OddRay ∧
+    SpeciesBridge.Specieslike ProductiveCore.ForkEdge ProductiveCore.OddRay ∧
+      ¬ProductiveCore.DescendantClosed ProductiveCore.ForkEdge ProductiveCore.OddRay
+'ResearchCommons.Claims.ProductivePruningRepair.constrained_maximum_not_descendantClosed' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.core_ancestrallyClosed : ∀ (E : SpeciesBridge.Graph),
+  SpeciesGlobalIAP.AncestrallyClosed E (ProductiveCore.Core E)
+'ResearchCommons.Claims.ProductivePruningRepair.core_ancestrallyClosed' does not depend on any axioms
+@ResearchCommons.Claims.ProductivePruningRepair.reindexed_population : ∀ {E : BinaryPopulation.LabelledGraph}
+  {S : SpeciesBridge.NatSet} (p : ProductiveCore.PopulationOn E S),
+  BinaryPopulation.BinaryNatPopulation (ProductiveCore.reindexed p)
+'ResearchCommons.Claims.ProductivePruningRepair.reindexed_population' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.reindexed_child_cap : ∀ {E : BinaryPopulation.LabelledGraph}
+  {S : SpeciesBridge.NatSet} (p : ProductiveCore.PopulationOn E S) (d : Nat),
+  FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels E) S d →
+    FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed p)) SpeciesBridge.Whole d
+'ResearchCommons.Claims.ProductivePruningRepair.reindexed_child_cap' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.deficient_finite_of_cofinite : ∀ {E : BinaryPopulation.LabelledGraph},
+  BinaryPopulation.BinaryNatPopulation E →
+    ∀ (S : SpeciesBridge.NatSet),
+      (SpeciesBridge.FiniteSupport fun v => ¬S v) → SpeciesBridge.FiniteSupport (BoundaryRepair.Deficient E S)
+'ResearchCommons.Claims.ProductivePruningRepair.deficient_finite_of_cofinite' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.cofinite_repair_population : ∀ {E : BinaryPopulation.LabelledGraph},
+  BinaryPopulation.BinaryNatPopulation E →
+    ∀ (S : SpeciesBridge.NatSet),
+      (SpeciesBridge.FiniteSupport fun v => ¬S v) → ProductiveCore.PopulationOn (BoundaryRepair.Repair E S) S
+'ResearchCommons.Claims.ProductivePruningRepair.cofinite_repair_population' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.finite_deficiency_iff_repair_exists : ∀
+  {E : BinaryPopulation.LabelledGraph},
+  BinaryPopulation.BinaryNatPopulation E →
+    ∀ (S : SpeciesBridge.NatSet),
+      SpeciesBridge.InfiniteSupport S →
+        (SpeciesBridge.FiniteSupport (BoundaryRepair.Deficient E S) ↔
+          Exists.{1} fun F => BoundaryRepair.AdmissibleRepair E S F ∧ ProductiveCore.PopulationOn F S)
+'ResearchCommons.Claims.ProductivePruningRepair.finite_deficiency_iff_repair_exists' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.repair_greatest : ∀ (E : BinaryPopulation.LabelledGraph)
+  (S : SpeciesBridge.NatSet) (F : BinaryPopulation.LabelledGraph),
+  BoundaryRepair.AdmissibleRepair E S F → ∀ (u v : Nat) (b : Bool), F u v b → BoundaryRepair.Repair E S u v b
+'ResearchCommons.Claims.ProductivePruningRepair.repair_greatest' does not depend on any axioms
+ResearchCommons.Claims.ProductivePruningRepair.repair_minimal_roots : ∀ (E : BinaryPopulation.LabelledGraph)
+  (S : SpeciesBridge.NatSet) (F : BinaryPopulation.LabelledGraph),
+  BoundaryRepair.AdmissibleRepair E S F →
+    ∀ (v : Nat),
+      S v →
+        SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels (BoundaryRepair.Repair E S)) S) v →
+          SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels F) S) v
+'ResearchCommons.Claims.ProductivePruningRepair.repair_minimal_roots' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.repair_deleted_edges_bounded : ∀ {E : BinaryPopulation.LabelledGraph},
+  BinaryPopulation.BinaryNatPopulation E →
+    ∀ (S : SpeciesBridge.NatSet),
+      SpeciesBridge.FiniteSupport (BoundaryRepair.Deficient E S) →
+        Exists.{1} fun bound =>
+          ∀ (u v : Nat) (b : Bool),
+            ProductiveCore.Restrict E S u v b → ¬BoundaryRepair.Repair E S u v b → LT.lt.{0} u bound ∧ LT.lt.{0} v bound
+'ResearchCommons.Claims.ProductivePruningRepair.repair_deleted_edges_bounded' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.ProductivePruningRepair.finite_boundary_repair_theorem : ∀ {E : BinaryPopulation.LabelledGraph}
+  (p : BinaryPopulation.BinaryNatPopulation E) (S : SpeciesBridge.NatSet) (hinfinite : SpeciesBridge.InfiniteSupport S)
+  (hdeficient : SpeciesBridge.FiniteSupport (BoundaryRepair.Deficient E S)) (d : Nat),
+  FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels E) SpeciesBridge.Whole d →
+    have q := ⋯;
+    BinaryPopulation.BinaryNatPopulation (ProductiveCore.reindexed q) ∧
+      FixedGenderLift.ChildCap (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed q)) SpeciesBridge.Whole d ∧
+        (∀ (s : Nat → Bool),
+            ¬BinaryPopulation.Realizes E s → ¬BinaryPopulation.Realizes (ProductiveCore.reindexed q) s) ∧
+          ∀ (i : Nat),
+            SpeciesBridge.Root (BinaryPopulation.ForgetLabels (ProductiveCore.reindexed q)) i ↔
+              BoundaryRepair.Deficient E S (ProductiveCore.vertex q i)
+'ResearchCommons.Claims.ProductivePruningRepair.finite_boundary_repair_theorem' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_roots : ∀ (s : Nat → Bool) (v : Nat),
+  SpeciesCones.C0 v ∧
+      SpeciesBridge.Root
+        (ProductiveCore.Induced
+          (BinaryPopulation.ForgetLabels (BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C0))
+          SpeciesCones.C0)
+        v ↔
+    Eq.{1} v 0 ∨ Eq.{1} v 2 ∨ Eq.{1} v 3
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_roots' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_roots : ∀ (s : Nat → Bool) (v : Nat),
+  SpeciesCones.C1 v ∧
+      SpeciesBridge.Root
+        (ProductiveCore.Induced
+          (BinaryPopulation.ForgetLabels (BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C1))
+          SpeciesCones.C1)
+        v ↔
+    Eq.{1} v 1 ∨ Eq.{1} v 2
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_roots' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c0_cut_edges : ∀ (s : Nat → Bool) (u v : Nat) (b : Bool),
+  ProductiveCore.Restrict (BinaryAvoidance.Edge s) SpeciesCones.C0 u v b ∧
+      ¬BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C0 u v b ↔
+    (Eq.{1} u 0 ∧ Eq.{1} v 2 ∨ Eq.{1} u 2 ∧ Eq.{1} v 3) ∧ BinaryAvoidance.Edge s u v b
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c0_cut_edges' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c1_cut_edges : ∀ (s : Nat → Bool) (u v : Nat) (b : Bool),
+  ProductiveCore.Restrict (BinaryAvoidance.Edge s) SpeciesCones.C1 u v b ∧
+      ¬BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C1 u v b ↔
+    (Eq.{1} u 1 ∧ Eq.{1} v 2) ∧ BinaryAvoidance.Edge s u v b
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c1_cut_edges' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_not_connected : ∀ (s : Nat → Bool),
+  ¬SpeciesBridge.WeaklyConnected
+      (BinaryPopulation.ForgetLabels (BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C0)) SpeciesCones.C0
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_not_connected' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_shifted_geometry : ∀ (s : Nat → Bool) (u v : Nat),
+  BinaryPopulation.ForgetLabels (BoundaryRepair.Repair (BinaryAvoidance.Edge s) SpeciesCones.C1)
+      (HAdd.hAdd.{0, 0, 0} u 1) (HAdd.hAdd.{0, 0, 0} v 1) ↔
+    SpeciesBridge.PsEdge u v
+'ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_shifted_geometry' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

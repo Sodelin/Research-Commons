@@ -1,0 +1,314 @@
+{
+  "claim_id": "CB-POPULATION-003",
+  "binding_adopted": false,
+  "canonical_exact_scope": "For an actual BinaryNatPopulation, productive pruning retains exactly vertices with infinitely many strict descendants. Finite roots, finite children and strict natural chronology yield an infinite ancestrally closed core, a constructed birth-order reindexing into the original eligible model, preservation of any supplied child cap and equivalence of the full infinite Boolean-word language. Whole-graph IAP is required only for the additional whole-core inspecies/specieslike conclusion; IAP means each member has finitely many descendants or finitely many non-descendants in the stated set. Unrestricted maximal connected-IAP-convex clusters are descendant-closed and pruning commutes; common-ancestor/reflection-constrained maximality need not imply descendant closure, although convexity plus reflection still makes pruning commute. Separately, for any fixed infinite retained S, finite incoming-label deficiency is equivalent to existence of an eligible deletion-only repair on exactly S. Deleting all remaining incoming edges at deficient vertices gives the greatest permissible retained-edge relation and inclusion-smallest deleted-edge/root sets, with all deleted edges below a finite birth bound. The reindexed repair preserves eligibility, a supplied child cap and every avoided target, not full language equivalence. The actual P_s C0 repair disconnects; C1 has the shifted original unlabelled geometry.",
+  "wrapper_sha256": "a3ffa73d3ffd0d725ecdf2ee4731a40357a17055db5e3f0f7384fe2d3f1fd836",
+  "endpoint_map": [
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.core_infinite",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.core_infinite",
+      "complete_header": "theorem core_infinite (E : Graph) (horder : \u2200 u v, E u v \u2192 u < v)\n    (hroots : FiniteSupport (Root E)) (hchildren : \u2200 v, FiniteSupport (E v)) :\n    InfiniteSupport (Core E) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.core_population",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.core_population",
+      "complete_header": "theorem core_population {E : LabelledGraph} (p : BinaryNatPopulation E) :\n    PopulationOn E (Core (ForgetLabels E)) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_inspecies",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.reindexed_core_whole_inspecies",
+      "complete_header": "theorem reindexed_core_whole_inspecies {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (hiap : IAP (ForgetLabels E) Whole) :\n    Inspecies (ForgetLabels (reindexed (core_population p))) Whole "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_whole_specieslike",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.reindexed_core_whole_specieslike",
+      "complete_header": "theorem reindexed_core_whole_specieslike {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (hiap : IAP (ForgetLabels E) Whole) :\n    Specieslike (ForgetLabels (reindexed (core_population p))) Whole "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.reindexed_core_language_iff",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.reindexed_core_language_iff",
+      "complete_header": "theorem reindexed_core_language_iff {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (s : Nat \u2192 Bool) : Realizes (reindexed (core_population p)) s \u2194 Realizes E s "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.productive_core_theorem",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.productive_core_theorem",
+      "complete_header": "theorem productive_core_theorem {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (hiap : IAP (ForgetLabels E) Whole) (d : Nat)\n    (hcap : FixedGenderLift.ChildCap (ForgetLabels E) Whole d) :\n    BinaryNatPopulation (reindexed (core_population p)) \u2227\n    Inspecies (Induced (ForgetLabels E) (Core (ForgetLabels E))) (Core (ForgetLabels E)) \u2227\n    FixedGenderLift.ChildCap (ForgetLabels (reindexed (core_population p))) Whole d \u2227\n    \u2200 s, \u00ac Realizes E s \u2192 \u00ac Realizes (reindexed (core_population p)) s "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.maximal_specieslike_descendantClosed",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.maximal_specieslike_descendantClosed",
+      "complete_header": "theorem maximal_specieslike_descendantClosed (E : Graph) (S : NatSet)\n    (horder : \u2200 u v, E u v \u2192 u < v) (hmax : MaximalSpecieslike E S) :\n    DescendantClosed E S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.maximal_cluster_pruning_commutes",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.maximal_cluster_pruning_commutes",
+      "complete_header": "theorem maximal_cluster_pruning_commutes (E : Graph) (S : NatSet)\n    (horder : \u2200 u v, E u v \u2192 u < v) (hmax : MaximalSpecieslike E S) :\n    RelativeCore E S = fun v => S v \u2227 Core E v "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.four_axioms_pruning_commutes",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.four_axioms_pruning_commutes",
+      "complete_header": "theorem four_axioms_pruning_commutes (E : Graph) (S : NatSet)\n    (h : SpeciesRootCriterion.FourAxioms E S) :\n    RelativeCore E S = fun v => S v \u2227 Core E v "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.nonmaximal_cluster_productivity_counterexample",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.nonmaximal_cluster_productivity_counterexample",
+      "complete_header": "theorem nonmaximal_cluster_productivity_counterexample :\n    Specieslike PsEdge (fun v => v = 0) \u2227 Core PsEdge 0 \u2227\n      \u00ac RelativeCore PsEdge (fun v => v = 0) 0 "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.constrained_maximum_not_descendantClosed",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.constrained_maximum_not_descendantClosed",
+      "complete_header": "theorem constrained_maximum_not_descendantClosed :\n    NaturalDateBiosphere ForkEdge \u2227\n    SpeciesRootCriterion.MaximalFourAxioms ForkEdge OddRay \u2227\n    Specieslike ForkEdge OddRay \u2227 \u00ac DescendantClosed ForkEdge OddRay "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.core_ancestrallyClosed",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.core_ancestrallyClosed",
+      "complete_header": "theorem core_ancestrallyClosed (E : Graph) : AncestrallyClosed E (Core E) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.reindexed_population",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.reindexed_population",
+      "complete_header": "theorem reindexed_population {E : LabelledGraph} {S : NatSet} (p : PopulationOn E S) :\n    BinaryNatPopulation (reindexed p) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.reindexed_child_cap",
+      "provider_module": "SamuelAlexanderResearch.ProductiveCore",
+      "original_endpoint": "ProductiveCore.reindexed_child_cap",
+      "complete_header": "theorem reindexed_child_cap {E : LabelledGraph} {S : NatSet} (p : PopulationOn E S)\n    (d : Nat) (hcap : FixedGenderLift.ChildCap (ForgetLabels E) S d) :\n    FixedGenderLift.ChildCap (ForgetLabels (reindexed p)) Whole d "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.deficient_finite_of_cofinite",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.deficient_finite_of_cofinite",
+      "complete_header": "theorem deficient_finite_of_cofinite {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (S : NatSet) (hremoved : FiniteSupport (fun v => \u00ac S v)) : FiniteSupport (Deficient E S) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.cofinite_repair_population",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.cofinite_repair_population",
+      "complete_header": "theorem cofinite_repair_population {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (S : NatSet) (hremoved : FiniteSupport (fun v => \u00ac S v)) : PopulationOn (Repair E S) S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.finite_deficiency_iff_repair_exists",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.finite_deficiency_iff_repair_exists",
+      "complete_header": "theorem finite_deficiency_iff_repair_exists {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (S : NatSet) (hinfinite : InfiniteSupport S) :\n    FiniteSupport (Deficient E S) \u2194\n      \u2203 F, AdmissibleRepair E S F \u2227 PopulationOn F S "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.repair_greatest",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.repair_greatest",
+      "complete_header": "theorem repair_greatest (E : LabelledGraph) (S : NatSet) (F : LabelledGraph)\n    (hF : AdmissibleRepair E S F) : \u2200 u v b, F u v b \u2192 Repair E S u v b "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.repair_minimal_roots",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.repair_minimal_roots",
+      "complete_header": "theorem repair_minimal_roots (E : LabelledGraph) (S : NatSet) (F : LabelledGraph)\n    (hF : AdmissibleRepair E S F) (v : Nat) (hv : S v)\n    (hr : Root (ProductiveCore.Induced (ForgetLabels (Repair E S)) S) v) :\n    Root (ProductiveCore.Induced (ForgetLabels F) S) v "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.repair_deleted_edges_bounded",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.repair_deleted_edges_bounded",
+      "complete_header": "theorem repair_deleted_edges_bounded {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (S : NatSet) (hdeficient : FiniteSupport (Deficient E S)) :\n    \u2203 bound, \u2200 u v b, Restrict E S u v b \u2192 \u00ac Repair E S u v b \u2192\n      u < bound \u2227 v < bound "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.finite_boundary_repair_theorem",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.finite_boundary_repair_theorem",
+      "complete_header": "theorem finite_boundary_repair_theorem {E : LabelledGraph} (p : BinaryNatPopulation E)\n    (S : NatSet) (hinfinite : InfiniteSupport S) (hdeficient : FiniteSupport (Deficient E S))\n    (d : Nat) (hcap : FixedGenderLift.ChildCap (ForgetLabels E) Whole d) :\n    let q := repair_population_of_finite_deficiency p S hinfinite hdeficient\n    BinaryNatPopulation (reindexed q) \u2227\n    FixedGenderLift.ChildCap (ForgetLabels (reindexed q)) Whole d \u2227\n    (\u2200 s, \u00ac Realizes E s \u2192 \u00ac Realizes (reindexed q) s) \u2227\n    (\u2200 i, Root (ForgetLabels (reindexed q)) i \u2194 Deficient E S (vertex q i)) "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_roots",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c0_repair_roots",
+      "complete_header": "theorem ps_c0_repair_roots (s : Nat \u2192 Bool) (v : Nat) :\n    (SpeciesCones.C0 v \u2227 Root (ProductiveCore.Induced\n      (ForgetLabels (Repair (BinaryAvoidance.Edge s) SpeciesCones.C0)) SpeciesCones.C0) v) \u2194\n      v = 0 \u2228 v = 2 \u2228 v = 3 "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_roots",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c1_repair_roots",
+      "complete_header": "theorem ps_c1_repair_roots (s : Nat \u2192 Bool) (v : Nat) :\n    (SpeciesCones.C1 v \u2227 Root (ProductiveCore.Induced\n      (ForgetLabels (Repair (BinaryAvoidance.Edge s) SpeciesCones.C1)) SpeciesCones.C1) v) \u2194\n      v = 1 \u2228 v = 2 "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c0_cut_edges",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c0_cut_edges",
+      "complete_header": "theorem ps_c0_cut_edges (s : Nat \u2192 Bool) (u v : Nat) (b : Bool) :\n    (Restrict (BinaryAvoidance.Edge s) SpeciesCones.C0 u v b \u2227\n      \u00ac Repair (BinaryAvoidance.Edge s) SpeciesCones.C0 u v b) \u2194\n    ((u = 0 \u2227 v = 2) \u2228 (u = 2 \u2227 v = 3)) \u2227 BinaryAvoidance.Edge s u v b "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c1_cut_edges",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c1_cut_edges",
+      "complete_header": "theorem ps_c1_cut_edges (s : Nat \u2192 Bool) (u v : Nat) (b : Bool) :\n    (Restrict (BinaryAvoidance.Edge s) SpeciesCones.C1 u v b \u2227\n      \u00ac Repair (BinaryAvoidance.Edge s) SpeciesCones.C1 u v b) \u2194\n    (u = 1 \u2227 v = 2) \u2227 BinaryAvoidance.Edge s u v b "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c0_repair_not_connected",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c0_repair_not_connected",
+      "complete_header": "theorem ps_c0_repair_not_connected (s : Nat \u2192 Bool) :\n    \u00ac WeaklyConnected (ForgetLabels (Repair (BinaryAvoidance.Edge s) SpeciesCones.C0))\n      SpeciesCones.C0 "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.ProductivePruningRepair.ps_c1_repair_shifted_geometry",
+      "provider_module": "SamuelAlexanderResearch.BoundaryRepair",
+      "original_endpoint": "BoundaryRepair.ps_c1_repair_shifted_geometry",
+      "complete_header": "theorem ps_c1_repair_shifted_geometry (s : Nat \u2192 Bool) (u v : Nat) :\n    ForgetLabels (Repair (BinaryAvoidance.Edge s) SpeciesCones.C1) (u + 1) (v + 1) \u2194\n      PsEdge u v "
+    }
+  ],
+  "clause_map": [
+    {
+      "clause": "Actual productive set infinite/ancestrally closed; constructed birth-order reindexing yields original eligible population and preserves supplied child cap",
+      "exports": [
+        "core_infinite",
+        "core_ancestrallyClosed",
+        "core_population",
+        "reindexed_population",
+        "reindexed_child_cap",
+        "productive_core_theorem"
+      ],
+      "premises": "Strict natural chronology/finite roots/finite children for infinitude; full original BinaryNatPopulation derives retained PopulationOn. Generic reindexing accepts PopulationOn; core_population discharges it from actual p. No input enumeration or infinite path."
+    },
+    {
+      "clause": "Exact FULL infinite Boolean word language of actual reindexed productive core",
+      "exports": [
+        "reindexed_core_language_iff"
+      ],
+      "premises": "Original BinaryNatPopulation only; no IAP or uniform cap. Every original infinite path vertex productive by chronology; no finite-path preservation."
+    },
+    {
+      "clause": "Additional whole-core inspecies/specieslike conclusion",
+      "exports": [
+        "reindexed_core_whole_inspecies",
+        "reindexed_core_whole_specieslike",
+        "productive_core_theorem"
+      ],
+      "premises": "Whole original graph IAP REQUIRED here, not imposed on plain language/eligibility; IAP per actual member finite descendants OR finite nondescendants."
+    },
+    {
+      "clause": "Unrestricted maximal connected IAP convex clusters descendant closed/pruning commutes; constrained common-ancestor/reflection maxima do not imply closure",
+      "exports": [
+        "maximal_specieslike_descendantClosed",
+        "maximal_cluster_pruning_commutes",
+        "four_axioms_pruning_commutes",
+        "constrained_maximum_not_descendantClosed",
+        "nonmaximal_cluster_productivity_counterexample"
+      ],
+      "premises": "Unrestricted MaximalSpecieslike ranges over weakly connected/IAP/convex supersets under strict natural order. FourAxioms includes CA and Reflection; pruning commutes via convexity/reflection, not false descendant closure. Countercontrol fork is unlabelled NaturalDateBiosphere, NOT asserted binary incoming-label population. Alexander shared-root two-ray example credited."
+    },
+    {
+      "clause": "Fixed infinite retained S: finite incoming-label deficiency iff eligible deletion-only repair; greatest edges/smallest deleted-edge and root sets; all deleted retained edges below one finite birth bound",
+      "exports": [
+        "finite_deficiency_iff_repair_exists",
+        "repair_greatest",
+        "repair_minimal_roots",
+        "repair_deleted_edges_bounded",
+        "deficient_finite_of_cofinite",
+        "cofinite_repair_population"
+      ],
+      "premises": "No changing S/addition/relabeling. Deficient includes original retained roots (already parentless); lost parent alone insufficient. Canonical Repair retains exactly original S-S edges into nondeficient targets. Cofinite deletion sufficient not necessary."
+    },
+    {
+      "clause": "Actual reindexed repair eligibility/cap/avoidance and exact repaired-root correspondence",
+      "exports": [
+        "finite_boundary_repair_theorem"
+      ],
+      "premises": "Infinite S, finite actual deficiency and original child cap. Only implication repaired realization -> original; no full-language/connectivity/species preservation."
+    },
+    {
+      "clause": "Actual P_s C0/C1 controls including retained roots, removed retained edges, disconnection and shifted geometry",
+      "exports": [
+        "ps_c0_repair_roots",
+        "ps_c1_repair_roots",
+        "ps_c0_cut_edges",
+        "ps_c1_cut_edges",
+        "ps_c0_repair_not_connected",
+        "ps_c1_repair_shifted_geometry"
+      ],
+      "premises": "C0 roots0,2,3/cuts0->2 and2->3/zeroisolated; C1 roots1,2/cut1->2/shifted unlabelled PsEdge. Original labels retained. These are same-source exact controls, not novelty."
+    }
+  ],
+  "actual_definition_output": {
+    "file": "logs/DefinitionBindings-final.log",
+    "targets": [
+      "SpeciesBridge.Graph",
+      "SpeciesBridge.NatSet",
+      "SpeciesBridge.Descendant",
+      "SpeciesBridge.Root",
+      "SpeciesBridge.FiniteSupport",
+      "SpeciesBridge.InfiniteSupport",
+      "SpeciesBridge.Whole",
+      "SpeciesBridge.IAP",
+      "SpeciesBridge.Convex",
+      "SpeciesBridge.WeaklyConnected",
+      "SpeciesBridge.Specieslike",
+      "SpeciesBridge.MaximalSpecieslike",
+      "SpeciesBridge.Reflection",
+      "SpeciesGlobalIAP.Inspecies",
+      "SpeciesRootCriterion.FourAxioms",
+      "SpeciesRootCriterion.MaximalFourAxioms",
+      "BinaryPopulation.LabelledGraph",
+      "BinaryPopulation.UniqueLabels",
+      "BinaryPopulation.ForgetLabels",
+      "BinaryPopulation.Realizes",
+      "BinaryPopulation.BinaryNatPopulation",
+      "ProductiveCore.Core",
+      "ProductiveCore.PopulationOn",
+      "ProductiveCore.Induced",
+      "ProductiveCore.enumeration",
+      "ProductiveCore.vertex",
+      "ProductiveCore.reindexed",
+      "ProductiveCore.DescendantClosed",
+      "ProductiveCore.RelativeCore",
+      "ProductiveCore.ForkEdge",
+      "ProductiveCore.OddRay",
+      "ProductiveCore.Restrict",
+      "BoundaryRepair.Deficient",
+      "BoundaryRepair.Repair",
+      "BoundaryRepair.AdmissibleRepair",
+      "BirthOrder.OrderedEnumeration",
+      "BirthOrder.enumerate",
+      "FixedGenderLift.ChildCap",
+      "SpeciesCones.C0",
+      "SpeciesCones.C1"
+    ],
+    "new_wrapper_definitions": 0
+  },
+  "source_reading": "Complete original ProductiveCore760/BoundaryRepair388/BirthOrder342 source lines read; two complete pinned proof/scope notes read and included.16transitive source bodies included/hashbound, not claiming all remaining transitive proofs freshly reread. Historical audit source inventory matched; whole historical release not rerun.",
+  "verification": {
+    "unchanged_new_wrapper_compiled": 1,
+    "qualified_original_objects_reused": 16,
+    "named_types": 27,
+    "owned_modules": 17,
+    "declarations": 1183,
+    "theorems": 905,
+    "owned_axioms": 0,
+    "nonstandard_axiom_rows": 0,
+    "missing_modules": 0,
+    "all_definition_probe_exit": 0
+  },
+  "prior_work": "Original simultaneous model/transport theorems using classical pruning and finite-union arguments; Alexander's species predicates and existing shared-root two-ray counterexample remain credited. The deletion criterion is a direct structural deduction, not a worldwide novelty claim.",
+  "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+  "remaining_limits": "Productive pruning need not preserve finite paths. Repair allows no added or relabelled edges and does not optimize over a different retained S. Arbitrary-real-date/general-alphabet adapters and empirical species interpretation are separate. Alexander's prior shared-root two-ray example must not be counted as a new counterexample.",
+  "not_claimed": [
+    "new mathematics or historical novelty",
+    "native infinite graph pruning/repair algorithm",
+    "arbitrary-real date/general alphabet adapter",
+    "preserving finite paths by pruning",
+    "full-language preservation/connectivity/species by repair",
+    "optimal repair over varying retained S",
+    "empirical species classifier",
+    "full profile or all118 closure"
+  ]
+}

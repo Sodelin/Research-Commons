@@ -1,0 +1,174 @@
+@[reducible] def SpeciesBridge.Graph : Type :=
+Nat → Nat → Prop
+@[reducible] def SpeciesBridge.NatSet : Type :=
+Nat → Prop
+inductive SpeciesBridge.Descendant : SpeciesBridge.Graph → Nat → Nat → Prop
+number of parameters: 2
+constructors:
+SpeciesBridge.Descendant.edge : ∀ {E : SpeciesBridge.Graph} {u v : Nat}, E u v → SpeciesBridge.Descendant E u v
+SpeciesBridge.Descendant.snoc : ∀ {E : SpeciesBridge.Graph} {u v w : Nat},
+  SpeciesBridge.Descendant E u v → E v w → SpeciesBridge.Descendant E u w
+def SpeciesBridge.Root : SpeciesBridge.Graph → Nat → Prop :=
+fun E v => ∀ (u : Nat), ¬E u v
+def SpeciesBridge.FiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => Exists.{1} fun xs => ∀ (n : Nat), S n → Membership.mem.{0, 0} xs n
+def SpeciesBridge.InfiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => ¬SpeciesBridge.FiniteSupport S
+def SpeciesBridge.Whole : SpeciesBridge.NatSet :=
+fun x => True
+def SpeciesBridge.IAP : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    S v →
+      (SpeciesBridge.FiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w) ∨
+        SpeciesBridge.FiniteSupport fun w => S w ∧ ¬SpeciesBridge.Descendant E v w
+def SpeciesBridge.Convex : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    (Exists.{1} fun a => S a ∧ SpeciesBridge.Descendant E a v) →
+      (Exists.{1} fun d => S d ∧ SpeciesBridge.Descendant E v d) → S v
+def SpeciesBridge.WeaklyConnected : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => (Exists.{1} fun u => S u) ∧ ∀ (u v : Nat), S u → S v → SpeciesBridge.WeakReach E S u v
+def SpeciesBridge.Specieslike : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => SpeciesBridge.WeaklyConnected E S ∧ SpeciesBridge.IAP E S ∧ SpeciesBridge.Convex E S
+def SpeciesBridge.MaximalSpecieslike : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesBridge.Specieslike E S ∧
+    ∀ (T : SpeciesBridge.NatSet), (∀ (v : Nat), S v → T v) → SpeciesBridge.Specieslike E T → ∀ (v : Nat), T v → S v
+def SpeciesBridge.Reflection : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    S v →
+      SpeciesBridge.InfiniteSupport (SpeciesBridge.Descendant E v) →
+        SpeciesBridge.InfiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w
+def SpeciesGlobalIAP.Inspecies : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesGlobalIAP.InfinitaryGenus E S ∧
+    ∀ (T : SpeciesBridge.NatSet),
+      (∀ (v : Nat), T v → S v) → SpeciesGlobalIAP.InfinitaryGenus E T → ∀ (v : Nat), S v → T v
+def SpeciesRootCriterion.FourAxioms : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesBridge.IAP E S ∧ SpeciesBridge.Convex E S ∧ SpeciesBridge.CommonAncestor E S ∧ SpeciesBridge.Reflection E S
+def SpeciesRootCriterion.MaximalFourAxioms : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesRootCriterion.FourAxioms E S ∧
+    ∀ (T : SpeciesBridge.NatSet),
+      (∀ (v : Nat), S v → T v) → SpeciesRootCriterion.FourAxioms E T → ∀ (v : Nat), T v → S v
+@[reducible] def BinaryPopulation.LabelledGraph : Type :=
+Nat → Nat → Bool → Prop
+def BinaryPopulation.UniqueLabels : BinaryPopulation.LabelledGraph → Prop :=
+fun E => ∀ (u w : Nat) (a b : Bool), E u w a → E u w b → Eq.{1} a b
+def BinaryPopulation.ForgetLabels : BinaryPopulation.LabelledGraph → SpeciesBridge.Graph :=
+fun E u w => Exists.{1} fun label => E u w label
+def BinaryPopulation.Realizes : BinaryPopulation.LabelledGraph → (Nat → Bool) → Prop :=
+fun E target => Exists.{1} fun path => ∀ (k : Nat), E (path k) (path (HAdd.hAdd.{0, 0, 0} k 1)) (target k)
+def BinaryPopulation.BinaryNatPopulation : BinaryPopulation.LabelledGraph → Prop :=
+fun E =>
+  BinaryPopulation.UniqueLabels E ∧
+    SpeciesBridge.NaturalDateBiosphere (BinaryPopulation.ForgetLabels E) ∧
+      SpeciesBridge.FiniteSupport (SpeciesBridge.Root (BinaryPopulation.ForgetLabels E)) ∧
+        ∀ (w : Nat),
+          ¬SpeciesBridge.Root (BinaryPopulation.ForgetLabels E) w → ∀ (label : Bool), Exists.{1} fun u => E u w label
+def ProductiveCore.Core : SpeciesBridge.Graph → SpeciesBridge.NatSet :=
+fun E v => SpeciesBridge.InfiniteSupport (SpeciesBridge.Descendant E v)
+structure ProductiveCore.PopulationOn (E : BinaryPopulation.LabelledGraph) (S : SpeciesBridge.NatSet) : Prop
+number of parameters: 2
+fields:
+  ProductiveCore.PopulationOn.unique : BinaryPopulation.UniqueLabels E
+  ProductiveCore.PopulationOn.infinite : SpeciesBridge.InfiniteSupport S
+  ProductiveCore.PopulationOn.order : ∀ (u v : Nat), S u → S v → BinaryPopulation.ForgetLabels E u v → LT.lt.{0} u v
+  ProductiveCore.PopulationOn.children : ∀ (u : Nat),
+      S u → SpeciesBridge.FiniteSupport fun v => S v ∧ BinaryPopulation.ForgetLabels E u v
+  ProductiveCore.PopulationOn.roots : SpeciesBridge.FiniteSupport fun v =>
+      S v ∧ SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels E) S) v
+  ProductiveCore.PopulationOn.parents : ∀ (v : Nat),
+      S v →
+        ¬SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels E) S) v →
+          ∀ (b : Bool), Exists.{1} fun u => S u ∧ E u v b
+constructor:
+  ProductiveCore.PopulationOn.mk {E : BinaryPopulation.LabelledGraph} {S : SpeciesBridge.NatSet}
+    (unique : BinaryPopulation.UniqueLabels E) (infinite : SpeciesBridge.InfiniteSupport S)
+    (order : ∀ (u v : Nat), S u → S v → BinaryPopulation.ForgetLabels E u v → LT.lt.{0} u v)
+    (children : ∀ (u : Nat), S u → SpeciesBridge.FiniteSupport fun v => S v ∧ BinaryPopulation.ForgetLabels E u v)
+    (roots :
+      SpeciesBridge.FiniteSupport fun v =>
+        S v ∧ SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels E) S) v)
+    (parents :
+      ∀ (v : Nat),
+        S v →
+          ¬SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels E) S) v →
+            ∀ (b : Bool), Exists.{1} fun u => S u ∧ E u v b) :
+    ProductiveCore.PopulationOn E S
+@[reducible] def ProductiveCore.Induced : SpeciesBridge.Graph → SpeciesBridge.NatSet → SpeciesBridge.Graph :=
+FixedGenderLift.Induced
+def ProductiveCore.enumeration : {E : BinaryPopulation.LabelledGraph} →
+  {S : SpeciesBridge.NatSet} →
+    ProductiveCore.PopulationOn E S → BirthOrder.OrderedEnumeration.{0, 0} (FixedGenderReindex.birth S) :=
+fun {E} {S} p => BirthOrder.orderedEnumeration.{0, 0} (FixedGenderReindex.birth S) ⋯ ⋯
+def ProductiveCore.vertex : {E : BinaryPopulation.LabelledGraph} →
+  {S : SpeciesBridge.NatSet} → ProductiveCore.PopulationOn E S → Nat → Nat :=
+fun {E} {S} p i => Subtype.val.{1} (BirthOrder.OrderedEnumeration.toFun.{0, 0} (ProductiveCore.enumeration p) i)
+def ProductiveCore.reindexed : {E : BinaryPopulation.LabelledGraph} →
+  {S : SpeciesBridge.NatSet} → ProductiveCore.PopulationOn E S → BinaryPopulation.LabelledGraph :=
+fun {E} {S} p i j b => E (ProductiveCore.vertex p i) (ProductiveCore.vertex p j) b
+def ProductiveCore.DescendantClosed : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => ∀ (u v : Nat), S u → SpeciesBridge.Descendant E u v → S v
+def ProductiveCore.RelativeCore : SpeciesBridge.Graph → SpeciesBridge.NatSet → SpeciesBridge.NatSet :=
+fun E S v => S v ∧ ProductiveCore.Core (ProductiveCore.Induced E S) v
+def ProductiveCore.ForkEdge : Nat → Nat → Prop :=
+fun u v => Eq.{1} v (HAdd.hAdd.{0, 0, 0} u 2) ∨ Eq.{1} u 0 ∧ Eq.{1} v 1
+def ProductiveCore.OddRay : Nat → Prop :=
+fun v => Eq.{1} v 0 ∨ Eq.{1} (HMod.hMod.{0, 0, 0} v 2) 1
+def ProductiveCore.Restrict : BinaryPopulation.LabelledGraph → SpeciesBridge.NatSet → BinaryPopulation.LabelledGraph :=
+fun E S u v b => S u ∧ S v ∧ E u v b
+def BoundaryRepair.Deficient : BinaryPopulation.LabelledGraph → SpeciesBridge.NatSet → SpeciesBridge.NatSet :=
+fun E S v => S v ∧ Exists.{1} fun b => ¬Exists.{1} fun u => S u ∧ E u v b
+def BoundaryRepair.Repair : BinaryPopulation.LabelledGraph → SpeciesBridge.NatSet → BinaryPopulation.LabelledGraph :=
+fun E S u v b => S u ∧ S v ∧ ¬BoundaryRepair.Deficient E S v ∧ E u v b
+def BoundaryRepair.AdmissibleRepair : BinaryPopulation.LabelledGraph →
+  SpeciesBridge.NatSet → BinaryPopulation.LabelledGraph → Prop :=
+fun E S F =>
+  (∀ (u v : Nat) (b : Bool), F u v b → ProductiveCore.Restrict E S u v b) ∧
+    ∀ (v : Nat),
+      S v →
+        ¬SpeciesBridge.Root (ProductiveCore.Induced (BinaryPopulation.ForgetLabels F) S) v →
+          ∀ (b : Bool), Exists.{1} fun u => S u ∧ F u v b
+structure BirthOrder.OrderedEnumeration.{u, v} {V : Type u} {Time : Type v} [LE.{v} Time] (birth : V → Time) : Type u
+number of parameters: 4
+fields:
+  BirthOrder.OrderedEnumeration.toFun.{u, v} : Nat → V
+  BirthOrder.OrderedEnumeration.injective.{u,
+    v} : ∀ (i j : Nat),
+      Eq.{u + 1} (BirthOrder.OrderedEnumeration.toFun.{u, v} self i)
+          (BirthOrder.OrderedEnumeration.toFun.{u, v} self j) →
+        Eq.{1} i j
+  BirthOrder.OrderedEnumeration.surjective.{u,
+    v} : ∀ (x : V), Exists.{1} fun n => Eq.{u + 1} (BirthOrder.OrderedEnumeration.toFun.{u, v} self n) x
+  BirthOrder.OrderedEnumeration.nondecreasing.{u,
+    v} : ∀ (i j : Nat),
+      LE.le.{0} i j →
+        LE.le.{v} (birth (BirthOrder.OrderedEnumeration.toFun.{u, v} self i))
+          (birth (BirthOrder.OrderedEnumeration.toFun.{u, v} self j))
+constructor:
+  BirthOrder.OrderedEnumeration.mk.{u, v} {V : Type u} {Time : Type v} [LE.{v} Time] {birth : V → Time}
+    (toFun : Nat → V) (injective : ∀ (i j : Nat), Eq.{u + 1} (toFun i) (toFun j) → Eq.{1} i j)
+    (surjective : ∀ (x : V), Exists.{1} fun n => Eq.{u + 1} (toFun n) x)
+    (nondecreasing : ∀ (i j : Nat), LE.le.{0} i j → LE.le.{v} (birth (toFun i)) (birth (toFun j))) :
+    BirthOrder.OrderedEnumeration.{u, v} birth
+def BirthOrder.enumerate.{u, v} : {V : Type u} →
+  {Time : Type v} →
+    [inst : LE.{v} Time] →
+      [Std.IsLinearPreorder.{v} Time] →
+        (birth : V → Time) → BirthOrder.InfiniteVertices.{u} V → BirthOrder.FiniteSublevels.{u, v} birth → Nat → V :=
+fun {V} {Time} [LE.{v} Time] [Std.IsLinearPreorder.{v} Time] birth infinite finite n =>
+  BirthOrder.fresh.{u, v} birth infinite finite (BirthOrder.chosen.{u, v} birth infinite finite n)
+def FixedGenderLift.ChildCap : SpeciesBridge.Graph → SpeciesBridge.NatSet → Nat → Prop :=
+fun E S cap =>
+  ∀ (x : Nat),
+    S x →
+      Exists.{1} fun children =>
+        LE.le.{0} (List.length.{0} children) cap ∧ ∀ (y : Nat), S y → E x y → Membership.mem.{0, 0} children y
+@[reducible] def SpeciesCones.C0 : SpeciesBridge.NatSet :=
+SpeciesCones.Cone 0
+@[reducible] def SpeciesCones.C1 : SpeciesBridge.NatSet :=
+SpeciesCones.Cone 1

@@ -1,0 +1,228 @@
+@GenericUniversalAvoiders.no_countable_population_family.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label)
+  (W : ℕ → Type u_2) (hosts : (j : ℕ) → GenericUniversalAvoiders.Population.{u_2, u_3} (W j) Label),
+  ∃ m,
+    ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+      (∀ (x : V),
+          (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b) → Eq.{1} (m x) 1) ∧
+        (∀ (s : ℕ → Label),
+            GenericUniversalAvoiders.Realizes.{u_1, u_3} (GenericUniversalAvoiders.blowUp.{u_1, u_3} p m hm) s ↔
+              GenericUniversalAvoiders.Realizes.{u_1, u_3} p s) ∧
+          ∀ (j : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+            Function.Injective.{u_1 + 1, u_2 + 1} f →
+              ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                  (GenericUniversalAvoiders.blowUp.{u_1, u_3} p m hm)
+                  (GenericUniversalAvoiders.populationHost.{u_2, u_3} (hosts j)) f
+'GenericUniversalAvoiders.no_countable_population_family' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@GenericUniversalAvoiders.no_countable_host_family.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label)
+  (W : ℕ → Type u_2) [(j : ℕ) → Encodable.{u_2} (W j)]
+  (H : (j : ℕ) → GenericUniversalAvoiders.LocallyFiniteHost.{u_2} (W j)),
+  ∃ m,
+    ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+      (∀ (x : V),
+          (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b) → Eq.{1} (m x) 1) ∧
+        (∀ (s : ℕ → Label),
+            GenericUniversalAvoiders.Realizes.{u_1, u_3} (GenericUniversalAvoiders.blowUp.{u_1, u_3} p m hm) s ↔
+              GenericUniversalAvoiders.Realizes.{u_1, u_3} p s) ∧
+          ∀ (j : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+            Function.Injective.{u_1 + 1, u_2 + 1} f →
+              ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                  (GenericUniversalAvoiders.blowUp.{u_1, u_3} p m hm) (H j) f
+'GenericUniversalAvoiders.no_countable_host_family' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@TerminalCloneAvoiders.no_countable_host_family.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label)
+  (W : ℕ → Type u_2) [(j : ℕ) → Encodable.{u_2} (W j)]
+  (H : (j : ℕ) → GenericUniversalAvoiders.LocallyFiniteHost.{u_2} (W j)),
+  ∃ m,
+    ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+      (∀ (x : V),
+          (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b) → Eq.{1} (m x) 1) ∧
+        (∀ (s : ℕ → Label),
+            GenericUniversalAvoiders.Realizes.{u_1, u_3} (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm) s ↔
+              GenericUniversalAvoiders.Realizes.{u_1, u_3} p s) ∧
+          ∀ (j : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+            Function.Injective.{u_1 + 1, u_2 + 1} f →
+              ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                  (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm) (H j) f
+'TerminalCloneAvoiders.no_countable_host_family' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@TerminalCloneAvoiders.no_countable_bounded_stretch_family.{u_1, u_2,
+    u_3} : ∀ {Label : Type u_3} {V : Type u_1} (p : GenericUniversalAvoiders.Population.{u_1, u_3} V Label)
+  (W : ℕ → Type u_2) [(j : ℕ) → Encodable.{u_2} (W j)]
+  (H : (j : ℕ) → GenericUniversalAvoiders.LocallyFiniteHost.{u_2} (W j)),
+  ∃ m,
+    ∃ (hm : ∀ (x : V), LT.lt.{0} 0 (m x)),
+      (∀ (x : V),
+          (∀ (y : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u_1, u_3} p y x b) → Eq.{1} (m x) 1) ∧
+        (∀ (s : ℕ → Label),
+            GenericUniversalAvoiders.Realizes.{u_1, u_3} (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm) s ↔
+              GenericUniversalAvoiders.Realizes.{u_1, u_3} p s) ∧
+          ∀ (j L : ℕ) (f : GenericUniversalAvoiders.Fibre.{u_1} V m → W j),
+            Function.Injective.{u_1 + 1, u_2 + 1} f →
+              ¬GenericUniversalAvoiders.PreservesEdges.{u_1, u_2, u_3}
+                  (TerminalCloneAvoiders.terminalClone.{u_1, u_3} p m hm)
+                  (GenericUniversalAvoiders.LocallyFiniteHost.power.{u_2} (H j) L) f
+'TerminalCloneAvoiders.no_countable_bounded_stretch_family' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@InfiniteConservation.crossing_upper : ∀ {k : ℕ} (p : PopulationCounting.InfiniteLabeledPopulation k k) (n : ℕ),
+  LE.le.{0} (InfiniteConservation.crossingCount p n) (HMul.hMul.{0, 0, 0} k (PopulationCounting.fullRootCount p))
+'InfiniteConservation.crossing_upper' depends on axioms: [propext, Quot.sound.{u}]
+@BirthOrder.orderedEnumeration_exists.{u_1,
+    u_2} : ∀ {V : Type u_1} {Time : Type u_2} [inst : LE.{u_2} Time] [Std.IsLinearPreorder.{u_2} Time]
+  (birth : V → Time),
+  BirthOrder.InfiniteVertices.{u_1} V →
+    BirthOrder.FiniteSublevels.{u_1, u_2} birth → Nonempty.{u_1 + 1} (BirthOrder.OrderedEnumeration.{u_1, u_2} birth)
+'BirthOrder.orderedEnumeration_exists' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@BirthOrder.OrderedEnumeration.edges_increase.{u_1,
+    u_2} : ∀ {V : Type u_1} {Time : Type u_2} [inst : LE.{u_2} Time] {birth : V → Time} [inst_1 : LT.{u_2} Time]
+  [Std.LawfulOrderLT.{u_2} Time] (e : BirthOrder.OrderedEnumeration.{u_1, u_2} birth) (E : V → V → Prop),
+  (∀ (x y : V), E x y → LT.lt.{u_2} (birth x) (birth y)) →
+    ∀ (i j : ℕ),
+      E (BirthOrder.OrderedEnumeration.toFun.{u_1, u_2} e i) (BirthOrder.OrderedEnumeration.toFun.{u_1, u_2} e j) →
+        LT.lt.{0} i j
+'BirthOrder.OrderedEnumeration.edges_increase' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+structure GenericUniversalAvoiders.Population.{u, w} (V : Type u) (Label : Type w) : Type (max u w)
+number of parameters: 2
+fields:
+  GenericUniversalAvoiders.Population.edge.{u, w} : V → V → Label → Prop
+  GenericUniversalAvoiders.Population.birth.{u, w} : V → ℝ
+  GenericUniversalAvoiders.Population.infinite.{u, w} : BirthOrder.InfiniteVertices.{u} V
+  GenericUniversalAvoiders.Population.sublevels.{u,
+    w} : ∀ (r : ℝ),
+      BirthOrder.FiniteCover.{u} fun x => LE.le.{0} (GenericUniversalAvoiders.Population.birth.{u, w} self x) r
+  GenericUniversalAvoiders.Population.chronological.{u,
+    w} : ∀ (x y : V) (b : Label),
+      GenericUniversalAvoiders.Population.edge.{u, w} self x y b →
+        LT.lt.{0} (GenericUniversalAvoiders.Population.birth.{u, w} self x)
+          (GenericUniversalAvoiders.Population.birth.{u, w} self y)
+  GenericUniversalAvoiders.Population.unique.{u,
+    w} : ∀ (x y : V) (a b : Label),
+      GenericUniversalAvoiders.Population.edge.{u, w} self x y a →
+        GenericUniversalAvoiders.Population.edge.{u, w} self x y b → Eq.{w + 1} a b
+  GenericUniversalAvoiders.Population.roots.{u,
+    w} : BirthOrder.FiniteCover.{u} fun y =>
+      ∀ (x : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u, w} self x y b
+  GenericUniversalAvoiders.Population.children.{u,
+    w} : ∀ (x : V), BirthOrder.FiniteCover.{u} fun y => ∃ b, GenericUniversalAvoiders.Population.edge.{u, w} self x y b
+  GenericUniversalAvoiders.Population.parents.{u,
+    w} : ∀ (y : V),
+      (¬∀ (x : V) (b : Label), ¬GenericUniversalAvoiders.Population.edge.{u, w} self x y b) →
+        ∀ (b : Label), ∃ x, GenericUniversalAvoiders.Population.edge.{u, w} self x y b
+constructor:
+  GenericUniversalAvoiders.Population.mk.{u, w} {V : Type u} {Label : Type w} (edge : V → V → Label → Prop)
+    (birth : V → ℝ) (infinite : BirthOrder.InfiniteVertices.{u} V)
+    (sublevels : ∀ (r : ℝ), BirthOrder.FiniteCover.{u} fun x => LE.le.{0} (birth x) r)
+    (chronological : ∀ (x y : V) (b : Label), edge x y b → LT.lt.{0} (birth x) (birth y))
+    (unique : ∀ (x y : V) (a b : Label), edge x y a → edge x y b → Eq.{w + 1} a b)
+    (roots : BirthOrder.FiniteCover.{u} fun y => ∀ (x : V) (b : Label), ¬edge x y b)
+    (children : ∀ (x : V), BirthOrder.FiniteCover.{u} fun y => ∃ b, edge x y b)
+    (parents : ∀ (y : V), (¬∀ (x : V) (b : Label), ¬edge x y b) → ∀ (b : Label), ∃ x, edge x y b) :
+    GenericUniversalAvoiders.Population.{u, w} V Label
+def GenericUniversalAvoiders.blowUp.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population.{u, w} V Label →
+      (m : V → ℕ) →
+        (∀ (x : V), LT.lt.{0} 0 (m x)) →
+          GenericUniversalAvoiders.Population.{u, w} (GenericUniversalAvoiders.Fibre.{u} V m) Label :=
+fun {Label} {V} p m hm =>
+  GenericUniversalAvoiders.Population.mk.{u, w} (GenericUniversalAvoiders.liftedEdge.{u, w} p m)
+    (fun x => GenericUniversalAvoiders.Population.birth.{u, w} p (Sigma.fst.{u, 0} x)) ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯
+def GenericUniversalAvoiders.PreservesEdges.{u, v, w} : {Label : Type w} →
+  {V : Type u} →
+    {W : Type v} →
+      GenericUniversalAvoiders.Population.{u, w} V Label →
+        GenericUniversalAvoiders.LocallyFiniteHost.{v} W → (V → W) → Prop :=
+fun {Label} {V} {W} p H f =>
+  ∀ (x y : V) (b : Label),
+    GenericUniversalAvoiders.Population.edge.{u, w} p x y b →
+      GenericUniversalAvoiders.LocallyFiniteHost.adjacent.{v} H (f x) (f y)
+structure GenericUniversalAvoiders.LocallyFiniteHost.{v} (W : Type v) : Type v
+number of parameters: 1
+fields:
+  GenericUniversalAvoiders.LocallyFiniteHost.adjacent.{v} : W → W → Prop
+  GenericUniversalAvoiders.LocallyFiniteHost.neighbours_finite.{v} : ∀ (x : W),
+      Set.Finite.{v} (Set.ofPred.{v} fun y => GenericUniversalAvoiders.LocallyFiniteHost.adjacent.{v} self x y)
+constructor:
+  GenericUniversalAvoiders.LocallyFiniteHost.mk.{v} {W : Type v} (adjacent : W → W → Prop)
+    (neighbours_finite : ∀ (x : W), Set.Finite.{v} (Set.ofPred.{v} fun y => adjacent x y)) :
+    GenericUniversalAvoiders.LocallyFiniteHost.{v} W
+def TerminalCloneAvoiders.terminalClone.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population.{u, w} V Label →
+      (m : V → ℕ) →
+        (∀ (x : V), LT.lt.{0} 0 (m x)) →
+          GenericUniversalAvoiders.Population.{u, w} (GenericUniversalAvoiders.Fibre.{u} V m) Label :=
+fun {Label} {V} p m hm =>
+  GenericUniversalAvoiders.Population.mk.{u, w} (TerminalCloneAvoiders.terminalEdge.{u, w} p m)
+    (fun x => GenericUniversalAvoiders.Population.birth.{u, w} p (Sigma.fst.{u, 0} x)) ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯
+def TerminalCloneAvoiders.terminalEdge.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population.{u, w} V Label →
+      (m : V → ℕ) → GenericUniversalAvoiders.Fibre.{u} V m → GenericUniversalAvoiders.Fibre.{u} V m → Label → Prop :=
+fun {Label} {V} p m x y b =>
+  Eq.{1} (↑(Sigma.snd.{u, 0} x)) 0 ∧
+    GenericUniversalAvoiders.Population.edge.{u, w} p (Sigma.fst.{u, 0} x) (Sigma.fst.{u, 0} y) b
+structure PopulationCounting.InfiniteLabeledPopulation (k d : ℕ) : Type
+number of parameters: 2
+fields:
+  PopulationCounting.InfiniteLabeledPopulation.edge : ℕ → ℕ → Option.{0} ℕ
+  PopulationCounting.InfiniteLabeledPopulation.root : ℕ → Bool
+  PopulationCounting.InfiniteLabeledPopulation.birth_order : ∀ (u v : ℕ),
+      Eq.{1} (Option.isSome.{0} (self.edge u v)) true → LT.lt.{0} u v
+  PopulationCounting.InfiniteLabeledPopulation.root_no_parents : ∀ (v : ℕ),
+      Eq.{1} (self.root v) true → ∀ (u : ℕ), Eq.{1} (self.edge u v) none.{0}
+  PopulationCounting.InfiniteLabeledPopulation.parent_of_label : ∀ (v : ℕ),
+      Eq.{1} (self.root v) false → ∀ (l : ℕ), LT.lt.{0} l k → ∃ u, Eq.{1} (self.edge u v) (some.{0} l)
+  PopulationCounting.InfiniteLabeledPopulation.childSupport : ℕ → ℕ
+  PopulationCounting.InfiniteLabeledPopulation.no_children_after : ∀ (u v : ℕ),
+      LE.le.{0} (self.childSupport u) v → Eq.{1} (self.edge u v) none.{0}
+  PopulationCounting.InfiniteLabeledPopulation.child_cap : ∀ (u : ℕ),
+      LE.le.{0} (PopulationCounting.sumBelow (self.childSupport u) fun v => PopulationCounting.edgeBit (self.edge u v))
+        d
+  PopulationCounting.InfiniteLabeledPopulation.rootSupport : ℕ
+  PopulationCounting.InfiniteLabeledPopulation.no_roots_after : ∀ (v : ℕ),
+      LE.le.{0} self.rootSupport v → Eq.{1} (self.root v) false
+constructor:
+  PopulationCounting.InfiniteLabeledPopulation.mk {k d : ℕ} (edge : ℕ → ℕ → Option.{0} ℕ) (root : ℕ → Bool)
+    (birth_order : ∀ (u v : ℕ), Eq.{1} (Option.isSome.{0} (edge u v)) true → LT.lt.{0} u v)
+    (root_no_parents : ∀ (v : ℕ), Eq.{1} (root v) true → ∀ (u : ℕ), Eq.{1} (edge u v) none.{0})
+    (parent_of_label :
+      ∀ (v : ℕ), Eq.{1} (root v) false → ∀ (l : ℕ), LT.lt.{0} l k → ∃ u, Eq.{1} (edge u v) (some.{0} l))
+    (childSupport : ℕ → ℕ) (no_children_after : ∀ (u v : ℕ), LE.le.{0} (childSupport u) v → Eq.{1} (edge u v) none.{0})
+    (child_cap :
+      ∀ (u : ℕ),
+        LE.le.{0} (PopulationCounting.sumBelow (childSupport u) fun v => PopulationCounting.edgeBit (edge u v)) d)
+    (rootSupport : ℕ) (no_roots_after : ∀ (v : ℕ), LE.le.{0} rootSupport v → Eq.{1} (root v) false) :
+    PopulationCounting.InfiniteLabeledPopulation k d
+def InfiniteConservation.crossingCount : {k d : ℕ} → PopulationCounting.InfiniteLabeledPopulation k d → ℕ → ℕ :=
+fun {k d} p n =>
+  PopulationCounting.sumBelow n fun u =>
+    PopulationCounting.sumBelow (p.childSupport u) fun v =>
+      ite.{1} (LE.le.{0} n v) (PopulationCounting.edgeBit (p.edge u v)) 0
+def PopulationCounting.fullRootCount : {k d : ℕ} → PopulationCounting.InfiniteLabeledPopulation k d → ℕ :=
+fun {k d} p => PopulationCounting.sumBelow p.rootSupport fun v => ite.{1} (Eq.{1} (p.root v) true) 1 0
+structure BirthOrder.OrderedEnumeration.{u, v} {V : Type u} {Time : Type v} [LE.{v} Time] (birth : V → Time) : Type u
+number of parameters: 4
+fields:
+  BirthOrder.OrderedEnumeration.toFun.{u, v} : ℕ → V
+  BirthOrder.OrderedEnumeration.injective.{u,
+    v} : ∀ (i j : ℕ),
+      Eq.{u + 1} (BirthOrder.OrderedEnumeration.toFun.{u, v} self i)
+          (BirthOrder.OrderedEnumeration.toFun.{u, v} self j) →
+        Eq.{1} i j
+  BirthOrder.OrderedEnumeration.surjective.{u,
+    v} : ∀ (x : V), ∃ n, Eq.{u + 1} (BirthOrder.OrderedEnumeration.toFun.{u, v} self n) x
+  BirthOrder.OrderedEnumeration.nondecreasing.{u,
+    v} : ∀ (i j : ℕ),
+      LE.le.{0} i j →
+        LE.le.{v} (birth (BirthOrder.OrderedEnumeration.toFun.{u, v} self i))
+          (birth (BirthOrder.OrderedEnumeration.toFun.{u, v} self j))
+constructor:
+  BirthOrder.OrderedEnumeration.mk.{u, v} {V : Type u} {Time : Type v} [LE.{v} Time] {birth : V → Time} (toFun : ℕ → V)
+    (injective : ∀ (i j : ℕ), Eq.{u + 1} (toFun i) (toFun j) → Eq.{1} i j)
+    (surjective : ∀ (x : V), ∃ n, Eq.{u + 1} (toFun n) x)
+    (nondecreasing : ∀ (i j : ℕ), LE.le.{0} i j → LE.le.{v} (birth (toFun i)) (birth (toFun j))) :
+    BirthOrder.OrderedEnumeration.{u, v} birth

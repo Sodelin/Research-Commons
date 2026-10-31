@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Productive pruning and fixed-S repair successor — 31 October 2026
+
+[POPULATION-002 adoption](../../../research/2026-10-31-population003-package-binding/README.md): **61 mapped IDs/662 names/57 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Full infinite-language pruning versus fixed-S avoidance-only repair retained; IAP/maximality/actual C0-C1/noncomputable boundaries explicit. No native infinite pruning/repair algorithm.
+
+[Current aggregate](productive-pruning-repair-aggregate-verification.json) records changed roots,662 complete named checks, selected owned audit and actual resolved source/object bindings. Explicit coherent qualified reuse, not fresh whole1846 build/audit. Older receipts historical.
+
 ## Critical tail and actual encoder successor — 31 October 2026
 
 [POPULATION-002 adoption](../../../research/2026-10-31-population002-package-binding/README.md): **60 mapped IDs/635 names/58 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Three exact scopes retained: persistent-minimum adjacency; actual unconditional fair encoder deriving Regular; SAME schedule conditional positive-period realization. No finite slots imply periodicity or native infinite encoder.
