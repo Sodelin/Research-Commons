@@ -1,0 +1,88 @@
+@Nanuq.ActualStar.actual_short_arm_family : ∀ {V : Type u_1} {E : Type u_2} {ι : Type u_3}
+  {G : Nanuq.Source.EdgeGraph V E} (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) (es : ι → E) (ws : ι → V)
+  (v : V),
+  (∀ (i : ι), G.Inc (es i) v (ws i)) →
+    Function.Injective es →
+      ∃ f,
+        (∀ (i : ι),
+            ContinuousOn (f i) unitInterval ∧
+              Set.InjOn (f i) unitInterval ∧
+                f i '' unitInterval = Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) (es i) ∧
+                  f i 0 = NanuqFaithfulSupplierDrawing.vertex D v ∧
+                    f i 1 = NanuqFaithfulSupplierDrawing.vertex D (ws i)) ∧
+          ∀ (i j : ι),
+            i ≠ j →
+              ∀ z ∈ (fun t => f i (t / 2)) '' unitInterval,
+                z ∈ (fun t => f j (t / 2)) '' unitInterval → z = NanuqFaithfulSupplierDrawing.vertex D v
+'Nanuq.ActualStar.actual_short_arm_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+Nanuq.ActualStar.line_preserving_third_germ : ∀ (f : ℝ → Schoenflies.Plane),
+  ContinuousOn f unitInterval →
+    Set.InjOn f unitInterval →
+      f 0 = 0 →
+        ∀ {r : ℝ},
+          0 < r →
+            r ≤ max |(f 1).ofLp 0| |(f 1).ofLp 1| →
+              (∀ t ∈ unitInterval, 0 < t → max |(f t).ofLp 0| |(f t).ofLp 1| ≤ r → (f t).ofLp 1 ≠ 0) →
+                ∃ s H q,
+                  s ∈ unitInterval ∧
+                    0 < s ∧
+                      0 < q.ofLp 1 ∧
+                        (∀ (z : Schoenflies.Plane), z.ofLp 1 = 0 → H z = z) ∧
+                          ⇑H '' f '' Set.Icc 0 s = segment ℝ 0 q ∧ H (f s) = q
+'Nanuq.ActualStar.line_preserving_third_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.ActualStar.actual_three_incident_frame : ∀ {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) (es : Fin 3 → E) (ws : Fin 3 → V) (v : V),
+  (∀ (i : Fin 3), G.Inc (es i) v (ws i)) →
+    Function.Injective es →
+      ∃ f H c s q,
+        (∀ (i : Fin 3),
+            ContinuousOn (f i) unitInterval ∧
+              Set.InjOn (f i) unitInterval ∧
+                f i '' unitInterval = Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) (es i) ∧
+                  f i 0 = NanuqFaithfulSupplierDrawing.vertex D v ∧
+                    f i 1 = NanuqFaithfulSupplierDrawing.vertex D (ws i)) ∧
+          |c| < 2 ∧
+            0 < s ∧
+              s ≤ 1 / 2 ∧
+                0 < q.ofLp 1 ∧
+                  H (NanuqFaithfulSupplierDrawing.vertex D v) = 0 ∧
+                    ⇑H '' (f 0 '' Set.Icc 0 (1 / 6) ∪ f 1 '' Set.Icc 0 (1 / 6)) = Nanuq.ActualStar.centeredCarrier c ∧
+                      ⇑H '' f 2 '' Set.Icc 0 s = segment ℝ 0 q ∧
+                        H (f 0 (1 / 6)) = Schoenflies.Plane.mk (2 - c) 0 ∧
+                          H (f 1 (1 / 6)) = Schoenflies.Plane.mk (-2 - c) 0 ∧ H (f 2 s) = q
+'Nanuq.ActualStar.actual_three_incident_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.ActualStar.finite_discarded_trace : ∀ {E : Type u_1} {G : Graph Schoenflies.Plane E} [G.Finite]
+  {drawing : E → ℝ → Schoenflies.Plane},
+  G.IsDrawing drawing →
+    ∀ (es : Fin 3 → E) (ws : Fin 3 → Schoenflies.Plane) (v : Schoenflies.Plane),
+      (∀ (i : Fin 3), G.IsLink (es i) v (ws i)) →
+        (∀ e ∈ G.edgeSet, G.Inc e v → ∃ i, es i = e) →
+          ∀ (f : Fin 3 → ℝ → Schoenflies.Plane),
+            (∀ (i : Fin 3),
+                ContinuousOn (f i) unitInterval ∧
+                  Set.InjOn (f i) unitInterval ∧
+                    f i '' unitInterval = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i) →
+              ∀ (a : Fin 3 → ℝ),
+                (∀ (i : Fin 3), 0 < a i ∧ a i ≤ 1) →
+                  ∃ K, IsCompact K ∧ v ∉ K ∧ G.pointSet drawing = K ∪ ⋃ i, f i '' Set.Icc 0 (a i)
+'Nanuq.ActualStar.finite_discarded_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.ActualStar.binary_three_incident_exhausts : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (es : Fin 3 → E) (ws : Fin 3 → V) (v : V),
+  (∀ (i : Fin 3), N.graph.Inc (es i) v (ws i)) →
+    Function.Injective es → ∀ (e : E), N.graph.source e = v ∨ N.graph.target e = v → ∃ i, es i = e
+'Nanuq.ActualStar.binary_three_incident_exhausts' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.ActualStar.actual_binary_trivalent_star : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (es : Fin 3 → E) (ws : Fin 3 → V) (v : V),
+  (∀ (i : Fin 3), N.graph.Inc (es i) v (ws i)) →
+    Function.Injective es →
+      ∃ H ε q,
+        0 < ε ∧
+          ε < ‖q‖ ∧
+            0 < q.ofLp 1 ∧
+              H (NanuqFaithfulSupplierDrawing.vertex D v) = 0 ∧
+                ⇑H '' ⇑NanuqFaithfulSupplierDrawing.coordinates '' G1OuterLabelledMultigraphCurves.drawing D ∩
+                    Metric.ball 0 ε =
+                  ({z | z.ofLp 1 = 0} ∪ segment ℝ 0 q) ∩ Metric.ball 0 ε
+'Nanuq.ActualStar.actual_binary_trivalent_star' depends on axioms: [propext, Classical.choice, Quot.sound]

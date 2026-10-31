@@ -1,0 +1,42 @@
+/workspace/tasks/lean-completion/actual-star/source/ThreeGermFrame.lean:86:7: error(lean.unknownIdentifier): Unknown identifier `abs_add`
+/workspace/tasks/lean-completion/actual-star/source/ThreeGermFrame.lean:86:30: error: linarith failed to find a contradiction
+f : Fin 3 → ℝ → Plane
+hc : ∀ (i : Fin 3), ContinuousOn (f i) I
+hi : ∀ (i : Fin 3), InjOn (f i) I
+hzero : ∀ (i : Fin 3), f i 0 = f 0 0
+hmeet : ∀ (i j : Fin 3), i ≠ j → ∀ z ∈ f i '' I, z ∈ f j '' I → z = f 0 0
+h01 : 0 ≠ 1
+H : Plane ≃ₜ Plane
+hHA : ⇑H '' (f 0 '' Icc 0 (1 / 3) ∪ f 1 '' Icc 0 (1 / 3)) = CornerShear.horizontal
+hp : H (f 0 (1 / 3)) = Plane.mk 2 0
+hq : H (f 1 (1 / 3)) = Plane.mk (-2) 0
+hvy : (H (f 0 0)).ofLp 1 = 0
+hvc : |(H (f 0 0)).ofLp 0| < 2
+v : Plane := H (f 0 0)
+c : (fun x => ℝ) 0 := v.ofLp 0
+K : Plane ≃ₜ Plane := H.trans (shiftVertex v)
+A : Set Plane := f 0 '' Icc 0 (1 / 3) ∪ f 1 '' Icc 0 (1 / 3)
+hK0 : K (f 0 0) = 0
+hKA : ⇑K '' A = centeredCarrier c
+g : ℝ → Plane := fun t => K (f 2 t)
+hgc : ContinuousOn g I
+hgi : InjOn g I
+hg0 : g 0 = 0
+hg1 : g 1 ≠ 0
+b : (fun x => ℝ) 0 := max |(g 1).ofLp 0| |(g 1).ofLp 1|
+hb : 0 < b
+r : (fun x => ℝ) 0 := min ((2 - |c|) / 2) (b / 2)
+hr : 0 < r
+hrmargin : r + |c| < 2
+hrend : r ≤ max |(g 1).ofLp 0| |(g 1).ofLp 1|
+hIa : Icc 0 (1 / 3) ⊆ I
+t : ℝ
+ht : t ∈ I
+htp : 0 < t
+hbound : max |(g t).ofLp 0| |(g t).ofLp 1| ≤ r
+hy : (g t).ofLp 1 = 0
+hx : |(g t).ofLp 0| ≤ r
+a✝ : 2 ≤ ?m.758
+⊢ False
+failed
+'Nanuq.ActualStar.three_continued_germ_frame' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

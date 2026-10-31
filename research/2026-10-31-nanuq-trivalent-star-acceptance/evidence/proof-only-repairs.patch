@@ -1,0 +1,60 @@
+--- frozen/HalfRectangle.lean
++++ source/HalfRectangle.lean
+@@ -102,7 +102,9 @@
+     simpa [hy] using hh
+   by_cases hx : x ∈ halfBoundary r hr
+   · exact Or.inl hx
+-  · exact Or.inr (mem_outside_of_notMem_union_inside (by tauto))
++  · exact Or.inr (mem_outside_of_notMem_union_inside (by
++      intro h
++      exact h.elim hx hn))
+ 
+ #print axioms mem_half_inside
+ #print axioms mem_half_boundary_of_exit
+--- frozen/ThirdGerm.lean
++++ source/ThirdGerm.lean
+@@ -38,7 +38,7 @@
+     intro he
+     apply hz.2
+     right
+-    simpa only [he]
++    simp [he]
+   exact ⟨hy t ⟨ht0,ht.2⟩,hbefore t ht hts⟩
+ 
+ /-- The no-line-hit premise is an explicit intermediate consequence of the
+--- frozen/ThreeGermFrame.lean
++++ source/ThreeGermFrame.lean
+@@ -83,7 +83,7 @@
+     intro t ht htp hbound hy
+     have hx : |g t 0| ≤ r := (le_max_left _ _).trans hbound
+     have hxin : |g t 0+c| ≤ 2 := le_of_lt (lt_of_le_of_lt
+-      (abs_add (g t 0) c) (by linarith))
++      (abs_add_le (g t 0) c) (by linarith))
+     have hgin : g t ∈ centeredCarrier c := ⟨hy,hxin⟩
+     have him : g t ∈ K '' A := hKA.symm ▸ hgin
+     obtain ⟨z,hz,hzK⟩ := him
+--- frozen/TrivalentLocal.lean
++++ source/TrivalentLocal.lean
+@@ -20,8 +20,11 @@
+   let a : Fin 3 → ℝ := ![1/6,1/6,s]
+   have ha : ∀ i, 0 < a i ∧ a i ≤ 1 := by
+     intro i
+-    fin_cases i <;> simp [a]
+-    exact ⟨hsp,by linarith⟩
++    fin_cases i
++    · norm_num [a]
++    · norm_num [a]
++    · change 0 < s ∧ s ≤ 1
++      exact ⟨hsp,by linarith⟩
+   obtain ⟨K,hK,hvK,hdecomp⟩ := finite_discarded_trace hD es ws v hinc hcover f hf a ha
+   have hprefix : (⋃ i, f i '' Icc 0 (a i)) =
+       (f 0 '' Icc 0 (1/6) ∪ f 1 '' Icc 0 (1/6)) ∪ f 2 '' Icc 0 s := by
+@@ -57,7 +60,7 @@
+     have hzn : ‖z‖ < ε := by simpa only [mem_ball,dist_zero_right] using hz
+     have hx : |z 0| < ε := lt_of_le_of_lt
+       ((Plane.abs_zero_le_supNorm z).trans (Plane.supNorm_le_norm z)) hzn
+-    have hxc : |z 0+c| ≤ 2 := le_of_lt (lt_of_le_of_lt (abs_add (z 0) c) (by linarith))
++    have hxc : |z 0+c| ≤ 2 := le_of_lt (lt_of_le_of_lt (abs_add_le (z 0) c) (by linarith))
+     exact ⟨hzy,hxc⟩
+   refine ⟨H,ε,q,hε,hεq,hqy,hHv,?_⟩
+   rw [hFull]

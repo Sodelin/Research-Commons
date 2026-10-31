@@ -1,0 +1,130 @@
+/workspace/tasks/lean-completion/actual-star/source/TrivalentLocal.lean:24:10: error: Invalid `⟨...⟩` notation: The expected type `Real.le✝ 6⁻¹ 1` is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+/workspace/tasks/lean-completion/actual-star/source/TrivalentLocal.lean:21:38: error: unsolved goals
+case «1»
+E : Type u_1
+G : Graph Plane E
+inst✝ : G.Finite
+drawing : E → ℝ → Plane
+hD : G.IsDrawing drawing
+es : Fin 3 → E
+ws : Fin 3 → Plane
+v : Plane
+hinc : ∀ (i : Fin 3), G.IsLink (es i) v (ws i)
+hids : Function.Injective es
+hcover : ∀ e ∈ E(G), G.Inc e v → ∃ i, es i = e
+f : Fin 3 → ℝ → Plane
+H : Plane ≃ₜ Plane
+c s : ℝ
+q : Plane
+hf :
+  ∀ (i : Fin 3),
+    ContinuousOn (f i) I ∧ InjOn (f i) I ∧ f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i
+hc : |c| < 2
+hsp : 0 < s
+hs : s ≤ 1 / 2
+hqy : 0 < q.ofLp 1
+hHv : H v = 0
+hHA : ⇑H '' (f 0 '' Icc 0 (1 / 6) ∪ f 1 '' Icc 0 (1 / 6)) = centeredCarrier c
+hHQ : ⇑H '' f 2 '' Icc 0 s = segment ℝ 0 q
+left✝¹ : H (f 0 (1 / 6)) = Plane.mk (2 - c) 0
+left✝ : H (f 1 (1 / 6)) = Plane.mk (-2 - c) 0
+right✝ : H (f 2 s) = q
+a : Fin 3 → ℝ := ![1 / 6, 1 / 6, s]
+⊢ 6⁻¹ ≤ 1
+
+case «2»
+E : Type u_1
+G : Graph Plane E
+inst✝ : G.Finite
+drawing : E → ℝ → Plane
+hD : G.IsDrawing drawing
+es : Fin 3 → E
+ws : Fin 3 → Plane
+v : Plane
+hinc : ∀ (i : Fin 3), G.IsLink (es i) v (ws i)
+hids : Function.Injective es
+hcover : ∀ e ∈ E(G), G.Inc e v → ∃ i, es i = e
+f : Fin 3 → ℝ → Plane
+H : Plane ≃ₜ Plane
+c s : ℝ
+q : Plane
+hf :
+  ∀ (i : Fin 3),
+    ContinuousOn (f i) I ∧ InjOn (f i) I ∧ f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i
+hc : |c| < 2
+hsp : 0 < s
+hs : s ≤ 1 / 2
+hqy : 0 < q.ofLp 1
+hHv : H v = 0
+hHA : ⇑H '' (f 0 '' Icc 0 (1 / 6) ∪ f 1 '' Icc 0 (1 / 6)) = centeredCarrier c
+hHQ : ⇑H '' f 2 '' Icc 0 s = segment ℝ 0 q
+left✝¹ : H (f 0 (1 / 6)) = Plane.mk (2 - c) 0
+left✝ : H (f 1 (1 / 6)) = Plane.mk (-2 - c) 0
+right✝ : H (f 2 s) = q
+a : Fin 3 → ℝ := ![1 / 6, 1 / 6, s]
+⊢ 0 < s ∧ s ≤ 1
+/workspace/tasks/lean-completion/actual-star/source/TrivalentLocal.lean:39:36: warning: Try `simp at hqy` instead of `simpa using hqy`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/workspace/tasks/lean-completion/actual-star/source/TrivalentLocal.lean:60:56: error(lean.unknownIdentifier): Unknown identifier `abs_add`
+/workspace/tasks/lean-completion/actual-star/source/TrivalentLocal.lean:60:77: error: linarith failed to find a contradiction
+E : Type u_1
+G : Graph Plane E
+inst✝ : G.Finite
+drawing : E → ℝ → Plane
+hD : G.IsDrawing drawing
+es : Fin 3 → E
+ws : Fin 3 → Plane
+v : Plane
+hinc : ∀ (i : Fin 3), G.IsLink (es i) v (ws i)
+hids : Function.Injective es
+hcover : ∀ e ∈ E(G), G.Inc e v → ∃ i, es i = e
+f : Fin 3 → ℝ → Plane
+H : Plane ≃ₜ Plane
+c s : ℝ
+q : Plane
+hf :
+  ∀ (i : Fin 3),
+    ContinuousOn (f i) I ∧ InjOn (f i) I ∧ f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i
+hc : |c| < 2
+hsp : 0 < s
+hs : s ≤ 1 / 2
+hqy : 0 < q.ofLp 1
+hHv : H v = 0
+hHA : ⇑H '' (f 0 '' Icc 0 (1 / 6) ∪ f 1 '' Icc 0 (1 / 6)) = centeredCarrier c
+hHQ : ⇑H '' f 2 '' Icc 0 s = segment ℝ 0 q
+left✝¹ : H (f 0 (1 / 6)) = Plane.mk (2 - c) 0
+left✝ : H (f 1 (1 / 6)) = Plane.mk (-2 - c) 0
+right✝ : H (f 2 s) = q
+a : Fin 3 → ℝ := ![1 / 6, 1 / 6, s]
+ha : ∀ (i : Fin 3), 0 < a i ∧ a i ≤ 1
+K : Set Plane
+hK : IsCompact K
+hvK : v ∉ K
+hdecomp : G.pointSet drawing = K ∪ ⋃ i, f i '' Icc 0 (a i)
+hprefix : ⋃ i, f i '' Icc 0 (a i) = f 0 '' Icc 0 (1 / 6) ∪ f 1 '' Icc 0 (1 / 6) ∪ f 2 '' Icc 0 s
+hFull : ⇑H '' G.pointSet drawing = ⇑H '' K ∪ (centeredCarrier c ∪ segment ℝ 0 q)
+hHK : IsCompact (⇑H '' K)
+hzK : 0 ∉ ⇑H '' K
+δ : ℝ
+hδ : δ > 0
+hδsub : ball 0 δ ⊆ (⇑H '' K)ᶜ
+hqne : q ≠ 0
+hqn : 0 < ‖q‖
+ε : ℝ := min (δ / 2) (min ((2 - |c|) / 2) (‖q‖ / 2))
+hε : 0 < ε
+hεδ : ε < δ
+hεq : ε < ‖q‖
+hεc : ε + |c| < 2
+hball : ∀ z ∈ ball 0 ε, z ∉ ⇑H '' K
+z : Plane
+hz : z ∈ ball 0 ε
+hzy : z.ofLp 1 = 0
+hzn : ‖z‖ < ε
+hx : |z.ofLp 0| < ε
+a✝ : 2 ≤ ?m.1215
+⊢ False
+failed
+'Nanuq.ActualStar.trivalent_local_drawing' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

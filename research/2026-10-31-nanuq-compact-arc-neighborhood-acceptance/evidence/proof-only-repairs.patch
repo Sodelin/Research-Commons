@@ -1,0 +1,33 @@
+--- frozen/ArcJordanNeighborhood.lean
++++ source/ArcJordanNeighborhood.lean
+@@ -16,7 +16,9 @@
+   have hzS : z ∉ S := by
+     intro hz
+     have hh : max |R+3| |(0:ℝ)| ≤ R+2 := by
+-      simpa [S,z,Plane.closedSquare,Plane.supDist,Plane.supNorm] using hz
++      have hh' : |R+3| ≤ R+2 ∧ (0:ℝ) ≤ R+2 := by
++        simpa [S,z,Plane.closedSquare,Plane.supDist,Plane.supNorm] using hz
++      simpa only [abs_zero] using max_le hh'.1 hh'.2
+     rw [abs_of_nonneg (by linarith : 0 ≤ R+3),abs_zero,max_eq_left (by linarith)] at hh
+     linarith
+   have hAS : A ⊆ S := by
+--- frozen/CompactObstacleJordan.lean
++++ source/CompactObstacleJordan.lean
+@@ -147,7 +147,7 @@
+   obtain ⟨z,hzL⟩ := hLne
+   have hzout := hout z hzL
+   obtain ⟨e,u,v,D,hface⟩ :=
+-    Nanuq.ContinuousFaceCycles.face_cycles_continuous hdraw htwo z hzout.1
++    Graph.face_cycles_continuous hdraw htwo z hzout.1
+   let C := Graph.edgesCover segmentDrawing (e :: D)
+   have hC : IsJordanCurve C := hdraw.cycle_isJordanCurve hface.isCycle
+   have hFout : Graph.face G segmentDrawing z = outside C := by
+@@ -207,7 +207,7 @@
+   obtain ⟨j,hj0,hj1,hxj⟩ := exists_mem_frontier_of_mem_pointSet_familyChain hxi
+   have hjN : j ≤ (n+1)*m := by
+     calc j ≤ i*m+m := hj1
+-      _ ≤ n*m+m := Nat.add_le_add_right (Nat.mul_le_mul_right m hin) m
++      _ ≤ n*m+m := by simpa only [Nat.zero_add] using Nat.add_le_add_right (Nat.mul_le_mul_right m hin) m
+       _ = (n+1)*m := by ring
+   refine ⟨c j,⟨sample ((n+1)*m) j,sample_mem_I hjN,(hc j).symm⟩,?_⟩
+   have hdist : Plane.supDist x (c j) = r := by

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "arc_jordan_neighborhood",
+    "header": "theorem arc_jordan_neighborhood {A U : Set Plane} (hA : IsArc A)\n    (hU : IsOpen U) (hAU : A ⊆ U) :\n    ∃ C : Set Plane, IsJordanCurve C ∧ A ⊆ inside C ∧ C ∪ inside C ⊆ U",
+    "sha256": "6ffdb8d784efc05d82ed2428fd496ce0857be4533dc60a1f153f732a837156ac"
+  },
+  {
+    "name": "compact_obstacle_jordan",
+    "header": "theorem compact_obstacle_jordan {A L : Set Plane} (hA : IsArc A)\n    (hL : IsCompact L) (hLne : L.Nonempty) (hdisj : Disjoint L A)\n    {ε : ℝ} (hε : 0 < ε) :\n    ∃ C : Set Plane, IsJordanCurve C ∧ A ⊆ inside C ∧ L ⊆ outside C ∧\n      ∀ x ∈ C, ∃ y ∈ A, Plane.supDist x y < ε",
+    "sha256": "fc202ec23176f7f6cf0362ddb0003cad83429ec9ad6229d013bf9e903681a1e9"
+  }
+]
