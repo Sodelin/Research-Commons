@@ -1,0 +1,121 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:46:21: error: Application type mismatch: The argument
+  Location.noConfusion ?m.208
+has type
+  ?m.196 = ?m.199 → ?m.197 ≍ ?m.200 → Location.noConfusionType ?m.194 ?m.197 ?m.200
+but is expected to have type
+  False
+in the application
+  False.elim (Location.noConfusion ?m.208)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:46:43: error: Application type mismatch: The argument
+  Eq.trans (Eq.symm hv) he
+has type
+  Location.node v = Location.edge e
+but is expected to have type
+  ?m.195 = ?m.198
+in the application
+  Location.noConfusion ⋯
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:52:19: error: Application type mismatch: The argument
+  Location.noConfusion ?m.94
+has type
+  ?m.82 = ?m.85 → ?m.83 ≍ ?m.86 → Location.noConfusionType ?m.80 ?m.83 ?m.86
+but is expected to have type
+  False
+in the application
+  False.elim (Location.noConfusion ?m.94)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:52:41: error: Application type mismatch: The argument
+  Eq.trans (Eq.symm hv) he
+has type
+  Location.node v = Location.edge e
+but is expected to have type
+  ?m.81 = ?m.84
+in the application
+  Location.noConfusion ⋯
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:65:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69ActiveStage.after_nodes_upper_locations`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:196:8: error: `simp` made no progress
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    o
+  has type
+    SupportedObservation N sample A
+  but is expected to have type
+    { o // (∃ s, observeCode N s = o) ∧ ∀ (x : Copy), o.2 x ∈ A }
+  in the application
+    ↑o
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:202:10: warning: `MeasureTheory.lintegral_finset_sum` has been deprecated: Use `MeasureTheory.lintegral_finsetSum` instead
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActiveStage.lean:263:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  future (calendarEnd N ops s past)
+in the target expression
+  calendarWeight N L q (stageProgram N C H gamma common a b) s past *
+      calendarValue N r L q (guardedRoot N r L q) post (calendarEnd N (stageProgram N C H gamma common a b) s past) =
+    calendarWeight N L q ops s past * F (observeCode N (calendarEnd N ops s past))
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+a b : ℝ
+hab : a < b
+hb : b ≤ C.age N.root
+hgap : ∀ (v : V), a < C.age v → b ≤ C.age v
+s : Code N sample
+hs : ActiveCode N C a s
+post : List (ProgramStep N)
+ops : List (ProgramStep N) := stageProgram N C H gamma common a b
+future : Code N sample → ℝ≥0∞ := calendarValue N r L q (guardedRoot N r L q) post
+F : BlockPopulationObservation Copy V E → ℝ≥0∞
+hF : ∀ (d : Code N sample), (state d).register = (state s).register → future d = F (observeCode N d)
+p : PMF (Code N sample) := sourceProgram N r ops s
+hsupp : ∀ᵐ (d : Code N sample) ∂p.toMeasure, d ∈ p.support
+hreg :
+  ∀ᵐ (d : Code N sample) ∂Measure.map (calendarEnd N ops s) (actualCalendarTraceLaw N r ops s),
+    (state d).register = (state s).register
+hre :
+  ∀ᵐ (x : Fin ops.length → SegmentRecord N sample) ∂actualCalendarTraceLaw N r ops s,
+    (state (calendarEnd N ops s x)).register = (state s).register
+past : Fin (stageProgram N C H gamma common a b).length → SegmentRecord N sample
+hp : past ∈ {x | (state (calendarEnd N ops s x)).register = (state s).register}
+⊢ calendarWeight N L q (stageProgram N C H gamma common a b) s past *
+      calendarValue N r L q (guardedRoot N r L q) post (calendarEnd N (stageProgram N C H gamma common a b) s past) =
+    calendarWeight N L q ops s past * F (observeCode N (calendarEnd N ops s past))
+'ResearchCommons.MSCI.JC69ActiveStage.actual_stage_support' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ActiveStage.actual_next_date_stage_support' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ActiveStage.stage_supported_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69ActiveStage.actual_stage_finite_readout' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ActiveStage.actual_stage_guarded_transfer' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

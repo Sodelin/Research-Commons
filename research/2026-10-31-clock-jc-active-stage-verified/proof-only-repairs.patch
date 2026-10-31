@@ -1,0 +1,40 @@
+--- frozen/JC69ActiveStage.lean
++++ source/JC69ActiveStage.lean
+@@ -43,13 +43,15 @@
+     simpa only [hef] using ha.2
+   · intro x v hv
+     obtain ⟨e,he,_⟩ := (mem_activeLocations N C a _).mp (hs x)
+-    exact False.elim (Location.noConfusion (hv.symm.trans he))
++    have hne : Location.node v = Location.edge e := hv.symm.trans he
++    cases hne
+ 
+ lemma active_node_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy → X}
+     (a : ℝ) (s : Code N sample) (hs : ActiveCode N C a s) : NodeUpper N C a s := by
+   intro x v hv
+   obtain ⟨e,he,_⟩ := (mem_activeLocations N C a _).mp (hs x)
+-  exact False.elim (Location.noConfusion (hv.symm.trans he))
++  have hne : Location.node v = Location.edge e := hv.symm.trans he
++  cases hne
+ 
+ def stageProgram (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval)
+@@ -193,7 +195,9 @@
+         have hno : observeCode N d ≠ o.val := by
+           intro he
+           exact hne (Subtype.ext he.symm)
+-        simp only [hno,if_false,mul_zero]
++        exact (congrArg (fun z : ℝ≥0∞ => F o.val * (calendarWeight N L q ops s past * z))
++          (if_neg hno)).trans
++          ((congrArg (fun z : ℝ≥0∞ => F o.val * z) (mul_zero _)).trans (mul_zero _))
+       · simp
+     _ = ∑ o : SupportedObservation N sample A,
+         ∫⁻ past, F o.val * (calendarWeight N L q ops s past *
+@@ -260,7 +264,7 @@
+         ∂actualCalendarTraceLaw N r ops s := by
+       apply lintegral_congr_ae
+       filter_upwards [hre] with past hp
+-      rw [hF _ hp]
++      exact congrArg (fun z : ℝ≥0∞ => calendarWeight N L q ops s past * z) (hF _ hp)
+     _ = _ := actual_stage_finite_readout N C H gamma common r L q a b hab hb hgap s hs F
+ 
+ #print axioms actual_stage_support
