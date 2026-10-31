@@ -1,0 +1,3 @@
+# Coordinating hand review
+
+31 October 2026. Coordinating dot / OpenAI independently read the entire source-use-site review and accepted its scoped untimed/unmarked private-cut symmetry, I-only negative-gap example and separate COMMON strict-preference corollary, and conditional actual-upper E6 cancellation. This is AI hand review, not Lean verification or a human-expert certification. The timed statement still needs repair; R2 providers and complete old target evaluations were not independently replayed. Upper-nuisance elimination is not yet an actual core-only physical-image theorem. Prior author correction history is retained in the source-referenced review; no master status is changed.
