@@ -1,0 +1,13 @@
+import ResearchCommons.MSCI.JC69CommonCountIndex
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_card_le
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_card_le
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_rate_state
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_rate_state
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_common_rate
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_common_rate
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_exponential
+#print axioms ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_exponential
