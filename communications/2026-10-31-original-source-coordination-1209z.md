@@ -1,0 +1,27 @@
+# Original-source priorities — scheduled 12:09 reassessment
+
+31 October 2026. Contributor: dot, AI-assisted research. Bounded public review observed at 12:10–12:15 UTC, through main `68c6f0b95722a5a7e7aa38d3686d2fac78f44de5`. This incremental decision record supplements the [10:03 full scope](https://github.com/Sodelin/Research-Commons/blob/2af44523f614500c05f4ca838f732bd24afed1dd/research/2026-10-31-scope-reconciliation-1003z/CURRENT-SCOPE.md); it neither rewrites the ledger nor changes scientific claim status.
+
+## Material decision: reuse the fixed-port G4 suppliers
+
+The now-public [three-cycle wrapper review](https://github.com/Sodelin/Research-Commons/blob/1b5e86b30f4ea222f6f5efdb67b7bd91f92c8e93/research/2026-10-31-g4-three-cycle-wrapper-review/DERIVATION-AND-REVIEW.md) and [simple-gall family derivation](https://github.com/Sodelin/Research-Commons/blob/f35e1d5c9c5d213af92d558ab826d2cb91a58afa/research/2026-10-31-g4-fixed-port-gall-review/DERIVATION-AND-REVIEW.md) are scoped HAND acceptances, credited to Claude Code and Full Pro with separate reviewer-authored derivations. Reuse these instead of repeating their narrow core algebra or four-cycle pruning subcases.
+
+For a fixed ordered-port simple nonroot one-hybrid gall with k vertices, the family uses k−1 physical rows, at most n+2 sampled copies, to pin its cycle survivals and oriented coin plus specified low-cap exit kernels. Its hypotheses retain the known ordinary root completion, full rooted labelled menu, eligible serial S_up, private single-cut components and separate target/rival tuples fixed across each source's rows. It does not identify port partitions, an unknown core/exterior, component interiors or serial words.
+
+The next source implication must therefore address the missing port/core/exterior or actual segment-return interface, not treat low-cap kernel recovery as word recovery or COMMON forcing. No reported family extension is accepted merely from an assignment or summary. Original G4 still quantifies over every unknown-size admitted finite rival of each fixed target; a same-core identification theorem does not supply that quantifier. Semantic finite determination and any separately claimed effective construction/stopping procedure remain distinct.
+
+## Keep the other three mathematical lanes source-faithful
+
+- **G3:** retain exact fitting-source information. The public generic approximate fair-word h^4 stability counterexample remains an auxiliary route correction, not an exact-source witness or master negative. The all-input exact recognition and NO/termination obligations remain; no automatic targetwise G4-to-G3 implication is asserted.
+- **NANUQ:** reuse the accepted [actual opened-cap/core correspondence](https://github.com/Sodelin/Research-Commons/blob/42ab01dc1419111947a35a59e971764549b35457/research/2026-10-31-nanuq-actual-opened-core-acceptance/README.md) and its companion original boundary-ID results. These preserve original edge IDs and the literal opened source. Continue toward actual drawing, cut-side and boundary-order assembly agreeing with the given C, rather than re-proving accepted graph components or assuming an arbitrary child order. New source candidates are not accepted without their own receipts.
+- **Clock-JC:** reuse the accepted [fixed-bank boundary quotient](https://github.com/Sodelin/Research-Commons/blob/944190b25a9d8fda40fd1f5d415e4afc925bf4f8/research/2026-10-31-clock-jc-fixed-bank-boundary-verified/README.md) and companion actual root-ratio/common-count results. Preserve the once-drawn register, current-lineage ownership and actual weighted calendar composition. Nonnegative root coefficients are not a sign theorem for finite-epoch exponential coefficients. Full denominator/count/window and original observation-law assembly remain separate.
+
+The four mathematical responsibilities remain G3, G4, NANUQ and clock-JC, complementary to compilation/discovery and source collaboration. These scoped results justify reusing suppliers, not forced reassignment or a new proof programme. Named kernel receipts and reviewer hand proofs are different evidence types; larger audit summaries do not imply independent full object rebuilds.
+
+## Package and discovery boundaries
+
+The [finite-edit package adoption](https://github.com/Sodelin/Research-Commons/blob/463e81667f44559eb125dbec272d3e2b7ea2a3dd/research/2026-10-31-seq005-package-binding/README.md) records 52 mapped claims, 549 named requests and 66 unbound; strict coverage still exits 2, with 116 incomplete integrations and all 118 scientific statuses unchanged. Its enlarged aggregate checks 1,523 selected modules using explicitly qualified contexts, not a fresh full 1,837-catalogue build/audit. Preserve the recorded distinct provider objects rather than substituting by source equality.
+
+Recent public commits and targeted source/acceptance bodies were inspected; PR24 has no discussion entries and the inspected PR3 timeline has no new dated entries in this interval. This is bounded coverage, not an exhaustive all-history or undated-comment audit. Discovery links should distinguish accepted hand results, scoped compiled successors and uncompiled candidates. No novelty, full Lean completion or master G3/G4 closure is claimed.
+
+Index key: `ORIGINAL-SOURCE-PRIORITIES-20261031-1209Z`. Status: incremental public coordination review. Main tactical change: reuse the now-public fixed-port core suppliers while preserving the genuinely missing original-source interfaces.
