@@ -1,0 +1,34 @@
+ResearchCommons.MSCI.JC69ActualDensity.winner_density : ∀ (C r T : ℝ),
+  0 < C →
+    0 ≤ r →
+      0 ≤ T →
+        ∀ (f : ℝ → ENNReal),
+          ∫⁻ (u : ℝ) in Set.Iic T, f u ∂ENNReal.ofReal (r / C) • ProbabilityTheory.expMeasure C =
+            ∫⁻ (u : ℝ) in Set.Icc 0 T, ENNReal.ofReal (r * Real.exp (-(C * u))) * f u
+'ResearchCommons.MSCI.JC69ActualDensity.winner_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+@ResearchCommons.MSCI.JC69ActualDensity.actual_weighted_density_renewal : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal),
+  ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q (n + 1) s ↑t =
+    ENNReal.ofReal
+        (Real.exp
+          (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+              ↑t))) +
+      ∑ p,
+        ∫⁻ (u : ℝ) in Set.Icc 0 ↑t,
+          ENNReal.ofReal
+              (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p *
+                Real.exp
+                  (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                        ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+                      u))) *
+            ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n
+              (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) (↑t - u)
+'ResearchCommons.MSCI.JC69ActualDensity.actual_weighted_density_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

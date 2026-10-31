@@ -1,0 +1,81 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActualDensity.lean:36:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  exponentialPDF ?m.224 u
+in the target expression
+  (fun x => ENNReal.ofReal (r / C) * (exponentialPDF C x * f x)) u = (fun x => 0) u
+
+C r T : ℝ
+hC : 0 < C
+hr : 0 ≤ r
+hT : 0 ≤ T
+f : ℝ → ℝ≥0∞
+hd : ∫⁻ (u : ℝ) in Iic T, f u ∂expMeasure C = ∫⁻ (u : ℝ) in Iic T, exponentialPDF C u * f u
+u : ℝ
+hu : u ∈ Iio 0
+⊢ (fun x => ENNReal.ofReal (r / C) * (exponentialPDF C x * f x)) u = (fun x => 0) u
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActualDensity.lean:42:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  exponentialPDF ?m.250 u
+in the target expression
+  (fun x => ENNReal.ofReal (r / C) * (exponentialPDF C x * f x)) u =
+    (fun x => ENNReal.ofReal (r * Real.exp (-(C * x))) * f x) u
+
+C r T : ℝ
+hC : 0 < C
+hr : 0 ≤ r
+hT : 0 ≤ T
+f : ℝ → ℝ≥0∞
+hd : ∫⁻ (u : ℝ) in Iic T, f u ∂expMeasure C = ∫⁻ (u : ℝ) in Iic T, exponentialPDF C u * f u
+hz : ∫⁻ (u : ℝ) in Iio 0, ENNReal.ofReal (r / C) * (exponentialPDF C u * f u) = 0
+u : ℝ
+hu : u ∈ Icc 0 T
+⊢ (fun x => ENNReal.ofReal (r / C) * (exponentialPDF C x * f x)) u =
+    (fun x => ENNReal.ofReal (r * Real.exp (-(C * x))) * f x) u
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActualDensity.lean:79:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫⁻ (u : ℝ) in Iic ↑t, ?f u ∂ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s)
+in the target expression
+  ∫⁻ (u : ℝ) in Iic ↑t,
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+        actualLocusWeight N r L q n (stepDestination N s (some p))
+          (↑t - u) ∂ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s) =
+    ∫⁻ (u : ℝ) in Icc 0 ↑t,
+      ENNReal.ofReal (choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * u))) *
+        actualLocusWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+
+case hy
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+n : ℕ
+s : Code N sample
+t : ℝ≥0
+p : Choice N s
+a✝ : p ∈ Finset.univ
+hr : 0 < choiceRate N r s p
+hC : 0 < totalRate N r s
+⊢ ∫⁻ (u : ℝ) in Iic ↑t,
+      ENNReal.ofReal (Real.exp (-(locusKill N L q s * u))) *
+        actualLocusWeight N r L q n (stepDestination N s (some p))
+          (↑t - u) ∂ENNReal.ofReal (choiceRate N r s p / totalRate N r s) • expMeasure (totalRate N r s) =
+    ∫⁻ (u : ℝ) in Icc 0 ↑t,
+      ENNReal.ofReal (choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * u))) *
+        actualLocusWeight N r L q n (stepDestination N s (some p)) (↑t - u)
+'ResearchCommons.MSCI.JC69ActualDensity.winner_density' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69ActualDensity.actual_weighted_density_renewal' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

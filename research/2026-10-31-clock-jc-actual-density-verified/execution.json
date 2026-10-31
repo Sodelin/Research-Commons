@@ -1,0 +1,41 @@
+[
+  {
+    "step": "proof-repair-attempt2",
+    "exit_code": 0,
+    "seconds": 2.7357814790011616,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69ActualDensity.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69ActualDensity.lean"
+    ]
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.2126911300001666,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/NamedAudit.lean"
+    ]
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 4.725159051995433,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/OwnedAudit.lean"
+    ]
+  }
+]

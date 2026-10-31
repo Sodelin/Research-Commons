@@ -1,0 +1,5 @@
+import ResearchCommons.MSCI.JC69ActualDensity
+#check @ResearchCommons.MSCI.JC69ActualDensity.winner_density
+#print axioms ResearchCommons.MSCI.JC69ActualDensity.winner_density
+#check @ResearchCommons.MSCI.JC69ActualDensity.actual_weighted_density_renewal
+#print axioms ResearchCommons.MSCI.JC69ActualDensity.actual_weighted_density_renewal

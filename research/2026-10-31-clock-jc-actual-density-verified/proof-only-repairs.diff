@@ -1,0 +1,37 @@
+--- frozen/ResearchCommons/MSCI/JC69ActualDensity.lean
++++ source/ResearchCommons/MSCI/JC69ActualDensity.lean
+@@ -33,12 +33,15 @@
+       _ = ∫⁻ u in Iio (0:ℝ), (0:ℝ≥0∞) := by
+         apply setLIntegral_congr_fun measurableSet_Iio
+         intro u hu
++        change ENNReal.ofReal (r/C) * (exponentialPDF C u * f u) = 0
+         rw [exponentialPDF_of_neg hu]
+         simp
+       _ = 0 := by simp
+   rw [hz,zero_add]
+   apply setLIntegral_congr_fun measurableSet_Icc
+   intro u hu
++  change ENNReal.ofReal (r/C) * (exponentialPDF C u * f u) =
++    ENNReal.ofReal (r * Real.exp (-(C*u))) * f u
+   rw [exponentialPDF_of_nonneg hu.1,← mul_assoc,
+     ← ENNReal.ofReal_mul (div_nonneg hr hC.le)]
+   congr 2
+@@ -76,9 +79,17 @@
+     have hC : 0 < totalRate N r s :=
+       hr.trans_le (Finset.single_le_sum
+         (fun i _ => (actual_choiceRate_positive N r s i).le) (Finset.mem_univ p))
+-    rw [winner_density _ _ _ hC hr.le t.property]
++    rw [winner_density (totalRate N r s) (choiceRate N r s p) (t:ℝ) hC hr.le t.property
++      (fun u => ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))) *
++        actualLocusWeight N r L q n (stepDestination N s (some p)) ((t:ℝ)-u))]
+     apply setLIntegral_congr_fun measurableSet_Icc
+     intro u _
++    change ENNReal.ofReal (choiceRate N r s p * Real.exp (-(totalRate N r s*u))) *
++      (ENNReal.ofReal (Real.exp (-(locusKill N L q s*u))) *
++        actualLocusWeight N r L q n (stepDestination N s (some p)) ((t:ℝ)-u)) =
++      ENNReal.ofReal (choiceRate N r s p *
++        Real.exp (-((totalRate N r s+locusKill N L q s)*u))) *
++        actualLocusWeight N r L q n (stepDestination N s (some p)) ((t:ℝ)-u)
+     rw [← mul_assoc,← ENNReal.ofReal_mul
+       (mul_nonneg hr.le (Real.exp_nonneg _))]
+     congr 2
