@@ -1,0 +1,77 @@
+{
+  "claim_id": "CB-ALEXANDER-003",
+  "canonical_exact_scope": "For a labelled graph and fixed infinite word s, use reachable vertex/phase states (v,k) witnessed by a path spelling the first k letters. Avoidance is equivalent to well-foundedness of forward continuation and to a decreasing ordinal certificate, without a finite-branching premise. With finite per-label children, natural certificates suffice; states surviving all finite successor-pruning rounds form exactly the infinite-continuation core and the greatest successor fixed point. Its complement is forward closed and well-founded. Each such mortal state has a pointwise least natural height h, equal to an attained maximum number of further matching edges, survives precisely n\u2264h and is removed at h+1; other states may realize the word, so global avoidance is not assumed for this dichotomy. A phase-zero state survives iff its start realizes the full target. A separate complete positive finite-fibre blow-up preserves and reflects reachable phases and every finite continuation length, and transports least attained natural heights through the actual projection. Its avoiding-population endpoint derives the needed hypotheses. This complete blow-up is not terminal cloning and need not preserve exact parent counts. The written composition with countable-host obstruction and written live-core/infinite-tail transport are not separately named combined Lean endpoints.",
+  "binding_adopted": false,
+  "wrapper_sha256": "580df824ba56c676dff7ba055ef033b593e92e03f41180468768d8212e6eacde",
+  "clause_map": [
+    {
+      "clause": "Actual reachable vertex/phase states; forward child relation; no finite branching for WF/ordinal avoidance",
+      "exports": [
+        "well_founded_criterion",
+        "ordinal_criterion"
+      ],
+      "definitions": "Original Graph/Reachable/State/Step/Realizes/OrdinalCertificate printed. State carries actual prefix witness; ordinal rank universe retained."
+    },
+    {
+      "clause": "Finite per-label children suffice for natural certificates",
+      "exports": [
+        "natural_criterion"
+      ],
+      "definitions": "Original FiniteLabelChildren and NaturalCertificate, not whole-label finite alphabet or a new decision procedure."
+    },
+    {
+      "clause": "All finite successor pruning survivors exactly infinite core, greatest successor fixed point",
+      "exports": [
+        "core_infinite_continuation",
+        "core_greatest_fixed_point"
+      ],
+      "definitions": "Original survives/core/Live/derivative printed; finite_state_children derived from same finite-label graph input."
+    },
+    {
+      "clause": "Complement forward closed and WF; pointwise least decreasing attained height, exact survival n\u2264h/removal h+1, no global avoidance",
+      "exports": [
+        "mortal_forward_closed",
+        "mortal_well_founded",
+        "mortal_height_decreases",
+        "mortal_height_attained",
+        "mortal_height_least",
+        "mortal_exact_survival",
+        "matching_state_dichotomy"
+      ],
+      "definitions": "These six mortal exports explicitly specialize actual Mortal (Step E s) and derived finite_state_children, not a substitute unrelated relation. The dichotomy is at actual reachable State E s. Exact survival implies removal at h+1 by natural strict inequality, no separately compiled numerical claim."
+    },
+    {
+      "clause": "Phase-zero survives iff original start realizes target",
+      "exports": [
+        "phase_zero_realization"
+      ],
+      "definitions": "Original startState, preserving same starting vertex and target labels."
+    },
+    {
+      "clause": "Complete positive finite-fibre blow-up preserves/refects every reachable phase and finite continuation length; transports exact height under actual projection",
+      "exports": [
+        "complete_blowup_reachability",
+        "complete_blowup_finite_lengths",
+        "complete_blowup_height"
+      ],
+      "definitions": "Actual liftedEdge/Fibre/complete blowUp/projectState/liftState printed. General finiteHeight equality retains explicit existence witnesses. This is NOT terminal cloning and does not preserve exact parent counts."
+    },
+    {
+      "clause": "Actual avoiding-population specialization discharges source finite-height premises",
+      "exports": [
+        "actual_population_rank_transport"
+      ],
+      "definitions": "Original Population and original avoider_has_exact_rank_transport endpoint supplies finite-label branching and ranks, leastness and attainment for same p/m/s."
+    }
+  ],
+  "written_only_limits": "Card explicitly separates written countable-host composition and live-core/infinite-tail transport from separately named combined Lean endpoints. This wrapper does not claim to formalize those additional written corollaries.",
+  "novelty_correction": "The 2 October 2026, 19:34 UTC VibeMathed correction states that a distinct new theorem beyond source-specific classical formalization was not established and asks for eligibility reassessment. It does not allege an incorrect Lean proof, request withdrawal or remove verification. No mathematical novelty is asserted by this recovery.",
+  "scope_limits": [
+    "No terminating decision procedure on arbitrary infinite inputs",
+    "No new ordinal hierarchy/classification or general rank theory",
+    "No inference from artificial history-tree superroot ranks to actual matching heights",
+    "No exact-parent terminal-clone all-copy height transport",
+    "Original proof authorship, classical attribution and October2 eligibility reassessment remain"
+  ],
+  "source_review": "Full canonical card and all853 lines of five direct provider modules read; exact original source bodies, seventeen complete named types/standard axioms, actual definition output and26-module scope supplied. No scientific status or binding adopted before parent review."
+}

@@ -1,0 +1,110 @@
+@[reducible] def GenericCertificate.Graph.{u, v} : Type u → Type v → Type (max u v) :=
+fun V Label => V → V → Label → Prop
+def GenericCertificate.Realizes.{u, v} : {V : Type u} →
+  {Label : Type v} → GenericCertificate.Graph V Label → (ℕ → Label) → Prop :=
+fun {V} {Label} E s => ∃ p, ∀ (n : ℕ), E (p n) (p (n + 1)) (s n)
+def GenericCertificate.Reachable.{u, v} : {V : Type u} →
+  {Label : Type v} → GenericCertificate.Graph V Label → (ℕ → Label) → V → ℕ → Prop :=
+fun {V} {Label} E s vertex phase => ∃ p, p phase = vertex ∧ ∀ n < phase, E (p n) (p (n + 1)) (s n)
+@[reducible] def GenericCertificate.State.{u, v} : {V : Type u} →
+  {Label : Type v} → GenericCertificate.Graph V Label → (ℕ → Label) → Type (max 0 u) :=
+fun {V} {Label} E s => { q // GenericCertificate.Reachable E s q.1 q.2 }
+def GenericCertificate.Step.{u, v} : {V : Type u} →
+  {Label : Type v} →
+    (E : GenericCertificate.Graph V Label) →
+      (s : ℕ → Label) → GenericCertificate.State E s → GenericCertificate.State E s → Prop :=
+fun {V} {Label} E s child parent => (↑child).2 = (↑parent).2 + 1 ∧ E (↑parent).1 (↑child).1 (s (↑parent).2)
+def GenericCertificate.FiniteLabelChildren.{u, v} : {V : Type u} →
+  {Label : Type v} → GenericCertificate.Graph V Label → Prop :=
+fun {V} {Label} E => ∀ (v : V) (label : Label), {w | E v w label}.Finite
+def GenericCertificate.NaturalCertificate.{u, v} : {V : Type u} →
+  {Label : Type v} →
+    (E : GenericCertificate.Graph V Label) → (s : ℕ → Label) → (GenericCertificate.State E s → ℕ) → Prop :=
+fun {V} {Label} E s rank =>
+  ∀ {child parent : GenericCertificate.State E s}, GenericCertificate.Step E s child parent → rank child < rank parent
+def GenericCertificate.finiteHeight.{u} : {α : Type u} →
+  (R : α → α → Prop) → (∀ (x : α), Finite { y // R y x }) → WellFounded R → α → ℕ :=
+fun {α} R fin wf => wf.fix fun x rec => Finset.univ.sup fun y => rec ↑y ⋯ + 1
+inductive GenericCertificate.ChainLength.{u} : {α : Type u} → (α → α → Prop) → α → ℕ → Prop
+number of parameters: 2
+constructors:
+GenericCertificate.ChainLength.zero : ∀ {α : Type u} {R : α → α → Prop} (x : α), GenericCertificate.ChainLength R x 0
+GenericCertificate.ChainLength.cons : ∀ {α : Type u} {R : α → α → Prop} {x y : α} {n : ℕ},
+  R y x → GenericCertificate.ChainLength R y n → GenericCertificate.ChainLength R x (n + 1)
+def GenericOrdinalCertificate.OrdinalCertificate.{u, v, w} : {V : Type u} →
+  {Label : Type v} →
+    (E : GenericCertificate.Graph V Label) → (s : ℕ → Label) → (GenericCertificate.State E s → Ordinal.{w}) → Prop :=
+fun {V} {Label} E s rank =>
+  ∀ {child parent : GenericCertificate.State E s}, GenericCertificate.Step E s child parent → rank child < rank parent
+def GenericPruning.survives.{u} : {α : Type u} → (α → α → Prop) → ℕ → α → Prop :=
+fun {α} R x x_1 => Nat.brecOn (motive := fun x => α → Prop) x (GenericPruning.survives._f R) x_1
+def GenericPruning.core.{u} : {α : Type u} → (α → α → Prop) → α → Prop :=
+fun {α} R x => ∀ (n : ℕ), GenericPruning.survives R n x
+def GenericPruning.Live.{u} : {α : Type u} → (α → α → Prop) → α → Prop :=
+fun {α} R x => ∃ f, f 0 = x ∧ ∀ (n : ℕ), R (f (n + 1)) (f n)
+def GenericPruning.derivative.{u} : {α : Type u} → (α → α → Prop) → Set α → Set α :=
+fun {α} R S => {x | ∃ y, R y x ∧ y ∈ S}
+def GenericPruning.startState.{u, v} : {V : Type u} →
+  {Label : Type v} → (E : GenericCertificate.Graph V Label) → (s : ℕ → Label) → V → GenericCertificate.State E s :=
+fun {V} {Label} E s vertex => ⟨(vertex, 0), ⋯⟩
+@[reducible] def GenericMortalRank.Mortal.{u} : {α : Type u} → (α → α → Prop) → Type (max 0 u) :=
+fun {α} R => { x // ¬GenericPruning.core R x }
+def GenericMortalRank.MortalStep.{u} : {α : Type u} →
+  (R : α → α → Prop) → GenericMortalRank.Mortal R → GenericMortalRank.Mortal R → Prop :=
+fun {α} R y x => R ↑y ↑x
+def GenericMortalRank.height.{u} : {α : Type u} →
+  (R : α → α → Prop) → (∀ (x : α), Finite { y // R y x }) → GenericMortalRank.Mortal R → ℕ :=
+fun {α} R fin => GenericCertificate.finiteHeight (GenericMortalRank.MortalStep R) ⋯ ⋯
+def BlowUpRankInvariance.projectState.{u, v} : {V : Type u} →
+  {Label : Type v} →
+    (p : GenericUniversalAvoiders.Population V Label) →
+      (m : V → ℕ) →
+        (∀ (v : V), 0 < m v) →
+          (s : ℕ → Label) →
+            GenericCertificate.State (GenericUniversalAvoiders.liftedEdge p m) s → GenericCertificate.State p.edge s :=
+fun {V} {Label} p m hm s x => ⟨((↑x).1.fst, (↑x).2), ⋯⟩
+def BlowUpRankInvariance.liftState.{u, v} : {V : Type u} →
+  {Label : Type v} →
+    (p : GenericUniversalAvoiders.Population V Label) →
+      (m : V → ℕ) →
+        (∀ (v : V), 0 < m v) →
+          (s : ℕ → Label) →
+            GenericCertificate.State p.edge s → GenericCertificate.State (GenericUniversalAvoiders.liftedEdge p m) s :=
+fun {V} {Label} p m hm s x => ⟨(GenericUniversalAvoiders.section0 m hm (↑x).1, (↑x).2), ⋯⟩
+def GenericUniversalAvoiders.liftedEdge.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population V Label →
+      (m : V → ℕ) → GenericUniversalAvoiders.Fibre V m → GenericUniversalAvoiders.Fibre V m → Label → Prop :=
+fun {Label} {V} p m x y b => p.edge x.fst y.fst b
+def GenericUniversalAvoiders.blowUp.{u, w} : {Label : Type w} →
+  {V : Type u} →
+    GenericUniversalAvoiders.Population V Label →
+      (m : V → ℕ) →
+        (∀ (x : V), 0 < m x) → GenericUniversalAvoiders.Population (GenericUniversalAvoiders.Fibre V m) Label :=
+fun {Label} {V} p m hm =>
+  { edge := GenericUniversalAvoiders.liftedEdge p m, birth := fun x => p.birth x.fst, infinite := ⋯, sublevels := ⋯,
+    chronological := ⋯, unique := ⋯, roots := ⋯, children := ⋯, parents := ⋯ }
+structure GenericUniversalAvoiders.Population.{u, w} (V : Type u) (Label : Type w) : Type (max u w)
+number of parameters: 2
+fields:
+  GenericUniversalAvoiders.Population.edge : V → V → Label → Prop
+  GenericUniversalAvoiders.Population.birth : V → ℝ
+  GenericUniversalAvoiders.Population.infinite : BirthOrder.InfiniteVertices V
+  GenericUniversalAvoiders.Population.sublevels : ∀ (r : ℝ), BirthOrder.FiniteCover fun x => self.birth x ≤ r
+  GenericUniversalAvoiders.Population.chronological : ∀ (x y : V) (b : Label),
+      self.edge x y b → self.birth x < self.birth y
+  GenericUniversalAvoiders.Population.unique : ∀ (x y : V) (a b : Label), self.edge x y a → self.edge x y b → a = b
+  GenericUniversalAvoiders.Population.roots : BirthOrder.FiniteCover fun y => ∀ (x : V) (b : Label), ¬self.edge x y b
+  GenericUniversalAvoiders.Population.children : ∀ (x : V), BirthOrder.FiniteCover fun y => ∃ b, self.edge x y b
+  GenericUniversalAvoiders.Population.parents : ∀ (y : V),
+      (¬∀ (x : V) (b : Label), ¬self.edge x y b) → ∀ (b : Label), ∃ x, self.edge x y b
+constructor:
+  GenericUniversalAvoiders.Population.mk.{u, w} {V : Type u} {Label : Type w} (edge : V → V → Label → Prop)
+    (birth : V → ℝ) (infinite : BirthOrder.InfiniteVertices V)
+    (sublevels : ∀ (r : ℝ), BirthOrder.FiniteCover fun x => birth x ≤ r)
+    (chronological : ∀ (x y : V) (b : Label), edge x y b → birth x < birth y)
+    (unique : ∀ (x y : V) (a b : Label), edge x y a → edge x y b → a = b)
+    (roots : BirthOrder.FiniteCover fun y => ∀ (x : V) (b : Label), ¬edge x y b)
+    (children : ∀ (x : V), BirthOrder.FiniteCover fun y => ∃ b, edge x y b)
+    (parents : ∀ (y : V), (¬∀ (x : V) (b : Label), ¬edge x y b) → ∀ (b : Label), ∃ x, edge x y b) :
+    GenericUniversalAvoiders.Population V Label

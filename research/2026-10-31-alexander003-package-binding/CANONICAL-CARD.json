@@ -1,0 +1,126 @@
+{
+  "id": "CB-ALEXANDER-003",
+  "canonical_key": "alexander.MATCHING_CORE_RANK_TRANSPORT",
+  "programme": "Alexander structures \u00b7 classical certificates and matching heights",
+  "title": "Matching states either continue forever or have an exact finite height",
+  "claim_kind": "theorem",
+  "plain_language": {
+    "question": "What exactly separates an infinite pattern-matching continuation from one that must stop?",
+    "what_we_learned": "Classical rank and pruning methods give an exact answer on reachable states. Under finite branching, every state either continues forever or has an attained longest continuation; complete finite duplication preserves the corresponding finite heights.",
+    "what_it_lets_someone_do": "Use an exact source-specific certificate and identify information that matching heights retain or omit, without inventing a new rank theory.",
+    "what_cannot_conclude": "This is not a terminating decision procedure for arbitrary infinite inputs, a rank hierarchy distinguishing every avoiding population or an established new ordinal theorem."
+  },
+  "exact_statement_and_scope": "For a labelled graph and fixed infinite word s, use reachable vertex/phase states (v,k) witnessed by a path spelling the first k letters. Avoidance is equivalent to well-foundedness of forward continuation and to a decreasing ordinal certificate, without a finite-branching premise. With finite per-label children, natural certificates suffice; states surviving all finite successor-pruning rounds form exactly the infinite-continuation core and the greatest successor fixed point. Its complement is forward closed and well-founded. Each such mortal state has a pointwise least natural height h, equal to an attained maximum number of further matching edges, survives precisely n\u2264h and is removed at h+1; other states may realize the word, so global avoidance is not assumed for this dichotomy. A phase-zero state survives iff its start realizes the full target. A separate complete positive finite-fibre blow-up preserves and reflects reachable phases and every finite continuation length, and transports least attained natural heights through the actual projection. Its avoiding-population endpoint derives the needed hypotheses. This complete blow-up is not terminal cloning and need not preserve exact parent counts. The written composition with countable-host obstruction and written live-core/infinite-tail transport are not separately named combined Lean endpoints.",
+  "origin": {
+    "category": "classical_prior",
+    "detail": "Source-specific formalization and application of well-founded ordinal ranks, finite-branching continuation, greatest fixed points and attained heights. Alexander's 2013 \u00a76 ordinal-characterization question is genuine, but its presence does not establish that this classical instantiation is a novel theorem."
+  },
+  "prior_work": "Standard well-founded rank machinery, K\u00f6nig-type finite branching and fixed-point/pruning theory supply the methods; GenericOrdinalCertificate explicitly uses Mathlib ordinal ranks. The complete-blow-up projection is analyzed at the actual reachable-state interface rather than credited as new general rank theory.",
+  "our_contribution": "The existing 29 September 2026 package formalizes the exact reachable-state criterion, the live/mortal dichotomy without global avoidance, and corresponding finite-height transport. It exposes the difference between the artificial history-tree superroot and actual matching-state heights, and between complete blow-ups and exact-parent terminal clones.",
+  "mathematical_status": "proved_at_stated_scope",
+  "novelty_status": "The 2 October 2026, 19:34 UTC VibeMathed correction states that a distinct new theorem beyond source-specific classical formalization was not established and asks for eligibility reassessment. It does not allege an incorrect Lean proof, request withdrawal or remove verification. No mathematical novelty is asserted by this recovery.",
+  "remaining_obligation": "None for the exact completed characterizations and named transport theorem. Novelty/eligibility and separate additional applications are not missing proofs of these statements.",
+  "separate_downstream_or_validation_work": "Historical novelty and catalogue eligibility remain distinct assessments. A terminating algorithm for arbitrary infinite inputs, richer rank classification or a construction combining terminal cloning's exact-parent property with all-copy rank preservation would require different results; none is implied here. Missing formalization of the explicitly written auxiliary corollaries does not reopen their written mathematics.",
+  "completion": {
+    "display": "Proved; archived Lean check recorded",
+    "formal_verification": "kernel_checked_selected_release",
+    "independent_review": "recorded_source_and_formal_audit",
+    "mathematical_claim_complete": true,
+    "proof_authorship_complete": true,
+    "proof_derivation_required": false,
+    "remaining_work_role": "separate_downstream_extension_or_validation",
+    "rule": "Reuse the exact completed result. A historical pending header, absent new replay, broader application or unresolved novelty does not reopen its mathematics. Grouping and endpoint counts are not discovery counts."
+  },
+  "evidence": {
+    "hand": {
+      "status": "recorded_source_and_formal_audit",
+      "detail": "The complete generic scope and ordinal audits, publication correspondence audit and all five direct certificate/pruning/mortal/transport modules were read. The October 2 correction is retained rather than replacing it with the older AI-discovered metadata. No new whole-transitive proof acceptance or external human peer review is claimed."
+    },
+    "formal": {
+      "status": "kernel_checked_selected_release",
+      "detail": "Five named modules have 8 generic-certificate, 3 ordinal-certificate, 10 pruning, 9 mortal-rank and 7 blow-up selected reports under Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. Raw logs report only standard axioms and saved receipts exit zero. Successful hosted audit uses the same selected proof blobs, including byte-identical reused originals. These 37 reports are supporting inventory, not separate discoveries; generic live-core transport and the combined host-obstruction corollary are not separately named formal endpoints."
+    },
+    "execution": {
+      "status": "archived_build_receipt",
+      "detail": "The recorded local Lean 4.33.1 receipts and raw selected-endpoint logs were read. Fresh read-only hosted metadata confirms run 36631876391 succeeded at 1592b89731d10fc49019ff22cf2f93c7bc799118; the actual workflow/audit contracts and identical selected proof blobs at recovery pin e2502c82 were checked. No compiler, build, scientific execution or new theorem validation occurred during this recovery."
+    },
+    "empirical": {
+      "status": "not_empirical_claim",
+      "detail": "An exact theorem in a stated infinite labelled-graph model. No measured biological data, validated species classifier or demonstrated population mechanism is asserted."
+    }
+  },
+  "evidence_basis": "Recovered from Samuel A01\u2013A04 in the public 32-family ledger and actual named proof, review, prior-work and receipt bodies at e2502c82ab9a77c00543932f775a71e5374221f7. All 15 selected proof-module bodies were read and their Git blobs match successful hosted commit 1592b89731d10fc49019ff22cf2f93c7bc799118. All 93 exact card scopes at Commons 2e239d258d312c5d3998c05437cbe6df9cea9a18 were compared; the fresh 97-card insertion base at 4938a3cff2cfa40b35342cd0d5cbe330a6c38d2f, claims blob 0bc119a3356c9eb034d706f87d2b2b7c4f25a70a, adds four nonduplicating memory cards. This is accepted source recovery, not a new independent whole-proof review, run or priority survey. Final insertion checks the 101-card base ddfcd1ae10d4b159fb299f821be3346206620fe8, claims blob 1f6702ea2ced899e43c25bec8ca8afdd73340a67. Its four population additions concern uniform child caps, critical-tail encoding, graph-productive pruning/deletion repair and a synthetic CA; they do not duplicate countable-host nonuniversality, reachable vertex/phase matching ranks or fixed-window maximal-cluster existence.",
+  "accepted_artifacts": [
+    {
+      "label": "Generic finite certificate and attained height",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericCertificate.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Classical ordinal-certificate equivalence",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericOrdinalCertificate.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Exact surviving core",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericPruning.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Mortal-region least attained ranks",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericMortalRank.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Complete-blow-up finite-height transport",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/ordinal-audit/BlowUpRankInvariance.lean",
+      "role": "proof_source"
+    },
+    {
+      "label": "Generic proof and definition scope review",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/literature/new-proof-scope-review.md",
+      "role": "hand_review"
+    },
+    {
+      "label": "Ordinal/history distinction and transport audit",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/ordinal-audit/audit.md",
+      "role": "hand_review"
+    },
+    {
+      "label": "Pinned seven-module source and compiler-log manifest",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/verification-manifest.json",
+      "role": "formal_receipt"
+    },
+    {
+      "label": "Successful integrated hosted audit at 1592b897",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/actions/runs/36631876391",
+      "role": "formal_receipt"
+    },
+    {
+      "label": "Source-question, statement and bounded prior-work audit",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md",
+      "role": "hand_review"
+    },
+    {
+      "label": "October 2 classical-formalization novelty correction",
+      "url": "https://vibemathed.com/problem/ordinal-certificates-and-exact-pruning-characterize-sequence-realization",
+      "role": "prior_work"
+    }
+  ],
+  "aliases": [
+    "Samuel A02",
+    "Samuel A03"
+  ],
+  "dependencies": [
+    {
+      "claim_id": "CB-ALEXANDER-002",
+      "relation_type": "same_principle",
+      "detail": "The transport result accompanies the nonuniversality programme, but complete blow-ups and terminal clones have different preservation properties. Exact-parent terminal cloning is not asserted to preserve every copy's height."
+    },
+    {
+      "claim_id": "CB-SEQ-004",
+      "relation_type": "same_principle",
+      "detail": "Concrete Thue\u2013Morse height formulas and this generic certificate/core theorem concern related matching states but are not the same theorem or a claimed new dependency."
+    }
+  ]
+}

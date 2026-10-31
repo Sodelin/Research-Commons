@@ -6091,10 +6091,26 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.MatchingCore",
+      "path": "lean/Compatibility/ResearchCommons.Claims.MatchingCore.lean",
+      "sha256": "580df824ba56c676dff7ba055ef033b593e92e03f41180468768d8212e6eacde",
+      "imports": [
+        "GenericOrdinalCertificate",
+        "GenericMortalRank",
+        "BlowUpRankInvariance"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed CB-ALEXANDER-003 exact original reachable matching core/certificates/mortal heights/complete-blow-up transport interface",
+        "proof_derivation": false,
+        "verification": "integration/matching-core-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "0fbebc59abe8da6e83c6e5c7d49753d604094beec8e9859d484b71a1a29652dc",
+      "sha256": "f3e72e3f3e36b4084973f96e5eff00ae57cc6133b4e7c8f2cd2003a7a6a67077",
       "imports": [
+        "ResearchCommons.Claims.MatchingCore",
         "ResearchCommons.Claims.CountableHosts",
         "ResearchCommons.Claims.StatefulCertificates",
         "ResearchCommons.Claims.AperiodicModulus",
@@ -6236,6 +6252,10 @@
         "countable_hosts_successor": {
           "prior_source_sha256": "e324d455199ca47d828eb3ab2c4b67b77bc7954afdad2fd129250d3c4fbaf45a",
           "scope": "Reviewed ALEXANDER002 one-clone/countable actual hosts/all finite stretch join; actual enlarged aggregate check pending."
+        },
+        "matching_core_successor": {
+          "prior_source_sha256": "0fbebc59abe8da6e83c6e5c7d49753d604094beec8e9859d484b71a1a29652dc",
+          "scope": "Reviewed ALEXANDER003 exact reachable-state classical certificate/core/height and complete-blow-up join; actual enlarged aggregate check pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

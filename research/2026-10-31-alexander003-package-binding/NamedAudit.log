@@ -1,0 +1,198 @@
+@ResearchCommons.Claims.MatchingCore.well_founded_criterion.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  ¬GenericCertificate.Realizes.{u_1, u_2} E s ↔ WellFounded.{u_1 + 1} (GenericCertificate.Step.{u_1, u_2} E s)
+'ResearchCommons.Claims.MatchingCore.well_founded_criterion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.ordinal_criterion.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  ¬GenericCertificate.Realizes.{u_1, u_2} E s ↔
+    ∃ rank, GenericOrdinalCertificate.OrdinalCertificate.{u_1, u_2, u_1} E s rank
+'ResearchCommons.Claims.MatchingCore.ordinal_criterion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.natural_criterion.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  GenericCertificate.FiniteLabelChildren.{u_1, u_2} E →
+    (¬GenericCertificate.Realizes.{u_1, u_2} E s ↔ ∃ rank, GenericCertificate.NaturalCertificate.{u_1, u_2} E s rank)
+'ResearchCommons.Claims.MatchingCore.natural_criterion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.core_infinite_continuation.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  GenericCertificate.FiniteLabelChildren.{u_1, u_2} E →
+    ∀ (x : GenericCertificate.State.{u_1, u_2} E s),
+      GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x ↔
+        GenericPruning.Live.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x
+'ResearchCommons.Claims.MatchingCore.core_infinite_continuation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.core_greatest_fixed_point.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  GenericCertificate.FiniteLabelChildren.{u_1, u_2} E →
+    Eq.{u_1 + 1}
+        (GenericPruning.derivative.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)
+          (Set.ofPred.{u_1} fun x => GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x))
+        (Set.ofPred.{u_1} fun x => GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x) ∧
+      ∀ (S : Set.{u_1} (GenericCertificate.State.{u_1, u_2} E s)),
+        Eq.{u_1 + 1} (GenericPruning.derivative.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) S) S →
+          S ⊆ Set.ofPred.{u_1} fun x => GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x
+'ResearchCommons.Claims.MatchingCore.core_greatest_fixed_point' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.mortal_forward_closed.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label)
+  {x y : GenericCertificate.State.{u_1, u_2} E s},
+  ¬GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x →
+    GenericCertificate.Step.{u_1, u_2} E s y x → ¬GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) y
+'ResearchCommons.Claims.MatchingCore.mortal_forward_closed' does not depend on any axioms
+@ResearchCommons.Claims.MatchingCore.mortal_well_founded.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  WellFounded.{u_1 + 1} (GenericMortalRank.MortalStep.{u_1} (GenericCertificate.Step.{u_1, u_2} E s))
+'ResearchCommons.Claims.MatchingCore.mortal_well_founded' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.mortal_height_decreases.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label)
+  (fin : GenericCertificate.FiniteLabelChildren.{u_1, u_2} E)
+  {x y : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)},
+  GenericCertificate.Step.{u_1, u_2} E s ↑y ↑x →
+    LT.lt.{0} (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ y)
+      (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ x)
+'ResearchCommons.Claims.MatchingCore.mortal_height_decreases' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.mortal_height_attained.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label)
+  (fin : GenericCertificate.FiniteLabelChildren.{u_1, u_2} E)
+  (x : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)),
+  GenericPruning.survives.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)
+      (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ x) ↑x ∧
+    ∀ (n : ℕ),
+      GenericPruning.survives.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) n ↑x →
+        LE.le.{0} n (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ x)
+'ResearchCommons.Claims.MatchingCore.mortal_height_attained' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.mortal_height_least.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label)
+  (fin : GenericCertificate.FiniteLabelChildren.{u_1, u_2} E)
+  (rank : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) → ℕ),
+  (∀ {x y : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)},
+      GenericCertificate.Step.{u_1, u_2} E s ↑y ↑x → LT.lt.{0} (rank y) (rank x)) →
+    ∀ (x : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)),
+      LE.le.{0} (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ x) (rank x)
+'ResearchCommons.Claims.MatchingCore.mortal_height_least' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.mortal_exact_survival.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label)
+  (fin : GenericCertificate.FiniteLabelChildren.{u_1, u_2} E)
+  (x : GenericMortalRank.Mortal.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)) (n : ℕ),
+  GenericPruning.survives.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) n ↑x ↔
+    LE.le.{0} n (GenericMortalRank.height.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) ⋯ x)
+'ResearchCommons.Claims.MatchingCore.mortal_exact_survival' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.matching_state_dichotomy.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  GenericCertificate.FiniteLabelChildren.{u_1, u_2} E →
+    ∀ (x : GenericCertificate.State.{u_1, u_2} E s),
+      GenericPruning.Live.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) x ∨
+        ∃ h,
+          GenericPruning.survives.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) h x ∧
+            ∀ (n : ℕ), GenericPruning.survives.{u_1} (GenericCertificate.Step.{u_1, u_2} E s) n x → LE.le.{0} n h
+'ResearchCommons.Claims.MatchingCore.matching_state_dichotomy' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.phase_zero_realization.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (E : GenericCertificate.Graph.{u_1, u_2} V Label) (s : ℕ → Label),
+  GenericCertificate.FiniteLabelChildren.{u_1, u_2} E →
+    ∀ (vertex : V),
+      GenericPruning.core.{u_1} (GenericCertificate.Step.{u_1, u_2} E s)
+          (GenericPruning.startState.{u_1, u_2} E s vertex) ↔
+        ∃ p, Eq.{u_1 + 1} (p 0) vertex ∧ ∀ (n : ℕ), E (p n) (p (HAdd.hAdd.{0, 0, 0} n 1)) (s n)
+'ResearchCommons.Claims.MatchingCore.phase_zero_realization' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.complete_blowup_reachability.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ),
+  (∀ (v : V), LT.lt.{0} 0 (m v)) →
+    ∀ (s : ℕ → Label) (x : GenericUniversalAvoiders.Fibre.{u_1} V m) (k : ℕ),
+      GenericCertificate.Reachable.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s x k ↔
+        GenericCertificate.Reachable.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s
+          (Sigma.fst.{u_1, 0} x) k
+'ResearchCommons.Claims.MatchingCore.complete_blowup_reachability' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.complete_blowup_finite_lengths.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ)
+  (hm : ∀ (v : V), LT.lt.{0} 0 (m v)) (s : ℕ → Label)
+  (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s) (n : ℕ),
+  GenericCertificate.ChainLength.{u_1}
+      (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s) x n ↔
+    GenericCertificate.ChainLength.{u_1}
+      (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s)
+      (BlowUpRankInvariance.projectState.{u_1, u_2} p m hm s x) n
+'ResearchCommons.Claims.MatchingCore.complete_blowup_finite_lengths' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.complete_blowup_height.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ)
+  (hm : ∀ (v : V), LT.lt.{0} 0 (m v)) (s : ℕ → Label)
+  (finP :
+    ∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s),
+      Finite.{u_1 + 1}
+        (Subtype.{u_1 + 1} fun y =>
+          GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s y x))
+  (wfP :
+    WellFounded.{u_1 + 1}
+      (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s))
+  (finQ :
+    ∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s),
+      Finite.{u_1 + 1}
+        (Subtype.{u_1 + 1} fun y =>
+          GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s y x))
+  (wfQ :
+    WellFounded.{u_1 + 1} (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s))
+  (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s),
+  Eq.{1}
+    (GenericCertificate.finiteHeight.{u_1}
+      (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s) finQ wfQ x)
+    (GenericCertificate.finiteHeight.{u_1}
+      (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s) finP wfP
+      (BlowUpRankInvariance.projectState.{u_1, u_2} p m hm s x))
+'ResearchCommons.Claims.MatchingCore.complete_blowup_height' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.MatchingCore.actual_population_rank_transport.{u_1,
+    u_2} : ∀ {V : Type u_1} {Label : Type u_2} (p : GenericUniversalAvoiders.Population.{u_1, u_2} V Label) (m : V → ℕ)
+  (hm : ∀ (v : V), LT.lt.{0} 0 (m v)) (s : ℕ → Label),
+  ¬GenericCertificate.Realizes.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s →
+    ∃ r,
+      GenericCertificate.NaturalCertificate.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s r ∧
+        (∀ (other : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s → ℕ),
+            GenericCertificate.NaturalCertificate.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s
+                other →
+              ∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s),
+                LE.le.{0} (r x) (other x)) ∧
+          (∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s),
+              GenericCertificate.ChainLength.{u_1}
+                (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.Population.edge.{u_1, u_2} p) s) x
+                (r x)) ∧
+            (GenericCertificate.NaturalCertificate.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s
+                fun x => r (BlowUpRankInvariance.projectState.{u_1, u_2} p m hm s x)) ∧
+              (∀
+                  (other :
+                    GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s → ℕ),
+                  GenericCertificate.NaturalCertificate.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m)
+                      s other →
+                    ∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s),
+                      LE.le.{0} (r (BlowUpRankInvariance.projectState.{u_1, u_2} p m hm s x)) (other x)) ∧
+                ∀ (x : GenericCertificate.State.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s),
+                  GenericCertificate.ChainLength.{u_1}
+                    (GenericCertificate.Step.{u_1, u_2} (GenericUniversalAvoiders.liftedEdge.{u_1, u_2} p m) s) x
+                    (r (BlowUpRankInvariance.projectState.{u_1, u_2} p m hm s x))
+'ResearchCommons.Claims.MatchingCore.actual_population_rank_transport' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

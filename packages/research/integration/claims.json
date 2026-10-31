@@ -6521,13 +6521,40 @@
         }
       ],
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.MatchingCore",
+        "declarations": [
+          "ResearchCommons.Claims.MatchingCore.well_founded_criterion",
+          "ResearchCommons.Claims.MatchingCore.ordinal_criterion",
+          "ResearchCommons.Claims.MatchingCore.natural_criterion",
+          "ResearchCommons.Claims.MatchingCore.core_infinite_continuation",
+          "ResearchCommons.Claims.MatchingCore.core_greatest_fixed_point",
+          "ResearchCommons.Claims.MatchingCore.mortal_forward_closed",
+          "ResearchCommons.Claims.MatchingCore.mortal_well_founded",
+          "ResearchCommons.Claims.MatchingCore.mortal_height_decreases",
+          "ResearchCommons.Claims.MatchingCore.mortal_height_attained",
+          "ResearchCommons.Claims.MatchingCore.mortal_height_least",
+          "ResearchCommons.Claims.MatchingCore.mortal_exact_survival",
+          "ResearchCommons.Claims.MatchingCore.matching_state_dichotomy",
+          "ResearchCommons.Claims.MatchingCore.phase_zero_realization",
+          "ResearchCommons.Claims.MatchingCore.complete_blowup_reachability",
+          "ResearchCommons.Claims.MatchingCore.complete_blowup_finite_lengths",
+          "ResearchCommons.Claims.MatchingCore.complete_blowup_height",
+          "ResearchCommons.Claims.MatchingCore.actual_population_rank_transport"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Actual reachable vertex/phase ordinal and WF criterion without finite branching; finite-per-label natural certificates/live core/greatest fixed point/mortal exact heights without global avoidance; phase-zero starts; COMPLETE positive finite-fibre height transport. Both global WF premises remain in complete_blowup_height. Written mixed-live-core/host compositions are not new named endpoints. No terminating infinite-input algorithm or novelty claim."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.MatchingCore --claim CB-ALEXANDER-003",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/matching-core-verification.json",
+          "scope": "Named type/owner proof interface only; classical rank/choice definitions do not supply a terminating decision procedure for arbitrary infinite inputs."
+        }
       },
       "source_artifacts": [
         {
@@ -6588,7 +6615,15 @@
       ],
       "scope_owner": "canonical_registry",
       "remaining_obligation": "None for the exact completed characterizations and named transport theorem. Novelty/eligibility and separate additional applications are not missing proofs of these statements.",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "580df824ba56c676dff7ba055ef033b593e92e03f41180468768d8212e6eacde",
+          "record": "integration/matching-core-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Complete canonical card, full correspondence, unchanged wrapper, seventeen complete types/axioms and actual source definitions accepted. Original proof authorship and26-module audit remain attributed, with classical/October2 novelty correction retained."
+        }
+      ],
       "obligation": "None for the exact completed characterizations and named transport theorem. Novelty/eligibility and separate additional applications are not missing proofs of these statements."
     },
     {

@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Actual matching-core successor — 31 October 2026
+
+[ALEXANDER-003 adoption](../../../research/2026-10-31-alexander003-package-binding/README.md): **56 mapped IDs/584 names/62 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Actual target26:6 compiled/20 reused,17 named exports pass. Exact reachable-state, classical core/mortal and COMPLETE blow-up scope is retained, including both global WF premises in the height endpoint. No native infinite-input decision algorithm or new novelty claim.
+
+[Current aggregate](matching-core-aggregate-verification.json): both changed roots,584 named requests,1,538 owned modules (103,269 declarations/93,248 theorems/zero rejects),1,843 primaries/7,323 resolved bindings pass. Qualified reuse is explicit; no fresh whole1,841 build/audit. Older records remain historical.
+
 ## Actual countable-host successor — 31 October 2026
 
 [ALEXANDER-002 adoption](../../../research/2026-10-31-alexander002-package-binding/README.md) adds the original actual-population terminal-clone/countable-host interface: **55 mapped claims/567 names/63 unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Public target22:12compiled/10reused, six full named exports and complete22-module owned audit pass. One clone before all hosts/finite stretches, canonical roots and selection versus original-language distinction retained; terminal vertices allowed, no uniform child cap or native/novelty claim.
