@@ -1,0 +1,51 @@
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:33:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:34:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:35:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:41:28: error(lean.invalidField): Invalid field `mpr`: The environment does not contain `Function.mpr`, so it is not possible to project the field `mpr` from an expression
+  Finset.mem_sort
+of type
+  ∀ (r : ?m.213 → ?m.213 → Prop) [inst : DecidableRel r] [inst_1 : IsTrans ?m.213 r] [inst_2 : Std.Antisymm r]
+    [inst_3 : Std.Total r] {a : ?m.213}, a ∈ Finset.sort ?m.214 r ↔ a ∈ ?m.214
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:64:41: error: invalid `▸` notation, expected result type of cast is 
+  z = p ∨ z = q
+however, the equality 
+  hcut.inter_eq
+of type 
+  A₁ ∩ A₂ = {p, q}
+does not contain the expected result type on either the left or the right hand side
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:84:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:74:15: warning: Variable name `hac` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hac
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'Nanuq.BoundaryOrder.finite_occurrence_parameters' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.BoundaryOrder.empty_pair_arc_parameter_gap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

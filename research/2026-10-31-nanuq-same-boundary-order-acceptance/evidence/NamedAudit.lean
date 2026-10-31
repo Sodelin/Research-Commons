@@ -1,0 +1,12 @@
+import ActualFiniteBoundaryOrder
+set_option pp.universes true
+#check @Nanuq.OpenedCore.actual_named_boundary_noninterlacing
+#print axioms Nanuq.OpenedCore.actual_named_boundary_noninterlacing
+#check @Nanuq.OpenedCore.actual_shared_boundary_receiver
+#print axioms Nanuq.OpenedCore.actual_shared_boundary_receiver
+#check @Nanuq.BoundaryOrder.finite_occurrence_parameters
+#print axioms Nanuq.BoundaryOrder.finite_occurrence_parameters
+#check @Nanuq.BoundaryOrder.empty_pair_arc_parameter_gap
+#print axioms Nanuq.BoundaryOrder.empty_pair_arc_parameter_gap
+#check @Nanuq.OpenedCore.actual_finite_boundary_order
+#print axioms Nanuq.OpenedCore.actual_finite_boundary_order

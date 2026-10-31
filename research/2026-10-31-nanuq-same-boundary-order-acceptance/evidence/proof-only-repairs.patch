@@ -1,0 +1,34 @@
+--- frozen/LoopOccurrenceOrder.lean
++++ source/LoopOccurrenceOrder.lean
+@@ -38,7 +38,7 @@
+   · intro t
+     exact ⟨⟨(hθ t).1,lt_of_le_of_ne (hθ t).2 (hθ1 t)⟩,hpoint t⟩
+   · intro t
+-    exact (Finset.mem_sort).mpr (Finset.mem_univ t)
++    exact (Finset.mem_sort r).mpr (Finset.mem_univ t)
+ 
+ /-- Explicit interval pieces of the selected loop, including its wraparound seam. -/
+ theorem parameter_cut_pair {f : ℝ → Plane} (hf : IsLoop f)
+@@ -61,7 +61,11 @@
+   obtain ⟨z,hzB,hzA⟩ := isPreconnected_closed_iff.mp hB A₁ A₂
+     hcut.fst.isArc.isClosed hcut.snd.isArc.isClosed
+     (hcut.union_eq.symm ▸ hBC) ⟨x,hx,hxA⟩ ⟨y,hy,hyA⟩
+-  have hz : z=p ∨ z=q := by simpa using (hcut.inter_eq ▸ hzA)
++  have hz : z=p ∨ z=q := by
++    have hzEnds : z ∈ ({p, q} : Set Plane) := by
++      rw [← hcut.inter_eq]
++      exact hzA
++    simpa only [Set.mem_insert_iff, Set.mem_singleton_iff] using hzEnds
+   rcases hz with rfl | rfl
+   · exact hp hzB
+   · exact hq hzB
+--- frozen/ActualFiniteBoundaryOrder.lean
++++ source/ActualFiniteBoundaryOrder.lean
+@@ -10,6 +10,7 @@
+ open G1OuterLabelledMultigraphCurves NanuqFaithfulSupplierDrawing Set Schoenflies
+ open Nanuq.BoundaryOrder
+ open scoped Graph Classical
++local notation "Plane" => Schoenflies.Plane
+ variable {V E X : Type*} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]
+ variable (N : RootedBinary V E X) (D : PlanarCurves N.graph) (b : N.graph.Blob)
+ variable (hg : N.graph.GalledDetour) (hb : N.NonleafBlob b)

@@ -1,0 +1,39 @@
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:33:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:34:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:35:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:88:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+<BUILD_ROOT>/source/LoopOccurrenceOrder.lean:78:15: warning: Variable name `hac` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hac
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'Nanuq.BoundaryOrder.finite_occurrence_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.BoundaryOrder.empty_pair_arc_parameter_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
