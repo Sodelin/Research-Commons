@@ -6065,10 +6065,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.StatefulCertificates",
+      "path": "lean/Compatibility/ResearchCommons.Claims.StatefulCertificates.lean",
+      "sha256": "fe187ab9720cc56c88367d3a4a58260750c9fa2b6623a12a4e21bc9e2eb6303a",
+      "imports": [
+        "StatefulCAReal"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed CB-POPULATION-004 exact synthetic same-rule full-real-hull/stateful-evolution interface",
+        "proof_derivation": false,
+        "verification": "integration/stateful-certificates-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "f4b742219c7509690f6a722b9111611cc8659641c1ad4ad10b180b30ab753f23",
+      "sha256": "e324d455199ca47d828eb3ab2c4b67b77bc7954afdad2fd129250d3c4fbaf45a",
       "imports": [
+        "ResearchCommons.Claims.StatefulCertificates",
         "ResearchCommons.Claims.AperiodicModulus",
         "ResearchCommons.Claims.FiniteEditOptimum",
         "ResearchCommons.Claims.MatchingHeights",
@@ -6200,6 +6214,10 @@
           "prior_source_sha256": "8656661e8ea7894fc712a44dd7aabea96b4b034369e085ae3b4ae381f0f1a807",
           "scope": "Reviewed SEQ006 adopted; both changed roots/555names/1526owned/all1840primary/7320resolved identities pass with coherent qualified reuse",
           "verification": "integration/aperiodic-modulus-aggregate-verification.json"
+        },
+        "stateful_certificates_successor": {
+          "prior_source_sha256": "f4b742219c7509690f6a722b9111611cc8659641c1ad4ad10b180b30ab753f23",
+          "scope": "Reviewed POPULATION004 synthetic actual rule/global dynamics and full real-hull join; actual enlarged aggregate check pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

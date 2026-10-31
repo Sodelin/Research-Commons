@@ -1,0 +1,40 @@
+ResearchCommons.Claims.StatefulCertificates.actual_static_certificate : StatefulCA.FixedCert StatefulCA.Aligned
+  StatefulCA.Diagonal
+'ResearchCommons.Claims.StatefulCertificates.actual_static_certificate' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.StatefulCertificates.full_real_static_support : ∀ (a b : StatefulCA.Dir → Prop),
+  StatefulCA.FixedCert a b →
+    IsGreatest.{0} (Set.image.{0, 0} (fun v => v.1) (Inter.inter.{0} (StatefulCAReal.hull a) (StatefulCAReal.hull b))) 1
+'ResearchCommons.Claims.StatefulCertificates.full_real_static_support' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.StatefulCertificates.actual_global_charge_strip : ∀ (c : StatefulCA.Config) (lo hi : ℤ),
+  StatefulCA.ChargeBound c lo hi → ∀ (n : ℕ), StatefulCA.ChargeBound (StatefulCA.iterate c n) lo hi
+'ResearchCommons.Claims.StatefulCertificates.actual_global_charge_strip' depends on axioms: [propext]
+ResearchCommons.Claims.StatefulCertificates.no_horizontal_translation : ∀ (c : StatefulCA.Config) (period : ℕ)
+  (dx dy : ℤ),
+  StatefulCA.FiniteSupport c →
+    (∃ x y, Ne.{1} (c x y) StatefulCA.dead) →
+      Eq.{1} (StatefulCA.iterate c period) (StatefulCA.translate c dx dy) → Eq.{1} dx 0
+'ResearchCommons.Claims.StatefulCertificates.no_horizontal_translation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.StatefulCertificates.horizontal_velocity_zero : ∀ (c : StatefulCA.Config) (period : ℕ)
+  (dx dy : ℤ),
+  StatefulCA.FiniteSupport c →
+    (∃ x y, Ne.{1} (c x y) StatefulCA.dead) →
+      Eq.{1} (StatefulCA.iterate c period) (StatefulCA.translate c dx dy) → Eq.{1} (HDiv.hDiv.{0, 0, 0} ↑dx ↑period) 0
+'ResearchCommons.Claims.StatefulCertificates.horizontal_velocity_zero' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.StatefulCertificates.finite_nontrivial_oscillator : StatefulCA.FiniteSupport StatefulCA.rDomino ∧
+  StatefulCA.FiniteSupport StatefulCA.lDomino ∧
+    (∃ x y, Ne.{1} (StatefulCA.rDomino x y) StatefulCA.dead) ∧
+      (∃ x y, Ne.{1} (StatefulCA.lDomino x y) StatefulCA.dead) ∧
+        Eq.{1} (StatefulCA.evolve StatefulCA.rDomino) StatefulCA.lDomino ∧
+          Eq.{1} (StatefulCA.evolve StatefulCA.lDomino) StatefulCA.rDomino ∧
+            Ne.{1} StatefulCA.rDomino StatefulCA.lDomino
+'ResearchCommons.Claims.StatefulCertificates.finite_nontrivial_oscillator' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

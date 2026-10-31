@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Synthetic full-real-hull/stateful successor — 31 October 2026
+
+[POPULATION-004 adoption](../../../research/2026-10-31-population004-package-binding/README.md) adds the reviewed actual synthetic-rule interface: **54 mapped claims/561 names/64 unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Actual target3 compiled/0reused, all six full exports and complete3-module audit pass. Full real hull, global evolution, finite nonempty/full dead exterior, arbitrary vertical displacement and positive-period physical interpretation retained; native simulator/Life-like/priority claims excluded.
+
+[Current aggregate](stateful-certificates-aggregate-verification.json): both changed roots,561names,1,529owned modules (102,940declarations/93,019theorems/zero rejects),1,841primary objects/7,321resolved hashes pass in exact coherent qualified context. No fresh whole1,839build/audit or master closure. Earlier dated records retain their exact historical scopes.
+
 ## Quantitative/slow avoidance successor — 31 October 2026
 
 [SEQ-006 adoption](../../../research/2026-10-31-seq006-package-binding/README.md) adds the reviewed original modulus/slow-target interface. Actual **53mapped claims/555names/65unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Package target12:4compiled/8reused and six complete named checks pass.

@@ -1,0 +1,51 @@
+@[reducible] def StatefulCA.Cell : Type :=
+Fin 3
+@[reducible] def StatefulCA.Dir : Type :=
+Fin 6
+def StatefulCA.output : StatefulCA.Pattern → StatefulCA.Cell :=
+fun p =>
+  if p 0 = StatefulCA.r ∧ (p 1 = StatefulCA.r ∨ p 2 = StatefulCA.r) then StatefulCA.l
+  else if p 3 = StatefulCA.l ∧ (p 4 = StatefulCA.l ∨ p 5 = StatefulCA.l) then StatefulCA.r else StatefulCA.dead
+def StatefulCA.selected : StatefulCA.Pattern → Bool → StatefulCA.Dir :=
+fun p label =>
+  if StatefulCA.output p = StatefulCA.l then if label = true then if p 1 = StatefulCA.r then 1 else 2 else 0
+  else if label = true then if p 4 = StatefulCA.l then 4 else 5 else 3
+def StatefulCA.FixedCert : (StatefulCA.Dir → Prop) → (StatefulCA.Dir → Prop) → Prop :=
+fun a b =>
+  ∀ (p : StatefulCA.Pattern),
+    StatefulCA.output p ≠ StatefulCA.dead → ∃ i j, i ≠ j ∧ a i ∧ b j ∧ p i ≠ StatefulCA.dead ∧ p j ≠ StatefulCA.dead
+def StatefulCA.dx : StatefulCA.Dir → ℤ :=
+fun d => if ↑d ≤ 2 then 1 else -1
+def StatefulCA.potential : StatefulCA.Cell → ℤ :=
+fun q => if q = StatefulCA.r then 1 else 0
+@[reducible] def StatefulCA.Config : Type :=
+ℤ → ℤ → StatefulCA.Cell
+def StatefulCA.neighborhood : StatefulCA.Config → ℤ → ℤ → StatefulCA.Pattern :=
+fun c x y d =>
+  if d = 0 then c (x - 1) y
+  else
+    if d = 1 then c (x - 1) (y + 1)
+    else
+      if d = 2 then c (x - 1) (y - 1)
+      else if d = 3 then c (x + 1) y else if d = 4 then c (x + 1) (y + 1) else c (x + 1) (y - 1)
+def StatefulCA.evolve : StatefulCA.Config → StatefulCA.Config :=
+fun c x y => StatefulCA.output (StatefulCA.neighborhood c x y)
+def StatefulCA.iterate : StatefulCA.Config → ℕ → StatefulCA.Config :=
+fun c x => Nat.brecOn x (StatefulCA.iterate._f c)
+def StatefulCA.ChargeBound : StatefulCA.Config → ℤ → ℤ → Prop :=
+fun c lo hi =>
+  ∀ (x y : ℤ), c x y ≠ StatefulCA.dead → lo ≤ x + StatefulCA.potential (c x y) ∧ x + StatefulCA.potential (c x y) ≤ hi
+def StatefulCA.FiniteSupport : StatefulCA.Config → Prop :=
+fun c => ∃ points, ∀ (x y : ℤ), c x y ≠ StatefulCA.dead ↔ (x, y) ∈ points
+def StatefulCA.translate : StatefulCA.Config → ℤ → ℤ → StatefulCA.Config :=
+fun c dx dy x y => c (x - dx) (y - dy)
+def StatefulCA.rDomino : StatefulCA.Config :=
+fun x y => if x = 0 ∧ (y = 0 ∨ y = 1) then StatefulCA.r else StatefulCA.dead
+def StatefulCA.lDomino : StatefulCA.Config :=
+fun x y => if x = 1 ∧ (y = 0 ∨ y = 1) then StatefulCA.l else StatefulCA.dead
+def StatefulCAReal.vector : StatefulCA.Dir → ℝ × ℝ :=
+fun d => (↑(StatefulCA.xStep d), ↑(StatefulCA.yStep d))
+def StatefulCAReal.directionSet : (StatefulCA.Dir → Prop) → Set (ℝ × ℝ) :=
+fun D => StatefulCAReal.vector '' {d | D d}
+def StatefulCAReal.hull : (StatefulCA.Dir → Prop) → Set (ℝ × ℝ) :=
+fun D => (convexHull ℝ) (StatefulCAReal.directionSet D)
