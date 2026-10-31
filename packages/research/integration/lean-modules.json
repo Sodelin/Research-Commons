@@ -6132,10 +6132,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.CapTwoPopulation",
+      "path": "lean/Compatibility/ResearchCommons.Claims.CapTwoPopulation.lean",
+      "sha256": "f2b2208c4a0f3c9f77282fa09503dc20c2b5ffda9976041a5fd29f341e4682a5",
+      "imports": [
+        "SamuelAlexanderResearch.CapTwoSpecies"
+      ],
+      "provenance": {
+        "role": "Reviewed original CB-POPULATION-001 exact cap-two permanent-gender threshold and same actual witness species interface",
+        "proof_derivation": false,
+        "verification": "integration/cap-two-population-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "e08e207ef98790a13464c6d3d44c3bd24bd543fa999dcb5efab8d79791b8edbb",
+      "sha256": "f43ead630e9bb6c54ffc77124994f60e8fa75627845088abefe30b4518eeec00",
       "imports": [
+        "ResearchCommons.Claims.CapTwoPopulation",
         "ResearchCommons.Claims.OwnerAncestry",
         "ResearchCommons.Claims.WongNormalForm",
         "ResearchCommons.Claims.MatchingCore",
@@ -6292,6 +6306,10 @@
         "owner_ancestry_successor": {
           "prior_source_sha256": "83f19276d8bd57f2c50019840a0ac614ec5bafbe6379c8b943cff563e223d45d",
           "scope": "Reviewed original conditional owner ancestry / saturated maximality / candidate-local finite-error IAP interface; enlarged aggregate pending."
+        },
+        "cap_two_population_successor": {
+          "prior_source_sha256": "e08e207ef98790a13464c6d3d44c3bd24bd543fa999dcb5efab8d79791b8edbb",
+          "scope": "Reviewed original retained positive-port cap-two actual population/threshold/full-language/same-witness species join; enlarged aggregate pending."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

@@ -1,0 +1,97 @@
+def CapTwo.Vertices : SpeciesBridge.NatSet :=
+fun x => LE.le.{0} 1 x
+def CapTwo.source : Nat → Nat :=
+fun x => HDiv.hDiv.{0, 0, 0} x 2
+def CapTwo.target : Nat → Nat :=
+fun x => HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (CapTwo.source x) 1) (HMod.hMod.{0, 0, 0} x 2)
+def CapTwo.gender : (Nat → Bool) → Nat → Bool :=
+fun s x =>
+  ite.{1} (Eq.{1} (HMod.hMod.{0, 0, 0} x 2) 0) (BinaryAvoidance.row s (CapTwo.target x))
+    !BinaryAvoidance.row s (CapTwo.target x)
+def CapTwo.Arc : SpeciesBridge.Graph :=
+fun x y => CapTwo.Vertices x ∧ CapTwo.Vertices y ∧ Eq.{1} (CapTwo.source y) (CapTwo.target x)
+def FixedGenderLift.FixedGenderPopulation : SpeciesBridge.Graph → SpeciesBridge.NatSet → (Nat → Bool) → Nat → Prop :=
+fun E S g cap =>
+  SpeciesBridge.InfiniteSupport S ∧
+    (∀ (u w : Nat), S u → S w → E u w → LT.lt.{0} u w) ∧
+      (∀ (date : Nat), SpeciesBridge.FiniteSupport fun v => S v ∧ LT.lt.{0} v date) ∧
+        (SpeciesBridge.FiniteSupport fun v => S v ∧ SpeciesBridge.Root (FixedGenderLift.Induced E S) v) ∧
+          FixedGenderLift.ChildCap E S cap ∧
+            ∀ (w : Nat),
+              S w →
+                ¬SpeciesBridge.Root (FixedGenderLift.Induced E S) w →
+                  ∀ (b : Bool), Exists.{1} fun u => S u ∧ E u w ∧ Eq.{1} (g u) b
+def FixedGenderLift.ChildCap : SpeciesBridge.Graph → SpeciesBridge.NatSet → Nat → Prop :=
+fun E S cap =>
+  ∀ (x : Nat),
+    S x →
+      Exists.{1} fun children =>
+        LE.le.{0} (List.length.{0} children) cap ∧ ∀ (y : Nat), S y → E x y → Membership.mem.{0, 0} children y
+def FixedGenderLift.Induced : SpeciesBridge.Graph → SpeciesBridge.NatSet → SpeciesBridge.Graph :=
+fun E S x y => S x ∧ S y ∧ E x y
+def FixedGenderLift.Inspecies : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  SpeciesBridge.InfiniteSupport S ∧
+    FixedGenderLift.AncestrallyClosed E S ∧
+      ∀ (T : SpeciesBridge.NatSet),
+        (∀ (x : Nat), T x → S x) →
+          SpeciesBridge.InfiniteSupport T → FixedGenderLift.AncestrallyClosed E T → ∀ (x : Nat), S x → T x
+def FixedGenderLift.AncestrallyClosed : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => ∀ (x y : Nat), S y → SpeciesBridge.Descendant E x y → S x
+def FixedGenderReindex.RealizesOn : SpeciesBridge.Graph → SpeciesBridge.NatSet → (Nat → Bool) → (Nat → Bool) → Prop :=
+fun E S g target =>
+  Exists.{1} fun path =>
+    ∀ (k : Nat), S (path k) ∧ E (path k) (path (HAdd.hAdd.{0, 0, 0} k 1)) ∧ Eq.{1} (g (path k)) (target k)
+def FixedGenderReindex.FixedGenderUnavoidable : Nat → (Nat → Bool) → Prop :=
+fun cap s =>
+  ∀ (E : SpeciesBridge.Graph) (S : SpeciesBridge.NatSet) (g : Nat → Bool),
+    FixedGenderLift.FixedGenderPopulation E S g cap → FixedGenderReindex.RealizesOn E S g s
+def BinaryPopulation.Realizes : BinaryPopulation.LabelledGraph → (Nat → Bool) → Prop :=
+fun E target => Exists.{1} fun path => ∀ (k : Nat), E (path k) (path (HAdd.hAdd.{0, 0, 0} k 1)) (target k)
+def BinaryAvoidance.Edge : (Nat → Bool) → Nat → Nat → Bool → Prop :=
+fun s u w label =>
+  LE.le.{0} 2 w ∧
+    (Eq.{1} w (HAdd.hAdd.{0, 0, 0} u 1) ∧ Eq.{1} label (BinaryAvoidance.row s w) ∨
+      Eq.{1} w (HAdd.hAdd.{0, 0, 0} u 2) ∧ Eq.{1} label !BinaryAvoidance.row s w)
+def BinaryAvoidance.row : (Nat → Bool) → Nat → Bool :=
+fun s w => ite.{1} (Eq.{1} (HMod.hMod.{0, 0, 0} w 2) 0) (s (HDiv.hDiv.{0, 0, 0} w 2)) !s (HDiv.hDiv.{0, 0, 0} w 2)
+def BinaryAvoidance.EventuallyPeriodic : (Nat → Bool) → Prop :=
+fun s =>
+  Exists.{1} fun start =>
+    Exists.{1} fun period =>
+      LT.lt.{0} 0 period ∧ ∀ (k : Nat), LE.le.{0} start k → Eq.{1} (s (HAdd.hAdd.{0, 0, 0} k period)) (s k)
+@[reducible] def SpeciesBridge.Graph : Type :=
+Nat → Nat → Prop
+def SpeciesBridge.Root : SpeciesBridge.Graph → Nat → Prop :=
+fun E v => ∀ (u : Nat), ¬E u v
+def SpeciesBridge.FiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => Exists.{1} fun xs => ∀ (n : Nat), S n → Membership.mem.{0, 0} xs n
+def SpeciesBridge.InfiniteSupport : SpeciesBridge.NatSet → Prop :=
+fun S => ¬SpeciesBridge.FiniteSupport S
+inductive SpeciesBridge.Descendant : SpeciesBridge.Graph → Nat → Nat → Prop
+number of parameters: 2
+constructors:
+SpeciesBridge.Descendant.edge : ∀ {E : SpeciesBridge.Graph} {u v : Nat}, E u v → SpeciesBridge.Descendant E u v
+SpeciesBridge.Descendant.snoc : ∀ {E : SpeciesBridge.Graph} {u v w : Nat},
+  SpeciesBridge.Descendant E u v → E v w → SpeciesBridge.Descendant E u w
+def SpeciesBridge.WeaklyConnected : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => (Exists.{1} fun u => S u) ∧ ∀ (u v : Nat), S u → S v → SpeciesBridge.WeakReach E S u v
+def SpeciesBridge.IAP : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    S v →
+      (SpeciesBridge.FiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w) ∨
+        SpeciesBridge.FiniteSupport fun w => S w ∧ ¬SpeciesBridge.Descendant E v w
+def SpeciesBridge.Convex : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    (Exists.{1} fun a => S a ∧ SpeciesBridge.Descendant E a v) →
+      (Exists.{1} fun d => S d ∧ SpeciesBridge.Descendant E v d) → S v
+def SpeciesBridge.Specieslike : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S => SpeciesBridge.WeaklyConnected E S ∧ SpeciesBridge.IAP E S ∧ SpeciesBridge.Convex E S
+def SpeciesBridge.Reflection : SpeciesBridge.Graph → SpeciesBridge.NatSet → Prop :=
+fun E S =>
+  ∀ (v : Nat),
+    S v →
+      SpeciesBridge.InfiniteSupport (SpeciesBridge.Descendant E v) →
+        SpeciesBridge.InfiniteSupport fun w => S w ∧ SpeciesBridge.Descendant E v w

@@ -1,0 +1,110 @@
+{
+  "claim_id": "CB-POPULATION-001",
+  "binding_adopted": false,
+  "canonical_exact_scope": "For every natural cap and binary infinite word s, there exist an infinite retained vertex set, an actual eligible permanent-binary-gender population with at most cap children per vertex and finite actual roots, and avoidance of s from every starting vertex, iff cap\u22652 and s is not eventually periodic. Nonroots have parents of each gender and chronology/finite-prefix conditions are retained. Below two no eligible infinite population exists. The directed line graph of the original P_s has exactly three roots, exactly two children per vertex and two opposite-gender parents at every nonroot, with full infinite-word language preserved without a shifted first letter. The unlabelled graph is fixed across targets; only genders change. The same actual retained witness is specieslike, an inspecies and reflective. Three-root optimality is not part of the result.",
+  "wrapper_sha256": "f2b2208c4a0f3c9f77282fa09503dc20c2b5ffda9976041a5fd29f341e4682a5",
+  "endpoint_map": [
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.exact_threshold",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.avoiding_population_exists_iff",
+      "complete_header": "theorem exact_threshold (cap : Nat) (s : Nat \u2192 Bool) :\n    (\u2203 E S g, FixedGenderPopulation E S g cap \u2227\n      \u00ac FixedGenderReindex.RealizesOn E S g s) \u2194\n      2 \u2264 cap \u2227 \u00ac EventuallyPeriodic s "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.below_two_impossible",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.fixedGender_subcritical_impossible",
+      "complete_header": "theorem below_two_impossible {E : Graph} {S : NatSet}\n    {g : Nat \u2192 Bool} {cap : Nat} (population : FixedGenderPopulation E S g cap)\n    (hcap : cap < 2) : False "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.actual_three_root_two_child_avoider",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.cap_two_avoider",
+      "complete_header": "theorem actual_three_root_two_child_avoider (s : Nat \u2192 Bool) (hs : \u00ac EventuallyPeriodic s) :\n    FixedGenderPopulation Arc Vertices (gender s) 2 \u2227\n    (\u2200 x, Vertices x \u2192 \u2203 a b, a \u2260 b \u2227 Vertices a \u2227 Vertices b \u2227\n      \u2200 y, Arc x y \u2194 y = a \u2228 y = b) \u2227\n    (\u2200 y, (Vertices y \u2227 Root (Induced Arc Vertices) y) \u2194 y = 1 \u2228 y = 2 \u2228 y = 3) \u2227\n    \u00ac FixedGenderReindex.RealizesOn Arc Vertices (gender s) s "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.actual_parent_ids",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.parents_exactly",
+      "complete_header": "theorem actual_parent_ids (x y : Nat) (hy : 2 \u2264 source y) :\n    Arc x y \u2194 x = 2 * source y - 2 \u2228 x = 2 * source y - 3 "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.each_gender_parent",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.incoming_gender",
+      "complete_header": "theorem each_gender_parent (s : Nat \u2192 Bool) (y : Nat) (hy : Vertices y)\n    (hsource : 2 \u2264 source y) (b : Bool) :\n    \u2203 x, Vertices x \u2227 Arc x y \u2227 gender s x = b "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.full_unshifted_language",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.realizes_iff",
+      "complete_header": "theorem full_unshifted_language (s word : Nat \u2192 Bool) :\n    FixedGenderReindex.RealizesOn Arc Vertices (gender s) word \u2194\n      BinaryPopulation.Realizes (BinaryAvoidance.Edge s) word "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.cap_two_unavoidability",
+      "provider_module": "SamuelAlexanderResearch.CapTwo",
+      "original_endpoint": "CapTwo.fixedGender_cap_two_classification",
+      "complete_header": "theorem cap_two_unavoidability (s : Nat \u2192 Bool) :\n    FixedGenderReindex.FixedGenderUnavoidable 2 s \u2194 EventuallyPeriodic s "
+    },
+    {
+      "wrapper": "ResearchCommons.Claims.CapTwoPopulation.same_actual_specieslike_inspecies_reflective_witness",
+      "provider_module": "SamuelAlexanderResearch.CapTwoSpecies",
+      "original_endpoint": "CapTwoSpecies.cap_two_inspecies_avoider",
+      "complete_header": "theorem same_actual_specieslike_inspecies_reflective_witness (s : Nat \u2192 Bool)\n    (hs : \u00acBinaryAvoidance.EventuallyPeriodic s) :\n    FixedGenderPopulation Arc Vertices (CapTwo.gender s) 2 \u2227\n    Specieslike (Induced Arc Vertices) Vertices \u2227\n    Inspecies (Induced Arc Vertices) Vertices \u2227\n    Reflection (Induced Arc Vertices) Vertices \u2227\n    \u00acFixedGenderReindex.RealizesOn Arc Vertices (CapTwo.gender s) s "
+    }
+  ],
+  "clause_map": [
+    {
+      "clause": "For EVERY natural cap and binarytarget, actual eligible fixedgender infinite retained avoider exists iff cap>=2 AND target not eventuallyperiodic",
+      "exports": [
+        "exact_threshold"
+      ],
+      "actual_predicates": "FixedGenderPopulation E S g cap and \u00acRealizesOn E S g s. Infinity/strict natural chronology/finite dateprefix/finite ACTUAL retained induced roots/childcover/correct parents eachgender all retained."
+    },
+    {
+      "clause": "Below two no eligible infinite fixedgenderpopulation exists independentoftarget",
+      "exports": [
+        "below_two_impossible"
+      ],
+      "actual_source": "Original CapTwo.presented translates actual retained subtype into PopulationReindex counting model; no supplied counting inequality or finite search."
+    },
+    {
+      "clause": "Exact construction with fixed graph and targetdependent permanent gender, exactlytwo children and exactlythree retained roots",
+      "exports": [
+        "actual_three_root_two_child_avoider",
+        "actual_parent_ids",
+        "each_gender_parent"
+      ],
+      "actual_source": "Vertices = positive ports; unused0 would encode nonexistent0->1. Arc is independent of s, with source(y)=target(x). Roots precisely1,2,3. ParentIDs2*source(y)-2 and2*source(y)-3 under source>=2. Oppositegenders derived from original incoming labels, not newparentpremise."
+    },
+    {
+      "clause": "Full infinite wordlanguage preserved without dropping/reversing/shifting initialletter or requiring rootstart",
+      "exports": [
+        "full_unshifted_language",
+        "cap_two_unavoidability"
+      ],
+      "actual_source": "forall s word: original edge-labelled P_s Realizes word iff actual permanentgender portpopulation RealizesOn word. Original arbitrary start quantifier preserved."
+    },
+    {
+      "clause": "SAME Arc/Vertices/gender(s) captwo witness simultaneously specieslike,inspecies,reflective and avoidsaperiodictarget",
+      "exports": [
+        "same_actual_specieslike_inspecies_reflective_witness"
+      ],
+      "actual_source": "Original inducedgraph equality retains actualpositivevertices, no separate existential witness choice; Inspecies means infinite ancestralclosure and minimalamong infinite ancestralclosed retainedsubsets."
+    }
+  ],
+  "actual_definition_output": "26 actual original definitions/relations printed in logs/DefinitionBindings-final.log. No new wrapper definitions.",
+  "source_reading": "Full CapTwo320 andCapTwoSpecies117 lines read, plus exact primitive definitions from FixedGenderLift/Reindex/BinaryAvoidance/SpeciesBridge. Three original proof/species/prior-art notes retrieved from exactpublice2502pin with byteSHA/Gitblob identities and read in full. Eight supplier bodies included/hashbound, not all eight full proof bodies independently reviewed. No new whole16-provider proof replay or primaryhistoricalpaper reread.",
+  "prior_work": "Original Samuel-project proof; classical directed line graph and edge-to-vertex color transfer are explicitly credited. It sharpens the pinned avg-netizen P_s manuscript's stated four-root/cap-four vertex-gender lift. The exact narrower corollary is not explicit in that pinned manuscript; worldwide priority remains unresolved.",
+  "novelty_status": "Historical priority is unresolved. Established methods and source examples retain their attribution; archived formal correctness and source recovery do not certify novelty.",
+  "prior_work_detail": "Directed line/arc graph and edge-to-vertex color transfer are classical, not invented here. Original P_s classification credited to pinned avg-netizen manuscript as original ledgers state. Narrow three-root/cap-two fixedgender consequence and samewitnessspecies claims remain attributed to original Samuel project. Historical priority unresolved; sourceaudits bounded searches do not certify worldwide absence.",
+  "separate_limits": [
+    "Three-root optimality not proved",
+    "No generic new line-graph operation theorem",
+    "No empirical biological validity/species classifier",
+    "No native executable infinite-population constructor/runtime",
+    "No new crossingwidthsix named theorem supplied",
+    "Older capthree/four constructions remain valid, not current sharp capthreshold"
+  ],
+  "verification_scope": "New unchanged eight-endpoint wrapper,15qualifiedoriginalproviders reused; actual16-module audit1068declarations810theorems/zero rejects and26definitionprintouts. No binding/canonical scientific status mutation before parentreview."
+}

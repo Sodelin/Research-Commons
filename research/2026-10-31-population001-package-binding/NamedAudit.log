@@ -1,0 +1,63 @@
+ResearchCommons.Claims.CapTwoPopulation.exact_threshold : ∀ (cap : Nat) (s : Nat → Bool),
+  (Exists.{1} fun E =>
+      Exists.{1} fun S =>
+        Exists.{1} fun g => FixedGenderLift.FixedGenderPopulation E S g cap ∧ ¬FixedGenderReindex.RealizesOn E S g s) ↔
+    LE.le.{0} 2 cap ∧ ¬BinaryAvoidance.EventuallyPeriodic s
+'ResearchCommons.Claims.CapTwoPopulation.exact_threshold' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.CapTwoPopulation.below_two_impossible : ∀ {E : SpeciesBridge.Graph} {S : SpeciesBridge.NatSet}
+  {g : Nat → Bool} {cap : Nat}, FixedGenderLift.FixedGenderPopulation E S g cap → LT.lt.{0} cap 2 → False
+'ResearchCommons.Claims.CapTwoPopulation.below_two_impossible' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.actual_three_root_two_child_avoider : ∀ (s : Nat → Bool),
+  ¬BinaryAvoidance.EventuallyPeriodic s →
+    FixedGenderLift.FixedGenderPopulation CapTwo.Arc CapTwo.Vertices (CapTwo.gender s) 2 ∧
+      (∀ (x : Nat),
+          CapTwo.Vertices x →
+            Exists.{1} fun a =>
+              Exists.{1} fun b =>
+                Ne.{1} a b ∧
+                  CapTwo.Vertices a ∧ CapTwo.Vertices b ∧ ∀ (y : Nat), CapTwo.Arc x y ↔ Eq.{1} y a ∨ Eq.{1} y b) ∧
+        (∀ (y : Nat),
+            CapTwo.Vertices y ∧ SpeciesBridge.Root (FixedGenderLift.Induced CapTwo.Arc CapTwo.Vertices) y ↔
+              Eq.{1} y 1 ∨ Eq.{1} y 2 ∨ Eq.{1} y 3) ∧
+          ¬FixedGenderReindex.RealizesOn CapTwo.Arc CapTwo.Vertices (CapTwo.gender s) s
+'ResearchCommons.Claims.CapTwoPopulation.actual_three_root_two_child_avoider' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.actual_parent_ids : ∀ (x y : Nat),
+  LE.le.{0} 2 (CapTwo.source y) →
+    (CapTwo.Arc x y ↔
+      Eq.{1} x (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 (CapTwo.source y)) 2) ∨
+        Eq.{1} x (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 (CapTwo.source y)) 3))
+'ResearchCommons.Claims.CapTwoPopulation.actual_parent_ids' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.each_gender_parent : ∀ (s : Nat → Bool) (y : Nat),
+  CapTwo.Vertices y →
+    LE.le.{0} 2 (CapTwo.source y) →
+      ∀ (b : Bool), Exists.{1} fun x => CapTwo.Vertices x ∧ CapTwo.Arc x y ∧ Eq.{1} (CapTwo.gender s x) b
+'ResearchCommons.Claims.CapTwoPopulation.each_gender_parent' depends on axioms: [propext, Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.full_unshifted_language : ∀ (s word : Nat → Bool),
+  FixedGenderReindex.RealizesOn CapTwo.Arc CapTwo.Vertices (CapTwo.gender s) word ↔
+    BinaryPopulation.Realizes (BinaryAvoidance.Edge s) word
+'ResearchCommons.Claims.CapTwoPopulation.full_unshifted_language' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.cap_two_unavoidability : ∀ (s : Nat → Bool),
+  FixedGenderReindex.FixedGenderUnavoidable 2 s ↔ BinaryAvoidance.EventuallyPeriodic s
+'ResearchCommons.Claims.CapTwoPopulation.cap_two_unavoidability' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.CapTwoPopulation.same_actual_specieslike_inspecies_reflective_witness : ∀ (s : Nat → Bool),
+  ¬BinaryAvoidance.EventuallyPeriodic s →
+    FixedGenderLift.FixedGenderPopulation CapTwo.Arc CapTwo.Vertices (CapTwo.gender s) 2 ∧
+      SpeciesBridge.Specieslike (FixedGenderLift.Induced CapTwo.Arc CapTwo.Vertices) CapTwo.Vertices ∧
+        FixedGenderLift.Inspecies (FixedGenderLift.Induced CapTwo.Arc CapTwo.Vertices) CapTwo.Vertices ∧
+          SpeciesBridge.Reflection (FixedGenderLift.Induced CapTwo.Arc CapTwo.Vertices) CapTwo.Vertices ∧
+            ¬FixedGenderReindex.RealizesOn CapTwo.Arc CapTwo.Vertices (CapTwo.gender s) s
+'ResearchCommons.Claims.CapTwoPopulation.same_actual_specieslike_inspecies_reflective_witness' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

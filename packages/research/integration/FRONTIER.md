@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Actual cap-two population successor — 31 October 2026
+
+[POPULATION-001 adoption](../../../research/2026-10-31-population001-package-binding/README.md): **59 mapped IDs/627 names/59 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Retained positive ports, exactthree roots/twochildren/opposite-gender parents, full unshifted language and SAME witness specieslike/inspecies/reflection preserved. Classical line graph/P_s attribution and no least-root/native/biological/novelty claim.
+
+[Current aggregate](cap-two-population-aggregate-verification.json) records changed roots,627 full named checks, selected owned audit and all actual resolved source/object bindings. Explicit coherent qualified reuse, not a fresh whole1,844 build/audit. Earlier receipts remain historical.
+
 ## Actual owner-ancestry successor — 31 October 2026
 
 [WONG-004 adoption](../../../research/2026-10-31-wong004-package-binding/README.md): **58 mapped IDs/619 names/60 unbound**; strict2/full116 incomplete, all118 scientific statuses unchanged. Original exact/sound/finite-error/connected-fibre hypotheses remain separate; IAP-only errors, saturated reverse maximality and credited finite-coarsening reuse retained.
