@@ -1,0 +1,3 @@
+# Separate AI-assisted semantic review
+
+31 October 2026. Separate AI-assisted mathematical review read both repair hunks and all six complete named types/standard axiom reports. Scoped acceptance: the finite-type instance implementation change is disclosed as an injection into actual admitted Code, not an unchanged body. The populationColors function is unchanged; its proof projection is explicitly typed. Original Copy, hc, activation, nonfinal/support and active-edge <=P premises remain intact. Raw125-module audit is compiler-attributed, not independently replayed. No full clock-JC theorem, expert peer review or novelty certification is claimed.

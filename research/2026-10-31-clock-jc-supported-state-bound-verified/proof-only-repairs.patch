@@ -1,0 +1,26 @@
+--- frozen/JC69SupportedStateBound.lean
++++ source/JC69SupportedStateBound.lean
+@@ -75,7 +75,13 @@
+     (∃ s : Code N sample, observeCode N s = o) ∧ ∀ x : Copy, o.2 x ∈ A}
+ 
+ instance supportedObservationFintype (N : RootedBinary V E X) (sample : Copy → X)
+-    (A : Finset (Location V E)) : Fintype (SupportedObservation N sample A) := Fintype.ofFinite _
++    (A : Finset (Location V E)) : Fintype (SupportedObservation N sample A) := by
++  classical
++  apply Fintype.ofInjective (fun o : SupportedObservation N sample A => Classical.choose o.property.1)
++  intro x y h
++  apply Subtype.ext
++  exact (Classical.choose_spec x.property.1).symm.trans
++    ((congrArg (observeCode N) h).trans (Classical.choose_spec y.property.1))
+ 
+ def representative (N : RootedBinary V E X) {sample : Copy → X} {A : Finset (Location V E)}
+     (o : SupportedObservation N sample A) : Code N sample := Classical.choose o.property.1
+@@ -131,7 +137,7 @@
+     intro x y h
+     apply (Fintype.equivFin A).injective
+     apply Fin.ext
+-    exact congrArg Fin.val h
++    exact congrArg (fun z : Fin P => z.val) h
+ 
+ /-- Exact original-copy Bell envelope. This counts observations, not Codes,
+ register assignments or ordered genealogy shapes. -/

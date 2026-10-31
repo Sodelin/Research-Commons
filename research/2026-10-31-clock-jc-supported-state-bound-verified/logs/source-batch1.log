@@ -1,0 +1,45 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SupportedStateBound.lean:25:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SupportedStateBound.actual_root_latest`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SupportedStateBound.lean:78:79: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Finite (SupportedObservation N sample A)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SupportedStateBound.lean:83:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SupportedStateBound.representative_observation`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SupportedStateBound.lean:134:27: error: Application type mismatch: The argument
+  h
+has type
+  (fun x => ⟨↑((Fintype.equivFin ↥A) x), ⋯⟩) x = (fun x => ⟨↑((Fintype.equivFin ↥A) x), ⋯⟩) y
+but is expected to have type
+  (Fintype.equivFin ↥A) x = (Fintype.equivFin ↥A) y
+in the application
+  congrArg Fin.val h
+'ResearchCommons.MSCI.JC69SupportedStateBound.actual_root_latest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SupportedStateBound.actual_initialized_prefix_active' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SupportedStateBound.encodeObservation_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SupportedStateBound.supported_observation_card' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SupportedStateBound.supported_active_observation_card' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SupportedStateBound.actual_prefix_observation_supported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

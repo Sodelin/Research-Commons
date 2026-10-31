@@ -1,0 +1,14 @@
+import ResearchCommons.MSCI.JC69SupportedStateBound
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.actual_root_latest
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.actual_root_latest
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.actual_initialized_prefix_active
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.actual_initialized_prefix_active
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.encodeObservation_injective
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.encodeObservation_injective
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.supported_observation_card
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.supported_observation_card
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.supported_active_observation_card
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.supported_active_observation_card
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.actual_prefix_observation_supported
+#print axioms ResearchCommons.MSCI.JC69SupportedStateBound.actual_prefix_observation_supported
