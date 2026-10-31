@@ -1,0 +1,23 @@
+<BUILD_ROOT>/source/ActualCoreCurves.lean:57:6: error: linarith failed to find a contradiction
+case pos.inl.h1
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : N.OriginalBlobArc b
+t : ↑unitInterval
+hh : N.graph.IsHybrid (N.graph.target ↑e)
+h : coreParameter N b e t = 0
+he : t = 0
+a✝ : t < 0
+⊢ False
+failed
+'Nanuq.OpenedCore.actualCoreCurves' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.actualCoreCurves_subset_raw' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.actualCoreCurves_closed_disk' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.actualCoreCurves_arc_formula' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

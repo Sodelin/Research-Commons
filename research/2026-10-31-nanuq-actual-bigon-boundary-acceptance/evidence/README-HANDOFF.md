@@ -1,0 +1,3 @@
+# Actual bigon qualification
+
+Both full types and standard axioms checked; complete selected540module audit11731declarations/8548theorems/zero rejected rows.538qualified providers reused, unchanged accepted SmallBlob freshly compiled once, new candidate compiled after one recorded proof-only equality-normalization repair. Both headers unchanged, no new definitions or section premise. Actual whole two-ID pointSet and same specified original exterior only; no hg/IsTwoConnected/>=3/redraw/order input, singleton/global contour separate. Full raw audits stay local and are compiler-attributed summary only. Preflight schema error occurred before Lean; successful SmallBlob object reused on repaired candidate retry.

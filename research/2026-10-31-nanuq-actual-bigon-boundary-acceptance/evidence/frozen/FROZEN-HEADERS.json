@@ -1,0 +1,13 @@
+{
+  "source_sha256": "6ae885c0a998da3098329dc4d7cd7773d90d91eda9007557e6834d6a745e5a4c",
+  "headers": [
+    {
+      "name": "actual_bigon_pointSet",
+      "header": "theorem actual_bigon_pointSet\n    (u v : BlobVertex N.graph b) (huv : u \u2260 v)\n    (hall : \u2200 w : BlobVertex N.graph b, w = u \u2228 w = v) :\n    \u2203 e f : BlobEdge N.graph b, e \u2260 f \u2227\n      (\u2200 g : BlobEdge N.graph b, g = e \u2228 g = f) \u2227\n      \u2203 s t : Schoenflies.Plane,\n        (graph (blobCurves D b)).IsCycleThrough e s t [f] \u2227\n        Schoenflies.IsJordanCurve (Graph.edgesCover (curve (blobCurves D b)) [e,f]) \u2227\n        Graph.pointSet (graph (blobCurves D b)) (curve (blobCurves D b)) =\n          Graph.edgesCover (curve (blobCurves D b)) [e,f]"
+    },
+    {
+      "name": "actual_bigon_outer_boundary",
+      "header": "theorem actual_bigon_outer_boundary (hb : N.NonleafBlob b)\n    (face : TaxonOuterFace D N.leaf)\n    (u v : BlobVertex N.graph b) (huv : u \u2260 v)\n    (hall : \u2200 w : BlobVertex N.graph b, w = u \u2228 w = v) :\n    \u2203 e f : BlobEdge N.graph b, e \u2260 f \u2227\n      (\u2200 g : BlobEdge N.graph b, g = e \u2228 g = f) \u2227\n      \u2203 s t : Schoenflies.Plane,\n        (graph (blobCurves D b)).IsCycleThrough e s t [f] \u2227\n        Schoenflies.IsJordanCurve (Graph.edgesCover (curve (blobCurves D b)) [e,f]) \u2227\n        Graph.pointSet (graph (blobCurves D b)) (curve (blobCurves D b)) =\n          Graph.edgesCover (curve (blobCurves D b)) [e,f] \u2227\n        Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n          (coordinates face.outside) =\n          Schoenflies.outside (Graph.edgesCover (curve (blobCurves D b)) [e,f]) \u2227\n        \u2200 p : N.BlobPort b, coordinates (D.point (N.originalPortInner b p).val) \u2208\n          Graph.edgesCover (curve (blobCurves D b)) [e,f]"
+    }
+  ]
+}

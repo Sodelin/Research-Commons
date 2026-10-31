@@ -1,0 +1,92 @@
+@Nanuq.ActualBigonBoundary.actual_bigon_pointSet.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (u v : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+  Ne.{u_1 + 1} u v →
+    (∀ (w : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+        Eq.{u_1 + 1} w u ∨ Eq.{u_1 + 1} w v) →
+      ∃ e f,
+        Ne.{u_2 + 1} e f ∧
+          (∀ (g : Nanuq.RawBlock.BlobEdge.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+              Eq.{u_2 + 1} g e ∨ Eq.{u_2 + 1} g f) ∧
+            ∃ s t,
+              Graph.IsCycleThrough.{0, u_2}
+                  (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)) e s
+                  t (List.cons.{u_2} f List.nil.{u_2}) ∧
+                Schoenflies.IsJordanCurve
+                    (Graph.edgesCover.{u_2}
+                      (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2}))) ∧
+                  Eq.{1}
+                    (Graph.pointSet.{u_2}
+                      (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                        (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)))
+                    (Graph.edgesCover.{u_2}
+                      (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2})))
+'Nanuq.ActualBigonBoundary.actual_bigon_pointSet' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.ActualBigonBoundary.actual_bigon_outer_boundary.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b →
+    ∀
+      (face :
+        G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+          ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N))
+      (u v : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+      Ne.{u_1 + 1} u v →
+        (∀ (w : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+            Eq.{u_1 + 1} w u ∨ Eq.{u_1 + 1} w v) →
+          ∃ e f,
+            Ne.{u_2 + 1} e f ∧
+              (∀ (g : Nanuq.RawBlock.BlobEdge.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+                  Eq.{u_2 + 1} g e ∨ Eq.{u_2 + 1} g f) ∧
+                ∃ s t,
+                  Graph.IsCycleThrough.{0, u_2}
+                      (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      e s t (List.cons.{u_2} f List.nil.{u_2}) ∧
+                    Schoenflies.IsJordanCurve
+                        (Graph.edgesCover.{u_2}
+                          (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                            (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                          (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2}))) ∧
+                      Eq.{1}
+                          (Graph.pointSet.{u_2}
+                            (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2}
+                              (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                            (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                              (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)))
+                          (Graph.edgesCover.{u_2}
+                            (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                              (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                            (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2}))) ∧
+                        Eq.{1}
+                            (Graph.face.{u_2}
+                              (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2}
+                                (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                              (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                                (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                              (NanuqFaithfulSupplierDrawing.coordinates
+                                (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+                            (Schoenflies.outside
+                              (Graph.edgesCover.{u_2}
+                                (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                                  (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                                (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2})))) ∧
+                          ∀ (p : Nanuq.Source.RootedBinary.BlobPort.{u_1, u_2, u_3} N b),
+                            Membership.mem.{0, 0}
+                              (Graph.edgesCover.{u_2}
+                                (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                                  (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                                (List.cons.{u_2} e (List.cons.{u_2} f List.nil.{u_2})))
+                              (NanuqFaithfulSupplierDrawing.coordinates
+                                (G1OuterLabelledMultigraphCurves.PlanarCurves.point.{u_1, u_2} D
+                                  ↑(Nanuq.Source.RootedBinary.originalPortInner.{u_1, u_2, u_3} N b p)))
+'Nanuq.ActualBigonBoundary.actual_bigon_outer_boundary' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

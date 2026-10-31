@@ -1,0 +1,60 @@
+[
+  {
+    "step": "source",
+    "exit_code": 1,
+    "seconds": 3.429008132996387,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<BUILD_ROOT>/source",
+      "-o",
+      "<BUILD_ROOT>/lib/ActualCoreCurves.olean",
+      "<BUILD_ROOT>/source/ActualCoreCurves.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "source",
+    "exit_code": 0,
+    "seconds": 3.56901186399773,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<BUILD_ROOT>/source",
+      "-o",
+      "<BUILD_ROOT>/lib/ActualCoreCurves.olean",
+      "<BUILD_ROOT>/source/ActualCoreCurves.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.631886602997838,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<BUILD_ROOT>/NamedAudit.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 6.850025125000684,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<BUILD_ROOT>/OwnedAudit.lean"
+    ],
+    "batch": 2
+  }
+]

@@ -1,0 +1,11 @@
+--- frozen-original
++++ checked-proof-only-variant
+@@ -54,7 +54,7 @@
+     · left; apply Subtype.ext
+       have he := congrArg Subtype.val h
+       norm_num [coreParameter,affineParameter,coreEnd,hh,oneHalf] at he ⊢
+-      linarith
++      simpa using he
+     · have he := congrArg Subtype.val h
+       norm_num [coreParameter,affineParameter,coreEnd,hh,oneHalf] at he
+       linarith [t.property.2]

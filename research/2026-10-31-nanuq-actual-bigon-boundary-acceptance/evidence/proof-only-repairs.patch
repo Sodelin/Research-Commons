@@ -1,0 +1,10 @@
+--- frozen-original
++++ checked-proof-only-variant
+@@ -97,6 +97,7 @@
+   let F := connectedComponentIn Rᶜ face.outside
+   let G := graph (blobCurves D b)
+   let φ := curve (blobCurves D b)
++  change Graph.pointSet G φ = Graph.edgesCover φ [e,f] at hset
+   obtain ⟨hnot,hub,_⟩ := Nanuq.RawPortFrontier.actual_raw_port_frontier N D b hb face
+   have hnotG : coordinates face.outside ∉ Graph.pointSet G φ := by
+     rw [pointSet_eq (blobCurves D b)]
