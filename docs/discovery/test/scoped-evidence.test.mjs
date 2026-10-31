@@ -27,3 +27,13 @@ test('CLI returns the exact local evidence and refuses transferred claim facets'
  const run=spawnSync(process.execPath,[cli,'--scoped-evidence',manifest,'--query','Example.sample'],{encoding:'utf8'});assert.equal(run.status,0,run.stderr);const result=JSON.parse(run.stdout);assert.equal(result.view,'explicit_local_scoped_evidence_not_claim_acceptance');assert.equal(result.results[0].named_declarations[0].name,'Example.sample');
  const invalid=spawnSync(process.execPath,[cli,'--scoped-evidence',manifest,'--status','complete'],{encoding:'utf8'});assert.notEqual(invalid.status,0);assert.equal(invalid.stdout,'');
 });
+
+test('Lean explicit-argument type prints are accepted only for the exact named declaration',async t=>{
+ const {root,manifest,m}=await fixture(t);
+ for(const signature of ['@Example.sample : True','@Example.sample.{u} : True']){
+  const log=Buffer.from(signature+"\n'Example.sample' does not depend on any axioms\n");await writeFile(join(root,'named.log'),log);m.named_audit.sha256=identity(log).sha256;await writeFile(manifest,JSON.stringify(m));assert.equal((await loadScopedEvidence([manifest])).length,1);
+ }
+ for(const signature of ['@Example.sample_other : True','@Example.sample.evil : True','@ExampleXsample : True']){
+  const log=Buffer.from(signature+"\n'Example.sample' does not depend on any axioms\n");await writeFile(join(root,'named.log'),log);m.named_audit.sha256=identity(log).sha256;await writeFile(manifest,JSON.stringify(m));await assert.rejects(loadScopedEvidence([manifest]),/Named type output missing/);
+ }
+});
