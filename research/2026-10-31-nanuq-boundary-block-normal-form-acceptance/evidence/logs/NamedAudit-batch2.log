@@ -1,0 +1,184 @@
+Nanuq.Restriction.cyclicGap_rotate_one : ∀ (xs : List.{0} ℕ) (a b : ℕ),
+  Nanuq.Restriction.CyclicGap xs a b → Nanuq.Restriction.CyclicGap (List.rotate.{0} xs 1) a b
+'Nanuq.Restriction.cyclicGap_rotate_one' depends on axioms: [propext, Quot.sound.{u}]
+Nanuq.Restriction.linear_blocks_factor : ∀ (xs : List.{0} ℕ),
+  (∀ (x : ℕ), LE.le.{0} (List.count.{0} x xs) 2) →
+    (∀ (x : ℕ), Eq.{1} (List.count.{0} x xs) 2 → Nanuq.Restriction.LinearGap xs x x) →
+      ∃ base dup, List.Nodup.{0} base ∧ Eq.{1} xs (Nanuq.Restriction.blocks base dup)
+'Nanuq.Restriction.linear_blocks_factor' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+Nanuq.Restriction.cyclic_blocks_factor : ∀ (xs : List.{0} ℕ),
+  (∀ (x : ℕ), LE.le.{0} (List.count.{0} x xs) 2) →
+    (∃ a, Membership.mem.{0, 0} xs a ∧ ∃ b, Membership.mem.{0, 0} xs b ∧ Ne.{1} a b) →
+      (∀ (x : ℕ), Eq.{1} (List.count.{0} x xs) 2 → Nanuq.Restriction.CyclicGap xs x x) →
+        ∃ k base dup,
+          LE.le.{0} k 1 ∧ List.Nodup.{0} base ∧ Eq.{1} (List.rotate.{0} xs k) (Nanuq.Restriction.blocks base dup)
+'Nanuq.Restriction.cyclic_blocks_factor' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.Restriction.exhaustive_map_count.{u_1} : ∀ {T : Type u_1} [inst : Fintype.{u_1} T] (xs : List.{u_1} T),
+  List.Nodup.{u_1} xs →
+    (∀ (t : T), Membership.mem.{u_1, u_1} xs t) →
+      ∀ (lab : T → ℕ) (y : ℕ),
+        Eq.{1} (List.count.{0} y (List.map.{u_1, 0} lab xs)) (Finset.card.{u_1} {t | Eq.{1} (lab t) y})
+'Nanuq.Restriction.exhaustive_map_count' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.Restriction.finite_label_blocks.{u_1,
+    u_2} : ∀ {T : Type u_1} {L : Type u_2} [inst : Fintype.{u_1} T] [inst_1 : Fintype.{u_2} L] (xs : List.{u_1} T),
+  List.Nodup.{u_1} xs →
+    (∀ (t : T), Membership.mem.{u_1, u_1} xs t) →
+      ∀ (label : T → L),
+        Function.Surjective.{u_1 + 1, u_2 + 1} label →
+          ∀ (code : L → ℕ),
+            Function.Injective.{u_2 + 1, 1} code →
+              (∀ (x : L), LE.le.{0} (Finset.card.{u_1} {t | Eq.{u_2 + 1} (label t) x}) 2) →
+                LE.le.{0} 2 (Fintype.card.{u_2} L) →
+                  (∀ (a c : T),
+                      Ne.{u_1 + 1} a c →
+                        Eq.{u_2 + 1} (label a) (label c) →
+                          Nanuq.Restriction.CyclicGap (List.map.{u_1, 0} (fun t => code (label t)) xs) (code (label a))
+                            (code (label a))) →
+                    ∃ k base dup,
+                      LE.le.{0} k 1 ∧
+                        List.Nodup.{0} base ∧
+                          Eq.{1} (List.map.{u_1, 0} (fun t => code (label t)) (List.rotate.{u_1} xs k))
+                            (Nanuq.Restriction.blocks base dup)
+'Nanuq.Restriction.finite_label_blocks' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_boundary_block_normal_form.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ code C f θ xs,
+      Schoenflies.IsJordanCurve C ∧
+        Eq.{1}
+            (Graph.face.{u_2}
+              (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.coordinates
+                (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+            (Schoenflies.outside C) ∧
+          Schoenflies.IsLoop f ∧
+            Eq.{1} (Set.image.{0, 0} f unitInterval) C ∧
+              (∀
+                  (t :
+                    Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                  Membership.mem.{0, 0} (Set.Ico.{0} 0 1) (θ t) ∧
+                    Eq.{1} (f (θ t)) (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)) ∧
+                Function.Injective.{u_2 + 1, 1} θ ∧
+                  List.Nodup.{u_2} xs ∧
+                    (∀
+                        (t :
+                          Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                        Membership.mem.{u_2, u_2} xs t) ∧
+                      List.Pairwise.{u_2} (fun a c => LE.le.{0} (θ a) (θ c)) xs ∧
+                        (∀
+                            (k :
+                              Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                            (a c d e :
+                              Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                            Nanuq.Source.EdgeGraph.OrientedQuartet.{max u_1 u_2, u_2}
+                                (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+                                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)
+                                  ⋯)
+                                k
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  a)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  c)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  d)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  e) →
+                              ¬(LT.lt.{0} (θ a) (θ d) ∧ LT.lt.{0} (θ d) (θ c) ∧ LT.lt.{0} (θ c) (θ e) ∨
+                                  LT.lt.{0} (θ d) (θ a) ∧ LT.lt.{0} (θ a) (θ e) ∧ LT.lt.{0} (θ e) (θ c))) ∧
+                          (∀
+                              (a c :
+                                Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                              LT.lt.{0} (θ a) (θ c) →
+                                Eq.{u_2 + 1}
+                                    (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                        hb)
+                                      ⋯ a)
+                                    (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                        hb)
+                                      ⋯ c) →
+                                  (∀
+                                      (w :
+                                        Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)),
+                                      ¬(LT.lt.{0} (θ a) (θ w) ∧ LT.lt.{0} (θ w) (θ c))) ∨
+                                    ∀
+                                      (w :
+                                        Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)),
+                                      ¬(LT.lt.{0} (θ w) (θ a) ∨ LT.lt.{0} (θ c) (θ w))) ∧
+                            (∀
+                                (a c :
+                                  Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb)),
+                                Ne.{u_2 + 1} a c →
+                                  Eq.{u_2 + 1}
+                                      (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                          hb)
+                                        ⋯ a)
+                                      (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                          hb)
+                                        ⋯ c) →
+                                    Nanuq.Restriction.CyclicGap
+                                      (List.map.{u_2, 0}
+                                        (fun t =>
+                                          code
+                                            (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                  u_3}
+                                                N b hb)
+                                              ⋯ t))
+                                        xs)
+                                      (code
+                                        (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)
+                                          ⋯ a))
+                                      (code
+                                        (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)
+                                          ⋯ a))) ∧
+                              ∃ k base dup,
+                                LE.le.{0} k 1 ∧
+                                  List.Nodup.{0} base ∧
+                                    Eq.{1}
+                                      (List.map.{u_2, 0}
+                                        (fun t =>
+                                          code
+                                            (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                  u_3}
+                                                N b hb)
+                                              ⋯ t))
+                                        (List.rotate.{u_2} xs k))
+                                      (Nanuq.Restriction.blocks base dup)
+'Nanuq.OpenedCore.actual_boundary_block_normal_form' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

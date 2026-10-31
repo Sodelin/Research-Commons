@@ -1,0 +1,88 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "source",
+    "exit_code": 1,
+    "seconds": 3.0148686850006925,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69SamplingReduction.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "batch_start": true,
+    "batch": 2
+  },
+  {
+    "step": "source",
+    "exit_code": 1,
+    "seconds": 4.7734208820038475,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69SamplingReduction.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "batch_start": true,
+    "batch": 3
+  },
+  {
+    "step": "source",
+    "exit_code": 0,
+    "seconds": 5.280824696004856,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69SamplingReduction.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean"
+    ],
+    "batch": 3
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.39439804200083,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/NamedAudit.lean"
+    ],
+    "batch": 3
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 5.128627558995504,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/OwnedAudit.lean"
+    ],
+    "batch": 3
+  }
+]
