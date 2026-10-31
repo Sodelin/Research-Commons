@@ -1,0 +1,29 @@
+{
+  "source_sha256": "714e225c190fb285873dc09e519f10afb03ec7c411beeeb33a4210d1011fdbca",
+  "definitions": [
+    {
+      "name": "corePoint",
+      "source": "def corePoint : CoreVertex N b \u2192 Plane\n  | .inl v => D.point v.val.val\n  | .inr e => D.arc e.val.val oneHalf"
+    },
+    {
+      "name": "coreEnd",
+      "source": "def coreEnd (e : N.OriginalBlobArc b) : unitInterval :=\n  if N.graph.IsHybrid (N.graph.target e.val) then oneHalf else 1"
+    },
+    {
+      "name": "coreParameter",
+      "source": "def coreParameter (e : N.OriginalBlobArc b) (t : unitInterval) : unitInterval :=\n  affineParameter 0 (coreEnd N b e) t"
+    },
+    {
+      "name": "coreRawArc",
+      "source": "def coreRawArc (e : N.OriginalBlobArc b) (t : unitInterval) : Plane :=\n  D.arc e.val (coreParameter N b e t)"
+    },
+    {
+      "name": "coreArc",
+      "source": "def coreArc (hg : N.graph.GalledDetour) (e : N.OriginalBlobArc b) :\n    Path (corePoint N D b ((coreGraph N b hg).source e))\n      (corePoint N D b ((coreGraph N b hg).target e)) where\n  toFun := coreRawArc N D b e\n  continuous_toFun := (D.arc e.val).continuous.comp\n    (show Continuous (coreParameter N b e) from by fun_prop [coreParameter,affineParameter])\n  source' := coreRawArc_source N D b hg e\n  target' := coreRawArc_target N D b hg e"
+    },
+    {
+      "name": "actualCoreCurves",
+      "source": "def actualCoreCurves (hg : N.graph.GalledDetour) : PlanarCurves (coreGraph N b hg) where\n  point := corePoint N D b\n  point_injective := corePoint_injective N D b\n  arc := coreArc N D b hg\n  arc_injective := coreArc_injective N D b hg\n  vertex_incidence := coreArc_vertex_incidence N D b hg\n  edge_incidence := coreArc_edge_incidence N D b hg"
+    }
+  ]
+}
