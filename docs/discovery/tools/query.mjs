@@ -2,6 +2,11 @@
 import {readFile} from 'node:fs/promises';
 import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters,validateAssessments} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
+
+import {loadPackage,solverBinding,solverSearchCards,coverageLedger,searchPackageModules} from './solver-bindings.mjs';
+import {validateCorpus} from './source-merge.mjs';
+import {readObservations} from './check-observations.mjs';
+import {loadScopedEvidence,searchScopedEvidence} from './scoped-evidence.mjs';
 import {queryResearchResults} from './research-results.mjs';
 // Explicit exits must wait for piped JSON to drain, including large pages.
 async function exitAfterOutput(){
@@ -9,9 +14,16 @@ async function exitAfterOutput(){
  process.exit(0);
 }
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
+let packageRoot=null,corpusPath=null,ledger=false,modules=false;
+const observationPaths=[],scopedPaths=[];
 let limit=25,offset=0,researchResults=null,researchPath=null,referenceCoverage=false;
 for(let i=0;i<args.length;i++){
   const k=args[i];
+  if(k==='--modules'){modules=true;continue;}
+  if(k==='--scoped-evidence'){if(!args[i+1])throw Error('--scoped-evidence needs a path');scopedPaths.push(args[++i]);continue;}
+  if(k==='--observation'){if(!args[i+1])throw Error('--observation needs a path');observationPaths.push(args[++i]);continue;}
+  if(k==='--package-root'||k==='--corpus'){if(!args[i+1])throw Error(`${k} needs a path`);if(k==='--package-root')packageRoot=args[++i];else corpusPath=args[++i];continue;}
+  if(k==='--ledger'){ledger=true;continue;}
   if(k==='--limit'||k==='--offset'){const value=Number(args[++i]);if(!Number.isSafeInteger(value)||value<0||(k==='--limit'&&(value<1||value>100)))throw Error('Use --limit 1..100 and nonnegative --offset.');if(k==='--limit')limit=value;else offset=value;continue;}
   if(k==='--reference-coverage'){referenceCoverage=true;continue;}
   if(k==='--research-path'){if(researchPath||!args[i+1])throw Error('Use one --research-path PREFIX');researchPath=args[++i];continue;}
@@ -23,6 +35,18 @@ for(let i=0;i<args.length;i++){
   if(!['--query','--status','--origin','--topic','--programme','--kind','--review','--formal-status','--novelty','--sort'].includes(k) || !args[i+1]) throw Error('Use --query TEXT, combinable --topic/--programme/--kind/--status/--origin/--review/--formal-status/--novelty, --sort subjective_reuse, [--refresh | --sources | --archive].');
   f[k==='--query'?'q':k.slice(2).replaceAll('-','_')]=args[++i];
 }
+if(scopedPaths.length){
+ if(packageRoot||ledger||sources||archive||changes||refresh||modules||observationPaths.length||corpusPath||Object.keys(f).some(k=>k!=='q'))throw Error('--scoped-evidence is an explicit local evidence view with optional --query only; it does not transfer claim facets or acceptance.');
+ const records=await loadScopedEvidence(scopedPaths),hits=searchScopedEvidence(records,f.q??'');
+ console.log(JSON.stringify({view:'explicit_local_scoped_evidence_not_claim_acceptance',total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();
+}
+if(packageRoot&&(sources||archive||changes))throw Error('--package-root joins claim lookup only; source/archive/change evidence has separate provenance.');
+if(ledger&&(!packageRoot||Object.keys(f).length))throw Error('--ledger needs --package-root and retains every claim; use normal lookup for filters.');
+if(corpusPath&&!sources)throw Error('--corpus needs --sources');
+if(observationPaths.length&&!packageRoot)throw Error('--observation needs --package-root');
+if(modules&&(!packageRoot||ledger||sources||archive||changes||refresh||observationPaths.length||Object.keys(f).some(k=>k!=='q')))throw Error('--modules needs --package-root and optional --query; module evidence has no transferred claim facets, ledger, refresh or observation status.');
+
+if((referenceCoverage||researchResults)&&(packageRoot||ledger||modules||observationPaths.length||corpusPath))throw Error('Package/observation/corpus views must remain separate from reference or research-results views.');
 if(referenceCoverage){if(researchResults||researchPath||refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--reference-coverage accepts --query and pagination only.');const data=JSON.parse(await readFile(new URL('../result-reference-coverage.json',import.meta.url)));const hits=data.records.filter(r=>!f.q||JSON.stringify(r).toLowerCase().includes(f.q.toLowerCase()));console.log(JSON.stringify({view:'canonical_reference_coverage_not_scientific_status',source_commit:data.tree_source_commit,coverage:data.coverage_counts,limitation:data.limitation,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();}
 if(researchPath&&!researchResults)throw Error('--research-path requires --research-results');
 if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath}),null,2));await exitAfterOutput();}
@@ -63,7 +87,7 @@ const ranking=validateRanking(JSON.parse(await readFile(new URL('../dist/subject
 const rankingSource=JSON.parse(await readFile(new URL('../dist/ranking-source.json',import.meta.url)));
 if(sources){
  if(f.sort)throw Error('--sort orders claim cards only; source hits retain their own evidence roles, not a transferred claim rank.');
- const corpus=JSON.parse(await readFile(new URL('../dist/source-corpus.json',import.meta.url)));
+ const corpus=validateCorpus(JSON.parse(await readFile(corpusPath??new URL('../dist/source-corpus.json',import.meta.url))));
  const allowed=Object.keys(f).some(k=>!['q','sort'].includes(k)&&f[k])?new Set(search(data.claims,{...f,q:''}).map(c=>c.id)):null;
  const hits=searchSources(corpus,f.q??'',allowed);
  console.log(JSON.stringify({coverage:corpus.coverage,registry_source:corpus.registry_source,
@@ -71,6 +95,11 @@ if(sources){
    current_registry_source:meta,results:hits.slice(offset,offset+limit).map(({body,...d})=>({...d,excerpt:sourceExcerpt(body,f.q??'')}))},null,2));
  await exitAfterOutput();
 }
-const hits=sortClaims(search(data.claims,f),f.sort,ranking);
+const pkg=packageRoot?await loadPackage(packageRoot):null;
+if(modules){const hits=searchPackageModules(pkg,f.q??'');console.log(JSON.stringify({package_source:pkg.identity,view:'exact_module_source_navigation_not_claim_acceptance',total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();}
+const observations=pkg?await readObservations(observationPaths,pkg):[];
+if(ledger){console.log(JSON.stringify({registry_source:meta,package_source:pkg.identity,...coverageLedger(data.claims,pkg),local_observations:observations},null,2));await exitAfterOutput();}
+const hits=sortClaims(search(pkg?solverSearchCards(data.claims,pkg,observations):data.claims,f),f.sort,ranking);
 console.log(JSON.stringify({coverage:data.coverage, registry_source:meta,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,
- results:hits.slice(offset,offset+limit).map(c=>reusePacket(c,meta,joins,ranking,rankingSource,assessments))},null,2));
+ ...(pkg?{package_source:pkg.identity,local_observations:observations}:{}),
+ results:hits.slice(offset,offset+limit).map(c=>{const original=data.claims.find(o=>o.id===c.id);return {...reusePacket(original,meta,joins,ranking,rankingSource,assessments),...(pkg?{solver:solverBinding(original,pkg)}:{})};})},null,2));

@@ -73,7 +73,7 @@ export function sourceQueryCandidates(documents,query){
 }
 export function searchSources(corpus,query,claimIds=null){
   if(!indexes.has(corpus)){
-    const index=new MiniSearch({idField:'url',fields:['title','body','claims']});
+    const index=new MiniSearch({idField:'url',fields:['title','body','claims','url']});
     index.addAll(corpus.documents.map(d=>({...d,claims:d.bindings.map(b=>[b.claim_id,b.catalogue_key,b.label,b.catalogue_record?.scope].filter(Boolean).join(' ')).join(' ')})));
     indexes.set(corpus,index);
   }

@@ -39,7 +39,7 @@ test('large paginated source JSON fully drains to a slow pipe before exit',async
  try {
   mkdirSync(join(fixture,'tools'));
   copyFileSync(cli,join(fixture,'tools/query.mjs'));
-  symlinkSync(join(dirname(cli),'research-results.mjs'),join(fixture,'tools/research-results.mjs'));
+  for(const name of ['research-results.mjs','solver-bindings.mjs','source-merge.mjs','check-observations.mjs','scoped-evidence.mjs'])symlinkSync(join(dirname(cli),name),join(fixture,'tools',name));
   symlinkSync(join(dirname(cli),'../dist'),join(fixture,'dist'));
   writeFileSync(join(fixture,'result-reference-coverage.json'),JSON.stringify({records:Array.from({length:100},(_,id)=>({id,description:'synthetic public reference '.repeat(2000)}))}));
   const child=spawn(process.execPath,[join(fixture,'tools/query.mjs'),'--reference-coverage','--limit','100'],{stdio:['ignore','pipe','pipe']});

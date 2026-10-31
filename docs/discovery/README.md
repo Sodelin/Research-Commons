@@ -177,3 +177,101 @@ node docs/discovery/tools/query.mjs --reference-coverage --query packages --limi
 ```
 
 `--reference-coverage` reads the committed reference receipt; the generation command accepts a freshly checked body manifest. Its metadata inputs come from that exact Git commit, with byte hashes. Historical query-run counts are preserved with an explicit correction where an earlier `unique_text_bodies` field actually counted indexed documents. Current coverage distinguishes distinct blob hashes from document records and paths. No whole-history, full-binary, private-task or all-linked-repository coverage is claimed.
+
+## Local package declaration-check bridge
+
+The local tooling also joins this SAME search model to the portable package.
+`--package-root` takes an existing `packages/research` checkout; it verifies its
+producer lock and every selected Lean source, preserves all canonical IDs and
+returns exact declarations, owners, source identities, historical printed types,
+runtime state, scientific obligations and the existing checker command. It does
+not recompute or override the Rust strict-completion gate. A named declaration
+check is separate from a scientific solver and from native/provider refinement.
+
+```sh
+node docs/discovery/tools/query.mjs --package-root /path/to/packages/research --query CB-MEMORY-004
+node docs/discovery/tools/query.mjs --package-root /path/to/packages/research --ledger > coverage.json
+node docs/discovery/tools/query.mjs --modules --package-root /path/to/packages/research --query DiscriminatingStatusTransport
+node docs/discovery/tools/check-claim.mjs --package-root /path/to/packages/research --claim CB-MEMORY-004 --execute --receipt new-observation.json
+node docs/discovery/tools/query.mjs --package-root /path/to/packages/research --observation new-observation.json --query 'CB-MEMORY-004 UNKNOWN'
+```
+
+A separate explicit local evidence view makes scoped checks searchable even when
+no canonical claim card or package module has been updated:
+
+```sh
+node docs/discovery/tools/query.mjs --scoped-evidence /path/to/scoped-evidence.json --query pointSet_eq
+```
+
+The manifest names local source files, a named type/axiom log and an owned-audit
+JSON, each with a SHA256. Paths must remain inside the manifest directory. The
+reader verifies file hashes, selected-module uniqueness, named ownership, the
+matching named/owned axiom rows and empty rejection lists before using the same
+source search engine. It returns the exact local source identities, printed
+types, selected scope and limitations. It does not run Lean, independently
+authenticate the receipt or prove that a listed source produced that audit, and
+it never changes claim, native-runtime or full-package status. Multiple explicit
+manifests can be searched together; ordinary claim facets deliberately do not
+apply to this view. Example manifests and their actual bounded receipts accompany
+the local handoff rather than replacing the published historical corpus.
+
+Without `--execute`, the check adapter only prints its plan. Execution uses the
+existing Rust checker with offline Cargo, actual usable pinned Rust/Lean compilers
+(including the official direct Lean release without an elan installation),
+an existing exact audited target build, a 45-second limit and a 4 MiB output
+limit. It installs nothing and starts no remote build. Missing prerequisites,
+rejections and limits return UNKNOWN/exit2. Only the actual complete scoped
+checker receipt can produce CHECKED_SCOPED_DECLARATIONS; successful process exit
+alone cannot. Observations are explicit local files with hashes and an explicitly
+limited metadata-file match field, not authenticated acceptance. That comparison
+does not establish checker/runtime/Cargo/toolchain or whole-environment identity.
+Observations are never written into canonical cards.
+The original source/observer/target/history/IDs/one-bank premises stay in the
+source declarations and authored scope fields. Historical printed types are
+labelled separately; missing type rows require the actual named check. Checked
+contexts must include the entire transitive project dependency closure and contain
+no duplicate modules. A larger explicit audited context is allowed when it remains
+dependency-closed and every listed source hash matches. Only declared
+Lean/Init/Std/Mathlib provider namespaces are external; an unknown missing project
+import refuses. Canonical package source
+URLs are emitted only for clean checkouts with the supported repository origin
+and canonical packages/research location; otherwise local source hashes remain.
+
+New proof bodies can now be ingested even when no claim card changed. Use a
+complete bounded local Git-tree delta between two full commit IDs in an existing
+Research-Commons checkout, then merge into a NEW corpus:
+
+```sh
+node docs/discovery/tools/ingest-git-delta.mjs --repo /path/to/Research-Commons --from COMMIT40 --to COMMIT40 --base docs/discovery/dist/source-corpus.json --output new-supplement.json
+node docs/discovery/tools/merge-sources.mjs docs/discovery/dist/source-corpus.json new-supplement.json new-corpus.json
+node docs/discovery/tools/query.mjs --sources --corpus new-corpus.json --query 'endpoint freedom'
+```
+
+This path reads changed Markdown blobs in research/handoffs/communications from
+exact local Git objects, verifies byte/SHA256/Git-blob identity, records excluded
+and unavailable paths, and refuses over 2,000 changed paths or 100 selected
+bodies. Each body is bounded to 512 KiB and each corpus to 16 MiB. New documents
+retain a source-only navigation role without inferred claim acceptance or master
+status. JSON/status files, comments, Lean bodies, unchanged older omissions and
+other roots need their separate readers; this is not full archive coverage.
+Existing bodies, canonical records and deployed snapshots are preserved. Use
+unfiltered source search and pagination before narrowing with claim facets.
+The shared browser/CLI source index also searches immutable URL paths. A new
+source directory key can therefore find its body even when that key occurs in
+neither its prose nor the canonical claim register.
+
+Node supplies this adapter because the reader already shares its validated model
+and ranking engine across CLI/browser; the existing Rust package remains the
+execution/completion authority. The adapter adds no duplicate mathematical engine
+or taxonomy, no model service, no installer and no deployment dependency.
+
+`--modules` searches the same source engine over exact package module identities,
+imports, source provenance, recorded supplier names and any source-matching external
+context receipt. This finds suppliers that have no direct named claim mapping,
+without inventing a canonical claim binding. Claim facets, claim observations and
+register refresh are deliberately refused in this source-only view. An external
+60-source receipt can be current while the full1500/520-name/all118 gates remain
+pending; historical source-only headers do not override a later exact matching
+receipt. Reading that metadata is neither a new compiler execution nor automatic
+cache admission. Reuse the closed context instead of rerunning it because the
+broader package is unfinished.
