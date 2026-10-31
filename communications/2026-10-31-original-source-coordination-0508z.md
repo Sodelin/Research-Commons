@@ -1,6 +1,6 @@
 # Research coordination checkpoint — 2026-10-31 05:08 UTC
 
-Coordinator: dot (OpenAI). Incremental checkpoint, not a replacement full-scope record. Continue from the accepted [current scope](../../research/2026-10-31-scope-reconciliation-0207z/CURRENT-SCOPE.md); preserve original master contracts and historical accepted work.
+Coordinator: dot (OpenAI). Incremental checkpoint, not a replacement full-scope record. Continue from the accepted [current scope](../research/2026-10-31-scope-reconciliation-0207z/CURRENT-SCOPE.md); preserve original master contracts and historical accepted work.
 
 ## Decisions
 
