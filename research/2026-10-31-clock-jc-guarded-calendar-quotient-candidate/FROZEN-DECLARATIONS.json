@@ -1,0 +1,71 @@
+{
+  "source_sha256": "4d95a9d7d4d74dea21756bcaee82081e6dbfda5a8e7362231984bc536912f185",
+  "note": "Complete declarations including proof bodies and adjacent comments; entire source authoritative.",
+  "declarations": [
+    {
+      "name": "destination_register",
+      "complete_frozen_text": "lemma destination_register (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (p : Option (Choice N s)) :\n    (state (stepDestination N s p)).register = (state s).register := by\n  cases p <;> rfl",
+      "sha256": "12270d79b0a85113877d66603dfe61243c1f97f1ac9015bc57bbe9b917b852e5"
+    },
+    {
+      "name": "step_register_law",
+      "complete_frozen_text": "lemma step_register_law (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (s : Code N sample) :\n    (sourceStep N r s).map (fun d => (state d).register) = PMF.pure ((state s).register) := by\n  rw [sourceStep,PMF.map_comp]\n  have he : (fun d : Code N sample => (state d).register) \u2218 stepDestination N s =\n      Function.const (Option (Choice N s)) ((state s).register) := by\n    funext p\n    exact destination_register N s p\n  rw [he,PMF.map_const]",
+      "sha256": "723d925302d39cf616f0e0366868937d04c14d1e0e98f7b829da51a12d4bb955"
+    },
+    {
+      "name": "iteration_register_law",
+      "complete_frozen_text": "lemma iteration_register_law (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (k : \u2115) (s : Code N sample) :\n    (sourceIteration N r k s).map (fun d => (state d).register) =\n      PMF.pure ((state s).register) := by\n  induction k generalizing s with\n  | zero => simp [sourceIteration,PMF.pure_map]\n  | succ k ih =>\n      rw [sourceIteration,PMF.map_bind]\n      simp_rw [ih]\n      change (sourceStep N r s).bind (PMF.pure \u2218 (fun d => (state d).register)) = _\n      rw [PMF.bind_pure_comp,step_register_law]\n\n/-- Original Poisson/source-step interval kernel, with the original rate bank. -/",
+      "sha256": "b964c65b624f09c1ecd5ba4fd6e7240d38b9e4d407df6a3112c0834eb48118d3"
+    },
+    {
+      "name": "actual_interval_register_law",
+      "complete_frozen_text": "theorem actual_interval_register_law (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (h : \u211d\u22650) (s : Code N sample) :\n    (sourceTimeKernel N r h s).map (fun d => (state d).register) =\n      PMF.pure ((state s).register) := by\n  simp only [sourceTimeKernel,PMF.map_bind,iteration_register_law,PMF.bind_const]",
+      "sha256": "963cca7e4f656c43360fd5199a0169cd44c86d8260fd7d0c8b211061dcbb7004"
+    },
+    {
+      "name": "program_step_register_law",
+      "complete_frozen_text": "lemma program_step_register_law (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (op : ProgramStep N) (s : Code N sample) :\n    (sourceProgramStep N r op s).map (fun d => (state d).register) =\n      PMF.pure ((state s).register) := by\n  cases op with\n  | interval h => exact actual_interval_register_law N r h s\n  | boundary b => exact actual_boundary_register_law N b s",
+      "sha256": "e9897b92f90aed2a956ca3e1c920f5b338ac5c700ec7a3b9c993584f393d1fcf"
+    },
+    {
+      "name": "program_step_support_register",
+      "complete_frozen_text": "lemma program_step_support_register (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (op : ProgramStep N) (s d : Code N sample)\n    (hd : d \u2208 (sourceProgramStep N r op s).support) :\n    (state d).register = (state s).register := by\n  have hm : (state d).register \u2208\n      ((sourceProgramStep N r op s).map (fun z => (state z).register)).support :=\n    PMF.mem_support_map_iff.mpr \u27e8d,hd,rfl\u27e9\n  rw [program_step_register_law] at hm\n  simpa using hm\n\n/-- Auxiliary extension off physical terminal support, NOT a replacement\nof the original observable. On actual ancestral endpoints it is rootWeight. -/",
+      "sha256": "928d6827ca70986e41837dd49962e84b6bafc773d9ebffc3c89ec8856fa5db90"
+    },
+    {
+      "name": "guardedRoot",
+      "complete_frozen_text": "def guardedRoot (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (s : Code N sample) : \u211d\u22650\u221e :=\n  if AncestralRoot N s then rootWeight N r L q s else 0\n\n/-- Reuses the accepted ancestry transfer and actual complete-root quotient. -/",
+      "sha256": "0ad50718c2f8220e057fbf933c2eee27c7eb6ab8aa976c14f9139a30e84b66b5"
+    },
+    {
+      "name": "guarded_root_observation",
+      "complete_frozen_text": "theorem guarded_root_observation [Nonempty Copy] (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (s t : Code N sample)\n    (hobs : observeCode N s = observeCode N t) :\n    guardedRoot N r L q s = guardedRoot N r L q t := by\n  by_cases hs : AncestralRoot N s\n  \u00b7 have ht := observation_ancestralRoot N s t hobs hs\n    simp only [guardedRoot,if_pos hs,if_pos ht]\n    exact actual_root_weight_observation N r L q hbal s t hobs hs\n  \u00b7 have ht : \u00ac AncestralRoot N t := fun ht =>\n        hs (observation_ancestralRoot N t s hobs.symm ht)\n    simp [guardedRoot,hs,ht]\n\n/-- Choose only from nonempty admitted observation fibres. The re-banked\nrepresentative need not be reachable; the equality assumption is the induction\nhypothesis on the actual auxiliary future, not a postulated source quotient. -/",
+      "sha256": "b30b1ebb4d3582d509f354d928fed248c49ecdcb712871dba1af3a68969ece93"
+    },
+    {
+      "name": "exists_bank_readout",
+      "complete_frozen_text": "lemma exists_bank_readout (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (f : Code N sample \u2192 \u211d\u22650\u221e)\n    (hf : \u2200 s t, observeCode N s = observeCode N t \u2192\n      (state s).register = (state t).register \u2192 f s = f t) (sigma : V \u2192 Bool) :\n    \u2203 F : BlockPopulationObservation Copy V E \u2192 \u211d\u22650\u221e,\n      \u2200 d : Code N sample, (state d).register = sigma \u2192 f d = F (observeCode N d) := by\n  let F : BlockPopulationObservation Copy V E \u2192 \u211d\u22650\u221e := fun o =>\n    if h : \u2203 d : Code N sample, observeCode N d = o then\n      f (reBank N (Classical.choose h) sigma) else 0\n  refine \u27e8F,?_\u27e9\n  intro d hd\n  have h : \u2203 e : Code N sample, observeCode N e = observeCode N d := \u27e8d,rfl\u27e9\n  dsimp only [F]\n  rw [dif_pos h]\n  have hr := actual_reBank_observation N (Classical.choose h) sigma\n  apply hf\n  \u00b7 exact (Classical.choose_spec h).symm.trans hr.1.symm\n  \u00b7 exact hd.trans hr.2.symm\n\n/-- Full finite-calendar auxiliary future factors through the SAME current\nobservation and SAME bank, derived by actual weighted backward induction. -/",
+      "sha256": "eb235e35f8a17216dda9c73ac660e522e8b0eb0c546f7891accbd0b79e01e708"
+    },
+    {
+      "name": "actual_guarded_calendar_quotient",
+      "complete_frozen_text": "theorem actual_guarded_calendar_quotient [Nonempty Copy] (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (ops : List (ProgramStep N))\n    (s t : Code N sample) (hobs : observeCode N s = observeCode N t)\n    (hreg : (state s).register = (state t).register) :\n    calendarValue N r L q (guardedRoot N r L q) ops s =\n      calendarValue N r L q (guardedRoot N r L q) ops t := by\n  induction ops generalizing s t with\n  | nil => exact guarded_root_observation N r L q hbal s t hobs\n  | cons op ops ih =>\n      let f := calendarValue N r L q (guardedRoot N r L q) ops\n      obtain \u27e8F,hF\u27e9 := exists_bank_readout N f (fun u v ho hr => ih u v ho hr) ((state s).register)\n      have hu (u : Code N sample) (hbank : (state u).register = (state s).register) :\n          calendarValue N r L q (guardedRoot N r L q) (op::ops) u =\n            \u2211 target : BlockPopulationObservation Copy V E,\n              segmentObservedWeight N r L q op u target * F target := by\n        rw [calendarValue,\u2190 actual_observation_readout_sum]\n        apply Finset.sum_congr rfl\n        intro d _\n        by_cases hz : sourceProgramStep N r op u d = 0\n        \u00b7 rw [actual_fibre_zero_of_source_zero N r L q op u d hz,zero_mul,zero_mul]\n        \u00b7 have hd := program_step_support_register N r op u d ((PMF.mem_support_iff _ _).mpr hz)\n          exact congrArg (segmentFibreWeight N r L q op u d * \u00b7) (hF d (hd.trans hbank))\n      rw [hu s rfl,hu t hreg.symm]\n      apply Finset.sum_congr rfl\n      intro target _\n      rw [actual_segment_observation_quotient N r L q op s t hobs hreg target]\n\n/-- Existing original endpoint law and initialized ancestry support make the\nauxiliary guard true almost everywhere; no new terminal support is assumed. -/",
+      "sha256": "a14a2e86a1037533d3fa2da03ac622149156f7934dac4c8dbb4a0a5a4941cbf7"
+    },
+    {
+      "name": "actual_initialized_ancestry_ae",
+      "complete_frozen_text": "theorem actual_initialized_ancestry_ae (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) :\n    let ops := compiledCalendarProgram N C H gamma common\n    let s := initialCode N sample register\n    \u2200\u1d50 past \u2202actualCalendarTraceLaw N r ops s, AncestralRoot N (calendarEnd N ops s past) := by\n  let ops := compiledCalendarProgram N C H gamma common\n  let s := initialCode N sample register\n  let p := sourceProgram N r ops s\n  have hs : \u2200\u1d50 d \u2202p.toMeasure, d \u2208 p.support := by\n    rw [\u2190 p.restrict_toMeasure_support]\n    exact ae_restrict_mem p.support_countable.measurableSet\n  have ha : \u2200\u1d50 d \u2202p.toMeasure, AncestralRoot N d := by\n    filter_upwards [hs] with d hd\n    exact initialized_original_calendar_ancestral_support N C sample register H gamma common r hd\n  change \u2200\u1d50 d \u2202(sourceProgram N r ops s).toMeasure, AncestralRoot N d at ha\n  rw [\u2190 actual_calendar_endpoint_law N r ops s] at ha\n  exact ae_of_ae_map (calendar_end_measurable N ops s).aemeasurable ha\n\n/-- The auxiliary guarded value equals the ORIGINAL value only where its\nphysical source support supplies the guard. Initialization is not modified. -/",
+      "sha256": "7a1c60ef95fe8d911f13c5752b09c9f54a30587563ad7c9dd1410f8d17759e06"
+    },
+    {
+      "name": "actual_initialized_guarded_value",
+      "complete_frozen_text": "theorem actual_initialized_guarded_value (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) :\n    let ops := compiledCalendarProgram N C H gamma common\n    let s := initialCode N sample register\n    calendarValue N r L q (rootWeight N r L q) ops s =\n      calendarValue N r L q (guardedRoot N r L q) ops s := by\n  let ops := compiledCalendarProgram N C H gamma common\n  let s := initialCode N sample register\n  rw [\u2190 actual_calendar_weighted_recursion N r L q (rootWeight N r L q) ops s,\n    \u2190 actual_calendar_weighted_recursion N r L q (guardedRoot N r L q) ops s]\n  apply lintegral_congr_ae\n  filter_upwards [actual_initialized_ancestry_ae N C sample register H gamma common r] with past hp\n  simp only [guardedRoot,if_pos hp]\n\n/-- Original full-labelled Fourier observable, not a guarded physical law.\nThe initial forest-potential factor is retained verbatim. -/",
+      "sha256": "d510784a34110a45b4fae1601453c85ebca62af8313cbf799082c9d0cdb8e920"
+    },
+    {
+      "name": "actual_observed_guarded_calendar",
+      "complete_frozen_text": "theorem actual_observed_guarded_calendar [Nonempty Copy] (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (hbal : \u2200 j, \u2211 x, q j x = 0) :\n    observedFourier L N C sample register H gamma common r q =\n      (initialPotentialWeight N C sample register L q *\n        calendarValue N r L q (guardedRoot N r L q)\n          (compiledCalendarProgram N C H gamma common)\n          (initialCode N sample register)).toReal := by\n  rw [actual_observed_calendar_recursion N C sample register H gamma common r L q hbal,\n    actual_initialized_guarded_value N C sample register H gamma common r L q]",
+      "sha256": "8c5b1c5ead1686b39d2b5fb9f55ceac8cb9bec8e8e2497986791e7f2ee1af152"
+    }
+  ]
+}
