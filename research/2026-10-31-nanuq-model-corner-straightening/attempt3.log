@@ -1,0 +1,98 @@
+CornerShear.lean:9:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+CornerShear.lean:12:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'backward', which is 'noncomputable'
+CornerShear.lean:30:42: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+CornerShear.lean:37:8: error: linarith failed to find a contradiction
+case mp.inl.left.h1
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : 0 ≤ p.ofLp 0 + p.ofLp 1
+a✝ : p.ofLp 1 < 1
+⊢ False
+failed
+CornerShear.lean:38:37: error: linarith failed to find a contradiction
+case mp.inl.right.left
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : 0 ≤ p.ofLp 0 + p.ofLp 1
+a✝ : p.ofLp 0 < -1
+⊢ False
+failed
+CornerShear.lean:38:37: error: linarith failed to find a contradiction
+case mp.inl.right.right
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - (p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : 0 ≤ p.ofLp 0 + p.ofLp 1
+a✝ : 1 < p.ofLp 0
+⊢ False
+failed
+CornerShear.lean:42:8: error: linarith failed to find a contradiction
+case mp.inr.left.h1
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : p.ofLp 0 + p.ofLp 1 ≤ 0
+a✝ : p.ofLp 0 < -1
+⊢ False
+failed
+CornerShear.lean:43:37: error: linarith failed to find a contradiction
+case mp.inr.right.left
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : p.ofLp 0 + p.ofLp 1 ≤ 0
+a✝ : p.ofLp 1 < -1
+⊢ False
+failed
+CornerShear.lean:43:37: error: linarith failed to find a contradiction
+case mp.inr.right.right
+p : P
+hz : ![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 1 = 0
+hb : |![p.ofLp 0 + p.ofLp 1, p.ofLp 0 - p.ofLp 1 - -(p.ofLp 0 + p.ofLp 1) + 2] 0| ≤ 2
+h : p.ofLp 0 + p.ofLp 1 ≤ 0
+a✝ : 1 < p.ofLp 1
+⊢ False
+failed
+CornerShear.lean:47:22: error: linarith failed to find a contradiction
+case mpr.inl.left.h1
+p : P
+hy : p.ofLp 1 = 1
+hx : |p.ofLp 0| ≤ 1
+hl : -1 ≤ p.ofLp 0
+hr : p.ofLp 0 ≤ 1
+a✝ : ![p.ofLp 0 + 1, p.ofLp 0 - 1 - (p.ofLp 0 + 1) + 2] 1 < 0
+⊢ False
+failed
+CornerShear.lean:47:22: error: linarith failed to find a contradiction
+case mpr.inl.right
+p : P
+hy : p.ofLp 1 = 1
+hx : |p.ofLp 0| ≤ 1
+hl : -1 ≤ p.ofLp 0
+hr : p.ofLp 0 ≤ 1
+a✝ : 2 < |![p.ofLp 0 + 1, p.ofLp 0 - 1 - (p.ofLp 0 + 1) + 2] 0|
+⊢ False
+failed
+CornerShear.lean:50:22: error: linarith failed to find a contradiction
+case mpr.inr.left.h1
+p : P
+hx : p.ofLp 0 = -1
+hy : |p.ofLp 1| ≤ 1
+hl : -1 ≤ p.ofLp 1
+hr : p.ofLp 1 ≤ 1
+a✝ : ![-1 + p.ofLp 1, -1 - p.ofLp 1 - -(-1 + p.ofLp 1) + 2] 1 < 0
+⊢ False
+failed
+CornerShear.lean:50:22: error: linarith failed to find a contradiction
+case mpr.inr.right
+p : P
+hx : p.ofLp 0 = -1
+hy : |p.ofLp 1| ≤ 1
+hl : -1 ≤ p.ofLp 1
+hr : p.ofLp 1 ≤ 1
+a✝ : 2 < |![-1 + p.ofLp 1, -1 - p.ofLp 1 - -(-1 + p.ofLp 1) + 2] 0|
+⊢ False
+failed
+'Nanuq.CornerShear.image_upperL' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
