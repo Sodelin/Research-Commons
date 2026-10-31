@@ -1,0 +1,3 @@
+# Source-only mathematical review
+
+31 October 2026. A separate AI-assisted review read all 273 lines and approved the intended actual record/failure-weighted recursion with unnormalized endpoint restrictions, exact root specialization, and original observed-Fourier identity retaining initialPotentialWeight. No finite-S, denominator or full-window premise is assumed. Measurability, restricted product integration and ENNReal factorization elaboration remain unverified until actual compilation. This is not expert peer review or a novelty determination. Later finite-state quotient, initialization cancellation and whole same-date boundary-block assembly remain separate derived joins.
