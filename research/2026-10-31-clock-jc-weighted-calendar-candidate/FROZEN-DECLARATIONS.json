@@ -1,0 +1,86 @@
+{
+  "source_sha256": "816b3f2ae4b416a49361565760ca2f127dcdc2ed455e67e277fc84555441dba3",
+  "note": "Complete declarations including proof bodies and adjacent comments; entire source authoritative.",
+  "declarations": [
+    {
+      "name": "segmentWeight",
+      "complete_frozen_text": "def segmentWeight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (op : ProgramStep N)\n    (s : Code N sample) (z : SegmentRecord N sample) : \u211d\u22650\u221e :=\n  match op with\n  | .interval h => locusTraceWeight N L q (Fintype.card Copy) s h z.1\n  | .boundary _ => 1",
+      "sha256": "1e61d34ed26a419eddadf22ddb550286d5c14ed2ef4f62090bce5e688c95145f"
+    },
+    {
+      "name": "segment_weight_measurable",
+      "complete_frozen_text": "lemma segment_weight_measurable (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (op : ProgramStep N) (s : Code N sample) :\n    Measurable (segmentWeight N L q op s) := by\n  cases op with\n  | interval h => exact (locus_trace_weight_measurable N L q _ s h).comp measurable_fst\n  | boundary b => exact measurable_const",
+      "sha256": "d2f44cfd66d61afd68647dd6b2606f1be1764cb2c11031f2fffb94a2c43e0fc7"
+    },
+    {
+      "name": "calendarWeight",
+      "complete_frozen_text": "def calendarWeight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) : (ops : List (ProgramStep N)) \u2192\n      Code N sample \u2192 (Fin ops.length \u2192 SegmentRecord N sample) \u2192 \u211d\u22650\u221e\n  | [],_,_ => 1\n  | op::ops,s,past => segmentWeight N L q op s (past 0) *\n      calendarWeight N L q ops (past 0).2 (Fin.tail past)",
+      "sha256": "334d2332ab16adf86e1fa27819c1db8eb35e7e0a26cae8285b8c1ec2be2ed773"
+    },
+    {
+      "name": "calendar_weight_measurable",
+      "complete_frozen_text": "lemma calendar_weight_measurable (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (ops : List (ProgramStep N)) (s : Code N sample) :\n    Measurable (calendarWeight N L q ops s) := by\n  induction ops generalizing s with\n  | nil => exact measurable_const\n  | cons op ops ih =>\n      have hd : Measurable (fun z : Code N sample \u00d7 (Fin ops.length \u2192 SegmentRecord N sample) =>\n          calendarWeight N L q ops z.1 z.2) := measurable_from_prod_countable_right ih\n      exact ((segment_weight_measurable N L q op s).comp (measurable_pi_apply 0)).mul\n        (hd.comp (((measurable_pi_apply 0).snd).prodMk\n          (measurable_pi_lambda _ (fun i => measurable_pi_apply i.succ))))",
+      "sha256": "78be62b597ebfff45071e8aa22155cd4b16e4324f2719313f95fe75b488936d7"
+    },
+    {
+      "name": "calendar_weight_of_success",
+      "complete_frozen_text": "lemma calendar_weight_of_success (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (ops : List (ProgramStep N))\n    (s : Code N sample) (past : Fin ops.length \u2192 SegmentRecord N sample)\n    (hs : \u2200 i, (past i).1.1 = true) :\n    calendarWeight N L q ops s past =\n      ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j, calendarOccupation N (q j) ops s past))) := by\n  induction ops generalizing s with\n  | nil => simp [calendarWeight,calendarOccupation]\n  | cons op ops ih =>\n      have ht := ih (past 0).2 (Fin.tail past) (fun i => hs i.succ)\n      have hh : segmentWeight N L q op s (past 0) =\n          ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n            segmentOccupation N (q j) op s (past 0)))) := by\n        cases op with\n        | interval h => simp [segmentWeight,locusTraceWeight,segmentOccupation,hs 0]\n        | boundary b => simp [segmentWeight,segmentOccupation]\n      simp only [calendarWeight,hh,ht,calendarOccupation,Finset.sum_add_distrib]\n      rw [mul_add,neg_add,Real.exp_add,ENNReal.ofReal_mul (Real.exp_nonneg _)]\n\n/-- Reuses the already proved finite-calendar success theorem; no new\nnormalization hypothesis or proof is introduced. -/",
+      "sha256": "06e91fcc516ed83a7b277a0495cadc63f06af7a078a76f31e5c3bce024e0e1e0"
+    },
+    {
+      "name": "actual_calendar_weight_exponential",
+      "complete_frozen_text": "theorem actual_calendar_weight_exponential (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (ops : List (ProgramStep N)) (s : Code N sample) :\n    \u2200\u1d50 past \u2202actualCalendarTraceLaw N r ops s,\n      calendarWeight N L q ops s past =\n        ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n          calendarOccupation N (q j) ops s past))) := by\n  filter_upwards [actual_calendar_success_ae N r ops s] with past hp\n  exact calendar_weight_of_success N L q ops s past hp\n\n/-- Original, UNNORMALIZED endpoint fibre integral. -/",
+      "sha256": "0d758c2eb0d35e8a6d1fe3ee6c8d20de54db7a9dc1ba1935c9f1a3693e444453"
+    },
+    {
+      "name": "segmentFibreWeight",
+      "complete_frozen_text": "def segmentFibreWeight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s d : Code N sample) : \u211d\u22650\u221e :=\n  \u222b\u207b z, segmentWeight N L q op s z \u2202(actualSegmentLaw N r op s).restrict {z | z.2 = d}\n\n/-- Finite backward recursion over the ACTUAL Code and endpoint fibres.\nThis definition does not assert the scientific S bound on the ambient type. -/",
+      "sha256": "166575540b83f9aee3209cc74f50478efec506347828eb4611ea0a2e295f0b3a"
+    },
+    {
+      "name": "calendarValue",
+      "complete_frozen_text": "def calendarValue (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (terminal : Code N sample \u2192 \u211d\u22650\u221e) : List (ProgramStep N) \u2192 Code N sample \u2192 \u211d\u22650\u221e\n  | [],s => terminal s\n  | op::ops,s => \u2211 d : Code N sample,\n      segmentFibreWeight N r L q op s d * calendarValue N r L q terminal ops d",
+      "sha256": "980e7fcd59c002a63f31ad1fe234f6ca0df466a742bf1bff2b28792d83e34b99"
+    },
+    {
+      "name": "weighted_readout_measurable",
+      "complete_frozen_text": "lemma weighted_readout_measurable (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (terminal : Code N sample \u2192 \u211d\u22650\u221e)\n    (ops : List (ProgramStep N)) (s : Code N sample) :\n    Measurable (fun past => calendarWeight N L q ops s past *\n      terminal (calendarEnd N ops s past)) :=\n  (calendar_weight_measurable N L q ops s).mul\n    (measurable_of_countable.comp (calendar_end_measurable N ops s))\n\n/-- Actual joint records, not a product of separately averaged epochs.\nAn arbitrary terminal function is allowed only as a readout of this exact\nsource measure; the complete-root specialization follows below. -/",
+      "sha256": "5a1f72fa69b4e364640745e2bb522d18e3a75ba046d51f4e0e6ddaf3d86d78cd"
+    },
+    {
+      "name": "actual_calendar_weighted_recursion",
+      "complete_frozen_text": "theorem actual_calendar_weighted_recursion (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (terminal : Code N sample \u2192 \u211d\u22650\u221e) (ops : List (ProgramStep N)) (s : Code N sample) :\n    (\u222b\u207b past, calendarWeight N L q ops s past * terminal (calendarEnd N ops s past)\n      \u2202actualCalendarTraceLaw N r ops s) = calendarValue N r L q terminal ops s := by\n  induction ops generalizing s with\n  | nil => simp [actualCalendarTraceLaw,calendarWeight,calendarEnd,calendarValue]\n  | cons op ops ih =>\n      letI := actual_segment_probability N r op s\n      rw [actualCalendarTraceLaw,lintegral_finsetSum_measure,calendarValue]\n      apply Finset.sum_congr rfl\n      intro d _\n      letI := actual_calendar_trace_probability N r ops d\n      have hF := weighted_readout_measurable N L q terminal (op::ops) s\n      have hm := record_cons_measurable N (sample := sample) ops.length\n      rw [lintegral_map hF hm]\n      rw [lintegral_prod\n        (\u03bc := (actualSegmentLaw N r op s).restrict {z | z.2 = d})\n        (\u03bd := actualCalendarTraceLaw N r ops d)\n        (fun z => calendarWeight N L q (op::ops) s (recordCons N ops.length z) *\n          terminal (calendarEnd N (op::ops) s (recordCons N ops.length z)))\n        (hF.comp hm).aemeasurable]\n      calc\n        _ = \u222b\u207b z, segmentWeight N L q op s z * calendarValue N r L q terminal ops d\n            \u2202(actualSegmentLaw N r op s).restrict {z | z.2 = d} := by\n          apply lintegral_congr_ae\n          filter_upwards [ae_restrict_mem\n            (measurableSet_eq_fun measurable_snd measurable_const :\n              MeasurableSet {z : SegmentRecord N sample | z.2 = d})] with z hz\n          simp only [recordCons,calendarWeight,calendarEnd,Fin.cons_zero,Fin.tail_cons,hz]\n          simp_rw [mul_assoc]\n          rw [lintegral_const_mul _ (weighted_readout_measurable N L q terminal ops d),ih d]\n        _ = _ := by\n          rw [lintegral_mul_const _ (segment_weight_measurable N L q op s)]\n          rfl\n\n/-- Exact root-weight readout, with no assumed root rational function. -/",
+      "sha256": "6440af8bd6fa7e9a4106ad537cd700fa37789c3784871ce6ab46ed0a10cbdf59"
+    },
+    {
+      "name": "actual_calendar_root_recursion",
+      "complete_frozen_text": "theorem actual_calendar_root_recursion (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (ops : List (ProgramStep N)) (s : Code N sample) :\n    (\u222b\u207b past, calendarWeight N L q ops s past *\n        rootWeight N r L q (calendarEnd N ops s past)\n      \u2202actualCalendarTraceLaw N r ops s) =\n        calendarValue N r L q (rootWeight N r L q) ops s :=\n  actual_calendar_weighted_recursion N r L q (rootWeight N r L q) ops s\n\n/-- A zero-duration boundary keeps its exact original PMF transition weight. -/",
+      "sha256": "920ab791e5d937c3b38e57d475ffe747e5a5e335f5796f6be38224c5408a8da6"
+    },
+    {
+      "name": "actual_boundary_fibre_weight",
+      "complete_frozen_text": "theorem actual_boundary_fibre_weight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (b : BoundaryOperation N) (s d : Code N sample) :\n    segmentFibreWeight N r L q (.boundary b) s d = boundaryKernel N b s d := by\n  simp only [segmentFibreWeight,segmentWeight,lintegral_const,one_mul,\n    Measure.restrict_apply MeasurableSet.univ,univ_inter]\n  simpa only [sourceProgramStep] using segment_end_fibre_mass N r (.boundary b) s d\n\n/-- Exact finite partition into endpoint fibres, without normalization. -/",
+      "sha256": "4548104f2014fd4662610befc3add74c47e143a0f88985abc3a2ae28a245474a"
+    },
+    {
+      "name": "finite_fibre_lintegral",
+      "complete_frozen_text": "lemma finite_fibre_lintegral {A B : Type*} [MeasurableSpace A] [MeasurableSpace B]\n    [Fintype B] [MeasurableSingletonClass B] (\u03bc : Measure A)\n    (g : A \u2192 B) (hg : Measurable g) (f : A \u2192 \u211d\u22650\u221e) :\n    (\u2211 b : B, \u222b\u207b x, f x \u2202\u03bc.restrict {x | g x = b}) = \u222b\u207b x, f x \u2202\u03bc := by\n  have hm (b : B) : MeasurableSet {x | g x = b} := hg (MeasurableSet.singleton b)\n  have hd : Pairwise (fun b c : B => Disjoint {x : A | g x = b} {x | g x = c}) := by\n    intro b c hbc\n    apply Set.disjoint_left.mpr\n    intro x hx hy\n    exact hbc (hx.symm.trans hy)\n  have hu : (\u22c3 b : B, {x : A | g x = b}) = Set.univ := by ext x; simp\n  simpa only [hu,Measure.restrict_univ,tsum_fintype] using\n    (lintegral_iUnion (\u03bc := \u03bc) hm hd f).symm",
+      "sha256": "992652481ac9ec99cf44a2b5db3f9b4c45ecb3c7535df227f0204f0f2a35f817"
+    },
+    {
+      "name": "ofReal_exp_add",
+      "complete_frozen_text": "lemma ofReal_exp_add (a b : \u211d) :\n    ENNReal.ofReal (Real.exp (a+b)) =\n      ENNReal.ofReal (Real.exp a) * ENNReal.ofReal (Real.exp b) := by\n  rw [Real.exp_add,ENNReal.ofReal_mul (Real.exp_nonneg _)]\n\n/-- Retained original initial potential. It need not vanish if the first\noriginal network date precedes the contemporaneous sampled-leaf date. -/",
+      "sha256": "44f6a1f566e3c4b29a436a3d762c23bf2d8b145316cd70646cbf6a1fda017938"
+    },
+    {
+      "name": "initialPotentialWeight",
+      "complete_frozen_text": "def initialPotentialWeight (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) : \u211d\u22650\u221e :=\n  let leafAge := fun x : Copy => C.age (N.leaf (sample x))\n  let M := fun x (_ : Copy) => leafAge x\n  ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n    forestPotential (q j) leafAge (state (initialCode N sample register)) M\n      (firstOriginalDate N C))))\n\n/-- The original full-labelled observed law equals the actual weighted\ncalendar recursion, with its original initialization factor. This does not\nreplace the source by a quotient, discard register dependence, or assert S. -/",
+      "sha256": "d74ecc742392062aa13ff9573c596b2ba9c0993fd534694385972cc2c1a2f2ab"
+    },
+    {
+      "name": "actual_observed_calendar_recursion",
+      "complete_frozen_text": "theorem actual_observed_calendar_recursion [Nonempty Copy]\n    (N : RootedBinary V E X) (C : Calendar N.graph) (sample : Copy \u2192 X)\n    (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool)\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) :\n    observedFourier L N C sample register H gamma common r q =\n      (initialPotentialWeight N C sample register L q *\n        calendarValue N r L q (rootWeight N r L q)\n          (compiledCalendarProgram N C H gamma common)\n          (initialCode N sample register)).toReal := by\n  let ops := compiledCalendarProgram N C H gamma common\n  let s := initialCode N sample register\n  let leafAge := fun x : Copy => C.age (N.leaf (sample x))\n  let M := fun x (_ : Copy) => leafAge x\n  let I := initialPotentialWeight N C sample register L q\n  let W := fun past => ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n    calendarOccupation N (q j) ops s past)))\n  let F := fun past => calendarWeight N L q ops s past *\n    rootWeight N r L q (calendarEnd N ops s past)\n  have hI : I \u2260 \u221e := ENNReal.ofReal_ne_top\n  have hfactor (d : Code N sample) (past : Fin ops.length \u2192 SegmentRecord N sample)\n      (c : Choice N d \u2192 \u211d) :\n      ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n        (forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) +\n          completeClockOccupation N (q j) ops s d past c)))) =\n        (I * W past) * completeRootWeight N L q d c := by\n    dsimp only [I,W,initialPotentialWeight,s,leafAge,M,completeClockOccupation,completeRootWeight]\n    simp only [Finset.sum_add_distrib,mul_add,neg_add,ofReal_exp_add,mul_assoc]\n  rw [actual_observed_balanced_clock_integral N C sample register H gamma common r L q hbal]\n  apply congrArg ENNReal.toReal\n  change (\u2211 d : Code N sample, \u222b\u207b past, \u222b\u207b c,\n      ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n        (forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) +\n          completeClockOccupation N (q j) ops s d past c))))\n        \u2202currentPairClockMeasure N r d\n        \u2202(actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d}) =\n    I * calendarValue N r L q (rootWeight N r L q) ops s\n  calc\n    _ = \u2211 d : Code N sample, \u222b\u207b past, I * F past\n        \u2202(actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d} := by\n      apply Finset.sum_congr rfl\n      intro d _\n      apply lintegral_congr_ae\n      have hm : MeasurableSet {past | calendarEnd N ops s past = d} :=\n        measurableSet_eq_fun (calendar_end_measurable N ops s) measurable_const\n      filter_upwards [ae_restrict_mem hm,\n        ae_restrict_of_ae (actual_calendar_weight_exponential N r L q ops s)] with past hd hw\n      simp_rw [hfactor d past]\n      rw [lintegral_const_mul' (I * W past) _\n        (ENNReal.mul_ne_top hI ENNReal.ofReal_ne_top)]\n      simp only [F,rootWeight,hd,hw,mul_assoc]\n    _ = \u222b\u207b past, I * F past \u2202actualCalendarTraceLaw N r ops s :=\n      finite_fibre_lintegral _ (calendarEnd N ops s) (calendar_end_measurable N ops s) _\n    _ = I * calendarValue N r L q (rootWeight N r L q) ops s := by\n      rw [lintegral_const_mul' I F hI]\n      exact congrArg (I * \u00b7) (actual_calendar_root_recursion N r L q ops s)",
+      "sha256": "402f063d75af46bc61712c970d1c4f19c2fd1ee7c084cebfa4b746d41ea68ee7"
+    }
+  ]
+}
