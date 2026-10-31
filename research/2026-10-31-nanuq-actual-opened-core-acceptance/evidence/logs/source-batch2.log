@@ -1,0 +1,326 @@
+<BUILD_ROOT>/source/ActualOpenedCore.lean:33:23: error: no macro or `[quot_precheck]` instance for syntax kind `Lean.Parser.Term.proj` found
+  (M).openedHybridGraph
+This means we cannot eagerly check your notation/quotation for unbound identifiers; you can use `set_option quotPrecheck false` to disable this check.
+<BUILD_ROOT>/source/ActualOpenedCore.lean:68:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:73:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:73:95: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+e : N.OriginalBlobArc b
+ht : N.graph.IsHybrid (N.graph.target ↑e)
+⊢ sorry () = Sum.inr ⟨Sum.inl e, ⋯⟩
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+e : N.OriginalBlobArc b
+ht : ¬N.graph.IsHybrid (N.graph.target ↑e)
+⊢ sorry () = Sum.inl ⟨Sum.inl ⟨N.graph.target ↑e, ⋯⟩, ⋯⟩
+<BUILD_ROOT>/source/ActualOpenedCore.lean:75:10: warning: This simp argument is unused:
+  coreEdgeLift
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [coreGraph, coreLift, ht]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:92:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:116:4: error: Type mismatch
+  (RootedBinary.actual_rooted_cap_inner_hybrid_iff N b (N.originalPortInner b p)).mpr hh
+has type
+  (N.actualRootedCapGraph b).IsHybrid (Sum.inl (N.originalPortInner b p))
+but is expected to have type
+  {
+        source :=
+          Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+            (Sum.elim
+              (fun p =>
+                if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p)
+                else N.actualRootedCapRoot b)
+              fun x => N.actualRootedCapRoot b),
+        target :=
+          Sum.elim (fun e => Sum.inl ⟨N.graph.target ↑e, ⋯⟩)
+            (Sum.elim (fun p => Sum.inr (Sum.inl p)) fun x => Sum.inl (N.originalRootedCapEntry b)) }.IsHybrid
+    (Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+      (Sum.elim
+        (fun p =>
+          if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b)
+        fun x => N.actualRootedCapRoot b)
+      (Sum.inr (Sum.inl p)))
+<BUILD_ROOT>/source/ActualOpenedCore.lean:115:49: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [RootedBinary.actualRootedCapGraph, if_pos]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:115:52: warning: This simp argument is unused:
+  if_pos
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [RootedBinary.actualRootedCapGraph, hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:148:25: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:152:25: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:159:38: error: invalid `▸` notation, expected result type of cast is 
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑f)
+however, the equality 
+  Eq.symm he
+of type 
+  (N.actualEveryNonleafRootedCapSource b hb).openedOriginalEdge (Sum.inr g) =
+    (N.actualEveryNonleafRootedCapSource b hb).openedOriginalEdge (Sum.inl f)
+does not contain the expected result type on either the left or the right hand side
+<BUILD_ROOT>/source/ActualOpenedCore.lean:160:38: error: invalid `▸` notation, expected result type of cast is 
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑g)
+however, the equality 
+  he
+of type 
+  (N.actualEveryNonleafRootedCapSource b hb).openedOriginalEdge (Sum.inr f) =
+    (N.actualEveryNonleafRootedCapSource b hb).openedOriginalEdge (Sum.inl g)
+does not contain the expected result type on either the left or the right hand side
+<BUILD_ROOT>/source/ActualOpenedCore.lean:178:27: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:178:62: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:185:38: warning: This simp argument is unused:
+  RootedBinary.openedHybridGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.rootSkeletonGraph, RootedBinary.actualRootedCapGraph, hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:186:8: warning: This simp argument is unused:
+  RootedBinary.rootSkeletonGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.actualRootedCapGraph, hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:186:39: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph, hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:186:73: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:193:38: warning: This simp argument is unused:
+  RootedBinary.openedHybridGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.rootSkeletonGraph, RootedBinary.actualRootedCapGraph, hp,
+    RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:194:8: warning: This simp argument is unused:
+  RootedBinary.rootSkeletonGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.actualRootedCapGraph, hp,
+    RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:194:39: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph, hp,
+    RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:194:73: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:195:8: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapRoot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, hp, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:197:36: warning: This simp argument is unused:
+  RootedBinary.openedHybridGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.rootSkeletonGraph, RootedBinary.actualRootedCapGraph,
+    RootedBinary.actualRootedCapRoot, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:198:6: warning: This simp argument is unused:
+  RootedBinary.rootSkeletonGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.actualRootedCapGraph,
+    RootedBinary.actualRootedCapRoot, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:198:37: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapRoot, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:199:6: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapRoot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:199:39: warning: This simp argument is unused:
+  r.property
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, RootedBinary.actualRootedCapRoot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:208:10: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:237:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:237:49: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+<BUILD_ROOT>/source/ActualOpenedCore.lean:247:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:261:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:267:4: error: Type mismatch: After simplification, term
+  hv
+ has type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inr r))
+but is expected to have type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inr r)))
+<BUILD_ROOT>/source/ActualOpenedCore.lean:269:28: error(lean.unknownIdentifier): Unknown identifier `hg`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:271:37: error(lean.unknownIdentifier): Unknown identifier `hg`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:271:63: error: Tactic `cases` failed: major premise type is not an inductive type
+  ?m.187 a
+
+Explanation: the `cases` tactic is for constructor-based reasoning as well as for applying custom cases principles with a 'using' clause or a registered '@[cases_eliminator]' theorem. The above type neither is an inductive type nor has a registered theorem.
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+k : N.OriginalBlobArc b
+r : N.RootedCapRootTag b
+hv : (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inr r))
+e : N.RootedCapArc b := Sum.inr (Sum.inr r)
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source e)
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target e)
+a : ?m.183
+he : ?m.187 a
+⊢ ?m.188 a he
+<BUILD_ROOT>/source/ActualOpenedCore.lean:264:71: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+k : N.OriginalBlobArc b
+r : N.RootedCapRootTag b
+hv : (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inr r))
+e : N.RootedCapArc b := Sum.inr (Sum.inr r)
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source e)
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target e)
+⊢ sorry
+<BUILD_ROOT>/source/ActualOpenedCore.lean:279:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:285:43: error: unknown free variable `_fvar.20421`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:286:14: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:282:56: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+k : N.OriginalBlobArc b
+p : N.BlobPort b
+hv : (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inl p))
+e : N.RootedCapArc b := Sum.inr (Sum.inl p)
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target e)
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source e)
+⊢ sorry
+<BUILD_ROOT>/source/ActualOpenedCore.lean:309:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:313:30: error(lean.unknownIdentifier): Unknown identifier `hg`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:314:36: error(lean.unknownIdentifier): Unknown identifier `hg`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:327:5: error: elaboration function for `_private.ActualOpenedCore.0.Nanuq.OpenedCore.termOG` has not been implemented
+  OG
+<BUILD_ROOT>/source/ActualOpenedCore.lean:332:35: error: Application type mismatch: The argument
+  hg
+has type
+  N.graph.GalledDetour
+but is expected to have type
+  N.NonleafBlob b
+in the application
+  collapse_fibre_walk N b hg

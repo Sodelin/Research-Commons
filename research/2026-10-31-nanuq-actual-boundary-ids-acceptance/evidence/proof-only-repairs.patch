@@ -1,0 +1,18 @@
+--- frozen-original
++++ checked-proof-only-variant
+@@ -35,10 +35,12 @@
+   obtain ⟨a,b,W,hrot,hperm⟩ := hc.rotate hk
+   have hab : a≠b := hd.ne_of_isLink hrot.isLink
+   have hzab : z=a ∨ z=b := hd.vertex_mem_edgeArc hrot.isLink hz hzk
+-  rcases hzab with rfl | rfl
+-  · obtain ⟨f,g,hfg,hf,hg,hfi,hgi⟩ := cycle_start_two hrot hab
++  rcases hzab with hza | hzb
++  · subst z
++    obtain ⟨f,g,hfg,hf,hg,hfi,hgi⟩ := cycle_start_two hrot hab
+     exact ⟨f,g,hfg,hperm.mem_iff.mp hf,hperm.mem_iff.mp hg,hfi,hgi⟩
+-  · have hreverse : G.IsCycleThrough k b a W.reverse :=
++  · subst z
++    have hreverse : G.IsCycleThrough k b a W.reverse :=
+       ⟨hrot.isLink.symm,hrot.isPath.reverse,by simpa using hrot.notMem⟩
+     obtain ⟨f,g,hfg,hf,hg,hfi,hgi⟩ := cycle_start_two hreverse hab.symm
+     have hf' : f∈k::W := by simpa using hf
