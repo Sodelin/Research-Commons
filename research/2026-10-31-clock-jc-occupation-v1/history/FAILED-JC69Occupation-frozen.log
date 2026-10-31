@@ -1,0 +1,146 @@
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:31:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69Occupation.potential_time_increment`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:36:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69Occupation.potential_graft_at_time`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:130:59: error: unsolved goals
+Copy : Type u_1
+V : Type u_2
+E : Type u_3
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+q : Copy → Base
+leafAge : Copy → ℝ
+s : State V E Copy
+M : Copy → Copy → ℝ
+T U : ℝ
+⊢ ∑ l ∈ s.live, potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) U =
+    ∑ l ∈ s.live, potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) T +
+      ∑ i ∈ s.live, charged q (s.genealogy i) * (U - T)
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:131:29: warning: This simp argument is unused:
+  potential_time_increment
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [forestPotential, Finset.sum_add_distrib, Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:131:54: warning: This simp argument is unused:
+  Finset.sum_add_distrib
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [forestPotential, potential_time_increment, Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:168:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  decode (mergeAgeMatrix s a b T M) ((s.genealogy a).graft (s.genealogy b))
+in the target expression
+  potential q leafAge (if a = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy a)
+      (decode (mergeAgeMatrix s a b T M) (if a = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy a)) T =
+    potential q leafAge (s.genealogy a) (decode M (s.genealogy a)) T +
+      if True then potential q leafAge (s.genealogy b) (decode M (s.genealogy b)) T else 0
+
+case pos
+Copy : Type u_1
+V : Type u_2
+E : Type u_3
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+q : Copy → Base
+leafAge : Copy → ℝ
+s : State V E Copy
+hs : Valid s
+a b : Copy
+hm : LegalMerge s a b
+M : Copy → Copy → ℝ
+T : ℝ
+ha hl : a ∈ s.live.erase b
+⊢ potential q leafAge (if a = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy a)
+      (decode (mergeAgeMatrix s a b T M) (if a = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy a)) T =
+    potential q leafAge (s.genealogy a) (decode M (s.genealogy a)) T +
+      if True then potential q leafAge (s.genealogy b) (decode M (s.genealogy b)) T else 0
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:170:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  decode (mergeAgeMatrix s a b T M) (s.genealogy l)
+in the target expression
+  potential q leafAge (if l = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy l)
+      (decode (mergeAgeMatrix s a b T M) (if l = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy l)) T =
+    potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) T
+
+case neg
+Copy : Type u_1
+V : Type u_2
+E : Type u_3
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+q : Copy → Base
+leafAge : Copy → ℝ
+s : State V E Copy
+hs : Valid s
+a b : Copy
+hm : LegalMerge s a b
+M : Copy → Copy → ℝ
+T : ℝ
+ha : a ∈ s.live.erase b
+l : Copy
+hl : l ∈ s.live.erase b
+he : ¬l = a
+⊢ potential q leafAge (if l = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy l)
+      (decode (mergeAgeMatrix s a b T M) (if l = a then (s.genealogy a).graft (s.genealogy b) else s.genealogy l)) T =
+    potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) T
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:167:23: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [merge]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+frozen-source/ResearchCommons/MSCI/JC69Occupation.lean:177:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69Occupation.potential_transport`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'ResearchCommons.MSCI.JC69Occupation.amplitude_eq_exposure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.root_fourier_exposure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.decode_actual_graft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.forest_potential_time_increment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.balanced_complete_potential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.balanced_complete_locus_fourier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_charge_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_forest_occupation_increment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_merge_potential_conserved' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_coded_merger_potential' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_literal_occupation_identity' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69Occupation.actual_literal_locus_occupation_identity' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

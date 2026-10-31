@@ -1,0 +1,138 @@
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:43:8: error: 'change' tactic failed, pattern
+  codeCharge N q s * (age + (z 0).2.1 - (age + previous)) +
+      occupationAt N q n (z 0).2.2 (age + (z 0).2.1) (age + horizon) (shiftTraceAges N age fun i => z i.succ) =
+    ?m.154
+is not definitionally equal to target
+  (if (z 0).1 = true then
+      codeCharge N q s * (age + (z 0).2.1 - (age + previous)) +
+        occupationAt N q n (z 0).2.2 (age + (z 0).2.1) (age + horizon) fun i =>
+          ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else
+      occupationAt N q n s (age + previous) (age + horizon) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    codeCharge N q s * ((z 0).2.1 - previous) + occupationAt N q n (z 0).2.2 (z 0).2.1 horizon fun i => z i.succ
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:49:8: error: Tactic `apply` failed: could not unify the conclusion of `ih`
+  occupationAt N q n ?s (age + ?previous) (age + horizon) (shiftTraceAges N age ?z) =
+    occupationAt N q n ?s ?previous horizon ?z
+with the goal
+  (if (z 0).1 = true then
+      codeCharge N q s * (age + (z 0).2.1 - (age + previous)) +
+        occupationAt N q n (z 0).2.2 (age + (z 0).2.1) (age + horizon) fun i =>
+          ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else
+      occupationAt N q n s (age + previous) (age + horizon) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    occupationAt N q n s previous horizon fun i => z i.succ
+
+Note: The full type of `ih` is
+  ∀ (s : Code N sample) (previous : ℝ) (z : ClockTrace N sample n),
+    occupationAt N q n s (age + previous) (age + horizon) (shiftTraceAges N age z) =
+      occupationAt N q n s previous horizon z
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+q : Copy → Base
+horizon age : ℝ
+n : ℕ
+ih :
+  ∀ (s : Code N sample) (previous : ℝ) (z : ClockTrace N sample n),
+    occupationAt N q n s (age + previous) (age + horizon) (shiftTraceAges N age z) =
+      occupationAt N q n s previous horizon z
+s : Code N sample
+previous : ℝ
+z : ClockTrace N sample (n + 1)
+h : ¬(z 0).1 = true
+⊢ (if (z 0).1 = true then
+      codeCharge N q s * (age + (z 0).2.1 - (age + previous)) +
+        occupationAt N q n (z 0).2.2 (age + (z 0).2.1) (age + horizon) fun i =>
+          ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else
+      occupationAt N q n s (age + previous) (age + horizon) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    occupationAt N q n s previous horizon fun i => z i.succ
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:51:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69TraceOccupation.occupation_empty`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:77:18: warning: This simp argument is unused:
+  literalMarkedTrace
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [occupationAt, literalOccupation]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:111:26: error: `fun_prop` was unable to prove `Measurable ?m.236`
+
+Issues:
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:114:24: error: `fun_prop` was unable to prove `Measurable ?m.286`
+
+Issues:
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:130:44: error: expected token
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:130:41: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:130:43: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:139:51: error: `fun_prop` was unable to prove `Measurable ?m.75`
+
+Issues:
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:149:44: error: expected token
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:149:41: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:149:43: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+frozen-source/ResearchCommons/MSCI/JC69TraceOccupation.lean:160:61: error: `fun_prop` was unable to prove `Measurable ?m.100`
+
+Issues:
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_shift' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_prepend' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69TraceOccupation.actual_trace_occupation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_joint_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69TraceOccupation.trace_weight_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69TraceOccupation.locus_trace_weight_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

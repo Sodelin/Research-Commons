@@ -1,0 +1,146 @@
+--- a/ResearchCommons/MSCI/JC69TraceOccupation.lean
++++ b/ResearchCommons/MSCI/JC69TraceOccupation.lean
+@@ -38,15 +38,15 @@
+   induction n generalizing s previous with
+   | zero => simp [occupationAt]
+   | succ n ih =>
+-      by_cases h : (z 0).1 = true
+-      · simp only [occupationAt,shiftTraceAges,if_pos h]
+-        change codeCharge N q s * ((age+(z 0).2.1)-(age+previous)) +
++      simp only [occupationAt]
++      dsimp (config := {instances := true}) only [shiftTraceAges]
++      split_ifs with h
++      · change codeCharge N q s * ((age+(z 0).2.1)-(age+previous)) +
+           occupationAt N q n (z 0).2.2 (age+(z 0).2.1) (age+horizon)
+             (shiftTraceAges N age (fun i => z i.succ)) = _
+         rw [ih]
+         ring
+-      · simp only [occupationAt,shiftTraceAges,if_neg h]
+-        apply ih
++      · apply ih
+ 
+ lemma occupation_empty (N : RootedBinary V E X) {sample : Copy → X} (q : Copy → Base)
+     (n : ℕ) (s : Code N sample) (previous horizon : ℝ) :
+@@ -105,13 +105,19 @@
+         apply measurable_from_prod_countable_left
+         intro d
+         exact ih d
++      have hzero : Measurable (fun z : ℝ × ℝ × ClockTrace N sample (n+1) => z.2.2 0) :=
++        (measurable_pi_apply 0).comp measurable_snd.snd
++      have htail : Measurable (fun z : ℝ × ℝ × ClockTrace N sample (n+1) => fun i : Fin n => z.2.2 i.succ) := by
++        apply measurable_pi_lambda
++        intro i
++        exact (measurable_pi_apply i.succ).comp measurable_snd.snd
+       have hfuture : Measurable (fun z : ℝ × ℝ × ClockTrace N sample (n+1) =>
+           occupationAt N q n (z.2.2 0).2.2 (z.2.2 0).2.1 z.2.1
+             (fun i => z.2.2 i.succ)) := by
+-        exact hd.comp (by fun_prop)
++        exact hd.comp ((hzero.snd.fst.prodMk (measurable_snd.fst.prodMk htail)).prodMk hzero.snd.snd)
+       have hrest : Measurable (fun z : ℝ × ℝ × ClockTrace N sample (n+1) =>
+           occupationAt N q n s z.1 z.2.1 (fun i => z.2.2 i.succ)) :=
+-        (ih s).comp (by fun_prop)
++        (ih s).comp (measurable_fst.prodMk (measurable_snd.fst.prodMk htail))
+       change Measurable (fun z : ℝ × ℝ × ClockTrace N sample (n+1) =>
+         if (z.2.2 0).1 = true then
+           codeCharge N q s*((z.2.2 0).2.1-z.1) +
+@@ -127,7 +133,7 @@
+ zero weight; the eventual full-mass proof must justify discarding them. -/
+ def traceWeight (N : RootedBinary V E X) {sample : Copy → X}
+     (q : Copy → Base) (n : ℕ) (s : Code N sample) (t : ℝ)
+-    (z : Bool × ClockTrace N sample n) : ℝ≥0∞ :=
++    (z : Bool × ClockTrace N sample n) : ENNReal :=
+   if z.1 = true then
+     ENNReal.ofReal (Real.exp (-((4/3:ℝ)*occupationAt N q n s 0 t z.2))) else 0
+ 
+@@ -136,7 +142,7 @@
+     Measurable (traceWeight N q n s t) := by
+   have ho : Measurable (fun z : Bool × ClockTrace N sample n =>
+       occupationAt N q n s 0 t z.2) :=
+-    (occupation_joint_measurable N q n s).comp (by fun_prop)
++    (occupation_joint_measurable N q n s).comp (measurable_const.prodMk (measurable_const.prodMk measurable_snd))
+   apply Measurable.ite
+   · exact measurableSet_eq_fun measurable_fst measurable_const
+   · exact (Real.measurable_exp.comp (measurable_const.mul ho).neg).ennreal_ofReal
+@@ -146,7 +152,7 @@
+ summed before exponentiation; independent sites never resample the genealogy. -/
+ def locusTraceWeight (N : RootedBinary V E X) {sample : Copy → X}
+     (L : ℕ) (q : Fin L → Copy → Base) (n : ℕ) (s : Code N sample) (t : ℝ)
+-    (z : Bool × ClockTrace N sample n) : ℝ≥0∞ :=
++    (z : Bool × ClockTrace N sample n) : ENNReal :=
+   if z.1 = true then ENNReal.ofReal
+     (Real.exp (-((4/3:ℝ)* ∑ j, occupationAt N (q j) n s 0 t z.2))) else 0
+ 
+@@ -157,7 +163,7 @@
+       ∑ j, occupationAt N (q j) n s 0 t z.2) := by
+     apply Finset.measurable_sum
+     intro j _
+-    exact (occupation_joint_measurable N (q j) n s).comp (by fun_prop)
++    exact (occupation_joint_measurable N (q j) n s).comp (measurable_const.prodMk (measurable_const.prodMk measurable_snd))
+   apply Measurable.ite
+   · exact measurableSet_eq_fun measurable_fst measurable_const
+   · exact (Real.measurable_exp.comp (measurable_const.mul ho).neg).ennreal_ofReal
+--- a/ResearchCommons/MSCI/JC69CurrentPartition.lean
++++ b/ResearchCommons/MSCI/JC69CurrentPartition.lean
+@@ -115,13 +115,24 @@
+     {a b : Copy} (hm : LegalMerge s a b) :
+     currentBlocks (merge s a b) = currentBlocks (merge s b a) := by
+   rw [actual_merge_blocks s hs hm,actual_merge_blocks s hs (legal_merge_reverse s hm)]
+-  rw [Finset.union_comm,Finset.erase_comm]
++  exact congrArg₂ (fun (block : Finset Copy) (blocks : Finset (Finset Copy)) => insert block blocks)
++    (Finset.union_comm _ _) (by
++      ext block
++      simp only [Finset.mem_erase]
++      tauto)
+ 
+ /-- Both orientations also retain every original copy's actual population. -/
+ theorem actual_merge_orientation_locations (s : State V E Copy)
+     {a b : Copy} (hm : LegalMerge s a b) (x : Copy) :
+     copyLocation (merge s a b) x = copyLocation (merge s b a) x := by
+-  rw [merge_population_preserved s hm,merge_population_preserved s (legal_merge_reverse s hm)]
++  have preserve : ∀ {u v : Copy}, LegalMerge s u v →
++      copyLocation (merge s u v) x = copyLocation s x := by
++    intro u v legal
++    by_cases h : s.ancestor x = v
++    · simp only [copyLocation, merge, if_pos h]
++      simpa only [h] using legal.same_population
++    · simp only [copyLocation, merge, if_neg h]
++  exact (preserve hm).trans (preserve (legal_merge_reverse s hm)).symm
+ 
+ theorem actual_transport_blocks (s : State V E Copy)
+     (location : Copy → Location V E) (event : SourceEvent V E Copy) :
+--- a/ResearchCommons/MSCI/JC69Occupation.lean
++++ b/ResearchCommons/MSCI/JC69Occupation.lean
+@@ -128,7 +128,14 @@
+     (s : State V E Copy) (M : Copy → Copy → ℝ) (T U : ℝ) :
+     forestPotential q leafAge s M U = forestPotential q leafAge s M T +
+       (∑ l ∈ s.live, charged q (s.genealogy l)) * (U-T) := by
+-  simp only [forestPotential,potential_time_increment,Finset.sum_add_distrib,Finset.sum_mul]
++  unfold forestPotential
++  have term : ∀ l ∈ s.live,
++      potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) U =
++      potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) T +
++        charged q (s.genealogy l) * (U-T) := by
++    intro l _
++    exact potential_time_increment q leafAge _ _ T U
++  rw [Finset.sum_congr rfl term, Finset.sum_add_distrib, Finset.sum_mul]
+ 
+ /-- The pending-branch coefficient is the original current-block charge
+ count used by the already proved killed-rate inequalities (one site). -/
+@@ -164,10 +171,13 @@
+     intro l hl
+     by_cases he : l = a
+     · subst l
+-      simp only [merge,if_pos rfl]
+-      rw [decode_actual_graft s hs hm M T,potential_graft_at_time]
+-    · simp only [merge,if_neg he,add_zero]
+-      rw [decode_old_live_after_merge s hs hm M T l (Finset.mem_erase.mp hl).2]
++      have gene : (merge s a b).genealogy a = .graft (s.genealogy a) (s.genealogy b) := by
++        simp [merge]
++      rw [gene, if_pos rfl, decode_actual_graft s hs hm M T, potential_graft_at_time]
++    · have gene : (merge s a b).genealogy l = s.genealogy l := by
++        simp [merge, he]
++      rw [gene, if_neg he, add_zero,
++        decode_old_live_after_merge s hs hm M T l (Finset.mem_erase.mp hl).2]
+   change (∑ l ∈ s.live.erase b, _) = _
+   rw [Finset.sum_congr rfl hterm,Finset.sum_add_distrib]
+   simp only [Finset.sum_ite_eq',ha,if_true]

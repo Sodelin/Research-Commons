@@ -1,0 +1,246 @@
+ResearchCommons.MSCI.JC69TraceOccupation.occupation_shift.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (previous horizon age : ℝ) (z : GProgram.G2.LiteralMarkedClockTrace.ClockTrace N sample n) :
+  ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q n s (age + previous) (age + horizon)
+      (GProgram.G2.ActualDecorationFold.shiftTraceAges N age z) =
+    ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q n s previous horizon z
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69TraceOccupation.occupation_prepend.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ) (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (age horizon : ℝ) (z : GProgram.G2.LiteralMarkedClockTrace.ClockTrace N sample n) :
+  ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q (n + 1) s 0 horizon
+      (GProgram.G2.LiteralMarkedClockTrace.prependTrace N age d z) =
+    ResearchCommons.MSCI.JC69Occupation.codeCharge N q s * age +
+      ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q n d 0 (horizon - age) z
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_prepend' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69TraceOccupation.actual_trace_occupation.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (t : ℝ) (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ) :
+  ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q n s 0 t
+      (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c).2 =
+    ResearchCommons.MSCI.JC69Occupation.literalOccupation N q n t s c
+'ResearchCommons.MSCI.JC69TraceOccupation.actual_trace_occupation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69TraceOccupation.occupation_joint_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) :
+  Measurable fun z => ResearchCommons.MSCI.JC69TraceOccupation.occupationAt N q n s z.1 z.2.1 z.2.2
+'ResearchCommons.MSCI.JC69TraceOccupation.occupation_joint_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69TraceOccupation.trace_weight_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (t : ℝ) : Measurable (ResearchCommons.MSCI.JC69TraceOccupation.traceWeight N q n s t)
+'ResearchCommons.MSCI.JC69TraceOccupation.trace_weight_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69TraceOccupation.locus_trace_weight_measurable.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ) :
+  Measurable (ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n s t)
+'ResearchCommons.MSCI.JC69TraceOccupation.locus_trace_weight_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CurrentPartition.active_charge_factors_through_partition.{u_1, u_2, u_3, u_4, u_5}
+  {Copy : Type u_1} {V : Type u_2} {E : Type u_3} [Fintype Copy] [DecidableEq Copy] {Site : Type u_4} {G : Type u_5}
+  [Fintype Site] [AddCommMonoid G] [DecidableEq G] (s : GProgram.SourceForest.State V E Copy)
+  (hs : GProgram.SourceForest.Valid s) (q : Copy → Site → G) :
+  ResearchCommons.MSCI.activeChargeCount s q =
+    ∑ B ∈ (ResearchCommons.MSCI.JC69CurrentPartition.currentPartition s hs).parts,
+      ∑ j, ResearchCommons.MSCI.nonzeroCharge (∑ x ∈ B, q x j)
+'ResearchCommons.MSCI.JC69CurrentPartition.active_charge_factors_through_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_blocks.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (s : GProgram.SourceForest.State V E Copy)
+  (hs : GProgram.SourceForest.Valid s) {a b : Copy} (hm : GProgram.SourceForest.LegalMerge s a b) :
+  ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (GProgram.SourceForest.merge s a b) =
+    insert ((s.genealogy a).leaves ∪ (s.genealogy b).leaves)
+      (((ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks s).erase (s.genealogy a).leaves).erase
+        (s.genealogy b).leaves)
+'ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_blocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_orientation_blocks.{u_1, u_2, u_3} {Copy : Type u_1}
+  {V : Type u_2} {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (s : GProgram.SourceForest.State V E Copy)
+  (hs : GProgram.SourceForest.Valid s) {a b : Copy} (hm : GProgram.SourceForest.LegalMerge s a b) :
+  ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (GProgram.SourceForest.merge s a b) =
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (GProgram.SourceForest.merge s b a)
+'ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_orientation_blocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_orientation_locations.{u_1, u_2, u_3} {Copy : Type u_1}
+  {V : Type u_2} {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (s : GProgram.SourceForest.State V E Copy)
+  {a b : Copy} (hm : GProgram.SourceForest.LegalMerge s a b) (x : Copy) :
+  GProgram.SourceForest.copyLocation (GProgram.SourceForest.merge s a b) x =
+    GProgram.SourceForest.copyLocation (GProgram.SourceForest.merge s b a) x
+'ResearchCommons.MSCI.JC69CurrentPartition.actual_merge_orientation_locations' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CurrentPartition.state_envelope_card (n P : ℕ) :
+  Fintype.card (ResearchCommons.MSCI.JC69CurrentPartition.StateEnvelope n P) =
+    ResearchCommons.MSCI.JC69CurrentPartition.BellCount n * P ^ n
+'ResearchCommons.MSCI.JC69CurrentPartition.state_envelope_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.amplitude_eq_exposure.{u_1} {Copy : Type u_1} [Fintype Copy] [DecidableEq Copy]
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) (t : GProgram.SourceForest.Genealogy Copy)
+  (d : GProgram.G2.FaithfulPairAgeDecoration.Decoration t) :
+  ResearchCommons.MSCI.JC69Tree.amplitude q t (ResearchCommons.MSCI.JC69Tree.clockSurvivals leafAge t d) =
+    Real.exp
+      (-(4 / 3 *
+          ResearchCommons.MSCI.JC69Occupation.potential q leafAge t d
+            (GProgram.G2.ChronologicalDecoration.rootAge leafAge t d)))
+'ResearchCommons.MSCI.JC69Occupation.amplitude_eq_exposure' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.root_fourier_exposure.{u_1} {Copy : Type u_1} [Fintype Copy] [DecidableEq Copy]
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) (t : GProgram.SourceForest.Genealogy Copy)
+  (d : GProgram.G2.FaithfulPairAgeDecoration.Decoration t) :
+  ∑ p,
+      ResearchCommons.MSCI.JC69Tree.rootLikelihood t (ResearchCommons.MSCI.JC69Tree.clockSurvivals leafAge t d) p *
+        ResearchCommons.MSCI.JC69Tree.patternCharacter q t p =
+    if ResearchCommons.MSCI.JC69Tree.totalCharge q t = 0 then
+      Real.exp
+        (-(4 / 3 *
+            ResearchCommons.MSCI.JC69Occupation.potential q leafAge t d
+              (GProgram.G2.ChronologicalDecoration.rootAge leafAge t d)))
+    else 0
+'ResearchCommons.MSCI.JC69Occupation.root_fourier_exposure' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.decode_actual_graft.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2} {E : Type u_3}
+  [Fintype Copy] [DecidableEq Copy] (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s)
+  {a b : Copy} (hm : GProgram.SourceForest.LegalMerge s a b) (M : Copy → Copy → ℝ) (T : ℝ) :
+  GProgram.G2.FaithfulPairAgeDecoration.decode (GProgram.G2.SourceGraftDecoration.mergeAgeMatrix s a b T M)
+      ((s.genealogy a).graft (s.genealogy b)) =
+    (T, GProgram.G2.FaithfulPairAgeDecoration.decode M (s.genealogy a),
+      GProgram.G2.FaithfulPairAgeDecoration.decode M (s.genealogy b))
+'ResearchCommons.MSCI.JC69Occupation.decode_actual_graft' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.forest_potential_time_increment.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : GProgram.SourceForest.State V E Copy) (M : Copy → Copy → ℝ) (T U : ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M U =
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M T +
+      (∑ l ∈ s.live, ResearchCommons.MSCI.JC69Occupation.charged q (s.genealogy l)) * (U - T)
+'ResearchCommons.MSCI.JC69Occupation.forest_potential_time_increment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.balanced_complete_potential.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (hcard : s.live.card ≤ 1) (l : Copy)
+  (hl : l ∈ s.live) (hbal : ∑ x, q x = 0) (M : Copy → Copy → ℝ) (T : ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M T =
+    ResearchCommons.MSCI.JC69Occupation.potential q leafAge (s.genealogy l)
+      (GProgram.G2.FaithfulPairAgeDecoration.decode M (s.genealogy l))
+      (GProgram.G2.ChronologicalDecoration.rootAge leafAge (s.genealogy l)
+        (GProgram.G2.FaithfulPairAgeDecoration.decode M (s.genealogy l)))
+'ResearchCommons.MSCI.JC69Occupation.balanced_complete_potential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.balanced_complete_locus_fourier.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (L : ℕ) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (leafAge : Copy → ℝ) (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s)
+  (hcard : s.live.card ≤ 1) (l : Copy) (hl : l ∈ s.live) (hbal : ∀ (j : Fin L), ∑ x, q j x = 0) (M : Copy → Copy → ℝ)
+  (T : ℝ) :
+  ∑ p,
+      ResearchCommons.MSCI.JC69Tree.locusLikelihood L (s.genealogy l)
+          (ResearchCommons.MSCI.JC69Tree.clockSurvivals leafAge (s.genealogy l)
+            (GProgram.G2.FaithfulPairAgeDecoration.decode M (s.genealogy l)))
+          p *
+        ∏ j, ResearchCommons.MSCI.JC69Tree.patternCharacter (q j) (s.genealogy l) (p j) =
+    Real.exp (-(4 / 3 * ∑ j, ResearchCommons.MSCI.JC69Occupation.forestPotential (q j) leafAge s M T))
+'ResearchCommons.MSCI.JC69Occupation.balanced_complete_locus_fourier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_charge_coefficient.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) :
+  ∑ l ∈ s.live, ResearchCommons.MSCI.JC69Occupation.charged q (s.genealogy l) =
+    ↑(ResearchCommons.MSCI.activeChargeCount s fun x x_1 => q x)
+'ResearchCommons.MSCI.JC69Occupation.actual_charge_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_forest_occupation_increment.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (M : Copy → Copy → ℝ) (T U : ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M U =
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M T +
+      ↑(ResearchCommons.MSCI.activeChargeCount s fun x x_1 => q x) * (U - T)
+'ResearchCommons.MSCI.JC69Occupation.actual_forest_occupation_increment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_merge_potential_conserved.{u_1, u_2, u_3} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) {a b : Copy}
+  (hm : GProgram.SourceForest.LegalMerge s a b) (M : Copy → Copy → ℝ) (T : ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (GProgram.SourceForest.merge s a b)
+      (GProgram.G2.SourceGraftDecoration.mergeAgeMatrix s a b T M) T =
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge s M T
+'ResearchCommons.MSCI.JC69Occupation.actual_merge_potential_conserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_coded_merger_potential.{u_1, u_2, u_3, u_4} {Copy : Type u_1} {V : Type u_2}
+  {E : Type u_3} [Fintype Copy] [DecidableEq Copy] {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V]
+  [Fintype E] [Fintype X] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s)
+  (M : Copy → Copy → ℝ) (T : ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge
+      (UnifiedLean.Source.UniformizedSourceStep.state
+        (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)))
+      (GProgram.G2.SourceGraftDecoration.codedAgeUpdate N s
+        (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) T M)
+      T =
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s) M T
+'ResearchCommons.MSCI.JC69Occupation.actual_coded_merger_potential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_literal_occupation_identity.{u_1, u_2, u_3, u_4} {Copy : Type u_1}
+  {V : Type u_2} {E : Type u_3} [Fintype Copy] [DecidableEq Copy] {X : Type u_4} [DecidableEq V] [DecidableEq E]
+  [Fintype V] [Fintype E] [Fintype X] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (q : Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t offset : ℝ)
+  (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ) (M : Copy → Copy → ℝ) :
+  ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge
+      (UnifiedLean.Source.UniformizedSourceStep.state
+        (GProgram.G2.LiteralMarkedClockTrace.traceEndpoint N n s
+          (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c).2))
+      (GProgram.G2.ActualDecorationFold.foldMatrix N n s offset M
+        (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c).2)
+      (offset + t) =
+    ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s) M
+        offset +
+      ResearchCommons.MSCI.JC69Occupation.literalOccupation N q n t s c
+'ResearchCommons.MSCI.JC69Occupation.actual_literal_occupation_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69Occupation.actual_literal_locus_occupation_identity.{u_1, u_2, u_3, u_4, u_5} {Copy : Type u_1}
+  {V : Type u_2} {E : Type u_3} [Fintype Copy] [DecidableEq Copy] {X : Type u_4} [DecidableEq V] [DecidableEq E]
+  [Fintype V] [Fintype E] [Fintype X] {Site : Type u_5} [Fintype Site] (N : Nanuq.Source.RootedBinary V E X)
+  {sample : Copy → X} (q : Copy → Site → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t offset : ℝ)
+  (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ) (M : Copy → Copy → ℝ) :
+  ∑ j,
+      ResearchCommons.MSCI.JC69Occupation.forestPotential (fun x => q x j) leafAge
+        (UnifiedLean.Source.UniformizedSourceStep.state
+          (GProgram.G2.LiteralMarkedClockTrace.traceEndpoint N n s
+            (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c).2))
+        (GProgram.G2.ActualDecorationFold.foldMatrix N n s offset M
+          (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c).2)
+        (offset + t) =
+    ∑ j,
+        ResearchCommons.MSCI.JC69Occupation.forestPotential (fun x => q x j) leafAge
+          (UnifiedLean.Source.UniformizedSourceStep.state s) M offset +
+      ∑ j, ResearchCommons.MSCI.JC69Occupation.literalOccupation N (fun x => q x j) n t s c
+'ResearchCommons.MSCI.JC69Occupation.actual_literal_locus_occupation_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
