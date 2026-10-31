@@ -1,0 +1,9 @@
+# NANUQ's contribution to the larger programme
+
+NANUQ contributes an exact deterministic observable summary: under the original admitted source class, the uniform-distinct quartet distance retains the complete displayed-split union in the given circular order. This is a network-summary theorem, not a theorem identifying every graph detail from that summary.
+
+The direct G1 connection is to the exact displayed cluster/split/quartet and compatible-order targets: the existing G1 actual full-split and normalized pruning APIs supply the meaning of the split output, while NANUQ would prove that a particular distance readout recovers that output on the stated class. The source maps must preserve original IDs, root suppression, labels, pruning and the given embedding order. Abstract all-split-compatible circles alone are not a proof of geometry-induced order.
+
+Reusable contributions across G1–G7 are the exact original-source graph/cap/parent-choice interfaces and an audited pipeline from actual continuous geometry through finite syntax and distinct-set semantics. Their reuse is a mathematical dependency only where the consuming theorem's assumptions are discharged. It does not solve the original G3 total recognizer, G4 all-arity source forcing, or the other groups' stochastic identifiability questions. Nor does it identify empirical sequence likelihoods or guarantee biological source admission.
+
+In a release ordering, NANUQ has a strong completed hand result and a substantial checked source spine, but still belongs in the formal-integration-heavy lane until its final original endpoint exists. A theorem with a complete matching Lean endpoint and only packaging/review left is closer to deposit. This is a dependency-based assessment, not a numeric rank or estimated release date, and it does not demote the accepted hand theorem.
