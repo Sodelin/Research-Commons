@@ -1,0 +1,44 @@
+@Nanuq.CapExterior.actualRootedCapOuterFace : {V : Type u_1} →
+  {E : Type u_2} →
+    {X : Type u_3} →
+      [inst : Fintype V] →
+        [inst_1 : Fintype E] →
+          [inst_2 : Fintype X] →
+            [inst_3 : DecidableEq V] →
+              (N : Nanuq.Source.RootedBinary V E X) →
+                (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) →
+                  (b : N.graph.Blob) →
+                    (hb : N.NonleafBlob b) →
+                      G1OuterLabelledMultigraphCurves.TaxonOuterFace D ⇑N.leaf →
+                        G1OuterLabelledMultigraphCurves.TaxonOuterFace (Nanuq.CapCurves.actualRootedCapCurves N D b hb)
+                          ⇑(N.actualRootedCapLeaf b)
+'Nanuq.CapExterior.actualRootedCapOuterFace' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CapExterior.cap_drawing_bound : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob) (hb : N.NonleafBlob b)
+  (p : N.BlobPort b),
+  G1OuterLabelledMultigraphCurves.drawing (Nanuq.CapCurves.actualRootedCapCurves N D b hb) ⊆
+    Nanuq.CapExterior.portBound N D b p
+'Nanuq.CapExterior.cap_drawing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CapExterior.far_trace_in_cap_complement : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob) (hb : N.NonleafBlob b)
+  (p : N.BlobPort b),
+  Nanuq.CapExterior.sideTrace D (Nanuq.CapExterior.nearSide N b p)ᶜ ⊆
+    (G1OuterLabelledMultigraphCurves.drawing (Nanuq.CapCurves.actualRootedCapCurves N D b hb))ᶜ
+'Nanuq.CapExterior.far_trace_in_cap_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CapExterior.omitted_tail_in_cap_complement : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob) (hb : N.NonleafBlob b)
+  (p : N.BlobPort b),
+  Nanuq.CapExterior.omittedTail N D b p ⊆
+    (G1OuterLabelledMultigraphCurves.drawing (Nanuq.CapCurves.actualRootedCapCurves N D b hb))ᶜ
+'Nanuq.CapExterior.omitted_tail_in_cap_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CapExterior.far_point_in_outer_component : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob) (hb : N.NonleafBlob b)
+  (face : G1OuterLabelledMultigraphCurves.TaxonOuterFace D ⇑N.leaf) (p : N.BlobPort b),
+  D.point (Nanuq.CapExterior.farVertex N b p) ∈
+    connectedComponentIn (G1OuterLabelledMultigraphCurves.drawing (Nanuq.CapCurves.actualRootedCapCurves N D b hb))ᶜ
+      face.outside
+'Nanuq.CapExterior.far_point_in_outer_component' depends on axioms: [propext, Classical.choice, Quot.sound]
