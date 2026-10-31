@@ -1,0 +1,11 @@
+# Source and trust boundary
+
+This is a new formal source adapter for a standard finite graph fact, not a novelty claim about graph theory. It closes a specific pending NANUQ source prerequisite only if all named joins compile.
+
+Original definitions: SourceNetwork.lean SHA256 `0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7`, accepted imported object SHA256 `5839e58243c6e4e4998b43a12b25e263da4f390ba9507a1cd165b3660df6bd7a`. The source defines distinct edge identities, undirected incidence with orientation alternatives, original edge deletion, bridge status, and `blobOf` as connectivity after all original bridges are removed. `RootedBinary` retains its original acyclicity, rootedness and binary-degree fields; no graph is replaced by a selected switching or by unordered endpoint pairs.
+
+Local compiler: existing Lean 4.33.1, binary SHA256 `e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550`; existing Mathlib pin `0df444a360eaa60ab8c11dca51a86af692955474`. These builds reuse accepted imported SourceNetwork and Mathlib objects; they are not a fresh rebuild of the original source closure or supplier. No native_decide certificate or assumed positive table is used in the new proofs. Actual axiom receipts, not an assertion based on exit alone, govern acceptance.
+
+Supplier-only candidate imports qualified faithful drawing source SHA256 `91070894fdec715baabef91abfee9c90dbf5b32a5db2cc02df719404ebe1f386` and upstream Schoenflies pin `05a43d29cde026618777db3d4e4316204ccca237`. Read-only exact APIs: Graph/Walk SHA256 `dbd2b1d1b6de760cc78d5419bc37a9ea4f005d69fd919a0c717a6d39264a9c5e`; Graph/TwoConnected SHA256 `1f05babe5c2ca5f441de751092bd6e816076ef1548d58e178cb465c12d78729c`. No qualified supplier objects are locally available for the new join. Its compiler status remains UNCOMPILED until the sole compiler returns an exact receipt.
+
+No held or denied audit payload is included or retried here. No original NANUQ, fixed taxon order, adjacent-copy contour, vertex-star/bridge assembly or global composition acceptance is claimed. The ≥3-vertex supplier guard is explicit; singleton and two-vertex bigon cases must not be silently included in IsTwoConnected.

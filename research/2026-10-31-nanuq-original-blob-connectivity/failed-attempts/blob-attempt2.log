@@ -1,0 +1,30 @@
+OriginalBlob.lean:69:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((fun e => ↑e) '' S).ncard
+in the target expression
+  (Subtype.val '' S).ncard ≤ {e | G.source e = ↑v ∨ G.target e = ↑v}.ncard
+
+V : Type u_1
+E : Type u_2
+G : EdgeGraph V E
+inst✝ : Fintype E
+hd : ∀ (v : V), {e | G.source e = v ∨ G.target e = v}.ncard ≤ 3
+b : G.Blob
+v : BlobVertex G b
+S : Set (BlobEdge G b) := {e | (originalBlob G b).source e = v ∨ (originalBlob G b).target e = v}
+hsub : Subtype.val '' S ⊆ {e | G.source e = ↑v ∨ G.target e = ↑v}
+hh : (Subtype.val '' S).ncard ≤ {e | G.source e = ↑v ∨ G.target e = ↑v}.ncard
+hcard : ((fun e => ↑e) '' S).ncard = S.ncard
+⊢ {e | (originalBlob G b).source e = v ∨ (originalBlob G b).target e = v}.ncard ≤ 3
+OriginalBlob.lean:79:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'Nanuq.RawBlock.original_blob_bridgeless' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.RawBlock.original_blob_delete_vertex_connected' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

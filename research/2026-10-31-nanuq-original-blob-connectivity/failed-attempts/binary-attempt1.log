@@ -1,0 +1,50 @@
+BinaryDegree.lean:17:54: warning: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BinaryDegree.lean:17:54: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+BinaryDegree.lean:24:74: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+v : V
+hu :
+  ({e | N.graph.source e = v} ∪ {e | N.graph.target e = v}).ncard ≤
+    {e | N.graph.source e = v}.ncard + {e | N.graph.target e = v}.ncard
+⊢ {e | N.graph.source e = v}.ncard = {e | N.graph.source e = v}.card
+BinaryDegree.lean:26:73: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+v : V
+hu :
+  ({e | N.graph.source e = v} ∪ {e | N.graph.target e = v}).ncard ≤
+    {e | N.graph.source e = v}.ncard + {e | N.graph.target e = v}.ncard
+hs : {e | N.graph.source e = v}.ncard = N.graph.outDegree v
+⊢ {e | N.graph.target e = v}.ncard = {e | N.graph.target e = v}.card
+BinaryDegree.lean:25:31: warning: This simp argument is unused:
+  Set.ncard_eq_toFinset_card
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [EdgeGraph.outDegree]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BinaryDegree.lean:27:30: warning: This simp argument is unused:
+  Set.ncard_eq_toFinset_card
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [EdgeGraph.inDegree]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.RawBlock.binary_incidence_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
