@@ -1,0 +1,88 @@
+structure WongGARG.GARG.{u, v} (Node : Type u) (Coord : Type v) [Fintype.{u} Node] [LinearOrder.{v} Coord] :
+  Type (max u v)
+number of parameters: 4
+fields:
+  WongGARG.GARG.samples.{u, v} : Finset.{u} Node
+  WongGARG.GARG.records.{u, v} : Finset.{max v u} (WongGARG.EdgeRecord.{u, v} Node Coord)
+  WongGARG.GARG.acyclic.{u,
+    v} : ∀ (a : Node), ¬AncestryViews.Reach.{u} (WongGARG.RecordTopology.{u, v} (WongGARG.GARG.records.{u, v} self)) a a
+constructor:
+  WongGARG.GARG.mk.{u, v} {Node : Type u} {Coord : Type v} [Fintype.{u} Node] [LinearOrder.{v} Coord]
+    (samples : Finset.{u} Node) (records : Finset.{max v u} (WongGARG.EdgeRecord.{u, v} Node Coord))
+    (acyclic : ∀ (a : Node), ¬AncestryViews.Reach.{u} (WongGARG.RecordTopology.{u, v} records) a a) :
+    WongGARG.GARG.{u, v} Node Coord
+def WongGARG.GARG.AtLocus.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] →
+      [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G x parent child =>
+  ∃ e,
+    Membership.mem.{max u v, max u v} (WongGARG.GARG.records.{u, v} G) e ∧
+      Eq.{u + 1} (WongGARG.EdgeRecord.parent.{u, v} e) parent ∧
+        Eq.{u + 1} (WongGARG.EdgeRecord.child.{u, v} e) child ∧ WongGARG.EdgeRecord.Covers.{u, v} e x
+def WongGARG.GARG.UniqueParentAt.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] → [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Coord → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G x =>
+  ∀ (child a b : Node),
+    WongGARG.GARG.AtLocus.{u, v} G x a child → WongGARG.GARG.AtLocus.{u, v} G x b child → Eq.{u + 1} a b
+def WongGARG.GARG.SampleAncestral.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] →
+      [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Coord → Node → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G x a =>
+  ∃ s,
+    Membership.mem.{u, u} (WongGARG.GARG.samples.{u, v} G) s ∧
+      (Eq.{u + 1} a s ∨ AncestryViews.Reach.{u} (WongGARG.GARG.AtLocus.{u, v} G x) a s)
+def WongGARG.GARG.ExtractedAt.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] →
+      [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Coord → Node → Node → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G x parent child =>
+  WongGARG.GARG.AtLocus.{u, v} G x parent child ∧ WongGARG.GARG.SampleAncestral.{u, v} G x child
+def WongGARG.GARG.SampleSupported.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] → [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Prop :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G =>
+  ∀ (x : Coord) (a b : Node), WongGARG.GARG.AtLocus.{u, v} G x a b → WongGARG.GARG.SampleAncestral.{u, v} G x b
+def WongRecordTracing.covers.{u, v} : {Node : Type u} →
+  {Coord : Type v} → [inst : LinearOrder.{v} Coord] → WongGARG.EdgeRecord.{u, v} Node Coord → Coord → Bool :=
+fun {Node} {Coord} [LinearOrder.{v} Coord] e x =>
+  decide
+    (∃ I,
+      Membership.mem.{v, v} (WongGARG.EdgeRecord.regions.{u, v} e) I ∧
+        LE.le.{v} (WongGARG.Interval.lo.{v} I) x ∧ LT.lt.{v} x (WongGARG.Interval.hi.{v} I))
+def WongRecordTracing.lookup.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [DecidableEq.{u + 1} Node] →
+      [inst : LinearOrder.{v} Coord] →
+        List.{max v u} (WongGARG.EdgeRecord.{u, v} Node Coord) → Coord → Node → Option.{u} Node :=
+fun {Node} {Coord} [DecidableEq.{u + 1} Node] [LinearOrder.{v} Coord] records x c =>
+  List.brecOn.{u + 1, max v u} records (WongRecordTracing.lookup._f.{u, v} x c)
+def WongMemoizedTracing.memoExtract.{u} : {Node : Type u} →
+  [DecidableEq.{u + 1} Node] → (Node → Option.{u} Node) → ℕ → List.{u} Node → Node → Option.{u} Node :=
+fun {Node} [DecidableEq.{u + 1} Node] parent fuel samples =>
+  WongMemoizedTracing.Result.cache.{u} (WongMemoizedTracing.run.{u} parent fuel samples fun x => none.{u})
+def WongMemoizedTracing.run.{u} : {Node : Type u} →
+  [DecidableEq.{u + 1} Node] →
+    (Node → Option.{u} Node) → ℕ → List.{u} Node → (Node → Option.{u} Node) → WongMemoizedTracing.Result.{u} Node :=
+fun {Node} [DecidableEq.{u + 1} Node] parent fuel x x_1 =>
+  List.brecOn.{u + 1, u} (motive := fun x => (Node → Option.{u} Node) → WongMemoizedTracing.Result.{u} Node) x
+    (WongMemoizedTracing.run._f.{u} parent fuel) x_1
+def WongMemoizedTracing.visit.{u} : {Node : Type u} →
+  [DecidableEq.{u + 1} Node] →
+    (Node → Option.{u} Node) → ℕ → Node → (Node → Option.{u} Node) → WongMemoizedTracing.Result.{u} Node :=
+fun {Node} [DecidableEq.{u + 1} Node] parent x x_1 x_2 =>
+  Nat.brecOn.{u + 1} (motive := fun x => Node → (Node → Option.{u} Node) → WongMemoizedTracing.Result.{u} Node) x
+    (WongMemoizedTracing.visit._f.{u} parent) x_1 x_2
+def WongGARG.GARG.ancestorSet.{u, v} : {Node : Type u} →
+  {Coord : Type v} →
+    [inst : Fintype.{u} Node] →
+      [inst_1 : LinearOrder.{v} Coord] → WongGARG.GARG.{u, v} Node Coord → Node → Finset.{u} Node :=
+fun {Node} {Coord} [Fintype.{u} Node] [LinearOrder.{v} Coord] G v =>
+  {u | AncestryViews.Reach.{u} (WongGARG.GARG.Topology.{u, v} G) u v}
+@WongGARG.GARG.ancestor_count_lt_card.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : Fintype.{u_1} Node] [inst_1 : LinearOrder.{u_2} Coord]
+  (G : WongGARG.GARG.{u_1, u_2} Node Coord) (a : Node),
+  LT.lt.{0} (Finset.card.{u_1} (WongGARG.GARG.ancestorSet.{u_1, u_2} G a)) (Fintype.card.{u_1} Node)
+'WongGARG.GARG.ancestor_count_lt_card' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

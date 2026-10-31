@@ -214,3 +214,5 @@ The NEW partial RAW NANUQ noise receiver is checked with `cargo run --locked -p 
 Current additive binding successor: [CB-SEQ-001](../../research/2026-10-31-seq001-package-binding/README.md). Original projection/source and ContextB receipts remain dated historical records. Current selected catalogue 1,834; scoped new target checked, full enlarged profile not rerun.
 
 The enlarged aggregate and generated root are now specifically qualified with exact coherent reuse: [dated aggregate successor](../../research/2026-10-31-seq001-aggregate-verification/README.md). It supersedes only the prior unrebuilt-aggregate limitation, not the historical full1833 receipt or remaining strict gates.
+
+Latest additive binding: [CB-WONG-002](../../research/2026-10-31-wong002-package-binding/README.md),50mapped/532names/68unbound; actual1511aggregate and changed root qualification with coherent reuse, not a freshfull1835 owned audit. Strict coverage remains2 and canonical scientific statuses unchanged.

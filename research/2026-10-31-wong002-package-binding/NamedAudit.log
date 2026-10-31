@@ -1,0 +1,102 @@
+@ResearchCommons.Claims.WongRecordExtraction.actual_record_scan.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node]
+  [inst_2 : LinearOrder.{u_2} Coord] (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x →
+    ∀ (records : List.{max u_2 u_1} (WongGARG.EdgeRecord.{u_1, u_2} Node Coord)),
+      (∀ (e : WongGARG.EdgeRecord.{u_1, u_2} Node Coord),
+          Membership.mem.{max u_1 u_2, max u_1 u_2} records e ↔
+            Membership.mem.{max u_1 u_2, max u_1 u_2} (WongGARG.GARG.records.{u_1, u_2} G) e) →
+        ∀ (p c : Node),
+          Eq.{u_1 + 1} (WongRecordTracing.lookup.{u_1, u_2} records x c) (some.{u_1} p) ↔
+            WongGARG.GARG.AtLocus.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongRecordExtraction.actual_record_scan' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongRecordExtraction.reference_record_extraction.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node]
+  [inst_2 : LinearOrder.{u_2} Coord] (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x →
+    ∀ (records : List.{max u_2 u_1} (WongGARG.EdgeRecord.{u_1, u_2} Node Coord)),
+      (∀ (e : WongGARG.EdgeRecord.{u_1, u_2} Node Coord),
+          Membership.mem.{max u_1 u_2, max u_1 u_2} records e ↔
+            Membership.mem.{max u_1 u_2, max u_1 u_2} (WongGARG.GARG.records.{u_1, u_2} G) e) →
+        ∀ (samples : List.{u_1} Node),
+          (∀ (s : Node),
+              Membership.mem.{u_1, u_1} samples s ↔ Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s) →
+            ∀ (p c : Node),
+              Eq.{u_1 + 1}
+                  (WongSampleTracing.extract.{u_1} (WongRecordTracing.lookup.{u_1, u_2} records x)
+                    (Fintype.card.{u_1} Node) samples c)
+                  (some.{u_1} p) ↔
+                WongGARG.GARG.ExtractedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongRecordExtraction.reference_record_extraction' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongRecordExtraction.memoized_record_extraction.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node]
+  [inst_2 : LinearOrder.{u_2} Coord] (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord),
+  WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x →
+    ∀ (records : List.{max u_2 u_1} (WongGARG.EdgeRecord.{u_1, u_2} Node Coord)),
+      (∀ (e : WongGARG.EdgeRecord.{u_1, u_2} Node Coord),
+          Membership.mem.{max u_1 u_2, max u_1 u_2} records e ↔
+            Membership.mem.{max u_1 u_2, max u_1 u_2} (WongGARG.GARG.records.{u_1, u_2} G) e) →
+        ∀ (samples : List.{u_1} Node),
+          (∀ (s : Node),
+              Membership.mem.{u_1, u_1} samples s ↔ Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s) →
+            ∀ (p c : Node),
+              Eq.{u_1 + 1}
+                  (WongMemoizedTracing.memoExtract.{u_1} (WongRecordTracing.lookup.{u_1, u_2} records x)
+                    (Fintype.card.{u_1} Node) samples c)
+                  (some.{u_1} p) ↔
+                WongGARG.GARG.ExtractedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongRecordExtraction.memoized_record_extraction' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongRecordExtraction.sample_support_round_trip.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node]
+  [inst_2 : LinearOrder.{u_2} Coord] (G : WongGARG.GARG.{u_1, u_2} Node Coord),
+  (∀ (x : Coord), WongGARG.GARG.UniqueParentAt.{u_1, u_2} G x) →
+    ∀ (records : List.{max u_2 u_1} (WongGARG.EdgeRecord.{u_1, u_2} Node Coord)),
+      (∀ (e : WongGARG.EdgeRecord.{u_1, u_2} Node Coord),
+          Membership.mem.{max u_1 u_2, max u_1 u_2} records e ↔
+            Membership.mem.{max u_1 u_2, max u_1 u_2} (WongGARG.GARG.records.{u_1, u_2} G) e) →
+        ∀ (samples : List.{u_1} Node),
+          (∀ (s : Node),
+              Membership.mem.{u_1, u_1} samples s ↔ Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s) →
+            ((∀ (x : Coord) (p c : Node),
+                Eq.{u_1 + 1}
+                    (WongMemoizedTracing.memoExtract.{u_1} (WongRecordTracing.lookup.{u_1, u_2} records x)
+                      (Fintype.card.{u_1} Node) samples c)
+                    (some.{u_1} p) ↔
+                  WongGARG.GARG.AtLocus.{u_1, u_2} G x p c) ↔
+              WongGARG.GARG.SampleSupported.{u_1, u_2} G)
+'ResearchCommons.Claims.WongRecordExtraction.sample_support_round_trip' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongRecordExtraction.abstract_counter_bounds.{u_1} : ∀ {Node : Type u_1}
+  [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node] (parent : Node → Option.{u_1} Node) (fuel : ℕ)
+  (samples : List.{u_1} Node),
+  have r := WongMemoizedTracing.run.{u_1} parent fuel samples fun x => none.{u_1};
+  LE.le.{0} (WongMemoizedTracing.Result.writes.{u_1} r) (Fintype.card.{u_1} Node) ∧
+    LE.le.{0} (WongMemoizedTracing.Result.checks.{u_1} r)
+        (HAdd.hAdd.{0, 0, 0} (WongMemoizedTracing.Result.writes.{u_1} r) (List.length.{u_1} samples)) ∧
+      LE.le.{0} (WongMemoizedTracing.Result.lookups.{u_1} r)
+        (HAdd.hAdd.{0, 0, 0} (WongMemoizedTracing.Result.writes.{u_1} r) (List.length.{u_1} samples))
+'ResearchCommons.Claims.WongRecordExtraction.abstract_counter_bounds' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.WongRecordExtraction.derived_node_count_fuel.{u_1,
+    u_2} : ∀ {Node : Type u_1} {Coord : Type u_2} [inst : DecidableEq.{u_1 + 1} Node] [inst_1 : Fintype.{u_1} Node]
+  [inst_2 : LinearOrder.{u_2} Coord] (G : WongGARG.GARG.{u_1, u_2} Node Coord) (x : Coord)
+  (parent : Node → Option.{u_1} Node),
+  (∀ (a b : Node), Eq.{u_1 + 1} (parent b) (some.{u_1} a) ↔ WongGARG.GARG.AtLocus.{u_1, u_2} G x a b) →
+    ∀ (samples : List.{u_1} Node),
+      (∀ (s : Node),
+          Membership.mem.{u_1, u_1} samples s ↔ Membership.mem.{u_1, u_1} (WongGARG.GARG.samples.{u_1, u_2} G) s) →
+        ∀ (p c : Node),
+          Eq.{u_1 + 1} (WongMemoizedTracing.memoExtract.{u_1} parent (Fintype.card.{u_1} Node) samples c)
+              (some.{u_1} p) ↔
+            WongGARG.GARG.ExtractedAt.{u_1, u_2} G x p c
+'ResearchCommons.Claims.WongRecordExtraction.derived_node_count_fuel' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

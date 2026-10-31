@@ -7149,16 +7149,40 @@
       "claim_id": "CB-WONG-002",
       "reuse_rank": null,
       "lean": {
-        "state": "pending_binding",
-        "module": null,
-        "declarations": []
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.WongRecordExtraction",
+        "declarations": [
+          "ResearchCommons.Claims.WongRecordExtraction.actual_record_scan",
+          "ResearchCommons.Claims.WongRecordExtraction.reference_record_extraction",
+          "ResearchCommons.Claims.WongRecordExtraction.memoized_record_extraction",
+          "ResearchCommons.Claims.WongRecordExtraction.sample_support_round_trip",
+          "ResearchCommons.Claims.WongRecordExtraction.abstract_counter_bounds",
+          "ResearchCommons.Claims.WongRecordExtraction.derived_node_count_fuel"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Existing actual interval-record scanner and memoized sample extraction, original membership/unique-parent/sample-support premises and abstract counters. No byte inverse or machine runtime theorem."
       },
       "rust": {
         "state": "pending_binding",
-        "module": null
+        "module": null,
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.WongRecordExtraction --claim CB-WONG-002",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/wong-record-extraction-verification.json",
+          "scope": "Rust-to-Lean named type/owner interface only. Existing executable Lean definitions do not establish new native Rust runtime or production extraction."
+        }
       },
       "scope_owner": "canonical_registry",
-      "verification": [],
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_owner_type_export_join",
+          "module_source_sha256": "ac8848abed29329944f7b93e5ca012053e64929f2036ec208e68441343c59ba8",
+          "record": "integration/wong-record-extraction-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Exact full original completed card; original providers unchanged. Historical provider identity and11-module audit are compiler-attributed, not parent whole-proof replay."
+        }
+      ],
       "dependencies": [],
       "source_artifacts": [
         {

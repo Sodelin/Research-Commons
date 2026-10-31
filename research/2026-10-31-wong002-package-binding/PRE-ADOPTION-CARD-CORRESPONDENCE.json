@@ -1,0 +1,69 @@
+{
+  "claim_id": "CB-WONG-002",
+  "status": "READY_FOR_PARENT_FULL_CORRESPONDENCE_REVIEW_NOT_ADOPTED",
+  "canonical_status_unchanged": "proved_at_stated_scope",
+  "module": "ResearchCommons.Claims.WongRecordExtraction",
+  "current_source_sha256": "ac8848abed29329944f7b93e5ca012053e64929f2036ec208e68441343c59ba8",
+  "scope": "Only owner/type aliases of existing actual interval-record extraction, exact sample support roundtrip and abstract counters; no new mathematics or runtime implementation",
+  "existing_authorship_and_priority": {
+    "prior_work": "Credit Wong et al. 2024 Appendix E sample-rootward traversal, standard memoization and ancestry restriction, and Lean/Mathlib. The existing Samuel package supplies actual-record correspondence, cache-completeness refinement, node-cardinality fuel and exact sample-support/counter contracts. Historical novelty is not adjudicated; this card is archival recovery.",
+    "our_role": "Only exact existing-source interface integration; no new proof authorship/novelty determination"
+  },
+  "clauses": [
+    {
+      "canonical_clause": "finite acyclic interval GARG, finite Node, linearly ordered coordinates, decidable node equality",
+      "supplier": "WongGARG.GARG structure, printed actual definition",
+      "correspondence": "Original GARG samples/records and acyclic field; half-open disjoint interval regions; no canonical-record normalization, node-date, rank-oracle or nonempty-annotations premise introduced"
+    },
+    {
+      "canonical_clause": "actual record scan with exact memberships, duplicate/order unrestricted, unique parent at x",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.actual_record_scan",
+      "supplier": "WongRecordTracing.lookup_represents",
+      "correspondence": "lookup scans original records; recordIds is iff membership, not list uniqueness/order; UniqueParentAt x is explicit"
+    },
+    {
+      "canonical_clause": "reference actual record/sample array",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.reference_record_extraction",
+      "supplier": "WongRecordTracing.records_to_sample_array",
+      "correspondence": "Original lookup, card Node fuel, sample-list exact membership; actual ExtractedAt predicate"
+    },
+    {
+      "canonical_clause": "memoized actual-record extraction iff original active edge and child sample ancestry",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.memoized_record_extraction",
+      "supplier": "WongMemoizedTracing.records_to_memoized_sample_array",
+      "correspondence": "No parent oracle hypothesis in this endpoint. Printed ExtractedAt = AtLocus AND SampleAncestral; ancestor includes equality"
+    },
+    {
+      "canonical_clause": "node-count fuel adequate; proof rank not algorithm input",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.derived_node_count_fuel",
+      "supplier": "WongMemoizedTracing.actual_memoized_extraction",
+      "correspondence": "This helper has representation premise; actual_record_scan discharges it for the main memoized_record_extraction. Source proof derives ancestorSet card decrease/bound internally. No explicit rank input"
+    },
+    {
+      "canonical_clause": "persistent IDs and unary ancestors retained; no local MRCA truncation",
+      "supplier": "Original memoExtract/run/visit and SampleAncestral definitions",
+      "correspondence": "Cache keys are original Node, every sample-rootward original parent stored; no node quotient, contraction, MRCA cut or relabelling"
+    },
+    {
+      "canonical_clause": "all-coordinate complete indexed edge relation iff SampleSupported",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.sample_support_round_trip",
+      "supplier": "WongMemoizedTracing.memoized_records_round_trip_iff",
+      "correspondence": "UniqueParentAt every x; all original coordinates/parents/children quantified; original SampleSupported derived iff, not assumed to extract exact supported relation"
+    },
+    {
+      "canonical_clause": "empty-cache writes<=card Node, checks/lookups<=writes+sample-list length for arbitrary fuel/cyclic parent functions",
+      "export": "ResearchCommons.Claims.WongRecordExtraction.abstract_counter_bounds",
+      "supplier": "WongMemoizedTracing.memoized_cost_bounds",
+      "correspondence": "Arbitrary parent and fuel, no GARG/acyclicity/rank/correctness premise. Original run from empty functional cache; no constant-time scan/access/allocation or CPU-time claim"
+    },
+    {
+      "canonical_clause": "root and unvisited none, repeated roots may be relooked up",
+      "supplier": "Printed memoExtract/run/visit source definitions",
+      "correspondence": "Some parent cache entries terminate; none does not carry visited-root bit. No claimed at-most-once root lookup"
+    }
+  ],
+  "boundaries": "Incremental across-coordinate tables; machine arrays/cache representation; record-scan, allocation and runtime bounds; fully executable whole-graph export; arbitrary-file parsing and byte/metadata round trips; external tskit conformance. These are distinct from the completed per-coordinate theorem.",
+  "qualification_scope": "Only new wrapper compiled,10 exact qualified providers reused,6named/11ownedmodules; no runtime production sample extraction or fresh full77historical release check",
+  "new_wrapper_history": "Initial qualified wrapper accidentally repeated Fintype on abstract_counter_bounds. Removed redundant NEW wrapper binder, then all six complete types/owned audit rechecked. Original suppliers untouched; no failed compiler attempt for this join.",
+  "binding_adoption": false
+}

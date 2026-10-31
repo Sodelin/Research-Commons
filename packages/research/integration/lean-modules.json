@@ -6010,10 +6010,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.WongRecordExtraction",
+      "path": "lean/Compatibility/ResearchCommons.Claims.WongRecordExtraction.lean",
+      "sha256": "ac8848abed29329944f7b93e5ca012053e64929f2036ec208e68441343c59ba8",
+      "imports": [
+        "WongMemoizedTracing"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed exact existing CB-WONG-002 owner/type exports; actual record scanner, sample support and abstract counters",
+        "proof_derivation": false,
+        "verification": "integration/wong-record-extraction-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "f47b7104fec53920a35d1b863dbd7b2e58ceddf0548ed60a3065228fb0d4162e",
+      "sha256": "0aa20be1cc9e09df2d0052650bd97b83c5542ea5654105d56337d2dcfe6865b6",
       "imports": [
+        "ResearchCommons.Claims.WongRecordExtraction",
         "ResearchCommons.Claims.SequenceFirstOccurrence",
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
@@ -6080,12 +6094,27 @@
           "previous_source_sha256": "f281bc65c80e7c5c2649d581b5fbe8cd4a8a92529b8d812daa0daa87acfbeeab",
           "scope": "Add exact CB-SEQ-001 wrapper import. Historical union receipts preserved; enlarged aggregate not yet compiled as a whole."
         },
+        "wong_binding_successor": {
+          "prior_source_sha256": "f47b7104fec53920a35d1b863dbd7b2e58ceddf0548ed60a3065228fb0d4162e",
+          "scope": "Parent-reviewed WONG002 wrapper integrated; enlarged aggregate/root/named532/owned1511 checks passed with exact coherent reuse",
+          "verification": "integration/wong-record-extraction-aggregate-verification.json"
+        },
+        "historical_aggregate_verifications": [
+          {
+            "record": "integration/sequence-first-occurrence-aggregate-verification.json",
+            "actual_compiler_pass": true,
+            "actual_selected_owned_modules": 1507,
+            "actual_named_requests": 526,
+            "whole_1834_fresh_owned_audit": false,
+            "scientific_statuses_unchanged": true
+          }
+        ],
         "current_aggregate_verification": {
-          "record": "integration/sequence-first-occurrence-aggregate-verification.json",
+          "record": "integration/wong-record-extraction-aggregate-verification.json",
           "actual_compiler_pass": true,
-          "actual_selected_owned_modules": 1507,
-          "actual_named_requests": 526,
-          "whole_1834_fresh_owned_audit": false,
+          "actual_selected_owned_modules": 1511,
+          "actual_named_requests": 532,
+          "whole1835fresh_owned_audit": false,
           "scientific_statuses_unchanged": true
         }
       },

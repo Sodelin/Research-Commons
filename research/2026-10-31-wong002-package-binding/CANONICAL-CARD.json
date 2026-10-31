@@ -1,0 +1,119 @@
+{
+  "canonical_git_blob": "d88f0a92891b6b0d0fa700d50545d116c61c5bda",
+  "source": "docs/claims.json",
+  "card": {
+    "id": "CB-WONG-002",
+    "canonical_key": "wong.ACTUAL_RECORD_MEMOIZED_EXTRACTION",
+    "programme": "Wong ancestry-recombination graphs \u00b7 deterministic sample extraction",
+    "title": "Sample ancestry can be extracted exactly from the actual interval records",
+    "claim_kind": "theorem",
+    "plain_language": {
+      "question": "Can we extract exactly the ancestry supported by the chosen samples without assuming an ideal parent oracle?",
+      "what_we_learned": "Yes. The actual interval-record scanner and memoized traversal return exactly the supported local edges. They recover every original local edge if and only if all those edges are sample-supported.",
+      "what_it_lets_someone_do": "Reuse a proved actual-record extraction procedure and its abstract write/check/lookup bounds, with sample support and persistent identities explicit.",
+      "what_cannot_conclude": "This is not an unconditional inverse of arbitrary unsampled graphs, an MRCA-truncating simplifier, a machine-time benchmark, a byte-format round trip or tskit conformance."
+    },
+    "exact_statement_and_scope": "For every finite acyclic interval GARG on a finite node type and linearly ordered coordinates, use decidable node equality and coordinate tests. Supply record and sample lists with exactly the memberships of its record and sample sets; repeated entries and arbitrary order are allowed. At each coordinate x where every child has at most one local parent, the executable actual-record scan followed by memoized rootward tracing with fuel N=card(Node) returns parent p at c exactly when the original edge p\u2192c is active at x and c is a sample or an ancestor of a sample at x. The ancestor-count rank proves fuel adequacy and is not an input oracle. Persistent IDs and unary ancestors are retained. If unique local parents hold at all coordinates, equality of the complete extracted parent-array family with every original indexed local edge relation holds if and only if the source is SampleSupported: every active local edge has a child with a sample descendant, allowing equality. This is an edge-relation round trip, not equality of interval subdivisions, hidden event histories, dates, metadata or bytes. It is not local-MRCA truncation. Starting with an empty functional cache, the run has writes\u2264N and checks, lookups\u2264writes+sample-list length. These counters hold even for cyclic parent functions or inadequate fuel; exact extraction correctness has the separate acyclicity/fuel premises. Root and unvisited entries both use none, so roots may be looked up repeatedly. No constant-time scanner/cache/allocation or machine-time assumption is hidden in the inequalities.",
+    "origin": {
+      "category": "project_posed",
+      "detail": "The existing Samuel Wong programme formalizes the source's sample-rootward extraction and an actual interval-record/memoized implementation. This recovers a completed source-specific theorem, not a new claim of solving every source operation."
+    },
+    "prior_work": "Credit Wong et al. 2024 Appendix E sample-rootward traversal, standard memoization and ancestry restriction, and Lean/Mathlib. The existing Samuel package supplies actual-record correspondence, cache-completeness refinement, node-cardinality fuel and exact sample-support/counter contracts. Historical novelty is not adjudicated; this card is archival recovery.",
+    "our_contribution": "The existing Samuel source connects the actual record scanner to the local graph, proves cache-completeness and equality with a reference traversal, obtains node-cardinality fuel without an algorithmic rank oracle, and states the exact sample-support round trip and abstract operation bounds. This card restores that completion rather than proving it again.",
+    "mathematical_status": "proved_at_stated_scope",
+    "novelty_status": "Historical novelty is not adjudicated. Known operations and classical suppliers retain credit; archival recovery does not create new proof authorship or priority.",
+    "remaining_obligation": "None identified for the exact completed actual-record extractor, sample-support criterion and abstract counter bounds in the bounded source recovery.",
+    "separate_downstream_or_validation_work": "Incremental across-coordinate tables; machine arrays/cache representation; record-scan, allocation and runtime bounds; fully executable whole-graph export; arbitrary-file parsing and byte/metadata round trips; external tskit conformance. These are distinct from the completed per-coordinate theorem.",
+    "completion": {
+      "display": "Proved; archived Lean check recorded",
+      "formal_verification": "kernel_checked_selected_release",
+      "independent_review": "recorded_source_and_formal_audit",
+      "mathematical_claim_complete": true,
+      "proof_authorship_complete": true,
+      "proof_derivation_required": false,
+      "remaining_work_role": "separate_downstream_extension_or_validation",
+      "rule": "Reuse the exact completed statement. Missing implementation, fresh execution, broader source coverage or a separate whole-proof review does not reopen the completed mathematical claim. Historical formal checks and scoped source reviews remain distinct."
+    },
+    "evidence": {
+      "hand": {
+        "status": "recorded_source_and_formal_audit",
+        "detail": "All fifteen named source/provider bodies were read completely in the W-B recovery, totaling 3,998 lines. This includes the complete actual scanner, reference and memoized proofs and their named providers. No separate independent whole-extractor hand review was located in this bounded evidence set. The Sol2 deterministic65 statement/source review covers three other displayed contracts and is not silently assigned to this implementation. This is bounded coordinating AI source review, not human/external peer review, an all 77-module transitive review or a full primary-paper reread."
+      },
+      "formal": {
+        "status": "kernel_checked_selected_release",
+        "detail": "The fifteen read source/provider files, totaling 3,998 lines, exactly match both the deterministic 274-release source inventory and the final 415-report receipt. The final historical receipt names proof commit 1ac3dd9446e7264336f0764040ff47ad684099cb, Lean 4.33.1 and Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, with 77 project import-closure modules, zero recorded module exits and 415 selected axiom reports using only propext, Classical.choice and Quot.sound. The 134 selected reports in the thirteen directly named Wong namespaces include helpers and already-indexed providers; they are not 134 new results. The two generic ancestry providers are compiled dependencies without selected reports under those filenames. No fresh compile, scientific runtime, full 77-module independent hand review, native conformance test or empirical reproduction occurred."
+      },
+      "execution": {
+        "status": "archived_build_receipt",
+        "detail": "Historical source/object/log identities and recorded compiler exits were inspected. Only document/source integrity checks were performed in this recovery. Source algorithms are executable Lean definitions, but no compiler, benchmark, production extraction run or external-software conformance test was run here."
+      },
+      "empirical": {
+        "status": "not_empirical_claim",
+        "detail": "A deterministic mathematical graph/representation theorem, not biological data analysis, empirical validation, a stochastic-law identification theorem or measured performance."
+      }
+    },
+    "evidence_basis": "Fifteen exact source/provider bodies were read in full at e2502c82ab9a77c00543932f775a71e5374221f7 and match both the deterministic 274 source inventory and final 415 receipt. Fresh insertion-only comparison uses all 105 existing IDs, keys, titles and aliases at Commons fa627492d9521a72a604952527d570571fe0fff7, claims blob 5a27d4a7d5a9786400e78b5ce4dd9487a6e7a86b, with relevant exact scopes read separately. Existing CB-MEMORY-001 restriction, CB-GENOME-001 opposite completions and CB-WONG-001 continuous-history law are not counted again. No register mutation, new proof or new scientific execution occurred.",
+    "accepted_artifacts": [
+      {
+        "label": "Final exact-commit result and scope",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RESULT.json",
+        "role": "formal_receipt"
+      },
+      {
+        "label": "Exact source/object/log receipt",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/combined-receipt.json",
+        "role": "formal_receipt"
+      },
+      {
+        "label": "Selected axiom log",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/continuation-2026-09-27/verification/RealAudit.log",
+        "role": "formal_receipt"
+      },
+      {
+        "label": "Source-specific coverage and remaining boundaries",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/wong/completion/coverage.json",
+        "role": "proof_or_status"
+      },
+      {
+        "label": "Exact interval-graph source model",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongGARG.lean",
+        "role": "proof_source"
+      },
+      {
+        "label": "Reference traversal and node-cardinality fuel",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSampleTracing.lean",
+        "role": "proof_source"
+      },
+      {
+        "label": "Executable actual interval-record scan",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongRecordTracing.lean",
+        "role": "proof_source"
+      },
+      {
+        "label": "Memoized semantics and reference equality",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L288",
+        "role": "proof_source"
+      },
+      {
+        "label": "Abstract write/check/lookup bounds",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L408",
+        "role": "proof_source"
+      },
+      {
+        "label": "Actual-record extraction and support round trip",
+        "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean#L446",
+        "role": "proof_source"
+      },
+      {
+        "label": "Wong et al. 2024 representation source",
+        "url": "https://doi.org/10.1093/genetics/iyae100",
+        "role": "prior_work"
+      }
+    ],
+    "aliases": [
+      "Wong W-B executable extraction",
+      "Wong E01 actual-record memoized sample tracing"
+    ],
+    "dependencies": []
+  }
+}
