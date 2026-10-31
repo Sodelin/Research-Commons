@@ -1,0 +1,105 @@
+{
+  "source_sha256": "68bdc882076ca42cb43d032888501ec4c601f2d5092702a3ca67767b3bda1861",
+  "declarations": [
+    {
+      "name": "directed_equal_age",
+      "complete_frozen_text": "lemma directed_equal_age (N : RootedBinary V E X) (C : Calendar N.graph)\n    {a b : V} (hp : N.graph.DReach a b) (he : C.age a = C.age b) : a = b := by\n  induction hp with\n  | refl => rfl\n  | tail path step ih =>\n      obtain \u27e8e,hs,ht\u27e9 := step\n      have hl := C.edge_older e\n      rw [hs,ht] at hl\n      have hab := C.age_le_of_directed path\n      exact False.elim ((ne_of_lt (hl.trans_le hab)) he.symm)",
+      "sha256": "827e8393d89ff97a5b9c8d5d77129f253acd7c11e95d95286905100d197c2d56"
+    },
+    {
+      "name": "leaf_before_root",
+      "complete_frozen_text": "lemma leaf_before_root (N : RootedBinary V E X) (C : Calendar N.graph) (x : X) :\n    C.age (N.leaf x) < C.age N.root := by\n  have hp := N.rooted (N.leaf x)\n  apply lt_of_le_of_ne (C.age_le_of_directed hp)\n  intro he\n  exact N.leaf_ne_root x (directed_equal_age N C hp he.symm).symm",
+      "sha256": "879cea0df9c57e3c4b6f3f413cd6c8f27c6a81cf74bac8b5447e4e15f75eb12e"
+    },
+    {
+      "name": "sampleEdge",
+      "complete_frozen_text": "def sampleEdge (N : RootedBinary V E X) (x : X) : E :=\n  (defaultSelector N).edge \u27e8N.leaf x,N.leaf_ne_root x\u27e9",
+      "sha256": "e9f7f901285c069af28f3e76793672cc7f01b556a4a4f3c8982f7d18064f309a"
+    },
+    {
+      "name": "sampleEdge_target",
+      "complete_frozen_text": "lemma sampleEdge_target (N : RootedBinary V E X) (x : X) :\n    N.graph.target (sampleEdge N x) = N.leaf x := (defaultSelector N).target _",
+      "sha256": "a9a1f0f7143f6e0b009caa9926d88e2087819b948eceb52a337ca89fe2ccfd62"
+    },
+    {
+      "name": "unique_leaf_edge",
+      "complete_frozen_text": "lemma unique_leaf_edge (N : RootedBinary V E X) (x : X) (e : E)\n    (he : N.graph.target e = N.leaf x) : e = sampleEdge N x := by\n  have hc := (N.leaf_degrees x).1\n  unfold EdgeGraph.inDegree at hc\n  obtain \u27e8f,hf\u27e9 := Finset.card_eq_one.mp hc\n  have hm : e \u2208 Finset.univ.filter (fun e => N.graph.target e = N.leaf x) :=\n    Finset.mem_filter.mpr \u27e8Finset.mem_univ _,he\u27e9\n  have hn : sampleEdge N x \u2208 Finset.univ.filter (fun e => N.graph.target e = N.leaf x) :=\n    Finset.mem_filter.mpr \u27e8Finset.mem_univ _,sampleEdge_target N x\u27e9\n  rw [hf,Finset.mem_singleton] at hm hn\n  exact hm.trans hn.symm\n\n/-- Count/rate-independent admitted representative; no reachability asserted. -/",
+      "sha256": "9bec85414e454edb4fc04b0f30bfffed046dac4b90ecf6b345ee24cb6d151649"
+    },
+    {
+      "name": "activatedState",
+      "complete_frozen_text": "def activatedState (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) :\n    State V E Copy := { initial N sample register with location := fun x => .edge (sampleEdge N (sample x)) }",
+      "sha256": "08ec0ad16c213addb7bd6c67951e4cf9fc0c92ecdb8800d10fbd655a6c3ce405"
+    },
+    {
+      "name": "activated_valid",
+      "complete_frozen_text": "lemma activated_valid (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) :\n    SourceValid N sample (activatedState N sample register) := by\n  refine \u27e8initial_valid N sample register,?_\u27e9\n  intro x\n  change N.graph.DReach (N.graph.target (sampleEdge N (sample x))) (N.leaf (sample x))\n  rw [sampleEdge_target]\n  exact Relation.ReflTransGen.refl",
+      "sha256": "a378fbd078103e70c68a324a55c313dc3d4df3bf8b90b2e56229dfe1e430ece0"
+    },
+    {
+      "name": "activatedCode",
+      "complete_frozen_text": "def activatedCode (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) : Code N sample :=\n  admittedCode N sample (activatedState N sample register) (activated_valid N sample register)",
+      "sha256": "fc9bbe1eb644bda88f9d33bec9560a5f70397293a11f49fbbcdc3e62023a4445"
+    },
+    {
+      "name": "activated_observation",
+      "complete_frozen_text": "lemma activated_observation (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) :\n    observeCode N (activatedCode N sample register) =\n      (currentBlocks (initial N sample register),fun x => .edge (sampleEdge N (sample x))) := by\n  rw [activatedCode,admitted_observation]\n  rfl",
+      "sha256": "1ab6177cc8f050e429ac1f49d8c87038a8349e41218cb019c65d01624187f9f9"
+    },
+    {
+      "name": "activated_register",
+      "complete_frozen_text": "lemma activated_register (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) :\n    (state (activatedCode N sample register)).register = register := rfl",
+      "sha256": "820f01b66e857db43c3a2ab3575fe4b49d86ce2b9acac4e188b2656adc9a91d0"
+    },
+    {
+      "name": "singleton_blocks_initial",
+      "complete_frozen_text": "lemma singleton_blocks_initial (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (s : State V E Copy) (hs : Valid s) (hb : SingletonBlocks s) :\n    currentBlocks s = currentBlocks (initial N sample register) := by\n  ext B\n  constructor\n  \u00b7 intro hB\n    obtain \u27e8x,rfl\u27e9 := hb B hB\n    exact Finset.mem_image.mpr \u27e8x,Finset.mem_univ _,rfl\u27e9\n  \u00b7 intro hB\n    obtain \u27e8x,_,hx\u27e9 := Finset.mem_image.mp hB\n    have hBl : (s.genealogy (s.ancestor x)).leaves \u2208 currentBlocks s :=\n      Finset.mem_image.mpr \u27e8s.ancestor x,hs.ancestor_live x,rfl\u27e9\n    obtain \u27e8y,hy\u27e9 := hb _ hBl\n    have hxy : x = y := Finset.mem_singleton.mp (by\n      rw [\u2190 hy]; exact (hs.leaf_fiber _ (hs.ancestor_live x) x).mpr rfl)\n    have hBx : B = ({x} : Finset Copy) := hx.symm\n    simpa only [hy,\u2190 hxy,\u2190 hBx] using hBl\n\n/-- Actual physical support at c determines the original deterministic\nsingleton population observation, using strict age/ancestry and leaf degree. -/",
+      "sha256": "5e1cc5ed76ba8f421ea406f0e74c37218e09e7b2990ae07cab96dd93efabac50"
+    },
+    {
+      "name": "actual_sampling_observation",
+      "complete_frozen_text": "theorem actual_sampling_observation (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k = c) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    observeCode N d = observeCode N (activatedCode N sample register) := by\n  rw [activated_observation]\n  apply Prod.ext\n  \u00b7 exact singleton_blocks_initial N sample register (state d) d.property.forest\n      (actual_sampling_prefix_support N C sample register H gamma common r c hc k hcut.le hd).1\n  \u00b7 funext x\n    have hbefore : prefixDate N C k < C.age N.root := by\n      rw [hcut,\u2190 hc x]; exact leaf_before_root N C (sample x)\n    obtain \u27e8e,he,ha\u27e9 := actual_initialized_prefix_active N C sample register H gamma common r c hc k\n      hcut.ge hbefore hd x\n    have hp := d.property.original_descendant x\n    rw [he] at hp\n    change N.graph.DReach (N.graph.target e) (N.leaf (sample x)) at hp\n    have hage : C.age (N.graph.target e) = C.age (N.leaf (sample x)) := by\n      apply le_antisymm\n      \u00b7 rw [hc x,\u2190 hcut]; exact ha.1\n      \u00b7 exact C.age_le_of_directed hp\n    have ht := directed_equal_age N C hp hage\n    have hed := unique_leaf_edge N (sample x) e ht\n    simpa only [hed] using he",
+      "sha256": "2386eb71130456edb23fce387cd0518e10e5b6d094ee3908c050e0e50c9b613a"
+    },
+    {
+      "name": "program_support_register",
+      "complete_frozen_text": "lemma program_support_register (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (ops : List (ProgramStep N)) (s : Code N sample)\n    {d : Code N sample} (hd : d \u2208 (sourceProgram N r ops s).support) :\n    (state d).register = (state s).register := by\n  induction ops generalizing s with\n  | nil =>\n      have he : d = s := by simpa only [sourceProgram,PMF.mem_support_pure_iff] using hd\n      rw [he]\n  | cons op ops ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      exact (ih m hmd).trans (program_step_support_register N r op s hm)",
+      "sha256": "9a314ba392f7dd3463f170ad88a4febf1abfcfd19b330a3701be8fa355ab442c"
+    },
+    {
+      "name": "tail_take_drop",
+      "complete_frozen_text": "lemma tail_take_drop (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (dates : List \u211d) (a : \u211d) (k : \u2115) :\n    calendarTail N C H gamma common a dates =\n      calendarTail N C H gamma common a (dates.take k) ++\n        calendarTail N C H gamma common (finalDate a (dates.take k)) (dates.drop k) := by\n  induction dates generalizing a k with\n  | nil => simp [calendarTail,finalDate]\n  | cons b bs ih =>\n      cases k with\n      | zero => simp [calendarTail,finalDate]\n      | succ k =>\n          simp only [List.take_succ_cons,List.drop_succ_cons,calendarTail,finalDate,List.cons_append]\n          rw [ih b k]\n          simp only [List.append_assoc]",
+      "sha256": "0e748e2a1d057dc25252a42ced89ad14814ec43169ea3300d24e8d86039cc888"
+    },
+    {
+      "name": "samplingSuffix",
+      "complete_frozen_text": "def samplingSuffix (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (k : \u2115) : List (ProgramStep N) :=\n  match sortedOriginalDates N C with\n  | [] => []\n  | a::dates => calendarTail N C H gamma common (finalDate a (dates.take k)) (dates.drop k)\n\n/-- The actual full program splits after the COMPLETE date block, without\nreplaying that block or introducing a new time schedule. -/",
+      "sha256": "954bf837fb748841ad1caac727b4e0c70deba6a33c985668c8ccb765d5835d98"
+    },
+    {
+      "name": "actual_calendar_sampling_split",
+      "complete_frozen_text": "theorem actual_calendar_sampling_split (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (k : \u2115) :\n    compiledCalendarProgram N C H gamma common =\n      initializedPrefix N C H gamma common k ++ samplingSuffix N C H gamma common k := by\n  cases he : sortedOriginalDates N C with\n  | nil => simp [compiledCalendarProgram,initializedPrefix,samplingSuffix,he]\n  | cons a dates =>\n      simp only [compiledCalendarProgram,initializedPrefix,samplingSuffix,he]\n      rw [tail_take_drop N C H gamma common dates a k]\n      exact (List.append_assoc _ _ _).symm",
+      "sha256": "515f3020a28e8267780b87ebcf3a0346426efc454d8562d8eca8bc55901588ec"
+    },
+    {
+      "name": "calendar_value_append",
+      "complete_frozen_text": "lemma calendar_value_append (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (terminal : Code N sample \u2192 \u211d\u22650\u221e) (xs ys : List (ProgramStep N)) (s : Code N sample) :\n    calendarValue N r L q terminal (xs++ys) s =\n      calendarValue N r L q (calendarValue N r L q terminal ys) xs s := by\n  induction xs generalizing s with\n  | nil => rfl\n  | cons op xs ih =>\n      change (\u2211 d, segmentFibreWeight N r L q op s d * calendarValue N r L q terminal (xs++ys) d) = _\n      simp only [calendarValue,ih]",
+      "sha256": "a604c96b9b3798fa92c3391fda66c0c05f6f4014ec506cdb2b2a56fa901e153b"
+    },
+    {
+      "name": "actual_sampling_observation_bank_ae",
+      "complete_frozen_text": "lemma actual_sampling_observation_bank_ae (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k = c) :\n    let ops := initializedPrefix N C H gamma common k\n    let s := initialCode N sample register\n    \u2200\u1d50 past \u2202actualCalendarTraceLaw N r ops s,\n      observeCode N (calendarEnd N ops s past) = observeCode N (activatedCode N sample register) \u2227\n        (state (calendarEnd N ops s past)).register = (state (activatedCode N sample register)).register := by\n  let ops := initializedPrefix N C H gamma common k\n  let s := initialCode N sample register\n  let p := sourceProgram N r ops s\n  have hs : \u2200\u1d50 d \u2202p.toMeasure, d \u2208 p.support := by\n    rw [\u2190 p.restrict_toMeasure_support]\n    exact ae_restrict_mem p.support_countable.measurableSet\n  have ha : \u2200\u1d50 d \u2202p.toMeasure,\n      observeCode N d = observeCode N (activatedCode N sample register) \u2227\n        (state d).register = (state (activatedCode N sample register)).register := by\n    filter_upwards [hs] with d hd\n    refine \u27e8actual_sampling_observation N C sample register H gamma common r c hc k hcut hd,?_\u27e9\n    exact program_support_register N r ops s hd\n  change \u2200\u1d50 d \u2202(sourceProgram N r ops s).toMeasure, _ at ha\n  rw [\u2190 actual_calendar_endpoint_law N r ops s] at ha\n  exact ae_of_ae_map (calendar_end_measurable N ops s).aemeasurable ha\n\n/-- Actual initialization cancellation is now spliced into the ORIGINAL\nfull backward recursion. SAME bank, labels, balanced site family and source. -/",
+      "sha256": "68cd82acb84c694f5dc3d12545e740beab7ed60afbb87435ca86c7198dd14bfb"
+    },
+    {
+      "name": "actual_sampling_backward_reduction",
+      "complete_frozen_text": "theorem actual_sampling_backward_reduction [Nonempty Copy] (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k = c) :\n    initialPotentialWeight N C sample register L q *\n      calendarValue N r L q (guardedRoot N r L q) (compiledCalendarProgram N C H gamma common)\n        (initialCode N sample register) =\n      calendarValue N r L q (guardedRoot N r L q) (samplingSuffix N C H gamma common k)\n        (activatedCode N sample register) := by\n  let pre := initializedPrefix N C H gamma common k\n  let post := samplingSuffix N C H gamma common k\n  let s := initialCode N sample register\n  let d := activatedCode N sample register\n  let I := initialPotentialWeight N C sample register L q\n  let F : Code N sample \u2192 \u211d\u22650\u221e := calendarValue N r L q (guardedRoot N r L q) post\n  letI := actual_calendar_trace_probability N r pre s\n  rw [actual_calendar_sampling_split N C H gamma common k,calendar_value_append]\n  change I * calendarValue N r L q F pre s = F d\n  rw [\u2190 actual_calendar_weighted_recursion N r L q F pre s]\n  calc\n    I * (\u222b\u207b past, calendarWeight N L q pre s past * F (calendarEnd N pre s past)\n      \u2202actualCalendarTraceLaw N r pre s) =\n      \u222b\u207b past, I * (calendarWeight N L q pre s past * F (calendarEnd N pre s past))\n        \u2202actualCalendarTraceLaw N r pre s :=\n      (lintegral_const_mul I (weighted_readout_measurable N L q F pre s)).symm\n    _ = \u222b\u207b _past, F d \u2202actualCalendarTraceLaw N r pre s := by\n      apply lintegral_congr_ae\n      filter_upwards [actual_initial_factor_cancellation N C sample register H gamma common r L q c hc k hcut,\n        actual_sampling_observation_bank_ae N C sample register H gamma common r c hc k hcut] with past hi hd\n      have hf := actual_guarded_calendar_quotient N r L q hbal post (calendarEnd N pre s past) d hd.1 hd.2\n      rw [\u2190 mul_assoc,hi,one_mul]\n      exact hf\n    _ = F d := by simp\n\n/-- Equality for the original full-labelled observed Fourier coefficient,\nnot a newly invented reduced observation or a supplied likelihood law. -/",
+      "sha256": "64ea413d993cf76401915fd13ba65838dda29b6a6a45ee382cece8abd2f03d57"
+    },
+    {
+      "name": "actual_observed_sampling_reduction",
+      "complete_frozen_text": "theorem actual_observed_sampling_reduction [Nonempty Copy] (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (register : V \u2192 Bool)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) :\n    \u2203 k : \u2115, prefixDate N C k = c \u2227\n      observedFourier L N C sample register H gamma common r q =\n        (calendarValue N r L q (guardedRoot N r L q) (samplingSuffix N C H gamma common k)\n          (activatedCode N sample register)).toReal := by\n  obtain \u27e8k,hk\u27e9 := actual_sampling_cut_exists N C sample c hc\n  refine \u27e8k,hk,?_\u27e9\n  rw [actual_observed_guarded_calendar N C sample register H gamma common r L q hbal,\n    actual_sampling_backward_reduction N C sample register H gamma common r L q hbal c hc k hk]",
+      "sha256": "0bf9901d6ec8393bcfa71d0f59b35bc88d1137cbbf53f7b956ddc779fe30b867"
+    }
+  ]
+}

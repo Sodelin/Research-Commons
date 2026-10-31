@@ -1,0 +1,3 @@
+# Separate source-only semantic review
+
+31 October 2026. Separate AI-assisted mathematical review read all284 lines at68bdc882076ca42cb43d032888501ec4c601f2d5092702a3ca67767b3bda1861. Intended proof approved for compiler request: actual source descent, strict ages and leaf indegree determine the population observation; admitted representative independent of counts/rates is not assumed reachable; same-bank quotient and exact take/drop/backward splice integrate actual cancellation into original observedFourier. Preserve Nonempty Copy, balanced sites, hc/cut and no M/D/window claim. This is not a successful Lean check, expert peer review or novelty certification.
