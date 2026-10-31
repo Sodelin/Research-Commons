@@ -1,0 +1,94 @@
+@ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_source.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E)
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+    (UnifiedLean.Source.SourceProgramTransport.sourceProgram.{u_1, u_2, u_3, u_4} N r
+      (List.map.{max u_2 u_1, max u_1 u_2}
+        UnifiedLean.Source.SourceProgramTransport.ProgramStep.boundary.{u_1, u_2, u_4} bs)
+      s)
+    (ResearchCommons.MSCI.JC69BoundaryWord.boundaryLaw.{u_1, u_2, u_3, u_4} N bs s)
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_source' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_quotient.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N s)
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N t) →
+    Eq.{u_1 + 1}
+        (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+          (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} s))
+        (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+          (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} t)) →
+      ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+        Eq.{1} (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs s target)
+          (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs t target)
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_quotient' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_representative.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s representative : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N s)
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N representative) →
+    ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+      Eq.{1} (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs s target)
+        (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs
+          (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank.{u_1, u_2, u_3, u_4} N representative
+            (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+              (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} s)))
+          target)
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_representative' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_readout.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+  Eq.{1}
+    (ResearchCommons.MSCI.JC69WeightedCalendar.calendarValue.{u_1, u_2, u_3, u_4} N r L q
+      (fun d =>
+        ite.{1}
+          (Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+            (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N d) target)
+          1 0)
+      (List.map.{max u_2 u_1, max u_1 u_2}
+        UnifiedLean.Source.SourceProgramTransport.ProgramStep.boundary.{u_1, u_2, u_4} bs)
+      s)
+    (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs s target)
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_readout' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_coefficient_finite.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+  Ne.{1} (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs s target) Top.top.{0}
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_coefficient_finite' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
