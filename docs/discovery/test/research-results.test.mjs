@@ -30,3 +30,15 @@ test('an explicit source prefix selects its immutable alias without transferring
   assert.equal(hit.title,'research/z-reviewed.lean');const exact=await queryResearchResults(manifest,hit.url,{pathPrefix:'research/z-reviewed.lean'});assert.equal(exact.total,1);assert.equal(exact.results[0].url,hit.url);
  }finally{await rm(root,{recursive:true,force:true});}
 });
+
+test('existing immutable body shards support joined numeric theorem bounds without rewriting source bytes',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'result-numeric-'));const repo=join(root,'repo'),index=join(root,'index');await mkdir(repo);const git=(...a)=>execFileSync('git',['-C',repo,...a]);
+ try{
+  git('init');git('config','user.name','Fixture');git('config','user.email','fixture@example.invalid');git('remote','add','origin','https://github.com/Sodelin/Research-Commons.git');await mkdir(join(repo,'research'));
+  const body='# Singular cells\nAt most499 DISTINCT types, not a total repetition bound. Hand reviewed, not Lean.';
+  await writeFile(join(repo,'research/current.md'),body);await writeFile(join(repo,'research/other.md'),'A different count4990.');git('add','.');git('commit','-m','Scientific sources');
+  execFileSync('python3',[fileURLToPath(new URL('../tools/index-research-results.py',import.meta.url)),'--repo',repo,'--output',index]);
+  const r=await queryResearchResults(join(index,'manifest.json'),'499');assert.equal(r.total,1);assert(r.results[0].url.endsWith('/research/current.md'));assert.equal(r.results[0].bytes,Buffer.byteLength(body));assert.deepEqual(r.results[0].canonical_claim_references,[]);assert.match(r.results[0].evidence_role,/No claim status inferred/);
+  assert.equal((await readFile(join(repo,'research/current.md'),'utf8')),body);
+ }finally{await rm(root,{recursive:true,force:true});}
+});

@@ -53,10 +53,17 @@ export function recoveredReferences(catalogue,manifest,baseURL){
 }
 // Conservative necessary-condition filter using this engine's own query tokenizer.
 // Substring matches may over-select; final matching always uses searchSources.
+// Numeric-only lookups use complete digit runs in scientific prose, including
+// typography such as 'most499'. Long hexadecimal source identities are not counts.
+function numericSourceMatch(doc,query){
+ const text=[doc.title,doc.body].join(' ').replace(/\b[a-f0-9]{16,}\b/giu,' ');
+ return new RegExp('(?:^|[^0-9])'+query+'(?![0-9])','u').test(text);
+}
 export function sourceExactness(doc,query){
  const q=String(query).trim();if(!q)return 0;
  if(doc.bindings.some(b=>b.catalogue_key===q))return 5;
  if(doc.url===q||(doc.source_paths??[]).some(p=>p===q||p.endsWith('/'+q)))return 4;
+ if(/^[0-9]+$/.test(q)&&numericSourceMatch(doc,q))return 2;
  if(/^[\p{L}\p{N}_'.]+$/u.test(q)){
   const escaped=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
   const declaration=new RegExp('^(?:(?:private|protected|noncomputable)\\s+)*(?:theorem|lemma|def|abbrev|structure|inductive)\\s+'+escaped+'(?=[\\s.({:])','mu');
@@ -79,7 +86,9 @@ export function searchSources(corpus,query,claimIds=null){
   }
   const byURL=new Map(corpus.documents.map(d=>[d.url,d]));
   let hits=String(query).trim()?indexes.get(corpus).search(query,{combineWith:'AND',prefix:true,boost:{title:4,claims:3}}).map(h=>byURL.get(h.id)):corpus.documents;
-  const exact=corpus.documents.filter(d=>sourceExactness(d,query)>=4);
+  const numeric=String(query).trim();
+ if(/^[0-9]+$/.test(numeric))hits=corpus.documents.filter(d=>numericSourceMatch(d,numeric));
+ const exact=corpus.documents.filter(d=>sourceExactness(d,query)>=4);
   if(exact.length){const urls=new Set(exact.map(d=>d.url));hits=[...exact,...hits.filter(d=>!urls.has(d.url))];}
   return hits.filter(d=>!claimIds||d.bindings.some(b=>claimIds.has(b.claim_id))).sort((a,b)=>sourceExactness(b,query)-sourceExactness(a,query));
 }
