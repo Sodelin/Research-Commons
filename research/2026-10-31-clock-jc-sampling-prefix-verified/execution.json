@@ -1,0 +1,68 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "source",
+    "exit_code": 1,
+    "seconds": 4.639886782999383,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69SamplingPrefix.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "batch_start": true,
+    "batch": 2
+  },
+  {
+    "step": "source",
+    "exit_code": 0,
+    "seconds": 5.301393247995293,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69SamplingPrefix.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.75412448401039,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/NamedAudit.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 5.924928346008528,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/OwnedAudit.lean"
+    ],
+    "batch": 2
+  }
+]

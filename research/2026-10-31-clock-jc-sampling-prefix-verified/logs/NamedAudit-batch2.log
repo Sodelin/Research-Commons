@@ -1,0 +1,87 @@
+@ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_prefix_support.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X)
+  (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (k : ℕ),
+      LE.le.{0} (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) c →
+        ∀ {d : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample},
+          Membership.mem.{max (max u_1 u_2) u_3, max (max u_1 u_2) u_3}
+              (PMF.support.{max (max u_1 u_2) u_3}
+                (UnifiedLean.Source.SourceProgramTransport.sourceProgram.{u_1, u_2, u_3, u_4} N r
+                  (ResearchCommons.MSCI.JC69ActivatedPrefix.initializedPrefix.{u_1, u_2, u_4} N C H gamma common k)
+                  (UnifiedLean.Source.SourceInitializedCalendar.initialCode.{u_1, u_2, u_3, u_4} N sample register)))
+              d →
+            ResearchCommons.MSCI.JC69SamplingPrefix.SamplingInvariant.{u_1, u_2, u_3, u_4} N sample c
+              (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) d
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_prefix_support' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69SamplingPrefix.actual_prefix_calendar_time.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_3} X]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_3} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} N → Bool) (k : ℕ),
+  Eq.{1}
+    (ResearchCommons.MSCI.JC69CalendarOccupation.calendarTime.{u_1, u_2, u_3} N
+      (ResearchCommons.MSCI.JC69ActivatedPrefix.initializedPrefix.{u_1, u_2, u_3} N C H gamma common k)
+      (UnifiedLean.Source.SourceCalendarCompatibility.firstOriginalDate.{u_1, u_2, u_3} N C))
+    (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_3} N C k)
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_prefix_calendar_time' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_3} Copy] [Nonempty.{u_3 + 1} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∃ k, Eq.{1} (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) c
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69SamplingPrefix.actual_initial_factor_cancellation.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X)
+  (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (k : ℕ),
+      Eq.{1} (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) c →
+        have ops := ResearchCommons.MSCI.JC69ActivatedPrefix.initializedPrefix.{u_1, u_2, u_4} N C H gamma common k;
+        have s := UnifiedLean.Source.SourceInitializedCalendar.initialCode.{u_1, u_2, u_3, u_4} N sample register;
+        ∀ᵐ (past :
+          Fin (List.length.{max u_1 u_2} ops) →
+            GProgram.G2.ActualCalendarTrace.SegmentRecord.{u_1, u_2, u_3, u_4} N
+              sample) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw.{u_1, u_2, u_3, u_4} N r ops s,
+          Eq.{1}
+            (HMul.hMul.{0, 0, 0}
+              (ResearchCommons.MSCI.JC69WeightedCalendar.initialPotentialWeight.{u_1, u_2, u_3, u_4} N C sample register
+                L q)
+              (ResearchCommons.MSCI.JC69WeightedCalendar.calendarWeight.{u_1, u_2, u_3, u_4} N L q ops s past))
+            1
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_initial_factor_cancellation' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

@@ -1,0 +1,158 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:45:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (decodeSnapshot N.root ↑s).ancestor (↑p.snd).1
+in the target expression
+  (state s).location ((state s).ancestor (↑p.snd).1) = Location.node (N.leaf (sample (↑p.snd).1))
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : Dormant N sample s
+p : Choice N s
+hl : (↑p.snd).1 ∈ populationRoots (state s) (originalPlace N p.fst)
+hp : (↑p.snd).1 ∈ (state s).live ∧ (state s).location (↑p.snd).1 = originalPlace N p.fst
+h : (state s).location ((state s).ancestor (↑p.snd).1) = Location.node (N.leaf (sample (↑p.snd).1))
+⊢ False
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:51:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:129:2: error: Type mismatch: After simplification, term
+  hm
+ has type
+  if Location.node (N.leaf (sample x)) = Location.node v then
+    if v = N.root then copyLocation (state d) x = Location.rootPopulation N.root
+    else ∃ e, N.graph.target e = v ∧ copyLocation (state d) x = Location.edge e
+  else copyLocation (state d) x = Location.node (N.leaf (sample x))
+but is expected to have type
+  copyLocation (state d) x = Location.node (N.leaf (sample x))
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:155:41: error: Type mismatch: After simplification, term
+  hm
+ has type
+  m ∈ (sourceProgramStep N r (ProgramStep.boundary (BoundaryOperation.exit e)) s).support
+but is expected to have type
+  m = exitCode N s e
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:316:2: error: `simp` made no progress
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:318:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SamplingPrefix.calendar_time_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:324:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SamplingPrefix.boundary_word_time`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:392:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:416:18: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace (Code N sample)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:417:10: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace (Code N sample)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:419:18: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace (Code N sample)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:420:20: error(lean.unknownIdentifier): Unknown identifier `hs`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:422:81: error(lean.unknownIdentifier): Unknown identifier `ha`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingPrefix.lean:452:11: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  forestPotential (q j) leafAge (decodeSnapshot N.root ↑(calendarEnd N ops s past)) ?M c
+in the target expression
+  forestPotential (q j) leafAge (state (calendarEnd N ops s past))
+      (calendarMatrix N ops s (firstOriginalDate N C) M past) c =
+    forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) + calendarOccupation N (q j) ops s past
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+c : ℝ
+hc : ∀ (x : Copy), C.age (N.leaf (sample x)) = c
+k : ℕ
+hcut : prefixDate N C k = c
+ops : List (ProgramStep N) := initializedPrefix N C H gamma common k
+s : Code N sample := initialCode N sample register
+leafAge : Copy → ℝ := fun x => C.age (N.leaf (sample x))
+M : Copy → Copy → ℝ := fun x x_1 => leafAge x
+ht : calendarTime N ops (firstOriginalDate N C) = c
+hE :
+  ∀ᵐ (a : Fin ops.length → SegmentRecord N sample) ∂actualCalendarTraceLaw N r ops s,
+    ∀ (i : Fin L),
+      forestPotential (q i) leafAge (state (calendarEnd N ops s a)) (calendarMatrix N ops s (firstOriginalDate N C) M a)
+          (calendarTime N ops (firstOriginalDate N C)) =
+        forestPotential (q i) leafAge (state s) M (firstOriginalDate N C) + calendarOccupation N (q i) ops s a
+past : Fin (initializedPrefix N C H gamma common k).length → SegmentRecord N sample
+he :
+  past ∈
+    {x |
+      ∀ (i : Fin L),
+        forestPotential (q i) leafAge (state (calendarEnd N ops s x))
+            (calendarMatrix N ops s (firstOriginalDate N C) M x) (calendarTime N ops (firstOriginalDate N C)) =
+          forestPotential (q i) leafAge (state s) M (firstOriginalDate N C) + calendarOccupation N (q i) ops s x}
+hs :
+  SingletonBlocks (state (calendarEnd N (initializedPrefix N C H gamma common k) (initialCode N sample register) past))
+hw :
+  past ∈
+    {x | calendarWeight N L q ops s x = ENNReal.ofReal (Real.exp (-(4 / 3 * ∑ j, calendarOccupation N (q j) ops s x)))}
+j : Fin L
+h :
+  forestPotential (q j) leafAge (state (calendarEnd N ops s past))
+      (calendarMatrix N ops s (firstOriginalDate N C) M past) c =
+    forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) + calendarOccupation N (q j) ops s past
+⊢ forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) + calendarOccupation N (q j) ops s past = 0
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_prefix_support' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_prefix_calendar_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingPrefix.actual_initial_factor_cancellation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

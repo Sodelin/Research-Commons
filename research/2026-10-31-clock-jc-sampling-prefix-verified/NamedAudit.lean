@@ -1,0 +1,10 @@
+import ResearchCommons.MSCI.JC69SamplingPrefix
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_prefix_support
+#print axioms ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_prefix_support
+#check @ResearchCommons.MSCI.JC69SamplingPrefix.actual_prefix_calendar_time
+#print axioms ResearchCommons.MSCI.JC69SamplingPrefix.actual_prefix_calendar_time
+#check @ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists
+#print axioms ResearchCommons.MSCI.JC69SamplingPrefix.actual_sampling_cut_exists
+#check @ResearchCommons.MSCI.JC69SamplingPrefix.actual_initial_factor_cancellation
+#print axioms ResearchCommons.MSCI.JC69SamplingPrefix.actual_initial_factor_cancellation

@@ -1,0 +1,3 @@
+# Separate AI-assisted semantic review
+
+31 October 2026. Separate AI-assisted mathematical review read the complete repair patch and all four full named types/standard axiom reports. Scoped acceptance: existing measurable instances, explicit operation/representative unfolding and dependent-decoration zero proof retain the SAME actual source/exposure, hc/cut/support and initialization factor. All31 headers/three definitions unchanged. Full198-module raw audit remains compiler-attributed, not independently replayed. No full observed-recursion split/post-c population assignment/M/D/window, expert peer review or novelty certification is claimed.

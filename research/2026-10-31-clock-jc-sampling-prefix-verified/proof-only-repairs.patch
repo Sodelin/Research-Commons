@@ -1,0 +1,68 @@
+--- frozen/JC69SamplingPrefix.lean
++++ source/JC69SamplingPrefix.lean
+@@ -8,6 +8,8 @@
+ set_option autoImplicit false
+ set_option backward.isDefEq.respectTransparency false
+ namespace ResearchCommons.MSCI.JC69SamplingPrefix
++attribute [local instance] GProgram.G2.LiteralMarkedClockTrace.codeMeasurable
++  GProgram.G2.LiteralMarkedClockTrace.codeOptionMeasurable
+ open MeasureTheory ProbabilityTheory Set Nanuq.Source GProgram.SourceForest GProgram.G5
+ open UnifiedLean.Source.FiniteSourceSnapshot UnifiedLean.Source.UniformizedSourceStep
+ open UnifiedLean.Source.NativePairClockLaw UnifiedLean.Source.SourcePoissonKernel
+@@ -42,7 +44,8 @@
+   have hp := Finset.mem_filter.mp hl
+   have h := hs p.2.val.1
+   change (state s).location ((state s).ancestor p.2.val.1) = _ at h
+-  rw [s.property.forest.representative _ hp.1] at h
++  have hr : (state s).ancestor p.2.val.1 = p.2.val.1 := s.property.forest.representative _ hp.1
++  rw [hr] at h
+   exact originalPlace_not_node N p.1 _ (hp.2.symm.trans h)
+ 
+ lemma dormant_step_support (N : RootedBinary V E X) {sample : Copy → X}
+@@ -126,7 +129,9 @@
+     have hvx := congrArg C.age (Location.node.inj he)
+     rw [hc x] at hvx
+     exact (ne_of_lt hv) hvx.symm
+-  simpa only [NodeMovement,if_neg hn,hs x] using hm
++  simp only [NodeMovement] at hm
++  rw [if_neg hn] at hm
++  simpa only [hs x] using hm
+ 
+ lemma boundary_word_singleton (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bs : List (BoundaryOperation N)) (s : Code N sample)
+@@ -152,7 +157,7 @@
+       simpa only [he] using hs
+   | cons e es ih =>
+       obtain ⟨m,hm,hmd⟩ := (PMF.mem_support_bind_iff _ _ _).mp hd
+-      have he : m = exitCode N s e := by simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hm
++      have he : m = exitCode N s e := by simpa only [sourceProgramStep,boundaryKernel,PMF.mem_support_pure_iff] using hm
+       subst m
+       exact ih _ (dormant_exit_support N e s hs) hmd
+ 
+@@ -313,7 +318,12 @@
+   intro l hl
+   obtain ⟨x,hx⟩ := hB (s.genealogy l).leaves (Finset.mem_image.mpr ⟨l,hl,rfl⟩)
+   obtain ⟨y,hy⟩ := wellLabelled_singleton_leaf (s.genealogy l) (hs.wellLabelled l hl) hx
+-  simp only [hy,potential,hc y,sub_self,mul_zero]
++  change potential q leafAge (s.genealogy l) (decode M (s.genealogy l)) c = 0
++  have hz : ∀ d : Decoration (s.genealogy l), potential q leafAge (s.genealogy l) d c = 0 := by
++    rw [hy]
++    intro d
++    simp only [potential,hc y,sub_self,mul_zero]
++  exact hz _
+ 
+ lemma calendar_time_append (N : RootedBinary V E X) (xs ys : List (ProgramStep N)) (a : ℝ) :
+     calendarTime N (xs ++ ys) a = calendarTime N ys (calendarTime N xs a) := by
+@@ -449,8 +459,10 @@
+   have hz (j : Fin L) : forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) +
+       calendarOccupation N (q j) ops s past = 0 := by
+     have h := he j
+-    rw [ht,singleton_potential_zero _ (calendarEnd N ops s past).property.forest hs (q j) leafAge c hc] at h
+-    exact h.symm
++    rw [ht] at h
++    exact h.symm.trans (singleton_potential_zero (state (calendarEnd N ops s past))
++      (calendarEnd N ops s past).property.forest hs (q j) leafAge c hc
++      (calendarMatrix N ops s (firstOriginalDate N C) M past))
+   have hsum : (∑ j, forestPotential (q j) leafAge (state s) M (firstOriginalDate N C)) +
+       (∑ j, calendarOccupation N (q j) ops s past) = 0 := by
+     rw [← Finset.sum_add_distrib]
