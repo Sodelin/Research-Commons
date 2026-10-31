@@ -14,8 +14,8 @@ Run from the **repository root**, after obtaining the repository with its Git hi
 
 ```sh
 cd /path/to/Research-Commons
-python3 docs/discovery/tools/index-research-results.py --repo . --commit b96b25ba4c5ac19f26581f9c3178fb646fc4228e --output /tmp/commons-results-b96b
-node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-b96b/manifest.json \
+python3 docs/discovery/tools/index-research-results.py --repo . --commit 2037a743ac2a8005793586209cacb29479fff061 --output /tmp/commons-results-2037
+node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-2037/manifest.json \
   --query actual_root_weight_shifted_limit \
   --research-path research/2026-10-31-clock-jc-root-fuel-composition-verified/source/ResearchCommons/MSCI/JC69RootFuelComposition.lean --limit 10
 ```
@@ -23,12 +23,21 @@ node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-b96b
 Build the cache once, then reuse the last command with another query. Omit `--research-path` to search across every shard; `--offset` and `--limit` paginate the results. The optional path prefix selects the exact source link, useful when an unchanged candidate body also occurs in an accepted packet. `body_document_url` preserves its original deduplicated body link, and `source_paths` lists the shared locations; equal bytes do not transfer status between packets. A machine without this generated manifest **and its body shards** must build them first; the committed receipt alone is not the cache. To verify the same cache:
 
 ```sh
-python3 docs/discovery/tools/index-research-results.py --repo . --commit b96b25ba4c5ac19f26581f9c3178fb646fc4228e --output /tmp/commons-results-b96b --check
+python3 docs/discovery/tools/index-research-results.py --repo . --commit 2037a743ac2a8005793586209cacb29479fff061 --output /tmp/commons-results-2037 --check
 ```
 
-The latest checked local snapshot here is `b96b25ba` (including the 06:03 scope and later root-resolvent, straight-carrier, boundary-fixed-crosscut and real-Volterra acceptances, plus separately labelled ordered-path/trivalent-star candidates): **98,735 full-text paths, 1,063 explicitly path-only paths, 33,060 distinct text bodies**. Its [coverage receipt](result-coverage.json), [exact-source query history](result-query-receipt.json) and [publication-version checks](result-publications.json) record their own immutable input pins. Code availability, a published receipt, a generated local cache and a hosted reader deployment are distinct states. **The hosted reader and its bundled historical corpus have not been refreshed by this work.** This tree index covers the selected public roots, not all Git history, binary bodies, private chats or complete linked repositories; the [reference coverage inventory](result-reference-coverage.json) accounts for those separate source-reference gaps and the optional [exact public-reference body supplement](#exact-referenced-public-bodies-beyond-the-tree-roots).
+The latest checked local snapshot here is `2037a743` (including the decoded43-body G3 proof/dependency integration, independent hand review,08:09 coordination and portable-package software acceptance): **98,795 full-text paths,1,063 explicitly path-only paths,33,115 distinct text bodies**. Its [coverage receipt](result-coverage.json), [exact-source query history](result-query-receipt.json) and [publication-version checks](result-publications.json) record their own immutable input pins. Code availability, a published receipt, a generated local cache and a hosted reader deployment are distinct states. **The hosted reader and its bundled historical corpus have not been refreshed by this work.** This tree index covers the selected public roots, not all Git history, binary bodies, private chats or complete linked repositories; the [reference coverage inventory](result-reference-coverage.json) accounts for those separate source-reference gaps and the optional [exact public-reference body supplement](#exact-referenced-public-bodies-beyond-the-tree-roots).
 
-To see what has been completed and what remains, start with the [current full-scope checkpoint](../../research/2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md), then follow the [canonical scientific claim register](../claims.json) and [exact Lean declaration/binding guide](../EXISTING-LEAN-CLAIM-BINDINGS.md). The scope checkpoint distinguishes the completed 1,833-module build and 520 named requests from the then-running caller gate and incomplete all-118 gate; it is a dated observation, not live process status. Individual accepted packets retain their exact theorem and audit scope. Frozen candidates and failed versions remain searchable with later acceptance/correction links; a search hit does not transfer acceptance or close an original master question.
+To see what has been completed and what remains, start with the [current full-scope checkpoint](../../research/2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md), then follow the [canonical scientific claim register](../claims.json) and [exact Lean declaration/binding guide](../EXISTING-LEAN-CLAIM-BINDINGS.md). The scope checkpoint distinguishes the completed 1,833-module build and 520 named requests from the then-running caller gate and incomplete all-118 gate; it is a dated observation, not live process status. The [later terminal software receipt](../../research/2026-10-31-portable-package-context-b-acceptance/README.md) records the completed actual caller and final binding gates, qualified object reuse and still-incomplete all118 coverage. Individual accepted packets retain their exact theorem and audit scope. Frozen candidates and failed versions remain searchable with later acceptance/correction links; a search hit does not transfer acceptance or close an original master question.
+
+The [portable Lean/Rust source package](../../packages/research/README.md) is available on main. From the same repository root, inspect every claim and exact selected module binding without running proofs:
+
+```sh
+node docs/discovery/tools/query.mjs --package-root packages/research --ledger
+node docs/discovery/tools/query.mjs --package-root packages/research --modules --query DiscriminatingStatusTransport --limit 10
+```
+
+These package queries were executed against the materialized main source. The ledger accounts for all118 IDs and the module query ranks the exact declaration module first; lookup itself does not constitute execution or full completion. The actual public run receipt distinguishes1833/520/1296 success from strict coverage exit2. Full-result tree search still selects the three documented roots; package code uses the separate source-bound package view rather than silently expanding the tree coverage count.
 
 ## Run and verify
 
