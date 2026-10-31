@@ -1,0 +1,104 @@
+{
+  "modules": [
+    {
+      "module": "Pruning",
+      "source_sha256": "fb9fa92c9cd6b4c9a7fca3f70f3658cba962db708abc2f57270b14cfff698130",
+      "imports": [
+        "Mathlib.Data.List.Basic",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/Pruning.lean",
+      "compiled_object_sha256": "a70e509680b25c8e82aa6d3a081c8e2d36afb40f1ce1e99268ff4cd4f92a0c7b",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "RootRotation",
+      "source_sha256": "ff23924c043918192856c6c278a2f79e9b048035100cc9c893ec338245ced44e",
+      "imports": [
+        "Pruning"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/RootRotation.lean",
+      "compiled_object_sha256": "6dec7698fa62923b0cde0c621bfe72a6c237cb5c1242de3da3c8f7775d0d8693",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "Reroot",
+      "source_sha256": "d980d67aee1380aed2638490d86c4d1a61d8b6f47a83f3023507dd6f0208d572",
+      "imports": [
+        "RootRotation"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/Reroot.lean",
+      "compiled_object_sha256": "004076f7cb7a447d0f6f74adfeddecfc75e5b32842e1048d69543a4d16721978",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "OrderedCertificate",
+      "source_sha256": "f244539d12b2359ef67078eeca4c655626d02e942d913571056174f6fc901111",
+      "imports": [
+        "Mathlib.Data.List.Basic",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-adjacent-finite-provider/OrderedCertificate.lean",
+      "compiled_object_sha256": "052a18b1752e670fd0c1e3a8198cefdf0409081f5c980b24ebd9098a3c5bf476",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "AdjacentSemantics",
+      "source_sha256": "5721d75260c44bfdf26f2f7c9ee3072bc33cad78e6f0a5a461fce26c29a0c01f",
+      "imports": [
+        "OrderedCertificate"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-adjacent-finite-provider/AdjacentSemantics.lean",
+      "compiled_object_sha256": "97dbc689bbdd282425c96b19fe7c933bab1ca6833382bd6b40ffa75db1c044f5",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "AdjacentBlocks",
+      "source_sha256": "922f71773e7bf5b0bc695ebc37f2e008f97189d36a141e9783c4e32794655ebc",
+      "imports": [
+        "Reroot",
+        "AdjacentSemantics",
+        "Init.Data.BitVec.Lemmas"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/AdjacentBlocks.lean",
+      "compiled_object_sha256": "ab3c151b84c8fbee8239ea5e7eec8e51ec6a7996c9c0b9c9e4b448a5fafd2a59",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "Relabel",
+      "source_sha256": "92a5d3bbf2aebc25004d2eb5d0d63042944dc5fd6536591eb2cfdb1b65732353",
+      "imports": [
+        "AdjacentBlocks"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/Relabel.lean",
+      "compiled_object_sha256": "a3313d9e04bfde7545fabd36ec85fc1d6d6b7698075fbc116f14bf9516ba61d0",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "CanonicalRestriction",
+      "source_sha256": "215e0955257b4d46bc0d5744eea95b14051f1e2162a75220e3fa393f44c8a21c",
+      "imports": [
+        "Relabel"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/CanonicalRestriction.lean",
+      "compiled_object_sha256": "7cae3a77c2e04dfd15748176d16cda6cc7da38843bef62380652923097ce474e",
+      "actual_compile_exit": 0
+    },
+    {
+      "module": "CyclicGaps",
+      "source_sha256": "59d3adfa87d04931c0abc1d8013c05332733ebc52e00ff7dff6cd7351fa324b9",
+      "imports": [
+        "CanonicalRestriction"
+      ],
+      "immutable_source_url": "https://github.com/Sodelin/Research-Commons/blob/64b3e74a937de1088aeb6b2f0d3cd6b258c71f6e/research/2026-10-30-nanuq-ordered-tree-restriction/CyclicGaps.lean",
+      "compiled_object_sha256": "f909ae056e3b9e16f0f28f0d26ca126f260b793651399ce3e1b0b1cc891bae0c",
+      "actual_compile_exit": 0
+    }
+  ],
+  "count": 9,
+  "fresh_original_source_compilations": 9,
+  "prior1211_release_not_rebuilt": true,
+  "no_original_source_changes": true,
+  "CyclicGaps_source_sha256": "59d3adfa87d04931c0abc1d8013c05332733ebc52e00ff7dff6cd7351fa324b9",
+  "scope": "Exact recursive closure required by CyclicGaps only, source and actual object qualified here. No shared context source-only merge or whole finite-provider admission."
+}

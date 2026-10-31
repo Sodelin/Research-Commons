@@ -1,0 +1,111 @@
+{
+  "status": "SCOPED_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_commit": "4a8ff2b873da174a7dc30aba7b3b290ebdb0e453",
+  "sources": {
+    "Pruning": {
+      "source_sha256": "fb9fa92c9cd6b4c9a7fca3f70f3658cba962db708abc2f57270b14cfff698130",
+      "own_import_object_hashes": {},
+      "object_sha256": "a70e509680b25c8e82aa6d3a081c8e2d36afb40f1ce1e99268ff4cd4f92a0c7b"
+    },
+    "RootRotation": {
+      "source_sha256": "ff23924c043918192856c6c278a2f79e9b048035100cc9c893ec338245ced44e",
+      "own_import_object_hashes": {
+        "Pruning": "a70e509680b25c8e82aa6d3a081c8e2d36afb40f1ce1e99268ff4cd4f92a0c7b"
+      },
+      "object_sha256": "6dec7698fa62923b0cde0c621bfe72a6c237cb5c1242de3da3c8f7775d0d8693"
+    },
+    "Reroot": {
+      "source_sha256": "d980d67aee1380aed2638490d86c4d1a61d8b6f47a83f3023507dd6f0208d572",
+      "own_import_object_hashes": {
+        "RootRotation": "6dec7698fa62923b0cde0c621bfe72a6c237cb5c1242de3da3c8f7775d0d8693"
+      },
+      "object_sha256": "004076f7cb7a447d0f6f74adfeddecfc75e5b32842e1048d69543a4d16721978"
+    },
+    "OrderedCertificate": {
+      "source_sha256": "f244539d12b2359ef67078eeca4c655626d02e942d913571056174f6fc901111",
+      "own_import_object_hashes": {},
+      "object_sha256": "052a18b1752e670fd0c1e3a8198cefdf0409081f5c980b24ebd9098a3c5bf476"
+    },
+    "AdjacentSemantics": {
+      "source_sha256": "5721d75260c44bfdf26f2f7c9ee3072bc33cad78e6f0a5a461fce26c29a0c01f",
+      "own_import_object_hashes": {
+        "OrderedCertificate": "052a18b1752e670fd0c1e3a8198cefdf0409081f5c980b24ebd9098a3c5bf476"
+      },
+      "object_sha256": "97dbc689bbdd282425c96b19fe7c933bab1ca6833382bd6b40ffa75db1c044f5"
+    },
+    "AdjacentBlocks": {
+      "source_sha256": "922f71773e7bf5b0bc695ebc37f2e008f97189d36a141e9783c4e32794655ebc",
+      "own_import_object_hashes": {
+        "Reroot": "004076f7cb7a447d0f6f74adfeddecfc75e5b32842e1048d69543a4d16721978",
+        "AdjacentSemantics": "97dbc689bbdd282425c96b19fe7c933bab1ca6833382bd6b40ffa75db1c044f5"
+      },
+      "object_sha256": "ab3c151b84c8fbee8239ea5e7eec8e51ec6a7996c9c0b9c9e4b448a5fafd2a59"
+    },
+    "Relabel": {
+      "source_sha256": "92a5d3bbf2aebc25004d2eb5d0d63042944dc5fd6536591eb2cfdb1b65732353",
+      "own_import_object_hashes": {
+        "AdjacentBlocks": "ab3c151b84c8fbee8239ea5e7eec8e51ec6a7996c9c0b9c9e4b448a5fafd2a59"
+      },
+      "object_sha256": "a3313d9e04bfde7545fabd36ec85fc1d6d6b7698075fbc116f14bf9516ba61d0"
+    },
+    "CanonicalRestriction": {
+      "source_sha256": "215e0955257b4d46bc0d5744eea95b14051f1e2162a75220e3fa393f44c8a21c",
+      "own_import_object_hashes": {
+        "Relabel": "a3313d9e04bfde7545fabd36ec85fc1d6d6b7698075fbc116f14bf9516ba61d0"
+      },
+      "object_sha256": "7cae3a77c2e04dfd15748176d16cda6cc7da38843bef62380652923097ce474e"
+    },
+    "CyclicGaps": {
+      "source_sha256": "59d3adfa87d04931c0abc1d8013c05332733ebc52e00ff7dff6cd7351fa324b9",
+      "own_import_object_hashes": {
+        "CanonicalRestriction": "7cae3a77c2e04dfd15748176d16cda6cc7da38843bef62380652923097ce474e"
+      },
+      "object_sha256": "f909ae056e3b9e16f0f28f0d26ca126f260b793651399ce3e1b0b1cc891bae0c"
+    },
+    "RankGaps": {
+      "source_sha256": "6f6e6fd06be37486d684caff607894d9807280d727c5aa1e5c764260e69f38e9",
+      "own_import_object_hashes": {
+        "CyclicGaps": "f909ae056e3b9e16f0f28f0d26ca126f260b793651399ce3e1b0b1cc891bae0c"
+      },
+      "object_sha256": "a33932f1bb058363245ea9bfb3be9cc75fa7a4b624d8cf3ef750249cfbf8a92d"
+    },
+    "SortedGaps": {
+      "source_sha256": "9449b70baa57159377f0e231cd7fc625e0e0c1a81c68d5164767a18e2f49d2bd",
+      "own_import_object_hashes": {
+        "RankGaps": "a33932f1bb058363245ea9bfb3be9cc75fa7a4b624d8cf3ef750249cfbf8a92d"
+      },
+      "object_sha256": "dc3a1daf9d76363becba940de14e241bef1b990e57e872ad2e166ffb00e849ca"
+    },
+    "ActualDuplicateCyclicGaps": {
+      "source_sha256": "d4c835f41627b6078a37507d5d38b23a890ba228a17097524e20777ff17ddd83",
+      "own_import_object_hashes": {
+        "SortedGaps": "dc3a1daf9d76363becba940de14e241bef1b990e57e872ad2e166ffb00e849ca"
+      },
+      "object_sha256": "ec6ef1c9be3f55e32e0cc5255a8981b5f1ca78550438293f393afdb4ecaed027"
+    }
+  },
+  "named_targets": [
+    "Nanuq.Restriction.rank_gap_cases",
+    "Nanuq.Restriction.rank_cyclic_gap",
+    "Nanuq.Restriction.sorted_rank_strictMono",
+    "Nanuq.Restriction.sorted_empty_gap_cyclicGap",
+    "Nanuq.OpenedCore.actual_duplicate_cyclic_gaps"
+  ],
+  "named_owners": {
+    "Nanuq.Restriction.rank_cyclic_gap": "RankGaps",
+    "Nanuq.Restriction.sorted_empty_gap_cyclicGap": "SortedGaps",
+    "Nanuq.OpenedCore.actual_duplicate_cyclic_gaps": "ActualDuplicateCyclicGaps",
+    "Nanuq.Restriction.sorted_rank_strictMono": "SortedGaps",
+    "Nanuq.Restriction.rank_gap_cases": "RankGaps"
+  },
+  "owned_modules": 670,
+  "declarations": 17263,
+  "theorems": 12635,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "local_full_audit_sha256": "8aa16d5795bf762bba9ed1ec3f06661d90f588f27b5f92b64e1c5d2e8f1c6642",
+  "raw_full_audit_local_only": true,
+  "frozen_all_headers_and_definitions_preserved": true,
+  "scope": "Exact existing CyclicGap receiver for equal ORIGINAL-label occurrence pairs, retaining SAME boundary/loop/sorted order/cuts. Nine original public providers freshly qualified unchanged, three scientific modules. No code-injectivity premise or code-equality-to-original-label inference, block normalform/global given C/singleton/master claim."
+}
