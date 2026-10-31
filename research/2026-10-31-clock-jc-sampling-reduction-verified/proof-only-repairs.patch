@@ -1,0 +1,46 @@
+--- frozen/JC69SamplingReduction.lean
++++ source/JC69SamplingReduction.lean
+@@ -22,7 +22,7 @@
+ open ResearchCommons.MSCI.JC69WeightedCalendar ResearchCommons.MSCI.JC69GuardedCalendarQuotient
+ open ResearchCommons.MSCI.JC69ActivatedPrefix ResearchCommons.MSCI.JC69SupportedStateBound
+ open ResearchCommons.MSCI.JC69SamplingPrefix ResearchCommons.MSCI.JC69ObservedFourier
+-open scoped Classical BigOperators
++open scoped Classical BigOperators ENNReal
+ variable {V E Copy X : Type*}
+ variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+ variable [DecidableEq Copy] [Fintype Copy]
+@@ -69,7 +69,8 @@
+ 
+ lemma activated_valid (N : RootedBinary V E X) (sample : Copy → X) (register : V → Bool) :
+     SourceValid N sample (activatedState N sample register) := by
+-  refine ⟨initial_valid N sample register,?_⟩
++  have hi := initial_valid N sample register
++  refine ⟨⟨hi.ancestor_live,hi.representative,hi.leaf_fiber,hi.wellLabelled⟩,?_⟩
+   intro x
+   change N.graph.DReach (N.graph.target (sampleEdge N (sample x))) (N.leaf (sample x))
+   rw [sampleEdge_target]
+@@ -125,6 +126,7 @@
+     obtain ⟨e,he,ha⟩ := actual_initialized_prefix_active N C sample register H gamma common r c hc k
+       hcut.ge hbefore hd x
+     have hp := d.property.original_descendant x
++    change DescendsTo N (copyLocation (state d) x) (sample x) at hp
+     rw [he] at hp
+     change N.graph.DReach (N.graph.target e) (N.leaf (sample x)) at hp
+     have hage : C.age (N.graph.target e) = C.age (N.leaf (sample x)) := by
+@@ -133,6 +135,7 @@
+       · exact C.age_le_of_directed hp
+     have ht := directed_equal_age N C hp hage
+     have hed := unique_leaf_edge N (sample x) e ht
++    change copyLocation (state d) x = .edge (sampleEdge N (sample x))
+     simpa only [hed] using he
+ 
+ lemma program_support_register (N : RootedBinary V E X) {sample : Copy → X}
+@@ -145,7 +148,7 @@
+       rw [he]
+   | cons op ops ih =>
+       obtain ⟨m,hm,hmd⟩ := (PMF.mem_support_bind_iff _ _ _).mp hd
+-      exact (ih m hmd).trans (program_step_support_register N r op s hm)
++      exact (ih m hmd).trans (program_step_support_register N r op s m hm)
+ 
+ lemma tail_take_drop (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval)

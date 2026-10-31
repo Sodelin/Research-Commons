@@ -1,0 +1,168 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:30:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SamplingReduction.directed_equal_age`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:72:10: error: Application type mismatch: The argument
+  initial_valid N sample register
+has type
+  Valid (initial N sample register)
+but is expected to have type
+  Valid (activatedState N sample register)
+in the application
+  SourceValid.mk (initial_valid N sample register)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:90:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69SamplingReduction.singleton_blocks_initial`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:128:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  copyLocation (state d) x
+in the target expression
+  DescendsTo N (copyLocation (decodeSnapshot N.root ↑d) x) (sample x)
+
+case snd
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+c : ℝ
+hc : ∀ (x : Copy), C.age (N.leaf (sample x)) = c
+k : ℕ
+hcut : prefixDate N C k = c
+d : Code N sample
+hd : d ∈ (sourceProgram N r (initializedPrefix N C H gamma common k) (initialCode N sample register)).support
+x : Copy
+hbefore : prefixDate N C k < C.age N.root
+e : E
+he : copyLocation (state d) x = Location.edge e
+ha : C.Active (prefixDate N C k) e
+hp : DescendsTo N (copyLocation (decodeSnapshot N.root ↑d) x) (sample x)
+⊢ (observeCode N d).2 x =
+    (currentBlocks (initial N sample register), fun x => Location.edge (sampleEdge N (sample x))).2 x
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:148:69: error: Application type mismatch: The argument
+  hm
+has type
+  m ∈ (sourceProgramStep N r op s).support
+of sort `Prop` but is expected to have type
+  Code N sample
+of sort `Type (max 0 (max u_1 u_2) u_3)` in the application
+  program_step_support_register N r op s hm
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:189:35: error: expected token
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:243:26: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:243:28: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:237:45: error: unsolved goals
+case F
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+c : ℝ
+hc : ∀ (x : Copy), C.age (N.leaf (sample x)) = c
+k : ℕ
+hcut : prefixDate N C k = c
+pre : List (ProgramStep N) := initializedPrefix N C H gamma common k
+post : List (ProgramStep N) := samplingSuffix N C H gamma common k
+s : Code N sample := initialCode N sample register
+d : Code N sample := activatedCode N sample register
+I : ENNReal := initialPotentialWeight N C sample register L q
+⊢ Code N sample → sorry
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+c : ℝ
+hc : ∀ (x : Copy), C.age (N.leaf (sample x)) = c
+k : ℕ
+hcut : prefixDate N C k = c
+pre : List (ProgramStep N) := initializedPrefix N C H gamma common k
+post : List (ProgramStep N) := samplingSuffix N C H gamma common k
+s : Code N sample := initialCode N sample register
+d : Code N sample := activatedCode N sample register
+I : ENNReal := initialPotentialWeight N C sample register L q
+F : Code N sample → sorry := ?F
+⊢ initialPotentialWeight N C sample register L q *
+      calendarValue N r L q (guardedRoot N r L q) (compiledCalendarProgram N C H gamma common)
+        (initialCode N sample register) =
+    calendarValue N r L q (guardedRoot N r L q) (samplingSuffix N C H gamma common k) (activatedCode N sample register)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69SamplingReduction.lean:243:29: error: expected token
+'ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_observation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingReduction.actual_calendar_sampling_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_backward_reduction' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SamplingReduction.actual_observed_sampling_reduction' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

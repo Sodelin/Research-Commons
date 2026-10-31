@@ -1,0 +1,3 @@
+# Separate AI-assisted semantic review
+
+31 October 2026. Separate AI-assisted mathematical review read the complete repair patch and all four complete named types/standard axioms. Scoped acceptance: explicit Valid fields preserve the forest; original-descendant/observation unfolding and destination argument retain the actual source, SAME bank, original Copy, Nonempty/balance/hc/cut. All20 headers/four definitions are unchanged. Raw200-module audit remains compiler-attributed, not independently replayed. No finite-stage M/D/window theorem, expert peer review or novelty certification is claimed.

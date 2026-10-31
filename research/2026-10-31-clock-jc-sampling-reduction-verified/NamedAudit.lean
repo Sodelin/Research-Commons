@@ -1,0 +1,10 @@
+import ResearchCommons.MSCI.JC69SamplingReduction
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_observation
+#print axioms ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_observation
+#check @ResearchCommons.MSCI.JC69SamplingReduction.actual_calendar_sampling_split
+#print axioms ResearchCommons.MSCI.JC69SamplingReduction.actual_calendar_sampling_split
+#check @ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_backward_reduction
+#print axioms ResearchCommons.MSCI.JC69SamplingReduction.actual_sampling_backward_reduction
+#check @ResearchCommons.MSCI.JC69SamplingReduction.actual_observed_sampling_reduction
+#print axioms ResearchCommons.MSCI.JC69SamplingReduction.actual_observed_sampling_reduction
