@@ -1,0 +1,9 @@
+import OriginalGermLoops
+#check @Nanuq.ContinuedArms.complementary_arc_of_continuations
+#print axioms Nanuq.ContinuedArms.complementary_arc_of_continuations
+#check @Nanuq.ContinuedArms.jordan_through_two_germs
+#print axioms Nanuq.ContinuedArms.jordan_through_two_germs
+#check @Nanuq.ContinuedArms.jordan_germs_of_isDrawing
+#print axioms Nanuq.ContinuedArms.jordan_germs_of_isDrawing
+#check @Nanuq.ContinuedArms.actual_original_incident_germs
+#print axioms Nanuq.ContinuedArms.actual_original_incident_germs

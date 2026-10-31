@@ -1,0 +1,3 @@
+# Parent source/type review
+
+Parent inspected the complete delivered proof-only diff and all four named full theorem types. Only invalid le_rfl applications and set-membership proof elaboration changed. Original exact edge images, incidences, IDs, continuous injective germs and the Jordan conclusion remain intact. Scoped acceptance is supported together with the owner thin checks. This is not an independent rebuild or inspection of the full 501-module raw audit, which remains summary-only. Native-IR/object failures and existing-companion qualification history are retained. The auxiliary Jordan provider is now usable; star/gluing/order and full NANUQ closure are not inferred.

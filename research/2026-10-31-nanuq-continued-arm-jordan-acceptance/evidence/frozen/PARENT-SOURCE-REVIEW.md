@@ -1,0 +1,7 @@
+# Parent source-only review
+
+2026-10-31 05:12 UTC. Read both complete candidate modules and README. The compact-extrema construction is mathematically coherent: choose the first connector intersection with the second compact access arc, then the last prior intersection with the first. Disjointness forces strict parameter order; the retained connector interior meets neither access arc. Exact subarcs and concatenation give a simple closing arc despite potentially infinitely many discarded intersections.
+
+The two-germ theorem derives access from their genuine continued portions, not generic endpoint accessibility. The original-drawing binding uses distinct original incident IDs, halves their reparameterized arcs to exclude any shared far endpoint, and retains their exact whole-edge images and endpoint coordinates. It is an auxiliary geometric Jordan curve, not a new physical network edge or redrawing. Parallel edges remain permitted. Fractions refer to the explicitly returned same-image parameterizations, not a claim of pointwise equality to the original parameter function.
+
+Suitable for actual compiler qualification, UNCOMPILED. Extrema/closed-set APIs, equality transports and the full faithful adapter import must elaborate against exact suppliers. No star disk normal form, boundary-fixed third-germ gluing, degree-one local return, original cyclic order or full NANUQ result is asserted. Parent did not execute Lean or replay supplier audits.

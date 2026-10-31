@@ -1,0 +1,37 @@
+--- frozen/ContinuedArms.lean
++++ source/ContinuedArms.lean
+@@ -24,7 +24,7 @@
+   obtain ⟨p,hpc,hpi,hpim,hp0,hp1⟩ := hP
+   have hpend₂ : p 1 ∈ J₂ := hp1.symm ▸ hJ₂.right_mem
+   obtain ⟨s,hsI,_,hsJ₂,hfirst⟩ := exists_first_mem hpc hJ₂.isArc.isClosed one_mem_I hpend₂
+-  have hzero : (0 : ℝ) ∈ Icc 0 s := ⟨le_rfl _,hsI.1⟩
++  have hzero : (0 : ℝ) ∈ Icc 0 s := ⟨le_rfl,hsI.1⟩
+   have hpc' : ContinuousOn p (Icc 0 s) := hpc.mono (Icc_subset_Icc le_rfl hsI.2)
+   have hpend₁ : p 0 ∈ J₁ := hp0.symm ▸ hJ₁.right_mem
+   obtain ⟨t,htI,_,htJ₁,hlast⟩ := exists_last_mem_Icc hpc' hJ₁.isArc.isClosed hzero hpend₁
+@@ -55,11 +55,11 @@
+     exact hPA (hpim ▸ mem_image_of_mem p (hsubI hu)) hz
+   have hq₁t : q₁ ≠ p t := by
+     intro h
+-    exact Set.disjoint_left.mp hMA (mem_image_of_mem p ⟨le_rfl _,hts.le⟩)
++    exact Set.disjoint_left.mp hMA (mem_image_of_mem p ⟨le_rfl,hts.le⟩)
+       (h ▸ hA.left_mem)
+   have hq₂s : q₂ ≠ p s := by
+     intro h
+-    exact Set.disjoint_left.mp hMA (mem_image_of_mem p ⟨hts.le,le_rfl _⟩)
++    exact Set.disjoint_left.mp hMA (mem_image_of_mem p ⟨hts.le,le_rfl⟩)
+       (h ▸ hA.right_mem)
+   obtain ⟨L,hLsub,hL⟩ := hJ₁.isArc.exists_isArcBetween_subset hJ₁.left_mem htJ₁ hq₁t
+   obtain ⟨R,hRsub,hR⟩ := hJ₂.isArc.exists_isArcBetween_subset hJ₂.left_mem hsJ₂ hq₂s
+@@ -162,7 +162,10 @@
+   refine ⟨B,hB,hAB,hJordan,?_⟩
+   intro hvB
+   have hvA : f 0 ∈ A₁ ∪ A₂ := Or.inl hA₁.left_mem
+-  have hv : f 0 = f a ∨ f 0 = g a := hAB ▸ ⟨hvA,hvB⟩
++  have hv : f 0 = f a ∨ f 0 = g a := by
++    change f 0 ∈ ({f a,g a} : Set Plane)
++    rw [← hAB]
++    exact ⟨hvA,hvB⟩
+   rcases hv with hv | hv
+   · exact (ne_of_lt ha0) (hfi zero_mem_I haI hv)
+   · exact (ne_of_lt ha0) (hgi zero_mem_I haI (h0.symm.trans hv))
