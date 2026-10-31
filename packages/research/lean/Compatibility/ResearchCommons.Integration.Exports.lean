@@ -1,3 +1,4 @@
+import ResearchCommons.Claims.AperiodicModulus
 import ResearchCommons.Claims.FiniteEditOptimum
 import ResearchCommons.Claims.MatchingHeights
 import ResearchCommons.Claims.WongRecordExtraction

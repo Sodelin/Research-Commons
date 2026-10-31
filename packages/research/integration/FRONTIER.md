@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Quantitative/slow avoidance successor — 31 October 2026
+
+[SEQ-006 adoption](../../../research/2026-10-31-seq006-package-binding/README.md) adds the reviewed original modulus/slow-target interface. Actual **53mapped claims/555names/65unbound**; strict2/full116incomplete, all118scientific statuses unchanged. Package target12:4compiled/8reused and six complete named checks pass.
+
+[Current aggregate](aperiodic-modulus-aggregate-verification.json): both changed roots,555names,1,526owned modules (102,797decl/92,913theorems/zero rejects),1,840primary objects/7,320resolved hashes pass in exact coherent qualified context. No fresh full1,838build/audit, native solver, word-independent bound or master closure. Earlier dated records below retain their scopes.
+
 ## Individual finite-edit successor — 31 October 2026
 
 [SEQ-005 adoption](../../../research/2026-10-31-seq005-package-binding/README.md) adds the parent-reviewed individual finite-edit global optimum interface. Actual **52 mapped claims/549 names/66 unbound**; strict exits2 with116incomplete integrations and all118scientific statuses unchanged. Public target19:12reused+7compiled, seven names and complete owned audit pass.

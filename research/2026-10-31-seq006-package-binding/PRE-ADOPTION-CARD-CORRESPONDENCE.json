@@ -1,0 +1,73 @@
+{
+  "claim_id": "CB-SEQ-006",
+  "status": "READY_FOR_PARENT_FULL_CARD_CORRESPONDENCE_REVIEW_NOT_ADOPTED",
+  "source_sha256": "c96a3a66eead0357a2417efad238736b3e782502eb7e2c0cbe52f28dbd14df9d",
+  "original_proof_authorship_retained": true,
+  "clauses": [
+    {
+      "canonical_clause": "Own-target graph and bounded-offset bit-break modulus M(v,b), j in [b,M(v,b)) for every d<=v",
+      "source_definitions": [
+        "BinaryAvoidance.Edge",
+        "BinaryAvoidance.row",
+        "QuantitativeModulus.BreaksAt",
+        "QuantitativeModulus.IsModulus"
+      ],
+      "correspondence": "Actual definitions printed. No graph replacement, modulus-as-desired-path-bound premise or fixed target unrelated to source."
+    },
+    {
+      "canonical_clause": "Even d=2e breaks antiperiod e+1, odd d=2e+1 breaks period e+1",
+      "exports": [
+        "even_break",
+        "odd_break"
+      ],
+      "suppliers": [
+        "QuantitativeModulus.even_break_iff",
+        "QuantitativeModulus.odd_break_iff"
+      ],
+      "correspondence": "Same boolean equality/inequality, indices and parity; no stronger nonperiodicity input."
+    },
+    {
+      "canonical_clause": "B0=0, B(r+1)=M(v,Br), every actual matching prefix ell<B(v+1)",
+      "exports": [
+        "prefix_clock"
+      ],
+      "source_definition": "QuantitativeModulus.clock",
+      "supplier": "QuantitativeModulus.prefix_length_lt_clock",
+      "correspondence": "Strict inequality, v=path0, actual MatchesPrefix retained; clock base/successor definition printed."
+    },
+    {
+      "canonical_clause": "Uniform windows M(v,b)<=b+R imply ell<(v+1)*R",
+      "exports": [
+        "uniform_window_bound"
+      ],
+      "supplier": "QuantitativeModulus.prefix_length_lt_uniform_windows",
+      "correspondence": "Window input for relevant actual v=path0 at every b; no uniform window inferred from aperiodicity alone."
+    },
+    {
+      "canonical_clause": "Every non-eventually-periodic target admits such modulus using choice",
+      "exports": [
+        "aperiodic_modulus_and_bounds"
+      ],
+      "supplier": "QuantitativeModulus.aperiodic_explicit_bounds",
+      "correspondence": "Exists one M for this s, all paths/prefix bounds. Original choice construction retained, no claimed effective modulus recovery algorithm."
+    },
+    {
+      "canonical_clause": "For every f there exists an f-dependent aperiodic target, no infinite match, strictly increasing starts, finite matching prefixes longer than f at those starts",
+      "exports": [
+        "arbitrarily_slow"
+      ],
+      "supplier": "SlowAvoidance.arbitrarily_slow_avoidance",
+      "correspondence": "Exact forallf/existsword ordering and actual source graph P_s. Both no-infinite path and long finite prefixes retained, no single word asserted to beat every function."
+    }
+  ],
+  "scope_limits": [
+    "No new mathematics or novelty claim",
+    "No native Rust modulus/target solver or universal graph recognition",
+    "Choice existence distinct from supplied executable local-bit modulus",
+    "No word-independent bound for all aperiodic targets",
+    "Long finite matching paths do not imply an infinite matching path"
+  ],
+  "binding_adopted": false,
+  "canonical_scientific_status_unchanged": true,
+  "source_unchanged": true
+}

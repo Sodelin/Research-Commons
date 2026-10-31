@@ -1,0 +1,48 @@
+ResearchCommons.Claims.AperiodicModulus.even_break : ∀ (s : Nat → Bool) (e i : Nat),
+  QuantitativeModulus.BreaksAt s (HMul.hMul.{0, 0, 0} 2 e) i ↔
+    Eq.{1} (s (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} i e) 1)) (s i)
+'ResearchCommons.Claims.AperiodicModulus.even_break' depends on axioms: [propext, Quot.sound.{u}]
+ResearchCommons.Claims.AperiodicModulus.odd_break : ∀ (s : Nat → Bool) (e i : Nat),
+  QuantitativeModulus.BreaksAt s (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 e) 1) i ↔
+    Ne.{1} (s (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} i e) 1)) (s i)
+'ResearchCommons.Claims.AperiodicModulus.odd_break' depends on axioms: [propext, Quot.sound.{u}]
+@ResearchCommons.Claims.AperiodicModulus.prefix_clock : ∀ {s : Nat → Bool} {M : Nat → Nat → Nat},
+  QuantitativeModulus.IsModulus s M →
+    ∀ {path : Nat → Nat} {ell : Nat},
+      QuantitativeAvoidance.MatchesPrefix s path ell →
+        LT.lt.{0} ell (QuantitativeModulus.clock M (path 0) (HAdd.hAdd.{0, 0, 0} (path 0) 1))
+'ResearchCommons.Claims.AperiodicModulus.prefix_clock' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.Claims.AperiodicModulus.uniform_window_bound : ∀ {s : Nat → Bool} {M : Nat → Nat → Nat},
+  QuantitativeModulus.IsModulus s M →
+    ∀ {path : Nat → Nat} {ell R : Nat},
+      QuantitativeAvoidance.MatchesPrefix s path ell →
+        (∀ (b : Nat), LE.le.{0} (M (path 0) b) (HAdd.hAdd.{0, 0, 0} b R)) →
+          LT.lt.{0} ell (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (path 0) 1) R)
+'ResearchCommons.Claims.AperiodicModulus.uniform_window_bound' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.AperiodicModulus.aperiodic_modulus_and_bounds : ∀ (s : Nat → Bool),
+  ¬BinaryAvoidance.EventuallyPeriodic s →
+    Exists.{1} fun M =>
+      QuantitativeModulus.IsModulus s M ∧
+        ∀ (path : Nat → Nat) (ell : Nat),
+          QuantitativeAvoidance.MatchesPrefix s path ell →
+            LT.lt.{0} ell (QuantitativeModulus.clock M (path 0) (HAdd.hAdd.{0, 0, 0} (path 0) 1))
+'ResearchCommons.Claims.AperiodicModulus.aperiodic_modulus_and_bounds' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.AperiodicModulus.arbitrarily_slow : ∀ (f : Nat → Nat),
+  Exists.{1} fun s =>
+    ¬BinaryAvoidance.EventuallyPeriodic s ∧
+      (¬Exists.{1} fun path => BinaryAvoidance.Matches s path) ∧
+        Exists.{1} fun starts =>
+          (∀ (i j : Nat), LT.lt.{0} i j → LT.lt.{0} (starts i) (starts j)) ∧
+            ∀ (j : Nat),
+              Exists.{1} fun len =>
+                LT.lt.{0} (f (starts j)) len ∧
+                  Exists.{1} fun path => Eq.{1} (path 0) (starts j) ∧ QuantitativeAvoidance.MatchesPrefix s path len
+'ResearchCommons.Claims.AperiodicModulus.arbitrarily_slow' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

@@ -1,0 +1,26 @@
+def BinaryAvoidance.Edge : (Nat → Bool) → Nat → Nat → Bool → Prop :=
+fun s u w label => 2 ≤ w ∧ (w = u + 1 ∧ label = BinaryAvoidance.row s w ∨ w = u + 2 ∧ label = !BinaryAvoidance.row s w)
+def BinaryAvoidance.row : (Nat → Bool) → Nat → Bool :=
+fun s w => if w % 2 = 0 then s (w / 2) else !s (w / 2)
+def BinaryAvoidance.Matches : (Nat → Bool) → (Nat → Nat) → Prop :=
+fun s path => ∀ (k : Nat), BinaryAvoidance.Edge s (path k) (path (k + 1)) (s k)
+def BinaryAvoidance.EventuallyPeriodic : (Nat → Bool) → Prop :=
+fun s => ∃ start period, 0 < period ∧ ∀ (k : Nat), start ≤ k → s (k + period) = s k
+def QuantitativeAvoidance.MatchesPrefix : (Nat → Bool) → (Nat → Nat) → Nat → Prop :=
+fun s path len => ∀ (k : Nat), k < len → BinaryAvoidance.Edge s (path k) (path (k + 1)) (s k)
+def QuantitativeModulus.BreaksAt : (Nat → Bool) → Nat → Nat → Prop :=
+fun s d i => s i ≠ !BinaryAvoidance.row s (2 * i + d + 2)
+def QuantitativeModulus.IsModulus : (Nat → Bool) → (Nat → Nat → Nat) → Prop :=
+fun s M => ∀ (v b d : Nat), d ≤ v → ∃ j, b ≤ j ∧ j < M v b ∧ QuantitativeModulus.BreaksAt s d j
+def QuantitativeModulus.clock : (Nat → Nat → Nat) → Nat → Nat → Nat :=
+fun M v x => Nat.brecOn x (QuantitativeModulus.clock._f M v)
+def SlowAvoidance.wordLength : (Nat → Nat) → Nat → Nat :=
+fun f x => Nat.brecOn x (SlowAvoidance.wordLength._f f)
+def SlowAvoidance.wordBit : (Nat → Nat) → Nat → Nat → Bool :=
+fun f x x_1 => Nat.brecOn (motive := fun x => Nat → Bool) x (SlowAvoidance.wordBit._f f) x_1
+def SlowAvoidance.target : (Nat → Nat) → Nat → Bool :=
+fun f k => SlowAvoidance.wordBit f (k + 1) k
+def SlowAvoidance.start : (Nat → Nat) → Nat → Nat :=
+fun f j => 2 * SlowAvoidance.wordLength f j - 1
+def SlowAvoidance.matchLength : (Nat → Nat) → Nat → Nat :=
+fun f j => (f (SlowAvoidance.start f j) + 1) * SlowAvoidance.wordLength f j

@@ -6051,10 +6051,25 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.AperiodicModulus",
+      "path": "lean/Compatibility/ResearchCommons.Claims.AperiodicModulus.lean",
+      "sha256": "c96a3a66eead0357a2417efad238736b3e782502eb7e2c0cbe52f28dbd14df9d",
+      "imports": [
+        "SamuelAlexanderResearch.QuantitativeModulus",
+        "SamuelAlexanderResearch.SlowAvoidance"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed CB-SEQ-006 exact original local-period modulus and target-dependent slow-avoidance interface",
+        "proof_derivation": false,
+        "verification": "integration/aperiodic-modulus-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "8656661e8ea7894fc712a44dd7aabea96b4b034369e085ae3b4ae381f0f1a807",
+      "sha256": "f4b742219c7509690f6a722b9111611cc8659641c1ad4ad10b180b30ab753f23",
       "imports": [
+        "ResearchCommons.Claims.AperiodicModulus",
         "ResearchCommons.Claims.FiniteEditOptimum",
         "ResearchCommons.Claims.MatchingHeights",
         "ResearchCommons.Claims.WongRecordExtraction",
@@ -6153,14 +6168,22 @@
             "actual_named_requests": 542,
             "whole1836fresh_owned_audit": false,
             "scientific_statuses_unchanged": true
+          },
+          {
+            "record": "integration/finite-edit-optimum-aggregate-verification.json",
+            "actual_compiler_pass": true,
+            "actual_selected_owned_modules": 1523,
+            "actual_named_requests": 549,
+            "whole1837fresh_owned_audit": false,
+            "scientific_statuses_unchanged": true
           }
         ],
         "current_aggregate_verification": {
-          "record": "integration/finite-edit-optimum-aggregate-verification.json",
+          "record": "integration/aperiodic-modulus-aggregate-verification.json",
           "actual_compiler_pass": true,
-          "actual_selected_owned_modules": 1523,
-          "actual_named_requests": 549,
-          "whole1837fresh_owned_audit": false,
+          "actual_selected_owned_modules": 1526,
+          "actual_named_requests": 555,
+          "whole1838fresh_owned_audit": false,
           "scientific_statuses_unchanged": true
         },
         "matching_heights_successor": {
@@ -6172,6 +6195,11 @@
           "prior_source_sha256": "83102e49e2245f77e5a2817adcb7167911b85bd36b28374ef41d4d72746063d0",
           "scope": "Reviewed SEQ005 adopted; both changed roots,549named,1523owned and all1839primary/7319resolved identities pass in explicitly coherent qualified context",
           "verification": "integration/finite-edit-optimum-aggregate-verification.json"
+        },
+        "aperiodic_modulus_successor": {
+          "prior_source_sha256": "8656661e8ea7894fc712a44dd7aabea96b4b034369e085ae3b4ae381f0f1a807",
+          "scope": "Reviewed SEQ006 adopted; both changed roots/555names/1526owned/all1840primary/7320resolved identities pass with coherent qualified reuse",
+          "verification": "integration/aperiodic-modulus-aggregate-verification.json"
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

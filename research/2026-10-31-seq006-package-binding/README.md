@@ -1,0 +1,9 @@
+# CB-SEQ-006 package binding — 31 October 2026
+
+The existing quantitative/slow-avoidance result now has a parent-reviewed owner/type interface. [The complete card and clause map](PRE-ADOPTION-CARD-CORRESPONDENCE.json) preserve the actual own-target graph, parity bit-break conditions, strict prefix clock and uniform-window bound. A supplied modulus gives an explicit clock; choice existence is not an effective modulus-recovery or native solver. The slow target may depend on f, with strictly increasing starts and finite prefixes, while admitting no infinite match. No one target beating every function or word-independent bound is claimed. Original proofs/authorship and priority limits remain.
+
+Actual package target: **4 compiled objects,8 qualified objects reused**,12selected modules. All six names and the complete12-module owned audit pass:897declarations/716theorems/zero rejects. The unchanged wrapper had no new proof repair; frozen pending-review text is historical. All current target object hashes match its separately reviewed coherent context.
+
+[Aggregate verification](AGGREGATE-VERIFICATION.json): both changed roots compiled, all555names and the selected1,526-module owned audit pass (102,797declarations/92,913theorems/zero rejects). All1,840primary objects and7,320resolved modules are hash-bound in the exact original ContextB plus five checked wrapper contexts. The earlier SEQ005 alternative target objects remain explicitly separate; no source-equality-only substitution. No fresh full1,838build/audit or universal native/scientific master closure. Raw full audits stay local; summaries are compiler-attributed.
+
+Coverage is **53mapped claims,555names,65unbound**. Strict coverage still exits2 with116incomplete integrations. All118canonical scientific statuses remain unchanged.

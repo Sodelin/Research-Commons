@@ -4592,15 +4592,31 @@
       "claim_id": "CB-SEQ-006",
       "dependencies": [],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.AperiodicModulus",
+        "declarations": [
+          "ResearchCommons.Claims.AperiodicModulus.even_break",
+          "ResearchCommons.Claims.AperiodicModulus.odd_break",
+          "ResearchCommons.Claims.AperiodicModulus.prefix_clock",
+          "ResearchCommons.Claims.AperiodicModulus.uniform_window_bound",
+          "ResearchCommons.Claims.AperiodicModulus.aperiodic_modulus_and_bounds",
+          "ResearchCommons.Claims.AperiodicModulus.arbitrarily_slow"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Original own-target graph, parity break equivalences, explicit prefix clock and uniform-window bound; choice modulus existence and forall f exists f-dependent aperiodic target with no infinite match and long finite prefixes. No word-independent bound/native solver."
       },
       "obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
       "reuse_rank": null,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.AperiodicModulus --claim CB-SEQ-006",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/aperiodic-modulus-verification.json",
+          "scope": "Named type/owner proof interface only. Choice existence is not a recovered executable modulus or native solver."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -4630,7 +4646,15 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
       ],
-      "verification": []
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "c96a3a66eead0357a2417efad238736b3e782502eb7e2c0cbe52f28dbd14df9d",
+          "record": "integration/aperiodic-modulus-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Full card/clause map, unchanged wrapper, six complete types/axioms and actual graph/modulus/clock/slow-target definitions accepted. Original proof authorship and12-module audit remain attributed; no new mathematics or novelty claim."
+        }
+      ]
     },
     {
       "claim_id": "CB-SEQ-007",

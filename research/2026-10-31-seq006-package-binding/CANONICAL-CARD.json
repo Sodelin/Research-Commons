@@ -1,0 +1,86 @@
+{
+  "mathematical_status": "proved_at_stated_scope",
+  "novelty_status": "Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.",
+  "remaining_obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
+  "evidence_basis": "Recovered from the actual source/status notes, complete October reading editions where applicable, named archived formal endpoint entries and public review records. Compared against the fresh 75-card schema 1.1 register, blob 921c25a32d7b7ecde3f1e0e50d749c6d224941f7. This is source recovery, not a new proof review, build or novelty audit.",
+  "claim_kind": "theorem",
+  "origin": {
+    "category": "project_posed",
+    "detail": "A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions."
+  },
+  "id": "CB-SEQ-006",
+  "canonical_key": "sequences.QUANTITATIVE_AND_SLOW_AVOIDANCE",
+  "title": "Huge finite matches need not become an infinite match",
+  "programme": "Sequences \u00b7 quantitative aperiodic avoidance",
+  "plain_language": {
+    "question": "Does matching longer and longer finite patterns imply that some infinite match exists?",
+    "what_we_learned": "Not in this model. A specified word's period-break data bounds its matches, yet suitable aperiodic targets have finite matches exceeding any supplied growth schedule while admitting no infinite match.",
+    "what_it_lets_someone_do": "Separate a genuine infinite-realization claim from very large finite evidence, and obtain explicit bounds when a period-break modulus is supplied.",
+    "what_cannot_conclude": "There is no one target asserted to beat every growth function, nor a word-independent bound for all aperiodic targets."
+  },
+  "exact_statement_and_scope": "In the manuscript's own-target graph P_s, a modulus M(v,b) supplies, for each offset d\u2264v, an index i in [b,M(v,b)) at which s(i) differs from the label required for a constant-offset two-step edge. Equivalently, even d=2e breaks antiperiod e+1 and odd d=2e+1 breaks period e+1. With B_0=0 and B_{r+1}=M(v,B_r), every actual matching prefix from v has length ell<B_{v+1}. If M(v,b)\u2264b+R, then ell<(v+1)R. Every non-eventually-periodic target has such a modulus, with existence using choice. Conversely, for every f:Nat\u2192Nat there exists a non-eventually-periodic target s, with no infinite matching path in P_s, and strictly increasing starts v_j having finite matching prefixes longer than f(v_j). The target may depend on f. Named audited endpoints include QuantitativeModulus.prefix_length_lt_clock, prefix_length_lt_uniform_windows and SlowAvoidance.arbitrarily_slow_avoidance.",
+  "prior_work": "The own-target avoidance construction belongs to the September classification programme; its eventually-periodic positive direction credits Alexander. Iterated bounds and finite-state periodicity are established principles. The exact source-specific modulus and slow-construction claims must not be represented as a universal graph theorem.",
+  "our_contribution": "The original source makes both sides precise: an explicit bound from supplied failure-of-periodicity data and an arbitrary prescribed slow-growth counterexample to word-independent quantitative inference.",
+  "accepted_artifacts": [
+    {
+      "label": "Quantitative modulus theorem and exact source condition",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/QUANTITATIVE-MODULUS-THEOREM.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Arbitrarily slow avoidance theorem",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/SLOW-AVOIDANCE-FORMALIZATION.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Original classification manuscript",
+      "url": "https://github.com/avg-netizen/biological-unavoidability/blob/3d6175e3e23f67bd68e7be591b5a9a6d04e496a3/paper.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Integrated September source coverage",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Archived exact endpoint and axiom receipt",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+      "role": "formal_receipt"
+    }
+  ],
+  "separate_downstream_or_validation_work": "A supplied modulus gives an explicit clock; merely knowing a word is aperiodic is not a uniform effective input representation. The construction uses a target-dependent graph, not one graph avoiding every aperiodic target. General biological acquisition and arbitrary graph recognition are separate.",
+  "aliases": [
+    "Samuel T07",
+    "QuantitativeModulus",
+    "SlowAvoidance"
+  ],
+  "dependencies": [],
+  "completion": {
+    "display": "Proved; archived Lean check recorded",
+    "formal_verification": "kernel_checked_selected_release",
+    "independent_review": "recorded_source_and_formal_audit",
+    "mathematical_claim_complete": true,
+    "proof_authorship_complete": true,
+    "proof_derivation_required": false,
+    "remaining_work_role": "separate_downstream_extension_or_validation",
+    "rule": "A missing new build, missing original component receipt or broader extension does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+  },
+  "evidence": {
+    "hand": {
+      "status": "recorded_source_and_formal_audit",
+      "detail": "The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed."
+    },
+    "formal": {
+      "status": "kernel_checked_selected_release",
+      "detail": "The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun."
+    },
+    "execution": {
+      "status": "archived_build_receipt",
+      "detail": "Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery."
+    },
+    "empirical": {
+      "status": "not_empirical_claim",
+      "detail": "An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied."
+    }
+  }
+}
