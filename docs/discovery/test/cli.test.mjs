@@ -1,4 +1,5 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {execFileSync,spawnSync}from'node:child_process';import{fileURLToPath}from'node:url';
+import{mkdtempSync,mkdirSync,copyFileSync,symlinkSync,writeFileSync,rmSync}from'node:fs';import{tmpdir}from'node:os';import{join,dirname}from'node:path';
+import test from 'node:test';import assert from 'node:assert/strict';import {execFileSync,spawnSync,spawn}from'node:child_process';import{fileURLToPath}from'node:url';
 const cli=fileURLToPath(new URL('../tools/query.mjs',import.meta.url));
 const run=(...args)=>JSON.parse(execFileSync(process.execPath,[cli,...args],{encoding:'utf8',maxBuffer:2*1024*1024,timeout:15000}));
 test('agent archive pagination is bounded and deterministic, and refuses scientific-facet transfer',()=>{
@@ -31,4 +32,22 @@ test('agent change lookup compares exact sources in RAM with bounded results and
  for(const flags of [['--changes'],['--changes','--refresh','--archive'],['--changes','--refresh','--sort','subjective_reuse']]){
   const bad=spawnSync(process.execPath,[cli,...flags],{encoding:'utf8',timeout:10000});assert.notEqual(bad.status,0);assert.equal(bad.stdout,'');
  }
+});
+
+test('large paginated source JSON fully drains to a slow pipe before exit',async()=>{
+ const fixture=mkdtempSync(join(tmpdir(),'commons-pipe-'));
+ try {
+  mkdirSync(join(fixture,'tools'));
+  copyFileSync(cli,join(fixture,'tools/query.mjs'));
+  symlinkSync(join(dirname(cli),'research-results.mjs'),join(fixture,'tools/research-results.mjs'));
+  symlinkSync(join(dirname(cli),'../dist'),join(fixture,'dist'));
+  writeFileSync(join(fixture,'result-reference-coverage.json'),JSON.stringify({records:Array.from({length:100},(_,id)=>({id,description:'synthetic public reference '.repeat(2000)}))}));
+  const child=spawn(process.execPath,[join(fixture,'tools/query.mjs'),'--reference-coverage','--limit','100'],{stdio:['ignore','pipe','pipe']});
+  let out='',err='';child.stdout.setEncoding('utf8');child.stderr.setEncoding('utf8');
+  child.stdout.on('data',chunk=>{out+=chunk;});child.stderr.on('data',chunk=>{err+=chunk;});child.stdout.pause();
+  const done=new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',code=>resolve(code));});
+  setTimeout(()=>child.stdout.resume(),500);
+  assert.equal(await done,0,err);assert(out.length>65536,'exercise stdout backpressure');
+  const parsed=JSON.parse(out);assert.equal(parsed.results.length,100);assert.equal(parsed.next_offset,null);
+ } finally {rmSync(fixture,{recursive:true,force:true});}
 });

@@ -3,6 +3,11 @@ import {readFile} from 'node:fs/promises';
 import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters,validateAssessments} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 import {queryResearchResults} from './research-results.mjs';
+// Explicit exits must wait for piped JSON to drain, including large pages.
+async function exitAfterOutput(){
+ await new Promise((resolve,reject)=>process.stdout.write('',error=>error?reject(error):resolve()));
+ process.exit(0);
+}
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
 let limit=25,offset=0,researchResults=null,researchPath=null,referenceCoverage=false;
 for(let i=0;i<args.length;i++){
@@ -18,9 +23,9 @@ for(let i=0;i<args.length;i++){
   if(!['--query','--status','--origin','--topic','--programme','--kind','--review','--formal-status','--novelty','--sort'].includes(k) || !args[i+1]) throw Error('Use --query TEXT, combinable --topic/--programme/--kind/--status/--origin/--review/--formal-status/--novelty, --sort subjective_reuse, [--refresh | --sources | --archive].');
   f[k==='--query'?'q':k.slice(2).replaceAll('-','_')]=args[++i];
 }
-if(referenceCoverage){if(researchResults||researchPath||refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--reference-coverage accepts --query and pagination only.');const data=JSON.parse(await readFile(new URL('../result-reference-coverage.json',import.meta.url)));const hits=data.records.filter(r=>!f.q||JSON.stringify(r).toLowerCase().includes(f.q.toLowerCase()));console.log(JSON.stringify({view:'canonical_reference_coverage_not_scientific_status',source_commit:data.tree_source_commit,coverage:data.coverage_counts,limitation:data.limitation,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));process.exit(0);}
+if(referenceCoverage){if(researchResults||researchPath||refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--reference-coverage accepts --query and pagination only.');const data=JSON.parse(await readFile(new URL('../result-reference-coverage.json',import.meta.url)));const hits=data.records.filter(r=>!f.q||JSON.stringify(r).toLowerCase().includes(f.q.toLowerCase()));console.log(JSON.stringify({view:'canonical_reference_coverage_not_scientific_status',source_commit:data.tree_source_commit,coverage:data.coverage_counts,limitation:data.limitation,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();}
 if(researchPath&&!researchResults)throw Error('--research-path requires --research-results');
-if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath}),null,2));process.exit(0);}
+if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath}),null,2));await exitAfterOutput();}
 if(f.status && !Object.hasOwn(STATUS,f.status)) throw Error('Unknown status filter.');
 if(f.origin && !Object.hasOwn(ORIGIN,f.origin)) throw Error('Unknown origin filter.');
 if(changes&&(!refresh||sources||archive||f.sort))throw Error('--changes requires --refresh and compares claim snapshots; --sources, --archive and --sort belong to separate views.');
@@ -29,7 +34,7 @@ if(archive){
  const catalog=JSON.parse(await readFile(new URL('../dist/archive-catalog.json',import.meta.url)));
  const hits=searchArchive(catalog,f.q??'');
  console.log(JSON.stringify({repository:catalog.repository,commit:catalog.commit,coverage:catalog.coverage,
-   total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));process.exit(0);
+   total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();
 }
 let data=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));
 let meta=JSON.parse(await readFile(new URL('../dist/source.json',import.meta.url)));
@@ -52,7 +57,7 @@ if(changes){
  const allowed=new Set(search(candidates,f).map(c=>c.id));
  const hits=diff.records.filter(r=>allowed.has(r.claim_id));
  console.log(JSON.stringify({comparison:{baseline:bundledMeta,current:meta,added:diff.added,changed:diff.changed,removed:diff.removed,unchanged:diff.unchanged,limitation:diff.limitation},
-  total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));process.exit(0);
+  total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();
 }
 const ranking=validateRanking(JSON.parse(await readFile(new URL('../dist/subjective-reuse-ranking.json',import.meta.url))));
 const rankingSource=JSON.parse(await readFile(new URL('../dist/ranking-source.json',import.meta.url)));
@@ -64,7 +69,7 @@ if(sources){
  console.log(JSON.stringify({coverage:corpus.coverage,registry_source:corpus.registry_source,
    total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,
    current_registry_source:meta,results:hits.slice(offset,offset+limit).map(({body,...d})=>({...d,excerpt:sourceExcerpt(body,f.q??'')}))},null,2));
- process.exit(0);
+ await exitAfterOutput();
 }
 const hits=sortClaims(search(data.claims,f),f.sort,ranking);
 console.log(JSON.stringify({coverage:data.coverage, registry_source:meta,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,
