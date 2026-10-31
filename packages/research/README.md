@@ -1,5 +1,12 @@
 # Research Commons: portable Lean and Rust
 
+## Current navigation — 31 October 2026, 15:18 UTC
+
+The **historical ContextB baseline below** is 1,833 sources, 48 mappings and 520 named requests. Later reviewed bindings extend that software interface. The latest verified [critical-tail/actual-encoder integration](../../research/2026-10-31-population002-package-binding/README.md) records **60 mapped IDs, 635 named declarations and 58 unbound IDs**, with [exact target/export evidence](integration/critical-tail-ports-verification.json) and [changed-aggregate/import-binding evidence](integration/critical-tail-ports-aggregate-verification.json). This uses exact qualified objects plus newly checked wrappers and roots; it is **not a fresh whole 1,845-source profile replay**. Strict coverage remains exit 2/full 116 incomplete; all 118 canonical scientific statuses are unchanged.
+
+For current searchable source/result receipts and reproducible CLI commands, use the [discovery entry point](../../docs/discovery/README.md). For original scientific goals and remaining obligations, use the [14:03 full-scope reconciliation](../../research/2026-10-31-scope-reconciliation-1403z/CURRENT-SCOPE.md). Published code, generated local search caches, dated receipts and the unchanged hosted reader are distinct. Full raw audits marked local-only and held publication packages are not claimed publicly preserved here. Earlier dated evidence and counts remain intact below.
+
+
 ## Full profile and actual callers — 31 October 2026
 
 The complete selected1833-source profile plus Registry/root (1835 objects) passes.
