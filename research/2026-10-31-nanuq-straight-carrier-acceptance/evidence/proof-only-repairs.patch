@@ -1,0 +1,14 @@
+--- frozen/StraightCarrier.lean
++++ source/StraightCarrier.lean
+@@ -21,8 +21,9 @@
+   obtain ⟨H,hA',_,hp,hq,_⟩ :=
+     Nanuq.PrescribedLoopAmbient.cycle_arc_straightening hA hB hmeet
+   refine ⟨H.trans Nanuq.CornerShear.straighten, ?_, ?_, ?_⟩
+-  · change (Nanuq.CornerShear.straighten ∘ H) '' A = _
+-    rw [← Set.image_image, hA', ← upperL_eq]
++  · change (fun x => Nanuq.CornerShear.straighten (H x)) '' A = _
++    rw [← Set.image_image (fun x => Nanuq.CornerShear.straighten x) (fun x => H x) A,
++      hA', ← upperL_eq]
+     exact Nanuq.CornerShear.image_upperL
+   · change Nanuq.CornerShear.straighten (H p) = _
+     rw [hp]

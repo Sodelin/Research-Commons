@@ -1,0 +1,3 @@
+# Parent thin-evidence review
+
+Parent inspected the actual StraightCarrier repair patch and both complete named theorem types with standard axiom lists. The repair only makes lambda/image composition explicit; the same ambient map, exact first carrier and labelled endpoints are preserved. Scoped acceptance of repaired014628e8 is supported together with owner thin checks and unchanged helper73bb. Distinct local/compiler helper object identities remain explicit. This is not an independent full132 audit replay or object rebuild; the full audit remains summary-only. Failed attempts are retained. No star disk, boundary-fixed gluing, original order or full NANUQ conclusion is inferred; the separate relative-crosscut candidate still requires qualification.
