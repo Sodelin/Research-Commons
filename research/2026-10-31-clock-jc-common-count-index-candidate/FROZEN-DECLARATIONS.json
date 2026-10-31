@@ -1,0 +1,91 @@
+{
+  "source_sha256": "29336e0fceed50e5996b5c74da6ba58aa32774e6bf72372ce73992a692a383e7",
+  "note": "Complete frozen declaration text, including proof bodies and adjacent comments. Entire source is authoritative.",
+  "declarations": [
+    {
+      "name": "CommonTermIndex",
+      "complete_frozen_text": "abbrev CommonTermIndex {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (fuel : \u2115) (s : Code N sample) :=\n  \u03a3 h : CanonicalPath e N fuel s, Fin (pathLength N fuel s h.val + 1)",
+      "sha256": "1fbe96b3ea4091ddb8ecf88c7b1742c66179cd287b5547952c75618875f75319"
+    },
+    {
+      "name": "commonTermEquiv",
+      "complete_frozen_text": "def commonTermEquiv {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) :\n    CommonTermIndex e N fuel s \u2243 CanonicalTermIndex e N r L q fuel s :=\n  Equiv.sigmaCongrRight (fun h => finCongr (pathTerms_size N r L q fuel s h.val).symm)",
+      "sha256": "784eced842755230fd975e31fa31b83bf98de5ac7f235e324bf1a8759f1675ee"
+    },
+    {
+      "name": "commonRate",
+      "complete_frozen_text": "def commonRate {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (i : CommonTermIndex e N fuel s) : \u211d :=\n  termRate e N r L q fuel s (commonTermEquiv e N r L q fuel s i)",
+      "sha256": "aed4096be837b2b9a62e36de5aa0122fc5286d772632ff5ef630e3a822d3745c"
+    },
+    {
+      "name": "commonCoefficient",
+      "complete_frozen_text": "def commonCoefficient {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (target : BlockPopulationObservation Copy V E)\n    (i : CommonTermIndex e N fuel s) : \u211d :=\n  termCoefficient e N r L q fuel s target (commonTermEquiv e N r L q fuel s i)",
+      "sha256": "a3450ad317764ef992dd05fe2b50e228883a1cfce83ac0b8ba0211e0c60d05f9"
+    },
+    {
+      "name": "actual_common_index_expansion",
+      "complete_frozen_text": "theorem actual_common_index_expansion {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (T : \u211d\u22650) (target : BlockPopulationObservation Copy V E) :\n    (actualResolvedWeight N r L q fuel s T target).toReal =\n      \u2211 i : CommonTermIndex e N fuel s,\n        commonCoefficient e N r L q fuel s target i *\n          Real.exp (-commonRate e N r L q fuel s i*(T:\u211d)) := by\n  rw [actual_resolved_canonical_exponential_sum e]\n  exact ((commonTermEquiv e N r L q fuel s).sum_comp\n    (fun i => termCoefficient e N r L q fuel s target i *\n      Real.exp (-termRate e N r L q fuel s i*(T:\u211d)))).symm",
+      "sha256": "dca69fdc287b6b6a70629ac37c1f81a18d4cdd4ef5fff7238449b8168a9571e7"
+    },
+    {
+      "name": "actual_common_index_card_le",
+      "complete_frozen_text": "theorem actual_common_index_card_le [Nonempty Copy]\n    (e : Copy \u2243 Fin (Fintype.card Copy)) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (fuel : \u2115) (s : Code N sample) :\n    Fintype.card (CommonTermIndex e N fuel s) \u2264\n      Fintype.card Copy * \u2211 k \u2208 Finset.range (Fintype.card Copy), ((Fintype.card Copy).choose 2)^k := by\n  simp only [CommonTermIndex,Fintype.card_sigma,Fintype.card_fin]\n  calc\n    (\u2211 h : CanonicalPath e N fuel s, (pathLength N fuel s h.val + 1)) \u2264\n        \u2211 _h : CanonicalPath e N fuel s, Fintype.card Copy :=\n      Finset.sum_le_sum (fun h _ => pathLength_lt_original_copies N fuel s h.val)\n    _ = Fintype.card (CanonicalPath e N fuel s) * Fintype.card Copy := by simp; rfl\n    _ \u2264 (\u2211 k \u2208 Finset.range (Fintype.card Copy), ((Fintype.card Copy).choose 2)^k) * Fintype.card Copy :=\n      Nat.mul_le_mul_right _ (actual_canonical_path_card_le e N fuel s)\n    _ = _ := Nat.mul_comm _ _\n\n/-- Actual states along the ordered path, including its initial and final states.\nThe list is independent of every query parameter and of the rate bank. -/",
+      "sha256": "37abf5e177cd56afd152da5743360bae544b44e95649cbb39c0e66c1fc743857"
+    },
+    {
+      "name": "pathStates",
+      "complete_frozen_text": "def pathStates (N : RootedBinary V E X) {sample : Copy \u2192 X} :\n    (fuel : \u2115) \u2192 (s : Code N sample) \u2192 OrderedPath N fuel s \u2192 List (Code N sample)\n  | 0, s, _ => [s]\n  | _+1, s, .inl _ => [s]\n  | fuel+1, s, .inr \u27e8p,h\u27e9 => s :: pathStates N fuel (stepDestination N s (some p)) h",
+      "sha256": "2341747706a8f09eeb05ca376ee8a9377ac345278db94a5efd54562d20d57936"
+    },
+    {
+      "name": "pathStates_length",
+      "complete_frozen_text": "lemma pathStates_length (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (fuel : \u2115) (s : Code N sample) (h : OrderedPath N fuel s) :\n    (pathStates N fuel s h).length = pathLength N fuel s h + 1 := by\n  induction fuel generalizing s with\n  | zero => rfl\n  | succ fuel ih =>\n    cases h with\n    | inl h => rfl\n    | inr h => obtain \u27e8p,h\u27e9 := h; simp [pathStates,pathLength,ih,Nat.add_comm,Nat.add_assoc]",
+      "sha256": "f4af9d5f7c108f89ad44094d7ce0ae82b19f0a5ae7018b3b88b7d808326cbb86"
+    },
+    {
+      "name": "actual_path_rate_list",
+      "complete_frozen_text": "lemma actual_path_rate_list (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (h : OrderedPath N fuel s) :\n    List.ofFn (pathTerms N r L q fuel s h).rate =\n      (pathStates N fuel s h).map (holdingRate N r L q) := by\n  induction fuel generalizing s with\n  | zero => simp [pathTerms,singletonTerms,pathStates,List.ofFn_succ]\n  | succ fuel ih =>\n    cases h with\n    | inl h => simp [pathTerms,singletonTerms,pathStates,List.ofFn_succ]\n    | inr h =>\n      obtain \u27e8p,h\u27e9 := h\n      simp [pathTerms,prependTerms,pathStates,List.ofFn_succ,ih]\n\n/-- The default is never read at a CommonTermIndex position. -/",
+      "sha256": "a07bd03f94aadf73b1384e7ba38b7dbfdfc73bd37fc100192450068e6434056a"
+    },
+    {
+      "name": "commonState",
+      "complete_frozen_text": "def commonState {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) : Code N sample :=\n  (pathStates N fuel s i.1.val).getD i.2.val s",
+      "sha256": "c6fe8782ccf80a1fa2ad3881419f22ef866833f7e9f0168eca268ea10ebdc260"
+    },
+    {
+      "name": "actual_common_rate_state",
+      "complete_frozen_text": "theorem actual_common_rate_state {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) :\n    commonRate e N r L q fuel s i = holdingRate N r L q (commonState e N fuel s i) := by\n  have hi : i.2.val < (pathTerms N r L q fuel s i.1.val).size := by\n    rw [pathTerms_size]; exact i.2.isLt\n  have he := congrArg (fun xs : List \u211d => xs.getD i.2.val (holdingRate N r L q s))\n    (actual_path_rate_list N r L q fuel s i.1.val)\n  rw [List.getD_map] at he\n  simpa [commonRate,termRate,commonTermEquiv,commonState,\n    List.getD_eq_getElem?_getD,List.getElem?_ofFn,hi] using he\n\nvariable {A : Type*} [Fintype A]\n\n/-- Replicate SITES of each original-copy character, never copies or lineages. -/",
+      "sha256": "584d9736e402b1f3b36896f7da924856ff398d0a334f9db37f50d7da531c1d29"
+    },
+    {
+      "name": "ReplicaSites",
+      "complete_frozen_text": "abbrev ReplicaSites (v : A \u2192 \u2115) := \u03a3 a : A, Fin (v a)",
+      "sha256": "0444f20125f5e14673f66c084b1ac487b63439e477e1c3e43f29b0799f937603"
+    },
+    {
+      "name": "replicaEquiv",
+      "complete_frozen_text": "def replicaEquiv (v : A \u2192 \u2115) : Fin (\u2211 a, v a) \u2243 ReplicaSites v :=\n  (finCongr (by simp [ReplicaSites] : (\u2211 a, v a) = Fintype.card (ReplicaSites v))).trans\n    (Fintype.equivFin (ReplicaSites v)).symm",
+      "sha256": "c74908fbe413d8b4cbf36bbaf51b2f9f76c29ed7bc642f52c5b5941613b55b92"
+    },
+    {
+      "name": "replicatedQ",
+      "complete_frozen_text": "def replicatedQ (v : A \u2192 \u2115) (chi : A \u2192 Copy \u2192 Base) : Fin (\u2211 a, v a) \u2192 Copy \u2192 Base :=\n  fun j => chi ((replicaEquiv v j).1)",
+      "sha256": "963a81c35460c3e7d2fd10ca3ac893a1068add6740d68c341883334895ff2db5"
+    },
+    {
+      "name": "actual_replicated_locusKill",
+      "complete_frozen_text": "theorem actual_replicated_locusKill (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (v : A \u2192 \u2115) (chi : A \u2192 Copy \u2192 Base) (s : Code N sample) :\n    locusKill N (\u2211 a, v a) (replicatedQ v chi) s =\n      (4/3:\u211d) * \u2211 a, (v a:\u211d) * codeCharge N (chi a) s := by\n  unfold locusKill replicatedQ\n  rw [(replicaEquiv v).sum_comp (fun j => codeCharge N (chi j.1) s)]\n  simp [ReplicaSites,Fintype.sum_sigma]",
+      "sha256": "49a55fe2c6547e07e17185924e5317c25ab1f22f46d82107758c7d58959de36c"
+    },
+    {
+      "name": "actual_replicated_common_rate",
+      "complete_frozen_text": "theorem actual_replicated_common_rate {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (v : A \u2192 \u2115) (chi : A \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) :\n    commonRate e N r (\u2211 a, v a) (replicatedQ v chi) fuel s i =\n      (totalRate N r (commonState e N fuel s i) : \u211d) +\n        (4/3:\u211d) * \u2211 a, (v a:\u211d) * codeCharge N (chi a) (commonState e N fuel s i) := by\n  rw [actual_common_rate_state,holdingRate,actual_replicated_locusKill]\n\n/-- A fixed actual path-position has positive multiplicative bases, even\nwhen rates/bases coincide across other paths or some counts vanish. -/",
+      "sha256": "9980d96c49d2ff44472ced4465d1ad2dc1ac81351e7de370b576db23c39b35d6"
+    },
+    {
+      "name": "actual_replicated_exponential",
+      "complete_frozen_text": "theorem actual_replicated_exponential {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (r : PositivePairRates E)\n    (v : A \u2192 \u2115) (chi : A \u2192 Copy \u2192 Base) (fuel : \u2115) (s : Code N sample)\n    (i : CommonTermIndex e N fuel s) (T : \u211d) :\n    Real.exp (-commonRate e N r (\u2211 a, v a) (replicatedQ v chi) fuel s i*T) =\n      Real.exp (-(totalRate N r (commonState e N fuel s i):\u211d)*T) *\n        \u220f a, (Real.exp (-((4/3:\u211d)*codeCharge N (chi a) (commonState e N fuel s i))*T))^(v a) := by\n  rw [actual_replicated_common_rate]\n  have halg : -((totalRate N r (commonState e N fuel s i):\u211d) +\n      (4/3:\u211d)*\u2211 a, (v a:\u211d)*codeCharge N (chi a) (commonState e N fuel s i))*T =\n      -(totalRate N r (commonState e N fuel s i):\u211d)*T +\n        \u2211 a, (v a:\u211d)*(-((4/3:\u211d)*codeCharge N (chi a) (commonState e N fuel s i))*T) := by\n    simp only [Finset.mul_sum,Finset.sum_mul,neg_add,neg_mul,Finset.sum_neg_distrib]\n    congr 1\n    apply Finset.sum_congr rfl\n    intro a _\n    ring\n  rw [halg,Real.exp_add,Real.exp_sum]\n  congr 1\n  apply Finset.prod_congr rfl\n  intro a _\n  rw [Real.exp_nat_mul]",
+      "sha256": "dabf25ab2ba6bd229d5a7769cc943dc861281f9250e390a051cd4ffc5c095b61"
+    }
+  ]
+}
