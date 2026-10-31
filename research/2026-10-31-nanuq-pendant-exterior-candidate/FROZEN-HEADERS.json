@@ -1,0 +1,22 @@
+[
+  {
+    "file": "OneExitExterior.lean",
+    "name": "one_exit_boundary_component",
+    "header": "theorem one_exit_boundary_component {K A C : Set Plane} {q z u : Plane}\n    (hC : IsJordanCurve C) (hA : IsArc A)\n    (hinter : C \u2229 K = {q}) (hclosed : (C \u222a inside C) \u2229 K = A)\n    (hz : z \u2208 inside C) (hzK : z\u2209K) (hu : u\u2208C\\K) :\n    C\\{q} \u2286 connectedComponentIn K\u1d9c z"
+  },
+  {
+    "file": "OneExitExterior.lean",
+    "name": "one_exit_specified_component",
+    "header": "theorem one_exit_specified_component {K A C : Set Plane} {q p o u : Plane}\n    (hC : IsJordanCurve C) (hA : IsArc A)\n    (hinter : C\u2229K={q}) (hclosed : (C \u222a inside C)\u2229K=A)\n    (hp : p\u2208inside C) (hpcl : p\u2208closure (connectedComponentIn K\u1d9c o))\n    (hu : u\u2208C\\K) :\n    C\\{q} \u2286 connectedComponentIn K\u1d9c o"
+  },
+  {
+    "file": "OriginalPendantExterior.lean",
+    "name": "original_taxon_exterior_one_exit",
+    "header": "theorem original_taxon_exterior_one_exit {V E X : Type*}\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]\n    (N : RootedBinary V E X) (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph)\n    (face : G1OuterLabelledMultigraphCurves.TaxonOuterFace D N.leaf) (x : X) :\n    \u2203 (e : E) (f : \u211d \u2192 Plane) (H : Plane \u2243\u209c Plane) (r b t : \u211d) (C : Set Plane),\n      N.graph.target e=N.leaf x \u2227 ContinuousOn f I \u2227 InjOn f I \u2227\n      f '' I=Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) e \u2227\n      f 0=NanuqFaithfulSupplierDrawing.vertex D (N.leaf x) \u2227\n      f 1=NanuqFaithfulSupplierDrawing.vertex D (N.graph.source e) \u2227\n      0 < r \u2227 r < b \u2227 t \u2208 Ioo (1/2) (13/24) \u2227 IsJordanCurve C \u2227\n      (\u2200 y : \u211d, |y| < r \u2192 Plane.mk r y \u2208 C) \u2227\n      H (f (1/2))=0 \u2227 H (f (13/24))=Plane.mk b 0 \u2227 H (f t)=Plane.mk r 0 \u2227\n      H '' (f '' Icc (1/2) (13/24))=segment \u211d (0:Plane) (Plane.mk b 0) \u2227\n      C \u2229 (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D))={Plane.mk r 0} \u2227\n      (C \u222a inside C) \u2229 (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D))=H '' (f '' Icc 0 t) \u2227\n      Plane.mk r (r/2) \u2208 C \\ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D)) \u2227\n      Plane.mk r (-r/2) \u2208 C \\ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D)) \u2227\n      Plane.mk r (-r/2) \u2208 connectedComponentIn\n        (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n          G1OuterLabelledMultigraphCurves.drawing D))\u1d9c (Plane.mk r (r/2)) \u2227\n      C \\ {Plane.mk r 0} \u2286 connectedComponentIn\n        (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n          G1OuterLabelledMultigraphCurves.drawing D))\u1d9c\n        (H (NanuqFaithfulSupplierDrawing.coordinates face.outside))"
+  },
+  {
+    "file": "PrefixArc.lean",
+    "name": "prefix_isArcBetween",
+    "header": "theorem prefix_isArcBetween (f : \u211d \u2192 Plane) (hc : ContinuousOn f I) (hi : InjOn f I)\n    {t : \u211d} (ht : 0<t) (ht1 : t\u22641) :\n    IsArcBetween (f '' Icc 0 t) (f 0) (f t)"
+  }
+]
