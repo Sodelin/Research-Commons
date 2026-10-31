@@ -3,8 +3,9 @@ import {resolve,dirname,basename} from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {searchSources,sourceExcerpt,artifactReferences,sourceQueryCandidates,sourceExactness} from '../dist/source-search.mjs';
+import {loadReferenceBodies} from './reference-bodies.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
-export async function queryResearchResults(manifestPath,query,{offset=0,limit=25,pathPrefix=null}={}){
+export async function queryResearchResults(manifestPath,query,{offset=0,limit=25,pathPrefix=null,referenceBodies=null}={}){
  const root=dirname(resolve(manifestPath)),manifest=JSON.parse(await readFile(manifestPath));
  if(manifest.schema!==1||manifest.repository!=='Sodelin/Research-Commons'||!/^[a-f0-9]{40}$/.test(manifest.commit)||!Array.isArray(manifest.shards)||!Array.isArray(manifest.inventory))throw Error('Invalid published research inventory');
  const register=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));const refs=artifactReferences(register.claims),claims=new Map();
@@ -24,6 +25,18 @@ export async function queryResearchResults(manifestPath,query,{offset=0,limit=25
   }
  }
  if(seen.size!==relevant.length)throw Error('Incomplete body inventory');
+ let referenceCoverage=null;
+ if(referenceBodies){
+  const supplement=await loadReferenceBodies(referenceBodies),exactClaims=new Map(refs.map(r=>[r.url,[...new Set(r.bindings.map(b=>b.claim_id).filter(Boolean))]]));
+  // Keep a different source version even when a path or declaration is shared.
+  // Skip only bodies already present at the exact immutable URL.
+  const indexedUrls=new Set(manifest.inventory.filter(r=>r.coverage==='full_text').map(r=>r.document_url));
+  const docs=supplement.documents.filter(d=>!indexedUrls.has(d.url)&&(!pathPrefix||d.source_paths.some(p=>p.startsWith(pathPrefix))));
+  for(const doc of searchSources({documents:sourceQueryCandidates(docs,query)},query)){
+   const priority=sourceExactness(doc,query);if(buckets[priority].length<offset+limit)buckets[priority].push({url:doc.url,title:doc.title,repository:doc.repository,commit:doc.commit,git_blob:doc.git_blob,sha256:doc.sha256,bytes:doc.bytes,source_paths:doc.source_paths,canonical_claim_references:[...new Set([...(exactClaims.get(doc.url)??[]),...doc.bindings.map(b=>b.claim_id).filter(id=>register.claims.some(c=>c.id===id))])],evidence_role:doc.evidence_role,license_status:doc.license_status,excerpt:sourceExcerpt(doc.body,query)});total++;
+  }
+  referenceCoverage={documents:supplement.documents.length,additional_documents:docs.length,unavailable:supplement.unavailable,limitation:supplement.limitation};
+ }
  const results=buckets.reverse().flat().slice(offset,offset+limit);
- return {view:'published_research_full_text',path_prefix:pathPrefix,repository:manifest.repository,commit:manifest.commit,coverage:manifest.coverage,limitation:manifest.limitation,total,offset,limit,next_offset:offset+limit<total?offset+limit:null,results};
+ return {view:'published_research_full_text',path_prefix:pathPrefix,repository:manifest.repository,commit:manifest.commit,coverage:manifest.coverage,reference_bodies:referenceCoverage,limitation:manifest.limitation,total,offset,limit,next_offset:offset+limit<total?offset+limit:null,results};
 }

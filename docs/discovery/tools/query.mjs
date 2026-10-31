@@ -16,7 +16,7 @@ async function exitAfterOutput(){
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
 let packageRoot=null,corpusPath=null,ledger=false,modules=false;
 const observationPaths=[],scopedPaths=[];
-let limit=25,offset=0,researchResults=null,researchPath=null,referenceCoverage=false;
+let limit=25,offset=0,researchResults=null,researchPath=null,referenceCoverage=false,referenceBodies=null;
 for(let i=0;i<args.length;i++){
   const k=args[i];
   if(k==='--modules'){modules=true;continue;}
@@ -25,6 +25,7 @@ for(let i=0;i<args.length;i++){
   if(k==='--package-root'||k==='--corpus'){if(!args[i+1])throw Error(`${k} needs a path`);if(k==='--package-root')packageRoot=args[++i];else corpusPath=args[++i];continue;}
   if(k==='--ledger'){ledger=true;continue;}
   if(k==='--limit'||k==='--offset'){const value=Number(args[++i]);if(!Number.isSafeInteger(value)||value<0||(k==='--limit'&&(value<1||value>100)))throw Error('Use --limit 1..100 and nonnegative --offset.');if(k==='--limit')limit=value;else offset=value;continue;}
+  if(k==='--reference-bodies'){if(referenceBodies||!args[i+1])throw Error('Use one --reference-bodies CORPUS');referenceBodies=args[++i];continue;}
   if(k==='--reference-coverage'){referenceCoverage=true;continue;}
   if(k==='--research-path'){if(researchPath||!args[i+1])throw Error('Use one --research-path PREFIX');researchPath=args[++i];continue;}
   if(k==='--research-results'){if(researchResults||!args[i+1])throw Error('Use one --research-results MANIFEST');researchResults=args[++i];continue;}
@@ -35,8 +36,9 @@ for(let i=0;i<args.length;i++){
   if(!['--query','--status','--origin','--topic','--programme','--kind','--review','--formal-status','--novelty','--sort'].includes(k) || !args[i+1]) throw Error('Use --query TEXT, combinable --topic/--programme/--kind/--status/--origin/--review/--formal-status/--novelty, --sort subjective_reuse, [--refresh | --sources | --archive].');
   f[k==='--query'?'q':k.slice(2).replaceAll('-','_')]=args[++i];
 }
+if(referenceBodies&&!researchResults)throw Error('--reference-bodies requires --research-results');
 if(scopedPaths.length){
- if(packageRoot||ledger||sources||archive||changes||refresh||modules||observationPaths.length||corpusPath||Object.keys(f).some(k=>k!=='q'))throw Error('--scoped-evidence is an explicit local evidence view with optional --query only; it does not transfer claim facets or acceptance.');
+ if(researchResults||referenceCoverage||referenceBodies||packageRoot||ledger||sources||archive||changes||refresh||modules||observationPaths.length||corpusPath||Object.keys(f).some(k=>k!=='q'))throw Error('--scoped-evidence is an explicit local evidence view with optional --query only; it does not transfer claim facets or acceptance.');
  const records=await loadScopedEvidence(scopedPaths),hits=searchScopedEvidence(records,f.q??'');
  console.log(JSON.stringify({view:'explicit_local_scoped_evidence_not_claim_acceptance',total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();
 }
@@ -49,7 +51,7 @@ if(modules&&(!packageRoot||ledger||sources||archive||changes||refresh||observati
 if((referenceCoverage||researchResults)&&(packageRoot||ledger||modules||observationPaths.length||corpusPath))throw Error('Package/observation/corpus views must remain separate from reference or research-results views.');
 if(referenceCoverage){if(researchResults||researchPath||refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--reference-coverage accepts --query and pagination only.');const data=JSON.parse(await readFile(new URL('../result-reference-coverage.json',import.meta.url)));const hits=data.records.filter(r=>!f.q||JSON.stringify(r).toLowerCase().includes(f.q.toLowerCase()));console.log(JSON.stringify({view:'canonical_reference_coverage_not_scientific_status',source_commit:data.tree_source_commit,coverage:data.coverage_counts,limitation:data.limitation,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));await exitAfterOutput();}
 if(researchPath&&!researchResults)throw Error('--research-path requires --research-results');
-if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath}),null,2));await exitAfterOutput();}
+if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath,referenceBodies}),null,2));await exitAfterOutput();}
 if(f.status && !Object.hasOwn(STATUS,f.status)) throw Error('Unknown status filter.');
 if(f.origin && !Object.hasOwn(ORIGIN,f.origin)) throw Error('Unknown origin filter.');
 if(changes&&(!refresh||sources||archive||f.sort))throw Error('--changes requires --refresh and compares claim snapshots; --sources, --archive and --sort belong to separate views.');

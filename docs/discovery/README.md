@@ -275,3 +275,56 @@ pending; historical source-only headers do not override a later exact matching
 receipt. Reading that metadata is neither a new compiler execution nor automatic
 cache admission. Reuse the closed context instead of rerunning it because the
 broader package is unfinished.
+
+
+### Exact referenced public bodies beyond the tree roots
+
+The same `--research-results` query can join an explicit, verified reference-body
+supplement with `--reference-bodies CORPUS`. It uses the existing source search
+engine, exact-identifier ranking and **one global pagination sequence**. Each
+extra hit returns its own repository, exact revision, Git blob, SHA256, license
+observation and canonical reference association. The association is a citation,
+not a transfer of claim acceptance or a runtime proof.
+
+[Reviewed public input identities](referenced-public-inputs.json) bind the 128
+previously unbound first-party reference records to **120 distinct immutable
+source bodies**. Anchor variants explain repeated references. The four exact
+public repository pins are in that receipt; repository visibility and missing
+root-license observations are explicit. Owner-authorized research indexing does
+not invent an open-source license. Eight additional exact Commons source
+versions from docs/packages and a changed historical research note are joined
+alongside them. Two other-owner references stay link-only. Missing cited files
+are reported as `repository_artifact_missing_at_pinned_ref`, separately from
+real files outside the selected roots; no replacement evidence is guessed.
+
+Materialize only the reviewed public bodies using an authorized connector or
+existing pinned checkout, retaining this layout below a chosen `BODY_ROOT`:
+`OWNER--REPOSITORY/40-CHAR-COMMIT/original/path`. No downloaded source is executed.
+The offline intake verifies every byte length, SHA256 and Git blob against the
+published input receipt. The canonical-reference coverage receipt supplies the
+exact citations; the intake also accepts its already-covered successor.
+
+```sh
+python3 docs/discovery/tools/index-referenced-bodies.py --repo . \
+  --verified-inputs docs/discovery/referenced-public-inputs.json \
+  --body-root BODY_ROOT --references docs/discovery/result-reference-coverage.json \
+  --output /tmp/commons-reference-bodies.json
+node docs/discovery/tools/query.mjs \
+  --research-results /tmp/commons-result-index/manifest.json \
+  --reference-bodies /tmp/commons-reference-bodies.json \
+  --query path_projects_strict_of_distinct_owners --limit 25
+python3 docs/discovery/tools/reconcile-result-references.py --repo . \
+  --manifest /tmp/commons-result-index/manifest.json \
+  --reference-bodies /tmp/commons-reference-bodies.json \
+  --output /tmp/reference-coverage-current.json
+```
+
+[The exact-source query receipt](referenced-body-query-receipt.json) records all
+128 distinct supplemental documents and their matching immutable identities.
+[Supplement coverage](referenced-body-coverage.json) records input/output hashes
+and current limits. These generated bodies are local CLI inputs. Committed code,
+committed receipts, prepared source payloads and the unchanged hosted 334-body
+reader remain different delivery states. This is not every linked repository,
+all history, private source coverage or every unpublished manuscript. Continue
+the [shared contributor workflow](../../communications/2026-10-30-every-result-discoverable-2341z.md)
+for every new result and verify its exact body, not a related fuzzy hit count.
