@@ -74,3 +74,8 @@ Priorities are exact provider closure, applicable existing methods and end-to-en
 - 7 October: full historical reconciliation, preserved unchanged at its immutable predecessor link.
 - 23–27 October: 118-card recovery, formal-evidence corrections and programme/dissemination navigation incorporated at their recorded scopes.
 - 30 October, 22:17 cutoff: accepted local/hybrid/projectivity G3/G4 results, scoped clock-JC factorization, actual NANUQ formal gaps, prior-work corrections, release gate and current responsibilities reconciled. No original master closure or whole-package verification asserted.
+
+
+## Current scope successor — 31 October 2026, 02:07 UTC
+
+The [31 October incremental reconciliation](../2026-10-31-scope-reconciliation-0207z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims while updating scoped NANUQ/clock-JC providers, exact remaining joins, four independent research responsibilities plus two engineering contexts, discovery coverage and current release holds. No original master closure or whole-package acceptance is asserted.
