@@ -1,0 +1,3 @@
+# Exact successor binding
+
+The exact witness successor SHA256 5b2612ff0cfe8e9100f41f41d9d4fb8a4cdafde89bb016b7b747cca1cf20bbad was compared literally with reviewed 9d5f3edd2c9c9ba1581a2cfea2e1f55a8f4e6e39c43fcdc6e6fcc4df73689ad9. The sole change replaces the unrestricted epsilon phrase by "for all sufficiently small epsilon>0 (in particular epsilon<1)". This resolves the only requested correction. The finite linked witness and positive quartic chronological construction are HAND ACCEPTED at the scope of EXACT-WITNESS-REVIEW.md. Its separately attributed energy bound now also has the independent full source review ENERGY-PROOF-REVIEW.md; neither receipt upgrades the witness to a higher return.
