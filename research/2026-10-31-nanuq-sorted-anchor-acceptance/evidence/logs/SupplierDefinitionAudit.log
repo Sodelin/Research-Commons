@@ -1,0 +1,114 @@
+Nanuq.Restriction.all_size_mean_exact : ∀ (n mask : ℕ) (T : Nanuq.AdjacentCertificate.Tree),
+  Eq.{1} T.size (HSub.hSub.{0, 0, 0} (List.length.{0} (Nanuq.AdjacentCertificate.occurrenceLabels n mask)) 1) →
+    ∀ (x y p z : ℕ),
+      LT.lt.{0} x n →
+        LT.lt.{0} y n →
+          LT.lt.{0} p n →
+            LT.lt.{0} z n →
+              Ne.{1} x y →
+                Ne.{1} x p →
+                  Ne.{1} x z →
+                    Ne.{1} y p →
+                      Ne.{1} y z →
+                        Ne.{1} p z →
+                          Eq.{1}
+                            (↑(Nanuq.AdjacentCertificate.twiceMean (Nanuq.AdjacentCertificate.quartets n)
+                                (Nanuq.Restriction.codedPattern T (Nanuq.AdjacentCertificate.occurrenceLabels n mask) n)
+                                x y p z))
+                            (HDiv.hDiv.{0, 0, 0}
+                              (HMul.hMul.{0, 0, 0} 2
+                                ↑(List.length.{0}
+                                    (List.filter.{0}
+                                      (fun r =>
+                                        bne.{0}
+                                          ((Nanuq.AdjacentCertificate.quartetAt (Nanuq.AdjacentCertificate.quartets n) x
+                                                y p z).side
+                                            r x)
+                                          ((Nanuq.AdjacentCertificate.quartetAt (Nanuq.AdjacentCertificate.quartets n) x
+                                                y p z).side
+                                            r y))
+                                      (List.filter.{0}
+                                        (fun r =>
+                                          (Nanuq.AdjacentCertificate.code
+                                                (Nanuq.Restriction.codedPattern T
+                                                  (Nanuq.AdjacentCertificate.occurrenceLabels n mask) n)
+                                                (Nanuq.AdjacentCertificate.quartetIndex
+                                                  (Nanuq.AdjacentCertificate.quartets n) x y p z)).testBit
+                                            r)
+                                        (List.range 3)))))
+                              ↑(List.length.{0}
+                                  (List.filter.{0}
+                                    (fun r =>
+                                      (Nanuq.AdjacentCertificate.code
+                                            (Nanuq.Restriction.codedPattern T
+                                              (Nanuq.AdjacentCertificate.occurrenceLabels n mask) n)
+                                            (Nanuq.AdjacentCertificate.quartetIndex
+                                              (Nanuq.AdjacentCertificate.quartets n) x y p z)).testBit
+                                        r)
+                                    (List.range 3))))
+'Nanuq.Restriction.all_size_mean_exact' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+Nanuq.Restriction.query_lookup : ∀ (n x y p z : ℕ) (q : Nanuq.AdjacentCertificate.Quartet),
+  Membership.mem.{0, 0} (Nanuq.AdjacentCertificate.quartets n) q →
+    Nanuq.Restriction.QuerySet q x y p z →
+      Eq.{1}
+        (getElem?.{0, 0, 0} (Nanuq.AdjacentCertificate.quartets n)
+          (Nanuq.AdjacentCertificate.quartetIndex (Nanuq.AdjacentCertificate.quartets n) x y p z))
+        (some.{0} q)
+'Nanuq.Restriction.query_lookup' depends on axioms: [propext, Quot.sound.{u}]
+Nanuq.Restriction.summary_code_edge : ∀ (T : Nanuq.AdjacentCertificate.Tree) (tips : List.{0} ℕ)
+  (qs : List.{0} Nanuq.AdjacentCertificate.Quartet) (idx : ℕ) (q : Nanuq.AdjacentCertificate.Quartet),
+  Eq.{1} (getElem?.{0, 0, 0} qs idx) (some.{0} q) →
+    ∀ (r : ℕ),
+      LT.lt.{0} r 3 →
+        (Eq.{1}
+            ((Nanuq.AdjacentCertificate.code
+                  (Nanuq.AdjacentCertificate.Tree.summary (Nanuq.AdjacentCertificate.edgeContribution tips qs) 1 T)
+                  idx).testBit
+              r)
+            true ↔
+          ∃ e,
+            Membership.mem.{0, 0} (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) e ∧
+              Eq.{1} (Nanuq.AdjacentCertificate.edgeWitness tips e.1 e.2 q r) true)
+'Nanuq.Restriction.summary_code_edge' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def Nanuq.ActualFinite.coordinateQuartet : (Fin 4 → ℕ) → Nanuq.AdjacentCertificate.Quartet :=
+fun v => { a := v 0, b := v 1, c := v 2, d := v 3 }
+def Nanuq.ActualFinite.indexSide : Fin 3 → Fin 4 → Bool :=
+fun r i => (Nanuq.ActualFinite.coordinateQuartet Fin.val).side ↑r ↑i
+def Nanuq.ActualFinite.indexCut : Fin 3 → (Fin 4 → Bool) → (Fin 4 → Bool) → Bool :=
+fun r L R =>
+  ite.{1} (Eq.{1} (↑r) 0) (L 0 && L 1 && R 2 && R 3 || R 0 && R 1 && L 2 && L 3)
+    (ite.{1} (Eq.{1} (↑r) 1) (L 0 && L 2 && R 1 && R 3 || R 0 && R 2 && L 1 && L 3)
+      (L 0 && L 3 && R 1 && R 2 || R 0 && R 3 && L 1 && L 2))
+def Nanuq.ActualFinite.reindexResolution : Equiv.Perm.{1} (Fin 4) → Fin 3 → Fin 3 :=
+fun σ r =>
+  ite.{1}
+    (Eq.{1}
+      (BEq.beq.{0} (Nanuq.ActualFinite.indexSide r ((Equiv.symm.{1, 1} σ) 0))
+        (Nanuq.ActualFinite.indexSide r ((Equiv.symm.{1, 1} σ) 1)))
+      true)
+    0
+    (ite.{1}
+      (Eq.{1}
+        (BEq.beq.{0} (Nanuq.ActualFinite.indexSide r ((Equiv.symm.{1, 1} σ) 0))
+          (Nanuq.ActualFinite.indexSide r ((Equiv.symm.{1, 1} σ) 2)))
+        true)
+      1 2)
+def Nanuq.ActualFinite.resolutionFin : Nanuq.Quartet.Resolution → Fin 3 :=
+fun r => ⟨Nanuq.ActualFinite.resolutionIndex r, ⋯⟩
+def Nanuq.ActualFinite.presentIndices : (Fin 3 → Bool) → List.{0} (Fin 3) :=
+fun g => List.filter.{0} g (List.cons.{0} 0 (List.cons.{0} 1 (List.cons.{0} 2 List.nil.{0})))
+def Nanuq.ActualFinite.indexedMean : (Fin 3 → Bool) → ℚ :=
+fun g =>
+  HDiv.hDiv.{0, 0, 0} ↑(List.length.{0} (List.filter.{0} (fun r => bne.{0} r 0) (Nanuq.ActualFinite.presentIndices g)))
+    ↑(List.length.{0} (Nanuq.ActualFinite.presentIndices g))
+def Nanuq.ActualFinite.indexedPairMean : (Fin 3 → Bool) → Fin 4 → Fin 4 → ℚ :=
+fun g i j =>
+  HDiv.hDiv.{0, 0, 0}
+    ↑(List.length.{0}
+        (List.filter.{0} (fun r => bne.{0} (Nanuq.ActualFinite.indexSide r i) (Nanuq.ActualFinite.indexSide r j))
+          (Nanuq.ActualFinite.presentIndices g)))
+    ↑(List.length.{0} (Nanuq.ActualFinite.presentIndices g))
+def Nanuq.ActualFinite.finiteWitnessMask : Nanuq.AdjacentCertificate.Tree → List.{0} ℕ → (Fin 4 → ℕ) → Fin 3 → Bool :=
+fun T tips v r =>
+  List.any.{0} (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) fun e =>
+    Nanuq.AdjacentCertificate.edgeWitness tips e.1 e.2 (Nanuq.ActualFinite.coordinateQuartet v) ↑r

@@ -1,0 +1,11 @@
+Nanuq.ActualFinite.reindexResolution_cut : ∀ (σ : Equiv.Perm.{1} (Fin 4)) (r : Fin 3) (L R : Fin 4 → Bool),
+  Eq.{1} (Nanuq.ActualFinite.indexCut r (fun i => L (σ i)) fun i => R (σ i))
+    (Nanuq.ActualFinite.indexCut (Nanuq.ActualFinite.reindexResolution σ r) L R)
+'Nanuq.ActualFinite.reindexResolution_cut' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+Nanuq.ActualFinite.finite_distinctMean_permutation : ∀ (T : Nanuq.AdjacentCertificate.Tree) (tips : List.{0} ℕ)
+  (v : Fin 4 → ℕ) (σ : Equiv.Perm.{1} (Fin 4)),
+  Eq.{1}
+    (Nanuq.Quartet.distinctMean
+      (Nanuq.ActualFinite.finiteResolutionSet T tips (Nanuq.ActualFinite.coordinateQuartet fun i => v (σ i))))
+    (Nanuq.ActualFinite.indexedPairMean (Nanuq.ActualFinite.finiteWitnessMask T tips v) (σ 0) (σ 1))
+'Nanuq.ActualFinite.finite_distinctMean_permutation' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

@@ -1,0 +1,80 @@
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:25:6: error(lean.unknownIdentifier): Unknown identifier `hm`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:24:30: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+n mask : ℕ
+rank : X ≃ Fin n
+T : AdjacentCertificate.Tree
+q : Fin 4 ↪ X
+⊢ ↑(twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n) ↑(rank (q 0)) ↑(rank (q 1)) ↑(rank (q 2))
+        ↑(rank (q 3))) =
+    2 * N.rawQuartetMean q
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:52:54: error(lean.unknownIdentifier): Unknown identifier `hs`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:31:31: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+n mask : ℕ
+rank : X ≃ Fin n
+T : AdjacentCertificate.Tree
+v : Fin 4 → X
+hpq : v 2 ≠ v 3
+he : ∀ (i j : Fin 4), ↑(rank (v i)) = ↑(rank (v j)) ↔ v i = v j
+h01 : ¬v 0 = v 1
+h02 : ¬v 0 = v 2
+h03 : ¬v 0 = v 3
+h12 : ¬v 1 = v 2
+h13 : ¬v 1 = v 3
+hi : Function.Injective v
+⊢ ↑(anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n) ↑(rank (v 2)) ↑(rank (v 3)) ↑(rank (v 0))
+        ↑(rank (v 1))) =
+    N.actualTupleAnchor v
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:41:85: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchor, RootedBinary.actualTupleAnchor, Nanuq.PortPatterns.tupleAnchor, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:44:85: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchor, RootedBinary.actualTupleAnchor, Nanuq.PortPatterns.tupleAnchor, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:46:83: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchor, RootedBinary.actualTupleAnchor, Nanuq.PortPatterns.tupleAnchor, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:46:86: warning: This simp argument is unused:
+  eq_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchor, RootedBinary.actualTupleAnchor, Nanuq.PortPatterns.tupleAnchor, he]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<WORKSPACE>/tasks/lean-completion/sorted-anchor/source/ActualSortedAnchor.lean:48:83: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchor, RootedBinary.actualTupleAnchor, Nanuq.PortPatterns.tupleAnchor, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.ActualFinite.actual_sorted_query_mean' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.ActualFinite.actual_sorted_anchor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

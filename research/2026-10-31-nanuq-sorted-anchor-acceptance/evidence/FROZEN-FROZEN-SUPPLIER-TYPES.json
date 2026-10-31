@@ -1,0 +1,23 @@
+{
+  "note": "Exact retained qualified source types, not a fresh rebuild. Preserve section/namespace context in provider source.",
+  "suppliers": [
+    {
+      "module": "RestrictionEndpoints",
+      "name": "all_size_mean_exact",
+      "source_sha256": "35112790d4ee43fc5a654a1dbaad8fb58d5b24c2c0f631be625b6bf351ac18b7",
+      "literal_source_header": "theorem all_size_mean_exact (n mask : Nat) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (x y p z : Nat) (hx : x<n) (hy : y<n) (hp : p<n) (hz : z<n)\n    (hxy : x\u2260y) (hxp : x\u2260p) (hxz : x\u2260z) (hyp : y\u2260p) (hyz : y\u2260z) (hpz : p\u2260z) :\n    (twiceMean (quartets n) (codedPattern T (occurrenceLabels n mask) n) x y p z : \u211a) =\n      2 * (((List.range 3).filter (fun r =>\n        (code (codedPattern T (occurrenceLabels n mask) n) (quartetIndex (quartets n) x y p z)).testBit r)).filter\n        (fun r => (quartetAt (quartets n) x y p z).side r x != (quartetAt (quartets n) x y p z).side r y)).length /\n      (((List.range 3).filter (fun r =>\n        (code (codedPattern T (occurrenceLabels n mask) n) (quartetIndex (quartets n) x y p z)).testBit r)).length : \u211a)"
+    },
+    {
+      "module": "QuartetLookup",
+      "name": "query_lookup",
+      "source_sha256": "d683df4a02adbc5e4e335b0e1ed2026bdaa86ac2bfd01abae9c70400fd305559",
+      "literal_source_header": "theorem query_lookup (n x y p z : Nat) (q : Quartet)\n    (hq : q\u2208quartets n) (hset : QuerySet q x y p z) :\n    (quartets n)[quartetIndex (quartets n) x y p z]? = some q"
+    },
+    {
+      "module": "CodeBridge",
+      "name": "summary_code_edge",
+      "source_sha256": "c4b32dfc26649957377292dcae3c945891d306ff982f7461abecd31cbb0b5a79",
+      "literal_source_header": "theorem summary_code_edge (T : Tree) (tips : List Nat) (qs : List Quartet) (idx : Nat)\n    (q : Quartet) (hq : qs[idx]?=some q) (r : Nat) (hr : r<3) :\n    (code (T.summary (edgeContribution tips qs) 1) idx).testBit r=true \u2194\n      \u2203 e\u2208T.internalIntervals 1, edgeWitness tips e.1 e.2 q r=true"
+    }
+  ]
+}
