@@ -1,0 +1,59 @@
+{
+  "order": [
+    "Encode",
+    "Context",
+    "EncodeWitness",
+    "FrontierPartition",
+    "ContextCut",
+    "LabelWitness",
+    "ReceiverRepresentation"
+  ],
+  "modules": {
+    "Encode": {
+      "source_sha256": "cee82beef32cb77add794a1f548083a7654b81ba1a1c76f34223c08430afe6b3",
+      "imports": [
+        "GraphFrontier",
+        "Reroot"
+      ]
+    },
+    "Context": {
+      "source_sha256": "33ab607e3b5c76a12c571de46098e1e44d7389ed8ce9a6670dcd8304c4e4d8d3",
+      "imports": [
+        "Encode"
+      ]
+    },
+    "EncodeWitness": {
+      "source_sha256": "2e2c7058621e41c79aa7a5ca76f46da625dff07f705cd5259311a69733b4eda1",
+      "imports": [
+        "Context"
+      ]
+    },
+    "FrontierPartition": {
+      "source_sha256": "fed84df1b13ca37895082cc33eed17b09e596d20ffd595b2648ab4435c640ca2",
+      "imports": [
+        "EncodeWitness"
+      ]
+    },
+    "ContextCut": {
+      "source_sha256": "db6643392fdd68c8881a30f63b8c7f9123da708bd6f581ba96411c1e9a71bbc8",
+      "imports": [
+        "FrontierPartition"
+      ]
+    },
+    "LabelWitness": {
+      "source_sha256": "8e1328859495707665f3e5a4e8c07322dcba13388cb5543b745ea88e1e528e16",
+      "imports": [
+        "ContextCut"
+      ]
+    },
+    "ReceiverRepresentation": {
+      "source_sha256": "351125323dcdd9b3a60f3d9bfe537c5d80ac1c43ee97252b260994b0c5bfab75",
+      "imports": [
+        "LabelWitness",
+        "FiniteEdgeBridge"
+      ]
+    }
+  },
+  "root_module": "ReceiverRepresentation",
+  "count": 7
+}
