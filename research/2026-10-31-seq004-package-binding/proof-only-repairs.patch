@@ -1,0 +1,14 @@
+--- frozen/MatchingHeights.lean
++++ source/MatchingHeights.lean
+@@ -56,7 +56,10 @@
+ theorem base_extremal_classification (v : Nat) (hv : 1 ≤ v) :
+     3 * FullHeight.height v = 8 * v - 1 ↔
+       ∃ n, v = 3 * 2^n - 1 ∧ FullHeight.height v = 8 * 2^n - 3 := by
+-  simpa [PhaseShift.shift, FullHeight.height_isMaximum] using
++  have hm : IsMaximumPrefix (PhaseShift.shift t 0) v (FullHeight.height v) := by
++    change IsMaximumPrefix t v (FullHeight.height v)
++    exact FullHeight.height_isMaximum v
++  simpa only [hm, true_and, Nat.mul_zero, Nat.add_zero, Nat.zero_le, Nat.sub_zero] using
+     PhaseExtremal.shifted_extremal_iff 0 v (FullHeight.height v) hv
+ 
+ end ResearchCommons.Claims.MatchingHeights

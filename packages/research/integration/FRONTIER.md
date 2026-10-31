@@ -1,5 +1,11 @@
 # Current integration frontier
 
+## Current binding and aggregate successor — 31 October 2026
+
+[SEQ-004 adoption](../../../research/2026-10-31-seq004-package-binding/README.md) adds the reviewed original matching-height interface after SEQ-001 and WONG-002. Actual coverage: **51 mapped claims, 542 named requests, 67 unbound IDs**; strict exits2 with116 incomplete integrations. All118 scientific statuses remain unchanged. Native runtime is pending.
+
+Both changed aggregate/library roots compiled with exact qualified coherent reuse:1,836 selected source modules/1,838 profile objects, all542 names, selected1,516-module owned audit (102,271 declarations/92,433 theorems; zero rejects), and7,318 resolved source/object identities checked. [The exact receipt](matching-heights-aggregate-verification.json) preserves the original1,833 profile and earlier aggregates as history. No fresh full1,836 build/audit, new native implementation or scientific master closure is claimed. The dated earlier sections below retain their original scopes.
+
 ## Current selected export verification — 31 October 2026
 
 The actual canonical `ResearchCommons.Integration.Exports` build now passes its

@@ -6023,10 +6023,26 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.MatchingHeights",
+      "path": "lean/Compatibility/ResearchCommons.Claims.MatchingHeights.lean",
+      "sha256": "740b7ff388d8daeb0eb2a30c700c55c9df7cbcfd8746aeb06439f3e5f760f53c",
+      "imports": [
+        "SamuelAlexanderResearch.DigitRecurrence",
+        "SamuelAlexanderResearch.PhaseHeight",
+        "SamuelAlexanderResearch.PhaseExtremal"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed exact existing CB-SEQ-004 graph/maximum/phase/digit interface, distinct from progression A(d)",
+        "proof_derivation": false,
+        "verification": "integration/matching-heights-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "0aa20be1cc9e09df2d0052650bd97b83c5542ea5654105d56337d2dcfe6865b6",
+      "sha256": "83102e49e2245f77e5a2817adcb7167911b85bd36b28374ef41d4d72746063d0",
       "imports": [
+        "ResearchCommons.Claims.MatchingHeights",
         "ResearchCommons.Claims.WongRecordExtraction",
         "ResearchCommons.Claims.SequenceFirstOccurrence",
         "ResearchCommons.Claims.CM",
@@ -6107,15 +6123,28 @@
             "actual_named_requests": 526,
             "whole_1834_fresh_owned_audit": false,
             "scientific_statuses_unchanged": true
+          },
+          {
+            "record": "integration/wong-record-extraction-aggregate-verification.json",
+            "actual_compiler_pass": true,
+            "actual_selected_owned_modules": 1511,
+            "actual_named_requests": 532,
+            "whole1835fresh_owned_audit": false,
+            "scientific_statuses_unchanged": true
           }
         ],
         "current_aggregate_verification": {
-          "record": "integration/wong-record-extraction-aggregate-verification.json",
+          "record": "integration/matching-heights-aggregate-verification.json",
           "actual_compiler_pass": true,
-          "actual_selected_owned_modules": 1511,
-          "actual_named_requests": 532,
-          "whole1835fresh_owned_audit": false,
+          "actual_selected_owned_modules": 1516,
+          "actual_named_requests": 542,
+          "whole1836fresh_owned_audit": false,
           "scientific_statuses_unchanged": true
+        },
+        "matching_heights_successor": {
+          "prior_source_sha256": "0aa20be1cc9e09df2d0052650bd97b83c5542ea5654105d56337d2dcfe6865b6",
+          "scope": "Parent-reviewed SEQ004 integrated; enlarged aggregate/root/named542/owned1516 passed with exact coherent reuse",
+          "verification": "integration/matching-heights-aggregate-verification.json"
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

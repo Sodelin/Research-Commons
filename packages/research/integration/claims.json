@@ -4445,15 +4445,35 @@
         }
       ],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.MatchingHeights",
+        "declarations": [
+          "ResearchCommons.Claims.MatchingHeights.base_maximum",
+          "ResearchCommons.Claims.MatchingHeights.base_closed_form",
+          "ResearchCommons.Claims.MatchingHeights.zero_start",
+          "ResearchCommons.Claims.MatchingHeights.digit_recurrence",
+          "ResearchCommons.Claims.MatchingHeights.digit_maximum",
+          "ResearchCommons.Claims.MatchingHeights.phase_maximum",
+          "ResearchCommons.Claims.MatchingHeights.phase_extremal_classification",
+          "ResearchCommons.Claims.MatchingHeights.base_linear_bound",
+          "ResearchCommons.Claims.MatchingHeights.phase_linear_bound",
+          "ResearchCommons.Claims.MatchingHeights.base_extremal_classification"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Actual target-dependent matching graph, all-start maximum/closed form including L(0)=1, positive-start bounds/sharp indices, original ten-coordinate integer digit recurrence/evaluator, own-target phase shifts. Distinct from progression A(d)."
       },
       "obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
       "reuse_rank": null,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.MatchingHeights --claim CB-SEQ-004",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/matching-heights-verification.json",
+          "scope": "Named type/owner proof checker only; no native runtime, joint logarithmic phase/start algorithm, minimal dimension or bit complexity claim."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -4488,7 +4508,15 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json"
         }
       ],
-      "verification": []
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_full_card_owner_type_export_join",
+          "module_source_sha256": "740b7ff388d8daeb0eb2a30c700c55c9df7cbcfd8746aeb06439f3e5f760f53c",
+          "record": "integration/matching-heights-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Full card/types/graph and recurrence definitions reviewed; original proofs/authorship retained. Provider hashes and14-module audit remain compiler-attributed, not parent transitive proof replay."
+        }
+      ]
     },
     {
       "claim_id": "CB-SEQ-005",

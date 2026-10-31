@@ -1,0 +1,68 @@
+def BinaryAvoidance.row : (Nat → Bool) → Nat → Bool :=
+fun s w => if w % 2 = 0 then s (w / 2) else !s (w / 2)
+def BinaryAvoidance.Edge : (Nat → Bool) → Nat → Nat → Bool → Prop :=
+fun s u w label => 2 ≤ w ∧ (w = u + 1 ∧ label = BinaryAvoidance.row s w ∨ w = u + 2 ∧ label = !BinaryAvoidance.row s w)
+def QuantitativeAvoidance.MatchesPrefix : (Nat → Bool) → (Nat → Nat) → Nat → Prop :=
+fun s path len => ∀ (k : Nat), k < len → BinaryAvoidance.Edge s (path k) (path (k + 1)) (s k)
+def FiniteEditStability.HasPrefix : (Nat → Bool) → Nat → Nat → Prop :=
+fun s v ell => ∃ path, path 0 = v ∧ QuantitativeAvoidance.MatchesPrefix s path ell
+def FiniteEditStability.IsMaximumPrefix : (Nat → Bool) → Nat → Nat → Prop :=
+fun s v ell => FiniteEditStability.HasPrefix s v ell ∧ ∀ (len : Nat), FiniteEditStability.HasPrefix s v len → len ≤ ell
+def PhaseShift.shift : (Nat → Bool) → Nat → Nat → Bool :=
+fun s a k => s (k + a)
+def FullHeight.height : Nat → Nat :=
+fun v => Classical.choose ⋯
+def FullHeight.evenValue : Nat → Nat → Nat :=
+fun h r =>
+  if ThueMorseBits.t h = true then 1 - r % 2
+  else
+    if r = 1 then 7 - 2 * FullHeight.bit (ThueMorseBits.t (h + 1))
+    else (4 - 2 * FullHeight.bit (ThueMorseBits.t (h + 1))) * 2 ^ r - 1
+def FullHeight.oddValue : Nat → Nat → Nat :=
+fun h r =>
+  if ThueMorseBits.t h = true then
+    if ThueMorseBits.t (h + 1) = true then if FullHeight.special h = true then 16 * 2 ^ r - 3 else 10 * 2 ^ r - 1
+    else 4 * 2 ^ r - 1
+  else 0
+def FullHeight.special : Nat → Bool :=
+fun h => h % 4 == 1 && !ThueMorseBits.t (h / 4) && ThueMorseBits.t (h / 4 + 1)
+structure DigitRecurrence.State : Type
+number of parameters: 0
+fields:
+  DigitRecurrence.State.one : Int
+  DigitRecurrence.State.T : Int
+  DigitRecurrence.State.U : Int
+  DigitRecurrence.State.V : Int
+  DigitRecurrence.State.L : Int
+  DigitRecurrence.State.E : Int
+  DigitRecurrence.State.O : Int
+  DigitRecurrence.State.X : Int
+  DigitRecurrence.State.F : Int
+  DigitRecurrence.State.C : Int
+constructor:
+  DigitRecurrence.State.mk (one T U V L E O X F C : Int) : DigitRecurrence.State
+def DigitRecurrence.coordinates : (Nat → Nat) → Nat → DigitRecurrence.State :=
+fun H n =>
+  { one := 1, T := DigitRecurrence.bitInt (ThueMorseBits.t n), U := DigitRecurrence.bitInt (ThueMorseBits.t (n + 1)),
+    V := DigitRecurrence.bitInt (ThueMorseBits.t n) * DigitRecurrence.bitInt (ThueMorseBits.t (n + 1)), L := ↑(H n),
+    E := ↑(H (2 * n)), O := ↑(H (2 * n + 1)), X := (↑(H (4 * n + 1)) - DigitRecurrence.bitInt (ThueMorseBits.t n)) / 2,
+    F := ↑(H (4 * n + 2)), C := ↑(H (4 * n + 3)) }
+def DigitRecurrence.initial : DigitRecurrence.State :=
+{ one := 1, T := 0, U := 1, V := 0, L := 1, E := 1, O := 0, X := 0, F := 5, C := 0 }
+def DigitRecurrence.evenStep : DigitRecurrence.State → DigitRecurrence.State :=
+fun z =>
+  { one := z.one, T := z.T, U := z.one - z.T, V := 0, L := z.E, E := 3 * z.one - 2 * z.T - 2 * z.U + 2 * z.V,
+    O := 2 * z.X + z.T, X := z.T, F := 7 * z.one - 7 * z.T - 2 * z.U + 2 * z.V, C := 5 * z.X + 2 * z.T - 3 * z.V }
+def DigitRecurrence.oddStep : DigitRecurrence.State → DigitRecurrence.State :=
+fun z =>
+  { one := z.one, T := z.one - z.T, U := z.U, V := z.U - z.V, L := z.O, E := z.F, O := z.C,
+    X := 3 * z.U - 12 * z.V - 2 * z.E + 2 * z.X + z.F, F := z.T + 3 * z.U + 15 * z.V + 4 * z.E - 4 * z.X,
+    C := 3 * z.C - 2 * z.O }
+@[irreducible] def DigitRecurrence.evaluate : Nat → DigitRecurrence.State :=
+WellFounded.Nat.fix (fun x => x) fun n a =>
+  if h : n = 0 then DigitRecurrence.initial
+  else if h_1 : n % 2 = 0 then DigitRecurrence.evenStep (a (n / 2) ⋯) else DigitRecurrence.oddStep (a (n / 2) ⋯)
+def PhaseHeight.height : Nat → Nat → Nat :=
+fun a v => PhaseHeight.boundedHeight (PhaseShift.shift ThueMorseBits.t a) v (8 * (v + a) + 1)
+SharpThueMorse.binary_row_eq : ∀ (w : Nat), BinaryAvoidance.row ThueMorseBits.t w = ThueMorseBits.t w
+'SharpThueMorse.binary_row_eq' depends on axioms: [propext, Quot.sound]

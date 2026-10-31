@@ -1,3 +1,4 @@
+import ResearchCommons.Claims.MatchingHeights
 import ResearchCommons.Claims.WongRecordExtraction
 import ResearchCommons.Claims.SequenceFirstOccurrence
 import ResearchCommons.Claims.CM

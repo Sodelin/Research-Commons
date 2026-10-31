@@ -1,0 +1,99 @@
+{
+  "mathematical_status": "proved_at_stated_scope",
+  "novelty_status": "Historical priority is unassessed. Recorded correctness and formal checking do not establish novelty; established special cases and methods retain their attribution.",
+  "remaining_obligation": "None for this exact completed mathematical claim. The separately named validation, source-recovery or broader questions do not reopen it.",
+  "evidence_basis": "Recovered from the actual source/status notes, complete October reading editions where applicable, named archived formal endpoint entries and public review records. Compared against the fresh 75-card schema 1.1 register, blob 921c25a32d7b7ecde3f1e0e50d749c6d224941f7. This is source recovery, not a new proof review, build or novelty audit.",
+  "claim_kind": "theorem",
+  "origin": {
+    "category": "project_posed",
+    "detail": "A precise source-specific result within the existing sequence programme. Related published problems, constructions and known special cases are credited separately; this grouped card is not a claim to multiple newly solved field questions."
+  },
+  "id": "CB-SEQ-004",
+  "canonical_key": "sequences.MATCHING_ALL_START_PHASE_DIGIT",
+  "title": "Every start and phase has an exact matching answer",
+  "programme": "Sequences \u00b7 exact matching graphs",
+  "plain_language": {
+    "question": "How long can a prescribed Thue\u2013Morse pattern be followed from any starting point?",
+    "what_we_learned": "There is an exact all-start formula and digit evaluator, plus an attained maximum for every phase and an exact classification of sharp cases.",
+    "what_it_lets_someone_do": "Compute the actual longest match and distinguish ordinary starts from exceptional long matches without scanning every path.",
+    "what_cannot_conclude": "This is a target-dependent graph result, not every possible pattern search, arithmetic-progression statistic or biological measurement."
+  },
+  "exact_statement_and_scope": "For digit-parity Thue\u2013Morse t, the graph has edges w\u22121\u2192w labelled t(w) and w\u22122\u2192w labelled 1\u2212t(w), for w\u22652, and no edge 0\u21921. A path's kth edge must read t(k). The attained maximum L(v) has a complete closed form for all natural v, with L(0)=1. For v\u22651, 3L(v)\u22648v\u22121, with equality exactly at v=3\u00b72^n\u22121, where L=8\u00b72^n\u22123. The proved ten-coordinate integer digit recurrence evaluates this maximum. For the own-target graph of s_a(k)=t(k+a), shifting both target and graph, an actual maximum exists at every natural a,v. For v\u22651, 3L_a(v)\u22648v+5a\u22121, with equality iff some n\u22650 has a\u22642^n and v=3\u00b72^n\u2212a\u22121; then L_a(v)=8\u00b72^n\u2212a\u22123. Named endpoints are FullHeight.height_isMaximum/height_closed_form, DigitRecurrence.evaluate_isMaximum, PhaseHeight.height_isMaximum and PhaseExtremal.shifted_extremal_iff.",
+  "prior_work": "The underlying binary population is attributed to the pinned September 2026 biological-unavoidability manuscript. Candidate height tables and digit representation came from the preserved source-side investigation; finite experiments were discovery evidence, not the universal proof. Digit representations are an established method.",
+  "our_contribution": "The original Samuel repository proves the actual graph-to-formula bridge, digit recurrence and complete phase-extremal necessity/attainment. This card restores that completed source programme alongside, not as an alias of, CB-SEQ-001's arithmetic-progression result.",
+  "accepted_artifacts": [
+    {
+      "label": "Complete all-start matching-height proof",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/FULL-HEIGHT-PROOF.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Exact digit evaluator",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/DIGIT-RECURRENCE.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "All-phase actual maximum",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-HEIGHT-FORMALIZATION.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Sharp phase-extremal classification",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/notes/PHASE-EXTREMAL-FORMALIZATION.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Integrated September source coverage",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-2026-09-29/COVERAGE.md",
+      "role": "proof_or_status"
+    },
+    {
+      "label": "Archived exact endpoint and axiom receipt",
+      "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/verification/formal-audit.json",
+      "role": "formal_receipt"
+    }
+  ],
+  "separate_downstream_or_validation_work": "No joint logarithmic phase/start algorithm, minimal recurrence dimension or integer bit-complexity bound is claimed. Shifting the reading word in the unchanged graph is a different problem. Old candidate/pending integration notes are superseded by the linked final source and receipt.",
+  "aliases": [
+    "Samuel T01 and T02",
+    "FullHeight",
+    "DigitRecurrence",
+    "PhaseHeight",
+    "PhaseExtremal"
+  ],
+  "dependencies": [
+    {
+      "claim_id": "CB-SEQ-001",
+      "relation_type": "same_principle",
+      "detail": "Both concern Thue\u2013Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d)."
+    }
+  ],
+  "completion": {
+    "display": "Proved; archived Lean check recorded",
+    "formal_verification": "kernel_checked_selected_release",
+    "independent_review": "recorded_source_and_formal_audit",
+    "mathematical_claim_complete": true,
+    "proof_authorship_complete": true,
+    "proof_derivation_required": false,
+    "remaining_work_role": "separate_downstream_extension_or_validation",
+    "rule": "A missing new build, missing original component receipt or broader extension does not reopen the completed exact theorem. Grouping is for navigation, not discovery counting."
+  },
+  "evidence": {
+    "hand": {
+      "status": "recorded_source_and_formal_audit",
+      "detail": "The original proof/status notes and integrated publication inventory identify the completed source-bound theorem. Relevant actual archived endpoint entries were inspected. No fresh transitive mathematical review or external human review is claimed."
+    },
+    "formal": {
+      "status": "kernel_checked_selected_release",
+      "detail": "The source repository's 25 September 2026 Lean 4.33.1 formal-audit.json names the relevant endpoints and records only propext, Classical.choice and Quot.sound. Its 405 endpoints cover the wider repository, not 405 sequence discoveries. No checking was rerun."
+    },
+    "execution": {
+      "status": "archived_build_receipt",
+      "detail": "Historical source/axiom/build evidence is recorded in the linked audit. No Lean, compiler or scientific runtime was executed for this recovery."
+    },
+    "empirical": {
+      "status": "not_empirical_claim",
+      "detail": "An exact mathematical statement for the defined graph, symbolic word or arithmetic code. No measured performance, biological data, security, compression or hardware conclusion is implied."
+    }
+  }
+}

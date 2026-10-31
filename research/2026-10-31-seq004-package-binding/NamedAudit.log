@@ -1,0 +1,70 @@
+ResearchCommons.Claims.MatchingHeights.base_maximum : ∀ (v : Nat),
+  FiniteEditStability.IsMaximumPrefix ThueMorseBits.t v (FullHeight.height v)
+'ResearchCommons.Claims.MatchingHeights.base_maximum' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.base_closed_form : ∀ (v : Nat),
+  Exists.{1} fun h =>
+    Exists.{1} fun r =>
+      Eq.{1} (HAdd.hAdd.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} v 2) 1)
+          (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 h) 1) (HPow.hPow.{0, 0, 0} 2 r)) ∧
+        Eq.{1} (FullHeight.height v)
+          (ite.{1} (Eq.{1} (HMod.hMod.{0, 0, 0} v 2) 0) (FullHeight.evenValue h r) (FullHeight.oddValue h r))
+'ResearchCommons.Claims.MatchingHeights.base_closed_form' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.zero_start : Eq.{1} (FullHeight.height 0) 1
+'ResearchCommons.Claims.MatchingHeights.zero_start' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.digit_recurrence : Eq.{1} (DigitRecurrence.coordinates FullHeight.height 0)
+    DigitRecurrence.initial ∧
+  ∀ (n : Nat),
+    Eq.{1} (DigitRecurrence.coordinates FullHeight.height (HMul.hMul.{0, 0, 0} 2 n))
+        (DigitRecurrence.evenStep (DigitRecurrence.coordinates FullHeight.height n)) ∧
+      Eq.{1} (DigitRecurrence.coordinates FullHeight.height (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 1))
+        (DigitRecurrence.oddStep (DigitRecurrence.coordinates FullHeight.height n))
+'ResearchCommons.Claims.MatchingHeights.digit_recurrence' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.digit_maximum : ∀ (n : Nat),
+  FiniteEditStability.IsMaximumPrefix ThueMorseBits.t n (DigitRecurrence.evaluate n).L.toNat
+'ResearchCommons.Claims.MatchingHeights.digit_maximum' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.phase_maximum : ∀ (a v : Nat),
+  FiniteEditStability.IsMaximumPrefix (PhaseShift.shift ThueMorseBits.t a) v (PhaseHeight.height a v)
+'ResearchCommons.Claims.MatchingHeights.phase_maximum' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.phase_extremal_classification : ∀ (a v len : Nat),
+  LE.le.{0} 1 v →
+    (FiniteEditStability.IsMaximumPrefix (PhaseShift.shift ThueMorseBits.t a) v len ∧
+        Eq.{1} (HMul.hMul.{0, 0, 0} 3 len)
+          (HSub.hSub.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 v) (HMul.hMul.{0, 0, 0} 5 a)) 1) ↔
+      Exists.{1} fun n =>
+        LE.le.{0} a (HPow.hPow.{0, 0, 0} 2 n) ∧
+          Eq.{1} v (HSub.hSub.{0, 0, 0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 3 (HPow.hPow.{0, 0, 0} 2 n)) a) 1) ∧
+            Eq.{1} len
+              (HSub.hSub.{0, 0, 0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 (HPow.hPow.{0, 0, 0} 2 n)) a) 3))
+'ResearchCommons.Claims.MatchingHeights.phase_extremal_classification' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.base_linear_bound : ∀ (v : Nat),
+  LE.le.{0} 1 v →
+    LE.le.{0} (HMul.hMul.{0, 0, 0} 3 (FullHeight.height v)) (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 v) 1)
+'ResearchCommons.Claims.MatchingHeights.base_linear_bound' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.phase_linear_bound : ∀ (a v : Nat),
+  LE.le.{0} 1 v →
+    LE.le.{0} (HMul.hMul.{0, 0, 0} 3 (PhaseHeight.height a v))
+      (HSub.hSub.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 v) (HMul.hMul.{0, 0, 0} 5 a)) 1)
+'ResearchCommons.Claims.MatchingHeights.phase_linear_bound' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+ResearchCommons.Claims.MatchingHeights.base_extremal_classification : ∀ (v : Nat),
+  LE.le.{0} 1 v →
+    (Eq.{1} (HMul.hMul.{0, 0, 0} 3 (FullHeight.height v)) (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 v) 1) ↔
+      Exists.{1} fun n =>
+        Eq.{1} v (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 3 (HPow.hPow.{0, 0, 0} 2 n)) 1) ∧
+          Eq.{1} (FullHeight.height v) (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 (HPow.hPow.{0, 0, 0} 2 n)) 3))
+'ResearchCommons.Claims.MatchingHeights.base_extremal_classification' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
