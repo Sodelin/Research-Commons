@@ -14,8 +14,8 @@ Run from the **repository root**, after obtaining the repository with its Git hi
 
 ```sh
 cd /path/to/Research-Commons
-python3 docs/discovery/tools/index-research-results.py --repo . --commit d5515eec4d629c8106c8a77af3a692335bc017ef --output /tmp/commons-results-0603
-node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-0603/manifest.json \
+python3 docs/discovery/tools/index-research-results.py --repo . --commit b96b25ba4c5ac19f26581f9c3178fb646fc4228e --output /tmp/commons-results-b96b
+node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-b96b/manifest.json \
   --query actual_root_weight_shifted_limit \
   --research-path research/2026-10-31-clock-jc-root-fuel-composition-verified/source/ResearchCommons/MSCI/JC69RootFuelComposition.lean --limit 10
 ```
@@ -23,10 +23,10 @@ node docs/discovery/tools/query.mjs --research-results /tmp/commons-results-0603
 Build the cache once, then reuse the last command with another query. Omit `--research-path` to search across every shard; `--offset` and `--limit` paginate the results. The optional path prefix selects the exact source link, useful when an unchanged candidate body also occurs in an accepted packet. `body_document_url` preserves its original deduplicated body link, and `source_paths` lists the shared locations; equal bytes do not transfer status between packets. A machine without this generated manifest **and its body shards** must build them first; the committed receipt alone is not the cache. To verify the same cache:
 
 ```sh
-python3 docs/discovery/tools/index-research-results.py --repo . --commit d5515eec4d629c8106c8a77af3a692335bc017ef --output /tmp/commons-results-0603 --check
+python3 docs/discovery/tools/index-research-results.py --repo . --commit b96b25ba4c5ac19f26581f9c3178fb646fc4228e --output /tmp/commons-results-b96b --check
 ```
 
-The latest checked local snapshot here is `d5515eec` (including the 06:03 scope and older scope correction links): **98,578 full-text paths, 1,063 explicitly path-only paths, 32,927 distinct text bodies**. Its [coverage receipt](result-coverage.json), [exact-source query history](result-query-receipt.json) and [publication-version checks](result-publications.json) record their own immutable input pins. Code availability, a published receipt, a generated local cache and a hosted reader deployment are distinct states. **The hosted reader and its bundled historical corpus have not been refreshed by this work.** This tree index covers the selected public roots, not all Git history, binary bodies, private chats or complete linked repositories; the [reference coverage inventory](result-reference-coverage.json) accounts for those separate source-reference gaps and the optional [exact public-reference body supplement](#exact-referenced-public-bodies-beyond-the-tree-roots).
+The latest checked local snapshot here is `b96b25ba` (including the 06:03 scope and later root-resolvent, straight-carrier, boundary-fixed-crosscut and real-Volterra acceptances, plus separately labelled ordered-path/trivalent-star candidates): **98,735 full-text paths, 1,063 explicitly path-only paths, 33,060 distinct text bodies**. Its [coverage receipt](result-coverage.json), [exact-source query history](result-query-receipt.json) and [publication-version checks](result-publications.json) record their own immutable input pins. Code availability, a published receipt, a generated local cache and a hosted reader deployment are distinct states. **The hosted reader and its bundled historical corpus have not been refreshed by this work.** This tree index covers the selected public roots, not all Git history, binary bodies, private chats or complete linked repositories; the [reference coverage inventory](result-reference-coverage.json) accounts for those separate source-reference gaps and the optional [exact public-reference body supplement](#exact-referenced-public-bodies-beyond-the-tree-roots).
 
 To see what has been completed and what remains, start with the [current full-scope checkpoint](../../research/2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md), then follow the [canonical scientific claim register](../claims.json) and [exact Lean declaration/binding guide](../EXISTING-LEAN-CLAIM-BINDINGS.md). The scope checkpoint distinguishes the completed 1,833-module build and 520 named requests from the then-running caller gate and incomplete all-118 gate; it is a dated observation, not live process status. Individual accepted packets retain their exact theorem and audit scope. Frozen candidates and failed versions remain searchable with later acceptance/correction links; a search hit does not transfer acceptance or close an original master question.
 
