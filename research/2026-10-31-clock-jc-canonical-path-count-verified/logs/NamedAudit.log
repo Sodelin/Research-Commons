@@ -1,0 +1,52 @@
+@ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pairLabel_injective : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Function.Injective fun p => ResearchCommons.MSCI.JC69CanonicalPathCount.pairLabel e N s ↑p
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pairLabel_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_choice_card_le : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Fintype.card (ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalChoice e N s) ≤ n.choose 2
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_choice_card_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pathWord_injective : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Function.Injective fun h => ResearchCommons.MSCI.JC69CanonicalPathCount.pathWord e N fuel s ↑h
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pathWord_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CanonicalPathCount.boundedWords_card : ∀ (n : ℕ),
+  Fintype.card (ResearchCommons.MSCI.JC69CanonicalPathCount.BoundedWords n) = ∑ k ∈ Finset.range n, n.choose 2 ^ k
+'ResearchCommons.MSCI.JC69CanonicalPathCount.boundedWords_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CanonicalPathCount.actual_canonical_path_card_le : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (e : Copy ≃ Fin (Fintype.card Copy)) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Fintype.card (ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalPath e N fuel s) ≤
+    ∑ k ∈ Finset.range (Fintype.card Copy), (Fintype.card Copy).choose 2 ^ k
+'ResearchCommons.MSCI.JC69CanonicalPathCount.actual_canonical_path_card_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CanonicalPathCount.actual_source_canonical_path_bound : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Fintype.card (ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalPath (Fintype.equivFin Copy) N fuel s) ≤
+    ∑ k ∈ Finset.range (Fintype.card Copy), (Fintype.card Copy).choose 2 ^ k
+'ResearchCommons.MSCI.JC69CanonicalPathCount.actual_source_canonical_path_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

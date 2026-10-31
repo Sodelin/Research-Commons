@@ -1,0 +1,13 @@
+import ResearchCommons.MSCI.JC69CanonicalPathCount
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pairLabel_injective
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pairLabel_injective
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_choice_card_le
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_choice_card_le
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pathWord_injective
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pathWord_injective
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.boundedWords_card
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.boundedWords_card
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.actual_canonical_path_card_le
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.actual_canonical_path_card_le
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.actual_source_canonical_path_bound
+#print axioms ResearchCommons.MSCI.JC69CanonicalPathCount.actual_source_canonical_path_bound

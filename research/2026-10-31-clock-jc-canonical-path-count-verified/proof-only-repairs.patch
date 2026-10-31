@@ -1,0 +1,44 @@
+--- frozen/ResearchCommons/MSCI/JC69CanonicalPathCount.lean
++++ source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean
+@@ -112,8 +112,8 @@
+   have hbd : blockRank e N s b = blockRank e N s d := by rcases ha with h | h <;> rcases hb with h' | h' <;> omega
+   obtain ⟨hal,hbl,hab⟩ := Finset.mem_offDiag.mp hp
+   obtain ⟨hcl,hdl,hcd⟩ := Finset.mem_offDiag.mp hq
+-  have ac := blockRank_live_injective e N s (Finset.mem_filter.mp hal).1 (Finset.mem_filter.mp hcl).1 hac
+-  have bd := blockRank_live_injective e N s (Finset.mem_filter.mp hbl).1 (Finset.mem_filter.mp hdl).1 hbd
++  have ac : a = c := blockRank_live_injective e N s (Finset.mem_filter.mp hal).1 (Finset.mem_filter.mp hcl).1 hac
++  have bd : b = d := blockRank_live_injective e N s (Finset.mem_filter.mp hbl).1 (Finset.mem_filter.mp hdl).1 hbd
+   subst c
+   subst d
+   have hi : i = j := originalPlace_injective N ((Finset.mem_filter.mp hal).2.symm.trans (Finset.mem_filter.mp hcl).2)
+@@ -163,13 +163,16 @@
+       pathWord e N fuel s h = pathWord e N fuel s k → h = k := by
+     intro fuel
+     induction fuel with
+-    | zero => intro s h k _ _ _; exact Subsingleton.elim _ _
++    | zero =>
++        intro s h k _ _ _
++        unfold OrderedPath at h k
++        exact Subsingleton.elim h k
+     | succ fuel ih =>
+         intro s h k hh hk he
+         cases h with
+         | inl h =>
+             cases k with
+-            | inl k => congr 1; exact Subsingleton.elim _ _
++            | inl k => cases h; cases k; rfl
+             | inr k => simp [pathWord] at he
+         | inr h =>
+             cases k with
+@@ -178,8 +181,9 @@
+                 obtain ⟨p,h⟩ := h
+                 obtain ⟨q,k⟩ := k
+                 have he' := List.cons.inj he
+-                have hpq : p = q := congrArg Subtype.val
+-                  (canonical_pairLabel_injective e N s ⟨p,hh.1⟩ ⟨q,hk.1⟩ he'.1)
++                have hcanonical : (⟨p,hh.1⟩ : CanonicalChoice e N s) = ⟨q,hk.1⟩ :=
++                  canonical_pairLabel_injective e N s he'.1
++                have hpq : p = q := congrArg Subtype.val hcanonical
+                 subst q
+                 have hhk := ih (stepDestination N s (some p)) h k hh.2 hk.2 he'.2
+                 subst k

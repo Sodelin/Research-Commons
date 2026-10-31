@@ -1,0 +1,94 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:30:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CanonicalPathCount.blockRank_member`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:88:26: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:88:26: warning: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:88:26: warning: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:86:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CanonicalPathCount.originalPlace_injective`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:117:2: error: Tactic `subst` failed: did not find equation for eliminating 'c'
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+a b : Copy
+hp : (a, b) ∈ (populationRoots (state s) (originalPlace N i)).offDiag
+j : Option E
+c d : Copy
+hq : (c, d) ∈ (populationRoots (state s) (originalPlace N j)).offDiag
+hset : {blockRank e N s a, blockRank e N s b} = {blockRank e N s c, blockRank e N s d}
+ha : blockRank e N s a = blockRank e N s c ∨ blockRank e N s a = blockRank e N s d
+hb : blockRank e N s b = blockRank e N s c ∨ blockRank e N s b = blockRank e N s d
+hpc : blockRank e N s a < blockRank e N s b
+hqc : blockRank e N s c < blockRank e N s d
+he : (fun p => pairLabel e N s ↑p) ⟨⟨i, ⟨(a, b), hp⟩⟩, hpc⟩ = (fun p => pairLabel e N s ↑p) ⟨⟨j, ⟨(c, d), hq⟩⟩, hqc⟩
+hac : blockRank e N s a = blockRank e N s c
+hbd : blockRank e N s b = blockRank e N s d
+hal : (a, b).1 ∈ populationRoots (state s) (originalPlace N i)
+hbl : (a, b).2 ∈ populationRoots (state s) (originalPlace N i)
+hab : (a, b).1 ≠ (a, b).2
+hcl : (c, d).1 ∈ populationRoots (state s) (originalPlace N j)
+hdl : (c, d).2 ∈ populationRoots (state s) (originalPlace N j)
+hcd : (c, d).1 ≠ (c, d).2
+ac : (a, b).1 = (c, d).1
+bd : (a, b).2 = (c, d).2
+⊢ ⟨⟨i, ⟨(a, b), hp⟩⟩, hpc⟩ = ⟨⟨j, ⟨(c, d), hq⟩⟩, hqc⟩
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:136:0: warning: `CanonicalPath`: universes `u_5`, `u_6` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:166:39: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Subsingleton (OrderedPath N 0 s)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:172:32: error: No goals to be solved
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalPathCount.lean:182:55: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pairLabel_injective' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_choice_card_le' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalPathCount.canonical_pathWord_injective' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalPathCount.boundedWords_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalPathCount.actual_canonical_path_card_le' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalPathCount.actual_source_canonical_path_bound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
