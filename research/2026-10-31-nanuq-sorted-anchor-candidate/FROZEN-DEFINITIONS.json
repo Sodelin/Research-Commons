@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "module": "ResolutionCoordinates",
+      "name": "coordinateQuartet",
+      "definition": "def coordinateQuartet (v : Fin 4 \u2192 Nat) : Quartet := \u27e8v 0,v 1,v 2,v 3\u27e9"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "indexSide",
+      "definition": "def indexSide (r : Fin 3) (i : Fin 4) : Bool :=\n  (coordinateQuartet Fin.val).side r.val i.val"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "indexCut",
+      "definition": "def indexCut (r : Fin 3) (L R : Fin 4 \u2192 Bool) : Bool :=\n  if r.val=0 then (L 0 && L 1 && R 2 && R 3) || (R 0 && R 1 && L 2 && L 3)\n  else if r.val=1 then (L 0 && L 2 && R 1 && R 3) || (R 0 && R 2 && L 1 && L 3)\n  else (L 0 && L 3 && R 1 && R 2) || (R 0 && R 3 && L 1 && L 2)"
+    },
+    {
+      "module": "ResolutionCoordinates",
+      "name": "reindexResolution",
+      "definition": "def reindexResolution (\u03c3 : Equiv.Perm (Fin 4)) (r : Fin 3) : Fin 3 :=\n  if indexSide r (\u03c3.symm 0)==indexSide r (\u03c3.symm 1) then 0\n  else if indexSide r (\u03c3.symm 0)==indexSide r (\u03c3.symm 2) then 1 else 2"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "resolutionFin",
+      "definition": "def resolutionFin (r : Resolution) : Fin 3 :=\n  \u27e8resolutionIndex r,by cases r <;> decide\u27e9"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "presentIndices",
+      "definition": "def presentIndices (g : Fin 3 \u2192 Bool) : List (Fin 3) := ([0,1,2] : List (Fin 3)).filter g"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "indexedMean",
+      "definition": "def indexedMean (g : Fin 3 \u2192 Bool) : \u211a :=\n  ((presentIndices g).filter (fun r => r!=0)).length / ((presentIndices g).length : \u211a)"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "indexedPairMean",
+      "definition": "def indexedPairMean (g : Fin 3 \u2192 Bool) (i j : Fin 4) : \u211a :=\n  ((presentIndices g).filter (fun r => indexSide r i != indexSide r j)).length /\n    ((presentIndices g).length : \u211a)"
+    },
+    {
+      "module": "ResolutionMeanCoordinates",
+      "name": "finiteWitnessMask",
+      "definition": "def finiteWitnessMask (T : Tree) (tips : List Nat) (v : Fin 4 \u2192 Nat) (r : Fin 3) : Bool :=\n  (T.internalIntervals 1).any (fun e => edgeWitness tips e.1 e.2 (coordinateQuartet v) r.val)"
+    }
+  ]
+}
