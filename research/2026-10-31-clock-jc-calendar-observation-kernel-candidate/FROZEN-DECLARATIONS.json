@@ -1,0 +1,41 @@
+{
+  "source_sha256": "c9f1c71623dfeb5b09c1b432a571fc91844e26eef650e7a233463992410537cb",
+  "note": "Complete declarations including proof bodies and adjacent comments; entire source authoritative.",
+  "declarations": [
+    {
+      "name": "segmentObservedWeight",
+      "complete_frozen_text": "def segmentObservedWeight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) : \u211d\u22650\u221e :=\n  \u2211 d : Code N sample, segmentFibreWeight N r L q op s d *\n    (if observeCode N d = target then 1 else 0)",
+      "sha256": "fb8a55ad129a568026b3b1f9fd3168ac351e23dfdda98186f199e21af18289ef"
+    },
+    {
+      "name": "actual_fibre_readout",
+      "complete_frozen_text": "lemma actual_fibre_readout (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s : Code N sample) (F : Code N sample \u2192 \u211d\u22650\u221e) :\n    (\u2211 d : Code N sample, segmentFibreWeight N r L q op s d * F d) =\n      \u222b\u207b z, segmentWeight N L q op s z * F z.2 \u2202actualSegmentLaw N r op s := by\n  rw [\u2190 finite_fibre_lintegral (actualSegmentLaw N r op s) Prod.snd measurable_snd\n    (fun z => segmentWeight N L q op s z * F z.2)]\n  apply Finset.sum_congr rfl\n  intro d _\n  rw [segmentFibreWeight,\u2190 lintegral_mul_const (F d) (segment_weight_measurable N L q op s)]\n  apply lintegral_congr_ae\n  filter_upwards [ae_restrict_mem\n    (measurableSet_eq_fun measurable_snd measurable_const :\n      MeasurableSet {z : SegmentRecord N sample | z.2 = d})] with z hz\n  rw [hz]\n\n/-- Exact original interval supplier, at the original full-copy fuel and\nnonnegative physical duration. No new readout or source law is substituted. -/",
+      "sha256": "2fdd66ebaac0af678221adb96608680078581b0795db984b40e414e2862ff1e8"
+    },
+    {
+      "name": "actual_interval_observation_weight",
+      "complete_frozen_text": "theorem actual_interval_observation_weight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (s : Code N sample) (h : \u211d\u22650) (target : BlockPopulationObservation Copy V E) :\n    segmentObservedWeight N r L q (.interval h) s target =\n      actualResolvedWeight N r L q (Fintype.card Copy) s h target := by\n  rw [segmentObservedWeight,actual_fibre_readout]\n  have hm : Measurable (fun z : SegmentRecord N sample =>\n      segmentWeight N L q (.interval h) s z *\n        (if observeCode N z.2 = target then (1:\u211d\u22650\u221e) else 0)) :=\n    (segment_weight_measurable N L q (.interval h) s).mul\n      ((measurable_of_countable (fun d : Code N sample =>\n        if observeCode N d = target then (1:\u211d\u22650\u221e) else 0)).comp measurable_snd)\n  rw [actualSegmentLaw,lintegral_map hm (attach_endpoint_measurable N s)]\n  rfl\n\n/-- Boundary coefficient is the actual current-block routing PMF pushed to\nobservations, with the original bank still held fixed. -/",
+      "sha256": "66ad5287ffdd77ec79a49240f2f34c9e53fbe018b3ffd0b283f38dc4ceffe78b"
+    },
+    {
+      "name": "actual_boundary_observation_weight",
+      "complete_frozen_text": "theorem actual_boundary_observation_weight (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (b : BoundaryOperation N) (s : Code N sample)\n    (target : BlockPopulationObservation Copy V E) :\n    segmentObservedWeight N r L q (.boundary b) s target =\n      ((boundaryKernel N b s).map (observeCode N)) target := by\n  simp only [segmentObservedWeight,actual_boundary_fibre_weight,PMF.map_apply,tsum_fintype]\n  apply Finset.sum_congr rfl\n  intro d _\n  by_cases h : observeCode N d = target\n  \u00b7 simp [h]\n  \u00b7 simp [h,Ne.symm h]\n\n/-- SAME observation and SAME original register suffice for the actual\none-step weighted kernel; interval register independence is inherited. -/",
+      "sha256": "3f3e4b9a50e9d5ee94a369a6e37af78d7b41a850600f64360ef523fb74a1d0b7"
+    },
+    {
+      "name": "actual_segment_observation_quotient",
+      "complete_frozen_text": "theorem actual_segment_observation_quotient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s t : Code N sample)\n    (hobs : observeCode N s = observeCode N t)\n    (hreg : (state s).register = (state t).register)\n    (target : BlockPopulationObservation Copy V E) :\n    segmentObservedWeight N r L q op s target = segmentObservedWeight N r L q op t target := by\n  cases op with\n  | interval h =>\n      rw [actual_interval_observation_weight,actual_interval_observation_weight]\n      exact actual_resolved_weight_quotient N r L q (Fintype.card Copy) s t h target hobs\n  | boundary b =>\n      rw [actual_boundary_observation_weight,actual_boundary_observation_weight]\n      exact congrArg (fun p : PMF (BlockPopulationObservation Copy V E) => p target)\n        (actual_fixed_bank_boundary_quotient N b s t hobs hreg)\n\n/-- A genuinely observation-factored future readout can be transported;\nthis does not assume that the whole calendar future already factors. -/",
+      "sha256": "080a1604f43c38864c5f73fc9e11d39d94a8ab0807eb271653aa9e9415c2b54d"
+    },
+    {
+      "name": "actual_observation_readout_sum",
+      "complete_frozen_text": "theorem actual_observation_readout_sum (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s : Code N sample)\n    (F : BlockPopulationObservation Copy V E \u2192 \u211d\u22650\u221e) :\n    (\u2211 d : Code N sample, segmentFibreWeight N r L q op s d * F (observeCode N d)) =\n      \u2211 target : BlockPopulationObservation Copy V E,\n        segmentObservedWeight N r L q op s target * F target := by\n  simp_rw [segmentObservedWeight,Finset.sum_mul]\n  rw [Finset.sum_comm]\n  apply Finset.sum_congr rfl\n  intro d _\n  simp only [mul_ite,mul_one,mul_zero,ite_mul,zero_mul]\n  simp\n\n/-- Zero source endpoint mass gives zero weighted fibre without asserting\nthat a killed transition is normalized, or requiring a new mass bound. -/",
+      "sha256": "85c6873b4ce14e21cd8ea94d6897e5b83402e50208934530006a813547cc3281"
+    },
+    {
+      "name": "actual_fibre_zero_of_source_zero",
+      "complete_frozen_text": "theorem actual_fibre_zero_of_source_zero (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (op : ProgramStep N) (s d : Code N sample)\n    (hz : sourceProgramStep N r op s d = 0) :\n    segmentFibreWeight N r L q op s d = 0 := by\n  have he : actualSegmentLaw N r op s {z | z.2 = d} = 0 :=\n    (segment_end_fibre_mass N r op s d).trans hz\n  have hm : MeasurableSet {z : SegmentRecord N sample | z.2 = d} :=\n    measurableSet_eq_fun measurable_snd measurable_const\n  have hr : (actualSegmentLaw N r op s).restrict {z | z.2 = d} = 0 :=\n    Measure.restrict_eq_zero.mpr he\n  simp [segmentFibreWeight,hr]",
+      "sha256": "903473ec4edea1d995a13cb6c61285f3f269f6bd11eff0fd85c9a03c6a3a1136"
+    }
+  ]
+}
