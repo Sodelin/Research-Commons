@@ -1,0 +1,10 @@
+--- frozen/OriginalIncomingTransport.lean
++++ source/OriginalIncomingTransport.lean
+@@ -17,6 +17,7 @@
+ def incomingID (e : E) : SuppressedEdge N :=
+   if hs : N.graph.source e=N.root then .inr () else .inl ⟨e,hs⟩
+ 
++include ports in
+ theorem incoming_ids_distinct {h : V} {e f : E} (hef : e≠f)
+     (he : N.graph.target e=h) (hf : N.graph.target f=h) :
+     incomingID N e ≠ incomingID N f := by

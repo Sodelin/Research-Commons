@@ -1,0 +1,44 @@
+{
+  "title": "NANUQ marked-gall scoped acceptance",
+  "status": "scoped named/source evidence accepted; full original theorem open",
+  "candidate_commit": "fec328dde1953711052d93bf4ad7ce5bbf1c0b74",
+  "named_targets": [
+    "Nanuq.MarkedGallAdmission.ordinary_suppressed_edge_expansion",
+    "Nanuq.MarkedGallAdmission.ordinary_suppressed_walk_expansion",
+    "Nanuq.MarkedGallAdmission.guarded_cycle_detour",
+    "Nanuq.MarkedGallAdmission.incoming_ids_distinct",
+    "Nanuq.MarkedGallAdmission.incoming_parent_transport",
+    "Nanuq.MarkedGallAdmission.actual_marked_simple_galls_to_detour"
+  ],
+  "sources": {
+    "SuppressedOrdinaryWalk": {
+      "source_sha256": "654878301814248ff01cc7861490ecde08f17d5fcbcb5bbcd8c3558b4e6e42cb",
+      "own_import_object_hashes": {},
+      "object_sha256": "4efc0d813547252dbb6f7dba465820651a09ef014a1ae2d22a5a4380bb00e261"
+    },
+    "GuardedCycleDetour": {
+      "source_sha256": "b2e79eac36eb1345ac23fe4d49ae98bfaa75866e84567b150491d7735f0dd619",
+      "own_import_object_hashes": {},
+      "object_sha256": "f6fa3d8acd80d580a709ba85acf826ae85eaf2b2ef383094fdce4fa0272c7ed6"
+    },
+    "OriginalIncomingTransport": {
+      "source_sha256": "fc994956b1e10b280275f783d556f656fb4b1e01fb9e23401b842878b332d357",
+      "own_import_object_hashes": {
+        "SuppressedOrdinaryWalk": "4efc0d813547252dbb6f7dba465820651a09ef014a1ae2d22a5a4380bb00e261"
+      },
+      "object_sha256": "5208b452af83c0efc87f36c007c70a1a57d8bd80f2c4b555ba65e34d004175d8"
+    },
+    "ActualMarkedGallAdmission": {
+      "source_sha256": "3eb1a6d64c76eea6479da90589b68979677fd64288dd3942f9944d6fc31c4b4c",
+      "own_import_object_hashes": {
+        "GuardedCycleDetour": "f6fa3d8acd80d580a709ba85acf826ae85eaf2b2ef383094fdce4fa0272c7ed6",
+        "OriginalIncomingTransport": "5208b452af83c0efc87f36c007c70a1a57d8bd80f2c4b555ba65e34d004175d8"
+      },
+      "object_sha256": "9ae64b26d88d9c39d40331f0407c88e55976ccaf680c1837f1d09400ec63fdd2"
+    }
+  },
+  "full_audit": "compiler-attributed summary only",
+  "scope": "Literal chosen root-suppressed marked simple galls imply original GalledDetour, without CutChild. Arbitrary original semi-directed input identification and global C-order remain open.",
+  "failure_history_preserved": true,
+  "held_large_audits": "unchanged; not included or accepted"
+}

@@ -1,0 +1,26 @@
+--- frozen/OneExitExterior.lean
++++ source/OneExitExterior.lean
+@@ -39,7 +39,7 @@
+       refine ⟨u,?_,hu.1⟩
+       rw [← hfinish]
+       exact getLast_mem_poly (List.cons_ne_nil z vs)
+-    obtain ⟨w,hw,Q,_,hQ,hQP,hbefore⟩ := exists_arc_to_first_meeting
++    obtain ⟨w,hw,Q,_,hQ,hQP,hbefore⟩ := exists_arc_to_first_meeting (U := Cᶜ)
+       hC.isClosed (Set.disjoint_left.mpr (fun _ hx hy => hx hy)) hz.1
+       (show poly (z::vs) ⊆ Cᶜ ∪ C from fun x _ => by
+         by_cases hx : x∈C
+--- frozen/OriginalPendantExterior.lean
++++ source/OriginalPendantExterior.lean
+@@ -59,8 +59,10 @@
+   have hpinside : H (f 0)∈inside C := by
+     have hp : H (f 0)∈(C ∪ inside C) ∩ K := hclosed.symm ▸ hpA
+     rcases hp.1 with hpC | hpI
+-    · have hq : H (f 0)=Plane.mk r 0 :=
+-        hinter ▸ (show H (f 0)∈C∩K from ⟨hpC,hp.2⟩)
++    · have hq : H (f 0)=Plane.mk r 0 := by
++        have hm : H (f 0)∈({Plane.mk r 0}:Set Plane) :=
++          hinter ▸ (show H (f 0)∈C∩K from ⟨hpC,hp.2⟩)
++        exact hm
+       exact False.elim (hpq hq)
+     · exact hpI
+   have hcoord := Nanuq.AmbientTransport.outer_face_transfer

@@ -1,0 +1,3 @@
+# Marked-gall scoped compiler return
+
+Four own modules qualify against444 exact existing providers (448actual selected). All6named types/owners/standard axioms and complete selected audit pass; rawfullaudit stayslocal. One failed source attempt is preserved. The missing ports identifier was an omitted Lean section variable, not a missing RootPorts.exhaustive field. include ports in restores the intended explicitly declared parameter used by the original caller; printout exposes the full type. All frozen header text and four definitions are byte-identical. No CutChild or desired detour premise is added; full input identification and globalorder remain open.
