@@ -1,0 +1,60 @@
+--- BUILD_ROOT/frozen/ResearchCommons/MSCI/JC69RootResolvent.lean	2026-10-31 06:00:28.082867342 +0000
++++ BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean	2026-10-31 06:19:06.891140704 +0000
+@@ -49,7 +49,9 @@
+     · exact (Real.measurable_exp.comp (measurable_const.mul ho).neg).ennreal_ofReal
+     · exact measurable_const
+   have hi := hw.lintegral_prod_right' (ν := currentPairClockMeasure N r s)
+-  simpa only [actual_locus_weight_clock_integral] using hi
++  have heq := funext (actual_locus_weight_clock_integral N r L q n s)
++  rw [heq]
++  exact hi
+ 
+ /-- Genuine actual finite-fuel bound, only at nonnegative horizon. -/
+ theorem actual_weight_le_one (N : RootedBinary V E X) {sample : Copy → X}
+@@ -143,12 +145,12 @@
+       apply Filter.Eventually.of_forall
+       intro u
+       by_cases hu : u ≤ (m:ℝ)
+-      · rw [Set.indicator_of_mem hu]
++      · rw [Set.indicator_of_mem (show u ∈ Iic (m:ℝ) from hu)]
+         exact actual_weight_le_one N r L q n (stepDestination N s (some p)) _ (sub_nonneg.mpr hu)
+-      · rw [Set.indicator_of_notMem hu]
+-        exact zero_le _
++      · rw [Set.indicator_of_notMem (show u ∉ Iic (m:ℝ) from hu)]
++        exact bot_le
+     · simp only [lintegral_const,one_mul,hmass]
+-      exact ENNReal.ofReal_lt_top
++      exact ne_of_lt ENNReal.ofReal_lt_top
+     · apply Filter.Eventually.of_forall
+       intro u
+       have h := actual_root_weight_shifted_limit N r L q hbal n
+@@ -157,7 +159,8 @@
+       obtain ⟨m,hm⟩ := exists_nat_ge u
+       filter_upwards [Filter.eventually_ge_atTop m] with k hk
+       have hmk : (m:ℝ) ≤ (k:ℝ) := by exact_mod_cast hk
+-      exact (Set.indicator_of_mem (le_trans hm hmk) _).symm
++      exact (Set.indicator_of_mem (show u ∈ Iic (k:ℝ) from le_trans hm hmk)
++        (fun v => actualLocusWeight N r L q n (stepDestination N s (some p)) ((k:ℝ)-v))).symm
+   simpa only [lintegral_indicator measurableSet_Iic,lintegral_const,hmass,
+     mul_comm,μ,a,d] using hconv
+ 
+@@ -185,7 +188,7 @@
+       (Real.exp (-((totalRate N r s+locusKill N L q s)*(m:ℝ))))) atTop (𝓝 0) := by
+     have hlin : Tendsto (fun m : ℕ => (totalRate N r s+locusKill N L q s)*(m:ℝ)) atTop atTop :=
+       Filter.Tendsto.const_mul_atTop hd tendsto_natCast_atTop_atTop
+-    simpa only [ENNReal.ofReal_zero] using
++    simpa only [ENNReal.ofReal_zero, Function.comp_def] using
+       ENNReal.tendsto_ofReal (Real.tendsto_exp_neg_atTop_nhds_zero.comp hlin)
+   have hsum := tendsto_finsetSum Finset.univ (fun p _ =>
+     actual_root_waiting_limit N r L q hbal s hs p B
+@@ -214,7 +217,9 @@
+     unfold currentPairClockMeasure
+     infer_instance
+   have hf (c : Choice N s → ℝ) : completeRootWeight N L q s c = 1 := by
+-    have hcover : (clockCover N s c : ℝ) = 0 := by simp [clockCover]
++    have hcover : (clockCover N s c : ℝ) = 0 := by
++      change (∑ p : Choice N s, |c p|) = 0
++      simp
+     have ho (j : Fin L) (n : ℕ) : literalOccupation N (q j) n 0 s c = 0 := by
+       have hstop : ∀ p : Choice N s, (0:ℝ) < c p := fun p => isEmptyElim p
+       cases n <;> simp [literalOccupation,hstop]
