@@ -1,0 +1,100 @@
+@ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_sum.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (T : NNReal)
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s reference : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N s)
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N reference) →
+    ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+      Eq.{1}
+        (ResearchCommons.MSCI.JC69StagePathCoefficient.intervalBoundaryCoefficient.{u_1, u_2, u_3, u_4} N r L q T bs s
+          target)
+        (∑ o,
+          HMul.hMul.{0, 0, 0}
+            (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight.{u_1, u_2, u_3, u_4} N r L q
+              (Fintype.card.{u_3} Copy) reference (↑T) o)
+            (ResearchCommons.MSCI.JC69StagePathCoefficient.boundaryReadout.{u_1, u_2, u_3, u_4} N bs
+              (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+                (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} s))
+              target o))
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_sum' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_finite.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (T : NNReal)
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+  Ne.{1}
+    (ResearchCommons.MSCI.JC69StagePathCoefficient.intervalBoundaryCoefficient.{u_1, u_2, u_3, u_4} N r L q T bs s
+      target)
+    Top.top.{0}
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_finite' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_path_expansion.{u_1, u_2, u_3, u_4, u_5,
+    u_6} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy] {n : ℕ} (e : Equiv.{u_3 + 1, 1} Copy (Fin n))
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (T : NNReal)
+  (bs : List.{max u_2 u_1} (UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation.{u_1, u_2, u_4} N))
+  (s reference : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Eq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N s)
+      (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N reference) →
+    ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation.{u_3, u_1, u_2} Copy V E),
+      Eq.{1}
+        (ResearchCommons.MSCI.JC69StagePathCoefficient.intervalBoundaryCoefficient.{u_1, u_2, u_3, u_4} N r L q T bs s
+            target).toReal
+        (∑ i,
+          HMul.hMul.{0, 0, 0}
+            (HMul.hMul.{0, 0, 0}
+              (ResearchCommons.MSCI.JC69CommonCountIndex.commonCoefficient.{u_1, u_2, u_3, u_4, u_6, u_5} e N r L q
+                (Fintype.card.{u_3} Copy) reference
+                (ResearchCommons.MSCI.JC69EndpointWeight.observeCode.{u_1, u_2, u_3, u_4} N
+                  (ResearchCommons.MSCI.JC69OrderedPathExpansion.pathEnd.{u_1, u_2, u_3, u_4, u_6, u_5} N
+                    (Fintype.card.{u_3} Copy) reference ↑(Sigma.fst.{max (max (max u_2 u_3) u_5) u_6, 0} i)))
+                i)
+              (ResearchCommons.MSCI.JC69BoundaryWord.boundaryCoefficient.{u_1, u_2, u_3, u_4} N bs
+                  (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank.{u_1, u_2, u_3, u_4} N
+                    (ResearchCommons.MSCI.JC69OrderedPathExpansion.pathEnd.{u_1, u_2, u_3, u_4, u_6, u_5} N
+                      (Fintype.card.{u_3} Copy) reference ↑(Sigma.fst.{max (max (max u_2 u_3) u_5) u_6, 0} i))
+                    (GProgram.SourceForest.State.register.{u_1, u_2, u_3}
+                      (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} s)))
+                  target).toReal)
+            (Real.exp
+              (HMul.hMul.{0, 0, 0}
+                (Neg.neg.{0}
+                  (ResearchCommons.MSCI.JC69CommonCountIndex.commonRate.{u_1, u_2, u_3, u_4, u_6, u_5} e N r L q
+                    (Fintype.card.{u_3} Copy) reference i))
+                ↑T)))
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_path_expansion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_index_card.{u_1, u_2, u_3, u_4, u_5,
+    u_6} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy] [Nonempty.{u_3 + 1} Copy]
+  (e : Equiv.{u_3 + 1, 1} Copy (Fin (Fintype.card.{u_3} Copy))) (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  {sample : Copy → X} (reference : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  LE.le.{0}
+    (Fintype.card.{max (max (max u_5 u_6) u_3) u_2}
+      (ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex.{u_1, u_2, u_3, u_4, u_6, u_5} e N
+        (Fintype.card.{u_3} Copy) reference))
+    (HMul.hMul.{0, 0, 0} (Fintype.card.{u_3} Copy)
+      (∑ k ∈ Finset.range (Fintype.card.{u_3} Copy), HPow.hPow.{0, 0, 0} ((Fintype.card.{u_3} Copy).choose 2) k))
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_index_card' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

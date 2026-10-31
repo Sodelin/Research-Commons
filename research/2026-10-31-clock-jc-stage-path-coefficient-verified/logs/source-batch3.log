@@ -1,0 +1,46 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69StagePathCoefficient.lean:163:11: error: `simp` made no progress
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+T : ℝ≥0
+bs : List (BoundaryOperation N)
+s reference : Code N sample
+ho : observeCode N s = observeCode N reference
+target : BlockPopulationObservation Copy V E
+⊢ ∑ x,
+      (actualResolvedWeight N r L q (Fintype.card Copy) reference (↑T) x).toReal *
+        (boundaryReadout N bs (state s).register target x).toReal =
+    ∑ i,
+      commonCoefficient e N r L q (Fintype.card Copy) reference
+            (observeCode N (pathEnd N (Fintype.card Copy) reference ↑i.fst)) i *
+          (boundaryCoefficient N bs (reBank N (pathEnd N (Fintype.card Copy) reference ↑i.fst) (state s).register)
+              target).toReal *
+        Real.exp (-commonRate e N r L q (Fintype.card Copy) reference i * ↑T)
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_path_expansion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_index_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

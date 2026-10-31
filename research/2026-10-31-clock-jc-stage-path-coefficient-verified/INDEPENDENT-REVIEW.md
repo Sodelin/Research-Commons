@@ -1,0 +1,3 @@
+# Separate AI-assisted mathematical review
+
+31 October2026. Separate review read the complete repaired patch and all four complete named types/standard axioms. Scoped acceptance: explicit specialization of the accepted common-index theorem preserves original source, physical nonnegative horizon, exact endpoint and original bank in the boundary factor. All12 complete headers and two definitions are unchanged. Source finiteness precedes conversion to real values; no signed term is separately ofReal'd. Full198-module audit remains compiler-attributed rather than independently replayed. No global M/D/window, expert peer review or novelty certification is claimed.

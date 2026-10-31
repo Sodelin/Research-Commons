@@ -1,0 +1,10 @@
+import ResearchCommons.MSCI.JC69StagePathCoefficient
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_sum
+#print axioms ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_sum
+#check @ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_finite
+#print axioms ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_finite
+#check @ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_path_expansion
+#print axioms ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_path_expansion
+#check @ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_index_card
+#print axioms ResearchCommons.MSCI.JC69StagePathCoefficient.actual_interval_boundary_index_card

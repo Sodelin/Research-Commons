@@ -1,0 +1,15 @@
+--- frozen/JC69StagePathCoefficient.lean
++++ source/JC69StagePathCoefficient.lean
+@@ -158,7 +158,11 @@
+         Real.exp (-commonRate e N r L q (Fintype.card Copy) reference i*(T:ℝ)) := by
+   rw [actual_interval_boundary_sum N r L q T bs s reference ho target]
+   rw [ENNReal.toReal_sum (fun o _ => interval_boundary_summand_finite N r L q T bs _ reference target o)]
+-  simp_rw [ENNReal.toReal_mul,actual_common_index_expansion e,Finset.sum_mul]
++  simp_rw [ENNReal.toReal_mul]
++  have hExp (o : BlockPopulationObservation Copy V E) :=
++    ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion
++      e N r L q (Fintype.card Copy) reference T o
++  simp_rw [hExp,Finset.sum_mul]
+   rw [Finset.sum_comm]
+   apply Finset.sum_congr rfl
+   intro i _
