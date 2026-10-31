@@ -1,0 +1,28 @@
+{
+  "scope": "Exact finite mathematical checks; not the Puiseux proof or original source recognition",
+  "python_version": "3.12.14",
+  "sympy_version": "1.14.0",
+  "checks": [
+    {
+      "script": "checks/no_ap.py",
+      "certificate": "checks/NO-AP.json",
+      "claim": "All20 triples have nonzero a+b\u22122k; multihomogeneous coefficient499",
+      "arithmetic": "integer",
+      "result": "pass"
+    },
+    {
+      "script": "checks/four_support.py",
+      "certificate": "checks/FOUR-SUPPORT.json",
+      "claim": "All15 supports;45 rational kernel/annihilator checks;15 nonzero4\u00d74 minors",
+      "arithmetic": "exact rational SymPy",
+      "result": "pass",
+      "independent_validation": "all45 checks and15 determinants independently reconstructed in mathematical review"
+    }
+  ],
+  "not_executed": [
+    "Lean proof",
+    "quantified real algebraic decision",
+    "physical source fitting",
+    "original G3 recognizer"
+  ]
+}
