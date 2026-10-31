@@ -119,3 +119,8 @@ The [06:03 reconciliation](../2026-10-31-scope-reconciliation-0603z/CURRENT-SCOP
 ## Current full-scope successor — 31 October 2026, 10:03 reassessment
 
 The [10:03 reconciliation](../2026-10-31-scope-reconciliation-1003z/CURRENT-SCOPE.md) preserves this dated record and all accepted claims. It updates public G3 source components and the generic approximate-stability counterexample, scoped NANUQ/clock-JC acceptances versus candidates, completed historical package caller evidence versus the enlarged unrebuilt aggregate, the adopted sequence binding, and exact discovery limits. Original masters and all canonical scientific statuses remain unchanged.
+
+
+## Current full-scope successor — 31 October 2026, 14:03 reassessment
+
+The [14:03 reconciliation](https://github.com/Sodelin/Research-Commons/blob/02526d5bf414d0d06536b7ba1cad566cae1f0fe3/research/2026-10-31-scope-reconciliation-1403z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims. It records scoped simple-root versus two-cut-root separation and the original multi-hybrid source correction, coherent actual NANUQ boundary occurrence order, supported clock-JC observation bounds with their guards, and dated package/discovery evidence. Original G3/G4 and full scientific assembly remain open; no canonical scientific status changes. Older pending labels remain historical at their cutoffs.
