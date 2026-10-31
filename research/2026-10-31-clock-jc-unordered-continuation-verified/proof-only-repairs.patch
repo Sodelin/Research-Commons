@@ -1,0 +1,22 @@
+--- frozen/ResearchCommons/MSCI/JC69UnorderedContinuation.lean
++++ source/ResearchCommons/MSCI/JC69UnorderedContinuation.lean
+@@ -94,7 +94,8 @@
+         (actualResolvedWeight N r L q n (stepDestination N s (some p)) ((T:ℝ)-u) target).toReal := by
+   have h := actual_orientation_resolved_continuation N r L q n s p
+     (⟨(T:ℝ)-u,sub_nonneg.mpr hu.2⟩ : ℝ≥0) target
+-  change actualResolvedWeight N r L q n (stepDestination N s (some p)) ((T:ℝ)-u) target = _ at h
++  change actualResolvedWeight N r L q n (stepDestination N s (some p)) ((T:ℝ)-u) target =
++    actualResolvedWeight N r L q n (stepDestination N s (some (reverseChoice N s p))) ((T:ℝ)-u) target at h
+   rw [← h,reverseChoice_rate]
+   unfold choiceRate
+   ring
+@@ -103,7 +104,8 @@
+     (s t : Code N sample) (hobs : observeCode N s = observeCode N t) : liveCard s = liveCard t := by
+   have hB : currentBlocks (state s) = currentBlocks (state t) := congrArg Prod.fst hobs
+   have h := Fintype.card_congr (liveRootEquiv (state s) (state t) s.property.forest t.property.forest hB)
+-  simpa only [LiveRoot,Fintype.card_coe] using h
++  simpa only [liveCard,LiveRoot,Fintype.card_coe,state,
++    UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot] using h
+ 
+ lemma observation_ancestralRoot (N : RootedBinary V E X) {sample : Copy → X}
+     (s t : Code N sample) (hobs : observeCode N s = observeCode N t)
