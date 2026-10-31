@@ -1,0 +1,7 @@
+import RawPortCycle
+#check @Nanuq.RawPortFrontier.awayBridge_in_raw_outer_component
+#print axioms Nanuq.RawPortFrontier.awayBridge_in_raw_outer_component
+#check @Nanuq.RawPortFrontier.actual_raw_port_frontier
+#print axioms Nanuq.RawPortFrontier.actual_raw_port_frontier
+#check @Nanuq.RawPortFrontier.actual_raw_port_outer_cycle
+#print axioms Nanuq.RawPortFrontier.actual_raw_port_outer_cycle

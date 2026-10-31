@@ -1,0 +1,38 @@
+/workspace/tasks/lean-completion/actual-pendant/source/TerminalCap.lean:68:4: error: 'change' tactic failed, pattern
+  max |t| |y| < r
+is not definitionally equal to target
+  f t ∈ Plane.openSquare 0 r
+/workspace/tasks/lean-completion/actual-pendant/source/TerminalCap.lean:121:25: error: linarith failed to find a contradiction
+α : ℝ → Plane
+hα : ContinuousOn α I
+hi : InjOn α I
+hend : α 1 = 0
+L : Set Plane
+hL : IsCompact L
+hdisj : Disjoint L (α '' I)
+b δ : ℝ
+hb : 0 < b
+hδ : 0 < δ
+hbase : Plane.mk b 0 ∈ L
+hterm : TerminalPrefix (α '' I) b δ
+ε : ℝ := min (b / 4) (δ / 8)
+hε : 0 < ε
+N : ℕ
+r : ℝ
+C : Set Plane
+hN : 0 < N
+hr : 0 < r
+hrε : r < ε
+hC : IsJordanCurve C
+hAin : α '' I ⊆ inside C
+hLout : L ⊆ outside C
+hCsub : C ⊆ ⋃ j ∈ Finset.range (N + 1), frontier ((α (sample N j)).closedSquare r)
+hOpen : ∀ j ≤ N, (α (sample N j)).openSquare r ⊆ inside C
+hrb : r < b
+hsmall : 2 * r < δ
+hleft : Plane.openSquare 0 r ⊆ inside C
+hSC : rightStrip r b ⊆ Cᶜ
+a✝ : (Plane.mk b 0).ofLp 1 ≤ -r
+⊢ False
+failed
+'Nanuq.Pendant.sampled_terminal_cap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

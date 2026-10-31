@@ -1,0 +1,33 @@
+--- frozen/RawPortCycle.lean
++++ source/RawPortCycle.lean
+@@ -63,7 +63,9 @@
+   refine ⟨e,u,v,es,hface,hC,hout,?_⟩
+   intro p
+   have hp : coordinates (D.point (N.originalPortInner b p).val) ∈ frontier (coordinates '' F) := by
+-    rw [← coordinates.toHomeomorph.image_frontier F]
++    have hfrontier := coordinates.toHomeomorph.image_frontier F
++    change coordinates '' frontier F = frontier (coordinates '' F) at hfrontier
++    rw [← hfrontier]
+     exact ⟨_,hfront p,rfl⟩
+   rw [hcomp,hface.frontier_eq] at hp
+   exact hp
+--- frozen/RawPortFrontier.lean
++++ source/RawPortFrontier.lean
+@@ -85,13 +85,13 @@
+   · rw [N.originalPortInner_value_outgoing b p hp,← (D.arc p.val.val).source]
+     apply mem_closure_image (D.arc p.val.val).continuous.continuousAt
+     simp only [awayParameters,if_pos hp]
+-    rw [closure_Ioi' (show (Ioi (0:unitInterval)).Nonempty from ⟨1,by norm_num⟩)]
+-    exact le_rfl
++    rw [closure_Ioi' (a := (0:unitInterval)) (show (Ioi (0:unitInterval)).Nonempty from ⟨1,by norm_num⟩)]
++    exact Set.mem_Ici.mpr le_rfl
+   · rw [N.originalPortInner_value_incoming b p (p.property.resolve_left hp),← (D.arc p.val.val).target]
+     apply mem_closure_image (D.arc p.val.val).continuous.continuousAt
+     simp only [awayParameters,if_neg hp]
+-    rw [closure_Iio' (show (Iio (1:unitInterval)).Nonempty from ⟨0,by norm_num⟩)]
+-    exact le_rfl
++    rw [closure_Iio' (a := (1:unitInterval)) (show (Iio (1:unitInterval)).Nonempty from ⟨0,by norm_num⟩)]
++    exact Set.mem_Iic.mpr le_rfl
+ 
+ /-- SAME original outside basepoint throughout. The accepted cap result puts
+ an ACTUAL far original vertex in its exterior; raw⊆cap transfers that point,

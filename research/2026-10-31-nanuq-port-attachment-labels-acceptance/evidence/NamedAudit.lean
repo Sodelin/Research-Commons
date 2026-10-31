@@ -1,0 +1,5 @@
+import PortAttachmentLabels
+#check @Nanuq.PortAttachmentLabels.two_raw_incident_ids
+#print axioms Nanuq.PortAttachmentLabels.two_raw_incident_ids
+#check @Nanuq.PortAttachmentLabels.original_port_inner_injective
+#print axioms Nanuq.PortAttachmentLabels.original_port_inner_injective

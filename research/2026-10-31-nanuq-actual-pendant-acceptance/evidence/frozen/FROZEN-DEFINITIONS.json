@@ -1,0 +1,12 @@
+[
+  {
+    "file": "TerminalCap.lean",
+    "name": "TerminalPrefix",
+    "source": "def TerminalPrefix (A : Set Plane) (b \u03b4 : \u211d) : Prop :=\n  \u2200 a \u2208 A, (a 1 = 0 \u2227 a 0 \u2264 0) \u2228\n    (\u2200 x \u2208 Icc 0 b, \u03b4 \u2264 Plane.supDist a (Plane.mk x 0))"
+  },
+  {
+    "file": "TerminalCap.lean",
+    "name": "rightStrip",
+    "source": "def rightStrip (r b : \u211d) : Set Plane :=\n  {x | r < x 0 \u2227 x 0 \u2264 b \u2227 -r < x 1 \u2227 x 1 < r}"
+  }
+]

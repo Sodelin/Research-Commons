@@ -1,0 +1,77 @@
+[
+  {
+    "file": "ActualLeafOneExit.lean",
+    "name": "actual_leaf_one_exit",
+    "header": "theorem actual_leaf_one_exit {E : Type*} {G : Graph Plane E} [G.Finite]\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    {e : E} {v w : Plane} (he : G.IsLink e v w)\n    (hunique : ∀ g ∈ E(G), G.Inc g v → g = e)\n    (f : ℝ → Plane) (hc : ContinuousOn f I) (hi : InjOn f I)\n    (him : f '' I = Graph.edgeArc drawing e) (h0 : f 0=v) (h1 : f 1=w) :\n    ∃ (H : Plane ≃ₜ Plane) (r b t : ℝ) (C : Set Plane),\n      0 < r ∧ r < b ∧ t ∈ Ioo (1/2) (13/24) ∧ IsJordanCurve C ∧\n      H (f (1/2))=0 ∧ H (f (13/24))=Plane.mk b 0 ∧ H (f t)=Plane.mk r 0 ∧\n      H '' (f '' Icc (1/2) (13/24)) = segment ℝ (0:Plane) (Plane.mk b 0) ∧\n      C ∩ (H '' Graph.pointSet G drawing) = {Plane.mk r 0} ∧\n      (C ∪ inside C) ∩ (H '' Graph.pointSet G drawing) = H '' (f '' Icc 0 t) ∧\n      Plane.mk r (r/2) ∈ C \\ (H '' Graph.pointSet G drawing) ∧\n      Plane.mk r (-r/2) ∈ C \\ (H '' Graph.pointSet G drawing) ∧\n      Plane.mk r (-r/2) ∈ connectedComponentIn (H '' Graph.pointSet G drawing)ᶜ\n        (Plane.mk r (r/2))"
+  },
+  {
+    "file": "HorizontalArc.lean",
+    "name": "horizontal_coordinate_inj",
+    "header": "theorem horizontal_coordinate_inj {f : ℝ → Plane} {a b : ℝ}\n    (hi : InjOn f (Icc a b)) (hy : ∀ t ∈ Icc a b, f t 1 = 0) :\n    InjOn (fun t => f t 0) (Icc a b)"
+  },
+  {
+    "file": "HorizontalArc.lean",
+    "name": "horizontal_arc_image",
+    "header": "theorem horizontal_arc_image {f : ℝ → Plane} {a b : ℝ} (hab : a ≤ b)\n    (hc : ContinuousOn f (Icc a b)) (hi : InjOn f (Icc a b))\n    (hy : ∀ t ∈ Icc a b, f t 1 = 0) :\n    f '' Icc a b = segment ℝ (f a) (f b)"
+  },
+  {
+    "file": "HorizontalArc.lean",
+    "name": "half_parameter_image",
+    "header": "theorem half_parameter_image (f : ℝ → Plane) :\n    (fun t => f (t/2)) '' I = f '' Icc 0 (1/2)"
+  },
+  {
+    "file": "InteriorTerminalChart.lean",
+    "name": "interior_terminal_chart",
+    "header": "theorem interior_terminal_chart (f : ℝ → Plane) (hc : ContinuousOn f I)\n    (hi : InjOn f I) :\n    ∃ (H : Plane ≃ₜ Plane) (b δ : ℝ),\n      0 < b ∧ 0 < δ ∧ H (f (1/2)) = 0 ∧ H (f (13/24)) = Plane.mk b 0 ∧\n      H '' (f '' Icc (1/2) (13/24)) = segment ℝ (0:Plane) (Plane.mk b 0) ∧\n      TerminalPrefix (H '' (f '' Icc 0 (1/2))) b δ"
+  },
+  {
+    "file": "LeafTrace.lean",
+    "name": "leaf_trace_decomposition",
+    "header": "theorem leaf_trace_decomposition {E : Type*} {G : Graph Plane E} [G.Finite]\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    {e : E} {v w : Plane} (he : G.IsLink e v w)\n    (hunique : ∀ g ∈ E(G), G.Inc g v → g = e)\n    (f : ℝ → Plane) (hc : ContinuousOn f I) (hi : InjOn f I)\n    (him : f '' I = Graph.edgeArc drawing e) (h0 : f 0 = v) (h1 : f 1 = w) :\n    ∃ K : Set Plane, IsCompact K ∧ Disjoint K (f '' Icc 0 (1/2)) ∧\n      f (13/24) ∈ K ∧ Graph.pointSet G drawing = K ∪ f '' Icc 0 (13/24)"
+  },
+  {
+    "file": "OneExit.lean",
+    "name": "punctured_jordan_preconnected",
+    "header": "theorem punctured_jordan_preconnected {C : Set Plane} (hC : IsJordanCurve C)\n    {q z : Plane} (hq : q ∈ C) (hz : z ∈ C) (hqz : q ≠ z) :\n    IsPreconnected (C \\ {q})"
+  },
+  {
+    "file": "OneExit.lean",
+    "name": "terminal_one_exit",
+    "header": "theorem terminal_one_exit {A L C : Set Plane} {r b : ℝ}\n    (hr : 0 < r) (hrb : r < b) (hC : IsJordanCurve C)\n    (hA : A ⊆ inside C) (hL : L ⊆ outside C)\n    (hleft : Plane.openSquare 0 r ⊆ inside C)\n    (hright : rightStrip r b ⊆ outside C)\n    (hcap : ∀ y : ℝ, |y| < r → Plane.mk r y ∈ C) :\n    let T := A ∪ segment ℝ (0:Plane) (Plane.mk b 0) ∪ L\n    C ∩ T = {Plane.mk r 0} ∧\n    (C ∪ inside C) ∩ T = A ∪ segment ℝ (0:Plane) (Plane.mk r 0) ∧\n    Plane.mk r (r/2) ∈ C \\ T ∧ Plane.mk r (-r/2) ∈ C \\ T ∧\n    Plane.mk r (-r/2) ∈ connectedComponentIn Tᶜ (Plane.mk r (r/2))"
+  },
+  {
+    "file": "OriginalPendant.lean",
+    "name": "original_leaf_unique_id",
+    "header": "theorem original_leaf_unique_id {V E X : Type*}\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]\n    (N : RootedBinary V E X) (x : X) :\n    ∃ e : E, N.graph.target e=N.leaf x ∧\n      ∀ g : E, N.graph.source g=N.leaf x ∨ N.graph.target g=N.leaf x → g=e"
+  },
+  {
+    "file": "OriginalPendant.lean",
+    "name": "original_taxon_one_exit",
+    "header": "theorem original_taxon_one_exit {V E X : Type*}\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]\n    (N : RootedBinary V E X) (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph)\n    (x : X) :\n    ∃ (e : E) (f : ℝ → Plane) (H : Plane ≃ₜ Plane) (r b t : ℝ) (C : Set Plane),\n      N.graph.target e=N.leaf x ∧ ContinuousOn f I ∧ InjOn f I ∧\n      f '' I=Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) e ∧\n      f 0=NanuqFaithfulSupplierDrawing.vertex D (N.leaf x) ∧\n      f 1=NanuqFaithfulSupplierDrawing.vertex D (N.graph.source e) ∧\n      0 < r ∧ r < b ∧ t ∈ Ioo (1/2) (13/24) ∧ IsJordanCurve C ∧\n      H (f (1/2))=0 ∧ H (f (13/24))=Plane.mk b 0 ∧ H (f t)=Plane.mk r 0 ∧\n      H '' (f '' Icc (1/2) (13/24))=segment ℝ (0:Plane) (Plane.mk b 0) ∧\n      C ∩ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D))={Plane.mk r 0} ∧\n      (C ∪ inside C) ∩ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D))=H '' (f '' Icc 0 t) ∧\n      Plane.mk r (r/2) ∈ C \\ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D)) ∧\n      Plane.mk r (-r/2) ∈ C \\ (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D)) ∧\n      Plane.mk r (-r/2) ∈ connectedComponentIn\n        (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n          G1OuterLabelledMultigraphCurves.drawing D))ᶜ (Plane.mk r (r/2))"
+  },
+  {
+    "file": "SampledNeighborhood.lean",
+    "name": "sampled_neighborhood",
+    "header": "theorem sampled_neighborhood (α : ℝ → Plane) (hα : ContinuousOn α I)\n    (hinj : InjOn α I) {L : Set Plane} (hL : IsCompact L)\n    (hLne : L.Nonempty) (hdisj : Disjoint L (α '' I))\n    {ε : ℝ} (hε : 0 < ε) :\n    ∃ (N : ℕ) (r : ℝ) (C : Set Plane),\n      0 < N ∧ 0 < r ∧ r < ε ∧ IsJordanCurve C ∧\n      α '' I ⊆ inside C ∧ L ⊆ outside C ∧\n      C ⊆ ⋃ j ∈ Finset.range (N+1),\n        frontier (Plane.closedSquare (α (sample N j)) r) ∧\n      (∀ j ≤ N, Plane.openSquare (α (sample N j)) r ⊆ inside C)"
+  },
+  {
+    "file": "TerminalCap.lean",
+    "name": "rightStrip_preconnected",
+    "header": "theorem rightStrip_preconnected (r b : ℝ) : IsPreconnected (rightStrip r b)"
+  },
+  {
+    "file": "TerminalCap.lean",
+    "name": "strip_misses_square",
+    "header": "theorem strip_misses_square {A : Set Plane} {b δ r : ℝ}\n    (hterm : TerminalPrefix A b δ) (hr : 0 < r) (hsmall : 2*r < δ)\n    {a x : Plane} (ha : a ∈ A) (hx : x ∈ rightStrip r b) :\n    x ∉ Plane.closedSquare a r"
+  },
+  {
+    "file": "TerminalCap.lean",
+    "name": "vertical_cap_of_squares",
+    "header": "theorem vertical_cap_of_squares {C : Set Plane} {r b : ℝ}\n    (hC : IsJordanCurve C) (hr : 0 < r) (hrb : r < b)\n    (hleft : Plane.openSquare 0 r ⊆ inside C)\n    (hright : rightStrip r b ⊆ outside C) :\n    ∀ y : ℝ, |y| < r → Plane.mk r y ∈ C"
+  },
+  {
+    "file": "TerminalCap.lean",
+    "name": "sampled_terminal_cap",
+    "header": "theorem sampled_terminal_cap (α : ℝ → Plane) (hα : ContinuousOn α I)\n    (hi : InjOn α I) (hend : α 1 = 0) {L : Set Plane}\n    (hL : IsCompact L) (hdisj : Disjoint L (α '' I))\n    {b δ : ℝ} (hb : 0 < b) (hδ : 0 < δ)\n    (hbase : Plane.mk b 0 ∈ L) (hterm : TerminalPrefix (α '' I) b δ) :\n    ∃ (r : ℝ) (C : Set Plane),\n      0 < r ∧ r < b ∧ IsJordanCurve C ∧ α '' I ⊆ inside C ∧\n      L ⊆ outside C ∧ Plane.openSquare 0 r ⊆ inside C ∧\n      rightStrip r b ⊆ outside C ∧\n      (∀ y : ℝ, |y| < r → Plane.mk r y ∈ C)"
+  }
+]

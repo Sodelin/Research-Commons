@@ -1,0 +1,59 @@
+{
+  "theorems": [
+    {
+      "file": "RawPortCycle.lean",
+      "name": "actual_raw_port_outer_cycle",
+      "header": "theorem actual_raw_port_outer_cycle (hb : N.NonleafBlob b)\n    (face : TaxonOuterFace D N.leaf)\n    (hthree : ∃ a c d : BlobVertex N.graph b, a≠c ∧ a≠d ∧ c≠d) :\n    ∃ (e : BlobEdge N.graph b) (u v : Schoenflies.Plane) (es : List (BlobEdge N.graph b)),\n      Graph.IsFaceCycle (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside) e u v es ∧\n      Schoenflies.IsJordanCurve (Graph.edgesCover (curve (blobCurves D b)) (e::es)) ∧\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b)) (coordinates face.outside) =\n        Schoenflies.outside (Graph.edgesCover (curve (blobCurves D b)) (e::es)) ∧\n      ∀ p : N.BlobPort b, coordinates (D.point (N.originalPortInner b p).val) ∈\n        Graph.edgesCover (curve (blobCurves D b)) (e::es)"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "raw_drawing_subset_cap",
+      "header": "theorem raw_drawing_subset_cap (hb : N.NonleafBlob b) :\n    drawing (blobCurves D b) ⊆ drawing (actualRootedCapCurves N D b hb)"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "raw_drawing_subset_near",
+      "header": "theorem raw_drawing_subset_near (p : N.BlobPort b) :\n    drawing (blobCurves D b) ⊆ sideTrace D (nearSide N b p)"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "awayBridge_preconnected",
+      "header": "theorem awayBridge_preconnected (p : N.BlobPort b) : IsPreconnected (awayBridge N D b p)"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "far_point_mem_awayBridge",
+      "header": "theorem far_point_mem_awayBridge (p : N.BlobPort b) :\n    D.point (farVertex N b p) ∈ awayBridge N D b p"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "awayBridge_subset_raw_complement",
+      "header": "theorem awayBridge_subset_raw_complement (p : N.BlobPort b) :\n    awayBridge N D b p ⊆ (drawing (blobCurves D b))ᶜ"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "attachment_mem_awayBridge_closure",
+      "header": "theorem attachment_mem_awayBridge_closure (p : N.BlobPort b) :\n    D.point (N.originalPortInner b p).val ∈ closure (awayBridge N D b p)"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "awayBridge_in_raw_outer_component",
+      "header": "theorem awayBridge_in_raw_outer_component (hb : N.NonleafBlob b)\n    (face : TaxonOuterFace D N.leaf) (p : N.BlobPort b) :\n    awayBridge N D b p ⊆ connectedComponentIn (drawing (blobCurves D b))ᶜ face.outside"
+    },
+    {
+      "file": "RawPortFrontier.lean",
+      "name": "actual_raw_port_frontier",
+      "header": "theorem actual_raw_port_frontier (hb : N.NonleafBlob b) (face : TaxonOuterFace D N.leaf) :\n    face.outside ∉ drawing (blobCurves D b) ∧\n    ¬ Bornology.IsBounded (connectedComponentIn (drawing (blobCurves D b))ᶜ face.outside) ∧\n    ∀ p : N.BlobPort b, D.point (N.originalPortInner b p).val ∈\n      frontier (connectedComponentIn (drawing (blobCurves D b))ᶜ face.outside)"
+    }
+  ],
+  "definitions": [
+    {
+      "name": "awayParameters",
+      "source": "def awayParameters (p : N.BlobPort b) : Set unitInterval :=\n  if N.graph.bridgeQuotient.source p.val=b then Ioi 0 else Iio 1"
+    },
+    {
+      "name": "awayBridge",
+      "source": "def awayBridge (p : N.BlobPort b) : Set Plane := D.arc p.val.val '' awayParameters N b p"
+    }
+  ]
+}

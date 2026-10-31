@@ -1,0 +1,59 @@
+/workspace/tasks/lean-completion/raw-port/source/RawPortCycle.lean:33:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/workspace/tasks/lean-completion/raw-port/source/RawPortCycle.lean:34:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/workspace/tasks/lean-completion/raw-port/source/RawPortCycle.lean:66:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  frontier (⇑coordinates.toHomeomorph '' F)
+in the target expression
+  coordinates (D.point ↑(N.originalPortInner b p)) ∈ frontier (⇑coordinates '' F)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+hb : N.NonleafBlob b
+face : TaxonOuterFace D ⇑N.leaf
+hthree : ∃ a c d, a ≠ c ∧ a ≠ d ∧ c ≠ d
+G : Graph Schoenflies.Plane (BlobEdge N.graph b) := graph (blobCurves D b)
+φ : BlobEdge N.graph b → ℝ → Schoenflies.Plane := curve (blobCurves D b)
+R : Set Plane := drawing (blobCurves D b)
+F : Set Plane := connectedComponentIn Rᶜ face.outside
+this✝ : Finite (BlobVertex N.graph b)
+this : G.Finite
+hnot : face.outside ∉ drawing (blobCurves D b)
+hub : ¬Bornology.IsBounded (connectedComponentIn (drawing (blobCurves D b))ᶜ face.outside)
+hfront :
+  ∀ (p : N.BlobPort b),
+    D.point ↑(N.originalPortInner b p) ∈ frontier (connectedComponentIn (drawing (blobCurves D b))ᶜ face.outside)
+hdraw : (graph (blobCurves D b)).IsDrawing (curve (blobCurves D b))
+htwo : (graph (blobCurves D b)).IsTwoConnected
+hnotG : coordinates face.outside ∈ G.exterior φ
+hcomp : ⇑coordinates '' F = G.face φ (coordinates face.outside)
+hunbounded : ¬Bornology.IsBounded (G.face φ (coordinates face.outside))
+e : BlobEdge N.graph b
+u v : Schoenflies.Plane
+es : List (BlobEdge N.graph b)
+hface : (graph (blobCurves D b)).IsFaceCycle (curve (blobCurves D b)) (coordinates face.outside) e u v es
+hC : Schoenflies.IsJordanCurve (Graph.edgesCover (curve (blobCurves D b)) (e :: es))
+hout : G.face φ (coordinates face.outside) = Schoenflies.outside (Graph.edgesCover φ (e :: es))
+p : N.BlobPort b
+⊢ coordinates (D.point ↑(N.originalPortInner b p)) ∈ frontier (⇑coordinates '' F)
+'Nanuq.RawPortFrontier.actual_raw_port_outer_cycle' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,12 @@
+@Nanuq.PortAttachmentLabels.two_raw_incident_ids : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (b : N.graph.Blob),
+  (∃ u v, u ≠ v) →
+    ∀ (v : Nanuq.RawBlock.BlobVertex N.graph b),
+      ∃ e f,
+        e ≠ f ∧ (N.graph.source ↑e = ↑v ∨ N.graph.target ↑e = ↑v) ∧ (N.graph.source ↑f = ↑v ∨ N.graph.target ↑f = ↑v)
+'Nanuq.PortAttachmentLabels.two_raw_incident_ids' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.PortAttachmentLabels.original_port_inner_injective : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V]
+  (N : Nanuq.Source.RootedBinary V E X) (b : N.graph.Blob), (∃ u v, u ≠ v) → Function.Injective (N.originalPortInner b)
+'Nanuq.PortAttachmentLabels.original_port_inner_injective' depends on axioms: [propext, Classical.choice, Quot.sound]

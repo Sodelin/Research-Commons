@@ -1,0 +1,164 @@
+Nanuq.Pendant.sampled_neighborhood : ∀ (α : ℝ → Schoenflies.Plane),
+  ContinuousOn α unitInterval →
+    Set.InjOn α unitInterval →
+      ∀ {L : Set Schoenflies.Plane},
+        IsCompact L →
+          L.Nonempty →
+            Disjoint L (α '' unitInterval) →
+              ∀ {ε : ℝ},
+                0 < ε →
+                  ∃ N r C,
+                    0 < N ∧
+                      0 < r ∧
+                        r < ε ∧
+                          Schoenflies.IsJordanCurve C ∧
+                            α '' unitInterval ⊆ Schoenflies.inside C ∧
+                              L ⊆ Schoenflies.outside C ∧
+                                C ⊆ ⋃ j ∈ Finset.range (N + 1), frontier ((α (Schoenflies.sample N j)).closedSquare r) ∧
+                                  ∀ j ≤ N, (α (Schoenflies.sample N j)).openSquare r ⊆ Schoenflies.inside C
+'Nanuq.Pendant.sampled_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+Nanuq.Pendant.sampled_terminal_cap : ∀ (α : ℝ → Schoenflies.Plane),
+  ContinuousOn α unitInterval →
+    Set.InjOn α unitInterval →
+      α 1 = 0 →
+        ∀ {L : Set Schoenflies.Plane},
+          IsCompact L →
+            Disjoint L (α '' unitInterval) →
+              ∀ {b δ : ℝ},
+                0 < b →
+                  0 < δ →
+                    Schoenflies.Plane.mk b 0 ∈ L →
+                      Nanuq.Pendant.TerminalPrefix (α '' unitInterval) b δ →
+                        ∃ r C,
+                          0 < r ∧
+                            r < b ∧
+                              Schoenflies.IsJordanCurve C ∧
+                                α '' unitInterval ⊆ Schoenflies.inside C ∧
+                                  L ⊆ Schoenflies.outside C ∧
+                                    Schoenflies.Plane.openSquare 0 r ⊆ Schoenflies.inside C ∧
+                                      Nanuq.Pendant.rightStrip r b ⊆ Schoenflies.outside C ∧
+                                        ∀ (y : ℝ), |y| < r → Schoenflies.Plane.mk r y ∈ C
+'Nanuq.Pendant.sampled_terminal_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+Nanuq.Pendant.interior_terminal_chart : ∀ (f : ℝ → Schoenflies.Plane),
+  ContinuousOn f unitInterval →
+    Set.InjOn f unitInterval →
+      ∃ H b δ,
+        0 < b ∧
+          0 < δ ∧
+            H (f (1 / 2)) = 0 ∧
+              H (f (13 / 24)) = Schoenflies.Plane.mk b 0 ∧
+                ⇑H '' f '' Set.Icc (1 / 2) (13 / 24) = segment ℝ 0 (Schoenflies.Plane.mk b 0) ∧
+                  Nanuq.Pendant.TerminalPrefix (⇑H '' f '' Set.Icc 0 (1 / 2)) b δ
+'Nanuq.Pendant.interior_terminal_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.Pendant.leaf_trace_decomposition : ∀ {E : Type u_1} {G : Graph Schoenflies.Plane E} [G.Finite]
+  {drawing : E → ℝ → Schoenflies.Plane},
+  G.IsDrawing drawing →
+    ∀ {e : E} {v w : Schoenflies.Plane},
+      G.IsLink e v w →
+        (∀ g ∈ G.edgeSet, G.Inc g v → g = e) →
+          ∀ (f : ℝ → Schoenflies.Plane),
+            ContinuousOn f unitInterval →
+              Set.InjOn f unitInterval →
+                f '' unitInterval = Graph.edgeArc drawing e →
+                  f 0 = v →
+                    f 1 = w →
+                      ∃ K,
+                        IsCompact K ∧
+                          Disjoint K (f '' Set.Icc 0 (1 / 2)) ∧
+                            f (13 / 24) ∈ K ∧ G.pointSet drawing = K ∪ f '' Set.Icc 0 (13 / 24)
+'Nanuq.Pendant.leaf_trace_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.Pendant.terminal_one_exit : ∀ {A L C : Set Schoenflies.Plane} {r b : ℝ},
+  0 < r →
+    r < b →
+      Schoenflies.IsJordanCurve C →
+        A ⊆ Schoenflies.inside C →
+          L ⊆ Schoenflies.outside C →
+            Schoenflies.Plane.openSquare 0 r ⊆ Schoenflies.inside C →
+              Nanuq.Pendant.rightStrip r b ⊆ Schoenflies.outside C →
+                (∀ (y : ℝ), |y| < r → Schoenflies.Plane.mk r y ∈ C) →
+                  have T := A ∪ segment ℝ 0 (Schoenflies.Plane.mk b 0) ∪ L;
+                  C ∩ T = {Schoenflies.Plane.mk r 0} ∧
+                    (C ∪ Schoenflies.inside C) ∩ T = A ∪ segment ℝ 0 (Schoenflies.Plane.mk r 0) ∧
+                      Schoenflies.Plane.mk r (r / 2) ∈ C \ T ∧
+                        Schoenflies.Plane.mk r (-r / 2) ∈ C \ T ∧
+                          Schoenflies.Plane.mk r (-r / 2) ∈ connectedComponentIn Tᶜ (Schoenflies.Plane.mk r (r / 2))
+'Nanuq.Pendant.terminal_one_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.Pendant.actual_leaf_one_exit : ∀ {E : Type u_1} {G : Graph Schoenflies.Plane E} [G.Finite]
+  {drawing : E → ℝ → Schoenflies.Plane},
+  G.IsDrawing drawing →
+    ∀ {e : E} {v w : Schoenflies.Plane},
+      G.IsLink e v w →
+        (∀ g ∈ G.edgeSet, G.Inc g v → g = e) →
+          ∀ (f : ℝ → Schoenflies.Plane),
+            ContinuousOn f unitInterval →
+              Set.InjOn f unitInterval →
+                f '' unitInterval = Graph.edgeArc drawing e →
+                  f 0 = v →
+                    f 1 = w →
+                      ∃ H r b t C,
+                        0 < r ∧
+                          r < b ∧
+                            t ∈ Set.Ioo (1 / 2) (13 / 24) ∧
+                              Schoenflies.IsJordanCurve C ∧
+                                H (f (1 / 2)) = 0 ∧
+                                  H (f (13 / 24)) = Schoenflies.Plane.mk b 0 ∧
+                                    H (f t) = Schoenflies.Plane.mk r 0 ∧
+                                      ⇑H '' f '' Set.Icc (1 / 2) (13 / 24) = segment ℝ 0 (Schoenflies.Plane.mk b 0) ∧
+                                        C ∩ ⇑H '' G.pointSet drawing = {Schoenflies.Plane.mk r 0} ∧
+                                          (C ∪ Schoenflies.inside C) ∩ ⇑H '' G.pointSet drawing =
+                                              ⇑H '' f '' Set.Icc 0 t ∧
+                                            Schoenflies.Plane.mk r (r / 2) ∈ C \ ⇑H '' G.pointSet drawing ∧
+                                              Schoenflies.Plane.mk r (-r / 2) ∈ C \ ⇑H '' G.pointSet drawing ∧
+                                                Schoenflies.Plane.mk r (-r / 2) ∈
+                                                  connectedComponentIn (⇑H '' G.pointSet drawing)ᶜ
+                                                    (Schoenflies.Plane.mk r (r / 2))
+'Nanuq.Pendant.actual_leaf_one_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.Pendant.original_leaf_unique_id : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X) (x : X),
+  ∃ e, N.graph.target e = N.leaf x ∧ ∀ (g : E), N.graph.source g = N.leaf x ∨ N.graph.target g = N.leaf x → g = e
+'Nanuq.Pendant.original_leaf_unique_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.Pendant.original_taxon_one_exit : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (x : X),
+  ∃ e f H r b t C,
+    N.graph.target e = N.leaf x ∧
+      ContinuousOn f unitInterval ∧
+        Set.InjOn f unitInterval ∧
+          f '' unitInterval = Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) e ∧
+            f 0 = NanuqFaithfulSupplierDrawing.vertex D (N.leaf x) ∧
+              f 1 = NanuqFaithfulSupplierDrawing.vertex D (N.graph.source e) ∧
+                0 < r ∧
+                  r < b ∧
+                    t ∈ Set.Ioo (1 / 2) (13 / 24) ∧
+                      Schoenflies.IsJordanCurve C ∧
+                        H (f (1 / 2)) = 0 ∧
+                          H (f (13 / 24)) = Schoenflies.Plane.mk b 0 ∧
+                            H (f t) = Schoenflies.Plane.mk r 0 ∧
+                              ⇑H '' f '' Set.Icc (1 / 2) (13 / 24) = segment ℝ 0 (Schoenflies.Plane.mk b 0) ∧
+                                C ∩
+                                      ⇑H ''
+                                        ⇑NanuqFaithfulSupplierDrawing.coordinates ''
+                                          G1OuterLabelledMultigraphCurves.drawing D =
+                                    {Schoenflies.Plane.mk r 0} ∧
+                                  (C ∪ Schoenflies.inside C) ∩
+                                        ⇑H ''
+                                          ⇑NanuqFaithfulSupplierDrawing.coordinates ''
+                                            G1OuterLabelledMultigraphCurves.drawing D =
+                                      ⇑H '' f '' Set.Icc 0 t ∧
+                                    Schoenflies.Plane.mk r (r / 2) ∈
+                                        C \
+                                          ⇑H ''
+                                            ⇑NanuqFaithfulSupplierDrawing.coordinates ''
+                                              G1OuterLabelledMultigraphCurves.drawing D ∧
+                                      Schoenflies.Plane.mk r (-r / 2) ∈
+                                          C \
+                                            ⇑H ''
+                                              ⇑NanuqFaithfulSupplierDrawing.coordinates ''
+                                                G1OuterLabelledMultigraphCurves.drawing D ∧
+                                        Schoenflies.Plane.mk r (-r / 2) ∈
+                                          connectedComponentIn
+                                            (⇑H ''
+                                                ⇑NanuqFaithfulSupplierDrawing.coordinates ''
+                                                  G1OuterLabelledMultigraphCurves.drawing D)ᶜ
+                                            (Schoenflies.Plane.mk r (r / 2))
+'Nanuq.Pendant.original_taxon_one_exit' depends on axioms: [propext, Classical.choice, Quot.sound]

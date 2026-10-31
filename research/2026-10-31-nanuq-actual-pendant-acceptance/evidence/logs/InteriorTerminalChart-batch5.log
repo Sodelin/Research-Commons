@@ -1,0 +1,45 @@
+/workspace/tasks/lean-completion/actual-pendant/source/InteriorTerminalChart.lean:90:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  H (f (1 / 2))
+in the target expression
+  (fun t => (H (f t)).ofLp 0) (1 / 2) < (fun t => (H (f t)).ofLp 0) (13 / 24)
+
+f : ℝ → Plane
+hc : ContinuousOn f I
+hi : InjOn f I
+g : ℝ → Plane := fun t => f (1 / 2 + t / 4)
+k : ℝ → Plane := fun t => f (1 / 2 - t / 4)
+hgI : ∀ t ∈ I, 1 / 2 + t / 4 ∈ I
+hkI : ∀ t ∈ I, 1 / 2 - t / 4 ∈ I
+hgc : ContinuousOn g I
+hkc : ContinuousOn k I
+hgi : InjOn g I
+hki : InjOn k I
+hgk0 : g 0 = k 0
+hmeet : ∀ z ∈ g '' I, z ∈ k '' I → z = g 0
+H0 : Plane ≃ₜ Plane
+hcarrier : ⇑H0 '' (g '' Icc 0 (1 / 3) ∪ k '' Icc 0 (1 / 3)) = CornerShear.horizontal
+hplus : H0 (g (1 / 3)) = Plane.mk 2 0
+hminus : H0 (k (1 / 3)) = Plane.mk (-2) 0
+hvy : (H0 (g 0)).ofLp 1 = 0
+hvc : |(H0 (g 0)).ofLp 0| < 2
+v : Plane := H0 (f (1 / 2))
+H : Plane ≃ₜ Plane := H0.trans (ActualStar.shiftVertex v)
+hv0 : v.ofLp 1 = 0
+hH0 : H (f (1 / 2)) = 0
+hplus' : H0 (f (7 / 12)) = Plane.mk 2 0
+hminus' : H0 (f (5 / 12)) = Plane.mk (-2) 0
+hI : Icc (5 / 12) (7 / 12) ⊆ I
+hline0 : ∀ t ∈ Icc (5 / 12) (7 / 12), (H0 (f t)).ofLp 1 = 0
+hline : ∀ t ∈ Icc (5 / 12) (7 / 12), (H (f t)).ofLp 1 = 0
+hHc : ContinuousOn (fun t => H (f t)) I
+hHi : InjOn (fun t => H (f t)) I
+hsc : ContinuousOn (fun t => (H (f t)).ofLp 0) (Icc (5 / 12) (7 / 12))
+hsi : InjOn (fun t => (H (f t)).ofLp 0) (Icc (5 / 12) (7 / 12))
+hends : (H (f (5 / 12))).ofLp 0 ≤ (H (f (7 / 12))).ofLp 0
+hmono : StrictMonoOn (fun t => (H (f t)).ofLp 0) (Icc (5 / 12) (7 / 12))
+b : (fun x => ℝ) 0 := (H (f (13 / 24))).ofLp 0
+hhalf : 1 / 2 ∈ Icc (5 / 12) (7 / 12)
+hend : 13 / 24 ∈ Icc (5 / 12) (7 / 12)
+hh : (fun t => (H (f t)).ofLp 0) (1 / 2) < (fun t => (H (f t)).ofLp 0) (13 / 24)
+⊢ 0 < b
+'Nanuq.Pendant.interior_terminal_chart' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

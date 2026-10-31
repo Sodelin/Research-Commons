@@ -1,0 +1,49 @@
+/workspace/tasks/lean-completion/actual-pendant/source/HorizontalArc.lean:17:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (f t).ofLp 1
+in the target expression
+  (f t).ofLp ((fun i => i) ⟨1, ⋯⟩) = (f u).ofLp ((fun i => i) ⟨1, ⋯⟩)
+
+case «1»
+f : ℝ → Plane
+a b : ℝ
+hi : InjOn f (Icc a b)
+hy : ∀ t ∈ Icc a b, (f t).ofLp 1 = 0
+t : ℝ
+ht : t ∈ Icc a b
+u : ℝ
+hu : u ∈ Icc a b
+he : (fun t => (f t).ofLp 0) t = (fun t => (f t).ofLp 0) u
+⊢ (f t).ofLp ((fun i => i) ⟨1, ⋯⟩) = (f u).ofLp ((fun i => i) ⟨1, ⋯⟩)
+/workspace/tasks/lean-completion/actual-pendant/source/HorizontalArc.lean:48:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (f t).ofLp 1
+in the target expression
+  (f t).ofLp ((fun i => i) ⟨1, ⋯⟩) = z.ofLp ((fun i => i) ⟨1, ⋯⟩)
+
+case mpr.«1»
+f : ℝ → Plane
+a b : ℝ
+hab : a ≤ b
+hc : ContinuousOn f (Icc a b)
+hi : InjOn f (Icc a b)
+hy : ∀ t ∈ Icc a b, (f t).ofLp 1 = 0
+hsc : ContinuousOn (fun t => (f t).ofLp 0) (Icc a b)
+hsi : InjOn (fun t => (f t).ofLp 0) (Icc a b)
+hscalar : (fun t => (f t).ofLp 0) '' Icc a b = segment ℝ ((f a).ofLp 0) ((f b).ofLp 0)
+hfa : f a = Plane.mk ((f a).ofLp 0) 0
+hfb : f b = Plane.mk ((f b).ofLp 0) 0
+z : Plane
+hzy : z.ofLp 1 = 0
+hzx : z.ofLp 0 ∈ segment ℝ ((f a).ofLp 0) ((f b).ofLp 0)
+t : ℝ
+ht : t ∈ Icc a b
+he : (fun t => (f t).ofLp 0) t = z.ofLp 0
+⊢ (f t).ofLp ((fun i => i) ⟨1, ⋯⟩) = z.ofLp ((fun i => i) ⟨1, ⋯⟩)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/workspace/tasks/lean-completion/actual-pendant/source/HorizontalArc.lean:59:4: warning: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

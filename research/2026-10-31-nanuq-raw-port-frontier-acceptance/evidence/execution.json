@@ -1,0 +1,136 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "provider-requalification-NanuqFaithfulSupplierDrawing",
+    "exit_code": 0,
+    "seconds": 2.938404239997908,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/nanuq-adapter-check/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/NanuqFaithfulSupplierDrawing.olean",
+      "/workspace/nanuq-adapter-check/source/NanuqFaithfulSupplierDrawing.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "provider-requalification-OriginalBlobSupplier",
+    "exit_code": 0,
+    "seconds": 2.598406099998101,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/nanuq-original-blob-supplier/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/OriginalBlobSupplier.olean",
+      "/workspace/nanuq-original-blob-supplier/source/OriginalBlobSupplier.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "RawPortFrontier",
+    "exit_code": 1,
+    "seconds": 3.607420879001438,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/raw-port/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/RawPortFrontier.olean",
+      "/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "batch_start": true,
+    "batch": 2
+  },
+  {
+    "step": "RawPortFrontier",
+    "exit_code": 0,
+    "seconds": 3.8431573790003313,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/raw-port/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/RawPortFrontier.olean",
+      "/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "RawPortCycle",
+    "exit_code": 1,
+    "seconds": 2.399942946001829,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/raw-port/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/RawPortCycle.olean",
+      "/workspace/tasks/lean-completion/raw-port/source/RawPortCycle.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "batch_start": true,
+    "batch": 3
+  },
+  {
+    "step": "RawPortCycle",
+    "exit_code": 0,
+    "seconds": 2.743295064996346,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/raw-port/source",
+      "-o",
+      "/workspace/tasks/lean-completion/raw-port/lib/RawPortCycle.olean",
+      "/workspace/tasks/lean-completion/raw-port/source/RawPortCycle.lean"
+    ],
+    "batch": 3
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.2998524729991914,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/raw-port/NamedAudit.lean"
+    ],
+    "batch": 3
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 8.027170472996659,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/raw-port/OwnedAudit.lean"
+    ],
+    "batch": 3
+  }
+]

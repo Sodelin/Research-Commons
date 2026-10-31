@@ -1,0 +1,20 @@
+/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean:71:41: warning: Try `simp at ht` instead of `simpa using ht`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean:79:41: warning: Try `simp at ht` instead of `simpa using ht`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean:89:10: error: typeclass instance problem is stuck
+  Preorder ?m.143
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Preorder` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+/workspace/tasks/lean-completion/raw-port/source/RawPortFrontier.lean:94:4: error: Type mismatch
+  le_rfl
+has type
+  ?m.217 ≤ ?m.217
+but is expected to have type
+  1 ∈ Iic 1
+'Nanuq.RawPortFrontier.awayBridge_in_raw_outer_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.RawPortFrontier.actual_raw_port_frontier' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

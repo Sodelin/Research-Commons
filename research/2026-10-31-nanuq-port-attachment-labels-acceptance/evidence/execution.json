@@ -1,0 +1,48 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "PortAttachmentLabels",
+    "exit_code": 0,
+    "seconds": 2.6931880379997892,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/port-labels/source",
+      "-o",
+      "/workspace/tasks/lean-completion/port-labels/lib/PortAttachmentLabels.olean",
+      "/workspace/tasks/lean-completion/port-labels/source/PortAttachmentLabels.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.0557038570041186,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/port-labels/NamedAudit.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 3.6478152179988683,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/port-labels/OwnedAudit.lean"
+    ],
+    "batch": 1
+  }
+]

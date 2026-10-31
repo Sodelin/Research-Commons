@@ -1,0 +1,48 @@
+@Nanuq.RawPortFrontier.awayBridge_in_raw_outer_component : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V]
+  (N : Nanuq.Source.RootedBinary V E X) (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob),
+  N.NonleafBlob b →
+    ∀ (face : G1OuterLabelledMultigraphCurves.TaxonOuterFace D ⇑N.leaf) (p : N.BlobPort b),
+      Nanuq.RawPortFrontier.awayBridge N D b p ⊆
+        connectedComponentIn (G1OuterLabelledMultigraphCurves.drawing (Nanuq.RawBlockSupplier.blobCurves D b))ᶜ
+          face.outside
+'Nanuq.RawPortFrontier.awayBridge_in_raw_outer_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RawPortFrontier.actual_raw_port_frontier : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob),
+  N.NonleafBlob b →
+    ∀ (face : G1OuterLabelledMultigraphCurves.TaxonOuterFace D ⇑N.leaf),
+      face.outside ∉ G1OuterLabelledMultigraphCurves.drawing (Nanuq.RawBlockSupplier.blobCurves D b) ∧
+        ¬Bornology.IsBounded
+              (connectedComponentIn (G1OuterLabelledMultigraphCurves.drawing (Nanuq.RawBlockSupplier.blobCurves D b))ᶜ
+                face.outside) ∧
+          ∀ (p : N.BlobPort b),
+            D.point ↑(N.originalPortInner b p) ∈
+              frontier
+                (connectedComponentIn (G1OuterLabelledMultigraphCurves.drawing (Nanuq.RawBlockSupplier.blobCurves D b))ᶜ
+                  face.outside)
+'Nanuq.RawPortFrontier.actual_raw_port_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RawPortFrontier.actual_raw_port_outer_cycle : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype V]
+  [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob),
+  N.NonleafBlob b →
+    ∀ (face : G1OuterLabelledMultigraphCurves.TaxonOuterFace D ⇑N.leaf),
+      (∃ a c d, a ≠ c ∧ a ≠ d ∧ c ≠ d) →
+        ∃ e u v es,
+          (NanuqFaithfulSupplierDrawing.graph (Nanuq.RawBlockSupplier.blobCurves D b)).IsFaceCycle
+              (NanuqFaithfulSupplierDrawing.curve (Nanuq.RawBlockSupplier.blobCurves D b))
+              (NanuqFaithfulSupplierDrawing.coordinates face.outside) e u v es ∧
+            Schoenflies.IsJordanCurve
+                (Graph.edgesCover (NanuqFaithfulSupplierDrawing.curve (Nanuq.RawBlockSupplier.blobCurves D b))
+                  (e :: es)) ∧
+              (NanuqFaithfulSupplierDrawing.graph (Nanuq.RawBlockSupplier.blobCurves D b)).face
+                    (NanuqFaithfulSupplierDrawing.curve (Nanuq.RawBlockSupplier.blobCurves D b))
+                    (NanuqFaithfulSupplierDrawing.coordinates face.outside) =
+                  Schoenflies.outside
+                    (Graph.edgesCover (NanuqFaithfulSupplierDrawing.curve (Nanuq.RawBlockSupplier.blobCurves D b))
+                      (e :: es)) ∧
+                ∀ (p : N.BlobPort b),
+                  NanuqFaithfulSupplierDrawing.coordinates (D.point ↑(N.originalPortInner b p)) ∈
+                    Graph.edgesCover (NanuqFaithfulSupplierDrawing.curve (Nanuq.RawBlockSupplier.blobCurves D b))
+                      (e :: es)
+'Nanuq.RawPortFrontier.actual_raw_port_outer_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]

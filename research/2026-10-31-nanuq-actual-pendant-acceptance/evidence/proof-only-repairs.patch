@@ -1,0 +1,209 @@
+--- frozen/ActualLeafOneExit.lean
++++ source/ActualLeafOneExit.lean
+@@ -65,15 +65,18 @@
+     change L ∪ (A ∪ segment ℝ (0:Plane) (Plane.mk b 0)) = _
+     rw [union_comm]
+   obtain ⟨hinter,hclosed,hu,hd,hreturn⟩ := terminal_one_exit hr hrb hC hAin' hLout hleft hright hcap
++  have hzero : (0:Plane) = Plane.mk 0 0 := by
++    ext i; fin_cases i <;> simp
+   have hqseg : Plane.mk r 0 ∈ segment ℝ (0:Plane) (Plane.mk b 0) := by
+-    change Plane.mk r 0 ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0)
++    rw [hzero]
+     rw [mem_segment_horiz,segment_eq_Icc hb.le]
+     exact ⟨rfl,hr.le,hrb.le⟩
+   obtain ⟨y,⟨t,ht,rfl⟩,htq⟩ := hseg.symm ▸ hqseg
+   have htm : (1/2:ℝ)<t := by
+     apply lt_of_le_of_ne ht.1
+     intro heq
+-    have hh : (0:Plane)=Plane.mk r 0 := by simpa [← heq,hmid] using htq
++    have hh : (0:Plane)=Plane.mk r 0 :=
++      hmid.symm.trans (by simpa only [← heq] using htq)
+     have := congrArg (fun z : Plane => z 0) hh
+     simp at this
+     linarith
+@@ -90,7 +93,7 @@
+     intro u hu
+     have hh : H (f u) ∈ segment ℝ (0:Plane) (Plane.mk b 0) :=
+       hseg ▸ ⟨f u,⟨u,hsub hu,rfl⟩,rfl⟩
+-    change H (f u) ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0) at hh
++    rw [hzero] at hh
+     exact (mem_segment_horiz.mp hh).1
+   have hsegcut : H '' (f '' Icc (1/2) t) = segment ℝ (0:Plane) (Plane.mk r 0) := by
+     rw [Set.image_image]
+--- frozen/HorizontalArc.lean
++++ source/HorizontalArc.lean
+@@ -14,7 +14,7 @@
+   ext i
+   fin_cases i
+   · exact he
+-  · rw [hy t ht,hy u hu]
++  · exact (hy t ht).trans (hy u hu).symm
+ 
+ theorem horizontal_arc_image {f : ℝ → Plane} {a b : ℝ} (hab : a ≤ b)
+     (hc : ContinuousOn f (Icc a b)) (hi : InjOn f (Icc a b))
+@@ -45,7 +45,7 @@
+     ext i
+     fin_cases i
+     · exact he
+-    · rw [hy t ht,hzy]
++    · exact (hy t ht).trans hzy.symm
+ 
+ /-- Change only the interval parameter, preserving the exact original edge image. -/
+ theorem half_parameter_image (f : ℝ → Plane) :
+--- frozen/InteriorTerminalChart.lean
++++ source/InteriorTerminalChart.lean
+@@ -44,9 +44,11 @@
+   have hv0 : v 1 = 0 := by simpa [v,g] using hvy
+   have hH0 : H (f (1/2)) = 0 := by change H0 (f (1/2))-v=0; simp [v]
+   have hplus' : H0 (f (7/12)) = Plane.mk 2 0 := by
+-    simpa [g] using hplus
++    norm_num [g] at hplus
++    exact hplus
+   have hminus' : H0 (f (5/12)) = Plane.mk (-2) 0 := by
+-    simpa [k] using hminus
++    norm_num [k] at hminus
++    exact hminus
+   have hI : Icc (5/12:ℝ) (7/12) ⊆ I := by
+     intro t ht; exact ⟨by linarith [ht.1],by linarith [ht.2]⟩
+   have hline0 : ∀ t ∈ Icc (5/12:ℝ) (7/12), (H0 (f t)) 1 = 0 := by
+@@ -77,8 +79,7 @@
+   have hends : H (f (5/12)) 0 ≤ H (f (7/12)) 0 := by
+     change (H0 (f (5/12))) 0-v 0 ≤ (H0 (f (7/12))) 0-v 0
+     rw [hminus',hplus']
+-    simp only [Plane.mk_zero]
+-    linarith
++    norm_num [Plane.mk] <;> linarith
+   have hmono : StrictMonoOn (fun t => H (f t) 0) (Icc (5/12) (7/12)) :=
+     ContinuousOn.strictMonoOn_of_injOn_Icc (by norm_num) hends hsc hsi
+   let b := H (f (13/24)) 0
+@@ -86,7 +87,9 @@
+   have hend : (13/24:ℝ) ∈ Icc (5/12) (7/12) := by norm_num
+   have hb : 0 < b := by
+     have hh := hmono hhalf hend (by norm_num : (1/2:ℝ)<13/24)
+-    simpa only [hH0] using hh
++    change H (f (1/2)) 0 < H (f (13/24)) 0 at hh
++    rw [hH0] at hh
++    simpa [b] using hh
+   have hHb : H (f (13/24)) = Plane.mk b 0 := by
+     ext i
+     fin_cases i
+@@ -105,7 +108,8 @@
+   have hRI : Icc (0:ℝ) (5/12) ⊆ I := Icc_subset_Icc le_rfl (by norm_num)
+   have hRc : IsCompact R :=
+     (isCompact_Icc.image_of_continuousOn (hc.mono hRI)).image H.continuous
+-  have hQc : IsCompact Q := isCompact_segment
++  have hQc : IsCompact Q := by
++    simpa only [Q] using (isCompact_segment (0:Plane) (Plane.mk b 0))
+   have hRQ : Disjoint R Q := by
+     rw [Set.disjoint_left]
+     rintro z ⟨x,⟨t,ht,rfl⟩,rfl⟩ hzQ
+@@ -121,14 +125,18 @@
+     have htcentral : t ∈ Icc (5/12:ℝ) (7/12) := ⟨hnear,by linarith [ht.2]⟩
+     refine ⟨hline t htcentral,?_⟩
+     have hh := hmono.monotoneOn htcentral hhalf ht.2
+-    simpa only [hH0] using hh
++    change H (f t) 0 ≤ H (f (1/2)) 0 at hh
++    rw [hH0] at hh
++    simpa using hh
+   · right
+     intro x hx
+     have htR : t ∈ Icc (0:ℝ) (5/12) := ⟨ht.1,(lt_of_not_ge hnear).le⟩
+     have haR : H (f t) ∈ R := ⟨f t,⟨t,htR,rfl⟩,rfl⟩
+     have hxQ : Plane.mk x 0 ∈ Q := by
+-      change Plane.mk x 0 ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0)
+-      rw [mem_segment_horiz,segment_eq_Icc hb.le]
++      dsimp only [Q]
++      have hz : (0:Plane) = Plane.mk 0 0 := by
++        ext i; fin_cases i <;> simp
++      rw [hz,mem_segment_horiz,segment_eq_Icc hb.le]
+       exact ⟨rfl,hx⟩
+     exact (lt_supDist_of_le_dist hρ (hsep _ haR _ hxQ)).le
+ 
+--- frozen/OneExit.lean
++++ source/OneExit.lean
+@@ -56,20 +56,24 @@
+   dsimp only
+   let Q := segment ℝ (0:Plane) (Plane.mk b 0)
+   let T := A ∪ Q ∪ L
++  have hzero : (0:Plane) = Plane.mk 0 0 := by
++    ext i; fin_cases i <;> simp
+   have hq : Plane.mk r 0 ∈ C := hcap 0 (by simpa using hr)
+   have hqQ : Plane.mk r 0 ∈ Q := by
+-    change Plane.mk r 0 ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0)
++    dsimp only [Q]
++    rw [hzero]
+     rw [mem_segment_horiz,segment_eq_Icc (by linarith : (0:ℝ)≤b)]
+     exact ⟨rfl,hr.le,hrb.le⟩
+   have hline : ∀ x ∈ Q, x 1=0 ∧ x 0 ∈ Icc 0 b := by
+     intro x hx
+-    change x ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0) at hx
++    dsimp only [Q] at hx
++    rw [hzero] at hx
+     rwa [mem_segment_horiz,segment_eq_Icc (by linarith : (0:ℝ)≤b)] at hx
+   have hsmall : ∀ x ∈ Q, x 0 < r → x ∈ inside C := by
+     intro x hx hxr
+     obtain ⟨hy,hxx⟩ := hline x hx
+     apply hleft
+-    change max |x 0| |x 1| < r
++    simp only [Plane.openSquare,Set.mem_setOf_eq,Plane.supDist,sub_zero,Plane.supNorm]
+     rw [hy,abs_zero,abs_of_nonneg hxx.1]
+     exact max_lt hxr hr
+   have hlarge : ∀ x ∈ Q, r < x 0 → x ∈ outside C := by
+@@ -116,7 +120,7 @@
+           have hxo := hlarge x hxQ (lt_of_not_ge hn)
+           exact hx.elim (fun hc => Set.disjoint_left.mp hnotCout hc hxo)
+             (fun hi => Set.disjoint_left.mp disjoint_inside_outside hi hxo)
+-        change x ∈ segment ℝ (Plane.mk 0 0) (Plane.mk r 0)
++        rw [hzero]
+         rw [mem_segment_horiz,segment_eq_Icc hr.le]
+         exact ⟨hy,hxx.1,hxr⟩
+       · exact False.elim (hx.elim (fun hc => Set.disjoint_left.mp hnotCout hc (hL hxL))
+@@ -125,10 +129,11 @@
+       rcases hx with hxA | hxR
+       · exact ⟨Or.inr (hA hxA),Or.inl (Or.inl hxA)⟩
+       · have hrcoords : x 1=0 ∧ x 0 ∈ Icc 0 r := by
+-          change x ∈ segment ℝ (Plane.mk 0 0) (Plane.mk r 0) at hxR
++          rw [hzero] at hxR
+           rwa [mem_segment_horiz,segment_eq_Icc hr.le] at hxR
+         have hxQ : x∈Q := by
+-          change x ∈ segment ℝ (Plane.mk 0 0) (Plane.mk b 0)
++          dsimp only [Q]
++          rw [hzero]
+           rw [mem_segment_horiz,segment_eq_Icc (by linarith : (0:ℝ)≤b)]
+           exact ⟨hrcoords.1,hrcoords.2.1,hrcoords.2.2.trans hrb.le⟩
+         refine ⟨?_,Or.inl (Or.inr hxQ)⟩
+--- frozen/OriginalPendant.lean
++++ source/OriginalPendant.lean
+@@ -29,7 +29,7 @@
+       (N.leaf_degrees x).2
+     have hmem : g ∈ Finset.univ.filter (fun e : E => N.graph.source e=N.leaf x) := by simp [hgs]
+     rw [Finset.card_eq_zero.mp hzero] at hmem
+-    exact False.elim (Finset.not_mem_empty _ hmem)
++    simp at hmem
+   · have hmem : g ∈ Finset.univ.filter (fun e : E => N.graph.target e=N.leaf x) := by simp [hgt]
+     rw [he] at hmem
+     exact Finset.mem_singleton.mp hmem
+--- frozen/TerminalCap.lean
++++ source/TerminalCap.lean
+@@ -65,8 +65,8 @@
+     rintro x ⟨t,ht,rfl⟩
+     apply hleft
+     have htpos : 0 < t := by linarith [ht.1]
+-    change max |t| |y| < r
+-    exact max_lt (by simpa only [abs_of_pos htpos] using ht.2) hy
++    simpa [f,Plane.openSquare,Plane.supDist,Plane.supNorm] using
++      (max_lt (show |t| < r by simpa only [abs_of_pos htpos] using ht.2) hy)
+   have hlcl : r ∈ closure (Ioo (r/2) r) := by
+     rw [closure_Ioo (by linarith : r/2 ≠ r)]
+     exact ⟨by linarith,le_rfl⟩
+@@ -118,7 +118,9 @@
+     exact strip_misses_square hterm hr hsmall ha hx
+       ((Plane.isClosed_closedSquare _ _).frontier_subset hxj)
+   have hbS : Plane.mk b 0 ∈ rightStrip r b := by
+-    exact ⟨hrb,le_rfl,by linarith,hr⟩
++    simpa [rightStrip] using
++      (show r < b ∧ b ≤ b ∧ -r < (0:ℝ) ∧ (0:ℝ) < r from
++        ⟨hrb,le_rfl,by linarith,hr⟩)
+   have hScomp : rightStrip r b ⊆ connectedComponentIn Cᶜ (Plane.mk b 0) :=
+     (rightStrip_preconnected r b).subset_connectedComponentIn hbS hSC
+   have hright : rightStrip r b ⊆ outside C :=

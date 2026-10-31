@@ -1,0 +1,14 @@
+[
+  {
+    "name": "two_raw_incident_ids",
+    "header": "theorem two_raw_incident_ids\n    (hnt : ∃ u v : BlobVertex N.graph b, u ≠ v) (v : BlobVertex N.graph b) :\n    ∃ e f : BlobEdge N.graph b, e ≠ f ∧\n      (N.graph.source e.val=v.val ∨ N.graph.target e.val=v.val) ∧\n      (N.graph.source f.val=v.val ∨ N.graph.target f.val=v.val)"
+  },
+  {
+    "name": "port_id_incident",
+    "header": "theorem port_id_incident (p : N.BlobPort b) :\n    N.graph.source p.val.val=(N.originalPortInner b p).val ∨\n      N.graph.target p.val.val=(N.originalPortInner b p).val"
+  },
+  {
+    "name": "original_port_inner_injective",
+    "header": "theorem original_port_inner_injective\n    (hnt : ∃ u v : BlobVertex N.graph b, u ≠ v) :\n    Function.Injective (N.originalPortInner b)"
+  }
+]
