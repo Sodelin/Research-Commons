@@ -1,0 +1,102 @@
+@ResearchCommons.MSCI.JC69ActivatedPrefix.actual_time_copy_location.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (h : NNReal)
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+  Membership.mem.{max (max u_1 u_2) u_3, max (max u_1 u_2) u_3}
+      (PMF.support.{max (max u_1 u_2) u_3}
+        (UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} N r h s))
+      d →
+    ∀ (x : Copy),
+      Eq.{max (u_1 + 1) (u_2 + 1)}
+        (GProgram.SourceForest.copyLocation.{u_3, u_1, u_2}
+          (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} d) x)
+        (GProgram.SourceForest.copyLocation.{u_3, u_1, u_2}
+          (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} s) x)
+'ResearchCommons.MSCI.JC69ActivatedPrefix.actual_time_copy_location' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69ActivatedPrefix.actual_boundary_node_upper.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) {sample : Copy → X}
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (a u : ℝ),
+  LE.le.{0} a u →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample),
+      ResearchCommons.MSCI.JC69ActivatedPrefix.NodeUpper.{u_1, u_2, u_3, u_4} N C u s →
+        ∀ {d : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample},
+          Membership.mem.{max (max u_1 u_2) u_3, max (max u_1 u_2) u_3}
+              (PMF.support.{max (max u_1 u_2) u_3}
+                (UnifiedLean.Source.SourceProgramTransport.sourceProgram.{u_1, u_2, u_3, u_4} N r
+                  (UnifiedLean.Source.SourceCalendarCompiler.boundaryOperations.{u_1, u_2, u_4} N C H gamma common a)
+                  s))
+              d →
+            ResearchCommons.MSCI.JC69ActivatedPrefix.NodeUpper.{u_1, u_2, u_3, u_4} N C u d
+'ResearchCommons.MSCI.JC69ActivatedPrefix.actual_boundary_node_upper' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_support.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X)
+  (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (k : ℕ) {d : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample},
+      Membership.mem.{max (max u_1 u_2) u_3, max (max u_1 u_2) u_3}
+          (PMF.support.{max (max u_1 u_2) u_3}
+            (UnifiedLean.Source.SourceProgramTransport.sourceProgram.{u_1, u_2, u_3, u_4} N r
+              (ResearchCommons.MSCI.JC69ActivatedPrefix.initializedPrefix.{u_1, u_2, u_4} N C H gamma common k)
+              (UnifiedLean.Source.SourceInitializedCalendar.initialCode.{u_1, u_2, u_3, u_4} N sample register)))
+          d →
+        UnifiedLean.Source.SourceCalendarPhysicalSupport.AfterNodes.{u_1, u_2, u_3, u_4} N C
+            (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k)
+            (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} d) ∧
+          ResearchCommons.MSCI.JC69ActivatedPrefix.NodeUpper.{u_1, u_2, u_3, u_4} N C
+            (max.{0} c (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k)) d
+'ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_support' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_no_nodes.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq.{u_1 + 1} V]
+  [inst_1 : DecidableEq.{u_2 + 1} E] [inst_2 : Fintype.{u_1} V] [inst_3 : Fintype.{u_2} E] [inst_4 : Fintype.{u_4} X]
+  [inst_5 : DecidableEq.{u_3 + 1} Copy] [inst_6 : Fintype.{u_3} Copy]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X)
+  (C : GProgram.G5.Calendar.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_4} N)) (sample : Copy → X)
+  (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry.{u_1, u_2, u_4} N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_4} N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (c : ℝ),
+  (∀ (x : Copy),
+      Eq.{1} (GProgram.G5.Calendar.age.{u_1, u_2} C ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_4} N) (sample x)))
+        c) →
+    ∀ (k : ℕ),
+      LE.le.{0} c (ResearchCommons.MSCI.JC69ActivatedPrefix.prefixDate.{u_1, u_2, u_4} N C k) →
+        ∀ {d : UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample},
+          Membership.mem.{max (max u_1 u_2) u_3, max (max u_1 u_2) u_3}
+              (PMF.support.{max (max u_1 u_2) u_3}
+                (UnifiedLean.Source.SourceProgramTransport.sourceProgram.{u_1, u_2, u_3, u_4} N r
+                  (ResearchCommons.MSCI.JC69ActivatedPrefix.initializedPrefix.{u_1, u_2, u_4} N C H gamma common k)
+                  (UnifiedLean.Source.SourceInitializedCalendar.initialCode.{u_1, u_2, u_3, u_4} N sample register)))
+              d →
+            ∀ (x : Copy) (v : V),
+              Ne.{max (u_1 + 1) (u_2 + 1)}
+                (GProgram.SourceForest.copyLocation.{u_3, u_1, u_2}
+                  (UnifiedLean.Source.UniformizedSourceStep.state.{u_1, u_2, u_3, u_4} d) x)
+                (GProgram.SourceForest.Location.node.{u_1, u_2} v)
+'ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_no_nodes' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

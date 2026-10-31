@@ -1,0 +1,10 @@
+import ResearchCommons.MSCI.JC69ActivatedPrefix
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69ActivatedPrefix.actual_time_copy_location
+#print axioms ResearchCommons.MSCI.JC69ActivatedPrefix.actual_time_copy_location
+#check @ResearchCommons.MSCI.JC69ActivatedPrefix.actual_boundary_node_upper
+#print axioms ResearchCommons.MSCI.JC69ActivatedPrefix.actual_boundary_node_upper
+#check @ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_support
+#print axioms ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_support
+#check @ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_no_nodes
+#print axioms ResearchCommons.MSCI.JC69ActivatedPrefix.actual_initialized_prefix_no_nodes
