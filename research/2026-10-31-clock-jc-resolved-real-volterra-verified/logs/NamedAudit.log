@@ -1,0 +1,110 @@
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_measurable_time : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  Measurable fun t => ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n s t target
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_measurable_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_weight_le_one : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ),
+  0 ≤ t →
+    ∀ (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+      ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n s t target ≤ 1
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_weight_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_density_renewal : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q (n + 1) s (↑t) target =
+    (ENNReal.ofReal
+          (Real.exp
+            (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                  ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+                ↑t))) *
+        if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0) +
+      ∑ p,
+        ∫⁻ (u : ℝ) in Set.Icc 0 ↑t,
+          ResearchCommons.MSCI.JC69ResolvedRealVolterra.branchDensity N r L q n s (↑t) target p u
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_density_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_branch_integrable : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E)
+  (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s),
+  MeasureTheory.IntegrableOn
+    (fun u =>
+      UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p *
+          Real.exp
+            (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                  ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+                u)) *
+        (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n
+            (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) (↑t - u) target).toReal)
+    (Set.Icc 0 ↑t) MeasureTheory.volume
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_branch_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_zero : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (t : NNReal) (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q 0 s (↑t) target).toReal =
+    Real.exp
+        (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+              ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+            ↑t)) *
+      if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_renewal : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q (n + 1) s (↑t) target).toReal =
+    (Real.exp
+          (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+              ↑t)) *
+        if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0) +
+      ∑ p,
+        ∫ (u : ℝ) in Set.Icc 0 ↑t,
+          UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p *
+              Real.exp
+                (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                      ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+                    u)) *
+            (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n
+                (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) (↑t - u) target).toReal
+'ResearchCommons.MSCI.JC69ResolvedRealVolterra.actual_resolved_real_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

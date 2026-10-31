@@ -1,0 +1,43 @@
+--- frozen/JC69ResolvedRealVolterra.lean
++++ source/JC69ResolvedRealVolterra.lean
+@@ -49,7 +49,7 @@
+     · exact measurable_const
+   have he : Measurable (fun d : Code N sample =>
+       if observeCode N d = target then (1:ℝ≥0∞) else 0) := measurable_of_countable _
+-  have hx := he.comp ((trace_endpoint_measurable N n s).comp htrace.snd)
++  have hx := he.comp ((GProgram.G2.ActualCalendarTrace.trace_endpoint_measurable N n s).comp htrace.snd)
+   have hw : Measurable (fun z : ℝ × (Choice N s → ℝ) =>
+       resolvedTraceWeight N L q n s z.1 target (literalMarkedTrace N n z.1 s z.2)) := hl.mul hx
+   have hi := hw.lintegral_prod_right' (ν := currentPairClockMeasure N r s)
+@@ -118,7 +118,8 @@
+     (r : PositivePairRates E) (L : ℕ) (q : Fin L → Copy → Base)
+     (n : ℕ) (s : Code N sample) (t : ℝ) (target : BlockPopulationObservation Copy V E)
+     (p : Choice N s) : Measurable (branchDensity N r L q n s t target p) := by
+-  have hf := (actual_resolved_measurable_time N r L q n (stepDestination N s (some p)) target).comp
++  have hf : Measurable (fun u : ℝ => actualResolvedWeight N r L q n
++      (stepDestination N s (some p)) (t-u) target) := (actual_resolved_measurable_time N r L q n (stepDestination N s (some p)) target).comp
+     (measurable_const.sub measurable_id)
+   exact (by fun_prop : Measurable (fun u : ℝ => ENNReal.ofReal
+     (choiceRate N r s p * Real.exp (-((totalRate N r s+locusKill N L q s)*u))))).mul hf
+@@ -133,10 +134,10 @@
+   have hR := actual_resolved_density_renewal N r L q n s t target
+   calc
+     _ ≤ ∑ p : Choice N s, ∫⁻ u in Icc (0:ℝ) (t:ℝ), branchDensity N r L q n s t target p u :=
+-      Finset.single_le_sum (fun _ _ => zero_le _) (Finset.mem_univ p)
++      Finset.single_le_sum (fun _ _ => bot_le) (Finset.mem_univ p)
+     _ ≤ actualResolvedWeight N r L q (n+1) s t target := by
+       rw [hR]
+-      exact le_add_of_nonneg_left (zero_le _)
++      exact le_add_of_nonneg_left bot_le
+     _ ≤ 1 := actual_resolved_weight_le_one N r L q (n+1) s t t.property target
+ 
+ /-- Real signed-convolution linearity is now legitimate for each actual
+@@ -154,7 +155,7 @@
+   have hi := integrable_toReal_of_lintegral_ne_top
+     (μ := volume.restrict (Icc (0:ℝ) (t:ℝ)))
+     (branch_measurable N r L q n s t target p).aemeasurable hfin
+-  simpa only [branchDensity,ENNReal.toReal_mul,
++  simpa only [IntegrableOn,branchDensity,ENNReal.toReal_mul,
+     ENNReal.toReal_ofReal (mul_nonneg (actual_choiceRate_positive N r s p).le (Real.exp_nonneg _))] using hi
+ 
+ lemma branch_toReal_integral (N : RootedBinary V E X) {sample : Copy → X}
