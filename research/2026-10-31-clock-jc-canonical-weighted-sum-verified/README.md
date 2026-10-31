@@ -1,0 +1,19 @@
+# Actual canonical weighted-source sum and nE bound — scoped compiled successor
+
+Author: dot (OpenAI), 31 October 2026. Repaired source SHA256 a6214f99fd428324946310de0205573fdb30fb64567811b48429026993160614; original49da8497b26b256583b335843eea6a417e6bf6b75826d4465723b37c07f081d4 at6ff9596f6a5b9c4b9a4cda1b1dd1ca50db90fc5c. Historical UNCOMPILED comment and two failed source batches are preserved, superseded only by this scoped successor.
+
+The five named checks supply a genuine actual Choice ≃ CanonicalChoice × Bool, original SAME-target canonical real renewal, the actual canonical weighted path sum, its constructed finite exponential sum, and cardinal≤nE for the concrete horizon-independent Sigma(path,term) index. Here n=card ORIGINAL Copy and E=Σ[k=0..n−1]choose(n,2)^k. Replicated sites do not change n. One factor2 occurs per JUMP to combine original half-rates; stop/no-event has factor1. Actual destination, finite fuel, shared site law and final endpoint remain unchanged. Source identification uses nonnegative horizons, and real integrability was derived before signed coefficients. The index may contain zero endpoint coefficients and repeated rates; no minimality is claimed.
+
+## Evidence and definition preservation
+
+All18 thin-manifest hashes/lengths, exact frozen source and patch reconstruction were independently checked. All17 full declaration headers are unchanged. IMPORTANT: choiceOrientationEquiv has repaired left_inv/right_inv PROOF terms; its toFun/invFun are byte-identical. Every other def/abbrev body is byte-identical. This is not a claim that the entire equivalence definition has identical source bytes. Additional proof repairs normalize the zero-fuel exponential, apply existing stop/jump formulas and close a cardinality definitional equality.
+
+All five complete named types and exact standard axiom names were read. Universe-aware printing gives propext, Classical.choice.{u} and Quot.sound.{u}; a local parser initially rejected the pretty-print suffix and was corrected to check exactly those standard names, not broaden the axiom allowlist. Source batches1–2 exited1; source batch3, NamedAudit and OwnedAudit exited0. The reported189-module audit has4477 declarations/2935 theorems and zero owned/nonstandard axioms or missing modules. Raw audit SHA256 54d2de0045b227ae5b07f5245f9ed9f00216ded9591533482e81c2b3f3bf670b remains CLOUD-REPORTED / CLOUD-LOCAL ONLY, not independently replayed here. Provider summary reports188 qualified existing modules and zero recompilations; source/object revalidation is attributed to the compiler, not a fresh dependency rebuild.
+
+Thin REQUEST matches immutable source/commit/named targets; the complete source-hash BUILD-REQUEST remains at the candidate publication. Source/object and original/public hashes appear in SOURCE-BINDING.json. Only local build/compiler path prefixes are sanitized in diagnostics/execution records. No raw provider payload, compiled object or administrative control data is included.
+
+## Reproduction and limit
+
+Use exact189-module BUILD-REQUEST.json at candidate6ff9596f6a5b9c4b9a4cda1b1dd1ca50db90fc5c, research/2026-10-31-clock-jc-canonical-weighted-sum-candidate. Replace only this module with the repaired source; Lean4.33.1 commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Mathlib0df444a360eaa60ab8c11dca51a86af692955474; run NamedAudit with kernel checking enabled and preserve qualified provider source/object provenance.
+
+This closes a constructed SINGLE-EPOCH finite-fuel original-source representation with nE term bound, not the full calendar/window theorem. Actual root ratio-path coefficients, supported state/boundary/whole-bank composition, contemporaneous initialization, uniform count-vector index/affine adapters, indexed denominator degree and complete M/finite-window/reconstruction remain separate. No final likelihood expansion is assumed as an input. HOLD_FULL_LEAN_PROOF_PENDING; no master registry upgrade or preprint deposit.

@@ -1,0 +1,45 @@
+--- frozen/JC69CanonicalWeightedSum.lean
++++ source/JC69CanonicalWeightedSum.lean
+@@ -26,10 +26,10 @@
+     else (⟨reverseChoice N s p,(canonical_reverse_iff e N s p).mpr h⟩,false)
+   invFun z := if z.2 then z.1.val else reverseChoice N s z.1.val
+   left_inv p := by
+-    by_cases h : IsCanonical e N s p <;> simp [h,reverseChoice_involutive]
++    by_cases h : IsCanonical e N s p <;> simp [h,reverseChoice_involutive N s p]
+   right_inv z := by
+     rcases z with ⟨⟨p,hp⟩,b⟩
+-    cases b <;> simp [hp,canonical_reverse_iff,reverseChoice_involutive]
++    cases b <;> simp [hp,canonical_reverse_iff,reverseChoice_involutive N s p]
+ 
+ lemma sum_choice_orientations {A : Type*} [AddCommMonoid A] {n : ℕ}
+     (e : Copy ≃ Fin n) (N : RootedBinary V E X) {sample : Copy → X}
+@@ -152,15 +152,17 @@
+         (if observeCode N (pathEnd N fuel s h.val) = target then 1 else 0) := by
+   induction fuel generalizing s T with
+   | zero =>
+-      simpa [CanonicalPath,CanonicalPathPred,OrderedPath,canonicalMass,pathMass,pathLength,pathEnd,holdingRate,neg_mul]
++      simpa [CanonicalPath,CanonicalPathPred,OrderedPath,canonicalMass,pathMass,pathLength,pathEnd,holdingRate,neg_mul,neg_add,add_mul,add_comm]
+         using actual_resolved_real_zero N r L q s T target
+   | succ fuel ih =>
+       rw [actual_resolved_canonical_real_renewal e,sum_canonical_path_succ]
+       apply congrArg₂ (· + ·)
+-      · simp only [canonicalMass_stop,canonicalStop,pathEnd]
++      · rw [canonicalMass_stop]
++        rfl
+       · apply Finset.sum_congr rfl
+         intro p _
+-        simp only [canonicalMass_jump,canonicalJump,pathEnd]
++        simp_rw [canonicalMass_jump]
++        simp only [canonicalJump,pathEnd]
+         erw [integral_Icc_eq_integral_Ioc,← intervalIntegral.integral_of_le
+           (f := fun u : ℝ => pairRate r p.val.1 * Real.exp (-holdingRate N r L q s*u) *
+             (actualResolvedWeight N r L q fuel (stepDestination N s (some p.val)) ((T:ℝ)-u) target).toReal)
+@@ -251,7 +253,7 @@
+     (∑ h : CanonicalPath e N fuel s, (pathTerms N r L q fuel s h.val).size) ≤
+         ∑ _h : CanonicalPath e N fuel s, Fintype.card Copy :=
+       Finset.sum_le_sum (fun h _ => pathTerms_size_le_original_copies N r L q fuel s h.val)
+-    _ = Fintype.card (CanonicalPath e N fuel s) * Fintype.card Copy := by simp
++    _ = Fintype.card (CanonicalPath e N fuel s) * Fintype.card Copy := by simp; rfl
+     _ ≤ (∑ k ∈ Finset.range (Fintype.card Copy), ((Fintype.card Copy).choose 2)^k) * Fintype.card Copy :=
+       Nat.mul_le_mul_right _ (actual_canonical_path_card_le e N fuel s)
+     _ = _ := Nat.mul_comm _ _
