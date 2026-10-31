@@ -1,0 +1,8 @@
+import OriginalSimpleGallDetour
+set_option pp.universes true
+#check @Nanuq.SimpleGallAdmission.original_walk_ureach
+#print axioms Nanuq.SimpleGallAdmission.original_walk_ureach
+#check @Nanuq.SimpleGallAdmission.incoming_cycle_detour
+#print axioms Nanuq.SimpleGallAdmission.incoming_cycle_detour
+#check @Nanuq.SimpleGallAdmission.rooted_simple_galls_to_detour
+#print axioms Nanuq.SimpleGallAdmission.rooted_simple_galls_to_detour
