@@ -2085,15 +2085,31 @@
       "claim_id": "CB-SEQ-001",
       "dependencies": [],
       "lean": {
-        "declarations": [],
-        "module": null,
-        "state": "pending_binding"
+        "state": "verified_binding",
+        "module": "ResearchCommons.Claims.SequenceFirstOccurrence",
+        "declarations": [
+          "ResearchCommons.Claims.SequenceFirstOccurrence.plus_first_occurrence",
+          "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_first_occurrence",
+          "ResearchCommons.Claims.SequenceFirstOccurrence.odd_minus_first_occurrence",
+          "ResearchCommons.Claims.SequenceFirstOccurrence.plus_all_starts",
+          "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_all_starts",
+          "ResearchCommons.Claims.SequenceFirstOccurrence.canonical_three_families"
+        ],
+        "coverage": "exact_canonical_endpoint_exports",
+        "scope": "Three guarded A/i formula families and retained all-start classifications over original definitions. Existing proofs; noncomputable theorem interface."
       },
       "obligation": "None for this exact proved claim. See separate_downstream_or_validation_work; it must not reopen the proof.",
       "reuse_rank": 56,
       "rust": {
         "module": null,
-        "state": "pending_binding"
+        "state": "pending_binding",
+        "proof_interface": {
+          "module": "research_commons_package::exports",
+          "command": "check-exports --target ResearchCommons.Claims.SequenceFirstOccurrence --claim CB-SEQ-001",
+          "state": "verified_named_type_and_module_interface",
+          "record": "integration/sequence-first-occurrence-verification.json",
+          "scope": "Rust-to-Lean named owner/type checker, not an executable first-occurrence algorithm. Native runtime binding remains pending."
+        }
       },
       "scope_owner": "canonical_registry",
       "source_artifacts": [
@@ -2103,7 +2119,15 @@
           "url": "https://github.com/Sodelin/Research-Commons/blob/2468dc1151c5e9a9dd870024a4fbeff8d4910e4e/research/2026-10-04-dot-thue-morse-first-occurrence-lean-0550z/package/README.md"
         }
       ],
-      "verification": []
+      "verification": [
+        {
+          "kind": "parent_reviewed_exact_owner_type_export_join",
+          "module_source_sha256": "343cefcb6ce7c20d611dacc99113b926c92acfdb83f523ea165d3db807e4a211",
+          "record": "integration/sequence-first-occurrence-verification.json",
+          "whole_claim_formal_binding": true,
+          "scope": "Exact original claim guards and supplier definitions; no newly checked numeric exception theorem or native first-occurrence implementation."
+        }
+      ]
     },
     {
       "claim_id": "CB-SEQ-002",
@@ -3826,7 +3850,7 @@
         ],
         "whole_claim_formal_binding": false,
         "current_formal_acceptance": true,
-        "scope": "OLD strict-half RAW-noise theorem partial formalization: actual raw DISTINCT-resolution source under explicit at-most-two set condition derives integer original2n-4 matrix; generic strict nearest-integer and SAME actual-source real observation recovery. No whole admitted plane-source→two-resolution/correct-circle/exact support/admitted sharpness/estimator/native-refinement theorem.",
+        "scope": "OLD strict-half RAW-noise theorem partial formalization: actual raw DISTINCT-resolution source under explicit at-most-two set condition derives integer original2n-4 matrix; generic strict nearest-integer and SAME actual-source real observation recovery. No whole admitted plane-source\u2192two-resolution/correct-circle/exact support/admitted sharpness/estimator/native-refinement theorem.",
         "preflight": "integration/nanuq-sharp-noise-source-reuse.json",
         "verification": "integration/nanuq-noise-component-verification-v2.json"
       },
@@ -4416,7 +4440,7 @@
       "dependencies": [
         {
           "claim_id": "CB-SEQ-001",
-          "detail": "Both concern Thue–Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d).",
+          "detail": "Both concern Thue\u2013Morse and alignment, but matching-path height L(v) is not maximum monochromatic arithmetic-progression length A(d).",
           "relation_type": "same_principle"
         }
       ],
@@ -4704,7 +4728,7 @@
       "dependencies": [
         {
           "claim_id": "CB-SEQ-010",
-          "detail": "Both compare factor complexity, but their families differ: Thue–Morse is maximal within the selected-digit family, not within all grouped tau_n words.",
+          "detail": "Both compare factor complexity, but their families differ: Thue\u2013Morse is maximal within the selected-digit family, not within all grouped tau_n words.",
           "relation_type": "same_principle"
         }
       ],
@@ -4762,7 +4786,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
-          "label": "Complete fixed Thue–Morse valuation proof",
+          "label": "Complete fixed Thue\u2013Morse valuation proof",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Collatz-Conjecture-Work/blob/026aa4ad4be6453a005ab950b160a9f2204c5271/proof-search/disproof/TM_Prefix_Return_Exclusion_2026-09-05.md"
         },
@@ -4980,7 +5004,7 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/verification/combined-receipt.json"
         },
         {
-          "label": "Related Commons fixed-count N≥2 result, different source contract",
+          "label": "Related Commons fixed-count N\u22652 result, different source contract",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Research-Commons/blob/27b143c73a4ac272b560b2974d83ff96df738531/research/2026-09-30-stepchange-scope/PROOF.md"
         }
@@ -5015,7 +5039,7 @@
       "scope_owner": "canonical_registry",
       "source_artifacts": [
         {
-          "label": "Completed R1–R6 statement and exact exclusions",
+          "label": "Completed R1\u2013R6 statement and exact exclusions",
           "role": "proof_or_status",
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/RESULT-AND-SCOPE.md"
         },
@@ -5662,7 +5686,7 @@
           "WongPredictiveBridge.extracted_is_compress": "WongPredictiveBridge",
           "WongPredictiveBridge.no_global_iap_decoder": "WongPredictiveBridge"
         },
-        "scope": "ACCEPTED complete36-source/54-name joint context with2051 declarations/1422 theorems; ALL exact original types/owners/axioms/source hashes reviewed. OLD arbitrary-carrier total deterministic controlled quotient: onto fibre-compatible encodings, unique reduced update, finite action-word/output coarsest factorization, actual global depth fixed-point certificate and factored-controller all-time preservation. Arbitrary finite parity records/four reachable classes/no fixed suffix decoder; destructive original-sample graph restriction and SAME fixed-locus finite-gARG adapter. Exact initial/output/action/controller hypotheses remain. Not automatic adequate-state discovery, n−m algorithmic termination, biological memory, stochastic/general language evolution or full marked ARG preservation. Original opposite-completion consequence reuses CB-GENOME-001.",
+        "scope": "ACCEPTED complete36-source/54-name joint context with2051 declarations/1422 theorems; ALL exact original types/owners/axioms/source hashes reviewed. OLD arbitrary-carrier total deterministic controlled quotient: onto fibre-compatible encodings, unique reduced update, finite action-word/output coarsest factorization, actual global depth fixed-point certificate and factored-controller all-time preservation. Arbitrary finite parity records/four reachable classes/no fixed suffix decoder; destructive original-sample graph restriction and SAME fixed-locus finite-gARG adapter. Exact initial/output/action/controller hypotheses remain. Not automatic adequate-state discovery, n\u2212m algorithmic termination, biological memory, stochastic/general language evolution or full marked ARG preservation. Original opposite-completion consequence reuses CB-GENOME-001.",
         "whole_claim_formal_binding": true,
         "preflight": "integration/MEMORY-DETERMINISTIC-REUSE-PREFLIGHT.md",
         "verification": "integration/memory-deterministic-component-verification.json"
@@ -5730,7 +5754,7 @@
           "record": "integration/memory-deterministic-component-verification.json",
           "whole_claim_formal_binding": true,
           "Rust_state_automatically_promoted": false,
-          "scope": "ACCEPTED complete36-source/54-name joint context with2051 declarations/1422 theorems; ALL exact original types/owners/axioms/source hashes reviewed. OLD arbitrary-carrier total deterministic controlled quotient: onto fibre-compatible encodings, unique reduced update, finite action-word/output coarsest factorization, actual global depth fixed-point certificate and factored-controller all-time preservation. Arbitrary finite parity records/four reachable classes/no fixed suffix decoder; destructive original-sample graph restriction and SAME fixed-locus finite-gARG adapter. Exact initial/output/action/controller hypotheses remain. Not automatic adequate-state discovery, n−m algorithmic termination, biological memory, stochastic/general language evolution or full marked ARG preservation. Original opposite-completion consequence reuses CB-GENOME-001."
+          "scope": "ACCEPTED complete36-source/54-name joint context with2051 declarations/1422 theorems; ALL exact original types/owners/axioms/source hashes reviewed. OLD arbitrary-carrier total deterministic controlled quotient: onto fibre-compatible encodings, unique reduced update, finite action-word/output coarsest factorization, actual global depth fixed-point certificate and factored-controller all-time preservation. Arbitrary finite parity records/four reachable classes/no fixed suffix decoder; destructive original-sample graph restriction and SAME fixed-locus finite-gARG adapter. Exact initial/output/action/controller hypotheses remain. Not automatic adequate-state discovery, n\u2212m algorithmic termination, biological memory, stochastic/general language evolution or full marked ARG preservation. Original opposite-completion consequence reuses CB-GENOME-001."
         }
       ],
       "obligation": "None for this exact completed mathematical claim. Formal, empirical and broader-model extensions are tracked separately."
@@ -6035,7 +6059,7 @@
       "dependencies": [
         {
           "claim_id": "CB-SEQ-004",
-          "detail": "Both use the original target-dependent P_s construction. Exact all-start Thue–Morse heights do not supply the general fixed-gender cap threshold, and the two statements are not aliases.",
+          "detail": "Both use the original target-dependent P_s construction. Exact all-start Thue\u2013Morse heights do not supply the general fixed-gender cap threshold, and the two statements are not aliases.",
           "relation_type": "same_principle"
         }
       ],
@@ -6346,7 +6370,7 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md"
         },
         {
-          "label": "Alexander's original §6 questions, version 2",
+          "label": "Alexander's original \u00a76 questions, version 2",
           "role": "prior_work",
           "url": "https://arxiv.org/html/1212.0186v2#S6"
         }
@@ -6367,7 +6391,7 @@
         },
         {
           "claim_id": "CB-SEQ-004",
-          "detail": "Concrete Thue–Morse height formulas and this generic certificate/core theorem concern related matching states but are not the same theorem or a claimed new dependency.",
+          "detail": "Concrete Thue\u2013Morse height formulas and this generic certificate/core theorem concern related matching states but are not the same theorem or a claimed new dependency.",
           "relation_type": "same_principle"
         }
       ],
@@ -6570,7 +6594,7 @@
           "url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/publication-audit-2026-09-29/alexander/CLAIM-EVIDENCE.md"
         },
         {
-          "label": "Alexander's 2026 §6 non-common-ancestor question",
+          "label": "Alexander's 2026 \u00a76 non-common-ancestor question",
           "role": "prior_work",
           "url": "https://arxiv.org/html/2602.05274v1#S6"
         }

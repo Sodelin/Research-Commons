@@ -1,3 +1,4 @@
+import ResearchCommons.Claims.SequenceFirstOccurrence
 import ResearchCommons.Claims.CM
 import ResearchCommons.Integration.PositiveMoments
 import ResearchCommons.Integration.WordCache

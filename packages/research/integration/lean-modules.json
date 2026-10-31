@@ -5997,10 +5997,24 @@
       }
     },
     {
+      "module": "ResearchCommons.Claims.SequenceFirstOccurrence",
+      "path": "lean/Compatibility/ResearchCommons.Claims.SequenceFirstOccurrence.lean",
+      "sha256": "343cefcb6ce7c20d611dacc99113b926c92acfdb83f523ea165d3db807e4a211",
+      "imports": [
+        "ThueMorseMAP.Headline"
+      ],
+      "provenance": {
+        "role": "Parent-reviewed exact canonical CB-SEQ-001 owner/type exports of existing proofs",
+        "proof_derivation": false,
+        "verification": "integration/sequence-first-occurrence-verification.json"
+      }
+    },
+    {
       "module": "ResearchCommons.Integration.Exports",
       "path": "lean/Compatibility/ResearchCommons.Integration.Exports.lean",
-      "sha256": "f281bc65c80e7c5c2649d581b5fbe8cd4a8a92529b8d812daa0daa87acfbeeab",
+      "sha256": "f47b7104fec53920a35d1b863dbd7b2e58ceddf0548ed60a3065228fb0d4162e",
       "imports": [
+        "ResearchCommons.Claims.SequenceFirstOccurrence",
         "ResearchCommons.Claims.CM",
         "ResearchCommons.Integration.PositiveMoments",
         "ResearchCommons.Integration.WordCache",
@@ -6061,6 +6075,10 @@
           "selected_sha256": "f281bc65c80e7c5c2649d581b5fbe8cd4a8a92529b8d812daa0daa87acfbeeab",
           "edit": "Move the two final imports ahead of the module doc comment; same import list, no mathematical declaration or algorithm change.",
           "scoped_owned_audit": "integration/causal-tail-researchcommons-integration-exports-1500-verification.json"
+        },
+        "sequence_binding_successor": {
+          "previous_source_sha256": "f281bc65c80e7c5c2649d581b5fbe8cd4a8a92529b8d812daa0daa87acfbeeab",
+          "scope": "Add exact CB-SEQ-001 wrapper import. Historical union receipts preserved; enlarged aggregate not yet compiled as a whole."
         }
       },
       "prior_verified_sha256": "bcd9b9b6708a0493806cea1ec97d1531f0881d16a95a65389597b8982c0f71e4"

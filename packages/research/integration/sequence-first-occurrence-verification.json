@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "claim_id": "CB-SEQ-001",
+  "status": "ADOPTED_EXACT_LEAN_BINDING_AND_CHECKED_RUST_PROOF_INTERFACE",
+  "module": "ResearchCommons.Claims.SequenceFirstOccurrence",
+  "module_source_sha256": "343cefcb6ce7c20d611dacc99113b926c92acfdb83f523ea165d3db807e4a211",
+  "declarations": [
+    "ResearchCommons.Claims.SequenceFirstOccurrence.plus_first_occurrence",
+    "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_first_occurrence",
+    "ResearchCommons.Claims.SequenceFirstOccurrence.odd_minus_first_occurrence",
+    "ResearchCommons.Claims.SequenceFirstOccurrence.plus_all_starts",
+    "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_all_starts",
+    "ResearchCommons.Claims.SequenceFirstOccurrence.canonical_three_families"
+  ],
+  "parent_exact_correspondence_review": "accepted before binding adoption",
+  "actual_current_package_target_build": {
+    "compiler_exit_success": true,
+    "selected_source_modules": 8,
+    "compiled_modules": 1,
+    "reused_retained_objects": 7,
+    "complete_profile": false,
+    "source_graph_sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13",
+    "objects": [
+      {
+        "module": "SamuelAlexanderResearch.ThueMorseBits",
+        "reused_retained_object": true,
+        "sha256": "28c097d8e75909dbfafaae45b34e50d573b68dafe26db00fdacc9af1dd40bc4d"
+      },
+      {
+        "module": "ThueMorseMAP.Basic",
+        "reused_retained_object": true,
+        "sha256": "ee2fdacfdde0026bcc56c35f26c19b4b21c4f701b5cedacdef09c0fda49bb5c2"
+      },
+      {
+        "module": "ThueMorseMAP.Blocks",
+        "reused_retained_object": true,
+        "sha256": "b0bd4651b10cafa4f021f6b01d464095f310dc24e6698b14efb72cc3a06e8ad8"
+      },
+      {
+        "module": "ThueMorseMAP.EvenMinus",
+        "reused_retained_object": true,
+        "sha256": "aa14a2faa8dc32c3ada73e051b12ea9e12092af170e6a9a082cd7033fcc2657c"
+      },
+      {
+        "module": "ThueMorseMAP.OddMinus",
+        "reused_retained_object": true,
+        "sha256": "95bd1f8064361d43ad0dcdde6448d6ea098dd8c2e53e7fb1c932811210970642"
+      },
+      {
+        "module": "ThueMorseMAP.Plus",
+        "reused_retained_object": true,
+        "sha256": "731efa56c5afa223df34c69b87a6350d8fbb5bd2c7fd81580fe64b1ff999741c"
+      },
+      {
+        "module": "ThueMorseMAP.Headline",
+        "reused_retained_object": true,
+        "sha256": "13c009efec6fe33b7cb0691dbf5a31c24101bc581a771786c436ca9f5fb289d7"
+      },
+      {
+        "module": "ResearchCommons.Claims.SequenceFirstOccurrence",
+        "reused_retained_object": false,
+        "sha256": "5650a700b0b32e5527abc5b3a65dec7b68daf02a26a42282c8c98fc182c04f35"
+      }
+    ]
+  },
+  "actual_export_check": {
+    "command": "check-exports --target ResearchCommons.Claims.SequenceFirstOccurrence --claim CB-SEQ-001",
+    "exit_code": 0,
+    "checked_declarations": 6,
+    "checked_modules": 8,
+    "owner_check": true
+  },
+  "current_owned_audit_summary": {
+    "declaration_count": 329,
+    "theorem_declaration_count": 318
+  },
+  "current_owned_audit_sha256": "b899efc8c587f61b2b3505f195fb485d5db6316d65f2aca023cb743bbc8563d6",
+  "raw_full_audit_local_only": true,
+  "canonical_statuses_unchanged": true,
+  "native_runtime_binding": "pending; noncomputable A/i theorem interface is not an executable first-occurrence solver",
+  "prior_scoped_join": {
+    "source_sha256": "343cefcb6ce7c20d611dacc99113b926c92acfdb83f523ea165d3db807e4a211",
+    "named_declarations": 6,
+    "selected_modules": 8,
+    "owned_declarations": 329,
+    "owned_theorems": 318
+  },
+  "guards": {
+    "plus": "n >= 2",
+    "even_minus": "n >= 1",
+    "odd_minus": "n >= 0"
+  },
+  "numeric_exception_note": "i(3)=45 retained as original exclusion note, not a newly checked numeric theorem",
+  "full_1834_profile": "not run; previous 1833 ContextB receipt remains historical and unchanged",
+  "aggregate_exports": "New wrapper import added; enlarged full aggregate not separately compiled in this scoped check"
+}

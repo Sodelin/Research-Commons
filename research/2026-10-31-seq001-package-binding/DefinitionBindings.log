@@ -1,0 +1,13 @@
+def ThueMorseMAP.A : ℕ → ℕ :=
+fun d => sSup {L | ∃ s, ThueMorseMAP.Mono s d L}
+def ThueMorseMAP.i : ℕ → ℕ :=
+fun d => sInf {s | ThueMorseMAP.Mono s d (ThueMorseMAP.A d)}
+def ThueMorseMAP.Mono : ℕ → ℕ → ℕ → Prop :=
+fun s d L => ∃ c, ThueMorseMAP.Run s d L c
+def ThueMorseMAP.Run : ℕ → ℕ → ℕ → Bool → Prop :=
+fun s d L c => ∀ k < L, ThueMorseBits.t (s + k * d) = c
+def ThueMorseMAP.Center : ℕ → Prop :=
+fun l => 1 ≤ l ∧ ThueMorseBits.t (l - 1) = !ThueMorseBits.t l ∧ ThueMorseBits.t (l + 1) = !ThueMorseBits.t l
+@[irreducible] def ThueMorseBits.t : ℕ → Bool :=
+WellFounded.Nat.fix (fun x => x) fun n a =>
+  if h : n = 0 then false else if h_1 : n % 2 = 0 then a (n / 2) ⋯ else !a (n / 2) ⋯

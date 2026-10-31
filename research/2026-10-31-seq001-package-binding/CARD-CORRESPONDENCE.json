@@ -1,0 +1,64 @@
+{
+  "claim_id": "CB-SEQ-001",
+  "exact_existing_canonical_scope": "For digit-parity Thue–Morse t, maximum monochromatic progression length A(d) and earliest maximum start i(d): d=2^n+1,n≥2 gives A=2^n+2,i=3·2^(2n)−2^n−1; d=2^(2n)−1,n≥1 gives A=2^(2n)+4,i=3·2^(4n)−2^(2n)+1; d=2^(2n+1)−1,n≥0 gives A=2^(2n+1),i=2^(2n+1)−1. Stronger all-start classifications are also proved. The first formula excludes n=1, since i(3)=45.",
+  "canonical_status_unchanged": "proved_at_stated_scope",
+  "existing_proof_authorship_and_priority": {
+    "origin": {
+      "category": "published_open_problem",
+      "detail": "Three families of Joshi–Rust Conjecture 3.8, with explicit small-index ranges.",
+      "source_url": "https://arxiv.org/html/2501.05830v2#S3.SS2.SSS2"
+    },
+    "prior_work": "Maximal lengths and block-recognition ideas due to Parshina and Aedo–Grimm–Nagai–Staynova are rederived/credited. The contribution adds all-start analysis and formal first-occurrence proof.",
+    "our_integration_role": "Only named owner/type exports and original-definition correspondence; no new first-occurrence proof or novelty claim."
+  },
+  "clause_correspondence": [
+    {
+      "canonical_clause": "d=2^n+1,n>=2 exact A and earliest i",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.plus_first_occurrence",
+      "original_supplier": "ThueMorseMAP.conjecture_3_8_plus",
+      "guards": "n:Nat,2<=n; n=1 and i(3)=45 exception expressly excluded."
+    },
+    {
+      "canonical_clause": "d=2^(2n)-1,n>=1 exact A/i",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_first_occurrence",
+      "original_supplier": "ThueMorseMAP.conjecture_3_8_even_minus",
+      "guards": "n:Nat,1<=n"
+    },
+    {
+      "canonical_clause": "d=2^(2n+1)-1,n>=0 exact A/i",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.odd_minus_first_occurrence",
+      "original_supplier": "ThueMorseMAP.conjecture_3_8_odd_minus",
+      "guards": "n:Nat,includingn=0"
+    },
+    {
+      "canonical_clause": "Retained stronger plus all-start classification",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.plus_all_starts",
+      "original_supplier": "ThueMorseMAP.plus_classification",
+      "guards": "m>=2,actualMono/Center in original digit-parity word"
+    },
+    {
+      "canonical_clause": "Retained stronger even-minus all-start classification",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.even_minus_all_starts",
+      "original_supplier": "ThueMorseMAP.even_minus_classification",
+      "guards": "m>=2,m%2=0,actualMono/Center"
+    },
+    {
+      "canonical_clause": "All three formula families together using SAME actual A/i",
+      "new_export": "ResearchCommons.Claims.SequenceFirstOccurrence.canonical_three_families",
+      "original_supplier": "Conjunction of the exact three existing imported theorems",
+      "guards": "Original three respective index domains unchanged"
+    }
+  ],
+  "actual_definitions_printed": [
+    "ThueMorseMAP.A",
+    "ThueMorseMAP.i",
+    "ThueMorseMAP.Mono",
+    "ThueMorseMAP.Run",
+    "ThueMorseMAP.Center",
+    "ThueMorseBits.t"
+  ],
+  "definition_identity": "Wrapper imports the original definitions; no redefined A/i, substitute sequence, boolean assumption or hidden endpoint premise. DefinitionBindings.log prints actual loaded definitions.",
+  "numeric_exception_limit": "The typed plus theorem excludesn=1. This join does not newly certify i(3)=45 as an additional named theorem; the original canonical exclusion note is retained, not extended into the plus formula.",
+  "runtime_limit": "A/i are noncomputable supremum/infimum theorem interfaces. No executable first-occurrence solver or native wire refinement is claimed.",
+  "package_adoption": "PENDING parent source/type/card review; no integration binding row,520request set,1833profile source count or strict118 verdict modified."
+}
