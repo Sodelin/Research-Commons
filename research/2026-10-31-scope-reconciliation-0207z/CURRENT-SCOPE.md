@@ -67,3 +67,8 @@ Next scientific priorities are actual original-graph contour/fixed-order composi
 -2/7October: original shared/full scope and all successors retained.
 -30October22:17: previous full reconciliation and118-status snapshot retained unchanged.
 -31October02:07 public cutoff: reconcile accepted finite/graph/receiver/drawing/transport NANUQ components, occupation/recurrence/source joins,33-provider correction, G4 adapter obstructions, exact discovery coverage and separate four-plus-two allocation. Fresh crosscut named-receipt verification and root owner-verification are distinguished from their older source-only public snapshots; independent root repair review and broader composition remain separate. No original master, manuscript or all118 promotion.
+
+
+## Current full-scope successor — 31 October 2026, 06:03 UTC
+
+The [06:03 reconciliation](../2026-10-31-scope-reconciliation-0603z/CURRENT-SCOPE.md) preserves this historical snapshot and accepted claims while incorporating later scoped NANUQ/clock-JC source joins, public G3/G4 source and conditioning results, current ownership, selected-profile versus unfinished caller evidence, and exact discovery limits. Original masters and canonical claim statuses remain unchanged. Historical pending/paused statements above must be read at their dated cutoff, not as current status.
