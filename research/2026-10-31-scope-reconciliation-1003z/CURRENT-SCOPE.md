@@ -79,3 +79,8 @@ Priorities are actual original-source implications and the named remaining joins
 History: 2/7 October original scope; 30 October 22:17 programme-wide reconciliation; 31 October 02:07 and 06:03 preserved successors; 07:09/08:09/09:09 incremental public checkpoints; this 10:03 reassessment reconciles the material source, software and retrieval changes through its stated cutoff. Append navigation pointers without rewriting historical receipts. Ordinary deltas continue in incremental checkpoints.
 
 Index key: `FULL-SCOPE-RECONCILIATION-20261031-1003Z`. Status: public scientific/tooling coordination review, not a proof or canonical status promotion.
+
+
+## Current full-scope successor — 31 October 2026, 14:03 reassessment
+
+The [14:03 reconciliation](https://github.com/Sodelin/Research-Commons/blob/02526d5bf414d0d06536b7ba1cad566cae1f0fe3/research/2026-10-31-scope-reconciliation-1403z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims. It records scoped simple-root versus two-cut-root separation and the original multi-hybrid source correction, coherent actual NANUQ boundary occurrence order, supported clock-JC observation bounds with their guards, and dated package/discovery evidence. Original G3/G4 and full scientific assembly remain open; no canonical scientific status changes. Older pending labels remain historical at their cutoffs.
