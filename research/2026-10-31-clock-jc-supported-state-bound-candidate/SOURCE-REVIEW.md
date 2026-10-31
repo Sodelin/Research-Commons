@@ -1,0 +1,3 @@
+# Separate source-only semantic review
+
+31 October 2026. Separate AI-assisted review read all178 lines at source26faa8ac4f7e4d4cf11353e3f0f056b7b9a213ffe7efd7bebb0016022c68ab5d and approved the intended compiler request: explicit original-Copy relabeling, admitted observation representatives and active-location subtype colors, no bank/snapshot/history factor. Actual prefix support retains hc, activation and nonfinal-date premises, and the active-edge cardinal bound <=P is explicit. This is not an unconditional full-state/window result, a successful Lean check, expert peer review or novelty certification. Initialization cancellation and full stage transfer remain separate.

@@ -1,0 +1,95 @@
+{
+  "source_sha256": "26faa8ac4f7e4d4cf11353e3f0f056b7b9a213ffe7efd7bebb0016022c68ab5d",
+  "declarations": [
+    {
+      "name": "actual_root_latest",
+      "complete_frozen_text": "theorem actual_root_latest (N : RootedBinary V E X) (C : Calendar N.graph) (v : V) :\n    C.age v \u2264 C.age N.root := C.age_le_of_directed (N.rooted v)\n\n/-- At the younger endpoint of a NONFINAL completed date block, all activated\ncopies occupy actually active edges. No choice of an empty-epoch midpoint. -/",
+      "sha256": "bd03b8e230944d90e4612383448228f29e2f9eec9b82d621c1a1e23f68716a19"
+    },
+    {
+      "name": "actual_initialized_prefix_active",
+      "complete_frozen_text": "theorem actual_initialized_prefix_active (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hactivated : c \u2264 prefixDate N C k) (hbefore : prefixDate N C k < C.age N.root)\n    {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    \u2200 x : Copy, \u2203 e : E, copyLocation (state d) x = .edge e \u2227 C.Active (prefixDate N C k) e := by\n  have hs := actual_initialized_prefix_support N C sample register H gamma common r c hc k hd\n  have hn := actual_initialized_prefix_no_nodes N C sample register H gamma common r c hc k hactivated hd\n  intro x\n  have hr := hs.1.1.1 x\n  cases he : copyLocation (state d) x with\n  | node v => exact False.elim (hn x v he)\n  | edge e =>\n      rw [he] at hr\n      exact \u27e8e,rfl,hr.1,hs.1.1.2 x e he\u27e9\n  | rootPopulation v =>\n      rw [he] at hr\n      exact False.elim ((not_le_of_gt hbefore) hr.2)\n\n/-- This finite carrier is physically present edges only, not all graph IDs. -/",
+      "sha256": "f902cbbf94a706dbb336b0d5eca644d30ade05b442a197c4c06d720fc33fc6df"
+    },
+    {
+      "name": "activeLocations",
+      "complete_frozen_text": "def activeLocations (N : RootedBinary V E X) (C : Calendar N.graph) (a : \u211d) :\n    Finset (Location V E) :=\n  (Finset.univ.filter (C.Active a)).image Location.edge",
+      "sha256": "8441170e4c8a1c976a07ab216b53a00088676407bcf910a9ec8570a134c56c2b"
+    },
+    {
+      "name": "mem_activeLocations",
+      "complete_frozen_text": "lemma mem_activeLocations (N : RootedBinary V E X) (C : Calendar N.graph) (a : \u211d)\n    (l : Location V E) : l \u2208 activeLocations N C a \u2194 \u2203 e, l = .edge e \u2227 C.Active a e := by\n  simp only [activeLocations,Finset.mem_image,Finset.mem_filter,Finset.mem_univ,true_and]\n  constructor\n  \u00b7 rintro \u27e8e,he,rfl\u27e9; exact \u27e8e,rfl,he\u27e9\n  \u00b7 rintro \u27e8e,rfl,he\u27e9; exact \u27e8e,he,rfl\u27e9",
+      "sha256": "7378a96f56aca616e44bc0833fdc8f0f327092e31a5b251b6d56d46412ab692f"
+    },
+    {
+      "name": "active_locations_card",
+      "complete_frozen_text": "lemma active_locations_card (N : RootedBinary V E X) (C : Calendar N.graph) (a : \u211d) :\n    (activeLocations N C a).card = (Finset.univ.filter (C.Active a)).card := by\n  apply Finset.card_image_of_injective\n  intro e f h\n  exact Location.edge.inj h\n\n/-- Receiver restricted to actual admitted observations and locations in A.\nIt may contain more than the actual source support, giving a valid overcount. -/",
+      "sha256": "8db63635974a4d15e0442eb12324a0479cbed87d67273fc7336255864aa98b1a"
+    },
+    {
+      "name": "SupportedObservation",
+      "complete_frozen_text": "def SupportedObservation (N : RootedBinary V E X) (sample : Copy \u2192 X)\n    (A : Finset (Location V E)) :=\n  {o : BlockPopulationObservation Copy V E //\n    (\u2203 s : Code N sample, observeCode N s = o) \u2227 \u2200 x : Copy, o.2 x \u2208 A}",
+      "sha256": "f45b1c2a13d1b249151ffbcaa065d87b9705165e71b19f9e8e89c92cfc63aee4"
+    },
+    {
+      "name": "supportedObservationFintype",
+      "complete_frozen_text": "instance supportedObservationFintype (N : RootedBinary V E X) (sample : Copy \u2192 X)\n    (A : Finset (Location V E)) : Fintype (SupportedObservation N sample A) := Fintype.ofFinite _",
+      "sha256": "03369647ffe4d57df220d41d5acdc8127acca3259e153f595b0e790fe61f2bf6"
+    },
+    {
+      "name": "representative",
+      "complete_frozen_text": "def representative (N : RootedBinary V E X) {sample : Copy \u2192 X} {A : Finset (Location V E)}\n    (o : SupportedObservation N sample A) : Code N sample := Classical.choose o.property.1",
+      "sha256": "c17b3f24bedb68220e360f062e11134148344426fbbcbe9b39acc3f523edaefa"
+    },
+    {
+      "name": "representative_observation",
+      "complete_frozen_text": "lemma representative_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    {A : Finset (Location V E)} (o : SupportedObservation N sample A) :\n    observeCode N (representative N o) = o.val := Classical.choose_spec o.property.1\n\n/-- An explicit original-label equivalence transports partitions. -/",
+      "sha256": "0b356a629b45306abf2a5ecf873f15bcc0971f30160c83abb14549602cd0441b"
+    },
+    {
+      "name": "relabelFinsets",
+      "complete_frozen_text": "def relabelFinsets {n : \u2115} (labels : Copy \u2243 Fin n) : Finset Copy \u2243o Finset (Fin n) where\n  toEquiv := labels.finsetCongr\n  map_rel_iff' := by intro s t; exact Finset.map_subset_map",
+      "sha256": "f6037c9b1a11e6e53c3d17640c26e19562a64ca54c17749106c7a22630279861"
+    },
+    {
+      "name": "relabelPartition",
+      "complete_frozen_text": "def relabelPartition {n : \u2115} (labels : Copy \u2243 Fin n)\n    (p : Finpartition (Finset.univ : Finset Copy)) : Finpartition (Finset.univ : Finset (Fin n)) :=\n  (p.map (relabelFinsets labels)).copy (by simp [relabelFinsets])",
+      "sha256": "2d9d4c03b9355f46d99a9540053e81142264dde8596fc6565030e77d499d6a61"
+    },
+    {
+      "name": "relabelPartition_injective",
+      "complete_frozen_text": "lemma relabelPartition_injective {n : \u2115} (labels : Copy \u2243 Fin n) :\n    Function.Injective (relabelPartition labels) := by\n  intro p q h\n  apply Finpartition.ext\n  have hh := congrArg Finpartition.parts h\n  exact Finset.map_injective (relabelFinsets labels).toEmbedding hh\n\n/-- Population indexing is required only on A. No default for impossible\nlocations, and in particular no hidden P>0 assumption, is needed. -/",
+      "sha256": "0279d8ea605d8e52aa5555d25653234c59b28a16fda74e39649f065baf11b30b"
+    },
+    {
+      "name": "encodeObservation",
+      "complete_frozen_text": "def encodeObservation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    {A : Finset (Location V E)} {n P : \u2115} (labels : Copy \u2243 Fin n) (colors : A \u21aa Fin P)\n    (o : SupportedObservation N sample A) : StateEnvelope n P :=\n  (relabelPartition labels (currentPartition (state (representative N o))\n      (representative N o).property.forest),\n    fun x => colors \u27e8o.val.2 (labels.symm x),o.property.2 (labels.symm x)\u27e9)",
+      "sha256": "b41e1311711ce55f5a31ffa4de62b0a084ea8e58e473f6868271066f888d1b07"
+    },
+    {
+      "name": "encodeObservation_injective",
+      "complete_frozen_text": "lemma encodeObservation_injective (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    {A : Finset (Location V E)} {n P : \u2115} (labels : Copy \u2243 Fin n) (colors : A \u21aa Fin P) :\n    Function.Injective (encodeObservation N (sample:=sample) labels colors) := by\n  intro o p h\n  apply Subtype.ext\n  apply Prod.ext\n  \u00b7 have hp := relabelPartition_injective labels (congrArg Prod.fst h)\n    have hb := congrArg Finpartition.parts hp\n    have ho := congrArg Prod.fst (representative_observation N o)\n    have ht := congrArg Prod.fst (representative_observation N p)\n    exact ho.symm.trans (hb.trans ht)\n  \u00b7 funext x\n    have he := congrFun (congrArg Prod.snd h) (labels x)\n    have hv := congrArg Subtype.val (colors.injective he)\n    simpa only [Equiv.symm_apply_apply] using hv",
+      "sha256": "3ba384ee6742034cf3b9f4261e36eac9d0cfce608cd5bd0c517ffb4aacac0410"
+    },
+    {
+      "name": "populationColors",
+      "complete_frozen_text": "def populationColors {A : Finset (Location V E)} {P : \u2115} (hP : A.card \u2264 P) : A \u21aa Fin P where\n  toFun x := \u27e8(Fintype.equivFin A x).val,lt_of_lt_of_le (Fintype.equivFin A x).isLt (by simpa using hP)\u27e9\n  inj' := by\n    intro x y h\n    apply (Fintype.equivFin A).injective\n    apply Fin.ext\n    exact congrArg Fin.val h\n\n/-- Exact original-copy Bell envelope. This counts observations, not Codes,\nregister assignments or ordered genealogy shapes. -/",
+      "sha256": "1b3fd18cd4fc7d22db0cef339ff67340b0c1f3d9130e45f4e9f2e7b86c8d08c2"
+    },
+    {
+      "name": "supported_observation_card",
+      "complete_frozen_text": "theorem supported_observation_card (N : RootedBinary V E X) (sample : Copy \u2192 X)\n    (A : Finset (Location V E)) (P : \u2115) (hP : A.card \u2264 P) :\n    Fintype.card (SupportedObservation N sample A) \u2264\n      BellCount (Fintype.card Copy) * P ^ Fintype.card Copy := by\n  have hi := encodeObservation_injective N (sample:=sample) (Fintype.equivFin Copy) (populationColors hP)\n  exact (Fintype.card_le_of_injective _ hi).trans_eq\n    (state_envelope_card (Fintype.card Copy) P)",
+      "sha256": "10a67e1114d5b1167d192c2c8cca9d7700e5417a8f24d69d2f720b22be7052fd"
+    },
+    {
+      "name": "supported_active_observation_card",
+      "complete_frozen_text": "theorem supported_active_observation_card (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (a : \u211d) (P : \u2115)\n    (hP : (Finset.univ.filter (C.Active a)).card \u2264 P) :\n    Fintype.card (SupportedObservation N sample (activeLocations N C a)) \u2264\n      BellCount (Fintype.card Copy) * P ^ Fintype.card Copy := by\n  apply supported_observation_card N sample _ P\n  rw [active_locations_card]\n  exact hP\n\n/-- Every actual activated nonfinal prefix observation enters the SAME\nbank-independent, site-count-independent physically active carrier. -/",
+      "sha256": "4368a42cfe9aef891f324238c17a4af593bedcd8dde8df0777e982d406ea6633"
+    },
+    {
+      "name": "actual_prefix_observation_supported",
+      "complete_frozen_text": "theorem actual_prefix_observation_supported (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hactivated : c \u2264 prefixDate N C k) (hbefore : prefixDate N C k < C.age N.root)\n    {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    (\u2203 s : Code N sample, observeCode N s = observeCode N d) \u2227\n      \u2200 x : Copy, (observeCode N d).2 x \u2208 activeLocations N C (prefixDate N C k) := by\n  refine \u27e8\u27e8d,rfl\u27e9,?_\u27e9\n  intro x\n  apply (mem_activeLocations N C _ _).mpr\n  exact actual_initialized_prefix_active N C sample register H gamma common r c hc k hactivated hbefore hd x",
+      "sha256": "9643d3007f987be6b6f1d98531104bbb3668723ada5d1337d2d0083c78320b82"
+    }
+  ]
+}
