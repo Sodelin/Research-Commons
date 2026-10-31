@@ -78,3 +78,8 @@ Retain four mathematical assignments: original G3 source existence/termination a
 History: original2October shared scope and successors;7October full programme;30October22:17;31October02:07/06:03/10:03; ordinary12:09/13:09 priority checkpoints; this14:03 successor. Navigation updates are append-only; old proofs, failed receipts, author credit and dated status claims remain intact. Subsequent ordinary deltas belong in incremental checkpoints until the next full reconciliation.
 
 Index key: `FULL-SCOPE-RECONCILIATION-20261031-1403Z`. Status: public scientific/tooling scope review, not a canonical status promotion, novelty determination or master proof.
+
+
+## Current full-scope successor — 31 October 2026, 18:03 reassessment
+
+The [18:03 reconciliation](../2026-10-31-scope-reconciliation-1803z/CURRENT-SCOPE.md) preserves this dated record and all accepted claims. It records scoped same-source G4 J/consumer and CE results, actual NANUQ sorted-anchor qualification versus uncompiled local support, initialized clock-JC tuple and separate analytic-feature qualification, arbitrary-carrier founder transport, classical countable-interface limits, and dated package/discovery evidence. Original G3/G4 and full original NANUQ/clock-JC formal completion remain open; proof-library review is not a new theorem or canonical status promotion.
