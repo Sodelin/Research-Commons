@@ -1,0 +1,107 @@
+[
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "internal_source_nonhybrid",
+    "header": "theorem internal_source_nonhybrid (hg : N.graph.GalledDetour) (e : N.OriginalBlobArc b) :\n    \u00acN.graph.IsHybrid (N.graph.source e.val)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "inner_skeleton_iff",
+    "header": "theorem inner_skeleton_iff (v : N.OriginalBlobVertex b) :\n    M.SkeletonVertexPredicate (Sum.inl v) \u2194 \u00acN.graph.IsHybrid v.val"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreEdgeLift_source",
+    "header": "theorem coreEdgeLift_source (e : N.OriginalBlobArc b) :\n    OG.source (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).source e)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreEdgeLift_target",
+    "header": "theorem coreEdgeLift_target (e : N.OriginalBlobArc b) :\n    OG.target (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).target e)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreEdgeLift_original",
+    "header": "theorem coreEdgeLift_original (e : N.OriginalBlobArc b) :\n    M.openedOriginalEdge (coreEdgeLift N b hg hb e)=Sum.inl e"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreEdgeLift_injective",
+    "header": "theorem coreEdgeLift_injective : Function.Injective (coreEdgeLift N b hg hb)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "core_cut_walk_lifts",
+    "header": "theorem core_cut_walk_lifts (k : N.OriginalBlobArc b) {a c : CoreVertex N b}\n    (h : (coreGraph N b hg).ReachWithout k a c) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k) (coreLift N b hg hb a) (coreLift N b hg hb c)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "retained_port_inner_nonhybrid",
+    "header": "theorem retained_port_inner_nonhybrid (p : N.BlobPort b)\n    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :\n    \u00acN.graph.IsHybrid (N.originalPortInner b p).val"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "collapse_coreLift",
+    "header": "theorem collapse_coreLift (v : CoreVertex N b) :\n    collapse N b hg hb (coreLift N b hg hb v)=v"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "core_edge_collapsed_source",
+    "header": "theorem core_edge_collapsed_source (e : N.OriginalBlobArc b) :\n    collapse N b hg hb (OG.source (coreEdgeLift N b hg hb e))=(coreGraph N b hg).source e"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "core_edge_collapsed_target",
+    "header": "theorem core_edge_collapsed_target (e : N.OriginalBlobArc b) :\n    collapse N b hg hb (OG.target (coreEdgeLift N b hg hb e))=(coreGraph N b hg).target e"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "opened_original_injective",
+    "header": "theorem opened_original_injective : Function.Injective M.openedOriginalEdge"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "occurrenceRaw_original",
+    "header": "theorem occurrenceRaw_original (e : M.HybridParentOccurrence) :\n    Sum.inl (occurrenceRaw N b hb e).val=e.val"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "opened_edge_core_or_constant",
+    "header": "theorem opened_edge_core_or_constant (f : M.OpenedHybridEdge) :\n    (\u2203 e : N.OriginalBlobArc b, f=coreEdgeLift N b hg hb e) \u2228\n      collapse N b hg hb (OG.source f)=collapse N b hg hb (OG.target f)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "opened_cut_walk_collapses",
+    "header": "theorem opened_cut_walk_collapses (k : N.OriginalBlobArc b) {a c : M.OpenedHybridVertex}\n    (h : OG.ReachWithout (coreEdgeLift N b hg hb k) a c) :\n    (coreGraph N b hg).ReachWithout k (collapse N b hg hb a) (collapse N b hg hb c)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "openedOutEdge_target_skeleton",
+    "header": "theorem openedOutEdge_target_skeleton (e : N.RootedCapArc b)\n    (hs : M.SkeletonVertexPredicate (M.graph.source e))\n    (ht : M.SkeletonVertexPredicate (M.graph.target e)) :\n    OG.target (M.openedOutEdge e hs)=Sum.inl \u27e8M.graph.target e,ht\u27e9"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "discarded_edge_step",
+    "header": "theorem discarded_edge_step (k : N.OriginalBlobArc b) (e : N.RootedCapArc b)\n    (hne : \u2200 a : N.OriginalBlobArc b, e\u2260Sum.inl a)\n    (hs : M.SkeletonVertexPredicate (M.graph.source e))\n    (ht : M.SkeletonVertexPredicate (M.graph.target e)) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k)\n      (Sum.inl \u27e8M.graph.source e,hs\u27e9) (Sum.inl \u27e8M.graph.target e,ht\u27e9)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "fresh_root_fibre_walk",
+    "header": "theorem fresh_root_fibre_walk (k : N.OriginalBlobArc b) (r : N.RootedCapRootTag b)\n    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inr r))) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k)\n      (Sum.inl \u27e8Sum.inr (Sum.inr r),hv\u27e9)\n      (coreLift N b hg hb (Sum.inl \u27e8N.originalRootedCapEntry b,\n        N.originalRootedCapEntry_nonroot_not_hybrid b r.property\u27e9))"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "port_fibre_walk",
+    "header": "theorem port_fibre_walk (k : N.OriginalBlobArc b) (p : N.BlobPort b)\n    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k)\n      (Sum.inl \u27e8Sum.inr (Sum.inl p),hv\u27e9)\n      (coreLift N b hg hb (Sum.inl \u27e8N.originalPortInner b p,\n        retained_port_inner_nonhybrid N b hb p hv\u27e9))"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "collapse_fibre_walk",
+    "header": "theorem collapse_fibre_walk (k : N.OriginalBlobArc b) (v : M.OpenedHybridVertex) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k) v\n      (coreLift N b hg hb (collapse N b hg hb v))"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "actual_opened_core_cut_iff",
+    "header": "theorem actual_opened_core_cut_iff (k : N.OriginalBlobArc b) (a c : M.OpenedHybridVertex) :\n    OG.ReachWithout (coreEdgeLift N b hg hb k) a c \u2194\n      (coreGraph N b hg).ReachWithout k (collapse N b hg hb a) (collapse N b hg hb c)"
+  }
+]
