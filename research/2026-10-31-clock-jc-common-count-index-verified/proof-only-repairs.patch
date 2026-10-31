@@ -1,0 +1,28 @@
+--- frozen/JC69CommonCountIndex.lean
++++ source/JC69CommonCountIndex.lean
+@@ -118,8 +118,12 @@
+   have he := congrArg (fun xs : List ℝ => xs.getD i.2.val (holdingRate N r L q s))
+     (actual_path_rate_list N r L q fuel s i.1.val)
+   rw [List.getD_map] at he
+-  simpa [commonRate,termRate,commonTermEquiv,commonState,
+-    List.getD_eq_getElem?_getD,List.getElem?_ofFn,hi] using he
++  have hc : Fin.cast (pathTerms_size N r L q fuel s i.1.val).symm i.2 =
++      (⟨i.2.val, hi⟩ : Fin (pathTerms N r L q fuel s i.1.val).size) := by
++    apply Fin.ext
++    rfl
++  simpa [commonRate,termRate,commonTermEquiv,Equiv.sigmaCongrRight,commonState,
++    List.getD_eq_getElem?_getD,List.getElem?_ofFn,hi,hc] using he
+ 
+ variable {A : Type*} [Fintype A]
+ 
+@@ -164,8 +168,9 @@
+       (4/3:ℝ)*∑ a, (v a:ℝ)*codeCharge N (chi a) (commonState e N fuel s i))*T =
+       -(totalRate N r (commonState e N fuel s i):ℝ)*T +
+         ∑ a, (v a:ℝ)*(-((4/3:ℝ)*codeCharge N (chi a) (commonState e N fuel s i))*T) := by
+-    simp only [Finset.mul_sum,Finset.sum_mul,neg_add,neg_mul,Finset.sum_neg_distrib]
++    rw [neg_add, add_mul]
+     congr 1
++    rw [neg_mul, Finset.mul_sum, Finset.sum_mul, ← Finset.sum_neg_distrib]
+     apply Finset.sum_congr rfl
+     intro a _
+     ring

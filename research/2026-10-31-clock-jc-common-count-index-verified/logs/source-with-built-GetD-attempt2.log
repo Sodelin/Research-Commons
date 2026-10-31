@@ -1,0 +1,103 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:23:0: warning: `CommonTermIndex`: universes `u_5`, `u_6` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:89:78: warning: This simp argument is unused:
+  Nat.add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pathStates, pathLength, ih, Nat.add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:121:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  @Eq ℝ ((pathTerms N r L q fuel s ↑i.fst).rate ⟨↑i.snd, ⋯⟩)
+    (holdingRate N r L q ((pathStates N fuel s ↑i.fst)[↑i.snd]?.getD s))
+but is expected to have type
+  @Eq ℝ
+    ((pathTerms N r L q fuel s ↑((Equiv.sigmaCongrRight fun h => finCongr ⋯) i).fst).rate
+      ((Equiv.sigmaCongrRight fun h => finCongr ⋯) i).snd)
+    (holdingRate N r L q ((pathStates N fuel s ↑i.fst)[↑i.snd]?.getD s))
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:136:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:169:4: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.343 ?m.340 = Finset.sum ?m.343 ?m.341
+with the goal
+  (-totalRate N r (commonState e N fuel s i) +
+        -∑ i_1, 4 / 3 * (↑(v i_1) * codeCharge N (chi i_1) (commonState e N fuel s i))) *
+      T =
+    -(totalRate N r (commonState e N fuel s i) * T) +
+      ∑ x, ↑(v x) * -(4 / 3 * codeCharge N (chi x) (commonState e N fuel s i) * T)
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.343, ?m.340 x = ?m.341 x) → Finset.sum ?m.343 ?m.340 = Finset.sum ?m.343 ?m.341
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+A : Type u_5
+inst✝ : Fintype A
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+v : A → ℕ
+chi : A → Copy → Base
+fuel : ℕ
+s : Code N sample
+i : CommonTermIndex e N fuel s
+T : ℝ
+⊢ (-totalRate N r (commonState e N fuel s i) +
+        -∑ i_1, 4 / 3 * (↑(v i_1) * codeCharge N (chi i_1) (commonState e N fuel s i))) *
+      T =
+    -(totalRate N r (commonState e N fuel s i) * T) +
+      ∑ x, ↑(v x) * -(4 / 3 * codeCharge N (chi x) (commonState e N fuel s i) * T)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:167:30: warning: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.mul_sum, neg_add, neg_mul, Finset.sum_neg_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CommonCountIndex.lean:167:61: warning: This simp argument is unused:
+  Finset.sum_neg_distrib
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.mul_sum, Finset.sum_mul, neg_add, neg_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_card_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_rate_state' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_common_rate' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_exponential' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

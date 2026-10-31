@@ -1,0 +1,61 @@
+{
+  "source_sha256": "a7342bbd19511665a86103b2046c781550333068791fc97e080cd7f2e447def5",
+  "declarations": [
+    {
+      "name": "rootRatioProduct",
+      "complete_frozen_text": "def rootRatioProduct (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) :\n    (fuel : \u2115) \u2192 (s : Code N sample) \u2192 OrderedPath N fuel s \u2192 \u211d\n  | 0, _, _ => 1\n  | _+1, _, .inl _ => 1\n  | fuel+1, s, .inr \u27e8p,h\u27e9 =>\n      (pairRate r p.1 / holdingRate N r L q s) *\n        rootRatioProduct N r L q fuel (stepDestination N s (some p)) h\n\n/-- Keep exactly terminal paths, including an already-terminal empty path. -/",
+      "sha256": "5f77e4bf753fe325c31e8ce5f608a21c5b733a7c095a6b5794d75ed0c53c0b2c"
+    },
+    {
+      "name": "rootCoefficient",
+      "complete_frozen_text": "def rootCoefficient (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (h : OrderedPath N fuel s) : \u211d :=\n  rootRatioProduct N r L q fuel s h *\n    (if liveCard (pathEnd N fuel s h) \u2264 1 then 1 else 0)",
+      "sha256": "20af2f00dc85aa40c8a62df336aa5f377f84cba0d64410b5f65cfe50092ba8aa"
+    },
+    {
+      "name": "actual_root_ratio_nonneg",
+      "complete_frozen_text": "lemma actual_root_ratio_nonneg (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (h : OrderedPath N fuel s) :\n    0 \u2264 rootRatioProduct N r L q fuel s h := by\n  induction fuel generalizing s with\n  | zero => simp [rootRatioProduct]\n  | succ fuel ih =>\n    cases h with\n    | inl h => simp [rootRatioProduct]\n    | inr h =>\n      obtain \u27e8p,h\u27e9 := h\n      exact mul_nonneg (div_nonneg (le_of_lt (pairRate_pos r p.1))\n        (le_of_lt (actual_choice_killed_positive N r L q s p))) (ih _ h)",
+      "sha256": "17479da5f9634c9895a12960562b372679eefa272062ed87e5fc9185bd5de779"
+    },
+    {
+      "name": "rootCoefficient_nonneg",
+      "complete_frozen_text": "lemma rootCoefficient_nonneg (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (h : OrderedPath N fuel s) :\n    0 \u2264 rootCoefficient N r L q fuel s h := by\n  unfold rootCoefficient\n  apply mul_nonneg (actual_root_ratio_nonneg N r L q fuel s h)\n  split_ifs <;> norm_num",
+      "sha256": "00b382c46e9f8a7fe8b8e4ee9d5bab0e426c10e960c1cee549e71d99768faf94"
+    },
+    {
+      "name": "rootCoefficient_stop",
+      "complete_frozen_text": "lemma rootCoefficient_stop {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) :\n    rootCoefficient N r L q (fuel+1) s (canonicalStop e N fuel s).val =\n      if liveCard s \u2264 1 then 1 else 0 := by\n  simp [rootCoefficient,rootRatioProduct,canonicalStop,pathEnd]",
+      "sha256": "1ee474add7e27d0a478fc6b64444a2c3b00e3acd53f3807aa79e76c5ac26f849"
+    },
+    {
+      "name": "rootCoefficient_jump",
+      "complete_frozen_text": "lemma rootCoefficient_jump {n : \u2115} (e : Copy \u2243 Fin n) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (fuel : \u2115) (s : Code N sample) (p : CanonicalChoice e N s)\n    (h : CanonicalPath e N fuel (stepDestination N s (some p.val))) :\n    rootCoefficient N r L q (fuel+1) s (canonicalJump e N fuel s p h).val =\n      (pairRate r p.val.1 / holdingRate N r L q s) *\n        rootCoefficient N r L q fuel (stepDestination N s (some p.val)) h.val := by\n  simp [rootCoefficient,rootRatioProduct,canonicalJump,pathEnd,mul_assoc]",
+      "sha256": "7aeb7ef994fa1835a14153b7904b8810dc13d3bab72dd9f4ed07bc7541565549"
+    },
+    {
+      "name": "sum_canonical_path_succ_ennreal",
+      "complete_frozen_text": "lemma sum_canonical_path_succ_ennreal {n : \u2115} (e : Copy \u2243 Fin n)\n    (N : RootedBinary V E X) {sample : Copy \u2192 X} (fuel : \u2115) (s : Code N sample)\n    (f : CanonicalPath e N (fuel+1) s \u2192 \u211d\u22650\u221e) :\n    (\u2211 h, f h) = f (canonicalStop e N fuel s) +\n      \u2211 p : CanonicalChoice e N s,\n        \u2211 h : CanonicalPath e N fuel (stepDestination N s (some p.val)),\n          f (canonicalJump e N fuel s p h) := by\n  rw [\u2190 (canonicalPathSuccEquiv e N fuel s).symm.sum_comp f]\n  simp [Fintype.sum_sum_type,Fintype.sum_sigma,canonicalPathSuccEquiv]\n\n/-- Finite ratio expansion of the ACTUAL complete-root expectation. The\nadequate budget is derived at each actual destination by exact live-card descent. -/",
+      "sha256": "afe473f0b91d00eaea636a116819957eca6dce8f9277c216370786bffd040e2a"
+    },
+    {
+      "name": "actual_root_canonical_ratio_sum",
+      "complete_frozen_text": "theorem actual_root_canonical_ratio_sum [Nonempty Copy] {n : \u2115}\n    (e : Copy \u2243 Fin n) (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (fuel : \u2115) (s : Code N sample)\n    (hs : AncestralRoot N s) (hbudget : liveCard s \u2264 fuel+1) :\n    rootWeight N r L q s = \u2211 h : CanonicalPath e N fuel s,\n      ENNReal.ofReal (rootCoefficient N r L q fuel s h.val) := by\n  induction fuel generalizing s with\n  | zero =>\n      have ht : liveCard s \u2264 1 := by simpa using hbudget\n      rw [actual_terminal_root_weight N r L q s ht]\n      simp [CanonicalPath,CanonicalPathPred,OrderedPath,rootCoefficient,rootRatioProduct,pathEnd,ht]\n  | succ fuel ih =>\n      rw [sum_canonical_path_succ_ennreal,rootCoefficient_stop]\n      by_cases ht : liveCard s \u2264 1\n      \u00b7 letI := choice_empty_of_terminal_card N s ht\n        rw [actual_terminal_root_weight N r L q s ht]\n        simp [ht,CanonicalChoice]\n      \u00b7 have hg : 1 < liveCard s := lt_of_not_ge ht\n        rw [actual_root_resolvent N r L q hbal s hs hg]\n        simp only [ht,ite_false,ENNReal.ofReal_zero,zero_add]\n        change (\u2211 p : Choice N s,\n          ENNReal.ofReal (choiceRate N r s p/holdingRate N r L q s) *\n            rootWeight N r L q (stepDestination N s (some p))) = _\n        rw [sum_choice_orientations e N s]\n        apply Finset.sum_congr rfl\n        intro p _\n        rw [actual_orientation_root_summand_sum N r L q hbal s hs p.val]\n        have hd := merger_destination_card N s p.val\n        have hb : liveCard (stepDestination N s (some p.val)) \u2264 fuel+1 := by omega\n        rw [ih _ (ancestral_merger_preserved N s hs p.val) hb,Finset.mul_sum]\n        apply Finset.sum_congr rfl\n        intro h _\n        rw [rootCoefficient_jump]\n        exact (ENNReal.ofReal_mul (div_nonneg (le_of_lt (pairRate_pos r p.val.1))\n          (le_of_lt (actual_choice_killed_positive N r L q s p.val)))).symm\n\n/-- Genuine real coefficients for subsequent denominator algebra; finiteness\nis supplied by the finite sum of ofReal terms, not an assumed root integrability. -/",
+      "sha256": "451593dee13671e4b9060194fe1c708eda991336ab0eba8f3ab5a8d16830e071"
+    },
+    {
+      "name": "actual_root_canonical_real_sum",
+      "complete_frozen_text": "theorem actual_root_canonical_real_sum [Nonempty Copy] {n : \u2115}\n    (e : Copy \u2243 Fin n) (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (fuel : \u2115) (s : Code N sample)\n    (hs : AncestralRoot N s) (hbudget : liveCard s \u2264 fuel+1) :\n    (rootWeight N r L q s).toReal = \u2211 h : CanonicalPath e N fuel s,\n      rootCoefficient N r L q fuel s h.val := by\n  rw [actual_root_canonical_ratio_sum e N r L q hbal fuel s hs hbudget]\n  rw [ENNReal.toReal_sum (fun _ _ => ENNReal.ofReal_ne_top)]\n  apply Finset.sum_congr rfl\n  intro h _\n  exact ENNReal.toReal_ofReal (rootCoefficient_nonneg N r L q fuel s h.val)\n\n/-- Source-fixed root representation with at most E terms, independent of\nsite counts/characters. Original Copy is not replicated. No terminal 0/0. -/",
+      "sha256": "b64918ba3ea64ae85cf00152f55381b65c6892cd3a617fcdc7a0845d30cbc072"
+    },
+    {
+      "name": "actual_root_ratio_representation",
+      "complete_frozen_text": "theorem actual_root_ratio_representation [Nonempty Copy]\n    (e : Copy \u2243 Fin (Fintype.card Copy)) (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base)\n    (hbal : \u2200 j, \u2211 x, q j x = 0) (s : Code N sample) (hs : AncestralRoot N s) :\n    (rootWeight N r L q s).toReal =\n        \u2211 h : CanonicalPath e N (Fintype.card Copy) s,\n          rootCoefficient N r L q (Fintype.card Copy) s h.val \u2227\n      Fintype.card (CanonicalPath e N (Fintype.card Copy) s) \u2264\n        \u2211 k \u2208 Finset.range (Fintype.card Copy), ((Fintype.card Copy).choose 2)^k := by\n  constructor\n  \u00b7 apply actual_root_canonical_real_sum e N r L q hbal _ s hs\n    have hc : liveCard s \u2264 Fintype.card Copy := Finset.card_le_univ s.val.live\n    omega\n  \u00b7 exact actual_canonical_path_card_le e N _ s\n\n/-- Replication of already balanced original-copy characters retains the\nactual complete-root balance premise; it is not a replacement scalar source. -/",
+      "sha256": "f0484b87589251c96c71c394c9deddb3b682787da286740a511624339392818a"
+    },
+    {
+      "name": "replicated_character_balance",
+      "complete_frozen_text": "theorem replicated_character_balance {A : Type*} [Fintype A]\n    (v : A \u2192 \u2115) (chi : A \u2192 Copy \u2192 Base) (hchi : \u2200 a, \u2211 x, chi a x = 0) :\n    \u2200 j, \u2211 x, replicatedQ v chi j x = 0 := by\n  intro j\n  exact hchi ((replicaEquiv v j).1)",
+      "sha256": "94949f44279aa6aabf160a23679fbbd7f395fba912589870dc3f5a91a270737c"
+    }
+  ],
+  "authority": "Entire frozen source is authoritative; complete declarations including proof bodies retained."
+}

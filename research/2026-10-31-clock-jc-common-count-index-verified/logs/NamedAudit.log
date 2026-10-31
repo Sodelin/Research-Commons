@@ -1,0 +1,96 @@
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (T : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E),
+  (ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q fuel s (↑T) target).toReal =
+    ∑ i,
+      ResearchCommons.MSCI.JC69CommonCountIndex.commonCoefficient e N r L q fuel s target i *
+        Real.exp (-ResearchCommons.MSCI.JC69CommonCountIndex.commonRate e N r L q fuel s i * ↑T)
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_card_le : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (e : Copy ≃ Fin (Fintype.card Copy)) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Fintype.card (ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex e N fuel s) ≤
+    Fintype.card Copy * ∑ k ∈ Finset.range (Fintype.card Copy), (Fintype.card Copy).choose 2 ^ k
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_index_card_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_rate_state : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {n : ℕ} (e : Copy ≃ Fin n)
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (i : ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex e N fuel s),
+  ResearchCommons.MSCI.JC69CommonCountIndex.commonRate e N r L q fuel s i =
+    ResearchCommons.MSCI.JC69OrderedPathExpansion.holdingRate N r L q
+      (ResearchCommons.MSCI.JC69CommonCountIndex.commonState e N fuel s i)
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_common_rate_state' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [Fintype Copy] {A : Type u_5} [inst_7 : Fintype A]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (v : A → ℕ)
+  (chi : A → Copy → ResearchCommons.MSCI.JC69.Base) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69WeightedTrace.locusKill N (∑ a, v a)
+      (ResearchCommons.MSCI.JC69CommonCountIndex.replicatedQ v chi) s =
+    4 / 3 * ∑ a, ↑(v a) * ResearchCommons.MSCI.JC69Occupation.codeCharge N (chi a) s
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_locusKill' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_common_rate : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {A : Type u_5}
+  [inst_7 : Fintype A] {n : ℕ} (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (v : A → ℕ)
+  (chi : A → Copy → ResearchCommons.MSCI.JC69.Base) (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (i : ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex e N fuel s),
+  ResearchCommons.MSCI.JC69CommonCountIndex.commonRate e N r (∑ a, v a)
+      (ResearchCommons.MSCI.JC69CommonCountIndex.replicatedQ v chi) fuel s i =
+    UnifiedLean.Source.UniformizedSourceStep.totalRate N r
+        (ResearchCommons.MSCI.JC69CommonCountIndex.commonState e N fuel s i) +
+      4 / 3 *
+        ∑ a,
+          ↑(v a) *
+            ResearchCommons.MSCI.JC69Occupation.codeCharge N (chi a)
+              (ResearchCommons.MSCI.JC69CommonCountIndex.commonState e N fuel s i)
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_common_rate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_exponential : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] {A : Type u_5}
+  [inst_7 : Fintype A] {n : ℕ} (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (v : A → ℕ)
+  (chi : A → Copy → ResearchCommons.MSCI.JC69.Base) (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (i : ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex e N fuel s) (T : ℝ),
+  Real.exp
+      (-ResearchCommons.MSCI.JC69CommonCountIndex.commonRate e N r (∑ a, v a)
+            (ResearchCommons.MSCI.JC69CommonCountIndex.replicatedQ v chi) fuel s i *
+        T) =
+    Real.exp
+        (-UnifiedLean.Source.UniformizedSourceStep.totalRate N r
+              (ResearchCommons.MSCI.JC69CommonCountIndex.commonState e N fuel s i) *
+          T) *
+      ∏ a,
+        Real.exp
+            (-(4 / 3 *
+                  ResearchCommons.MSCI.JC69Occupation.codeCharge N (chi a)
+                    (ResearchCommons.MSCI.JC69CommonCountIndex.commonState e N fuel s i)) *
+              T) ^
+          v a
+'ResearchCommons.MSCI.JC69CommonCountIndex.actual_replicated_exponential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

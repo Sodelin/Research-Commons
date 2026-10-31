@@ -1,0 +1,84 @@
+@Nanuq.MarkedGallAdmission.ordinary_suppressed_edge_expansion.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) (ports : G1ActualFormerRootPorts.RootPorts.{u_1, u_2, u_3} N)
+  {h : V},
+  Ne.{u_1 + 1} h (Nanuq.Source.RootedBinary.root.{u_1, u_2, u_3} N) →
+    ∀ (e : G1LiteralSemidirectedRootSuppression.SuppressedEdge.{u_1, u_2, u_3} N),
+      Nanuq.MarkedGallAdmission.SuppressedOrdinaryAvoid.{u_1, u_2, u_3} N ports h e →
+        Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.MarkedGallAdmission.OrdinaryAvoid.{u_1, u_2, u_3} N h)
+          ↑(Nanuq.Source.EdgeGraph.source.{u_1, u_2}
+              (G1LiteralSemidirectedRootSuppression.suppressedGraph.{u_1, u_2, u_3} N ports) e)
+          ↑(Nanuq.Source.EdgeGraph.target.{u_1, u_2}
+              (G1LiteralSemidirectedRootSuppression.suppressedGraph.{u_1, u_2, u_3} N ports) e)
+'Nanuq.MarkedGallAdmission.ordinary_suppressed_edge_expansion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.MarkedGallAdmission.ordinary_suppressed_walk_expansion.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) (ports : G1ActualFormerRootPorts.RootPorts.{u_1, u_2, u_3} N)
+  {h : V},
+  Ne.{u_1 + 1} h (Nanuq.Source.RootedBinary.root.{u_1, u_2, u_3} N) →
+    ∀ {a b : G1LiteralSemidirectedRootSuppression.SuppressedVertex.{u_1, u_2, u_3} N},
+      Nanuq.Source.EdgeGraph.UReach.{u_1, u_2}
+          (G1LiteralSemidirectedRootSuppression.suppressedGraph.{u_1, u_2, u_3} N ports)
+          (Nanuq.MarkedGallAdmission.SuppressedOrdinaryAvoid.{u_1, u_2, u_3} N ports h) a b →
+        Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.MarkedGallAdmission.OrdinaryAvoid.{u_1, u_2, u_3} N h) ↑a ↑b
+'Nanuq.MarkedGallAdmission.ordinary_suppressed_walk_expansion' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.MarkedGallAdmission.guarded_cycle_detour.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E) {h a b : V} {e f : E}
+  {W : List.{u_2} E} {keep : E → Prop},
+  Graph.IsCycleThrough.{u_1, u_2} (Nanuq.SimpleGallAdmission.originalGraph.{u_1, u_2} G) e h a W →
+    Graph.IsLink.{u_1, u_2} (Nanuq.SimpleGallAdmission.originalGraph.{u_1, u_2} G) f h b →
+      Membership.mem.{u_2, u_2} W f →
+        (∀ (d : E), Membership.mem.{u_2, u_2} (List.cons.{u_2} e W) d → Ne.{u_2 + 1} d e → Ne.{u_2 + 1} d f → keep d) →
+          Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} G
+            (fun d =>
+              keep d ∧
+                Ne.{u_1 + 1} (Nanuq.Source.EdgeGraph.source.{u_1, u_2} G d) h ∧
+                  Ne.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G d) h)
+            a b
+'Nanuq.MarkedGallAdmission.guarded_cycle_detour' depends on axioms: [propext]
+@Nanuq.MarkedGallAdmission.incoming_ids_distinct.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) (ports : G1ActualFormerRootPorts.RootPorts.{u_1, u_2, u_3} N)
+  {h : V} {e f : E},
+  Ne.{u_2 + 1} e f →
+    Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) h →
+      Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) f) h →
+        Ne.{u_2 + 1} (Nanuq.MarkedGallAdmission.incomingID.{u_1, u_2, u_3} N e)
+          (Nanuq.MarkedGallAdmission.incomingID.{u_1, u_2, u_3} N f)
+'Nanuq.MarkedGallAdmission.incoming_ids_distinct' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.MarkedGallAdmission.incoming_parent_transport.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] [inst_4 : DecidableEq.{u_2 + 1} E]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) (ports : G1ActualFormerRootPorts.RootPorts.{u_1, u_2, u_3} N)
+  {h : V} (hh : Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) h)
+  {e : E},
+  Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) h →
+    ∃ a,
+      Graph.IsLink.{u_1, u_2}
+          (Nanuq.SimpleGallAdmission.originalGraph.{u_1, u_2}
+            (G1LiteralSemidirectedRootSuppression.suppressedGraph.{u_1, u_2, u_3} N ports))
+          (Nanuq.MarkedGallAdmission.incomingID.{u_1, u_2, u_3} N e) (Subtype.mk.{u_1 + 1} h ⋯) a ∧
+        G1ActualMarkedSemidirectedGalledAdmission.MarkedIncoming.{u_1, u_2, u_3} N ports
+            (Nanuq.MarkedGallAdmission.incomingID.{u_1, u_2, u_3} N e) (Subtype.mk.{u_1 + 1} h ⋯) ∧
+          Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+            (Nanuq.MarkedGallAdmission.OrdinaryAvoid.{u_1, u_2, u_3} N h)
+            (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) ↑a
+'Nanuq.MarkedGallAdmission.incoming_parent_transport' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.MarkedGallAdmission.actual_marked_simple_galls_to_detour.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) (ports : G1ActualFormerRootPorts.RootPorts.{u_1, u_2, u_3} N),
+  Nanuq.MarkedGallAdmission.MarkedSimpleGalls.{u_1, u_2, u_3} N ports →
+    Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+'Nanuq.MarkedGallAdmission.actual_marked_simple_galls_to_detour' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

@@ -1,0 +1,101 @@
+Nanuq.Pendant.prefix_isArcBetween : ∀ (f : ℝ → Schoenflies.Plane),
+  ContinuousOn.{0, 0} f unitInterval →
+    Set.InjOn.{0, 0} f unitInterval →
+      ∀ {t : ℝ},
+        LT.lt.{0} 0 t → LE.le.{0} t 1 → Schoenflies.IsArcBetween (Set.image.{0, 0} f (Set.Icc.{0} 0 t)) (f 0) (f t)
+'Nanuq.Pendant.prefix_isArcBetween' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.Pendant.one_exit_boundary_component : ∀ {K A C : Set.{0} Schoenflies.Plane} {q z u : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsArc A →
+      Eq.{1} (Inter.inter.{0} C K) (singleton.{0, 0} q) →
+        Eq.{1} (Inter.inter.{0} (Union.union.{0} C (Schoenflies.inside C)) K) A →
+          Membership.mem.{0, 0} (Schoenflies.inside C) z →
+            z ∉ K →
+              Membership.mem.{0, 0} (sdiff.{0} C K) u →
+                sdiff.{0} C (singleton.{0, 0} q) ⊆ connectedComponentIn.{0} (compl.{0} K) z
+'Nanuq.Pendant.one_exit_boundary_component' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.Pendant.one_exit_specified_component : ∀ {K A C : Set.{0} Schoenflies.Plane} {q p o u : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsArc A →
+      Eq.{1} (Inter.inter.{0} C K) (singleton.{0, 0} q) →
+        Eq.{1} (Inter.inter.{0} (Union.union.{0} C (Schoenflies.inside C)) K) A →
+          Membership.mem.{0, 0} (Schoenflies.inside C) p →
+            Membership.mem.{0, 0} (closure.{0} (connectedComponentIn.{0} (compl.{0} K) o)) p →
+              Membership.mem.{0, 0} (sdiff.{0} C K) u →
+                sdiff.{0} C (singleton.{0, 0} q) ⊆ connectedComponentIn.{0} (compl.{0} K) o
+'Nanuq.Pendant.one_exit_specified_component' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.Pendant.original_taxon_exterior_one_exit.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N))
+  (x : X),
+  ∃ e f H r b t C,
+    Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+        ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x) ∧
+      ContinuousOn.{0, 0} f unitInterval ∧
+        Set.InjOn.{0, 0} f unitInterval ∧
+          Eq.{1} (Set.image.{0, 0} f unitInterval)
+              (Graph.edgeArc.{u_2} (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} D) e) ∧
+            Eq.{1} (f 0)
+                (NanuqFaithfulSupplierDrawing.vertex.{u_1, u_2} D
+                  ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x)) ∧
+              Eq.{1} (f 1)
+                  (NanuqFaithfulSupplierDrawing.vertex.{u_1, u_2} D
+                    (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)) ∧
+                LT.lt.{0} 0 r ∧
+                  LT.lt.{0} r b ∧
+                    Membership.mem.{0, 0} (Set.Ioo.{0} (1 / 2) (13 / 24)) t ∧
+                      Schoenflies.IsJordanCurve C ∧
+                        (∀ (y : ℝ), LT.lt.{0} (abs.{0} y) r → Membership.mem.{0, 0} C (Schoenflies.Plane.mk r y)) ∧
+                          Eq.{1} (H (f (1 / 2))) 0 ∧
+                            Eq.{1} (H (f (13 / 24))) (Schoenflies.Plane.mk b 0) ∧
+                              Eq.{1} (H (f t)) (Schoenflies.Plane.mk r 0) ∧
+                                Eq.{1} (Set.image.{0, 0} (⇑H) (Set.image.{0, 0} f (Set.Icc.{0} (1 / 2) (13 / 24))))
+                                    (segment.{0, 0} ℝ 0 (Schoenflies.Plane.mk b 0)) ∧
+                                  Eq.{1}
+                                      (Inter.inter.{0} C
+                                        (Set.image.{0, 0} (⇑H)
+                                          (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                            (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                      (singleton.{0, 0} (Schoenflies.Plane.mk r 0)) ∧
+                                    Eq.{1}
+                                        (Inter.inter.{0} (Union.union.{0} C (Schoenflies.inside C))
+                                          (Set.image.{0, 0} (⇑H)
+                                            (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                              (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                        (Set.image.{0, 0} (⇑H) (Set.image.{0, 0} f (Set.Icc.{0} 0 t))) ∧
+                                      Membership.mem.{0, 0}
+                                          (sdiff.{0} C
+                                            (Set.image.{0, 0} (⇑H)
+                                              (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                                (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                          (Schoenflies.Plane.mk r (HDiv.hDiv.{0, 0, 0} r 2)) ∧
+                                        Membership.mem.{0, 0}
+                                            (sdiff.{0} C
+                                              (Set.image.{0, 0} (⇑H)
+                                                (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                                  (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                            (Schoenflies.Plane.mk r (HDiv.hDiv.{0, 0, 0} (Neg.neg.{0} r) 2)) ∧
+                                          Membership.mem.{0, 0}
+                                              (connectedComponentIn.{0}
+                                                (compl.{0}
+                                                  (Set.image.{0, 0} (⇑H)
+                                                    (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                                      (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                                (Schoenflies.Plane.mk r (HDiv.hDiv.{0, 0, 0} r 2)))
+                                              (Schoenflies.Plane.mk r (HDiv.hDiv.{0, 0, 0} (Neg.neg.{0} r) 2)) ∧
+                                            sdiff.{0} C (singleton.{0, 0} (Schoenflies.Plane.mk r 0)) ⊆
+                                              connectedComponentIn.{0}
+                                                (compl.{0}
+                                                  (Set.image.{0, 0} (⇑H)
+                                                    (Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+                                                      (G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} D))))
+                                                (H
+                                                  (NanuqFaithfulSupplierDrawing.coordinates
+                                                    (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2,
+                                                        u_3}
+                                                      face)))
+'Nanuq.Pendant.original_taxon_exterior_one_exit' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

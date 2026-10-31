@@ -1,0 +1,14 @@
+import ActualMarkedGallAdmission
+set_option pp.universes true
+#check @Nanuq.MarkedGallAdmission.ordinary_suppressed_edge_expansion
+#print axioms Nanuq.MarkedGallAdmission.ordinary_suppressed_edge_expansion
+#check @Nanuq.MarkedGallAdmission.ordinary_suppressed_walk_expansion
+#print axioms Nanuq.MarkedGallAdmission.ordinary_suppressed_walk_expansion
+#check @Nanuq.MarkedGallAdmission.guarded_cycle_detour
+#print axioms Nanuq.MarkedGallAdmission.guarded_cycle_detour
+#check @Nanuq.MarkedGallAdmission.incoming_ids_distinct
+#print axioms Nanuq.MarkedGallAdmission.incoming_ids_distinct
+#check @Nanuq.MarkedGallAdmission.incoming_parent_transport
+#print axioms Nanuq.MarkedGallAdmission.incoming_parent_transport
+#check @Nanuq.MarkedGallAdmission.actual_marked_simple_galls_to_detour
+#print axioms Nanuq.MarkedGallAdmission.actual_marked_simple_galls_to_detour

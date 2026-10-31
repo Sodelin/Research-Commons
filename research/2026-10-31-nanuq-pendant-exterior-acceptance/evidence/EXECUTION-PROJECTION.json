@@ -1,0 +1,120 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "PrefixArc",
+    "exit_code": 0,
+    "seconds": 2.2294545490003657,
+    "batch": 1,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<compiler-workspace>/source",
+      "-o",
+      "<compiler-workspace>/lib/PrefixArc.olean",
+      "<compiler-workspace>/source/PrefixArc.lean"
+    ]
+  },
+  {
+    "step": "OneExitExterior",
+    "exit_code": 1,
+    "seconds": 1.7569628570054192,
+    "batch": 1,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<compiler-workspace>/source",
+      "-o",
+      "<compiler-workspace>/lib/OneExitExterior.olean",
+      "<compiler-workspace>/source/OneExitExterior.lean"
+    ]
+  },
+  {
+    "batch_start": true,
+    "batch": 2
+  },
+  {
+    "step": "OneExitExterior",
+    "exit_code": 0,
+    "seconds": 1.9470688470028108,
+    "batch": 2,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<compiler-workspace>/source",
+      "-o",
+      "<compiler-workspace>/lib/OneExitExterior.olean",
+      "<compiler-workspace>/source/OneExitExterior.lean"
+    ]
+  },
+  {
+    "step": "OriginalPendantExterior",
+    "exit_code": 1,
+    "seconds": 2.7416765759990085,
+    "batch": 2,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<compiler-workspace>/source",
+      "-o",
+      "<compiler-workspace>/lib/OriginalPendantExterior.olean",
+      "<compiler-workspace>/source/OriginalPendantExterior.lean"
+    ]
+  },
+  {
+    "batch_start": true,
+    "batch": 3
+  },
+  {
+    "step": "OriginalPendantExterior",
+    "exit_code": 0,
+    "seconds": 3.2175863180018496,
+    "batch": 3,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<compiler-workspace>/source",
+      "-o",
+      "<compiler-workspace>/lib/OriginalPendantExterior.olean",
+      "<compiler-workspace>/source/OriginalPendantExterior.lean"
+    ]
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.6356617080018623,
+    "batch": 3,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<compiler-workspace>/NamedAudit.lean"
+    ]
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 8.44363693500054,
+    "batch": 3,
+    "command_portable": [
+      "lean-4.33.1",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<compiler-workspace>/OwnedAudit.lean"
+    ]
+  }
+]
