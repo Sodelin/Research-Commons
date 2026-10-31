@@ -1,0 +1,99 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:66:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69WeightedCalendar.calendar_weight_of_success`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:131:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:135:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:251:94: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma common
+s : Code N sample := initialCode N sample register
+leafAge : Copy → ℝ := fun x => C.age (N.leaf (sample x))
+M : Copy → Copy → ℝ := fun x x_1 => leafAge x
+I : ℝ≥0∞ := initialPotentialWeight N C sample register L q
+W : (Fin ops.length → SegmentRecord N sample) → ℝ≥0∞ :=
+  fun past => ENNReal.ofReal (Real.exp (-(4 / 3 * ∑ j, calendarOccupation N (q j) ops s past)))
+F : (Fin ops.length → SegmentRecord N sample) → ℝ≥0∞ :=
+  fun past => calendarWeight N L q ops s past * rootWeight N r L q (calendarEnd N ops s past)
+hI : I ≠ ∞
+hfactor :
+  ∀ (d : Code N sample) (past : Fin ops.length → SegmentRecord N sample) (c : Choice N d → ℝ),
+    ENNReal.ofReal
+        (Real.exp
+          (-(4 / 3 *
+              ∑ j,
+                (forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) +
+                  completeClockOccupation N (q j) ops s d past c)))) =
+      I * W past * completeRootWeight N L q d c
+d : Code N sample
+a✝ : d ∈ Finset.univ
+hm : MeasurableSet {past | calendarEnd N ops s past = d}
+past : Fin ops.length → SegmentRecord N sample
+hd : calendarEnd N ops s past = d
+hw : calendarWeight N L q ops s past = ENNReal.ofReal (Real.exp (-(4 / 3 * ∑ j, calendarOccupation N (q j) ops s past)))
+⊢ I * (W past * ∫⁻ (a : Choice N d → ℝ), completeRootWeight N L q d a ∂currentPairClockMeasure N r d) =
+    I *
+      (ENNReal.ofReal (Real.exp (-(4 / 3 * ∑ j, calendarOccupation N (q j) ops s past))) *
+        ∫⁻ (c : Choice N (calendarEnd N ops s past) → ℝ),
+          completeRootWeight N L q (calendarEnd N ops s past) c ∂currentPairClockMeasure N r (calendarEnd N ops s past))
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:262:30: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [F, rootWeight, hw, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

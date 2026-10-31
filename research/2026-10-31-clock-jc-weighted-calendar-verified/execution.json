@@ -1,0 +1,41 @@
+[
+  {
+    "step": "proof-only-attempt4",
+    "exit_code": 0,
+    "seconds": 4.985881104999862,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69WeightedCalendar.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean"
+    ]
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.141136671998538,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/NamedAudit.lean"
+    ]
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 5.1416701409980305,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/OwnedAudit.lean"
+    ]
+  }
+]

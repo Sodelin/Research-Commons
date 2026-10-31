@@ -1,0 +1,92 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:65:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69WeightedCalendar.calendar_weight_of_success`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:117:4: error: Application type mismatch: The argument
+  ?m.92 ∘ ?m.106
+has type
+  ?m.88 → ?m.90
+but is expected to have type
+  Measurable fun past => terminal (calendarEnd N ops s past)
+in the application
+  Measurable.mul (calendar_weight_measurable N L q ops s) (?m.92 ∘ ?m.106)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:117:34: error: Application type mismatch: The argument
+  calendar_end_measurable N ops s
+has type
+  Measurable (calendarEnd N ops s)
+but is expected to have type
+  ?m.88 → ?m.89
+in the application
+  ?m.92 ∘ ⋯
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:130:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:134:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:199:57: error(lean.unknownIdentifier): Unknown identifier `Calendar`
+
+Note: It is not possible to treat `Calendar` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:211:34: error(lean.unknownIdentifier): Unknown identifier `Calendar`
+
+Note: It is not possible to treat `Calendar` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69WeightedCalendar.lean:220:53: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : sorry
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+ops : List (ProgramStep N) := compiledCalendarProgram N sorry H gamma common
+s : Code N sample := initialCode N sample register
+⊢ observedFourier L N sorry sample register H gamma common r q =
+    (initialPotentialWeight N C sample register L q *
+        calendarValue N r L q (rootWeight N r L q) (compiledCalendarProgram N sorry H gamma common)
+          (initialCode N sample register)).toReal
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
