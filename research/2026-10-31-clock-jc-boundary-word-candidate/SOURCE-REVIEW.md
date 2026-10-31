@@ -1,0 +1,3 @@
+# Separate source-only mathematical review
+
+31 October2026. Separate AI-assisted review read all164 lines of ca1e7282f1869a95efa779485e8512254e8e002717aa56158131ede9daaad12f. The source-only request was approved: original whole-boundary PMF composition, quotient derived by backward induction/register retention, reBank only under proven observation/bank equivalence, and rate/site-free finite coefficient are explicit. No signed interval coefficient or global window claim. The final frozen source changes ONLY the import from JC69ActiveStage to its sufficient accepted JC69GuardedCalendarQuotient dependency; all complete declarations are unchanged. This reduces the exact context to197 modules. No successful Lean check, expert peer review or novelty claim.
