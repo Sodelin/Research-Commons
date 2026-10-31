@@ -1,0 +1,340 @@
+{
+  "status": "UNCOMPILED_LITERAL_INTERFACES_NOT_ACCEPTED_ELABORATED_TYPES",
+  "headers": [
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "actual_three_port_full_support",
+      "header": "theorem actual_three_port_full_support (N : RootedBinary V E X) (rank : X \u2243 Fin 3) :\n    LocalFullSupportAt N rank"
+    },
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "actual_two_port_full_support",
+      "header": "theorem actual_two_port_full_support (N : RootedBinary V E X) (rank : X \u2243 Fin 2) :\n    LocalFullSupportAt N rank"
+    },
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "actual_nontrivial_blob_full_local_support",
+      "header": "theorem actual_nontrivial_blob_full_local_support\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 (n : Nat) (rank : N.BlobPort b \u2243 Fin n) (C : Set Plane),\n      2\u2264n \u2227 IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside)=outside C \u2227 LocalFullSupportAt (M) rank"
+    },
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "actual_singleton_blob_full_local_support",
+      "header": "theorem actual_singleton_blob_full_local_support\n    (v : BlobVertex N.graph b) (hall : \u2200 w : BlobVertex N.graph b, w=v) :\n    \u2203 (n : Nat) (rank : N.BlobPort b \u2243 Fin n),\n      (n=2 \u2228 n=3) \u2227 LocalFullSupportAt (M) rank"
+    },
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "actual_every_blob_full_local_support",
+      "header": "theorem actual_every_blob_full_local_support (face : TaxonOuterFace D N.leaf) :\n    \u2203 (n : Nat) (rank : N.BlobPort b \u2243 Fin n), 2\u2264n \u2227 LocalFullSupportAt (M) rank"
+    },
+    {
+      "module": "ActualBoundaryCoordinates",
+      "name": "boundaryTuple_injective",
+      "header": "theorem boundaryTuple_injective {n : Nat} (hn : 3\u2264n) (i j : Fin n) (hij : i<j)\n    (nonadj : i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n)) :\n    Function.Injective (boundaryTuple i j)"
+    },
+    {
+      "module": "ActualBoundaryCoordinates",
+      "name": "actual_boundary_displayedPair_iff",
+      "header": "theorem actual_boundary_displayedPair_iff (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (hm : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (i j : Fin n) (hij : i<j)\n    (nonadj : i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n)) :\n    displayedPair (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      ((i.val+1)%n) j.val i.val ((j.val+1)%n)=true \u2194\n      ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n        Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ"
+    },
+    {
+      "module": "ActualBoundaryCoordinates",
+      "name": "actual_weighted_nontrivial_split_support",
+      "header": "theorem actual_weighted_nontrivial_split_support (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (hmean : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (m : X \u2192 \u211a) (hm : \u2200 x, 0<m x) (i j : Fin n) (hij : i<j)\n    (nonadj : i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n)) :\n    0<circularAlpha (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) i j \u2194\n      ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n        Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ"
+    },
+    {
+      "module": "ActualBoundaryCut",
+      "name": "actual_boundary_resolution_whole_cut",
+      "header": "theorem actual_boundary_resolution_whole_cut (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (i j : Nat) (hij : i<j) (hjn : j<n)\n    (q : Fin 4 \u21aa X)\n    (h0 : (rank (q 0)).val=i+1) (h1 : (rank (q 1)).val=j)\n    (h2 : (rank (q 2)).val=i)\n    (h3 : (rank (q 3)).val=if j+1=n then 0 else j+1)\n    (hq : Resolution.xy_zw \u2208 N.rawDisplayedQuartets q) :\n    \u2203 S : N.Switching, \u2203 e : S.Edge,\n      ((\u2200 x : X, S.graph.DReach (S.graph.target e) (N.leaf x) \u2194\n          i<(rank x).val \u2227 (rank x).val\u2264j) \u2228\n       (\u2200 x : X, \u00acS.graph.DReach (S.graph.target e) (N.leaf x) \u2194\n          i<(rank x).val \u2227 (rank x).val\u2264j))"
+    },
+    {
+      "module": "ActualBoundarySupport",
+      "name": "mem_rankIntervalSide",
+      "header": "@[simp] theorem mem_rankIntervalSide {n : Nat} (rank : X \u2243 Fin n) (i j : Nat) (x : X) :\n    x\u2208rankIntervalSide rank i j \u2194 i<(rank x).val \u2227 (rank x).val\u2264j"
+    },
+    {
+      "module": "ActualBoundarySupport",
+      "name": "actual_boundary_split_iff",
+      "header": "theorem actual_boundary_split_iff (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (i j : Nat) (hij : i<j) (hjn : j<n)\n    (q : Fin 4 \u21aa X)\n    (h0 : (rank (q 0)).val=i+1) (h1 : (rank (q 1)).val=j)\n    (h2 : (rank (q 2)).val=i)\n    (h3 : (rank (q 3)).val=if j+1=n then 0 else j+1) :\n    Resolution.xy_zw \u2208 N.rawDisplayedQuartets q \u2194\n      ({rankIntervalSide rank i j, Finset.univ \\ rankIntervalSide rank i j} :\n        Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ"
+    },
+    {
+      "module": "ActualCircularSupport",
+      "name": "actual_all_splits_are_rank_intervals",
+      "header": "theorem actual_all_splits_are_rank_intervals (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (cut : Finset (Finset X)) (hcut : cut\u2208actualDisplayedSplits N Finset.univ) :\n    \u2203 i j : Nat, i<j \u2227 j<n \u2227\n      cut={rankIntervalSide rank i j,Finset.univ \\ rankIntervalSide rank i j}"
+    },
+    {
+      "module": "ActualCircularSupport",
+      "name": "adjacent_gap_cases",
+      "header": "theorem adjacent_gap_cases {n : Nat} (i j : Fin n) (hij : i<j)\n    (hadj : \u00ac(i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n))) :\n    j=cyclicNext i \u2228 i=cyclicNext j"
+    },
+    {
+      "module": "ActualCircularSupport",
+      "name": "rank_value_eq_iff",
+      "header": "theorem rank_value_eq_iff {n : Nat} (rank : X \u2243 Fin n) (x : X) (a : Fin n) :\n    (rank x).val=a.val \u2194 x=rank.symm a"
+    },
+    {
+      "module": "ActualCircularSupport",
+      "name": "actual_adjacent_split_mem",
+      "header": "theorem actual_adjacent_split_mem (N : RootedBinary V E X)\n    {n : Nat} (rank : X \u2243 Fin n) (i j : Fin n) (hij : i<j)\n    (hadj : \u00ac(i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n))) :\n    ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n      Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ"
+    },
+    {
+      "module": "ActualCrossingCuts",
+      "name": "actual_resolution_mem",
+      "header": "theorem actual_resolution_mem (N : RootedBinary V E X) (S : N.Switching)\n    (q : Fin 4 \u21aa X) (r : Resolution)\n    (hr : S.graph.Resolves (fun i => N.leaf (q i)) r) :\n    r \u2208 N.rawDisplayedQuartets q"
+    },
+    {
+      "module": "ActualCrossingCuts",
+      "name": "actual_resolution_mem_iff",
+      "header": "theorem actual_resolution_mem_iff (N : RootedBinary V E X)\n    (q : Fin 4 \u21aa X) (r : Resolution) :\n    r \u2208 N.rawDisplayedQuartets q \u2194\n      \u2203 S : N.Switching, S.graph.Resolves (fun i => N.leaf (q i)) r"
+    },
+    {
+      "module": "ActualCrossingCuts",
+      "name": "actual_crossing_of_descendants",
+      "header": "theorem actual_crossing_of_descendants (N : RootedBinary V E X)\n    (S : N.Switching) (e : S.Edge) (q : Fin 4 \u21aa X)\n    (hc :\n      (\u00acS.graph.DReach (S.graph.target e) (N.leaf (q 0)) \u2227\n       \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 2)) \u2227\n       S.graph.DReach (S.graph.target e) (N.leaf (q 1)) \u2227\n       S.graph.DReach (S.graph.target e) (N.leaf (q 3))) \u2228\n      (S.graph.DReach (S.graph.target e) (N.leaf (q 0)) \u2227\n       S.graph.DReach (S.graph.target e) (N.leaf (q 2)) \u2227\n       \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 1)) \u2227\n       \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 3)))) :\n    Resolution.xz_yw \u2208 N.rawDisplayedQuartets q"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "actual_target_cluster",
+      "header": "theorem actual_target_cluster (N : RootedBinary V E X) (S : N.Switching)\n    (panel : Finset X) (e : S.Edge) :\n    sampledDescendants N S panel (S.graph.target e) =\n      panel.filter (fun x => S.graph.ReachWithout e (S.graph.target e) (N.leaf x))"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "actual_source_cluster",
+      "header": "theorem actual_source_cluster (N : RootedBinary V E X) (S : N.Switching)\n    (panel : Finset X) (e : S.Edge) :\n    panel \\ sampledDescendants N S panel (S.graph.target e) =\n      panel.filter (fun x => S.graph.ReachWithout e (S.graph.source e) (N.leaf x))"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "proper_selected_cluster_edge",
+      "header": "theorem proper_selected_cluster_edge (N : RootedBinary V E X) (S : N.Switching)\n    (panel D : Finset X) (hD : D \u2208 selectedClusters N S panel)\n    (hproper : (panel \\ D).Nonempty) :\n    \u2203 e : S.Edge, sampledDescendants N S panel (S.graph.target e) = D"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "actual_displayed_split_edge_iff",
+      "header": "theorem actual_displayed_split_edge_iff (N : RootedBinary V E X)\n    (panel : Finset X) (cut : Finset (Finset X)) :\n    cut \u2208 actualDisplayedSplits N panel \u2194\n      \u2203 S : N.Switching, \u2203 e : S.Edge,\n        let D := sampledDescendants N S panel (S.graph.target e)\n        D.Nonempty \u2227 (panel \\ D).Nonempty \u2227 cut = {D, panel \\ D}"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "actual_split_of_edge_side",
+      "header": "theorem actual_split_of_edge_side (N : RootedBinary V E X)\n    (S : N.Switching) (e : S.Edge) (B : Finset X)\n    (hB : B.Nonempty) (hBc : (Finset.univ \\ B).Nonempty)\n    (hor :\n      (\u2200 x, S.graph.DReach (S.graph.target e) (N.leaf x) \u2194 x\u2208B) \u2228\n      (\u2200 x, \u00acS.graph.DReach (S.graph.target e) (N.leaf x) \u2194 x\u2208B)) :\n    ({B,Finset.univ \\ B} : Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ"
+    },
+    {
+      "module": "ActualCutClusters",
+      "name": "actual_pendant_split_mem",
+      "header": "theorem actual_pendant_split_mem (N : RootedBinary V E X) (panel : Finset X)\n    (x : X) (hx : x\u2208panel) (hother : (panel \\ {x}).Nonempty) :\n    ({({x} : Finset X),panel \\ {x}} : Finset (Finset X)) \u2208 actualDisplayedSplits N panel"
+    },
+    {
+      "module": "ActualCutIntervals",
+      "name": "rank_image_mem",
+      "header": "theorem rank_image_mem (n : Nat) (rank : X \u2243 Fin n) (D : Finset X) (a : Fin n) :\n    a.val \u2208 D.image (fun x => (rank x).val) \u2194 rank.symm a \u2208 D"
+    },
+    {
+      "module": "ActualCutIntervals",
+      "name": "actual_proper_cut_interval",
+      "header": "theorem actual_proper_cut_interval (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (S : N.Switching) (e : S.Edge)\n    (hne : (sampledDescendants N S Finset.univ (S.graph.target e)).Nonempty)\n    (hproper : (Finset.univ \\ sampledDescendants N S Finset.univ (S.graph.target e)).Nonempty) :\n    \u2203 i j : Nat, i<j \u2227 j<n \u2227\n      ((\u2200 a : Fin n, S.graph.DReach (S.graph.target e) (N.leaf (rank.symm a)) \u2194\n          i<a.val \u2227 a.val\u2264j) \u2228\n       (\u2200 a : Fin n, \u00acS.graph.DReach (S.graph.target e) (N.leaf (rank.symm a)) \u2194\n          i<a.val \u2227 a.val\u2264j))"
+    },
+    {
+      "module": "ActualDisplayedPair",
+      "name": "distinctMean_lt_one_iff_first",
+      "header": "theorem distinctMean_lt_one_iff_first : \u2200 R : Finset Resolution,\n    R.Nonempty \u2192 (distinctMean R < 1 \u2194 Resolution.xy_zw \u2208 R)"
+    },
+    {
+      "module": "ActualDisplayedPair",
+      "name": "actual_displayedPair_iff",
+      "header": "theorem actual_displayedPair_iff (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hm : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (q : Fin 4 \u21aa X) :\n    displayedPair (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      (rank (q 0)).val (rank (q 1)).val (rank (q 2)).val (rank (q 3)).val=true \u2194\n      Resolution.xy_zw \u2208 N.rawDisplayedQuartets q"
+    },
+    {
+      "module": "ActualLocalSupport",
+      "name": "actual_weighted_all_interval_support",
+      "header": "theorem actual_weighted_all_interval_support (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (hmean : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (m : X \u2192 \u211a) (hm : \u2200 x, 0<m x) :\n    CircularDecomposable (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) \u2227\n    (\u2200 i j : Fin n, i<j \u2192\n      (0<circularAlpha (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) i j \u2194\n        ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n          Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ)) \u2227\n    (\u2200 cut\u2208actualDisplayedSplits N Finset.univ, \u2203 i j : Nat, i<j \u2227 j<n \u2227\n      cut={rankIntervalSide rank i j,Finset.univ \\ rankIntervalSide rank i j})"
+    },
+    {
+      "module": "ActualLowPorts",
+      "name": "no_four_port_embedding",
+      "header": "theorem no_four_port_embedding {n : Nat} (rank : X \u2243 Fin n) (hn : n<4)\n    (q : Fin 4 \u21aa X) : False"
+    },
+    {
+      "module": "ActualLowPorts",
+      "name": "finiteWeightedMatrix_two_zero",
+      "header": "theorem finiteWeightedMatrix_two_zero (mask : Nat) (T : Tree) (m : Fin 2 \u2192 \u211a)\n    (x y : Fin 2) : finiteWeightedMatrix 2 mask T m x y=0"
+    },
+    {
+      "module": "ActualLowPorts",
+      "name": "actual_two_port_zero",
+      "header": "theorem actual_two_port_zero (N : RootedBinary V E X) (rank : X \u2243 Fin 2)\n    (m : X \u2192 \u211a) (x y : X) : N.actualWeightedAnchorDistance m x y=0"
+    },
+    {
+      "module": "ActualLowPorts",
+      "name": "actual_three_port_support",
+      "header": "theorem actual_three_port_support (N : RootedBinary V E X) (rank : X \u2243 Fin 3)\n    (m : X \u2192 \u211a) (hm : \u2200 x, 0<m x) :\n    CircularDecomposable (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) \u2227\n    (\u2200 i j : Fin 3, i<j \u2192\n      (0<circularAlpha (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) i j \u2194\n        ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n          Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ)) \u2227\n    (\u2200 cut\u2208actualDisplayedSplits N Finset.univ, \u2203 i j : Nat, i<j \u2227 j<3 \u2227\n      cut={rankIntervalSide rank i j,Finset.univ \\ rankIntervalSide rank i j})"
+    },
+    {
+      "module": "ActualPairCut",
+      "name": "actual_first_pair_cut_iff",
+      "header": "theorem actual_first_pair_cut_iff (N : RootedBinary V E X) (q : Fin 4 \u21aa X) :\n    Resolution.xy_zw \u2208 N.rawDisplayedQuartets q \u2194\n      \u2203 S : N.Switching, \u2203 e : S.Edge,\n        (S.graph.DReach (S.graph.target e) (N.leaf (q 0)) \u2227\n         S.graph.DReach (S.graph.target e) (N.leaf (q 1)) \u2227\n         \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 2)) \u2227\n         \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 3))) \u2228\n        (\u00acS.graph.DReach (S.graph.target e) (N.leaf (q 0)) \u2227\n         \u00acS.graph.DReach (S.graph.target e) (N.leaf (q 1)) \u2227\n         S.graph.DReach (S.graph.target e) (N.leaf (q 2)) \u2227\n         S.graph.DReach (S.graph.target e) (N.leaf (q 3)))"
+    },
+    {
+      "module": "ActualSingletonPorts",
+      "name": "singleton_no_hybrid",
+      "header": "theorem singleton_no_hybrid : \u00ac N.graph.IsHybrid v.val"
+    },
+    {
+      "module": "ActualSingletonPorts",
+      "name": "singleton_port_card_le_three",
+      "header": "theorem singleton_port_card_le_three : Fintype.card (N.BlobPort b)\u22643"
+    },
+    {
+      "module": "ActualSingletonPorts",
+      "name": "singleton_nonleaf_port_card",
+      "header": "theorem singleton_nonleaf_port_card (hb : N.NonleafBlob b) :\n    Fintype.card (N.BlobPort b)=2 \u2228 Fintype.card (N.BlobPort b)=3"
+    },
+    {
+      "module": "ActualSingletonPorts",
+      "name": "singleton_no_four_distinct_ports",
+      "header": "theorem singleton_no_four_distinct_ports : IsEmpty (Fin 4 \u21aa N.BlobPort b)"
+    },
+    {
+      "module": "ActualWeightedRanked",
+      "name": "sum_reindex_rank",
+      "header": "theorem sum_reindex_rank {Y : Type*} [Fintype Y] (n : Nat)\n    (rank : Y \u2243 Fin n) (f : Y \u2192 \u211a) :\n    (\u2211 y, f y) = \u2211 i, f (rank.symm i)"
+    },
+    {
+      "module": "ActualWeightedRanked",
+      "name": "actual_ranked_anchor_entry",
+      "header": "theorem actual_ranked_anchor_entry (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hm : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (x y p q : Fin n) :\n    N.actualTupleAnchor ![rank.symm x,rank.symm y,rank.symm p,rank.symm q] =\n      if p=q then 0 else\n        (anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n          p.val q.val x.val y.val : \u211a)"
+    },
+    {
+      "module": "ActualWeightedRanked",
+      "name": "actual_weighted_anchor_ranked",
+      "header": "theorem actual_weighted_anchor_ranked (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hm : \u2200 q : Fin 4 \u21aa X,\n      N.rawQuartetMean q=distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n        (coordinateQuartet (fun i => (rank (q i)).val))))\n    (m : X \u2192 \u211a) (x y : Fin n) :\n    N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y) =\n      finiteWeightedMatrix n mask T (fun p => m (rank.symm p)) x y"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "quartetIndex_anchor_swap",
+      "header": "theorem quartetIndex_anchor_swap (qs : List Quartet) (x y p q : Nat) :\n    quartetIndex qs x y p q = quartetIndex qs x y q p"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "quartetIndex_query_swap",
+      "header": "theorem quartetIndex_query_swap (qs : List Quartet) (x y p q : Nat) :\n    quartetIndex qs x y p q = quartetIndex qs y x p q"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "twiceMean_anchor_swap",
+      "header": "theorem twiceMean_anchor_swap (qs : List Quartet) (pattern x y p q : Nat) :\n    twiceMean qs pattern x y p q = twiceMean qs pattern x y q p"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "twiceMean_query_swap",
+      "header": "theorem twiceMean_query_swap (qs : List Quartet) (pattern x y p q : Nat) :\n    twiceMean qs pattern x y p q = twiceMean qs pattern y x p q"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "anchor_anchor_swap",
+      "header": "theorem anchor_anchor_swap (qs : List Quartet) (pattern p q x y : Nat) :\n    anchor qs pattern p q x y = anchor qs pattern q p x y"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "anchor_query_swap",
+      "header": "theorem anchor_query_swap (qs : List Quartet) (pattern p q x y : Nat) :\n    anchor qs pattern p q x y = anchor qs pattern p q y x"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "alpha_anchor_swap",
+      "header": "theorem alpha_anchor_swap (n : Nat) (qs : List Quartet) (pattern p q i j : Nat) :\n    alpha n qs pattern p q i j = alpha n qs pattern q p i j"
+    },
+    {
+      "module": "AnchorSymmetry",
+      "name": "alpha_gap_swap",
+      "header": "theorem alpha_gap_swap (n : Nat) (qs : List Quartet) (pattern p q i j : Nat) :\n    alpha n qs pattern p q i j = alpha n qs pattern p q j i"
+    },
+    {
+      "module": "ConvexBoundarySplit",
+      "name": "convex_of_no_zero_crossing",
+      "header": "theorem convex_of_no_zero_crossing (S : Finset Nat) (hz : 0 \u2209 S)\n    (hcross : \u2200 x y z : Nat, 0 < x \u2192 x < y \u2192 y < z \u2192\n      x \u2208 S \u2192 y \u2209 S \u2192 z \u2208 S \u2192 False) :\n    \u2200 x y z : Nat, x \u2208 S \u2192 z \u2208 S \u2192 x \u2264 y \u2192 y \u2264 z \u2192 y \u2208 S"
+    },
+    {
+      "module": "ConvexBoundarySplit",
+      "name": "convex_side_interval",
+      "header": "theorem convex_side_interval (S : Finset Nat) (hne : S.Nonempty)\n    (hz : 0 \u2209 S)\n    (hc : \u2200 x y z : Nat, x \u2208 S \u2192 z \u2208 S \u2192 x \u2264 y \u2192 y \u2264 z \u2192 y \u2208 S) :\n    \u2203 i j : Nat, i < j \u2227 S = Finset.Ioc i j"
+    },
+    {
+      "module": "ConvexBoundarySplit",
+      "name": "boundary_pins_convex_side",
+      "header": "theorem boundary_pins_convex_side (n i j : Nat) (hij : i < j) (hjn : j < n)\n    (S : Finset Nat) (hbound : \u2200 x \u2208 S, x < n) (hz : 0 \u2209 S)\n    (hc : \u2200 x y z : Nat, x \u2208 S \u2192 z \u2208 S \u2192 x \u2264 y \u2192 y \u2264 z \u2192 y \u2208 S)\n    (hin : i+1 \u2208 S \u2227 j \u2208 S)\n    (hout : i \u2209 S \u2227 (if j+1=n then 0 else j+1) \u2209 S) :\n    S = Finset.Ioc i j"
+    },
+    {
+      "module": "ConvexBoundarySplit",
+      "name": "boundary_outer_orientation_impossible",
+      "header": "theorem boundary_outer_orientation_impossible (n i j : Nat) (hij : i < j)\n    (S : Finset Nat) (hz : 0 \u2209 S)\n    (hc : \u2200 x y z : Nat, x \u2208 S \u2192 z \u2208 S \u2192 x \u2264 y \u2192 y \u2264 z \u2192 y \u2208 S)\n    (hout : i \u2208 S \u2227 (if j+1=n then 0 else j+1) \u2208 S)\n    (hin : i+1 \u2209 S) : False"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_symmetric",
+      "header": "theorem finiteWeightedMatrix_symmetric (n mask : Nat) (T : Tree)\n    (m : Fin n \u2192 \u211a) (x y : Fin n) :\n    finiteWeightedMatrix n mask T m x y=finiteWeightedMatrix n mask T m y x"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_diagonal",
+      "header": "theorem finiteWeightedMatrix_diagonal (n mask : Nat) (T : Tree)\n    (m : Fin n \u2192 \u211a) (x : Fin n) : finiteWeightedMatrix n mask T m x x=0"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_alpha",
+      "header": "theorem finiteWeightedMatrix_alpha (n mask : Nat) (T : Tree)\n    (m : Fin n \u2192 \u211a) (i j : Fin n) :\n    circularAlpha (finiteWeightedMatrix n mask T m) i j =\n      \u2211 pq \u2208 upperPairs n, m pq.1*m pq.2 *\n        (alpha n (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n          pq.1.val pq.2.val i.val j.val : \u211a)"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_alpha_nonnegative",
+      "header": "theorem finiteWeightedMatrix_alpha_nonnegative (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (hm : \u2200 p, 0\u2264m p) (i j : Fin n) (hij : i<j) :\n    0\u2264circularAlpha (finiteWeightedMatrix n mask T m) i j"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_circular",
+      "header": "theorem finiteWeightedMatrix_circular (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (hm : \u2200 p, 0\u2264m p) :\n    CircularDecomposable (finiteWeightedMatrix n mask T m)"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_absent_zero",
+      "header": "theorem finiteWeightedMatrix_absent_zero (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (i j : Fin n) (hij : i<j)\n    (nonadj : i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n))\n    (absent : displayedPair (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      ((i.val+1)%n) j.val i.val ((j.val+1)%n)=false) :\n    circularAlpha (finiteWeightedMatrix n mask T m) i j=0"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_positive_anchor",
+      "header": "theorem finiteWeightedMatrix_positive_anchor (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (hm : \u2200 p, 0<m p) (i j : Fin n) (hij : i<j)\n    (p q : Fin n) (hpq : p\u2260q)\n    (ha : 0<alpha n (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      p.val q.val i.val j.val) :\n    0<circularAlpha (finiteWeightedMatrix n mask T m) i j"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_nontrivial_support",
+      "header": "theorem finiteWeightedMatrix_nontrivial_support (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (hm : \u2200 p, 0<m p) (i j : Fin n) (hij : i<j)\n    (nonadj : i.val+1<j.val \u2227 \u00ac(i.val=0 \u2227 j.val+1=n)) :\n    0<circularAlpha (finiteWeightedMatrix n mask T m) i j \u2194\n      displayedPair (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n        ((i.val+1)%n) j.val i.val ((j.val+1)%n)=true"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix_pendant_positive",
+      "header": "theorem finiteWeightedMatrix_pendant_positive (n mask : Nat) (T : Tree)\n    (hn : 3\u2264n) (hs : T.size=(occurrenceLabels n mask).length-1)\n    (m : Fin n \u2192 \u211a) (hm : \u2200 p, 0<m p) (i j : Fin n) (hij : i<j)\n    (hadj : j=cyclicNext i \u2228 i=cyclicNext j) :\n    0<circularAlpha (finiteWeightedMatrix n mask T m) i j"
+    },
+    {
+      "module": "RankedCutInterval",
+      "name": "actual_ranked_cut_no_hole",
+      "header": "theorem actual_ranked_cut_no_hole (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (S : N.Switching) (e : S.Edge) (A : Finset Nat)\n    (hbound : \u2200 a \u2208 A, a<n) (hz : 0 \u2209 A)\n    (horient :\n      (\u2200 a : Fin n, a.val \u2208 A \u2194 S.graph.DReach (S.graph.target e) (N.leaf (rank.symm a))) \u2228\n      (\u2200 a : Fin n, a.val \u2208 A \u2194 \u00acS.graph.DReach (S.graph.target e) (N.leaf (rank.symm a)))) :\n    \u2200 x y z : Nat, x \u2208 A \u2192 z \u2208 A \u2192 x\u2264y \u2192 y\u2264z \u2192 y\u2208A"
+    },
+    {
+      "module": "SortedCrossingExclusion",
+      "name": "finite_sorted_crossing_absent",
+      "header": "theorem finite_sorted_crossing_absent (n mask : Nat) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (a b c d : Nat) (hab : a<b) (hbc : b<c) (hcd : c<d) (hd : d<n) :\n    Resolution.xz_yw \u2209 finiteResolutionSet T (occurrenceLabels n mask) \u27e8a,b,c,d\u27e9"
+    },
+    {
+      "module": "SortedCrossingExclusion",
+      "name": "actual_sorted_crossing_absent",
+      "header": "theorem actual_sorted_crossing_absent (N : RootedBinary V E X)\n    (n mask : Nat) (rank : X \u2243 Fin n) (T : Tree)\n    (hs : T.size=(occurrenceLabels n mask).length-1)\n    (hsets : \u2200 q : Fin 4 \u21aa X,\n      N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n        \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)\n    (q : Fin 4 \u21aa X)\n    (h01 : (rank (q 0)).val<(rank (q 1)).val)\n    (h12 : (rank (q 1)).val<(rank (q 2)).val)\n    (h23 : (rank (q 2)).val<(rank (q 3)).val) :\n    Resolution.xz_yw \u2209 N.rawDisplayedQuartets q"
+    }
+  ],
+  "section_retention": [
+    {
+      "module": "ActualBlobFullSupport",
+      "text": "include hg in"
+    },
+    {
+      "module": "ActualBlobFullSupport",
+      "text": "include hg in"
+    }
+  ]
+}

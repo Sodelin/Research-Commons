@@ -1,0 +1,24 @@
+{
+  "definitions": [
+    {
+      "module": "ActualBlobFullSupport",
+      "name": "LocalFullSupportAt",
+      "definition": "def LocalFullSupportAt (N : RootedBinary V E X) {n : Nat} (rank : X \u2243 Fin n) : Prop :=\n  (n=2 \u2192 \u2200 (m : X \u2192 \u211a) (x y : X), N.actualWeightedAnchorDistance m x y=0) \u2227\n  (3\u2264n \u2192 \u2200 (m : X \u2192 \u211a), (\u2200 x, 0<m x) \u2192\n    CircularDecomposable (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) \u2227\n    (\u2200 i j : Fin n, i<j \u2192\n      (0<circularAlpha (fun x y => N.actualWeightedAnchorDistance m (rank.symm x) (rank.symm y)) i j \u2194\n        ({rankIntervalSide rank i.val j.val,Finset.univ \\ rankIntervalSide rank i.val j.val} :\n          Finset (Finset X)) \u2208 actualDisplayedSplits N Finset.univ)) \u2227\n    (\u2200 cut\u2208actualDisplayedSplits N Finset.univ, \u2203 i j : Nat, i<j \u2227 j<n \u2227\n      cut={rankIntervalSide rank i j,Finset.univ \\ rankIntervalSide rank i j}))"
+    },
+    {
+      "module": "ActualBoundaryCoordinates",
+      "name": "boundaryTuple",
+      "definition": "def boundaryTuple {n : Nat} (i j : Fin n) : Fin 4 \u2192 Fin n :=\n  ![cyclicNext i,j,i,cyclicNext j]"
+    },
+    {
+      "module": "ActualBoundarySupport",
+      "name": "rankIntervalSide",
+      "definition": "def rankIntervalSide {n : Nat} (rank : X \u2243 Fin n) (i j : Nat) : Finset X :=\n  Finset.univ.filter (fun x => i<(rank x).val \u2227 (rank x).val\u2264j)"
+    },
+    {
+      "module": "FiniteWeightedCoefficients",
+      "name": "finiteWeightedMatrix",
+      "definition": "def finiteWeightedMatrix (n mask : Nat) (T : Tree) (m : Fin n \u2192 \u211a) : Matrix n :=\n  fun x y => \u2211 pq \u2208 upperPairs n, m pq.1*m pq.2 *\n    (anchor (quartets n) (codedPattern T (occurrenceLabels n mask) n)\n      pq.1.val pq.2.val x.val y.val : \u211a)"
+    }
+  ]
+}
