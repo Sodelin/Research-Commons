@@ -1,0 +1,6 @@
+import ActualBigonBoundary
+set_option pp.universes true
+#check @Nanuq.ActualBigonBoundary.actual_bigon_pointSet
+#print axioms Nanuq.ActualBigonBoundary.actual_bigon_pointSet
+#check @Nanuq.ActualBigonBoundary.actual_bigon_outer_boundary
+#print axioms Nanuq.ActualBigonBoundary.actual_bigon_outer_boundary

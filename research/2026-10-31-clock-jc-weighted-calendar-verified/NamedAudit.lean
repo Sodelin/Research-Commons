@@ -1,0 +1,11 @@
+import ResearchCommons.MSCI.JC69WeightedCalendar
+#check @ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential
+#print axioms ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential
+#check @ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion
+#print axioms ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion
+#check @ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion
+#print axioms ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion
+#check @ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight
+#print axioms ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight
+#check @ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion
+#print axioms ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion

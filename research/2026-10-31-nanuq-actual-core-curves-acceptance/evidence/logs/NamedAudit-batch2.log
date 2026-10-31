@@ -1,0 +1,64 @@
+@Nanuq.OpenedCore.actualCoreCurves.{u_1, u_2,
+    u_3} : {V : Type u_1} →
+  {E : Type u_2} →
+    {X : Type u_3} →
+      [inst : Fintype.{u_1} V] →
+        [inst_1 : Fintype.{u_2} E] →
+          [inst_2 : Fintype.{u_3} X] →
+            [inst_3 : DecidableEq.{u_1 + 1} V] →
+              (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X) →
+                G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2}
+                    (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) →
+                  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) →
+                    (hg :
+                        Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2}
+                          (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) →
+                      G1OuterLabelledMultigraphCurves.PlanarCurves.{max u_1 u_2, u_2}
+                        (Nanuq.OpenedCore.coreGraph.{u_1, u_2, u_3} N b hg)
+'Nanuq.OpenedCore.actualCoreCurves' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actualCoreCurves_subset_raw.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  G1OuterLabelledMultigraphCurves.drawing.{max u_1 u_2, u_2}
+      (Nanuq.OpenedCore.actualCoreCurves.{u_1, u_2, u_3} N D b hg) ⊆
+    G1OuterLabelledMultigraphCurves.drawing.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)
+'Nanuq.OpenedCore.actualCoreCurves_subset_raw' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actualCoreCurves_arc_formula.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (e : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b) (t : ↑unitInterval),
+  Eq.{1}
+    ((G1OuterLabelledMultigraphCurves.PlanarCurves.arc.{max u_1 u_2, u_2}
+        (Nanuq.OpenedCore.actualCoreCurves.{u_1, u_2, u_3} N D b hg) e)
+      t)
+    ((G1OuterLabelledMultigraphCurves.PlanarCurves.arc.{u_1, u_2} D ↑e)
+      (Nanuq.CapCurves.affineParameter 0
+        (ite.{1}
+          (Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+            (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) ↑e))
+          Nanuq.CapCurves.oneHalf 1)
+        t))
+'Nanuq.OpenedCore.actualCoreCurves_arc_formula' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actualCoreCurves_closed_disk.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (o : Schoenflies.Plane) (C : Set.{0} Schoenflies.Plane),
+  Eq.{1}
+      (Graph.face.{u_2}
+        (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+        (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)) o)
+      (Schoenflies.outside C) →
+    Set.image.{0, 0} (⇑NanuqFaithfulSupplierDrawing.coordinates)
+        (G1OuterLabelledMultigraphCurves.drawing.{max u_1 u_2, u_2}
+          (Nanuq.OpenedCore.actualCoreCurves.{u_1, u_2, u_3} N D b hg)) ⊆
+      Union.union.{0} C (Schoenflies.inside C)
+'Nanuq.OpenedCore.actualCoreCurves_closed_disk' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

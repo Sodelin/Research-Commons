@@ -1,0 +1,86 @@
+@ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s,
+    ResearchCommons.MSCI.JC69WeightedCalendar.calendarWeight N L q ops s past =
+      ENNReal.ofReal
+        (Real.exp (-(4 / 3 * ∑ j, ResearchCommons.MSCI.JC69CalendarOccupation.calendarOccupation N (q j) ops s past)))
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weight_exponential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (terminal : UnifiedLean.Source.UniformizedSourceStep.Code N sample → ENNReal)
+  (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ∫⁻ (past : Fin ops.length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample),
+      ResearchCommons.MSCI.JC69WeightedCalendar.calendarWeight N L q ops s past *
+        terminal
+          (GProgram.G2.ActualCalendarTrace.calendarEnd N ops s
+            past) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s =
+    ResearchCommons.MSCI.JC69WeightedCalendar.calendarValue N r L q terminal ops s
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_weighted_recursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ∫⁻ (past : Fin ops.length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample),
+      ResearchCommons.MSCI.JC69WeightedCalendar.calendarWeight N L q ops s past *
+        ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q
+          (GProgram.G2.ActualCalendarTrace.calendarEnd N ops s
+            past) ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s =
+    ResearchCommons.MSCI.JC69WeightedCalendar.calendarValue N r L q
+      (ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q) ops s
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_calendar_root_recursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (b : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69WeightedCalendar.segmentFibreWeight N r L q
+      (UnifiedLean.Source.SourceProgramTransport.ProgramStep.boundary b) s d =
+    (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N b s) d
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_boundary_fibre_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [inst_7 : Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ResearchCommons.MSCI.JC69ObservedFourier.observedFourier L N C sample register H gamma common r q =
+      (ResearchCommons.MSCI.JC69WeightedCalendar.initialPotentialWeight N C sample register L q *
+          ResearchCommons.MSCI.JC69WeightedCalendar.calendarValue N r L q
+            (ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q)
+            (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+            (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register)).toReal
+'ResearchCommons.MSCI.JC69WeightedCalendar.actual_observed_calendar_recursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

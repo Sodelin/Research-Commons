@@ -1,0 +1,76 @@
+[
+  {
+    "step": "SmallBlob",
+    "exit_code": 0,
+    "seconds": 2.6961887540019234,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<BUILD_ROOT>/source",
+      "-o",
+      "<BUILD_ROOT>/lib/SmallBlob.olean",
+      "<BUILD_ROOT>/source/SmallBlob.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "ActualBigonBoundary",
+    "exit_code": 1,
+    "seconds": 2.6014412910008105,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<BUILD_ROOT>/source",
+      "-o",
+      "<BUILD_ROOT>/lib/ActualBigonBoundary.olean",
+      "<BUILD_ROOT>/source/ActualBigonBoundary.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "ActualBigonBoundary",
+    "exit_code": 0,
+    "seconds": 2.904469592998794,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=<BUILD_ROOT>/source",
+      "-o",
+      "<BUILD_ROOT>/lib/ActualBigonBoundary.olean",
+      "<BUILD_ROOT>/source/ActualBigonBoundary.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.349277825000172,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<BUILD_ROOT>/NamedAudit.lean"
+    ],
+    "batch": 2
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 7.601829750994511,
+    "command": [
+      "<LEAN_4_33_1>/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "<BUILD_ROOT>/OwnedAudit.lean"
+    ],
+    "batch": 2
+  }
+]

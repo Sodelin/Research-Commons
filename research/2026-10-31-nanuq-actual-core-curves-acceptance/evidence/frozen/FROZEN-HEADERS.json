@@ -1,0 +1,57 @@
+{
+  "source_sha256": "714e225c190fb285873dc09e519f10afb03ec7c411beeeb33a4210d1011fdbca",
+  "headers": [
+    {
+      "name": "half_ne_zero",
+      "header": "lemma half_ne_zero : oneHalf \u2260 (0 : unitInterval)"
+    },
+    {
+      "name": "half_ne_one",
+      "header": "lemma half_ne_one : oneHalf \u2260 (1 : unitInterval)"
+    },
+    {
+      "name": "corePoint_injective",
+      "header": "lemma corePoint_injective : Function.Injective (corePoint N D b)"
+    },
+    {
+      "name": "coreEnd_ne_zero",
+      "header": "lemma coreEnd_ne_zero (e : N.OriginalBlobArc b) : coreEnd N b e \u2260 0"
+    },
+    {
+      "name": "coreParameter_endpoint",
+      "header": "lemma coreParameter_endpoint (e : N.OriginalBlobArc b) (t : unitInterval)\n    (h : coreParameter N b e t = 0 \u2228 coreParameter N b e t = 1) :\n    t = 0 \u2228 t = 1"
+    },
+    {
+      "name": "coreRawArc_source",
+      "header": "lemma coreRawArc_source (hg : N.graph.GalledDetour) (e : N.OriginalBlobArc b) :\n    coreRawArc N D b e 0 = corePoint N D b ((coreGraph N b hg).source e)"
+    },
+    {
+      "name": "coreRawArc_target",
+      "header": "lemma coreRawArc_target (hg : N.graph.GalledDetour) (e : N.OriginalBlobArc b) :\n    coreRawArc N D b e 1 = corePoint N D b ((coreGraph N b hg).target e)"
+    },
+    {
+      "name": "coreArc_injective",
+      "header": "lemma coreArc_injective (hg : N.graph.GalledDetour) (e : N.OriginalBlobArc b) :\n    Function.Injective (coreArc N D b hg e)"
+    },
+    {
+      "name": "coreArc_edge_incidence",
+      "header": "lemma coreArc_edge_incidence (hg : N.graph.GalledDetour)\n    (e f : N.OriginalBlobArc b) (hef : e \u2260 f) (t u : unitInterval)\n    (h : coreArc N D b hg e t = coreArc N D b hg f u) :\n    (t = 0 \u2228 t = 1) \u2227 (u = 0 \u2228 u = 1)"
+    },
+    {
+      "name": "coreArc_vertex_incidence",
+      "header": "lemma coreArc_vertex_incidence (hg : N.graph.GalledDetour)\n    (e : N.OriginalBlobArc b) (v : CoreVertex N b) (t : unitInterval)\n    (h : coreArc N D b hg e t = corePoint N D b v) :\n    v = (coreGraph N b hg).source e \u2228 v = (coreGraph N b hg).target e"
+    },
+    {
+      "name": "actualCoreCurves_subset_raw",
+      "header": "theorem actualCoreCurves_subset_raw (hg : N.graph.GalledDetour) :\n    drawing (actualCoreCurves N D b hg) \u2286 drawing (blobCurves D b)"
+    },
+    {
+      "name": "actualCoreCurves_arc_formula",
+      "header": "theorem actualCoreCurves_arc_formula (hg : N.graph.GalledDetour)\n    (e : N.OriginalBlobArc b) (t : unitInterval) :\n    (actualCoreCurves N D b hg).arc e t =\n      D.arc e.val (affineParameter 0\n        (if N.graph.IsHybrid (N.graph.target e.val) then oneHalf else 1) t)"
+    },
+    {
+      "name": "actualCoreCurves_closed_disk",
+      "header": "theorem actualCoreCurves_closed_disk (hg : N.graph.GalledDetour)\n    (o : Schoenflies.Plane) (C : Set Schoenflies.Plane)\n    (hface : Graph.face\n      (NanuqFaithfulSupplierDrawing.graph (blobCurves D b))\n      (NanuqFaithfulSupplierDrawing.curve (blobCurves D b)) o = Schoenflies.outside C) :\n    NanuqFaithfulSupplierDrawing.coordinates '' drawing (actualCoreCurves N D b hg) \u2286\n      C \u222a Schoenflies.inside C"
+    }
+  ]
+}

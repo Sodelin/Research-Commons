@@ -1,0 +1,33 @@
+--- frozen-original
++++ checked-proof-only-variant
+@@ -9,8 +9,9 @@
+ set_option autoImplicit false
+ set_option backward.isDefEq.respectTransparency false
+ namespace ResearchCommons.MSCI.JC69WeightedCalendar
+-open MeasureTheory ProbabilityTheory Set Nanuq.Source GProgram.SourceForest
++open MeasureTheory ProbabilityTheory Set Nanuq.Source GProgram.SourceForest GProgram.G5
+ open UnifiedLean.Source.UniformizedSourceStep UnifiedLean.Source.NativePairClockLaw
++open UnifiedLean.Source.SourceActualHoldingClocks
+ open UnifiedLean.Source.SourceProgramTransport UnifiedLean.Source.SourceBoundaryKernels
+ open UnifiedLean.Source.SourceInitializedCalendar UnifiedLean.Source.SourceCalendarCompiler
+ open UnifiedLean.Source.SourceCalendarCompatibility UnifiedLean.Source.NativeParentRouting
+@@ -114,7 +115,7 @@
+     Measurable (fun past => calendarWeight N L q ops s past *
+       terminal (calendarEnd N ops s past)) :=
+   (calendar_weight_measurable N L q ops s).mul
+-    (measurable_of_countable.comp (calendar_end_measurable N ops s))
++    ((measurable_of_countable terminal).comp (calendar_end_measurable N ops s))
+ 
+ /-- Actual joint records, not a product of separately averaged epochs.
+ An arbitrary terminal function is allowed only as a readout of this exact
+@@ -258,7 +259,9 @@
+       simp_rw [hfactor d past]
+       rw [lintegral_const_mul' (I * W past) _
+         (ENNReal.mul_ne_top hI ENNReal.ofReal_ne_top)]
+-      simp only [F,rootWeight,hd,hw,mul_assoc]
++      dsimp only [F]
++      rw [hd,hw]
++      simp only [W,rootWeight,mul_assoc]
+     _ = ∫⁻ past, I * F past ∂actualCalendarTraceLaw N r ops s :=
+       finite_fibre_lintegral _ (calendarEnd N ops s) (calendar_end_measurable N ops s) _
+     _ = I * calendarValue N r L q (rootWeight N r L q) ops s := by
