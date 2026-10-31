@@ -1,0 +1,70 @@
+@ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X)
+  {sample : Copy → X} (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (sigma : V → Bool),
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank N s sigma) =
+      ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s ∧
+    (UnifiedLean.Source.UniformizedSourceStep.state
+          (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank N s sigma)).register =
+      sigma
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69FixedBankBoundary.actual_independent_boundary_quotient : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  {N : Nanuq.Source.RootedBinary V E X} {sample : Copy → X} (H : GProgram.G2.OriginalHybridParents N)
+  (gamma : ↑unitInterval) (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = ResearchCommons.MSCI.JC69EndpointWeight.observeCode N t →
+    PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+        (UnifiedLean.Source.SourceBoundaryKernels.independentPulseKernel H gamma s) =
+      PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+        (UnifiedLean.Source.SourceBoundaryKernels.independentPulseKernel H gamma t)
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_independent_boundary_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69FixedBankBoundary.actual_fixed_bank_boundary_quotient : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (op : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = ResearchCommons.MSCI.JC69EndpointWeight.observeCode N t →
+    (UnifiedLean.Source.UniformizedSourceStep.state s).register =
+        (UnifiedLean.Source.UniformizedSourceStep.state t).register →
+      PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+          (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op s) =
+        PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+          (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op t)
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_fixed_bank_boundary_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_register_law : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (op : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  PMF.map (fun d => (UnifiedLean.Source.UniformizedSourceStep.state d).register)
+      (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op s) =
+    PMF.pure (UnifiedLean.Source.UniformizedSourceStep.state s).register
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_register_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_representative : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (op : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N)
+  (s representative : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s =
+      ResearchCommons.MSCI.JC69EndpointWeight.observeCode N representative →
+    PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+        (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op s) =
+      PMF.map (ResearchCommons.MSCI.JC69EndpointWeight.observeCode N)
+        (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op
+          (ResearchCommons.MSCI.JC69FixedBankBoundary.reBank N representative
+            (UnifiedLean.Source.UniformizedSourceStep.state s).register))
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_representative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

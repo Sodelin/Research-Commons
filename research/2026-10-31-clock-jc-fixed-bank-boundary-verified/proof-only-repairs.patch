@@ -1,0 +1,13 @@
+--- frozen-original
++++ checked-proof-only-variant
+@@ -191,7 +191,9 @@
+     simp only [boundaryKernel,PMF.pure_map]
+     congr 1
+     have hp := coded_pulse_observation H s t hobs (fun _ => (state s).register H.hybrid)
+-    simpa [transportCoin,hreg] using hp
++    change observeCode N (pulseCode H s (fun _ => (state s).register H.hybrid)) =
++      observeCode N (pulseCode H t (fun _ => (state s).register H.hybrid)) at hp
++    simpa only [hreg] using hp
+ 
+ /-- Actual coded PMF operations preserve the original register exactly. -/
+ theorem actual_boundary_register_law (N : RootedBinary V E X)
