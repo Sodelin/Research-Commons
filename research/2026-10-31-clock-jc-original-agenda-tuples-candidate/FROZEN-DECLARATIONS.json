@@ -1,0 +1,76 @@
+{
+  "source_sha256": "67068310c2e68e50ab47d2e0d1dde4b3b2e540017c5f7c69d0ce8b61d84a6610",
+  "global_universes": "uV uE uCopy uX arbitrary independent",
+  "declarations": [
+    {
+      "name": "originalPostDates",
+      "complete_frozen_text": "def originalPostDates (N : RootedBinary V E X) (C : Calendar N.graph) (k : \u2115) : List \u211d :=\n  (sortedOriginalDates N C).tail.drop k",
+      "sha256": "5757a6f2907ce5882ec217b7d80bde40dbdadadb826718e7b58e609051d7fe04"
+    },
+    {
+      "name": "original_dates_nonempty",
+      "complete_frozen_text": "lemma original_dates_nonempty (N : RootedBinary V E X) (C : Calendar N.graph) :\n    sortedOriginalDates N C \u2260 [] := by\n  intro h\n  have hm := original_date_scheduled N C N.root\n  simpa only [h,List.not_mem_nil] using hm",
+      "sha256": "3812ec61d62b46449dcfec3357e6928e47e02c129d1ac70f791b46bb11480783"
+    },
+    {
+      "name": "original_date_upper",
+      "complete_frozen_text": "lemma original_date_upper (N : RootedBinary V E X) (C : Calendar N.graph)\n    {b : \u211d} (hb : b \u2208 sortedOriginalDates N C) : b \u2264 C.age N.root := by\n  rw [sortedOriginalDates,Finset.mem_sort] at hb\n  obtain \u27e8v,_,hv\u27e9 := Finset.mem_image.mp hb\n  rw [\u2190 hv]\n  exact original_root_latest N C v",
+      "sha256": "1a7f084d6cdd6a8b4297a025974432ee3bee508e6cf0b4fac062aef86edd2208"
+    },
+    {
+      "name": "original_initial_suffix",
+      "complete_frozen_text": "lemma original_initial_suffix (N : RootedBinary V E X) (C : Calendar N.graph)\n    {a : \u211d} {dates : List \u211d} (he : sortedOriginalDates N C = a::dates) :\n    SourceSuffix N C a dates := by\n  have hp := original_dates_strict N C\n  rw [he,List.pairwise_cons] at hp\n  refine \u27e8original_date_upper N C (by simp [he]),hp.2,?_,?_\u27e9\n  \u00b7 intro b hb\n    exact \u27e8hp.1 b hb,original_date_upper N C (by simp [he,hb])\u27e9\n  \u00b7 intro v hv\n    have hm := original_date_scheduled N C v\n    rw [he,List.mem_cons] at hm\n    exact hm.resolve_left (ne_of_gt hv)",
+      "sha256": "85bbb6f3bfff780402f3ead93ea26e1a558bc895f0aad760761b1d106db39f65"
+    },
+    {
+      "name": "source_suffix_take_drop",
+      "complete_frozen_text": "lemma source_suffix_take_drop (N : RootedBinary V E X) (C : Calendar N.graph)\n    (a : \u211d) (dates : List \u211d) (h : SourceSuffix N C a dates) (k : \u2115) :\n    SourceSuffix N C (finalDate a (dates.take k)) (dates.drop k) := by\n  induction k generalizing a dates with\n  | zero => simpa only [List.take_zero,List.drop_zero,finalDate] using h\n  | succ k ih =>\n      cases dates with\n      | nil => simpa only [List.take_nil,List.drop_nil,finalDate] using h\n      | cons b dates =>\n          simpa only [List.take_succ_cons,List.drop_succ_cons,finalDate] using\n            ih b dates (source_suffix_cons N C a b dates h).2.2.2\n\n/-- Completeness and chronology are DERIVED from the actual sorted agenda. -/",
+      "sha256": "b2e4f35e98cbe6d840d1f13166841ea9f320c3a4dd64906a4b0526720b7b2aea"
+    },
+    {
+      "name": "actual_original_post_suffix",
+      "complete_frozen_text": "theorem actual_original_post_suffix (N : RootedBinary V E X) (C : Calendar N.graph) (k : \u2115) :\n    SourceSuffix N C (prefixDate N C k) (originalPostDates N C k) := by\n  obtain \u27e8a,dates,he\u27e9 := List.exists_cons_of_ne_nil (original_dates_nonempty N C)\n  simpa only [prefixDate,originalPostDates,he,List.tail_cons] using\n    source_suffix_take_drop N C a dates (original_initial_suffix N C he) k",
+      "sha256": "f5c9baabb1527fd6d49c3bada9fd2e831cdb5754f899ad8252cdbc54f3f696e5"
+    },
+    {
+      "name": "sampling_suffix_original",
+      "complete_frozen_text": "lemma sampling_suffix_original (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (k : \u2115) :\n    samplingSuffix N C H gamma common k =\n      calendarTail N C H gamma common (prefixDate N C k) (originalPostDates N C k) := by\n  obtain \u27e8a,dates,he\u27e9 := List.exists_cons_of_ne_nil (original_dates_nonempty N C)\n  simp only [samplingSuffix,originalPostDates,prefixDate,he,List.tail_cons]",
+      "sha256": "7bbc027bb5cb5a79ce198b3fa2e1d88009ab3d534e287ae4ef37865d07655e79"
+    },
+    {
+      "name": "actual_post_dates_length",
+      "complete_frozen_text": "lemma actual_post_dates_length (N : RootedBinary V E X) (C : Calendar N.graph) (k : \u2115) :\n    (originalPostDates N C k).length \u2264 (originalDates N C).card - 1 := by\n  simp only [originalPostDates,List.length_drop,List.length_tail,sortedOriginalDates,Finset.length_sort]\n  exact Nat.sub_le _ _\n\n/-- This reference is fixed before any bank, rate, site family or count vector. -/",
+      "sha256": "6a5beb0809c26450bd028c58d0879b01a6a4c22f260cd7525f2eabed5365183f"
+    },
+    {
+      "name": "samplingReference",
+      "complete_frozen_text": "def samplingReference (N : RootedBinary V E X) (sample : Copy \u2192 X) : Code N sample :=\n  activatedCode N sample (fun _ => false)",
+      "sha256": "97f72f0ecf82d76f4bcd938d1cfee6f4e740f1d2acfda5dec541b1bed3b2b3cd"
+    },
+    {
+      "name": "reference_rebank_observation",
+      "complete_frozen_text": "lemma reference_rebank_observation (N : RootedBinary V E X) (sample : Copy \u2192 X)\n    (sigma : V \u2192 Bool) :\n    observeCode N (reBank N (samplingReference N sample) sigma) =\n      observeCode N (activatedCode N sample sigma) \u2227\n      (state (reBank N (samplingReference N sample) sigma)).register =\n        (state (activatedCode N sample sigma)).register := by\n  refine \u27e8?_,?_\u27e9\n  \u00b7 rw [(actual_reBank_observation N (samplingReference N sample) sigma).1]\n    simp only [samplingReference,activated_observation]\n    rfl\n  \u00b7 rw [(actual_reBank_observation N (samplingReference N sample) sigma).2,activated_register]",
+      "sha256": "bfa4c9e1c1b2d18a83fdf07e090d7ae76b0a576c1888297cfa9f9a0453325d16"
+    },
+    {
+      "name": "sampling_reference_active",
+      "complete_frozen_text": "lemma sampling_reference_active (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) :\n    \u2200 x : Copy, copyLocation (state (samplingReference N sample)) x \u2208 stageLocations N C c := by\n  intro x\n  have hbefore : c < C.age N.root := by rw [\u2190 hc x]; exact leaf_before_root N C (sample x)\n  rw [stageLocations,if_pos hbefore]\n  apply (mem_activeLocations N C c _).mpr\n  refine \u27e8sampleEdge N (sample x),?_,?_\u27e9\n  \u00b7 have h := congrArg (fun o => o.2 x) (activated_observation N sample (fun _=>false))\n    exact h\n  \u00b7 constructor\n    \u00b7 rw [sampleEdge_target,hc x]\n    \u00b7 have h := C.edge_older (sampleEdge N (sample x))\n      simpa only [sampleEdge_target,hc x] using h\n\n/-- A scientific global active-population bound already forces P>=1 at sampling. -/",
+      "sha256": "da51f54d9d4d3d6fb8b910463b0ac7e7c52b5e5fcc1bfdaf422bbfd24fc01c5b"
+    },
+    {
+      "name": "actual_population_bound_positive",
+      "complete_frozen_text": "lemma actual_population_bound_positive [Nonempty Copy] (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (P : \u2115)\n    (hP : \u2200 t : \u211d, c \u2264 t \u2192 t < C.age N.root \u2192 (Finset.univ.filter (C.Active t)).card \u2264 P) :\n    1 \u2264 P := by\n  let x : Copy := Classical.choice inferInstance\n  have hbefore : c < C.age N.root := by rw [\u2190 hc x]; exact leaf_before_root N C (sample x)\n  have ha := sampling_reference_active N C sample c hc x\n  rw [stageLocations,if_pos hbefore] at ha\n  obtain \u27e8edge,_,he\u27e9 := (mem_activeLocations N C c _).mp ha\n  have hone : 1 \u2264 (Finset.univ.filter (C.Active c)).card :=\n    Finset.one_le_card.mpr \u27e8edge,Finset.mem_filter.mpr \u27e8Finset.mem_univ _,he\u27e9\u27e9\n  exact hone.trans (hP c le_rfl hbefore)\n\n/-- The exact scientific P bound specializes to every actual suffix carrier;\nroot-date active edges are empty, and the root carrier is one population. -/",
+      "sha256": "b40ce49857cd4894e8825da9d6c39c6b43993d5f0edc570099aa4c7442ca9595"
+    },
+    {
+      "name": "actual_original_tuple_card",
+      "complete_frozen_text": "theorem actual_original_tuple_card [Nonempty Copy]\n    (e : Copy \u2243 Fin (Fintype.card Copy)) (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hk : prefixDate N C k = c) (P : \u2115)\n    (hP : \u2200 t : \u211d, c \u2264 t \u2192 t < C.age N.root \u2192 (Finset.univ.filter (C.Active t)).card \u2264 P) :\n    let n := Fintype.card Copy\n    let B := \u2211 j \u2208 Finset.range n, (n.choose 2)^j\n    let S := BellCount n * P^n\n    Fintype.card (TupleIndex e N C (originalPostDates N C k) (samplingReference N sample)) \u2264\n      B * (n*B*S)^(originalPostDates N C k).length := by\n  apply actual_tuple_index_card e N C (originalPostDates N C k) (samplingReference N sample) P\n    (actual_population_bound_positive N C sample c hc P hP)\n  intro b hb\n  have hs := actual_original_post_suffix N C k\n  rw [hk] at hs\n  have hbc := hs.2.2.1 b hb\n  by_cases hbefore : b < C.age N.root\n  \u00b7 exact hP b hbc.1.le hbefore\n  \u00b7 have heq : b = C.age N.root := le_antisymm hbc.2 (le_of_not_gt hbefore)\n    have hempty : Finset.univ.filter (C.Active b) = \u2205 := by\n      apply Finset.eq_empty_iff_forall_not_mem.mpr\n      intro edge he\n      have ha := (Finset.mem_filter.mp he).2\n      have hu := original_root_latest N C (N.graph.source edge)\n      rw [heq] at ha\n      exact (not_lt_of_ge hu) ha.2\n    simp only [hempty,Finset.card_empty,Nat.zero_le]\n\n/-- The original observed coefficient, simultaneously for every unchanged\nbank and balanced site family; no register-dependent index choice. -/",
+      "sha256": "0f171e929c234dfd44c5eb17bfae3427859c6ece5f7a0ffe32ccfc93c1df69d7"
+    },
+    {
+      "name": "actual_original_observed_tuple",
+      "complete_frozen_text": "theorem actual_original_observed_tuple [Nonempty Copy]\n    (e : Copy \u2243 Fin (Fintype.card Copy)) (N : RootedBinary V E X)\n    (C : Calendar N.graph) (sample : Copy \u2192 X) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) :\n    \u2203 k : \u2115, prefixDate N C k = c \u2227\n      \u2200 (sigma : V \u2192 Bool) (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n        (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base),\n      (\u2200 j, \u2211 x, q j x = 0) \u2192\n      observedFourier L N C sample sigma H gamma common r q =\n        \u2211 t : TupleIndex e N C (originalPostDates N C k) (samplingReference N sample),\n          tupleTerm e N C H gamma common r L q sigma c (originalPostDates N C k)\n            (samplingReference N sample) t := by\n  obtain \u27e8k,hk\u27e9 := actual_sampling_cut_exists N C sample c hc\n  refine \u27e8k,hk,?_\u27e9\n  intro sigma H gamma common r L q hbal\n  have hs := actual_original_post_suffix N C k\n  rw [hk] at hs\n  have hv := actual_calendar_tuple_expansion e N C H gamma common r L q hbal c\n    (originalPostDates N C k) hs (samplingReference N sample)\n    (sampling_reference_active N C sample c hc) sigma\n  have ho := reference_rebank_observation N sample sigma\n  have heq := actual_guarded_calendar_quotient N r L q hbal\n    (calendarTail N C H gamma common c (originalPostDates N C k))\n    (reBank N (samplingReference N sample) sigma) (activatedCode N sample sigma) ho.1 ho.2\n  rw [actual_observed_guarded_calendar N C sample sigma H gamma common r L q hbal,\n    actual_sampling_backward_reduction N C sample sigma H gamma common r L q hbal c hc k hk,\n    sampling_suffix_original, hk,\u2190 heq]\n  exact hv.2",
+      "sha256": "8383d648163cdcb8c6c26dab70a90858532afe9abd888737dac5b073196c4765"
+    }
+  ]
+}
