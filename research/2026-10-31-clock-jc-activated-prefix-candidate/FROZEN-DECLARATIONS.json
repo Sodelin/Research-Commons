@@ -1,0 +1,85 @@
+{
+  "source_sha256": "14431517777bf77f9d127d56266226e27bca871f6e7a51925278753181929ef7",
+  "declarations": [
+    {
+      "name": "NodeUpper",
+      "complete_frozen_text": "def NodeUpper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (u : \u211d) (s : Code N sample) : Prop :=\n  \u2200 x : Copy, \u2200 v : V, copyLocation (state s) x = .node v \u2192 C.age v \u2264 u",
+      "sha256": "c8380bf59e69eaf439b9a1821ae7090a633d5ea51188682eb68eb33d2460de49"
+    },
+    {
+      "name": "node_upper_mono",
+      "complete_frozen_text": "lemma node_upper_mono (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    {u v : \u211d} {s : Code N sample} (hs : NodeUpper N C u s) (huv : u \u2264 v) : NodeUpper N C v s :=\n  fun x w hw => (hs x w hw).trans huv",
+      "sha256": "367203f3db464e1e96195fa8412a63252334ad9c08c5173a19b4979d925b0723"
+    },
+    {
+      "name": "step_copy_location",
+      "complete_frozen_text": "lemma step_copy_location (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (s d : Code N sample) (hd : d \u2208 (sourceStep N r s).support)\n    (x : Copy) : copyLocation (state d) x = copyLocation (state s) x := by\n  obtain \u27e8p,_,hp\u27e9 := (PMF.mem_support_map_iff _ _ _).mp hd\n  rw [\u2190 hp]\n  cases p with\n  | none => rfl\n  | some p => exact actual_coded_merge_copyLocation N s p x",
+      "sha256": "5d4cac73d39283f481619651a2200f1d1087fe0c198146436a4c9e6d8a595275"
+    },
+    {
+      "name": "iteration_copy_location",
+      "complete_frozen_text": "lemma iteration_copy_location (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (k : \u2115) (s d : Code N sample)\n    (hd : d \u2208 (sourceIteration N r k s).support) (x : Copy) :\n    copyLocation (state d) x = copyLocation (state s) x := by\n  induction k generalizing s with\n  | zero =>\n      have he : d = s := by simpa only [sourceIteration,PMF.mem_support_pure_iff] using hd\n      simp [he]\n  | succ k ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      exact (ih m hmd).trans (step_copy_location N r s m hm x)\n\n/-- Actual interval mergers preserve each original copy's population; no\nnew chronological support or normalization theorem is inserted. -/",
+      "sha256": "9288a2733c49e335185dea140032e3eeb4e1667f1e0964231cc12c7584d484c4"
+    },
+    {
+      "name": "actual_time_copy_location",
+      "complete_frozen_text": "theorem actual_time_copy_location (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (h : \u211d\u22650) (s d : Code N sample)\n    (hd : d \u2208 (sourceTimeKernel N r h s).support) (x : Copy) :\n    copyLocation (state d) x = copyLocation (state s) x := by\n  obtain \u27e8k,_,hk\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  exact iteration_copy_location N r k s d hk x",
+      "sha256": "115915e8664ec113aa49bb389d6e47ade47821ea7e1e99b85d9afdd00c9306dd"
+    },
+    {
+      "name": "time_node_upper",
+      "complete_frozen_text": "lemma time_node_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (h : \u211d\u22650) (s d : Code N sample) (u : \u211d)\n    (hs : NodeUpper N C u s) (hd : d \u2208 (sourceTimeKernel N r h s).support) :\n    NodeUpper N C u d := by\n  intro x v hv\n  exact hs x v ((actual_time_copy_location N r h s d hd x).symm.trans hv)",
+      "sha256": "711b92a33a6a9a17bd16e3dcc3540a8e89a364c673ff8b9d037d95a41ff2de54"
+    },
+    {
+      "name": "exit_node_upper",
+      "complete_frozen_text": "lemma exit_node_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (u : \u211d) (s : Code N sample) (e : E) (he : C.age (N.graph.source e) \u2264 u)\n    (hs : NodeUpper N C u s) : NodeUpper N C u (exitCode N s e) := by\n  intro x v hv\n  rw [exitCode_copyLocation] at hv\n  unfold exitLocation at hv\n  split_ifs at hv with hp\n  \u00b7 have hh := Location.node.inj hv\n    simpa only [hh] using he\n  \u00b7 exact hs x v hv",
+      "sha256": "f6c32ae5909b7c7461edd22320f2cdf13d760579e9388fe35db26cf46fef725a"
+    },
+    {
+      "name": "exit_list_node_upper",
+      "complete_frozen_text": "lemma exit_list_node_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (u : \u211d) (es : List E)\n    (he : \u2200 e \u2208 es, C.age (N.graph.source e) \u2264 u) (s : Code N sample)\n    (hs : NodeUpper N C u s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (es.map (fun e => .boundary (.exit e))) s).support) :\n    NodeUpper N C u d := by\n  induction es generalizing s with\n  | nil =>\n      have hh : d = s := by simpa only [List.map_nil,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [hh] using hs\n  | cons e es ih =>\n      have ht : d \u2208 (sourceProgram N r (es.map (fun e => .boundary (.exit e))) (exitCode N s e)).support := by\n        simpa only [List.map_cons,sourceProgram,sourceProgramStep,boundaryKernel,PMF.pure_bind] using hd\n      exact ih (fun f hf => he f (List.mem_cons_of_mem e hf)) (exitCode N s e)\n        (exit_node_upper N C u s e (he e (by simp)) hs) ht",
+      "sha256": "d86aeb8c49756641da7b5e32af63b28f068862244e12c05112a76305c8ee7a35"
+    },
+    {
+      "name": "node_operation_upper",
+      "complete_frozen_text": "lemma node_operation_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool)\n    (u : \u211d) (v : V) (s d : Code N sample) (hs : NodeUpper N C u s)\n    (hd : d \u2208 (boundaryKernel N (originalNodeOperation N H gamma common v) s).support) :\n    NodeUpper N C u d := by\n  intro x w hw\n  have hm := actual_original_node_kernel_movement N H gamma common v s hd x\n  have ho : copyLocation (state s) x = .node w := by\n    by_contra h\n    exact node_move_never_creates_node N hm h hw\n  exact hs x w ho",
+      "sha256": "bcfd76877182afad5f543dabf83fd7946a066309ffd09ecef29f183da83d0049"
+    },
+    {
+      "name": "node_list_upper",
+      "complete_frozen_text": "lemma node_list_upper (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy \u2192 X}\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool)\n    (r : PositivePairRates E) (u : \u211d) (vs : List V) (s : Code N sample)\n    (hs : NodeUpper N C u s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (vs.map (fun v =>\n      .boundary (originalNodeOperation N H gamma common v))) s).support) : NodeUpper N C u d := by\n  induction vs generalizing s with\n  | nil =>\n      have hh : d = s := by simpa only [List.map_nil,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [hh] using hs\n  | cons v vs ih =>\n      change d \u2208 ((boundaryKernel N (originalNodeOperation N H gamma common v) s).bind\n        (sourceProgram N r (vs.map (fun w => .boundary (originalNodeOperation N H gamma common w))))).support at hd\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      exact ih m (node_operation_upper N C H gamma common u v s m hs hm) hmd\n\n/-- A COMPLETE original date block creates nodes only at its own date;\nnode entries/pulses never create a future dormant node. -/",
+      "sha256": "8390ae346f533fd22cd340394740b227232d1342638d04602c2be362a9c38c3c"
+    },
+    {
+      "name": "actual_boundary_node_upper",
+      "complete_frozen_text": "theorem actual_boundary_node_upper (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (a u : \u211d) (hau : a \u2264 u)\n    (s : Code N sample) (hs : NodeUpper N C u s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (boundaryOperations N C H gamma common a) s).support) :\n    NodeUpper N C u d := by\n  rw [boundaryOperations,sourceProgram_append] at hd\n  obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  have he := exit_list_node_upper N C r u\n    (Finset.univ.filter (fun e : E => C.age (N.graph.source e) = a)).toList\n    (fun e he => (Finset.mem_filter.mp (Finset.mem_toList.mp he)).2.le.trans hau) s hs hm\n  exact node_list_upper N C H gamma common r u _ m he hmd\n\n/-- Prefix form of the existing physical-calendar induction. FutureComplete\nis retained for choosing the genuine next-date gap; it is not a new law field. -/",
+      "sha256": "537a3a93cf588d19851d4d7b9e9d52c98a280da1fb30b61b485d46432cc262a4"
+    },
+    {
+      "name": "actual_tail_prefix_support",
+      "complete_frozen_text": "lemma actual_tail_prefix_support (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (dates : List \u211d) (a c : \u211d)\n    (hfuture : FutureComplete N C a dates) (hordered : dates.Pairwise (\u00b7 < \u00b7))\n    (hafter : \u2200 b \u2208 dates, a < b) (k : \u2115) (s : Code N sample)\n    (hs : AfterNodes N C a (state s)) (hu : NodeUpper N C (max c a) s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (calendarTail N C H gamma common a (dates.take k)) s).support) :\n    AfterNodes N C (finalDate a (dates.take k)) (state d) \u2227\n      NodeUpper N C (max c (finalDate a (dates.take k))) d := by\n  induction dates generalizing a s k with\n  | nil =>\n      have hh : d = s := by simpa only [List.take_nil,calendarTail,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [List.take_nil,finalDate,hh] using And.intro hs hu\n  | cons b bs ih =>\n      cases k with\n      | zero =>\n          have hh : d = s := by simpa only [List.take_zero,calendarTail,sourceProgram,PMF.mem_support_pure_iff] using hd\n          simpa only [List.take_zero,finalDate,hh] using And.intro hs hu\n      | succ k =>\n          have hab : a < b := hafter b (by simp)\n          have hbs := List.pairwise_cons.mp hordered\n          have hgap : \u2200 v : V, a < C.age v \u2192 b \u2264 C.age v := by\n            intro v hv\n            rcases List.mem_cons.mp (hfuture v hv) with he | he\n            \u00b7 exact he.ge\n            \u00b7 exact (hbs.1 _ he).le\n          have hepoch := after_nodes_to_epoch N C hs hgap\n          change d \u2208 ((sourceTimeKernel N r (Real.toNNReal (b-a)) s).bind\n            (sourceProgram N r (boundaryOperations N C H gamma common b ++\n              calendarTail N C H gamma common b (bs.take k)))).support at hd\n          obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n          have hmepoch := actual_source_time_epoch_support N C r (Real.toNNReal (b-a)) s hepoch hm\n          have hmupper := time_node_upper N C r (Real.toNNReal (b-a)) s m (max c a) hu hm\n          rw [sourceProgram_append] at hmd\n          obtain \u27e8z,hz,hzd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hmd\n          have hzphysical := actual_original_boundary_batch_support N C H gamma common r b m\n            (epoch_to_next_ready N C hmepoch hab.le) hz\n          have hzupper := actual_boundary_node_upper N C H gamma common r b (max c b)\n            (le_max_right c b) m (node_upper_mono N C hmupper (max_le_max_left c hab.le)) hz\n          have hnext : FutureComplete N C b bs := by\n            intro v hv\n            rcases List.mem_cons.mp (hfuture v (hab.trans hv)) with he | he\n            \u00b7 exact False.elim ((ne_of_gt hv) he)\n            \u00b7 exact he\n          simpa only [List.take_succ_cons,finalDate] using\n            ih b hnext hbs.2 hbs.1 k z hzphysical hzupper hzd\n\n/-- Stop after the initial date block and k further COMPLETE date blocks. -/",
+      "sha256": "70dd7afb7235cf14269b841585a74be81f78bf34704c6d6dec7fd1ecbc62dbe0"
+    },
+    {
+      "name": "initializedPrefix",
+      "complete_frozen_text": "def initializedPrefix (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (k : \u2115) : List (ProgramStep N) :=\n  match sortedOriginalDates N C with\n  | [] => []\n  | a::dates => boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a (dates.take k)",
+      "sha256": "ff83163e925a4d8cfb698bdae49d99751200bf1c7054118578b43e2076a8e606"
+    },
+    {
+      "name": "prefixDate",
+      "complete_frozen_text": "def prefixDate (N : RootedBinary V E X) (C : Calendar N.graph) (k : \u2115) : \u211d :=\n  match sortedOriginalDates N C with\n  | [] => firstOriginalDate N C\n  | a::dates => finalDate a (dates.take k)\n\n/-- Actual initialized prefix support, deriving the no-future-node bound\nfrom the original contemporaneous sampled leaf IDs and original operations. -/",
+      "sha256": "5f9aa228dd8e0783b7917a9ea1a2e6726970ede960683d77223b3b13195b2347"
+    },
+    {
+      "name": "actual_initialized_prefix_support",
+      "complete_frozen_text": "theorem actual_initialized_prefix_support (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    AfterNodes N C (prefixDate N C k) (state d) \u2227\n      NodeUpper N C (max c (prefixDate N C k)) d := by\n  have hne : sortedOriginalDates N C \u2260 [] := by\n    intro h\n    have hm := original_date_scheduled N C N.root\n    rw [h] at hm\n    exact List.not_mem_nil hm\n  obtain \u27e8a,dates,heq\u27e9 := List.exists_cons_of_ne_nil hne\n  have hfirst : a = firstOriginalDate N C := by\n    have h := first_compiled_date_is_initial_boundary N C\n    simpa only [heq,List.getElem_cons_zero] using h\n  have hordered := original_dates_strict N C\n  rw [heq] at hordered\n  have hp := List.pairwise_cons.mp hordered\n  have hfuture : FutureComplete N C a dates := by\n    intro v hv\n    have hm := original_date_scheduled N C v\n    rw [heq] at hm\n    rcases List.mem_cons.mp hm with he | he\n    \u00b7 exact False.elim ((ne_of_gt hv) he)\n    \u00b7 exact he\n  have hready : BoundaryReady N C a (state (initialCode N sample register)) := by\n    rw [hfirst]\n    exact actual_initial_calendar_boundary N C sample register\n  have hi : NodeUpper N C c (initialCode N sample register) := by\n    intro x v hv\n    have hl : copyLocation (state (initialCode N sample register)) x = .node (N.leaf (sample x)) := by\n      unfold initialCode state admittedCode\n      rw [decode_encode_copyLocation]\n      rfl\n    have he := Location.node.inj (hl.symm.trans hv)\n    simpa only [he] using (hc x).le\n  rw [initializedPrefix,heq,sourceProgram_append] at hd\n  obtain \u27e8s,hs,hsd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  have hstart := actual_original_boundary_batch_support N C H gamma common r a _ hready hs\n  have hupper := actual_boundary_node_upper N C H gamma common r a (max c a) (le_max_right c a)\n    (initialCode N sample register) (node_upper_mono N C hi (le_max_left c a)) hs\n  simpa only [prefixDate,heq] using\n    actual_tail_prefix_support N C H gamma common r dates a c hfuture hp.2 hp.1 k s hstart hupper hsd\n\n/-- No dormant sample node remains after the common sample date, on the\nACTUAL prefix support. Whole same-date batches, not elementary operations. -/",
+      "sha256": "b2abda616546fcbb2c5124206979f84b2f51c0f86674c4e7924b86f567ca22ff"
+    },
+    {
+      "name": "actual_initialized_prefix_no_nodes",
+      "complete_frozen_text": "theorem actual_initialized_prefix_no_nodes (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hactivated : c \u2264 prefixDate N C k) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    \u2200 x : Copy, \u2200 v : V, copyLocation (state d) x \u2260 .node v := by\n  have h := actual_initialized_prefix_support N C sample register H gamma common r c hc k hd\n  intro x v hv\n  have hu := h.2 x v hv\n  rw [max_eq_right hactivated] at hu\n  exact (not_lt_of_ge hu) (h.1.2 x v hv)",
+      "sha256": "c5ceae59394dac0cfa8f1f727d42623cad310c29121f4536c58ae54e0c9118ef"
+    }
+  ]
+}
