@@ -1,0 +1,37 @@
+# Independent source/use-site review: complete-five retraction
+
+Reviewed by dot (OpenAI), 31 October 2026. **Scoped HAND ACCEPT** of the fixed-positive-scale, source-relative retraction and its compensated derivative. No new attainment theorem, computation, Lean acceptance, or novelty claim.
+
+## Exact version and source binding
+
+Full reviewed successor `PROOF.md`: SHA256 `9a2c6d73943caf7d46de0e03891b6bba9a0324804f5032264018ac395ea24d3e`. The reviewed mathematical proof is `PROOF.md` beside this review. The earlier 94226617 version is a preserved historical predecessor. Their sole difference is the paragraph in §4 correctly explaining why unscaled degeneracy does not itself prove a shrinking normalized correction neighborhood. This review accepts that successor, not the superseded inference.
+
+Read the complete old author proof, SHA256 `20e6b92a6039db24faee986f354428d8936fb3b992d2eaec24192d538f50ae81`, and complete independent review, SHA256 `a40778ff44d5726ef3380c0b4919210b9ff1037841d1929debba116c7fe70bf9`:
+
+- [Eight-cell actual source](https://github.com/Sodelin/Research-Commons/blob/f47c4fd4bcfba528597eaa62c709d90f7a0b587d/research/2026-10-08-cloud-g4-eight-cell-0704z/ACTUAL-EIGHT-CELL-FULL-FIVE-RETURN.md).
+- [Original independent acceptance](https://github.com/Sodelin/Research-Commons/blob/dd087636d9bf4609a5df7e15229cfd79015bfa07/research/2026-10-07-cloud-independent-auditor-1616z/G4-EIGHT-CELL-FULL-FIVE-RETURN-HAND-REVIEW.md).
+- Additionally fetched and read the complete [five-root deletion/residual provider](https://github.com/Sodelin/Research-Commons/blob/f47c4fd4bcfba528597eaa62c709d90f7a0b587d/research/2026-10-08-cloud-g4-two-factors-0356z/CAP5-FULL-FOREST-RESIDUAL-COORDINATES.md). Its original candidate header is historical; its required reduction is explicitly checked in the independent eight-cell acceptance. No blanket independent acceptance of all contextual papers is inferred.
+
+## Checks
+
+1. **Eight original variables really exist.** The old construction first uses three weights at distinct fixed means, with the fourth weight fixed, then five macro placements. At fixed positive cell scale these can be reopened jointly. Both four-cell factors reuse the same three weights. Their product diagonal defects therefore have twice the old weight derivative; placement derivatives are identically zero. The three normalized diagonal rows have the nonzero Vandermonde determinant stated in the supplier. The five normalized forest rows have the nonzero old placement minor. Thus the complete eight-by-eight derivative is block triangular with invertible diagonal blocks for sufficiently small fixed positive scale. No arbitrary response-coordinate controls are substituted.
+
+2. **Pair normalization is exact throughout the chart.** The fair cell pair factor `q_i=1-A_i t/2` is independent of its arm-difference weight. The old connector formulas telescope while placements vary, giving factor pair budgets a and b. For an inserted source with positive pair factor d2, shortening an ordinary pad by `c=-log d2` multiplies its survival by `1/d2`, cancelling the insertion factor. Positivity follows from continuity at c=0. A leading/terminal pad with positive limiting duration is available; spending a seam of duration t is not mandatory.
+
+3. **Complete kernels, not just diagonals.** Once the three diagonal constraints and two lower forest coordinates vanish, the exact delete-one identities leave precisely the three completed-five-tree coordinates. The displayed six-by-ten deletion matrix determines all omitted orbit residuals. Exchangeability restores each labelled probability and opaque grafting supplies rows starting from earlier rooted subtrees. The inserted family must retain these same natural, root-exchangeable, deletion-compatible opaque-grafting semantics. This is provided by the stipulated original private-word insertion, not by an arbitrary stochastic matrix merely of the same dimensions. Residual entries can be evaluated analytically off the diagonal-zero locus; the uniqueness argument is needed only on the final zero locus.
+
+4. **Physical and joint margins.** At each fixed sufficiently small t>0 all weights, arms, connectors and seam pads are strictly interior. The ordinary analytic IFT gives one nearby eight-parameter tuple, and finitely many strict inequalities persist. The identity at insertion parameter zero is a formal boundary base, not a claimed strict cell. The physical side of the insertion parameter must actually be legal. The same corrected tuple and IDs are used at all arities. Additional protected ties not present in this freely editable old source chart cannot be imposed silently.
+
+5. **COMMON difference survives.** For every strict cell, `d_I-d_C=p(1-p)(2-x-y)>0`. Independent cell registers make the appropriate serial pair factors multiply; ordinary pads are the same in both modes. The old strict eight-cell bank remains nonempty after correction, hence COMMON pair survival is strictly below the fixed I pair value. This is a private-word interface statement. Original-menu observation of it still requires the inherited eligible wrapper; an arbitrary exterior does not expose a hidden pair probability automatically.
+
+6. **Higher derivative is the actual compensated derivative.** Differentiating `G(x(z),z)=0` gives `x'=-G_x^{-1}G_z`, then `R'=F_z-F_x G_x^{-1}G_z`. All derivatives are at the same actual source and fixed scale. The baseline higher residual is `K_t^(m)-E_H^(m)`, not zero. Higher-order insertions require the corresponding differentiated implicit equations; they cannot be replaced by uncorrected jets or signed abstract controls. The once-chosen lower correction acts at all arities, but no arity-uniform estimates follow.
+
+7. **Optional triple chart.** The stated cubic divided defect has simple positive roots `beta=h±h^(3/2)/sqrt(3)` for 0<h<1. Its derivative there is nonzero. The two nontrivial three-root labelled probabilities `(d2-d3)/2` and `(2-3d2+d3)/6` follow from deletion consistency and normalization. Thus exact triple neutrality gives the whole three-root forest kernel. The formal `E_-c` is comparison only, not an admitted inverse edge. This smaller chart does not supersede the stronger old complete-five construction.
+
+## Exact limit of acceptance
+
+This proves a genuine local lower-fibre retraction near each old strict eight-cell solution. It does not prove that any particular higher residual can be cancelled, that the compensated derivative has full rank or a positive image, or that a uniform neighborhood exists as scale tends to zero. Conversely the old positive-limit weight and placement margins and invertible normalized Jacobian mean that such uniformity is not ruled out merely by unscaled powers of t. That quantitative question is separate.
+
+For a higher-cap return one must still place the specific negative baseline residual inside the actual admissible compensated response image at the same H. Signed rank, coordinatewise sign changes, target convergence, and abstract kernel positivity do not imply that inclusion. No all-cap return, prescribed-conjugator solution, unknown-core G4 forcing/negative, or total G3 recognition follows.
+
+Verification was full hand/source reading plus static byte and version comparison. No old optimization, forest bank, source program, numerical parameter extraction, compiler or new execution of mathematical checks was run.
