@@ -1,0 +1,61 @@
+--- frozen/ActualOpenedCutLocality.lean
++++ source/ActualOpenedCutLocality.lean
+@@ -42,7 +42,7 @@
+       ((M).openedTipVertex d) ((M).openedTipVertex e)) : False := by
+   let p := N.originalIncomingBlobPort b r.property
+   let pc : N.RootedCapArc b := Sum.inr (Sum.inl p)
+-  let root := Sum.inl (M).rootSkeletonRoot
++  let root : (M).OpenedHybridVertex := Sum.inl (M).rootSkeletonRoot
+   have hps : (M).graph.source pc = (M).root := by
+     change (N.actualRootedCapGraph b).source pc = N.actualRootedCapRoot b
+     simp [pc,p,RootedBinary.actualRootedCapGraph,
+@@ -77,6 +77,7 @@
+     change s.val = (M).openedOriginalEdge k at hid
+     rw [(M).openedOutEdge_original] at hid
+     rw [hs] at hid
++    change Sum.inr (Sum.inr r) = Sum.inr (Sum.inl p) at hid
+     cases hid
+   have hroot : ∀ f, (OG).target f ≠ root :=
+     ((M).actualOpenedRootedSource hl).edge_target_ne_root
+@@ -107,7 +108,9 @@
+     exact hs
+   · let pt : (M).OrdinaryTaxon := ⟨p,by
+       have ht := s.property.2
+-      simpa only [hs] using ht⟩
++      change (M).SkeletonVertexPredicate ((N.actualRootedCapGraph b).target s.val) at ht
++      rw [hs] at ht
++      exact ht⟩
+     apply False.elim
+     apply (M).opened_nontrivial_cut_target_not_tip hl (Sum.inl s) hde' hq (Sum.inl pt)
+     apply congrArg Sum.inl
+--- frozen/ActualCoreCutClasses.lean
++++ source/ActualCoreCutClasses.lean
+@@ -10,6 +10,7 @@
+ variable (N : RootedBinary V E X) (b : N.graph.Blob)
+ variable (hg : N.graph.GalledDetour) (hb : N.NonleafBlob b)
+ 
++include hb in
+ /-- Every literal retained original core edge separates its actual endpoint
+ classes. This follows by lifting a hypothetical detour to the original opened
+ tree with the SAME forbidden edge occurrence. -/
+--- frozen/ActualCutCarriers.lean
++++ source/ActualCutCarriers.lean
+@@ -55,6 +55,7 @@
+   rw [targetCarrier,Nanuq.CutSideCarrier.point_mem_carrier_iff,
+     actual_opened_core_cut_iff,core_edge_collapsed_target]
+ 
++include hb in
+ /-- Separation is derived from the actual opened tree, with the exact forbidden ID. -/
+ theorem actual_cut_carriers (k : N.OriginalBlobArc b) :
+     IsCompact (sourceCarrier N D b hg k) ∧ IsConnected (sourceCarrier N D b hg k) ∧
+--- frozen/ActualTipBoundary.lean
++++ source/ActualTipBoundary.lean
+@@ -70,7 +70,7 @@
+     refine ⟨D.arc k.val.val Nanuq.CapCurves.oneHalf,?_,rfl⟩
+     right
+     let g : BlobEdge N.graph b :=
+-      ⟨k.val.val,internal_not_bridge N b k.val,k.val.property.1⟩
++      ⟨k.val.val,Nanuq.CapCurves.internal_not_bridge N b k.val,k.val.property.1⟩
+     exact Set.mem_iUnion.mpr ⟨g,Nanuq.CapCurves.oneHalf,rfl⟩
+ 
+ /-- Coherent source-facing input to the still-separate closed-disk noncrossing

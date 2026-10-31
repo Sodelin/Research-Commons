@@ -1,0 +1,69 @@
+<BUILD_ROOT>/source/ActualOpenedCutLocality.lean:45:14: error: don't know how to synthesize implicit argument `β`
+  @Sum.inl (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertex ?m.230
+    (N.actualEveryNonleafRootedCapSource b hb).rootSkeletonRoot
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+r : N.RootedCapRootTag b
+s : (N.actualEveryNonleafRootedCapSource b hb).SkeletonEdge
+hs : ↑s = Sum.inr (Sum.inr r)
+a c d e : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip
+hac : a ≠ c
+hq :
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).OrientedQuartet (Sum.inl s)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex a)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex c)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex d)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex e)
+p : N.BlobPort b := ⋯
+pc : N.RootedCapArc b := ⋯
+⊢ Type ?u.137
+<BUILD_ROOT>/source/ActualOpenedCutLocality.lean:45:6: error: failed to infer `let` declaration type
+<BUILD_ROOT>/source/ActualOpenedCutLocality.lean:42:66: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+r : N.RootedCapRootTag b
+s : (N.actualEveryNonleafRootedCapSource b hb).SkeletonEdge
+hs : ↑s = Sum.inr (Sum.inr r)
+a c d e : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip
+hac : a ≠ c
+hq :
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).OrientedQuartet (Sum.inl s)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex a)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex c)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex d)
+    ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex e)
+p : N.BlobPort b := N.originalIncomingBlobPort b ⋯
+pc : N.RootedCapArc b := Sum.inr (Sum.inl p)
+⊢ False
+<BUILD_ROOT>/source/ActualOpenedCutLocality.lean:110:6: error: Type mismatch: After simplification, term
+  ht
+ has type
+  @RootedBinary.SkeletonVertexPredicate (N.RootedCapVertex b) (N.RootedCapArc b) (N.BlobPort b)
+    (N.rootedCapVertexFintype b) (N.rootedCapArcFintype b) (N.blobPortFintype b) (N.rootedCapVertexDecidableEq b)
+    (N.actualEveryNonleafRootedCapSource b hb)
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p)))
+but is expected to have type
+  @RootedBinary.SkeletonVertexPredicate (N.RootedCapVertex b) (N.RootedCapArc b) (N.BlobPort b)
+    (N.rootedCapVertexFintype b) (N.rootedCapArcFintype b) (N.blobPortFintype b) (N.rootedCapVertexDecidableEq b)
+    (N.actualEveryNonleafRootedCapSource b hb) ((N.actualEveryNonleafRootedCapSource b hb).leaf p)
+'Nanuq.OpenedCore.actual_stem_quartet_false' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.actual_opened_quartet_core_id' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
