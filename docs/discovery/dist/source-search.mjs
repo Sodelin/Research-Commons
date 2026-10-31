@@ -56,7 +56,7 @@ export function recoveredReferences(catalogue,manifest,baseURL){
 // Numeric-only lookups use complete digit runs in scientific prose, including
 // typography such as 'most499'. Long hexadecimal source identities are not counts.
 function numericSourceMatch(doc,query){
- const text=[doc.title,doc.body].join(' ').replace(/\b[a-f0-9]{16,}\b/giu,' ');
+ const text=[doc.title,doc.body].join(' ').replace(/\b[a-f0-9]{16,}\b/giu,token=>/[a-f]/iu.test(token)?' ':token);
  return new RegExp('(?:^|[^0-9])'+query+'(?![0-9])','u').test(text);
 }
 export function sourceExactness(doc,query){

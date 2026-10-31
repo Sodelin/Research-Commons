@@ -162,11 +162,13 @@ test('original successor proofs are retrievable by their literal stable keys wit
 test('numeric bounds remain searchable in joined prose without matching digit prefixes or source hashes',()=>{
  const doc=(id,body)=>({url:'https://example.invalid/'+id,title:id,body,bindings:[{role:'hand_source_not_master_acceptance'}]});
  const current=doc('current','At most499 DISTINCT types; no repetition bound.'),plain=doc('plain','The bound is 499.'),prefix=doc('other','A different count4990.'),old=doc('old','Earlier2495 and independent3599 controls.'),hash=doc('identity','SHA256 '+('a'.repeat(30))+'499'+('b'.repeat(31)));
- const fixture={documents:[current,plain,prefix,old,hash]},before=JSON.stringify(fixture);
+ const large=doc('large','A valid bound12345678901234567890 remains searchable.');
+ const fixture={documents:[current,plain,prefix,old,hash,large]},before=JSON.stringify(fixture);
  assert.deepEqual(searchSources(fixture,'499').map(d=>d.title).sort(),['current','plain']);
  assert.deepEqual(searchSources(fixture,'2495').map(d=>d.title),['old']);
  assert.deepEqual(searchSources(fixture,'3599').map(d=>d.title),['old']);
  assert.deepEqual(searchSources(fixture,'4990').map(d=>d.title),['other']);
+ assert.deepEqual(searchSources(fixture,'12345678901234567890').map(d=>d.title),['large']);
  assert.deepEqual(searchSources(fixture,'repetition').map(d=>d.title),['current']);
  assert.equal(JSON.stringify(fixture),before);
  assert(searchSources(fixture,'499').every(d=>d.bindings[0].role==='hand_source_not_master_acceptance'));
