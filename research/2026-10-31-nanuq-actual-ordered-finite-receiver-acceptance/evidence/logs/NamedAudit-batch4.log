@@ -1,0 +1,341 @@
+@Nanuq.GraphReceiver.focus_occurrence.{u_1} : ∀ {V : Type u_1} (t : Nanuq.GraphSyntax.BinarySyntax.{u_1} V) (a : V),
+  Membership.mem.{u_1, u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} t) a →
+    LE.le.{0} 2 (List.length.{u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} t)) →
+      ∃ v rest,
+        List.Perm.{u_1}
+            (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+              (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} a) rest))
+            (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} t) ∧
+          ∀ (label : V → ℕ) (i j k m : ℕ),
+            (Nanuq.GraphReceiver.encode.{u_1} label
+                    (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} a)
+                      rest)).Witness
+                List.nil.{0} i j k m ↔
+              (Nanuq.GraphReceiver.encode.{u_1} label t).Witness List.nil.{0} i j k m
+'Nanuq.GraphReceiver.focus_occurrence' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.GraphReceiver.anchored_frontier_convex.{u_1,
+    u_2} : ∀ {V : Type u_1} {R : Type u_2} [inst : LinearOrder.{u_2} R] (v anchor : V)
+  (rest : Nanuq.GraphSyntax.BinarySyntax.{u_1} V) (rank : V → R) (code : V → ℕ),
+  List.Nodup.{u_1}
+      (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+        (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor) rest)) →
+    (∀ (x : V),
+        Membership.mem.{u_1, u_1}
+            (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+              (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor) rest))
+            x →
+          Ne.{u_1 + 1} x anchor → LT.lt.{u_2} (rank anchor) (rank x)) →
+      (∀ (a c d e : V),
+          Membership.mem.{u_1, u_1}
+              (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+                (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor) rest))
+              a →
+            Membership.mem.{u_1, u_1}
+                (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+                  (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor) rest))
+                c →
+              Membership.mem.{u_1, u_1}
+                  (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+                    (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor)
+                      rest))
+                  d →
+                Membership.mem.{u_1, u_1}
+                    (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+                      (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor)
+                        rest))
+                    e →
+                  (Nanuq.GraphReceiver.encode.{u_1} code
+                          (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor)
+                            rest)).Witness
+                      List.nil.{0} (code a) (code c) (code d) (code e) →
+                    ¬(LT.lt.{u_2} (rank a) (rank d) ∧ LT.lt.{u_2} (rank d) (rank c) ∧ LT.lt.{u_2} (rank c) (rank e) ∨
+                        LT.lt.{u_2} (rank d) (rank a) ∧
+                          LT.lt.{u_2} (rank a) (rank e) ∧ LT.lt.{u_2} (rank e) (rank c))) →
+        ∀ {u : Nanuq.GraphSyntax.BinarySyntax.{u_1} V} {out : List.{u_1} V},
+          Nanuq.GraphReceiver.Context.{u_1} rest u out →
+            ∀ (a : V),
+              Membership.mem.{u_1, u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} u) a →
+                ∀ (c : V),
+                  Membership.mem.{u_1, u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} u) c →
+                    ∀ (b : V),
+                      Membership.mem.{u_1, u_1}
+                          (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1}
+                            (Nanuq.GraphSyntax.BinarySyntax.fork.{u_1} v
+                              (Nanuq.GraphSyntax.BinarySyntax.tip.{u_1} anchor) rest))
+                          b →
+                        LT.lt.{u_2} (rank a) (rank b) →
+                          LT.lt.{u_2} (rank b) (rank c) →
+                            Membership.mem.{u_1, u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} u) b
+'Nanuq.GraphReceiver.anchored_frontier_convex' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.GraphReceiver.occurrence_order_receiver.{u_1,
+    u_2} : ∀ {V : Type u_1} {R : Type u_2} [inst : LinearOrder.{u_2} R] (t : Nanuq.GraphSyntax.BinarySyntax.{u_1} V)
+  (xs : List.{u_1} V) (rank : V → R) (code : V → ℕ),
+  List.Perm.{u_1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} t) xs →
+    List.Nodup.{u_1} xs →
+      LE.le.{0} 2 (List.length.{u_1} xs) →
+        List.Pairwise.{u_1} (fun a b => LT.lt.{u_2} (rank a) (rank b)) xs →
+          (∀ (a : V),
+              Membership.mem.{u_1, u_1} xs a →
+                ∀ (b : V), Membership.mem.{u_1, u_1} xs b → Eq.{u_2 + 1} (rank a) (rank b) → Eq.{u_1 + 1} a b) →
+            (∀ (a c d e : V),
+                Membership.mem.{u_1, u_1} xs a →
+                  Membership.mem.{u_1, u_1} xs c →
+                    Membership.mem.{u_1, u_1} xs d →
+                      Membership.mem.{u_1, u_1} xs e →
+                        (Nanuq.GraphReceiver.encode.{u_1} code t).Witness List.nil.{0} (code a) (code c) (code d)
+                            (code e) →
+                          ¬(LT.lt.{u_2} (rank a) (rank d) ∧
+                                LT.lt.{u_2} (rank d) (rank c) ∧ LT.lt.{u_2} (rank c) (rank e) ∨
+                              LT.lt.{u_2} (rank d) (rank a) ∧
+                                LT.lt.{u_2} (rank a) (rank e) ∧ LT.lt.{u_2} (rank e) (rank c))) →
+              ∃ s,
+                Eq.{u_1 + 1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} s) xs ∧
+                  ∀ (label : V → ℕ) (a b c d : ℕ),
+                    (Nanuq.GraphReceiver.encode.{u_1} label s).Witness List.nil.{0} a b c d ↔
+                      (Nanuq.GraphReceiver.encode.{u_1} label t).Witness List.nil.{0} a b c d
+'Nanuq.GraphReceiver.occurrence_order_receiver' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.GraphReceiver.rooted_tree_order_receiver.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X),
+  Function.Injective.{u_2 + 1, u_1 + 1}
+      (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)) →
+    ∀ (xs : List.{u_3} X) (θ : X → ℝ),
+      List.Nodup.{u_3} xs →
+        (∀ (x : X), Membership.mem.{u_3, u_3} xs x) →
+          Function.Injective.{u_3 + 1, 1} θ →
+            List.Pairwise.{u_3} (fun a b => LE.le.{0} (θ a) (θ b)) xs →
+              (∀ (e : E) (a c d f : X),
+                  Nanuq.Source.EdgeGraph.OrientedQuartet.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+                      e ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) a)
+                      ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) c)
+                      ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) d)
+                      ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) f) →
+                    ¬(LT.lt.{0} (θ a) (θ d) ∧ LT.lt.{0} (θ d) (θ c) ∧ LT.lt.{0} (θ c) (θ f) ∨
+                        LT.lt.{0} (θ d) (θ a) ∧ LT.lt.{0} (θ a) (θ f) ∧ LT.lt.{0} (θ f) (θ c))) →
+                ∃ s,
+                  Eq.{u_1 + 1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} s)
+                      (List.map.{u_3, u_1} (⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)) xs) ∧
+                    ∀ (label : V → ℕ) (a b c d : ℕ),
+                      Nanuq.GraphReceiver.LabelledQuartet.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+                          label a b c d ↔
+                        (Nanuq.GraphReceiver.encode.{u_1} label s).Witness List.nil.{0} a b c d
+'Nanuq.GraphReceiver.rooted_tree_order_receiver' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+Nanuq.GraphReceiver.rotated_finite_receiver : ∀ (t : Nanuq.Restriction.LTree),
+  LE.le.{0} 2 (List.length.{0} t.leaves) →
+    ∀ (k : ℕ),
+      LE.le.{0} k 1 →
+        ∃ T,
+          Eq.{1} T.size (HSub.hSub.{0, 0, 0} (List.length.{0} (List.rotate.{0} t.leaves k)) 1) ∧
+            ∀ (q : Nanuq.AdjacentCertificate.Quartet) (r a b c d : ℕ),
+              Eq.{1} (q.parts r) (Prod.mk.{0, 0} a (Prod.mk.{0, 0} b (Prod.mk.{0, 0} c d))) →
+                Ne.{1} a b →
+                  Ne.{1} c d →
+                    (t.Witness List.nil.{0} a b c d ↔
+                      ∃ e,
+                        Membership.mem.{0, 0} (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) e ∧
+                          Eq.{1} (Nanuq.AdjacentCertificate.edgeWitness (List.rotate.{0} t.leaves k) e.1 e.2 q r) true)
+'Nanuq.GraphReceiver.rotated_finite_receiver' depends on axioms: [propext, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_ordered_block_finite_receiver.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ code C f θ xs k base dup s label T,
+      Schoenflies.IsJordanCurve C ∧
+        Eq.{1}
+            (Graph.face.{u_2}
+              (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+              (NanuqFaithfulSupplierDrawing.coordinates
+                (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+            (Schoenflies.outside C) ∧
+          Schoenflies.IsLoop f ∧
+            Eq.{1} (Set.image.{0, 0} f unitInterval) C ∧
+              (∀
+                  (t :
+                    Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                  Membership.mem.{0, 0} (Set.Ico.{0} 0 1) (θ t) ∧
+                    Eq.{1} (f (θ t)) (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)) ∧
+                Function.Injective.{u_2 + 1, 1} θ ∧
+                  List.Nodup.{u_2} xs ∧
+                    (∀
+                        (t :
+                          Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                        Membership.mem.{u_2, u_2} xs t) ∧
+                      List.Pairwise.{u_2} (fun a c => LE.le.{0} (θ a) (θ c)) xs ∧
+                        (∀
+                            (k :
+                              Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                            (a c d e :
+                              Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                            Nanuq.Source.EdgeGraph.OrientedQuartet.{max u_1 u_2, u_2}
+                                (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+                                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)
+                                  ⋯)
+                                k
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  a)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  c)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  d)
+                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb))
+                                  e) →
+                              ¬(LT.lt.{0} (θ a) (θ d) ∧ LT.lt.{0} (θ d) (θ c) ∧ LT.lt.{0} (θ c) (θ e) ∨
+                                  LT.lt.{0} (θ d) (θ a) ∧ LT.lt.{0} (θ a) (θ e) ∧ LT.lt.{0} (θ e) (θ c))) ∧
+                          (∀
+                              (a c :
+                                Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                              LT.lt.{0} (θ a) (θ c) →
+                                Eq.{u_2 + 1}
+                                    (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                        hb)
+                                      ⋯ a)
+                                    (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                        hb)
+                                      ⋯ c) →
+                                  (∀
+                                      (w :
+                                        Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)),
+                                      ¬(LT.lt.{0} (θ a) (θ w) ∧ LT.lt.{0} (θ w) (θ c))) ∨
+                                    ∀
+                                      (w :
+                                        Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)),
+                                      ¬(LT.lt.{0} (θ w) (θ a) ∨ LT.lt.{0} (θ c) (θ w))) ∧
+                            (∀
+                                (a c :
+                                  Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                      hb)),
+                                Ne.{u_2 + 1} a c →
+                                  Eq.{u_2 + 1}
+                                      (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                          hb)
+                                        ⋯ a)
+                                      (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b
+                                          hb)
+                                        ⋯ c) →
+                                    Nanuq.Restriction.CyclicGap
+                                      (List.map.{u_2, 0}
+                                        (fun t =>
+                                          code
+                                            (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                  u_3}
+                                                N b hb)
+                                              ⋯ t))
+                                        xs)
+                                      (code
+                                        (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)
+                                          ⋯ a))
+                                      (code
+                                        (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N
+                                            b hb)
+                                          ⋯ a))) ∧
+                              LE.le.{0} k 1 ∧
+                                List.Nodup.{0} base ∧
+                                  Eq.{1}
+                                      (List.map.{u_2, 0}
+                                        (fun t =>
+                                          code
+                                            (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                  u_3}
+                                                N b hb)
+                                              ⋯ t))
+                                        (List.rotate.{u_2} xs k))
+                                      (Nanuq.Restriction.blocks base dup) ∧
+                                    Eq.{max (u_1 + 1) (u_2 + 1)}
+                                        (Nanuq.GraphSyntax.BinarySyntax.frontier.{max u_1 u_2} s)
+                                        (List.map.{u_2, max u_1 u_2}
+                                          (⇑(Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                  u_3}
+                                                N b hb)))
+                                          xs) ∧
+                                      (∀
+                                          (lab :
+                                            Nanuq.Source.RootedBinary.OpenedHybridVertex.{max u_1 u_2, u_2, u_2}
+                                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                    u_3}
+                                                  N b hb) →
+                                              ℕ)
+                                          (a b_1 c d : ℕ),
+                                          Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2}
+                                              (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+                                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                    u_3}
+                                                  N b hb)
+                                                ⋯)
+                                              lab a b_1 c d ↔
+                                            (Nanuq.GraphReceiver.encode.{max u_1 u_2} lab s).Witness List.nil.{0} a b_1
+                                              c d) ∧
+                                        (∀
+                                            (t :
+                                              Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2,
+                                                    u_3}
+                                                  N b hb)),
+                                            Eq.{1}
+                                              (label
+                                                ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                                                    (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1,
+                                                        u_2, u_3}
+                                                      N b hb))
+                                                  t))
+                                              (code
+                                                (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1,
+                                                      u_2, u_3}
+                                                    N b hb)
+                                                  ⋯ t))) ∧
+                                          Eq.{1} T.size
+                                              (HSub.hSub.{0, 0, 0} (List.length.{0} (Nanuq.Restriction.blocks base dup))
+                                                1) ∧
+                                            ∀ (q : Nanuq.AdjacentCertificate.Quartet) (r a b_1 c d : ℕ),
+                                              Eq.{1} (q.parts r)
+                                                  (Prod.mk.{0, 0} a (Prod.mk.{0, 0} b_1 (Prod.mk.{0, 0} c d))) →
+                                                Ne.{1} a b_1 →
+                                                  Ne.{1} c d →
+                                                    (Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2} ⋯ label a
+                                                        b_1 c d ↔
+                                                      ∃ e,
+                                                        Membership.mem.{0, 0}
+                                                            (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) e ∧
+                                                          Eq.{1}
+                                                            (Nanuq.AdjacentCertificate.edgeWitness
+                                                              (Nanuq.Restriction.blocks base dup) e.1 e.2 q r)
+                                                            true)
+'Nanuq.OpenedCore.actual_ordered_block_finite_receiver' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

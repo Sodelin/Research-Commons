@@ -1,0 +1,116 @@
+<BUILD_ROOT>/source/SyntaxFocus.lean:18:27: warning: This simp argument is unused:
+  LTree.leaves
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LTree.Witness]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:40:27: warning: This simp argument is unused:
+  LTree.leaves
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LTree.Witness]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:67:54: error: unexpected token '~'; expected ':=' or '|'
+<BUILD_ROOT>/source/SyntaxFocus.lean:48:9: error(lean.invalidDottedIdent): Invalid dotted identifier notation: The expected type of `.fork` could not be determined
+
+Hint: Using one of these would be unambiguous:
+  [apply] `BinarySyntax.fork`
+  [apply] `Represents.fork`
+  [apply] `LTree.fork`
+  [apply] `Represents.below.fork`
+<BUILD_ROOT>/source/SyntaxFocus.lean:67:18: error: Type mismatch
+  s.frontier ++ l.frontier ++ r.frontier
+has type
+  List V
+but is expected to have type
+  Sort u_1
+<BUILD_ROOT>/source/SyntaxFocus.lean:67:13: error: Missing cases:
+<BUILD_ROOT>/source/SyntaxFocus.lean:67:6: error: unsolved goals
+case fork.inr.refine_1
+V : Type u_1
+a v : V
+l s : BinarySyntax V
+il :
+  a ∈ l.frontier →
+    ∀ (root : V) (r : BinarySyntax V),
+      ∃ v rest,
+        (BinarySyntax.fork v (BinarySyntax.tip a) rest).frontier.Perm sorry ∧
+          ∀ (label : V → ℕ) (i j k m : ℕ),
+            (encode label (BinarySyntax.fork v (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+              (encode label (BinarySyntax.fork root l r)).Witness [] i j k m
+ir :
+  a ∈ s.frontier →
+    ∀ (root : V) (r : BinarySyntax V),
+      ∃ v rest,
+        (BinarySyntax.fork v (BinarySyntax.tip a) rest).frontier.Perm sorry ∧
+          ∀ (label : V → ℕ) (i j k m : ℕ),
+            (encode label (BinarySyntax.fork v (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+              (encode label (BinarySyntax.fork root s r)).Witness [] i j k m
+ha : a ∈ (BinarySyntax.fork v l s).frontier
+root : V
+r : BinarySyntax V
+has : a ∈ s.frontier
+w : V
+rest : BinarySyntax V
+hperm : (BinarySyntax.fork w (BinarySyntax.tip a) rest).frontier.Perm sorry
+hw :
+  ∀ (label : V → ℕ) (i j k m : ℕ),
+    (encode label (BinarySyntax.fork w (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+      (encode label (BinarySyntax.fork v s (BinarySyntax.fork root l r))).Witness [] i j k m
+hp : sorry
+⊢ (BinarySyntax.fork w (BinarySyntax.tip a) rest).frontier.Perm sorry
+<BUILD_ROOT>/source/SyntaxFocus.lean:65:4: error: unsolved goals
+case fork.inr.refine_2
+V : Type u_1
+a v : V
+l s : BinarySyntax V
+il :
+  a ∈ l.frontier →
+    ∀ (root : V) (r : BinarySyntax V),
+      ∃ v rest,
+        (BinarySyntax.fork v (BinarySyntax.tip a) rest).frontier.Perm sorry ∧
+          ∀ (label : V → ℕ) (i j k m : ℕ),
+            (encode label (BinarySyntax.fork v (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+              (encode label (BinarySyntax.fork root l r)).Witness [] i j k m
+ir :
+  a ∈ s.frontier →
+    ∀ (root : V) (r : BinarySyntax V),
+      ∃ v rest,
+        (BinarySyntax.fork v (BinarySyntax.tip a) rest).frontier.Perm sorry ∧
+          ∀ (label : V → ℕ) (i j k m : ℕ),
+            (encode label (BinarySyntax.fork v (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+              (encode label (BinarySyntax.fork root s r)).Witness [] i j k m
+ha : a ∈ (BinarySyntax.fork v l s).frontier
+root : V
+r : BinarySyntax V
+has : a ∈ s.frontier
+w : V
+rest : BinarySyntax V
+hperm : (BinarySyntax.fork w (BinarySyntax.tip a) rest).frontier.Perm sorry
+hw :
+  ∀ (label : V → ℕ) (i j k m : ℕ),
+    (encode label (BinarySyntax.fork w (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+      (encode label (BinarySyntax.fork v s (BinarySyntax.fork root l r))).Witness [] i j k m
+⊢ ∀ (label : V → ℕ) (i j k m : ℕ),
+    (encode label (BinarySyntax.fork w (BinarySyntax.tip a) rest)).Witness [] i j k m ↔
+      (encode label (BinarySyntax.fork root (BinarySyntax.fork v l s) r)).Witness [] i j k m
+<BUILD_ROOT>/source/SyntaxFocus.lean:81:8: warning: declaration uses `sorry`
+<BUILD_ROOT>/source/SyntaxFocus.lean:93:6: warning: Unused tactic linter: `refine ⟨v, rest, hperm.trans List.perm_append_comm, ?_⟩` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:94:6: warning: Unused tactic linter: `intro label i j k m` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:95:6: warning: Unused tactic linter: `exact
+  (hw label i j k m).trans (witness_fork_swap (encode label r) (encode label l) [] i j k m)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:94:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+<BUILD_ROOT>/source/SyntaxFocus.lean:95:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'Nanuq.GraphReceiver.focus_occurrence' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

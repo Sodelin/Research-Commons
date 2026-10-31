@@ -1,0 +1,98 @@
+<BUILD_ROOT>/source/ActualOrderedBlockReceiver.lean:75:93: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+face : TaxonOuterFace D ⇑N.leaf
+hnt : ∃ u v, u ≠ v
+code : N.BlobPort b ↪ ℕ
+C : Set Plane
+f : ℝ → Plane
+θ : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip → ℝ
+xs : List (N.actualEveryNonleafRootedCapSource b hb).OpenedTip
+hC : IsJordanCurve C
+hface : (graph (blobCurves D b)).face (curve (blobCurves D b)) (coordinates face.outside) = outside C
+hf : IsLoop f
+himage : f '' unitInterval = C
+hθ : ∀ (t : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip), θ t ∈ Ico 0 1 ∧ f (θ t) = tipPoint N D b hg hb t
+hθinj : Function.Injective θ
+hnd : xs.Nodup
+hall : ∀ (t : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip), t ∈ xs
+horder : List.Pairwise (fun a c => θ a ≤ θ c) xs
+hcuts :
+  ∀ (k : (N.actualEveryNonleafRootedCapSource b hb).OpenedHybridEdge)
+    (a c d e : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip),
+    ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).OrientedQuartet k
+        ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex a)
+        ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex c)
+        ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex d)
+        ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex e) →
+      ¬(θ a < θ d ∧ θ d < θ c ∧ θ c < θ e ∨ θ d < θ a ∧ θ a < θ e ∧ θ e < θ c)
+hgaps :
+  ∀ (a c : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip),
+    θ a < θ c →
+      (N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ a =
+          (N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ c →
+        (∀ (w : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip), ¬(θ a < θ w ∧ θ w < θ c)) ∨
+          ∀ (w : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip), ¬(θ w < θ a ∨ θ c < θ w)
+hcyclic :
+  ∀ (a c : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip),
+    a ≠ c →
+      (N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ a =
+          (N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ c →
+        Restriction.CyclicGap
+          (List.map (fun t => code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ t)) xs)
+          (code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ a))
+          (code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ a))
+k : ℕ
+base : List ℕ
+dup : ℕ → Bool
+hk : k ≤ 1
+hbase : base.Nodup
+hblocks :
+  List.map (fun t => code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ t)) (xs.rotate k) =
+    Restriction.blocks base dup
+s : BinarySyntax (N.actualEveryNonleafRootedCapSource b hb).OpenedHybridVertex
+hfront : s.frontier = List.map (⇑((N.actualEveryNonleafRootedCapSource b hb).actualOpenedRootedSource ⋯).leaf) xs
+hsource :
+  ∀ (label : (N.actualEveryNonleafRootedCapSource b hb).OpenedHybridVertex → ℕ) (a b_1 c d : ℕ),
+    LabelledQuartet ((N.actualEveryNonleafRootedCapSource b hb).actualOpenedRootedSource ⋯).graph label a b_1 c d ↔
+      (encode label s).Witness [] a b_1 c d
+label : (N.actualEveryNonleafRootedCapSource b hb).OpenedHybridVertex → ℕ :=
+  fun v =>
+    if h : ∃ t, (N.actualEveryNonleafRootedCapSource b hb).openedTipVertex t = v then
+      code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ (Classical.choose h))
+    else 0
+hlabel :
+  ∀ (t : (N.actualEveryNonleafRootedCapSource b hb).OpenedTip),
+    label ((N.actualEveryNonleafRootedCapSource b hb).openedTipVertex t) =
+      code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ t)
+⊢ List.map (fun x => label (((N.actualEveryNonleafRootedCapSource b hb).actualOpenedRootedSource ⋯).leaf x)) xs =
+    List.map (fun t => code ((N.actualEveryNonleafRootedCapSource b hb).openedTipLabel ⋯ t)) xs
+<BUILD_ROOT>/source/ActualOrderedBlockReceiver.lean:91:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  Iff (LabelledQuartet ((N.actualEveryNonleafRootedCapSource b✝ hb).actualOpenedRootedSource ⋯).graph label a b c d)
+    (∃ e ∈ Tree.internalIntervals 1 T, edgeWitness (Restriction.blocks base dup) e.1 e.2 q r = true)
+but is expected to have type
+  Iff (LabelledQuartet ((N.actualEveryNonleafRootedCapSource b✝ hb).openedHybridGraph ⋯) label a b c d)
+    (∃ e ∈ Tree.internalIntervals 1 T, edgeWitness (Restriction.blocks base dup) e.1 e.2 q r = true)
+<BUILD_ROOT>/source/ActualOrderedBlockReceiver.lean:76:67: warning: This simp argument is unused:
+  hlabel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [encode_leaves, hfront, List.map_map, Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.OpenedCore.actual_ordered_block_finite_receiver' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

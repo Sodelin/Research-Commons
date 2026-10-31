@@ -1,0 +1,64 @@
+--- frozen/SyntaxFocus.lean
++++ source/SyntaxFocus.lean
+@@ -45,7 +45,7 @@
+ theorem focus_left (l : BinarySyntax V) (a : V) (ha : a∈l.frontier)
+     (root : V) (r : BinarySyntax V) :
+     ∃ v rest, (.fork v (.tip a) rest : BinarySyntax V).frontier.Perm
+-        (.fork root l r).frontier ∧
++        (BinarySyntax.fork root l r).frontier ∧
+       ∀ (label : V → Nat) i j k m,
+         (encode label (.fork v (.tip a) rest)).Witness [] i j k m ↔
+           (encode label (.fork root l r)).Witness [] i j k m := by
+@@ -64,8 +64,8 @@
+           (whole_rotation (encode label l) (encode label s) (encode label r) i j k m).symm
+     · obtain ⟨w,rest,hperm,hw⟩ := ir has v (.fork root l r)
+       refine ⟨w,rest,?_,?_⟩
+-      · have hp : (s.frontier++l.frontier)++r.frontier ~
+-            (l.frontier++s.frontier)++r.frontier := List.perm_append_comm.append_right _
++      · have hp : List.Perm ((s.frontier++l.frontier)++r.frontier)
++            ((l.frontier++s.frontier)++r.frontier) := List.perm_append_comm.append_right _
+         exact hperm.trans (by simpa only [BinarySyntax.frontier,List.append_assoc] using hp)
+       · intro label i j k m
+         have hrot := (whole_rotation (encode label s) (encode label l)
+--- frozen/AnchoredIntervals.lean
++++ source/AnchoredIntervals.lean
+@@ -37,13 +37,24 @@
+   have hwhole (x : V) (hx : x∈u.frontier) :
+       x∈(.fork v (.tip anchor) rest : BinarySyntax V).frontier :=
+     hp.mem_iff.mpr (List.mem_append_left _ hx)
+-  have hbout : b∈out++[anchor] := (hctx.outside_iff hnd b).mpr ⟨hb,hbu⟩
++  have hout (x : V) : x ∈ out++[anchor] ↔
++      x ∈ (.fork v (.tip anchor) rest : BinarySyntax V).frontier ∧ x ∉ u.frontier := by
++    have hnd' : (u.frontier ++ (out++[anchor])).Nodup := hp.nodup_iff.mp hnd
++    have hd := (List.nodup_append.mp hnd').2.2
++    constructor
++    · intro hx
++      exact ⟨hp.mem_iff.mpr (List.mem_append_right _ hx),fun hu => hd x hu x hx rfl⟩
++    · rintro ⟨hx,hu⟩
++      rcases List.mem_append.mp (hp.mem_iff.mp hx) with h | h
++      · exact False.elim (hu h)
++      · exact h
++  have hbout : b∈out++[anchor] := (hout b).mpr ⟨hb,hbu⟩
+   have hanchorout : anchor∈out++[anchor] := by simp
+-  have hanchoru : anchor∉u.frontier := ((hctx.outside_iff hnd anchor).mp hanchorout).2
++  have hanchoru : anchor∉u.frontier := ((hout anchor).mp hanchorout).2
+   have hane : a≠anchor := by intro h; subst a; exact hanchoru ha
+   have h0 := hfirst a (hwhole a ha) hane
+   have haall : anchor∈(.fork v (.tip anchor) rest : BinarySyntax V).frontier :=
+-    ((hctx.outside_iff hnd anchor).mp hanchorout).1
++    ((hout anchor).mp hanchorout).1
+   have hw : (encode code (.fork v (.tip anchor) rest)).Witness []
+       (code a) (code c) (code anchor) (code b) := by
+     apply (encode_witness_iff code _ [] _ _ _ _).mpr
+--- frozen/ActualOrderedBlockReceiver.lean
++++ source/ActualOrderedBlockReceiver.lean
+@@ -64,6 +64,9 @@
+   obtain ⟨s,hfront,hsource⟩ := rooted_tree_order_receiver
+     ((M).actualOpenedRootedSource hl) ((M).opened_hybrid_uniqueIncoming hl)
+     xs θ hnd hall hθinj horder hcuts
++  change s.frontier = xs.map (M).openedTipVertex at hfront
++  change ∀ (label : (M).OpenedHybridVertex → Nat) a b c d,
++    LabelledQuartet (OG) label a b c d ↔ (encode label s).Witness [] a b c d at hsource
+   let label : (M).OpenedHybridVertex → Nat := fun v =>
+     if h : ∃ t, (M).openedTipVertex t=v then code ((M).openedTipLabel hl (Classical.choose h)) else 0
+   have hlabel (t : (M).OpenedTip) : label ((M).openedTipVertex t)=code ((M).openedTipLabel hl t) := by
