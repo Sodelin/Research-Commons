@@ -1,0 +1,3 @@
+# Separate AI-assisted semantic review
+
+31 October2026. Separate AI-assisted mathematical review read the sole bind-congruence repair and all five full named types/standard axioms. Scoped acceptance: the same original boundary PMF/readout, fixed bank and admitted representative are preserved; coefficient definitions contain no rate or site-count parameter. All12 complete headers and three definitions are unchanged. Raw197-module audit remains compiler-attributed rather than independently replayed. No signed exponential-polynomial expansion, global window theorem, expert review or novelty certification is claimed.

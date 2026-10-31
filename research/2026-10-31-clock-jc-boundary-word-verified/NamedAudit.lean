@@ -1,0 +1,12 @@
+import ResearchCommons.MSCI.JC69BoundaryWord
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_source
+#print axioms ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_source
+#check @ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_quotient
+#print axioms ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_quotient
+#check @ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_representative
+#print axioms ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_representative
+#check @ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_readout
+#print axioms ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_readout
+#check @ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_coefficient_finite
+#print axioms ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_coefficient_finite

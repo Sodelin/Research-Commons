@@ -1,0 +1,45 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69BoundaryWord.lean:43:17: error: unsolved goals
+case cons
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+b : BoundaryOperation N
+bs : List (BoundaryOperation N)
+ih : ∀ (s : Code N sample), sourceProgram N r (List.map ProgramStep.boundary bs) s = boundaryLaw N bs s
+s : Code N sample
+⊢ (boundaryKernel N b s).bind (sourceProgram N r (List.map ProgramStep.boundary bs)) =
+    (boundaryKernel N b s).bind (boundaryLaw N bs)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69BoundaryWord.lean:43:89: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.map_cons, sourceProgram, sourceProgramStep, boundaryLaw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_source' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_representative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_word_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69BoundaryWord.actual_boundary_coefficient_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

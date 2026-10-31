@@ -1,0 +1,13 @@
+--- frozen/JC69BoundaryWord.lean
++++ source/JC69BoundaryWord.lean
+@@ -40,7 +40,9 @@
+     sourceProgram N r (bs.map ProgramStep.boundary) s = boundaryLaw N bs s := by
+   induction bs generalizing s with
+   | nil => rfl
+-  | cons b bs ih => simp only [List.map_cons,sourceProgram,sourceProgramStep,boundaryLaw,ih]
++  | cons b bs ih =>
++      simp only [List.map_cons,sourceProgram,sourceProgramStep,boundaryLaw]
++      exact congrArg (fun k => (boundaryKernel N b s).bind k) (funext ih)
+ 
+ lemma boundary_backward_expectation (N : RootedBinary V E X) {sample : Copy → X}
+     (f : Code N sample → ℝ≥0∞) (bs : List (BoundaryOperation N)) (s : Code N sample) :

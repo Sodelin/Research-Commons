@@ -1,0 +1,14 @@
+{
+  "definitions": [
+    {
+      "module": "ActualFiniteDistinctMean",
+      "name": "resolutionIndex",
+      "definition": "def resolutionIndex : Resolution \u2192 Nat\n  | .xy_zw => 0\n  | .xz_yw => 1\n  | .xw_yz => 2"
+    },
+    {
+      "module": "ActualFiniteDistinctMean",
+      "name": "finiteResolutionSet",
+      "definition": "def finiteResolutionSet (T : Tree) (tips : List Nat) (Q : Quartet) : Finset Resolution :=\n  ({.xy_zw,.xz_yw,.xw_yz} : Finset Resolution).filter\n    (fun r => \u2203 e\u2208T.internalIntervals 1, edgeWitness tips e.1 e.2 Q (resolutionIndex r)=true)"
+    }
+  ]
+}

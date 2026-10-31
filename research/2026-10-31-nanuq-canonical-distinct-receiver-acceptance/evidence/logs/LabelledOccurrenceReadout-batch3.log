@@ -1,0 +1,332 @@
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:65:13: error: Application type mismatch: The argument
+  t 0
+has type
+  N.OpenedTip
+of sort `Type (max u_3 u_2)` but is expected to have type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` in the application
+  Exists.intro (t 0)
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:67:41: error: Application type mismatch: The argument
+  ![w, y, x, z] i
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_3 u_2)` in the application
+  N.openedTipLabel hl (![w, y, x, z] i)
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:67:63: error: unsolved goals
+case «0»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 2) ∧ lab y = code (q 1) ∧ lab z = code (q 3)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 0
+
+case «1»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 2) ∧ lab y = code (q 1) ∧ lab z = code (q 3)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 1
+
+case «2»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 2) ∧ lab y = code (q 1) ∧ lab z = code (q 3)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 2
+
+case «3»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 2) ∧ lab y = code (q 1) ∧ lab z = code (q 3)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 3
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:68:16: error: Application type mismatch: The argument
+  w
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons w
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:68:18: error: Application type mismatch: The argument
+  y
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons y
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:68:20: error: Application type mismatch: The argument
+  x
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons x
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:68:22: error: Application type mismatch: The argument
+  z
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons z
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:71:13: error: Application type mismatch: The argument
+  t 0
+has type
+  N.OpenedTip
+of sort `Type (max u_3 u_2)` but is expected to have type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` in the application
+  Exists.intro (t 0)
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:73:41: error: Application type mismatch: The argument
+  ![w, y, z, x] i
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_3 u_2)` in the application
+  N.openedTipLabel hl (![w, y, z, x] i)
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:73:63: error: unsolved goals
+case «0»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 3) ∧ lab y = code (q 1) ∧ lab z = code (q 2)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 0
+
+case «1»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 3) ∧ lab y = code (q 1) ∧ lab z = code (q 2)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 1
+
+case «2»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 3) ∧ lab y = code (q 1) ∧ lab z = code (q 2)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 2
+
+case «3»
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hl : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+code : X ↪ ℕ
+lab : N.OpenedHybridVertex → ℕ
+q : Fin 4 ↪ X
+w x y z : N.OpenedHybridVertex
+hlab :
+  (∀ (a : X) (b : N.SkeletonVertexPredicate (N.leaf a)),
+      lab (N.openedTipVertex (Sum.inl ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inl ⟨a, b⟩))) ∧
+    ∀ (a : E) (b : N.graph.IsHybrid (N.graph.target a)),
+      lab (N.openedTipVertex (Sum.inr ⟨a, b⟩)) = code (N.openedTipLabel hl (Sum.inr ⟨a, b⟩))
+mk : ∀ (t : Fin 4 → N.OpenedTip), (∀ (i : Fin 4), N.openedTipLabel hl (t i) = q i) → Function.Injective t
+hq :
+  (lab w = code (q 0) ∧ lab x = code (q 3) ∧ lab y = code (q 1) ∧ lab z = code (q 2)) ∧
+    (N.openedHybridGraph hl).HasQuartet w x y z
+hw : (N.openedHybridGraph hl).outDegree w = 0
+hx : (N.openedHybridGraph hl).outDegree x = 0
+hy : (N.openedHybridGraph hl).outDegree y = 0
+hz : (N.openedHybridGraph hl).outDegree z = 0
+⊢ N.openedTipLabel hl (sorry ()) = q 3
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:74:16: error: Application type mismatch: The argument
+  w
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons w
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:74:18: error: Application type mismatch: The argument
+  y
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons y
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:74:20: error: Application type mismatch: The argument
+  z
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons z
+<BUILD_ROOT>/source/LabelledOccurrenceReadout.lean:74:22: error: Application type mismatch: The argument
+  x
+has type
+  N.OpenedHybridVertex
+of sort `Type (max u_1 u_2)` but is expected to have type
+  N.OpenedTip
+of sort `Type (max u_2 u_3)` in the application
+  Matrix.vecCons x
+'Nanuq.Source.RootedBinary.actual_displayed_iff_labelled' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
