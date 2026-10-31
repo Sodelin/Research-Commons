@@ -1,0 +1,13 @@
+# Goldsztejn's parametric interval operators and the manuscript inclusion
+
+## Source and reading boundary
+
+On 31 October 2026 UTC, this pass read extracted text from Alexandre Goldsztejn, [*Sensitivity Analysis Using a Fixed Point Interval Iteration*, arXiv:0811.2984v1](https://arxiv.org/pdf/0811.2984v1), submitted 18 November 2008. The checked passages are Theorem 2 on printed page 2 and equations (5)–(7) on printed pages 2–3. Requests for screenshots of those pages returned references but no inspectable image payload in this interface, so this is a text-extraction check, not a visual equation audit. The PDF bytes were not retained or independently hashed. The arXiv abstract and paper are the same source, not independent confirmations.
+
+## What the source states
+
+- Theorem 2 concerns the **parametric Hansen–Sengupta** operator defined earlier in the paper. Its first assertion encloses solutions for parameters in the stated input box. Its second, stronger existence-and-uniqueness assertion has an additional interior-inclusion hypothesis; it is a separate claim.
+- The paper then compares a **parametric Krawczyk** operator in equations (6)–(7). Its displayed specialization uses an inverse-midpoint preconditioner, where that inverse is available. Theorem 2 is not itself the definition of that Krawczyk operator.
+- For the manuscript's uncertain target, the identification `f(a,x)=F(x)-a` with `a` in `O` connects the source's family-of-equations setting to all compatible sources. The manuscript uses the same Krawczyk-style algebraic pattern, while its own pointwise identity proves the inclusion for **any fixed rational `Y`**, including `Y=0`; it does not require an inverse midpoint or infer existence. Interval evaluations of differently grouped expressions may have different widths, so the correspondence does not assert identical computed boxes.
+
+This is a bounded attribution and notation comparison. It does not independently verify the nine-feature forward map, prove the manuscript's theorem in Lean, certify a numerical contractor, establish historical priority, or show that the source's existence conditions hold here. A visual check, broader interval-method history and any implementation-specific comparison remain open. The original Hansen–Sengupta PDF named in the retained proof was inaccessible through the earlier direct browser attempt and was not then treated as newly read. A later pass obtained cached extracted text from a university-hosted reproduction; the [separate comparison](HANSEN-SENGUPTA-1981-COMPARISON.md) records its exact reading and visual limits.

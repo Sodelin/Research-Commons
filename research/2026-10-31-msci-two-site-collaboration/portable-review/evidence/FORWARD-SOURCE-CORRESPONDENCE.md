@@ -1,0 +1,30 @@
+# Forward formulas: retained source and Lean draft
+
+This is a targeted manual comparison of the inherited formula and observation order with the local Lean *source text*. It does not re-review the previously checked manuscript wording, validate the inherited pair laws, parse or compile Lean, prove the declarations, or replace scientific or compiler ownership.
+
+## Inputs
+
+The inherited [330-feature interface](https://github.com/Sodelin/Research-Commons/blob/ddcb0be5339cee2bf3e26651ca13f11db185a448/research/2026-10-05-dot-msci-330-feature-forward-interface-1039z/COROLLARY.md) is retained at guide commit `501730afc601aa196ff4c7b84e96105a63199668:recovery/msci/source/c192e95844c66f53af49ca8c200fa8d280a8dc99.txt`; its 10,841 bytes have SHA-256 `4ce2908f87a88584be18a49444c1c0ad06e07ec58d304130b565a18a8ff556ac`. Its §3 supplies the six pair-transform formulas; its own observation interface uses up to 55 sites. The selected [two-site proof](https://github.com/Sodelin/Research-Commons/blob/27b143c73a4ac272b560b2974d83ff96df738531/research/2026-10-05-dot-msci-two-site-nine-feature-identifiability-1150z/THEOREM.md) is retained in the same guide commit at `recovery/msci/source/faea17d4638070b90a54f570d8bb3d8d2b63dc6c.txt`, 14,433 bytes/SHA-256 `cff80cc135de68fde525c29f05c82c7f86081397fc84066479909acc1942fdbf`; its §1 supplies the selected two-site order and shared-genealogy scope. The guide's stored bodies are the sources of this comparison; the URLs are upstream locators, not separately fetched or authenticated copies.
+
+The compared Forward and Root originals are at local commit `812b12b65c4fab34f1144aa2df914f5a1c7182c6`, with respective SHA-256 values `58e2428bcab6a41e99dae4485968adc166eea92defb7967dd2fec10547f255ec` and `f9c22571c83d862bb733d8701011af78f126f79dbbf61e0c3a8a0f4fa01248ba`. The current ForwardDraft (internal supporting file not included: `ForwardDraft.lean`) matches the owner-qualified import-only successor, SHA-256 `8becd27a233481437bfc7a2acd91027362e213368bc8657a2a714c577e9004ec`; it changes no declaration bytes. RootDraft (internal supporting file not included: `RootDraft.lean`) is unchanged. This local integration does not recompile the current tree or qualify its other modules. The JCLocusDraft (internal supporting file not included: `JCLocusDraft.lean`) body at `129a1f7160454f914b98b1566b2c58b7298512b0` is 2,952 bytes/SHA-256 `bdbe5ff3d38ab18f9794630577ce2b5874c652fae806510baddc334c9b9f9f6e` and is **outside** the two-file qualification.
+
+## Matched source expressions
+
+In §3 of the 330-feature source, put `u=t1-h`, `v=t0-t1`, `E(x)=exp(-z*x)`, `S(r,l)=exp(-r*l)`, `H(r,l)=r/(r+z)*(1-exp(-(r+z)*l))`, and `R=rR/(rR+z)`. The local `pairTransform` uses those same definitions and the source's `s`, `b`, `a`, `c1`, `a0`, and `c0` abbreviations. A manual expression-by-expression comparison found no mismatch in these six branches:
+
+| Pair | Distinguishing source and draft terms |
+| --- | --- |
+| `AC` | Root-only `E(t0)*R`. |
+| `AB` | `(1-g)` times the AB interval contribution, with root weight `g+(1-g)*a`. |
+| `BC` | `g` times the C interval beginning at `h`, with root weight `1-g+g*c1`. |
+| `AA` | A interval to `t1`, then the surviving A pair's AB interval and root contributions. |
+| `CC` | The tied C interval through `t0`, followed by its surviving root term. |
+| `BB` | Pre-pulse B contribution plus survival `s` times stay/stay, C/C and split routes; the root weight is `(1-g)^2*b*a + g^2*c1 + 2*g*(1-g)`. The same `rB` occurs before and after the pulse, and the C/C interval spans `h` to `t0`. |
+
+The selected source's raw moment order is `AC1, AC2, CC1, BC1, BC2, AB1, AB2, AA1, BB1`. The `nineRawFeatures` tuple uses that order with `c=8/3` and `2c`. The inherited 330-feature source also defines shifted Bernoulli means `(1+m)/2`; the draft's `nineRawFeatures` are **raw** `m` values, consistent with the two-site statement, and should not be labelled as the shifted means. `JCLocusDraft` maps the pairs to `(0,4)`, `(0,2)`, `(2,4)`, `(0,1)`, `(4,5)`, and `(2,3)` for `AC`, `AB`, `BC`, `AA`, `CC`, and `BB` respectively, consistent with the candidate initial assignment of two labels each to A, B and C.
+
+## Formal domain and remaining bridge
+
+The source's displayed `H` formula is specified for nonnegative `z` and positive rates, making its denominators positive. The Lean definitions are total functions on all reals: division by zero is defined in Lean, so their unrestricted syntax is **not** evidence of the source formula's probabilistic meaning at a zero denominator. The final correspondence must use `Admissible p` and the selected positive values `z=8/3,16/3`, prove the relevant denominators positive, and identify the functions with the actual pair-law integrals. The type `Real` supplies finite real values; `Admissible` supplies strict ordering, positive rates and `0<g<1`. Rate coincidences remain allowed.
+
+The root draft's stated results concern the transcribed analytic moments and positive rate/exponent; they do not establish that observed sequences have those moments. The existing compiler owner reports a successful [qualification of the exact import-only Forward/Root successor](msci-two-file-qualification.md); this comparison is not a separate compiler or raw-audit check. `JCLocusDraft` makes the missing link explicit as `ObservationCorrespondence`, a premise of its conditional injectivity statement. The statement audit (internal supporting file not included: `FORMULA-IDENTIFICATION-SIGNATURE-AUDIT.md`) records the candidate recovery signatures and an arbitrary-mass example showing why equality of laws alone cannot be fed into the formula target. The 55-site source's formulas, the two-site proof's shared genealogy, and the draft's finite-sample observables still need one constructed six-sample process and JC observation law connecting them. Neither this comparison nor the two-file qualification supplies that bridge, an axiom audit of later files, the full Jacobian, or the interval implementation.

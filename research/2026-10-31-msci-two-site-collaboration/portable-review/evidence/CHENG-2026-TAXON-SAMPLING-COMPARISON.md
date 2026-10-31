@@ -1,0 +1,20 @@
+# Cheng and coauthors (2026): taxon sampling and model misspecification
+
+This is a bounded comparison with the internal two-site manuscript, not an independent proof review, a priority finding or a validation experiment for its model.
+
+## Source and scope
+
+Sirui Cheng, Tomáš Flouri, Tianqi Zhu and Ziheng Yang, “[The Impact of Incomplete Taxon Sampling on Inference of Gene Flow by Bayesian and Summary Methods Using Genomic Sequence Data](https://doi.org/10.1093/sysbio/syag023),” *Systematic Biology* 75(6), 1097–1119 (2026). The [publisher record](https://academic.oup.com/sysbio/article/75/6/1097/8504117) gives 3 March 2026 as online publication and 25 March as corrected/typeset; the issue is dated November 2026. On 31 October 2026 I read selected methods, results and conclusion passages in the [published PMC text](https://pmc.ncbi.nlm.nih.gov/articles/PMC13637633/) and compared the relevant design wording with the [UCL-hosted accepted manuscript](https://discovery.ucl.ac.uk/id/eprint/10222800/). They are versions of the same work, not independent replications. Figures, supplementary material and equations embedded as graphics were not visually inspected; the complete derivations were not audited. No original bytes were retained or hashed.
+
+## Comparison
+
+| Aspect | Cheng and coauthors | Present fixed-family manuscript |
+| --- | --- | --- |
+| Question | Compare specified ghost, inflow, outflow and no-flow scenarios by Bayesian and summary methods; investigate incomplete sampling and population-size misspecification. The paper explicitly follows Pang and Zhang's triplet setup and says the ghost-model test has limited scope. | Identify nine parameters within one specified, known-backbone, directed-pulse family. This is not a test of ghost introgression or direction across models. |
+| Observations | In the stated triplet simulation, the authors report 100 replicates with 250 or 1,000 loci, four sequences per species per locus and 500 sites per sequence; their summary methods use one sequence per species per locus. Their separate one-population asymptotic calculation uses two sequences per locus with infinitely many loci and either infinitely many or 500 sites. | The theorem concerns the exact joint law of two sites across six labelled sequences, two per species, sharing a locus genealogy. It supplies no finite-locus performance estimate. |
+| Population sizes | Their triplet BPP analysis uses `linked-msci` to tie a branch's size before and after introgression. In a separate quartet comparison they report large biases when data generated with unequal population sizes were analyzed assuming one size for all populations. | The model allows distinct population-specific rates while imposing its particular B and C across-pulse ties. A generic BPP tie or a bias observed under a different all-populations-equal assumption is not a proof about this exact parameterization. |
+| Model adequacy | The authors study selected incomplete-sampling and size-change cases and report both successful and biased estimates depending on the analysis and scenario. | Identifiability assumes the stated model is correct. This comparison neither supplies a robustness theorem nor shows that a particular biological dataset satisfies those assumptions. |
+
+The paper's “two sequences” in the one-population analysis must not be read as “two sites,” nor as the six-sample network observation here. The reported simulations use much longer loci and evaluate different inference procedures. Their results highlight a practical model-admission question without refuting the scoped mathematical claim. We did not rerun their simulation, test the manuscript's estimator, or establish finite-data accuracy.
+
+The paper follows the earlier Pang–Zhang line of inquiry; it is a distinct published study, not an independent replication of the present two-site theorem. Its network labels and software settings do not by themselves resolve the Pang–Zhang `τ_S`/`τ_H` crosswalk; see the [separate comparison](PANG-ZHANG-2024-COMPARISON.md). A complete prior-art search, independent mathematical and biological review, and the full Lean proof remain open.

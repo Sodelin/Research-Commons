@@ -41,3 +41,7 @@ The question builds on work about sequence-based identifiability and multispecie
 The project welcomes researchers interested in checking the probability and observation model, reviewing the mathematics and prior literature, improving the Lean formalization, or assessing whether the model has useful biological applications. The goal includes learning the relevant biology and bioinformatics while working with collaborators. Constructive corrections and negative results would be valuable contributions. Discussion or a specific concern can be raised in the [Research Commons issue tracker](https://github.com/Sodelin/Research-Commons/issues).
 
 This is an early research note for discussion. Any later archival deposit or journal submission should identify the responsible human contributors and applicable license, give the selected proof and formalization sources, and update these status statements to match the evidence available at that time.
+
+## Full working manuscript
+
+The [portable review edition](portable-review/README.md) includes the full working manuscript, original proof and historical review appendices, and directly cited evidence notes. It is shared for discussion; the full Lean proof, independent expert review, authorship and archival rights remain open.
