@@ -4,10 +4,11 @@ import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';
 import {queryResearchResults} from './research-results.mjs';
 const args=process.argv.slice(2); let f={}, refresh=false,sources=false,archive=false,changes=false;
-let limit=25,offset=0,researchResults=null,researchPath=null;
+let limit=25,offset=0,researchResults=null,researchPath=null,referenceCoverage=false;
 for(let i=0;i<args.length;i++){
   const k=args[i];
   if(k==='--limit'||k==='--offset'){const value=Number(args[++i]);if(!Number.isSafeInteger(value)||value<0||(k==='--limit'&&(value<1||value>100)))throw Error('Use --limit 1..100 and nonnegative --offset.');if(k==='--limit')limit=value;else offset=value;continue;}
+  if(k==='--reference-coverage'){referenceCoverage=true;continue;}
   if(k==='--research-path'){if(researchPath||!args[i+1])throw Error('Use one --research-path PREFIX');researchPath=args[++i];continue;}
   if(k==='--research-results'){if(researchResults||!args[i+1])throw Error('Use one --research-results MANIFEST');researchResults=args[++i];continue;}
   if(k==='--refresh'){refresh=true;continue;}
@@ -17,6 +18,7 @@ for(let i=0;i<args.length;i++){
   if(!['--query','--status','--origin','--topic','--programme','--kind','--review','--formal-status','--novelty','--sort'].includes(k) || !args[i+1]) throw Error('Use --query TEXT, combinable --topic/--programme/--kind/--status/--origin/--review/--formal-status/--novelty, --sort subjective_reuse, [--refresh | --sources | --archive].');
   f[k==='--query'?'q':k.slice(2).replaceAll('-','_')]=args[++i];
 }
+if(referenceCoverage){if(researchResults||researchPath||refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--reference-coverage accepts --query and pagination only.');const data=JSON.parse(await readFile(new URL('../result-reference-coverage.json',import.meta.url)));const hits=data.records.filter(r=>!f.q||JSON.stringify(r).toLowerCase().includes(f.q.toLowerCase()));console.log(JSON.stringify({view:'canonical_reference_coverage_not_scientific_status',source_commit:data.tree_source_commit,coverage:data.coverage_counts,limitation:data.limitation,total:hits.length,offset,limit,next_offset:offset+limit<hits.length?offset+limit:null,results:hits.slice(offset,offset+limit)},null,2));process.exit(0);}
 if(researchPath&&!researchResults)throw Error('--research-path requires --research-results');
 if(researchResults){if(refresh||sources||archive||changes||Object.keys(f).some(k=>k!=='q'))throw Error('--research-results accepts --query and pagination only; claim facets must not hide source-only results.');console.log(JSON.stringify(await queryResearchResults(researchResults,f.q??'',{offset,limit,pathPrefix:researchPath}),null,2));process.exit(0);}
 if(f.status && !Object.hasOwn(STATUS,f.status)) throw Error('Unknown status filter.');

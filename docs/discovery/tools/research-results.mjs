@@ -2,7 +2,7 @@ import {readFile} from 'node:fs/promises';
 import {resolve,dirname,basename} from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
-import {searchSources,sourceExcerpt,artifactReferences,sourceQueryCandidates} from '../dist/source-search.mjs';
+import {searchSources,sourceExcerpt,artifactReferences,sourceQueryCandidates,sourceExactness} from '../dist/source-search.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 export async function queryResearchResults(manifestPath,query,{offset=0,limit=25,pathPrefix=null}={}){
  const root=dirname(resolve(manifestPath)),manifest=JSON.parse(await readFile(manifestPath));
@@ -10,7 +10,7 @@ export async function queryResearchResults(manifestPath,query,{offset=0,limit=25
  const register=JSON.parse(await readFile(new URL('../dist/claims.json',import.meta.url)));const refs=artifactReferences(register.claims),claims=new Map();
  for(const ref of refs){const match=ref.url.match(/^https:\/\/github.com\/Sodelin\/Research-Commons\/blob\/[a-f0-9]{40}\/(.+)$/);if(!match)continue;const list=claims.get(match[1])??new Set();for(const b of ref.bindings)if(b.claim_id)list.add(b.claim_id);claims.set(match[1],list);}
  const inventory=new Map(manifest.inventory.map(r=>[r.path,r]));if(inventory.size!==manifest.inventory.length)throw Error('Duplicate inventory path');const seen=new Set();
- let total=0;const results=[];
+ let total=0;const buckets=Array.from({length:6},()=>[]);
  const relevant=manifest.inventory.filter(r=>r.coverage==='full_text'&&(!pathPrefix||r.path.startsWith(pathPrefix)));const relevantShards=new Set(relevant.map(r=>r.shard));
  for(const entry of manifest.shards){
   if(!relevantShards.has(entry.path))continue;
@@ -20,9 +20,10 @@ export async function queryResearchResults(manifestPath,query,{offset=0,limit=25
   for(const doc of corpus.documents){const bytes=Buffer.from(doc.body);if(sha(bytes)!==doc.sha256||bytes.length!==doc.bytes||createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')!==doc.git_blob||!(manifest.source_commits??[manifest.commit]).some(pin=>doc.url.startsWith(`https://github.com/Sodelin/Research-Commons/blob/${pin}/`)))throw Error('Body identity mismatch');}
   for(const doc of corpus.documents)for(const path of doc.source_paths){if(pathPrefix&&!path.startsWith(pathPrefix))continue;const row=inventory.get(path);if(seen.has(path)||!row||row.coverage!=='full_text'||row.git_blob!==doc.git_blob||row.sha256!==doc.sha256||row.shard!==entry.path)throw Error('Body inventory mismatch');seen.add(path);}
   for(const doc of searchSources({documents:sourceQueryCandidates(corpus.documents.filter(d=>!pathPrefix||d.source_paths.some(p=>p.startsWith(pathPrefix))),query)},query)){
-   if(total>=offset&&results.length<limit)results.push({url:doc.url,title:doc.title,git_blob:doc.git_blob,sha256:doc.sha256,bytes:doc.bytes,source_paths:doc.source_paths,canonical_claim_references:[...new Set(doc.source_paths.flatMap(p=>[...(claims.get(p)??[])]))],evidence_role:'Published source; authored labels and later corrections must be read. No claim status inferred.',excerpt:sourceExcerpt(doc.body,query)});total++;
+   const priority=sourceExactness(doc,query);if(buckets[priority].length<offset+limit)buckets[priority].push({url:doc.url,title:doc.title,git_blob:doc.git_blob,sha256:doc.sha256,bytes:doc.bytes,source_paths:doc.source_paths,canonical_claim_references:[...new Set(doc.source_paths.flatMap(p=>[...(claims.get(p)??[])]))],evidence_role:'Published source; authored labels and later corrections must be read. No claim status inferred.',excerpt:sourceExcerpt(doc.body,query)});total++;
   }
  }
  if(seen.size!==relevant.length)throw Error('Incomplete body inventory');
+ const results=buckets.reverse().flat().slice(offset,offset+limit);
  return {view:'published_research_full_text',path_prefix:pathPrefix,repository:manifest.repository,commit:manifest.commit,coverage:manifest.coverage,limitation:manifest.limitation,total,offset,limit,next_offset:offset+limit<total?offset+limit:null,results};
 }

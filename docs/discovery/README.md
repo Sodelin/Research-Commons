@@ -164,3 +164,16 @@ python3 docs/discovery/tools/check-result-publications.py --repo . --index /tmp/
 ```
 
 Extension refuses modified or deleted prior paths; use a full rebuild in that case. Hash-verified unchanged shards are reused with their original immutable URLs. Incremental additions may repeat a previously stored body under a new path; distinct body hashes and search document counts are separate. `--research-path` is an explicit optional prefix filter; unfiltered search remains available. Publication coverage reports original versions that differ from the current tree as explicit gaps rather than silently equating them. Private inventories are not copied into this public index.
+
+### Exact identifiers and references beyond the selected roots
+
+Exact catalogue keys, immutable source URLs/paths, lexical declaration names and literal identifiers rank ahead of related token matches. This ordering applies across body shards, while broad matches remain paginated. Lexical declaration detection is retrieval evidence, not a Lean ownership or acceptance audit. The corrected `all_size_anchor_nonnegative` query returns its defining `CoefficientTransport.lean` at offset0; the older offset100 observation remains historical in the receipts.
+
+The selected roots are not every user result. [Canonical reference coverage](result-reference-coverage.json) reconciles claim, programme, dissemination and reading-join links, including docs/packages and linked repositories outside those roots. It distinguishes bodies in the separately pinned334-body corpus, identical blobs in the current tree, unbound external bodies, unversioned links and other explicit gaps. These labels describe retrieval coverage, never mathematical openness or acceptance.
+
+```sh
+python3 docs/discovery/tools/reconcile-result-references.py --repo . --manifest /tmp/commons-result-index/manifest.json --output /tmp/reference-coverage.json
+node docs/discovery/tools/query.mjs --reference-coverage --query packages --limit 10
+```
+
+`--reference-coverage` reads the committed reference receipt; the generation command accepts a freshly checked body manifest. Its metadata inputs come from that exact Git commit, with byte hashes. Historical query-run counts are preserved with an explicit correction where an earlier `unique_text_bodies` field actually counted indexed documents. Current coverage distinguishes distinct blob hashes from document records and paths. No whole-history, full-binary, private-task or all-linked-repository coverage is claimed.

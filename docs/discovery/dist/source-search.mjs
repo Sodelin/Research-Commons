@@ -53,6 +53,19 @@ export function recoveredReferences(catalogue,manifest,baseURL){
 }
 // Conservative necessary-condition filter using this engine's own query tokenizer.
 // Substring matches may over-select; final matching always uses searchSources.
+export function sourceExactness(doc,query){
+ const q=String(query).trim();if(!q)return 0;
+ if(doc.bindings.some(b=>b.catalogue_key===q))return 5;
+ if(doc.url===q||(doc.source_paths??[]).some(p=>p===q||p.endsWith('/'+q)))return 4;
+ if(/^[\p{L}\p{N}_'.]+$/u.test(q)){
+  const escaped=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const declaration=new RegExp('^(?:(?:private|protected|noncomputable)\\s+)*(?:theorem|lemma|def|abbrev|structure|inductive)\\s+'+escaped+'(?=[\\s.({:])','mu');
+  if(declaration.test(doc.body))return 3;
+  const text=[doc.title,doc.body,doc.url].join(' ');let start=0;
+  while((start=text.indexOf(q,start))!==-1){const before=text[start-1]??'',after=text[start+q.length]??'';if(!/[\p{L}\p{N}_']/u.test(before)&&!/[\p{L}\p{N}_']/u.test(after))return 2;start+=q.length;}
+ }
+ return 0;
+}
 export function sourceQueryCandidates(documents,query){
  const terms=MiniSearch.getDefault('tokenize')(String(query).trim()).map(MiniSearch.getDefault('processTerm')).filter(Boolean);
  if(!terms.length)return documents;
@@ -66,9 +79,9 @@ export function searchSources(corpus,query,claimIds=null){
   }
   const byURL=new Map(corpus.documents.map(d=>[d.url,d]));
   let hits=String(query).trim()?indexes.get(corpus).search(query,{combineWith:'AND',prefix:true,boost:{title:4,claims:3}}).map(h=>byURL.get(h.id)):corpus.documents;
-  const exact=corpus.documents.filter(d=>d.bindings.some(b=>b.catalogue_key===String(query).trim()));
+  const exact=corpus.documents.filter(d=>sourceExactness(d,query)>=4);
   if(exact.length){const urls=new Set(exact.map(d=>d.url));hits=[...exact,...hits.filter(d=>!urls.has(d.url))];}
-  return hits.filter(d=>!claimIds||d.bindings.some(b=>claimIds.has(b.claim_id)));
+  return hits.filter(d=>!claimIds||d.bindings.some(b=>claimIds.has(b.claim_id))).sort((a,b)=>sourceExactness(b,query)-sourceExactness(a,query));
 }
 export function sourceExcerpt(body,query,max=320){
   const term=String(query).trim().split(/\s+/).find(t=>body.toLowerCase().includes(t.toLowerCase()));
