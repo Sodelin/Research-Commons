@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ActualMarkedGallAdmission.lean",
+    "name": "MarkedSimpleGalls",
+    "source": "def MarkedSimpleGalls : Prop :=\n  \u2200 (h : SuppressedVertex N) (e f : SuppressedEdge N), e\u2260f \u2192\n    MarkedIncoming N ports e h \u2192 MarkedIncoming N ports f h \u2192\n    \u2203 (a : SuppressedVertex N) (W : List (SuppressedEdge N)),\n      (originalGraph (suppressedGraph N ports)).IsCycleThrough e h a W \u2227 f\u2208W \u2227\n        \u2200 d \u2208 e::W, d\u2260e \u2192 d\u2260f \u2192 suppressedMark N ports d = .undirected"
+  },
+  {
+    "file": "OriginalIncomingTransport.lean",
+    "name": "incomingID",
+    "source": "def incomingID (e : E) : SuppressedEdge N :=\n  if hs : N.graph.source e=N.root then .inr () else .inl \u27e8e,hs\u27e9"
+  },
+  {
+    "file": "SuppressedOrdinaryWalk.lean",
+    "name": "OrdinaryAvoid",
+    "source": "def OrdinaryAvoid (h : V) (e : E) : Prop :=\n  \u00acN.graph.IsHybrid (N.graph.target e) \u2227 N.graph.source e\u2260h \u2227 N.graph.target e\u2260h"
+  },
+  {
+    "file": "SuppressedOrdinaryWalk.lean",
+    "name": "SuppressedOrdinaryAvoid",
+    "source": "def SuppressedOrdinaryAvoid (h : V) (e : SuppressedEdge N) : Prop :=\n  suppressedMark N ports e = .undirected \u2227\n    ((suppressedGraph N ports).source e).val\u2260h \u2227\n    ((suppressedGraph N ports).target e).val\u2260h"
+  }
+]

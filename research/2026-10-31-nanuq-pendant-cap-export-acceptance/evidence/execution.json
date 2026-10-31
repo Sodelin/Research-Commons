@@ -1,0 +1,48 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "source",
+    "exit_code": 0,
+    "seconds": 4.259123780000664,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/pendant-cap-export/source",
+      "-o",
+      "/workspace/tasks/lean-completion/pendant-cap-export/lib/PendantCapExport.olean",
+      "/workspace/tasks/lean-completion/pendant-cap-export/source/PendantCapExport.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.35133787200175,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/pendant-cap-export/NamedAudit.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 8.365322975994786,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/pendant-cap-export/OwnedAudit.lean"
+    ],
+    "batch": 1
+  }
+]

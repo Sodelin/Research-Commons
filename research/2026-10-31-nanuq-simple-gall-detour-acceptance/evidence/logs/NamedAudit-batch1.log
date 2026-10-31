@@ -1,0 +1,34 @@
+@Nanuq.SimpleGallAdmission.original_walk_ureach.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E) {a b : V} {W : List.{u_2} E}
+  {keep : E → Prop},
+  Graph.IsWalk.{u_1, u_2} (Nanuq.SimpleGallAdmission.originalGraph.{u_1, u_2} G) a W b →
+    (∀ (d : E), Membership.mem.{u_2, u_2} W d → keep d) → Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} G keep a b
+'Nanuq.SimpleGallAdmission.original_walk_ureach' depends on axioms: [propext]
+@Nanuq.SimpleGallAdmission.incoming_cycle_detour.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E) [inst : Fintype.{u_2} E]
+  [inst_1 : DecidableEq.{u_1 + 1} V] {h : V} {e f : E} {W : List.{u_2} E},
+  Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G e) h →
+    Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G f) h →
+      Ne.{u_2 + 1} e f →
+        Graph.IsCycleThrough.{u_1, u_2} (Nanuq.SimpleGallAdmission.originalGraph.{u_1, u_2} G) e h
+            (Nanuq.Source.EdgeGraph.source.{u_1, u_2} G e) W →
+          Membership.mem.{u_2, u_2} W f →
+            (∀ (d : E),
+                Membership.mem.{u_2, u_2} (List.cons.{u_2} e W) d →
+                  Ne.{u_2 + 1} d e →
+                    Ne.{u_2 + 1} d f →
+                      ¬Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} G (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G d)) →
+              Nanuq.Source.EdgeGraph.UReach.{u_1, u_2} G
+                (fun d =>
+                  ¬Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} G (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G d) ∧
+                    Ne.{u_1 + 1} (Nanuq.Source.EdgeGraph.source.{u_1, u_2} G d) h ∧
+                      Ne.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} G d) h)
+                (Nanuq.Source.EdgeGraph.source.{u_1, u_2} G e) (Nanuq.Source.EdgeGraph.source.{u_1, u_2} G f)
+'Nanuq.SimpleGallAdmission.incoming_cycle_detour' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.SimpleGallAdmission.rooted_simple_galls_to_detour.{u_1,
+    u_2} : ∀ {V : Type u_1} {E : Type u_2} (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E) [inst : Fintype.{u_2} E]
+  [inst_1 : DecidableEq.{u_1 + 1} V],
+  Nanuq.SimpleGallAdmission.RootedSimpleGalls.{u_1, u_2} G → Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} G
+'Nanuq.SimpleGallAdmission.rooted_simple_galls_to_detour' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

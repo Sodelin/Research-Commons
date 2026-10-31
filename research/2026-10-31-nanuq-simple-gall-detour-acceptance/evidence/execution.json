@@ -1,0 +1,48 @@
+[
+  {
+    "batch_start": true,
+    "batch": 1
+  },
+  {
+    "step": "source",
+    "exit_code": 0,
+    "seconds": 1.2543806499961647,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=/workspace/tasks/lean-completion/simple-gall-detour/source",
+      "-o",
+      "/workspace/tasks/lean-completion/simple-gall-detour/lib/OriginalSimpleGallDetour.olean",
+      "/workspace/tasks/lean-completion/simple-gall-detour/source/OriginalSimpleGallDetour.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 1.0570848970019142,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/simple-gall-detour/NamedAudit.lean"
+    ],
+    "batch": 1
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 1.9279780029974063,
+    "command": [
+      "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "/workspace/tasks/lean-completion/simple-gall-detour/OwnedAudit.lean"
+    ],
+    "batch": 1
+  }
+]

@@ -1,0 +1,174 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:28:16: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+p : Choice N s
+h : ¬IsCanonical e N s p
+⊢ reverseChoice N s (reverseChoice N s p) = p
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:30:17: error: unsolved goals
+case false
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+p : Choice N s
+hp : IsCanonical e N s p
+⊢ reverseChoice N s (reverseChoice N s p) = p
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:29:49: warning: This simp argument is unused:
+  reverseChoice_involutive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:32:47: warning: This simp argument is unused:
+  reverseChoice_involutive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hp, canonical_reverse_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:39:47: warning: declaration uses `sorry`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:39:30: warning: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_prod_type, choiceOrientationEquiv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:155:6: error: Type mismatch: After simplification, term
+  actual_resolved_real_zero N r L q s T target
+ has type
+  (actualResolvedWeight N r L q 0 s (↑T) target).toReal =
+    if observeCode N s = target then Real.exp (-((totalRate N r s + locusKill N L q s) * ↑T)) else 0
+but is expected to have type
+  (actualResolvedWeight N r L q 0 s (↑T) target).toReal =
+    if observeCode N s = target then Real.exp ((-locusKill N L q s + -totalRate N r s) * ↑T) else 0
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:160:6: error: unsolved goals
+case succ.hx
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+n : ℕ
+e : Copy ≃ Fin n
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+target : BlockPopulationObservation Copy V E
+fuel : ℕ
+ih :
+  ∀ (s : Code N sample) (T : ℝ≥0),
+    (actualResolvedWeight N r L q fuel s (↑T) target).toReal =
+      ∑ h, canonicalMass e N r L q fuel s h ↑T * if observeCode N (pathEnd N fuel s ↑h) = target then 1 else 0
+s : Code N sample
+T : ℝ≥0
+⊢ (Real.exp (-holdingRate N r L q s * ↑T) * if observeCode N s = target then 1 else 0) =
+    canonicalMass e N r L q (fuel + 1) s ⟨Sum.inl PUnit.unit, True.intro⟩ ↑T * if observeCode N s = target then 1 else 0
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:188:10: error: 'change' tactic failed, pattern
+  ∫ (u : ℝ) in 0..↑T,
+      pairRate r (↑p).fst * Real.exp (-holdingRate N r L q s * u) *
+        (canonicalMass e N r L q fuel d h (↑T - u) * terminal h) =
+    (pairRate r (↑p).fst *
+        ∫ (u : ℝ) in 0..↑T, Real.exp (-holdingRate N r L q s * u) * canonicalMass e N r L q fuel d h (↑T - u)) *
+      terminal h
+is not definitionally equal to target
+  ∫ (x : ℝ) in 0..↑T,
+      pairRate r (↑p).fst * Real.exp (-holdingRate N r L q s * x) *
+        (canonicalMass e N r L q fuel d h (↑T - x) * terminal h) =
+    canonicalMass e N r L q (fuel + 1) s ⟨Sum.inr ⟨↑p, ↑h⟩, ⋯⟩ ↑T *
+      if observeCode N (pathEnd N fuel (stepDestination N s (some ↑p)) ↑h) = target then 1 else 0
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:160:19: warning: This simp argument is unused:
+  canonicalMass_stop
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [canonicalStop, pathEnd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:163:19: warning: This simp argument is unused:
+  canonicalMass_jump
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [canonicalJump, pathEnd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:203:0: warning: `CanonicalTermIndex`: universes `u_5`, `u_6` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69CanonicalWeightedSum.lean:254:71: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+e : Copy ≃ Fin (Fintype.card Copy)
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+fuel : ℕ
+s : Code N sample
+⊢ Fintype.card (CanonicalPath e N fuel s) = Fintype.card (CanonicalPath e N fuel s)
+'ResearchCommons.MSCI.JC69CanonicalWeightedSum.choiceOrientationEquiv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalWeightedSum.actual_resolved_canonical_real_renewal' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalWeightedSum.actual_resolved_canonical_path_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalWeightedSum.actual_resolved_canonical_exponential_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CanonicalWeightedSum.actual_canonical_term_card_le' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
