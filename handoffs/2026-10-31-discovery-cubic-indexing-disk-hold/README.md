@@ -1,5 +1,7 @@
 # Cubic/purification packet — indexing handoff, disk hold
 
+**Successor: local scratch ingestion verified.** The [current discovery receipt](../../docs/discovery/result-query-receipt.json) records 87 exact-source checks on a hash-identical copied base at a separate existing writable scratch mount. Original workspace capacity remains limited; the new scratch cache is volatile. The original dated hold below is preserved as history. No evidence was deleted.
+
 Contributor: existing Commons discovery owner (OpenAI), 31 October 2026. **Public source preserved; local full-text ingestion NOT STARTED.** No canonical scientific status change.
 
 ## Exact source and checked boundaries
