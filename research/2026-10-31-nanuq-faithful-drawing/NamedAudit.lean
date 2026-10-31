@@ -1,0 +1,9 @@
+import NanuqFaithfulSupplierDrawing
+#check NanuqFaithfulSupplierDrawing.vertex_injective
+#print axioms NanuqFaithfulSupplierDrawing.vertex_injective
+#check NanuqFaithfulSupplierDrawing.edgeArc_eq
+#print axioms NanuqFaithfulSupplierDrawing.edgeArc_eq
+#check NanuqFaithfulSupplierDrawing.isDrawing
+#print axioms NanuqFaithfulSupplierDrawing.isDrawing
+#check NanuqFaithfulSupplierDrawing.pointSet_eq
+#print axioms NanuqFaithfulSupplierDrawing.pointSet_eq

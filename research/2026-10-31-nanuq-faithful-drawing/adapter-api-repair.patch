@@ -1,0 +1,11 @@
+--- a/NanuqFaithfulSupplierDrawing.lean
++++ b/NanuqFaithfulSupplierDrawing.lean
+@@ -63,7 +63,7 @@
+ 
+ lemma curve_on_interval (e : E) (t : unitInterval) :
+     curve D e t = coordinates (D.arc e t) := by
+-  simp only [curve, projIcc_coe]
++  simp only [curve, projIcc_of_mem _ t.property]
+ 
+ lemma curve_zero (e : E) : curve D e 0 = vertex D (G.source e) := by
+   simpa [vertex] using curve_on_interval D e 0

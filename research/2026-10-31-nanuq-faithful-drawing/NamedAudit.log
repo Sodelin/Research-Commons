@@ -1,0 +1,17 @@
+NanuqFaithfulSupplierDrawing.vertex_injective.{u_1, u_2} {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) : Function.Injective (NanuqFaithfulSupplierDrawing.vertex D)
+'NanuqFaithfulSupplierDrawing.vertex_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+NanuqFaithfulSupplierDrawing.edgeArc_eq.{u_1, u_2} {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) (e : E) :
+  Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) e =
+    ⇑NanuqFaithfulSupplierDrawing.coordinates '' Set.range ⇑(D.arc e)
+'NanuqFaithfulSupplierDrawing.edgeArc_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+NanuqFaithfulSupplierDrawing.isDrawing.{u_1, u_2} {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) :
+  (NanuqFaithfulSupplierDrawing.graph D).IsDrawing (NanuqFaithfulSupplierDrawing.curve D)
+'NanuqFaithfulSupplierDrawing.isDrawing' depends on axioms: [propext, Classical.choice, Quot.sound]
+NanuqFaithfulSupplierDrawing.pointSet_eq.{u_1, u_2} {V : Type u_1} {E : Type u_2} {G : Nanuq.Source.EdgeGraph V E}
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves G) :
+  (NanuqFaithfulSupplierDrawing.graph D).pointSet (NanuqFaithfulSupplierDrawing.curve D) =
+    ⇑NanuqFaithfulSupplierDrawing.coordinates '' G1OuterLabelledMultigraphCurves.drawing D
+'NanuqFaithfulSupplierDrawing.pointSet_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
