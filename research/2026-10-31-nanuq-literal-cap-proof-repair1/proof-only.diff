@@ -1,0 +1,107 @@
+--- a/RootedCapMap.lean
++++ b/RootedCapMap.lean
+@@ -115,8 +115,14 @@
+         N.originalPortInner_value_outgoing b p hp]
+     · have hn := incoming_port_nonroot N b p hp
+       have he := incoming_port_eq N b p hp
+-      simp [capRawArc,capPoint,RootedBinary.actualRootedCapGraph,hp,
+-        RootedBinary.actualRootedCapRoot,hn,he]
++      change (if N.graph.bridgeQuotient.source p.val = b then
++          D.arc p.val.val (affineParameter 0 oneHalf 0)
++        else D.arc p.val.val (affineParameter twoThirds oneThird 0)) =
++        capPoint N D b (if N.graph.bridgeQuotient.source p.val = b then
++          Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b)
++      rw [if_neg hp]
++      simp only [affineParameter_zero,RootedBinary.actualRootedCapRoot,dif_neg hn,capPoint]
++      exact congrArg (fun q : N.BlobPort b => D.arc q.val.val twoThirds) he
+   · simp [capRawArc,capPoint,RootedBinary.actualRootedCapGraph,
+       RootedBinary.actualRootedCapRoot,r.property]
+ 
+@@ -129,13 +135,27 @@
+   · simp [capRawArc,capPoint,RootedBinary.actualRootedCapGraph,
+       N.originalRootedCapEntry_nonroot_value b r.property]
+ 
++lemma capRawArc_port_outgoing (p : N.BlobPort b)
++    (hp : N.graph.bridgeQuotient.source p.val = b) :
++    capRawArc N D b (.inr (.inl p)) =
++      fun t => D.arc p.val.val (affineParameter 0 oneHalf t) := by
++  funext t
++  exact if_pos hp
++
++lemma capRawArc_port_incoming (p : N.BlobPort b)
++    (hp : ¬ N.graph.bridgeQuotient.source p.val = b) :
++    capRawArc N D b (.inr (.inl p)) =
++      fun t => D.arc p.val.val (affineParameter twoThirds oneThird t) := by
++  funext t
++  exact if_neg hp
++
+ lemma capRawArc_continuous (e : N.RootedCapArc b) : Continuous (capRawArc N D b e) := by
+   rcases e with e | (p | r)
+   · exact (D.arc e.val).continuous
+   · by_cases hp : N.graph.bridgeQuotient.source p.val = b
+-    · simp only [capRawArc,if_pos hp]
++    · rw [capRawArc_port_outgoing N D b p hp]
+       exact (D.arc p.val.val).continuous.comp (by fun_prop [affineParameter])
+-    · simp only [capRawArc,if_neg hp]
++    · rw [capRawArc_port_incoming N D b p hp]
+       exact (D.arc p.val.val).continuous.comp (by fun_prop [affineParameter])
+   · exact (D.arc _).continuous.comp (by fun_prop [capRawArc,affineParameter])
+ 
+@@ -152,11 +172,11 @@
+   · exact D.arc_injective e.val
+   · by_cases hp : N.graph.bridgeQuotient.source p.val = b
+     · change Function.Injective (capRawArc N D b (.inr (.inl p)))
+-      simp only [capRawArc,if_pos hp]
++      rw [capRawArc_port_outgoing N D b p hp]
+       exact (D.arc_injective _).comp (affineParameter_injective _ _ (by
+         intro h; have := congrArg Subtype.val h; norm_num [oneHalf] at this))
+     · change Function.Injective (capRawArc N D b (.inr (.inl p)))
+-      simp only [capRawArc,if_neg hp]
++      rw [capRawArc_port_incoming N D b p hp]
+       exact (D.arc_injective _).comp (affineParameter_injective _ _ (by
+         intro h; have := congrArg Subtype.val h; norm_num [twoThirds,oneThird] at this))
+   · exact (D.arc_injective _).comp (affineParameter_injective _ _ (by
+@@ -180,7 +200,7 @@
+   rcases e with e | (p | r)
+   · rfl
+   · by_cases hp : N.graph.bridgeQuotient.source p.val = b <;>
+-      simp [capRawArc,capCarrier,capParameter,hp]
++      simp [capRawArc,capCarrier,capParameter,hp] <;> rfl
+   · rfl
+ 
+ lemma capParameter_interior (e : N.RootedCapArc b) (t : unitInterval)
+@@ -195,10 +215,10 @@
+   · by_cases hp : N.graph.bridgeQuotient.source p.val = b
+     all_goals constructor <;> intro h <;> have he := congrArg Subtype.val h
+     all_goals simp [capParameter,hp,affineParameter,oneHalf,oneThird,twoThirds] at he
+-    all_goals linarith [ht.1,ht.2]
++    all_goals first | exact ht0 he | exact ht1 he | linarith [ht.1,ht.2]
+   · constructor <;> intro h <;> have he := congrArg Subtype.val h
+     all_goals simp [capParameter,affineParameter,twoThirds] at he
+-    all_goals linarith [ht.1,ht.2]
++    all_goals first | exact ht0 he | exact ht1 he | linarith [ht.1,ht.2]
+ 
+ lemma internal_not_bridge (e : N.OriginalBlobArc b) : ¬ N.graph.IsBridge e.val := by
+   intro he
+@@ -217,6 +237,7 @@
+     have hn : (t:ℝ) ≠ 0 := fun h => ht0 (Subtype.ext h)
+     exact lt_of_le_of_ne t.property.1 (Ne.symm hn)
+   rcases e with e | (p | r) <;> rcases f with f | (q | s)
++  all_goals dsimp only [capCarrier] at hc
+   · exact hef (congrArg Sum.inl (Subtype.ext hc))
+   · exact internal_not_bridge N b e (hc.symm ▸ q.val.property)
+   · exact internal_not_bridge N b e (hc.symm ▸ (N.originalIncomingBlobPort b s.property).val.property)
+@@ -280,9 +301,11 @@
+       capPoint N D b v = capArc N D b f 1 := by
+     rcases hf with hs | ht
+     · left
+-      simpa only [hs] using (capArc N D b f).source.symm
++      change (N.actualRootedCapGraph b).source f = v at hs
++      exact (congrArg (capPoint N D b) hs).symm.trans (capArc N D b f).source.symm
+     · right
+-      simpa only [ht] using (capArc N D b f).target.symm
++      change (N.actualRootedCapGraph b).target f = v at ht
++      exact (congrArg (capPoint N D b) ht).symm.trans (capArc N D b f).target.symm
+   have ht : t = 0 ∨ t = 1 := by
+     rcases hv with hv | hv
+     · by_cases he : e = f
