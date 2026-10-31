@@ -1,0 +1,160 @@
+{
+  "source_sha256": "7a3aa9f702ac3bf6dcda7bd2868ed8349861b0b17b0ad870c30dfce7a30930e6",
+  "declarations": [
+    {
+      "name": "SingletonBlocks",
+      "complete_frozen_text": "def SingletonBlocks (s : State V E Copy) : Prop :=\n  \u2200 B \u2208 currentBlocks s, \u2203 x : Copy, B = {x}",
+      "sha256": "b31ebfee89a06e2b5dbeabfa0ad8b4105a5afa4e98f1df2c0943a13560cc335e"
+    },
+    {
+      "name": "Dormant",
+      "complete_frozen_text": "def Dormant (N : RootedBinary V E X) (sample : Copy \u2192 X) (s : Code N sample) : Prop :=\n  \u2200 x : Copy, copyLocation (state s) x = .node (N.leaf (sample x))",
+      "sha256": "b0e20868b64b20ae638d9856efd31e5223800af32bdb11fa77a3753d1703381a"
+    },
+    {
+      "name": "dormant_choice_empty",
+      "complete_frozen_text": "lemma dormant_choice_empty (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (hs : Dormant N sample s) : IsEmpty (Choice N s) := by\n  refine \u27e8fun p => ?_\u27e9\n  have hl := (Finset.mem_offDiag.mp p.2.property).1\n  have hp := Finset.mem_filter.mp hl\n  have h := hs p.2.val.1\n  change (state s).location ((state s).ancestor p.2.val.1) = _ at h\n  rw [s.property.forest.representative _ hp.1] at h\n  exact originalPlace_not_node N p.1 _ (hp.2.symm.trans h)",
+      "sha256": "f7d43ba933a4d7c8eeea3313367eb6c45119741cb914a73a3bf3ee8b9cb0e69c"
+    },
+    {
+      "name": "dormant_step_support",
+      "complete_frozen_text": "lemma dormant_step_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample} (hd : d \u2208 (sourceStep N r s).support) : d = s := by\n  letI := dormant_choice_empty N s hs\n  obtain \u27e8p,_,hp\u27e9 := (PMF.mem_support_map_iff _ _ _).mp hd\n  cases p with\n  | none => exact hp.symm\n  | some p => exact isEmptyElim p",
+      "sha256": "3cd2eaefce2482a5b9eba726dbf61db53ee0745148014cbd4057f1c3d9eb8aea"
+    },
+    {
+      "name": "dormant_iteration_support",
+      "complete_frozen_text": "lemma dormant_iteration_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (k : \u2115) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample} (hd : d \u2208 (sourceIteration N r k s).support) : d = s := by\n  induction k with\n  | zero => simpa only [sourceIteration,PMF.mem_support_pure_iff] using hd\n  | succ k ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      have he := dormant_step_support N r s hs hm\n      subst m\n      exact ih hmd",
+      "sha256": "7644769740e6c7e61261a99530384f17115b27071927ccab18118b545c88afff"
+    },
+    {
+      "name": "dormant_time_support",
+      "complete_frozen_text": "lemma dormant_time_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (h : \u211d\u22650) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample} (hd : d \u2208 (sourceTimeKernel N r h s).support) : d = s := by\n  obtain \u27e8k,_,hk\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  exact dormant_iteration_support N r k s hs hk\n\n/-- Original boundaries preserve descendant blocks, not literal Code identity. -/",
+      "sha256": "beec4ed0c7e38258d56c7e6d241410d6501781f737aee3bdc4f3e6974f9d2827"
+    },
+    {
+      "name": "boundary_blocks_support",
+      "complete_frozen_text": "lemma boundary_blocks_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (b : BoundaryOperation N) (s : Code N sample) {d : Code N sample}\n    (hd : d \u2208 (boundaryKernel N b s).support) : currentBlocks (state d) = currentBlocks (state s) := by\n  have hp (H : GProgram.G2.OriginalHybridParents N) (coin : AtNode (state s) H.hybrid \u2192 Bool) :\n      currentBlocks (state (pulseCode H s coin)) = currentBlocks (state s) := by\n    have ho := admitted_observation N (pulse H (state s) coin)\n      (pulse_source_valid H sample (state s) s.property coin)\n    exact congrArg Prod.fst ho\n  cases b with\n  | exit e =>\n      have he : d = exitCode N s e := by simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hd\n      subst d; exact congrArg Prod.fst (exit_observation N s e)\n  | ordinary e degree =>\n      have he : d = ordinaryCode N s e := by simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hd\n      subst d; exact congrArg Prod.fst (ordinary_observation N s e)\n  | root =>\n      have he : d = rootCode N s := by simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hd\n      subst d; exact congrArg Prod.fst (root_observation N s)\n  | common H =>\n      have he : d = pulseCode H s (fun _ => (state s).register H.hybrid) := by\n        simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hd\n      subst d; exact hp H _\n  | independent H gamma =>\n      obtain \u27e8coin,_,hc\u27e9 := (PMF.mem_support_map_iff _ _ _).mp hd\n      rw [\u2190 hc]; exact hp H coin",
+      "sha256": "6e85a1931a43a8c1e1381f9a7fca841da01eb99f948e87302d845cd52543bc47"
+    },
+    {
+      "name": "singleton_boundary_support",
+      "complete_frozen_text": "lemma singleton_boundary_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (b : BoundaryOperation N) (s : Code N sample) (hs : SingletonBlocks (state s))\n    {d : Code N sample} (hd : d \u2208 (boundaryKernel N b s).support) : SingletonBlocks (state d) := by\n  intro B hB\n  rw [boundary_blocks_support N b s hd] at hB\n  exact hs B hB",
+      "sha256": "d5ce20565b9a653d1c8e89471b7367676fa25bd6feb9924045351a5817e4339c"
+    },
+    {
+      "name": "dormant_exit_support",
+      "complete_frozen_text": "lemma dormant_exit_support (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (e : E) (s : Code N sample) (hs : Dormant N sample s) : Dormant N sample (exitCode N s e) := by\n  intro x\n  rw [exitCode_copyLocation,hs x]\n  rfl",
+      "sha256": "e7e7165350c4fae04f8f3159422b76c067ed24acb2477de99ba3c6d508a9d349"
+    },
+    {
+      "name": "dormant_node_support",
+      "complete_frozen_text": "lemma dormant_node_support (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c)\n    (v : V) (hv : C.age v < c) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample}\n    (hd : d \u2208 (boundaryKernel N (originalNodeOperation N H gamma common v) s).support) :\n    Dormant N sample d := by\n  intro x\n  have hm := actual_original_node_kernel_movement N H gamma common v s hd x\n  have hn : copyLocation (state s) x \u2260 .node v := by\n    rw [hs x]\n    intro he\n    have hvx := congrArg C.age (Location.node.inj he)\n    rw [hc x] at hvx\n    exact (ne_of_lt hv) hvx.symm\n  simpa only [NodeMovement,if_neg hn,hs x] using hm",
+      "sha256": "a949088b09f7c8b64ce3374e7566a7f1f4e9c31ed88ba135233ac606aa17f3ff"
+    },
+    {
+      "name": "boundary_word_singleton",
+      "complete_frozen_text": "lemma boundary_word_singleton (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (bs : List (BoundaryOperation N)) (s : Code N sample)\n    (hs : SingletonBlocks (state s)) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (bs.map ProgramStep.boundary) s).support) :\n    SingletonBlocks (state d) := by\n  induction bs generalizing s with\n  | nil =>\n      have he : d = s := by simpa only [List.map_nil,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [he] using hs\n  | cons b bs ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      exact ih m (singleton_boundary_support N b s hs hm) hmd",
+      "sha256": "7bd2fa963e4d38c48331cb502ad087bf4466e350c3de4732005a0c1d7671407b"
+    },
+    {
+      "name": "exit_word_dormant",
+      "complete_frozen_text": "lemma exit_word_dormant (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (es : List E) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (es.map (fun e => .boundary (.exit e))) s).support) :\n    Dormant N sample d := by\n  induction es generalizing s with\n  | nil =>\n      have he : d = s := by simpa only [List.map_nil,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [he] using hs\n  | cons e es ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      have he : m = exitCode N s e := by simpa only [boundaryKernel,PMF.mem_support_pure_iff] using hm\n      subst m\n      exact ih _ (dormant_exit_support N e s hs) hmd",
+      "sha256": "e6900d6dc9f730b1d8428831529089016cda258794b3944e4bebe2af5b5ca0d1"
+    },
+    {
+      "name": "node_word_dormant",
+      "complete_frozen_text": "lemma node_word_dormant (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (vs : List V)\n    (hv : \u2200 v \u2208 vs, C.age v < c) (s : Code N sample) (hs : Dormant N sample s)\n    {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r\n      (vs.map (fun v => .boundary (originalNodeOperation N H gamma common v))) s).support) :\n    Dormant N sample d := by\n  induction vs generalizing s with\n  | nil =>\n      have he : d = s := by simpa only [List.map_nil,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [he] using hs\n  | cons v vs ih =>\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      exact ih (fun w hw => hv w (by simp [hw])) m\n        (dormant_node_support N C H gamma common c hc v (hv v (by simp)) s hs hm) hmd",
+      "sha256": "dbadf154bce28f132d2ec2b7b7d3fe0ee556c56d8d496ecf00bb9c9f27336139"
+    },
+    {
+      "name": "whole_boundary_singleton",
+      "complete_frozen_text": "lemma whole_boundary_singleton (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (a : \u211d) (s : Code N sample)\n    (hs : SingletonBlocks (state s)) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (boundaryOperations N C H gamma common a) s).support) :\n    SingletonBlocks (state d) := by\n  let es := (Finset.univ.filter (fun e : E => C.age (N.graph.source e) = a)).toList\n  let vs := (Finset.univ.filter (fun v : V => C.age v = a)).toList\n  have heq : boundaryOperations N C H gamma common a =\n      (es.map BoundaryOperation.exit ++ vs.map (originalNodeOperation N H gamma common)).map ProgramStep.boundary := by\n    simp [boundaryOperations,es,vs,List.map_append,List.map_map,Function.comp_def]\n  rw [heq] at hd\n  exact boundary_word_singleton N r _ s hs hd",
+      "sha256": "48be955a8be24b34336451396baf89fa0cbe9ec58e7172256ed098d78fa97c9a"
+    },
+    {
+      "name": "whole_boundary_dormant",
+      "complete_frozen_text": "lemma whole_boundary_dormant (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (a : \u211d) (ha : a < c)\n    (s : Code N sample) (hs : Dormant N sample s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (boundaryOperations N C H gamma common a) s).support) :\n    Dormant N sample d := by\n  rw [boundaryOperations,sourceProgram_append] at hd\n  obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  have he := exit_word_dormant N r _ s hs hm\n  exact node_word_dormant N C H gamma common r c hc _\n    (fun v hv => ((Finset.mem_filter.mp (Finset.mem_toList.mp hv)).2).trans_lt ha) m he hmd\n\n/-- Strong sampling invariant: singleton blocks through c, dormant locations\nstrictly before c. At c actual routing is allowed, with no instantaneous merger. -/",
+      "sha256": "5dfd6c0720e717e9a18f661a122709093325d467582f32979b7d54ff2ea7a044"
+    },
+    {
+      "name": "SamplingInvariant",
+      "complete_frozen_text": "def SamplingInvariant (N : RootedBinary V E X) (sample : Copy \u2192 X) (c a : \u211d)\n    (s : Code N sample) : Prop := SingletonBlocks (state s) \u2227 (a < c \u2192 Dormant N sample s)",
+      "sha256": "49f61716162f4054f3ae2c008ee854191c3419a65632dd23e609de2d72a5b7f9"
+    },
+    {
+      "name": "tail_sampling_support",
+      "complete_frozen_text": "lemma tail_sampling_support (N : RootedBinary V E X) (C : Calendar N.graph)\n    {sample : Copy \u2192 X} (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (dates : List \u211d) (a : \u211d)\n    (hordered : dates.Pairwise (\u00b7 < \u00b7)) (hafter : \u2200 b \u2208 dates, a < b)\n    (hcut : \u2200 b \u2208 dates, b \u2264 c) (s : Code N sample)\n    (hs : SamplingInvariant N sample c a s) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (calendarTail N C H gamma common a dates) s).support) :\n    SamplingInvariant N sample c (finalDate a dates) d := by\n  induction dates generalizing a s with\n  | nil =>\n      have he : d = s := by simpa only [calendarTail,sourceProgram,PMF.mem_support_pure_iff] using hd\n      simpa only [finalDate,he] using hs\n  | cons b bs ih =>\n      have hab := hafter b (by simp)\n      have hbc := hcut b (by simp)\n      have hdorm := hs.2 (hab.trans_le hbc)\n      change d \u2208 ((sourceTimeKernel N r (Real.toNNReal (b-a)) s).bind\n        (sourceProgram N r (boundaryOperations N C H gamma common b ++ calendarTail N C H gamma common b bs))).support at hd\n      obtain \u27e8m,hm,hmd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n      have he := dormant_time_support N r _ s hdorm hm\n      subst m\n      rw [sourceProgram_append] at hmd\n      obtain \u27e8z,hz,hzd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hmd\n      have hzInv : SamplingInvariant N sample c b z :=\n        \u27e8whole_boundary_singleton N C H gamma common r b s hs.1 hz,\n          fun hb => whole_boundary_dormant N C H gamma common r c hc b hb s hdorm hz\u27e9\n      have ho := List.pairwise_cons.mp hordered\n      exact ih b ho.2 ho.1 (fun u hu => hcut u (by simp [hu])) z hzInv hzd",
+      "sha256": "a31c8fdfb3afc5176a099f930ce13780cfc92d7e42a0b0b15fb4b96179244403"
+    },
+    {
+      "name": "dates_le_final",
+      "complete_frozen_text": "lemma dates_le_final (a : \u211d) (dates : List \u211d) (ho : dates.Pairwise (\u00b7 < \u00b7))\n    (ha : \u2200 b \u2208 dates, a < b) : a \u2264 finalDate a dates \u2227 \u2200 b \u2208 dates, b \u2264 finalDate a dates := by\n  induction dates generalizing a with\n  | nil => exact \u27e8le_rfl,by simp\u27e9\n  | cons b bs ih =>\n      have hh := List.pairwise_cons.mp ho\n      have ht := ih b hh.2 hh.1\n      refine \u27e8(ha b (by simp)).le.trans ht.1,?_\u27e9\n      intro u hu\n      rcases List.mem_cons.mp hu with he | he\n      \u00b7 simpa only [he,finalDate] using ht.1\n      \u00b7 exact ht.2 u he",
+      "sha256": "d9cdda2c13b745264ab2084f93f382bdbef9672a4d2f3fe2fd06182c6a54f837"
+    },
+    {
+      "name": "initial_singleton_dormant",
+      "complete_frozen_text": "lemma initial_singleton_dormant (N : RootedBinary V E X) (sample : Copy \u2192 X) (register : V \u2192 Bool) :\n    SingletonBlocks (state (initialCode N sample register)) \u2227 Dormant N sample (initialCode N sample register) := by\n  have ho := admitted_observation N (initial N sample register) (initial_source_valid N sample register)\n  constructor\n  \u00b7 intro B hB\n    have hb := congrArg Prod.fst ho\n    change currentBlocks (state (initialCode N sample register)) = currentBlocks (initial N sample register) at hb\n    rw [hb] at hB\n    obtain \u27e8l,_,hl\u27e9 := Finset.mem_image.mp hB\n    exact \u27e8l,hl.symm\u27e9\n  \u00b7 intro x\n    exact congrFun (congrArg Prod.snd ho) x\n\n/-- Actual initialized whole-date prefix remains singleton through sampling.\nDormant locations are asserted only STRICTLY before sampling. -/",
+      "sha256": "bf55d7a95c7f3971d91e21dbe6237cc4d8e73e7b002e52e85f5be5440cc30721"
+    },
+    {
+      "name": "actual_sampling_prefix_support",
+      "complete_frozen_text": "theorem actual_sampling_prefix_support (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k \u2264 c) {d : Code N sample}\n    (hd : d \u2208 (sourceProgram N r (initializedPrefix N C H gamma common k)\n      (initialCode N sample register)).support) :\n    SamplingInvariant N sample c (prefixDate N C k) d := by\n  have hne : sortedOriginalDates N C \u2260 [] := by\n    intro he\n    have hm := original_date_scheduled N C N.root\n    rw [he] at hm\n    exact List.not_mem_nil hm\n  obtain \u27e8a,dates,heq\u27e9 := List.exists_cons_of_ne_nil hne\n  have ho := original_dates_strict N C\n  rw [heq] at ho\n  have hp := List.pairwise_cons.mp ho\n  have ht : (dates.take k).Pairwise (\u00b7 < \u00b7) := hp.2.take\n  have ha : \u2200 b \u2208 dates.take k, a < b := fun b hb => hp.1 b (List.mem_of_mem_take hb)\n  have hfinal : finalDate a (dates.take k) \u2264 c := by simpa only [prefixDate,heq] using hcut\n  have hbnd := dates_le_final a (dates.take k) ht ha\n  have hi := initial_singleton_dormant N sample register\n  rw [initializedPrefix,heq,sourceProgram_append] at hd\n  obtain \u27e8s,hs,hsd\u27e9 := (PMF.mem_support_bind_iff _ _ _).mp hd\n  have hstart : SamplingInvariant N sample c a s :=\n    \u27e8whole_boundary_singleton N C H gamma common r a _ hi.1 hs,\n      fun hac => whole_boundary_dormant N C H gamma common r c hc a hac _ hi.2 hs\u27e9\n  simpa only [prefixDate,heq] using tail_sampling_support N C H gamma common r c hc\n    (dates.take k) a ht ha (fun b hb => (hbnd.2 b hb).trans hfinal) s hstart hsd",
+      "sha256": "9b5566b691cf0f0f6b20f3cecce9107968811cba37a0d324559926a70dcde9e6"
+    },
+    {
+      "name": "wellLabelled_singleton_leaf",
+      "complete_frozen_text": "lemma wellLabelled_singleton_leaf (t : Genealogy Copy) (ht : t.WellLabelled)\n    {x : Copy} (hx : t.leaves = {x}) : \u2203 y : Copy, t = .leaf y := by\n  cases t with\n  | leaf y => exact \u27e8y,rfl\u27e9\n  | graft a b =>\n      have ha : witness a = x := Finset.mem_singleton.mp (by\n        rw [\u2190 hx]; exact Finset.mem_union_left _ (witness_mem a))\n      have hb : witness b = x := Finset.mem_singleton.mp (by\n        rw [\u2190 hx]; exact Finset.mem_union_right _ (witness_mem b))\n      have hab : witness a \u2208 b.leaves := by rw [ha,\u2190 hb]; exact witness_mem b\n      exact False.elim (Finset.disjoint_left.mp ht.2.2 (witness_mem a) hab)",
+      "sha256": "7f6a23c855e1075a449dd7d9bb4a6b1e59526b6b09290f6c367c3d8d4af9c725"
+    },
+    {
+      "name": "singleton_potential_zero",
+      "complete_frozen_text": "lemma singleton_potential_zero (s : State V E Copy) (hs : Valid s) (hB : SingletonBlocks s)\n    (q : Copy \u2192 Base) (leafAge : Copy \u2192 \u211d) (c : \u211d) (hc : \u2200 x, leafAge x = c)\n    (M : Copy \u2192 Copy \u2192 \u211d) : forestPotential q leafAge s M c = 0 := by\n  apply Finset.sum_eq_zero\n  intro l hl\n  obtain \u27e8x,hx\u27e9 := hB (s.genealogy l).leaves (Finset.mem_image.mpr \u27e8l,hl,rfl\u27e9)\n  obtain \u27e8y,hy\u27e9 := wellLabelled_singleton_leaf (s.genealogy l) (hs.wellLabelled l hl) hx\n  simp only [hy,potential,hc y,sub_self,mul_zero]",
+      "sha256": "0c6c1b49418deecad4ff0b64645a12b18364da6e7ba8fba90ed03883cb8d7080"
+    },
+    {
+      "name": "calendar_time_append",
+      "complete_frozen_text": "lemma calendar_time_append (N : RootedBinary V E X) (xs ys : List (ProgramStep N)) (a : \u211d) :\n    calendarTime N (xs ++ ys) a = calendarTime N ys (calendarTime N xs a) := by\n  induction xs generalizing a with\n  | nil => rfl\n  | cons x xs ih => exact ih (segmentOffset N x a)",
+      "sha256": "d88e0b7ecbd091ec168c419ee9dbbec30b39901cdcda8a55a1729ad5df550e4a"
+    },
+    {
+      "name": "boundary_word_time",
+      "complete_frozen_text": "lemma boundary_word_time (N : RootedBinary V E X) (bs : List (BoundaryOperation N)) (a : \u211d) :\n    calendarTime N (bs.map ProgramStep.boundary) a = a := by\n  induction bs with\n  | nil => rfl\n  | cons b bs ih => exact ih",
+      "sha256": "2b9e5a75b3d3fd9b2ae27dcd777c70a921760db41afce47e7150b64cb0fe4118"
+    },
+    {
+      "name": "whole_boundary_time",
+      "complete_frozen_text": "lemma whole_boundary_time (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (b a : \u211d) :\n    calendarTime N (boundaryOperations N C H gamma common b) a = a := by\n  let es := (Finset.univ.filter (fun e : E => C.age (N.graph.source e) = b)).toList\n  let vs := (Finset.univ.filter (fun v : V => C.age v = b)).toList\n  have heq : boundaryOperations N C H gamma common b =\n      (es.map BoundaryOperation.exit ++ vs.map (originalNodeOperation N H gamma common)).map ProgramStep.boundary := by\n    simp [boundaryOperations,es,vs,List.map_append,List.map_map,Function.comp_def]\n  rw [heq,boundary_word_time]",
+      "sha256": "39525aeadd8e5657be9d76db6293e6f489a0bd9d113c228733f41ca2b3c1fb52"
+    },
+    {
+      "name": "tail_calendar_time",
+      "complete_frozen_text": "lemma tail_calendar_time (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (dates : List \u211d) (a : \u211d)\n    (ho : dates.Pairwise (\u00b7 < \u00b7)) (ha : \u2200 b \u2208 dates, a < b) :\n    calendarTime N (calendarTail N C H gamma common a dates) a = finalDate a dates := by\n  induction dates generalizing a with\n  | nil => rfl\n  | cons b bs ih =>\n      have hab := ha b (by simp)\n      have hp := List.pairwise_cons.mp ho\n      have he : a+(Real.toNNReal (b-a) : \u211d) = b := by\n        rw [Real.coe_toNNReal _ (sub_nonneg.mpr hab.le)]; ring\n      change calendarTime N (boundaryOperations N C H gamma common b ++ calendarTail N C H gamma common b bs)\n        (a+(Real.toNNReal (b-a) : \u211d)) = finalDate b bs\n      rw [he,calendar_time_append,whole_boundary_time]\n      exact ih b hp.2 hp.1",
+      "sha256": "92e78d457c33374d5092f666159d0e44d706c20b5ac42d381a36d8389594a523"
+    },
+    {
+      "name": "actual_prefix_calendar_time",
+      "complete_frozen_text": "theorem actual_prefix_calendar_time (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (gamma : Hybrid N \u2192 unitInterval)\n    (common : Hybrid N \u2192 Bool) (k : \u2115) :\n    calendarTime N (initializedPrefix N C H gamma common k) (firstOriginalDate N C) = prefixDate N C k := by\n  have hne : sortedOriginalDates N C \u2260 [] := by\n    intro he\n    have hm := original_date_scheduled N C N.root\n    rw [he] at hm\n    exact List.not_mem_nil hm\n  obtain \u27e8a,dates,heq\u27e9 := List.exists_cons_of_ne_nil hne\n  have hf : a = firstOriginalDate N C := by\n    have h := first_compiled_date_is_initial_boundary N C\n    simpa only [heq,List.getElem_cons_zero] using h\n  have ho := original_dates_strict N C\n  rw [heq] at ho\n  have hp := List.pairwise_cons.mp ho\n  rw [initializedPrefix,prefixDate,heq,\u2190 hf,calendar_time_append,whole_boundary_time]\n  exact tail_calendar_time N C H gamma common (dates.take k) a hp.2.take\n    (fun b hb => hp.1 b (List.mem_of_mem_take hb))",
+      "sha256": "fa52bb476d169b8bfad59d0071ef9a36483ecf5895beb2fa5550bd09dc5c8c2a"
+    },
+    {
+      "name": "exists_prefix_finalDate",
+      "complete_frozen_text": "lemma exists_prefix_finalDate (a : \u211d) (dates : List \u211d) (c : \u211d) (hc : c \u2208 a::dates) :\n    \u2203 k : \u2115, finalDate a (dates.take k) = c := by\n  induction dates generalizing a with\n  | nil =>\n      have he : c = a := by simpa only [List.mem_singleton] using hc\n      exact \u27e80,he.symm\u27e9\n  | cons b bs ih =>\n      rcases List.mem_cons.mp hc with he | he\n      \u00b7 exact \u27e80,he.symm\u27e9\n      \u00b7 obtain \u27e8k,hk\u27e9 := ih b he\n        exact \u27e8k+1,by simpa only [List.take_succ_cons,finalDate] using hk\u27e9\n\n/-- The required cut is present in the original vertex agenda, not added as\nan arbitrary external time. The scientific panel is nonempty. -/",
+      "sha256": "4314a69effb8f4f2040ed3a7fafca04be1b0240f223ce087d0aac83cb4b4758a"
+    },
+    {
+      "name": "actual_sampling_cut_exists",
+      "complete_frozen_text": "theorem actual_sampling_cut_exists [Nonempty Copy] (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) :\n    \u2203 k : \u2115, prefixDate N C k = c := by\n  let x : Copy := Classical.choice inferInstance\n  have hm := original_date_scheduled N C (N.leaf (sample x))\n  rw [hc x] at hm\n  cases heq : sortedOriginalDates N C with\n  | nil => rw [heq] at hm; exact False.elim (List.not_mem_nil hm)\n  | cons a dates =>\n      rw [heq] at hm\n      obtain \u27e8k,hk\u27e9 := exists_prefix_finalDate a dates c hm\n      exact \u27e8k,by simpa only [prefixDate,heq] using hk\u27e9",
+      "sha256": "35300cbcdfea413494c2c505bb4cbf9dda9ead7f73f05af0e125572caad6956c"
+    },
+    {
+      "name": "actual_sampling_singleton_ae",
+      "complete_frozen_text": "lemma actual_sampling_singleton_ae (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (c : \u211d) (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k = c) :\n    let ops := initializedPrefix N C H gamma common k\n    let s := initialCode N sample register\n    \u2200\u1d50 past \u2202actualCalendarTraceLaw N r ops s, SingletonBlocks (state (calendarEnd N ops s past)) := by\n  let ops := initializedPrefix N C H gamma common k\n  let s := initialCode N sample register\n  let p := sourceProgram N r ops s\n  have hs : \u2200\u1d50 d \u2202p.toMeasure, d \u2208 p.support := by\n    rw [\u2190 p.restrict_toMeasure_support]\n    exact ae_restrict_mem p.support_countable.measurableSet\n  have ha : \u2200\u1d50 d \u2202p.toMeasure, SingletonBlocks (state d) := by\n    filter_upwards [hs] with d hd\n    exact (actual_sampling_prefix_support N C sample register H gamma common r c hc k hcut.le hd).1\n  change \u2200\u1d50 d \u2202(sourceProgram N r ops s).toMeasure, SingletonBlocks (state d) at ha\n  rw [\u2190 actual_calendar_endpoint_law N r ops s] at ha\n  exact ae_of_ae_map (calendar_end_measurable N ops s).aemeasurable ha\n\n/-- The original initialization factor cancels its actual pre-sampling\noccupation on the SAME record law. It is not assumed <=1 or discarded.\nOriginal success/normalization and exposure suppliers are reused unchanged. -/",
+      "sha256": "3cfd7a0c625ebc0a4ca2643242a17ad995bfac7daa6737022603574da57b3f5c"
+    },
+    {
+      "name": "actual_initial_factor_cancellation",
+      "complete_frozen_text": "theorem actual_initial_factor_cancellation (N : RootedBinary V E X) (C : Calendar N.graph)\n    (sample : Copy \u2192 X) (register : V \u2192 Bool) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (L : \u2115) (q : Fin L \u2192 Copy \u2192 Base) (c : \u211d)\n    (hc : \u2200 x : Copy, C.age (N.leaf (sample x)) = c) (k : \u2115)\n    (hcut : prefixDate N C k = c) :\n    let ops := initializedPrefix N C H gamma common k\n    let s := initialCode N sample register\n    \u2200\u1d50 past \u2202actualCalendarTraceLaw N r ops s,\n      initialPotentialWeight N C sample register L q * calendarWeight N L q ops s past = 1 := by\n  let ops := initializedPrefix N C H gamma common k\n  let s := initialCode N sample register\n  let leafAge := fun x : Copy => C.age (N.leaf (sample x))\n  let M := fun x (_ : Copy) => leafAge x\n  have ht : calendarTime N ops (firstOriginalDate N C) = c :=\n    (actual_prefix_calendar_time N C H gamma common k).trans hcut\n  have hE := ae_all_iff.mpr (fun j : Fin L =>\n    actual_calendar_exposure N r (q j) leafAge ops s (firstOriginalDate N C) M)\n  filter_upwards [hE,actual_sampling_singleton_ae N C sample register H gamma common r c hc k hcut,\n    actual_calendar_weight_exponential N r L q ops s] with past he hs hw\n  have hz (j : Fin L) : forestPotential (q j) leafAge (state s) M (firstOriginalDate N C) +\n      calendarOccupation N (q j) ops s past = 0 := by\n    have h := he j\n    rw [ht,singleton_potential_zero _ (calendarEnd N ops s past).property.forest hs (q j) leafAge c hc] at h\n    exact h.symm\n  have hsum : (\u2211 j, forestPotential (q j) leafAge (state s) M (firstOriginalDate N C)) +\n      (\u2211 j, calendarOccupation N (q j) ops s past) = 0 := by\n    rw [\u2190 Finset.sum_add_distrib]\n    exact Finset.sum_eq_zero (fun j _ => hz j)\n  rw [hw]\n  change ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j,\n      forestPotential (q j) leafAge (state s) M (firstOriginalDate N C)))) *\n    ENNReal.ofReal (Real.exp (-((4/3:\u211d) * \u2211 j, calendarOccupation N (q j) ops s past))) = 1\n  rw [\u2190 ENNReal.ofReal_mul (Real.exp_nonneg _),\u2190 Real.exp_add]\n  have hexp : -((4/3:\u211d) * \u2211 j, forestPotential (q j) leafAge (state s) M (firstOriginalDate N C)) +\n      -((4/3:\u211d) * \u2211 j, calendarOccupation N (q j) ops s past) = 0 := by\n    linarith [hsum]\n  rw [hexp]\n  simp",
+      "sha256": "c4509fa877b9e55f7c1fdc6b4d61002c24a598cb0f8022095ac67fe7ff39d525"
+    }
+  ]
+}

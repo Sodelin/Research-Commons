@@ -1,0 +1,3 @@
+# Separate source-only semantic review
+
+31 October 2026. Separate AI-assisted mathematical review read all473 lines at7a3aa9f702ac3bf6dcda7bd2868ed8349861b0b17b0ad870c30dfce7a30930e6. Intended source proof approved for compiler request: strong actual dormant/singleton support, whole-date cut/time, actual WellLabelled leaf argument and same-record accepted exposure/success-weight yield the factor cancellation, not a new normalization. Preserve hc/cut/support and Nonempty Copy only where cut existence uses it. No literal inactive-boundary Code identity. Full backward split/post-c deterministic populations/global M/D/window remain separate. This is not a successful Lean result, expert peer review or novelty certification.
