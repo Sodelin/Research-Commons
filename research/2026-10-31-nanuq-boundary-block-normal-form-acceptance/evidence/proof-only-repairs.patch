@@ -1,0 +1,14 @@
+--- frozen/RotateGaps.lean
++++ source/RotateGaps.lean
+@@ -32,7 +32,10 @@
+   rcases h with h | ⟨ys,he⟩
+   · exact h
+   · have hfirst : first=x := by simpa using congrArg List.head? he
+-    have hlast : last=x := by simpa using congrArg List.getLast? he
++    have hlast : last=x := by
++      have hh := congrArg List.getLast? he
++      change ((first::middle)++[last]).getLast? = ((x::ys)++[x]).getLast? at hh
++      simpa only [List.getLast?_concat,Option.some.injEq] using hh
+     exact False.elim (hne (hfirst.trans hlast.symm))
+ 
+ #print axioms cyclicGap_rotate_one
