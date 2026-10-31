@@ -1,0 +1,86 @@
+ResearchCommons.MSCI.JC69CompleteClockComposition.labelled_complete_locus_fourier.{u_1, u_2, u_3} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy]
+  [Fintype Copy] (L : ℕ) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (leafAge : Copy → ℝ)
+  (s : GProgram.SourceForest.State V E Copy) (hs : GProgram.SourceForest.Valid s) (hcard : s.live.card ≤ 1) (l : Copy)
+  (hl : l ∈ s.live) (hbal : ∀ (j : Fin L), ∑ x, q j x = 0) (M : Copy → Copy → ℝ) (T : ℝ) :
+  ResearchCommons.MSCI.JC69CompleteClockComposition.labelledTreeFourier L q leafAge (s.genealogy l) M =
+    Real.exp (-(4 / 3 * ∑ j, ResearchCommons.MSCI.JC69Occupation.forestPotential (q j) leafAge s M T))
+'ResearchCommons.MSCI.JC69CompleteClockComposition.labelled_complete_locus_fourier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CompleteClockComposition.calendar_time_duration.{u_1, u_2, u_4} {V : Type u_1} {E : Type u_2}
+  {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  (N : Nanuq.Source.RootedBinary V E X) (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (offset : ℝ) :
+  ResearchCommons.MSCI.JC69CalendarOccupation.calendarTime N ops offset =
+    offset + ↑(GProgram.G2.ChronologicalPathReadout.programDuration N ops)
+'ResearchCommons.MSCI.JC69CompleteClockComposition.calendar_time_duration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CompleteClockComposition.actual_complete_clock_exposure.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (q : Copy → ResearchCommons.MSCI.JC69.Base)
+  (leafAge : Copy → ℝ) (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (offset : ℝ) (M : Copy → Copy → ℝ) :
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂(GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s).restrict
+      {past | GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past = d},
+    ∀ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N d → ℝ),
+      ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge
+          (UnifiedLean.Source.UniformizedSourceStep.state
+            (GProgram.G2.CompleteDecoration.completeEnd N ops
+              (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c)))
+          (GProgram.G2.CompleteDecoration.completeMatrix N ops s offset M
+            (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c))
+          (offset + ↑(GProgram.G2.ChronologicalPathReadout.programDuration N ops) +
+            ↑(GProgram.G2.FiniteAncestralTrace.clockCover N d c)) =
+        ResearchCommons.MSCI.JC69Occupation.forestPotential q leafAge (UnifiedLean.Source.UniformizedSourceStep.state s)
+            M offset +
+          ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockOccupation N q ops s d past c
+'ResearchCommons.MSCI.JC69CompleteClockComposition.actual_complete_clock_exposure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69CompleteClockComposition.actual_original_complete_clock_fourier.{u_1, u_2, u_3, u_4}
+  {V : Type u_1} {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E]
+  [Fintype X] [DecidableEq Copy] [Fintype Copy] [Nonempty Copy] (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (hbal : ∀ (j : Fin L), ∑ x, q j x = 0)
+  (d : UnifiedLean.Source.UniformizedSourceStep.Code N sample) :
+  let ops := UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common;
+  have s := UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register;
+  have leafAge := fun x => C.age (N.leaf (sample x));
+  have M := fun x x_1 => leafAge x;
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂(GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s).restrict
+      {past | GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past = d},
+    ∀ᵐ (c :
+      UnifiedLean.Source.UniformizedSourceStep.Choice N d →
+        ℝ) ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r d,
+      ResearchCommons.MSCI.JC69CompleteClockComposition.labelledTreeFourier L q leafAge
+          ((UnifiedLean.Source.UniformizedSourceStep.state
+                (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common
+                    (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c)).1).genealogy
+            (ResearchCommons.MSCI.JC69Source.selectedRoot N
+              (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common
+                  (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c)).1))
+          (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common
+              (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c)).2 =
+        Real.exp
+          (-(4 / 3 *
+              ∑ j,
+                (ResearchCommons.MSCI.JC69Occupation.forestPotential (q j) leafAge
+                    (UnifiedLean.Source.UniformizedSourceStep.state s) M
+                    (UnifiedLean.Source.SourceCalendarCompatibility.firstOriginalDate N C) +
+                  ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockOccupation N (q j) ops s d past c)))
+'ResearchCommons.MSCI.JC69CompleteClockComposition.actual_original_complete_clock_fourier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,55 @@
+source/ResearchCommons/MSCI/JC69CompleteClockComposition.lean:76:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?g (e i)
+in the target expression
+  ∑ p,
+      locusLikelihood L (s.genealogy l) (clockSurvivals leafAge (s.genealogy l) (decode M (s.genealogy l))) (e p) *
+        ∏ j, patternCharacter (q j) (s.genealogy l) (e p j) =
+    Real.exp (-(4 / 3 * ∑ j, forestPotential (q j) leafAge s M T))
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+L : ℕ
+q : Fin L → Copy → Base
+leafAge : Copy → ℝ
+s : State V E Copy
+hs : Valid s
+hcard : s.live.card ≤ 1
+l : Copy
+hl : l ∈ s.live
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+M : Copy → Copy → ℝ
+T : ℝ
+hfull : (s.genealogy l).leaves = Finset.univ
+e : (Fin L → Copy → Base) ≃ (Fin L → Pattern (s.genealogy l)) :=
+  Equiv.piCongrRight fun x => fullPatternEquiv (s.genealogy l) ⋯ hfull
+⊢ ∑ p,
+      locusLikelihood L (s.genealogy l) (clockSurvivals leafAge (s.genealogy l) (decode M (s.genealogy l))) (e p) *
+        ∏ j, patternCharacter (q j) (s.genealogy l) (e p j) =
+    Real.exp (-(4 / 3 * ∑ j, forestPotential (q j) leafAge s M T))
+source/ResearchCommons/MSCI/JC69CompleteClockComposition.lean:79:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69CompleteClockComposition.calendar_time_duration`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'ResearchCommons.MSCI.JC69CompleteClockComposition.labelled_complete_locus_fourier' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CompleteClockComposition.calendar_time_duration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CompleteClockComposition.actual_complete_clock_exposure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69CompleteClockComposition.actual_original_complete_clock_fourier' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

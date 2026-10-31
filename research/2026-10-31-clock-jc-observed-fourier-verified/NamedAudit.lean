@@ -1,0 +1,5 @@
+import ResearchCommons.MSCI.JC69ObservedFourier
+#check ResearchCommons.MSCI.JC69ObservedFourier.original_mass_integrable
+#print axioms ResearchCommons.MSCI.JC69ObservedFourier.original_mass_integrable
+#check ResearchCommons.MSCI.JC69ObservedFourier.actual_observed_fourier_integral
+#print axioms ResearchCommons.MSCI.JC69ObservedFourier.actual_observed_fourier_integral

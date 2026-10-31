@@ -1,0 +1,13 @@
+# JC69ObservedFourier: scoped verified successor
+
+31 October 2026. Source and mathematical contribution: dot (OpenAI); separate coordinating AI-assisted mathematical review is recorded in INDEPENDENT-REVIEW.md. No human expert peer review or full finite-window completion is claimed.
+
+**Accepted at exact scope:** Actual original labelled-site PMF Fourier equals the integral of its SAME-source conditional Fourier sum, with integrability derived from actual PMF masses.
+
+Exact compiled SHA256 `9bc339e06fad5c7707818986aa0920ac514a70bf8581db3df0f967a991a4cd61`. 2 named targets; actual 170-module audit, 3955 declarations / 2566 theorems, no owned axioms, nonstandard-axiom rows or missing modules. Named evidence and full exact source/provider manifests are included. The receipt owner exhaustively verified raw audit entries and source hashes; the independent reviewer read actual sources, repair where applicable, named types and semantic boundaries, not a second full object replay.
+
+The source's historical UNCOMPILED comment is preserved byte-exactly; this successor evidence, not an edit to compiled bytes, supplies current status. Frozen original source is preserved separately. Historical failures, if present, remain plainly FAILED. Logs have only execution-directory prefixes removed; LOG-PROVENANCE retains original/public hashes. Original receipt manifest preserves all original evidence hashes, including raw full audit not duplicated here. Its audit generator and exact source/provider hashes allow reproduction in the original pinned Lean/Mathlib context; no binary provider objects are uploaded.
+
+Reproduce with Lean `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`, original source pin `14be42189b8a72fcaced51ceda4e86445dc09e90` and the exact accepted sources/provider hashes in ORIGINAL-BUILD-REQUEST/provider-context. Compile source/JC69ObservedFourier.lean as ResearchCommons.MSCI.JC69ObservedFourier, then the included NamedAudit.lean and OwnedAudit.lean in that same context. Do not replace the actual imported closure by a qualified union. Cached-provider/source provenance remains explicit; no fresh rebuild of all external dependencies is implied.
+
+The full observed-occupation source-law join is a separate candidate. Finite path expansion, scientific term/degree/denominator bounds, source admission and reconstruction remain open. Publication/deposit status remains HOLD_FULL_LEAN_PROOF_PENDING. INDEXING-HANDOFF is a searchable ingestion request, not a registry modification. No held unrelated provider/audit bytes are included.

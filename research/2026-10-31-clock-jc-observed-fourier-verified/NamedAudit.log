@@ -1,0 +1,42 @@
+ResearchCommons.MSCI.JC69ObservedFourier.original_mass_integrable.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] [Nonempty Copy] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (p : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  MeasureTheory.Integrable
+    (fun z =>
+      ((ResearchCommons.MSCI.JC69Source.conditionalLocusKernel L N (fun x => C.age (N.leaf (sample x)))
+            (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common z))
+          p).toReal)
+    (GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r
+      (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+      (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register))
+'ResearchCommons.MSCI.JC69ObservedFourier.original_mass_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69ObservedFourier.actual_observed_fourier_integral.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] [Nonempty Copy] (L : ℕ) (N : Nanuq.Source.RootedBinary V E X)
+  (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) :
+  ResearchCommons.MSCI.JC69ObservedFourier.observedFourier L N C sample register H gamma common r q =
+    ∫ (z :
+      GProgram.G2.CompleteCalendarAttachment.CompleteCalendarRecord N sample
+        (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)),
+      ∑ p,
+        ((ResearchCommons.MSCI.JC69Source.conditionalLocusKernel L N (fun x => C.age (N.leaf (sample x)))
+                (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common z))
+              p).toReal *
+          ResearchCommons.MSCI.JC69ObservedFourier.originalCharacter L q
+            p ∂GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r
+        (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+        (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register)
+'ResearchCommons.MSCI.JC69ObservedFourier.actual_observed_fourier_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

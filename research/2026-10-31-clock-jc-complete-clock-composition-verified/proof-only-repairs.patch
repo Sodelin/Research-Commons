@@ -1,0 +1,28 @@
+--- original/JC69CompleteClockComposition.lean
++++ current/JC69CompleteClockComposition.lean
+@@ -9,6 +9,7 @@
+ noncomputable section
+ namespace ResearchCommons.MSCI.JC69CompleteClockComposition
+ set_option backward.isDefEq.respectTransparency false
++open GProgram.G2.FaithfulPairAgeDecoration UnifiedLean.Source.SourceCalendarCompatibility
+ open MeasureTheory ProbabilityTheory Set Nanuq.Source GProgram.SourceForest GProgram.G5
+ open UnifiedLean.Source.UniformizedSourceStep UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceProgramTransport UnifiedLean.Source.SourceInitializedCalendar
+@@ -71,9 +72,14 @@
+       change (∏ x : Copy, character (q j x) (p j x)) =
+         patternCharacter (q j) (s.genealogy l) (labelPattern (s.genealogy l) (p j))
+       rw [label_pattern_character _ _ _ (hs.wellLabelled l hl),hfull]
+-    _ = _ := by
+-      rw [e.sum_comp]
+-      exact balanced_complete_locus_fourier L q leafAge s hs hcard l hl hbal M T
++    _ = ∑ p : Fin L → Pattern (s.genealogy l),
++        locusLikelihood L (s.genealogy l)
++          (clockSurvivals leafAge (s.genealogy l) (decode M (s.genealogy l))) p *
++          ∏ j, patternCharacter (q j) (s.genealogy l) (p j) := by
++      exact e.sum_comp (fun p => locusLikelihood L (s.genealogy l)
++        (clockSurvivals leafAge (s.genealogy l) (decode M (s.genealogy l))) p *
++        ∏ j, patternCharacter (q j) (s.genealogy l) (p j))
++    _ = _ := balanced_complete_locus_fourier L q leafAge s hs hcard l hl hbal M T
+ 
+ lemma calendar_time_duration (N : RootedBinary V E X)
+     (ops : List (ProgramStep N)) (offset : ℝ) :
