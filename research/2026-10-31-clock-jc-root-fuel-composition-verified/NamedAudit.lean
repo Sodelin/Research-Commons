@@ -1,0 +1,9 @@
+import ResearchCommons.MSCI.JC69RootFuelComposition
+#check @ResearchCommons.MSCI.JC69RootFuelComposition.literal_occupation_fuel_irrel
+#print axioms ResearchCommons.MSCI.JC69RootFuelComposition.literal_occupation_fuel_irrel
+#check @ResearchCommons.MSCI.JC69RootFuelComposition.actual_clock_weight_fuel_irrel
+#print axioms ResearchCommons.MSCI.JC69RootFuelComposition.actual_clock_weight_fuel_irrel
+#check @ResearchCommons.MSCI.JC69RootFuelComposition.actual_weight_fuel_irrel
+#print axioms ResearchCommons.MSCI.JC69RootFuelComposition.actual_weight_fuel_irrel
+#check @ResearchCommons.MSCI.JC69RootFuelComposition.actual_root_weight_shifted_limit
+#print axioms ResearchCommons.MSCI.JC69RootFuelComposition.actual_root_weight_shifted_limit

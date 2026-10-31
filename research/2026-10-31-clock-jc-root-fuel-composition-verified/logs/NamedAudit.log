@@ -1,0 +1,63 @@
+@ResearchCommons.MSCI.JC69RootFuelComposition.literal_occupation_fuel_irrel : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (q : Copy → ResearchCommons.MSCI.JC69.Base) (n m : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ)
+  (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+  UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ n →
+    UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ m →
+      ResearchCommons.MSCI.JC69Occupation.literalOccupation N q n t s c =
+        ResearchCommons.MSCI.JC69Occupation.literalOccupation N q m t s c
+'ResearchCommons.MSCI.JC69RootFuelComposition.literal_occupation_fuel_irrel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootFuelComposition.actual_clock_weight_fuel_irrel : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (n m : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ)
+  (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+  UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ n →
+    UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ m →
+      GProgram.G2.LiteralMarkedClockTrace.ClockRegular c →
+        ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q n s t
+            (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N n t s c) =
+          ResearchCommons.MSCI.JC69TraceOccupation.locusTraceWeight N L q m s t
+            (GProgram.G2.LiteralMarkedClockTrace.literalMarkedTrace N m t s c)
+'ResearchCommons.MSCI.JC69RootFuelComposition.actual_clock_weight_fuel_irrel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootFuelComposition.actual_weight_fuel_irrel : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n m : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ),
+  UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ n →
+    UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ m →
+      ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n s t =
+        ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q m s t
+'ResearchCommons.MSCI.JC69RootFuelComposition.actual_weight_fuel_irrel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootFuelComposition.actual_root_weight_shifted_limit : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (n : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ n →
+        UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+          ∀ (u : ℝ),
+            Filter.Tendsto (fun m => ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n s (↑m - u))
+              Filter.atTop
+              (nhds
+                (∫⁻ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N s → ℝ),
+                  ResearchCommons.MSCI.JC69RootWeightLimit.completeRootWeight N L q s
+                    c ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r s))
+'ResearchCommons.MSCI.JC69RootFuelComposition.actual_root_weight_shifted_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

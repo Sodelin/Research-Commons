@@ -1,0 +1,41 @@
+[
+  {
+    "step": "exact-source-attempt1",
+    "exit_code": 0,
+    "seconds": 3.098962754003878,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "--root=BUILD_ROOT/source",
+      "-o",
+      "BUILD_ROOT/lib/ResearchCommons/MSCI/JC69RootFuelComposition.olean",
+      "BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootFuelComposition.lean"
+    ]
+  },
+  {
+    "step": "NamedAudit",
+    "exit_code": 0,
+    "seconds": 2.249686344002839,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/NamedAudit.lean"
+    ]
+  },
+  {
+    "step": "OwnedAudit",
+    "exit_code": 0,
+    "seconds": 4.95985532800114,
+    "command": [
+      "LEAN_BIN",
+      "-j1",
+      "-M6144",
+      "-Ddebug.skipKernelTC=false",
+      "BUILD_ROOT/OwnedAudit.lean"
+    ]
+  }
+]
