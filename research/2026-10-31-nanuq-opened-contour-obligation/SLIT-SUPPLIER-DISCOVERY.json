@@ -1,0 +1,100 @@
+{
+  "status": "read-only bounded supplier assessment",
+  "upstream_pin": "05a43d29cde026618777db3d4e4316204ccca237",
+  "sources": {
+    "Schoenflies.SkeletonAccess": {
+      "path": "Schoenflies/SkeletonAccess.lean",
+      "git_blob": "b521381f658866999854685623d0afc5bb703098",
+      "sha256": "c8e2275706a77b415b21e61633a61af7604e408eeea259f3b2c6573b84f3fc6f",
+      "bytes": 49389,
+      "imports": [
+        "Schoenflies.SkeletonSectors",
+        "Schoenflies.AccessibleJoin",
+        "Schoenflies.Square"
+      ]
+    },
+    "Schoenflies.SourceJoining": {
+      "path": "Schoenflies/SourceJoining.lean",
+      "git_blob": "12c1b9afefcce7243b842849d52eccc65e4afe0a",
+      "sha256": "75f49a7c4a847d7cf4e3f00126ae28930b704bcfcc31d57951093b3b7b181756",
+      "bytes": 66343,
+      "imports": [
+        "Schoenflies.OverlayExtension",
+        "Schoenflies.StageTransition"
+      ]
+    },
+    "Schoenflies.Graph.OuterFace": {
+      "path": "Schoenflies/Graph/OuterFace.lean",
+      "git_blob": "05e6d92aef69e7b019cfc109fc3a8c13bec72fcb",
+      "sha256": "1da449c396297c2cd46c66ff8497cf76903e80b336d3ebf322871a7257769499",
+      "bytes": 6967,
+      "imports": [
+        "Schoenflies.Graph.Drawing"
+      ]
+    },
+    "Schoenflies.Graph.Drawing": {
+      "path": "Schoenflies/Graph/Drawing.lean",
+      "git_blob": "b2618663b0fef2f75895154d0c62cc24d7aa9aaa",
+      "sha256": "471a7a68dd9787e0f5ebaed4182841cdb0588c4d668218213c50dd8449a9e727",
+      "bytes": 9074,
+      "imports": [
+        "Schoenflies.Curve",
+        "Schoenflies.Topology",
+        "Schoenflies.Bounded",
+        "Schoenflies.Graph.Degree"
+      ]
+    },
+    "Schoenflies.Graph.Tree": {
+      "path": "Schoenflies/Graph/Tree.lean",
+      "git_blob": "bd8616a8e4a65997d061637ebc6ddbb3b72e1d88",
+      "sha256": "94b0c9b4bdf40e5e3dbeeb239dac4fd46089bc63fadc20214c9f3297a68a6c4c",
+      "bytes": 19745,
+      "imports": [
+        "Schoenflies.Graph.Cycle",
+        "Schoenflies.Graph.Degree"
+      ]
+    },
+    "Schoenflies.ArcComplement": {
+      "path": "Schoenflies/ArcComplement.lean",
+      "git_blob": "661d8e8aa9f247f0e212a4e576627202951053ff",
+      "sha256": "c1de694e5d318c5223e8b8778d24721a1e7b772dd570e4ab960635150f20d5a8",
+      "bytes": 43931,
+      "imports": [
+        "Schoenflies.ArcComplementPrep",
+        "Schoenflies.CombinatorialInvariance",
+        "Schoenflies.Graph.VertexSquares",
+        "Schoenflies.OuterChainClosed",
+        "Schoenflies.AccessibleJoin"
+      ]
+    },
+    "Schoenflies.CrosscutAtMostTwo": {
+      "path": "Schoenflies/CrosscutAtMostTwo.lean",
+      "git_blob": "244e09b6e61e569550e4a3949b4fc2c208b56b99",
+      "sha256": "e88b44d3521e1f26a0c25addf39c979183ed0e720f5437562143e8af20e3154a",
+      "bytes": 35204,
+      "imports": [
+        "Schoenflies.Subarc",
+        "Schoenflies.Topology",
+        "Schoenflies.Polygonal",
+        "Schoenflies.Strip"
+      ]
+    },
+    "Schoenflies.FaceCycles": {
+      "path": "Schoenflies/FaceCycles.lean",
+      "git_blob": "6e3c8c004b8c738f2f16bf161cbc0d37a6690420",
+      "sha256": "3b0c3bf001f02ac8c91e6474c19c71b0fae4cfab0a3009363da7abc985fae2c5",
+      "bytes": 33649,
+      "imports": [
+        "Schoenflies.Graph.CycleJordan",
+        "Schoenflies.Graph.RelativeEar",
+        "Schoenflies.Graph.OuterFace",
+        "Schoenflies.Subarc",
+        "each"
+      ]
+    }
+  },
+  "new_theorem": false,
+  "missing_identified_API": "Given continuous dangling-arc / original segment deletion exact face-merger or actual embedded-tree nonseparation",
+  "not_claimed": "Global absence of such mathematics/library theorem",
+  "required_geometry": "opened contour, paired adjacency, collapse to original C"
+}
