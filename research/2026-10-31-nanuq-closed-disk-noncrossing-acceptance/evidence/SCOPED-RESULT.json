@@ -1,0 +1,64 @@
+{
+  "status": "SCOPED_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_commit": "6028fbe94f7892cc573c7c105f213c8e5df4af8b",
+  "sources": {
+    "SquareCarrierArc": {
+      "source_sha256": "6b2d7b63d92e9bca40a6a81f9d9e7218486127ed92f4e00a4feefd70a31b5a73",
+      "own_import_object_hashes": {},
+      "object_sha256": "201d3299f3a78a5a464cb42102ddd8d337144385517eff3fa3bff45251542db1"
+    },
+    "ClosedCrosscutCells": {
+      "source_sha256": "407798e1da55efae1de73bb4d511b466e7361a947e1ca5d99272e1622d291e12",
+      "own_import_object_hashes": {},
+      "object_sha256": "22455e0c9daa4d3a0d88aae0fa210542b4b235c0ec8c2f48b644cb42f1fc51f3"
+    },
+    "ClosedDiskCarrierArc": {
+      "source_sha256": "8c155cfccaa05a056ea00745d4eb343f90a0a0fd5f0d68a56c4bf52a6fa29c66",
+      "own_import_object_hashes": {
+        "SquareCarrierArc": "201d3299f3a78a5a464cb42102ddd8d337144385517eff3fa3bff45251542db1"
+      },
+      "object_sha256": "c6e28db8b8a6ed2fe49c5777c99d48fcf1d4cc2ee94a1b493b3673e0bea48b54"
+    },
+    "ClosedDiskNoncrossing": {
+      "source_sha256": "e2316590e3ab26aa4c079787199fb685a324146f06f37fbcdad5e9fe99b018c8",
+      "own_import_object_hashes": {
+        "ClosedCrosscutCells": "22455e0c9daa4d3a0d88aae0fa210542b4b235c0ec8c2f48b644cb42f1fc51f3",
+        "ClosedDiskCarrierArc": "c6e28db8b8a6ed2fe49c5777c99d48fcf1d4cc2ee94a1b493b3673e0bea48b54"
+      },
+      "object_sha256": "a5df25437303a85ee0637d2523819806f0d2fab7181ad6dacf32c970d42f281f"
+    },
+    "ActualCutNoncrossing": {
+      "source_sha256": "759a82a16dda201fb7c55629ffc5ae6877df334c0a54c4757fb4d0a56fb20c0e",
+      "own_import_object_hashes": {
+        "ClosedDiskNoncrossing": "a5df25437303a85ee0637d2523819806f0d2fab7181ad6dacf32c970d42f281f"
+      },
+      "object_sha256": "7a947693188b00d576b4e756d09e5d053bc5e6f1400f04281fb93f2890caddf0"
+    }
+  },
+  "named_targets": [
+    "Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc",
+    "Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells",
+    "Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected",
+    "Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc",
+    "Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing",
+    "Nanuq.OpenedCore.actual_opened_cuts_noninterlacing"
+  ],
+  "named_owners": {
+    "Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells": "ClosedCrosscutCells",
+    "Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing": "ClosedDiskNoncrossing",
+    "Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected": "ClosedCrosscutCells",
+    "Nanuq.OpenedCore.actual_opened_cuts_noninterlacing": "ActualCutNoncrossing",
+    "Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc": "ClosedDiskCarrierArc",
+    "Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc": "SquareCarrierArc"
+  },
+  "owned_modules": 652,
+  "declarations": 16867,
+  "theorems": 12428,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "local_full_audit_sha256": "335114220c698874fff31cc0042748be91f84c88bd14536a18c3582b816432bf",
+  "raw_full_audit_local_only": true,
+  "frozen_all_headers_and_definitions_preserved": true,
+  "scope": "Weak CLOSED-disk noninterlacing derived for actual same-source carriers; radial accessibility/one exact-endpoint proper arc constructed internally, no strict-interior/order/collar input. Singleton/paired adjacency/global C remain separate."
+}

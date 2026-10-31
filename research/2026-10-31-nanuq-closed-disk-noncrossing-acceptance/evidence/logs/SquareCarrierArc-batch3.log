@@ -1,0 +1,56 @@
+<BUILD_ROOT>/source/SquareCarrierArc.lean:66:32: error: typeclass instance problem is stuck
+  TopologicalSpace ?m.586
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `TopologicalSpace` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+<BUILD_ROOT>/source/SquareCarrierArc.lean:89:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  connectedComponentIn U (f p)
+in the target expression
+  T ⊆ connectedComponentIn U (f x)
+
+P K : Set Plane
+p q : Plane
+hP : IsCompact P
+hPc : IsPreconnected P
+hK : IsCompact K
+hPK : Disjoint P K
+hPsq : P ⊆ Plane.closedSquare 0 1
+hp : p ∈ P
+hq : q ∈ P
+hpq : p ≠ q
+ρ : ℝ
+hρ : ρ > 0
+hsep : ∀ p ∈ P, ∀ q ∈ K, ρ ≤ dist p q
+R : ℝ
+hR : ∀ x ∈ P, ‖x‖ ≤ R
+hR0 : 0 ≤ R
+hRp : 0 < R + 1
+δ : ℝ := min (1 / 2) (ρ / (2 * (R + 1)))
+hδ : 0 < δ
+hδhalf : δ ≤ 1 / 2
+hδratio : δ ≤ ρ / (2 * (R + 1))
+hδR : δ * (R + 1) < ρ
+hlower : ∀ (t : ℝ), 1 - δ ≤ t → 0 ≤ t
+hclear : ∀ x ∈ P, ∀ (t : ℝ), 1 - δ ≤ t → t ≤ 1 → t • x ∉ K
+U : Set Plane := Plane.openSquare 0 1 \ K
+f : Plane → Plane := fun x => (1 - δ) • x
+hf : Continuous f
+hsub : f '' P ⊆ U
+Ω : Set Plane := connectedComponentIn U (f p)
+hΩopen : IsOpen Ω
+hΩpre : IsPreconnected Ω
+hPΩ : f '' P ⊆ Ω
+x : Plane
+hx : x ∈ P
+T : Set Plane := (fun t => t • x) '' Ico (1 - δ) 1
+hTpre : IsPreconnected T
+hxT : f x ∈ T
+hTU : T ⊆ U
+hxΩ : f x ∈ Ω
+hh : T ⊆ connectedComponentIn U (f x)
+⊢ T ⊆ Ω
+'Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

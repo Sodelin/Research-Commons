@@ -1,0 +1,14 @@
+import ActualPairedBoundary
+set_option pp.universes true
+#check @Nanuq.OpenedCore.named_boundary_incoming_full
+#print axioms Nanuq.OpenedCore.named_boundary_incoming_full
+#check @Nanuq.OpenedCore.incomingTail_only_core_tip
+#print axioms Nanuq.OpenedCore.incomingTail_only_core_tip
+#check @Nanuq.OpenedCore.paired_incoming_tail_arc
+#print axioms Nanuq.OpenedCore.paired_incoming_tail_arc
+#check @Nanuq.OpenedCore.equal_label_distinct_are_hybrid_occurrences
+#print axioms Nanuq.OpenedCore.equal_label_distinct_are_hybrid_occurrences
+#check @Nanuq.OpenedCore.actual_paired_tip_empty_boundary_arc
+#print axioms Nanuq.OpenedCore.actual_paired_tip_empty_boundary_arc
+#check @Nanuq.OpenedCore.actual_one_boundary_paired_tip_arcs
+#print axioms Nanuq.OpenedCore.actual_one_boundary_paired_tip_arcs

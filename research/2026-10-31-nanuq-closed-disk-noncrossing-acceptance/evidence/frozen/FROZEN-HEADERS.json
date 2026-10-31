@@ -1,0 +1,45 @@
+{
+  "status": "UNCOMPILED intended explicit headers, not checked elaborated types",
+  "headers": [
+    {
+      "module": "ActualCutNoncrossing",
+      "name": "actual_opened_cuts_noninterlacing",
+      "header": "theorem actual_opened_cuts_noninterlacing\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 C : Set Schoenflies.Plane, IsJordanCurve C \u2227\n      Function.Injective (tipPoint N D b hg hb) \u2227\n      (\u2200 t : (M).OpenedTip, tipPoint N D b hg hb t\u2208C) \u2227\n      \u2200 (f : (M).OpenedHybridEdge) (a c d e : (M).OpenedTip), a\u2260c \u2192 d\u2260e \u2192\n        (OG).OrientedQuartet f ((M).openedTipVertex a) ((M).openedTipVertex c)\n          ((M).openedTipVertex d) ((M).openedTipVertex e) \u2192\n        \u2200 A\u2081 A\u2082 : Set Schoenflies.Plane,\n          IsCutPair C (tipPoint N D b hg hb a) (tipPoint N D b hg hb c) A\u2081 A\u2082 \u2192\n          \u00ac(tipPoint N D b hg hb d\u2208A\u2081 \u2227 tipPoint N D b hg hb e\u2208A\u2082)"
+    },
+    {
+      "module": "ClosedCrosscutCells",
+      "name": "proper_crosscut_closed_cells",
+      "header": "theorem proper_crosscut_closed_cells\n    {C P A\u2081 A\u2082 : Set Plane} {p q : Plane}\n    (hC : IsJordanCurve C) (hcut : IsCutPair C p q A\u2081 A\u2082)\n    (hP : IsArcBetween P p q) (hPC : P \u2229 C = {p,q})\n    (hPD : P \\ {p,q} \u2286 inside C) :\n    \u2203 F\u2081 F\u2082 : Set Plane, IsClosed F\u2081 \u2227 IsClosed F\u2082 \u2227\n      F\u2081 \u222a F\u2082 = C \u222a inside C \u2227 F\u2081 \u2229 F\u2082 = P \u2227\n      F\u2081 \u2229 C = A\u2081 \u2227 F\u2082 \u2229 C = A\u2082"
+    },
+    {
+      "module": "ClosedCrosscutCells",
+      "name": "proper_crosscut_blocks_connected",
+      "header": "theorem proper_crosscut_blocks_connected\n    {C P Q A\u2081 A\u2082 : Set Plane} {p q r s : Plane}\n    (hC : IsJordanCurve C) (hcut : IsCutPair C p q A\u2081 A\u2082)\n    (hP : IsArcBetween P p q) (hPC : P \u2229 C = {p,q})\n    (hPD : P \\ {p,q} \u2286 inside C)\n    (hQ : IsPreconnected Q) (hQdisk : Q \u2286 C \u222a inside C)\n    (hdisj : Disjoint Q P) (hrQ : r\u2208Q) (hsQ : s\u2208Q)\n    (hr : r\u2208A\u2081) (hs : s\u2208A\u2082) : False"
+    },
+    {
+      "module": "ClosedDiskCarrierArc",
+      "name": "ambient_to_model",
+      "header": "private theorem ambient_to_model {C : Set Plane} (hC : IsJordanCurve C) :\n    \u2203 H : Plane \u2243\u209c Plane, H '' C = modelCurve \u2227\n      H '' (C \u222a inside C) = Plane.closedSquare 0 1"
+    },
+    {
+      "module": "ClosedDiskCarrierArc",
+      "name": "closed_disk_carrier_proper_arc",
+      "header": "theorem closed_disk_carrier_proper_arc\n    {C P K : Set Plane} {p q : Plane}\n    (hC : IsJordanCurve C) (hP : IsCompact P) (hPc : IsPreconnected P)\n    (hK : IsCompact K) (hPK : Disjoint P K)\n    (hPdisk : P \u2286 C \u222a inside C)\n    (hp : p\u2208P) (hq : q\u2208P) (hpC : p\u2208C) (hqC : q\u2208C) (hpq : p\u2260q) :\n    \u2203 A : Set Plane, IsArcBetween A p q \u2227 A\u2229C={p,q} \u2227\n      A \\ {p,q} \u2286 inside C \u2227 Disjoint A K"
+    },
+    {
+      "module": "ClosedDiskNoncrossing",
+      "name": "closed_disk_noninterlacing",
+      "header": "theorem closed_disk_noninterlacing\n    {C P Q A\u2081 A\u2082 : Set Plane} {p q r s : Plane}\n    (hC : IsJordanCurve C) (hcut : IsCutPair C p q A\u2081 A\u2082)\n    (hP : IsCompact P) (hPc : IsPreconnected P)\n    (hQ : IsCompact Q) (hQc : IsPreconnected Q)\n    (hPQ : Disjoint P Q)\n    (hPdisk : P \u2286 C \u222a inside C) (hQdisk : Q \u2286 C \u222a inside C)\n    (hp : p\u2208P) (hq : q\u2208P) (hrQ : r\u2208Q) (hsQ : s\u2208Q)\n    (hr : r\u2208A\u2081) (hs : s\u2208A\u2082) : False"
+    },
+    {
+      "module": "SquareCarrierArc",
+      "name": "scaled_square_interior",
+      "header": "private theorem scaled_square_interior {x : Plane} {t : \u211d}\n    (hx : x\u2208Plane.closedSquare 0 1) (ht : 0\u2264t) (ht1 : t<1) :\n    t \u2022 x \u2208 Plane.openSquare 0 1"
+    },
+    {
+      "module": "SquareCarrierArc",
+      "name": "square_carrier_proper_arc",
+      "header": "theorem square_carrier_proper_arc\n    {P K : Set Plane} {p q : Plane}\n    (hP : IsCompact P) (hPc : IsPreconnected P) (hK : IsCompact K)\n    (hPK : Disjoint P K) (hPsq : P \u2286 Plane.closedSquare 0 1)\n    (hp : p\u2208P) (hq : q\u2208P) (hpq : p\u2260q) :\n    \u2203 A : Set Plane, IsPolygonal A \u2227 IsArcBetween A p q \u2227\n      A \\ {p,q} \u2286 Plane.openSquare 0 1 \u2227 Disjoint A K"
+    }
+  ]
+}

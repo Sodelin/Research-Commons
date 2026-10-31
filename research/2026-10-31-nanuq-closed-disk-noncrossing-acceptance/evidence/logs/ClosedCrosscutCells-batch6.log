@@ -1,0 +1,516 @@
+<BUILD_ROOT>/source/ClosedCrosscutCells.lean:64:4: warning: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+<BUILD_ROOT>/source/ClosedCrosscutCells.lean:57:2: error: unsolved goals
+case refine_1.mp.inl.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h_1 : z ∈ V₁
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mp.inl.inr.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h : z ∈ closure V₁ ∩ C
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mp.inl.inr.inr
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h_1 : z ∈ P
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mp.inr.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h : z ∈ V₂
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mp.inr.inr.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h : z ∈ closure V₂ ∩ C
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mp.inr.inr.inr
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h_1 : z ∈ P
+⊢ z ∈ C ∨ z ∈ inside C
+
+case refine_1.mpr.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h : z ∈ C
+⊢ (z ∈ V₁ ∨ z ∈ closure V₁ ∩ C ∨ z ∈ P) ∨ z ∈ V₂ ∨ z ∈ closure V₂ ∩ C ∨ z ∈ P
+
+case refine_1.mpr.inr
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hpz : z ∈ P → z ∈ C ∪ inside C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+h_1 : z ∈ inside C
+⊢ (z ∈ V₁ ∨ z ∈ closure V₁ ∩ C ∨ z ∈ P) ∨ z ∈ V₂ ∨ z ∈ closure V₂ ∩ C ∨ z ∈ P
+<BUILD_ROOT>/source/ClosedCrosscutCells.lean:73:4: warning: aesop: failed to prove the goal after exhaustive search.
+<BUILD_ROOT>/source/ClosedCrosscutCells.lean:65:2: error: unsolved goals
+case refine_2.mp.inl.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+h : z ∈ V₁
+h_1 : z ∈ V₂
+⊢ z ∈ P
+
+case refine_2.mp.inl.inr.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+h : z ∈ V₁
+h_1 : z ∈ closure V₂ ∩ C
+⊢ z ∈ P
+
+case refine_2.mp.inr.inl.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+h : z ∈ V₂
+h_2 : z ∈ closure V₁ ∩ C
+⊢ z ∈ P
+
+case refine_2.mp.inr.inr.inl.inl
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+h : z ∈ closure V₁ ∩ C
+h_1 : z ∈ closure V₂ ∩ C
+⊢ z ∈ P
+
+case refine_2.mpr.left
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+a : z ∈ P
+⊢ z ∈ V₁ ∨ z ∈ closure V₁ ∩ C ∨ z ∈ P
+
+case refine_2.mpr.right
+C P : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsArcBetween P p q
+hPC : P ∩ C = {p, q}
+hPD : P \ {p, q} ⊆ inside C
+V₁ V₂ : Set Plane
+hcover : inside C \ P = V₁ ∪ V₂
+hdisj : Disjoint V₁ V₂
+hn₁ : V₁.Nonempty
+hn₂ : V₂.Nonempty
+hne : V₁ ≠ V₂
+hcomp₁ : ∀ z ∈ V₁, connectedComponentIn (inside C \ P) z = V₁
+hcomp₂ : ∀ z ∈ V₂, connectedComponentIn (inside C \ P) z = V₂
+hmeet : ∀ A ⊆ C, ∀ z ∈ A, z ∈ P → z = p ∨ z = q
+hends : {p, q} ⊆ P
+hPdisk : P ⊆ C ∪ inside C
+hv : ∀ (z : Plane), z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+z : Plane
+hvz : z ∈ V₁ ∨ z ∈ V₂ ↔ z ∈ inside C ∧ z ∉ P
+hd : ¬(z ∈ V₁ ∧ z ∈ V₂)
+hi : z ∈ inside C → z ∉ C
+hV₁ : IsRegionOf (closure V₁ ∩ C ∪ P) V₁
+hj₁ : IsSeparating (closure V₁ ∩ C ∪ P)
+hf₁ : closure V₁ = V₁ ∪ (closure V₁ ∩ C ∪ P)
+hV₂ : IsRegionOf (closure V₂ ∩ C ∪ P) V₂
+hj₂ : IsSeparating (closure V₂ ∩ C ∪ P)
+hf₂ : closure V₂ = V₂ ∪ (closure V₂ ∩ C ∪ P)
+hcut : IsCutPair C p q (closure V₁ ∩ C) (closure V₂ ∩ C)
+ha : ∀ (z : Plane), z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+hab : ∀ z ∈ closure V₁ ∩ C, z ∈ closure V₂ ∩ C → z ∈ P
+haz : z ∈ closure V₁ ∩ C ∨ z ∈ closure V₂ ∩ C ↔ z ∈ C
+habz : z ∈ closure V₁ ∩ C → z ∈ closure V₂ ∩ C → z ∈ P
+a : z ∈ P
+⊢ z ∈ V₂ ∨ z ∈ closure V₂ ∩ C ∨ z ∈ P
+'Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

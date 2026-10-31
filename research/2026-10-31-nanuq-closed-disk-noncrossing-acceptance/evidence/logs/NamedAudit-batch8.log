@@ -1,0 +1,137 @@
+@Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc : ∀ {P K : Set.{0} Schoenflies.Plane} {p q : Schoenflies.Plane},
+  IsCompact.{0} P →
+    IsPreconnected.{0} P →
+      IsCompact.{0} K →
+        Disjoint.{0} P K →
+          P ⊆ Schoenflies.Plane.closedSquare 0 1 →
+            Membership.mem.{0, 0} P p →
+              Membership.mem.{0, 0} P q →
+                Ne.{1} p q →
+                  ∃ A,
+                    Schoenflies.IsPolygonal A ∧
+                      Schoenflies.IsArcBetween A p q ∧
+                        sdiff.{0} A (insert.{0, 0} p (singleton.{0, 0} q)) ⊆ Schoenflies.Plane.openSquare 0 1 ∧
+                          Disjoint.{0} A K
+'Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells : ∀ {C P A₁ A₂ : Set.{0} Schoenflies.Plane}
+  {p q : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      Schoenflies.IsArcBetween P p q →
+        Eq.{1} (Inter.inter.{0} P C) (insert.{0, 0} p (singleton.{0, 0} q)) →
+          sdiff.{0} P (insert.{0, 0} p (singleton.{0, 0} q)) ⊆ Schoenflies.inside C →
+            ∃ F₁ F₂,
+              IsClosed.{0} F₁ ∧
+                IsClosed.{0} F₂ ∧
+                  Eq.{1} (Union.union.{0} F₁ F₂) (Union.union.{0} C (Schoenflies.inside C)) ∧
+                    Eq.{1} (Inter.inter.{0} F₁ F₂) P ∧
+                      Eq.{1} (Inter.inter.{0} F₁ C) A₁ ∧ Eq.{1} (Inter.inter.{0} F₂ C) A₂
+'Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected : ∀ {C P Q A₁ A₂ : Set.{0} Schoenflies.Plane}
+  {p q r s : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      Schoenflies.IsArcBetween P p q →
+        Eq.{1} (Inter.inter.{0} P C) (insert.{0, 0} p (singleton.{0, 0} q)) →
+          sdiff.{0} P (insert.{0, 0} p (singleton.{0, 0} q)) ⊆ Schoenflies.inside C →
+            IsPreconnected.{0} Q →
+              Q ⊆ Union.union.{0} C (Schoenflies.inside C) →
+                Disjoint.{0} Q P →
+                  Membership.mem.{0, 0} Q r →
+                    Membership.mem.{0, 0} Q s → Membership.mem.{0, 0} A₁ r → Membership.mem.{0, 0} A₂ s → False
+'Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc : ∀ {C P K : Set.{0} Schoenflies.Plane}
+  {p q : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    IsCompact.{0} P →
+      IsPreconnected.{0} P →
+        IsCompact.{0} K →
+          Disjoint.{0} P K →
+            P ⊆ Union.union.{0} C (Schoenflies.inside C) →
+              Membership.mem.{0, 0} P p →
+                Membership.mem.{0, 0} P q →
+                  Membership.mem.{0, 0} C p →
+                    Membership.mem.{0, 0} C q →
+                      Ne.{1} p q →
+                        ∃ A,
+                          Schoenflies.IsArcBetween A p q ∧
+                            Eq.{1} (Inter.inter.{0} A C) (insert.{0, 0} p (singleton.{0, 0} q)) ∧
+                              sdiff.{0} A (insert.{0, 0} p (singleton.{0, 0} q)) ⊆ Schoenflies.inside C ∧
+                                Disjoint.{0} A K
+'Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing : ∀ {C P Q A₁ A₂ : Set.{0} Schoenflies.Plane}
+  {p q r s : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      IsCompact.{0} P →
+        IsPreconnected.{0} P →
+          IsCompact.{0} Q →
+            IsPreconnected.{0} Q →
+              Disjoint.{0} P Q →
+                P ⊆ Union.union.{0} C (Schoenflies.inside C) →
+                  Q ⊆ Union.union.{0} C (Schoenflies.inside C) →
+                    Membership.mem.{0, 0} P p →
+                      Membership.mem.{0, 0} P q →
+                        Membership.mem.{0, 0} Q r →
+                          Membership.mem.{0, 0} Q s → Membership.mem.{0, 0} A₁ r → Membership.mem.{0, 0} A₂ s → False
+'Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_opened_cuts_noninterlacing.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ C,
+      Schoenflies.IsJordanCurve C ∧
+        Function.Injective.{u_2 + 1, 1} (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb) ∧
+          (∀
+              (t :
+                Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+              Membership.mem.{0, 0} C (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)) ∧
+            ∀
+              (f :
+                Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+              (a c d e :
+                Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                  (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+              Ne.{u_2 + 1} a c →
+                Ne.{u_2 + 1} d e →
+                  Nanuq.Source.EdgeGraph.OrientedQuartet.{max u_1 u_2, u_2}
+                      (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+                        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+                      f
+                      ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                        a)
+                      ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                        c)
+                      ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                        d)
+                      ((Nanuq.Source.RootedBinary.openedTipVertex.{max u_1 u_2, u_2, u_2}
+                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb))
+                        e) →
+                    ∀ (A₁ A₂ : Set.{0} Schoenflies.Plane),
+                      Schoenflies.IsCutPair C (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb a)
+                          (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb c) A₁ A₂ →
+                        ¬(Membership.mem.{0, 0} A₁ (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb d) ∧
+                            Membership.mem.{0, 0} A₂ (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb e))
+'Nanuq.OpenedCore.actual_opened_cuts_noninterlacing' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

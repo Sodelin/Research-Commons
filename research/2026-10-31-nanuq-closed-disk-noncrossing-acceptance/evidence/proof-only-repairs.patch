@@ -1,0 +1,109 @@
+--- frozen/SquareCarrierArc.lean
++++ source/SquareCarrierArc.lean
+@@ -43,7 +43,7 @@
+   have hδR : δ*(R+1)<ρ := by
+     have h := (le_div_iff₀ (show 0<2*(R+1) by positivity)).mp hδratio
+     nlinarith
+-  have hλ0 : ∀ t : ℝ, 1-δ≤t → 0≤t := by intro t ht; linarith
++  have hlower : ∀ t : ℝ, 1-δ≤t → 0≤t := by intro t ht; linarith
+   have hclear : ∀ x∈P, ∀ t : ℝ, 1-δ≤t → t≤1 → t • x ∉ K := by
+     intro x hx t ht ht1 hbad
+     have hdist : dist (t • x) x < ρ := by
+@@ -61,10 +61,13 @@
+     exact (not_lt_of_ge (hsep x hx (t • x) hbad)) (by simpa [dist_comm] using hdist)
+   let U : Set Plane := Plane.openSquare 0 1 \ K
+   let f : Plane → Plane := fun x => (1-δ) • x
+-  have hf : Continuous f := continuous_const.smul continuous_id
++  have hf : Continuous f := by
++    change Continuous (fun x : Plane => (1-δ) • x)
++    exact (continuous_const : Continuous (fun _ : Plane => (1-δ : ℝ))).smul
++      (continuous_id : Continuous (fun x : Plane => x))
+   have hsub : f '' P ⊆ U := by
+     rintro z ⟨x,hx,rfl⟩
+-    exact ⟨scaled_square_interior (hPsq hx) (hλ0 _ le_rfl) (by linarith),
++    exact ⟨scaled_square_interior (hPsq hx) (hlower _ le_rfl) (by linarith),
+       hclear x hx _ le_rfl (by linarith)⟩
+   let Ω : Set Plane := connectedComponentIn U (f p)
+   have hΩopen : IsOpen Ω := ((Plane.isOpen_openSquare 0 1).sdiff hK.isClosed).connectedComponentIn
+@@ -79,12 +82,12 @@
+     have hxT : f x ∈ T := ⟨1-δ,⟨le_rfl,by linarith⟩,rfl⟩
+     have hTU : T ⊆ U := by
+       rintro z ⟨t,ht,rfl⟩
+-      exact ⟨scaled_square_interior (hPsq hx) (hλ0 t ht.1) ht.2,
++      exact ⟨scaled_square_interior (hPsq hx) (hlower t ht.1) ht.2,
+         hclear x hx t ht.1 ht.2.le⟩
+     have hxΩ : f x ∈ Ω := hPΩ (mem_image_of_mem f hx)
+     have hTΩ : T ⊆ Ω := by
+       have hh := hTpre.subset_connectedComponentIn hxT hTU
+-      rw [connectedComponentIn_eq hxΩ] at hh
++      rw [← connectedComponentIn_eq hxΩ] at hh
+       exact hh
+     apply PolyAccessible.of_openSegment hxΩ
+     intro z hz
+--- frozen/ClosedCrosscutCells.lean
++++ source/ClosedCrosscutCells.lean
+@@ -59,8 +59,27 @@
+     have hvz := hv z
+     have haz := ha z
+     have hpz := @hPdisk z
+-    simp only [Set.mem_union]
+-    aesop
++    change ((z∈V₁ ∨ (z∈A₁ ∨ z∈P)) ∨ (z∈V₂ ∨ (z∈A₂ ∨ z∈P))) ↔
++      (z∈C ∨ z∈inside C)
++    constructor
++    · rintro (h | h)
++      · rcases h with hv₁ | ha₁ | hp
++        · exact Or.inr (hvz.mp (Or.inl hv₁)).1
++        · exact Or.inl (haz.mp (Or.inl ha₁))
++        · exact hpz hp
++      · rcases h with hv₂ | ha₂ | hp
++        · exact Or.inr (hvz.mp (Or.inr hv₂)).1
++        · exact Or.inl (haz.mp (Or.inr ha₂))
++        · exact hpz hp
++    · rintro (hc | hi)
++      · rcases haz.mpr hc with ha₁ | ha₂
++        · exact Or.inl (Or.inr (Or.inl ha₁))
++        · exact Or.inr (Or.inr (Or.inl ha₂))
++      · by_cases hp : z∈P
++        · exact Or.inl (Or.inr (Or.inr hp))
++        · rcases hvz.mpr ⟨hi,hp⟩ with hv₁ | hv₂
++          · exact Or.inl (Or.inl hv₁)
++          · exact Or.inr (Or.inl hv₂)
+   · rw [hf₁,hf₂]
+     ext z
+     have hvz := hv z
+@@ -68,8 +87,21 @@
+     have habz := hab z
+     have hd : ¬(z∈V₁ ∧ z∈V₂) := fun h => Set.disjoint_left.mp hdisj h.1 h.2
+     have hi : z∈inside C → z∉C := fun h => h.1
+-    simp only [Set.mem_inter_iff,Set.mem_union]
+-    aesop
++    change ((z∈V₁ ∨ (z∈A₁ ∨ z∈P)) ∧ (z∈V₂ ∨ (z∈A₂ ∨ z∈P))) ↔ z∈P
++    constructor
++    · rintro ⟨h₁,h₂⟩
++      rcases h₁ with hv₁ | ha₁ | hp
++      · rcases h₂ with hv₂ | ha₂ | hp
++        · exact False.elim (hd ⟨hv₁,hv₂⟩)
++        · exact False.elim (hi (hvz.mp (Or.inl hv₁)).1 (haz.mp (Or.inr ha₂)))
++        · exact hp
++      · rcases h₂ with hv₂ | ha₂ | hp
++        · exact False.elim (hi (hvz.mp (Or.inr hv₂)).1 (haz.mp (Or.inl ha₁)))
++        · exact habz ha₁ ha₂
++        · exact hp
++      · exact hp
++    · intro hp
++      exact ⟨Or.inr (Or.inr hp),Or.inr (Or.inr hp)⟩
+ 
+ /-- A connected subset of the CLOSED disk cannot meet the two opposite
+ boundary arcs while avoiding the ENTIRE proper crosscut, endpoints included.
+--- frozen/ClosedDiskCarrierArc.lean
++++ source/ClosedDiskCarrierArc.lean
+@@ -60,7 +60,7 @@
+     rintro z ⟨⟨y,hy,hyz⟩,hzends⟩
+     have hyends : y∉({H p,H q}:Set Plane) := by
+       intro he
+-      rcases he with he | he
++      rcases (show y = H p ∨ y = H q from by simpa using he) with he | he
+       · have hz : z=p := hyz.symm.trans (by simpa only [he,Homeomorph.symm_apply_apply])
+         exact hzends (by simp [hz])
+       · have hz : z=q := hyz.symm.trans (by simpa only [he,Homeomorph.symm_apply_apply])

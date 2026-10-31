@@ -1,0 +1,32 @@
+<BUILD_ROOT>/source/HybridTailGeometry.lean:83:4: error: linarith failed to find a contradiction
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+e f : CoreTip N b
+hef : e ≠ f
+z : Schoenflies.Plane
+t : ℝ
+ht : t ∈ Icc (1 / 2) 1
+het : curve D (↑↑e) t = z
+u : ℝ
+hu : u ∈ Icc (1 / 2) 1
+hfu : curve D (↑↑f) u = z
+tI : ↑unitInterval := ⟨t, ⋯⟩
+uI : ↑unitInterval := ⟨u, ⋯⟩
+het' : coordinates ((D.arc ↑↑e) tI) = z
+hfu' : coordinates ((D.arc ↑↑f) uI) = z
+hid : ↑↑e ≠ ↑↑f
+he : tI = 0
+hzero : tI = 0
+⊢ False
+failed
+'Nanuq.OpenedCore.incomingTail_only_core_tip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.paired_incoming_tail_arc' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

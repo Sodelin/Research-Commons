@@ -1,0 +1,41 @@
+<BUILD_ROOT>/source/ClosedDiskCarrierArc.lean:64:44: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+<BUILD_ROOT>/source/ClosedDiskCarrierArc.lean:66:44: error: Tactic `assumption` failed
+
+C P K : Set Plane
+p q : Plane
+hC : IsJordanCurve C
+hP : IsCompact P
+hPc : IsPreconnected P
+hK : IsCompact K
+hPK : Disjoint P K
+hPdisk : P ⊆ C ∪ inside C
+hp : p ∈ P
+hq : q ∈ P
+hpC : p ∈ C
+hqC : q ∈ C
+hpq : p ≠ q
+H : Plane ≃ₜ Plane
+hHC : ⇑H '' C = modelCurve
+hHdisk : ⇑H '' (C ∪ inside C) = Plane.closedSquare 0 1
+hdisj : Disjoint (⇑H '' P) (⇑H '' K)
+hPsq : ⇑H '' P ⊆ Plane.closedSquare 0 1
+A' : Set Plane
+hpoly : IsPolygonal A'
+hA' : IsArcBetween A' (H p) (H q)
+hAi' : A' \ {H p, H q} ⊆ Plane.openSquare 0 1
+hAK' : Disjoint A' (⇑H '' K)
+A : Set Plane := ⇑H.symm '' A'
+hA : IsArcBetween A p q
+z : Plane
+hzends : z ∉ {p, q}
+y : Plane
+hy : y ∈ A'
+hyz : H.symm y = z
+he : y ∈ {H q}
+⊢ H.symm y = q
+'Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

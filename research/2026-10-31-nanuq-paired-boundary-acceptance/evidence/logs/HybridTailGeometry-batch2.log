@@ -1,0 +1,84 @@
+<BUILD_ROOT>/source/HybridTailGeometry.lean:44:4: error: linarith failed to find a contradiction
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+e : CoreTip N b
+v : CoreVertex N b
+t : ↑unitInterval
+ht : 1 / 2 ≤ ↑t
+heq : (D.arc ↑↑e) t = corePoint N D b v
+h : t = 0
+h' : t = 0
+⊢ False
+failed
+<BUILD_ROOT>/source/HybridTailGeometry.lean:84:4: error: linarith failed to find a contradiction
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+e f : CoreTip N b
+hef : e ≠ f
+z : Schoenflies.Plane
+t : ℝ
+ht : t ∈ Icc (1 / 2) 1
+het : curve D (↑↑e) t = z
+u : ℝ
+hu : u ∈ Icc (1 / 2) 1
+hfu : curve D (↑↑f) u = z
+tI : ↑unitInterval := ⟨t, ⋯⟩
+uI : ↑unitInterval := ⟨u, ⋯⟩
+het' : coordinates ((D.arc ↑↑e) tI) = z
+hfu' : coordinates ((D.arc ↑↑f) uI) = z
+hid : ↑↑e ≠ ↑↑f
+he : tI = 0
+hzero : tI = 0
+⊢ False
+failed
+<BUILD_ROOT>/source/HybridTailGeometry.lean:95:6: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => IsArcBetween (incomingTail N D b f) (coordinates (D.point _a)) (coordinates ((D.arc ↑↑f) oneHalf))
+Error: Application type mismatch: The argument
+  D.arc ↑↑f
+has type
+  Path (D.point (N.graph.source ↑↑f)) (D.point (N.graph.target ↑↑f))
+but is expected to have type
+  Path (D.point (N.graph.source ↑↑f)) (D.point _a)
+in the application
+  ⇑(D.arc ↑↑f)
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+D : PlanarCurves N.graph
+b : N.graph.Blob
+e f : CoreTip N b
+hef : e ≠ f
+ht : N.graph.target ↑↑e = N.graph.target ↑↑f
+hf :
+  IsArcBetween (incomingTail N D b f) (coordinates (D.point (N.graph.target ↑↑f))) (coordinates ((D.arc ↑↑f) oneHalf))
+⊢ IsArcBetween (incomingTail N D b e ∪ incomingTail N D b f) (coordinates ((D.arc ↑↑e) oneHalf))
+    (coordinates ((D.arc ↑↑f) oneHalf))
+'Nanuq.OpenedCore.incomingTail_only_core_tip' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.OpenedCore.paired_incoming_tail_arc' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

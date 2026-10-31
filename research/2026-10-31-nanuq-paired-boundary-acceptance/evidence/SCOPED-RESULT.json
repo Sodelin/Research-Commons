@@ -1,0 +1,51 @@
+{
+  "status": "SCOPED_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_commit": "ee343f8fe08994bd7ccd702d038f70ad9dbed2f7",
+  "sources": {
+    "NamedBoundaryIncoming": {
+      "source_sha256": "f0c8f8fbea663312aecff349f7bb9c021ba85a42ffce8cc608b7e371270a67c5",
+      "own_import_object_hashes": {},
+      "object_sha256": "a064a0776ddb20fa63385ee2e5851fccd39330c0c7c33a6d11dd5da10bfa6fb6"
+    },
+    "HybridTailGeometry": {
+      "source_sha256": "d57af308895064fec88326fc25843a62c1991223a219aaa0b32b0125d47da133",
+      "own_import_object_hashes": {
+        "NamedBoundaryIncoming": "a064a0776ddb20fa63385ee2e5851fccd39330c0c7c33a6d11dd5da10bfa6fb6"
+      },
+      "object_sha256": "48aab9374bc08eb6f272b7380451eadec669cc16346a2895535439ec3e0e1e45"
+    },
+    "ActualPairedBoundary": {
+      "source_sha256": "aea8fb4ccbe87633bbd98d7bd3d0742e5919af29bd511806c353ab46b33eec82",
+      "own_import_object_hashes": {
+        "HybridTailGeometry": "48aab9374bc08eb6f272b7380451eadec669cc16346a2895535439ec3e0e1e45"
+      },
+      "object_sha256": "81cef7664f02ea6e823b602ca4f10f1197b9297615a624b3be4a45359f8ae22c"
+    }
+  },
+  "named_targets": [
+    "Nanuq.OpenedCore.named_boundary_incoming_full",
+    "Nanuq.OpenedCore.incomingTail_only_core_tip",
+    "Nanuq.OpenedCore.paired_incoming_tail_arc",
+    "Nanuq.OpenedCore.equal_label_distinct_are_hybrid_occurrences",
+    "Nanuq.OpenedCore.actual_paired_tip_empty_boundary_arc",
+    "Nanuq.OpenedCore.actual_one_boundary_paired_tip_arcs"
+  ],
+  "named_owners": {
+    "Nanuq.OpenedCore.equal_label_distinct_are_hybrid_occurrences": "ActualPairedBoundary",
+    "Nanuq.OpenedCore.named_boundary_incoming_full": "NamedBoundaryIncoming",
+    "Nanuq.OpenedCore.actual_one_boundary_paired_tip_arcs": "ActualPairedBoundary",
+    "Nanuq.OpenedCore.actual_paired_tip_empty_boundary_arc": "ActualPairedBoundary",
+    "Nanuq.OpenedCore.paired_incoming_tail_arc": "HybridTailGeometry",
+    "Nanuq.OpenedCore.incomingTail_only_core_tip": "HybridTailGeometry"
+  },
+  "owned_modules": 650,
+  "declarations": 16871,
+  "theorems": 12432,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "local_full_audit_sha256": "3e83bc170f954c88542393118cdc4e0aa821f3559ba92313ae3aff316d3c7015",
+  "raw_full_audit_local_only": true,
+  "frozen_all_headers_and_definitions_preserved": true,
+  "scope": "Same original named raw boundary and whole incoming half-edge tails supply empty boundary arcs for equal-label distinct actual occurrences. No finite circular-order, singleton or global C claim."
+}

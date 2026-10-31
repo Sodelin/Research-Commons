@@ -1,0 +1,48 @@
+--- frozen/NamedBoundaryIncoming.lean
++++ source/NamedBoundaryIncoming.lean
+@@ -18,6 +18,7 @@
+   rw [← (jordan_curve_theorem hC).frontier_outside,
+     ← (jordan_curve_theorem hC').frontier_outside,h]
+ 
++include hg hb in
+ /-- Full original incoming edge images lie on this named original boundary.
+ The >=3 and exact bigon branches are separate; singleton is not admitted. -/
+ theorem named_boundary_incoming_full
+--- frozen/HybridTailGeometry.lean
++++ source/HybridTailGeometry.lean
+@@ -39,9 +39,8 @@
+     (heq : D.arc e.val.val t=corePoint N D b v) : v=Sum.inr e := by
+   have ht0 : t≠0 := by
+     intro h
+-    have h' := congrArg Subtype.val h
+-    norm_num at h'
+-    linarith
++    have h' : (t : ℝ) = 0 := congrArg Subtype.val h
++    linarith only [ht,h']
+   rcases v with v | f
+   · change D.arc e.val.val t=D.point v.val.val at heq
+     rcases D.vertex_incidence e.val.val v.val.val t heq with hs | hd
+@@ -79,9 +78,8 @@
+   have he := (D.edge_incidence e.val.val f.val.val hid tI uI
+     (coordinates.injective (het'.trans hfu'.symm))).1
+   rcases he with he | he
+-  · have hzero := congrArg Subtype.val he
+-    norm_num at hzero
+-    linarith [ht.1]
++  · have hzero : t = (0:ℝ) := congrArg Subtype.val he
++    linarith only [hzero,ht.1]
+   · simpa only [he,Path.target] using het'.symm
+ 
+ /-- The two incoming tails concatenate at the SAME original hybrid, including
+@@ -92,7 +90,10 @@
+       (coordinates (D.arc e.val.val oneHalf))
+       (coordinates (D.arc f.val.val oneHalf)) := by
+   have hf := (incomingTail_arc N D b f).reverse
+-  rw [← ht] at hf
++  have hend : coordinates (D.point (N.graph.target f.val.val)) =
++      coordinates (D.point (N.graph.target e.val.val)) :=
++    congrArg (fun v => coordinates (D.point v)) ht.symm
++  rw [hend] at hf
+   exact (incomingTail_arc N D b e).concatenate hf
+     (fun z hz hz' => incomingTails_meet_only_target N D b e f hef hz hz')
+ 

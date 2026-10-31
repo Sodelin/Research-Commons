@@ -1,0 +1,14 @@
+import ActualCutNoncrossing
+set_option pp.universes true
+#check @Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc
+#print axioms Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc
+#check @Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells
+#print axioms Nanuq.ClosedDiskNoncrossing.proper_crosscut_closed_cells
+#check @Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected
+#print axioms Nanuq.ClosedDiskNoncrossing.proper_crosscut_blocks_connected
+#check @Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc
+#print axioms Nanuq.ClosedDiskNoncrossing.closed_disk_carrier_proper_arc
+#check @Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing
+#print axioms Nanuq.ClosedDiskNoncrossing.closed_disk_noninterlacing
+#check @Nanuq.OpenedCore.actual_opened_cuts_noninterlacing
+#print axioms Nanuq.OpenedCore.actual_opened_cuts_noninterlacing

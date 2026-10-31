@@ -1,0 +1,30 @@
+<BUILD_ROOT>/source/SquareCarrierArc.lean:46:8: error: unexpected token 'λ'; expected ':=' or '|'
+<BUILD_ROOT>/source/SquareCarrierArc.lean:46:7: error: Missing cases:
+<BUILD_ROOT>/source/SquareCarrierArc.lean:34:57: error: unsolved goals
+P K : Set Plane
+p q : Plane
+hP : IsCompact P
+hPc : IsPreconnected P
+hK : IsCompact K
+hPK : Disjoint P K
+hPsq : P ⊆ Plane.closedSquare 0 1
+hp : p ∈ P
+hq : q ∈ P
+hpq : p ≠ q
+ρ : ℝ
+hρ : ρ > 0
+hsep : ∀ p ∈ P, ∀ q ∈ K, ρ ≤ dist p q
+R : ℝ
+hR : ∀ x ∈ P, ‖x‖ ≤ R
+hR0 : 0 ≤ R
+hRp : 0 < R + 1
+δ : ℝ := min (1 / 2) (ρ / (2 * (R + 1)))
+hδ : 0 < δ
+hδhalf : δ ≤ 1 / 2
+hδratio : δ ≤ ρ / (2 * (R + 1))
+hδR : δ * (R + 1) < ρ
+⊢ ∃ A, IsPolygonal A ∧ IsArcBetween A p q ∧ A \ {p, q} ⊆ Plane.openSquare 0 1 ∧ Disjoint A K
+'Nanuq.ClosedDiskNoncrossing.square_carrier_proper_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
