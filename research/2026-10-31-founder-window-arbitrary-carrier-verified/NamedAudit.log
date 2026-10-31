@@ -1,0 +1,35 @@
+@FounderCarrier.descendant_iff.{u_1} : ∀ {V : Type u_1} {birth : V → ℝ}
+  (e : BirthOrder.OrderedEnumeration.{u_1, 0} birth) (E : V → V → Prop) (i j : ℕ),
+  SpeciesBridge.Descendant (FounderCarrier.pullGraph.{u_1} e E) i j ↔
+    FounderCarrier.VDescendant.{u_1} E (BirthOrder.OrderedEnumeration.toFun.{u_1, 0} e i)
+      (BirthOrder.OrderedEnumeration.toFun.{u_1, 0} e j)
+'FounderCarrier.descendant_iff' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@FounderCarrier.windowSpecies_iff.{u_1} : ∀ {V : Type u_1} {birth : V → ℝ}
+  (e : BirthOrder.OrderedEnumeration.{u_1, 0} birth) (E : V → V → Prop) (S : V → Prop) (duration : ℝ),
+  FounderMaximal.WindowSpecies (FounderCarrier.pullGraph.{u_1} e E) (FounderCarrier.pulledBirth.{u_1} e) duration
+      (FounderCarrier.pullSet.{u_1} e S) ↔
+    FounderCarrier.VWindowSpecies.{u_1} E birth duration S
+'FounderCarrier.windowSpecies_iff' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@FounderCarrier.push_maximal.{u_1} : ∀ {V : Type u_1} {birth : V → ℝ} (e : BirthOrder.OrderedEnumeration.{u_1, 0} birth)
+  (E : V → V → Prop) (duration : ℝ) (T : SpeciesBridge.NatSet),
+  FounderMaximal.MaximalWindowSpecies (FounderCarrier.pullGraph.{u_1} e E) (FounderCarrier.pulledBirth.{u_1} e) duration
+      T →
+    FounderCarrier.VMaximalWindowSpecies.{u_1} E birth duration (FounderCarrier.pushSet.{u_1} e T)
+'FounderCarrier.push_maximal' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@FounderCarrier.every_vertex_in_maximal_real_window.{u_1} : ∀ {V : Type u_1} (E : V → V → Prop) (birth : V → ℝ),
+  BirthOrder.InfiniteVertices.{u_1} V →
+    (∀ (t : ℝ), BirthOrder.FiniteCover.{u_1} fun a => LT.lt.{0} (birth a) t) →
+      (∀ (a b : V), E a b → LT.lt.{0} (birth a) (birth b)) →
+        (∀ (a : V), BirthOrder.FiniteCover.{u_1} (E a)) →
+          ∀ (duration : ℝ),
+            LE.le.{0} 0 duration → ∀ (a : V), ∃ M, M a ∧ FounderCarrier.VMaximalWindowSpecies.{u_1} E birth duration M
+'FounderCarrier.every_vertex_in_maximal_real_window' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@FounderCarrier.maximal_window_extension.{u_1} : ∀ {V : Type u_1} (E : V → V → Prop) (birth : V → ℝ),
+  BirthOrder.InfiniteVertices.{u_1} V →
+    (∀ (t : ℝ), BirthOrder.FiniteCover.{u_1} fun a => LT.lt.{0} (birth a) t) →
+      (∀ (a b : V), E a b → LT.lt.{0} (birth a) (birth b)) →
+        (∀ (a : V), BirthOrder.FiniteCover.{u_1} (E a)) →
+          ∀ (duration : ℝ) (S : V → Prop),
+            FounderCarrier.VWindowSpecies.{u_1} E birth duration S →
+              ∃ M, (∀ (a : V), S a → M a) ∧ FounderCarrier.VMaximalWindowSpecies.{u_1} E birth duration M
+'FounderCarrier.maximal_window_extension' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
