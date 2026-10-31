@@ -1,0 +1,3 @@
+# Separate source-only semantic review
+
+31 October 2026. Separate AI-assisted review read all271 lines at50808495aaf1a21d7915d752cf893bb377e62cf4e066dd3211e2949752d3cfd7. Intended compiler request approved: admitted active representatives close through actual interval plus whole next-date block; original remaining agenda gives gap/root bound; finite sum is over the supported carrier and future readout is derived from the same-bank quotient. Keep1<=P root-carrier and active-edge<=P explicit until original global use derives them. No reachability assumption, bank averaging or M/D/window conclusion. This is not a successful Lean check, expert peer review or novelty certification.
