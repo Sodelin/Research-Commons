@@ -81,3 +81,8 @@ Four independent mathematical/review contexts remain available. The immediate wr
 Keep original proof attribution, exact source/receipt hashes, failed attempts and candidate labels. Review actual changed text and qualified receipts before changing a status. Integrate every accepted, conditional, negative-route and correction result through the existing discovery catalogue, not a competing registry. Old navigation/history is appended, not overwritten. Subsequent narrow deltas belong in ordinary checkpoints until the next justified full reconciliation.
 
 Index key: FULL-SCOPE-RECONCILIATION-20261031-1803Z. Status: public scientific/tooling scope reconciliation; no canonical status promotion, novelty determination or master closure.
+
+
+## Dated priority decision — 18:09 UTC
+
+Continue three direct proof-library review lanes and a fourth source/receipt-support lane within the existing four contexts; keep the existing serial compiler and source-collaboration owners, without additional workers. Prioritize completing and checking the selected proof library's actual revised statements, dependencies and evidence over new component ladders. All twelve chapters being authored does not mean all chapters are reviewed, every historical theorem is covered, or the whole mathematics is formally verified. Preserve original G3/G4 targets and all stated NANUQ/clock-JC source gates. This is an incremental priority decision within this successor, not another scope rewrite or a new scientific result.
