@@ -1,0 +1,65 @@
+--- frozen/JC69OrderedPathExpansion.lean
++++ source/JC69OrderedPathExpansion.lean
+@@ -168,7 +168,8 @@
+       ((∑ i, b.coefficient i/(a-b.rate i)*Real.exp (-b.rate i*T)) -
+        (∑ i, b.coefficient i/(a-b.rate i))*Real.exp (-a*T)) := by
+   simp only [ExpTerms.eval,prependTerms,Fin.sum_univ_succ,Fin.cons_zero,Fin.cons_succ]
+-  rw [mul_sub,Finset.mul_sum]
++  rw [mul_sub,Finset.mul_sum Finset.univ
++    (fun i => b.coefficient i/(a-b.rate i)*Real.exp (-b.rate i*T)) rp]
+   simp_rw [mul_assoc]
+   ring
+ 
+@@ -242,14 +243,19 @@
+       ∑ h : OrderedPath N n s, pathMass N r L q n s h t *
+         (if observeCode N (pathEnd N n s h) = target then 1 else 0) := by
+   induction n generalizing s t with
+-  | zero => simpa [OrderedPath,pathMass,pathEnd,holdingRate] using actual_resolved_real_zero N r L q s t target
++  | zero => simpa only [OrderedPath,pathMass,pathEnd,holdingRate,Fintype.sum_unique,neg_mul] using actual_resolved_real_zero N r L q s t target
+   | succ n ih =>
+       rw [actual_resolved_real_renewal,sum_path_succ]
+       apply congrArg₂ (· + ·)
+-      · rfl
++      · simp only [pathMass,pathEnd,holdingRate,neg_mul]
+       · apply Finset.sum_congr rfl
+         intro p _
+-        rw [integral_Icc_eq_integral_Ioc,← intervalIntegral.integral_of_le t.property]
++        simp only [pathMass,pathEnd]
++        erw [integral_Icc_eq_integral_Ioc,← intervalIntegral.integral_of_le
++          (f := fun u : ℝ => choiceRate N r s p *
++            Real.exp (-((totalRate N r s+locusKill N L q s)*u)) *
++            (actualResolvedWeight N r L q n (stepDestination N s (some p)) ((t:ℝ)-u) target).toReal)
++          (μ := volume) t.property]
+         let d := stepDestination N s (some p)
+         let terminal : OrderedPath N n d → ℝ := fun h =>
+           if observeCode N (pathEnd N n d h) = target then 1 else 0
+@@ -261,12 +267,17 @@
+                 (pathMass N r L q n d h ((t:ℝ)-u) * terminal h) := by
+           apply intervalIntegral.integral_congr
+           intro u hu
+-          rw [uIcc_of_le t.property] at hu
++          erw [uIcc_of_le t.property] at hu
+           have hh := ih d (⟨(t:ℝ)-u,sub_nonneg.mpr hu.2⟩ : ℝ≥0)
+           change (actualResolvedWeight N r L q n d ((t:ℝ)-u) target).toReal = _ at hh
+-          rw [hh,Finset.mul_sum]
++          change choiceRate N r s p * Real.exp (-((totalRate N r s+locusKill N L q s)*u)) *
++            (actualResolvedWeight N r L q n d ((t:ℝ)-u) target).toReal =
++              ∑ h : OrderedPath N n d, choiceRate N r s p * Real.exp (-holdingRate N r L q s*u) *
++                (pathMass N r L q n d h ((t:ℝ)-u) * terminal h)
++          erw [hh,Finset.mul_sum]
++          simp only [holdingRate,neg_mul]
+           rfl
+-        rw [hi,intervalIntegral.integral_finsetSum]
++        erw [hi,intervalIntegral.integral_finsetSum]
+         · apply Finset.sum_congr rfl
+           intro h _
+           change (∫ u in (0:ℝ)..(t:ℝ), choiceRate N r s p *
+@@ -279,7 +290,7 @@
+               fun u => choiceRate N r s p *
+                 (Real.exp (-holdingRate N r L q s*u) * pathMass N r L q n d h ((t:ℝ)-u)) * terminal h := by
+             funext u; ring
+-          rw [hf,intervalIntegral.integral_mul_const,intervalIntegral.integral_const_mul]
++          erw [hf,intervalIntegral.integral_mul_const,intervalIntegral.integral_const_mul]
+         · intro h _
+           have hc := pathMass_continuous N r L q n d h
+           exact (by fun_prop : Continuous (fun u : ℝ => choiceRate N r s p *

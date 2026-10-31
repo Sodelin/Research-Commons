@@ -1,0 +1,5 @@
+import ArcJordanNeighborhood
+#check @Nanuq.CompactArcNeighborhood.compact_obstacle_jordan
+#print axioms Nanuq.CompactArcNeighborhood.compact_obstacle_jordan
+#check @Nanuq.CompactArcNeighborhood.arc_jordan_neighborhood
+#print axioms Nanuq.CompactArcNeighborhood.arc_jordan_neighborhood

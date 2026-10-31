@@ -1,0 +1,100 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:48:0: warning: `OrderedPath`: universes `u_5`, `u_6` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:148:79: warning: This simp argument is unused:
+  Nat.add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pathTerms, prependTerms, pathLength, ih, Nat.add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:205:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69OrderedPathExpansion.liveCard_pos`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69OrderedPathExpansion.lean:254:41: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ℝ) in Ioc 0 ↑t,
+    choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * x)) *
+      (actualResolvedWeight N r L q n (stepDestination N s (some p)) (↑t - x) target).toReal ∂volume
+in the target expression
+  ∫ (t_1 : ℝ) in Ioc 0 ↑t,
+      choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * t_1)) *
+        (actualResolvedWeight N r L q n (stepDestination N s (some p)) (↑t - t_1) target).toReal =
+    ∑ x,
+      (choiceRate N r s p *
+          ∫ (u : ℝ) in 0..↑t,
+            Real.exp (-holdingRate N r L q s * u) * pathMass N r L q n (stepDestination N s (some p)) x (↑t - u)) *
+        if observeCode N (pathEnd N n (stepDestination N s (some p)) x) = target then 1 else 0
+
+case succ.hy
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+target : BlockPopulationObservation Copy V E
+n : ℕ
+ih :
+  ∀ (s : Code N sample) (t : ℝ≥0),
+    (actualResolvedWeight N r L q n s (↑t) target).toReal =
+      ∑ h, pathMass N r L q n s h ↑t * if observeCode N (pathEnd N n s h) = target then 1 else 0
+s : Code N sample
+t : ℝ≥0
+p : Choice N s
+a✝ : p ∈ Finset.univ
+⊢ ∫ (t_1 : ℝ) in Ioc 0 ↑t,
+      choiceRate N r s p * Real.exp (-((totalRate N r s + locusKill N L q s) * t_1)) *
+        (actualResolvedWeight N r L q n (stepDestination N s (some p)) (↑t - t_1) target).toReal =
+    ∑ x,
+      (choiceRate N r s p *
+          ∫ (u : ℝ) in 0..↑t,
+            Real.exp (-holdingRate N r L q s * u) * pathMass N r L q n (stepDestination N s (some p)) x (↑t - u)) *
+        if observeCode N (pathEnd N n (stepDestination N s (some p)) x) = target then 1 else 0
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    Sum.inr ⟨p, x⟩
+  has type
+    PUnit.{u_5 + 1} ⊕ (p : Choice N s) × OrderedPath N n (stepDestination N s (some p))
+  but is expected to have type
+    OrderedPath N (n + 1) s
+  in the application
+    pathEnd N (n + 1) s (Sum.inr ⟨p, x⟩)
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.holdingRate_strict_merger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathLength_add_liveCard' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_path_mass_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathLength_lt_original_copies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.pathTerms_size_le_original_copies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_resolved_ordered_path_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69OrderedPathExpansion.actual_resolved_finite_exponential_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,164 @@
+[
+  {
+    "module": "FiniteTrace",
+    "name": "finite_discarded_trace",
+    "header": "theorem finite_discarded_trace {E : Type*} {G : Graph Plane E} [G.Finite]\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    (es : Fin 3 → E) (ws : Fin 3 → Plane) (v : Plane)\n    (hinc : ∀ i, G.IsLink (es i) v (ws i))\n    (hcover : ∀ e ∈ E(G), G.Inc e v → ∃ i, es i = e)\n    (f : Fin 3 → ℝ → Plane)\n    (hf : ∀ i, ContinuousOn (f i) I ∧ InjOn (f i) I ∧\n      f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i)\n    (a : Fin 3 → ℝ) (ha : ∀ i, 0 < a i ∧ a i ≤ 1) :\n    ∃ K : Set Plane, IsCompact K ∧ v ∉ K ∧\n      Graph.pointSet G drawing = K ∪ ⋃ i, f i '' Icc 0 (a i)",
+    "sha256": "cef5922a06570607ce2ce4349989170b2b957acf01d0b804e80b0c4f50fe5a08"
+  },
+  {
+    "module": "HalfCrosscut",
+    "name": "crosscut_intersection_of_inside",
+    "header": "theorem crosscut_intersection_of_inside {C P : Set Plane} {p q : Plane}\n    (hP : IsArcBetween P p q) (hp : p ∈ C) (hq : q ∈ C)\n    (hPI : P \\ {p,q} ⊆ inside C) : P ∩ C = {p,q}",
+    "sha256": "09c5d4d5ecd02e60617c6e01ac403cb699088520cb4e72fd77ff8f2bf537ff95"
+  },
+  {
+    "module": "HalfCrosscut",
+    "name": "chord_inside_half",
+    "header": "theorem chord_inside_half {r : ℝ} (hr : 0 < r) {q : Plane}\n    (hqy : 0 < q 1) (hq : max |q 0| |q 1| = r) :\n    segment ℝ (0:Plane) q \\ {0,q} ⊆ inside (halfBoundary r hr)",
+    "sha256": "efcf6f7449edfb6d650b325f4f8871e0d733d5d1501225e867bb35ae7781403b"
+  },
+  {
+    "module": "HalfCrosscut",
+    "name": "upper_prefix_straightening",
+    "header": "theorem upper_prefix_straightening {r : ℝ} (hr : 0 < r) {q : Plane} {P : Set Plane}\n    (hP : IsArcBetween P 0 q) (hqy : 0 < q 1) (hq : max |q 0| |q 1| = r)\n    (hinner : ∀ z ∈ P \\ {0,q}, 0 < z 1 ∧ max |z 0| |z 1| < r) :\n    ∃ H : Plane ≃ₜ Plane, (∀ z : Plane, z 1 = 0 → H z = z) ∧\n      H '' P = segment ℝ (0:Plane) q ∧ H q = q",
+    "sha256": "f05e0114bc953342e7310cb730d69c88017a59a9de5acf1ad4ee6ed19fe032de"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "halfBoundary_jordan",
+    "header": "theorem halfBoundary_jordan (r : ℝ) (hr : 0 < r) : IsJordanCurve (halfBoundary r hr)",
+    "sha256": "f7e9cbe3451294c064106caace183153b35b43702770248ed74ebed139d0ce3a"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "homeomorph_mem_image",
+    "header": "theorem homeomorph_mem_image (H : Plane ≃ₜ Plane) (S : Set Plane) (x : Plane) :\n    x ∈ H '' S ↔ H.symm x ∈ S",
+    "sha256": "94e6c572471dcdbed3272d86bdfe66104070ded22d0053313c910578b011ccc9"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "mem_half_inside",
+    "header": "theorem mem_half_inside (r : ℝ) (hr : 0 < r) (x : Plane) :\n    x ∈ inside (halfBoundary r hr) ↔\n      -r < x 0 ∧ x 0 < r ∧ 0 < x 1 ∧ x 1 < r",
+    "sha256": "368e43fa45a8ba19a9fbf114e6476c8fe7bdeb812b2db88af2b010db9fdb9ef7"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "zero_mem_half_boundary",
+    "header": "theorem zero_mem_half_boundary (r : ℝ) (hr : 0 < r) : (0 : Plane) ∈ halfBoundary r hr",
+    "sha256": "57f36f785a270b7b6a5cac0da1ead96e515b192bee185eae5b106ea81ce8cf9a"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "mem_half_boundary_of_exit",
+    "header": "theorem mem_half_boundary_of_exit {r : ℝ} (hr : 0 < r) {x : Plane}\n    (hy : 0 < x 1) (hexit : max |x 0| |x 1| = r) : x ∈ halfBoundary r hr",
+    "sha256": "c31492a82d7e323a30cdad7b2b367d694545ec09287271a10212ddc9f399d605"
+  },
+  {
+    "module": "HalfRectangle",
+    "name": "horizontal_in_closed_exterior",
+    "header": "theorem horizontal_in_closed_exterior (r : ℝ) (hr : 0 < r) {x : Plane}\n    (hy : x 1 = 0) : x ∈ halfBoundary r hr ∪ outside (halfBoundary r hr)",
+    "sha256": "7474eaf3d0c87912a54bd91b89d6899e3aa5f5acfae80b9bdd11ab354b6c2c70"
+  },
+  {
+    "module": "OriginalBinaryStar",
+    "name": "binary_three_incident_exhausts",
+    "header": "theorem binary_three_incident_exhausts {V E X : Type*}\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]\n    (N : RootedBinary V E X) (es : Fin 3 → E) (ws : Fin 3 → V) (v : V)\n    (hinc : ∀ i, N.graph.Inc (es i) v (ws i)) (hids : Function.Injective es) :\n    ∀ e, N.graph.source e = v ∨ N.graph.target e = v → ∃ i, es i = e",
+    "sha256": "d1bf489dffb60233e2ba09c786c6407efc519f43ab200e333f27ccde0fe55c7e"
+  },
+  {
+    "module": "OriginalBinaryStar",
+    "name": "actual_binary_trivalent_star",
+    "header": "theorem actual_binary_trivalent_star {V E X : Type*}\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]\n    (N : RootedBinary V E X) (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph)\n    (es : Fin 3 → E) (ws : Fin 3 → V) (v : V)\n    (hinc : ∀ i, N.graph.Inc (es i) v (ws i)) (hids : Function.Injective es) :\n    ∃ (H : Plane ≃ₜ Plane) (ε : ℝ) (q : Plane),\n      0 < ε ∧ ε < ‖q‖ ∧ 0 < q 1 ∧\n      H (NanuqFaithfulSupplierDrawing.vertex D v) = 0 ∧\n      (H '' (NanuqFaithfulSupplierDrawing.coordinates ''\n        G1OuterLabelledMultigraphCurves.drawing D)) ∩ Metric.ball 0 ε =\n        ({z : Plane | z 1 = 0} ∪ segment ℝ (0:Plane) q) ∩ Metric.ball 0 ε",
+    "sha256": "9fa4ed0535ea342852639b318accb65f32b67fe561904b0470cc8f5345beae6a"
+  },
+  {
+    "module": "OriginalShortArms",
+    "name": "short_arm_family_of_isDrawing",
+    "header": "theorem short_arm_family_of_isDrawing {E ι : Type*} {G : Graph Plane E}\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    (es : ι → E) (ws : ι → Plane) (v : Plane)\n    (hinc : ∀ i, G.IsLink (es i) v (ws i)) (hids : Function.Injective es) :\n    ∃ f : ι → ℝ → Plane,\n      (∀ i, ContinuousOn (f i) I ∧ InjOn (f i) I ∧\n        f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i) ∧\n      (∀ i j, i ≠ j → ∀ z ∈ (fun t : ℝ => f i (t/2)) '' I,\n        z ∈ (fun t : ℝ => f j (t/2)) '' I → z = v)",
+    "sha256": "13cd2c3ae2eb60126191e52ca1c97b351e468627c319a12607374c4503a298f4"
+  },
+  {
+    "module": "OriginalShortArms",
+    "name": "actual_short_arm_family",
+    "header": "theorem actual_short_arm_family {V E ι : Type*} {G : Nanuq.Source.EdgeGraph V E}\n    (D : G1OuterLabelledMultigraphCurves.PlanarCurves G)\n    (es : ι → E) (ws : ι → V) (v : V)\n    (hinc : ∀ i, G.Inc (es i) v (ws i)) (hids : Function.Injective es) :\n    ∃ f : ι → ℝ → Plane,\n      (∀ i, ContinuousOn (f i) I ∧ InjOn (f i) I ∧\n        f i '' I = Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) (es i) ∧\n        f i 0 = NanuqFaithfulSupplierDrawing.vertex D v ∧\n        f i 1 = NanuqFaithfulSupplierDrawing.vertex D (ws i)) ∧\n      (∀ i j, i ≠ j → ∀ z ∈ (fun t : ℝ => f i (t/2)) '' I,\n        z ∈ (fun t : ℝ => f j (t/2)) '' I → z = NanuqFaithfulSupplierDrawing.vertex D v)",
+    "sha256": "043c3e549eeb34d77b08bb56e763924bb96fd424486eafdfa1c552eb166c8957"
+  },
+  {
+    "module": "OriginalThreeFrame",
+    "name": "half_image_interval",
+    "header": "theorem half_image_interval (f : ℝ → Plane) (a : ℝ) :\n    (fun t : ℝ => f (t/2)) '' Icc 0 a = f '' Icc 0 (a/2)",
+    "sha256": "6ae657aa92aa0eba817508c2e6283800850f5d46e2bf55580f420505474ae011"
+  },
+  {
+    "module": "OriginalThreeFrame",
+    "name": "three_frame_of_isDrawing",
+    "header": "theorem three_frame_of_isDrawing {E : Type*} {G : Graph Plane E}\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    (es : Fin 3 → E) (ws : Fin 3 → Plane) (v : Plane)\n    (hinc : ∀ i, G.IsLink (es i) v (ws i)) (hids : Function.Injective es) :\n    ∃ (f : Fin 3 → ℝ → Plane) (H : Plane ≃ₜ Plane) (c s : ℝ) (q : Plane),\n      (∀ i, ContinuousOn (f i) I ∧ InjOn (f i) I ∧\n        f i '' I = Graph.edgeArc drawing (es i) ∧ f i 0 = v ∧ f i 1 = ws i) ∧\n      |c| < 2 ∧ 0 < s ∧ s ≤ 1/2 ∧ 0 < q 1 ∧ H v = 0 ∧\n      H '' (f 0 '' Icc 0 (1/6) ∪ f 1 '' Icc 0 (1/6)) = centeredCarrier c ∧\n      H '' (f 2 '' Icc 0 s) = segment ℝ (0:Plane) q ∧\n      H (f 0 (1/6)) = Plane.mk (2-c) 0 ∧\n      H (f 1 (1/6)) = Plane.mk (-2-c) 0 ∧ H (f 2 s) = q",
+    "sha256": "dbd832275d60abda875dd54d5fdb0a935eb26f52da71f83cf7107d6a87d6ecbc"
+  },
+  {
+    "module": "OriginalThreeFrame",
+    "name": "actual_three_incident_frame",
+    "header": "theorem actual_three_incident_frame {V E : Type*} {G : Nanuq.Source.EdgeGraph V E}\n    (D : G1OuterLabelledMultigraphCurves.PlanarCurves G)\n    (es : Fin 3 → E) (ws : Fin 3 → V) (v : V)\n    (hinc : ∀ i, G.Inc (es i) v (ws i)) (hids : Function.Injective es) :\n    ∃ (f : Fin 3 → ℝ → Plane) (H : Plane ≃ₜ Plane) (c s : ℝ) (q : Plane),\n      (∀ i, ContinuousOn (f i) I ∧ InjOn (f i) I ∧\n        f i '' I = Graph.edgeArc (NanuqFaithfulSupplierDrawing.curve D) (es i) ∧\n        f i 0 = NanuqFaithfulSupplierDrawing.vertex D v ∧\n        f i 1 = NanuqFaithfulSupplierDrawing.vertex D (ws i)) ∧\n      |c| < 2 ∧ 0 < s ∧ s ≤ 1/2 ∧ 0 < q 1 ∧\n      H (NanuqFaithfulSupplierDrawing.vertex D v) = 0 ∧\n      H '' (f 0 '' Icc 0 (1/6) ∪ f 1 '' Icc 0 (1/6)) = centeredCarrier c ∧\n      H '' (f 2 '' Icc 0 s) = segment ℝ (0:Plane) q ∧\n      H (f 0 (1/6)) = Plane.mk (2-c) 0 ∧\n      H (f 1 (1/6)) = Plane.mk (-2-c) 0 ∧ H (f 2 s) = q",
+    "sha256": "b3f6b34e4b462034f694204f0ae25b90eb3cbfe44de6839a0a3a94e80a8988ff"
+  },
+  {
+    "module": "SquareFirstExit",
+    "name": "square_first_exit",
+    "header": "theorem square_first_exit (f : ℝ → Plane) (hf : ContinuousOn f I)\n    (hzero : f 0 = 0) {r : ℝ} (hr : 0 < r)\n    (hend : r ≤ max |f 1 0| |f 1 1|) :\n    ∃ s ∈ I, 0 < s ∧ max |f s 0| |f s 1| = r ∧\n      ∀ t ∈ Icc 0 s, t < s → max |f t 0| |f t 1| < r",
+    "sha256": "f9df97a7cc9a59956567ae94ba20d11c8ab83eee29d77335e083b04087e38321"
+  },
+  {
+    "module": "SquareFirstExit",
+    "name": "sign_on_punctured_interval",
+    "header": "theorem sign_on_punctured_interval (f : ℝ → ℝ) {s : ℝ} (hs : 0 < s)\n    (hf : ContinuousOn f (Icc 0 s)) (hne : ∀ t ∈ Ioc 0 s, f t ≠ 0) :\n    (∀ t ∈ Ioc 0 s, 0 < f t) ∨ (∀ t ∈ Ioc 0 s, f t < 0)",
+    "sha256": "366bae56703518c0bffcddab1c5402da9ff5ea73f714996d78ae5046772c5c15"
+  },
+  {
+    "module": "ThirdGerm",
+    "name": "straighten_upper_first_prefix",
+    "header": "theorem straighten_upper_first_prefix (f : ℝ → Plane) (hf : ContinuousOn f I)\n    (hi : InjOn f I) (h0 : f 0 = 0) {r s : ℝ} (hr : 0 < r)\n    (hs : s ∈ I) (hsp : 0 < s) (he : max |f s 0| |f s 1| = r)\n    (hbefore : ∀ t ∈ Icc 0 s, t < s → max |f t 0| |f t 1| < r)\n    (hy : ∀ t ∈ Ioc 0 s, 0 < f t 1) :\n    ∃ H : Plane ≃ₜ Plane, (∀ z : Plane, z 1 = 0 → H z = z) ∧\n      H '' (f '' Icc 0 s) = segment ℝ (0:Plane) (f s) ∧ H (f s) = f s",
+    "sha256": "676ac33f65ae1d13f8cec05206c0904f0bd668b5e1ac6171a9a44e02b0e388d1"
+  },
+  {
+    "module": "ThirdGerm",
+    "name": "line_preserving_third_germ",
+    "header": "theorem line_preserving_third_germ (f : ℝ → Plane) (hf : ContinuousOn f I)\n    (hi : InjOn f I) (h0 : f 0 = 0) {r : ℝ} (hr : 0 < r)\n    (hend : r ≤ max |f 1 0| |f 1 1|)\n    (hline : ∀ t ∈ I, 0 < t → max |f t 0| |f t 1| ≤ r → f t 1 ≠ 0) :\n    ∃ (s : ℝ) (H : Plane ≃ₜ Plane) (q : Plane),\n      s ∈ I ∧ 0 < s ∧ 0 < q 1 ∧\n      (∀ z : Plane, z 1 = 0 → H z = z) ∧\n      H '' (f '' Icc 0 s) = segment ℝ (0:Plane) q ∧ H (f s) = q",
+    "sha256": "21e2bc1b45750321bea23c73ebb37556714ce70ffd9167d445499a393514216e"
+  },
+  {
+    "module": "ThreeGermFrame",
+    "name": "image_shift_horizontal",
+    "header": "theorem image_shift_horizontal {v : Plane} (hv : v 1 = 0) :\n    shiftVertex v '' Nanuq.CornerShear.horizontal = centeredCarrier (v 0)",
+    "sha256": "9d0623333d8ab77e81948a76aa5e31bc59c441c20957cf0d579cc81fd95e8d55"
+  },
+  {
+    "module": "ThreeGermFrame",
+    "name": "max_coordinates_pos",
+    "header": "theorem max_coordinates_pos {z : Plane} (hz : z ≠ 0) : 0 < max |z 0| |z 1|",
+    "sha256": "2a2d05a2123e6a1999321f73168fdd896e0d2ee7571205e66080b9b38b38808a"
+  },
+  {
+    "module": "ThreeGermFrame",
+    "name": "three_continued_germ_frame",
+    "header": "theorem three_continued_germ_frame (f : Fin 3 → ℝ → Plane)\n    (hc : ∀ i, ContinuousOn (f i) I) (hi : ∀ i, InjOn (f i) I)\n    (hzero : ∀ i, f i 0 = f 0 0)\n    (hmeet : ∀ i j, i ≠ j → ∀ z ∈ f i '' I, z ∈ f j '' I → z = f 0 0) :\n    ∃ (H : Plane ≃ₜ Plane) (c s : ℝ) (q : Plane),\n      |c| < 2 ∧ s ∈ I ∧ 0 < s ∧ 0 < q 1 ∧ H (f 0 0) = 0 ∧\n      H '' (f 0 '' Icc 0 (1/3) ∪ f 1 '' Icc 0 (1/3)) = centeredCarrier c ∧\n      H '' (f 2 '' Icc 0 s) = segment ℝ (0:Plane) q ∧\n      H (f 0 (1/3)) = Plane.mk (2-c) 0 ∧\n      H (f 1 (1/3)) = Plane.mk (-2-c) 0 ∧ H (f 2 s) = q",
+    "sha256": "f527283df9326959cec90ee6f2184f38d431a887684b6438fd14f458524b73e9"
+  },
+  {
+    "module": "TrivalentLocal",
+    "name": "trivalent_local_drawing",
+    "header": "theorem trivalent_local_drawing {E : Type*} {G : Graph Plane E} [G.Finite]\n    {drawing : E → ℝ → Plane} (hD : G.IsDrawing drawing)\n    (es : Fin 3 → E) (ws : Fin 3 → Plane) (v : Plane)\n    (hinc : ∀ i, G.IsLink (es i) v (ws i)) (hids : Function.Injective es)\n    (hcover : ∀ e ∈ E(G), G.Inc e v → ∃ i, es i = e) :\n    ∃ (H : Plane ≃ₜ Plane) (ε : ℝ) (q : Plane),\n      0 < ε ∧ ε < ‖q‖ ∧ 0 < q 1 ∧ H v = 0 ∧\n      (H '' Graph.pointSet G drawing) ∩ ball 0 ε =\n        ({z : Plane | z 1 = 0} ∪ segment ℝ (0:Plane) q) ∩ ball 0 ε",
+    "sha256": "89a04a7a7910e2e2bbcac311afc4e3d1c2d0223d9f644e4fcf8f9075f2889ef8"
+  },
+  {
+    "module": "TwoGermCarrier",
+    "name": "horizontal_nonendpoint",
+    "header": "theorem horizontal_nonendpoint {z : Plane} (hz : z ∈ Nanuq.CornerShear.horizontal)\n    (hp : z ≠ Plane.mk 2 0) (hm : z ≠ Plane.mk (-2) 0) : |z 0| < 2",
+    "sha256": "ad6ab4d4fec9f12c3af6d0741879cc88e26593c2100ad29da1a23d5b6253e307"
+  },
+  {
+    "module": "TwoGermCarrier",
+    "name": "straighten_two_continued_germs",
+    "header": "theorem straighten_two_continued_germs\n    (f g : ℝ → Plane) (hfc : ContinuousOn f I) (hgc : ContinuousOn g I)\n    (hfi : InjOn f I) (hgi : InjOn g I) (h0 : f 0 = g 0)\n    (hmeet : ∀ z ∈ f '' I, z ∈ g '' I → z = f 0) :\n    ∃ H : Plane ≃ₜ Plane,\n      H '' (f '' Icc 0 (1/3) ∪ g '' Icc 0 (1/3)) = Nanuq.CornerShear.horizontal ∧\n      H (f (1/3)) = Plane.mk 2 0 ∧ H (g (1/3)) = Plane.mk (-2) 0 ∧\n      (H (f 0)) 1 = 0 ∧ |(H (f 0)) 0| < 2",
+    "sha256": "63b5f6d22449ca68cbf514284f3fe3b1f2807abce1de9d44def03307697f9dce"
+  }
+]

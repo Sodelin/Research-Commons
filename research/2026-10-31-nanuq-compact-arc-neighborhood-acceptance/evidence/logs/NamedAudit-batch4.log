@@ -1,0 +1,15 @@
+@Nanuq.CompactArcNeighborhood.compact_obstacle_jordan : ∀ {A L : Set Schoenflies.Plane},
+  Schoenflies.IsArc A →
+    IsCompact L →
+      L.Nonempty →
+        Disjoint L A →
+          ∀ {ε : ℝ},
+            0 < ε →
+              ∃ C,
+                Schoenflies.IsJordanCurve C ∧
+                  A ⊆ Schoenflies.inside C ∧ L ⊆ Schoenflies.outside C ∧ ∀ x ∈ C, ∃ y ∈ A, x.supDist y < ε
+'Nanuq.CompactArcNeighborhood.compact_obstacle_jordan' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.CompactArcNeighborhood.arc_jordan_neighborhood : ∀ {A U : Set Schoenflies.Plane},
+  Schoenflies.IsArc A →
+    IsOpen U → A ⊆ U → ∃ C, Schoenflies.IsJordanCurve C ∧ A ⊆ Schoenflies.inside C ∧ C ∪ Schoenflies.inside C ⊆ U
+'Nanuq.CompactArcNeighborhood.arc_jordan_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]

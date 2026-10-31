@@ -1,0 +1,19 @@
+/workspace/tasks/lean-completion/compact-arc/source/CompactObstacleJordan.lean:140:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/workspace/tasks/lean-completion/compact-arc/source/CompactObstacleJordan.lean:210:19: error: Type mismatch
+  Nat.add_le_add_right (Nat.mul_le_mul_right m hin) m
+has type
+  i * m + m ≤ (0 + n) * m + m
+but is expected to have type
+  i * m + m ≤ n * m + m
+/workspace/tasks/lean-completion/compact-arc/source/CompactObstacleJordan.lean:214:36: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+'Nanuq.CompactArcNeighborhood.compact_obstacle_jordan' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
