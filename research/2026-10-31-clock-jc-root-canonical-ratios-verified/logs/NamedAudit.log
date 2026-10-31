@@ -1,0 +1,66 @@
+@ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_nonneg : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (fuel : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (h : ResearchCommons.MSCI.JC69OrderedPathExpansion.OrderedPath N fuel s),
+  0 ≤ ResearchCommons.MSCI.JC69RootCanonicalRatios.rootRatioProduct N r L q fuel s h
+'ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_ratio_sum : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (fuel : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ fuel + 1 →
+          ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q s =
+            ∑ h, ENNReal.ofReal (ResearchCommons.MSCI.JC69RootCanonicalRatios.rootCoefficient N r L q fuel s ↑h)
+'ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_ratio_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_real_sum : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy] {n : ℕ}
+  (e : Copy ≃ Fin n) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (fuel : ℕ) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ fuel + 1 →
+          (ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q s).toReal =
+            ∑ h, ResearchCommons.MSCI.JC69RootCanonicalRatios.rootCoefficient N r L q fuel s ↑h
+'ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_real_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_representation : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (e : Copy ≃ Fin (Fintype.card Copy)) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        (ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q s).toReal =
+            ∑ h, ResearchCommons.MSCI.JC69RootCanonicalRatios.rootCoefficient N r L q (Fintype.card Copy) s ↑h ∧
+          Fintype.card (ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalPath e N (Fintype.card Copy) s) ≤
+            ∑ k ∈ Finset.range (Fintype.card Copy), (Fintype.card Copy).choose 2 ^ k
+'ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootCanonicalRatios.replicated_character_balance : ∀ {Copy : Type u_1} [DecidableEq Copy]
+  [inst : Fintype Copy] {A : Type u_2} [inst_1 : Fintype A] (v : A → ℕ)
+  (chi : A → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (a : A), ∑ x, chi a x = 0) →
+    ∀ (j : Fin (∑ a, v a)), ∑ x, ResearchCommons.MSCI.JC69CommonCountIndex.replicatedQ v chi j x = 0
+'ResearchCommons.MSCI.JC69RootCanonicalRatios.replicated_character_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

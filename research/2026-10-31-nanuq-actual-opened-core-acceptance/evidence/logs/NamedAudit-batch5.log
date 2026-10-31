@@ -1,0 +1,103 @@
+@Nanuq.OpenedCore.coreEdgeLift_original.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (e : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b),
+  Eq.{u_2 + 1}
+    (Nanuq.Source.RootedBinary.openedOriginalEdge.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)
+      (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb e))
+    (Sum.inl.{u_2, u_2} e)
+'Nanuq.OpenedCore.coreEdgeLift_original' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.collapse_coreLift.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (v : Nanuq.OpenedCore.CoreVertex.{u_1, u_2, u_3} N b),
+  Eq.{max (u_1 + 1) (u_2 + 1)}
+    (Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb (Nanuq.OpenedCore.coreLift.{u_1, u_2, u_3} N b hg hb v)) v
+'Nanuq.OpenedCore.collapse_coreLift' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.opened_edge_core_or_constant.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (f :
+    Nanuq.Source.RootedBinary.OpenedHybridEdge.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+  (∃ e, Eq.{u_2 + 1} f (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb e)) ∨
+    Eq.{max (u_1 + 1) (u_2 + 1)}
+      (Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb
+        (Nanuq.Source.EdgeGraph.source.{max u_1 u_2, u_2}
+          (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+          f))
+      (Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb
+        (Nanuq.Source.EdgeGraph.target.{max u_1 u_2, u_2}
+          (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+          f))
+'Nanuq.OpenedCore.opened_edge_core_or_constant' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.fresh_root_fibre_walk.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b)
+  (r : Nanuq.Source.RootedBinary.RootedCapRootTag.{u_1, u_2, u_3} N b)
+  (hv :
+    Nanuq.Source.RootedBinary.SkeletonVertexPredicate.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)
+      (Sum.inr.{u_1, u_2} (Sum.inr.{u_2, 0} r))),
+  Nanuq.Source.EdgeGraph.ReachWithout.{max u_1 u_2, u_2}
+    (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+    (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb k)
+    (Sum.inl.{max u_1 u_2, u_2} (Subtype.mk.{max (u_1 + 1) (u_2 + 1)} (Sum.inr.{u_1, u_2} (Sum.inr.{u_2, 0} r)) hv))
+    (Nanuq.OpenedCore.coreLift.{u_1, u_2, u_3} N b hg hb
+      (Sum.inl.{u_1, u_2}
+        (Subtype.mk.{u_1 + 1} (Nanuq.Source.RootedBinary.originalRootedCapEntry.{u_1, u_2, u_3} N b) ⋯)))
+'Nanuq.OpenedCore.fresh_root_fibre_walk' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.port_fibre_walk.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b)
+  (p : Nanuq.Source.RootedBinary.BlobPort.{u_1, u_2, u_3} N b)
+  (hv :
+    Nanuq.Source.RootedBinary.SkeletonVertexPredicate.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)
+      (Sum.inr.{u_1, u_2} (Sum.inl.{u_2, 0} p))),
+  Nanuq.Source.EdgeGraph.ReachWithout.{max u_1 u_2, u_2}
+    (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+    (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb k)
+    (Sum.inl.{max u_1 u_2, u_2} (Subtype.mk.{max (u_1 + 1) (u_2 + 1)} (Sum.inr.{u_1, u_2} (Sum.inl.{u_2, 0} p)) hv))
+    (Nanuq.OpenedCore.coreLift.{u_1, u_2, u_3} N b hg hb
+      (Sum.inl.{u_1, u_2} (Subtype.mk.{u_1 + 1} (Nanuq.Source.RootedBinary.originalPortInner.{u_1, u_2, u_3} N b p) ⋯)))
+'Nanuq.OpenedCore.port_fibre_walk' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_opened_core_cut_iff.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (k : Nanuq.Source.RootedBinary.OriginalBlobArc.{u_1, u_2, u_3} N b)
+  (a c :
+    Nanuq.Source.RootedBinary.OpenedHybridVertex.{max u_1 u_2, u_2, u_2}
+      (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+  Nanuq.Source.EdgeGraph.ReachWithout.{max u_1 u_2, u_2}
+      (Nanuq.Source.RootedBinary.openedHybridGraph.{max u_1 u_2, u_2, u_2}
+        (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb) ⋯)
+      (Nanuq.OpenedCore.coreEdgeLift.{u_1, u_2, u_3} N b hg hb k) a c ↔
+    Nanuq.Source.EdgeGraph.ReachWithout.{max u_1 u_2, u_2} (Nanuq.OpenedCore.coreGraph.{u_1, u_2, u_3} N b hg) k
+      (Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb a) (Nanuq.OpenedCore.collapse.{u_1, u_2, u_3} N b hg hb c)
+'Nanuq.OpenedCore.actual_opened_core_cut_iff' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

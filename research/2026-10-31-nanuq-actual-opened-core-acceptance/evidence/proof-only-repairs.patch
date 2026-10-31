@@ -1,0 +1,314 @@
+--- frozen-original
++++ checked-elaboration-variant
+@@ -27,16 +27,17 @@
+   target e := if ht : N.graph.IsHybrid (N.graph.target e.val)
+     then Sum.inr ⟨e,ht⟩ else Sum.inl ⟨⟨N.graph.target e.val,e.property.2⟩,ht⟩
+ 
++attribute [local simp] RootedBinary.actualEveryNonleafRootedCapSource RootedBinary.actualRootedCapSource
+ variable (hg : N.graph.GalledDetour) (hb : N.NonleafBlob b)
+ local notation "M" => N.actualEveryNonleafRootedCapSource b hb
+ local notation "hl" => N.actual_admitted_cap_hybrid_child_is_taxon hg b hb
+-local notation "OG" => M.openedHybridGraph hl
++local notation "OG" => RootedBinary.openedHybridGraph (N.actualEveryNonleafRootedCapSource b hb) (N.actual_admitted_cap_hybrid_child_is_taxon hg b hb)
+ 
++include hg in
+ /-- In the actual cap, inner skeleton vertices are exactly nonhybrid raw
+ vertices. Hybrid child taxa are port tips, never inner raw vertices. -/
+-include hg in
+ theorem inner_skeleton_iff (v : N.OriginalBlobVertex b) :
+-    M.SkeletonVertexPredicate (Sum.inl v) ↔ ¬N.graph.IsHybrid v.val := by
++    (M).SkeletonVertexPredicate (Sum.inl v) ↔ ¬N.graph.IsHybrid v.val := by
+   constructor
+   · intro hv hh
+     exact hv.1 ((N.actual_rooted_cap_inner_hybrid_iff b v).mpr hh)
+@@ -48,14 +49,14 @@
+     cases hbad
+ 
+ /-- Literal lift of a retained inner vertex or incoming EDGE occurrence. -/
+-def coreLift : CoreVertex N b → M.OpenedHybridVertex
++def coreLift : CoreVertex N b → (M).OpenedHybridVertex
+   | Sum.inl v => Sum.inl ⟨Sum.inl v.val,(inner_skeleton_iff N b hg hb v.val).mpr v.property⟩
+   | Sum.inr e => Sum.inr ⟨Sum.inl e.val,
+       (N.actual_rooted_cap_inner_hybrid_iff b ⟨N.graph.target e.val.val,e.val.property.2⟩).mpr e.property⟩
+ 
+ /-- Every raw original edge is retained ONCE in the actual opened cap,
+ with only a hybrid endpoint replaced by its exact edge-occurrence tip. -/
+-def coreEdgeLift (e : N.OriginalBlobArc b) : M.OpenedHybridEdge :=
++def coreEdgeLift (e : N.OriginalBlobArc b) : (M).OpenedHybridEdge :=
+   if ht : N.graph.IsHybrid (N.graph.target e.val) then
+     Sum.inr ⟨Sum.inl e,(N.actual_rooted_cap_inner_hybrid_iff b
+       ⟨N.graph.target e.val,e.property.2⟩).mpr ht⟩
+@@ -65,23 +66,23 @@
+     (inner_skeleton_iff N b hg hb ⟨N.graph.target e.val,e.property.2⟩).mpr ht⟩
+ 
+ theorem coreEdgeLift_source (e : N.OriginalBlobArc b) :
+-    OG.source (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).source e) := by
++    (OG).source (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).source e) := by
+   unfold coreEdgeLift
+   split <;> rfl
+ 
+ theorem coreEdgeLift_target (e : N.OriginalBlobArc b) :
+-    OG.target (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).target e) := by
++    (OG).target (coreEdgeLift N b hg hb e)=coreLift N b hg hb ((coreGraph N b hg).target e) := by
+   by_cases ht : N.graph.IsHybrid (N.graph.target e.val) <;>
+-    simp [coreEdgeLift,coreGraph,coreLift,ht]
++    simp [coreEdgeLift,coreGraph,coreLift,ht,RootedBinary.openedHybridGraph,RootedBinary.rootSkeletonGraph,RootedBinary.actualRootedCapGraph]
+ 
+ theorem coreEdgeLift_original (e : N.OriginalBlobArc b) :
+-    M.openedOriginalEdge (coreEdgeLift N b hg hb e)=Sum.inl e := by
++    (M).openedOriginalEdge (coreEdgeLift N b hg hb e)=Sum.inl e := by
+   unfold coreEdgeLift
+   split <;> rfl
+ 
+ theorem coreEdgeLift_injective : Function.Injective (coreEdgeLift N b hg hb) := by
+   intro e f he
+-  have h := congrArg M.openedOriginalEdge he
++  have h := congrArg (M).openedOriginalEdge he
+   rw [coreEdgeLift_original,coreEdgeLift_original] at h
+   exact Sum.inl.inj h
+ 
+@@ -89,7 +90,7 @@
+ choice of switching, child order or drawing. -/
+ theorem core_cut_walk_lifts (k : N.OriginalBlobArc b) {a c : CoreVertex N b}
+     (h : (coreGraph N b hg).ReachWithout k a c) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k) (coreLift N b hg hb a) (coreLift N b hg hb c) := by
++    (OG).ReachWithout (coreEdgeLift N b hg hb k) (coreLift N b hg hb a) (coreLift N b hg hb c) := by
+   induction h with
+   | refl => exact .refl
+   | @tail v w hp hs ih =>
+@@ -105,19 +106,19 @@
+ /-- A retained ordinary port is attached at a nonhybrid. Incoming ports
+ use the actual bridge-entry theorem, not a chosen geometric convention. -/
+ theorem retained_port_inner_nonhybrid (p : N.BlobPort b)
+-    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :
++    (hv : (M).SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :
+     ¬N.graph.IsHybrid (N.originalPortInner b p).val := by
+   by_cases hp : N.graph.bridgeQuotient.source p.val=b
+   · intro hh
+     apply hv.2 (Sum.inr (Sum.inl p)) rfl
+     change (N.actualRootedCapGraph b).IsHybrid
+       ((N.actualRootedCapGraph b).source (Sum.inr (Sum.inl p)))
+-    simp only [RootedBinary.actualRootedCapGraph,hp,if_pos]
+-    exact (N.actual_rooted_cap_inner_hybrid_iff b (N.originalPortInner b p)).mpr hh
++    simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,RootedBinary.actualRootedCapGraph,hp] using
++      (N.actual_rooted_cap_inner_hybrid_iff b (N.originalPortInner b p)).mpr hh
+   · rw [N.originalPortInner_value_incoming b p (p.property.resolve_left hp)]
+     exact GProgram.G6.BridgeEntry.original_bridge_target_not_hybrid N p.val.property
+ 
+-def collapseSkeleton (v : M.SkeletonVertex) : CoreInner N b := by
++def collapseSkeleton (v : (M).SkeletonVertex) : CoreInner N b := by
+   rcases v with ⟨v | (p | r),hv⟩
+   · exact ⟨v,(inner_skeleton_iff N b hg hb v).mp hv⟩
+   · exact ⟨N.originalPortInner b p,retained_port_inner_nonhybrid N b hb p hv⟩
+@@ -125,7 +126,7 @@
+ 
+ /-- A hybrid incoming cap occurrence is necessarily an ORIGINAL INTERNAL
+ edge. Neither port-leaf edges nor the incoming fresh-root stem can qualify. -/
+-def occurrenceRaw (e : M.HybridParentOccurrence) : CoreTip N b := by
++def occurrenceRaw (e : (M).HybridParentOccurrence) : CoreTip N b := by
+   rcases e with ⟨e | (p | r),hh⟩
+   · exact ⟨e,(N.actual_rooted_cap_inner_hybrid_iff b
+       ⟨N.graph.target e.val,e.property.2⟩).mp hh⟩
+@@ -136,7 +137,7 @@
+   · exact False.elim (N.originalRootedCapEntry_nonroot_not_hybrid b r.property
+       ((N.actual_rooted_cap_inner_hybrid_iff b (N.originalRootedCapEntry b)).mp hh))
+ 
+-def collapse : M.OpenedHybridVertex → CoreVertex N b :=
++def collapse : (M).OpenedHybridVertex → CoreVertex N b :=
+   Sum.elim (fun v => Sum.inl (collapseSkeleton N b hg hb v))
+     (fun e => Sum.inr (occurrenceRaw N b hb e))
+ 
+@@ -145,22 +146,28 @@
+   rcases v with v | e <;> rfl
+ 
+ theorem core_edge_collapsed_source (e : N.OriginalBlobArc b) :
+-    collapse N b hg hb (OG.source (coreEdgeLift N b hg hb e))=(coreGraph N b hg).source e := by
++    collapse N b hg hb ((OG).source (coreEdgeLift N b hg hb e))=(coreGraph N b hg).source e := by
+   rw [coreEdgeLift_source,collapse_coreLift]
+ 
+ theorem core_edge_collapsed_target (e : N.OriginalBlobArc b) :
+-    collapse N b hg hb (OG.target (coreEdgeLift N b hg hb e))=(coreGraph N b hg).target e := by
++    collapse N b hg hb ((OG).target (coreEdgeLift N b hg hb e))=(coreGraph N b hg).target e := by
+   rw [coreEdgeLift_target,collapse_coreLift]
+ 
+-theorem opened_original_injective : Function.Injective M.openedOriginalEdge := by
++theorem opened_original_injective : Function.Injective (M).openedOriginalEdge := by
+   intro f g he
+   rcases f with f | f <;> rcases g with g | g
+   · exact congrArg Sum.inl (Subtype.ext he)
+-  · exact False.elim (f.property.2.1 (he.symm ▸ g.property))
+-  · exact False.elim (g.property.2.1 (he ▸ f.property))
++  · change f.val = g.val at he
++    apply False.elim
++    apply f.property.2.1
++    simpa only [he] using g.property
++  · change f.val = g.val at he
++    apply False.elim
++    apply g.property.2.1
++    simpa only [← he] using f.property
+   · exact congrArg Sum.inr (Subtype.ext he)
+ 
+-theorem occurrenceRaw_original (e : M.HybridParentOccurrence) :
++theorem occurrenceRaw_original (e : (M).HybridParentOccurrence) :
+     Sum.inl (occurrenceRaw N b hb e).val=e.val := by
+   rcases e with ⟨e | (p | r),hh⟩
+   · rfl
+@@ -173,9 +180,9 @@
+ 
+ /-- Every ACTUAL opened edge is either the lift of the same raw internal
+ ID or is contracted to one attachment. Both root-chain pieces are included. -/
+-theorem opened_edge_core_or_constant (f : M.OpenedHybridEdge) :
++theorem opened_edge_core_or_constant (f : (M).OpenedHybridEdge) :
+     (∃ e : N.OriginalBlobArc b, f=coreEdgeLift N b hg hb e) ∨
+-      collapse N b hg hb (OG.source f)=collapse N b hg hb (OG.target f) := by
++      collapse N b hg hb ((OG).source f)=collapse N b hg hb ((OG).target f) := by
+   rcases f with ⟨e | (p | r),hs,ht⟩ | e
+   · left
+     refine ⟨e,opened_original_injective N b hb ?_⟩
+@@ -199,13 +206,13 @@
+       RootedBinary.actualRootedCapRoot,r.property]
+   · left
+     refine ⟨(occurrenceRaw N b hb e).val,opened_original_injective N b hb ?_⟩
+-    change e.val=M.openedOriginalEdge (coreEdgeLift N b hg hb (occurrenceRaw N b hb e).val)
++    change e.val=(M).openedOriginalEdge (coreEdgeLift N b hg hb (occurrenceRaw N b hb e).val)
+     rw [coreEdgeLift_original]
+     exact (occurrenceRaw_original N b hb e).symm
+ 
+ /-- Forward contraction preserves every original internal forbidden ID. -/
+-theorem opened_cut_walk_collapses (k : N.OriginalBlobArc b) {a c : M.OpenedHybridVertex}
+-    (h : OG.ReachWithout (coreEdgeLift N b hg hb k) a c) :
++theorem opened_cut_walk_collapses (k : N.OriginalBlobArc b) {a c : (M).OpenedHybridVertex}
++    (h : (OG).ReachWithout (coreEdgeLift N b hg hb k) a c) :
+     (coreGraph N b hg).ReachWithout k (collapse N b hg hb a) (collapse N b hg hb c) := by
+   induction h with
+   | refl => exact .refl
+@@ -232,9 +239,9 @@
+       simpa only [hvw] using ih
+ 
+ theorem openedOutEdge_target_skeleton (e : N.RootedCapArc b)
+-    (hs : M.SkeletonVertexPredicate (M.graph.source e))
+-    (ht : M.SkeletonVertexPredicate (M.graph.target e)) :
+-    OG.target (M.openedOutEdge e hs)=Sum.inl ⟨M.graph.target e,ht⟩ := by
++    (hs : (M).SkeletonVertexPredicate ((M).graph.source e))
++    (ht : (M).SkeletonVertexPredicate ((M).graph.target e)) :
++    (OG).target ((M).openedOutEdge e hs)=Sum.inl ⟨(M).graph.target e,ht⟩ := by
+   simp only [RootedBinary.openedOutEdge,dif_neg ht.1]
+   rfl
+ 
+@@ -242,71 +249,71 @@
+ The source and target skeleton facts are proved at its actual use sites. -/
+ theorem discarded_edge_step (k : N.OriginalBlobArc b) (e : N.RootedCapArc b)
+     (hne : ∀ a : N.OriginalBlobArc b, e≠Sum.inl a)
+-    (hs : M.SkeletonVertexPredicate (M.graph.source e))
+-    (ht : M.SkeletonVertexPredicate (M.graph.target e)) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k)
+-      (Sum.inl ⟨M.graph.source e,hs⟩) (Sum.inl ⟨M.graph.target e,ht⟩) := by
++    (hs : (M).SkeletonVertexPredicate ((M).graph.source e))
++    (ht : (M).SkeletonVertexPredicate ((M).graph.target e)) :
++    (OG).ReachWithout (coreEdgeLift N b hg hb k)
++      (Sum.inl ⟨(M).graph.source e,hs⟩) (Sum.inl ⟨(M).graph.target e,ht⟩) := by
+   apply Relation.ReflTransGen.single
+-  refine ⟨M.openedOutEdge e hs,?_,Or.inl
+-    ⟨M.openedOutEdge_source hl e hs,openedOutEdge_target_skeleton N b hg hb e hs ht⟩⟩
++  refine ⟨(M).openedOutEdge e hs,?_,Or.inl
++    ⟨(M).openedOutEdge_source hl e hs,openedOutEdge_target_skeleton N b hg hb e hs ht⟩⟩
+   intro he
+-  have he' := congrArg M.openedOriginalEdge he
+-  rw [M.openedOutEdge_original,coreEdgeLift_original] at he'
++  have he' := congrArg (M).openedOriginalEdge he
++  rw [(M).openedOutEdge_original,coreEdgeLift_original] at he'
+   exact hne k he'
+ 
+ /-- Fresh root to the SAME original entry is the second incoming chain
+ piece. It is not silently omitted in the cap-to-core contraction. -/
+ theorem fresh_root_fibre_walk (k : N.OriginalBlobArc b) (r : N.RootedCapRootTag b)
+-    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inr r))) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k)
++    (hv : (M).SkeletonVertexPredicate (Sum.inr (Sum.inr r))) :
++    (OG).ReachWithout (coreEdgeLift N b hg hb k)
+       (Sum.inl ⟨Sum.inr (Sum.inr r),hv⟩)
+       (coreLift N b hg hb (Sum.inl ⟨N.originalRootedCapEntry b,
+         N.originalRootedCapEntry_nonroot_not_hybrid b r.property⟩)) := by
+   let e : N.RootedCapArc b := Sum.inr (Sum.inr r)
+-  have hs : M.SkeletonVertexPredicate (M.graph.source e) := by
+-    simpa [e,RootedBinary.actualRootedCapGraph,RootedBinary.actualRootedCapRoot,r.property] using hv
+-  have ht : M.SkeletonVertexPredicate (M.graph.target e) :=
++  have hs : (M).SkeletonVertexPredicate ((M).graph.source e) := by
++    simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,e,RootedBinary.actualRootedCapGraph,RootedBinary.actualRootedCapRoot,r.property] using hv
++  have ht : (M).SkeletonVertexPredicate ((M).graph.target e) :=
+     (inner_skeleton_iff N b hg hb (N.originalRootedCapEntry b)).mpr
+       (N.originalRootedCapEntry_nonroot_not_hybrid b r.property)
+-  have hw := discarded_edge_step N b hg hb k e (fun a he => by cases he) hs ht
+-  simpa [e,coreLift,RootedBinary.actualRootedCapGraph,
++  have hw := discarded_edge_step N b hg hb k e (fun a he => by dsimp [e] at he; cases he) hs ht
++  simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,e,coreLift,RootedBinary.actualRootedCapGraph,
+     RootedBinary.actualRootedCapRoot,r.property] using hw
+ 
+ /-- Ordinary port to its raw attachment. Incoming ports use BOTH actual
+ edges tip -> fresh root -> entry, not a one-edge surrogate. -/
+ theorem port_fibre_walk (k : N.OriginalBlobArc b) (p : N.BlobPort b)
+-    (hv : M.SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k)
++    (hv : (M).SkeletonVertexPredicate (Sum.inr (Sum.inl p))) :
++    (OG).ReachWithout (coreEdgeLift N b hg hb k)
+       (Sum.inl ⟨Sum.inr (Sum.inl p),hv⟩)
+       (coreLift N b hg hb (Sum.inl ⟨N.originalPortInner b p,
+         retained_port_inner_nonhybrid N b hb p hv⟩)) := by
+   let e : N.RootedCapArc b := Sum.inr (Sum.inl p)
+-  have ht : M.SkeletonVertexPredicate (M.graph.target e) := hv
+-  have hs := M.skeleton_predicate_parent hl e ht
+-  have hw := OG.ureach_symm (discarded_edge_step N b hg hb k e (fun a he => by cases he) hs ht)
++  have ht : (M).SkeletonVertexPredicate ((M).graph.target e) := hv
++  have hs := (M).skeleton_predicate_parent hl e ht
++  have hw := (OG).ureach_symm (discarded_edge_step N b hg hb k e (fun a he => by dsimp [e] at he; cases he) hs ht)
+   by_cases hp : N.graph.bridgeQuotient.source p.val=b
+-  · simpa [e,coreLift,RootedBinary.actualRootedCapGraph,hp] using hw
++  · simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,e,coreLift,RootedBinary.actualRootedCapGraph,hp] using hw
+   · have hpt := p.property.resolve_left hp
+     have hr : b≠N.graph.blobOf N.root := by
+       intro heq
+       exact N.original_root_blob_has_no_incoming_port p.val (hpt.trans heq)
+     let r : N.RootedCapRootTag b := ⟨(),hr⟩
+-    have hroot : M.SkeletonVertexPredicate (Sum.inr (Sum.inr r)) := by
+-      simpa [e,r,RootedBinary.actualRootedCapGraph,hp,RootedBinary.actualRootedCapRoot,hr] using hs
+-    have hw1 : OG.ReachWithout (coreEdgeLift N b hg hb k)
++    have hroot : (M).SkeletonVertexPredicate (Sum.inr (Sum.inr r)) := by
++      simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,e,r,RootedBinary.actualRootedCapGraph,hp,RootedBinary.actualRootedCapRoot,hr] using hs
++    have hw1 : (OG).ReachWithout (coreEdgeLift N b hg hb k)
+         (Sum.inl ⟨Sum.inr (Sum.inl p),hv⟩) (Sum.inl ⟨Sum.inr (Sum.inr r),hroot⟩) := by
+-      simpa [e,r,RootedBinary.actualRootedCapGraph,hp,RootedBinary.actualRootedCapRoot,hr] using hw
++      simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,e,r,RootedBinary.actualRootedCapGraph,hp,RootedBinary.actualRootedCapRoot,hr] using hw
+     have hw2 := fresh_root_fibre_walk N b hg hb k r hroot
+     have hi : N.originalIncomingBlobPort b hr=p :=
+       N.original_incoming_port_unique b _ p (N.originalIncomingBlobPort_target b hr) hpt
+     have hentry : N.originalRootedCapEntry b=N.originalPortInner b p := by
+       simp [RootedBinary.originalRootedCapEntry,hr,hi]
+-    simpa [hentry] using hw1.trans hw2
++    simpa [EdgeGraph.ReachWithout,EdgeGraph.UReach,hentry] using hw1.trans hw2
+ 
+ /-- Every actual opened vertex joins its canonical core lift through only
+ its literal contracted fibre, avoiding every original retained core edge. -/
+-theorem collapse_fibre_walk (k : N.OriginalBlobArc b) (v : M.OpenedHybridVertex) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k) v
++theorem collapse_fibre_walk (k : N.OriginalBlobArc b) (v : (M).OpenedHybridVertex) :
++    (OG).ReachWithout (coreEdgeLift N b hg hb k) v
+       (coreLift N b hg hb (collapse N b hg hb v)) := by
+   rcases v with ⟨v | (p | r),hv⟩ | e
+   · exact .refl
+@@ -323,13 +330,13 @@
+ 
+ /-- EXACT original-ID cut-side correspondence for the actual opened cap.
+ Not a switching-cap analogue and not an averaged quartet identity. -/
+-theorem actual_opened_core_cut_iff (k : N.OriginalBlobArc b) (a c : M.OpenedHybridVertex) :
+-    OG.ReachWithout (coreEdgeLift N b hg hb k) a c ↔
++theorem actual_opened_core_cut_iff (k : N.OriginalBlobArc b) (a c : (M).OpenedHybridVertex) :
++    (OG).ReachWithout (coreEdgeLift N b hg hb k) a c ↔
+       (coreGraph N b hg).ReachWithout k (collapse N b hg hb a) (collapse N b hg hb c) := by
+   constructor
+   · exact opened_cut_walk_collapses N b hg hb k
+   · intro h
+     exact (collapse_fibre_walk N b hg hb k a).trans
+       ((core_cut_walk_lifts N b hg hb k h).trans
+-        (OG.ureach_symm (collapse_fibre_walk N b hg hb k c)))
++        ((OG).ureach_symm (collapse_fibre_walk N b hg hb k c)))
+ end Nanuq.OpenedCore

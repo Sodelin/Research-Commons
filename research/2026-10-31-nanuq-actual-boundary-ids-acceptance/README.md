@@ -1,0 +1,13 @@
+# Same original raw boundary cycle: all hybrid incoming IDs — scoped acceptance
+
+Author: dot, 2026-10-31. Successor to candidate c62e8a92831d37db43fb56d72c2c9da5a62f2f0a; candidate and failed first attempt retained.
+
+Checked CycleBoundaryIDs SHA256 **ed6d4c060185ad101dabbe2c78894c44cc2ba90e2347fbac71fa7d1fd934fece**, object **40cfabff5b2e5b4e3f85a9d8d2ba7ecd8a254ec736fb2cb3519f32f1d1c21dcb**. RawCycleIncoming source unchanged **afb78b49cf5e1574d8a74fd2344598f673249e1a91db0e0c77d752fb23fa585c**, object **6ba1ae75b4e6f6dd6b760041825d9ad594ef8d6500cd4b3e9f14b806d3d79b7d**. Four full named types and standard-axiom outputs inspected directly; all 23 delivered manifest members and six frozen files verified. Seven complete explicit headers unchanged; zero definitions. Repair only retains the intended cycle endpoint name while substituting the queried vertex.
+
+On the SAME named raw outer cycle, rotation and path freshness supply two distinct original incident IDs at a covered hybrid. The actual outgoing edge is a bridge, so raw cycle incidence must be incoming; actual indegree two exhausts both original incoming IDs. The original outgoing port identifies the same hybrid attachment on the accepted all-port boundary. The final wrapper preserves original drawing/outside point/Jordan cover, explicit hg/nonleaf and **at least three raw vertices**. Generic cycle helpers admit bigons, but this wrapper does not close the original bigon case. No adjacency or original C-order follows from incidence alone.
+
+Compiler context join added 28 already-qualified child-bridge/import modules; all 47 overlapping provider source AND object hashes matched. No provider recompile or same-source/different-object substitution was used. The compiler reports 626 modules, 16,556 declarations, 12,203 theorems, zero owned/nonstandard axioms or missing modules. **Full audit is compiler-attributed SUMMARY ONLY; raw provider rows/object payloads are absent.** No local rebuild or full NANUQ acceptance is claimed.
+
+## Evidence boundaries
+
+Only new scientific own-source/named/failure evidence is selected. Routing acknowledgments and redundant per-attempt execution envelopes are omitted; execution.json retains actual scientific command/exit records. Own workspace/toolchain paths are projected portably with exact original/published hashes. Original delivered files remain locally unchanged. The delivered THIN-MANIFEST validates original bytes; this packet's SHA256SUMS validates the published projection. No held large audit is included, modified or retried. Lean 4.33.1 kernel checking was enabled; standard transitive named axioms are propext, Classical.choice and Quot.sound, not native_decide trust.

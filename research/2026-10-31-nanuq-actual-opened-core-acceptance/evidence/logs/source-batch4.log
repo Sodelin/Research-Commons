@@ -1,0 +1,114 @@
+<BUILD_ROOT>/source/ActualOpenedCore.lean:74:95: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+e : N.OriginalBlobArc b
+ht : ¬N.graph.IsHybrid (N.graph.target ↑e)
+⊢ ⟨(N.actualRootedCapGraph b).target (Sum.inl e), ⋯⟩ = ⟨Sum.inl ⟨N.graph.target ↑e, ⋯⟩, ⋯⟩
+<BUILD_ROOT>/source/ActualOpenedCore.lean:295:4: error: Type mismatch: After simplification, term
+  hw
+ has type
+  ({
+            graph :=
+              {
+                source :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+                    (Sum.elim
+                      (fun p =>
+                        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p)
+                        else N.actualRootedCapRoot b)
+                      fun x => N.actualRootedCapRoot b),
+                target :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.target ↑e, ⋯⟩)
+                    (Sum.elim (fun p => Sum.inr (Sum.inl p)) fun x => Sum.inl (N.originalRootedCapEntry b)) },
+            root := N.actualRootedCapRoot b, leaf := N.actualRootedCapLeaf b, at_least_two_taxa := ⋯, root_degrees := ⋯,
+            leaf_degrees := ⋯, internal_degrees := ⋯, acyclic := ⋯, rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+        ⋯).UReach
+    (fun f => f ≠ coreEdgeLift N b hg hb k) (Sum.inl ⟨Sum.inr (Sum.inl p), ⋯⟩)
+    (Sum.inl ⟨Sum.inl (N.originalPortInner b p), ⋯⟩)
+but is expected to have type
+  ({
+            graph :=
+              {
+                source :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+                    (Sum.elim
+                      (fun p =>
+                        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p)
+                        else N.actualRootedCapRoot b)
+                      fun x => N.actualRootedCapRoot b),
+                target :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.target ↑e, ⋯⟩)
+                    (Sum.elim (fun p => Sum.inr (Sum.inl p)) fun x => Sum.inl (N.originalRootedCapEntry b)) },
+            root := N.actualRootedCapRoot b, leaf := N.actualRootedCapLeaf b, at_least_two_taxa := ⋯, root_degrees := ⋯,
+            leaf_degrees := ⋯, internal_degrees := ⋯, acyclic := ⋯, rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+        ⋯).ReachWithout
+    (coreEdgeLift N b hg hb k) (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (Sum.inl ⟨Sum.inl (N.originalPortInner b p), ⋯⟩)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:305:6: error: Type mismatch: After simplification, term
+  hw
+ has type
+  ({
+            graph :=
+              {
+                source :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+                    (Sum.elim
+                      (fun p =>
+                        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p)
+                        else if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩))
+                      fun x =>
+                      if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩)),
+                target :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.target ↑e, ⋯⟩)
+                    (Sum.elim (fun p => Sum.inr (Sum.inl p)) fun x => Sum.inl (N.originalRootedCapEntry b)) },
+            root := if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩),
+            leaf := N.actualRootedCapLeaf b, at_least_two_taxa := ⋯, root_degrees := ⋯, leaf_degrees := ⋯,
+            internal_degrees := ⋯, acyclic := ⋯, rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+        ⋯).UReach
+    (fun f => f ≠ coreEdgeLift N b hg hb k) (Sum.inl ⟨Sum.inr (Sum.inl p), ⋯⟩) (Sum.inl ⟨Sum.inr (Sum.inr ⟨(), ⋯⟩), ⋯⟩)
+but is expected to have type
+  ({
+            graph :=
+              {
+                source :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+                    (Sum.elim
+                      (fun p =>
+                        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p)
+                        else if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩))
+                      fun x =>
+                      if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩)),
+                target :=
+                  Sum.elim (fun e => Sum.inl ⟨N.graph.target ↑e, ⋯⟩)
+                    (Sum.elim (fun p => Sum.inr (Sum.inl p)) fun x => Sum.inl (N.originalRootedCapEntry b)) },
+            root := if h : b = N.graph.blobOf N.root then Sum.inl ⟨N.root, ⋯⟩ else Sum.inr (Sum.inr ⟨(), h⟩),
+            leaf := N.actualRootedCapLeaf b, at_least_two_taxa := ⋯, root_degrees := ⋯, leaf_degrees := ⋯,
+            internal_degrees := ⋯, acyclic := ⋯, rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+        ⋯).ReachWithout
+    (coreEdgeLift N b hg hb k) (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (Sum.inl ⟨Sum.inr (Sum.inr ⟨(), hr⟩), hroot⟩)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:311:4: error: Type mismatch: After simplification, term
+  Relation.ReflTransGen.trans hw1 hw2
+ has type
+  Relation.ReflTransGen
+    (({ graph := N.actualRootedCapGraph b, root := N.actualRootedCapRoot b, leaf := N.actualRootedCapLeaf b,
+              at_least_two_taxa := ⋯, root_degrees := ⋯, leaf_degrees := ⋯, internal_degrees := ⋯, acyclic := ⋯,
+              rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+          ⋯).UStep
+      fun f => f ≠ coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (coreLift N b hg hb (Sum.inl ⟨N.originalPortInner b p, ⋯⟩))
+but is expected to have type
+  ({ graph := N.actualRootedCapGraph b, root := N.actualRootedCapRoot b, leaf := N.actualRootedCapLeaf b,
+            at_least_two_taxa := ⋯, root_degrees := ⋯, leaf_degrees := ⋯, internal_degrees := ⋯, acyclic := ⋯,
+            rooted := ⋯, least_stable := ⋯ }.openedHybridGraph
+        ⋯).ReachWithout
+    (coreEdgeLift N b hg hb k) (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩)
+    (coreLift N b hg hb (Sum.inl ⟨N.originalPortInner b p, ⋯⟩))

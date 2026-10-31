@@ -1,0 +1,270 @@
+<BUILD_ROOT>/source/ActualOpenedCore.lean:73:95: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+e : N.OriginalBlobArc b
+ht : N.graph.IsHybrid (N.graph.target ↑e)
+⊢ ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).target (Sum.inr ⟨Sum.inl e, ⋯⟩) =
+    Sum.inr ⟨Sum.inl e, ⋯⟩
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+e : N.OriginalBlobArc b
+ht : ¬N.graph.IsHybrid (N.graph.target ↑e)
+⊢ ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).target (Sum.inl ⟨Sum.inl e, ⋯⟩) =
+    Sum.inl ⟨Sum.inl ⟨N.graph.target ↑e, ⋯⟩, ⋯⟩
+<BUILD_ROOT>/source/ActualOpenedCore.lean:161:4: error: Type mismatch: After simplification, term
+  g.property
+ has type
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑g)
+but is expected to have type
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑f)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:164:4: error: Type mismatch: After simplification, term
+  f.property
+ has type
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑f)
+but is expected to have type
+  (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid ((N.actualEveryNonleafRootedCapSource b hb).graph.target ↑g)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:189:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+p : N.BlobPort b
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p)))
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p)))
+hp : N.graph.bridgeQuotient.source ↑p = b
+⊢ Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalRootedCapEntry b, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p))) ⋯ =
+    Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalRootedCapEntry b, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p))) ⋯
+<BUILD_ROOT>/source/ActualOpenedCore.lean:191:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+p : N.BlobPort b
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p)))
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p)))
+hp : ¬N.graph.bridgeQuotient.source ↑p = b
+hpt : N.graph.bridgeQuotient.target ↑p = b
+hr : b ≠ N.graph.blobOf N.root
+hi : N.originalIncomingBlobPort b hr = p
+⊢ Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalPortInner b p, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p))) ⋯ =
+    Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalPortInner b p, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p))) ⋯
+<BUILD_ROOT>/source/ActualOpenedCore.lean:200:2: error: unsolved goals
+case inl.inr.inr
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hg : N.graph.GalledDetour
+hb : N.NonleafBlob b
+r : N.RootedCapRootTag b
+hs :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inr r)))
+ht :
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inr r)))
+⊢ Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalRootedCapEntry b, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inr r))) ⋯ =
+    Sum.rec (motive := fun x => (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate x → CoreInner N b)
+      (fun val hv => ⟨val, ⋯⟩)
+      (fun val hv =>
+        Sum.rec (motive := fun x =>
+          (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr x) → CoreInner N b)
+          (fun val hv => ⟨N.originalPortInner b val, ⋯⟩) (fun val hv => ⟨N.originalRootedCapEntry b, ⋯⟩) val hv)
+      ((N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inr r))) ⋯
+<BUILD_ROOT>/source/ActualOpenedCore.lean:190:39: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph, hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:190:73: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:198:39: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph, hp,
+    RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:198:73: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, RootedBinary.actualRootedCapRoot, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:199:8: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapRoot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, hp, hr, RootedBinary.originalRootedCapEntry, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:202:37: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapGraph
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapRoot, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:203:6: warning: This simp argument is unused:
+  RootedBinary.actualRootedCapRoot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, r.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:203:39: warning: This simp argument is unused:
+  r.property
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [collapse, collapseSkeleton, RootedBinary.openedHybridGraph, RootedBinary.rootSkeletonGraph,
+    RootedBinary.actualRootedCapGraph, RootedBinary.actualRootedCapRoot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+<BUILD_ROOT>/source/ActualOpenedCore.lean:271:4: error: Type mismatch: After simplification, term
+  hv
+ has type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inr r))
+but is expected to have type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inr r)))
+<BUILD_ROOT>/source/ActualOpenedCore.lean:275:63: error: Dependent elimination failed: Failed to solve equation
+  Sum.inl a = e
+<BUILD_ROOT>/source/ActualOpenedCore.lean:276:2: error: Type mismatch: After simplification, term
+  hw
+ has type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).ReachWithout (coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inr r)), hs⟩)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inr r)), ht⟩)
+but is expected to have type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).ReachWithout (coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inr r), hv⟩) (Sum.inl ⟨Sum.inl (N.originalRootedCapEntry b), ⋯⟩)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:290:81: error: Dependent elimination failed: Failed to solve equation
+  Sum.inl a = e
+<BUILD_ROOT>/source/ActualOpenedCore.lean:292:4: error: Type mismatch: After simplification, term
+  hw
+ has type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).UReach (fun f => ¬f = coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p)), ht⟩)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p)), hs⟩)
+but is expected to have type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).ReachWithout (coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (Sum.inl ⟨Sum.inl (N.originalPortInner b p), ⋯⟩)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:299:6: error: Type mismatch: After simplification, term
+  hs
+ has type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate
+    ((N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p)))
+but is expected to have type
+  (N.actualEveryNonleafRootedCapSource b hb).SkeletonVertexPredicate (Sum.inr (Sum.inr ⟨(), hr⟩))
+<BUILD_ROOT>/source/ActualOpenedCore.lean:302:6: error: Type mismatch: After simplification, term
+  hw
+ has type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).UReach (fun f => ¬f = coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.target (Sum.inr (Sum.inl p)), ht⟩)
+    (Sum.inl ⟨(N.actualEveryNonleafRootedCapSource b hb).graph.source (Sum.inr (Sum.inl p)), hs⟩)
+but is expected to have type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).ReachWithout (coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (Sum.inl ⟨Sum.inr (Sum.inr ⟨(), hr⟩), hroot⟩)
+<BUILD_ROOT>/source/ActualOpenedCore.lean:308:4: error: Type mismatch: After simplification, term
+  Relation.ReflTransGen.trans hw1 hw2
+ has type
+  Relation.ReflTransGen
+    (((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).UStep fun f => ¬f = coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (coreLift N b hg hb (Sum.inl ⟨N.originalPortInner b p, ⋯⟩))
+but is expected to have type
+  ((N.actualEveryNonleafRootedCapSource b hb).openedHybridGraph ⋯).ReachWithout (coreEdgeLift N b hg hb k)
+    (Sum.inl ⟨Sum.inr (Sum.inl p), hv⟩) (coreLift N b hg hb (Sum.inl ⟨N.originalPortInner b p, ⋯⟩))

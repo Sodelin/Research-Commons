@@ -1,0 +1,37 @@
+[
+  {
+    "file": "CycleBoundaryIDs.lean",
+    "name": "cycle_start_two",
+    "header": "private theorem cycle_start_two {e : E} {u v : Plane} {D : List E}\n    (hc : G.IsCycleThrough e u v D) (hne : u\u2260v) :\n    \u2203 f g : E, f\u2260g \u2227 f\u2208e::D \u2227 g\u2208e::D \u2227 G.Inc f u \u2227 G.Inc g u"
+  },
+  {
+    "file": "CycleBoundaryIDs.lean",
+    "name": "cycle_two_incident_ids",
+    "header": "theorem cycle_two_incident_ids\n    (hd : Graph.IsDrawing G drawing) {e : E} {u v z : Plane} {D : List E}\n    (hc : G.IsCycleThrough e u v D) (hz : z\u2208V(G))\n    (hcover : z\u2208Graph.edgesCover drawing (e::D)) :\n    \u2203 f g : E, f\u2260g \u2227 f\u2208e::D \u2227 g\u2208e::D \u2227 G.Inc f z \u2227 G.Inc g z"
+  },
+  {
+    "file": "CycleBoundaryIDs.lean",
+    "name": "cycle_contains_both_incident_ids",
+    "header": "theorem cycle_contains_both_incident_ids\n    (hd : Graph.IsDrawing G drawing) {e e\u2081 e\u2082 : E} {u v z : Plane} {D : List E}\n    (hc : G.IsCycleThrough e u v D) (hz : z\u2208V(G))\n    (hcover : z\u2208Graph.edgesCover drawing (e::D))\n    (hexhaust : \u2200 f, G.Inc f z \u2192 f=e\u2081 \u2228 f=e\u2082) :\n    e\u2081\u2208e::D \u2227 e\u2082\u2208e::D"
+  },
+  {
+    "file": "RawCycleIncoming.lean",
+    "name": "raw_hybrid_incident_incoming",
+    "header": "theorem raw_hybrid_incident_incoming (hg : N.graph.GalledDetour)\n    (h : BlobVertex N.graph b) (hh : N.graph.IsHybrid h.val)\n    (f : BlobEdge N.graph b)\n    (hi : (graph (blobCurves D b)).Inc f (vertex (blobCurves D b) h)) :\n    N.graph.target f.val=h.val"
+  },
+  {
+    "file": "RawCycleIncoming.lean",
+    "name": "raw_cycle_contains_all_hybrid_incoming",
+    "header": "theorem raw_cycle_contains_all_hybrid_incoming (hg : N.graph.GalledDetour)\n    (h : BlobVertex N.graph b) (hh : N.graph.IsHybrid h.val)\n    {e\u2080 : BlobEdge N.graph b} {u v : Schoenflies.Plane} {es : List (BlobEdge N.graph b)}\n    (hc : (graph (blobCurves D b)).IsCycleThrough e\u2080 u v es)\n    (hcover : vertex (blobCurves D b) h \u2208 Graph.edgesCover (curve (blobCurves D b)) (e\u2080::es)) :\n    \u2200 e : E, N.graph.target e=h.val \u2192\n      \u2203 f : BlobEdge N.graph b, f.val=e \u2227 f\u2208e\u2080::es"
+  },
+  {
+    "file": "RawCycleIncoming.lean",
+    "name": "hybrid_on_all_port_cover",
+    "header": "theorem hybrid_on_all_port_cover (hg : N.graph.GalledDetour)\n    (h : BlobVertex N.graph b) (hh : N.graph.IsHybrid h.val)\n    {C : Set Schoenflies.Plane}\n    (hports : \u2200 p : N.BlobPort b,\n      coordinates (D.point (N.originalPortInner b p).val)\u2208C) :\n    vertex (blobCurves D b) h\u2208C"
+  },
+  {
+    "file": "RawCycleIncoming.lean",
+    "name": "actual_raw_outer_cycle_all_hybrid_incoming",
+    "header": "theorem actual_raw_outer_cycle_all_hybrid_incoming (hg : N.graph.GalledDetour)\n    (hb : N.NonleafBlob b) (face : TaxonOuterFace D N.leaf)\n    (hthree : \u2203 a c d : BlobVertex N.graph b, a\u2260c \u2227 a\u2260d \u2227 c\u2260d) :\n    \u2203 (e\u2080 : BlobEdge N.graph b) (u v : Schoenflies.Plane)\n      (es : List (BlobEdge N.graph b)),\n      Graph.IsFaceCycle (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside) e\u2080 u v es \u2227\n      Schoenflies.IsJordanCurve (Graph.edgesCover (curve (blobCurves D b)) (e\u2080::es)) \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b)) (coordinates face.outside)=\n        Schoenflies.outside (Graph.edgesCover (curve (blobCurves D b)) (e\u2080::es)) \u2227\n      (\u2200 p : N.BlobPort b, coordinates (D.point (N.originalPortInner b p).val)\u2208\n        Graph.edgesCover (curve (blobCurves D b)) (e\u2080::es)) \u2227\n      \u2200 h : BlobVertex N.graph b, N.graph.IsHybrid h.val \u2192\n        \u2200 e : E, N.graph.target e=h.val \u2192\n          \u2203 f : BlobEdge N.graph b, f.val=e \u2227 f\u2208e\u2080::es"
+  }
+]

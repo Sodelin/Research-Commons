@@ -1,0 +1,52 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69FixedBankBoundary.lean:31:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69FixedBankBoundary.lean:44:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69FixedBankBoundary.observe_transport`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69FixedBankBoundary.lean:129:54: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [observeState, copyLocation, pulse, transport, hq, hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69FixedBankBoundary.lean:194:4: error: Type mismatch: After simplification, term
+  hp
+ has type
+  @Eq (BlockPopulationObservation Copy V E) (observeCode N (pulseCode H s fun x => (state t).register H.hybrid))
+    (observeCode N
+      (pulseCode H t
+        (transportCoin (matchingAtNodeEquiv (state s) (state t) ⋯ ⋯ ⋯ ⋯ H.hybrid) fun x =>
+          (state t).register H.hybrid)))
+but is expected to have type
+  @Eq (BlockPopulationObservation Copy V E) (observeCode N (pulseCode H s fun x => (state t).register H.hybrid))
+    (observeCode N (pulseCode H t fun x => (state t).register H.hybrid))
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_independent_boundary_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_fixed_bank_boundary_quotient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_register_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_representative' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

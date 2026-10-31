@@ -1,0 +1,112 @@
+@Nanuq.OpenedCore.cycle_two_incident_ids.{u_1} : ∀ {E : Type u_1} {G : Graph.{0, u_1} Schoenflies.Plane E}
+  {drawing : E → ℝ → Schoenflies.Plane},
+  Graph.IsDrawing.{u_1} G drawing →
+    ∀ {e : E} {u v z : Schoenflies.Plane} {D : List.{u_1} E},
+      Graph.IsCycleThrough.{0, u_1} G e u v D →
+        Membership.mem.{0, 0} (Graph.vertexSet.{0, u_1} G) z →
+          Membership.mem.{0, 0} (Graph.edgesCover.{u_1} drawing (List.cons.{u_1} e D)) z →
+            ∃ f g,
+              Ne.{u_1 + 1} f g ∧
+                Membership.mem.{u_1, u_1} (List.cons.{u_1} e D) f ∧
+                  Membership.mem.{u_1, u_1} (List.cons.{u_1} e D) g ∧
+                    Graph.Inc.{0, u_1} G f z ∧ Graph.Inc.{0, u_1} G g z
+'Nanuq.OpenedCore.cycle_two_incident_ids' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.raw_cycle_contains_all_hybrid_incoming.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) →
+    ∀ (h : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) ↑h →
+        ∀ {e₀ : Nanuq.RawBlock.BlobEdge.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b}
+          {u v : Schoenflies.Plane}
+          {es : List.{u_2} (Nanuq.RawBlock.BlobEdge.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b)},
+          Graph.IsCycleThrough.{0, u_2}
+              (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b)) e₀ u v
+              es →
+            Membership.mem.{0, 0}
+                (Graph.edgesCover.{u_2}
+                  (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                  (List.cons.{u_2} e₀ es))
+                (NanuqFaithfulSupplierDrawing.vertex.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b) h) →
+              ∀ (e : E),
+                Eq.{u_1 + 1}
+                    (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+                    ↑h →
+                  ∃ f, Eq.{u_2 + 1} (↑f) e ∧ Membership.mem.{u_2, u_2} (List.cons.{u_2} e₀ es) f
+'Nanuq.OpenedCore.raw_cycle_contains_all_hybrid_incoming' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.OpenedCore.hybrid_on_all_port_cover.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) →
+    ∀ (h : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) ↑h →
+        ∀ {C : Set.{0} Schoenflies.Plane},
+          (∀ (p : Nanuq.Source.RootedBinary.BlobPort.{u_1, u_2, u_3} N b),
+              Membership.mem.{0, 0} C
+                (NanuqFaithfulSupplierDrawing.coordinates
+                  (G1OuterLabelledMultigraphCurves.PlanarCurves.point.{u_1, u_2} D
+                    ↑(Nanuq.Source.RootedBinary.originalPortInner.{u_1, u_2, u_3} N b p)))) →
+            Membership.mem.{0, 0} C
+              (NanuqFaithfulSupplierDrawing.vertex.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b) h)
+'Nanuq.OpenedCore.hybrid_on_all_port_cover' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_raw_outer_cycle_all_hybrid_incoming.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)),
+  Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) →
+    Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b →
+      ∀
+        (face :
+          G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+            ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+        (∃ a c d, Ne.{u_1 + 1} a c ∧ Ne.{u_1 + 1} a d ∧ Ne.{u_1 + 1} c d) →
+          ∃ e₀ u v es,
+            Graph.IsFaceCycle.{u_2}
+                (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                (NanuqFaithfulSupplierDrawing.coordinates
+                  (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face))
+                e₀ u v es ∧
+              Schoenflies.IsJordanCurve
+                  (Graph.edgesCover.{u_2}
+                    (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                    (List.cons.{u_2} e₀ es)) ∧
+                Eq.{1}
+                    (Graph.face.{u_2}
+                      (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                      (NanuqFaithfulSupplierDrawing.coordinates
+                        (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+                    (Schoenflies.outside
+                      (Graph.edgesCover.{u_2}
+                        (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                          (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                        (List.cons.{u_2} e₀ es))) ∧
+                  (∀ (p : Nanuq.Source.RootedBinary.BlobPort.{u_1, u_2, u_3} N b),
+                      Membership.mem.{0, 0}
+                        (Graph.edgesCover.{u_2}
+                          (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2}
+                            (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                          (List.cons.{u_2} e₀ es))
+                        (NanuqFaithfulSupplierDrawing.coordinates
+                          (G1OuterLabelledMultigraphCurves.PlanarCurves.point.{u_1, u_2} D
+                            ↑(Nanuq.Source.RootedBinary.originalPortInner.{u_1, u_2, u_3} N b p)))) ∧
+                    ∀ (h : Nanuq.RawBlock.BlobVertex.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) b),
+                      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+                          ↑h →
+                        ∀ (e : E),
+                          Eq.{u_1 + 1}
+                              (Nanuq.Source.EdgeGraph.target.{u_1, u_2}
+                                (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+                              ↑h →
+                            ∃ f, Eq.{u_2 + 1} (↑f) e ∧ Membership.mem.{u_2, u_2} (List.cons.{u_2} e₀ es) f
+'Nanuq.OpenedCore.actual_raw_outer_cycle_all_hybrid_incoming' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]

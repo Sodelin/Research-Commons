@@ -1,0 +1,11 @@
+import ResearchCommons.MSCI.JC69FixedBankBoundary
+#check @ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation
+#print axioms ResearchCommons.MSCI.JC69FixedBankBoundary.actual_reBank_observation
+#check @ResearchCommons.MSCI.JC69FixedBankBoundary.actual_independent_boundary_quotient
+#print axioms ResearchCommons.MSCI.JC69FixedBankBoundary.actual_independent_boundary_quotient
+#check @ResearchCommons.MSCI.JC69FixedBankBoundary.actual_fixed_bank_boundary_quotient
+#print axioms ResearchCommons.MSCI.JC69FixedBankBoundary.actual_fixed_bank_boundary_quotient
+#check @ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_register_law
+#print axioms ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_register_law
+#check @ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_representative
+#print axioms ResearchCommons.MSCI.JC69FixedBankBoundary.actual_boundary_representative

@@ -1,0 +1,11 @@
+import ResearchCommons.MSCI.JC69RootCanonicalRatios
+#check @ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_nonneg
+#print axioms ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_nonneg
+#check @ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_ratio_sum
+#print axioms ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_ratio_sum
+#check @ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_real_sum
+#print axioms ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_canonical_real_sum
+#check @ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_representation
+#print axioms ResearchCommons.MSCI.JC69RootCanonicalRatios.actual_root_ratio_representation
+#check @ResearchCommons.MSCI.JC69RootCanonicalRatios.replicated_character_balance
+#print axioms ResearchCommons.MSCI.JC69RootCanonicalRatios.replicated_character_balance
