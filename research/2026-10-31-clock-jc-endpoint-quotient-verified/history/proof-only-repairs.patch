@@ -1,0 +1,19 @@
+--- original/JC69EndpointQuotient.lean
++++ current/JC69EndpointQuotient.lean
+@@ -49,12 +49,10 @@
+     currentBlocks (state (stepDestination N t (some (actualChoiceEquiv N s t hB hLoc p)))) =
+       currentBlocks (state (stepDestination N s (some p))) := by
+   rw [actual_coded_merge_blocks,actual_coded_merge_blocks]
+-  rw [actual_merge_blocks (state t) t.property.forest
+-      (population_pair_is_source_legal _ _
+-        (originalPlace_not_node N (actualChoiceEquiv N s t hB hLoc p).1)
+-        (actualChoiceEquiv N s t hB hLoc p).2.property),
+-    actual_merge_blocks (state s) s.property.forest
+-      (population_pair_is_source_legal _ _ (originalPlace_not_node N p.1) p.2.property)]
++  rw [actual_merge_blocks (state t) t.property.forest,
++    actual_merge_blocks (state s) s.property.forest]
++  all_goals try exact (population_pair_is_source_legal _ _ (originalPlace_not_node N _) (actualChoiceEquiv N s t hB hLoc p).2.property)
++  all_goals try exact (population_pair_is_source_legal _ _ (originalPlace_not_node N p.1) p.2.property)
+   rw [actualChoiceEquiv_first_block,actualChoiceEquiv_second_block,← hB]
+ 
+ /-- Matching coded destinations also preserve the per-original-copy

@@ -1,0 +1,94 @@
+source/ResearchCommons/MSCI/JC69EndpointQuotient.lean:50:62: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s t : Code N sample
+hB : currentBlocks (state s) = currentBlocks (state t)
+hLoc : ∀ (x : Copy), copyLocation (state s) x = copyLocation (state t) x
+p : Choice N s
+⊢ insert
+      (((state t).genealogy (↑((actualChoiceEquiv N s t hB hLoc) p).snd).1).leaves ∪
+        ((state t).genealogy (↑((actualChoiceEquiv N s t hB hLoc) p).snd).2).leaves)
+      (((currentBlocks (state t)).erase
+            ((state t).genealogy (↑((actualChoiceEquiv N s t hB hLoc) p).snd).1).leaves).erase
+        ((state t).genealogy (↑((actualChoiceEquiv N s t hB hLoc) p).snd).2).leaves) =
+    insert (((state s).genealogy (↑p.snd).1).leaves ∪ ((state s).genealogy (↑p.snd).2).leaves)
+      (((currentBlocks (state s)).erase ((state s).genealogy (↑p.snd).1).leaves).erase
+        ((state s).genealogy (↑p.snd).2).leaves)
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s t : Code N sample
+hB : currentBlocks (state s) = currentBlocks (state t)
+hLoc : ∀ (x : Copy), copyLocation (state s) x = copyLocation (state t) x
+p : Choice N s
+⊢ LegalMerge (state s) (↑p.snd).1 (↑p.snd).2
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s t : Code N sample
+hB : currentBlocks (state s) = currentBlocks (state t)
+hLoc : ∀ (x : Copy), copyLocation (state s) x = copyLocation (state t) x
+p : Choice N s
+⊢ LegalMerge (state t) (↑((actualChoiceEquiv N s t hB hLoc) p).snd).1 (↑((actualChoiceEquiv N s t hB hLoc) p).snd).2
+source/ResearchCommons/MSCI/JC69EndpointQuotient.lean:55:4: error: unexpected token '('; expected command
+source/ResearchCommons/MSCI/JC69EndpointQuotient.lean:86:0: warning: automatically included section variable(s) unused in theorem `ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+source/ResearchCommons/MSCI/JC69EndpointQuotient.lean:115:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_matched_destinations_observation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_quotient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

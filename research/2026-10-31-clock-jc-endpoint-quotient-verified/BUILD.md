@@ -1,0 +1,5 @@
+# Reproduction
+
+Use Lean4.33.1 commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6 and Mathlib0df444a360eaa60ab8c11dca51a86af692955474 with pinned dependencies. Recover each exact project source in evidence/required-context.json from original14be42189b8a72fcaced51ceda4e86445dc09e90 or the explicitly repaired occupation/source-join/root providers. Source root adapter32a09d45… is preserved at93be23355094c5ad5218af8a2e69443dc90594e7; endpoint renewal f40648e8… is preserved at29c0bb1a58bdde571b5cc5fd37a7acef45f78adc.
+
+Place lean/ResearchCommons/MSCI/JC69EndpointQuotient.lean at its module path in that existing exact-context project. Compile it, then run audit/NamedAudit.lean and audit/OwnedAudit.portable.lean in the same pinned environment. Verify actual recursive imports before constructing the audit list; do not reuse the historical126 union as the selected124 closure. Compare exact source hash,4 named types/axioms and all owned declaration metadata. These are reproduction instructions, not another reported execution. Original failed source and audit configuration are retained for reproducibility, not current acceptance.

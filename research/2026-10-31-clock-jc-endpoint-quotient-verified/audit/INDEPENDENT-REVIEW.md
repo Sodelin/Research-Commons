@@ -1,0 +1,13 @@
+# Independent endpoint-resolved quotient review
+
+2026-10-31. Separate AI-assisted research review. No rebuild.
+
+**ACCEPT, scoped:** repaired JC69EndpointQuotient source SHA256 9a29045621d7e570f6e3a46464b4e0d778c2ad3562f58cf6954fb318878e0b1c proves equality of the original finite-fuel endpoint-resolved weighted laws for equal current descendant-block/population observations, on the SAME graph, sample, positive pair rates, site charges, fuel, duration and final target.
+
+The actual choice equivalence matches both descendant blocks. Original coded legal merges therefore give equal successor block observations; original copy locations remain equal. The repair changes only the elaboration of that merge-block proof: rewrite first with the forest premises, then discharge inferred pair-legality obligations. It does not change theorem hypotheses, definitions, the zero-fuel law, or the inductive continuation.
+
+The killing coefficient factors through actual current blocks by the inherited active-charge identity. It is not a fitted replacement. The fuel-zero law keeps the actual success flag and exact no-event exponential mass; it is not probability-one success or success-conditioned normalization. The successor proof reindexes actual ordered choices using the existing rate-preserving equivalence, retains the same final target in every branch, and applies induction only where the restricted integration domain ensures nonnegative remaining time. All sites within a locus share the same trace. No historical register equality is imposed.
+
+Receipt checks: all25 manifest entries match; repaired source hash independently matches. Full owned payload independently parsed:124 selected modules,3317 declarations,2099 theorem declarations, empty owned/nonstandard/missing lists and only standard axiom dependencies. Four named endpoints and final owned exit0 are supplied. The initial126-module union audit failed because BoundaryOccupation and CalendarOccupation were not imported; those failed receipts are retained. The owner's independent source-graph traversal supports exact124; this review does not re-run that traversal or compiler. Named exit0 is recorded beside the earlier owned failure and must not be mistaken for a full126 pass.
+
+Limits: this is a homogeneous-segment finite-fuel weighted quotient, not all calendar boundary compatibility, unbounded-fuel completion, scientific finite-window reconstruction, or full clock-JC theorem closure. The accepted actual normalization/Fourier suppliers remain separate prior results, not assumptions newly proven here. Source comment UNCOMPILED is preserved historical candidate wording, superseded only by the exact repaired-source build receipt. No G4 status changes.

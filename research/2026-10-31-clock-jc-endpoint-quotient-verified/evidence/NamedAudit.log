@@ -1,0 +1,58 @@
+ResearchCommons.MSCI.JC69EndpointQuotient.actual_matched_destinations_observation.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state s) =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state t))
+  (hLoc :
+    ∀ (x : Copy),
+      GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state s) x =
+        GProgram.SourceForest.copyLocation (UnifiedLean.Source.UniformizedSourceStep.state t) x)
+  (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) :
+  ResearchCommons.MSCI.JC69EndpointWeight.observeCode N
+      (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) =
+    ResearchCommons.MSCI.JC69EndpointWeight.observeCode N
+      (UnifiedLean.Source.UniformizedSourceStep.stepDestination N t
+        (some ((ResearchCommons.MSCI.JC69SourceRootQuotient.actualChoiceEquiv N s t hB hLoc) p)))
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_matched_destinations_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (hB :
+    ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state s) =
+      ResearchCommons.MSCI.JC69CurrentPartition.currentBlocks (UnifiedLean.Source.UniformizedSourceStep.state t)) :
+  ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q t = ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_zero.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (T : NNReal) (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E) :
+  ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q 0 s (↑T) target =
+    ENNReal.ofReal (Real.exp (-(UnifiedLean.Source.UniformizedSourceStep.totalRate N r s * ↑T))) *
+      (ENNReal.ofReal (Real.exp (-(ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s * ↑T))) *
+        if ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = target then 1 else 0)
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_quotient.{u_1, u_2, u_3, u_4} {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+  [DecidableEq Copy] [Fintype Copy] (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s t : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (T : NNReal)
+  (target : ResearchCommons.MSCI.JC69EndpointWeight.BlockPopulationObservation Copy V E)
+  (hobs :
+    ResearchCommons.MSCI.JC69EndpointWeight.observeCode N s = ResearchCommons.MSCI.JC69EndpointWeight.observeCode N t) :
+  ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n s (↑T) target =
+    ResearchCommons.MSCI.JC69EndpointWeight.actualResolvedWeight N r L q n t (↑T) target
+'ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

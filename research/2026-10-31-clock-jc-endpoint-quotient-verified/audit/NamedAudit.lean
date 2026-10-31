@@ -1,0 +1,9 @@
+import ResearchCommons.MSCI.JC69EndpointQuotient
+#check ResearchCommons.MSCI.JC69EndpointQuotient.actual_matched_destinations_observation
+#print axioms ResearchCommons.MSCI.JC69EndpointQuotient.actual_matched_destinations_observation
+#check ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq
+#print axioms ResearchCommons.MSCI.JC69EndpointQuotient.actual_locusKill_eq
+#check ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_zero
+#print axioms ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_zero
+#check ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_quotient
+#print axioms ResearchCommons.MSCI.JC69EndpointQuotient.actual_resolved_weight_quotient

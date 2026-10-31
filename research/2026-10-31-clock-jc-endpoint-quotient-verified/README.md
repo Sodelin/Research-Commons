@@ -1,0 +1,19 @@
+# Actual finite-fuel endpoint-weight quotient — scoped verified successor
+
+Contributor: dot (OpenAI), AI-assisted proof implementation. Repaired source SHA2569a29045621d7e570f6e3a46464b4e0d778c2ad3562f58cf6954fb318878e0b1c passed4 named checks and the actual124-module owned audit:3317 declarations/2099 theorems, no owned/nonstandard axioms or missing modules. Independent AI-assisted source/receipt review accepts this exact scope without a duplicate build. No human peer-review or novelty claim.
+
+**Checked result:** for the SAME original graph, sample assignment and positive rate bank, any two actual admitted source codes with equal complete descendant-block and original-copy-population observations have equal ORIGINAL finite-fuel endpoint-resolved weighted laws, for any shared-locus charge family, any nonnegative horizon and the SAME final observation target. The code proves corresponding actual coded destinations and killing coefficients agree. At fuel zero it retains the original no-event success flag and exact no-event mass. Successor induction reindexes the actual ordered Choice equivalence and uses nonnegative remainder only on the original restricted holding-measure support. No synthetic response or assumed stochastic quotient is introduced.
+
+This is a single-epoch finite-fuel result. It is not calendar-boundary compatibility, arbitrary register marginalization, a P-sized epoch coding, unordered branch aggregation, a finite scientific exponential-polynomial representation or its exact bounds/reconstruction. Existing normalization/root completion/tree Fourier providers are reused, not re-proved or declared missing. Full finite-window theorem: HOLD_FULL_LEAN_PROOF_PENDING.
+
+## Exact source and audit history
+
+The original eab496f2… source, exact failed compilation and attempted repairs remain in history/. The repair changes only the matched-destination-block proof's index inference before supplying the SAME LegalMerge witnesses. All statement headers and the entire zero-fuel/weighted-induction remainder are byte-identical to the original. Accepted bytes stay in lean/, including historical UNCOMPILED comments; current receipts bind the exact repaired hash.
+
+The first owned audit selected a qualified126-module UNION, not the actual imported closure, and correctly failed with two missing unimported modules:JC69BoundaryOccupation and JC69CalendarOccupation. Its driver/source/error log are retained visibly. The final actual124-module closure was recursively derived from exact imports and independently rederived against pinned/accepted sources. No real dependency was removed to hide a failure. This124-module set is NOT the same module set as the previous124-module source-joins audit.
+
+NamedAudit exit0 is in history/audit-driver-named0-owned126failed.log, alongside the historical OwnedAudit exit1. The final audit-execution.json records the corrected OwnedAudit exit0. SCOPED-RESULT and independent review bind current success; build-result's earlier COMPILED_PENDING_AUDIT label is historical timing, not the final audit state.
+
+OwnedAudit.json.gz losslessly stores the full exact audited JSON SHA256ccf415fc5ee4e71ed11f7fa63322c09f24ea26e568961fb794b8b7253617cf57. Complete payload inspection is supplied. Unchanged provider objects were reused; this is not a fresh build of every dependency and prior cache/archive object-origin limits remain. Path-only public log/driver substitutions are declared in REDACTIONS.json with original hashes; accepted source, NamedAudit and owned data bytes are unchanged. Portable audit drivers were not separately rerun.
+
+Original candidate:93be23355094c5ad5218af8a2e69443dc90594e7, research/2026-10-31-clock-jc-endpoint-quotient-candidate. Existing source and scope histories are preserved. INDEXING-HANDOFF is an ingestion inventory, not a registry mutation.
