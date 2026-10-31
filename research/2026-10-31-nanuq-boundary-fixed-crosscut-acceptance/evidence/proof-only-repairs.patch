@@ -1,0 +1,24 @@
+--- frozen/CrosscutClosedCells.lean
++++ source/CrosscutClosedCells.lean
+@@ -98,9 +98,9 @@
+   have hout : Disjoint (C ∪ inside C) (outside C) :=
+     disjoint_union_left.mpr ⟨disjoint_curve_outside C, disjoint_inside_outside⟩
+   have hE₁ : ((A₁ ∪ P) ∪ inside (A₁ ∪ P)) ∩ (C ∪ outside C) = A₁ := by
+-    rw [inter_union, hcl₁, (hout.mono_left hD₁sub).inter_eq, union_empty]
++    rw [inter_union_distrib_left, hcl₁, (hout.mono_left hD₁sub).inter_eq, union_empty]
+   have hE₂ : ((A₂ ∪ P) ∪ inside (A₂ ∪ P)) ∩ (C ∪ outside C) = A₂ := by
+-    rw [inter_union, hcl₂, (hout.mono_left hD₂sub).inter_eq, union_empty]
++    rw [inter_union_distrib_left, hcl₂, (hout.mono_left hD₂sub).inter_eq, union_empty]
+   exact ⟨hc₁,hc₂,hcover,hinter,hE₁,hE₂⟩
+ 
+ #print axioms closed_crosscut_cells
+--- frozen/FixedCrosscutExtension.lean
++++ source/FixedCrosscutExtension.lean
+@@ -29,6 +29,7 @@
+     EqOn (paste A id m) id A ∧ EqOn (paste A id m) m P := by
+   have hnfix : EqOn n id {p,q} := by
+     intro z hz
++    change n z = z
+     have hzP : z ∈ P := (hAP.symm ▸ hz : z ∈ A ∩ P).2
+     have hmz : m z = z := hfix hz
+     simpa only [hmz] using hmn.invOn.1 hzP

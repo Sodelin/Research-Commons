@@ -1,0 +1,54 @@
+@Nanuq.RelativeCrosscut.glue_two_closed : ∀ {S₁ S₂ T₁ T₂ : Set Schoenflies.Plane}
+  {f₁ g₁ f₂ g₂ : Schoenflies.Plane → Schoenflies.Plane},
+  IsClosed S₁ →
+    IsClosed S₂ →
+      IsClosed T₁ →
+        IsClosed T₂ →
+          Schoenflies.IsHomeoOn f₁ g₁ S₁ T₁ →
+            Schoenflies.IsHomeoOn f₂ g₂ S₂ T₂ →
+              Set.EqOn f₁ f₂ (S₁ ∩ S₂) →
+                Set.EqOn g₁ g₂ (T₁ ∩ T₂) →
+                  Schoenflies.IsHomeoOn (Schoenflies.paste S₁ f₁ f₂) (Schoenflies.paste T₁ g₁ g₂) (S₁ ∪ S₂) (T₁ ∪ T₂)
+'Nanuq.RelativeCrosscut.glue_two_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RelativeCrosscut.closed_crosscut_cells : ∀ {C P A₁ A₂ : Set Schoenflies.Plane} {p q : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      Schoenflies.IsArcBetween P p q →
+        P ∩ C = {p, q} →
+          P \ {p, q} ⊆ Schoenflies.inside C →
+            Schoenflies.IsJordanCurve (A₁ ∪ P) ∧
+              Schoenflies.IsJordanCurve (A₂ ∪ P) ∧
+                A₁ ∪ P ∪ Schoenflies.inside (A₁ ∪ P) ∪ (A₂ ∪ P ∪ Schoenflies.inside (A₂ ∪ P)) =
+                    C ∪ Schoenflies.inside C ∧
+                  (A₁ ∪ P ∪ Schoenflies.inside (A₁ ∪ P)) ∩ (A₂ ∪ P ∪ Schoenflies.inside (A₂ ∪ P)) = P ∧
+                    (A₁ ∪ P ∪ Schoenflies.inside (A₁ ∪ P)) ∩ (C ∪ Schoenflies.outside C) = A₁ ∧
+                      (A₂ ∪ P ∪ Schoenflies.inside (A₂ ∪ P)) ∩ (C ∪ Schoenflies.outside C) = A₂
+'Nanuq.RelativeCrosscut.closed_crosscut_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RelativeCrosscut.bounded_crosscut_fixed_extension : ∀ {C P Q A₁ A₂ : Set Schoenflies.Plane}
+  {p q : Schoenflies.Plane} {m n : Schoenflies.Plane → Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      Schoenflies.IsArcBetween P p q →
+        Schoenflies.IsArcBetween Q p q →
+          P ∩ C = {p, q} →
+            Q ∩ C = {p, q} →
+              P \ {p, q} ⊆ Schoenflies.inside C →
+                Q \ {p, q} ⊆ Schoenflies.inside C →
+                  Schoenflies.IsHomeoOn m n P Q →
+                    Set.EqOn m id {p, q} → ∃ H, Set.EqOn (⇑H) id (C ∪ Schoenflies.outside C) ∧ Set.EqOn (⇑H) m P
+'Nanuq.RelativeCrosscut.bounded_crosscut_fixed_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RelativeCrosscut.matching_map_of_crosscuts : ∀ {C P Q A₁ A₂ : Set Schoenflies.Plane} {p q : Schoenflies.Plane},
+  Schoenflies.IsCutPair C p q A₁ A₂ →
+    Schoenflies.IsArcBetween P p q →
+      Schoenflies.IsArcBetween Q p q → P ∩ C = {p, q} → Q ∩ C = {p, q} → ∃ M, ⇑M '' P = Q ∧ M p = p ∧ M q = q
+'Nanuq.RelativeCrosscut.matching_map_of_crosscuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.RelativeCrosscut.crosscut_fixed_ambient : ∀ {C P Q A₁ A₂ : Set Schoenflies.Plane} {p q : Schoenflies.Plane},
+  Schoenflies.IsJordanCurve C →
+    Schoenflies.IsCutPair C p q A₁ A₂ →
+      Schoenflies.IsArcBetween P p q →
+        Schoenflies.IsArcBetween Q p q →
+          P ∩ C = {p, q} →
+            Q ∩ C = {p, q} →
+              P \ {p, q} ⊆ Schoenflies.inside C →
+                Q \ {p, q} ⊆ Schoenflies.inside C → ∃ H, Set.EqOn (⇑H) id (C ∪ Schoenflies.outside C) ∧ ⇑H '' P = Q
+'Nanuq.RelativeCrosscut.crosscut_fixed_ambient' depends on axioms: [propext, Classical.choice, Quot.sound]
