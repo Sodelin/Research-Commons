@@ -1,0 +1,12 @@
+[
+  {
+    "file": "OriginalSimpleGallDetour.lean",
+    "name": "originalGraph",
+    "source": "def originalGraph : Graph V E where\n  vertexSet := univ\n  edgeSet := univ\n  IsLink := G.Inc\n  isLink_symm := by\n    intro e _\n    constructor\n    intro a b h\n    exact G.inc_symm h\n  eq_or_eq_of_isLink_of_isLink := by\n    intro e a b c d h k\n    rcases h with \u27e8ha,hb\u27e9 | \u27e8ha,hb\u27e9 <;>\n      rcases k with \u27e8hc,hd\u27e9 | \u27e8hc,hd\u27e9 <;> simp_all\n  edge_mem_iff_exists_isLink := by\n    intro e\n    exact \u27e8fun _ => \u27e8_,_,G.inc_source_target e\u27e9,fun _ => mem_univ _\u27e9\n  left_mem_of_isLink := by\n    intro e a b h\n    exact mem_univ a"
+  },
+  {
+    "file": "OriginalSimpleGallDetour.lean",
+    "name": "RootedSimpleGalls",
+    "source": "def RootedSimpleGalls [Fintype E] [DecidableEq V] : Prop :=\n  \u2200 h, G.IsHybrid h \u2192 \u2200 e f, e\u2260f \u2192 G.target e=h \u2192 G.target f=h \u2192\n    \u2203 W, (originalGraph G).IsCycleThrough e h (G.source e) W \u2227 f\u2208W \u2227\n      \u2200 d \u2208 e::W, d\u2260e \u2192 d\u2260f \u2192 \u00acG.IsHybrid (G.target d)"
+  }
+]

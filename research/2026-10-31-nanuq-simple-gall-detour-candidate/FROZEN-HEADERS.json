@@ -1,0 +1,17 @@
+[
+  {
+    "file": "OriginalSimpleGallDetour.lean",
+    "name": "original_walk_ureach",
+    "header": "theorem original_walk_ureach {a b : V} {W : List E} {keep : E \u2192 Prop}\n    (hw : (originalGraph G).IsWalk a W b) (hk : \u2200 d \u2208 W, keep d) :\n    G.UReach keep a b"
+  },
+  {
+    "file": "OriginalSimpleGallDetour.lean",
+    "name": "incoming_cycle_detour",
+    "header": "theorem incoming_cycle_detour [Fintype E] [DecidableEq V]\n    {h : V} {e f : E} {W : List E}\n    (he : G.target e=h) (hf : G.target f=h) (hef : e\u2260f)\n    (hc : (originalGraph G).IsCycleThrough e h (G.source e) W)\n    (hfm : f \u2208 W)\n    (hord : \u2200 d \u2208 e::W, d\u2260e \u2192 d\u2260f \u2192 \u00acG.IsHybrid (G.target d)) :\n    G.UReach (fun d => \u00acG.IsHybrid (G.target d) \u2227 G.source d\u2260h \u2227 G.target d\u2260h)\n      (G.source e) (G.source f)"
+  },
+  {
+    "file": "OriginalSimpleGallDetour.lean",
+    "name": "rooted_simple_galls_to_detour",
+    "header": "theorem rooted_simple_galls_to_detour [Fintype E] [DecidableEq V]\n    (hg : RootedSimpleGalls G) : G.GalledDetour"
+  }
+]
