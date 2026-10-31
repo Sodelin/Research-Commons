@@ -1,0 +1,120 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:79:4: error(lean.unknownIdentifier): Unknown constant `PMF.mem_support_map_iff.mpr`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:137:15: error: don't know how to synthesize implicit argument `sample`
+  @calendarValue V E Copy X inst✝⁷ inst✝⁶ inst✝⁵ inst✝⁴ inst✝³ inst✝² inst✝¹ N ?m.196 r L q (guardedRoot N r L q) ops
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+op : ProgramStep N
+ops : List (ProgramStep N)
+ih :
+  ∀ (s t : Code N sample),
+    observeCode N s = observeCode N t →
+      (state s).register = (state t).register →
+        calendarValue N r L q (guardedRoot N r L q) ops s = calendarValue N r L q (guardedRoot N r L q) ops t
+s t : Code N sample
+hobs : observeCode N s = observeCode N t
+hreg : (state s).register = (state t).register
+⊢ Copy → X
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:137:38: error: don't know how to synthesize implicit argument `sample`
+  @guardedRoot V E Copy X inst✝⁷ inst✝⁶ inst✝⁵ inst✝⁴ inst✝³ inst✝² inst✝¹ N ?m.196 r L q
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+op : ProgramStep N
+ops : List (ProgramStep N)
+ih :
+  ∀ (s t : Code N sample),
+    observeCode N s = observeCode N t →
+      (state s).register = (state t).register →
+        calendarValue N r L q (guardedRoot N r L q) ops s = calendarValue N r L q (guardedRoot N r L q) ops t
+s t : Code N sample
+hobs : observeCode N s = observeCode N t
+hreg : (state s).register = (state t).register
+⊢ Copy → X
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:137:10: error: failed to infer `let` declaration type
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:190:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  calendarValue N r L q (rootWeight N r L q) ops s
+in the target expression
+  let ops := compiledCalendarProgram N C H gamma common;
+  let s := initialCode N sample register;
+  calendarValue N r L q (rootWeight N r L q) ops s = calendarValue N r L q (guardedRoot N r L q) ops s
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma common
+s : Code N sample := initialCode N sample register
+⊢ let ops := compiledCalendarProgram N C H gamma common;
+  let s := initialCode N sample register;
+  calendarValue N r L q (rootWeight N r L q) ops s = calendarValue N r L q (guardedRoot N r L q) ops s
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_interval_register_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.guarded_root_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_guarded_calendar_quotient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_initialized_ancestry_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_initialized_guarded_value' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_observed_guarded_calendar' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

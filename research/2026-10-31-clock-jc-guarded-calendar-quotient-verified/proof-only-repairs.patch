@@ -1,0 +1,34 @@
+--- frozen/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean
++++ source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean
+@@ -76,7 +76,7 @@
+     (state d).register = (state s).register := by
+   have hm : (state d).register ∈
+       ((sourceProgramStep N r op s).map (fun z => (state z).register)).support :=
+-    PMF.mem_support_map_iff.mpr ⟨d,hd,rfl⟩
++    (PMF.mem_support_map_iff _ _ _).mpr ⟨d,hd,rfl⟩
+   rw [program_step_register_law] at hm
+   simpa using hm
+ 
+@@ -134,7 +134,7 @@
+   induction ops generalizing s t with
+   | nil => exact guarded_root_observation N r L q hbal s t hobs
+   | cons op ops ih =>
+-      let f := calendarValue N r L q (guardedRoot N r L q) ops
++      let f : Code N sample → ℝ≥0∞ := calendarValue N r L q (guardedRoot N r L q) ops
+       obtain ⟨F,hF⟩ := exists_bank_readout N f (fun u v ho hr => ih u v ho hr) ((state s).register)
+       have hu (u : Code N sample) (hbank : (state u).register = (state s).register) :
+           calendarValue N r L q (guardedRoot N r L q) (op::ops) u =
+@@ -187,10 +187,13 @@
+       calendarValue N r L q (guardedRoot N r L q) ops s := by
+   let ops := compiledCalendarProgram N C H gamma common
+   let s := initialCode N sample register
++  change calendarValue N r L q (rootWeight N r L q) ops s =
++    calendarValue N r L q (guardedRoot N r L q) ops s
+   rw [← actual_calendar_weighted_recursion N r L q (rootWeight N r L q) ops s,
+     ← actual_calendar_weighted_recursion N r L q (guardedRoot N r L q) ops s]
+   apply lintegral_congr_ae
+   filter_upwards [actual_initialized_ancestry_ae N C sample register H gamma common r] with past hp
++  change AncestralRoot N (calendarEnd N ops s past) at hp
+   simp only [guardedRoot,if_pos hp]
+ 
+ /-- Original full-labelled Fourier observable, not a guarded physical law.

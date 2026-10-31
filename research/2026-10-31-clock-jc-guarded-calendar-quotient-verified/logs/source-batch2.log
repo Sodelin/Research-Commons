@@ -1,0 +1,58 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:187:59: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma common
+s : Code N sample := initialCode N sample register
+past : Fin ops.length → SegmentRecord N sample
+hp :
+  past ∈
+    {x | AncestralRoot N (calendarEnd N (compiledCalendarProgram N C H gamma common) (initialCode N sample register) x)}
+⊢ calendarWeight N L q ops s past * rootWeight N r L q (calendarEnd N ops s past) =
+    calendarWeight N L q ops s past *
+      if AncestralRoot N (calendarEnd N ops s past) then rootWeight N r L q (calendarEnd N ops s past) else 0
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69GuardedCalendarQuotient.lean:196:25: warning: This simp argument is unused:
+  if_pos hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [guardedRoot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_interval_register_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.guarded_root_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_guarded_calendar_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_initialized_ancestry_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_initialized_guarded_value' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69GuardedCalendarQuotient.actual_observed_guarded_calendar' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
