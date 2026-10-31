@@ -1,0 +1,12 @@
+Nanuq.RawBlockSupplier.actual_blob_two_connected.{u_1, u_2} {V : Type u_1} {E : Type u_2}
+  {G : Nanuq.Source.EdgeGraph V E} [Fintype E] (D : G1OuterLabelledMultigraphCurves.PlanarCurves G)
+  (hd : ∀ (v : V), {e | G.source e = v ∨ G.target e = v}.ncard ≤ 3) (b : G.Blob)
+  (hthree : ∃ a c d, a ≠ c ∧ a ≠ d ∧ c ≠ d) :
+  (NanuqFaithfulSupplierDrawing.graph (Nanuq.RawBlockSupplier.blobCurves D b)).IsTwoConnected
+'Nanuq.RawBlockSupplier.actual_blob_two_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+Nanuq.RawBlockSupplier.actual_binary_blob_two_connected.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] (N : Nanuq.Source.RootedBinary V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves N.graph) (b : N.graph.Blob)
+  (hthree : ∃ a c d, a ≠ c ∧ a ≠ d ∧ c ≠ d) :
+  (NanuqFaithfulSupplierDrawing.graph (Nanuq.RawBlockSupplier.blobCurves D b)).IsTwoConnected
+'Nanuq.RawBlockSupplier.actual_binary_blob_two_connected' depends on axioms: [propext, Classical.choice, Quot.sound]

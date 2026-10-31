@@ -1,0 +1,1 @@
+Only fresh own-source/named/diagnostic/summary evidence is delivered. Raw provider declarations/body-reference audits remain local. Historical incomplete-context audits are failures, never acceptance. Full mathematical master/order/contour gates remain as SCOPED-RESULT states. No held package was transferred or repackaged.

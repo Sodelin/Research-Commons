@@ -1,0 +1,13 @@
+Nanuq.ContinuousFaceCycles.component_region {C P A₁ A₂ Ω : Set Schoenflies.Plane} {p q z : Schoenflies.Plane}
+  (hC : Schoenflies.IsJordanCurve C) (hcut : Schoenflies.IsCutPair C p q A₁ A₂) (hP : Schoenflies.IsArcBetween P p q)
+  (hPC : P ∩ C = {p, q}) (hΩ : Schoenflies.IsRegionOf C Ω) (hPD : P \ {p, q} ⊆ Ω) (hz : z ∈ Ω \ P) :
+  Schoenflies.IsRegionOf (A₁ ∪ P) (connectedComponentIn (Ω \ P) z) ∨
+    Schoenflies.IsRegionOf (A₂ ∪ P) (connectedComponentIn (Ω \ P) z)
+'Nanuq.ContinuousFaceCycles.component_region' depends on axioms: [propext, Classical.choice, Quot.sound]
+Graph.IsDrawing.hasFaceCycles_cycleGraph_continuous.{u_1} {β : Type u_1} {G : Graph Schoenflies.Plane β}
+  {drawing : β → ℝ → Schoenflies.Plane} (h : G.IsDrawing drawing) {e : β} {u v : Schoenflies.Plane} {D : List β}
+  (hc : G.IsCycleThrough e u v D) : (G.cycleGraph u e D).HasFaceCycles drawing
+'Graph.IsDrawing.hasFaceCycles_cycleGraph_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+Graph.face_cycles_continuous.{u_1} {β : Type u_1} {G : Graph Schoenflies.Plane β} {drawing : β → ℝ → Schoenflies.Plane}
+  [G.Finite] (h : G.IsDrawing drawing) (hG : G.IsTwoConnected) : G.HasFaceCycles drawing
+'Graph.face_cycles_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]

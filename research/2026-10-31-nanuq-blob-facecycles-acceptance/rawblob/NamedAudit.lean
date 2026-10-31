@@ -1,0 +1,6 @@
+import OriginalBlobSupplier
+import BinaryBlob
+#check Nanuq.RawBlockSupplier.actual_blob_two_connected
+#print axioms Nanuq.RawBlockSupplier.actual_blob_two_connected
+#check Nanuq.RawBlockSupplier.actual_binary_blob_two_connected
+#print axioms Nanuq.RawBlockSupplier.actual_binary_blob_two_connected

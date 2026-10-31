@@ -1,0 +1,7 @@
+import ContinuousFaceCycles
+#check Nanuq.ContinuousFaceCycles.component_region
+#print axioms Nanuq.ContinuousFaceCycles.component_region
+#check Graph.IsDrawing.hasFaceCycles_cycleGraph_continuous
+#print axioms Graph.IsDrawing.hasFaceCycles_cycleGraph_continuous
+#check Graph.face_cycles_continuous
+#print axioms Graph.face_cycles_continuous
