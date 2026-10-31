@@ -1,0 +1,47 @@
+[
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "CoreInner",
+    "source": "abbrev CoreInner := {v : N.OriginalBlobVertex b // \u00acN.graph.IsHybrid v.val}"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "CoreTip",
+    "source": "abbrev CoreTip := {e : N.OriginalBlobArc b // N.graph.IsHybrid (N.graph.target e.val)}"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "CoreVertex",
+    "source": "abbrev CoreVertex := Sum (CoreInner N b) (CoreTip N b)"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreGraph",
+    "source": "def coreGraph (hg : N.graph.GalledDetour) : EdgeGraph (CoreVertex N b) (N.OriginalBlobArc b) where\n  source e := Sum.inl \u27e8\u27e8N.graph.source e.val,e.property.1\u27e9,internal_source_nonhybrid N b hg e\u27e9\n  target e := if ht : N.graph.IsHybrid (N.graph.target e.val)\n    then Sum.inr \u27e8e,ht\u27e9 else Sum.inl \u27e8\u27e8N.graph.target e.val,e.property.2\u27e9,ht\u27e9"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreLift",
+    "source": "def coreLift : CoreVertex N b \u2192 M.OpenedHybridVertex\n  | Sum.inl v => Sum.inl \u27e8Sum.inl v.val,(inner_skeleton_iff N b hg hb v.val).mpr v.property\u27e9\n  | Sum.inr e => Sum.inr \u27e8Sum.inl e.val,\n      (N.actual_rooted_cap_inner_hybrid_iff b \u27e8N.graph.target e.val.val,e.val.property.2\u27e9).mpr e.property\u27e9"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "coreEdgeLift",
+    "source": "def coreEdgeLift (e : N.OriginalBlobArc b) : M.OpenedHybridEdge :=\n  if ht : N.graph.IsHybrid (N.graph.target e.val) then\n    Sum.inr \u27e8Sum.inl e,(N.actual_rooted_cap_inner_hybrid_iff b\n      \u27e8N.graph.target e.val,e.property.2\u27e9).mpr ht\u27e9\n  else Sum.inl \u27e8Sum.inl e,\n    (inner_skeleton_iff N b hg hb \u27e8N.graph.source e.val,e.property.1\u27e9).mpr\n      (internal_source_nonhybrid N b hg e),\n    (inner_skeleton_iff N b hg hb \u27e8N.graph.target e.val,e.property.2\u27e9).mpr ht\u27e9"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "collapseSkeleton",
+    "source": "def collapseSkeleton (v : M.SkeletonVertex) : CoreInner N b := by\n  rcases v with \u27e8v | (p | r),hv\u27e9\n  \u00b7 exact \u27e8v,(inner_skeleton_iff N b hg hb v).mp hv\u27e9\n  \u00b7 exact \u27e8N.originalPortInner b p,retained_port_inner_nonhybrid N b hb p hv\u27e9\n  \u00b7 exact \u27e8N.originalRootedCapEntry b,N.originalRootedCapEntry_nonroot_not_hybrid b r.property\u27e9"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "occurrenceRaw",
+    "source": "def occurrenceRaw (e : M.HybridParentOccurrence) : CoreTip N b := by\n  rcases e with \u27e8e | (p | r),hh\u27e9\n  \u00b7 exact \u27e8e,(N.actual_rooted_cap_inner_hybrid_iff b\n      \u27e8N.graph.target e.val,e.property.2\u27e9).mp hh\u27e9\n  \u00b7 have h2 := hh.1\n    have h1 := (N.actual_rooted_cap_port_degrees b p).1\n    change (N.actualRootedCapGraph b).inDegree (Sum.inr (Sum.inl p))=2 at h2\n    omega\n  \u00b7 exact False.elim (N.originalRootedCapEntry_nonroot_not_hybrid b r.property\n      ((N.actual_rooted_cap_inner_hybrid_iff b (N.originalRootedCapEntry b)).mp hh))"
+  },
+  {
+    "file": "ActualOpenedCore.lean",
+    "name": "collapse",
+    "source": "def collapse : M.OpenedHybridVertex \u2192 CoreVertex N b :=\n  Sum.elim (fun v => Sum.inl (collapseSkeleton N b hg hb v))\n    (fun e => Sum.inr (occurrenceRaw N b hb e))"
+  }
+]
