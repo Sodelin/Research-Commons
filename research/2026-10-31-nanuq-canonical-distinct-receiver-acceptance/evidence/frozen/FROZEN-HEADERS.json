@@ -1,0 +1,60 @@
+{
+  "status": "UNCOMPILED literal headers, not previously checked elaborated signatures",
+  "headers": [
+    {
+      "module": "ActualCanonicalDistinctReceiver",
+      "name": "actual_canonical_distinct_receiver",
+      "header": "theorem actual_canonical_distinct_receiver\n    (face : TaxonOuterFace D N.leaf)\n    (hnt : \u2203 u v : BlobVertex N.graph b, u\u2260v) :\n    \u2203 (n mask : Nat) (rank : N.BlobPort b \u2243 Fin n)\n      (C : Set Plane) (f : \u211d \u2192 Plane) (\u03b8 : (M).OpenedTip \u2192 \u211d)\n      (xs : List (M).OpenedTip) (k : Nat) (T : Tree),\n      2\u2264n \u2227 mask<2^n \u2227 IsJordanCurve C \u2227\n      Graph.face (graph (blobCurves D b)) (curve (blobCurves D b))\n        (coordinates face.outside)=outside C \u2227\n      IsLoop f \u2227 f '' unitInterval=C \u2227\n      (\u2200 t, \u03b8 t\u2208Ico (0:\u211d) 1 \u2227 f (\u03b8 t)=tipPoint N D b hg hb t) \u2227\n      Function.Injective \u03b8 \u2227 xs.Nodup \u2227 (\u2200 t, t\u2208xs) \u2227\n      xs.Pairwise (fun a c => \u03b8 a\u2264\u03b8 c) \u2227 k\u22641 \u2227\n      (xs.rotate k).map (fun t => (rank ((M).openedTipLabel hl t)).val)=occurrenceLabels n mask \u2227\n      T.size=(occurrenceLabels n mask).length-1 \u2227\n      (\u2200 q : Fin 4 \u21aa N.BlobPort b,\n        (M).rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9 \u2227\n        (M).rawQuartetMean q=Nanuq.Quartet.distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (q 0)).val,(rank (q 1)).val,(rank (q 2)).val,(rank (q 3)).val\u27e9)) \u2227\n      (\u2200 (q : Fin 4 \u21aa X) (hinj : Function.Injective (fun i => N.blobProjection b hb (q i))),\n        N.rawDisplayedQuartets q=finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (N.blobProjection b hb (q 0))).val,(rank (N.blobProjection b hb (q 1))).val,\n           (rank (N.blobProjection b hb (q 2))).val,(rank (N.blobProjection b hb (q 3))).val\u27e9 \u2227\n        N.rawQuartetMean q=Nanuq.Quartet.distinctMean (finiteResolutionSet T (occurrenceLabels n mask)\n          \u27e8(rank (N.blobProjection b hb (q 0))).val,(rank (N.blobProjection b hb (q 1))).val,\n           (rank (N.blobProjection b hb (q 2))).val,(rank (N.blobProjection b hb (q 3))).val\u27e9))"
+    },
+    {
+      "module": "ActualFiniteDistinctMean",
+      "name": "mem_finiteResolutionSet",
+      "header": "theorem mem_finiteResolutionSet (T : Tree) (tips : List Nat) (Q : Quartet) (r : Resolution) :\n    r\u2208finiteResolutionSet T tips Q \u2194\n      \u2203 e\u2208T.internalIntervals 1, edgeWitness tips e.1 e.2 Q (resolutionIndex r)=true"
+    },
+    {
+      "module": "ActualFiniteDistinctMean",
+      "name": "finiteResolutionSet_code",
+      "header": "theorem finiteResolutionSet_code (T : Tree) (tips : List Nat) (qs : List Quartet)\n    (idx : Nat) (Q : Quartet) (hQ : qs[idx]?=some Q) (r : Resolution) :\n    r\u2208finiteResolutionSet T tips Q \u2194\n      (Nanuq.AdjacentCertificate.code (T.summary (edgeContribution tips qs) 1) idx).testBit\n        (resolutionIndex r)=true"
+    },
+    {
+      "module": "ActualFiniteDistinctMean",
+      "name": "actual_distinct_set_and_mean_finite",
+      "header": "theorem actual_distinct_set_and_mean_finite\n    (code : X \u21aa Nat) (lab : N.OpenedHybridVertex \u2192 Nat) (T : Tree) (tips : List Nat)\n    (hlab : \u2200 t, lab (N.openedTipVertex t)=code (N.openedTipLabel hl t))\n    (hfinite : \u2200 (Q : Quartet) (r a b c d : Nat), Q.parts r=(a,b,c,d) \u2192 a\u2260b \u2192 c\u2260d \u2192\n      (LabelledQuartet (N.openedHybridGraph hl) lab a b c d \u2194\n        \u2203 e\u2208T.internalIntervals 1, edgeWitness tips e.1 e.2 Q r=true))\n    (q : Fin 4 \u21aa X) :\n    N.rawDisplayedQuartets q=finiteResolutionSet T tips\n      \u27e8code (q 0),code (q 1),code (q 2),code (q 3)\u27e9 \u2227\n    N.rawQuartetMean q=distinctMean (finiteResolutionSet T tips\n      \u27e8code (q 0),code (q 1),code (q 2),code (q 3)\u27e9)"
+    },
+    {
+      "module": "ActualOccurrenceChoices",
+      "name": "actual_occurrence_selection_extends",
+      "header": "theorem actual_occurrence_selection_extends\n    (q : I \u21aa X) (t : I \u2192 N.OpenedTip)\n    (ht : \u2200 i, N.openedTipLabel hleaf (t i)=q i) :\n    \u2203 C : N.HybridParentChoice, \u2200 i, C.selectedTipEmbedding hleaf (q i)=t i"
+    },
+    {
+      "module": "ActualOccurrenceQuartets",
+      "name": "actual_displayed_iff_occurrence_resolves",
+      "header": "theorem actual_displayed_iff_occurrence_resolves (q : Fin 4 \u21aa X) (r : Resolution) :\n    r\u2208N.rawDisplayedQuartets q \u2194\n      \u2203 t : Fin 4 \u21aa N.OpenedTip,\n        (\u2200 i, N.openedTipLabel hleaf (t i)=q i) \u2227\n        (N.openedHybridGraph hleaf).Resolves (fun i => N.openedTipVertex (t i)) r"
+    },
+    {
+      "module": "CanonicalPortRanks",
+      "name": "actual_block_support",
+      "header": "theorem actual_block_support (code : X \u21aa Nat) (label : O \u2192 X)\n    (surj : Function.Surjective label) (xs : List O) (hall : \u2200 t, t\u2208xs)\n    (k : Nat) (base : List Nat) (dup : Nat \u2192 Bool)\n    (hblocks : (xs.rotate k).map (fun t => code (label t))=blocks base dup) :\n    \u2200 z, z\u2208base \u2194 \u2203 x, code x=z"
+    },
+    {
+      "module": "CanonicalPortRanks",
+      "name": "exists_canonical_port_rank",
+      "header": "theorem exists_canonical_port_rank (code : X \u21aa Nat) (base : List Nat)\n    (hnd : base.Nodup) (support : \u2200 z, z\u2208base \u2194 \u2203 x, code x=z) :\n    \u2203 rank : X \u2243 Fin base.length, \u2200 x, (rank x).val=base.idxOf (code x)"
+    },
+    {
+      "module": "CanonicalSyntaxReceiver",
+      "name": "canonical_syntax_receiver",
+      "header": "theorem canonical_syntax_receiver (G : EdgeGraph V E) (tip : O \u21aa V)\n    (tipLabel : O \u2192 X) (code : X \u21aa Nat) (xs : List O) (k : Nat) (base : List Nat)\n    (dup : Nat \u2192 Bool) (s : BinarySyntax V) (oldLab : V \u2192 Nat)\n    (hfront : s.frontier=xs.map tip) (hs : 2\u2264xs.length) (hk : k\u22641) (hbase : base.Nodup)\n    (hblocks : (xs.rotate k).map (fun t => code (tipLabel t))=blocks base dup)\n    (hold : \u2200 t, oldLab (tip t)=code (tipLabel t))\n    (hsource : \u2200 (lab : V \u2192 Nat) a b c d,\n      LabelledQuartet G lab a b c d \u2194 (encode lab s).Witness [] a b c d)\n    (rank : X \u2243 Fin base.length) (hrank : \u2200 x, (rank x).val=base.idxOf (code x)) :\n    \u2203 (lab : V \u2192 Nat) (T : Tree),\n      (\u2200 t, lab (tip t)=(rank (tipLabel t)).val) \u2227\n      T.size=(occurrenceLabels base.length (restrictedMask base dup)).length-1 \u2227\n      (\u2200 (q : Quartet) (r a b c d : Nat), q.parts r=(a,b,c,d) \u2192 a\u2260b \u2192 c\u2260d \u2192\n        (LabelledQuartet G lab a b c d \u2194\n          \u2203 e\u2208T.internalIntervals 1,\n            edgeWitness (occurrenceLabels base.length (restrictedMask base dup)) e.1 e.2 q r=true))"
+    },
+    {
+      "module": "LabelledOccurrenceReadout",
+      "name": "labelled_quartet_iff_tip_witness",
+      "header": "theorem labelled_quartet_iff_tip_witness (a b c d : X) :\n    LabelledQuartet (N.openedHybridGraph hl) lab (code a) (code b) (code c) (code d) \u2194\n      \u2203 w x y z : N.OpenedTip,\n        (N.openedTipLabel hl w=a \u2227 N.openedTipLabel hl x=b \u2227\n          N.openedTipLabel hl y=c \u2227 N.openedTipLabel hl z=d) \u2227\n        (N.openedHybridGraph hl).HasQuartet (N.openedTipVertex w) (N.openedTipVertex x)\n          (N.openedTipVertex y) (N.openedTipVertex z)"
+    },
+    {
+      "module": "LabelledOccurrenceReadout",
+      "name": "actual_displayed_iff_labelled",
+      "header": "theorem actual_displayed_iff_labelled (q : Fin 4 \u21aa X) (r : Resolution) :\n    r\u2208N.rawDisplayedQuartets q \u2194\n      match r with\n      | .xy_zw => LabelledQuartet (N.openedHybridGraph hl) lab (code (q 0)) (code (q 1)) (code (q 2)) (code (q 3))\n      | .xz_yw => LabelledQuartet (N.openedHybridGraph hl) lab (code (q 0)) (code (q 2)) (code (q 1)) (code (q 3))\n      | .xw_yz => LabelledQuartet (N.openedHybridGraph hl) lab (code (q 0)) (code (q 3)) (code (q 1)) (code (q 2))"
+    }
+  ]
+}

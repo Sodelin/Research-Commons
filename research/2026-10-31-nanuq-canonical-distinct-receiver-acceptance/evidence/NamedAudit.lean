@@ -1,0 +1,18 @@
+import ActualCanonicalDistinctReceiver
+set_option pp.universes true
+#check @Nanuq.Source.RootedBinary.actual_occurrence_selection_extends
+#print axioms Nanuq.Source.RootedBinary.actual_occurrence_selection_extends
+#check @Nanuq.Source.RootedBinary.actual_displayed_iff_occurrence_resolves
+#print axioms Nanuq.Source.RootedBinary.actual_displayed_iff_occurrence_resolves
+#check @Nanuq.Source.RootedBinary.actual_displayed_iff_labelled
+#print axioms Nanuq.Source.RootedBinary.actual_displayed_iff_labelled
+#check @Nanuq.GraphReceiver.exists_canonical_port_rank
+#print axioms Nanuq.GraphReceiver.exists_canonical_port_rank
+#check @Nanuq.GraphReceiver.canonical_syntax_receiver
+#print axioms Nanuq.GraphReceiver.canonical_syntax_receiver
+#check @Nanuq.ActualFinite.finiteResolutionSet_code
+#print axioms Nanuq.ActualFinite.finiteResolutionSet_code
+#check @Nanuq.ActualFinite.actual_distinct_set_and_mean_finite
+#print axioms Nanuq.ActualFinite.actual_distinct_set_and_mean_finite
+#check @Nanuq.OpenedCore.actual_canonical_distinct_receiver
+#print axioms Nanuq.OpenedCore.actual_canonical_distinct_receiver

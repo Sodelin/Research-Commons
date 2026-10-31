@@ -1,0 +1,59 @@
+--- frozen/ActualOccurrenceChoices.lean
++++ source/ActualOccurrenceChoices.lean
+@@ -38,14 +38,18 @@
+   refine ⟨C,?_⟩
+   intro i
+   rcases hti : t i with x | e
+-  · have hx : x.val=q i := by simpa only [hti,openedTipLabel] using ht i
+-    rw [← hx,C.selectedTip_ordinary hleaf x,hti]
++  · have hx := ht i
++    rw [hti] at hx
++    change x.val=q i at hx
++    simpa only [← hx] using C.selectedTip_ordinary hleaf x
+   · let h : N.HybridVertex := ⟨N.graph.target e.val,e.property⟩
+-    have hi : q i=N.hybridChildTaxon hleaf h := by
+-      simpa only [hti,openedTipLabel] using (ht i).symm
++    have hi := (ht i).symm
++    rw [hti] at hi
++    change q i=N.hybridChildTaxon hleaf h at hi
+     rw [hi,C.selectedTip_hybrid hleaf h]
+-    change ((N.openedHybridFiberEquiv hleaf h).symm (C h)).val=t i
+-    rw [hC h i hi,Equiv.symm_apply_apply]
++    apply congrArg Sum.inr
++    apply Subtype.ext
++    simpa [hti,openedHybridFiberEquiv] using congrArg Subtype.val (hC h i hi)
+ 
+ #print axioms actual_occurrence_selection_extends
+ end Nanuq.Source.RootedBinary
+--- frozen/LabelledOccurrenceReadout.lean
++++ source/LabelledOccurrenceReadout.lean
+@@ -16,6 +16,8 @@
+ variable (hl : ∀ e, N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e=N.leaf x)
+ variable (code : X ↪ Nat) (lab : N.OpenedHybridVertex → Nat)
+ variable (hlab : ∀ t, lab (N.openedTipVertex t)=code (N.openedTipLabel hl t))
++
++include hlab
+ 
+ theorem labelled_quartet_iff_tip_witness (a b c d : X) :
+     LabelledQuartet (N.openedHybridGraph hl) lab (code a) (code b) (code c) (code d) ↔
+@@ -51,7 +53,7 @@
+       Function.Injective t := by
+     intro i j hij
+     exact q.injective ((ht i).symm.trans ((congrArg (N.openedTipLabel hl) hij).trans (ht j)))
+-  cases r <;> rw [N.labelled_quartet_iff_tip_witness hl code lab hlab]
++  cases r <;> dsimp only <;> rw [N.labelled_quartet_iff_tip_witness hl code lab hlab]
+   · constructor
+     · rintro ⟨t,ht,hq⟩
+       exact ⟨t 0,t 1,t 2,t 3,⟨ht 0,ht 1,ht 2,ht 3⟩,hq⟩
+--- frozen/CanonicalPortRanks.lean
++++ source/CanonicalPortRanks.lean
+@@ -38,7 +38,8 @@
+     obtain ⟨x,hx⟩ := (support base[j]).mp (List.getElem_mem j.isLt)
+     refine ⟨x,Fin.ext ?_⟩
+     change base.idxOf (code x)=j.val
+-    rw [hx,hnd.idxOf_getElem]
++    rw [hx]
++    exact hnd.idxOf_getElem j.val j.isLt
+   exact ⟨Equiv.ofBijective f ⟨hinj,hsurj⟩,fun _ => rfl⟩
+ 
+ #print axioms exists_canonical_port_rank

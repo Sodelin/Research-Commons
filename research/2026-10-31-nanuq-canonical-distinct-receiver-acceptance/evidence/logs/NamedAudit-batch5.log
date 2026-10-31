@@ -1,0 +1,287 @@
+@Nanuq.Source.RootedBinary.actual_occurrence_selection_extends.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} {I : Type u_4} [inst : Fintype.{u_1} V]
+  [inst_1 : Fintype.{u_2} E] [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V]
+  (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (hleaf :
+    ∀ (e : E),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) →
+        ∃ x,
+          Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+            ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x))
+  (q : Function.Embedding.{u_4 + 1, u_3 + 1} I X) (t : I → Nanuq.Source.RootedBinary.OpenedTip.{u_1, u_2, u_3} N),
+  (∀ (i : I), Eq.{u_3 + 1} (Nanuq.Source.RootedBinary.openedTipLabel.{u_1, u_2, u_3} N hleaf (t i)) (q i)) →
+    ∃ C,
+      ∀ (i : I),
+        Eq.{max (u_2 + 1) (u_3 + 1)}
+          ((Nanuq.Source.RootedBinary.HybridParentChoice.selectedTipEmbedding.{u_1, u_2, u_3} hleaf C) (q i)) (t i)
+'Nanuq.Source.RootedBinary.actual_occurrence_selection_extends' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.Source.RootedBinary.actual_displayed_iff_occurrence_resolves.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (hleaf :
+    ∀ (e : E),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) →
+        ∃ x,
+          Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+            ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x))
+  (q : Function.Embedding.{1, u_3 + 1} (Fin 4) X) (r : Nanuq.Quartet.Resolution),
+  Membership.mem.{0, 0} (Nanuq.Source.RootedBinary.rawDisplayedQuartets.{u_1, u_2, u_3} N q) r ↔
+    ∃ t,
+      (∀ (i : Fin 4), Eq.{u_3 + 1} (Nanuq.Source.RootedBinary.openedTipLabel.{u_1, u_2, u_3} N hleaf (t i)) (q i)) ∧
+        Nanuq.Source.EdgeGraph.Resolves.{max u_1 u_2, u_2}
+          (Nanuq.Source.RootedBinary.openedHybridGraph.{u_1, u_2, u_3} N hleaf)
+          (fun i => (Nanuq.Source.RootedBinary.openedTipVertex.{u_1, u_2, u_3} N) (t i)) r
+'Nanuq.Source.RootedBinary.actual_displayed_iff_occurrence_resolves' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.Source.RootedBinary.actual_displayed_iff_labelled.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (hl :
+    ∀ (e : E),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) →
+        ∃ x,
+          Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+            ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x))
+  (code : Function.Embedding.{u_3 + 1, 1} X ℕ)
+  (lab : Nanuq.Source.RootedBinary.OpenedHybridVertex.{u_1, u_2, u_3} N → ℕ),
+  (∀ (t : Nanuq.Source.RootedBinary.OpenedTip.{u_1, u_2, u_3} N),
+      Eq.{1} (lab ((Nanuq.Source.RootedBinary.openedTipVertex.{u_1, u_2, u_3} N) t))
+        (code (Nanuq.Source.RootedBinary.openedTipLabel.{u_1, u_2, u_3} N hl t))) →
+    ∀ (q : Function.Embedding.{1, u_3 + 1} (Fin 4) X) (r : Nanuq.Quartet.Resolution),
+      Membership.mem.{0, 0} (Nanuq.Source.RootedBinary.rawDisplayedQuartets.{u_1, u_2, u_3} N q) r ↔
+        match r with
+        | Nanuq.Quartet.Resolution.xy_zw =>
+          Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2}
+            (Nanuq.Source.RootedBinary.openedHybridGraph.{u_1, u_2, u_3} N hl) lab (code (q 0)) (code (q 1))
+            (code (q 2)) (code (q 3))
+        | Nanuq.Quartet.Resolution.xz_yw =>
+          Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2}
+            (Nanuq.Source.RootedBinary.openedHybridGraph.{u_1, u_2, u_3} N hl) lab (code (q 0)) (code (q 2))
+            (code (q 1)) (code (q 3))
+        | Nanuq.Quartet.Resolution.xw_yz =>
+          Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2}
+            (Nanuq.Source.RootedBinary.openedHybridGraph.{u_1, u_2, u_3} N hl) lab (code (q 0)) (code (q 3))
+            (code (q 1)) (code (q 2))
+'Nanuq.Source.RootedBinary.actual_displayed_iff_labelled' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.GraphReceiver.exists_canonical_port_rank.{u_1} : ∀ {X : Type u_1} (code : Function.Embedding.{u_1 + 1, 1} X ℕ)
+  (base : List.{0} ℕ),
+  List.Nodup.{0} base →
+    (∀ (z : ℕ), Membership.mem.{0, 0} base z ↔ ∃ x, Eq.{1} (code x) z) →
+      ∃ rank, ∀ (x : X), Eq.{1} (↑(rank x)) (List.idxOf.{0} (code x) base)
+'Nanuq.GraphReceiver.exists_canonical_port_rank' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.GraphReceiver.canonical_syntax_receiver.{u_1, u_2, u_3,
+    u_4} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} {O : Type u_4} [Fintype.{u_1} V] [inst : Fintype.{u_2} E]
+  [inst_1 : DecidableEq.{u_1 + 1} V] (G : Nanuq.Source.EdgeGraph.{u_1, u_2} V E)
+  (tip : Function.Embedding.{u_4 + 1, u_1 + 1} O V) (tipLabel : O → X) (code : Function.Embedding.{u_3 + 1, 1} X ℕ)
+  (xs : List.{u_4} O) (k : ℕ) (base : List.{0} ℕ) (dup : ℕ → Bool) (s : Nanuq.GraphSyntax.BinarySyntax.{u_1} V)
+  (oldLab : V → ℕ),
+  Eq.{u_1 + 1} (Nanuq.GraphSyntax.BinarySyntax.frontier.{u_1} s) (List.map.{u_4, u_1} (⇑tip) xs) →
+    LE.le.{0} 2 (List.length.{u_4} xs) →
+      LE.le.{0} k 1 →
+        List.Nodup.{0} base →
+          Eq.{1} (List.map.{u_4, 0} (fun t => code (tipLabel t)) (List.rotate.{u_4} xs k))
+              (Nanuq.Restriction.blocks base dup) →
+            (∀ (t : O), Eq.{1} (oldLab (tip t)) (code (tipLabel t))) →
+              (∀ (lab : V → ℕ) (a b c d : ℕ),
+                  Nanuq.GraphReceiver.LabelledQuartet.{u_1, u_2} G lab a b c d ↔
+                    (Nanuq.GraphReceiver.encode.{u_1} lab s).Witness List.nil.{0} a b c d) →
+                ∀ (rank : Equiv.{u_3 + 1, 1} X (Fin (List.length.{0} base))),
+                  (∀ (x : X), Eq.{1} (↑(rank x)) (List.idxOf.{0} (code x) base)) →
+                    ∃ lab T,
+                      (∀ (t : O), Eq.{1} (lab (tip t)) ↑(rank (tipLabel t))) ∧
+                        Eq.{1} T.size
+                            (HSub.hSub.{0, 0, 0}
+                              (List.length.{0}
+                                (Nanuq.AdjacentCertificate.occurrenceLabels (List.length.{0} base)
+                                  (Nanuq.Restriction.restrictedMask base dup)))
+                              1) ∧
+                          ∀ (q : Nanuq.AdjacentCertificate.Quartet) (r a b c d : ℕ),
+                            Eq.{1} (q.parts r) (Prod.mk.{0, 0} a (Prod.mk.{0, 0} b (Prod.mk.{0, 0} c d))) →
+                              Ne.{1} a b →
+                                Ne.{1} c d →
+                                  (Nanuq.GraphReceiver.LabelledQuartet.{u_1, u_2} G lab a b c d ↔
+                                    ∃ e,
+                                      Membership.mem.{0, 0} (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) e ∧
+                                        Eq.{1}
+                                          (Nanuq.AdjacentCertificate.edgeWitness
+                                            (Nanuq.AdjacentCertificate.occurrenceLabels (List.length.{0} base)
+                                              (Nanuq.Restriction.restrictedMask base dup))
+                                            e.1 e.2 q r)
+                                          true)
+'Nanuq.GraphReceiver.canonical_syntax_receiver' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+Nanuq.ActualFinite.finiteResolutionSet_code : ∀ (T : Nanuq.AdjacentCertificate.Tree) (tips : List.{0} ℕ)
+  (qs : List.{0} Nanuq.AdjacentCertificate.Quartet) (idx : ℕ) (Q : Nanuq.AdjacentCertificate.Quartet),
+  Eq.{1} (getElem?.{0, 0, 0} qs idx) (some.{0} Q) →
+    ∀ (r : Nanuq.Quartet.Resolution),
+      Membership.mem.{0, 0} (Nanuq.ActualFinite.finiteResolutionSet T tips Q) r ↔
+        Eq.{1}
+          ((Nanuq.AdjacentCertificate.code
+                (Nanuq.AdjacentCertificate.Tree.summary (Nanuq.AdjacentCertificate.edgeContribution tips qs) 1 T)
+                idx).testBit
+            (Nanuq.ActualFinite.resolutionIndex r))
+          true
+'Nanuq.ActualFinite.finiteResolutionSet_code' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+@Nanuq.ActualFinite.actual_distinct_set_and_mean_finite.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (hl :
+    ∀ (e : E),
+      Nanuq.Source.EdgeGraph.IsHybrid.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N)
+          (Nanuq.Source.EdgeGraph.source.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e) →
+        ∃ x,
+          Eq.{u_1 + 1} (Nanuq.Source.EdgeGraph.target.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N) e)
+            ((Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N) x))
+  (code : Function.Embedding.{u_3 + 1, 1} X ℕ)
+  (lab : Nanuq.Source.RootedBinary.OpenedHybridVertex.{u_1, u_2, u_3} N → ℕ) (T : Nanuq.AdjacentCertificate.Tree)
+  (tips : List.{0} ℕ),
+  (∀ (t : Nanuq.Source.RootedBinary.OpenedTip.{u_1, u_2, u_3} N),
+      Eq.{1} (lab ((Nanuq.Source.RootedBinary.openedTipVertex.{u_1, u_2, u_3} N) t))
+        (code (Nanuq.Source.RootedBinary.openedTipLabel.{u_1, u_2, u_3} N hl t))) →
+    (∀ (Q : Nanuq.AdjacentCertificate.Quartet) (r a b c d : ℕ),
+        Eq.{1} (Q.parts r) (Prod.mk.{0, 0} a (Prod.mk.{0, 0} b (Prod.mk.{0, 0} c d))) →
+          Ne.{1} a b →
+            Ne.{1} c d →
+              (Nanuq.GraphReceiver.LabelledQuartet.{max u_1 u_2, u_2}
+                  (Nanuq.Source.RootedBinary.openedHybridGraph.{u_1, u_2, u_3} N hl) lab a b c d ↔
+                ∃ e,
+                  Membership.mem.{0, 0} (Nanuq.AdjacentCertificate.Tree.internalIntervals 1 T) e ∧
+                    Eq.{1} (Nanuq.AdjacentCertificate.edgeWitness tips e.1 e.2 Q r) true)) →
+      ∀ (q : Function.Embedding.{1, u_3 + 1} (Fin 4) X),
+        Eq.{1} (Nanuq.Source.RootedBinary.rawDisplayedQuartets.{u_1, u_2, u_3} N q)
+            (Nanuq.ActualFinite.finiteResolutionSet T tips
+              { a := code (q 0), b := code (q 1), c := code (q 2), d := code (q 3) }) ∧
+          Eq.{1} (Nanuq.Source.RootedBinary.rawQuartetMean.{u_1, u_2, u_3} N q)
+            (Nanuq.Quartet.distinctMean
+              (Nanuq.ActualFinite.finiteResolutionSet T tips
+                { a := code (q 0), b := code (q 1), c := code (q 2), d := code (q 3) }))
+'Nanuq.ActualFinite.actual_distinct_set_and_mean_finite' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+@Nanuq.OpenedCore.actual_canonical_distinct_receiver.{u_1, u_2,
+    u_3} : ∀ {V : Type u_1} {E : Type u_2} {X : Type u_3} [inst : Fintype.{u_1} V] [inst_1 : Fintype.{u_2} E]
+  [inst_2 : Fintype.{u_3} X] [inst_3 : DecidableEq.{u_1 + 1} V] (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X)
+  (D : G1OuterLabelledMultigraphCurves.PlanarCurves.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (b : Nanuq.Source.EdgeGraph.Blob.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hg : Nanuq.Source.EdgeGraph.GalledDetour.{u_1, u_2} (Nanuq.Source.RootedBinary.graph.{u_1, u_2, u_3} N))
+  (hb : Nanuq.Source.RootedBinary.NonleafBlob.{u_1, u_2, u_3} N b)
+  (face :
+    G1OuterLabelledMultigraphCurves.TaxonOuterFace.{u_1, u_2, u_3} D
+      ⇑(Nanuq.Source.RootedBinary.leaf.{u_1, u_2, u_3} N)),
+  (∃ u v, Ne.{u_1 + 1} u v) →
+    ∃ n mask rank C f θ xs k T,
+      LE.le.{0} 2 n ∧
+        LT.lt.{0} mask (HPow.hPow.{0, 0, 0} 2 n) ∧
+          Schoenflies.IsJordanCurve C ∧
+            Eq.{1}
+                (Graph.face.{u_2}
+                  (NanuqFaithfulSupplierDrawing.graph.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                  (NanuqFaithfulSupplierDrawing.curve.{u_1, u_2} (Nanuq.RawBlockSupplier.blobCurves.{u_1, u_2} D b))
+                  (NanuqFaithfulSupplierDrawing.coordinates
+                    (G1OuterLabelledMultigraphCurves.TaxonOuterFace.outside.{u_1, u_2, u_3} face)))
+                (Schoenflies.outside C) ∧
+              Schoenflies.IsLoop f ∧
+                Eq.{1} (Set.image.{0, 0} f unitInterval) C ∧
+                  (∀
+                      (t :
+                        Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                          (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                      Membership.mem.{0, 0} (Set.Ico.{0} 0 1) (θ t) ∧
+                        Eq.{1} (f (θ t)) (Nanuq.OpenedCore.tipPoint.{u_1, u_2, u_3} N D b hg hb t)) ∧
+                    Function.Injective.{u_2 + 1, 1} θ ∧
+                      List.Nodup.{u_2} xs ∧
+                        (∀
+                            (t :
+                              Nanuq.Source.RootedBinary.OpenedTip.{max u_1 u_2, u_2, u_2}
+                                (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3} N b hb)),
+                            Membership.mem.{u_2, u_2} xs t) ∧
+                          List.Pairwise.{u_2} (fun a c => LE.le.{0} (θ a) (θ c)) xs ∧
+                            LE.le.{0} k 1 ∧
+                              Eq.{1}
+                                  (List.map.{u_2, 0}
+                                    (fun t =>
+                                      ↑(rank
+                                          (Nanuq.Source.RootedBinary.openedTipLabel.{max u_1 u_2, u_2, u_2}
+                                            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3}
+                                              N b hb)
+                                            ⋯ t)))
+                                    (List.rotate.{u_2} xs k))
+                                  (Nanuq.AdjacentCertificate.occurrenceLabels n mask) ∧
+                                Eq.{1} T.size
+                                    (HSub.hSub.{0, 0, 0}
+                                      (List.length.{0} (Nanuq.AdjacentCertificate.occurrenceLabels n mask)) 1) ∧
+                                  (∀
+                                      (q :
+                                        Function.Embedding.{1, u_2 + 1} (Fin 4)
+                                          (Nanuq.Source.RootedBinary.BlobPort.{u_1, u_2, u_3} N b)),
+                                      Eq.{1}
+                                          (Nanuq.Source.RootedBinary.rawDisplayedQuartets.{max u_1 u_2, u_2, u_2}
+                                            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3}
+                                              N b hb)
+                                            q)
+                                          (Nanuq.ActualFinite.finiteResolutionSet T
+                                            (Nanuq.AdjacentCertificate.occurrenceLabels n mask)
+                                            { a := ↑(rank (q 0)), b := ↑(rank (q 1)), c := ↑(rank (q 2)),
+                                              d := ↑(rank (q 3)) }) ∧
+                                        Eq.{1}
+                                          (Nanuq.Source.RootedBinary.rawQuartetMean.{max u_1 u_2, u_2, u_2}
+                                            (Nanuq.Source.RootedBinary.actualEveryNonleafRootedCapSource.{u_1, u_2, u_3}
+                                              N b hb)
+                                            q)
+                                          (Nanuq.Quartet.distinctMean
+                                            (Nanuq.ActualFinite.finiteResolutionSet T
+                                              (Nanuq.AdjacentCertificate.occurrenceLabels n mask)
+                                              { a := ↑(rank (q 0)), b := ↑(rank (q 1)), c := ↑(rank (q 2)),
+                                                d := ↑(rank (q 3)) }))) ∧
+                                    ∀ (q : Function.Embedding.{1, u_3 + 1} (Fin 4) X),
+                                      (Function.Injective.{1, u_2 + 1} fun i =>
+                                          Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb (q i)) →
+                                        Eq.{1} (Nanuq.Source.RootedBinary.rawDisplayedQuartets.{u_1, u_2, u_3} N q)
+                                            (Nanuq.ActualFinite.finiteResolutionSet T
+                                              (Nanuq.AdjacentCertificate.occurrenceLabels n mask)
+                                              {
+                                                a :=
+                                                  ↑(rank
+                                                      (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                        (q 0))),
+                                                b :=
+                                                  ↑(rank
+                                                      (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                        (q 1))),
+                                                c :=
+                                                  ↑(rank
+                                                      (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                        (q 2))),
+                                                d :=
+                                                  ↑(rank
+                                                      (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                        (q 3))) }) ∧
+                                          Eq.{1} (Nanuq.Source.RootedBinary.rawQuartetMean.{u_1, u_2, u_3} N q)
+                                            (Nanuq.Quartet.distinctMean
+                                              (Nanuq.ActualFinite.finiteResolutionSet T
+                                                (Nanuq.AdjacentCertificate.occurrenceLabels n mask)
+                                                {
+                                                  a :=
+                                                    ↑(rank
+                                                        (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                          (q 0))),
+                                                  b :=
+                                                    ↑(rank
+                                                        (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                          (q 1))),
+                                                  c :=
+                                                    ↑(rank
+                                                        (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                          (q 2))),
+                                                  d :=
+                                                    ↑(rank
+                                                        (Nanuq.Source.RootedBinary.blobProjection.{u_1, u_2, u_3} N b hb
+                                                          (q 3))) }))
+'Nanuq.OpenedCore.actual_canonical_distinct_receiver' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

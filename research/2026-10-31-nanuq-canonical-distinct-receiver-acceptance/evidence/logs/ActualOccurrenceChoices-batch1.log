@@ -1,0 +1,52 @@
+<BUILD_ROOT>/source/ActualOccurrenceChoices.lean:41:30: error: Type mismatch: After simplification, term
+  ht i
+ has type
+  @Eq X (Sum.elim Subtype.val (fun e => N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) (Sum.inl x)) (q i)
+but is expected to have type
+  @Eq X (↑x) (q i)
+<BUILD_ROOT>/source/ActualOccurrenceChoices.lean:42:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  t i
+in the target expression
+  Sum.inl x = Sum.inl x
+
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+I : Type u_4
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+q : I ↪ X
+t : I → N.OpenedTip
+ht : ∀ (i : I), N.openedTipLabel hleaf (t i) = q i
+C0 : N.HybridParentChoice := (Classical.choice ⋯).toHybridParentChoice
+C : N.HybridParentChoice :=
+  fun h =>
+    if hi : ∃ i, q i = N.hybridChildTaxon hleaf h then (N.openedHybridFiberEquiv hleaf h) ⟨t (Classical.choose hi), ⋯⟩
+    else C0 h
+hC :
+  ∀ (h : N.HybridVertex) (i : I) (hi : q i = N.hybridChildTaxon hleaf h),
+    C h = (N.openedHybridFiberEquiv hleaf h) ⟨t i, ⋯⟩
+i : I
+x : N.OrdinaryTaxon
+hti : t i = Sum.inl x
+hx : ↑x = q i
+⊢ Sum.inl x = Sum.inl x
+<BUILD_ROOT>/source/ActualOccurrenceChoices.lean:45:6: error: Type mismatch: After simplification, term
+  Eq.symm (ht i)
+ has type
+  @Eq X (q i) (Sum.elim Subtype.val (fun e => N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) (Sum.inr e))
+but is expected to have type
+  @Eq X (q i) (N.hybridChildTaxon hleaf h)
+<BUILD_ROOT>/source/ActualOccurrenceChoices.lean:47:4: error: 'change' tactic failed, pattern
+  ↑((N.openedHybridFiberEquiv hleaf h).symm (C h)) = t i
+is not definitionally equal to target
+  Sum.inr ⟨↑(C h), ⋯⟩ = Sum.inr e
+'Nanuq.Source.RootedBinary.actual_occurrence_selection_extends' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

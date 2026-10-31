@@ -1,0 +1,17 @@
+<BUILD_ROOT>/source/CanonicalPortRanks.lean:41:11: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  List.idxOf base[?i] base
+in the target expression
+  List.idxOf base[j] base = ↑j
+
+X : Type u_1
+code : X ↪ ℕ
+base : List ℕ
+hnd : base.Nodup
+support : ∀ (z : ℕ), z ∈ base ↔ ∃ x, code x = z
+f : X → Fin base.length := fun x => ⟨List.idxOf (code x) base, ⋯⟩
+hinj : Function.Injective f
+j : Fin base.length
+x : X
+hx : code x = base[j]
+⊢ List.idxOf base[j] base = ↑j
+'Nanuq.GraphReceiver.exists_canonical_port_rank' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
