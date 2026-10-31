@@ -1,0 +1,24 @@
+BUILD_ROOT/source/MSCi/TwoSite/ABContinuationDraft.lean:21:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+BUILD_ROOT/source/MSCi/TwoSite/ABContinuationDraft.lean:41:55: error: unsolved goals
+T R r z a : ℝ
+he : Real.exp (-z * T) = Real.exp (-z * a) * Real.exp (-z * (T - a))
+⊢ Real.exp (-(z * a)) * r * (z + r)⁻¹ - Real.exp (-(z * a)) * r * (z + r)⁻¹ * Real.exp (z * a - z * T + a * r - r * T) +
+      Real.exp (a * r - r * T) * Real.exp (-(z * T)) * R * (z + R)⁻¹ =
+    Real.exp (-(z * a)) * r * (z + r)⁻¹ -
+        Real.exp (-(z * a)) * r * (z + r)⁻¹ * Real.exp (z * a - z * T + a * r - r * T) +
+      Real.exp (-(z * a)) * Real.exp (a * r - r * T) * R * (z + R)⁻¹ * Real.exp (z * a - z * T)
+BUILD_ROOT/source/MSCi/TwoSite/ABContinuationDraft.lean:47:65: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pulseShiftedMoment, rootMoment, fixedContinuationMoment]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

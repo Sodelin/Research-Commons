@@ -1,0 +1,46 @@
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:39:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  abSurvival a r t
+in the target expression
+  (fun x => Real.exp (-z * x) * abSurvival a r x) t = (fun x => Real.exp (-z * x)) t
+
+T r z a : ℝ
+ha₀ : 0 ≤ a
+haT : a ≤ T
+hr : 0 < r
+hz : 0 < z
+hz0 : z ≠ 0
+hnz : -z ≠ 0
+hrz : r + z ≠ 0
+hnrz : -(r + z) ≠ 0
+hcont : Continuous fun t => Real.exp (-z * t) * abSurvival a r t
+hI₁ : IntervalIntegrable (fun t => Real.exp (-z * t) * abSurvival a r t) volume 0 a
+hI₂ : IntervalIntegrable (fun t => Real.exp (-z * t) * abSurvival a r t) volume a T
+t : ℝ
+ht : t ∈ Set.uIcc 0 a
+ht' : t ∈ Set.Icc 0 a
+⊢ (fun x => Real.exp (-z * x) * abSurvival a r x) t = (fun x => Real.exp (-z * x)) t
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:46:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  abSurvival a r t
+in the target expression
+  (fun x => Real.exp (-z * x) * abSurvival a r x) t = (fun x => Real.exp (r * a) * Real.exp (-(r + z) * x)) t
+
+T r z a : ℝ
+ha₀ : 0 ≤ a
+haT : a ≤ T
+hr : 0 < r
+hz : 0 < z
+hz0 : z ≠ 0
+hnz : -z ≠ 0
+hrz : r + z ≠ 0
+hnrz : -(r + z) ≠ 0
+hcont : Continuous fun t => Real.exp (-z * t) * abSurvival a r t
+hI₁ : IntervalIntegrable (fun t => Real.exp (-z * t) * abSurvival a r t) volume 0 a
+hI₂ : IntervalIntegrable (fun t => Real.exp (-z * t) * abSurvival a r t) volume a T
+hearly : ∫ (t : ℝ) in 0..a, Real.exp (-z * t) * abSurvival a r t = ∫ (t : ℝ) in 0..a, Real.exp (-z * t)
+t : ℝ
+ht : t ∈ Set.uIcc a T
+ht' : t ∈ Set.Icc a T
+⊢ (fun x => Real.exp (-z * x) * abSurvival a r x) t = (fun x => Real.exp (r * a) * Real.exp (-(r + z) * x)) t
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:104:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

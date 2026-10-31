@@ -1,0 +1,30 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+BUILD_ROOT/source/MSCi/TwoSite/ARecoveryDraft.lean:46:88: error: unsolved goals
+p : Parameters
+z : ℝ
+hexp : Real.exp (-z * p.t0) = Real.exp (-z * p.t1) * Real.exp (-z * (p.t0 - p.t1))
+⊢ p.rA * (p.rA + z)⁻¹ - p.rA * (p.rA + z)⁻¹ * Real.exp (-(p.rA * p.t1) - z * p.t1) +
+          Real.exp (-(p.rA * p.t1)) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ -
+        Real.exp (-(p.rA * p.t1)) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ *
+          Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.rAB * p.t0) +
+      Real.exp (-(p.rA * p.t1)) * Real.exp (p.t1 * p.rAB - p.rAB * p.t0) * Real.exp (-(z * p.t0)) * p.rR *
+        (z + p.rR)⁻¹ =
+    p.rA * (p.rA + z)⁻¹ - p.rA * (p.rA + z)⁻¹ * Real.exp (-(p.rA * p.t1) - z * p.t1) +
+          Real.exp (-(p.rA * p.t1)) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ -
+        Real.exp (-(p.rA * p.t1)) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ *
+          Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.rAB * p.t0) +
+      Real.exp (-(p.rA * p.t1)) * Real.exp (-(z * p.t1)) * Real.exp (p.t1 * p.rAB - p.rAB * p.t0) * p.rR *
+          (z + p.rR)⁻¹ *
+        Real.exp (z * p.t1 - z * p.t0)
+BUILD_ROOT/source/MSCi/TwoSite/ARecoveryDraft.lean:52:64: warning: This simp argument is unused:
+  hexp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairTransform, fixedContinuationMoment, aaContinuation]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

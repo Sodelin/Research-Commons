@@ -1,0 +1,42 @@
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:30:14: error: typeclass instance problem is stuck
+  IsLocallyFiniteMeasure ?m.279
+
+Note: Lean will not try to resolve this typeclass instance problem because the fourth type argument to `IsLocallyFiniteMeasure` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:102:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BUILD_ROOT/source/MSCi/TwoSite/ABIntegralDraft.lean:137:4: error: linarith failed to find a contradiction
+case h1
+T R r₁ r₂ z a₁ a₂ : ℝ
+ha₁ : 0 ≤ a₁
+ha₂ : 0 ≤ a₂
+h₁T : a₁ ≤ T
+h₂T : a₂ ≤ T
+hR : 0 < R
+hr₁ : 0 < r₁
+hr₂ : 0 < r₂
+hz : 0 < z
+heq :
+  1 -
+      z *
+        ((∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₁ r₁ t) +
+          Real.exp (-z * T) * abSurvival a₁ r₁ T / (R + z)) =
+    1 -
+      z *
+        ((∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₂ r₂ t) + Real.exp (-z * T) * abSurvival a₂ r₂ T / (R + z))
+hcont₁ : Continuous fun t => Real.exp (-z * t) * abSurvival a₁ r₁ t
+hcont₂ : Continuous fun t => Real.exp (-z * t) * abSurvival a₂ r₂ t
+hIdiff :
+  ∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvivalDiff a₁ r₁ a₂ r₂ t =
+    (∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₁ r₁ t) -
+      ∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₂ r₂ t
+a✝ :
+  -z *
+      (((∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₁ r₁ t) -
+          ∫ (t : ℝ) in 0..T, Real.exp (-z * t) * abSurvival a₂ r₂ t) +
+        Real.exp (-z * T) * (abSurvival a₁ r₁ T - abSurvival a₂ r₂ T) / (R + z)) <
+    0
+⊢ False
+failed

@@ -1,0 +1,173 @@
+--- frozen/source/MSCi/TwoSite/ABContinuationDraft.lean
++++ source/MSCi/TwoSite/ABContinuationDraft.lean
+@@ -44,7 +44,9 @@
+     rw [← Real.exp_add]
+     congr 1
+     ring
+-  simp [pulseShiftedMoment, rootMoment, fixedContinuationMoment, he] <;> ring
++  simp only [pulseShiftedMoment, rootMoment, fixedContinuationMoment]
++  rw [he]
++  ring
+ 
+ /-- For one fixed onset, positive ancestral rate is identified by one moment. -/
+ theorem ab_rate_eq_at_fixed_onset (T R r s z a : ℝ)
+--- frozen/source/MSCi/TwoSite/ABCrossingDraft.lean
++++ source/MSCi/TwoSite/ABCrossingDraft.lean
+@@ -85,7 +85,7 @@
+             (Real.exp (-c * t) * D t) * Real.exp (-c * s)) := by
+         apply intervalIntegral.integral_congr
+         intro t _
+-        unfold abCrossTerm
++        dsimp only [abCrossTerm]
+         rw [he2 t]
+         ring
+       _ = _ := by
+--- frozen/source/MSCi/TwoSite/ABIntegralDraft.lean
++++ source/MSCi/TwoSite/ABIntegralDraft.lean
+@@ -27,13 +27,16 @@
+   have hcont : Continuous (fun t : ℝ => Real.exp (-z * t) * abSurvival a r t) := by
+     unfold abSurvival
+     fun_prop
+-  have hI₁ := hcont.intervalIntegrable 0 a
+-  have hI₂ := hcont.intervalIntegrable a T
++  have hI₁ : IntervalIntegrable (fun t : ℝ => Real.exp (-z*t) * abSurvival a r t) volume 0 a :=
++    hcont.intervalIntegrable 0 a
++  have hI₂ : IntervalIntegrable (fun t : ℝ => Real.exp (-z*t) * abSurvival a r t) volume a T :=
++    hcont.intervalIntegrable a T
+   have hearly : (∫ t in (0 : ℝ)..a, Real.exp (-z * t) * abSurvival a r t) =
+       ∫ t in (0 : ℝ)..a, Real.exp (-z * t) := by
+     apply intervalIntegral.integral_congr
+     intro t ht
+     have ht' : t ∈ Set.Icc (0 : ℝ) a := by simpa [Set.uIcc_of_le ha₀] using ht
++    dsimp only
+     rw [ab_survival_of_le a r t ht'.2]
+     ring
+   have hlate : (∫ t in a..T, Real.exp (-z * t) * abSurvival a r t) =
+@@ -41,6 +44,7 @@
+     apply intervalIntegral.integral_congr
+     intro t ht
+     have ht' : t ∈ Set.Icc a T := by simpa [Set.uIcc_of_le haT] using ht
++    dsimp only
+     rw [ab_survival_of_ge a r t ht'.1, ← Real.exp_add, ← Real.exp_add]
+     congr 1
+     ring
+@@ -134,7 +138,7 @@
+       ((∫ t in (0 : ℝ)..T, Real.exp (-z * t) * abSurvival a₁ r₁ t) -
+         (∫ t in (0 : ℝ)..T, Real.exp (-z * t) * abSurvival a₂ r₂ t) +
+         Real.exp (-z * T) * (abSurvival a₁ r₁ T - abSurvival a₂ r₂ T) / (R + z)) = 0 := by
+-    nlinarith [heq]
++    linear_combination heq
+   exact (mul_eq_zero.mp hprod).resolve_left (neg_ne_zero.mpr (ne_of_gt hz))
+ 
+ end MSCi.TwoSite
+--- frozen/source/MSCi/TwoSite/ARecoveryDraft.lean
++++ source/MSCi/TwoSite/ARecoveryDraft.lean
+@@ -49,7 +49,9 @@
+     rw [← Real.exp_add]
+     congr 1
+     ring
+-  simp [pairTransform, fixedContinuationMoment, aaContinuation, hexp] <;> ring
++  simp only [pairTransform, fixedContinuationMoment, aaContinuation]
++  rw [hexp]
++  ring
+ 
+ theorem aa_continuation_le_start (p : Parameters) (z : ℝ)
+     (hp : Admissible p) (hz : 0 < z) : aaContinuation p z ≤ Real.exp (-z * p.t1) := by
+--- frozen/source/MSCi/TwoSite/BBContinuationDraft.lean
++++ source/MSCi/TwoSite/BBContinuationDraft.lean
+@@ -57,8 +57,9 @@
+     congr 1
+     ring
+   have hlen : p.t1 - p.h + (p.t0 - p.t1) = p.t0 - p.h := by ring
+-  simp [pairTransform, bbForwardAt, bbTail, bbStayContinuation, bbRouteContinuation,
+-    bbABRelativeTail, bbRootTail, fixedContinuationMoment, rootMoment, hlen, he₃, ← he₁, ← he₂] <;> ring
++  simp only [pairTransform, bbForwardAt, bbTail, bbStayContinuation, bbRouteContinuation,
++    bbABRelativeTail, bbRootTail, fixedContinuationMoment, rootMoment, hlen, he₁, he₂, he₃]
++  ring
+ 
+ theorem bb_root_tail_le_start (L R z : ℝ) (hR : 0 < R) (hz : 0 < z) :
+     bbRootTail L R z ≤ Real.exp (-z * L) := by
+--- frozen/source/MSCi/TwoSite/FixedContinuationDraft.lean
++++ source/MSCi/TwoSite/FixedContinuationDraft.lean
+@@ -1,3 +1,6 @@
++import Mathlib.Analysis.Calculus.Deriv.Inv
++import Mathlib.Analysis.SpecialFunctions.ExpDeriv
++import Mathlib.Analysis.Calculus.Deriv.MeanValue
+ import MSCi.TwoSite.ForwardDraft
+ 
+ /-!
+@@ -42,7 +45,7 @@
+     have hK' : 0 ≤ Real.exp (-z * L) - K := sub_nonneg.mpr hK
+     positivity
+   unfold fixedContinuationDerivative
+-  exact add_pos_of_pos_of_nonneg (mul_pos hcoef hbr) htail
++  exact add_pos_of_pos_of_nonneg (mul_pos hcoef (by simpa only [neg_mul] using hbr)) htail
+ 
+ theorem fixed_continuation_hasDerivAt (L z K r : ℝ)
+     (hz : 0 < z) (hr : 0 < r) :
+@@ -50,18 +53,20 @@
+   have hne : r + z ≠ 0 := ne_of_gt (by positivity)
+   have hid : HasDerivAt (fun x : ℝ => x) 1 r := hasDerivAt_id' r
+   have hden := hid.add_const z
+-  have hquot := hid.fun_div hden hne
++  have hquot := hid.div hden hne
+   have harg := hden.neg.mul_const L
+   have he := harg.exp
+   have htail := (hid.neg.mul_const L).exp
+-  have hsum := (hquot.fun_mul (he.const_sub 1)).add (htail.mul_const K)
++  have hsum := (hquot.mul (he.const_sub 1)).add (htail.mul_const K)
+   have hexp : Real.exp (-(r + z) * L) = Real.exp (-r * L) * Real.exp (-z * L) := by
+     rw [← Real.exp_add]
+     congr 1
+     ring
+-  convert hsum using 1 <;>
+-    simp [fixedContinuationMoment, fixedContinuationDerivative, hexp] <;>
+-    field_simp [hne] <;> ring
++  convert hsum using 1 <;> first
++  | rfl
++  | (funext x; rfl)
++  | ((try dsimp [fixedContinuationMoment, fixedContinuationDerivative]) <;>
++      (try rw [hexp]) <;> (try field_simp [hne]) <;> ring)
+ 
+ theorem fixed_continuation_strictMonoOn (L z K : ℝ)
+     (hL : 0 < L) (hz : 0 < z) (hK : K ≤ Real.exp (-z * L)) :
+--- frozen/source/MSCi/TwoSite/PulseIntegralDraft.lean
++++ source/MSCi/TwoSite/PulseIntegralDraft.lean
+@@ -1,3 +1,4 @@
++import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+ import MSCi.TwoSite.PulseScoreDraft
+ 
+ /-!
+--- frozen/source/MSCi/TwoSite/PulseKernelDraft.lean
++++ source/MSCi/TwoSite/PulseKernelDraft.lean
+@@ -40,7 +40,10 @@
+   have hz : ∀ t ∈ Set.Iic T, Real.exp (-c * t) - rootMoment T R c ≠ 0 := by
+     intro t ht
+     exact ne_of_gt (sub_pos.mpr (root_moment_lt_exp_at T R c t hR hc ht))
+-  simpa [pulseScoreAt, pulseScore] using hn.continuousOn.div hd.continuousOn hz
++  change ContinuousOn (fun t : ℝ =>
++    (Real.exp (-c * t) ^ 2 - rootMoment T R (2*c)) /
++      (Real.exp (-c * t) - rootMoment T R c)) (Set.Iic T)
++  exact hn.continuousOn.div hd.continuousOn hz
+ 
+ /-- The second weighted integrand is the declared second-moment kernel. -/
+ theorem pulse_weight_mul_score (T R r c t : ℝ) (hR : 0 < R) (hc : 0 < c)
+@@ -54,7 +57,7 @@
+     ring
+   unfold pulseWeight pulseScoreAt pulseScore pulseKernelTwo
+   rw [he2]
+-  field_simp [hne] <;> ring
++  rw [mul_assoc, mul_div_cancel₀ _ hne]
+ 
+ /-- Strict decrease of the two analytic kernel integrals' ratio. -/
+ theorem pulse_kernel_ratio_strict (T R r c a b : ℝ)
+@@ -66,7 +69,8 @@
+   have hsub : Set.Icc a T ⊆ Set.Iic T := by
+     intro t ht
+     exact ht.2
+-  have hw := (pulse_weight_continuous T R r c).continuousOn
++  have hw : ContinuousOn (pulseWeight T R r c) (Set.Icc a T) :=
++    (pulse_weight_continuous T R r c).continuousOn
+   have hq := (pulse_score_continuousOn T R c hR hc).mono hsub
+   have hwpos : ∀ t ∈ Set.Icc a T, 0 < pulseWeight T R r c t := by
+     intro t ht

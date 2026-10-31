@@ -1,0 +1,47 @@
+BUILD_ROOT/source/MSCi/TwoSite/PulseKernelDraft.lean:43:2: error: Type mismatch: After simplification, term
+  ContinuousOn.div (Continuous.continuousOn hn) (Continuous.continuousOn hd) hz
+ has type
+  ContinuousOn
+    ((fun t => Real.exp (-(c * t)) ^ 2 - rootMoment T R (2 * c)) / fun t => Real.exp (-(c * t)) - rootMoment T R c)
+    (Set.Iic T)
+but is expected to have type
+  ContinuousOn (pulseScoreAt T R c) (Set.Iic T)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+BUILD_ROOT/source/MSCi/TwoSite/PulseKernelDraft.lean:48:34: error: unsolved goals
+T R r c t : ℝ
+hR : 0 < R
+hc : 0 < c
+ht : t ≤ T
+hne : Real.exp (-c * t) - rootMoment T R c ≠ 0
+he2 : Real.exp (-(2 * c) * t) = Real.exp (-c * t) ^ 2
+⊢ -(Real.exp (-(t * c)) * rootMoment T R (c * 2) * (Real.exp (-(t * c)) - rootMoment T R c)⁻¹) -
+          Real.exp (-(t * c)) ^ 2 * rootMoment T R c * (Real.exp (-(t * c)) - rootMoment T R c)⁻¹ +
+        Real.exp (-(t * c)) ^ 3 * (Real.exp (-(t * c)) - rootMoment T R c)⁻¹ +
+      rootMoment T R c * rootMoment T R (c * 2) * (Real.exp (-(t * c)) - rootMoment T R c)⁻¹ =
+    Real.exp (-(t * c)) ^ 2 - rootMoment T R (c * 2)
+BUILD_ROOT/source/MSCi/TwoSite/PulseKernelDraft.lean:69:13: error: don't know how to synthesize implicit argument `s`
+  @Continuous.continuousOn ℝ ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (pulseWeight T R r c) ?m.69 (pulse_weight_continuous T R r c)
+context:
+T R r c a b : ℝ
+hR : 0 < R
+hc : 0 < c
+hab : a < b
+hbT : b < T
+hsub : Set.Icc a T ⊆ Set.Iic T
+⊢ Set ℝ
+BUILD_ROOT/source/MSCi/TwoSite/PulseKernelDraft.lean:69:7: error: failed to infer `have` declaration type
+BUILD_ROOT/source/MSCi/TwoSite/PulseKernelDraft.lean:65:48: error: unsolved goals
+T R r c a b : ℝ
+hR : 0 < R
+hc : 0 < c
+hab : a < b
+hbT : b < T
+hsub : Set.Icc a T ⊆ Set.Iic T
+⊢ (∫ (t : ℝ) in b..T, pulseKernelTwo T R r c t) / ∫ (t : ℝ) in b..T, pulseWeight T R r c t <
+    (∫ (t : ℝ) in a..T, pulseKernelTwo T R r c t) / ∫ (t : ℝ) in a..T, pulseWeight T R r c t

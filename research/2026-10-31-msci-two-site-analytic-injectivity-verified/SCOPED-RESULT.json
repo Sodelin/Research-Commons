@@ -1,0 +1,168 @@
+{
+  "status": "SCOPED_ANALYTIC_KERNEL_NAMED_AND_OWNED_PASS",
+  "source_epoch": "63c9dc744fc04a34c3072a055b5fb4c53bbe3ee0",
+  "capsule_sha256": "00b61e4f1482c8f3edba39e81699161d9bc7df166fe23ebdec8351ca49177e79",
+  "capsule_modules": 18,
+  "actual_terminal_project_closure": 18,
+  "fresh_modules": 16,
+  "qualified_reused_modules": 2,
+  "sources": {
+    "MSCi.TwoSite.PulseScoreDraft": {
+      "source_sha256": "ee70c98e3c17b611dd709567a5492ae520ebbd85a5147185135fc51c9eee8229",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.RootDraft": "9197fe315551a3812a36bc697e3d6de92f9b0236cccec95b0ba43c71230d989b"
+      },
+      "object_sha256": "43d31d9b4773d91d60e659af934b2f7a0cbc596949ef1af39ab72178c3dcd095",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.PulseIntegralDraft": {
+      "source_sha256": "c9949785a507ff5580c0e33f2dfa79584c81612148529ef729dd822aa9eed8e4",
+      "direct_import_object_hashes": {
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic": "00d51c7b2f5392cacd9197f4ca8cec897f12085b4570dc1126ee77aeb5480cee",
+        "MSCi.TwoSite.PulseScoreDraft": "43d31d9b4773d91d60e659af934b2f7a0cbc596949ef1af39ab72178c3dcd095"
+      },
+      "object_sha256": "c0f1bacfd9f40cb4a703effde818d490fd00edd89a5bdc9f7649c0462be48847",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.PulseKernelDraft": {
+      "source_sha256": "5a411feeca43c17aa795f93b333f8392f30c39d434a70319c8b6f76f8d49d809",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.PulseIntegralDraft": "c0f1bacfd9f40cb4a703effde818d490fd00edd89a5bdc9f7649c0462be48847"
+      },
+      "object_sha256": "d153a97cac8351960fa0c5cf3157b4f50bb78be3ed308397ec25377a3ba7f58b",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.BCExcessDraft": {
+      "source_sha256": "59b14a545e6785cc2b2595eb779df4b79184110b4d42cc4c4dbc5f3b09e31949",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.PulseKernelDraft": "d153a97cac8351960fa0c5cf3157b4f50bb78be3ed308397ec25377a3ba7f58b"
+      },
+      "object_sha256": "d5db85cfc80b22e6c8e576fa041d93fafd823c05fd979b71818c46957422d013",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.FixedContinuationDraft": {
+      "source_sha256": "a29e7287edbd499a2d6bf022078b4f66c9a45eb7c2a3f5e8a2cb7e4adb312421",
+      "direct_import_object_hashes": {
+        "Mathlib.Analysis.Calculus.Deriv.Inv": "fd968e284229733571ef2d112e20db6324c9d2009eecb092e6303b907212dda3",
+        "Mathlib.Analysis.SpecialFunctions.ExpDeriv": "b3e1d9d203a964bd38a8a701a8f5eb1adf07d828294c80e572f673b68255ec3d",
+        "Mathlib.Analysis.Calculus.Deriv.MeanValue": "00f6384bbac8151062ff23dbda101f48abf1885bc68533120d7587b57763e3a8",
+        "MSCi.TwoSite.ForwardDraft": "c3aa3259e019e34c26d568ad59caa3e82b1587c9fe0f187e5c214ed4d9644ae7"
+      },
+      "object_sha256": "934ea437afa680b9d864139fefd8739d24e5ed695c320eee651247c3f246fa01",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.CRecoveryDraft": {
+      "source_sha256": "9e9260c5677bcfe1dd9c54ded0fd2ced2d7d8776cfaaba99444fe1df820923fa",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.FixedContinuationDraft": "934ea437afa680b9d864139fefd8739d24e5ed695c320eee651247c3f246fa01",
+        "MSCi.TwoSite.RootDraft": "9197fe315551a3812a36bc697e3d6de92f9b0236cccec95b0ba43c71230d989b"
+      },
+      "object_sha256": "a1c82d41d01927c5c4e5300c57f7b713673193586a752b5b88405f7a4ba8a521",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.BCRecoveryDraft": {
+      "source_sha256": "63010f844a81cb9767992fc968a37ed6aa7d0f9b23afb569eb1070a0ec1811ae",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.BCExcessDraft": "d5db85cfc80b22e6c8e576fa041d93fafd823c05fd979b71818c46957422d013",
+        "MSCi.TwoSite.CRecoveryDraft": "a1c82d41d01927c5c4e5300c57f7b713673193586a752b5b88405f7a4ba8a521"
+      },
+      "object_sha256": "00578b0e02baf27d080607c8d992660cd0b524cca19025955a73c884b6a877c0",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ARecoveryDraft": {
+      "source_sha256": "b02c766cf5c1c6a7e3d28a62fdd3c07aafc5e167e773a24f72cb62ce7b36ee67",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.CRecoveryDraft": "a1c82d41d01927c5c4e5300c57f7b713673193586a752b5b88405f7a4ba8a521"
+      },
+      "object_sha256": "b1454c0e207bda294bd5a5a8b7c505a5afdb141673aeea279f9fb19154e719f6",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABContinuationDraft": {
+      "source_sha256": "425556a43579d9232dfd052c3d84fc31a5babc4f71c351ae2ce08913e287c0d7",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.BCRecoveryDraft": "00578b0e02baf27d080607c8d992660cd0b524cca19025955a73c884b6a877c0",
+        "MSCi.TwoSite.ARecoveryDraft": "b1454c0e207bda294bd5a5a8b7c505a5afdb141673aeea279f9fb19154e719f6"
+      },
+      "object_sha256": "7b8b8768af6223e97c6194287b31c56d24f1030a32b0544c62400945aeed48c8",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABCrossingDraft": {
+      "source_sha256": "1b434f08caea8dfff6b80c643147d04fba0d96e6e53c6d295487bf518a18c285",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABContinuationDraft": "7b8b8768af6223e97c6194287b31c56d24f1030a32b0544c62400945aeed48c8"
+      },
+      "object_sha256": "c6f13ea3a9cf5fefd2e9052964772f19a1d82a7d92d332d1068d64c923543859",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABSurvivalDraft": {
+      "source_sha256": "cad29574098d05cfaaa62b9ad3760d26aefa971947ed95dcb891c70c9ae7890b",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABCrossingDraft": "c6f13ea3a9cf5fefd2e9052964772f19a1d82a7d92d332d1068d64c923543859"
+      },
+      "object_sha256": "fb987629e4aa915f77797a8cebcd332bb3bf6a591b1a2c2d1c4b6bbe9fe5b3bd",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABIntegralDraft": {
+      "source_sha256": "aae27c1558deafa0bd12ac3777970c616f77008729a702ef5eadc311cc18a5d4",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABSurvivalDraft": "fb987629e4aa915f77797a8cebcd332bb3bf6a591b1a2c2d1c4b6bbe9fe5b3bd"
+      },
+      "object_sha256": "277200a9cc5e1fde83fbf8ad71bfef085fe8dcc0f238ebdf1752ebbb8fcf9892",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABOrderingDraft": {
+      "source_sha256": "4e7f5b4c1e937df3aa9202cfbe8ad4c508333a96e00838e0974779feb99544b9",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABIntegralDraft": "277200a9cc5e1fde83fbf8ad71bfef085fe8dcc0f238ebdf1752ebbb8fcf9892"
+      },
+      "object_sha256": "2009667e45e0f09f69e0ce3485c33e4c34ed7c165a5c8a97d3d18a746e593e3e",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.ABRecoveryDraft": {
+      "source_sha256": "4c7dea6439c7e9773d6c4be96ed86b06831863d985833b8075585bf6c8a5078c",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABOrderingDraft": "2009667e45e0f09f69e0ce3485c33e4c34ed7c165a5c8a97d3d18a746e593e3e"
+      },
+      "object_sha256": "6e1fa3a52dd893285499efd069caaccaaf0f050e437eaf27dea65590047296d2",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.BBContinuationDraft": {
+      "source_sha256": "1e29321d2dbc67f7bafb236dc4e7c5d714d7ac6a9221d9cccb28d02c1fca9325",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.ABRecoveryDraft": "6e1fa3a52dd893285499efd069caaccaaf0f050e437eaf27dea65590047296d2"
+      },
+      "object_sha256": "8bad7d6e0fd143dc42d66b1613f91a1bf96e7c9d933f9a93d47fe03cd32400e1",
+      "compile_exit_code": 0
+    },
+    "MSCi.TwoSite.BBRecoveryDraft": {
+      "source_sha256": "04f4fbf848118f175348550e09243f9926cf8612d4d1f9e0c09fc4b6810ee5dd",
+      "direct_import_object_hashes": {
+        "MSCi.TwoSite.BBContinuationDraft": "8bad7d6e0fd143dc42d66b1613f91a1bf96e7c9d933f9a93d47fe03cd32400e1"
+      },
+      "object_sha256": "350fb6007f31a5d61b9c014c354bdc058d5d4718e22f16abdc9276203d79c1f6",
+      "compile_exit_code": 0
+    }
+  },
+  "retained_sources": {
+    "MSCi.TwoSite.ForwardDraft": {
+      "source_sha256": "8becd27a233481437bfc7a2acd91027362e213368bc8657a2a714c577e9004ec",
+      "object_sha256": "c3aa3259e019e34c26d568ad59caa3e82b1587c9fe0f187e5c214ed4d9644ae7"
+    },
+    "MSCi.TwoSite.RootDraft": {
+      "source_sha256": "f9c22571c83d862bb733d8701011af78f126f79dbbf61e0c3a8a0f4fa01248ba",
+      "object_sha256": "9197fe315551a3812a36bc697e3d6de92f9b0236cccec95b0ba43c71230d989b"
+    }
+  },
+  "target": "MSCi.TwoSite.nineRawFeatures_injective_on_admissible",
+  "target_owner": "MSCi.TwoSite.BBRecoveryDraft",
+  "owned_modules": 18,
+  "declarations": 224,
+  "theorems": 145,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": 0,
+  "full_audit_sha256": "3a5a63303f69471fa4e565c1658b4ac21b41316925b75dc711b6d8c9cde0c800",
+  "raw_full_audit_local_only": true,
+  "all_frozen_definition_bodies_and_theorem_headers_preserved": true,
+  "scope": "Analytic literal Fin9 formula injectivity on unchanged nine-parameter admissible domain only; no actual six-copy process/JC correspondence, full Jacobian or general clock theorem."
+}

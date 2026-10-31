@@ -1,0 +1,12 @@
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:55:20: error(lean.invalidField): Invalid field `div`: The environment does not contain `HasFDerivAtFilter.div`, so it is not possible to project the field `div` from an expression
+  hid
+of type
+  HasFDerivAtFilter (fun x => x) (ContinuousLinearMap.toSpanSingleton ℝ 1) (nhds r ×ˢ pure r)
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:51:90: error: unsolved goals
+L z K r : ℝ
+hz : 0 < z
+hr : 0 < r
+hne : r + z ≠ 0
+hid : HasDerivAt (fun x => x) 1 r
+hden : HasDerivAt (fun x => x + z) 1 r
+⊢ HasDerivAt (fixedContinuationMoment L z K) (fixedContinuationDerivative L z K r) r

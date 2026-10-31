@@ -1,0 +1,33 @@
+BUILD_ROOT/source/MSCi/TwoSite/ABCrossingDraft.lean:89:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Real.exp (-(2 * c) * t)
+in the target expression
+  Real.exp (-c * t) * (Real.exp (-c * t) - Real.exp (-c * s)) * D t =
+    (fun x => Real.exp (-(2 * c) * x) * D x - Real.exp (-c * x) * D x * Real.exp (-c * s)) t
+
+D : ℝ → ℝ
+T R c s x : ℝ
+hD : Continuous D
+hR : 0 < R
+hc : 0 < c
+hs0 : 0 < s
+hsT : s < T
+hx0 : 0 ≤ x
+hxT : x ≤ T
+hxs : x < s
+hxneg : D x < 0
+hleft : ∀ t ∈ Set.Icc 0 T, t < s → D t ≤ 0
+hright : ∀ t ∈ Set.Icc 0 T, s < t → 0 ≤ D t
+hend : 0 ≤ D T
+hzero : (∫ (t : ℝ) in 0..T, Real.exp (-c * t) * D t) + Real.exp (-c * T) * D T / (R + c) = 0
+h0T : 0 < T
+hnonpos : ∀ t ∈ Set.Icc 0 T, abCrossTerm D c s t ≤ 0
+hneg : abCrossTerm D c s x < 0
+hcont : Continuous (abCrossTerm D c s)
+hintneg : ∫ (t : ℝ) in 0..T, abCrossTerm D c s t < 0
+he2 : ∀ (t : ℝ), Real.exp (-(2 * c) * t) = Real.exp (-c * t) * Real.exp (-c * t)
+hI1 : IntervalIntegrable (fun t => Real.exp (-c * t) * D t) volume 0 T
+hI2 : IntervalIntegrable (fun t => Real.exp (-(2 * c) * t) * D t) volume 0 T
+t : ℝ
+a✝ : t ∈ Set.uIcc 0 T
+⊢ Real.exp (-c * t) * (Real.exp (-c * t) - Real.exp (-c * s)) * D t =
+    (fun x => Real.exp (-(2 * c) * x) * D x - Real.exp (-c * x) * D x * Real.exp (-c * s)) t

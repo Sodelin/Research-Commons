@@ -1,0 +1,99 @@
+MSCi.TwoSite.nineRawFeatures_injective_on_admissible : ∀ (p q : MSCi.TwoSite.Parameters),
+  MSCi.TwoSite.Admissible p →
+    MSCi.TwoSite.Admissible q → Eq.{1} (MSCi.TwoSite.nineRawFeatures p) (MSCi.TwoSite.nineRawFeatures q) → Eq.{1} p q
+'MSCi.TwoSite.nineRawFeatures_injective_on_admissible' depends on axioms: [propext,
+ Classical.choice.{u},
+ Quot.sound.{u}]
+structure MSCi.TwoSite.Parameters : Type
+number of parameters: 0
+fields:
+  MSCi.TwoSite.Parameters.h : ℝ
+  MSCi.TwoSite.Parameters.t1 : ℝ
+  MSCi.TwoSite.Parameters.t0 : ℝ
+  MSCi.TwoSite.Parameters.rA : ℝ
+  MSCi.TwoSite.Parameters.rB : ℝ
+  MSCi.TwoSite.Parameters.rC : ℝ
+  MSCi.TwoSite.Parameters.rAB : ℝ
+  MSCi.TwoSite.Parameters.rR : ℝ
+  MSCi.TwoSite.Parameters.g : ℝ
+constructor:
+  MSCi.TwoSite.Parameters.mk (h t1 t0 rA rB rC rAB rR g : ℝ) : MSCi.TwoSite.Parameters
+def MSCi.TwoSite.Admissible : MSCi.TwoSite.Parameters → Prop :=
+fun p =>
+  LT.lt.{0} 0 p.h ∧
+    LT.lt.{0} p.h p.t1 ∧
+      LT.lt.{0} p.t1 p.t0 ∧
+        LT.lt.{0} 0 p.g ∧
+          LT.lt.{0} p.g 1 ∧
+            LT.lt.{0} 0 p.rA ∧ LT.lt.{0} 0 p.rB ∧ LT.lt.{0} 0 p.rC ∧ LT.lt.{0} 0 p.rAB ∧ LT.lt.{0} 0 p.rR
+def MSCi.TwoSite.nineRawFeatures : MSCi.TwoSite.Parameters → Fin 9 → ℝ :=
+fun p =>
+  Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.AC MSCi.TwoSite.jcPairExponent)
+    (Matrix.vecCons.{0}
+      (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.AC (HMul.hMul.{0, 0, 0} 2 MSCi.TwoSite.jcPairExponent))
+      (Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.CC MSCi.TwoSite.jcPairExponent)
+        (Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.BC MSCi.TwoSite.jcPairExponent)
+          (Matrix.vecCons.{0}
+            (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.BC (HMul.hMul.{0, 0, 0} 2 MSCi.TwoSite.jcPairExponent))
+            (Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.AB MSCi.TwoSite.jcPairExponent)
+              (Matrix.vecCons.{0}
+                (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.AB (HMul.hMul.{0, 0, 0} 2 MSCi.TwoSite.jcPairExponent))
+                (Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.AA MSCi.TwoSite.jcPairExponent)
+                  (Matrix.vecCons.{0} (MSCi.TwoSite.pairTransform p MSCi.TwoSite.Pair.BB MSCi.TwoSite.jcPairExponent)
+                    Matrix.vecEmpty.{0}))))))))
+def MSCi.TwoSite.pairTransform : MSCi.TwoSite.Parameters → MSCi.TwoSite.Pair → ℝ → ℝ :=
+fun p pair z =>
+  have u := HSub.hSub.{0, 0, 0} p.t1 p.h;
+  have v := HSub.hSub.{0, 0, 0} p.t0 p.t1;
+  have E := fun t => Real.exp (HMul.hMul.{0, 0, 0} (Neg.neg.{0} z) t);
+  have S := fun r l => Real.exp (HMul.hMul.{0, 0, 0} (Neg.neg.{0} r) l);
+  have H := fun r l =>
+    HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} r (HAdd.hAdd.{0, 0, 0} r z))
+      (HSub.hSub.{0, 0, 0} 1 (Real.exp (HMul.hMul.{0, 0, 0} (Neg.neg.{0} (HAdd.hAdd.{0, 0, 0} r z)) l)));
+  have root := HDiv.hDiv.{0, 0, 0} p.rR (HAdd.hAdd.{0, 0, 0} p.rR z);
+  have s := S p.rB p.h;
+  have b := S p.rB u;
+  have a := S p.rAB v;
+  have c1 := S p.rC (HAdd.hAdd.{0, 0, 0} u v);
+  have a0 := S p.rA p.t1;
+  have c0 := S p.rC p.t0;
+  match pair with
+  | MSCi.TwoSite.Pair.AC => HMul.hMul.{0, 0, 0} (E p.t0) root
+  | MSCi.TwoSite.Pair.AB =>
+    HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) (E p.t1)) (H p.rAB v))
+      (HMul.hMul.{0, 0, 0}
+        (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} p.g (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) a)) (E p.t0))
+        root)
+  | MSCi.TwoSite.Pair.BC =>
+    HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} p.g (E p.h)) (H p.rC (HAdd.hAdd.{0, 0, 0} u v)))
+      (HMul.hMul.{0, 0, 0}
+        (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) (HMul.hMul.{0, 0, 0} p.g c1)) (E p.t0))
+        root)
+  | MSCi.TwoSite.Pair.AA =>
+    HAdd.hAdd.{0, 0, 0}
+      (HAdd.hAdd.{0, 0, 0} (H p.rA p.t1) (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} a0 (E p.t1)) (H p.rAB v)))
+      (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} a0 a) (E p.t0)) root)
+  | MSCi.TwoSite.Pair.CC =>
+    HAdd.hAdd.{0, 0, 0} (H p.rC p.t0) (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} c0 (E p.t0)) root)
+  | MSCi.TwoSite.Pair.BB =>
+    HAdd.hAdd.{0, 0, 0} (H p.rB p.h)
+      (HMul.hMul.{0, 0, 0} s
+        (HAdd.hAdd.{0, 0, 0}
+          (HAdd.hAdd.{0, 0, 0}
+            (HAdd.hAdd.{0, 0, 0}
+              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) 2) (E p.h))
+                (H p.rB u))
+              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} p.g 2) (E p.h))
+                (H p.rC (HAdd.hAdd.{0, 0, 0} u v))))
+            (HMul.hMul.{0, 0, 0}
+              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) 2) b) (E p.t1))
+              (H p.rAB v)))
+          (HMul.hMul.{0, 0, 0}
+            (HMul.hMul.{0, 0, 0}
+              (HAdd.hAdd.{0, 0, 0}
+                (HAdd.hAdd.{0, 0, 0}
+                  (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} (HSub.hSub.{0, 0, 0} 1 p.g) 2) b) a)
+                  (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} p.g 2) c1))
+                (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 p.g) (HSub.hSub.{0, 0, 0} 1 p.g)))
+              (E p.t0))
+            root)))

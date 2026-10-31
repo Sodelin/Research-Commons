@@ -1,0 +1,591 @@
+{
+  "definitions": [
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "Parameters",
+      "text": "structure Parameters where\n  h : \u211d\n  t1 : \u211d\n  t0 : \u211d\n  rA : \u211d\n  rB : \u211d\n  rC : \u211d\n  rAB : \u211d\n  rR : \u211d\n  g : \u211d"
+    },
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "Admissible",
+      "text": "def Admissible (p : Parameters) : Prop :=\n  0 < p.h \u2227 p.h < p.t1 \u2227 p.t1 < p.t0 \u2227\n  0 < p.g \u2227 p.g < 1 \u2227\n  0 < p.rA \u2227 0 < p.rB \u2227 0 < p.rC \u2227 0 < p.rAB \u2227 0 < p.rR"
+    },
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "Pair",
+      "text": "inductive Pair where\n  | AC | AB | BC | AA | CC | BB\n  deriving DecidableEq, Repr"
+    },
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "pairTransform",
+      "text": "def pairTransform (p : Parameters) (pair : Pair) (z : \u211d) : \u211d :=\n  let u := p.t1 - p.h\n  let v := p.t0 - p.t1\n  let E : \u211d \u2192 \u211d := fun t => Real.exp (-z * t)\n  let S : \u211d \u2192 \u211d \u2192 \u211d := fun r l => Real.exp (-r * l)\n  let H : \u211d \u2192 \u211d \u2192 \u211d := fun r l =>\n    r / (r + z) * (1 - Real.exp (-(r + z) * l))\n  let root := p.rR / (p.rR + z)\n  let s := S p.rB p.h\n  let b := S p.rB u\n  let a := S p.rAB v\n  let c1 := S p.rC (u + v)\n  let a0 := S p.rA p.t1\n  let c0 := S p.rC p.t0\n  match pair with\n  | .AC => E p.t0 * root\n  | .AB =>\n      (1 - p.g) * E p.t1 * H p.rAB v +\n        (p.g + (1 - p.g) * a) * E p.t0 * root\n  | .BC =>\n      p.g * E p.h * H p.rC (u + v) +\n        (1 - p.g + p.g * c1) * E p.t0 * root\n  | .AA =>\n      H p.rA p.t1 + a0 * E p.t1 * H p.rAB v +\n        a0 * a * E p.t0 * root\n  | .CC => H p.rC p.t0 + c0 * E p.t0 * root\n  | .BB =>\n      H p.rB p.h + s *\n        ((1 - p.g) ^ 2 * E p.h * H p.rB u +\n          p.g ^ 2 * E p.h * H p.rC (u + v) +\n          (1 - p.g) ^ 2 * b * E p.t1 * H p.rAB v +\n          ((1 - p.g) ^ 2 * b * a + p.g ^ 2 * c1 +\n            2 * p.g * (1 - p.g)) * E p.t0 * root)"
+    },
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "jcPairExponent",
+      "text": "def jcPairExponent : \u211d := 8 / 3"
+    },
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "nineRawFeatures",
+      "text": "def nineRawFeatures (p : Parameters) : Fin 9 \u2192 \u211d :=\n  ![pairTransform p .AC jcPairExponent,\n    pairTransform p .AC (2 * jcPairExponent),\n    pairTransform p .CC jcPairExponent,\n    pairTransform p .BC jcPairExponent,\n    pairTransform p .BC (2 * jcPairExponent),\n    pairTransform p .AB jcPairExponent,\n    pairTransform p .AB (2 * jcPairExponent),\n    pairTransform p .AA jcPairExponent,\n    pairTransform p .BB jcPairExponent]"
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootMoment",
+      "text": "def rootMoment (t r z : \u211d) : \u211d :=\n  Real.exp (-z * t) * (r / (r + z))"
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRatio",
+      "text": "def rootRatio (r c : \u211d) : \u211d :=\n  (r + c) ^ 2 / (r * (r + 2 * c))"
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "pulseScore",
+      "text": "def pulseScore (x B\u2081 B\u2082 : \u211d) : \u211d := (x ^ 2 - B\u2082) / (x - B\u2081)"
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulseWeight",
+      "text": "def pulseWeight (T R r c t : \u211d) : \u211d :=\n  Real.exp (-r * t) * (Real.exp (-c * t) - rootMoment T R c)"
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulseScoreAt",
+      "text": "def pulseScoreAt (T R c t : \u211d) : \u211d :=\n  pulseScore (Real.exp (-c * t)) (rootMoment T R c) (rootMoment T R (2 * c))"
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulseKernelTwo",
+      "text": "def pulseKernelTwo (T R r c t : \u211d) : \u211d :=\n  Real.exp (-r * t) * (Real.exp (-(2 * c) * t) - rootMoment T R (2 * c))"
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "pulseKernel",
+      "text": "def pulseKernel (T R r z t : \u211d) : \u211d :=\n  Real.exp (-r * t) * (Real.exp (-z * t) - rootMoment T R z)"
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "pulseShiftedMoment",
+      "text": "def pulseShiftedMoment (T R r z h : \u211d) : \u211d :=\n  Real.exp (-z * h) * (r / (r + z)) *\n      (1 - Real.exp (-(r + z) * (T - h))) +\n    Real.exp (-r * (T - h)) * rootMoment T R z"
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "fixedContinuationMoment",
+      "text": "def fixedContinuationMoment (L z K r : \u211d) : \u211d :=\n  r / (r + z) * (1 - Real.exp (-(r + z) * L)) + Real.exp (-r * L) * K"
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "fixedContinuationDerivative",
+      "text": "def fixedContinuationDerivative (L z K r : \u211d) : \u211d :=\n  z / (r + z) ^ 2 * (1 - (1 + (r + z) * L) * Real.exp (-(r + z) * L)) +\n    L * Real.exp (-r * L) * (Real.exp (-z * L) - K)"
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "bcExcess",
+      "text": "def bcExcess (p : Parameters) (z : \u211d) : \u211d :=\n  pairTransform p .BC z - rootMoment p.t0 p.rR z"
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "bcExcessRatio",
+      "text": "def bcExcessRatio (p : Parameters) (c : \u211d) : \u211d :=\n  bcExcess p (2 * c) / bcExcess p c"
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "aaContinuation",
+      "text": "def aaContinuation (p : Parameters) (z : \u211d) : \u211d :=\n  Real.exp (-z * p.t1) *\n    fixedContinuationMoment (p.t0 - p.t1) z\n      (Real.exp (-z * (p.t0 - p.t1)) * (p.rR / (p.rR + z))) p.rAB"
+    },
+    {
+      "module": "MSCi.TwoSite.ABCrossingDraft",
+      "name": "abCrossTerm",
+      "text": "def abCrossTerm (D : \u211d \u2192 \u211d) (c s t : \u211d) : \u211d :=\n  Real.exp (-c * t) * (Real.exp (-c * t) - Real.exp (-c * s)) * D t"
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "abSurvival",
+      "text": "def abSurvival (a r t : \u211d) : \u211d := Real.exp (-r * max (t - a) 0)"
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "abSurvivalDiff",
+      "text": "def abSurvivalDiff (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d) : \u211d :=\n  abSurvival a\u2081 r\u2081 t - abSurvival a\u2082 r\u2082 t"
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "abCrossing",
+      "text": "def abCrossing (a\u2081 r\u2081 a\u2082 r\u2082 : \u211d) : \u211d :=\n  (r\u2082 * a\u2082 - r\u2081 * a\u2081) / (r\u2082 - r\u2081)"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbRootTail",
+      "text": "def bbRootTail (L R z : \u211d) : \u211d :=\n  Real.exp (-z * L) * (R / (R + z))"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbABRelativeTail",
+      "text": "def bbABRelativeTail (p : Parameters) (z : \u211d) : \u211d :=\n  Real.exp (-z * (p.t1 - p.h)) *\n    fixedContinuationMoment (p.t0 - p.t1) z\n      (bbRootTail (p.t0 - p.t1) p.rR z) p.rAB"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbStayContinuation",
+      "text": "def bbStayContinuation (p : Parameters) (z r : \u211d) : \u211d :=\n  Real.exp (-z * p.h) *\n    fixedContinuationMoment (p.t1 - p.h) z (bbABRelativeTail p z) r"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbRouteContinuation",
+      "text": "def bbRouteContinuation (p : Parameters) (z : \u211d) : \u211d :=\n  Real.exp (-z * p.h) *\n    fixedContinuationMoment (p.t0 - p.h) z\n      (bbRootTail (p.t0 - p.h) p.rR z) p.rC"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbTail",
+      "text": "def bbTail (p : Parameters) (z r : \u211d) : \u211d :=\n  (1 - p.g) ^ 2 * bbStayContinuation p z r +\n    p.g ^ 2 * bbRouteContinuation p z + 2 * p.g * (1 - p.g) * rootMoment p.t0 p.rR z"
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bbForwardAt",
+      "text": "def bbForwardAt (p : Parameters) (z r : \u211d) : \u211d :=\n  fixedContinuationMoment p.h z (bbTail p z r) r"
+    }
+  ],
+  "headers": [
+    {
+      "module": "MSCi.TwoSite.ForwardDraft",
+      "name": "rootRatio_gt_one",
+      "header": "theorem rootRatio_gt_one (r c : \u211d) (hr : 0 < r) (hc : 0 < c) :\n    (1 : \u211d) < (r + c) ^ 2 / (r * (r + 2 * c)) "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "ac_transform_eq_rootMoment",
+      "header": "theorem ac_transform_eq_rootMoment (p : Parameters) (z : \u211d) :\n    pairTransform p .AC z = rootMoment p.t0 p.rR z "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRatio_eq_one_add",
+      "header": "theorem rootRatio_eq_one_add (r c : \u211d) (hr : 0 < r) (hc : 0 < c) :\n    rootRatio r c = 1 + c ^ 2 / (r * (r + 2 * c)) "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRatio_strictAnti",
+      "header": "theorem rootRatio_strictAnti (a b c : \u211d)\n    (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) (hab : a < b) :\n    rootRatio b c < rootRatio a c "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRatio_injective",
+      "header": "theorem rootRatio_injective (a b c : \u211d)\n    (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)\n    (heq : rootRatio a c = rootRatio b c) : a = b "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootMoments_ratio",
+      "header": "theorem rootMoments_ratio (t r c : \u211d) (hr : 0 < r) (hc : 0 < c) :\n    rootMoment t r (2 * c) / (rootMoment t r c) ^ 2 = rootRatio r c "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRate_eq_of_moments_eq",
+      "header": "theorem rootRate_eq_of_moments_eq (t t' r r' c : \u211d)\n    (hr : 0 < r) (hr' : 0 < r') (hc : 0 < c)\n    (h1 : rootMoment t r c = rootMoment t' r' c)\n    (h2 : rootMoment t r (2 * c) = rootMoment t' r' (2 * c)) :\n    r = r' "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootRate_eq_of_nineRawFeatures_eq",
+      "header": "theorem rootRate_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.rR = q.rR "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootTime_eq_of_rootMoment_eq",
+      "header": "theorem rootTime_eq_of_rootMoment_eq (t t' r c : \u211d)\n    (hr : 0 < r) (hc : 0 < c)\n    (h : rootMoment t r c = rootMoment t' r c) : t = t' "
+    },
+    {
+      "module": "MSCi.TwoSite.RootDraft",
+      "name": "rootTime_eq_of_nineRawFeatures_eq",
+      "header": "theorem rootTime_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.t0 = q.t0 "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "pulse_score_difference",
+      "header": "theorem pulse_score_difference (a b B\u2081 B\u2082 : \u211d)\n    (ha : a \u2260 B\u2081) (hb : b \u2260 B\u2081) :\n    pulseScore b B\u2081 B\u2082 - pulseScore a B\u2081 B\u2082 =\n      (b - a) * (1 + (B\u2082 - B\u2081 ^ 2) / ((b - B\u2081) * (a - B\u2081))) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "pulse_score_strict_in_x",
+      "header": "theorem pulse_score_strict_in_x (a b B\u2081 B\u2082 : \u211d)\n    (ha : B\u2081 < a) (hab : a < b) (hvar : B\u2081 ^ 2 < B\u2082) :\n    pulseScore a B\u2081 B\u2082 < pulseScore b B\u2081 B\u2082 "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "root_moment_variance_pos",
+      "header": "theorem root_moment_variance_pos (T R c : \u211d) (hR : 0 < R) (hc : 0 < c) :\n    rootMoment T R c ^ 2 < rootMoment T R (2 * c) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "root_moment_lt_exp_at",
+      "header": "theorem root_moment_lt_exp_at (T R c t : \u211d) (hR : 0 < R) (hc : 0 < c)\n    (ht : t \u2264 T) : rootMoment T R c < Real.exp (-c * t) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "pulse_score_strict_decrease_time",
+      "header": "theorem pulse_score_strict_decrease_time (T R c t\u2081 t\u2082 : \u211d)\n    (hR : 0 < R) (hc : 0 < c) (h12 : t\u2081 < t\u2082) (h2 : t\u2082 \u2264 T) :\n    pulseScore (Real.exp (-c * t\u2082)) (rootMoment T R c) (rootMoment T R (2 * c)) <\n      pulseScore (Real.exp (-c * t\u2081)) (rootMoment T R c) (rootMoment T R (2 * c)) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseScoreDraft",
+      "name": "weighted_split_ratio_strict",
+      "header": "theorem weighted_split_ratio_strict (wl wr il ir middle : \u211d)\n    (hwl : 0 < wl) (hwr : 0 < wr)\n    (hleft : middle * wl < il) (hright : ir < middle * wr) :\n    ir / wr < (il + ir) / (wl + wr) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseIntegralDraft",
+      "name": "weighted_tail_ratio_strict",
+      "header": "theorem weighted_tail_ratio_strict (w q : \u211d \u2192 \u211d) (a b c : \u211d)\n    (hab : a < b) (hbc : b < c)\n    (hw : ContinuousOn w (Set.Icc a c))\n    (hq : ContinuousOn q (Set.Icc a c))\n    (hwpos : \u2200 t \u2208 Set.Icc a c, 0 < w t)\n    (hanti : StrictAntiOn q (Set.Icc a c)) :\n    (\u222b t in b..c, w t * q t) / (\u222b t in b..c, w t) <\n      (\u222b t in a..c, w t * q t) / (\u222b t in a..c, w t) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulse_weight_positive",
+      "header": "theorem pulse_weight_positive (T R r c t : \u211d) (hR : 0 < R) (hc : 0 < c)\n    (ht : t \u2264 T) : 0 < pulseWeight T R r c t "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulse_weight_continuous",
+      "header": "theorem pulse_weight_continuous (T R r c : \u211d) : Continuous (pulseWeight T R r c) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulse_score_continuousOn",
+      "header": "theorem pulse_score_continuousOn (T R c : \u211d) (hR : 0 < R) (hc : 0 < c) :\n    ContinuousOn (pulseScoreAt T R c) (Set.Iic T) "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulse_weight_mul_score",
+      "header": "theorem pulse_weight_mul_score (T R r c t : \u211d) (hR : 0 < R) (hc : 0 < c)\n    (ht : t \u2264 T) : pulseWeight T R r c t * pulseScoreAt T R c t =\n      pulseKernelTwo T R r c t "
+    },
+    {
+      "module": "MSCi.TwoSite.PulseKernelDraft",
+      "name": "pulse_kernel_ratio_strict",
+      "header": "theorem pulse_kernel_ratio_strict (T R r c a b : \u211d)\n    (hR : 0 < R) (hc : 0 < c) (hab : a < b) (hbT : b < T) :\n    (\u222b t in b..T, pulseKernelTwo T R r c t) /\n        (\u222b t in b..T, pulseWeight T R r c t) <\n      (\u222b t in a..T, pulseKernelTwo T R r c t) /\n        (\u222b t in a..T, pulseWeight T R r c t) "
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "bc_transform_split",
+      "header": "theorem bc_transform_split (p : Parameters) (z : \u211d) :\n    pairTransform p .BC z = (1 - p.g) * rootMoment p.t0 p.rR z +\n      p.g * pulseShiftedMoment p.t0 p.rR p.rC z p.h "
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "integral_exp_linear",
+      "header": "theorem integral_exp_linear (k a b : \u211d) (hk : k \u2260 0) :\n    (\u222b t in a..b, Real.exp (k * t)) =\n      (Real.exp (k * b) - Real.exp (k * a)) / k "
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "pulse_kernel_integral_closed",
+      "header": "theorem pulse_kernel_integral_closed (T R r z h : \u211d) (hr : 0 < r) (hz : 0 < z) :\n    (\u222b t in h..T, pulseKernel T R r z t) =\n      (Real.exp (-(r + z) * T) - Real.exp (-(r + z) * h)) / (-(r + z)) -\n        rootMoment T R z * (Real.exp (-r * T) - Real.exp (-r * h)) / (-r) "
+    },
+    {
+      "module": "MSCi.TwoSite.BCExcessDraft",
+      "name": "pulse_excess_integral",
+      "header": "theorem pulse_excess_integral (T R r z h : \u211d) (hr : 0 < r) (hz : 0 < z) :\n    pulseShiftedMoment T R r z h - rootMoment T R z =\n      r * Real.exp (r * h) * (\u222b t in h..T, pulseKernel T R r z t) "
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "exponential_tail_bracket_pos",
+      "header": "theorem exponential_tail_bracket_pos (x : \u211d) (hx : 0 < x) :\n    0 < 1 - (1 + x) * Real.exp (-x) "
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "fixed_continuation_derivative_pos",
+      "header": "theorem fixed_continuation_derivative_pos (L z K r : \u211d)\n    (hL : 0 < L) (hz : 0 < z) (hr : 0 < r) (hK : K \u2264 Real.exp (-z * L)) :\n    0 < fixedContinuationDerivative L z K r "
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "fixed_continuation_hasDerivAt",
+      "header": "theorem fixed_continuation_hasDerivAt (L z K r : \u211d)\n    (hz : 0 < z) (hr : 0 < r) :\n    HasDerivAt (fixedContinuationMoment L z K) (fixedContinuationDerivative L z K r) r "
+    },
+    {
+      "module": "MSCi.TwoSite.FixedContinuationDraft",
+      "name": "fixed_continuation_strictMonoOn",
+      "header": "theorem fixed_continuation_strictMonoOn (L z K : \u211d)\n    (hL : 0 < L) (hz : 0 < z) (hK : K \u2264 Real.exp (-z * L)) :\n    StrictMonoOn (fixedContinuationMoment L z K) (Set.Ioi 0) "
+    },
+    {
+      "module": "MSCi.TwoSite.CRecoveryDraft",
+      "name": "cc_transform_eq_fixed",
+      "header": "theorem cc_transform_eq_fixed (p : Parameters) (z : \u211d) :\n    pairTransform p .CC z =\n      fixedContinuationMoment p.t0 z\n        (Real.exp (-z * p.t0) * (p.rR / (p.rR + z))) p.rC "
+    },
+    {
+      "module": "MSCi.TwoSite.CRecoveryDraft",
+      "name": "cc_tail_le_start",
+      "header": "theorem cc_tail_le_start (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) :\n    Real.exp (-z * p.t0) * (p.rR / (p.rR + z)) \u2264 Real.exp (-z * p.t0) "
+    },
+    {
+      "module": "MSCi.TwoSite.CRecoveryDraft",
+      "name": "c_rate_eq_of_cc_eq",
+      "header": "theorem c_rate_eq_of_cc_eq (p q : Parameters) (z : \u211d)\n    (hp : Admissible p) (hq : Admissible q) (hz : 0 < z)\n    (ht : p.t0 = q.t0) (hR : p.rR = q.rR)\n    (heq : pairTransform p .CC z = pairTransform q .CC z) : p.rC = q.rC "
+    },
+    {
+      "module": "MSCi.TwoSite.CRecoveryDraft",
+      "name": "c_rate_eq_of_nineRawFeatures_eq",
+      "header": "theorem c_rate_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.rC = q.rC "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "bc_excess_eq_integral",
+      "header": "theorem bc_excess_eq_integral (p : Parameters) (z : \u211d)\n    (hr : 0 < p.rC) (hz : 0 < z) :\n    bcExcess p z = p.g * (p.rC * Real.exp (p.rC * p.h) *\n      (\u222b t in p.h..p.t0, pulseKernel p.t0 p.rR p.rC z t)) "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "pulse_weight_integral_pos",
+      "header": "theorem pulse_weight_integral_pos (T R r c h : \u211d)\n    (hR : 0 < R) (hc : 0 < c) (hhT : h < T) :\n    0 < \u222b t in h..T, pulseWeight T R r c t "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "bc_excess_ratio_eq_kernel_ratio",
+      "header": "theorem bc_excess_ratio_eq_kernel_ratio (p : Parameters) (c : \u211d)\n    (hp : Admissible p) (hc : 0 < c) :\n    bcExcessRatio p c =\n      (\u222b t in p.h..p.t0, pulseKernelTwo p.t0 p.rR p.rC c t) /\n        (\u222b t in p.h..p.t0, pulseWeight p.t0 p.rR p.rC c t) "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "bc_excess_ratio_eq_of_bc_eq",
+      "header": "theorem bc_excess_ratio_eq_of_bc_eq (p q : Parameters) (c : \u211d)\n    (ht : p.t0 = q.t0) (hR : p.rR = q.rR)\n    (h1 : pairTransform p .BC c = pairTransform q .BC c)\n    (h2 : pairTransform p .BC (2 * c) = pairTransform q .BC (2 * c)) :\n    bcExcessRatio p c = bcExcessRatio q c "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "pulse_time_eq_of_bc_eq",
+      "header": "theorem pulse_time_eq_of_bc_eq (p q : Parameters) (c : \u211d)\n    (hp : Admissible p) (hq : Admissible q) (hc : 0 < c)\n    (ht : p.t0 = q.t0) (hR : p.rR = q.rR) (hC : p.rC = q.rC)\n    (h1 : pairTransform p .BC c = pairTransform q .BC c)\n    (h2 : pairTransform p .BC (2 * c) = pairTransform q .BC (2 * c)) :\n    p.h = q.h "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "pulse_probability_eq_of_bc_eq",
+      "header": "theorem pulse_probability_eq_of_bc_eq (p q : Parameters) (c : \u211d)\n    (hp : Admissible p) (hc : 0 < c)\n    (ht : p.t0 = q.t0) (hR : p.rR = q.rR) (hC : p.rC = q.rC)\n    (hh : p.h = q.h)\n    (h1 : pairTransform p .BC c = pairTransform q .BC c) : p.g = q.g "
+    },
+    {
+      "module": "MSCi.TwoSite.BCRecoveryDraft",
+      "name": "pulse_parameters_eq_of_nineRawFeatures_eq",
+      "header": "theorem pulse_parameters_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.h = q.h \u2227 p.g = q.g "
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "fixed_continuation_le_one",
+      "header": "theorem fixed_continuation_le_one (L z K r : \u211d)\n    (hL : 0 \u2264 L) (hz : 0 < z) (hr : 0 < r) (hK : K \u2264 Real.exp (-z * L)) :\n    fixedContinuationMoment L z K r \u2264 1 "
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "aa_transform_eq_fixed",
+      "header": "theorem aa_transform_eq_fixed (p : Parameters) (z : \u211d) :\n    pairTransform p .AA z = fixedContinuationMoment p.t1 z (aaContinuation p z) p.rA "
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "aa_continuation_le_start",
+      "header": "theorem aa_continuation_le_start (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) : aaContinuation p z \u2264 Real.exp (-z * p.t1) "
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "a_rate_eq_of_aa_eq",
+      "header": "theorem a_rate_eq_of_aa_eq (p q : Parameters) (z : \u211d)\n    (hp : Admissible p) (hq : Admissible q) (hz : 0 < z)\n    (ht1 : p.t1 = q.t1) (ht0 : p.t0 = q.t0)\n    (hAB : p.rAB = q.rAB) (hR : p.rR = q.rR)\n    (heq : pairTransform p .AA z = pairTransform q .AA z) : p.rA = q.rA "
+    },
+    {
+      "module": "MSCi.TwoSite.ARecoveryDraft",
+      "name": "a_rate_eq_of_nineRawFeatures_eq",
+      "header": "theorem a_rate_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q)\n    (ht1 : p.t1 = q.t1) (hAB : p.rAB = q.rAB) : p.rA = q.rA "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_transform_split",
+      "header": "theorem ab_transform_split (p : Parameters) (z : \u211d) :\n    pairTransform p .AB z = p.g * rootMoment p.t0 p.rR z +\n      (1 - p.g) * pulseShiftedMoment p.t0 p.rR p.rAB z p.t1 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_shifted_eq_of_ab_eq",
+      "header": "theorem ab_shifted_eq_of_ab_eq (p q : Parameters) (z : \u211d)\n    (hp : Admissible p) (ht : p.t0 = q.t0) (hR : p.rR = q.rR)\n    (hg : p.g = q.g)\n    (heq : pairTransform p .AB z = pairTransform q .AB z) :\n    pulseShiftedMoment p.t0 p.rR p.rAB z p.t1 =\n      pulseShiftedMoment q.t0 q.rR q.rAB z q.t1 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_shifted_eq_fixed",
+      "header": "theorem ab_shifted_eq_fixed (T R r z a : \u211d) :\n    pulseShiftedMoment T R r z a = Real.exp (-z * a) *\n      fixedContinuationMoment (T - a) z\n        (Real.exp (-z * (T - a)) * (R / (R + z))) r "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_rate_eq_at_fixed_onset",
+      "header": "theorem ab_rate_eq_at_fixed_onset (T R r s z a : \u211d)\n    (hR : 0 < R) (hr : 0 < r) (hs : 0 < s) (hz : 0 < z) (ha : a < T)\n    (heq : pulseShiftedMoment T R r z a = pulseShiftedMoment T R s z a) : r = s "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_shifted_moments_eq_of_nineRawFeatures_eq",
+      "header": "theorem ab_shifted_moments_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) :\n    pulseShiftedMoment p.t0 p.rR p.rAB jcPairExponent p.t1 =\n        pulseShiftedMoment q.t0 q.rR q.rAB jcPairExponent q.t1 \u2227\n      pulseShiftedMoment p.t0 p.rR p.rAB (2 * jcPairExponent) p.t1 =\n        pulseShiftedMoment q.t0 q.rR q.rAB (2 * jcPairExponent) q.t1 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABContinuationDraft",
+      "name": "ab_rate_eq_of_features_and_onset_eq",
+      "header": "theorem ab_rate_eq_of_features_and_onset_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) (ha : p.t1 = q.t1) : p.rAB = q.rAB "
+    },
+    {
+      "module": "MSCi.TwoSite.ABCrossingDraft",
+      "name": "ab_bounded_crossing_separates",
+      "header": "theorem ab_bounded_crossing_separates (D : \u211d \u2192 \u211d) (T R c s x : \u211d)\n    (hD : Continuous D) (hR : 0 < R) (hc : 0 < c)\n    (hs0 : 0 < s) (hsT : s < T) (hx0 : 0 \u2264 x) (hxT : x \u2264 T) (hxs : x < s)\n    (hxneg : D x < 0)\n    (hleft : \u2200 t \u2208 Set.Icc 0 T, t < s \u2192 D t \u2264 0)\n    (hright : \u2200 t \u2208 Set.Icc 0 T, s < t \u2192 0 \u2264 D t)\n    (hend : 0 \u2264 D T)\n    (hzero : (\u222b t in (0 : \u211d)..T, Real.exp (-c * t) * D t) +\n        Real.exp (-c * T) * D T / (R + c) = 0) :\n    (\u222b t in (0 : \u211d)..T, Real.exp (-(2 * c) * t) * D t) +\n        Real.exp (-(2 * c) * T) * D T / (R + 2 * c) < 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_of_le",
+      "header": "theorem ab_survival_of_le (a r t : \u211d) (h : t \u2264 a) : abSurvival a r t = 1 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_of_ge",
+      "header": "theorem ab_survival_of_ge (a r t : \u211d) (h : a \u2264 t) :\n    abSurvival a r t = Real.exp (-r * (t - a)) "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_continuous",
+      "header": "theorem ab_survival_diff_continuous (a\u2081 r\u2081 a\u2082 r\u2082 : \u211d) :\n    Continuous (abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082) "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_crossing_after_second_onset",
+      "header": "theorem ab_crossing_after_second_onset (a\u2081 r\u2081 a\u2082 r\u2082 : \u211d)\n    (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082) :\n    a\u2082 < abCrossing a\u2081 r\u2081 a\u2082 r\u2082 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_zero_before_first",
+      "header": "theorem ab_survival_diff_zero_before_first (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (ha : a\u2081 \u2264 a\u2082) (ht : t \u2264 a\u2081) : abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t = 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_neg_between_onsets",
+      "header": "theorem ab_survival_diff_neg_between_onsets (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (hr\u2081 : 0 < r\u2081) (h\u2081 : a\u2081 < t) (h\u2082 : t \u2264 a\u2082) :\n    abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t < 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_log_survival_diff",
+      "header": "theorem ab_log_survival_diff (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d) (hrr : r\u2081 < r\u2082) :\n    (-r\u2081 * (t - a\u2081)) - (-r\u2082 * (t - a\u2082)) =\n      (r\u2082 - r\u2081) * (t - abCrossing a\u2081 r\u2081 a\u2082 r\u2082) "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_neg_after_second_before_crossing",
+      "header": "theorem ab_survival_diff_neg_after_second_before_crossing (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (hrr : r\u2081 < r\u2082) (ha : a\u2081 \u2264 a\u2082) (ht : a\u2082 \u2264 t)\n    (hc : t < abCrossing a\u2081 r\u2081 a\u2082 r\u2082) : abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t < 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_pos_after_crossing",
+      "header": "theorem ab_survival_diff_pos_after_crossing (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082)\n    (hc : abCrossing a\u2081 r\u2081 a\u2082 r\u2082 < t) : 0 < abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_survival_diff_nonpos_before_crossing",
+      "header": "theorem ab_survival_diff_nonpos_before_crossing (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082)\n    (ht : t < abCrossing a\u2081 r\u2081 a\u2082 r\u2082) : abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t \u2264 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABSurvivalDraft",
+      "name": "ab_ordered_crossing_separates",
+      "header": "theorem ab_ordered_crossing_separates (a\u2081 r\u2081 a\u2082 r\u2082 T R c : \u211d)\n    (ha\u2080 : 0 \u2264 a\u2081) (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082)\n    (hR : 0 < R) (hc : 0 < c) (hsT : abCrossing a\u2081 r\u2081 a\u2082 r\u2082 < T)\n    (hzero : (\u222b t in (0 : \u211d)..T, Real.exp (-c * t) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t) +\n        Real.exp (-c * T) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 T / (R + c) = 0) :\n    (\u222b t in (0 : \u211d)..T, Real.exp (-(2 * c) * t) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t) +\n        Real.exp (-(2 * c) * T) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 T / (R + 2 * c) < 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABIntegralDraft",
+      "name": "ab_survival_integral_closed",
+      "header": "theorem ab_survival_integral_closed (T r z a : \u211d)\n    (ha\u2080 : 0 \u2264 a) (haT : a \u2264 T) (hr : 0 < r) (hz : 0 < z) :\n    (\u222b t in (0 : \u211d)..T, Real.exp (-z * t) * abSurvival a r t) =\n      (1 - Real.exp (-z * a)) / z +\n        (Real.exp (-z * a) - Real.exp (-z * T) * Real.exp (-r * (T - a))) / (r + z) "
+    },
+    {
+      "module": "MSCi.TwoSite.ABIntegralDraft",
+      "name": "ab_shifted_eq_survival_integral",
+      "header": "theorem ab_shifted_eq_survival_integral (T R r z a : \u211d)\n    (ha\u2080 : 0 \u2264 a) (haT : a \u2264 T) (hR : 0 < R) (hr : 0 < r) (hz : 0 < z) :\n    pulseShiftedMoment T R r z a = 1 - z *\n      ((\u222b t in (0 : \u211d)..T, Real.exp (-z * t) * abSurvival a r t) +\n        Real.exp (-z * T) * abSurvival a r T / (R + z)) "
+    },
+    {
+      "module": "MSCi.TwoSite.ABIntegralDraft",
+      "name": "ab_equal_shifted_moment_implies_zero_weight",
+      "header": "theorem ab_equal_shifted_moment_implies_zero_weight (T R r\u2081 r\u2082 z a\u2081 a\u2082 : \u211d)\n    (ha\u2081 : 0 \u2264 a\u2081) (ha\u2082 : 0 \u2264 a\u2082) (h\u2081T : a\u2081 \u2264 T) (h\u2082T : a\u2082 \u2264 T)\n    (hR : 0 < R) (hr\u2081 : 0 < r\u2081) (hr\u2082 : 0 < r\u2082) (hz : 0 < z)\n    (heq : pulseShiftedMoment T R r\u2081 z a\u2081 = pulseShiftedMoment T R r\u2082 z a\u2082) :\n    (\u222b t in (0 : \u211d)..T, Real.exp (-z * t) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t) +\n      Real.exp (-z * T) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 T / (R + z) = 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_nonpositive_weighted_difference_neg",
+      "header": "theorem ab_nonpositive_weighted_difference_neg (D : \u211d \u2192 \u211d) (T R c x : \u211d)\n    (hD : Continuous D) (hT : 0 < T) (hR : 0 < R) (hc : 0 < c)\n    (hx\u2080 : 0 \u2264 x) (hxT : x \u2264 T) (hx : D x < 0)\n    (hDnonpos : \u2200 t \u2208 Set.Icc (0 : \u211d) T, D t \u2264 0) (hend : D T \u2264 0) :\n    (\u222b t in (0 : \u211d)..T, Real.exp (-c * t) * D t) +\n      Real.exp (-c * T) * D T / (R + c) < 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_earlier_faster_survival_diff_nonpos",
+      "header": "theorem ab_earlier_faster_survival_diff_nonpos (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (ha : a\u2081 \u2264 a\u2082) (hr\u2082 : 0 < r\u2082) (hrr : r\u2082 \u2264 r\u2081) :\n    abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t \u2264 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_earlier_rate_lt_of_zero_weight",
+      "header": "theorem ab_earlier_rate_lt_of_zero_weight (a\u2081 r\u2081 a\u2082 r\u2082 T R c : \u211d)\n    (ha\u2080 : 0 \u2264 a\u2081) (ha : a\u2081 < a\u2082) (ha\u2082T : a\u2082 < T)\n    (hr\u2081 : 0 < r\u2081) (hr\u2082 : 0 < r\u2082) (hR : 0 < R) (hc : 0 < c)\n    (hzero : (\u222b t in (0 : \u211d)..T, Real.exp (-c * t) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t) +\n        Real.exp (-c * T) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 T / (R + c) = 0) : r\u2081 < r\u2082 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_survival_diff_zero_at_crossing",
+      "header": "theorem ab_survival_diff_zero_at_crossing (a\u2081 r\u2081 a\u2082 r\u2082 : \u211d)\n    (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082) :\n    abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 (abCrossing a\u2081 r\u2081 a\u2082 r\u2082) = 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_survival_diff_nonpos_at_or_before_crossing",
+      "header": "theorem ab_survival_diff_nonpos_at_or_before_crossing (a\u2081 r\u2081 a\u2082 r\u2082 t : \u211d)\n    (ha : a\u2081 < a\u2082) (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082)\n    (ht : t \u2264 abCrossing a\u2081 r\u2081 a\u2082 r\u2082) : abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t \u2264 0 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABOrderingDraft",
+      "name": "ab_crossing_before_root_of_zero_weight",
+      "header": "theorem ab_crossing_before_root_of_zero_weight (a\u2081 r\u2081 a\u2082 r\u2082 T R c : \u211d)\n    (ha\u2080 : 0 \u2264 a\u2081) (ha : a\u2081 < a\u2082) (ha\u2082T : a\u2082 < T)\n    (hr\u2081 : 0 < r\u2081) (hrr : r\u2081 < r\u2082) (hR : 0 < R) (hc : 0 < c)\n    (hzero : (\u222b t in (0 : \u211d)..T, Real.exp (-c * t) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 t) +\n        Real.exp (-c * T) * abSurvivalDiff a\u2081 r\u2081 a\u2082 r\u2082 T / (R + c) = 0) :\n    abCrossing a\u2081 r\u2081 a\u2082 r\u2082 < T "
+    },
+    {
+      "module": "MSCi.TwoSite.ABRecoveryDraft",
+      "name": "ab_onset_eq_of_two_shifted_moments",
+      "header": "theorem ab_onset_eq_of_two_shifted_moments (T R r\u2081 r\u2082 c a\u2081 a\u2082 : \u211d)\n    (ha\u2081 : 0 \u2264 a\u2081) (ha\u2082 : 0 \u2264 a\u2082) (h\u2081T : a\u2081 < T) (h\u2082T : a\u2082 < T)\n    (hR : 0 < R) (hr\u2081 : 0 < r\u2081) (hr\u2082 : 0 < r\u2082) (hc : 0 < c)\n    (hfirst : pulseShiftedMoment T R r\u2081 c a\u2081 = pulseShiftedMoment T R r\u2082 c a\u2082)\n    (hsecond : pulseShiftedMoment T R r\u2081 (2 * c) a\u2081 =\n      pulseShiftedMoment T R r\u2082 (2 * c) a\u2082) : a\u2081 = a\u2082 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABRecoveryDraft",
+      "name": "ab_onset_rate_eq_of_two_shifted_moments",
+      "header": "theorem ab_onset_rate_eq_of_two_shifted_moments (T R r\u2081 r\u2082 c a\u2081 a\u2082 : \u211d)\n    (ha\u2081 : 0 \u2264 a\u2081) (ha\u2082 : 0 \u2264 a\u2082) (h\u2081T : a\u2081 < T) (h\u2082T : a\u2082 < T)\n    (hR : 0 < R) (hr\u2081 : 0 < r\u2081) (hr\u2082 : 0 < r\u2082) (hc : 0 < c)\n    (hfirst : pulseShiftedMoment T R r\u2081 c a\u2081 = pulseShiftedMoment T R r\u2082 c a\u2082)\n    (hsecond : pulseShiftedMoment T R r\u2081 (2 * c) a\u2081 =\n      pulseShiftedMoment T R r\u2082 (2 * c) a\u2082) : a\u2081 = a\u2082 \u2227 r\u2081 = r\u2082 "
+    },
+    {
+      "module": "MSCi.TwoSite.ABRecoveryDraft",
+      "name": "ab_parameters_eq_of_nineRawFeatures_eq",
+      "header": "theorem ab_parameters_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.t1 = q.t1 \u2227 p.rAB = q.rAB "
+    },
+    {
+      "module": "MSCi.TwoSite.ABRecoveryDraft",
+      "name": "a_and_ab_parameters_eq_of_nineRawFeatures_eq",
+      "header": "theorem a_and_ab_parameters_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) :\n    p.t1 = q.t1 \u2227 p.rAB = q.rAB \u2227 p.rA = q.rA "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_transform_eq_forwardAt",
+      "header": "theorem bb_transform_eq_forwardAt (p : Parameters) (z : \u211d) :\n    pairTransform p .BB z = bbForwardAt p z p.rB "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_root_tail_le_start",
+      "header": "theorem bb_root_tail_le_start (L R z : \u211d) (hR : 0 < R) (hz : 0 < z) :\n    bbRootTail L R z \u2264 Real.exp (-z * L) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_ab_relative_tail_le_start",
+      "header": "theorem bb_ab_relative_tail_le_start (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) :\n    bbABRelativeTail p z \u2264 Real.exp (-z * (p.t1 - p.h)) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_stay_continuation_le_start",
+      "header": "theorem bb_stay_continuation_le_start (p : Parameters) (z r : \u211d)\n    (hp : Admissible p) (hz : 0 < z) (hr : 0 < r) :\n    bbStayContinuation p z r \u2264 Real.exp (-z * p.h) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_route_continuation_le_start",
+      "header": "theorem bb_route_continuation_le_start (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) :\n    bbRouteContinuation p z \u2264 Real.exp (-z * p.h) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBContinuationDraft",
+      "name": "bb_tail_le_start",
+      "header": "theorem bb_tail_le_start (p : Parameters) (z r : \u211d)\n    (hp : Admissible p) (hz : 0 < z) (hr : 0 < r) :\n    bbTail p z r \u2264 Real.exp (-z * p.h) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBRecoveryDraft",
+      "name": "bb_stay_strictMonoOn",
+      "header": "theorem bb_stay_strictMonoOn (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) :\n    StrictMonoOn (bbStayContinuation p z) (Set.Ioi 0) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBRecoveryDraft",
+      "name": "bb_tail_mono",
+      "header": "theorem bb_tail_mono (p : Parameters) (z r s : \u211d)\n    (hp : Admissible p) (hz : 0 < z) (hr : 0 < r) (hs : 0 < s) (hrs : r < s) :\n    bbTail p z r \u2264 bbTail p z s "
+    },
+    {
+      "module": "MSCi.TwoSite.BBRecoveryDraft",
+      "name": "bb_forward_strictMonoOn",
+      "header": "theorem bb_forward_strictMonoOn (p : Parameters) (z : \u211d)\n    (hp : Admissible p) (hz : 0 < z) :\n    StrictMonoOn (bbForwardAt p z) (Set.Ioi 0) "
+    },
+    {
+      "module": "MSCi.TwoSite.BBRecoveryDraft",
+      "name": "b_rate_eq_of_nineRawFeatures_eq",
+      "header": "theorem b_rate_eq_of_nineRawFeatures_eq (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p.rB = q.rB "
+    },
+    {
+      "module": "MSCi.TwoSite.BBRecoveryDraft",
+      "name": "nineRawFeatures_injective_on_admissible",
+      "header": "theorem nineRawFeatures_injective_on_admissible (p q : Parameters)\n    (hp : Admissible p) (hq : Admissible q)\n    (hF : nineRawFeatures p = nineRawFeatures q) : p = q "
+    }
+  ]
+}

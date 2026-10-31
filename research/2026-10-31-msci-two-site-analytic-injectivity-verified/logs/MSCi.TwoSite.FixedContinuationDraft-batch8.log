@@ -1,0 +1,28 @@
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:67:24: error: `field_simp` made no progress on the goal
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:67:24: error: `field_simp` made no progress on the goal
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:52:90: error: unsolved goals
+case e'_9
+L z K r : ℝ
+hz : 0 < z
+hr : 0 < r
+hne : r + z ≠ 0
+hid : HasDerivAt (fun x => x) 1 r
+hden : HasDerivAt (fun x => x + z) 1 r
+hquot : HasDerivAt ((fun x => x) / fun x => x + z) ((1 * (r + z) - r * 1) / (r + z) ^ 2) r
+harg : HasDerivAt (fun y => (-fun x => x + z) y * L) (-1 * L) r
+he : HasDerivAt (fun x => Real.exp ((-fun x => x + z) x * L)) (Real.exp ((-fun x => x + z) r * L) * (-1 * L)) r
+htail : HasDerivAt (fun x => Real.exp ((-fun x => x) x * L)) (Real.exp ((-fun x => x) r * L) * (-1 * L)) r
+hsum :
+  HasDerivAt
+    ((((fun x => x) / fun x => x + z) * fun x => 1 - Real.exp ((-fun x => x + z) x * L)) + fun y =>
+      Real.exp ((-fun x => x) y * L) * K)
+    ((1 * (r + z) - r * 1) / (r + z) ^ 2 * (1 - Real.exp ((-fun x => x + z) r * L)) +
+        ((fun x => x) / fun x => x + z) r * -(Real.exp ((-fun x => x + z) r * L) * (-1 * L)) +
+      Real.exp ((-fun x => x) r * L) * (-1 * L) * K)
+    r
+hexp : Real.exp (-(r + z) * L) = Real.exp (-r * L) * Real.exp (-z * L)
+⊢ z * (1 - (1 + (r + z) * L) * Real.exp (-(r * L)) * Real.exp (-(z * L))) +
+      (r + z) ^ 2 * L * Real.exp (-(r * L)) * (Real.exp (-(z * L)) - K) =
+    (r + z - r) * (1 - Real.exp (-(r * L)) * Real.exp (-(z * L))) +
+        r * (r + z) * L * Real.exp (-(r * L)) * Real.exp (-(z * L)) +
+      -((r + z) ^ 2 * L * Real.exp (-(r * L)) * K)

@@ -1,0 +1,36 @@
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:45:48: error: Application type mismatch: The argument
+  hbr
+has type
+  0 < 1 - (1 + (r + z) * L) * Real.exp (-((r + z) * L))
+but is expected to have type
+  0 < 1 - (1 + (r + z) * L) * Real.exp (-(r + z) * L)
+in the application
+  mul_pos hcoef hbr
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:49:4: error: Function expected at
+  HasDerivAt
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (fixedContinuationMoment L z K)
+
+Hint: The identifier `HasDerivAt` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:51:13: error: Function expected at
+  HasDerivAt
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (fun x : ℝ => x)
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:51:48: error(lean.unknownIdentifier): Unknown identifier `hasDerivAt_id'`
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:49:90: error: unsolved goals
+x✝ : Sort u_1
+HasDerivAt : x✝
+L z K r : ℝ
+hz : 0 < z
+hr : 0 < r
+hne : r + z ≠ 0
+hid : sorry
+⊢ sorry
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:69:8: error(lean.unknownIdentifier): Unknown identifier `strictMonoOn_of_deriv_pos`
+BUILD_ROOT/source/MSCi/TwoSite/FixedContinuationDraft.lean:70:2: error: No goals to be solved

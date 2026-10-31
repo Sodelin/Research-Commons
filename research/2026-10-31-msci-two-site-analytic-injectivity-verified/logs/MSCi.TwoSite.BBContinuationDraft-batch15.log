@@ -1,0 +1,132 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+BUILD_ROOT/source/MSCi/TwoSite/BBContinuationDraft.lean:42:52: error: unsolved goals
+p : Parameters
+z : ℝ
+he₁ : Real.exp (-z * p.t1) = Real.exp (-z * p.h) * Real.exp (-z * (p.t1 - p.h))
+he₂ : Real.exp (-z * p.t0) = Real.exp (-z * p.h) * Real.exp (-z * (p.t1 - p.h)) * Real.exp (-z * (p.t0 - p.t1))
+he₃ : Real.exp (-z * (p.t0 - p.h)) = Real.exp (-z * (p.t1 - p.h)) * Real.exp (-z * (p.t0 - p.t1))
+hlen : p.t1 - p.h + (p.t0 - p.t1) = p.t0 - p.h
+⊢ -(p.g * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ * 2) +
+                                          p.g * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ *
+                                              Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) *
+                                            2 -
+                                        p.g * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB *
+                                            (z + p.rAB)⁻¹ *
+                                          2 +
+                                      p.g * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB *
+                                            (z + p.rAB)⁻¹ *
+                                          Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) *
+                                        2 -
+                                    p.g * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) *
+                                            Real.exp (-(z * p.t0)) *
+                                          p.rR *
+                                        (z + p.rR)⁻¹ *
+                                      2 +
+                                  p.g * Real.exp (-(z * p.t0)) * p.rR * (z + p.rR)⁻¹ * 2 +
+                                p.g ^ 2 * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ -
+                              p.g ^ 2 * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ *
+                                Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) +
+                            p.g ^ 2 * Real.exp (-(z * p.h)) * p.rC * (z + p.rC)⁻¹ -
+                          p.g ^ 2 * Real.exp (-(z * p.h)) * p.rC * (z + p.rC)⁻¹ *
+                            Real.exp (z * p.h - z * p.t0 + p.h * p.rC - p.rC * p.t0) +
+                        p.g ^ 2 * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ -
+                      p.g ^ 2 * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ *
+                        Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) +
+                    p.g ^ 2 * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) *
+                          Real.exp (-(z * p.t0)) *
+                        p.rR *
+                      (z + p.rR)⁻¹ +
+                  p.g ^ 2 * Real.exp (p.h * p.rC - p.rC * p.t0) * Real.exp (-(z * p.t0)) * p.rR * (z + p.rR)⁻¹ -
+                p.g ^ 2 * Real.exp (-(z * p.t0)) * p.rR * (z + p.rR)⁻¹ * 2 +
+              Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ -
+            Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ * Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) +
+          Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ -
+        Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (-(z * p.t1)) * p.rAB * (z + p.rAB)⁻¹ *
+          Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) +
+      Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) * Real.exp (-(z * p.t0)) * p.rR *
+        (z + p.rR)⁻¹ =
+    -(p.g * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ * 2) +
+                                          p.g * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ *
+                                              Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) *
+                                            2 +
+                                        p.g * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB *
+                                                (z + p.rAB)⁻¹ *
+                                              Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) *
+                                            Real.exp (z * p.h - z * p.t1) *
+                                          2 -
+                                      p.g * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB *
+                                            (z + p.rAB)⁻¹ *
+                                          Real.exp (z * p.h - z * p.t1) *
+                                        2 -
+                                    p.g * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) *
+                                                Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) *
+                                              p.rR *
+                                            (z + p.rR)⁻¹ *
+                                          Real.exp (z * p.h - z * p.t1) *
+                                        Real.exp (z * p.t1 - z * p.t0) *
+                                      2 +
+                                  p.g * Real.exp (-(z * p.t0)) * p.rR * (z + p.rR)⁻¹ * 2 +
+                                p.g ^ 2 * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ -
+                              p.g ^ 2 * Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ *
+                                Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) +
+                            p.g ^ 2 * Real.exp (-(z * p.h)) * p.rC * (z + p.rC)⁻¹ -
+                          p.g ^ 2 * Real.exp (-(z * p.h)) * p.rC * (z + p.rC)⁻¹ *
+                            Real.exp (z * p.h - z * p.t0 + p.h * p.rC - p.rC * p.t0) -
+                        p.g ^ 2 * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB * (z + p.rAB)⁻¹ *
+                            Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) *
+                          Real.exp (z * p.h - z * p.t1) +
+                      p.g ^ 2 * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB * (z + p.rAB)⁻¹ *
+                        Real.exp (z * p.h - z * p.t1) +
+                    p.g ^ 2 * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) *
+                              Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) *
+                            p.rR *
+                          (z + p.rR)⁻¹ *
+                        Real.exp (z * p.h - z * p.t1) *
+                      Real.exp (z * p.t1 - z * p.t0) +
+                  p.g ^ 2 * Real.exp (-(z * p.h)) * Real.exp (p.h * p.rC - p.rC * p.t0) * p.rR * (z + p.rR)⁻¹ *
+                    Real.exp (z * p.h - z * p.t0) -
+                p.g ^ 2 * Real.exp (-(z * p.t0)) * p.rR * (z + p.rR)⁻¹ * 2 +
+              Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ -
+            Real.exp (-(z * p.h)) * p.rB * (z + p.rB)⁻¹ * Real.exp (z * p.h - z * p.t1 + p.h * p.rB - p.rB * p.t1) -
+          Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB * (z + p.rAB)⁻¹ *
+              Real.exp (z * p.t1 - z * p.t0 + p.t1 * p.rAB - p.t0 * p.rAB) *
+            Real.exp (z * p.h - z * p.t1) +
+        Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * p.rAB * (z + p.rAB)⁻¹ *
+          Real.exp (z * p.h - z * p.t1) +
+      Real.exp (-(z * p.h)) * Real.exp (p.h * p.rB - p.rB * p.t1) * Real.exp (p.t1 * p.rAB - p.t0 * p.rAB) * p.rR *
+            (z + p.rR)⁻¹ *
+          Real.exp (z * p.h - z * p.t1) *
+        Real.exp (z * p.t1 - z * p.t0)
+BUILD_ROOT/source/MSCi/TwoSite/BBContinuationDraft.lean:61:77: warning: This simp argument is unused:
+  he₃
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairTransform, bbForwardAt, bbTail, bbStayContinuation, bbRouteContinuation, bbABRelativeTail,
+    bbRootTail, fixedContinuationMoment, rootMoment, hlen, ← he₁, ← he₂]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/MSCi/TwoSite/BBContinuationDraft.lean:61:82: warning: This simp argument is unused:
+  ← he₁
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairTransform, bbForwardAt, bbTail, bbStayContinuation, bbRouteContinuation, bbABRelativeTail,
+    bbRootTail, fixedContinuationMoment, rootMoment, hlen, he₃, ← he₂]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_ROOT/source/MSCi/TwoSite/BBContinuationDraft.lean:61:89: warning: This simp argument is unused:
+  ← he₂
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairTransform, bbForwardAt, bbTail, bbStayContinuation, bbRouteContinuation, bbABRelativeTail,
+    bbRootTail, fixedContinuationMoment, rootMoment, hlen, he₃, ← he₁]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
