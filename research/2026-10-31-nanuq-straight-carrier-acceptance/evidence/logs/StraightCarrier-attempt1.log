@@ -1,0 +1,20 @@
+/workspace/tasks/lean-completion/corner-straightening/source/StraightCarrier.lean:12:39: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+/workspace/tasks/lean-completion/corner-straightening/source/StraightCarrier.lean:25:27: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ⇑H '' A
+in the target expression
+  ⇑CornerShear.straighten ∘ ⇑H '' (fun x => x) '' A = CornerShear.horizontal
+
+case refine_1
+A B : Set Plane
+p q : Plane
+hA : IsArcBetween A p q
+hB : IsArcBetween B q p
+hmeet : ∀ z ∈ A, z ∈ B → z = p ∨ z = q
+H : Plane ≃ₜ Plane
+hA' : ⇑H '' A = sideTop ∪ sideLeft
+left✝ : ⇑H '' B = sideBottom ∪ sideRight
+hp : H p = cornerNE
+hq : H q = cornerSW
+right✝ : IsPolygonal (⇑H '' A)
+⊢ ⇑CornerShear.straighten ∘ ⇑H '' (fun x => x) '' A = CornerShear.horizontal
+'Nanuq.StraightCarrier.two_arc_straight_carrier' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

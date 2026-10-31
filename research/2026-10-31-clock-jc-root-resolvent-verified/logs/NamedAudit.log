@@ -1,0 +1,116 @@
+@ResearchCommons.MSCI.JC69RootResolvent.actual_weight_measurable_time : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  Measurable (ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n s)
+'ResearchCommons.MSCI.JC69RootResolvent.actual_weight_measurable_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootResolvent.actual_weight_le_one : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] (N : Nanuq.Source.RootedBinary V E X)
+  {sample : Copy → X} (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : ℝ),
+  0 ≤ t → ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n s t ≤ 1
+'ResearchCommons.MSCI.JC69RootResolvent.actual_weight_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+@ResearchCommons.MSCI.JC69RootResolvent.actual_killed_measure_renewal : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (n : ℕ)
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample) (t : NNReal),
+  ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q (n + 1) s ↑t =
+    ENNReal.ofReal
+        (Real.exp
+          (-((UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s) *
+              ↑t))) +
+      ∑ p,
+        ∫⁻ (u : ℝ) in Set.Iic ↑t,
+          ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n
+            (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))
+            (↑t -
+              u) ∂ENNReal.ofReal
+              (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                  ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s)) •
+            ProbabilityTheory.expMeasure
+              (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s)
+'ResearchCommons.MSCI.JC69RootResolvent.actual_killed_measure_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootResolvent.actual_root_waiting_limit : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        ∀ (p : UnifiedLean.Source.UniformizedSourceStep.Choice N s) (n : ℕ),
+          UnifiedLean.Source.SourceActualHoldingClocks.liveCard
+                (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p)) ≤
+              n →
+            Filter.Tendsto
+              (fun m =>
+                ∫⁻ (u : ℝ) in Set.Iic ↑m,
+                  ResearchCommons.MSCI.JC69WeightedTrace.actualLocusWeight N r L q n
+                    (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))
+                    (↑m -
+                      u) ∂ENNReal.ofReal
+                      (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                        (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                          ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s)) •
+                    ProbabilityTheory.expMeasure
+                      (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                        ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s))
+              Filter.atTop
+              (nhds
+                (ENNReal.ofReal
+                    (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                      (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                        ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s)) *
+                  ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q
+                    (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))))
+'ResearchCommons.MSCI.JC69RootResolvent.actual_root_waiting_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootResolvent.actual_root_resolvent : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    ∀ (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+      UnifiedLean.Source.SourceAncestralCompletion.AncestralRoot N s →
+        1 < UnifiedLean.Source.SourceActualHoldingClocks.liveCard s →
+          ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q s =
+            ∑ p,
+              ENNReal.ofReal
+                  (UnifiedLean.Source.UniformizedSourceStep.choiceRate N r s p /
+                    (UnifiedLean.Source.UniformizedSourceStep.totalRate N r s +
+                      ResearchCommons.MSCI.JC69WeightedTrace.locusKill N L q s)) *
+                ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q
+                  (UnifiedLean.Source.UniformizedSourceStep.stepDestination N s (some p))
+'ResearchCommons.MSCI.JC69RootResolvent.actual_root_resolvent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69RootResolvent.actual_terminal_root_weight : ∀ {V : Type u_1} {E : Type u_2} {Copy : Type u_3}
+  {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V] [inst_3 : Fintype E]
+  [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base) (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  UnifiedLean.Source.SourceActualHoldingClocks.liveCard s ≤ 1 →
+    ResearchCommons.MSCI.JC69RootResolvent.rootWeight N r L q s = 1
+'ResearchCommons.MSCI.JC69RootResolvent.actual_terminal_root_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

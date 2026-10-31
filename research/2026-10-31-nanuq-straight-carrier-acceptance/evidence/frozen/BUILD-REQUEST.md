@@ -1,0 +1,3 @@
+# Sole-compiler bounded request
+
+Import the existing qualified CycleArcStraightening provider, unchanged; add own CornerShear and StraightCarrier only. Check exact source hashes, kernel checking enabled, full types and transitive axioms of Nanuq.CornerShear.image_upperL and Nanuq.StraightCarrier.two_arc_straight_carrier. The former has a local scoped receipt; the latter is UNCOMPILED. No supplier rebuild, no aggregate Mathlib rebuild, no full audit upload requested. Preserve any failure and proof-only repairs; no hypothesis changes. Return a small own-source/named/summary receipt, not held raw provider rows. Local full audit may remain local and summarized separately.

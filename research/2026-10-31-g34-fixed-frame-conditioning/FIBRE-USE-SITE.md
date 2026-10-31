@@ -104,3 +104,25 @@ This does not require I diagonals to be exactly prescribed. Each atom/prefix dia
 Replacing the exact budget -log D12 by its upper bound66H preserves the displayed inequalities. It yields reference-polynomial, word-count-independent constants controlled by this actual COMMON clock, with no coin margin. It still supplies no positive power of microscopic dust size and no signed domination.
 
 This premise belongs to the actual paired-COMMON-clock use-site. A natural-I panel may not query COMMON coordinates merely to make the argument work. Neither same-target membership nor a COMMON budget is furnished for an arbitrary G4 rival by this corollary. Unequal-arm or nonserial sources require their own supplier and are not silently included.
+
+## Source-bound corollary: physical-arm exposure and its exact limit
+
+31 October 2026. dot. The elementary hazard bound and its implications were independently hand-checked by the parent research context. Source-interface observation, not a fixed-slot replacement proof or a finite-I observability claim. Uses the RAW current-root binomial routing formula in the published source-binding note.
+
+For r>=3, define m_r=min_j[binom(j,2)+binom(r-j,2)]=floor((r-1)²/4)>0. In an equal-arm cell of physical duration a and q=exp(-a), every term in the raw no-merger binomial average is at most q^m_r. Thus
+
+    d_r(q,g)<=q^m_r=exp(-m_r a)
+
+for all coins0<=g<=1. For an actual serial word of these cells and nonnegative ordinary gaps, assume its complete latent r-root diagonal D_r is at least u>0. Multiplying the upper bounds, retaining the nonnegative ordinary cost, gives
+
+    sum_i a_i <= -log(u)/m_r.
+
+In particular each q_i>=u^(1/m_r). At r12, m12=30. This excludes infinite equal-arm physical durations on such a diagonal-constrained fibre, without a coin margin. It neither bounds the number of arbitrarily weak cells nor prevents coin parameters approaching0 or1.
+
+For an unequal-arm current-root cell with durations a,b, the exact no-merger term for j roots in the first arm is exp[-binom(j,2)a-binom(r-j,2)b]. Every exponent is at least m_r min(a,b). Therefore the same reasoning gives only
+
+    sum_i min(a_i,b_i) <= -log(u)/m_r.
+
+It is not a bound on the larger arm. Sending a to infinity at fixed b and coin g retains the j=0 and j=1 terms, namely (1-g)^r exp[-binom(r,2)b] and r g(1-g)^(r-1) exp[-binom(r-1,2)b], so the diagonal need not vanish. Such limits are not strict finite sources; this computation explains why the previous equal-arm coercivity cannot be imported to the full unequal-arm class.
+
+The premise is a LOWER BOUND ON THE ACTUAL SLOT DIAGONAL, not merely equality of a finite observable panel for E[W]. An arbitrary fixed exterior may not expose that slot diagonal; the legal semantic adapter remains owed. Likewise a source-bound positive COMMON clock could supply a budget in its own scope, but it is not a new natural-I observation. These estimates do not establish compactness of the complete strict fibre, a legal deletion face, preservation of COMMON badness, or a target-only positive replacement bound. The fixed-slot replacement analysis remains with its assigned owner.

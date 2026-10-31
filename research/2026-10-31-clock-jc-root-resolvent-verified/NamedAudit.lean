@@ -1,0 +1,13 @@
+import ResearchCommons.MSCI.JC69RootResolvent
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_weight_measurable_time
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_weight_measurable_time
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_weight_le_one
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_weight_le_one
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_killed_measure_renewal
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_killed_measure_renewal
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_root_waiting_limit
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_root_waiting_limit
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_root_resolvent
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_root_resolvent
+#check @ResearchCommons.MSCI.JC69RootResolvent.actual_terminal_root_weight
+#print axioms ResearchCommons.MSCI.JC69RootResolvent.actual_terminal_root_weight

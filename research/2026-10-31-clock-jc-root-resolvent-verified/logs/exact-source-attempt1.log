@@ -1,0 +1,230 @@
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:32:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:34:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:52:2: error: Type mismatch: After simplification, term
+  hi
+ has type
+  Measurable fun x =>
+    ∫⁻ (y : Choice N s → ℝ), locusTraceWeight N L q n s x (literalMarkedTrace N n x s y) ∂currentPairClockMeasure N r s
+but is expected to have type
+  Measurable (actualLocusWeight N r L q n s)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:59:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:61:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:131:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:146:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  indicator (Real.le✝ u) ?f ↑m
+in the target expression
+  (Iic ↑m).indicator (fun u => actualLocusWeight N r L q n (stepDestination N s (some p)) (↑m - u)) u ≤ (fun x => 1) u
+
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+s : Code N sample
+hs : AncestralRoot N s
+p : Choice N s
+n : ℕ
+hn : liveCard (stepDestination N s (some p)) ≤ n
+d : ℝ := totalRate N r s + locusKill N L q s
+a : ℝ≥0∞ := ENNReal.ofReal (choiceRate N r s p / d)
+μ : Measure ℝ := a • expMeasure d
+hd : 0 < d
+this : IsProbabilityMeasure (expMeasure d) := isProbabilityMeasure_expMeasure hd
+hmass : μ univ = a
+hf : Measurable (actualLocusWeight N r L q n (stepDestination N s (some p)))
+m : ℕ
+u : ℝ
+hu : u ≤ ↑m
+⊢ (Iic ↑m).indicator (fun u => actualLocusWeight N r L q n (stepDestination N s (some p)) (↑m - u)) u ≤ (fun x => 1) u
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:148:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  indicator (Real.le✝ u) ?f ↑m
+in the target expression
+  (Iic ↑m).indicator (fun u => actualLocusWeight N r L q n (stepDestination N s (some p)) (↑m - u)) u ≤ (fun x => 1) u
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+s : Code N sample
+hs : AncestralRoot N s
+p : Choice N s
+n : ℕ
+hn : liveCard (stepDestination N s (some p)) ≤ n
+d : ℝ := totalRate N r s + locusKill N L q s
+a : ℝ≥0∞ := ENNReal.ofReal (choiceRate N r s p / d)
+μ : Measure ℝ := a • expMeasure d
+hd : 0 < d
+this : IsProbabilityMeasure (expMeasure d) := isProbabilityMeasure_expMeasure hd
+hmass : μ univ = a
+hf : Measurable (actualLocusWeight N r L q n (stepDestination N s (some p)))
+m : ℕ
+u : ℝ
+hu : ¬u ≤ ↑m
+⊢ (Iic ↑m).indicator (fun u => actualLocusWeight N r L q n (stepDestination N s (some p)) (↑m - u)) u ≤ (fun x => 1) u
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:151:6: error: Type mismatch
+  ENNReal.ofReal_lt_top
+has type
+  ENNReal.ofReal ?m.548 < ∞
+but is expected to have type
+  a ≠ ∞
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:160:6: error: Type mismatch
+  Eq.symm (indicator_of_mem (le_trans hm hmk) ?m.652)
+has type
+  ?m.652 ↑k = indicator (Real.instPreorder.toLE.1 u) ?m.652 ↑k
+but is expected to have type
+  actualLocusWeight N r L q n (stepDestination N s (some p)) (↑k - u) =
+    (Iic ↑k).indicator (fun u => actualLocusWeight N r L q n (stepDestination N s (some p)) (↑k - u)) u
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:177:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:188:4: error: Type mismatch: After simplification, term
+  ENNReal.tendsto_ofReal (Tendsto.comp Real.tendsto_exp_neg_atTop_nhds_zero hlin)
+ has type
+  @Tendsto ℕ ℝ≥0∞
+    (fun a => ENNReal.ofReal (((fun x => Real.exp (-x)) ∘ fun m => (totalRate N r s + locusKill N L q s) * ↑m) a)) atTop
+    (𝓝 0)
+but is expected to have type
+  @Tendsto ℕ ℝ≥0∞ (fun m => ENNReal.ofReal (Real.exp (-((totalRate N r s + locusKill N L q s) * ↑m)))) atTop (𝓝 0)
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:210:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:211:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:213:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BUILD_ROOT/source/ResearchCommons/MSCI/JC69RootResolvent.lean:217:48: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+s : Code N sample
+hcard : liveCard s ≤ 1
+this✝¹ : IsEmpty (Choice N s) := choice_empty_of_terminal_card N s hcard
+this✝ : ∀ (p : Choice N s), IsProbabilityMeasure (expMeasure (choiceRate N r s p)) :=
+  fun p =>
+    isProbabilityMeasure_expMeasure
+      (div_pos (pairRate_pos r p.fst)
+        (Mathlib.Meta.NormNum.isNat_lt_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)
+          (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2)) (Eq.refl false)))
+this : IsProbabilityMeasure (currentPairClockMeasure N r s) := id inferInstance
+c : Choice N s → ℝ
+⊢ ⟨0, ⋯⟩ = 0
+'ResearchCommons.MSCI.JC69RootResolvent.actual_weight_measurable_time' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootResolvent.actual_weight_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.MSCI.JC69RootResolvent.actual_killed_measure_renewal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootResolvent.actual_root_waiting_limit' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootResolvent.actual_root_resolvent' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69RootResolvent.actual_terminal_root_weight' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

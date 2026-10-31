@@ -1,0 +1,9 @@
+Nanuq.CornerShear.image_upperL : ⇑Nanuq.CornerShear.straighten '' Nanuq.CornerShear.upperL =
+  Nanuq.CornerShear.horizontal
+'Nanuq.CornerShear.image_upperL' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Nanuq.StraightCarrier.two_arc_straight_carrier : ∀ {A B : Set Schoenflies.Plane} {p q : Schoenflies.Plane},
+  Schoenflies.IsArcBetween A p q →
+    Schoenflies.IsArcBetween B q p →
+      (∀ z ∈ A, z ∈ B → z = p ∨ z = q) →
+        ∃ H, ⇑H '' A = Nanuq.CornerShear.horizontal ∧ H p = Schoenflies.Plane.mk 2 0 ∧ H q = Schoenflies.Plane.mk (-2) 0
+'Nanuq.StraightCarrier.two_arc_straight_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
