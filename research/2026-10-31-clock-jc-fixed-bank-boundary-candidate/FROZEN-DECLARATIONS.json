@@ -1,0 +1,101 @@
+{
+  "source_sha256": "ab36322df6804d9f26b1d7cf538a5ecdc81178766bd804ee4b4164fb5697415a",
+  "declarations": [
+    {
+      "name": "reBank",
+      "complete_frozen_text": "def reBank (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (sigma : V \u2192 Bool) : Code N sample :=\n  \u27e8{s.val with register := sigma},\n    \u27e8\u27e8s.property.forest.ancestor_live,s.property.forest.representative,\n      s.property.forest.leaf_fiber,s.property.forest.wellLabelled\u27e9,\n      s.property.original_descendant\u27e9\u27e9",
+      "sha256": "503b86be4e9fcb2ca506867832d50605054051603758e1bb3a86bd42064c3449"
+    },
+    {
+      "name": "actual_reBank_observation",
+      "complete_frozen_text": "theorem actual_reBank_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (sigma : V \u2192 Bool) :\n    observeCode N (reBank N s sigma) = observeCode N s \u2227\n      (state (reBank N s sigma)).register = sigma := \u27e8rfl,rfl\u27e9",
+      "sha256": "9e063566bf36f69a3454fde4d0f44ab226e5ff0b8445daa3d4dee9988c054d1e"
+    },
+    {
+      "name": "admitted_observation",
+      "complete_frozen_text": "lemma admitted_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : State V E Copy) (hs : SourceValid N sample s) :\n    observeCode N (admittedCode N sample s hs) = observeState s := by\n  apply Prod.ext\n  \u00b7 exact decode_encode_blocks N.root s hs.forest\n  \u00b7 funext x\n    exact decode_encode_copyLocation N.root s hs.forest x",
+      "sha256": "983d9872f0888760eb08b1c51ed6cffa527af1ad3dd6718b116874e940017fb6"
+    },
+    {
+      "name": "observe_transport",
+      "complete_frozen_text": "lemma observe_transport (s : State V E Copy) (f : Location V E \u2192 Location V E)\n    (event : SourceEvent V E Copy) :\n    observeState (transport s (f \u2218 s.location) event) =\n      (currentBlocks s,fun x => f (copyLocation s x)) := rfl",
+      "sha256": "88d20b4181e2cd7bc9aaa82edd002bb2e9f9e46e55f7108ae7bb520f031b14ce"
+    },
+    {
+      "name": "exit_observation",
+      "complete_frozen_text": "lemma exit_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (edge : E) :\n    observeCode N (exitCode N s edge) =\n      ((observeCode N s).1,fun x => exitLocation N edge ((observeCode N s).2 x)) := by\n  rw [exitCode,admitted_observation]\n  rfl",
+      "sha256": "76ecaba8db4c78f7e2151f603099df594801e64e23d00a3b6325bd1d8ec03535"
+    },
+    {
+      "name": "ordinary_observation",
+      "complete_frozen_text": "lemma ordinary_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) (edge : E) :\n    observeCode N (ordinaryCode N s edge) =\n      ((observeCode N s).1,fun x => ordinaryLocation N edge ((observeCode N s).2 x)) := by\n  rw [ordinaryCode,admitted_observation]\n  rfl",
+      "sha256": "fec74acaaab420fe4b0ca9fe3a2387c0eff59c458bf7ec6eb53d102263452b05"
+    },
+    {
+      "name": "root_observation",
+      "complete_frozen_text": "lemma root_observation (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (s : Code N sample) :\n    observeCode N (rootCode N s) =\n      ((observeCode N s).1,fun x => rootLocation N ((observeCode N s).2 x)) := by\n  rw [rootCode,admitted_observation]\n  rfl\n\n/-- Repackage the ACTUAL AtNode subtype, without changing its current owners. -/",
+      "sha256": "263d6aa8cea27fdb50fa32cd2b2a2124b51e746fb7e68e439d4f8ba4304f8de8"
+    },
+    {
+      "name": "atNodeLiveEquiv",
+      "complete_frozen_text": "def atNodeLiveEquiv (s : State V E Copy) (v : V) :\n    AtNode s v \u2243 {a : LiveRoot s // s.location a.val = .node v} where\n  toFun a := \u27e8\u27e8a.val,a.property.1\u27e9,a.property.2\u27e9\n  invFun a := \u27e8a.val.val,a.val.property,a.property\u27e9\n  left_inv a := by cases a; rfl\n  right_inv a := by rcases a with \u27e8\u27e8a,ha\u27e9,hp\u27e9; rfl",
+      "sha256": "4caff0624d0d510786568f5a5d274a389962fc939640bfe4191559a3549b0c37"
+    },
+    {
+      "name": "matchingAtNodeEquiv",
+      "complete_frozen_text": "def matchingAtNodeEquiv (s t : State V E Copy) (hs : Valid s) (ht : Valid t)\n    (hB : currentBlocks s = currentBlocks t)\n    (hLoc : \u2200 x, copyLocation s x = copyLocation t x) (v : V) : AtNode s v \u2243 AtNode t v :=\n  (atNodeLiveEquiv s v).trans\n    (((liveRootEquiv s t hs ht hB).subtypeEquiv (fun a => by\n      change s.location a.val = .node v \u2194\n        t.location (matchingRoot s t hB a).val = .node v\n      rw [matchingRoot_location s t hs ht hB hLoc a])).trans (atNodeLiveEquiv t v).symm)",
+      "sha256": "830d9da47cef48459f01975fda30e8d82e5083e77563ac71084a092fec047275"
+    },
+    {
+      "name": "matchingRoot_ancestor",
+      "complete_frozen_text": "lemma matchingRoot_ancestor (s t : State V E Copy) (hs : Valid s) (ht : Valid t)\n    (hB : currentBlocks s = currentBlocks t) (x : Copy) :\n    (matchingRoot s t hB \u27e8s.ancestor x,hs.ancestor_live x\u27e9).val = t.ancestor x := by\n  have hx : x \u2208 (s.genealogy (s.ancestor x)).leaves :=\n    (hs.leaf_fiber _ (hs.ancestor_live x) x).mpr rfl\n  have hy : x \u2208 (t.genealogy (matchingRoot s t hB \u27e8s.ancestor x,hs.ancestor_live x\u27e9).val).leaves := by\n    rw [matchingRoot_block]\n    exact hx\n  exact ((ht.leaf_fiber _ (matchingRoot s t hB \u27e8s.ancestor x,hs.ancestor_live x\u27e9).property x).mp hy).symm\n\n/-- Pull back CURRENT-owner coin assignments along the actual matching blocks. -/",
+      "sha256": "eb33bc5c2fd2885032b9d1dce098c4108057df8af825dacf094fd4c91b59880e"
+    },
+    {
+      "name": "transportCoin",
+      "complete_frozen_text": "def transportCoin {A B : Type*} (e : A \u2243 B) (coin : A \u2192 Bool) : B \u2192 Bool :=\n  fun b => coin (e.symm b)",
+      "sha256": "225782092db7d0d3e04723e1c65e506eea224660728a7c1af5cc0e3f09facb26"
+    },
+    {
+      "name": "actual_pulse_observation",
+      "complete_frozen_text": "lemma actual_pulse_observation {N : RootedBinary V E X}\n    (H : GProgram.G2.OriginalHybridParents N) (s t : State V E Copy)\n    (hs : Valid s) (ht : Valid t) (hB : currentBlocks s = currentBlocks t)\n    (hLoc : \u2200 x, copyLocation s x = copyLocation t x)\n    (coin : AtNode s H.hybrid \u2192 Bool) :\n    observeState (pulse H s coin) =\n      observeState (pulse H t (transportCoin (matchingAtNodeEquiv s t hs ht hB hLoc H.hybrid) coin)) := by\n  apply Prod.ext\n  \u00b7 exact hB\n  \u00b7 funext x\n    let e := matchingAtNodeEquiv s t hs ht hB hLoc H.hybrid\n    have hx := hLoc x\n    change s.location (s.ancestor x) = t.location (t.ancestor x) at hx\n    by_cases hp : s.location (s.ancestor x) = .node H.hybrid\n    \u00b7 have hq : t.location (t.ancestor x) = .node H.hybrid := hx.symm.trans hp\n      let a : AtNode s H.hybrid := \u27e8s.ancestor x,hs.ancestor_live x,hp\u27e9\n      let b : AtNode t H.hybrid := \u27e8t.ancestor x,ht.ancestor_live x,hq\u27e9\n      have hab : e a = b := by\n        apply Subtype.ext\n        exact matchingRoot_ancestor s t hs ht hB x\n      have hc : transportCoin e coin b = coin a := by\n        rw [\u2190 hab]\n        exact congrArg coin (e.symm_apply_apply a)\n      change (pulse H s coin).location (s.ancestor x) =\n        (pulse H t (transportCoin e coin)).location (t.ancestor x)\n      change (pulse H s coin).location a.val = (pulse H t (transportCoin e coin)).location b.val\n      rw [pulse_routes_current_ancestor H s coin a,pulse_routes_current_ancestor H t (transportCoin e coin) b,hc]\n    \u00b7 have hq : t.location (t.ancestor x) \u2260 .node H.hybrid := fun h => hp (hx.trans h)\n      simp [observeState,copyLocation,pulse,transport,hp,hq,hx]",
+      "sha256": "622c81b3a5492cf7e99e4ba8aaea5802b6c0b44c190b9c0633cdc17ec5a9becc"
+    },
+    {
+      "name": "coded_pulse_observation",
+      "complete_frozen_text": "lemma coded_pulse_observation {N : RootedBinary V E X} {sample : Copy \u2192 X}\n    (H : GProgram.G2.OriginalHybridParents N) (s t : Code N sample)\n    (hobs : observeCode N s = observeCode N t)\n    (coin : AtNode (state s) H.hybrid \u2192 Bool) :\n    observeCode N (pulseCode H s coin) =\n      observeCode N (pulseCode H t\n        (transportCoin (matchingAtNodeEquiv (state s) (state t) s.property.forest t.property.forest\n          (congrArg Prod.fst hobs) (fun x => congrFun (congrArg Prod.snd hobs) x) H.hybrid) coin)) := by\n  rw [pulseCode,pulseCode,admitted_observation,admitted_observation]\n  exact actual_pulse_observation H (state s) (state t) s.property.forest t.property.forest _ _ coin\n\n/-- The product law is invariant under the actual CURRENT-owner bijection,\nincluding Bernoulli parameters zero and one. No per-copy redraw is introduced. -/",
+      "sha256": "3d5eae97379e79223522fe2c4d761ca386af2fbd4d40b4e0efe162547fe8241f"
+    },
+    {
+      "name": "transportCoin_measurePreserving",
+      "complete_frozen_text": "lemma transportCoin_measurePreserving {A B : Type*} [Fintype A] [Fintype B]\n    (e : A \u2243 B) (gamma : unitInterval) :\n    MeasurePreserving (transportCoin e) (independentCoinMeasure A gamma)\n      (independentCoinMeasure B gamma) := by\n  have hm := measurePreserving_piCongrLeft (fun _ : B => bitMeasure gamma) e\n  have he : (\u21d1(MeasurableEquiv.piCongrLeft (fun _ : B => Bool) e)) = transportCoin e := by\n    funext coin b\n    simp [MeasurableEquiv.coe_piCongrLeft,Equiv.piCongrLeft_apply,transportCoin]\n  rw [he] at hm\n  exact hm",
+      "sha256": "4a1a09dbe065848e57103dca7790f262bc5db933f4d17b79e83c02e2e5a2ba60"
+    },
+    {
+      "name": "transportCoin_pmf",
+      "complete_frozen_text": "lemma transportCoin_pmf {A B : Type*} [Fintype A] [Fintype B]\n    (e : A \u2243 B) (gamma : unitInterval) :\n    (currentCoinPMF A gamma).map (transportCoin e) = currentCoinPMF B gamma := by\n  apply PMF.toMeasure_injective\n  rw [\u2190 PMF.toMeasure_map _ _ (measurable_of_countable _)]\n  unfold currentCoinPMF\n  rw [Measure.toPMF_toMeasure,Measure.toPMF_toMeasure]\n  exact (transportCoin_measurePreserving e gamma).map_eq\n\n/-- Actual independent original pulse descends to current blocks/populations. -/",
+      "sha256": "12f992baf9c3cfef99801c343e095de95b7878821f76a92401ed6b291d85f63a"
+    },
+    {
+      "name": "actual_independent_boundary_quotient",
+      "complete_frozen_text": "theorem actual_independent_boundary_quotient {N : RootedBinary V E X}\n    {sample : Copy \u2192 X} (H : GProgram.G2.OriginalHybridParents N) (gamma : unitInterval)\n    (s t : Code N sample) (hobs : observeCode N s = observeCode N t) :\n    (independentPulseKernel H gamma s).map (observeCode N) =\n      (independentPulseKernel H gamma t).map (observeCode N) := by\n  let e := matchingAtNodeEquiv (state s) (state t) s.property.forest t.property.forest\n    (congrArg Prod.fst hobs) (fun x => congrFun (congrArg Prod.snd hobs) x) H.hybrid\n  have hcoin := transportCoin_pmf e gamma\n  rw [independentPulseKernel,independentPulseKernel,PMF.map_comp,PMF.map_comp,\u2190 hcoin,PMF.map_comp]\n  congr 1\n  funext coin\n  exact coded_pulse_observation H s t hobs coin\n\n/-- Exact original boundary law on a fixed once-drawn register fibre. -/",
+      "sha256": "21ab9705db675d1000a643e7c67bb627a71f4b6c1955e4c693a684c64af016d9"
+    },
+    {
+      "name": "actual_fixed_bank_boundary_quotient",
+      "complete_frozen_text": "theorem actual_fixed_bank_boundary_quotient (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (op : BoundaryOperation N) (s t : Code N sample)\n    (hobs : observeCode N s = observeCode N t)\n    (hreg : (state s).register = (state t).register) :\n    (boundaryKernel N op s).map (observeCode N) =\n      (boundaryKernel N op t).map (observeCode N) := by\n  cases op with\n  | exit edge => simp only [boundaryKernel,PMF.pure_map]; congr 1; rw [exit_observation,exit_observation,hobs]\n  | ordinary edge degree => simp only [boundaryKernel,PMF.pure_map]; congr 1; rw [ordinary_observation,ordinary_observation,hobs]\n  | root => simp only [boundaryKernel,PMF.pure_map]; congr 1; rw [root_observation,root_observation,hobs]\n  | independent H gamma => exact actual_independent_boundary_quotient H gamma s t hobs\n  | common H =>\n    simp only [boundaryKernel,PMF.pure_map]\n    congr 1\n    have hp := coded_pulse_observation H s t hobs (fun _ => (state s).register H.hybrid)\n    simpa [transportCoin,hreg] using hp\n\n/-- Actual coded PMF operations preserve the original register exactly. -/",
+      "sha256": "73e79669fd847d9b0e76ceba0c27ec4ae07b03d0a68c930440cfda7b06469f2e"
+    },
+    {
+      "name": "actual_boundary_register_law",
+      "complete_frozen_text": "theorem actual_boundary_register_law (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (op : BoundaryOperation N) (s : Code N sample) :\n    (boundaryKernel N op s).map (fun d => (state d).register) = PMF.pure ((state s).register) := by\n  cases op with\n  | exit edge => simp [boundaryKernel,PMF.pure_map,exitCode,admittedCode,state,decodeSnapshot,encodeSnapshot,exitEdge,transport]\n  | ordinary edge degree => simp [boundaryKernel,PMF.pure_map,ordinaryCode,admittedCode,state,decodeSnapshot,encodeSnapshot,enterEdge,transport]\n  | root => simp [boundaryKernel,PMF.pure_map,rootCode,admittedCode,state,decodeSnapshot,encodeSnapshot,enterRoot,transport]\n  | common H => simp [boundaryKernel,PMF.pure_map,pulseCode,admittedCode,state,decodeSnapshot,encodeSnapshot,pulse,transport]\n  | independent H gamma =>\n    rw [boundaryKernel,independentPulseKernel,PMF.map_comp]\n    have hf : (fun d : Code N sample => (state d).register) \u2218 pulseCode H s =\n        Function.const (AtNode (state s) H.hybrid \u2192 Bool) ((state s).register) := by\n      funext coin\n      rfl\n    rw [hf,PMF.map_const]\n\n/-- A single count/bank-independent admitted representative can be re-banked\nONLY for boundary coefficients. No added representative existence premise. -/",
+      "sha256": "22fe7f7cc93f305cad16efce756b1a10af8037cce1aa6b9353f615f32413b57b"
+    },
+    {
+      "name": "actual_boundary_representative",
+      "complete_frozen_text": "theorem actual_boundary_representative (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (op : BoundaryOperation N) (s representative : Code N sample)\n    (hobs : observeCode N s = observeCode N representative) :\n    (boundaryKernel N op s).map (observeCode N) =\n      (boundaryKernel N op (reBank N representative (state s).register)).map (observeCode N) := by\n  apply actual_fixed_bank_boundary_quotient N op\n  \u00b7 exact hobs.trans (actual_reBank_observation N representative (state s).register).1.symm\n  \u00b7 exact (actual_reBank_observation N representative (state s).register).2.symm",
+      "sha256": "dbac3ba71ee0935d5158fca41de4b52a15505d966f8cd0783acfddd0a5b2a587"
+    }
+  ],
+  "authority": "Entire frozen source is authoritative, including proof bodies and definition values."
+}
