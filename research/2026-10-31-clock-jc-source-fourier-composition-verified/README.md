@@ -1,0 +1,13 @@
+# Actual observed Fourier to original clock occupation — scoped verified successor
+
+31 October 2026. Source/math contribution: dot (OpenAI); separate coordinating AI-assisted review in INDEPENDENT-REVIEW.md. **Scoped accepted**, not full finite-window completion.
+
+Exact compiled source SHA25622b32d8773e75b2796e97c63d97a46e3490cfaac2997dc9579b21b9bb7a914b2 repairs original916cdf7d9b7ffede8f826b483019a80e5ad55493c98839d157eabe22b91178df with three proof-API changes. All10 headers/definitions remain unchanged. Six exact named types have only propext, Classical.choice, Quot.sound. The complete original source parameters, full labelled panel, shared-locus genealogy, fixed entering bank, a.e. support, unnormalized endpoint masses and initial potential remain.
+
+The real observed Fourier coefficient now equals the original prefix/root-clock occupation integral for balanced site charges. Any unbalanced site has coefficient zero. Integrability is derived from actual original PMF masses; no desired exponential representation is assumed. The source's historical UNCOMPILED comment is preserved byte-exactly as provenance; this successor records actual checked status.
+
+The raw176-module audit remains cloud-local. Its reported4113declarations/2673theorems and empty rejection/missing lists are bound by SCOPED-RESULT to its exact hash; this packet verifies thin source/named receipts, NOT the raw full audit rows. No held raw provider/audit payload is included. Historical failed original-source attempts remain explicitly FAILED; diagnostic execution paths alone are removed with original/public hashes.
+
+Reproduce using the exact BUILD-REQUEST at commitd3ee9d9752ac54d6fb57a342c54bae230d9f1cc0, research/2026-10-31-clock-jc-source-fourier-composition-candidate, replacing only that candidate module by this exact repaired source. Accepted dependencies are at614a082a46ecdb30bdc35882df2157ac64e9e6e6: complete-clock sourcee94ae01644150612ff16e2f3699a33cf4a06c12f2bb50bfea1e1a6c1d6b03032 and observed-Fourier source9bc339e06fad5c7707818986aa0920ac514a70bf8581db3df0f967a991a4cd61. Lean4.33.1 compiler819816b2e0a3bf405af45ae5c7af2491d8f5bee6; Mathlib0df444a360eaa60ab8c11dca51a86af692955474. Compile the named module and included NamedAudit.lean in that exact context; no full dependency rebuild is claimed here.
+
+The full scientific result remains HOLD_FULL_LEAN_PROOF_PENDING. Actual source quotient/boundary admission, weighted root resolvent and finite path integration, term/degree/positive-denominator bounds and reconstruction remain distinct. INDEXING-HANDOFF is a searchable ingestion request, not a registry change or preprint deposit.

@@ -1,0 +1,39 @@
+--- frozen/ResearchCommons/MSCI/JC69SourceFourierComposition.lean
++++ source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean
+@@ -157,7 +157,7 @@
+   have hm : Measurable (fun z : (Fin ops.length → SegmentRecord N sample) ×
+       (Bool × ClockTrace N sample (Fintype.card Copy)) => (d,z)) :=
+     measurable_const.prodMk measurable_id
+-  have hp := ae_ae_of_ae_prod (ae_of_ae_map hm.aemeasurable hd)
++  have hp := Measure.ae_ae_of_ae_prod (ae_of_ae_map hm.aemeasurable hd)
+   filter_upwards [hp] with past htail
+   exact ae_of_ae_map (complete_ancestral_trace_measurable N d).aemeasurable htail
+ 
+@@ -179,7 +179,11 @@
+   have hm : Measurable (fun z : (Fin ops.length → SegmentRecord N sample) ×
+       (Bool × ClockTrace N sample (Fintype.card Copy)) => (d,z)) :=
+     measurable_const.prodMk measurable_id
+-  rw [lintegral_map hF hm,lintegral_prod _ (hF.comp hm).aemeasurable]
++  rw [lintegral_map hF hm]
++  rw [lintegral_prod
++    (μ := (actualCalendarTraceLaw N r ops s).restrict {z | calendarEnd N ops s z = d})
++    (ν := completeAncestralTraceLaw N r d)
++    (fun z => F (d,z)) (hF.comp hm).aemeasurable]
+   apply lintegral_congr
+   intro past
+   change (∫⁻ z, F (d,past,z) ∂(currentPairClockMeasure N r d).map
+@@ -219,9 +223,12 @@
+     filter_upwards [actual_original_point_support N C sample register H gamma common r] with z hz
+     dsimp only [f]
+     rw [point_fourier_eq_labelled L N q leafAge _ hz]
+-    rw [labelled_complete_locus_fourier L q leafAge _
++    rw [labelled_complete_locus_fourier L q leafAge
++      (state (originalPoint N C sample register H gamma common z).1)
+       (originalPoint N C sample register H gamma common z).1.property.forest hz.1
+-      _ (selected_root_live N _) hbal _ (0:ℝ)]
++      (selectedRoot N (originalPoint N C sample register H gamma common z).1)
++      (selected_root_live N _) hbal
++      (originalPoint N C sample register H gamma common z).2 (0:ℝ)]
+     exact (Real.exp_pos _).le
+   have hfi : Integrable f (completeCalendarTraceLaw N r ops s) :=
+     actual_point_fourier_integrable L N C sample register H gamma common r q

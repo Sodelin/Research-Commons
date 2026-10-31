@@ -1,0 +1,125 @@
+@ResearchCommons.MSCI.JC69SourceFourierComposition.actual_point_fourier_integrable : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [inst_7 : Nonempty Copy]
+  (L : ℕ) (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (sample : Copy → X)
+  (register : V → Bool) (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  MeasureTheory.Integrable
+    (fun z =>
+      ResearchCommons.MSCI.JC69SourceFourierComposition.pointFourier L N q (fun x => C.age (N.leaf (sample x)))
+        (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common z))
+    (GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r
+      (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common)
+      (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register))
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_point_fourier_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_unbalanced_zero : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [inst_7 : Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∃ j, ∑ x, q j x ≠ 0) →
+    ResearchCommons.MSCI.JC69ObservedFourier.observedFourier L N C sample register H gamma common r q = 0
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_unbalanced_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69SourceFourierComposition.point_fourier_eq_labelled : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [inst_7 : Nonempty Copy]
+  (L : ℕ) (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X} (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base)
+  (leafAge : Copy → ℝ) (z : UnifiedLean.Source.UniformizedSourceStep.Code N sample × (Copy → Copy → ℝ)),
+  ResearchCommons.MSCI.JC69Source.GoodPoint N leafAge z →
+    ResearchCommons.MSCI.JC69SourceFourierComposition.pointFourier L N q leafAge z =
+      ResearchCommons.MSCI.JC69CompleteClockComposition.labelledTreeFourier L q leafAge
+        ((UnifiedLean.Source.UniformizedSourceStep.state z.1).genealogy
+          (ResearchCommons.MSCI.JC69Source.selectedRoot N z.1))
+        z.2
+'ResearchCommons.MSCI.JC69SourceFourierComposition.point_fourier_eq_labelled' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69SourceFourierComposition.actual_branch_good_point : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (d : UnifiedLean.Source.UniformizedSourceStep.Code N sample),
+  let ops := UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common;
+  have s := UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register;
+  ∀ᵐ (past :
+    Fin ops.length →
+      GProgram.G2.ActualCalendarTrace.SegmentRecord N
+        sample) ∂(GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s).restrict
+      {past | GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past = d},
+    ∀ᵐ (c :
+      UnifiedLean.Source.UniformizedSourceStep.Choice N d →
+        ℝ) ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r d,
+      ResearchCommons.MSCI.JC69Source.GoodPoint N (fun x => C.age (N.leaf (sample x)))
+        (ResearchCommons.MSCI.JC69Source.originalPoint N C sample register H gamma common
+          (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past c))
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_branch_good_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69SourceFourierComposition.complete_clock_lintegral : ∀ {V : Type u_1} {E : Type u_2}
+  {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) {sample : Copy → X}
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E)
+  (ops : List (UnifiedLean.Source.SourceProgramTransport.ProgramStep N))
+  (s : UnifiedLean.Source.UniformizedSourceStep.Code N sample)
+  (F : GProgram.G2.CompleteCalendarAttachment.CompleteCalendarRecord N sample ops → ENNReal),
+  Measurable F →
+    ∫⁻ (z : GProgram.G2.CompleteCalendarAttachment.CompleteCalendarRecord N sample ops),
+        F z ∂GProgram.G2.CompleteCalendarAttachment.completeCalendarTraceLaw N r ops s =
+      ∑ d,
+        ∫⁻ (past : Fin ops.length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample) in
+          {past | GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past = d},
+          ∫⁻ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N d → ℝ),
+            F
+              (ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockRecord N ops d past
+                c) ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r
+              d ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s
+'ResearchCommons.MSCI.JC69SourceFourierComposition.complete_clock_lintegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_balanced_clock_integral : ∀ {V : Type u_1}
+  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [inst : DecidableEq V] [inst_1 : DecidableEq E] [inst_2 : Fintype V]
+  [inst_3 : Fintype E] [inst_4 : Fintype X] [inst_5 : DecidableEq Copy] [inst_6 : Fintype Copy] [inst_7 : Nonempty Copy]
+  (N : Nanuq.Source.RootedBinary V E X) (C : GProgram.G5.Calendar N.graph) (sample : Copy → X) (register : V → Bool)
+  (H : UnifiedLean.Source.NativeParentRouting.OriginalParentRegistry N)
+  (gamma : UnifiedLean.Source.NativeParentRouting.Hybrid N → ↑unitInterval)
+  (common : UnifiedLean.Source.NativeParentRouting.Hybrid N → Bool)
+  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates E) (L : ℕ)
+  (q : Fin L → Copy → ResearchCommons.MSCI.JC69.Base),
+  (∀ (j : Fin L), ∑ x, q j x = 0) →
+    have ops := UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H gamma common;
+    have s := UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample register;
+    have leafAge := fun x => C.age (N.leaf (sample x));
+    have M := fun x x_1 => leafAge x;
+    ResearchCommons.MSCI.JC69ObservedFourier.observedFourier L N C sample register H gamma common r q =
+      (∑ d,
+          ∫⁻ (past : Fin ops.length → GProgram.G2.ActualCalendarTrace.SegmentRecord N sample) in
+            {past | GProgram.G2.ActualCalendarTrace.calendarEnd N ops s past = d},
+            ∫⁻ (c : UnifiedLean.Source.UniformizedSourceStep.Choice N d → ℝ),
+              ENNReal.ofReal
+                (Real.exp
+                  (-(4 / 3 *
+                      ∑ j,
+                        (ResearchCommons.MSCI.JC69Occupation.forestPotential (q j) leafAge
+                            (UnifiedLean.Source.UniformizedSourceStep.state s) M
+                            (UnifiedLean.Source.SourceCalendarCompatibility.firstOriginalDate N C) +
+                          ResearchCommons.MSCI.JC69CompleteClockComposition.completeClockOccupation N (q j) ops s d past
+                            c)))) ∂UnifiedLean.Source.SourceActualHoldingClocks.currentPairClockMeasure N r
+                d ∂GProgram.G2.ActualCalendarTrace.actualCalendarTraceLaw N r ops s).toReal
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_balanced_clock_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

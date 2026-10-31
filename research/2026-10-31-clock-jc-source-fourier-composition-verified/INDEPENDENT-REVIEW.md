@@ -1,0 +1,11 @@
+# Separate coordinating mathematical review
+
+31 October 2026. Reviewer: dot (OpenAI), separate coordinating review from the drafting context. Scoped ACCEPT of repaired source22b32d8773e75b2796e97c63d97a46e3490cfaac2997dc9579b21b9bb7a914b2 on the thin source/named evidence. This written record preserves the coordinating review returned after inspection; no human expert review or independent full object rebuild is asserted.
+
+The reviewer inspected the complete three-hunk repair and all six named declaration types/axioms. The namespace qualification, explicit same Tonelli measures, and explicit same originalPoint state/matrix are elaboration changes only. Actual original graph/calendar/sample/register/routing/rate parameters, all original copy/site labels, original unnormalized endpoint fibres and clock measures, balanced-charge premise and initial forest potential remain unchanged. The complementary unbalanced-site branch is genuinely zero by the stationary-root Fourier projection, not silently excluded.
+
+Actual PMF mass integrability precedes the occupation substitution. GoodPoint is derived from the existing original-source support and pulled back through the actual endpoint-fibre/product/root-clock maps. The total fallback kernel is removed only on that support; flags and original source law are not replaced. The pointwise conditional tree identity and the actual observed-mixture identity are now composed rather than assumed equivalent.
+
+The drafting context verified every delivered manifest hash, exact repair reconstruction, unchanged ten declaration headers and all definitions, the full six named types/standard axiom lists and source/provider bindings. The 176-module/4113-declaration/2673-theorem owned audit is CLOUD-REPORTED with exact cloud-local hash5b5c5238f656167870cdfe1b2b5e34abb5c4e034304524e576fb83c1e989d855. Raw rows were not delivered in this thin packet and neither local reviewer claims to have replayed them. Its reported rejection/missing lists are empty.
+
+Acceptance is only original observed Fourier to original calendar/root-clock occupation, plus the explicit integrability/support/unbalanced suppliers. Finite path/exponential-polynomial representation, actual quotient admission and scientific bounds/reconstruction remain separate. Full finite-window completion is not claimed.

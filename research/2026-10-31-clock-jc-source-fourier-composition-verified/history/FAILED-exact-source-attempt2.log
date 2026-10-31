@@ -1,0 +1,205 @@
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:152:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:153:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:160:13: error(lean.unknownIdentifier): Unknown identifier `ae_ae_of_ae_prod`
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:149:53: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+d : Code N sample
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma common
+s : Code N sample := initialCode N sample register
+this✝ : IsProbabilityMeasure (actualCalendarTraceLaw N r ops s) := actual_calendar_trace_probability N r ops s
+this : IsProbabilityMeasure (completeAncestralTraceLaw N r d) := complete_ancestral_trace_probability N r d
+h :
+  ∀ i ∈ Finset.univ,
+    ∀ᵐ (x :
+      CompleteCalendarRecord N sample
+        (compiledCalendarProgram N C H gamma
+          common)) ∂Measure.map (fun z => (i, z))
+        (((actualCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
+                  (initialCode N sample register)).restrict
+              {z |
+                calendarEnd N (compiledCalendarProgram N C H gamma common) (initialCode N sample register) z = i}).prod
+          (completeAncestralTraceLaw N r i)),
+      GoodPoint N (fun x => C.age (N.leaf (sample x))) (originalPoint N C sample register H gamma common x)
+hd :
+  ∀ᵐ (x :
+    CompleteCalendarRecord N sample
+      (compiledCalendarProgram N C H gamma
+        common)) ∂Measure.map (fun z => (d, z))
+      (((actualCalendarTraceLaw N r (compiledCalendarProgram N C H gamma common)
+                (initialCode N sample register)).restrict
+            {z | calendarEnd N (compiledCalendarProgram N C H gamma common) (initialCode N sample register) z = d}).prod
+        (completeAncestralTraceLaw N r d)),
+    GoodPoint N (fun x => C.age (N.leaf (sample x))) (originalPoint N C sample register H gamma common x)
+hm : Measurable fun z => (d, z)
+⊢ let ops := compiledCalendarProgram N C H gamma common;
+  let s := initialCode N sample register;
+  ∀ᵐ (past :
+    Fin ops.length →
+      SegmentRecord N sample) ∂(actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d},
+    ∀ᵐ (c : Choice N d → ℝ) ∂currentPairClockMeasure N r d,
+      GoodPoint N (fun x => C.age (N.leaf (sample x)))
+        (originalPoint N C sample register H gamma common (completeClockRecord N ops d past c))
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:174:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:178:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:182:26: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫⁻ (z : (Fin ops.length → SegmentRecord N sample) × Bool × ClockTrace N sample (Fintype.card Copy)),
+    (F ∘ fun z => (d, z)) z ∂Measure.prod ?m.250 ?m.251
+in the target expression
+  ∫⁻ (a : (Fin ops.length → SegmentRecord N sample) × Bool × ClockTrace N sample (Fintype.card Copy)),
+      F
+        (d,
+          a) ∂((actualCalendarTraceLaw N r ops s).restrict {z | calendarEnd N ops s z = d}).prod
+        (completeAncestralTraceLaw N r d) =
+    ∫⁻ (past : Fin ops.length → SegmentRecord N sample) in {past | calendarEnd N ops s past = d},
+      ∫⁻ (c : Choice N d → ℝ),
+        F (completeClockRecord N ops d past c) ∂currentPairClockMeasure N r d ∂actualCalendarTraceLaw N r ops s
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+ops : List (ProgramStep N)
+s : Code N sample
+F : CompleteCalendarRecord N sample ops → ℝ≥0∞
+hF : Measurable F
+this✝ : IsProbabilityMeasure (actualCalendarTraceLaw N r ops s) := actual_calendar_trace_probability N r ops s
+d : Code N sample
+a✝ : d ∈ Finset.univ
+this : IsProbabilityMeasure (completeAncestralTraceLaw N r d) := complete_ancestral_trace_probability N r d
+hm : Measurable fun z => (d, z)
+⊢ ∫⁻ (a : (Fin ops.length → SegmentRecord N sample) × Bool × ClockTrace N sample (Fintype.card Copy)),
+      F
+        (d,
+          a) ∂((actualCalendarTraceLaw N r ops s).restrict {z | calendarEnd N ops s z = d}).prod
+        (completeAncestralTraceLaw N r d) =
+    ∫⁻ (past : Fin ops.length → SegmentRecord N sample) in {past | calendarEnd N ops s past = d},
+      ∫⁻ (c : Choice N d → ℝ),
+        F (completeClockRecord N ops d past c) ∂currentPairClockMeasure N r d ∂actualCalendarTraceLaw N r ops s
+source/ResearchCommons/MSCI/JC69SourceFourierComposition.lean:222:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  labelledTreeFourier L q leafAge
+    ((UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root
+          ↑(originalPoint N C sample register H gamma common z).1).genealogy
+      (selectedRoot N (originalPoint N C sample register H gamma common z).1))
+    ?m.450
+in the target expression
+  0 ≤
+    labelledTreeFourier L q leafAge
+      ((state (originalPoint N C sample register H gamma common z).1).genealogy
+        (selectedRoot N (originalPoint N C sample register H gamma common z).1))
+      (originalPoint N C sample register H gamma common z).2
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+L : ℕ
+q : Fin L → Copy → Base
+hbal : ∀ (j : Fin L), ∑ x, q j x = 0
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma common
+s : Code N sample := initialCode N sample register
+leafAge : Copy → ℝ := fun x => C.age (N.leaf (sample x))
+f : CompleteCalendarRecord N sample ops → ℝ :=
+  fun z => pointFourier L N q leafAge (originalPoint N C sample register H gamma common z)
+hf : Measurable f
+z : CompleteCalendarRecord N sample ops
+hz : z ∈ {x | GoodPoint N (fun x => C.age (N.leaf (sample x))) (originalPoint N C sample register H gamma common x)}
+⊢ 0 ≤
+    labelledTreeFourier L q leafAge
+      ((state (originalPoint N C sample register H gamma common z).1).genealogy
+        (selectedRoot N (originalPoint N C sample register H gamma common z).1))
+      (originalPoint N C sample register H gamma common z).2
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_point_fourier_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_unbalanced_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SourceFourierComposition.point_fourier_eq_labelled' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_branch_good_point' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SourceFourierComposition.complete_clock_lintegral' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'ResearchCommons.MSCI.JC69SourceFourierComposition.actual_observed_balanced_clock_integral' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
