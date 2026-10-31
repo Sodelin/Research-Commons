@@ -1,0 +1,8 @@
+import ResearchCommons.MSCI.JC69StagePathCoefficient
+import ResearchCommons.MSCI.JC69ActiveStage
+import ResearchCommons.MSCI.JC69RootCanonicalRatios
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalPath
+#check @ResearchCommons.MSCI.JC69OrderedPathExpansion.OrderedPath
+#check @ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex
+#check @ResearchCommons.MSCI.JC69SupportedStateBound.SupportedObservation

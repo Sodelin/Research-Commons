@@ -1,0 +1,69 @@
+@ResearchCommons.MSCI.JC69CanonicalPathCount.CanonicalPath.{u_1, u_2, u_3, u_4, u_5,
+    u_6} : {V : Type u_1} →
+  {E : Type u_2} →
+    {Copy : Type u_3} →
+      {X : Type u_4} →
+        [inst : DecidableEq.{u_1 + 1} V] →
+          [DecidableEq.{u_2 + 1} E] →
+            [inst_2 : Fintype.{u_1} V] →
+              [inst_3 : Fintype.{u_2} E] →
+                [inst_4 : Fintype.{u_4} X] →
+                  [inst_5 : DecidableEq.{u_3 + 1} Copy] →
+                    [Fintype.{u_3} Copy] →
+                      {n : ℕ} →
+                        Equiv.{u_3 + 1, 1} Copy (Fin n) →
+                          (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) →
+                            {sample : Copy → X} →
+                              ℕ →
+                                UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample →
+                                  Type (max 0 (max (max u_2 u_3) u_5) u_6)
+@ResearchCommons.MSCI.JC69OrderedPathExpansion.OrderedPath.{u_1, u_2, u_3, u_4, u_5,
+    u_6} : {V : Type u_1} →
+  {E : Type u_2} →
+    {Copy : Type u_3} →
+      {X : Type u_4} →
+        [inst : DecidableEq.{u_1 + 1} V] →
+          [DecidableEq.{u_2 + 1} E] →
+            [inst_2 : Fintype.{u_1} V] →
+              [inst_3 : Fintype.{u_2} E] →
+                [inst_4 : Fintype.{u_4} X] →
+                  [inst_5 : DecidableEq.{u_3 + 1} Copy] →
+                    [Fintype.{u_3} Copy] →
+                      (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) →
+                        {sample : Copy → X} →
+                          ℕ →
+                            UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample →
+                              Type (max (max (max (max (max u_5 u_2) u_3) u_6) u_2 u_3) u_6)
+@ResearchCommons.MSCI.JC69CommonCountIndex.CommonTermIndex.{u_1, u_2, u_3, u_4, u_5,
+    u_6} : {V : Type u_1} →
+  {E : Type u_2} →
+    {Copy : Type u_3} →
+      {X : Type u_4} →
+        [inst : DecidableEq.{u_1 + 1} V] →
+          [DecidableEq.{u_2 + 1} E] →
+            [inst_2 : Fintype.{u_1} V] →
+              [inst_3 : Fintype.{u_2} E] →
+                [inst_4 : Fintype.{u_4} X] →
+                  [inst_5 : DecidableEq.{u_3 + 1} Copy] →
+                    [Fintype.{u_3} Copy] →
+                      {n : ℕ} →
+                        Equiv.{u_3 + 1, 1} Copy (Fin n) →
+                          (N : Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X) →
+                            {sample : Copy → X} →
+                              ℕ →
+                                UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} N sample →
+                                  Type (max (max (max u_2 u_3) u_5) u_6)
+@ResearchCommons.MSCI.JC69SupportedStateBound.SupportedObservation.{u_1, u_2, u_3,
+    u_4} : {V : Type u_1} →
+  {E : Type u_2} →
+    {Copy : Type u_3} →
+      {X : Type u_4} →
+        [inst : DecidableEq.{u_1 + 1} V] →
+          [inst_1 : Fintype.{u_1} V] →
+            [inst_2 : Fintype.{u_2} E] →
+              [inst_3 : Fintype.{u_4} X] →
+                [DecidableEq.{u_3 + 1} Copy] →
+                  Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X →
+                    (Copy → X) →
+                      Finset.{max u_2 u_1} (GProgram.SourceForest.Location.{u_1, u_2} V E) →
+                        Type (max 0 (max u_1 u_2) u_3)

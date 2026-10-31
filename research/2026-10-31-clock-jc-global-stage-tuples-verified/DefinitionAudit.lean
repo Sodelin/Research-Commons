@@ -1,0 +1,33 @@
+import ResearchCommons.MSCI.JC69GlobalStageTuples
+set_option pp.universes true
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_nil
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.source_suffix_cons
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.originalBoundaryWord
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.originalBoundaryWord
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.original_boundary_word_map
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.original_boundary_word_map
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.TupleIndex
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.TupleIndex
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.tupleIndexFintype
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.tupleIndexFintype
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.tupleTerm
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.tupleTerm
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.actual_tuple_index_card
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.actual_tuple_index_card
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.representative_locations
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.representative_locations
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.rebank_locations
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.rebank_locations
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.stage_indicator_coefficient
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.stage_indicator_coefficient
+#check @ResearchCommons.MSCI.JC69GlobalStageTuples.actual_calendar_tuple_expansion
+#print axioms ResearchCommons.MSCI.JC69GlobalStageTuples.actual_calendar_tuple_expansion
+#print ResearchCommons.MSCI.JC69GlobalStageTuples.SourceSuffix
+#print ResearchCommons.MSCI.JC69GlobalStageTuples.originalBoundaryWord
+#print ResearchCommons.MSCI.JC69GlobalStageTuples.TupleIndex
+#print ResearchCommons.MSCI.JC69GlobalStageTuples.tupleIndexFintype
+#print ResearchCommons.MSCI.JC69GlobalStageTuples.tupleTerm

@@ -1,0 +1,106 @@
+--- original/JC69GlobalStageTuples.lean
++++ current/JC69GlobalStageTuples.lean
+@@ -10,6 +10,9 @@
+ set_option autoImplicit false
+ set_option backward.isDefEq.respectTransparency false
+ namespace ResearchCommons.MSCI.JC69GlobalStageTuples
++open GProgram.G5 UnifiedLean.Source.SourceProgramTransport UnifiedLean.Source.SourceActualHoldingClocks
++open ResearchCommons.MSCI.JC69EndpointWeight ResearchCommons.MSCI.JC69CurrentPartition
++open ResearchCommons.MSCI.JC69RootResolvent
+ open MeasureTheory Set Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.UniformizedSourceStep UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceAncestralCompletion
+@@ -23,7 +26,8 @@
+ open ResearchCommons.MSCI.JC69RootCanonicalRatios ResearchCommons.MSCI.JC69StagePathCoefficient
+ open ResearchCommons.MSCI.JC69SupportedStateBound ResearchCommons.MSCI.JC69ActiveStage
+ open scoped Classical BigOperators ENNReal NNReal
+-variable {V E Copy X : Type*}
++universe uV uE uCopy uX
++variable {V : Type uV} {E : Type uE} {Copy : Type uCopy} {X : Type uX}
+ variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+ variable [DecidableEq Copy] [Fintype Copy]
+ 
+@@ -78,9 +82,9 @@
+ choice per WHOLE boundary word; no initial-state sum or intermediate target. -/
+ def TupleIndex (e : Copy ≃ Fin (Fintype.card Copy))
+     (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy → X} :
+-    List ℝ → Code N sample → Type _
+-  | [], s => CanonicalPath e N (Fintype.card Copy) s
+-  | b::dates, s => CommonTermIndex e N (Fintype.card Copy) s ×
++    List ℝ → Code N sample → Type (max uV uE uCopy)
++  | [], s => CanonicalPath.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s
++  | b::dates, s => CommonTermIndex.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s ×
+       ((o : SupportedObservation N sample (stageLocations N C b)) ×
+         TupleIndex e N C dates (representative N o))
+ 
+@@ -88,10 +92,10 @@
+     (N : RootedBinary V E X) (C : Calendar N.graph) {sample : Copy → X}
+     (dates : List ℝ) (s : Code N sample) : Fintype (TupleIndex e N C dates s) := by
+   induction dates generalizing s with
+-  | nil => exact inferInstanceAs (Fintype (CanonicalPath e N (Fintype.card Copy) s))
++  | nil => exact inferInstanceAs (Fintype (CanonicalPath.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s))
+   | cons b dates ih =>
+       letI : ∀ d : Code N sample, Fintype (TupleIndex e N C dates d) := ih
+-      exact inferInstanceAs (Fintype (CommonTermIndex e N (Fintype.card Copy) s ×
++      exact inferInstanceAs (Fintype (CommonTermIndex.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s ×
+         ((o : SupportedObservation N sample (stageLocations N C b)) ×
+           TupleIndex e N C dates (representative N o))))
+ 
+@@ -139,12 +143,13 @@
+         exact ih d (fun c hc => hP c (List.mem_cons_of_mem b hc))
+       have hs : Fintype.card (SupportedObservation N sample (stageLocations N C b)) ≤ S :=
+         stage_supported_card N C sample b P hroot (hP b (by simp))
+-      have hp : Fintype.card (CommonTermIndex e N (Fintype.card Copy) s) ≤ n*B :=
++      have hp : Fintype.card (CommonTermIndex.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s) ≤ n*B :=
+         actual_interval_boundary_index_card e N s
+-      change Fintype.card (CommonTermIndex e N (Fintype.card Copy) s ×
++      change Fintype.card (CommonTermIndex.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s ×
+         ((o : SupportedObservation N sample (stageLocations N C b)) ×
+           TupleIndex e N C dates (representative N o))) ≤ _
+-      rw [Fintype.card_prod,Fintype.card_sigma]
++      rw [Fintype.card_prod]
++      conv_lhs => arg 2; rw [Fintype.card_sigma]
+       calc
+         _ ≤ (n*B) * ∑ o : SupportedObservation N sample (stageLocations N C b),
+             B * (n*B*S)^dates.length :=
+@@ -185,7 +190,9 @@
+     programObservationWeight N r L q (stageProgram N C H gamma common a b) s o =
+       intervalBoundaryCoefficient N r L q (Real.toNNReal (b-a))
+         (originalBoundaryWord N C H gamma common b) s o := by
+-  rw [programObservationWeight,actual_calendar_weighted_recursion]
++  rw [programObservationWeight]
++  rw [actual_calendar_weighted_recursion N r L q
++    (fun d => if observeCode N d = o then 1 else 0) (stageProgram N C H gamma common a b) s]
+   simp only [intervalBoundaryCoefficient,stageProgram,original_boundary_word_map]
+ 
+ /-- Exact source value, not an assumed scalar likelihood: finiteness is
+@@ -217,9 +224,10 @@
+       change guardedRoot N r L q (reBank N s sigma) ≠ ∞ ∧ _
+       rw [heq]
+       constructor
+-      · rw [actual_root_canonical_ratio_sum e N r L q hbal (Fintype.card Copy) s hroot hb]
++      · rw [actual_root_canonical_ratio_sum.{uV,uE,uCopy,uX,uV,0} e N r L q hbal (Fintype.card Copy) s hroot hb]
+         exact ENNReal.sum_ne_top.mpr (fun _ _ => ENNReal.ofReal_ne_top)
+-      · exact actual_root_canonical_real_sum e N r L q hbal (Fintype.card Copy) s hroot hb
++      · simpa only [calendarTail,calendarValue,TupleIndex,tupleIndexFintype,tupleTerm,heq] using
++          (actual_root_canonical_real_sum.{uV,uE,uCopy,uX,0,uV} e N r L q hbal (Fintype.card Copy) s hroot hb)
+   | cons b dates ih =>
+       obtain ⟨hab,hb,hgap,htail⟩ := source_suffix_cons N C a b dates hdates
+       have ha : a < C.age N.root := hab.trans_le hb
+@@ -265,7 +273,7 @@
+       · rw [hrec,ENNReal.toReal_sum (fun o _ => hprod o)]
+         simp_rw [ENNReal.toReal_mul]
+         have hc (o : A) : (coefficient o).toReal =
+-            ∑ i : CommonTermIndex e N (Fintype.card Copy) s,
++            ∑ i : CommonTermIndex.{uV,uE,uCopy,uX,uV,0} e N (Fintype.card Copy) s,
+               commonCoefficient e N r L q (Fintype.card Copy) s
+                 (observeCode N (pathEnd N (Fintype.card Copy) s i.1.val)) i *
+               (boundaryCoefficient N (originalBoundaryWord N C H gamma common b)
+@@ -279,6 +287,7 @@
+         simp_rw [hc,fun o => (hind o).2,Finset.sum_mul,Finset.mul_sum]
+         rw [Finset.sum_comm]
+         simp only [TupleIndex,Fintype.sum_prod_type,Fintype.sum_sigma,tupleTerm,R]
++        rfl
+ 
+ #print axioms source_suffix_nil
+ #print axioms source_suffix_cons
