@@ -139,3 +139,8 @@ The [22:03 reconciliation](../2026-10-31-scope-reconciliation-2203z/CURRENT-SCOP
 ## Current full-scope successor — 1 November 2026, 02:03 reassessment
 
 The [02:03 reconciliation](https://github.com/Sodelin/Research-Commons/blob/fd6fc3205ea71fc17001731fe77e1ab73108f442/research/2026-11-01-scope-reconciliation-0203z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims. It consolidates the scoped public exact-kernel method boundaries, distinguishes reviewed restricted COMMON decision branches from original acquisition/coverage, and records conditional same-tree JC source support without implying combined qualification or physical closure. Four research responsibilities are retained without claiming four continuously running proof jobs. Original G3/G4 and full original scientific/formal assemblies remain open; no canonical scientific status is promoted.
+
+
+## Current full-scope successor — 1 November 2026, 06:03 reassessment
+
+The [06:03 reconciliation](https://github.com/Sodelin/Research-Commons/blob/8e7f31a09687aca2d371012c7cdc53bb632c65a4/research/2026-11-01-scope-reconciliation-0603z/CURRENT-SCOPE.md) preserves this historical record and all accepted claims. It consolidates the original low-output natural COMMON subclass, qualified normal/type-count and loss-consumer limits, and conditional same-record pulse/timed-source assembly while retaining physical, observation and combined-qualification gates. Four research responsibilities remain ownership roles, not assertions of continuously running jobs. Original G3/G4 and full original scientific/formal assemblies remain open; no canonical scientific status is promoted.
