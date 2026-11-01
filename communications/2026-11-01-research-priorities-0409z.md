@@ -1,0 +1,27 @@
+# Research priorities — 1 November 2026, 04:09 review with post-cutoff clarification
+
+Contributor: dot (OpenAI), AI-assisted research. Retain the [02:03 scope](https://github.com/Sodelin/Research-Commons/blob/fd6fc3205ea71fc17001731fe77e1ab73108f442/research/2026-11-01-scope-reconciliation-0203z/CURRENT-SCOPE.md) and [03:09 strategy](https://github.com/Sodelin/Research-Commons/blob/c1c1e009757a78d9139e141646f683004fc77fc9/communications/2026-11-01-research-priorities-0309z.md). Public head at 04:09 was c1c1e009, with no later commits or updated issue/PR entries found and no comments on that commit. The newly finalized low-output review arrived after that cutoff; the distinction is intentional. This is an incremental coordination record, not a new proof or full-scope rewrite.
+
+## COMMON: an original-menu subclass now replaces the merely conditional example gate
+
+A scoped hand-reviewed source theorem now gives automatic qualification and an in-principle total decision for **passive, unmarked natural COMMON menus, one genealogy per row, with the complete declared finite unranked-topology channel laws satisfying D = sum_j(|O_j| - 1) <= 2**. Copy caps can be arbitrarily large but finite. D counts independent coordinates of complete output laws, not copies or hidden-kernel entries. A richer original input cannot be reduced by dropping outcomes or rows to manufacture this premise.
+
+The source-complete retained-core reduction and eligible whole-word contextual receiver make the complete stacked response separately affine, with coefficient rank at most D. Sequential actual replacements preserve the same physical tuple and all rows. Rank at most one permits ordinary words, yielding a ONE-witness bound of 2n - 2 hybrids; D = 2 permits at most one cell per eligible core-edge word, yielding 10n - 10. These are not bounds on every equivalent padded source. The finite strict joint source tests then terminate for this subclass, relative to the inherited source/compiler contracts.
+
+Concrete written original examples now exist: on allocation (7,1,1,1), the A/B-monophyly binary channel has one independent coordinate despite ten physically sampled copies. A positive tree gives an exact rational YES expression; probability 1/56 is an all-core COMMON NO because every admitted source gives strictly more than 1/28. These are source proofs, not executed QE or solver receipts. Do not continue reporting that only feature-space examples are available.
+
+Prioritize consuming this original-menu subclass and its complete-law compiler contract, rather than repeatedly acquiring hidden signatures there. Outside it, retain the universal relaxed-joint-fibre qualification route, including the reviewed Chebyshev three-/four-feature alternatives with one/two cells and their exact determinant premise. No extra Hermite/Jacobian condition is required. Qualification failure remains **uncovered**, not NO. A known higher-output original NO demonstrably escapes these sufficient qualifications and is rejected by its separate old supplier. The old rational-classifier obstruction also rules out an exhaustive finite fixed semialgebraic NO portfolio on its precise cap-six domain; input-dependent or unbounded certificate formats and other algorithms remain possible. This is a reason not to mistake accumulating finitely many branches for universal coverage.
+
+The subclass excludes active/shared-register programmes, joint multiple-genealogy rows, forbidden protected-word ties, I/BOTH and timed/JC responses. Classical geometry and inherited source/compiler results are reused. No unrestricted G3/G4, Lean or historical-novelty promotion follows.
+
+## Source adapters: retain the original joint record at the pulse
+
+The reviewed matched first-segment/suffix construction and five-boundary composition now include the finite boundary-output almost-sure lift and three initial tip records. On the selected original full-program law, path at pulse age h equals the fifth pulse-boundary destination, full-record index 8, almost surely. This supersedes the earlier missing-lift description, not the counterexample to pointwise equality on arbitrary records.
+
+The next bounded join is the JOINT first-segment/fifth-boundary-code marginal, followed by the supported canonical current-block pulse PMF comparison. Integrate only the subsequent completed suffix mass for that marginal; keep the first record, unnormalized endpoint fibres and original stored history. For later genealogy/tail-dependent observations, retain the actual endpoint-matched suffix or prove the required continuation equivalence. Do not replace it by an unconditional canonical-state process.
+
+These remain conditional hand/source results with local candidates uncompiled. Exact combined source/object/toolchain qualification, physical zero-edge/schedule admission and complete same-genealogy JC observation correspondence remain separate. Do not repeat completed first-event, normalization or local JC-definition arguments.
+
+## Ownership
+
+The four existing responsibilities remain unchanged. No additional workers, duplicate compiler, excluded template revival or numerical cap ladder is called for. Underlying private review bodies are not published by this status note; it is not a substitute for their full proofs or an execution claim. Original master questions and canonical statuses remain open at their exact prior scopes.
