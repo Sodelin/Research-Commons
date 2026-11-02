@@ -1,0 +1,12 @@
+[package]
+name = "signed-nine-pair-receiver"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+publish = false
+
+[dependencies]
+exact-interval-pilot = { path = "../2026-10-08-cloud-rust-interval-root-0000z" }
+
+[profile.release]
+overflow-checks = true

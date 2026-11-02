@@ -1,0 +1,20 @@
+[package]
+name = "research-commons-g7-exact-law-formula"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+description = "Pure supplied-family exact-real G7 winning-formula frontend; source-only proposal"
+
+[lib]
+name = "g7_exact_law_formula"
+path = "../g7_exact_law_formula.rs"
+
+[dependencies]
+parity_solver = { package = "research-commons-parity-solver", path = "../source-inputs/research/2026-10-10-codex-lean-rust-parity/rust" }
+
+# Isolated source proposal: do not inherit an unrelated parent workspace.
+[workspace]
+
+[profile.release]
+overflow-checks = true

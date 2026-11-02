@@ -1,0 +1,289 @@
+{
+  "schema": "selected_first_persistence_source_inventory_v1",
+  "status": "SOURCE_REVIEW_ONLY;NO_RUNTIME_PERMIT",
+  "source_entries": [
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+      "writer_candidates": [
+        {
+          "line": 62,
+          "source": "with (a.out/'stdout').open('xb') as out, (a.out/'stderr').open('xb') as err:"
+        },
+        {
+          "line": 106,
+          "source": "(a.out/'RECEIPT.json').write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 107,
+          "source": "print(json.dumps({k:v for k,v in receipt.items() if k != 'samples'}))"
+        }
+      ],
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b",
+      "writer_candidates": [
+        {
+          "line": 143,
+          "source": "with path.open('x') as stream:"
+        },
+        {
+          "line": 144,
+          "source": "json.dump(value, stream, indent=2, sort_keys=True)"
+        },
+        {
+          "line": 218,
+          "source": "(out / 'REQUEST.json').write_bytes(encoded)"
+        },
+        {
+          "line": 331,
+          "source": "print(json.dumps({key:result[key] for key in"
+        }
+      ],
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b"
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628",
+      "writer_candidates": [
+        {
+          "line": 129,
+          "source": "incoming.write_bytes(raw)"
+        },
+        {
+          "line": 144,
+          "source": "with (folder / 'launcher.stdout').open('xb') as stdout, \\"
+        },
+        {
+          "line": 145,
+          "source": "(folder / 'launcher.stderr').open('xb') as stderr:"
+        },
+        {
+          "line": 188,
+          "source": "with path.open('x') as stream:"
+        },
+        {
+          "line": 189,
+          "source": "json.dump(result, stream, indent=2, sort_keys=True, allow_nan=False)"
+        }
+      ],
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b"
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_verify.py",
+      "sha256": "d3d2435b2c034ea8adbe1717bfa23f7fb492f69fdeac27907f5ec827c73af6b7",
+      "writer_candidates": [
+        {
+          "line": 192,
+          "source": "target.write_bytes(proof)"
+        },
+        {
+          "line": 207,
+          "source": "bound_path.write_bytes(incoming)"
+        },
+        {
+          "line": 248,
+          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report, indent=2, sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 249,
+          "source": "print(json.dumps(report, sort_keys=True))"
+        }
+      ],
+      "source_revision": "dbba87288352584bb5723f0a2018958c8d4dd649"
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_bank.py",
+      "sha256": "1295a4263eac308eb656779dad5974def3e626b5caeda2299861e12b3b14ba97",
+      "writer_candidates": [
+        {
+          "line": 155,
+          "source": "        bound.write_bytes(acquired.stdout)"
+        },
+        {
+          "line": 168,
+          "source": "        target.write_bytes(proof)"
+        },
+        {
+          "line": 233,
+          "source": "        snapshot.write_bytes(raw_object)"
+        },
+        {
+          "line": 241,
+          "source": "    (args.output/\"NATIVE-OBJECTS.json\").write_text(json.dumps(native_objects,indent=2,sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 255,
+          "source": "    (args.output/\"RESULT.json\").write_text(json.dumps(report,indent=2,sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 256,
+          "source": "    print(json.dumps(report,sort_keys=True))"
+        }
+      ],
+      "source_context": {
+        "kind": "same_packet_source_by_hash",
+        "note": "Use this authored file in the same immutable packet commit as this inventory; its exact hash is below."
+      }
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_connector.py",
+      "sha256": "f7a4c6790770cfb7cd6b2096f2602ebfe5924d2bf35688d83ef14e51d87958de",
+      "writer_candidates": [
+        {
+          "line": 156,
+          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report,sort_keys=True,indent=2)+\"\\n\")"
+        },
+        {
+          "line": 157,
+          "source": "print(json.dumps(report,sort_keys=True))"
+        }
+      ],
+      "source_revision": "dbba87288352584bb5723f0a2018958c8d4dd649"
+    },
+    {
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e02b5d8d07c28eababe72312de80f3bf8cddf020ffe1d7420a436b52a8c7f3ad.lean",
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "e02b5d8d07c28eababe72312de80f3bf8cddf020ffe1d7420a436b52a8c7f3ad",
+      "logical_module": "G6GeneratedChartAudit",
+      "writer_candidates": [
+        {
+          "line": 5,
+          "source": "run_cmd do"
+        },
+        {
+          "line": 47,
+          "source": "  liftIO <| IO.FS.writeFile \"AUDIT-OWNED.json\" result.pretty"
+        },
+        {
+          "line": 48,
+          "source": "  logInfo m!\"Fresh closure: {declarations.size} declarations, {theorems} theorems, {ownedAxioms.size} owned axioms, {invalid.size} nonstandard rows, {missing.size} missing modules\""
+        }
+      ],
+      "executed": false,
+      "review": "Complete original source independently read; run_cmd writes AUDIT-OWNED.json during elaboration. A later outer stream wrapper does not mediate this file."
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/native_bridge.py",
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "b298ae551bc488aab45560434a5f9dc2bead15a4c0b0328199577e63ac808f39",
+      "writer_candidates": [
+        {
+          "line": 93,
+          "source": "    with (out/(name+'.stdout')).open('xb') as stdout, (out/(name+'.stderr')).open('xb') as stderr:"
+        },
+        {
+          "line": 107,
+          "source": "    (out/(name+'.execution.json')).write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 154,
+          "source": "        (out/'REQUEST.rc1').write_bytes(raw)"
+        },
+        {
+          "line": 163,
+          "source": "            with tempfile.TemporaryDirectory(prefix='astra-pinned-native-') as temporary:"
+        },
+        {
+          "line": 165,
+          "source": "                captured.write_bytes(binary_raw)"
+        },
+        {
+          "line": 173,
+          "source": "                    certificate_path.write_bytes(response)"
+        },
+        {
+          "line": 187,
+          "source": "                    certificate_path.write_bytes(response)"
+        },
+        {
+          "line": 219,
+          "source": "    (out/'RESULT.json').write_text(json.dumps(result, indent=2, sort_keys=True)+'\\n')"
+        }
+      ],
+      "executed": false,
+      "review": "Source review of existing native RC1 loader/streams/request/result writers; no held runtime replay. Captured executable staging requires source/build classification separately from raw scientific records."
+    },
+    {
+      "repository": "leanprover/lean4",
+      "source_revision": "v4.33.1",
+      "path": "src/lake/Lake/Load/Lean/Elab.lean",
+      "sha256": "5b3d30d5a9001514e7ff3d8c95a71bd0b29a79777e12c441e79563af0acb1674",
+      "writer_candidates": [
+        {
+          "line": 184,
+          "source": "IO.FS.createDirAll configDir"
+        },
+        {
+          "line": 246,
+          "source": "h.putStrLn <| Json.pretty <| toJson ... ConfigTrace"
+        },
+        {
+          "line": 252,
+          "source": "h.flush"
+        },
+        {
+          "line": 253,
+          "source": "h.truncate"
+        },
+        {
+          "line": 256,
+          "source": "Lean.writeModule env olean"
+        }
+      ],
+      "executed": false,
+      "review": "Fresh/reconfigured Lake loading writes configuration trace and elaborates before selected target refusal; require outer admission before first Lake invocation. .olean source/build classification separate."
+    },
+    {
+      "repository": "Sodelin/Research-Commons",
+      "path": "research/2026-10-21-lean-online-builder/native/start_new_context.sh",
+      "source_revision": "311290fc03de071d634fe5c2ade857acf50d9259",
+      "sha256": "0fb0007d8f8fe280a6c3add2ed5e982db50f9c70ccd8cf8868ae3dfa0896165d",
+      "writer_candidates": [
+        {
+          "line": 6,
+          "source": "printf constant REFUSED status to stderr"
+        }
+      ],
+      "executed": false,
+      "review": "Outer refusal now precedes Lake; its stderr still needs RAM-only parent capture or a quiet exit plus existing encrypted refusal custody before future execution. No observed new persistence violation.",
+      "historical_version_retained": true,
+      "subsequent_quiet_source": {
+        "revision": "66ee58e4dcc52faf515977b9f4231628e8dd59ec",
+        "sha256": "66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3",
+        "stdout_stderr_writers": false,
+        "executed": false,
+        "controller_writer_binding": "UNBOUND"
+      }
+    }
+  ],
+  "coverage": "Selected direct writer sites only. Transitive solver/provider/native-loader/failure paths remain OPEN.",
+  "new_execution": false,
+  "owner_callback_bound": false,
+  "public_recipient_exported": false,
+  "original_private_identity_changed": false,
+  "existing_owner_reuse_review": {
+    "path": "evidence/EXISTING-NATIVE-WRITER-REUSE.json",
+    "existing_frame_codec_sha256": "80103a05b4cf96c48c051c196727785233a2305a634420accbb74c527e0ff4e9",
+    "current_write_coverage_policy": "purple.write-coverage.v2",
+    "current_write_coverage_source_sha256": "493150b8d408905a3297e72b20a5415da397fef1a662a740fee082c3a7a4dbb5",
+    "existing_helper_capture_sha256": "e3c3814acb53a932f0b97e29ead32d3ebd1cba31c6435afabeee2cc95f590ad1",
+    "writer_controller_recipient_sequence_bound": false,
+    "new_execution": false
+  },
+  "Cargo_transitive_source_review": {
+    "path": "evidence/CARGO-FIRST-WRITERS.json",
+    "official_Rust190_Cargo_commit": "840b83a10fb0e039a83f4d70ad032892c287570a",
+    "selected_sites": [
+      "Per-unit compiler original diagnostic cache",
+      "Successful custom-build stdout/stderr/root-output",
+      "Dirty compiler-query cache",
+      "Fingerprint metadata classification"
+    ],
+    "executed": false,
+    "inventory_complete": false,
+    "one_supported_cache_control": "CARGO_CACHE_RUSTC_INFO=0 is proposed for the new job only, does not supply encryption or all-writer closure"
+  }
+}

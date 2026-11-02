@@ -1,0 +1,184 @@
+{
+  "schema": "G7_budget_free_history_horizon_attributed_hosted_review_v1",
+  "peer_commit": "7e80b1a8cac5ab3128a36964640baae9f0c48006",
+  "checks": [
+    {
+      "case": "g7_finite_path_budget_union_bridge",
+      "client": "online_lean_quiet.mjs",
+      "client_identity_unchanged": true,
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "printed_types": [
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {small large : List.{u_1} A}\n  (h : @List.Sublist.{u_1} A small large)\n  (hf :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites large) :\n  @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³ inst✝⁴\n    support sites regions budget allowedRows allowedSites small"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {small large : List.{u_1} A}\n  (h : @List.Sublist.{u_1} A small large) (a : A)\n  (ha :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a large)) :\n  @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³ inst✝⁴\n    support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a small)"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.extension_call_bound",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.extension_call_bound.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) {past future : List.{u_1} A}\n  (hsub : @List.Sublist.{u_1} A past future)\n  (hf :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites future) :\n  @LE.le.{0} Nat instLENat (@List.length.{u_1} A future)\n    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) (@List.length.{u_1} A past)\n      (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n        inst✝⁴ support sites regions budget allowedRows allowedSites past))"
+        },
+        {
+          "name": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action",
+          "printed_type": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action.{u_1, u_2, u_3, u_4} {A : Type u_1} {Row : Type u_2}\n  {Site : Type u_3} {Region : Type u_4} [DecidableEq.{u_1 + 1} A] [DecidableEq.{u_2 + 1} Row]\n  [DecidableEq.{u_3 + 1} Site] [DecidableEq.{u_4 + 1} Region] [Fintype.{u_2} Row] [Fintype.{u_3} Site]\n  (support : A → Finset.{u_2} Row) (sites : Row → Finset.{u_3} Site) (regions : Finset.{u_4} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_2} (Finset.{u_2} Row))\n  (allowedSites : Region → Option.{u_3} (Finset.{u_3} Site)) (past : List.{u_1} A)\n  (hz :\n    @Eq.{1} Nat\n      (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n        inst✝⁴ support sites regions budget allowedRows allowedSites past)\n      (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))\n  (a : A) :\n  Not\n    (@Astra.G7FinitePathBudgetBridge.WithinRegions.{u_1, u_2, u_3, u_4} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_1} A a past))"
+        }
+      ],
+      "scope": "Semantic finite union of existing path budgets, optional allowed original row/site sets, physical legality deletion and maximum remaining-call bound. Not BTreeSet/AST/parser/native refinement or source/action admission.",
+      "selected_theorem_audits": [
+        {
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.next_action_legal_deletion' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathBudgetBridge.next_action_legal_deletion",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.extension_call_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathBudgetBridge.extension_call_bound",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathBudgetBridge.zero_remaining_no_legal_action",
+          "standard_axioms_only": true
+        }
+      ],
+      "source": "lean/OnlineG7FinitePathBudgetBridge.lean",
+      "source_sha256": "1b52d64139d9fc7d33558e36c96fd355dcb1ed434ae76a8cc16b7d77d7db1a6d",
+      "submitted_source_sha256": "f10e364bba4df89051ac4b58582bbd324e809e7a4062e894eee8baab0992ee27",
+      "versions": {
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+        "toolchain": "leanprover/lean4:v4.35.0"
+      },
+      "warning_count": 7,
+      "warning_dispositions": "Benign unused-variable/style warnings; no errors, sorry/unsafe warnings or nonstandard selected axioms.",
+      "exact_complete_body_projection_reconstructed": true,
+      "exact_audit_submission_reconstructed": true,
+      "complete_selected_types_reviewed_in_preceding_continuation": true
+    },
+    {
+      "case": "g7_finite_path_game_horizon_composition",
+      "client": "online_lean_quiet.mjs",
+      "client_identity_unchanged": true,
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "printed_types": [
+        {
+          "name": "Astra.G7FinitePathGame.remaining_after_legal",
+          "printed_type": "Astra.G7FinitePathGame.remaining_after_legal.{u_2, u_6, u_7, u_8} {A : Type u_2} {Row : Type u_6} {Site : Type u_7}\n  {Region : Type u_8} [DecidableEq.{u_2 + 1} A] [DecidableEq.{u_6 + 1} Row] [DecidableEq.{u_7 + 1} Site]\n  [DecidableEq.{u_8 + 1} Region] [Fintype.{u_6} Row] [Fintype.{u_7} Site] (support : A → Finset.{u_6} Row)\n  (sites : Row → Finset.{u_7} Site) (regions : Finset.{u_8} Region)\n  (budget : Region → GProgram.G7.ExactLawResourceGame.Budget) (allowedRows : Region → Option.{u_6} (Finset.{u_6} Row))\n  (allowedSites : Region → Option.{u_7} (Finset.{u_7} Site)) (past : List.{u_2} A) (a : A)\n  (ha :\n    @Astra.G7FinitePathBudgetBridge.WithinRegions.{u_2, u_6, u_7, u_8} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_2} A a past)) :\n  @LT.lt.{0} Nat instLTNat\n    (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_2, u_6, u_7, u_8} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites (@List.cons.{u_2} A a past))\n    (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_2, u_6, u_7, u_8} A Row Site Region inst✝ inst✝¹ inst✝² inst✝³\n      inst✝⁴ support sites regions budget allowedRows allowedSites past)"
+        },
+        {
+          "name": "Astra.G7FinitePathGame.winning_mono",
+          "printed_type": "Astra.G7FinitePathGame.winning_mono.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1} {A : Type u_2} {Y : Type u_3}\n  {T : Type u_4} {R : Type u_5} [DecidableEq.{u_2 + 1} A]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_5} S A Y T R) {m n : Nat}\n  {h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y} {u : R} (hmn : @LE.le.{0} Nat instLENat m n)\n  (hw : @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_5} S A Y T R E m h u) :\n  @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_5} S A Y T R E n h u"
+        },
+        {
+          "name": "Astra.G7FinitePathGame.winning_iff_call_cap",
+          "printed_type": "Astra.G7FinitePathGame.winning_iff_call_cap.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1} {A : Type u_2} {Y : Type u_3}\n  {T : Type u_4} {R : Type u_5} [DecidableEq.{u_2 + 1} A]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_5} S A Y T R) (potential : R → Nat)\n  (decrease :\n    ∀ (u : R) (a : A),\n      @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_5} S A Y T R E u a →\n        @LT.lt.{0} Nat instLTNat\n          (potential (@GProgram.G7.ExactLawResourceGame.Experiment.update.{u_1, u_2, u_3, u_4, u_5} S A Y T R E u a))\n          (potential u))\n  (n : Nat) (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (u : R) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_5} S A Y T R E n h u)\n    (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_5} S A Y T R E\n      (@min.{0} Nat instMinNat n (potential u)) h u)"
+        },
+        {
+          "name": "Astra.G7FinitePathGame.regional_winning_iff_capped",
+          "printed_type": "Astra.G7FinitePathGame.regional_winning_iff_capped.{u_1, u_2, u_3, u_4, u_5, u_6, u_7, u_8} {S : Type u_1}\n  {A : Type u_2} {Y : Type u_3} {T : Type u_4} {R : Type u_5} {Row : Type u_6} {Site : Type u_7} {Region : Type u_8}\n  [DecidableEq.{u_2 + 1} A] [DecidableEq.{u_6 + 1} Row] [DecidableEq.{u_7 + 1} Site] [DecidableEq.{u_8 + 1} Region]\n  [Fintype.{u_6} Row] [Fintype.{u_7} Site] (support : A → Finset.{u_6} Row) (sites : Row → Finset.{u_7} Site)\n  (regions : Finset.{u_8} Region) (budget : Region → GProgram.G7.ExactLawResourceGame.Budget)\n  (allowedRows : Region → Option.{u_6} (Finset.{u_6} Row)) (allowedSites : Region → Option.{u_7} (Finset.{u_7} Site))\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_5} S A Y T R) (allowed : A → Prop) (n : Nat)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (past : List.{u_2} A) :\n  Iff\n    (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_2} S A Y T (List.{u_2} A)\n      (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_3, u_4, u_5, u_6, u_7, u_8} S A Y T R Row Site Region inst✝\n        inst✝¹ inst✝² inst✝³ inst✝⁴ support sites regions budget allowedRows allowedSites E allowed)\n      n h past)\n    (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_2} S A Y T (List.{u_2} A)\n      (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_3, u_4, u_5, u_6, u_7, u_8} S A Y T R Row Site Region inst✝\n        inst✝¹ inst✝² inst✝³ inst✝⁴ support sites regions budget allowedRows allowedSites E allowed)\n      (@min.{0} Nat instMinNat n\n        (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_2, u_6, u_7, u_8} A Row Site Region inst✝ inst✝¹ inst✝²\n          inst✝³ inst✝⁴ support sites regions budget allowedRows allowedSites past))\n      h past)"
+        },
+        {
+          "name": "Astra.G7FinitePathGame.total_policy_capped_at_history",
+          "printed_type": "Astra.G7FinitePathGame.total_policy_capped_at_history.{u_1, u_2, u_4, u_5, u_6, u_7, u_8, u_9, u_10} {S : Type u_1}\n  {A : Type u_2} {T : Type u_4} {R : Type u_5} {Row : Type u_6} {Site : Type u_7} {Region : Type u_8}\n  [DecidableEq.{u_2 + 1} A] [DecidableEq.{u_6 + 1} Row] [DecidableEq.{u_7 + 1} Site] [DecidableEq.{u_8 + 1} Region]\n  [Fintype.{u_6} Row] [Fintype.{u_7} Site] (support : A → Finset.{u_6} Row) (sites : Row → Finset.{u_7} Site)\n  (regions : Finset.{u_8} Region) (budget : Region → GProgram.G7.ExactLawResourceGame.Budget)\n  (allowedRows : Region → Option.{u_6} (Finset.{u_6} Row)) (allowedSites : Region → Option.{u_7} (Finset.{u_7} Site))\n  {O : Type u_9} {V : Type u_10} [AddCommGroup.{u_10} V]\n  [@Module.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝)]\n  [@FiniteDimensional.{0, u_10} Real V Real.instDivisionRing inst✝ inst✝¹]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_9, u_4, u_5} S A (O → Real) T R) (allowed : A → Prop)\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_9, u_4, u_5} S A (O → Real) T R E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_10 + 1, u_10 + 1, 1}\n            (@Module.Dual.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_10, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  (policy : GProgram.G7.ExactLawRankCompression.Policy.{u_2, u_9, u_4} A O T)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_9} A (O → Real)) (past : List.{u_2} A)\n  (total :\n    ∀ (s : S),\n      @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_9, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site\n            Region inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n          h s →\n        @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_9, u_4} S A O T\n          (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site\n            Region inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n          policy s h past) :\n  @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_9, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n    (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site Region\n      inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n    (@min.{0} Nat instMinNat\n      (@Module.finrank.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹)\n      (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_2, u_6, u_7, u_8} A Row Site Region inst✝² inst✝³ inst✝⁴ inst✝⁵\n        inst✝⁶ support sites regions budget allowedRows allowedSites past))\n    h past"
+        },
+        {
+          "name": "Astra.G7FinitePathGame.capped_loss_excludes_total_policy",
+          "printed_type": "Astra.G7FinitePathGame.capped_loss_excludes_total_policy.{u_1, u_2, u_4, u_5, u_6, u_7, u_8, u_9, u_10} {S : Type u_1}\n  {A : Type u_2} {T : Type u_4} {R : Type u_5} {Row : Type u_6} {Site : Type u_7} {Region : Type u_8}\n  [DecidableEq.{u_2 + 1} A] [DecidableEq.{u_6 + 1} Row] [DecidableEq.{u_7 + 1} Site] [DecidableEq.{u_8 + 1} Region]\n  [Fintype.{u_6} Row] [Fintype.{u_7} Site] (support : A → Finset.{u_6} Row) (sites : Row → Finset.{u_7} Site)\n  (regions : Finset.{u_8} Region) (budget : Region → GProgram.G7.ExactLawResourceGame.Budget)\n  (allowedRows : Region → Option.{u_6} (Finset.{u_6} Row)) (allowedSites : Region → Option.{u_7} (Finset.{u_7} Site))\n  {O : Type u_9} {V : Type u_10} [AddCommGroup.{u_10} V]\n  [@Module.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝)]\n  [@FiniteDimensional.{0, u_10} Real V Real.instDivisionRing inst✝ inst✝¹]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_9, u_4, u_5} S A (O → Real) T R) (allowed : A → Prop)\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_9, u_4, u_5} S A (O → Real) T R E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_10 + 1, u_10 + 1, 1}\n            (@Module.Dual.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_10, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_9} A (O → Real)) (past : List.{u_2} A)\n  (loss :\n    Not\n      (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_9, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n        (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site Region\n          inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n        (@min.{0} Nat instMinNat\n          (@Module.finrank.{0, u_10} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_10} V inst✝) inst✝¹)\n          (@Astra.G7FinitePathBudgetBridge.remainingCalls.{u_2, u_6, u_7, u_8} A Row Site Region inst✝² inst✝³ inst✝⁴\n            inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites past))\n        h past)) :\n  Not\n    (∃ policy,\n      ∀ (s : S),\n        @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_9, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n            (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site\n              Region inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n            h s →\n          @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_9, u_4} S A O T\n            (@Astra.G7FinitePathGame.withRegions.{u_1, u_2, u_9, u_4, u_5, u_6, u_7, u_8} S A (O → Real) T R Row Site\n              Region inst✝² inst✝³ inst✝⁴ inst✝⁵ inst✝⁶ support sites regions budget allowedRows allowedSites E allowed)\n            policy s h past)"
+        }
+      ],
+      "scope": "Retained abstract exact-law game/rank plus finite-union path budgets: strict remaining-call decrease, full game cap equivalence and pointwise-totality/loss consequences at the exact free history. Legal/reachable physical prefix, original source/affine programme provider, AST/QE/result/native refinement are not supplied.",
+      "selected_theorem_audits": [
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.remaining_after_legal' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.remaining_after_legal",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.winning_mono' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.winning_mono",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.winning_iff_call_cap' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.winning_iff_call_cap",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.regional_winning_iff_capped' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.regional_winning_iff_capped",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.total_policy_capped_at_history' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.total_policy_capped_at_history",
+          "standard_axioms_only": true
+        },
+        {
+          "messages": [
+            "'Astra.G7FinitePathGame.capped_loss_excludes_total_policy' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.G7FinitePathGame.capped_loss_excludes_total_policy",
+          "standard_axioms_only": true
+        }
+      ],
+      "source": "lean/OnlineG7FinitePathGame.lean",
+      "source_sha256": "b81225d52decde4ff3e33521ea4ba02b20e95efeb66b21ba628c7673da4c5d5d",
+      "submitted_source_sha256": "2b01ef148e1205c064665ece4a2614eb49c7336c1a4416c8c0f901d62676c2ec",
+      "versions": {
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+        "toolchain": "leanprover/lean4:v4.35.0"
+      },
+      "warning_count": 9,
+      "warning_dispositions": "Nine retained benign deprecation/unused-section warnings; no errors/sorry/unsafe or nonstandard selected axioms.",
+      "exact_complete_body_projection_reconstructed": true,
+      "exact_audit_submission_reconstructed": true,
+      "complete_selected_types_reviewed_in_preceding_continuation": true
+    }
+  ],
+  "all_complete_source_bodies_and_selected_types_read": true,
+  "source_scope": "finite whole-state region union, maximum currently fitting remaining calls, strict decrease, Winning cap, affine/pointwise-totality consequence at supplied history/past",
+  "native_Resource_method_formally_refined": false,
+  "new_guarded_Rust_API_covered_by_Lean_check": false,
+  "zero_calls": "Homogeneous may stop; zero calls or false disabled fibre is not itself loss",
+  "independent_Lean_or_native_or_QE_execution": false,
+  "latest_peer_source_context": {
+    "modules": 771,
+    "source_bytes": 5891078,
+    "original": 754,
+    "owned_or_import_variants": 17,
+    "graph_sha256": "b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c",
+    "selection_sha256": "995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4",
+    "prior548_entries_unchanged": "independently compared metadata in predecessor continuation",
+    "all771_source_bodies_independently_read_here": false,
+    "native_import_or_object_acceptance": false
+  },
+  "remaining": "actual source/response/target coverage, native AST/padded response/history/resource relation, exact backend result/selector and pinned imports/writer binding"
+}

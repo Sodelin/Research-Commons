@@ -1,0 +1,71 @@
+{
+  "schema": "source_only_cell_row_export_call_path_review_v1",
+  "status": "SOURCE_REVIEW_ONLY_NOT_A_COMPILE_TEST_OR_FORMAL_REFINEMENT",
+  "reviewed_original_source_commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+  "adapter": {
+    "path": "native/cell_row_export.rs",
+    "prior_sha256": "11e9e68a5ad4769148bc60592845504c9eaf01182e3c5465078037c55dc89b6e",
+    "sha256": "9e458889c66b3070ebe29cd93387030f6ecd6ffa20a169830af3d428eef81da3",
+    "compiled": false,
+    "executed": false
+  },
+  "material_change": {
+    "problem": "The original generic protocol::parse validates COUNT arithmetic and LAW requests before a later Request::Chart match can reject them.",
+    "original_protocol_lines": {
+      "parse_dispatch": [
+        202,
+        238
+      ],
+      "COUNT_validation": 233,
+      "CHART_only_path": [
+        88,
+        148
+      ]
+    },
+    "change": "Reject non-CHART command tags using starts_with(b\"RC1 CHART \") before original parsing; no replacement field/number/frame grammar.",
+    "effect": "Any accepted candidate enters only the original CHART grammar/source validation/row compiler. Other command tags return ChartRequestRequired without generic COUNT/LAW validation.",
+    "prior_unexecuted_bytes_retained_at": "73f344954f125fd0437c5bbbaaf19c7803307e0a",
+    "new_test_suite": false,
+    "existing_five_staged_tests_amended": true
+  },
+  "reviewed_invariants": [
+    {
+      "name": "one_owned_snapshot",
+      "source": "Private original_request Vec<u8>, Chart and Compiled are constructed together; accessors return shared references, with no public mutation or external process-origin claim."
+    },
+    {
+      "name": "dimension_and_coordinate_ranges",
+      "source": "Original CHART parser bounds v,e,h independently<=32 and total V+E+1+h<=32. Population::Edge and hybrid selectors check original lengths; ancestral selector uses the one original E continuation index."
+    },
+    {
+      "name": "row_identity",
+      "source": "The adapter stores the exact original Compiled rows without reordering/deduplication; shape checks require original dimension, every row length, row cap and bank-name count."
+    },
+    {
+      "name": "bounded_input_and_algebra",
+      "source": "Original CHART parser enforces65536B ASCII/newline/canonical fields, canonical rationals<=256bits,<=32 caller chronology entries and<=32 exposure entries; original row compiler enforces128 rows."
+    },
+    {
+      "name": "failure_semantics",
+      "source": "Tag, parsing, compiler and shape errors are unavailability/refusal; none is a mathematical infeasibility verdict."
+    },
+    {
+      "name": "build_interface",
+      "source": "Original lib.rs publicly exports natural_cell/protocol/affine and q; Chart/Compiled/Row implement the traits required by adapter derives. This is source compatibility, not an actual compiler result."
+    }
+  ],
+  "possible_runtime_failures_not_discharged": [
+    "Allocator failure/panic/toolchain/library mismatch",
+    "Actual encrypted controller/failure/recovery persistence",
+    "Authentic input/output and binary/object custody"
+  ],
+  "exact_row_count": {
+    "status": "SOURCE_LOOP_COUNT_DEDUCTION_NOT_FORMALLY_CHECKED",
+    "formula": "2*E + 2*n + 1 + 2*h + c_lt + c_le + 2*c_eq + endpoint_count(exposures) + endpoint_count(coin_intervals)",
+    "binary_census_base": "6*n + 8*h - 3",
+    "definitions": "n=complete leaf registry size, h=complete hybrid registry size; endpoint_count counts present lower/upper bounds separately, retaining every occurrence/duplicate.",
+    "meaning": "Chronology/exposure/coin interval rows can exhaust128 independently of32 coordinate capacity. Counts do not prove source/chart admission."
+  },
+  "remaining": "Exact typed original source/registry/layout/emission relation, M0/readout substitution proof, native refinement, actual compiled objects/tests and encrypted writer admission remain open.",
+  "no_native_Python_Lean_or_CI_execution": true
+}

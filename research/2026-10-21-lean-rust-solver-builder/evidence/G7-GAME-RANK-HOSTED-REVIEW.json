@@ -1,0 +1,238 @@
+{
+  "actual_runtime_record_policy_or_canonical_profile_change": false,
+  "capture_client": {
+    "path": "online_lean_quiet.mjs",
+    "sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+    "unchanged_before_after": true
+  },
+  "complete_original_and_used_source_bodies_read": true,
+  "complete_printed_types": [
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.consistent_extend",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.consistent_extend.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA} {Y : Type uY}\n  {T : Type uT} {R : Type uR} (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) (s : S) (a : A) (y : Y) :\n  Iff\n    (@GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E\n      (@List.cons.{max uA uY} (Prod.{uA, uY} A Y) (@Prod.mk.{uA, uY} A Y a y) h) s)\n    (And (@GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E h s)\n      (@Eq.{uY + 1} Y (@GProgram.G7.ExactLawResourceGame.Experiment.response.{uS, uA, uY, uT, uR} S A Y T R E s a) y))"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA} {Y : Type uY}\n  {T : Type uT} {R : Type uR} [Nonempty.{uT + 1} T]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Homogeneous.{uS, uA, uY, uT, uR} S A Y T R E h)\n    (∃ q,\n      ∀ (s : S),\n        @GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E h s →\n          @Eq.{uT + 1} T (@GProgram.G7.ExactLawResourceGame.Experiment.target.{uS, uA, uY, uT, uR} S A Y T R E s) q)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA} {Y : Type uY}\n  {T : Type uT} {R : Type uR} [Nonempty.{uT + 1} T]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R) (n : Nat)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) (u : R) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Winning.{uS, uA, uY, uT, uR} S A Y T R E n h u)\n    (∃ p, @GProgram.G7.ExactLawResourceGame.Valid.{uS, uA, uY, uT, uR} S A Y T R E n p h u)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.valid_run_identifies",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.valid_run_identifies.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA} {Y : Type uY}\n  {T : Type uT} {R : Type uR} (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R) {n : Nat}\n  (p : GProgram.G7.ExactLawResourceGame.Plan.{uA, uY, uT} A Y T n)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) (u : R)\n  (hp : @GProgram.G7.ExactLawResourceGame.Valid.{uS, uA, uY, uT, uR} S A Y T R E n p h u) (s : S)\n  (hs : @GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E h s) :\n  @Eq.{uT + 1} T (@GProgram.G7.ExactLawResourceGame.run.{uS, uA, uY, uT, uR} S A Y T R E n p s)\n    (@GProgram.G7.ExactLawResourceGame.Experiment.target.{uS, uA, uY, uT, uR} S A Y T R E s)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.losing_step",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.losing_step.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA} {Y : Type uY}\n  {T : Type uT} {R : Type uR} (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R) (n : Nat)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) (u : R)\n  (hl :\n    Not\n      (@GProgram.G7.ExactLawResourceGame.Winning.{uS, uA, uY, uT, uR} S A Y T R E\n        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n\n          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))\n        h u)) :\n  And (Not (@GProgram.G7.ExactLawResourceGame.Homogeneous.{uS, uA, uY, uT, uR} S A Y T R E h))\n    (∀ (a : A),\n      @GProgram.G7.ExactLawResourceGame.Experiment.legal.{uS, uA, uY, uT, uR} S A Y T R E u a →\n        ∃ y,\n          Not\n            (@GProgram.G7.ExactLawResourceGame.Winning.{uS, uA, uY, uT, uR} S A Y T R E n\n              (@List.cons.{max uA uY} (Prod.{uA, uY} A Y) (@Prod.mk.{uA, uY} A Y a y) h)\n              (@GProgram.G7.ExactLawResourceGame.Experiment.update.{uS, uA, uY, uT, uR} S A Y T R E u a)))"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair.{uS, uA, uY, uT, uR} {S : Type uS} {A : Type uA}\n  {Y : Type uY} {T : Type uT} {R : Type uR}\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{uS, uA, uY, uT, uR} S A Y T R) (n : Nat)\n  (h : GProgram.G7.ExactLawResourceGame.History.{uA, uY} A Y) (u : R)\n  (hl : Not (@GProgram.G7.ExactLawResourceGame.Winning.{uS, uA, uY, uT, uR} S A Y T R E n h u)) :\n  ∃ s t,\n    And (@GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E h s)\n      (And (@GProgram.G7.ExactLawResourceGame.Consistent.{uS, uA, uY, uT, uR} S A Y T R E h t)\n        (@Ne.{uT + 1} T (@GProgram.G7.ExactLawResourceGame.Experiment.target.{uS, uA, uY, uT, uR} S A Y T R E s)\n          (@GProgram.G7.ExactLawResourceGame.Experiment.target.{uS, uA, uY, uT, uR} S A Y T R E t)))"
+    },
+    {
+      "name": "GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed",
+      "printed_type": "GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed.{uA, u_1, u_2} {A : Type uA} {Row : Type u_1}\n  {Site : Type u_2} [DecidableEq.{uA + 1} A] [DecidableEq.{u_1 + 1} Row] [DecidableEq.{u_2 + 1} Site]\n  (support : A → Finset.{u_1} Row) (sites : Row → Finset.{u_2} Site) (B : GProgram.G7.ExactLawResourceGame.Budget)\n  {small large : List.{uA} A} (h : @List.Sublist.{uA} A small large)\n  (hb :\n    @GProgram.G7.ExactLawResourceGame.WithinBudget.{uA, u_1, u_2} A Row Site inst✝ inst✝¹ inst✝² support sites B\n      large) :\n  @GProgram.G7.ExactLawResourceGame.WithinBudget.{uA, u_1, u_2} A Row Site inst✝ inst✝¹ inst✝² support sites B small"
+    },
+    {
+      "name": "GProgram.G7.ExactLawRankCompression.redundant_response_unique",
+      "printed_type": "GProgram.G7.ExactLawRankCompression.redundant_response_unique.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1} {A : Type u_2}\n  {O : Type u_3} {T : Type u_4} {V : Type u_5} [AddCommGroup.{u_5} V]\n  [@Module.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝)]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A))\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_5 + 1, u_5 + 1, 1}\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  (L :\n    @Submodule.{0, u_5} Real\n      (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n      (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n      (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n        (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A (O → Real))\n  (hd : @GProgram.G7.ExactLawRankCompression.Determined.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E base L h)\n  (a : A)\n  (ha :\n    ∀ (o : O),\n      @Membership.mem.{u_5, u_5}\n        (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n        (@Submodule.{0, u_5} Real\n          (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n          Real.semiring\n          (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n            (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n            (@Semiring.toModule.{0} Real Real.semiring)\n            (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n          (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n            (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n            (@Semiring.toModule.{0} Real Real.semiring)\n            (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n            (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n        (@SetLike.instMembership.{u_5, u_5}\n          (@Submodule.{0, u_5} Real\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n            Real.semiring\n            (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n              (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n          (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n          (@Submodule.setLike.{0, u_5} Real\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n            Real.semiring\n            (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n              (@Semiring.toModule.{0} Real Real.semiring) ⋯)))\n        L (linear a o))\n  (s t : S)\n  (hs : @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E h s)\n  (ht : @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E h t) :\n  @Eq.{u_3 + 1} (O → Real)\n    (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E s\n      a)\n    (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E t\n      a)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawRankCompression.determined_extend",
+      "printed_type": "GProgram.G7.ExactLawRankCompression.determined_extend.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1} {A : Type u_2}\n  {O : Type u_3} {T : Type u_4} {V : Type u_5} [AddCommGroup.{u_5} V]\n  [@Module.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝)]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A))\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_5 + 1, u_5 + 1, 1}\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  (L :\n    @Submodule.{0, u_5} Real\n      (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n      (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n      (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n        (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A (O → Real))\n  (hd : @GProgram.G7.ExactLawRankCompression.Determined.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E base L h)\n  (a : A) (y : O → Real) :\n  @GProgram.G7.ExactLawRankCompression.Determined.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E base\n    (@max.{u_5}\n      (@Submodule.{0, u_5} Real\n        (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n        (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n        (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n          (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n      (@SemilatticeSup.toMax.{u_5}\n        (@Submodule.{0, u_5} Real\n          (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n          Real.semiring\n          (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n            (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n            (@Semiring.toModule.{0} Real Real.semiring)\n            (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n          (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n            (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n            (@Semiring.toModule.{0} Real Real.semiring)\n            (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n            (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n        (@Lattice.toSemilatticeSup.{u_5}\n          (@Submodule.{0, u_5} Real\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n            Real.semiring\n            (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n              (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n          (@ConditionallyCompleteLattice.toLattice.{u_5}\n            (@Submodule.{0, u_5} Real\n              (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n              Real.semiring\n              (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n                (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n                (@Semiring.toModule.{0} Real Real.semiring)\n                (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n              (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n                (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n                (@Semiring.toModule.{0} Real Real.semiring)\n                (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n                (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n            (@CompleteLattice.toConditionallyCompleteLattice.{u_5}\n              (@Submodule.{0, u_5} Real\n                (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n                Real.semiring\n                (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n                  (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring)\n                  inst✝¹ (@Semiring.toModule.{0} Real Real.semiring)\n                  (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n                (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n                  (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring)\n                  inst✝¹ (@Semiring.toModule.{0} Real Real.semiring)\n                  (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n                  (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n              (@Submodule.completeLattice.{0, u_5} Real\n                (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n                Real.semiring\n                (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n                  (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring)\n                  inst✝¹ (@Semiring.toModule.{0} Real Real.semiring)\n                  (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n                (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n                  (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring)\n                  inst✝¹ (@Semiring.toModule.{0} Real Real.semiring)\n                  (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n                  (@Semiring.toModule.{0} Real Real.semiring) ⋯))))))\n      L\n      (@Submodule.span.{0, u_5} Real\n        (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n        (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n        (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n          (@Semiring.toModule.{0} Real Real.semiring) ⋯)\n        (@Set.range.{u_5, u_3 + 1}\n          (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) O\n          (linear a))))\n    (@List.cons.{max u_2 u_3} (Prod.{u_2, u_3} A (O → Real)) (@Prod.mk.{u_2, u_3} A (O → Real) a y) h)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawRankCompression.first_informative",
+      "printed_type": "GProgram.G7.ExactLawRankCompression.first_informative.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1} {A : Type u_2}\n  {O : Type u_3} {T : Type u_4} {V : Type u_5} [AddCommGroup.{u_5} V]\n  [@Module.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝)]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A))\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_5 + 1, u_5 + 1, 1}\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  (policy : GProgram.G7.ExactLawRankCompression.Policy.{u_2, u_3, u_4} A O T)\n  (deletion :\n    ∀ {small large : List.{u_2} A},\n      @List.Sublist.{u_2} A small large →\n        ∀ (a : A),\n          @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n              large a →\n            @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n              E small a)\n  (L :\n    @Submodule.{0, u_5} Real\n      (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n      (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n      (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n        (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n  (physical virtual : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A (O → Real))\n  (past virtualPast : List.{u_2} A)\n  (hd :\n    @GProgram.G7.ExactLawRankCompression.Determined.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E base L physical)\n  (hn :\n    Not\n      (@GProgram.G7.ExactLawResourceGame.Homogeneous.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n        physical))\n  (same :\n    ∀ (s : S),\n      Iff\n        (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          physical s)\n        (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          virtual s))\n  (sub : @List.Sublist.{u_2} A past virtualPast)\n  (total :\n    ∀ (s : S),\n      @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E virtual\n          s →\n        @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_3, u_4} S A O T E policy s virtual virtualPast)\n  (s₀ : S)\n  (hs₀ :\n    @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E physical\n      s₀)\n  (run : @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_3, u_4} S A O T E policy s₀ virtual virtualPast) :\n  Nonempty.{max (u_3 + 1) (u_2 + 1)}\n    (@GProgram.G7.ExactLawRankCompression.InformativeStep.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E linear\n      policy L physical past)"
+    },
+    {
+      "name": "GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget",
+      "printed_type": "GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget.{u_1, u_2, u_3, u_4, u_5} {S : Type u_1}\n  {A : Type u_2} {O : Type u_3} {T : Type u_4} {V : Type u_5} [AddCommGroup.{u_5} V]\n  [@Module.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝)]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A))\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_5 + 1, u_5 + 1, 1}\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  [@FiniteDimensional.{0, u_5} Real V Real.instDivisionRing inst✝ inst✝¹]\n  (policy : GProgram.G7.ExactLawRankCompression.Policy.{u_2, u_3, u_4} A O T)\n  (deletion :\n    ∀ {small large : List.{u_2} A},\n      @List.Sublist.{u_2} A small large →\n        ∀ (a : A),\n          @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n              large a →\n            @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n              E small a)\n  (update :\n    ∀ (past : List.{u_2} A) (a : A),\n      @Eq.{u_2 + 1} (List.{u_2} A)\n        (@GProgram.G7.ExactLawResourceGame.Experiment.update.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          past a)\n        (@List.cons.{u_2} A a past))\n  (d : Nat)\n  (L :\n    @Submodule.{0, u_5} Real\n      (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n      (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n      (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n        (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n        (@Semiring.toModule.{0} Real Real.semiring)\n        (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n        (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n  (physical virtual : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A (O → Real))\n  (past virtualPast : List.{u_2} A)\n  (capacity :\n    @LE.le.{0} Nat instLENat\n      (@Module.finrank.{0, u_5} Real\n        (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) Real.semiring\n        (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n        (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n          (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n          (@Semiring.toModule.{0} Real Real.semiring)\n          (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n          (@Semiring.toModule.{0} Real Real.semiring) ⋯))\n      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)\n        (@Module.finrank.{0, u_5} Real (↥L) Real.semiring\n          (@Submodule.addCommMonoid.{0, u_5} Real\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n            Real.semiring\n            (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n              (@Semiring.toModule.{0} Real Real.semiring) ⋯)\n            L)\n          (@Submodule.module.{0, u_5} Real\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n            Real.semiring\n            (@LinearMap.addCommMonoid.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (@LinearMap.module.{0, 0, 0, u_5, 0} Real Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)) Real.semiring\n              (@Semiring.toModule.{0} Real Real.semiring) ⋯)\n            L))\n        d))\n  (hd :\n    @GProgram.G7.ExactLawRankCompression.Determined.{u_1, u_2, u_3, u_4, u_5} S A O T V inst✝ inst✝¹ E base L physical)\n  (same :\n    ∀ (s : S),\n      Iff\n        (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          physical s)\n        (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          virtual s))\n  (sub : @List.Sublist.{u_2} A past virtualPast)\n  (total :\n    ∀ (s : S),\n      @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E virtual\n          s →\n        @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_3, u_4} S A O T E policy s virtual virtualPast) :\n  @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E d physical past"
+    },
+    {
+      "name": "GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon",
+      "printed_type": "GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon.{u_1, u_2, u_3, u_4, u_5}\n  {S : Type u_1} {A : Type u_2} {O : Type u_3} {T : Type u_4} {V : Type u_5} [AddCommGroup.{u_5} V]\n  [@Module.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝)]\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A))\n  (base : S → V)\n  (linear : A → O → @Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n  (offset : A → O → Real)\n  (affine :\n    ∀ (s : S) (a : A) (o : O),\n      @Eq.{1} Real\n        (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n          E s a o)\n        (@HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd)\n          (@DFunLike.coe.{u_5 + 1, u_5 + 1, 1}\n            (@Module.Dual.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹) V\n            (fun x => Real)\n            (@LinearMap.instFunLike.{0, 0, u_5, 0} Real Real V Real Real.semiring Real.semiring\n              (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) (@Semiring.toAddCommMonoid.{0} Real Real.semiring) inst✝¹\n              (@Semiring.toModule.{0} Real Real.semiring)\n              (@RingHom.id.{0} Real (@Semiring.toNonAssocSemiring.{0} Real Real.semiring)))\n            (linear a o) (base s))\n          (offset a o)))\n  [@FiniteDimensional.{0, u_5} Real V Real.instDivisionRing inst✝ inst✝¹]\n  (policy : GProgram.G7.ExactLawRankCompression.Policy.{u_2, u_3, u_4} A O T)\n  (deletion :\n    ∀ {small large : List.{u_2} A},\n      @List.Sublist.{u_2} A small large →\n        ∀ (a : A),\n          @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n              large a →\n            @GProgram.G7.ExactLawResourceGame.Experiment.legal.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A)\n              E small a)\n  (update :\n    ∀ (past : List.{u_2} A) (a : A),\n      @Eq.{u_2 + 1} (List.{u_2} A)\n        (@GProgram.G7.ExactLawResourceGame.Experiment.update.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          past a)\n        (@List.cons.{u_2} A a past))\n  (total :\n    ∀ (s : S),\n      @GProgram.G7.ExactLawResourceGame.Experiment.admitted.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n          s →\n        @GProgram.G7.ExactLawRankCompression.CorrectRun.{u_1, u_2, u_3, u_4} S A O T E policy s\n          (@List.nil.{max u_2 u_3} (Prod.{u_2, u_3} A (O → Real))) (@List.nil.{u_2} A)) :\n  @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, u_3, u_4, u_2} S A (O → Real) T (List.{u_2} A) E\n    (@Module.finrank.{0, u_5} Real V Real.semiring (@AddCommGroup.toAddCommMonoid.{u_5} V inst✝) inst✝¹)\n    (@List.nil.{max u_2 u_3} (Prod.{u_2, u_3} A (O → Real))) (@List.nil.{u_2} A)"
+    }
+  ],
+  "context": {
+    "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "toolchain": "leanprover/lean4:v4.35.0"
+  },
+  "exact_import_hoisting_and_body_projection_reconstructed": {
+    "body_bytes": 20096,
+    "body_equal": true,
+    "body_sha256": "b400cec0eb1e982e3ca8865cb6bd22b9b8a03b9fd4eb22f5cb139913476265a6",
+    "submission_equal": true,
+    "submission_sha256": "23d3c82208b133ba608a0b603b10a8f7e44b69687d0e54872a38efd7ffa584fa"
+  },
+  "independent_Lean_or_native_or_backend_run": false,
+  "open_history_consumer_guard": {
+    "actual_transcript_additionally_requires": "ReachableHistory and authenticated original history",
+    "disabled_false_action_fibre_is_budget_loss": false,
+    "formula": "conditional_on_constants(prefix_legal AND win)",
+    "negative_continuation_requires": [
+      "ConstantsWellDefined at the same bound constant tuple",
+      "LegalHistory at the exact free history values"
+    ]
+  },
+  "original_548_module_native_context_changed": false,
+  "peer_commit": "53ee5a23159d98869da8c0c997f560acc1ac0139",
+  "peer_root": "research/2026-10-21-lean-online-builder",
+  "rejected_revisions": {
+    "accepted_virtual_sha256": "b400cec0eb1e982e3ca8865cb6bd22b9b8a03b9fd4eb22f5cb139913476265a6",
+    "hosted_game_variant_sha256": "ae22d0f069fc62f21bed41e0a7b4864d01f9520852433839cba9120ec693b409",
+    "original_pinned_modules_changed": false,
+    "rejected_revisions": [
+      {
+        "clean_partial_audits_do_not_override_component_rejection": true,
+        "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+        "errors": [
+          "Unknown identifier `_root_.not_imp`"
+        ],
+        "revision": 1,
+        "source_sha256": "f517b8faba02999fa476018ebd19874156f99452d74cab0b28647b3d8e56786f"
+      }
+    ]
+  },
+  "remaining": [
+    "Literal native sparse-polynomial evaluation versus existing actual controlled readout theorem, one source across all masks/menus/history.",
+    "Bidirectional complete original-source/coordinate coverage, exact target and legal action/resource correspondence.",
+    "AST-to-Winning refinement, verified QE and history-relative algebraic action/lower-witness selection, CorrectRun/frontier.",
+    "Pinned4.33.1 full imports/objects and actual original-owner transitive encrypted first-writer binding."
+  ],
+  "schema": "G7_complete_game_rank_attributed_hosted_review_v1",
+  "scope": [
+    "Abstract exact-law source/game and finite-dimensional affine rank semantics.",
+    "One source point satisfies the whole history; actions are chosen before all consistent exact responses.",
+    "Finite-dimensional base, actual affine-response equality, pointwise totality, deletion-closed legality and matching history update remain explicit premises.",
+    "The losing-pair endpoint preserves its quantified continuation/history scope; no single universal source pair or executable adversary is supplied.",
+    "The rank proof does not provide effective QE, a relative-history selector, executable policy extraction, actual source coverage or native AST/parser refinement."
+  ],
+  "selected_theorem_audits": [
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.consistent_extend' depends on axioms: [propext, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.consistent_extend",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.valid_run_identifies' depends on axioms: [propext, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.valid_run_identifies",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.losing_step' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.losing_step",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawRankCompression.redundant_response_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawRankCompression.redundant_response_unique",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawRankCompression.determined_extend' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawRankCompression.determined_extend",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawRankCompression.first_informative' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawRankCompression.first_informative",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget",
+      "standard_axioms_only": true
+    },
+    {
+      "messages": [
+        "'GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ],
+      "name": "GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon",
+      "standard_axioms_only": true
+    }
+  ],
+  "source_map": {
+    "path": "lean/G7ExactLawGame-SOURCE-MAP.json",
+    "sha256": "214433732598f730a61f5fab7688829660e41ab9c3aa243bf0d9a242c4f26fa1"
+  },
+  "source_only_hosted_folder_not_a_prepared_native_import_context": true,
+  "standalone_sources": [
+    {
+      "bytes": 8248,
+      "only_proof_change": {
+        "added": [
+          "  unfold Homogeneous at hn",
+          "  push_neg at hn",
+          "  exact hn"
+        ],
+        "removed": [
+          "  simpa only [Homogeneous,not_forall,_root_.not_imp,exists_prop] using hn"
+        ],
+        "start_line": 147
+      },
+      "original_pinned_native_source_changed": false,
+      "original_pinned_sha256": "86b878a239fc22e7ff6712593c4e849089a3d1c9986f04e64e3485ad12cff2be",
+      "path": "lean/hosted435/G7ExactLawResourceGame.lean",
+      "sha256": "ae22d0f069fc62f21bed41e0a7b4864d01f9520852433839cba9120ec693b409"
+    },
+    {
+      "byte_identical_to_original": true,
+      "bytes": 11876,
+      "path": "lean/hosted435/G7ExactLawRankCompression.lean",
+      "sha256": "c2aa5ffb8617013c0a4fb11bc7aa20481a6e4c90a8c177856c442d80cf762bd2"
+    }
+  ],
+  "status": "COMPLETE_SOURCE_TYPE_PROJECTION_REVIEW;ATTRIBUTED_PEER_HOSTED_EXECUTION",
+  "two_selected_lists_without_Classical_choice": [
+    "consistent_extend",
+    "valid_run_identifies"
+  ],
+  "warning_count": 3,
+  "warning_dispositions": "Three benign unused-variable/style warnings; no errors, sorry/unsafe warnings or nonstandard selected axioms."
+}

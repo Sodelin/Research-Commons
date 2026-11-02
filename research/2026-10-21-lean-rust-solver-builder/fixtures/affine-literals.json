@@ -1,0 +1,137 @@
+{
+  "schema": "authored_rc1_affine_value_fixtures_v1",
+  "status": "AUTHORED_INPUTS_AND_EXPECTED_SOURCES;NO_NATIVE_OR_PYTHON_EXECUTION",
+  "positives": [
+    {
+      "name": "strict_interval",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 1/2\nEVAL 2 -1/2 1/2\nEND\n",
+      "request_sha256": "95768e264140da6f814b00c5d5b0640fb614115a7b431cbb8bdc324f5baddd84",
+      "certificate_sha256": "0dcd9165b79fc318fb90ce2929480c702e73465284bc238e8244747537e6fb4f",
+      "expected_source": "generated/AffineCertificate_861dab33cd7fb50134d98158f9086e8c27e1de6ad91be4b8191e274aca7d673c.lean",
+      "source_sha256": "5ce2117645aaa9fd3c310e18d5d3008c38e4efa6bf12daf39bcda282c96430e1",
+      "expected_status": "CHECKED_FINITE_AFFINE_WITNESS"
+    },
+    {
+      "name": "strict_contradiction",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS UNSAT\nMULTIPLIERS 2 1/1 1/1\nBOUND 0/1\nSTRICT 1\nEND\n",
+      "request_sha256": "74241e64a6d6358c321677e544df8ef22963f2036db76bccdb85e2e74f079bab",
+      "certificate_sha256": "009685d46b5eff1719a9256722fcf9515b4b21a6d5ca5ac0e2222131b3f80642",
+      "expected_source": "generated/AffineCertificate_78d991c0b56029b917e3a3996376ecbbeeae5924f28e3c90e59b3a6fac844953.lean",
+      "source_sha256": "e5ed329413841f6853e9ac0ff460f4dbf03ccd3075ec658c2b3fdecd7cc4d8f1",
+      "expected_status": "CHECKED_FINITE_AFFINE_EXCLUSION"
+    },
+    {
+      "name": "zero_multiplier_feasible",
+      "request": "RC1 AFFINE 1 3 16\nLT 1/1 0/1\nLE 0/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 3 16\nLT 1/1 0/1\nLE 0/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 0/1\nEVAL 3 0/1 0/1 0/1\nEND\n",
+      "request_sha256": "f48a12fed5a1030f3a478d5fddce88af3d9c4a8b87ab929b2b4900c424e43938",
+      "certificate_sha256": "e278eae2316b467f468f11b08f2e33b68fc18733d3d18681c90446d15aa88be5",
+      "expected_source": "generated/AffineCertificate_1663299e141644e3912056031bf84769e7f6009ee9a116a9e4abab61152c4864.lean",
+      "source_sha256": "90f233fc423e6166b867f18a80fbbb02d98a35ef11091d4337abc385bd354e06",
+      "expected_status": "CHECKED_FINITE_AFFINE_WITNESS"
+    },
+    {
+      "name": "weak_negative_bound",
+      "request": "RC1 AFFINE 1 2 16\nLE -1/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLE -1/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS UNSAT\nMULTIPLIERS 2 1/1 1/1\nBOUND -1/1\nSTRICT 0\nEND\n",
+      "request_sha256": "c97bbd5c0f99b318a86d58201313caed4d13abbe77b424ea860adff16b28074a",
+      "certificate_sha256": "b6d461081e2a7b137132d78f2e7c1f5e118c5c624b495f2a6bebfc0bc9d25c08",
+      "expected_source": "generated/AffineCertificate_f5edba1021c41e64403f0f0cdb4d63a4c9a8455a4fe1c5bcece5415b917b39f3.lean",
+      "source_sha256": "3b3c348f6a2f1c5331a2ddee56ebbf05cce5d5a4220dbbc71d66e583ada8a8b5",
+      "expected_status": "CHECKED_FINITE_AFFINE_EXCLUSION"
+    },
+    {
+      "name": "duplicate_rows_two_coordinates",
+      "request": "RC1 AFFINE 2 3 16\nLE 1/1 1/1 0/1\nLE 1/1 1/1 0/1\nLT 0/1 0/1 -1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 2 3 16\nLE 1/1 1/1 0/1\nLE 1/1 1/1 0/1\nLT 0/1 0/1 -1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 2 1/1 1/1\nEVAL 3 1/1 1/1 -1/1\nEND\n",
+      "request_sha256": "f6546bf096afc6ca96ea5bea2fed26dd7938cdff3e02f6d831a462afd3b44160",
+      "certificate_sha256": "d35b0673e6e7f1f634d080ff1ec44fda070d59fc7ef83f27a16a92a4774a8454",
+      "expected_source": "generated/AffineCertificate_1824552c57960a9ce9afd4abf952634c4a35f2295ace7f13540106b018557c66.lean",
+      "source_sha256": "8c226fd30c9395432f2b46ac39c904723c9db0f2d35a5ec997fc97cc1bfdda73",
+      "expected_status": "CHECKED_FINITE_AFFINE_WITNESS"
+    },
+    {
+      "name": "empty_zero_dimension",
+      "request": "RC1 AFFINE 0 0 0\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 0 0 0\nEND_REQUEST\nSTATUS SAT\nWITNESS 0\nEVAL 0\nEND\n",
+      "request_sha256": "7125725420043a221745e877b12a959824ab037992bda7f4521609669b755247",
+      "certificate_sha256": "6686f10f623f1d12fb6d5832b371fba5e5a6ba94f1efb5941922e498f514d91b",
+      "expected_source": "generated/AffineCertificate_8b333840de5495917bda5a5f1d611cb212494f6b2e2c64c11f4f1a6192aac0ec.lean",
+      "source_sha256": "24a06962d9c012e4c9c94c0a18346f59648b3d08e74947976615e2a19fe41f4f",
+      "expected_status": "CHECKED_FINITE_AFFINE_WITNESS"
+    }
+  ],
+  "negatives": [
+    {
+      "name": "different_echoed_request",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 2/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 1/2\nEVAL 2 -1/2 1/2\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "wrong_reported_evaluation",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 1/2\nEVAL 2 -1/2 0/1\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "wrong_witness_dimension",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 0\nEVAL 2 -1/2 1/2\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "negative_multiplier",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS UNSAT\nMULTIPLIERS 2 -1/1 1/1\nBOUND 0/1\nSTRICT 1\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "zero_multiplier_strict_false_exclusion",
+      "request": "RC1 AFFINE 1 3 16\nLT 1/1 0/1\nLE 0/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 3 16\nLT 1/1 0/1\nLE 0/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS UNSAT\nMULTIPLIERS 3 0/1 1/1 1/1\nBOUND 0/1\nSTRICT 1\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "noncanonical_rational",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 2/2 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 1/2\nEVAL 2 -1/2 1/2\nEND\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "trailing_blank_certificate_line",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 1/2\nEVAL 2 -1/2 1/2\nEND\n\n",
+      "expected": "REFUSED"
+    },
+    {
+      "name": "wrong_strict_derivation",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLE 0/1 1/1\nEND_REQUEST\nSTATUS UNSAT\nMULTIPLIERS 2 1/1 1/1\nBOUND 0/1\nSTRICT 0\nEND\n",
+      "expected": "REFUSED"
+    }
+  ],
+  "unknown_controls": [
+    {
+      "name": "native_unknown_is_not_certificate",
+      "request": "RC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\n",
+      "certificate": "RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 2 16\nLT 0/1 -1/1\nLT 1/1 1/1\nEND_REQUEST\nSTATUS UNKNOWN\nLIMIT 1 17 16\nEND\n",
+      "expected": "UNKNOWN_WITHOUT_LEAN_SOURCE_OR_CERTIFICATE"
+    }
+  ],
+  "required_later_controls": [
+    "Exact Python-emitter bytes against all six expected sources",
+    "2048-bit adapter arithmetic growth and256KiB source exhaustion stay UNKNOWN",
+    "Runtime binding rejects changed raw receiver/request/certificate hashes, altered original result/identity or nonzero/timed-out native checker",
+    "Matching fields in a synthetic dictionary do not authenticate actual runtime origin",
+    "Changing only projection cap preserves ordered_matrix_sha256 while raw request/certificate identities change; reordering original rows changes ordered identity"
+  ],
+  "metadata_provenance": {
+    "kind": "supplied_mathematical_matrix",
+    "physical_source_binding": null,
+    "observation_binding": null,
+    "error_confidence_contract": null
+  }
+}
