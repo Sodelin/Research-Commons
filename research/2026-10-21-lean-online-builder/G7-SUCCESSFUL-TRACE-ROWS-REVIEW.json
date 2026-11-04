@@ -1,0 +1,227 @@
+{
+  "schema": "successful_queried_support_fibre_review_v1",
+  "current_source": {
+    "path": "lean/proposals/G7SuccessfulTraceRows.lean",
+    "bytes": 4093,
+    "sha256": "744555a8ecd37e7f0c0e71e733b897d623d2fee16f1e9bb8a3620d9bd740cfbb",
+    "submitted_source_sha256": "46951f47b47abfc9be870b19e4f0ca0da8bd077dedbf21513996f3f44cd94763"
+  },
+  "rejected": {
+    "path": "lean/proposals/rejected/G7SuccessfulTraceRows-r0.lean",
+    "sha256": "7113071d5fa866ab31b4eb8380178ec6933a129c708de4da9a87bcf498e1d567",
+    "submitted_source_sha256": "379eacc909f8153ec497c06b4c54b0efebb2018e20536ebba9d9fc3acb6fc859",
+    "errors": [
+      {
+        "fullRange": {
+          "end": {
+            "character": 31,
+            "line": 88
+          },
+          "start": {
+            "character": 25,
+            "line": 88
+          }
+        },
+        "message": "unexpected token 'prefix'; expected '_' or identifier",
+        "range": {
+          "end": {
+            "character": 31,
+            "line": 88
+          },
+          "start": {
+            "character": 25,
+            "line": 88
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "fullRange": {
+          "end": {
+            "character": 35,
+            "line": 88
+          },
+          "start": {
+            "character": 33,
+            "line": 88
+          }
+        },
+        "message": "unexpected identifier; expected prec",
+        "range": {
+          "end": {
+            "character": 35,
+            "line": 88
+          },
+          "start": {
+            "character": 33,
+            "line": 88
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "fullRange": {
+          "end": {
+            "character": 47,
+            "line": 90
+          },
+          "start": {
+            "character": 45,
+            "line": 90
+          }
+        },
+        "message": "unexpected identifier; expected ':'",
+        "range": {
+          "end": {
+            "character": 47,
+            "line": 90
+          },
+          "start": {
+            "character": 45,
+            "line": 90
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "fullRange": {
+          "end": {
+            "character": 46,
+            "line": 93
+          },
+          "start": {
+            "character": 44,
+            "line": 93
+          }
+        },
+        "message": "unexpected identifier; expected ':'",
+        "range": {
+          "end": {
+            "character": 46,
+            "line": 93
+          },
+          "start": {
+            "character": 44,
+            "line": 93
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "fullRange": {
+          "end": {
+            "character": 60,
+            "line": 38
+          },
+          "start": {
+            "character": 52,
+            "line": 38
+          }
+        },
+        "message": "Type mismatch\n  ih\nhas type\n  (List.map ((fun a => if key a.1 = b then a.2 else 0) \u2218 fun a => (a.1, q * a.2)) rows).sum =\n    q * (List.map (fun a => if key a.1 = b then a.2 else 0) rows).sum\nbut is expected to have type\n  q * a.2 + (List.map ((fun a => if key a.1 = b then a.2 else 0) \u2218 fun a => (a.1, q * a.2)) rows).sum =\n    q * a.2 + q * (List.map (fun a => if key a.1 = b then a.2 else 0) rows).sum",
+        "range": {
+          "end": {
+            "character": 60,
+            "line": 38
+          },
+          "start": {
+            "character": 52,
+            "line": 38
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "code": "lean.unknownIdentifier",
+        "fullRange": {
+          "end": {
+            "character": 50,
+            "line": 109
+          },
+          "start": {
+            "character": 7,
+            "line": 109
+          }
+        },
+        "message": "Unknown identifier `Astra.G7SuccessfulTraceRows.compressed_step`",
+        "range": {
+          "end": {
+            "character": 50,
+            "line": 109
+          },
+          "start": {
+            "character": 7,
+            "line": 109
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      },
+      {
+        "code": "lean.unknownIdentifier",
+        "fullRange": {
+          "end": {
+            "character": 57,
+            "line": 110
+          },
+          "start": {
+            "character": 14,
+            "line": 110
+          }
+        },
+        "message": "Unknown constant `Astra.G7SuccessfulTraceRows.compressed_step`",
+        "range": {
+          "end": {
+            "character": 57,
+            "line": 110
+          },
+          "start": {
+            "character": 14,
+            "line": 110
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      }
+    ],
+    "audit_rows": [
+      {
+        "name": "Astra.G7SuccessfulTraceRows.fibre_bind",
+        "clean": false,
+        "messages": [
+          "'Astra.G7SuccessfulTraceRows.fibre_bind' depends on axioms: [propext, sorryAx]"
+        ]
+      },
+      {
+        "name": "Astra.G7SuccessfulTraceRows.queried_bind_matrix",
+        "clean": false,
+        "messages": [
+          "'Astra.G7SuccessfulTraceRows.queried_bind_matrix' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+        ]
+      },
+      {
+        "name": "Astra.G7SuccessfulTraceRows.compressed_step",
+        "clean": false,
+        "messages": []
+      }
+    ],
+    "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+    "clean_partials_not_adopted": true
+  },
+  "proof_only_diff": "--- rejected-r0\n+++ checked-r1\n@@ -35,8 +35,11 @@\n   induction rows with\n   | nil => simp [fibre, scale]\n   | cons a rows ih =>\n-      by_cases h : key a.1 = b <;>\n-        simp [fibre, scale, h, mul_add] at ih \u22a2 <;> exact ih\n+      change (if key a.1 = b then q * a.2 else 0) +\n+          fibre key (scale q rows) b =\n+        q * ((if key a.1 = b then a.2 else 0) + fibre key rows b)\n+      rw [ih, mul_add]\n+      by_cases h : key a.1 = b <;> simp [h]\n \n theorem fibre_bind (key : A \u2192 K) (rows : Rows A C)\n     (next : A \u2192 Rows A C) (b : K) :\n@@ -86,12 +89,12 @@\n The theorem does not assume that a successful native map operation proves it. -/\n theorem compressed_step [Fintype K] (key : A \u2192 K)\n     (rows compressed : Rows A C) (next : A \u2192 Rows A C)\n-    (table : K \u2192 K \u2192 C) (prefix : K \u2192 C)\n+    (table : K \u2192 K \u2192 C) (prefixWeights : K \u2192 C)\n     (hqueried : \u2200 a \u2208 rows, \u2200 b, fibre key (next a.1) b = table (key a.1) b)\n-    (hprefix : \u2200 k, fibre key rows k = prefix k)\n+    (hprefix : \u2200 k, fibre key rows k = prefixWeights k)\n     (hcompressed : \u2200 b, fibre key compressed b = fibre key (bindRows rows next) b)\n     (b : K) :\n-    fibre key compressed b = \u2211 k : K, prefix k * table k b := by\n+    fibre key compressed b = \u2211 k : K, prefixWeights k * table k b := by\n   rw [hcompressed, queried_bind_matrix key rows next table hqueried]\n   simp_rw [hprefix]\n \n",
+  "remaining_native_certificates": [
+    "Exact validated state and selected key decoding.",
+    "Exact polynomial and variable bank decoding.",
+    "Each actual queried provider returns a complete certified row, including zero on absent destinations.",
+    "BTreeMap aggregation preserves complete fibres and chosen witness/key.",
+    "Actual initial row and finite successful trace instance; raw completion and authorized observer."
+  ],
+  "native_777_selection_changed": false,
+  "native_execution": false,
+  "new_transition_engine": false
+}

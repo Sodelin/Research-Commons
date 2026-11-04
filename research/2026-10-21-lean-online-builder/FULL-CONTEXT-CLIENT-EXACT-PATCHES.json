@@ -1,0 +1,37 @@
+{
+  "schema": "full_context_client_exact_variant_v2",
+  "original_core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+  "variant_sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c",
+  "variant_bytes": 11100,
+  "drain_sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603",
+  "exact_reversible_patches": [
+    {
+      "before": "Buffer.byteLength(source) > 262144",
+      "after": "Buffer.byteLength(source) > 1048576"
+    },
+    {
+      "before": "timeoutMs = 60000",
+      "after": "timeoutMs = 300000"
+    },
+    {
+      "before": "lastProgress = { processing_ranges: ranges.length, furthest_end_line: furthestLine };",
+      "after": "lastProgress = { processing_ranges: ranges.length, furthest_end_line: furthestLine,\n            first_processing_ranges: ranges.slice(0, 12).map(r => ({\n              start: r.range?.start ?? null, end: r.range?.end ?? null, kind: r.kind ?? null })) };"
+    },
+    {
+      "before": "reject(Object.assign(err, { observations, capture_stats: captureStats() }));",
+      "after": "reject(Object.assign(err, { observations, capture_stats: captureStats(),\n        source_sha256: sha(source), source_bytes: Buffer.byteLength(source),\n        submitted_source_sha256: sha(text), before }));"
+    },
+    {
+      "before": "report = { status: 'UNVERIFIED', reason: error.message, observations: error.observations ?? [], capture_stats: error.capture_stats ?? null };",
+      "after": "report = { status: 'UNVERIFIED', reason: error.message, observations: error.observations ?? [],\n    capture_stats: error.capture_stats ?? null, source_sha256: error.source_sha256 ?? null,\n    source_bytes: error.source_bytes ?? null, submitted_source_sha256: error.submitted_source_sha256 ?? null,\n    before: error.before ?? null };"
+    }
+  ],
+  "all_other_protocol_and_acceptance_body_byte_identical": true,
+  "source_input_bound_bytes": 1048576,
+  "document_deadline_ms": 300000,
+  "parent_deadline_seconds": 370,
+  "progress_ranges_retained_max": 12,
+  "failed_run_status_stays_unverified": true,
+  "native_profile_or_original_client_changed": false,
+  "compiler_or_hosted_call_run_by_preparer": false
+}

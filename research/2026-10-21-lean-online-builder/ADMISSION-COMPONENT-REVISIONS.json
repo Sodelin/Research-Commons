@@ -1,0 +1,25 @@
+{
+  "rejected_revisions": [
+    {
+      "source_sha256": "500b9fde570334f3a71f0434fb66b149acf2ed9f6c2d46385da99078471947dd",
+      "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+      "first_unique_errors": [
+        "unsolved goals\nα : Type u_1\ninst✝ : DecidableEq α\np q : Fin 2 → α\n⊢ 4 * 4⁻¹ = 1",
+        "'change' tactic failed, pattern\n  (∑ k, if p k.1 = q k.2 then 1 / 4 else 0) = ?m.68\nis not definitionally equal to target\n  ∑ b, {k | p k.1 = q k.2}.indicator (fun x => 1 / 4) b = ↑(pairCount p q) / 4",
+        "Function expected at\n  Finset.prod_le_one fun i x => ?m.31\nbut this term has type\n  ∏ i ∈ ?m.23, ?m.22 i ≤ 1\n\nNote: Expected a function because this term is being applied to the argument\n  (fun i _ => (cellSurvival_below_one (cells i)).le)",
+        "Type mismatch\n  LT.lt.le (cellSurvival_positive (cells i))\nhas type\n  0 ≤ cellSurvival (cells i)\nbut is expected to have type\n  ?m.22 i ≤ 1",
+        "failed to synthesize\n  MulLeftStrictMono ℝ\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command."
+      ]
+    },
+    {
+      "source_sha256": "c1b7de7558d29c68d45b6966f1e9b1f716462baee7de06567ea868faf0926088",
+      "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+      "first_unique_errors": [
+        "unsolved goals\nα : Type u_1\ninst✝ : DecidableEq α\np q : Fin 2 → α\n⊢ (∑ x, if p x.1 = q x.2 then 4⁻¹ else 0) = ↑{k | p k.1 = q k.2}.card * 4⁻¹"
+      ]
+    }
+  ],
+  "accepted_source_sha256": "fb43523a2a92b4a335deebf82e6b497ccb26dfdc2f47581cef2a521c6105d0e0",
+  "earlier_capture_limited_attempts": "Retained as UNVERIFIED; no selected-audit or full-component PASS inferred.",
+  "original_pinned_sources_changed": false
+}

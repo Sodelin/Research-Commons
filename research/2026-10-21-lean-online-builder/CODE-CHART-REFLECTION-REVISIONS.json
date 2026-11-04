@@ -1,0 +1,25 @@
+{
+  "rejected_revisions": [
+    {
+      "revision": 1,
+      "status": "REJECTED_REMOTE_LEAN_CHECK",
+      "virtual_source_sha256": "ab391e3a2b64142629366f8af611e5ebe5e09196ae9d0dbdef0ebfa3c0c76c81",
+      "first_unique_errors": [
+        "Function expected at\n  List.range_succ\nbut this term has type\n  List.range (Nat.succ ?m.221) = List.range ?m.221 ++ [?m.221]\n\nNote: Expected a function because this term is being applied to the argument\n  (edgeCount (Fintype.card X) (Fintype.card ID))",
+        "unsolved goals\nX : Type u_1\nID : Type u_2\ninst✝³ : Fintype X\ninst✝² : Fintype ID\ninst✝¹ : DecidableEq X\ninst✝ : DecidableEq ID\nnt nh nc ni : ℕ\nc : Code X ID\nhb : BinaryValid c\nhr : RegistryValid c\ntaxonOrder : X ≃ Fin nt\nidOrder : ID ≃ Fin nh\nchronology : Fin nc → AgeConstraint NV\nexposures : Fin ni → Exposure NV NE\ncoins : Hybrid (sourceOfValid c hb) → RationalInterval\ncap : ℕ\n⊢ (fun i => (encodeInterval (coins ((decodedIDs c hb hr) (idOrder.symm i))), ↑i)) =\n    (fun h => (encodeInterval (coins h), ↑(idOrder ((decodedIDs c hb hr).symm h)))) ∘ fun i =>\n      (decodedIDs c hb hr) (idOrder.symm i)",
+        "don't know how to synthesize placeholder for argument `n`\ncontext:\nX : Type u_1\nID : Type u_2\ninst✝³ : Fintype X\ninst✝² : Fintype ID\ninst✝¹ : DecidableEq X\ninst✝ : DecidableEq ID\nnt nh nc ni : ℕ\nc : Code X ID\nhb : BinaryValid c\nhr : RegistryValid c\ntaxonOrder : X ≃ Fin nt\nidOrder : ID ≃ Fin nh\nchronology : Fin nc → AgeConstraint NV\nexposures : Fin ni → Exposure NV NE\ncoins : Hybrid (sourceOfValid c hb) → RationalInterval\ncap : ℕ\n⊢ ℕ\n\nNote: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be"
+      ]
+    },
+    {
+      "revision": 2,
+      "status": "REJECTED_REMOTE_LEAN_CHECK",
+      "virtual_source_sha256": "c609603784767c47388d5d466560dc9513531b3d80103de350b558782e473e9d",
+      "first_unique_errors": [
+        "Type mismatch: After simplification, term\n  List.range_succ\n has type\n  List.range (edgeCount (Fintype.card X) (Fintype.card ID) + 1) =\n    List.range (edgeCount (Fintype.card X) (Fintype.card ID)) ++ [edgeCount (Fintype.card X) (Fintype.card ID)]\nbut is expected to have type\n  List.range (edgeCount (Fintype.card X) (Fintype.card ID) + 1) =\n    List.map ((fun e => (Option.map Fin.val e).getD (edgeCount (Fintype.card X) (Fintype.card ID))) ∘ some)\n        (edgeOrder c) ++\n      [edgeCount (Fintype.card X) (Fintype.card ID)]"
+      ]
+    }
+  ],
+  "accepted_standalone_sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+  "accepted_virtual_sha256": "d6c72ea5289bf4b7d23650bdf8f3a38ca23054555ef4b2b72e32cfceeb053712",
+  "original_engine_or_decoder_changed": false
+}

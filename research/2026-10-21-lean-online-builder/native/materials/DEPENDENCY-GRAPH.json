@@ -1,0 +1,119 @@
+{
+  "targets": {
+    "materials-components-provisional": {
+      "roots": [
+        "P1FiniteThreshold",
+        "P5OrderedLambShift"
+      ],
+      "order": [
+        "P1BinomialMoments",
+        "P1ScalarStatistic",
+        "FiniteProductMoments",
+        "P1ProductStatistic",
+        "P1FiniteThreshold",
+        "P5OrderedTriangle",
+        "P5SquareTriangle",
+        "P5OmegaIntegrability",
+        "BoundedTriangleIntegral",
+        "P5OrderedLambShift"
+      ],
+      "modules": {
+        "P1BinomialMoments": {
+          "sha256": "eecaff38bc4c06db7ada58189259f364b892ee6fc01571ce75522fb97ac52e68",
+          "imports": [
+            "Mathlib.Data.Real.Basic",
+            "Mathlib.Data.Nat.Choose.Sum"
+          ]
+        },
+        "P1ScalarStatistic": {
+          "sha256": "d1cc877dafb298a52593c6bbc0787822d138944057ac4ff82d719e44caf57d32",
+          "imports": [
+            "P1BinomialMoments",
+            "Mathlib.Tactic.FieldSimp"
+          ]
+        },
+        "FiniteProductMoments": {
+          "sha256": "611524c858ad5b162690f3027f1e61201b3e2c214721ae030ae7540b356e38a7",
+          "imports": [
+            "Mathlib.Data.Real.Basic",
+            "Mathlib.Algebra.BigOperators.Ring.Finset",
+            "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+            "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+            "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+            "Mathlib.Tactic.Ring"
+          ]
+        },
+        "P1ProductStatistic": {
+          "sha256": "6d96dabddd85894f09604b4cacd701a87525481162a0dcf9f50afc64f97e280d",
+          "imports": [
+            "P1ScalarStatistic",
+            "FiniteProductMoments",
+            "Mathlib.Algebra.BigOperators.Fin"
+          ]
+        },
+        "P1FiniteThreshold": {
+          "sha256": "273783f8d88cad1591dedad762f523ea2953c5009df5cb3b13432b32d32f2159",
+          "imports": [
+            "Mathlib.Data.Real.Basic",
+            "Mathlib.Algebra.BigOperators.Ring.Finset",
+            "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+            "Mathlib.Tactic.FieldSimp",
+            "Mathlib.Tactic.Linarith",
+            "Mathlib.Tactic.Positivity",
+            "Mathlib.Tactic.Ring",
+            "P1ProductStatistic"
+          ]
+        },
+        "P5OrderedTriangle": {
+          "sha256": "a93742acb8ca9c194784141a6480756f0bc0785145855b8e0a1b2b72ae6d635e",
+          "imports": [
+            "Mathlib.Algebra.Algebra.Basic",
+            "Mathlib.Data.Complex.Basic",
+            "Mathlib.Tactic.Module"
+          ]
+        },
+        "P5SquareTriangle": {
+          "sha256": "ad6f170ff9691b390c4a9e73e7e6b2f894117ecb5d0a3033be7da6dd553feaef",
+          "imports": [
+            "Mathlib.MeasureTheory.Integral.Prod",
+            "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+            "Mathlib.Tactic.Linarith"
+          ]
+        },
+        "P5OmegaIntegrability": {
+          "sha256": "9dd4eeeff8dcaa262ec9dec7fe7d6dc12c166030dfda245f87cf9330b37d5c0f",
+          "imports": [
+            "P5SquareTriangle",
+            "Mathlib.Analysis.Normed.Algebra.Basic",
+            "Mathlib.Data.Complex.Basic",
+            "Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic",
+            "Mathlib.MeasureTheory.Function.L1Space.Integrable",
+            "Mathlib.Tactic.FunProp",
+            "Mathlib.Tactic.NormNum"
+          ]
+        },
+        "BoundedTriangleIntegral": {
+          "sha256": "e500127aa5f9451716ab5e01a937b31fd77e621e9e7e2001f1c831a365ca1610",
+          "imports": [
+            "Mathlib.MeasureTheory.Integral.Prod",
+            "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+            "Mathlib.Tactic.Linarith"
+          ]
+        },
+        "P5OrderedLambShift": {
+          "sha256": "c30985345a729e18fd2039d01580b2b6eae19e4e70d7f3262acadb52fce0d320",
+          "imports": [
+            "P5OmegaIntegrability",
+            "P5OrderedTriangle",
+            "BoundedTriangleIntegral",
+            "Mathlib.Analysis.Normed.Operator.Mul",
+            "Mathlib.Tactic.Positivity"
+          ]
+        }
+      },
+      "required_for_accepted_release": false
+    }
+  },
+  "original_source_commit": "ae0777ba38660a3e30da6b01f07e3874afb7b785",
+  "scope": "Separate source-only P1/P5 component context; no master or native acceptance."
+}

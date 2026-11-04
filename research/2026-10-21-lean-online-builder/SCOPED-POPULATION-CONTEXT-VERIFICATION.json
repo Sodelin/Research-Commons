@@ -1,0 +1,205 @@
+{
+  "schema": "scoped_physical_population_certificate_hosted_verification_v1",
+  "case": "scoped-population-certificate",
+  "disposition": "PASS_REMOTE_LEAN_CHECK",
+  "classification": "Formal verification/integration of the original population mathematics and supplied-table caller; not a new mathematical discovery.",
+  "source": "lean/scoped-context/PopulationTableCertificate.lean",
+  "source_bytes": 99274,
+  "source_sha256": "801504467b7bf1440bdf9ab4d9d052790724605541838223956e4367d2842d35",
+  "submitted_source_sha256": "c3c34c6bd5b327d4139c826db3bb92f7b754b54b75f4c3e252521cebee109c89",
+  "versions": {
+    "toolchain": "leanprover/lean4:v4.35.0",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270"
+  },
+  "versions_stable": true,
+  "complete_printed_types": [
+    {
+      "name": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients",
+      "printed_type": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients.{u_1, u_2, u_3, u_4} {V : Type u_1}\n  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]\n  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X]\n  [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E] [FinEnum.{u_3 + 1} Copy]\n  (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³) {sample : Copy → X}\n  (s d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (@UnifiedLean.Source.NativePairClockLaw.pairRate.{u_2} E r i)) ↑t))\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n        (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n          inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s d)))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+      "printed_type_sha256": "248b06ff6a069626b3b6cfca901eb7ef67f652d42944567e5e4180b0182e93fa"
+    },
+    {
+      "name": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem",
+      "printed_type": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem.{u_1, u_2, u_3, u_4} {V : Type u_1}\n  {E : Type u_2} {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E]\n  [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X]\n  [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E] [FinEnum.{u_3 + 1} Copy]\n  (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³) {sample : Copy → X} (fuel : Nat)\n  (s d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (hd :\n    d ∉\n      @GProgram.G7.EffectiveCoefficientSupport.destinations.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝\n        inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s) :\n  @Eq.{1} (@Polynomial.{0} Rat Rat.semiring)\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n        inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s d))\n    (@OfNat.ofNat.{0} (@Polynomial.{0} Rat Rat.semiring) (nat_lit 0)\n      (@Zero.toOfNat0.{0} (@Polynomial.{0} Rat Rat.semiring) (@Polynomial.instZero.{0} Rat Rat.semiring)))",
+      "printed_type_sha256": "60dbc34b567ffdfb9d9fa87956b8af4e0891b6fa30be2c899893e13195d69314"
+    },
+    {
+      "name": "Astra.NativePopulationTableCertificate.check_sound",
+      "printed_type": "Astra.NativePopulationTableCertificate.check_sound.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2} {Copy : Type u_3}\n  {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X} (fuel : Nat)\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample) :\n  @Eq.{1} (@Polynomial.{0} Rat Rat.semiring)\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² N sample rows d))\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n      (@GProgram.G7.EffectivePopulationCoefficients.coefficients.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴\n        inst✝ inst✝¹ inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample fuel s d))",
+      "printed_type_sha256": "67a6ecfcd33c44a871da3721ef7126c884e54ae7e087b0065c3a7b5af5e371ad"
+    },
+    {
+      "name": "Astra.NativePopulationTableCertificate.checked_actual_population",
+      "printed_type": "Astra.NativePopulationTableCertificate.checked_actual_population.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy]\n  [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X}\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (@UnifiedLean.Source.NativePairClockLaw.pairRate.{u_2} E r i)) ↑t))\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial\n        (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝\n          inst✝¹ inst✝⁶ inst✝² N sample rows d)))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+      "printed_type_sha256": "a5bb0f6923fb4411a597605acd72f34b108f3712bbcdc60afce7593c69f8f5a0"
+    }
+  ],
+  "selected_theorem_audits": [
+    {
+      "name": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients",
+      "standard_axioms_only": true,
+      "messages": [
+        "'GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ]
+    },
+    {
+      "name": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem",
+      "standard_axioms_only": true,
+      "messages": [
+        "'GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.NativePopulationTableCertificate.check_sound",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.NativePopulationTableCertificate.check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.NativePopulationTableCertificate.checked_actual_population",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.NativePopulationTableCertificate.checked_actual_population' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+      ]
+    }
+  ],
+  "global_error_diagnostics": [],
+  "complete_warning_diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "message": "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "message": "\n'Mathlib.Data.ENNReal.BigOperators' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.ENNReal.BigOperators\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "message": "`simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [population_roots N s i hs]\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+      "range": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    }
+  ],
+  "normal_child_exit": 0,
+  "complete_before_after_inventory": true,
+  "required_tested_source_identities": {
+    "check_online_context.py": {
+      "bytes": 1838,
+      "sha256": "7f4e4968da91ca392080f5480eab03533de8e29c7baa0026f4c0ac08b05153ed"
+    },
+    "online_capture.py": {
+      "bytes": 10200,
+      "sha256": "8450567f244e3d4933edbf193792be6648a4e64b15e4e33e44c2c905fa43b00e"
+    },
+    "online_lean_full_context.mjs": {
+      "bytes": 11100,
+      "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+    },
+    "online_lean_full_context_drain.mjs": {
+      "bytes": 529,
+      "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+    },
+    "lean/scoped-context/PopulationTableCertificate.lean": {
+      "bytes": 99274,
+      "sha256": "801504467b7bf1440bdf9ab4d9d052790724605541838223956e4367d2842d35"
+    }
+  },
+  "capture_ciphertext_sha256": "4bcddfe771a37fe8a20ea5da2d890046128759f956c4538640044796f24d5102",
+  "started_utc": "2026-10-22T09:20:28.750Z",
+  "finished_utc": "2026-10-22T09:20:39.562Z",
+  "capture_stats": {
+    "received_bytes": 1869166,
+    "retained_bytes": 17895,
+    "received_messages": 1454,
+    "progress_messages": 1316,
+    "duplicate_diagnostics": 334,
+    "last_progress": {
+      "processing_ranges": 0,
+      "furthest_end_line": null,
+      "first_processing_ranges": []
+    },
+    "limits": {
+      "received_bytes": 33554432,
+      "retained_bytes": 4194304,
+      "frame_bytes": 4194304,
+      "retained_observations": 2048
+    },
+    "policy": "Union of every distinct diagnostic; cumulative duplicates coalesced; progress counted with latest state in RAM."
+  },
+  "prior_rejected_revision": "SCOPED-POPULATION-CONTEXT-REVISIONS.json",
+  "source_command_map": "SCOPED-POPULATION-CONTEXT-SOURCE-MAP.json",
+  "scope": "Generic actual original single-population row with arbitrary finite admitted carriers, duplicate aggregation, zero on absence, Boolean check, actual CoLocated, same positive rates and nonnegative time. No Encoded-image premise or desired-row identity.",
+  "not_supplied": [
+    "Particular native table/check instance",
+    "Parser/validator/state/panel/key refinement",
+    "Authenticated emitted source/request/result origin",
+    "Whole-word raw completion/readout",
+    "Two-sided physical source/target/action coverage",
+    "Pinned4.33.1 imports/objects/native execution"
+  ],
+  "native_writer_controller": "UNBOUND",
+  "review_ciphertext_sha256": "9b3f0f1c14c98f2683b7b55b2605a03ec3bc8c5b31c23e838a9f217d0cf79ffa"
+}

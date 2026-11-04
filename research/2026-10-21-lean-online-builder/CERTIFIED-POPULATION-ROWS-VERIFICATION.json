@@ -1,0 +1,227 @@
+{
+  "schema": "certified_population_rows_hosted_verification_v1",
+  "case": "certified-population-rows",
+  "disposition": "PASS_REMOTE_LEAN_CHECK",
+  "classification": "Verification/integration of the unchanged existing sparse-row caller and solved original embedding/fibre/population mathematics.",
+  "source": "lean/scoped-context/CertifiedPopulationRows.lean",
+  "source_bytes": 108147,
+  "source_sha256": "5b83d95049900e2faa6127905bde20a4be9840cf975983c59ad5ce701b86f212",
+  "submitted_source_sha256": "4cd4ef8fb5d2574f2ae3e90d6ff02c42613c987b488b082b51065e896367eaee",
+  "versions": {
+    "toolchain": "leanprover/lean4:v4.35.0",
+    "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+  },
+  "versions_stable": true,
+  "complete_printed_types": [
+    {
+      "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr",
+      "printed_type": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr.{u_2} {E : Type u_2} [DecidableEq.{u_2 + 1} E]\n  [Fintype.{u_2} E] [FinEnum.{u_2 + 1} E] (i : Option.{u_2} E) (p : GProgram.G7.SinglePopulationPolynomialKernel.Expr)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i p)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t i)\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial p))",
+      "printed_type_sha256": "f4742355fd882443abef0f0167fc6accd018e16f6ec811e04fe7ded74df5a853"
+    },
+    {
+      "name": "Astra.CertifiedPopulationRows.read_sparseRows",
+      "printed_type": "Astra.CertifiedPopulationRows.read_sparseRows.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2} {Copy : Type u_3}\n  {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³}\n  {sample : Copy → X} (i : Option.{u_2} E)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample) :\n  @Eq.{u_2 + 1} (GProgram.G7.EffectiveFullEpochCoefficients.Sparse.{u_2} (Option.{u_2} E))\n    (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴\n        N sample)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴\n        N sample)\n      (fun a b =>\n        @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n          (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst✝⁴)\n          (fun x =>\n            @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst✝⁴ inst✝ inst✝¹ inst✝² inst✝³ N\n              sample\n              (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst✝⁴\n                (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³ N) x))\n          (fun a b =>\n            @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst✝³ inst✝⁵ inst✝⁴\n              inst✝ inst✝⁶ a b)\n          a b)\n      (@id.{(max (max u_3 u_2) u_1) + 1}\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample))\n      (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n        sample i rows)\n      d)\n    (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i\n      (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² N sample rows d))",
+      "printed_type_sha256": "e7276ad41b1fe456a2032315696e01f91bdcfaa1ee1b660f26128d980db84fdc"
+    },
+    {
+      "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual",
+      "printed_type": "Astra.CertifiedPopulationRows.checked_sparseRows_actual.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy]\n  [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X}\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun a b =>\n          @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n            (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst✝⁴)\n            (fun x =>\n              @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst✝⁴ inst✝ inst✝¹ inst✝² inst✝³ N\n                sample\n                (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst✝⁴\n                  (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³ N) x))\n            (fun a b =>\n              @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst✝³ inst✝⁵ inst✝⁴\n                inst✝ inst✝⁶ a b)\n            a b)\n        (@id.{(max (max u_3 u_2) u_1) + 1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n          sample i rows)\n        d)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+      "printed_type_sha256": "7e77ed2bb973c5845990d22a6ffd6bb2ccbe7bd32f7a51ae106132eec5799513"
+    }
+  ],
+  "selected_theorem_audits": [
+    {
+      "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr",
+      "standard_axioms_only": true,
+      "messages": [
+        "'GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.CertifiedPopulationRows.read_sparseRows",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.CertifiedPopulationRows.read_sparseRows' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual",
+      "standard_axioms_only": true,
+      "messages": [
+        "'Astra.CertifiedPopulationRows.checked_sparseRows_actual' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    }
+  ],
+  "global_error_diagnostics": [],
+  "complete_warning_diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "message": "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 12
+        },
+        "start": {
+          "character": 0,
+          "line": 12
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "message": "\n'Mathlib.Data.ENNReal.BigOperators' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.ENNReal.BigOperators\n",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 23
+        },
+        "start": {
+          "character": 0,
+          "line": 23
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "message": "`simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [population_roots N s i hs]\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+      "range": {
+        "end": {
+          "character": 77,
+          "line": 1582
+        },
+        "start": {
+          "character": 27,
+          "line": 1582
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 9,
+          "line": 2461
+        },
+        "start": {
+          "character": 0,
+          "line": 2450
+        }
+      },
+      "message": "automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr`:\n  [DecidableEq E]\n  [Fintype E]\n  [FinEnum E]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq E] [Fintype E] [FinEnum E] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 2451
+        },
+        "start": {
+          "character": 0,
+          "line": 2450
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 69,
+          "line": 2519
+        },
+        "start": {
+          "character": 0,
+          "line": 2506
+        }
+      },
+      "message": "automatically included section variable(s) unused in theorem `Astra.CertifiedPopulationRows.read_sparseRows`:\n  [FinEnum V]\n  [FinEnum E]\n  [FinEnum Copy]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 2507
+        },
+        "start": {
+          "character": 0,
+          "line": 2506
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    }
+  ],
+  "normal_child_exit": 0,
+  "complete_before_after_inventory": true,
+  "required_tested_source_identities": {
+    "lean/scoped-context/CertifiedPopulationRows.lean": {
+      "bytes": 108147,
+      "sha256": "5b83d95049900e2faa6127905bde20a4be9840cf975983c59ad5ce701b86f212"
+    },
+    "check_online_context.py": {
+      "bytes": 2894,
+      "sha256": "e6e20dd7425cc99dd64046527e328e8ccee5f598509e906cb5e9424df0153802"
+    },
+    "online_capture.py": {
+      "bytes": 10200,
+      "sha256": "8450567f244e3d4933edbf193792be6648a4e64b15e4e33e44c2c905fa43b00e"
+    },
+    "online_lean_full_context.mjs": {
+      "bytes": 11100,
+      "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+    },
+    "online_lean_full_context_drain.mjs": {
+      "bytes": 529,
+      "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+    }
+  },
+  "capture_ciphertext_sha256": "22161620c55bba725ec3fc8d6659da2ba04b7d91d57f49e9a6ecfed40f1affdd",
+  "started_utc": "2026-10-22T10:09:47.870Z",
+  "finished_utc": "2026-10-22T10:11:01.889Z",
+  "original_proposal_sha256": "9b1dd5f8660ea516383884ff1c6a14d713543a1cca3eb1fb23c26b6c820f7663",
+  "original_proposal_body_unchanged": true,
+  "generic_physical_core_unchanged_literal_prefix": true,
+  "source_command_map": "CERTIFIED-POPULATION-ROWS-SOURCE-MAP.json",
+  "preflight": "SPARSE-ROW-CALLER-PREFLIGHT.json",
+  "scope": "Arbitrary original finite carriers with their original FinEnum instances, admitted Code/sample, actual Boolean Table check, every raw Code fibre, CoLocated, one positive rate bank and nonnegative time. Duplicates and zero on absence retained.",
+  "not_supplied": [
+    "Particular native table or proof of its Boolean check",
+    "Native parser/validator/state/key/panel/variable refinement",
+    "Selected-view step identity and complete immutable-word instance",
+    "Raw completion/authorized readout instance",
+    "Two-sided source/target/action coverage",
+    "Authenticated native proof/result origin or pinned imports/objects"
+  ],
+  "native_writer_controller": "UNBOUND",
+  "review_ciphertext_sha256": "664c4f0c8a534bf72bde0ebcfc9afc0f617f6317f75d68b3c5c9023ac906be51"
+}

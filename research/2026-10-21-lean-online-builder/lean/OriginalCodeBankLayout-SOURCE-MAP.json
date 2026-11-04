@@ -1,0 +1,1492 @@
+{
+  "kind": "complete_original_admission_component_projection",
+  "original_root": "G7OriginalAdmission",
+  "original_module_count": 43,
+  "original_bytes": 300088,
+  "owned_modules": [
+    "NativeOrderedBankLayout",
+    "OriginalCodeBankLayout"
+  ],
+  "external_imports": [
+    "Mathlib.Data.Fintype.Card",
+    "Mathlib.Logic.Relation",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Data.Fintype.EquivFin",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Data.Rat.Lemmas",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+    "Lean.Elab.Tactic.Omega",
+    "Mathlib.Probability.Distributions.Uniform",
+    "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+    "Mathlib.Data.Rat.BigOperators",
+    "Mathlib.Data.ENNReal.BigOperators",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Fintype.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Probability.Distributions.Exponential",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Fin.Tuple.Basic",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Countable",
+    "Mathlib.Data.Fintype.Inv",
+    "Mathlib.Logic.Equiv.Fin.Basic"
+  ],
+  "sources": [
+    {
+      "module": "SourceNetwork",
+      "original_bytes": 8458,
+      "original_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "selected_source_bytes": 8458,
+      "selected_source_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "projected_body_bytes": 7019,
+      "projected_body_sha256": "56ccd63e4af22a97f5b5a4f7093cdc889006b93ed634f51b4664b4f406633d60",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 248,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.not_bridge_of_parallel"
+        },
+        {
+          "line": 249,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.bridge_not_sameBlob"
+        },
+        {
+          "line": 250,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.bridge_blob_ne"
+        },
+        {
+          "line": 251,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.dreach_antisymm"
+        },
+        {
+          "line": 252,
+          "command": "#print axioms Nanuq.Source.RootedBinary.underlying_connected"
+        }
+      ],
+      "code_character_layout_sha256": "f20b80b389adf5cf98fd36aeabe3c8da9bc730aac7827ba64f54deda43c1324a"
+    },
+    {
+      "module": "G7OriginalCensus",
+      "original_bytes": 4894,
+      "original_sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517",
+      "selected_source_bytes": 4894,
+      "selected_source_sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517",
+      "projected_body_bytes": 4187,
+      "projected_body_sha256": "a3d65d73a040b1942a8571d364461f6311b65761f4dff04ae276a196d5530831",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 135,
+          "command": "#print axioms sum_inDegree"
+        },
+        {
+          "line": 136,
+          "command": "#print axioms sum_outDegree"
+        },
+        {
+          "line": 137,
+          "command": "#print axioms original_census"
+        }
+      ],
+      "code_character_layout_sha256": "7eaff0b78b1c018b22a9575d0be6d2ad85ee7520b678ec456dbfdfdaba0eee56"
+    },
+    {
+      "module": "GraphLeaves",
+      "original_bytes": 3088,
+      "original_sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "selected_source_bytes": 3088,
+      "selected_source_sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "projected_body_bytes": 2672,
+      "projected_body_sha256": "1abf28fa36acbac7600f10316101ca7eea27a2ba85595378d6ee0e66a83a2020",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 86,
+          "command": "#print axioms Nanuq.Source.RootedBinary.every_vertex_reaches_leaf"
+        },
+        {
+          "line": 87,
+          "command": "#print axioms Nanuq.Source.RootedBinary.forward_closed_contains_leaf"
+        },
+        {
+          "line": 88,
+          "command": "#print axioms Nanuq.Source.RootedBinary.exists_leaf_avoiding_of_ne_root"
+        }
+      ],
+      "code_character_layout_sha256": "8c1d6d619f80654e2fdb5af2404047e2d7dfa8808bacee7f6d9626ed65c666a8"
+    },
+    {
+      "module": "GraphCuts",
+      "original_bytes": 4515,
+      "original_sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "selected_source_bytes": 4515,
+      "selected_source_sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "projected_body_bytes": 3960,
+      "projected_body_sha256": "e532a15d36a8dd7d6beaa23a07600a1235d745fc91c0ba7fbaaf95e93608850f",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 122,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.edge_side_cover"
+        },
+        {
+          "line": 123,
+          "command": "#print axioms Nanuq.Source.EdgeGraph.bridge_sides_disjoint"
+        },
+        {
+          "line": 124,
+          "command": "#print axioms Nanuq.Source.RootedBinary.bridge_both_sides_contain_taxa"
+        }
+      ],
+      "code_character_layout_sha256": "b780d8a9748274c4a665da7da30493b07c8ac3fb9832f812d754d46de63d8516"
+    },
+    {
+      "module": "G5BridgeBarrier",
+      "original_bytes": 3984,
+      "original_sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "selected_source_bytes": 3984,
+      "selected_source_sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "projected_body_bytes": 2568,
+      "projected_body_sha256": "a2bb7bc16ae47dfa26c661d6e13552dd7179b3bbd753b69886fa831fc057eda1",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 94,
+          "command": "#print axioms bridge_target_component_iff_descendant"
+        },
+        {
+          "line": 95,
+          "command": "#print axioms unique_child_edge"
+        },
+        {
+          "line": 96,
+          "command": "#print axioms descendant_via_unique_child"
+        },
+        {
+          "line": 97,
+          "command": "#print axioms hybrid_descendant_component"
+        }
+      ],
+      "code_character_layout_sha256": "cc1b31540895dc8a0a11ba56e91a4783a31c12c8cac968efa7db02c397c73776"
+    },
+    {
+      "module": "G5CalendarRoutes",
+      "original_bytes": 8679,
+      "original_sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "selected_source_bytes": 8679,
+      "selected_source_sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "projected_body_bytes": 6726,
+      "projected_body_sha256": "0cd9fc0f453d328f709edd40f80407426929ec1521b9cf3fb887c96a5742866f",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 200,
+          "command": "#print axioms bridge_mem_every_descendant_route"
+        },
+        {
+          "line": 201,
+          "command": "#print axioms original_tip_route_exists"
+        },
+        {
+          "line": 202,
+          "command": "#print axioms EdgePath.active_unique"
+        },
+        {
+          "line": 203,
+          "command": "#print axioms protective_edge_active_on_every_route"
+        },
+        {
+          "line": 204,
+          "command": "#print axioms protective_edge_absent_on_outside_route"
+        },
+        {
+          "line": 205,
+          "command": "#print axioms protective_interval_nonempty"
+        },
+        {
+          "line": 206,
+          "command": "#print axioms younger_side_open_interval_has_no_first"
+        }
+      ],
+      "code_character_layout_sha256": "d6f8a140559eeb0f8407308c4fde61efeee606d2c3971345c1952f11aa455658"
+    },
+    {
+      "module": "G5ProtectiveBlock",
+      "original_bytes": 2587,
+      "original_sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "selected_source_bytes": 2587,
+      "selected_source_sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "projected_body_bytes": 1668,
+      "projected_body_sha256": "51ad7a0c368c4df87d8eb5d7e5c530ca353e9f1372de1756e7f4abc36fe45d41",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 63,
+          "command": "#print axioms routeFamily_exists"
+        },
+        {
+          "line": 64,
+          "command": "#print axioms protective_population_block_eq"
+        }
+      ],
+      "code_character_layout_sha256": "c90f9e179b95c9609ee6ddd18b344e287af75d139b09407416b900ccdbe443c8"
+    },
+    {
+      "module": "G5MinimalGraphInterface",
+      "original_bytes": 1896,
+      "original_sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "selected_source_bytes": 1896,
+      "selected_source_sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "projected_body_bytes": 1068,
+      "projected_body_sha256": "fc2287b8aa74314d946c1d1d8de5b36192372ec6324ad6ab29446aa48b719fa4",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 47,
+          "command": "#print axioms root_source_side_of_rooted_acyclic"
+        },
+        {
+          "line": 48,
+          "command": "#print axioms bridge_component_iff_descendant"
+        }
+      ],
+      "code_character_layout_sha256": "07642d175e84287ea5ca228075c5e838a6a22980d43751238368f63492f27c03"
+    },
+    {
+      "module": "G2LiveLineageRouting",
+      "original_bytes": 5339,
+      "original_sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "selected_source_bytes": 5339,
+      "selected_source_sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "projected_body_bytes": 3503,
+      "projected_body_sha256": "4e6c45ff66720a6d72deff5ea1890b3deeae5c859ded960d89f418165f00561b",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 123,
+          "command": "#print axioms coalesced_copies_cannot_split"
+        },
+        {
+          "line": 124,
+          "command": "#print axioms routed_parent_eq_iff_live_coin_eq"
+        },
+        {
+          "line": 125,
+          "command": "#print axioms opposite_copy_bits_are_not_a_live_pulse"
+        },
+        {
+          "line": 126,
+          "command": "#print axioms wrong_pulse_split_mass"
+        },
+        {
+          "line": 127,
+          "command": "#print axioms fair_copy_pulse_splits_merged_ancestor"
+        }
+      ],
+      "code_character_layout_sha256": "17f6dce4876eb12d574251c441be17984c4d81d974d6a92b896f90d6d1d6b680"
+    },
+    {
+      "module": "G6BridgeCannotEnterHybrid",
+      "original_bytes": 3752,
+      "original_sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "selected_source_bytes": 3752,
+      "selected_source_sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "projected_body_bytes": 2678,
+      "projected_body_sha256": "24c2a627c911b323995b75cc00b355edba2b0ace173b8c43b5903a5add3ce6b0",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 85,
+          "command": "#print axioms bridge_targets_injective"
+        },
+        {
+          "line": 86,
+          "command": "#print axioms bridge_incoming_unique"
+        },
+        {
+          "line": 87,
+          "command": "#print axioms bridge_target_indegree_one"
+        },
+        {
+          "line": 88,
+          "command": "#print axioms two_incoming_occurrences_not_bridge"
+        },
+        {
+          "line": 89,
+          "command": "#print axioms original_bridge_target_not_hybrid"
+        },
+        {
+          "line": 90,
+          "command": "#print axioms original_hybrid_parents_nonbridge"
+        }
+      ],
+      "code_character_layout_sha256": "254a336efd81402b98d7257a317e6a0c9ede18423ad828557a55134bfa207aa5"
+    },
+    {
+      "module": "G5BridgeComponentEntries",
+      "original_bytes": 4488,
+      "original_sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "selected_source_bytes": 4488,
+      "selected_source_sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "projected_body_bytes": 3027,
+      "projected_body_sha256": "53f9b67f170d69db02f84a23e839423620363cadf670c82b2da54a1ba2800536",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 95,
+          "command": "#print axioms bridge_targets_sameBlob_iff_eq"
+        },
+        {
+          "line": 96,
+          "command": "#print axioms bridge_target_not_root_component"
+        },
+        {
+          "line": 97,
+          "command": "#print axioms nonroot_component_has_incoming_bridge"
+        },
+        {
+          "line": 98,
+          "command": "#print axioms nonroot_component_unique_entry"
+        }
+      ],
+      "code_character_layout_sha256": "14033ec43abf7a6407ffc64f40433b592a1058778da8ff30cd1006054d3e1b4c"
+    },
+    {
+      "module": "G5NonbridgeRouteBound",
+      "original_bytes": 8540,
+      "original_sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "selected_source_bytes": 8540,
+      "selected_source_sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "projected_body_bytes": 6464,
+      "projected_body_sha256": "07a5cfad452ba45b459fd5a797d106cca3e85d296c6ce7bc73e3f0078569d312",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 183,
+          "command": "#print axioms UpPath.unique_from_kept_source"
+        },
+        {
+          "line": 184,
+          "command": "#print axioms UpPath.unique_of_same_first"
+        },
+        {
+          "line": 185,
+          "command": "#print axioms cut_child_nonbridge_incoming_unique"
+        },
+        {
+          "line": 186,
+          "command": "#print axioms original_nonbridge_route_unique_of_first"
+        },
+        {
+          "line": 187,
+          "command": "#print axioms finite_nonbridge_route_family_card_le_indegree"
+        },
+        {
+          "line": 188,
+          "command": "#print axioms hybrid_nonbridge_route_family_card_le_two"
+        },
+        {
+          "line": 189,
+          "command": "#print axioms ordinary_nonbridge_route_family_card_le_one"
+        }
+      ],
+      "code_character_layout_sha256": "48e92b56a2ed95dae39c6592c982d50c9a69453cee9442b9e1c2b807693266bd"
+    },
+    {
+      "module": "G5ComponentCalendarCoverage",
+      "original_bytes": 4589,
+      "original_sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "selected_source_bytes": 4589,
+      "selected_source_sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "projected_body_bytes": 3947,
+      "projected_body_sha256": "d0337a1bf6fd99bd09655ae53bce92096da0016647bd43cbb26ca9d97595cf4b",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 99,
+          "command": "#print axioms EdgePath.all_nonbridge_of_sameBlob"
+        },
+        {
+          "line": 100,
+          "command": "#print axioms root_route_component_decomposition"
+        },
+        {
+          "line": 101,
+          "command": "#print axioms EdgePath.unique_active_exists"
+        }
+      ],
+      "code_character_layout_sha256": "b0b7372595de7c7182dc030db3dccf997ef13691b99955f4283bbfb3f5a8b5ed"
+    },
+    {
+      "module": "G5ActualComponentSupport",
+      "original_bytes": 5163,
+      "original_sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "selected_source_bytes": 5163,
+      "selected_source_sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "projected_body_bytes": 4015,
+      "projected_body_sha256": "311b73639e38bdfcdb2f41be88359849e898674be23cb9ea139bcd5f287450ad",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 37,
+          "command": "#print axioms UpPath.append"
+        },
+        {
+          "line": 38,
+          "command": "#print axioms EdgePath.to_upPath_reverse"
+        },
+        {
+          "line": 112,
+          "command": "#print axioms finite_active_nonbridge_edges_card_le_indegree"
+        },
+        {
+          "line": 113,
+          "command": "#print axioms activeComponentEdges_card_le_indegree"
+        }
+      ],
+      "code_character_layout_sha256": "467701295d3a10e60be7f44cddaef1515f67559cfbe13165c0dea1b4f4870c7a"
+    },
+    {
+      "module": "G5RootRouteCurrentSupport",
+      "original_bytes": 6503,
+      "original_sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "selected_source_bytes": 6503,
+      "selected_source_sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "projected_body_bytes": 5001,
+      "projected_body_sha256": "51425ca0b3b796602cf6756c16efdee2ab399c809bc258b0b9266e2db7cf5f10",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 127,
+          "command": "#print axioms incoming_bridge_mem_root_route"
+        },
+        {
+          "line": 128,
+          "command": "#print axioms active_root_edge_has_nonbridge_suffix"
+        },
+        {
+          "line": 129,
+          "command": "#print axioms activeRootRouteEdges_eq_component"
+        },
+        {
+          "line": 130,
+          "command": "#print axioms activeRootRouteEdges_eq_root_component"
+        },
+        {
+          "line": 131,
+          "command": "#print axioms activeRootRouteEdges_card_le_indegree_of_entry"
+        }
+      ],
+      "code_character_layout_sha256": "05b5c90ea1c79e507618cc85a0faa95f691248149d3a6ba0ed383eb9c27f0d10"
+    },
+    {
+      "module": "G5CurrentPortTwoPositions",
+      "original_bytes": 4876,
+      "original_sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "selected_source_bytes": 4876,
+      "selected_source_sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "projected_body_bytes": 3453,
+      "projected_body_sha256": "0f9ae1e5a8fecc9067284515c923df8d578816f2f1d71da1fee61767ed93e782",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 91,
+          "command": "#print axioms binary_indegree_le_two"
+        },
+        {
+          "line": 92,
+          "command": "#print axioms current_port_support_card_le_indegree"
+        },
+        {
+          "line": 93,
+          "command": "#print axioms current_port_support_card_le_two"
+        },
+        {
+          "line": 94,
+          "command": "#print axioms current_ordinary_port_support_card_le_one"
+        },
+        {
+          "line": 95,
+          "command": "#print axioms current_port_support_nonempty"
+        },
+        {
+          "line": 96,
+          "command": "#print axioms current_ordinary_port_support_card_eq_one"
+        }
+      ],
+      "code_character_layout_sha256": "9b51b499047475dcf6ead051e2ae962381390a718c157f302df71f6c0874c3a4"
+    },
+    {
+      "module": "G5OriginalTipCurrentSupport",
+      "original_bytes": 5035,
+      "original_sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "selected_source_bytes": 5035,
+      "selected_source_sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "projected_body_bytes": 3684,
+      "projected_body_sha256": "a3a170555f8fa2ec1f7f70e198f0d22ff19e05e65c230076debac363a20e742b",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 101,
+          "command": "#print axioms active_tip_edge_has_root_port_prefix"
+        },
+        {
+          "line": 102,
+          "command": "#print axioms original_tip_support_eq_port"
+        },
+        {
+          "line": 103,
+          "command": "#print axioms original_tip_current_support_nonempty_card_le_two"
+        },
+        {
+          "line": 104,
+          "command": "#print axioms original_tip_bridge_support_eq_singleton"
+        }
+      ],
+      "code_character_layout_sha256": "9cd49952d7a23ebeb5e2d1cedb0f85ba40d141d083dda8c30d703e90ad185546"
+    },
+    {
+      "module": "G5ParentChoiceCalendar",
+      "original_bytes": 8077,
+      "original_sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "selected_source_bytes": 8077,
+      "selected_source_sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "projected_body_bytes": 6491,
+      "projected_body_sha256": "40946a203505c3ac1b4c925d992212628d0f59705e3dae8e11e6c474dfaa3a1c",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 150,
+          "command": "#print axioms component_entry_reaches_sameBlob"
+        },
+        {
+          "line": 151,
+          "command": "#print axioms parent_route_prefix_exists"
+        },
+        {
+          "line": 152,
+          "command": "#print axioms parent_route_unique"
+        },
+        {
+          "line": 153,
+          "command": "#print axioms parentPosition_spec"
+        },
+        {
+          "line": 154,
+          "command": "#print axioms active_edge_eq_parentPosition"
+        }
+      ],
+      "code_character_layout_sha256": "b99df6e6ee5d48b59b371f95913469c06f6bae428cf15970d6d8e2e91fd32c80"
+    },
+    {
+      "module": "SourceLabelledForest",
+      "original_bytes": 32780,
+      "original_sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "selected_source_bytes": 32780,
+      "selected_source_sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "projected_body_bytes": 27299,
+      "projected_body_sha256": "43c7144631a45a1ee9f73fda3243bbc8b7d1f4a4950aa12a81b3bd33a2c25c5d",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 681,
+          "command": "#print axioms pulse_selected_coin_marginal"
+        },
+        {
+          "line": 682,
+          "command": "#print axioms coinCylinderMass_eq_retained_product"
+        },
+        {
+          "line": 683,
+          "command": "#print axioms Genealogy.prune_wellLabelled"
+        },
+        {
+          "line": 684,
+          "command": "#print axioms unique_live_genealogy"
+        },
+        {
+          "line": 685,
+          "command": "#print axioms source_live_root_is_original"
+        },
+        {
+          "line": 686,
+          "command": "#print axioms source_trace_original_copy_budget"
+        },
+        {
+          "line": 687,
+          "command": "#print axioms source_trace_history_prefix"
+        },
+        {
+          "line": 688,
+          "command": "#print axioms Genealogy.prune_leaves"
+        },
+        {
+          "line": 689,
+          "command": "#print axioms selectedBlock_injective_on_visible"
+        },
+        {
+          "line": 690,
+          "command": "#print axioms selectedBlock_merge_survivor"
+        },
+        {
+          "line": 691,
+          "command": "#print axioms prune_merge_survivor"
+        },
+        {
+          "line": 692,
+          "command": "#print axioms source_trace_valid"
+        },
+        {
+          "line": 693,
+          "command": "#print axioms source_trace_register"
+        },
+        {
+          "line": 694,
+          "command": "#print axioms step_history_extends"
+        },
+        {
+          "line": 695,
+          "command": "#print axioms pulseExpectation_one"
+        },
+        {
+          "line": 696,
+          "command": "#print axioms pulseExpectation_nonnegative"
+        },
+        {
+          "line": 697,
+          "command": "#print axioms initial_valid"
+        },
+        {
+          "line": 698,
+          "command": "#print axioms merge_valid"
+        },
+        {
+          "line": 699,
+          "command": "#print axioms merge_population_preserved"
+        },
+        {
+          "line": 700,
+          "command": "#print axioms merge_never_splits"
+        },
+        {
+          "line": 701,
+          "command": "#print axioms merge_live_card"
+        },
+        {
+          "line": 702,
+          "command": "#print axioms enterRoot_retains_original_root"
+        },
+        {
+          "line": 703,
+          "command": "#print axioms pulse_valid"
+        },
+        {
+          "line": 704,
+          "command": "#print axioms pulse_routes_current_ancestor"
+        },
+        {
+          "line": 705,
+          "command": "#print axioms pulse_cannot_split_copies"
+        },
+        {
+          "line": 706,
+          "command": "#print axioms independentWeight_normalized"
+        },
+        {
+          "line": 707,
+          "command": "#print axioms independentWeight_nonnegative"
+        }
+      ],
+      "code_character_layout_sha256": "feef55c3bf65e669b4d456b47b1f2b0b9e99dce21d9b4c9c2271a387cfbcf97d"
+    },
+    {
+      "module": "G5CoupledQuartetKernel",
+      "original_bytes": 4175,
+      "original_sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "selected_source_bytes": 4175,
+      "selected_source_sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "projected_body_bytes": 3552,
+      "projected_body_sha256": "7635e100ce3395d2fd91e3cb0d1227b7b6a489bbd11187803b3dcdb2f482be21",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 104,
+          "command": "#print axioms selectorWitness_iff_blockWitness"
+        },
+        {
+          "line": 105,
+          "command": "#print axioms pairCount_four_iff"
+        },
+        {
+          "line": 106,
+          "command": "#print axioms pairCount_one_split"
+        }
+      ],
+      "code_character_layout_sha256": "14940a6953731a6fbd3178e6522e1debd40b667e3f55717f8d61562c5031b7b5"
+    },
+    {
+      "module": "G5FairSelectorMoments",
+      "original_bytes": 1726,
+      "original_sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "selected_source_bytes": 2293,
+      "selected_source_sha256": "83eba3837389771f80b7383be9cbf184b2f4826ab5c32976d8c8fb345a383485",
+      "projected_body_bytes": 1428,
+      "projected_body_sha256": "00070c32c6f352fd550e2a9c6f96553ce63bd115c51a26fc5e82d5ff24f3e0fa",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 51,
+          "command": "#print axioms meetingChoices_card"
+        },
+        {
+          "line": 52,
+          "command": "#print axioms fairMeetingMass_eq_count"
+        }
+      ],
+      "code_character_layout_sha256": "c533a6206ac1169488d79bb861774f3eb1dfe68f78d9b031450dc315c6e3bb29"
+    },
+    {
+      "module": "G5FairOriginalCoinLaw",
+      "original_bytes": 4437,
+      "original_sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "selected_source_bytes": 4437,
+      "selected_source_sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "projected_body_bytes": 3069,
+      "projected_body_sha256": "4596dbaef572f87826f767cda56f202c2fd70d37aceb0adc7465f8028a465b43",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 95,
+          "command": "#print axioms jointBitMass_eq_quarter"
+        },
+        {
+          "line": 96,
+          "command": "#print axioms fair_two_site_expectation"
+        },
+        {
+          "line": 97,
+          "command": "#print axioms fair_source_meeting_weight"
+        }
+      ],
+      "code_character_layout_sha256": "d2102fbf0d86506b0f6276126ce3172b03a0a492414b5bd5e532044d0ef578ac"
+    },
+    {
+      "module": "G5OriginalCoinPMF",
+      "original_bytes": 3960,
+      "original_sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "selected_source_bytes": 3960,
+      "selected_source_sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "projected_body_bytes": 2911,
+      "projected_body_sha256": "25b0d2d6ad04b89f011186d16a1cce8006bbdce4289f5b6423c3757b7845be77",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 82,
+          "command": "#print axioms independentWeight_ennreal_normalized"
+        },
+        {
+          "line": 83,
+          "command": "#print axioms independentPMF_event"
+        },
+        {
+          "line": 84,
+          "command": "#print axioms fair_source_meeting_probability"
+        }
+      ],
+      "code_character_layout_sha256": "a7c592b0329f58a0f2e0ae145c4d338b51292a1a9e9091213b1a7e92e1829703"
+    },
+    {
+      "module": "G5ParentPositionPushforward",
+      "original_bytes": 6372,
+      "original_sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "selected_source_bytes": 6372,
+      "selected_source_sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "projected_body_bytes": 4815,
+      "projected_body_sha256": "1c78d1a978d9904384f04f2db5adfabdc91ea2cde54dce130c32df0e6f90a94f",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 129,
+          "command": "#print axioms incoming_edge_is_original_parent"
+        },
+        {
+          "line": 130,
+          "command": "#print axioms EdgePath.empty_or_last"
+        },
+        {
+          "line": 131,
+          "command": "#print axioms activeComponentEdges_eq_parentPosition_image"
+        },
+        {
+          "line": 132,
+          "command": "#print axioms activeRootRouteEdges_eq_parentPosition_image"
+        },
+        {
+          "line": 133,
+          "command": "#print axioms actual_parent_position_fair_meeting_probability"
+        }
+      ],
+      "code_character_layout_sha256": "e6057bdb469bb9981a2cc1a8e7572443a6a678517fb52e89a4248ee5350771f4"
+    },
+    {
+      "module": "G5SafePastHybridDisjointness",
+      "original_bytes": 6676,
+      "original_sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "selected_source_bytes": 6676,
+      "selected_source_sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "projected_body_bytes": 4830,
+      "projected_body_sha256": "97c758cc0832dc08f83d213cb9e0284c349dea3f67a93e4f4e27a25f1833d0bf",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 133,
+          "command": "#print axioms protective_sure_exact_block"
+        },
+        {
+          "line": 134,
+          "command": "#print axioms shared_hybrid_produces_earlier_sure_block"
+        },
+        {
+          "line": 135,
+          "command": "#print axioms safeAt_of_no_earlier_sure_block"
+        },
+        {
+          "line": 136,
+          "command": "#print axioms originalHybridPast_disjoint"
+        },
+        {
+          "line": 137,
+          "command": "#print axioms originalHybridPast_disjoint_of_no_earlier_sure_block"
+        }
+      ],
+      "code_character_layout_sha256": "f0ac787acfb08509e800a21e542d69fdcbf119ad7030e2973eddc078e95e49f9"
+    },
+    {
+      "module": "G5PairOnlySureBlockChronology",
+      "original_bytes": 5576,
+      "original_sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "selected_source_bytes": 5576,
+      "selected_source_sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "projected_body_bytes": 4152,
+      "projected_body_sha256": "30f77dc3bae765a25b635aedab3b508f94dde3aa7222c2e10f113db70cddfe21",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 119,
+          "command": "#print axioms sureExactBlock_iff_distinct_pair_predicates"
+        },
+        {
+          "line": 120,
+          "command": "#print axioms noSureNontrivialBlock_iff_pair_predicates"
+        },
+        {
+          "line": 121,
+          "command": "#print axioms safeAt_of_no_earlier_pair_sure_block"
+        }
+      ],
+      "code_character_layout_sha256": "6163294f59ab596793e32a797546e99a22704f1da748b988b8f0678684ebcbb4"
+    },
+    {
+      "module": "G5SafePastMeetingPermanence",
+      "original_bytes": 6798,
+      "original_sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "selected_source_bytes": 6798,
+      "selected_source_sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "projected_body_bytes": 5411,
+      "projected_body_sha256": "deb0191d1e77ed18a848f3c725a37001b8d796ebe998d78316bad5a5a38fb13f",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 26,
+          "command": "#print axioms UpPath.to_edgePath_reverse"
+        },
+        {
+          "line": 135,
+          "command": "#print axioms shared_ancestor_not_hybrid"
+        },
+        {
+          "line": 136,
+          "command": "#print axioms UpPath.active_edges_equal_of_no_processed_hybrid"
+        },
+        {
+          "line": 137,
+          "command": "#print axioms coOccupy_persists_to_safe_age"
+        },
+        {
+          "line": 138,
+          "command": "#print axioms separated_at_safe_age_never_previously_met"
+        }
+      ],
+      "code_character_layout_sha256": "03a836d67001aaa8d7bbec5bdd07a6aeb820573b827e80e3a545d362d617e06c"
+    },
+    {
+      "module": "G5ExponentialGermIdentification",
+      "original_bytes": 4073,
+      "original_sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "selected_source_bytes": 4073,
+      "selected_source_sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "projected_body_bytes": 2402,
+      "projected_body_sha256": "0000502a4ede01ed81b4596c079729cd834737a96f9614d3eebda51c75fce38e",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 83,
+          "command": "#print axioms coefficient_zero_of_grid"
+        },
+        {
+          "line": 84,
+          "command": "#print axioms coefficients_eq_of_right_germ"
+        },
+        {
+          "line": 85,
+          "command": "#print axioms constant_coefficient_eq_of_right_germ"
+        }
+      ],
+      "code_character_layout_sha256": "b07c0eebaa8f291e9bd3416bef56a159dc8d8ca57beffc2b08562a091cd9abc3"
+    },
+    {
+      "module": "G5UnknownRateSupport",
+      "original_bytes": 2752,
+      "original_sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "selected_source_bytes": 2752,
+      "selected_source_sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "projected_body_bytes": 2070,
+      "projected_body_sha256": "4f7853ba32123417aade8a75d327622c1bb246e21510955765212cb119c242fe",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 61,
+          "command": "#print axioms finite_coefficients_zero_of_right_germ"
+        },
+        {
+          "line": 62,
+          "command": "#print axioms finite_coefficients_eq_of_right_germ"
+        },
+        {
+          "line": 63,
+          "command": "#print axioms finite_constant_mass_eq_of_right_germ"
+        }
+      ],
+      "code_character_layout_sha256": "28ca89d3291ba8d013d34b98bbd6a259bcafe529025fffd62d8e134f56490554"
+    },
+    {
+      "module": "G5OriginalRouteHazard",
+      "original_bytes": 9219,
+      "original_sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "selected_source_bytes": 9219,
+      "selected_source_sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "projected_body_bytes": 7442,
+      "projected_body_sha256": "5c63b059d28a04be94f3cb33c9c432f99b5c59e0a7982c08a7684467f3bff139",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 187,
+          "command": "#print axioms currentPairRate_zero_iff_separated"
+        },
+        {
+          "line": 188,
+          "command": "#print axioms separated_safe_accumulatedHazard_zero"
+        },
+        {
+          "line": 189,
+          "command": "#print axioms separated_safe_routeSurvival_one"
+        },
+        {
+          "line": 190,
+          "command": "#print axioms positive_endpoint_gap_exists"
+        },
+        {
+          "line": 191,
+          "command": "#print axioms exposure_add_on_endpoint_gap"
+        },
+        {
+          "line": 192,
+          "command": "#print axioms accumulatedHazard_add_on_endpoint_gap"
+        },
+        {
+          "line": 193,
+          "command": "#print axioms routeSurvival_add_on_endpoint_gap"
+        }
+      ],
+      "code_character_layout_sha256": "bb0eaf39ba66c6fc94605ba0bf11274fb031a5d8463f56e51fda40f07133de42"
+    },
+    {
+      "module": "G4TwoRootSourceStopping",
+      "original_bytes": 11260,
+      "original_sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "selected_source_bytes": 11260,
+      "selected_source_sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "projected_body_bytes": 9708,
+      "projected_body_sha256": "4c53a90237ab8a651df3cb9840921fdc41fb76dbca645ccf9ed98f6d25df8ab6",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 279,
+          "command": "#print axioms G4TwoRootSourceStopping.bareSurvival_eq"
+        },
+        {
+          "line": 280,
+          "command": "#print axioms G4TwoRootSourceStopping.rootedACladeResponse_injective"
+        },
+        {
+          "line": 281,
+          "command": "#print axioms G4TwoRootSourceStopping.observable_finite_length_certificate"
+        }
+      ],
+      "code_character_layout_sha256": "b29d5fb15b1f8f66a68aa0eb79b2c291004d8fbfe3adbf7da88efb37372809be"
+    },
+    {
+      "module": "G1SharedRegisterStress",
+      "original_bytes": 7319,
+      "original_sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "selected_source_bytes": 7319,
+      "selected_source_sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "projected_body_bytes": 5107,
+      "projected_body_sha256": "7f3e2f79929347012013cc636b15930eae0962a75d2fc8248c51d79655bf53d6",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 155,
+          "command": "#print axioms pairSurvival_eq_exp"
+        },
+        {
+          "line": 156,
+          "command": "#print axioms pairSurvival_log_two"
+        },
+        {
+          "line": 157,
+          "command": "#print axioms pairSurvival_log_four"
+        },
+        {
+          "line": 158,
+          "command": "#print axioms shared_register_exact_counterexample"
+        },
+        {
+          "line": 159,
+          "command": "#print axioms retained_register_joint_normalized"
+        },
+        {
+          "line": 160,
+          "command": "#print axioms retained_register_joint_nonnegative"
+        },
+        {
+          "line": 161,
+          "command": "#print axioms resampling_changes_exposed_context"
+        },
+        {
+          "line": 162,
+          "command": "#print axioms exposed_event_preserved_iff_equal_conditionals"
+        }
+      ],
+      "code_character_layout_sha256": "eb1ba95b01fbcd3e7c457fa64957632e1cc04dc0c9e5549f7ebaa3a906196387"
+    },
+    {
+      "module": "G4FourRootPositivity",
+      "original_bytes": 3644,
+      "original_sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "selected_source_bytes": 3644,
+      "selected_source_sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "projected_body_bytes": 2556,
+      "projected_body_sha256": "9d715a6b9d6107d445ee4c7344efd138114ad43d29b2a2bde80a481a093b9e58",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 83,
+          "command": "#print axioms exact_defect_factorization"
+        },
+        {
+          "line": 84,
+          "command": "#print axioms zero_delta_forces_negative_defect3"
+        },
+        {
+          "line": 85,
+          "command": "#print axioms no_common_moment_signature"
+        },
+        {
+          "line": 86,
+          "command": "#print axioms rational_cap3_scalar_witness"
+        }
+      ],
+      "code_character_layout_sha256": "3cca3eeae77fe6bec5ef1d4b532d4b165fd19fa50d8744ec3a55aedd561faef5"
+    },
+    {
+      "module": "G4IndependentRoutingBridge",
+      "original_bytes": 10707,
+      "original_sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "selected_source_bytes": 10707,
+      "selected_source_sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "projected_body_bytes": 8569,
+      "projected_body_sha256": "98bd9b383626ddcb6aa2308fe90ebd48ae1f7f59778064b600d25afc7df59e00",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 229,
+          "command": "#print axioms exponential_model_original_coordinates"
+        },
+        {
+          "line": 230,
+          "command": "#print axioms original_source_coordinates"
+        },
+        {
+          "line": 231,
+          "command": "#print axioms exponential_four_root_arm_law"
+        },
+        {
+          "line": 232,
+          "command": "#print axioms actual_parent0_count"
+        },
+        {
+          "line": 233,
+          "command": "#print axioms generic_two"
+        },
+        {
+          "line": 234,
+          "command": "#print axioms generic_three"
+        },
+        {
+          "line": 235,
+          "command": "#print axioms generic_four"
+        },
+        {
+          "line": 236,
+          "command": "#print axioms routingWeight_normalized"
+        }
+      ],
+      "code_character_layout_sha256": "d92c29ff1d3313e4a339f8a7571af595d66402109844356ad59e3a533711ef63"
+    },
+    {
+      "module": "G4AllRootPairClocks",
+      "original_bytes": 3781,
+      "original_sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "selected_source_bytes": 3781,
+      "selected_source_sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "projected_body_bytes": 2852,
+      "projected_body_sha256": "1a063d4a991b69bd01622b2cf8685d6a64982171c112099bf48d2db0510da74b",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 78,
+          "command": "#print axioms private_arms_no_first_merge"
+        },
+        {
+          "line": 79,
+          "command": "#print axioms livePair_card"
+        },
+        {
+          "line": 80,
+          "command": "#print axioms all_root_no_first_merge"
+        },
+        {
+          "line": 81,
+          "command": "#print axioms product_clock_eq_holding_model"
+        }
+      ],
+      "code_character_layout_sha256": "f3e5e4c53772d0a5b6a75b078a9aa8dabbcfc703a44735ed55927e8d4b4cb2a1"
+    },
+    {
+      "module": "G4PathResolvedMeasurement",
+      "original_bytes": 26027,
+      "original_sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "selected_source_bytes": 26261,
+      "selected_source_sha256": "77cc46b734b8961e37a7d53ef03eec6a26f8267ce5d169a31588c9650f27eb13",
+      "projected_body_bytes": 21468,
+      "projected_body_sha256": "7df698933f7e3163c15682b3bb2d7869984b1c25bfae9b0ff3a1dfc526711eb4",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 513,
+          "command": "#print axioms original_all_input_arm_clock_likelihood"
+        },
+        {
+          "line": 514,
+          "command": "#print axioms original_two_live_root_clock_branch"
+        },
+        {
+          "line": 515,
+          "command": "#print axioms joint_record_cons_recursion"
+        },
+        {
+          "line": 516,
+          "command": "#print axioms failure_cons_recursion"
+        },
+        {
+          "line": 517,
+          "command": "#print axioms path_resolved_ordinary_detection"
+        },
+        {
+          "line": 518,
+          "command": "#print axioms normalized_PMF_data_C4_reconstruction"
+        },
+        {
+          "line": 519,
+          "command": "#print axioms sourceC4_strict_of_genuine_bigon"
+        },
+        {
+          "line": 520,
+          "command": "#print axioms ordinary_no_bigon_scalar"
+        },
+        {
+          "line": 521,
+          "command": "#print axioms sourceC4_word_factorization"
+        },
+        {
+          "line": 522,
+          "command": "#print axioms positive_bigon_C4_strict"
+        },
+        {
+          "line": 523,
+          "command": "#print axioms sourcePairPMF_joint_record"
+        },
+        {
+          "line": 524,
+          "command": "#print axioms all_input_edge_clock_survival"
+        },
+        {
+          "line": 525,
+          "command": "#print axioms observed_mass_cons_recursion"
+        },
+        {
+          "line": 526,
+          "command": "#print axioms complete_original_parent_readout_injective"
+        },
+        {
+          "line": 527,
+          "command": "#print axioms original_source_joint_itinerary_likelihood"
+        },
+        {
+          "line": 528,
+          "command": "#print axioms complete_joint_no_merger_mass"
+        },
+        {
+          "line": 529,
+          "command": "#print axioms reconstructed_kernel_eq_original"
+        },
+        {
+          "line": 530,
+          "command": "#print axioms path_resolved_C4_reconstruction"
+        }
+      ],
+      "code_character_layout_sha256": "99999dd91660dcc57fdd5f4328ddcf5ccbf925c598c87bc952a014b73cf29339"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "original_bytes": 8794,
+      "original_sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "selected_source_bytes": 8794,
+      "selected_source_sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "projected_body_bytes": 6966,
+      "projected_body_sha256": "960728f667bd80f02e096acb1d79b8c30e5cc63677dc4683cbf899d50b2ac0a1",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 177,
+          "command": "#print axioms original_incoming_exists"
+        },
+        {
+          "line": 178,
+          "command": "#print axioms original_parent_ordering_exists"
+        },
+        {
+          "line": 179,
+          "command": "#print axioms registry_parent_target"
+        },
+        {
+          "line": 180,
+          "command": "#print axioms olderRank_edge_decreases"
+        },
+        {
+          "line": 181,
+          "command": "#print axioms compiled_original_parent_consistency"
+        },
+        {
+          "line": 182,
+          "command": "#print axioms selected_original_path_exists"
+        },
+        {
+          "line": 183,
+          "command": "#print axioms compiledRoute_source_spec"
+        }
+      ],
+      "code_character_layout_sha256": "227c5ad8ad29f81b578a15f3e7cb1918e52bdcd27ae510570ad3eb5b2e71aff3"
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "original_bytes": 7243,
+      "original_sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "selected_source_bytes": 7243,
+      "selected_source_sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "projected_body_bytes": 5162,
+      "projected_body_sha256": "3561360b69494dababb985c448a8de15b06c68722f8e0c97343f6b818e7d0711",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 141,
+          "command": "#print axioms pairRate_pos"
+        },
+        {
+          "line": 142,
+          "command": "#print axioms noFirstMerger_iff"
+        },
+        {
+          "line": 143,
+          "command": "#print axioms positive_exp_clock_tail"
+        },
+        {
+          "line": 144,
+          "command": "#print axioms original_clock_no_merger_probability"
+        },
+        {
+          "line": 145,
+          "command": "#print axioms native_hazard_decomposition"
+        },
+        {
+          "line": 146,
+          "command": "#print axioms original_clock_survival_eq_routeSurvival"
+        },
+        {
+          "line": 147,
+          "command": "#print axioms below_root_original_clock_law"
+        },
+        {
+          "line": 148,
+          "command": "#print axioms compiled_original_pair_probability"
+        }
+      ],
+      "code_character_layout_sha256": "c11967b3130801d6efa7ddd0abfdcd9c254ec42440fb1bb00ccd2d59c0b4f5ef"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "original_bytes": 7816,
+      "original_sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "selected_source_bytes": 7816,
+      "selected_source_sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "projected_body_bytes": 6141,
+      "projected_body_sha256": "bdb4205f828011c20d238a0848d21c714788768771fde6f040c5efc6422105f0",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 159,
+          "command": "#print axioms originalCoinMass_positive"
+        },
+        {
+          "line": 160,
+          "command": "#print axioms originalCoinMass_normalized"
+        },
+        {
+          "line": 161,
+          "command": "#print axioms survivingReadoutEvent_section"
+        },
+        {
+          "line": 162,
+          "command": "#print axioms native_surviving_readout_mass"
+        },
+        {
+          "line": 163,
+          "command": "#print axioms below_root_native_pair_probability"
+        }
+      ],
+      "code_character_layout_sha256": "906932d62cfb625a8a75ecf50cbbdacb3df72d659c5c1dc70ffdcd3fa22bfb5d"
+    },
+    {
+      "module": "G7OriginalRelabelling",
+      "original_bytes": 11573,
+      "original_sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "selected_source_bytes": 11573,
+      "selected_source_sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "projected_body_bytes": 10724,
+      "projected_body_sha256": "7d25396bb97af4dbe960c83b57de7151aa2d5dec073eb29dd3369fa71702f3e0",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 255,
+          "command": "#print axioms network"
+        },
+        {
+          "line": 256,
+          "command": "#print axioms hazard_preserved"
+        }
+      ],
+      "code_character_layout_sha256": "fd6eac36a4ebd20dfb3f863258df5291a12af5ffe023b393569c2eae042728ab"
+    },
+    {
+      "module": "G7OriginalFiniteEncoding",
+      "original_bytes": 4694,
+      "original_sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "selected_source_bytes": 4694,
+      "selected_source_sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "projected_body_bytes": 3854,
+      "projected_body_sha256": "513b75c9e3e2ba5fcf7a5e3b0a9e08f3a882601e363808d7ef54980e46657dea",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 94,
+          "command": "#print axioms original_registry_sizes"
+        },
+        {
+          "line": 95,
+          "command": "#print axioms every_original_source_has_code"
+        },
+        {
+          "line": 96,
+          "command": "#print axioms encoded_graph_exact"
+        },
+        {
+          "line": 97,
+          "command": "#print axioms encoded_parent_bits_distinct"
+        }
+      ],
+      "code_character_layout_sha256": "d1e223c4c4f84cecd1c30445b95de953c8f443991ebca9aa6d999f6b8457d351"
+    },
+    {
+      "module": "G7FiniteReachability",
+      "original_bytes": 3915,
+      "original_sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+      "selected_source_bytes": 3915,
+      "selected_source_sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+      "projected_body_bytes": 3572,
+      "projected_body_sha256": "f5d26794dff202b020319a26c2f63d7dd01785e0a08b83c36c9aac5ce6c6b78c",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 101,
+          "command": "#print axioms reached_iff"
+        },
+        {
+          "line": 102,
+          "command": "#print axioms decideReach"
+        }
+      ],
+      "code_character_layout_sha256": "da9082d20bd35718f5a3d017ed253dd53cab230b52608538e47cc2608ed4e4ea"
+    },
+    {
+      "module": "G7OriginalAdmission",
+      "original_bytes": 10308,
+      "original_sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "selected_source_bytes": 10308,
+      "selected_source_sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "projected_body_bytes": 9481,
+      "projected_body_sha256": "5dbb7110768990eda94d78f50b5304723bb24f588d67e23fb4c1adc9ce05e20d",
+      "omitted_unselected_informational_commands": [
+        {
+          "line": 203,
+          "command": "#print axioms decidableBinaryValid"
+        },
+        {
+          "line": 204,
+          "command": "#print axioms sourceOfValid"
+        }
+      ],
+      "code_character_layout_sha256": "18c9182c752d00083571ba8556b178cc5e4d5af72d6ddcd5af86189af5ee262e"
+    },
+    {
+      "module": "NativeOrderedBankLayout",
+      "original_bytes": 3655,
+      "original_sha256": "00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a",
+      "selected_source_bytes": 3655,
+      "selected_source_sha256": "00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a",
+      "projected_body_bytes": 3039,
+      "projected_body_sha256": "15a8f37280b5d23e54cef90182f282455dd66160a28f8903558ddce8be570936",
+      "omitted_unselected_informational_commands": [],
+      "code_character_layout_sha256": "75f87229c90d92637f51dc9c665ee395e22988aa5aaf4c573fe966026d52e65b"
+    },
+    {
+      "module": "OriginalCodeBankLayout",
+      "original_bytes": 2726,
+      "original_sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208",
+      "selected_source_bytes": 2726,
+      "selected_source_sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208",
+      "projected_body_bytes": 2248,
+      "projected_body_sha256": "0310aebbfa98caa507a9cea0a860b2c751313a516ccbbd12ea9c3689a98b263d",
+      "omitted_unselected_informational_commands": [],
+      "code_character_layout_sha256": "fc97a658f12c0fc96627c93a3a5cd704adf6f1073f47185696e06c5ae731e6d3"
+    }
+  ],
+  "virtual_bytes": 250412,
+  "virtual_sha256": "fb43523a2a92b4a335deebf82e6b497ccb26dfdc2f47581cef2a521c6105d0e0",
+  "compaction": "Only standalone block comments/line-comment tails; imports hoisted, unselected informational axiom prints omitted, section scopes retained; remaining non-comment code character positions unchanged per selected source module.",
+  "explicit_hosted_variants": [
+    "G5FairSelectorMoments: old PMF uniform API replaced by a four-point PMF with identical atom masses.",
+    "G4PathResolvedMeasurement: the two real-product lemmas use their renamed zero-aware versions."
+  ],
+  "suppressed_style_linter_options": [
+    "linter.unusedSectionVars",
+    "linter.unusedSimpArgs"
+  ],
+  "unsafe_sorry_or_error_diagnostics_suppressed": false,
+  "compiler_invoked": false,
+  "native_Lake_or_object_acceptance": false
+}
