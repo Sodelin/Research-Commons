@@ -59,6 +59,8 @@ At \(2^{28}\) the paired block has totals \(-5.527423N\) when \(\mu(q)=\mu(h)=+1
 
 The next target is the fixed-\(N\) signed \(A_{02}\) contribution with \(Q\le q\le\alpha\), jointly with the remaining paired overlap where feasible. This selection follows the exact change of support and the measured cancellation in \(A_{02}\), whose absolute contribution grew from \(6.40N\) to \(14.04N\) while its signed contribution changed sign. On the overlap the odd Möbius parity has a log ratio, while the even parity has \(\log(qh)\). The short-\(h\) part of raw \(A_{20}\) is already charged by the pinned pointwise proof. The new signed estimate must use the long-cofactor weights of \(A_{02}\) or an exact identity pairing them. A progression count for the individual primes leaves the \(\mu(h)\) weight along the fixed equation uncontrolled. [Existing short-cofactor result](https://github.com/Sodelin/Research-Commons/blob/36624845444790787f442157309e7f9ba6644ad0/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-powers-two-margin-and-odd-semiprime-budget.md#a-short-cofactor-part-of-the-raw-outer-rows)
 
+The centered formulation has the same pointwise value up to \(o(N)\), and reduces the lower bound on the unmatched row to a one-sided estimate for \(T_{02}(N)\). [Exact centered target](../goldbach-unmatched-outer-centered.md)
+
 ## Reproduction and status
 
 ```sh
