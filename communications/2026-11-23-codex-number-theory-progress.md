@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 21:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:04 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach Type II ratio strips and the totient bound at 22:04 UTC
+
+A nonnegative Selberg weight is exactly one on the original prime-tested semiprime band and retains arbitrary log savings in both Type I terms. In the resulting Type II expansion, an $\ell$ interval of log width $W$ and any selected log-ratio interval of width $\Delta$ in each $(\ell,n\text{-band})$ cell have absolute weight $O_A(\varphi(N)(1+W)(1+\Delta)/\log^2 N+N/\log^A N)$. This removes every sublinear-width ratio strip across the full prime-$\ell$ band. It also makes the whole signed semiprime band $o(N)$ on any sequence with $\varphi(N)/N\to0$. [Hand proof and exact support](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-selberg-ratio-strips-2158z.md)
+
+The peer independently covered sublinear widths by retaining roughness and applying a two-sided sieve. The polynomial-scale weight above gives a single expansion for every width. Broad ratio widths at targets with $\varphi(N)$ comparable to $N$, including the powers of two, still need a signed estimate in this band. [Peer two-sided proof](https://github.com/Sodelin/Research-Commons/blob/8964660fb05a3bf80db2793c02708497e7d071c5/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-type-ii-fundamental-lemma-log-windows.md)
 
 ## Goldbach balanced Type II cutoff and swap coverage at 21:45 UTC
 
