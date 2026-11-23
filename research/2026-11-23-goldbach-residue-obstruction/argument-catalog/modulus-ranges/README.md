@@ -1,0 +1,23 @@
+# What can be removed from the sieve error
+
+Hand arguments and finite fixtures, not a Goldbach or twin-prime proof. We retain the strict moving endpoint in [Huang–Li v2, (18)](https://arxiv.org/html/2005.03811v2).
+
+## An unconditional pointwise saving at the top edge
+
+Take α=√N/(log N)^K with K fixed, Q=N/α, δ=(log N)^(−2). In the long-divisor term, restrict to integers (1−δ)Q<k<Q. Every actual term has m=(N−n)/k an integer with α<m<α/(1−δ) and 1≤n<δN. The inclusion in this rectangle follows from n≥1, the strict cutoff n<N−αk, and the lower bound on k. There are at most (δQ+1)(δα/(1−δ)+1) pairs. Each term has absolute weight at most log²N by |μ|≤1, |Λ(n)|≤log N and |log(k/(N−n))|≤log N. Thus the actual portion is o(N), uniformly in N.
+
+For the progression-average model, use n<δN and the additional factor 1/φ(k). The elementary bound k/φ(k)≤ζ(2)∑_{d|k}1/d≪log k follows by comparing the Euler factors. Hence this band's reciprocal φ sum is O((δ+1/Q)log N). Its model contribution is O(δ(δ+1/Q)N log³N)=o(N). Neither estimate uses the unproved Möbius-twisted distribution bound. This removes a thin relative shell only; it does not control a fixed fraction of the range. [replay.py](replay.py) checks the exact finite support geometry.
+
+## Density-one control is not pointwise control
+
+For X≤N≤2X let b_q(m)=μ(m)(1_{q|m}−1/φ(q)) on 1≤m≤2X, and a_I(n)=Λ(n)1_{n∈I}. The difference between diagonal progression count and the corresponding progression-average model on prefix I is their convolution at N. For squarefree q≤√X log^K X, the Fourier transform of b_q is O_A(X/[φ(q)log^A X]) for any fixed A. To see the saving in q, set Y=2X/q and use μ(qk)=μ(q)μ(k)1_{(k,q)=1}. Expand the coprime-restricted μ as the convolution of μ with the indicator of integers supported only on primes dividing q. For divisors d≤√Y, [Davenport’s bound](https://aif.centre-mersenne.org/item/10.5802/aif.2401.pdf) on the inner Möbius sum applies with log(Y/d) comparable to log X; the reciprocal weight sums to at most q/φ(q). For d>√Y use Rankin with κ=1/loglog X. The reciprocal tail is bounded by Y^(−κ/2)∏_{p|q}(1−p^(−1+κ))^(−1). Splitting at (log X)² bounds the product by a fixed power of loglog X: below the split p^κ≤e² and the prime reciprocal sum is O(logloglog X); above it the bound follows from ω(q)≪log X. The tail beats any fixed log saving. The center term of b_q follows directly from Davenport.
+
+Parseval on dyadic intervals and the O(log X) dyadic decomposition of each prefix give the L² norm of the maximal-prefix discrepancy for one q bounded by O_A(X^(3/2) log^(3/2−A) X /φ(q)). Summing in L² over q costs O(log X); Chebyshev then gives the required log savings for all but O_B(X/log^B X) targets for arbitrary B. This is an **averaged claim**; it cannot be spent on a specified exceptional N. It does not improve the known power-saving Goldbach exception counts. Fixed K and all log-saving exponents are chosen before X.
+
+## Why the neighboring-target argument needs sign
+
+Set S(α)=∑_{p≤X}log p·e(pα) and W(α)=∑_h w_h e(−hα), with w_0=1 and nonnegative weights. Fourier orthogonality gives ∫|S|²W = C_0+∑_{h≠0} w_h C_h, where each C_h=∑_n a_n a_{n+h}≥0, with a_n=log n on the primes in range and zero elsewhere. Therefore ∫|S|²|W|≥C_0∼X log X. Restricting to the minor arcs can reduce that lower bound by at most (1+∑_{h≠0}w_h)∫major |S|². In a split where the latter energy is o(X log X) and the neighboring weights sum to O(1), the absolute-value error envelope still has an X log X floor. This rules out one magnitude-only proof strategy at those hypotheses; the *signed* integral need not be that large. A concrete such major-arc family uses reduced denominators and width parameters Q₀=B₀=(log X)^(1/4) and radii B₀/X: its energy is O(XB₀Q₀²)=o(X log X) by the trivial bound on |S|. Do not extrapolate to other arc choices without checking their major energy. Compare [Grimmelt's short-interval method](https://arxiv.org/abs/1910.05187) for positive results with different aims.
+
+## Small twin-prime comparison
+
+The counterpart of N−p is p+2. For any odd prime ℓ, the reduced class p≡−2 mod ℓ² forces μ(p+2)=0. Unlike the Goldbach version, no moving even target can make that residue non-reduced. For a fixed finite set of odd primes, CRT and fixed-modulus PNT give the same zero-lane fraction 1−∏(1−1/φ(ℓ²)). For ℓ=3 the weighted sum ∑_{p≤X}log p μ(p+2) is therefore ≤(5/6+o(1))X. This does not itself count prime–prime pairs: the unrestricted Möbius sign −1 can also come from three, five, etc. distinct factors. It is a precise transfer of the arithmetic margin, not of the signed analytic comparison. [Li–Liu already study both the reflected and shifted forms](https://arxiv.org/html/2606.05224v2); no priority or VibeMath claim.
