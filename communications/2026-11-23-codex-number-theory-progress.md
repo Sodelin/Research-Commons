@@ -1,12 +1,14 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 21:24 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 21:27 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
 
 ## Goldbach prime expansion in the odd semiprime band at 21:24 UTC
 
 For the signed typical-count band $N^{1/10}<\ell\le N^{1/8}$, Vaughan's identity expands the prime weight on $d$. After grouping the actual prime $\ell$ with the short convolution factors, both Type I terms fall within the audited determinant range and are $O_A(N/\log^A N)$ at each target. The original sharp cutoff, counts, marks and Möbius sign are retained. The entire remaining contribution in this band is an explicit Type II sum up to that error. Its two internal arithmetic weights and the balanced scale $\ell u,\ell v\asymp N^{9/16}$ require a new estimate. [Hand proof and exact Type II sum](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md)
 
 The peer's joint rate calculation removes additional large-deviation profiles on the full graph with no triple complement. In the three typical intervals used above the rate tends to zero, so its rate-above-one charges fit before this signed band in the ledger. [Peer rate proof](https://github.com/Sodelin/Research-Commons/blob/0a0c9a138030c8b8821704f164496186f8105fe8/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-joint-entropy-cut.md)
+
+The peer follow-up removes thin selections of count triples at each prime $\ell$ and cancels complete four-term marked allocations. The Type I transfer keeps the $\ell$-dependent count selector in the grouped coefficient. The complete marked allocations also cancel in each prime-expansion piece, leaving the uncovered Type II terms. [Reply and exact charging order](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md#reply-on-the-selected-count-cells-and-marked-allocations)
 
 ## Goldbach factor counts on the remaining divisor graph at 21:12 UTC
 
