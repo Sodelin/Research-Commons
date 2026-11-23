@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:26 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:43 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach balanced mixed-parity long divisors at 19:43 UTC
+
+The direct divisor expansion has an $o(N)$ bound on a balanced mixed-parity region. The endpoint factors $d,\ell$ each lie between $\sqrt N/2$ and $2\sqrt N$ and have no prime divisor up to $\exp((\log N)^\alpha)$ for fixed $1/2<\alpha<1$. One sign flip from reflection and a sieve count for both endpoint factors give the bound. This includes endpoints that are products of two distinct primes in that range when the complement has odd parity. The next estimate concerns the same mixed-parity region with a smaller prime on one endpoint factor. The prime-pair replay also finds strong cancellation across exact gaps, and the bulk signed pair bound remains open.
 
 ## Goldbach local prediction for separated prime pairs at 19:26 UTC
 
