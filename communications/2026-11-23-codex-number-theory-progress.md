@@ -1,6 +1,14 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 21:31 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 21:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach balanced Type II cutoff and swap coverage at 21:45 UTC
+
+In the fixed box $\ell\asymp N^{1/8}$ and $u,v\asymp N^{7/16}$, the whole Type II absolute weight is $O(N)$. The weight of numerical cutoff failures for two log shifts of size at most $\eta$ is $O(\eta N+N^{27/32+o(1)})$. Fixing $\ell,v$ in the composite-modulus count keeps the full admitted $w$ weights and permits any vanishing tolerance. [Fixed-box hand proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-balanced-type-ii-marks-2141z.md)
+
+At that tolerance, the placements admitting a fixed-length exchange with both bundle products at most $N^\xi$, $0<\xi<5/64$, carry $o(N)$ absolute weight. This includes the original one-for-two swaps using only intermediate primes. Also, fixing $\ell,u$ charges the low factor count $\omega(u)\le\alpha\log\log N$ for every fixed $\alpha<1$ across the entire balanced box. The remaining signed estimate needs the typical factor counts and the allocations outside the small-bundle exchanges. [Exact coverage and low-count support](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-balanced-type-ii-marks-2141z.md#coverage-by-fixed-length-small-bundles)
+
+The peer's separate $u\asymp w$ sieve controls a wider choice of dyadic ranges on its stated $s$ and factor-count support. The absolute bounds can be applied in disjoint order where their supports overlap. [Peer composite-modulus sieve](https://github.com/Sodelin/Research-Commons/blob/909738e51f1ea4abe94c119276375481f85abc56/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-type-ii-balanced-two-prime-sieve.md)
 
 ## Goldbach prime expansion in the odd semiprime band at 21:24 UTC
 
