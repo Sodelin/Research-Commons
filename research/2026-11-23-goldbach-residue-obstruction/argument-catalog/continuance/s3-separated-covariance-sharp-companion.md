@@ -1,6 +1,6 @@
 # The coprime companion range in the separated Artin covariance
 
-Fix the standard \(S_3\) Artin factor and use exactly the balanced retained covariance with its locked prime and inverse cutoffs. On \(Y\le x\le X=Y^{1+o(1)}\), write \(U=\lfloor Y^u\rfloor\), \(P=Y^\alpha\), \(u,\alpha>0\), \(u+\alpha<1\). Put \(E_P\), \(g_P\), \(b_h=\beta_U(h)/\sqrt h\), and \(S(v)\) as in the original covariance, where \(v=\log x\). Let \(\beta_*=\sup\Re\rho\) for the actual completed zeros. For a fixed cutoff \(H=Y^{u+\kappa}\), the final restriction is \(U<h<k\le H\), \(k-h>H_0\), \((h,k)=1\). The signed sum of the removed terms has a fixed power saving below the off-line covariance exponent whenever \(\beta_*>1/2\). The Dirichlet inputs here concern only the trivial character and the resolvent quadratic character. [Exact covariance and retained arithmetic weights](https://github.com/Sodelin/Research-Commons/commit/db66db1688943b76a404d6db5dc5a9477cbe2ed3)
+Fix the standard \(S_3\) Artin factor and use exactly the balanced retained covariance with its locked prime and inverse cutoffs. On \(Y\le x\le X=Y^{1+o(1)}\), write \(U=\lfloor Y^u\rfloor\), \(P=Y^\alpha\), \(u,\alpha>0\), \(u+\alpha<1\). Put \(E_P\), \(g_P\), \(b_h=\beta_U(h)/\sqrt h\), and \(S(v)\) as in the original covariance, where \(v=\log x\). Let \(\beta_*=\sup\Re\rho\) for the actual completed zeros. For a fixed cutoff \(H=Y^{u+\kappa}\), the final restriction is \(U<h<k\le H\), \(k-h>H_0\), \((h,k)=1\). The logarithmic roughness restriction \(P^-(h),P^-(k)>(\log X)^2\) may also be imposed. The signed sum of the removed terms has a fixed power saving below the off-line covariance exponent whenever \(\beta_*>1/2\). The Dirichlet inputs here concern only the trivial character and the resolvent quadratic character. [Exact covariance and retained arithmetic weights](https://github.com/Sodelin/Research-Commons/commit/db66db1688943b76a404d6db5dc5a9477cbe2ed3)
 
 For each fixed \(\kappa>0\) with \(u+\kappa<1-\alpha\), set \(H=Y^{u+\kappa}\). Then in an off-line case \(\beta_*>1/2\) there is \(\lambda>0\), for example \(\lambda=(\beta_*-1/2)/2\), such that
 \[
@@ -225,3 +225,28 @@ Exactly \(\mathbf1_{(h,k)>1}=-\sum_{d\mid h,\,d\mid k,\,d>1}\mu(d)\). Thus the l
  U<h<k\le H,\qquad k-h>H_0,\qquad (h,k)=1 .
 \]
 The kernel arguments, inverse coefficients, and strict endpoints all remain as in the original covariance. The required square-root estimate on this coprime separated band remains open.
+
+## Removing logarithmically small prime divisors
+
+The same covariance criterion may also impose \(P^-(h),P^-(k)>z\) for \(z=(\log X)^2\). The useful extra observation is that the two divisibility-lane bounds can retain a fixed power of \(d\) greater than \(1/2\).
+
+For full \(S_d\) simply retain \(d^{-\sigma+\varepsilon}\) with the original fixed \(\sigma>1/2\) in the shifted integral preceding (9). For the sharp high-companion tail, use (3) with \(G_{U,d}(s+w)\) from (6) instead of \(G_U(s+w)\). Its factor \(L^{(d)}(s+w)\) obeys the same degree-two mean square as \(L\), up to the \(d^\varepsilon\) bound for the omitted local factors. The remaining \(J_{U,d}\) has bound (8) at \(\sigma=a-\lambda>1/2\), where \(a=\Re s>\beta_*\) and \(\Re w=-\lambda\). The integral bound (4) then gives, after rescaling the auxiliary errors,
+\[
+ |S_{d,>H}(v)|\ll_\varepsilon
+ x^{a-1/2}H^{-\lambda}
+ U^{(\beta_*-\sigma)_+} X^\varepsilon d^{-\sigma+\varepsilon}
+ \qquad(d>1).
+\]
+Truncation errors are negligible uniformly for \(d\le H\) by the same height \(X^{10}\). In the off-line case choose \(a=\beta_*+\delta\) and \(\lambda=(\beta_*-1/2)/2\), then \(\delta\) small compared with \(\kappa\lambda\). For the full lane choose its fixed line just above \(1/2\), within the fixed exponent gap in (9). After decreasing the auxiliary errors there are \(\sigma_*>1/2\) and \(c>0\) such that the localized \(S_d\) is bounded by \(O(X^{\beta_*-1/2-c}d^{-\sigma_*})\) for every \(d>1\). At the critical line choose \(a=1/2+2\delta,\lambda=\delta\) and a similar small \(\delta\) for the full lane. For any final tolerance this gives \(O_\varepsilon(X^\varepsilon d^{-\sigma_\varepsilon})\) with some \(\sigma_\varepsilon>1/2\).
+
+Put \(\mathfrak p_z=\prod_{p\le z}p\), and let \(\widetilde S_d\) be the localized \(d\)-lane restricted to \((h,\mathfrak p_z)=1\). Exact inclusion–exclusion gives
+\[
+ \widetilde S_1-S_1=\sum_{\substack{e\mid\mathfrak p_z\\e>1}}\mu(e)S_e .
+\]
+For \(d>1\), \(\widetilde S_d=0\) if \((d,\mathfrak p_z)>1\), and otherwise \(\widetilde S_d=\sum_{e\mid\mathfrak p_z}\mu(e)S_{de}\). For any fixed \(\sigma>1/2\),
+\[
+ \sum_{e\mid\mathfrak p_z}e^{-\sigma}
+ =\prod_{p\le z}(1+p^{-\sigma})
+ =X^{o(1)} ,
+\]
+since even the sum over all integers up to \(z\) costs \(O_\sigma(1+z^{\max(1-\sigma,0)}\log z)=o(\log X)\) in the logarithm of that product. Thus \(\widetilde S_1-S_1\) is smaller by a fixed exponent in an off-line case and subpower at the critical line, and each \(\widetilde S_d\) for \(d>1\) retains the \(d^{-\sigma}\) square summability after absorption of \(X^{o(1)}\). Applying the same noncoprime-pair identity to these new lanes and the existing absolute short-gap estimate proves the reduction. Both companion restrictions are exact and preserve the original signed weights. No additional assertion on the covariance of the remaining rough, coprime, separated pairs follows.
