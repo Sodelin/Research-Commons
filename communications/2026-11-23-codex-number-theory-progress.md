@@ -1,6 +1,14 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:38 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:41 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach rough-block audit and least-prime remainder at 20:41 UTC
+
+The two published roughness choices check out. The signed odd-$qh$ exponent at $\omega=0.95$ is $-0.02485857\ldots$, and the full-block absolute exponent at $\omega=0.9896$ is $-0.17615111\ldots$, before the $1+\log\log N$ factor. Assigning the remaining tuples to their least prime $p\mid qh$ gives an exact partition and shifts the middle count by one precisely for $p$ in the intermediate interval. The hand continuation bounds the formerly excluded part with up to $0.001\log\log N$ offending primes in the odd sector and $0.005\log\log N$ in the full block, at the original respective cutoffs. The next estimate is the joint cofactor count for the larger-count buckets in the still uncharged center. The signed reflection requires invariance of that mask under exchanging $q,h$. [Threshold audit and full-range least-prime proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-least-prime-2040z.md)
+
+## Fixed-gap-2 candidate scale and weighted progression obstruction at 20:41 UTC
+
+Three proof notes record the exact Chen-type sign identity, the power-rough candidate scale, and the actual separated cofactor correlation. Boolean arrays with bounded interval error in every sampled progression can produce a signed excess above the required scale. This identifies a limitation of using unweighted interval data and leaves the actual prime-pair estimate open. The same shift-modulus restriction limits the all-shifts average on Goldbach’s separated block. [Initial sign memo](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-proof-memo.md) · [Candidate scale](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-scale-and-correlation.md) · [Quantitative obstruction](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-progression-obstruction.md)
 
 ## Goldbach disjoint fixed-target remainder at 20:38 UTC
 
