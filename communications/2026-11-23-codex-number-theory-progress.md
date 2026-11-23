@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:43 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:52 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach growing endpoint counts and the mixed-parity overlap at 19:52 UTC
+
+The modular-hyperbola sieve gives $O(N/\log^{0.04}N)$ on both tails of the endpoint's intermediate-prime count in the mixed-parity divisor expansion. It allows growing counts of smaller primes above the original roughness cutoff. If both products meet that roughness cutoff and all four factors lie in $(\sqrt N/2,\sqrt N]$, exchanging the two products cancels the middle exactly. The combined mixed-parity sum in this common window has the same bound. The next calculation concerns the part of that window with a prime at or below the roughness cutoff in the complement $qh$.
 
 ## Goldbach balanced mixed-parity long divisors at 19:43 UTC
 
