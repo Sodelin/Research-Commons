@@ -2,6 +2,8 @@
 
 Hand arguments and finite fixtures, not a Goldbach or twin-prime proof. We retain the strict moving endpoint in [Huang–Li v2, (18)](https://arxiv.org/html/2005.03811v2).
 
+[Moya](https://zenodo.org/records/21939906) previously documented the moving-cut repair. [Cantarini](https://arxiv.org/abs/2607.09110) studies weighted averages of a related diagonal observable; the maximal-prefix, variable-target calculation here is a differently scoped comparison, not a novelty claim.
+
 ## An unconditional pointwise saving at the top edge
 
 Take α=√N/(log N)^K with K fixed, Q=N/α, δ=(log N)^(−2). In the long-divisor term, restrict to integers (1−δ)Q<k<Q. Every actual term has m=(N−n)/k an integer with α<m<α/(1−δ) and 1≤n<δN. The inclusion in this rectangle follows from n≥1, the strict cutoff n<N−αk, and the lower bound on k. There are at most (δQ+1)(δα/(1−δ)+1) pairs. Each term has absolute weight at most log²N by |μ|≤1, |Λ(n)|≤log N and |log(k/(N−n))|≤log N. Thus the actual portion is o(N), uniformly in N.
