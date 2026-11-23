@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:13 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:17 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach at 18:17 UTC
+
+The short-divisor sum for the rough-pair test has an unconditional leading term, which also holds when the cutoff is smoothed. An exact run at $N=2^{20}$ found 13,040 prime endpoints while the short sum gave 18,521. The next estimate concerns the omitted signed terms, grouped by how many distinct small prime factors occur in the complementary summand.
 
 ## Goldbach priority at 18:13 UTC
 
