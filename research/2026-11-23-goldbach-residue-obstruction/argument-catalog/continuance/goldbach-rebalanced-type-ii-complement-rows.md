@@ -49,3 +49,42 @@ Using \(J<57/2000\) and \(\Pi<34/25\), its coefficient is at most the rational e
 Fix a group \((q,h,\ell,w)\) and its least prime \(p=P^-(d/w)\). In the part \(p\le z\), the rebalanced proof pairs allocations of \(p\), with identical \(W_N(n)\) and opposite \(\mu(u)\). Its upper count bounds the **absolute** weight of the surviving terms on both edges of the closed stress interval. The same statement applies to the pinned edge proof on \(z<p\le N^{1/25}\), and the retained-base harmonic refinement changes only positive counts. In each case the absolute value of the exact signed group subtotal is at most the sum of those surviving absolute weights. For \(p>N^{1/25}\), the direct bound instead counts the raw termwise absolutes, which again dominate the grouped absolute value. Thus the stated numerical bounds apply to \(2\sum_{\rm groups}|G_{q,h,\ell,w}|\), as well as to its negative mass. Numerically the low portion has explicit upper enclosure \(21875/38071296<.0006\), and the retained-base upper enclosure for the high portion is \(2100032191539/30012500000000<.07\). Their sum is strictly below \(.071\), with slack for the asymptotic errors.
 
 Finally, the complement identity is exact with the two strict inequalities defining \(T_<,T_>\). It follows that \(2(T_<+T_>)=2S-2T_0+O_A(N/L^A)\). The strict displayed enclosures give the claimed \(.075N\) bound, and the external factor two is included once. The original even-\(m\) semiprime cells and the prime-\(\ell\) ranges outside the narrow band belong to the original-level ledger. The other model and actual outer-window rows also retain their original supports. The present deduction accounts for the three rebalanced Type II ratios solely within this narrow original odd-\(m\) semiprime band.
+
+## Individual estimates on the two complementary ratios
+
+On the upper row \(\rho>L/10\), the doubled sum of absolute grouped weights is at most \(.041N\) for all sufficiently large powers of two. On the lower row the signed weight satisfies \(|2T_<|<.115N\). These estimates keep the same parameters, base, signs and strict partition.
+
+For \(T_>\) put \(p=P^-(d/w)\) as before. At fixed \(q,h,\ell,w\) and fixed pair \(d/w=pab\), the greater ratio belongs to the allocation \((u,s)=(pa,b)\). The other allocation is \((a,pb)\). The strict cut \(\rho>L/10\) leaves just one unmatched possibility, with exact sign \(-\mu(a)\) and
+\[
+ L/10<\rho\le L/10+2\log p.
+\]
+An allocation that remains above \(L/10\) meets the \(u\) threshold. Every other group condition stays fixed. For \(p\le z\), the forced-prime proof applies to this single moving edge. Here \(x=\min(u,v)=v>N^{1/5}\) and \(\ell x\le N^{41/80}\). The original stress proof bounds the magnitude and the number of dyadic \(x\) scales. Its CRT transfer is still power-saving with \(\ell x\le N^{41/80}\). The harmonic floor error is \(O(N^{1+2\kappa+\delta-1/5+o(1)})=O(N^{.8954+o(1)})\), using \(x>N^{1/5}\). Hence its doubled charge is at most the previous \(.0006N\), with the same strict rational enclosure.
+
+For the rest put \(\delta=17/5000\), \(\beta=7/100\), \(g=41/1000\), and \(x=\log\ell/L\in(1/10,1/8]\). Set
+\[
+ c(x)=\tfrac18+\tfrac x2,\qquad
+ I=\log(36/35),\qquad
+ K=\tfrac58 I-\tfrac1{80},\qquad
+ K_2=\tfrac{25}{64}I-\tfrac{129}{12800}.
+\]
+These are the integrals of \(1,c(x),c(x)^2\) against \(dx/(1-x)\) over the prime-\(\ell\) exponent band, respectively.
+
+On \(z<p\le N^\beta\), retain the exact unmatched allocation \(s=b\) and put \(M=\ell p w b\). From \(\rho>L/10\) we have \(v\le N^{9/20-x/2}\). The base \(\ell w>N^{13/40}\) gives \(b\le N^{c(x)}\), and \(M\le N^{41/80+\beta}\). The original square equals one. At fixed \(\ell,p,w,b\), sieve \(a=(N-qh)/M\) with the auxiliary square of level \(\min(p/2,N^g)\) and section density as in the pinned edge count. Its indices avoid the prime factors of \(M\), since those are \(p\) or greater. For any opened pair, count the unit hyperbola at the combined odd modulus, handling the factor \(2\) by the three parity choices when necessary. Thus the CRT errors at a fixed \(M\) are bounded by
+\[
+ N^{o(1)}\big(N^{3g}M^{1/2}+N^{2g}H/M^{1/2}\big).
+\]
+The modulus multiplicities are divisor-bounded, as in the pinned edge count. Summing up to \(N^{41/80+\beta}\) gives exponents \(.99675\) and \(.87325\), respectively. The main reciprocal sieve factor is \((1+o(1))\Pi/(2L\min(t,g))\) at \(t=\log p/L\in[\delta,\beta]\). At fixed \(\ell,p,b\) the edge permits \(w\) in a log interval of width \(\log p+O_B(\log L)\) after the standard endpoint trim. Thus \(\sum_w(\log w)/w\le(1+o(1))tL\). The squarefree \(b\) has all prime factors greater than \(p\), so its reciprocal size is at most \((4/7)(c(x)/t+1)+o(1)\). The original weight denominator yields \(\log d\ge(1-x)L-B\log L\). Using the pinned log-weight integral \(J\) for \(q,h\), and keeping the original external factor two, bounds the doubled charge by \(N(C_{\rm edge}+o(1))\), where
+\[
+ C_{\rm edge}
+ =J\Pi\frac47
+ \left[K\left(\frac1\delta-\frac1g+\frac1g\log\frac\beta g\right)
+ +I\left(\log\frac g\delta+\frac{\beta-g}{g}\right)\right].
+\]
+The two \(t\) integrals here are respectively \(\int_\delta^\beta dt/(t\min(t,g))\) and \(\int_\delta^\beta dt/\min(t,g)\). This follows directly from the prime harmonic measure \(dt/t\), the \(w\) factor \(tL\), the displayed \(b\) upper bound and the reciprocal sieve. [Pinned signed-edge count and auxiliary square](https://github.com/Sodelin/Research-Commons/blob/56abc20768f148741e0fb57b8c4fe82ec0ebb4a8/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-least-prime-edges-2246z.md) · [Pinned rough harmonic law](https://github.com/Sodelin/Research-Commons/blob/bc292106d03065e910b8dc6d2bbca1589313169b/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-type-ii-rough-harmonic-cap.md).
+
+On \(p>N^\beta\) bound all termwise absolute weights in this row. Set \(M=\ell w s=\ell v\le N^{41/80}\), use the auxiliary square at level \(N^\beta\) for the \(N^\beta\)-rough factor \(u\), and count at the combined odd modulus as above. The opened CRT powers are \(.97875\) and \(.89625\). The sifting primes are coprime to \(M\), since \(\ell,w>N^\beta\) and \(s\) is \(p\)-rough. For fixed \(\ell,s\), the \(w\) harmonic log window has width at most \(c(x)L\), from the same upper bound on \(v\) and the retained lower base. The \(s\) reciprocal size is at most \((4/7)(c(x)/\beta+1)+o(1)\). The sieve main factor is \((1+o(1))\Pi/(2\beta L)\). The same \(\ell\) integration now bounds this doubled charge by \(N(C_{\rm dir}+o(1))\) with
+\[
+ C_{\rm dir}=J\Pi\frac47\left(\frac{K_2}{\beta^2}+\frac K\beta\right).
+\]
+
+Use \(I\le7247/257250\), \(J<57/2000\), \(\Pi<34/25\), \(\log(70/41)<27/50\), and \(\log(205/17)<5/2\). The last two strict inequalities follow from the positive exponential series through degree seven. Exact rational arithmetic gives \(C_{\rm edge}\le10459343953/307628125000\) and \(C_{\rm dir}\le136527901/23529800000\) as upper enclosures. Adding the low-prime \(.0006\) gives the strict enclosure \(4872122457201/120590225000000<.041\); the asymptotic errors fit the slack. Finally, \(|2T_<|\le|2S|+|2T_0|+|2T_>|+o(N)\) by exact equivalence. The more precise upper enclosures \(.003876,.070546498,.040402301\) sum to less than \(.115\). These individual bounds are valid for the expanded partition. The complete narrow-band charge remains the direct bound on \(S\).
