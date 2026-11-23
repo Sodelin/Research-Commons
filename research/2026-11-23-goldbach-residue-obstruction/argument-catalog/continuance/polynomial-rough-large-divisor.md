@@ -40,3 +40,6 @@ With \(\ell\) having at most a fixed \(k\) prime factors, restoring the full abs
  \ll \frac{N\log(2V)(1+\log L)^{k-1}L^{-I(a)}}{\sqrt{\log L}}+N^{.78+o(1)},\qquad \ell\le V\le H.
 \]
 For the original parameters, \(I(.26)>1\) and \(I(4)>1\). Therefore these lower and upper tails give \(o(N)\) even at \(V=H\), with either \(m\)-parity, on the polynomially rough \(d\) and fixed-\(k\) complementary-divisor support. In particular, they remove those middle-count tails of the entire semiprime slice, including polynomial-scale \(\ell\), in absolute weight.
+
+
+The few-factor estimate also allows a growing count. Take \(V=\exp(L^\sigma)\), \(\log Y\asymp L^\theta\), and let \(k=\lfloor\kappa\log L\rfloor\) with \(0<\kappa<\sigma-\theta\). In the marked-prime argument the reciprocal sum of the remaining primes contributes at most \(\sum_{j\le k-1}S^j/j!\), where \(S=\sum_{Y<p\le V}1/p=(\sigma-\theta)\log L+O(1)\). This is \(L^{\kappa(1+\log((\sigma-\theta)/\kappa))+o(1)}\) by the factorial bound and the geometrically increasing terms up to the cutoff. Thus the reflected odd-\(m\) exponent is \(\sigma-1+\kappa(1+\log((\sigma-\theta)/\kappa))\). For example \(\theta=.005,\ \sigma=.9,\ \kappa=.02\) gives a strictly negative exponent. Adding the middle-count tail subtracts \(I(a)\) from the exponent, with the same atom saving as above.
