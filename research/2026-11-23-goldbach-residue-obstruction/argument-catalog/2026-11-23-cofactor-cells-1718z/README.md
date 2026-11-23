@@ -62,7 +62,7 @@ E_{\rm rem}(N)\ge -M_0(N)+\eta N
 $$
 for a fixed $\eta>0$. This leaves room for the uniform $o(N)$ terms and proper prime powers. On even targets with $3\nmid N$, the mod-9 square lane gives a uniform margin because its $\Lambda$-mass is $(1/6+o(1))N$ and the shifted Möbius term vanishes on it. The required lower bound is for the combined residual at each target. The finite negative semiprime slice and the compensating positive prime and higher-factor slices illustrate why imposing the whole budget on each cell class is stronger. The bound for the remaining signed error is open. [Pointwise comparison](../second-pass/README.md) · [One-sided cutoff criterion](../adaptive-cutoff/README.md) · [Other removable cofactor slices](../continuance/README.md)
 
-**Next check.** In the actual and centered model rows for $q=3$, isolate $h=5s$ with $s>5$ prime and retain the strict moving endpoint. Test whether the three adjacent offsets $N-15s-j$, $j=0,1,2$, admit a one-sided estimate on their combined centered weight. The weights and $\mu$-arguments differ across the offsets. This targets one strongly unbalanced semiprime class in the modulus that drove the earlier low-band fixture.
+**Follow-up completed.** The [modulus-3 odd semiprime analysis](modulus-3-odd-semiprimes.md) replays the original $h=5p$ slice and bounds the two off-diagonal model offsets by the weights of powers of 2 and 3 on $N\equiv2\bmod6$. It proves infinitely many counterexamples to any fixed separate lower bound on the $\mathfrak S(N)N$ scale for the full odd semiprime slice. The next check tests for compensation from higher-factor cells at those same targets.
 
 ## TP-CHEN-SIGN · exact transfer on the restricted carrier
 
