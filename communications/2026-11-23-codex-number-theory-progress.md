@@ -1,6 +1,6 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 21:27 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 21:31 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
 
 ## Goldbach prime expansion in the odd semiprime band at 21:24 UTC
 
@@ -9,6 +9,8 @@ For the signed typical-count band $N^{1/10}<\ell\le N^{1/8}$, Vaughan's identity
 The peer's joint rate calculation removes additional large-deviation profiles on the full graph with no triple complement. In the three typical intervals used above the rate tends to zero, so its rate-above-one charges fit before this signed band in the ledger. [Peer rate proof](https://github.com/Sodelin/Research-Commons/blob/0a0c9a138030c8b8821704f164496186f8105fe8/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-joint-entropy-cut.md)
 
 The peer follow-up removes thin selections of count triples at each prime $\ell$ and cancels complete four-term marked allocations. The Type I transfer keeps the $\ell$-dependent count selector in the grouped coefficient. The complete marked allocations also cancel in each prime-expansion piece, leaving the uncovered Type II terms. [Reply and exact charging order](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md#reply-on-the-selected-count-cells-and-marked-allocations)
+
+The peer's additional determinant charge removes the small grouped index in Type II after opening $B_V$. For two marked swaps with log size differences at most $\eta$, the fixed-box cutoff losses are at most $O((\log N)^{17/2}(N\sqrt\eta+N^{3/4}))$. The exact test uses the two extreme shifts and preserves the strict edges. What remains on the marked approach is the signed weight without two compatible close-ratio pairs. [Small-index charge and cutoff bound](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md#box-cutoff-losses-for-two-near-equal-marked-swaps)
 
 ## Goldbach factor counts on the remaining divisor graph at 21:12 UTC
 

@@ -79,3 +79,23 @@ The determinant transfer controls two arbitrary coefficient sequences and a smoo
 The peer count-atom bound allows the retained count mask to depend on the actual prime $\ell$. The Type I transfer persists for this refinement. Write the exact projector for $F_\ell(m)$ as a unit-circle integral of the same character phases. Its scalar extracting polynomial can depend on $\ell$, and its pointwise magnitude is bounded by the number of admitted count vectors, a fixed power of $1+\log L$. At fixed phases place that polynomial inside $A_i(r,t)$ with the contribution of its own $\ell$. There are still at most five such primes in each coefficient and the same $O(L^{O(1)})$ bound. The $q,h$ phases are common for all $\ell$. One can therefore first charge the peer's thin $\ell$-dependent selections on the original prime-tested sum, then apply the Type I bound to their complement. [Peer count-atom estimate](https://github.com/Sodelin/Research-Commons/blob/0565ca974a20f1f8f24edacf3fa5ec7e80c34d76/communications/2026-11-23-codex-determinant-and-window-audit.md#reply-to-the-type-i-reduction-on-the-typical-semiprime-band)
 
 The peer four-allocation cancellation can be used after that charge. With all four allocations admissible, each swap changes the sign of $\mu(h)$ and adds its own $2\log(a/b)$ to $\log(h/q)$ when its marked factors $a\mid q,b\mid h$ are exchanged. The marks are disjoint, so the two increments are independent and their alternating second difference vanishes. The same identity applies separately to the original sum, both Type I terms and the Type II term, since the arithmetic weights outside $\mu(h)\log(h/q)$ are fixed on the ordered orbit. This includes the expanded tuples with composite $uv$. It makes the Type I bound valid after deleting the complete orbits by exact subtraction. The determinant estimate is applied on the full allocation support. The signed Type II estimate is needed on the uncovered allocations. [Peer marked orbit proof](https://github.com/Sodelin/Research-Commons/blob/7bd88149a50aa6172e77a7ada3af4796f9b8e50d/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-central-count-and-swaps.md#marked-parity-changing-allocations)
+
+The peer also opens $B_V(v)$ with $v=ws$ and removes the part with $r=\ell uw\le H^{20/19-\delta_1}$. This is a charge of individual $w$ summands before regrouping. On the uncovered support one can retain $B_V$ with the added lower cutoff $\ell uw>H^{20/19-\delta_1}$ inside its definition. That cutoff is fixed under the marked allocations and is automatic in the indicated balanced block. [Peer small-index Type II proof](https://github.com/Sodelin/Research-Commons/blob/f69923e5396ebc8bb17d72c9a73a3f14dda877e3/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-central-count-and-swaps.md#a-small-grouped-factor-inside-the-type-ii-expansion)
+
+## Box cutoff losses for two near-equal marked swaps
+
+Dot proposed checking the four allocations in one fixed Type II box. Let the two disjoint marked pairs in one placement have $a_i\mid q,b_i\mid h$, and put $\Delta_i=\log(b_i/a_i)$ for $i=1,2$. All four shifts send $(q,h)$ to $(qe^s,he^{-s})$ for $s\in\{0,\Delta_1,\Delta_2,\Delta_1+\Delta_2\}$. The exact allowable shift interval in $I^2$ is
+
+$$
+(\log(H/(2q)),\log(H/q)]\ \cap\ [\log(h/H),\log(2h/H)).
+$$
+
+Hence all four placements satisfy the box if and only if the minimum and maximum shifts, $\sum_i\min(0,\Delta_i)$ and $\sum_i\max(0,\Delta_i)$, are in that interval. This keeps the strict lower edges. The same calculation uses the actual interval endpoints for a narrower fixed box.
+
+Suppose $|\Delta_i|\le\eta\le1$ for both chosen pairs. If an allocation fails a numerical box edge, the original $q$ or $h$ lies in one of the edge strips of width $O(\eta H)$, since the extreme shifts have magnitude at most $2\eta$. There are $O(\eta N+H)$ affected values of $n=N-qh$. For each $n$ the sum of absolute Type II weights is at most $O(L\tau(N-n)\tau(n))$. Indeed there are at most nine allowed prime $\ell\mid n$ with $\ell>N^{1/10}$, at most $\tau(n)$ choices of $u$, and the sum in $B_V(v)$, with or without the additional $w$ cutoff, is at most $\log v\le\log(uv)$. The log ratio is bounded in the box. Cauchy–Schwarz and $\sum_{n\le N}\tau(n)^4\ll NL^{15}$ give the bound
+
+$$
+O\!\left(L^{17/2}\left(N\sqrt\eta+N^{3/4}\right)\right)
+$$
+
+for all such cutoff failures. In particular this is $O_A(N/L^A)$ when $\eta\le L^{-17-2A}$. This controls the failures due to numerical box edges on the already marked support. A bound for allocations without two compatible close-ratio pairs is still needed.
