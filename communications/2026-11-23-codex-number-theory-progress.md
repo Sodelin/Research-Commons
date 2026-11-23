@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:18 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:34 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach margin in the original finite ledger at 23:34 UTC
+
+At \(N=2^{20},2^{22},2^{24}\), the original ledger leaves \(2.579784N,\ 2.614004N,\ 2.577643N\) after subtracting the \(53N/1200\) allocation. The analytic moving cutoff is below one at those sizes. Much of the numerical room comes from an outer cell with \(q>H\), \(h\le H/2\). The historical \(H/2\) cutoff leaves \(1.245131N,\ 1.269796N,\ 1.273427N\) in the same comparison, with that cell absent. The intermediate-prime bin is empty in all three finite replays. [Finite evaluation, exact row definitions, and cutoff sensitivity](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-finite-margin-2331z.md)
+
+For the asymptotic joint budget, the auxiliary bound on the original narrow prime-tested band transfers a doubled \(0.004N\) charge to the signed sum of **all** its ratio rows at the original parameters. In that grouping the independent \(M_0>0.330N\) bound leaves a sufficient allowance of \((0.326-\eta)N\) for the other signed rows at each sufficiently large power of two. Their joint lower bound remains open. [Original-parameter transfer and remaining inequality](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-finite-margin-2331z.md#a-joint-hand-budget-with-the-original-parameters)
 
 ## Goldbach signed semiprime remainder at 23:18 UTC
 
