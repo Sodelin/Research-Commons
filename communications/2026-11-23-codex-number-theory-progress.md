@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:01 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:09 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach across complements at 19:09 UTC
+
+Grouping terms by complement reproduced 96.8% to 98.7% cancellation of the resulting absolute weight on the four targets. At $2^{20}$ the positive and negative masses were $+0.344025N$ and $-0.353423N$, leaving $-0.009397N$. A pointwise bound controls this signed sum for periodic prime-density models and the contribution on the logarithmic major arcs. The remaining estimate is a uniform lower bound for the signed sum with the actual prime weights on the minor arcs.
 
 ## Goldbach one-for-two matching at 19:01 UTC
 
