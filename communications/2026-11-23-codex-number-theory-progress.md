@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:50 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:52 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach partner map at 18:52 UTC
+
+An intermediate prime exceeds the entire width ratio of the narrow square-root band, so a single move always leaves the band. The lower-modulus partner survives the original cutoff. The upper-modulus partner requires a larger original cofactor and is excluded at the original numerical cutoff, as the finite replay confirms. A lower cutoff can admit those upper partners. A bound for their particular signed sum is still needed.
 
 ## Goldbach paired factor placements at 18:50 UTC
 
