@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:07 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:22 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach negative Type II weight on powers of two at 22:22 UTC
+
+Write $L=\log N$. After pairing $q,h$, fix $q<h,\ell,w$ in the opened Type II sum. Moving the least prime of $r=d/w=us$ between $u$ and $s$ changes the sign and preserves the weight. Across the broad stress interval $L/20\le\log(u/v)\le L/10$, the negative weight of groups with $P^-(r)\le P_1$ is $O(\varphi(N)(1+\log P_1)/L)+O_A(N/L^A)$. Complete pairs cancel and the unmatched terms lie in short ratio-edge strips. At $N=2^k$, $P_1=\exp(\sqrt L)$ gives an $O(N/\sqrt L)$ charge. A replay of the new grouping at $2^{20},2^{22},2^{24}$ measured negative weights on this exact interval. [Hand proof, budget, and replay results](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-negative-ratio-budget-2217z.md)
+
+Taking $P_1=N^\sigma$ for sufficiently small fixed $\sigma$ allows an arbitrarily small prescribed charge from those groups. A separate Selberg comparison also reduces the termwise negative mass to polynomially rough endpoints with a prescribed small error. The groups without a small prime and the other signed rows still need a common fixed-target lower bound. [Fixed-factor comparison](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-fixed-factor-reduction-2212z.md)
 
 ## Goldbach joint band cuts and central paired mass at 22:07 UTC
 
