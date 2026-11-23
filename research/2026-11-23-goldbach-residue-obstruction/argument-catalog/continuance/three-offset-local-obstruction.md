@@ -1,0 +1,9 @@
+# A local obstruction to three-offset cancellation
+
+This follows the [cofactor checkpoint's proposed next check](../2026-11-23-cofactor-cells-1718z/README.md) in the corrected Huang–Li moving-prefix comparison. It is a hand reduction and finite numerical check, not a Goldbach proof or new Lean verification.
+
+Take N ≡ 2 (mod 6), modulus q=3, and cofactor cell h=5s with s>5 prime. It contains m=15s+j, j=0,1,2, with n=N−m; keep only n≥1 and m>3α as in the strict moving cutoff. Only j=0 is actual, while the model has weight 1/φ(3)=1/2 at each eligible offset. For j=0, m=3·5·s is squarefree, so its actual-minus-model weight is exactly −Λ(N−15s) log(5s)/2. For j=1, n is even, so Λ(n) can only be nonzero for powers of 2. For j=2, n is divisible by 3, so it can only be nonzero for powers of 3. In each exceptional offset s↦n is injective, with O(log N) possible prime powers and weight bounded by O((log N)²).
+
+Therefore the combined signed cell sum, over all admitted s, equals the nonpositive j=0 sum plus O((log N)³), uniformly in N and the cutoff. The adjacent model points cannot cancel a main-scale negative sum inside this specific class. This does **not** prove the j=0 sum has main-scale magnitude uniformly; that sum samples the prime s and the shifted prime or prime power N−15s. Nor does it rule out compensation in other cell classes. For N ≡ 4 (mod 6), the j=2 offset is not forced into a prime-power class by these congruences, and the same conclusion does not follow.
+
+Finite check: enumerate eligible prime s and exact integer offsets at N=9602, α=48 (the same cutoff as the low-band checkpoint; q=3 is in that band). The nonzero term counts at j=0,1,2 are 44,1,0. Using floating-point logarithms gives contributions −1252.648699, −2.604494, 0, respectively, or about −0.130728N combined. These are a sub-slice of the low band, not the full semiprime contribution or an asymptotic estimate.
