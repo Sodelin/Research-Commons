@@ -1,0 +1,10 @@
+# Exact factor-count refinement of the original transition sieve
+
+Hand estimate on actual prime weights, not a Lean check, not for transferred companions. This extends the restricted fixed-large-factor count in [the preceding note](mixed-parity-and-factor-count.md). Write H=√N, L=log N, Y=exp(L^γ), Z=exp(L^β), J=(Y,Z], and keep the original fixed square-root rectangle, squarefree and cutoff conditions. For each q and h, split its factors into primes ≤Y, primes in J, and primes >Z. Fix j=k(qh) in the original middle range. The absolute actual contribution from this count is
+```
+≪ N(1+log L) L^(3+2γ−4β) · Σ^j/j!,
+Σ=2(β−γ)log L+O(1),
+```
+plus negligible exceptional terms. Constants depend on the fixed endpoints. For γ=.10, β=.99, the exponent for j=c log L is −.76+c(1+log(1.78/c))+o(1). The roots are about .259918 and 4.001576, so with fixed slack this widens both tails *in the original rectangle*. It leaves a central count range untreated.
+
+Proof sketch: discard cases where a ≤Y part exceeds N^(1/8) by the same Rankin bound used for the original gap sieve. The products of intermediate factors are N^o(1) since j≤8log L. Write q=d a u and h=e b v for small, intermediate and large factors, respectively. The parts u,v are Z-rough and of polynomial size, so v has a prime t>Z; write v=s t. For fixed d,a the reciprocal sum over q in the fixed rectangle costs ≪1/(d a log Z) by a one-dimensional upper sieve. For fixed q,e,b,s the two-form sieve for t and N−qebst gives ≪H g(N)g(d)g(a)g(e)g(b)/(e b s (log Z)^2), since the Z-rough factors have bounded local corrections. Use a fixed power of Z as level and a smaller one as sifting limit; exclude the negligible exceptional prime endpoints before sieving. Sum reciprocal s at cost O(L/log Z). The two small-part sums cost O((log Y)^2), via the reciprocal Euler products, and the weight cap is L². Finally, use squarefreeness to bound the reciprocal sums over the intermediate parts with exact total j by the coefficient of ∏_{p∈J}(1+2g(p)t/p), at most Σ^j/j!. These operations yield the bound. [Fundamental lemma input](https://pub.math.leidenuniv.nl/~evertsejh/Fundamental%20Lemma.pdf)
