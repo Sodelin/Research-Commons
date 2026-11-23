@@ -45,3 +45,16 @@ More generally the main term is bounded by
 up to a fixed constant. Here \(\Delta_{\ell,j}\) is the actual log width in that cell. For a union of ratio intervals, replace \(1+\Delta_{\ell,j}\) by the sum of that quantity over the intervals. The same power error applies, since each fixed modulus and band can be counted once. If also \(n\le\xi N\), the contributing \(4^{-j}\) sum is \(O(\xi^2)\). For example, throughout the full polynomial \(\ell\) band, fixed bounded ratio widths and \(n\le N/L^{1/2}\) give \(o(N)\). These bounds concern the retained-mask expansion and leave broad log widths on central endpoints uncovered.
 
 The estimates use the pinned arithmetic support and hand upper bounds. No numerical or Lean verification is used.
+
+## A stronger automatic roughness cutoff in this semiprime band
+
+For this particular prime-tested sum one may use
+\[
+ Y_*=\exp\!\left(\frac{L}{(\log L)^2}\right)
+\]
+throughout the retained-mask expansion. On the original support \(n=\ell d\) has two prime factors, both exceeding \(N^{1/10}>Y_*\) for large \(N\). Keeping \(n\) squarefree and \(Y_*\)-rough therefore leaves the original sum and the exact replacement of the prime test by \(\Lambda(d)/\log d\) unchanged.
+
+The two Type I arguments with the retained masks still apply. In the small-prime subset expansion of the smooth factor, the truncation \(K=C_A\log L\) gives periods and total enumeration cost at most \(Y_*^{O(K)}=N^{o(1)}\). The factorial tail is arbitrarily log-small since \(\sum_{p\le Y_*}1/p=O(\log L)\), and the reciprocal Euler mask norm stays polylogarithmic. The squarefree exceptional set on the rough support has size \(O(N/Y_*)\). These are exactly the bounds needed for the pinned two-period Poisson proof and the endpoint trim. In the fixed-modulus Bonferroni calculation above, the CRT moduli and residue-box cost are likewise \(Y_*^{O(K)}=N^{o(1)}\). Thus (1) holds with \(\log Y_*\) in place of \(\log Y\) on this equivalent expansion. [Pinned retained-mask Type I proof](https://github.com/Sodelin/Research-Commons/blob/3c4778ccc493abb2b5f9610c8fce5ea86fd0737d/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/goldbach-type-ii-rough-complement.md)
+
+In particular allow the whole polynomial \(\ell\) band and one ratio interval in each \((\ell,j)\) cell of width at most \(L/(\log L)^5\), at arbitrary locations. From (1) the absolute contribution on this support is \(O(N/\log L)\), uniformly for the original even target. There is no small-endpoint condition beyond the standard trim and no separate primality or factor-count restriction on \(u,v\). This is an allowed change of expansion because of the two prime tests in the original band. It does not bound the individual regions lost from an unrestricted expansion or supply the signed lower bound across all ratio intervals.
+
