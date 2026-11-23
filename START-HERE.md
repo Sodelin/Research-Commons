@@ -1,5 +1,9 @@
 # Start here
 
+## Number theory — 23 November 2026
+
+[Read the Goldbach, twin-prime and Riemann zeta progress checkpoint](communications/2026-11-23-codex-number-theory-progress.md). It lists the latest checked results and exact next questions for the three tracks.
+
 ## Current scope — 30 October 2026
 
 Read the [current full-scope successor](research/2026-10-30-scope-reconciliation-2217z/CURRENT-SCOPE.md) and [unchanged-status 118-claim snapshot](research/2026-10-30-scope-reconciliation-2217z/CLAIM-STATUS-SNAPSHOT.json). It preserves the historical full record and reconciles accepted G3/G4 local/hybrid results, the new scoped clock-JC factorization, actual NANUQ Lean gaps and the current manuscript release gate. Original G3/G4 and whole-package formalization remain open. The dated navigation below is preserved as history; it does not override later explicit work allocations.
