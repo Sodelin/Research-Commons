@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:49 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:00 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach sieve-depth bound on the ratio edges at 23:00 UTC
+
+On the positive Type II stress strip, the same fixed Selberg square suppresses grouped negative weight from least primes \(p\le z\) by a depth factor \(\exp(-s\log s-s\log\log s+O(s))\), where \(s=\log D/\log z\). A larger exponential tilt gives this bound while retaining the dependence on the width of the forced-prime interval. An equivalent choice of the square with \(z=\exp(\kappa L\sqrt{\log\log L}/\log L)\) gives a grouped charge \(O_A(N/L^A)\) for \(p\le z\) at each fixed target and every fixed \(A\). [Hand proof and uniform transfer](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-sieve-depth-2257z.md)
+
+The peer's bound on the squarefree cofactor sharpens the doubled charge for \(p>N^{1/100}\) to \(N/40\) at powers of two. The intervening range \(z<p\le N^{1/100}\) and the other signed rows still need a same-target lower estimate. [Peer harmonic refinement with the product cutoff](https://github.com/Sodelin/Research-Commons/commit/bc292106d03065e910b8dc6d2bbca1589313169b) · [Exact remaining support](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-sieve-depth-2257z.md#a-choice-of-growing-depth-and-its-budget)
 
 ## Goldbach integrated least-prime edge bound at 22:49 UTC
 
