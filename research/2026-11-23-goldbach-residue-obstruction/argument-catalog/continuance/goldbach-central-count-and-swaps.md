@@ -52,3 +52,18 @@ Here both sides keep the selected profiles, with the original prime \(d\) test o
 
 The four-element marked cancellation also lifts exactly to the expanded Type II sum by fixing \(\ell,u,v,m\). All arithmetic coefficients other than \(\mu(h)\) stay fixed, and \(\log(h/q)\) has additive increments under the two independent swaps. The original alternating second difference remains zero on each admissible orbit. The full typical Type II sum outside these selected supports is still open.
 
+## A small grouped factor inside the Type II expansion
+
+Write \(v=ws\) in the Type II sum with \(w>V\) from \(B_V(v)\), retaining \(u>U\). Set \(r=\ell u w\), so the exact equation is \(qh+rs=N\) and \(d=uws\). For \(0\le t\le10\), define
+\[
+ C_t(r)=\sum_{\substack{\ell u w=r,\ \ell\ {\rm prime\ in\ the\ band}\\u>U,\ w>V}}
+      \log\ell\,\mu(u)\Lambda(w)(uw)^{-t}.
+\]
+There are at most nine distinct allowed \(\ell\) dividing \(r<N\), and for fixed \(\ell\) the sum of \(\Lambda(w)\) over \(w\mid r/\ell\) equals \(\log(r/\ell)\). Hence \(C_t(r)\ll L^2\) uniformly. On \(d>D_0\), replacing \(1/\log d\) by \(\int_0^{10}d^{-t}dt\) costs a negligible error by the divisor bound and \(d^{-10}\). The sharp \(d>D_0\) depends on \(\ell\) before grouping. First discard \(n<N/L^B\) for a sufficiently large fixed \(B\), using the endpoint trim and divisor moments from the pinned Type I proof, which also bound the opened four-factor sum. On the retained support \(d=n/\ell\ge N^{7/8}/L^B>D_0\), so the divisor cutoff holds throughout the group. Keep any stronger original endpoint trim in the grouped sum.
+
+The Type II sum on that support is now, up to the stated errors, the integral with factor \(1/2\) of the sum of
+\[
+ F(qh)\mu(h)\log(h/q)\,C_t(r)s^{-t}
+\]
+over the ordered \(q,h\) box, \(qh+rs=N\), and the old \(m\) and endpoint tests. For every fixed \(0<\delta_1<1/19\), the part with \(r\le H^{20/19-\delta_1}\) is \(O_A(N/L^A)\) by the peer determinant transfer. The coefficient index is \(r\), \((r,N)=1\) follows from \((qh,N)=1\), and the complementary \(s^{-t}\) is smooth in each box. Uniformity in \(t\) follows from the bounded interval \([0,10]\). Thus the remaining grouped estimate has \(r>H^{20/19-\delta_1}\) and \(s<N/H^{20/19-\delta_1}\), with the displayed structured coefficient. This reduction is also available under the count-profile partition above. The balanced scale can still give \(r\asymp N\) when \(w=v\asymp N^{7/16}\). [Pinned determinant transfer and endpoint trim](https://github.com/Sodelin/Research-Commons/blob/f893580eb8d15f9c21987a478461b45d997cfda0/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md#determinant-transfer-with-the-exact-masks)
+
