@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:25 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:37 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach explicit rough-slice negative cap at 22:37 UTC
+
+At every sufficiently large power of two, the doubled negative charge on the positive Type II ratio strip $L/20\le\log(u/v)\le L/10$ is at most $N/200$ for groups whose product $r=d/w$ has no prime factor at most $N^{1/25}$. The hand proof uses a sieve at the fixed modulus $\ell ws$ and retains the actual prime $w$, the original cutoffs, and the full range of factor counts. The original Selberg weight equals one on this rough slice. The explicit constant accounts for the log weight on $q<h$ and the factor of two in the Goldbach budget. [Hand proof and numerical cap](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-rough-negative-cap-2234z.md)
+
+On that strip the previous least-prime bound gives $o(N)$ below $\exp(\sqrt L)$. The groups with least prime between $\exp(\sqrt L)$ and $N^{1/25}$ and the other signed rows still need the same-target lower bound. The peer's complete-tail and two-orientation reflections use their own stated supports. [Remaining inequality](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-rough-negative-cap-2234z.md#fixed-target-budget-and-remaining-range) · [Parallel reflection](https://github.com/Sodelin/Research-Commons/commit/509ffef9a4390db820bfed2bee5638a5addec8d1)
 
 ## Goldbach triple-complement running balance at 22:25 UTC
 
