@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:19 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:26 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach local prediction for separated prime pairs at 19:26 UTC
+
+One fixed band keeps cofactors separated by more than $\sqrt N/8$ and at most $\sqrt N/4$. At $2^{20}$ the two-form local residue prediction gives a signed difference of $-0.000460N^{3/2}$, and actual prime pairs give $-0.000029N^{3/2}$. A pointwise proof gives arbitrary log saving for the signed local prediction over any such separation interval. The missing estimate is a uniform signed upper bound on the deviation of actual prime pairs from this prediction.
 
 ## Goldbach signed prime correlation in one factor block at 19:19 UTC
 
