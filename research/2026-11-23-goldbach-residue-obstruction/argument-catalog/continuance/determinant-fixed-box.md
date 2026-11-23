@@ -1,0 +1,31 @@
+# Fixed comparable rough divisor boxes: a determinant estimate
+
+Hand proof using Davenport and Bettin–Chandee, with independent review of the mask and zero-mode interface. No Lean build. This is not a proof of Goldbach.
+
+## Scope
+
+Let H=√N, L=log N, J=(exp(L^γ),exp(L^β)], 0<γ<β<1, and Y=exp(L^θ), fixed 0<θ<1. Retain the original q,h∈(H/2,H] block, strict cutoff h>floor(H/2), (q,N)=1, squarefree m=qh, and the prescribed middle window of O(log L) values of k(m)=# {p∈J:p|m}. Require n=N−m=dℓ to have no prime factor at most Y. Fix positive constant endpoints and restrict d,ℓ to respective intervals [c₁H,C₁H], [c₂H,C₂H]. The exact signed contribution −Σ μ(h)μ(d)log h log ℓ is O_A(N/L^A) for every fixed A, with no parity restriction. Both divisors exceed the previously used short cutoff for large N. The argument also works if rough nonsquarefree n is included or excluded, since its absolute weight is negligible. The prior GRH usage in reaching a particular long-divisor cutoff is distinct; the fixed box estimate itself uses unconditional Fourier cancellation for Möbius. [Exact expansion and support](rough-residual-and-norm-limit.md)
+
+## Masks and negligible changes
+
+At fixed product the number of factor placements is bounded by its divisor count. Thus the absolute cost of any exceptional set of E pairs on either product side, even after multiplying by any fixed powers of τ(m),τ(n), is ≪L² E^½(N L^C)^½ by Cauchy–Schwarz and fixed divisor moments (τ^r≤d_(2^r)). The same bound applies if E counts exceptional product values. Remove (m,N)>1 and, if needed, nonsquarefree n: roughness forces some p>Y to divide (n,N), or p²|n, giving exceptional sets O(N L/Y) and O(N/Y), respectively. Smooth q and ℓ only, just inside their true intervals, at edge width H/L^B. The exceptional pairs number O(N/L^B+H), so large fixed B makes their cost negligible. Normalized smooth derivatives of order j are O_j(L^(Bj)).
+
+Keep (h,N)=(d,N)=1 and d rough in separate coefficients. Expand squarefreeness of q over a²|q with coefficient μ(a); (q,hN)=1 over b₀|rad(N), b₁|h, b₀b₁|q with coefficients μ(b₀)μ(b₁); ζ^k(q) for |ζ|=1 over squarefree e|q supported on J with coefficient (ζ−1)^ω(e); and roughness of ℓ over squarefree f|ℓ with primes at most Y and coefficient μ(f). Coefficient extraction of ζ^k(q)ζ^k(h) recovers the original exact count on the surviving coprime squarefree m. Truncate each index at R=H^ρ, ρ=1/2000. Exceptional pairs for the first three indices are bounded by O(N/R), O(Nτ(N)/R), O(N/R). For the remaining two, the product of the relevant distinct primes in q or ℓ must exceed R. Rankin with 1/log Z or 1/log Y bounds their proportion by a fixed log power times exp(−cL^(1−β)) or exp(−cL^(1−θ)), respectively. To see this, expand ∏_{p|v,p≤U} p^(1/log U); its mean is bounded by ∏_{p≤U}(1+(p^(1/log U)−1)/p)≪1 by Σ(log p)/p≪log U. The absolute coefficients of the opened or truncated expansions are at most fixed powers of divisor counts. The sparse-pair estimate therefore gives arbitrary logarithmic savings on all changes.
+
+## One residue class per fixed mask
+
+Put E=lcm(a²,b₀b₁,e), F=f, g=gcd(E,F). Substitute q=Eq′, ℓ=Fℓ′. Any solution forces (h,F)=(d,E)=(h,d)=1 since h,d are coprime to N. Impose the first two separately in their coefficients. The last is enforced by the usual coprimality of fractions after reduction. Then gcd(Eh,Fd)=g, and we must have g|N. Write E′=E/g,F′=F/g; q′ is in the single residue class (N/g)·(E′h)^−1 mod F′d. In particular no coprimality or primality predicate on q′ or ℓ′ is carried implicitly after opening the masks.
+
+Write x=h/H, y=d/H, u=q/H, and G(v)=χ_ℓ(v)log(Hv), smoothly zero off the positive ℓ support. Poisson summation on the q′ progression gives amplitude
+```
+A_t(x,y) = 1/(E F′ y) · ∫ χ_q(u) G((1−ux)/y) e(−tu/(E F′ y)) du
+```
+multiplying the phase e((tN/g)·(E′h)^−1/(F′d)), with e(v)=exp(2πiv).
+
+## Main term and error budget
+
+At t=0 factor g/(EF) out of A₀; H/d and the smooth integral have polylogarithmic size and variation in h. For fixed d the remaining h sum has μ(h)log h ζ^k(h), (h,NdF)=1, b₁|h, and the original sharp interval. The additive Fourier expansion of b₁|h has coefficient norm one. The existing [uniform masked Möbius prefix estimate](three-proof-attacks.md) and partial summation bound this sum by O_A(H/L^A) uniformly; its convolution proof requires only a polynomial bound on the excluded integer NdF. Sum d at cost O(H). Across masks the reciprocal factor g/(EF)=1/lcm(E,F) is essential: the sum of absolute coefficients with this denominator is ≪∏_{p≤O(H)}(1+C/p+C/p²)≪L^C. There are finitely many patterns per prime among the five squarefree indices; a nonempty pattern pays p^(−1) or p^(−2), and |ζ−1|≤2. This proves arbitrary logarithmic saving for the main term after summing masks.
+
+For t≠0 restrict |t|≤EF′H^ρ. Outside this interval j integrations by parts in u give total per h,d of O_j(L^C H^(−ρ(j−1))); j=100 absorbs all mask costs at the stated ρ. In the retained range the normalized first x,y derivatives and their mixed derivative of A_t cost O(L^C H^(2ρ)); rectangular partial summation reduces to prefix sums of the bare reciprocal phases. Apply [Bettin–Chandee Theorem 1](https://arxiv.org/abs/1502.00769) with singleton numerator index, parameter tN/g, scales E′H and F′H. Its coefficient norms are O(√H L), O(√H) by sparseness, and |tN/g|/((E′H)(F′H))≪H^ρ. Since E≤H^(5ρ), F≤H^ρ, the bound per frequency is at most H^(39/20+6ρ+4ε) with harmless logarithms, using the two terms in the theorem and fixed dyadic splits. The number of retained frequencies is O(H^(7ρ)), the number of masks is O(H^(5ρ)), and the individual e coefficient is ≤H^ρ. Including the derivative cost gives H^(39/20+21ρ+4ε)L^C, a power saving for ε=.001. Coefficient extraction costs only O(log L) allowed counts. Combining the estimates proves the stated claim.
+
+Finite support checks independently matched the fixed-mask residue predicate and the untruncated mask polynomial; those checks do not verify the analytic estimates. The [endpoint trim and scaling note](determinant-endpoint-trim.md) gives a way to test genuinely asymmetric scales, not a claim that their masks and power budget have all been checked. In particular the fixed comparable result does not reach ℓ of subpolynomial size or close the gap to the separate asymmetric sieve.
