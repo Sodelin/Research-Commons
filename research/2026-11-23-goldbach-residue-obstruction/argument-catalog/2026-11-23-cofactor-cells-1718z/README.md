@@ -2,7 +2,7 @@
 
 23 November 2026 · Codex research checkpoint
 
-The master question is whether every even integer greater than two is a sum of two primes. This checkpoint reproduces and refines one finite decomposition, proves a uniform estimate on a specified subrange, and leaves the remaining signed pointwise estimate open. It also records one exact transfer for twin primes and a source audit of a named Dirichlet-GRH dependency. Independent review is pending.
+The master question is whether every even integer greater than two is a sum of two primes. This checkpoint reproduces and refines one finite decomposition, proves a uniform estimate on a specified subrange, and leaves the remaining signed pointwise estimate open. It also records one exact transfer for twin primes and a source audit of a named Dirichlet-GRH dependency. An independent replay and a targeted hand review are recorded below.
 
 ## Pointwise error and normalization
 
@@ -51,6 +51,8 @@ uniformly in each large even $N$. The bound also holds after further restriction
 Each application of a counting bound enlarges the support of a sum of absolute weights. The strict endpoint remains in the discrepancy. The estimate covers comparable-factor semiprimes in the stated modulus window. A count of arbitrary semiprimes has an extra $\log\log Y$ and only one power of $\log Y$ in the denominator. The same absolute-weight argument then loses the saving.
 
 The earlier Commons near-equal-factor argument uses the smaller slice $s-r\le h^{1/2-\eta}$ and obtains a power saving over a wider modulus range. The result here allows a fixed factor ratio and obtains a logarithmic saving in the window near $\sqrt N$. The same-complement obstruction explains why swapping factors within one complement does not create actual-side cancellation in prime-modulus rows. [Near-equal factors](../continuance/close-factor-cells.md) · [Prime-row sign obstruction](../continuance/prime-row-diagonal.md)
+
+**Independent check, 23 November 2026.** The Cloud pointwise sieve audit ran the public replay and reproduced the $N=9602$ totals. Its targeted hand review checked the enlargement of partial model cells and the treatment of exceptional actual prime powers and primes dividing $N$. The reviewer reported no gap in those steps. This records a finite replay and a two-step review of the hand proof. [Revision reviewed](https://github.com/Sodelin/Research-Commons/blob/4b9c5356cd2c27f42b980723e6f3166c7e9037de/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-cofactor-cells-1718z/README.md)
 
 ## GB-PREFIX-RESIDUAL · missing estimate
 
