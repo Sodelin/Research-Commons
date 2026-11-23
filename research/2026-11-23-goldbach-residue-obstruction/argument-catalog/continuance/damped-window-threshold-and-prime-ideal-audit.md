@@ -1,6 +1,6 @@
 # Audit of the damped window, its threshold, and prime ideal support
 
-This note checks the damping and exact reference in the positive standard-family count. It gives the pole and the sharp off-line growth rate in the square-root normalization. For degree two, the window can also be stated using prime ideals alone. All the deductions are by hand from the pinned generic Lean theorem and the cited classical inputs. The arithmetic upper window remains open. [Pinned standard-family window](https://github.com/Sodelin/Research-Commons/blob/1e5d50b6571a6333d3d2382f82345a1f22a1ee16/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/positive-window-standard-automorphic-families.md)
+This note checks the damping and exact reference in the positive standard-family count. It gives the pole and the sharp off-line growth rate in the square-root normalization. For degrees at most three, the window can also be stated using prime ideals alone. All the deductions are by hand from the pinned generic Lean theorem and the cited classical inputs. The arithmetic upper window remains open. [Pinned standard-family window](https://github.com/Sodelin/Research-Commons/blob/1e5d50b6571a6333d3d2382f82345a1f22a1ee16/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/positive-window-standard-automorphic-families.md)
 
 ## Shifted derivative and unchanged kernel
 
@@ -43,7 +43,7 @@ To get the lower limit use the damped statistic, whose rightmost pole supremum i
 
 For the upper limit when \(\beta_*-\delta<1\), move smoothed Perron for \(S\) to any fixed \(\beta_*-\delta<\sigma<1\). In the closed vertical region between the new line and the initial line, the shifted zeros are separated by a fixed real gap. The local logarithmic-derivative expansion and zero count give a logarithmic bound at large height. When \(\beta_*=1\) and \(\delta>0\), the new unshifted line has \(\Re(s+\delta)>1\), where absolute Euler convergence also gives the bound. The residue at \(1\) supplies a linear term which the difference \(S-T_BS\) removes, so \(C_{\delta,B}=O(x^\sigma)\). Let \(\sigma\downarrow\beta_*-\delta\). If \(\beta_*-\delta=1\), then \(\delta=0\), and the elementary coefficient cap gives the same upper limit. In particular a bound by \(Y^c\) at arbitrarily late normalized windows for a fixed \(c\ge0\) implies \(\beta_*\le1/2+c/(1+\kappa)\). This rate is independent of \(\delta\) in the square-root normalization. [Local zero-count and log-derivative estimate, Iwaniec–Kowalski, Proposition 5.7](https://doi.org/10.1090/coll/053)
 
-## Prime ideals alone in degree two
+## Prime ideals alone in degrees at most three
 
 The difference kernel is bounded and compactly supported at each fixed \(x\):
 \[
@@ -56,12 +56,22 @@ This follows by differentiating \(S(x)/x\) off the prime powers and using its co
 
 Suppose the finite roots of the original family have modulus at most \(q^\tau\), with \(\tau\le\delta\). The absolute contribution of all \(\mathfrak p^k\) with \(k\ge K_0\ge2\) is \(O(x^\theta)\) whenever \(\tau+1/K_0\le1/2\). Indeed \(\sum_{q^k\le X,k\ge K_0}\log q\ll_{F,K_0}X^{1/K_0}\) by the prime-ideal Chebyshev bound. Partial summation with \((q^k)^{\tau-\delta}\) gives at most \(X^{1/K_0+\tau-\delta}\) if this power is positive, \(O(1+\log X)\) at equality, and \(O(1)\) if it is negative. Take \(X=e^Bx\). This proves the claim and removes all higher powers in an everywhere tempered family.
 
-For a fixed cuspidal \(\mathrm{GL}_2\) family use \(\tau=\delta=7/64\), so \(K_0=3\) works and \(\theta=25/64\). At an unramified prime ideal, the remaining square trace satisfies
+For fixed cuspidal families of degrees two and three, the remaining finitely many powers can also be removed. Write \(\lambda_{\mathfrak p}=\sum_j\alpha_{\mathfrak p,j}\) at an unramified prime and let \(e_j\) be the elementary symmetric functions of the Euler roots. In degree two, \(e_2\) is the unitary central character value. In degree three, \(e_3\) is that value and \(e_2=e_3\overline{\lambda_{\mathfrak p}}\), since the contragredient has inverse roots and its first trace is the conjugate trace. Newton's identities give, for each fixed \(k\),
 \[
- |\alpha_{\mathfrak p}^2+\beta_{\mathfrak p}^2|
- \le |\alpha_{\mathfrak p}+\beta_{\mathfrak p}|^2+2
+  \left|\sum_j\alpha_{\mathfrak p,j}^k\right|
+  \ll_k 1+|\lambda_{\mathfrak p}|^k .
 \]
-by the unitary determinant. The self Rankin–Selberg \(L\)-function has a simple pole at \(1\) and nonnegative log coefficients. Its first coefficient at an unramified prime is \(|\alpha_{\mathfrak p}+\beta_{\mathfrak p}|^2\log q\). Positivity and evaluation of its negative log derivative at \(1+1/\log X\) therefore give
-\(\sum_{q\le X}|\alpha_{\mathfrak p}+\beta_{\mathfrak p}|^2\log q\ll_\pi X\log X\) over unramified primes. After partial summation with \(q^{-2\delta}\), the square contribution to \(C_{\delta,B}\) is \(O(x^\theta(1+\log x))\). The finitely many ramified prime ideals contribute at most \(O(1+\log x)\) over all their powers by the cap. Thus restricting both the raw count and its exact reference to prime ideals changes the normalized statistic by \(O(\sqrt x(1+\log x))\). The positive-part window integral changes by at most \(O((1+\log Y)^2)\), by \(|a_+-b_+|\le|a-b|\). This preserves both the arbitrarily late \(Y^\eta\) criterion and the strictly positive logarithmic rate above. The Rankin bound is an unconditional coefficient estimate. The proof does not use a Rankin critical-line hypothesis. [Blomer–Brumley, Theorem 1](https://annals.math.princeton.edu/2011/174-1/p18) · [Rankin–Selberg log coefficients and pole, Soundararajan–Thorner §2 and Brumley Appendix A](https://arxiv.org/abs/1804.03654)
+Indeed each \(e_j\) is bounded by \(1+|\lambda_{\mathfrak p}|\), and the monomials in the \(k\)-th power trace have weighted degree \(k\) when \(e_j\) is assigned weight \(j\).
+
+The self Rankin–Selberg function has a simple pole at \(1\) and nonnegative log coefficients. Its first coefficient at an unramified prime is \(|\lambda_{\mathfrak p}|^2\log q\). Positivity and evaluation of its negative log derivative at \(1+1/\log X\) give
+\(\sum_{q\le X}|\lambda_{\mathfrak p}|^2\log q\ll_\pi X\log X\) over unramified primes. With the local bound \(|\lambda_{\mathfrak p}|\ll q^\tau\), for each fixed \(k\ge2\) this gives
+\[
+ \sum_{q^k\le X}\left|\sum_j\alpha_{\mathfrak p,j}^k\right|\log q
+ \ll_{\pi,k} X^{\tau+(1-2\tau)/k}(1+\log X)
+ \ll_{\pi,k} \sqrt X(1+\log X)
+\]
+on unramified primes. Sum this for \(2\le k<K_0\) and use partial summation with \((q^k)^{-\delta}\). Its damped contribution is \(O(x^\theta(1+\log x))\). The finitely many ramified prime ideals contribute at most \(O(1+\log x)\) over all powers by the damped cap. Degree one already has unit-modulus local roots wherever its Euler factor is nontrivial.
+
+Thus restricting both the raw count and its exact reference to prime ideals changes the normalized statistic by \(O(\sqrt x(1+\log x))\) for any fixed family of degrees at most three. The positive-part window integral changes by at most \(O((1+\log Y)^2)\), by \(|a_+-b_+|\le|a-b|\). This preserves both the arbitrarily late \(Y^\eta\) criterion and the strictly positive logarithmic rate above. The Rankin bound is an unconditional coefficient estimate and uses no Rankin critical-line hypothesis. [Blomer–Brumley all-place local bounds](https://annals.math.princeton.edu/2011/174-1/p18) · [Rankin–Selberg log coefficients and pole, Soundararajan–Thorner §2 and Brumley Appendix A](https://arxiv.org/abs/1804.03654)
 
 Here “prime ideals” means \(k=1\) at each ideal, even when its norm is a rational prime power. The arithmetic inputs give a simpler conditional test. They give no upper window estimate for the centered prime-ideal count and no fixed-target Goldbach correlation.
