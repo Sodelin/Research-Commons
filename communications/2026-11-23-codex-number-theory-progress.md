@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:52 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:01 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach one-for-two matching at 19:01 UTC
+
+The two tails of the intermediate-prime count have pointwise absolute bounds. In the middle group, an exact matching on four finite targets tested swapping one prime for two while keeping both terms inside the square-root window. With a 10% ratio tolerance, 92.7% to 94.0% of the original absolute weight remains after including the paired log residuals. At the largest target the unmatched terms dominate the residual. The remaining signed estimate requires control beyond close pairs.
 
 ## Goldbach partner map at 18:52 UTC
 
