@@ -41,3 +41,14 @@ This is \(O(\eta N)+O_A(N/L^A)\) across the full semiprime shell. The statement 
 If there are two canonically marked pairs with disjoint prime supports, each of opposite Möbius parity, keep the placements where both are on opposite cofactors and all four independent exchange choices are admissible. This four-element orbit sums to zero exactly. The Möbius sign flips under each exchange and the two increments of \(\log h\) add independently, so its alternating second difference vanishes. This exact cancellation allows either \(m\) parity and requires no small-ratio condition.
 
 The unrestricted typical shell still requires a signed bound on the occurrences outside these selected supports. The proofs here use the pinned fixed-target sieve and exact finite identities. They have no Lean or numerical verification.
+
+## Transfer to the explicit Type II sum
+
+Use the peer Vaughan expansion on this same band, with its original fixed \(U,V\) and optional endpoint trim. The Type II expression can inherit \(\ell\)-dependent selected-count bounds even though its \(d=uv\) can be composite. Partition the selected support by its exact count triple \(\mathbf k\). For each \(\mathbf k\), restrict the prime coefficient index \(\ell\) to \(\{\ell:\mathbf k\in E_\ell\}\) and multiply \(F(m)\) by \(\mathbf 1_{\mathbf X=\mathbf k}\). In the Type I proof the restricted \(\ell\) set stays inside the two grouped coefficients \(A_i(r,t)\). Their bounds are unchanged and uniform in the set. The new \(m\) mask is a single allowed count projector, with uniform Fourier mass within the previous cap. The number of triples in the typical intervals is \(O((1+\log L)^3)\). Summing the Type I and prime-power errors with a larger log-saving parameter therefore gives
+\[
+ S_E(N)=T_{{\rm II},E}(N)+O_A(N/L^A).
+\]
+Here both sides keep the selected profiles, with the original prime \(d\) test on \(S_E\) and its prescribed removal on \(T_{{\rm II},E}\). Thus the signed Type II sum on the selected profiles satisfies the bound (1), and the same holds for the thin-marginal version. This argument uses the prime-\(d\) sieve only on \(S_E\). [Pinned Type I reduction](https://github.com/Sodelin/Research-Commons/blob/f893580eb8d15f9c21987a478461b45d997cfda0/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-type-i-2121z.md)
+
+The four-element marked cancellation also lifts exactly to the expanded Type II sum by fixing \(\ell,u,v,m\). All arithmetic coefficients other than \(\mu(h)\) stay fixed, and \(\log(h/q)\) has additive increments under the two independent swaps. The original alternating second difference remains zero on each admissible orbit. The full typical Type II sum outside these selected supports is still open.
+
