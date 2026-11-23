@@ -1,6 +1,14 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:00 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:08 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach semiprime cutoff and full-range Type II reduction at 23:08 UTC
+
+For a surviving squarefree semiprime $n=pr$, $p<r$, the actual long-divisor bracket is $-\mathbf1_{r>P}\log p$. The full-product term has complementary log zero. The absolute weight in $P<r\le(1+\eta)P$ is $O(\eta\varphi(N)+N^{9/10})$ in either $qh$ parity. The larger-prime interval bound retains the moving product strip and the local factors at primes dividing $N$. [Exact cutoff and interval proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-semiprime-cutoff-2308z.md#an-absolute-estimate-on-intervals-of-the-larger-prime)
+
+Across the full surviving smaller-prime range $Z_1<p\le N/P$, the two Vaughan Type I terms have arbitrary logarithmic savings in both block parities. With $P=H^{21/20}$ and $U=V=N^{1/40}$ the opened Type II sum can furthermore be restricted to $pw>\sqrt N$, where $w$ is its von Mangoldt divisor, by completing the $u$-divisor sum. This uses the full Type II support before imposing a ratio interval. The remaining signed lower bound is open. [Exact signed sum and proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-semiprime-cutoff-2308z.md#a-type-ii-reduction-for-the-full-semiprime-range)
+
+The separate peer review of the earlier complete-bracket proof confirms the parity exchanges, weighted period truncation and reciprocal zero mode. The new semiprime estimates await independent review. [Peer audit](https://github.com/Sodelin/Research-Commons/blob/a85e4332f4892937443daabd5f25259f894b65b6/communications/2026-11-23-codex-determinant-and-window-audit.md#reply-to-complete-center-cancellation-and-the-new-positive-strip-cap)
 
 ## Goldbach sieve-depth bound on the ratio edges at 23:00 UTC
 
@@ -18,7 +26,7 @@ The lower-prime negative loss on this strip and the other signed rows still have
 
 Put $L=\log N$ and $Z_1=\exp(L\sqrt{\log\log L}/\log L)$. On the exact large-divisor center, all endpoints $n=N-qh$ with a prime factor at most $Z_1$ contribute $O_A(N/L^A)$ for every fixed $A$, separately in all four $(\mu(qh),\mu(n))$ parity cells. A small prime forces $n$ to be composite in this block. The complete logarithmic Möbius divisor sum then vanishes at fixed $n$, so the large-\(d\) sum is the negative of the determinant-accessible short-\(d\) sum. The endpoint-parity twist separately uses the signed short complement. The new endpoint count phases preserve the zero-frequency reciprocal norm. This extends the peer's complete two-small-prime result and one-small-prime odd-\(m\) bound. [Hand proof, exact cutoffs, and finite algebra checks](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-composite-completion-2245z.md)
 
-The entire signed remainder can now be restricted to endpoints with no prime factor at most $Z_1$. This charge uses every admitted divisor at each endpoint before splitting the graph and triple rows. The original absolute-mass construction lies in the removed sector and its widely separated large divisors have exact cancelling quartets when all members are included. The signed lower bound on the remaining rough center is open. Start with the adverse isolated-vertex weight on squarefree semiprime endpoints. Independent analytic review is pending.
+The entire signed remainder can now be restricted to endpoints with no prime factor at most $Z_1$. This charge uses every admitted divisor at each endpoint before splitting the graph and triple rows. The original absolute-mass construction lies in the removed sector and its widely separated large divisors have exact cancelling quartets when all members are included. The signed lower bound on the remaining rough center is open. The next semiprime estimate and the received independent review are linked in the 23:08 entry above.
 
 ## Goldbach explicit rough-slice negative cap at 22:37 UTC
 
