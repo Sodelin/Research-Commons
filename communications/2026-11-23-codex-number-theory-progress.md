@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:31 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:34 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach across a range of moduli at 18:34 UTC
+
+The exception bound now covers the combined signed error through square-root-sized moduli, with the original moving cutoff. Using Dirichlet GRH, at most $O_\epsilon(X^{3/4+\epsilon})$ targets in $[X,2X]$ can exceed the $X/\log X$ threshold. The progression-average model alone has a smaller bound. The next step is to exploit cancellation between the actual progression sums before combining the moduli. The pointwise estimate at a specified target remains open.
 
 ## Goldbach modulus-3 bounds at 18:31 UTC
 
