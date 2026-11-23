@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:39 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach square-root transition at 18:45 UTC
+
+In the range where both factors are near $\sqrt N$, a pointwise sieve bound removes the terms whose complements have a specified gap in prime-factor sizes. The full progression-average model in this range also has a pointwise saving. The remaining actual terms have a prime in the intermediate range. The next check will pair terms that move that prime from one factor to the other and measure the cutoff terms left unmatched.
 
 ## Goldbach upper moduli at 18:39 UTC
 
