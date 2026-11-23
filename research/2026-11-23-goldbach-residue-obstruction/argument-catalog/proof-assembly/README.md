@@ -1,6 +1,6 @@
 # Goldbach proof assembly: separating checked plumbing from the missing estimate
 
-**Status:** Hand-verified modular reduction. Assembly.lean is an uncompiled source draft; no Lean or Mathlib verification is claimed. No Goldbach proof or VibeMath submission.
+**Status:** The modular arithmetic and conditional assembly in Assembly.lean kernel-check in Lean 4.33.1. The candidate-supply and finite-coverage premises remain open. No Goldbach proof or VibeMath submission.
 
 Inspired by the split between intermediate estimates and explicit theorem statements in [Alpöge's announcement](https://alpo.ge/remark.pdf) and [the independent RH/Dirichlet-GRH verification](https://math.mit.edu/~drew/grh/#what-was-verified). The proof method is not transferred; the attempt here is to make the interfaces explicit and catch mismatches before combining results.
 
@@ -10,11 +10,11 @@ Let T(k)=210k+192. A **candidate** means T(k)=p+rq with p and q prime and r∈{1
 
 | Component | Contract | Evidence / open obligation |
 | --- | --- | --- |
-| Local rejection | Impossible values of r=2 or r=3 for T(k) | Hand argument above, draft lemmas no_factor_two and no_factor_three. |
-| Candidate conversion | A single candidate gives a genuine prime pair | Hand argument and draft auditClass_iff. For the audit class this is an equivalence, not an independent route to existence. |
+| Local rejection | Impossible values of r=2 or r=3 for T(k) | Hand argument above, checked lemmas no_factor_two and no_factor_three. |
+| Candidate conversion | A single candidate gives a genuine prime pair | Hand argument and checked auditClass_iff. For the audit class this is an equivalence, not an independent route to existence. |
 | Supply | For every k above an explicit K, at least one candidate exists | **Open.** A fixed-exponent sieve or a bound on how many targets fail does not discharge this uniform statement. |
 | Finite coverage | For every k below that same K, a genuine pair exists | **Not discharged.** This needs an effective K from the preceding component and verified coverage up to it. |
-| Assembly | Supply plus finite coverage yields every target in this one progression | Draft combine_at_threshold, which takes both facts as explicit premises. Does not conclude full binary Goldbach. |
+| Assembly | Supply plus finite coverage yields every target in this one progression | Checked combine_at_threshold, which takes both facts as explicit premises. Does not conclude full binary Goldbach. |
 
 ## What the published tools can and cannot plug into
 
@@ -25,4 +25,8 @@ Let T(k)=210k+192. A **candidate** means T(k)=p+rq with p and q prime and r∈{1
 
 ## Verification
 
-The arithmetic proof above can be reviewed independently of the draft. Assembly.lean imports Lean alone and writes primality as the elementary no-proper-divisor predicate (no dependency on a Mathlib bridge). Compile with a known Lean toolchain, e.g. lean --trust=0 Assembly.lean; review the printed axioms and compare each theorem's statement with the table before labeling the bridge verified. The current workspace has no Lean executable; no compiler outcome is reported. The two analytic and finite hypotheses in combine_at_threshold are not axioms and are not claimed as established.
+Assembly.lean was checked with the official Lean 4.33.1 Linux executable and no Mathlib dependency. The build with `lean --trust=0 -o Assembly.olean Assembly.lean` exited 0. Both `auditClass_iff` and `combine_at_threshold` depend only on the Lean core axioms `propext` and `Quot.sound`; no `sorryAx` or project-specific axiom appears. See [the build log](LEAN-REPLAY.txt). The two hypotheses in combine_at_threshold are premises, not established facts.
+
+## Prior-work audit
+
+[Chen's formalization blueprint](https://subfish-zhou.github.io/goldbach-lean/blueprint/chap-chen.html) already conditions its sieve on whether a factor divides the target; that divisibility idea and the Chinese remainder theorem are classical. [Li–Liu](https://arxiv.org/html/2606.05224v2) supply the asymmetric family that motivates the small-factor interface. A targeted search did not identify this exact choice of progression and small-factor certificate. That does not establish priority, and this note makes no novelty claim. The same equivalence that makes the modular check exact also shows it does not independently make existence easier.
