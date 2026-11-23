@@ -1,0 +1,18 @@
+# Keep both rough divisors in the least-prime count
+
+This strengthens the other thread's least-prime count on the exact same fixed-\(N\) support. Its count uses roughness of \(s=\min(d,\ell)\) and discards roughness of the other divisor. Retaining the latter in the joint sieve saves one additional factor \(1/\log Y\), up to \(O(1+\log\log N)\). The proof is an upper count, with the original parity and signed-weight conventions unchanged. [Pinned least-prime count](https://github.com/Sodelin/Research-Commons/blob/9b91f0c966152810831ac8f7e7c05695278f6c9c/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-least-prime-2040z.md).
+
+Use that note's \(q=Ax,\ h=By\), where \(A,B\) are the exact products of the prime factors at most \(Z\) and \(x,y\) are \(Z\)-rough. For fixed \(A,B,s\), only \((AB,s)=(N,s)=1\) can contribute. On the original coprime support also \((AB,N)=1\). In addition to the two tests of \(Z\)-roughness, impose \(Y\)-roughness of \((N-ABxy)/s\), where \(s\le H\) is itself \(Y\)-rough. For \(p\le Y\), \(p\nmid sABN\), the two disjoint bad sets are \(xy=0\bmod p\) and \(ABxy=N\bmod p\), with union density \((3p-2)/p^2\). For \(p\mid N\) it reduces to \(xy=0\). For \(p\mid AB\) the second bad set is empty since \(p\nmid N\). Omitting \(p=2\), these exceptions cost at most \(\prod_{p\mid ABN,\ p>2}(p-1)/(p-2)\ll1+\log L\), since \(ABN\le N^2\). At \(Y<p\le Z\) only the \(x,y\) tests are active, and \(p\mid s\) makes them automatic. The lost Euler factors for \(p\mid s\) are bounded by roughness. Thus the survival product is
+\[
+ \ll\frac{1+\log L}{(\log Z)^2\log Y}.
+\]
+
+For the upper bound in the finite box, use one even Bonferroni truncation at \(C\log L\) primes, with \(C\) large. The sum of bad probabilities is \(O(\log L)\), so the independent-density tail is arbitrarily log-small. The auxiliary moduli are \(N^{o(1)}\). As in the published joint roughness proof, each selected residue pair reduces to a fixed rectangular hyperbola modulo \(s\); the modulus is coprime to the selected sifting primes because the automatic conditions were omitted. The complete-period and remainder decomposition gives per-box error \(O(s^{1/2+o(1)}(1+H/s))\). Thus the combined error over \(s\le H\) for fixed \(A,B\) is \(N^{3/4+o(1)}\), including all residue boxes. The CRT main term gives at most
+\[
+ \frac{N}{AB} \frac{1+\log L}{(\log Z)^2\log Y}
+   \sum_{\substack{s\le H\\s\ {\rm rough}}}\frac1s
+ \ll \frac{NL(1+\log L)}{AB(\log Z)^2(\log Y)^2}.
+\]
+The sum over \(s\) uses the same rough harmonic estimate as in the least-prime note. The case \(s=1\) carries zero weight on the exact long support. [Joint fixed-rectangle count](https://github.com/Sodelin/Research-Commons/blob/21fbeca29f418910e519dac4891b602550ec5a8b/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/joint-roughness-square-root-endpoint.md).
+
+The factor configurations are unchanged. Even in the case that permits unrestricted primes below \(Y_0\), the pinned truncation gives \(N^{.02+o(1)}\) configurations, so the summed error has a power saving after restoring logs. The reciprocal sums of \(1/(AB)\) and the reflection on odd \(qh\) are unchanged. Consequently each exponent \(E_b(\alpha,\kappa;\xi)\) in the pinned note can be replaced by \(E_b(\alpha,\kappa;\xi)-\theta\), with \(\theta=\log\log Y/\log L\) fixed there. The factor \(1+\log L=L^{o(1)}\) does not change the displayed exponents. This extends the negative-exponent ranges, with all original divisor orientations and no new assumption about the sizes of the largest prime factors. It applies to the remaining large-\(d\) region by intersecting the exact support with that divisor restriction.
