@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:08 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:13 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach gaps after one or two intermediate primes at 23:13 UTC
+
+On the original positive strip with \(z<P^-(d/w)\le N^{1/100}\), the two ratio edges cost at most \(N/200\) after doubling when the first prime is followed by the gap in the proof. A second disjoint slice, with a gap after the first two primes, costs at most \(N/80\). Both bounds apply after the exact short-cofactor removal because it keeps or removes each least-prime pair together. They allow all sizes of the surviving cofactor and hold at every sufficiently large power of two. [Hand proof, exact gap thresholds, and tested allocation algebra](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-prime-gaps-2310z.md)
+
+The negligible low-prime charge, the \(N/40\) high-prime cap, the short-cofactor charge and the two new gap charges give a sufficient fixed-target inequality \(2\mathcal D_{\rm res}+(53/1200)N\le M_0+E_{\rm other}-\eta N\). The residual grouped negative mass and the other signed rows still need to satisfy that inequality for the same target and square. [Exact ledger](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-prime-gaps-2310z.md#summing-the-marked-primes-and-the-fixed-target-budget)
 
 ## Goldbach semiprime cutoff and full-range Type II reduction at 23:08 UTC
 
