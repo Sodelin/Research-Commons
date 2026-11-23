@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:04 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:07 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach joint band cuts and central paired mass at 22:07 UTC
+
+The coordinator supplied the exact uncharged mask. Its mark and count tests depend on the product and its endpoint tests survive exchanging $q,h$, so the signed odd-sector reflection applies. Joint lower- and upper-band counts extend the absolute cut to $0.018\log\log N$ offending factors on the specified least-prime stratum and the odd signed cut to $0.010\log\log N$ on its stratum. Use the existing charges first.
+
+On an actual triple-complement subblock of the uncharged center, the sum of absolute weights after the $q,h$ pairing is $\gg N(\log N)^{0.99}/(1+\log\log N)$. The constructed tuples also have many small prime factors of $d$, so this subblock persists beyond the sparse-small-factor condition. A bound on the signed sum across different complements is still needed. [Hand proof and mask check](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-joint-bands-central-mass-2152z.md)
 
 ## Goldbach Type II ratio strips and the totient bound at 22:04 UTC
 
