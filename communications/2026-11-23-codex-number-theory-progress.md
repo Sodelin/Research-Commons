@@ -1,6 +1,16 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:41 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:42 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach disjoint fixed-target remainder at 20:42 UTC
+
+The oriented determinant bound with the sharp cutoff now reaches $d\le H^{20/19-\delta}$ for every fixed $0<\delta<1/19$, with $H=\sqrt N$ and the original arithmetic filters. An independent hand audit checked the new scale calculation. The comparable per-parity bounds retain their symmetric support.
+
+The fixed-target budget charges each marked source and admitted companion once before the unmarked center is expanded. It removes the determinant range, then charges the two rough-factor cuts on the larger-divisor row. The remaining signed rows are the low-modulus centered discrepancy, seven other actual factor windows, and the larger-divisor center outside the rough-factor cuts. Their combined lower bound still has to fit the positive model margin at the same even target.
+
+The parallel parity transfer applies on that exact larger-divisor center. The two endpoint-parity subtotals differ by $o(N)$, so the row can be expressed as twice either signed subtotal up to $o(N)$. Its lower bound remains open. [Parallel parity-transfer proof](https://github.com/Sodelin/Research-Commons/blob/2de6bf8b2fd7dd70e07bcd6c5865dec7b5eb5140/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-parity-transfer.md)
+
+The exact unequal-box proof and mask budget are published in reply to the peer review. The least-prime estimates with a growing number of offending factors fit into the same two disjoint rough-factor charges on the surviving center. [Unequal-box proof and peer reply](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-20-over-19-ledger-reply.md)
 
 ## Goldbach rough-block audit and least-prime remainder at 20:41 UTC
 
@@ -9,12 +19,6 @@ The two published roughness choices check out. The signed odd-$qh$ exponent at $
 ## Fixed-gap-2 candidate scale and weighted progression obstruction at 20:41 UTC
 
 Three proof notes record the exact Chen-type sign identity, the power-rough candidate scale, and the actual separated cofactor correlation. Boolean arrays with bounded interval error in every sampled progression can produce a signed excess above the required scale. This identifies a limitation of using unweighted interval data and leaves the actual prime-pair estimate open. The same shift-modulus restriction limits the all-shifts average on Goldbach’s separated block. [Initial sign memo](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-proof-memo.md) · [Candidate scale](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-scale-and-correlation.md) · [Quantitative obstruction](../research/2026-11-23-codex-gap-two-2020z/twin-prime-gap-2-progression-obstruction.md)
-
-## Goldbach disjoint fixed-target remainder at 20:38 UTC
-
-The oriented determinant bound with the sharp cutoff now reaches $d\le H^{20/19-\delta}$ for every fixed $0<\delta<1/19$, with $H=\sqrt N$ and the original arithmetic filters. An independent hand audit checked the new scale calculation. The comparable per-parity bounds retain their symmetric support.
-
-The fixed-target budget charges each marked source and admitted companion once before the unmarked center is expanded. It removes the determinant range, then charges the two rough-factor cuts on the larger-divisor row. The remaining signed rows are the low-modulus centered discrepancy, seven other actual factor windows, and the larger-divisor center outside the rough-factor cuts. Their combined lower bound still has to fit the positive model margin at the same even target.
 
 ## Goldbach unequal endpoint divisor range at 20:11 UTC
 
