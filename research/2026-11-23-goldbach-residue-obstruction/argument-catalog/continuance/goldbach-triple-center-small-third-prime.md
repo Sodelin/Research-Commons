@@ -62,7 +62,32 @@ Across \(N/L^B\le n\le N\), each \(k\)-range gives a single interval for \(a\) o
  \frac{N}{L}\sum_{p<p'\le Z}\frac{1+\log p}{pp'}
  \ll \frac{N(1+\log Z)}{L}.
 \]
-Indeed the inner sum \(\sum_{p<p'}(1+\log p)/p\) is \(O(1+\log p')\) by Chebyshev and partial summation. The middle range contributes at most \(O(N(1+\log Z)^2/L^2)\) by the product of the same two weighted prime harmonic sums. The boundary estimate (3) follows, under the original strict cutoff and all original \(m\) masks. 
+Indeed the inner sum \(\sum_{p<p'}(1+\log p)/p\) is \(O(1+\log p')\) by Chebyshev and partial summation. The middle range contributes at most \(O(N(1+\log Z)^2/L^2)\) by the product of the same two weighted prime harmonic sums. The boundary estimate (3) follows, under the original strict cutoff and all original \(m\) masks.
+
+## One subpower endpoint prime in the complete odd-\(m\) center
+
+Keep the combined triple-admitting and no-triple rows with the same \(m\) masks, the strict \(d>D\) and every admitted divisor at each endpoint. Fix \(0<\sigma<1\) and put \(V_1=\exp(L^\sigma)\). On the sector \(\mu(m)=-1\), the part with \(p_1(n)\le V_1\) is \(o(N)\) at each fixed target, separately in each endpoint parity. Explicitly, if \((1+\sigma)/2<\theta<1\), the bound is
+\[
+ O_{J,\sigma,\theta}\!\left(N L^{1+\sigma-2\theta}+\frac N{L^J}\right).
+ \tag{4}
+\]
+This uses the all-divisor complete center before splitting it by triple admission.
+
+Take \(Z=\exp(L^\theta)\). The part \(p_2(n)\le Z\) of the combined center has already been bounded by arbitrary logarithmic savings in each parity cell using its two-mark determinant calculation. On the remaining part \(p=p_1(n)\le V_1,\ p_2(n)>Z\), the trimmed \(n\) cannot be prime because \(n\ge N/L^B>V_1\). It has exactly one prime \(p\le Z\). Write \(n=p a k\), so \(a,k\) are both \(Z\)-rough. At fixed \(a\mid n/p\), the divisors \(\ell=a,ap\) give the exact untwisted bracket
+\[
+ \mu(k)\big(\log a\,\mathbf1_{k>D/p}
+                   -\log(ap)\,\mathbf1_{k>D}\big),
+\]
+with the original ordered \(m\) factor \(\mu(h)\log h\). The boundary \(D/p<k\le D\) is within the determinant range for the signed grouped index \(r=pk\le pD\), with smooth log weight on \(a\). The fixed prime \(p\mid r\) pays \(1/p\) in the zero mode, and the roughness above \(Z\) of \(a\) uses the same factorial expansion since \((\log Z)\log L=o(L)\). Roughness above \(Z\) of \(k\) stays in the grouped coefficient. The \(O(N/Y)\) nonsquarefree extension uses the original \(Y\)-roughness, which also holds on the selected support. This gives arbitrary logarithmic saving for the boundary.
+
+For \(k>D\), the remaining bracket is \(-\mu(k)\log p\). Pairing \(q,h\) on \(\mu(m)=-1\) gives absolute weight \(O(\log p)\) per tuple. Put \(M=p a=n/k\le N/D\), which is a unit modulus on the exact support, and upper bound the \(Z\)-rough test on \(k\) by the Selberg square in the preceding argument, now sifting to \(Z\) and omitting \(p\), the only prime divisor of \(M\) at most \(Z\). Its level is still \(D_s=N^{.03}\). The Markov estimate for the truncated Euler product applies since \(\log D_s/\log Z\to\infty\), and its product gives local main-term factor \(O(1/\log Z)\). The same CRT calculation gives main term \(O(N/(p a\log Z))\) per \(M\), and total power error \(O(N^{59/80+.12+o(1)})\).
+
+The harmonic mass of \(Z\)-rough \(a\le N\) is at most \(\prod_{Z<r\le N}(1-1/r)^{-1}\ll L/\log Z\). Also \(\sum_{p\le V_1}(\log p)/p\ll1+\log V_1\). Thus the absolute interior weight is
+\[
+ \ll \frac{N L(1+\log V_1)}{(\log Z)^2}
+           +O(N^{59/80+.12+o(1)}).
+\]
+Finally the \(\mu(n)\)-twist on the same one-small-prime support has signed index \(r=\ell<N/D\) and smooth variable \(t=d>D\), as before. The divisibility \(p\mid n\) is split between \(r\) and \(t\), and absence of the other primes at most \(Z\) uses the same reciprocal mask argument. This twisted sum has arbitrary logarithmic savings. Combining it with the untwisted boundary and interior gives (4) in each endpoint parity. For the triple-admitting row taken separately, this calculation leaves the selection of that row to be estimated.
 
 ## Placement in the complete fixed-target budget
 
