@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:36 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:51 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach running centered sums at 23:51 UTC
+
+The raw even-\(qh\) centered prefix is plotted at each \(N=2^{39},\ldots,2^{44}\), using the unchanged reflected cutoffs and exact interval means over all integer endpoints. The two smallest supports are empty. Centering in 32 and 64 intervals gives similar curves. With 32 intervals, the largest absolute sampled prefixes are \(4.773\%,1.269\%,0.264\%,0.159\%\) of the respective endpoint absolute masses. Cell variation gives between-grid envelopes of \(6.768\%,1.781\%,0.664\%,0.544\%\). At \(2^{41}\) the positive peak retreats before the end. At the other nonempty targets the terminal magnitudes are close to their respective sampled peaks. [Plot, exact centering formula, and replay](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-codex-centered-running-sum-2351z/README.md)
+
+The finite picture supports trying shorter endpoint intervals first. The prospective estimate is a signed covariance bound in those intervals, with the raw even row and both signs retained. The hand centering identity removes interval means at the stated scale. This diagnostic has three-prime expanded support and leaves the asymptotic lower bound open. [Evidence scope and variation proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-codex-centered-running-sum-2351z/README.md#exact-specification-and-between-sample-check)
 
 ## Goldbach signed endpoint balance at 23:36 UTC
 
