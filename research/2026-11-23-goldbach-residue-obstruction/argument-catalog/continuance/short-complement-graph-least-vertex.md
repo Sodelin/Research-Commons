@@ -52,3 +52,20 @@ For the charge \(\ell=p_0\), only one other prime \(\le z\) can remain in \(d\),
  O\!\left(\frac N L\left[\log(2V)(1+\log L)+(1+\log L)^3\right]\right).
 \]
 The power-error bound is unchanged: every counted \(A,\ell\) determines at most two possibilities for the marked \(p_0\) dividing \(A\). This proves the wider range, including \(V=\exp(L/(\log L)^{1+\epsilon})\) for each fixed \(\epsilon>0\).
+
+
+The least-prime order removes the remaining restriction on \(\log V\). Since \(p_0<X\), any smaller prime of \(n\) would itself be a vertex, so \(p_0\) is also the least prime of \(n\). The one further prime \(\le z\), when present, therefore has reciprocal cost bounded by
+\[
+ R(p_0)=1+\sum_{p_0<r\le z}\frac1r
+\]
+in either the \(p_0\)-charge or the band charge. Put \(T=\log(2V)\). By interchanging the two prime sums,
+\[
+ \sum_{p_0\le V}\frac{\log p_0}{p_0} R(p_0)
+ \ll T\bigl(1+\log(L/T)\bigr).
+\]
+Indeed, for \(r\le V\) the inner marked-prime sum is \(O(\log r)\), whose sum against \(1/r\) is \(O(T)\), and for \(r>V\) it is \(O(T)\), with the remaining reciprocals bounded by Mertens. We use \(V<z\) for large \(N\), which holds throughout the subpolynomial range. The \(B\log L+1\) part of the log width contributes only \(O((1+\log L)^3)\), even with both harmonic sums. The final upper bound is
+\[
+ O\!\left(\frac N L\left[T(1+\log(L/T))+(1+\log L)^3\right]\right)
+ +N^{.9+o(1)}+O_A(N/L^A).
+\]
+It is \(o(N)\) for **every** bound \(V=N^{o(1)}\) on the least vertex, with the other graph vertices still allowed to be polynomial in \(N\).
