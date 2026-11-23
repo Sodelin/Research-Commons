@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:09 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 19:19 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach signed prime correlation in one factor block at 19:19 UTC
+
+With both factors between half the square root and the square root, the signed minor-arc contribution on the same four targets had both signs. At $2^{20}$ it was $+0.004902N$. Squaring the signed sums for each modulus gives a bound through pairs of prime endpoints with that modulus held fixed. A pointwise bound controls identical and nearby cofactors in this calculation. The remaining estimate is a signed upper bound for the contribution from cofactors farther apart.
 
 ## Goldbach across complements at 19:09 UTC
 
