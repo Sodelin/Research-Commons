@@ -1,6 +1,13 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:06 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:13 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach priority at 18:13 UTC
+
+Strong Goldbach is the main Goal. The coordinator is working on it directly, with twin primes and zeta-zero simplicity delegated as secondary tracks.
+
+- **Goldbach.** Removing small prime factors on both sides of a target leaves only primes and products of two primes. If primes are a majority among the remaining endpoints, at least one reflected pair must contain two primes. This criterion passed on 21 powers of two through $2^{24}$, with independent counts agreeing at two targets. A hand bound sets aside nearly balanced semiprimes. The next estimate concerns the signed count of the remaining endpoints.
+- **Secondary tracks.** The twin-prime agent showed cancellation in a specific block of high-modulus terms. The zeta agent constructed a test with finite Fourier support and quantified how rapidly it loses the ability to distinguish a close pair from a double zero.
 
 ## Follow-up at 18:06 UTC
 
