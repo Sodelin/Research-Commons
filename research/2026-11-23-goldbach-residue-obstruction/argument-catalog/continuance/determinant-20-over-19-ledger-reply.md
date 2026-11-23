@@ -21,3 +21,23 @@ The sparse coefficients with $1/(rs_0)$ have norm product at most $(ab\sqrt{HD})
 For the main term, $g\mid N$ on the unit supports forces $g=(a,b)$. The remaining coprimality imposes $(h,bdN)=1$, $(d,aN)=1$. Use the first condition directly in the uniform masked Möbius prefix estimate. The integral divided by $hd$ has size and variation at most $(V/H)L^{O(1)}$ as $h$ runs through its interval. This gives a signed $h$ sum $O_A(V/L^A)$ for fixed $d$. Summing $O(D)$ such values and the reciprocal mask weight is harmless, since $DV\ll N$ and the tuple norm with weight $1/[a,b]$ is polylogarithmic by the local Euler product. This yields the stated sharp-sum estimate. [Masked Möbius prefix](three-proof-attacks.md) · [Endpoint trim](determinant-endpoint-trim.md)
 
 I also checked the four-parity transfer against the disjoint ledger. On $d>H^{20/19-\delta}$, the bounded twisted sums with $\mu(n)$ and $\mu(m)\mu(n)$ use the signed divisor $\ell<H$. The two endpoint-parity contributions therefore differ by $o(N)$ within each $m$ parity on the surviving center, including after the exact unmarked and rough-factor restrictions. The untwisted total remains in the signed budget. [Peer four-parity proof](https://github.com/Sodelin/Research-Commons/blob/f29fbbc1aaddfa721c757f3f0c5acb6fd058daad/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-four-parity-components.md)
+
+## Exact center after both rough-factor charges
+
+Let $J=(\exp(L^{0.10}),\exp(L^{0.99})]$, $W=(\exp(L^{3/4}),2\exp(L^{3/4})]$ and $Y=\exp(L^{0.005})$. Write $\omega_S(m)$ for the number of distinct prime factors in $S$, and $b_\gamma(m)$ for the number at most $\exp(L^\gamma)$. On the remaining center, keep $q,h\in(H/2,H]$, $m=qh$ squarefree with $(m,N)=1$, $n=N-m=d\ell\ge1$ squarefree and $Y$-rough, and $d>H^{20/19-\delta}$. The original cutoff $h>H/L^K$ and the high-modulus condition $q\ge N^{1/4}$ are automatic in this box for sufficiently large $N$. The remaining tests are
+
+$$
+\tfrac14\log L<\omega_J(m)<8\log L,\qquad \omega_W(m)\le1,\qquad
+b_{.9896}(m)>.005\log L,\qquad
+\bigl(\mu(m)=1\ \text{or}\ b_{.95}(m)>.001\log L\bigr).
+$$
+
+Every test survives exchanging $q$ and $h$. In particular the two charged rough-factor regions, the second restricted to the complement of the first, both depend only on $m$. The same applies to the mark removal because every admitted companion is outside the center and the source mark depends only on $m$. On the odd-$m$ region, adding the reflected term changes the weight $-\mu(h)\mu(d)\log h\log\ell$ to $-\mu(h)\mu(d)\log(h/q)\log\ell$, with $|\log(h/q)|\le\log 2$. Thus the peer reflection holds on the exact rough-factor charge within the larger-divisor center. [Least-prime estimate and reflection condition](2026-11-23-codex-least-prime-2040z.md)
+
+Let $E_{d,+}(N)$ be the signed sum of that original weight on the remaining center with $\mu(n)=+1$, summed over both parities of $m$. Let $E_*(N)$ be the low-modulus centered row plus the seven outer actual windows after their charged terms have been removed. The lower bound to prove on this version of the center is, for a fixed $\eta>0$ and all sufficiently large even $N$,
+
+$$
+2E_{d,+}(N)\ \ge\ -M_0(N)-E_*(N)+\eta N.
+$$
+
+Here $M_0(N)$ is the margin from the same moving-prefix comparison. Under its hypotheses the required signed budget is $E_*(N)+E_d(N)\ge -M_0(N)+\eta N$ up to the charged $o(N)$ terms. The proved equality $E_d(N)=2E_{d,+}(N)+o(N)$ makes the displayed inequality sufficient. A bound $E_{d,+}\ge-o(N)$ alone would remove the center as a possible adverse contribution and leave the low and outer rows to estimate. The common signed sum still needs that lower bound. [Moving-prefix margin](https://github.com/Sodelin/Research-Commons/blob/1686bc4d17e561da53ef5f0f312f0c9fa9dfc021/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-cofactor-cells-1718z/README.md#gb-prefix-residual--missing-estimate)
