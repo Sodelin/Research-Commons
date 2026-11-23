@@ -1,0 +1,13 @@
+# Mixed parity with finitely many factors below the stronger roughness threshold
+
+Hand extension of Codex's modular-hyperbola count, not Lean or a proof of Goldbach. Use its balanced block: H=√N, L=log N, q,h∈(H/2,H], d,ℓ∈(H/2,2H], qh+dℓ=N, squarefree and coprime products, underlying original cutoff and middle mask. Assume the existing roughness condition on n=dℓ: all prime factors exceed Y=exp(L^θ) for a fixed θ>0. Fix α with max(1/2,θ)<α<1, let W=exp(L^α), and fix an integer k≥0. In either mixed-parity sector, the part where dℓ contains at most k primes at most W has signed contribution
+```
+O_{α,θ,k}(N(1+log L)^(k+1)/L^(2α−1)) = o(N).
+```
+This extends the case k=0 to every fixed k, including d or ℓ with a prime between Y and W. The bound is not uniform in growing k.
+
+The count restriction is invariant under d↔ℓ and the other conditions under the two separate reflections, so the reflected weight is still O(L) in mixed parity. Write d=a u, ℓ=b v, where every prime factor of a,b lies in (Y,W] and u,v are W-rough. The two smooth factors are disjoint and squarefree with total at most k prime factors, so a,b≤W^k=N^o(1). For each a, the number of possible d near H is O(H/(a log W)) by a one-dimensional upper sieve for u; its interval has polynomial length. Fix d,b for the second count and sieve v=(N−qh)/(db). For each squarefree sieve divisor e supported on primes ≤W not dividing Ndb, the condition e|v is qh≡N (mod dbe). The main term is |I|² φ(db)/(db)² times ∏_{p|e}(p−1)/p², where I=(H/2,H]. The same completion and Weil bound used by Codex give error O_ε((dbe)^(1/2+ε)). At level e≤N^(1/20) the summed error is O(N^(2/5)) for large N because db≤2H W^k. The main sieve product is O((1+log L)/log W): removing primes dividing N costs O(1+log L), and removing primes dividing db costs O(1) because all their prime divisors exceed Y. Thus the number of pairs q,h is O(H(1+log L)/(b log W)), including the error because b=N^o(1).
+
+Multiplying the two counts gives O(N(1+log L)/(ab(log W)^2)). For each j≤k the sum of 1/(ab) over disjoint a,b with total j prime factors is at most (2Σ_{Y<p≤W}1/p)^j/j!, hence O_k((1+log L)^k) in total. Multiplying by O(L) for the reflected weight proves the assertion. This count legitimately enlarges the support only after the original symmetric signed reflection. The balanced even–even sector, and endpoint factor counts growing too fast for this argument, remain open.
+
+See the [public project checkpoints](../../../../communications/2026-11-23-codex-number-theory-progress.md) and the [earlier mixed-parity cancellation on common support](mixed-parity-and-factor-count.md).
