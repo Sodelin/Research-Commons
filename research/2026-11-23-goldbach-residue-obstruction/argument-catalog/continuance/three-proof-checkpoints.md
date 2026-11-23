@@ -5,9 +5,7 @@ These are scoped elementary hand arguments, not Lean-checked declarations or sol
 ## Goldbach: large prime overlap between modulus and cofactor
 
 In the [centered cofactor-cell split](square-divisor-cells.md), use d for the modulus and k=floor((N−n)/d)≥1 for the cell. Retain cells for which some prime p≥Z divides both d and k, with integer Z≥2. At the actual progression point N−n=dk, so μ(N−n)=0, even when both d and k are individually squarefree. The centered model need not vanish. For each p|d the number of cells is at most floor(N/(dp)), and each cell costs at most d(log N)²/φ(d) as before. Counting overlaps by an upper bound, the total over d≤Q≤N is at most
-[
-N(log N)^2sum_{pge Z}rac1psum_{dle Q:pmid d}rac1{arphi(d)}.
-]
+$$N(\log N)^2\sum_{p\ge Z}\frac{1}{p}\sum_{\substack{d\le Q\\p\mid d}}\frac{1}{\varphi(d)}.$$
 Here 1/φ(d)≤τ(d)/d and τ(pm)≤2τ(m); the inner sum is at most 2(1+log Q)²/p. Since the sum of 1/p² for p≥Z is at most 1/(Z−1), the contribution is O(N(log N)^4/(Z−1)). The bound is uniform in N and survives the original moving cutoff. It covers a repeat split across the two factors, not just a square inside k. Small overlaps and coprime squarefree semiprime cofactors are not controlled by this argument. An exact fixture checked the underlying counting inequality in 37,683 cases.
 
 ## Twin primes: exact condition on the restricted list
