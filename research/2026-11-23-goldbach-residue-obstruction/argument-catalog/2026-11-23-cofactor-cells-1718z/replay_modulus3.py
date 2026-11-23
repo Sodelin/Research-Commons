@@ -60,6 +60,37 @@ def run_case(target, alpha, kind, cells, mu, prime_base):
     return tuple(map(len, lanes))
 
 
+def check_full_row(target, alpha, odd_semiprimes, mu, prime_base):
+    actual, model, character, powers_of_three, other_cells = [], [], [], [], []
+    for partner in range(int(3 * alpha) + 1, target):
+        n = target - partner
+        base = prime_base[n]
+        if not base or not mu[partner]:
+            continue
+        weight = log(base) * mu[partner] * log(partner / 3)
+        model.append(weight / 2)
+        h, offset = divmod(partner, 3)
+        if offset == 0:
+            actual.append(weight)
+        if h not in odd_semiprimes:
+            other_cells.append(weight / 2 if offset == 0 else -weight / 2)
+        residue = n % 3
+        if residue == 0:
+            assert base == 3
+            powers_of_three.append(weight)
+        else:
+            character.append(weight if residue == 1 else -weight)
+
+    actual_mass, model_mass = fsum(actual), fsum(model)
+    error = actual_mass - model_mass
+    assert isclose(error, -(fsum(character) + fsum(powers_of_three)) / 2,
+                   rel_tol=1e-12, abs_tol=1e-10)
+    print(f'N={target} full q=3 row actual/N={actual_mass / target:+.9f} '
+          f'model/N={model_mass / target:+.9f} error/N={error / target:+.9f}')
+    print(f'  error/N from all other cells={fsum(other_cells) / target:+.9f}')
+    print('  Character formula, including the power-of-three correction, agrees.')
+
+
 def main():
     target = 9602
     _, mu, distinct, prime_base = arithmetic_tables(target - 1)
@@ -68,6 +99,7 @@ def main():
     five_times_prime = {h for h in cells if h % 5 == 0 and h // 5 > 5}
     run_case(target, Fraction(48), 'h=5p, prime p>5', five_times_prime, mu, prime_base)
     run_case(target, Fraction(48), 'all odd squarefree semiprime cells', cells, mu, prime_base)
+    check_full_row(target, Fraction(48), cells, mu, prime_base)
 
     # The actual point is at or beyond the strict endpoint in both fixtures.
     # One off-diagonal model term remains in each.

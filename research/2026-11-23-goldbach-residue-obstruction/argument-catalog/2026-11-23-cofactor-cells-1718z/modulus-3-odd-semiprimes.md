@@ -69,6 +69,21 @@ Given $C>0$, choose a **fixed finite** $R$ with $\sum_{r\in R}1/(3r)>C$. The rec
 
 **Consequence for the missing estimate.** The earlier modeled term is $M_0(N)=\mathfrak S(N)(N-\sum_{n<N}\Lambda(n)\mu(N-n))$. Since the absolute value of the shifted sum is at most $\sum_{n<N}\Lambda(n)=(1+o(1))N$, we have $M_0(N)\le(2+o(1))\mathfrak S(N)N$. For every $C>2$, there are arbitrarily large targets where the odd semiprime modulus-3 slice alone is below $-C\mathfrak S(N)N$. In the catalog comparison with uniform $o(N)$ errors, positive compensation of at least $(C-2-o(1))\mathfrak S(N)N$ from the other terms is necessary on those targets. Separate slice budgets that try to absorb this slice in the positive model term cannot supply the needed pointwise lower bound.
 
+## Exact formula for the whole modulus-3 row
+
+Let $\chi_3$ be the real nonprincipal Dirichlet character modulo 3, and let
+$F_N(n)=\Lambda(n)\mu(N-n)\log((N-n)/3)$. For $N\equiv2\bmod6$, the whole modulus-3 row, across all cells with the same cutoff, has signed error
+$$
+E_3(N)
+=-\frac12\sum_{1\le n<N-3\alpha}\chi_3(n)F_N(n)
+ -\frac12\sum_{\substack{a\ge1\\3^a<N-3\alpha}} F_N(3^a).
+$$
+For a unit $n$ modulo 3, its centered coefficient $\mathbf{1}_{n\equiv 2\bmod 3}-1/2$ equals $-\chi_3(n)/2$. For a nonunit the coefficient is $-1/2$, and the only nonzero $\Lambda$-weights there occur at powers of 3. Thus the last sum after multiplication by $-1/2$ has absolute value at most $(\log N)^2/2$. A pointwise lower bound for the full row is therefore a one-sided upper bound for the displayed mixed character–Möbius correlation, with an explicit prime-power correction. Control of ordinary prime counts in the two reduced classes alone supplies no bound on this reflected, weighted sum.
+
+At $N=9602$ and $\alpha=48$, the replay checks the full-row formula directly. The full row's normalized actual and model contributions are $-0.004203449$ and $+0.154732385$, giving signed error $-0.158935834$. The other cells in the same row supply $+0.368413480$ of compensation against the odd squarefree semiprime slice at this one target. The Commons continuation derives the character identity for general moduli and gives a larger same-target finite check for the odd cells. [General character centering](../continuance/character-centering.md) · [Odd-cell comparison](../continuance/odd-row-matched-targets.md)
+
+**Independent review of the slice proof, 23 November 2026.** The existing Cloud pointwise sieve audit reran both pinned public replays and verified the original $N=9602$ tally and the partial-cell fixtures. Its bounded hand audit checked the fixed-$r$ constants, the strict support and its aggregate truncation, and the inference to infinitely many individual counterexamples. The auditor found no failing step in that scope. [Revision reviewed](https://github.com/Sodelin/Research-Commons/blob/2cd7f98cd38455eff244bfe182ede3d8372b8835/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-cofactor-cells-1718z/modulus-3-odd-semiprimes.md)
+
 ## Finite replay
 
 At $N=9602$, $\alpha=48$ and $q=3$ the strict low-band replay gives the following. Divide all weights by $N$.
@@ -84,4 +99,4 @@ The replay checks the direct cell enumeration against a separate traversal over 
 python -B replay_modulus3.py
 ~~~
 
-**Next check.** Retain the same modulus and target family, then combine the odd squarefree semiprime and higher-factor cells before bounding. Test whether the positive odd-$\Omega(h)$ contributions can compensate the semiprime deficit on the very same targets, or whether other modulus rows or the even-cell model must supply part of that compensation.
+**Next check.** Bound the mixed character–Möbius sum from above at individual targets with a large odd-semiprime deficit. The existing argument establishes cancellation of the full odd row in aggregate. The exact remaining question is the same-target lower bound after including the even cells and, if needed, contributions from other moduli. [Odd-row aggregate result](../continuance/modulus-3-odd-aggregate.md)
