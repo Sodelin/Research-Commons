@@ -41,3 +41,14 @@ The first term is charged by \(\ell=p_0\), which is admitted with \(d>P\). In th
 The reciprocal log sum on primes up to \(V\) is \(O(L^\sigma)\). For primes in any band \([A_0,B_0]\), it is \(O(1+\log(B_0/A_0))\), by Chebyshev on dyadic intervals. For squarefree semiprimes in that band, order \(p<r\), use \(\log(pr)\le2\log r\), and apply the same prime bound to the interval for \(r\) with \(p\) fixed. Summing \(1/p\) costs \(O(1+\log L)\). Hence the total reciprocal log sum for the three charges is \(O(L^\sigma(1+\log L))\). The polynomial sieve proves the result.
 
 **Additional all-parity slices.** The no-triple graph condition gives at most two prime factors in each \(\ell>1\) and at most two exceptions to polynomial roughness in \(d\). Thus the middle-count tail estimate in the previous note applies to every graph vertex and edge product, even at polynomial scales. With the original parameters, \(k(qh)\le.26\log L\) and \(k(qh)\ge4\log L\) each give \(o(N)\) in the absolute original weight, with either \(qh\) parity. These extend the corresponding semiprime-endpoint estimates to the full no-triple graph. Outside those tails, the odd-\(qh\) bound above still removes the subpolynomial-least-vertex case. Graphs with all vertices polynomial in size, even \(qh\) in the central count region, and endpoints admitting triple complements remain open in general.
+
+
+## A wider least-vertex range
+
+The same conclusion holds for \(p_0\le V=N^{o(1)}\) whenever \(\log V=o(L/(1+\log L))\). The improvement comes from keeping \(p_0\) in the counting and charging the two small primes jointly.
+
+For the charge \(\ell=p_0\), only one other prime \(\le z\) can remain in \(d\), so the polynomial-sieve main term is \(O(N\log(2V)(1+\log L)/L)\). For the other charges, fix \(p_0\). The band has log width at most \(W(p_0)=B\log L+\log p_0\). The charged \(\ell\) is not divisible by \(p_0\), so \(p_0\) belongs to \(A\) in the polynomial sieve. The band lies above \(z^2\) for sufficiently small fixed \(c\), since \(V=N^{o(1)}\). Thus a prime or semiprime \(\ell\) in the band has a prime \(r>z\). Use the marked \(r\) to pay for \(\log\ell\) and sum \(\log r/r\) in its band, at cost \(O(1+W(p_0))\). If \(\ell\) has another prime factor above \(z\), its unmarked reciprocal cost is \(O_c(1)\) by Mertens between \(z\) and \(N\). Across \(A/p_0\) and \(\ell\), at most one further prime \(\le z\) is available, at cost \(O(1+\log L)\). Hence the main term for fixed \(p_0\) is bounded by \(N(1+W(p_0))(1+\log L)/(p_0 L)\). Summing over \(p_0\le V\) gives
+\[
+ O\!\left(\frac N L\left[\log(2V)(1+\log L)+(1+\log L)^3\right]\right).
+\]
+The power-error bound is unchanged: every counted \(A,\ell\) determines at most two possibilities for the marked \(p_0\) dividing \(A\). This proves the wider range, including \(V=\exp(L/(\log L)^{1+\epsilon})\) for each fixed \(\epsilon>0\).
