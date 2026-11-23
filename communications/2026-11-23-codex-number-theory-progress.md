@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:22 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:26 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach modulus-3 check at 18:26 UTC
+
+The moving-prefix replay reproduced the original small-factor contribution on all 22 targets with the same cutoff and weights. In all 17 cases at or above 512, most cancellation within that contribution occurred inside least-prime-factor buckets. At $2^{20}$ the share was 99.5%. The bucket sum was still about $-0.277434N$, with the other terms adding about $+0.273834N$. A uniform lower bound for the combined signed error at each target is still needed. [Original targets and normalization](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/rough-pair-row-crosswalk.md)
 
 ## Goldbach at 18:22 UTC
 
