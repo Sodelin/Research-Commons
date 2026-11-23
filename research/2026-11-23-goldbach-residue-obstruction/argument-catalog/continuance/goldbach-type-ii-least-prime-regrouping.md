@@ -41,10 +41,10 @@ Another test on the opened support before divisor-dependent cuts keeps both endp
 
 There is also an absolute bound for the part of the same expansion on which some \(p\le V_0\) divides \(n\), with \(\log V_0=o(L)\). It is
 \[
- \ll_A \varphi(N)\left(\frac{1+\log V_0}{L}\right)^{2/3}+N/L^A.
+ \ll_A \varphi(N)\frac{1+\log V_0}{L}+N/L^A.
  \tag{3}
 \]
-This upper bound survives arbitrary further intersections, including tests on \(u\). The stronger exponent in (2) uses complete signed regrouping.
+This upper bound survives arbitrary further intersections, including tests on \(u\). The signed regrouping in (2) independently exhibits cancellation in the original Möbius sum.
 
 For the proof use the averaged local Bernoulli endpoint density \(g=g_2\) of the pinned Selberg square. Write \(D=N^\kappa\), \(z=N^c\) for its fixed levels, and \(h(r)=\prod_{p\mid r}g(p)/(1-g(p))\) on squarefree supported indices. Its diagonal coordinates are \(y_d=\sum_{d\mid a}\lambda_a g(a)=\mu(d)h(d)/G_D\) for \(d\le D\), with \(G_D=\sum_{d\le D}h(d)\asymp\prod_{p\le z}(1+h(p))\). Force \(Y_p=1\) for one \(p\le V_0<z\), leaving the other flags independent. For \(p\nmid d\) the new diagonal coordinate for the same square is
 \[
@@ -56,21 +56,22 @@ Indeed forcing the flag replaces each coefficient \(\lambda_a\), \(p\nmid a\), b
  =G_D^{-2}\sum_{\substack{D/p<d\le D\\p\nmid d}} h(d).
 \]
 
-The full Euler-product normalization of \(h\) is the law of a random squarefree product with independent prime frequencies \(g(r)\). Write \(T_0=\sum_{r\le z}Y_r\log r\). Its probability in any log interval \(I\) of length at most \(\Delta\), \(1\le\Delta\le\log z\), is \(O((\Delta/\log z)^{2/3})\). To prove this, separate the event with no selected prime exceeding \(Y_1\), of probability \(O((\log Y_1/\log z)^2)\) by Mertens and the dimension-two survival factors of the fixed square. For any occurrence with such a selected prime, take a union over \(r>Y_1\). If \(T_{-r}=T_0-Y_r\log r\), independence and conditioning on \(Y_r=0\) give
+The full Euler-product normalization of \(h\) is the law of a random squarefree product with independent prime frequencies \(g(r)\). Write \(T_0=\sum_{r\le z}Y_r\log r\). Its probability in any log interval \(I\) of length at most \(\Delta\), \(1\le\Delta\le\log z\), is \(O(\Delta/\log z)\). If no prime is selected, the contribution is \(O((\log z)^{-2})\). Otherwise separate by the dyadic range \((A,2A]\) containing the logarithm of the largest selected prime. The probability of no selected prime above \(e^{2A}\) is \(O((A/\log z)^2)\) by Mertens and the dimension-two survival factors, also for the last range meeting \(z\). Conditional on that event, keep the independent variables for primes \(r\le\min(z,e^{2A})\). Write \(T_A\) for their log product and \(T_{A,-r}=T_A-Y_r\log r\). A union over the selected \(r\) in the dyadic range gives conditional probability at most
 \[
- \sum_{Y_1<r\le z}g(r)\mathbb P(T_{-r}\in I-\log r)
- \le \mathbb E\sum_{\substack{Y_1<r\le z\\ T_0\in I-\log r}}\frac{g(r)}{1-g(r)}
- \ll \frac{\Delta}{\log Y_1}.
+ \sum_{A<\log r\le2A}g(r)\mathbb P(T_{A,-r}\in I-\log r)
+ \le \mathbb E\sum_{\substack{A<\log r\le2A\\ T_A\in I-\log r}}\frac{g(r)}{1-g(r)}
+ \ll \frac{\Delta}{A}.
 \]
-The last bound uses the reciprocal prime sum over a log interval, \(r>Y_1\), and \(g(r)=O(1/r)\). Choose \(\log Y_1=(\Delta\log^2 z)^{1/3}\). Taking \(\Delta=1+\log p\) in this interval bound yields
+The inequality uses independence and \(Y_r=0\). The reciprocal prime sum in the last bound is over an interval of log width \(\Delta\) with all primes \(>e^A\). Summing the product \(O(\Delta A/(\log z)^2)\) over the dyadic ranges proves the concentration estimate.
+
+Taking \(\Delta=1+\log p\) then gives
 \[
- \mathbb E[W_N\mid Y_p=1]
- \ll G_D^{-1}\left(\frac{1+\log p}{L}\right)^{2/3}.
+ \mathbb E[W_N\mid Y_p=1]\ll G_D^{-1}\frac{1+\log p}{L}.
 \]
-A union bound with \(g(p)=O(1/p)\) and partial summation over \(p\le V_0\) gives averaged model mass
+A union bound with \(g(p)=O(1/p)\) and the prime reciprocal and Chebyshev sums yield
 \[
  \mathbb E[W_N\mathbf1_{\exists p\le V_0:Y_p=1}]
- \ll G_D^{-1}\left(\frac{1+\log V_0}{L}\right)^{2/3}.
+      \ll G_D^{-1}\frac{1+\log V_0}{L}.
 \]
 For transfer, insert the event \(p\mid n\) separately in each rectangle count and sum the resulting upper bounds. This adds at most one prime \(p\) to each CRT modulus from the Selberg square, with no extra CRT test when \(p\mid\min(u,v)\). Both this prime and the total number of such choices are \(N^{o(1)}\). The harmonic average in the smaller factor uses the same affine dependence on its prime flags and floor error as in the fixed-square proof. Thus the lattice and harmonic-average errors still save a power. Restoring the dyadic and prime-complement weights contributes \(O(NL^2)\) times the model mass. Since \(G_D^{-1}\ll\varphi(N)/(NL^2)\), this proves (3). [Pinned square, Euler product, and rectangle transfer](https://github.com/Sodelin/Research-Commons/blob/290227d6b4b2b5e69e39b241332620885c661ced/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-selberg-ratio-strips-2158z.md)
 
