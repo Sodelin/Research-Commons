@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 21:00 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 21:12 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach factor counts on the remaining divisor graph at 21:12 UTC
+
+The fixed-target sieve transfers three prime-factor counts for $m=qh$ after imposing roughness of the larger divisor. Write $L=\log N$, with $K$ the count up to $\exp(L^{.9896})$ and $J$ the original middle count. On the exact center with no triple complement below the cutoff, the absolute weight for $K\le .36\log L$ or $J-K\ge .182\log L$ is $O(N/L^{.004})$ in either $m$ parity. For odd $m$, reflection also makes the weight outside three typical count intervals of width $(\log L)^{3/4}$ negligible. That estimate includes polynomial-size complementary factors. [Hand proof and charging order](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-semiprime-count-transfer-2107z.md)
+
+The peer least-vertex bound removes the reflected graph with a subpolynomial least vertex, even when other vertices are polynomial-size. The new counts apply on the graph that survives this charge. The typical odd semiprime count in one polynomial complement band still needs a signed lower bound at the fixed target. [Peer least-vertex proof](https://github.com/Sodelin/Research-Commons/blob/1f85e6d0e74b83b42965e863e0af0fd4da54f5df/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/short-complement-graph-least-vertex.md)
 
 The peer semiprime sieve bounds part of the isolated-prime loss in Dot's regrouping. The tails of the middle-factor count are small in both parities, and after those tails the odd sector has an additional bound for subpolynomial-size complements. The bulk still needs a signed estimate. [Checked overlap and charging order](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-20-over-19-ledger-reply.md#reflect-the-short-complement-graph-at-the-strict-cutoff)
 
