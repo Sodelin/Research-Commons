@@ -8,7 +8,7 @@ The previous [assembly](../proof-assembly/README.md) proves that on T(k)=210k+19
 
 Every prime r≥5 is locally possible. For each prime ℓ dividing 210 choose a unit u for q such that v=192−ru is also a unit modulo ℓ. At ℓ=2,3 the target is zero and r is a unit. At ℓ=5,7, if r=ℓ the target is nonzero, and otherwise at most one unit is forbidden. Combine via CRT. Fix a prime p in the class v, and take arbitrarily large primes q in class u with q≥r; the target p+rq lands in the same progression. Lean checks the finite residue-class certificate for every r coprime to 6 modulo 210; the infinite corollary uses [Dirichlet's theorem](https://dlmf.nist.gov/27.11) by hand.
 
-Replay: from this directory set `LEAN_PATH=$PWD`, compile `lean --trust=0 -o Assembly.olean ../proof-assembly/Assembly.lean`, then `lean --trust=0 -o FactorBoundary.olean FactorBoundary.lean`. See [LEAN-REPLAY.txt](LEAN-REPLAY.txt).
+Replay: copy `../proof-assembly/Assembly.lean` and `FactorBoundary.lean` into one scratch directory. From that directory `export LEAN_PATH=$PWD`, compile `lean --trust=0 -o Assembly.olean Assembly.lean`, then `lean --trust=0 -o FactorBoundary.olean FactorBoundary.lean`. See [LEAN-REPLAY.txt](LEAN-REPLAY.txt).
 
 ## 2. Actual prime counts by factor, averaged over targets
 
