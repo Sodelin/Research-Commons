@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:26 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:31 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach modulus-3 bounds at 18:31 UTC
+
+A mean-square estimate bounds the number of large least-factor errors across a target interval. For least factors at most the fourth power of the logarithm, the Dirichlet GRH input gives at most $O_\epsilon(X^{1/2+\epsilon})$ exceptions to the $X/\log X$ threshold on $[X,2X]$. The full mod-3 row has the same exception bound. The result leaves the sign and size at each exceptional target open, including powers of two.
 
 ## Goldbach modulus-3 check at 18:26 UTC
 
