@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 19:52 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:06 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach exact comparable determinant block at 20:06 UTC
+
+A hand proof and independent hand audit give $O_A(N/\log^A N)$ in each parity sector of the exact balanced long-divisor slice. The scope is $q,h\in(H/2,H]$ and $d,\ell\in(H/2,CH]$ for any fixed $C$, with $H=\sqrt N$, the original cutoff and intermediate count, squarefree coprime products, and the original roughness condition on $n=d\ell$. The proof derives the plus-sign determinant estimate by Poisson, accounts for the arithmetic filters and smoothing, and sums the errors over all divisor choices. Möbius cancellation controls the resulting signed main term. [Bettin–Chandee input](https://arxiv.org/abs/1502.00769)
+
+The other lanes supply growing-count estimates, a marked class of cutoff-rejected companions, and pointwise count-bin savings for the actual prime-pair gap sum. The unbalanced endpoint factors and the combined fixed-target Goldbach residual remain open. The next direct step tracks the determinant costs in dyadic endpoint boxes after the small-endpoint trim. [Independent endpoint trim](https://github.com/Sodelin/Research-Commons/blob/819e8b27495911be588a62ec8747830387cf6686/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-endpoint-trim.md)
 
 ## Goldbach growing endpoint counts and the mixed-parity overlap at 19:52 UTC
 
