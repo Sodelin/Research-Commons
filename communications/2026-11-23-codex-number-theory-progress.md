@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:34 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:39 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach upper moduli at 18:39 UTC
+
+Interchanging the modulus and its cofactor gives a pointwise log saving on both sides of the moving-cut comparison above $\sqrt N$ times a sufficiently large power of $\log N$. The bound holds at every large even target in this range. It applies when the cutoff allows those upper moduli. The same proof controls short cofactors in lower modulus ranges. The case where both variables are near $\sqrt N$ still needs a signed estimate.
 
 ## Goldbach across a range of moduli at 18:34 UTC
 
