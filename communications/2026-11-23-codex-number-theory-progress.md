@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:11 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:38 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach disjoint fixed-target remainder at 20:38 UTC
+
+The oriented determinant bound with the sharp cutoff now reaches $d\le H^{20/19-\delta}$ for every fixed $0<\delta<1/19$, with $H=\sqrt N$ and the original arithmetic filters. An independent hand audit checked the new scale calculation. The comparable per-parity bounds retain their symmetric support.
+
+The fixed-target budget charges each marked source and admitted companion once before the unmarked center is expanded. It removes the determinant range, then charges the two rough-factor cuts on the larger-divisor row. The remaining signed rows are the low-modulus centered discrepancy, seven other actual factor windows, and the larger-divisor center outside the rough-factor cuts. Their combined lower bound still has to fit the positive model margin at the same even target.
 
 ## Goldbach unequal endpoint divisor range at 20:11 UTC
 
