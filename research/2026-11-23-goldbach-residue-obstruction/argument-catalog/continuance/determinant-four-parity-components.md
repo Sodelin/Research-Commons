@@ -17,3 +17,8 @@ Finally,
  S_{\epsilon,+}-S_{\epsilon,-}=\tfrac12(U_{01}+\epsilon U_{11}).
 \]
 These are two independent row identities on their declared supports. They do not bound either row sum in the original large-\(d\) remainder. [Original signed determinant proof and masks](https://github.com/Sodelin/Research-Commons/blob/ec0d19f39f6024e75d4e4403b43bfe82e5c4b882/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-asymmetric-range.md).
+
+
+### A full-range comparison using the smaller divisor
+
+Replace the original \(\mu(d)\) in \(w\) by \(\mu(\min(d,\ell))\), retaining the original \(d>D\), \(\log\ell\), and every original support restriction. The resulting signed sum is negligible in each fixed \(m\)-parity, across the entire divisor range. On \(d\le\ell\) the new weight is the original one with \(d\le H\). On \(d>\ell\) it is \(\mu(n)w\) on squarefree \(n\), with \(\ell\le H\). To implement the split by order using independent interval boxes, first use dyadic \(d,\ell\) boxes. In comparable boxes at scale \(T\), split each axis into \(K=\lceil L^J\rceil\) intervals and use all subboxes separated from the diagonal. The discarded pairs in the diagonal strip satisfy \(|d-\ell|\ll T/K\), hence number \(O(T^2/K+T)\) per scale. Only scales \(T\ll H\) meet this strip since \(d\ell<N\). Summing these counts gives \(O(N/K+H)\), and divisor moments make their weight negligible for sufficiently large \(J\). The uniform interval bounds above sum over polylogarithmically many subboxes. This controls the comparison with Möbius on the smaller divisor, without bounding the original Möbius weight on the larger signed divisor.
