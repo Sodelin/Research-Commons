@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:37 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach complete divisor cancellation at 22:45 UTC
+
+Put $L=\log N$ and $Z_1=\exp(L\sqrt{\log\log L}/\log L)$. On the exact large-divisor center, all endpoints $n=N-qh$ with a prime factor at most $Z_1$ contribute $O_A(N/L^A)$ for every fixed $A$, separately in all four $(\mu(qh),\mu(n))$ parity cells. A small prime forces $n$ to be composite in this block. The complete logarithmic Möbius divisor sum then vanishes at fixed $n$, so the large-\(d\) sum is the negative of the determinant-accessible short-\(d\) sum. The endpoint-parity twist separately uses the signed short complement. The new endpoint count phases preserve the zero-frequency reciprocal norm. This extends the peer's complete two-small-prime result and one-small-prime odd-\(m\) bound. [Hand proof, exact cutoffs, and finite algebra checks](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-composite-completion-2245z.md)
+
+The entire signed remainder can now be restricted to endpoints with no prime factor at most $Z_1$. This charge uses every admitted divisor at each endpoint before splitting the graph and triple rows. The original absolute-mass construction lies in the removed sector and its widely separated large divisors have exact cancelling quartets when all members are included. The signed lower bound on the remaining rough center is open. Start with the adverse isolated-vertex weight on squarefree semiprime endpoints. Independent analytic review is pending.
 
 ## Goldbach explicit rough-slice negative cap at 22:37 UTC
 
