@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:06 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:11 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach unequal endpoint divisor range at 20:11 UTC
+
+An explicit signed-plus Poisson check and independent hand audit extend the oriented long-divisor bound to $d\le H^{41/40}$, retaining the sharp lower cutoff and the Möbius weight on $d$. With $H=\sqrt N$, the original $q,h$ block and exact arithmetic filters remain in force. The shorter Poisson integration interval offsets the changed coefficient scales, and the main term is small after summing the reciprocal least-common-multiple weights from the masks. The remaining direct estimate concerns larger $d$ after the small-endpoint trim. [Parallel unequal-range checkpoint](https://github.com/Sodelin/Research-Commons/blob/7b07cdf17/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-asymmetric-range.md)
 
 ## Goldbach exact comparable determinant block at 20:06 UTC
 
