@@ -42,3 +42,11 @@ For real \(0<z<1\), \(0<Z_B(z)<1\), so the residue numerator is a positive combi
 The averaged observable is real, continuous, and \(O(e^{2u})\) on \(u\ge0\) by the same bound for \(G_F\) and compactness of \([0,B]\). Its surviving poles are simple and isolated. The positive-part envelope now meets the exact hypothesis of the pinned generic Landau theorem, with \(\theta=1/2+\epsilon\). Let \(\epsilon\) tend to zero and reflect using each Dedekind functional equation. Conversely, RH for both fields gives the uniform square-root-times-log prime ideal theorem. Partial summation gives \(G_F(x)=-x\int_x^\infty(\psi_F(t)-t)t^{-2}dt\), so each controlled term is \(O_B(\sqrt x[(1+\log x)\log |D_F|+[F:\mathbb Q](1+\log^2 x)])\). This implies the window condition. For a Galois extension, RH for the top zeta function also implies RH for the base by the Heilbronn order argument for the trivial Artin factor. [Pinned pole and envelope hypotheses](https://github.com/Deicyde/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauZeroFreeCriterion.lean#L15-L29) · [Pinned Landau theorem](https://github.com/Deicyde/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean#L83-L84) · [Grenié–Molteni, Corollary 1.2](https://doi.org/10.1090/mcom3031).
 
 This is a hand application of the pinned theorem. It isolates one positive count and one smooth main term whose difference would suffice. It does not establish the required window estimate or supply a same-target Goldbach correlation.
+
+### An integration-by-parts check of the sine sign
+
+For \(\alpha=1-\Re z>0\) and \(\tau=\Im z>0\), put \(F(v)=(1-\cos(\tau v))/\tau\). Nolan noted that \(F\ge0\) is the running integral of \(\sin(\tau v)\). Integration by parts gives
+\[
+ B\Im Z_B(z)=e^{-\alpha B}F(B)+\alpha\int_0^B e^{-\alpha v}F(v)\,dv>0.
+\]
+The integral is strictly positive even if \(F(B)=0\). Conjugation gives the negative-frequency case. This independently checks the shared-zero residue argument.
