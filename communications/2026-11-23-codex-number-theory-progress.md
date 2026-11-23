@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:50 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach paired factor placements at 18:50 UTC
+
+Moving two primes between the modulus and cofactor gives four signed terms that cancel exactly when all placements survive. With a sufficiently low cutoff, the groups that touch the square-root window have lower-order total net weight once their companions at other moduli are included. The original numerical cutoff left many groups incomplete. The next estimate must account for companions already inside the previously bounded upper-modulus range.
 
 ## Goldbach square-root transition at 18:45 UTC
 
