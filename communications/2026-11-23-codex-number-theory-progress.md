@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:22 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:25 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach triple-complement running balance at 22:25 UTC
+
+On seven finite exact-center targets, grouping every admitted divisor at fixed $qh$ removes 88.30% to 91.75% of the absolute mass. Grouping the triple-and-higher terms alone removes 0% to 5.73%. When the lower orders are restored at the same product, they neutralize 92.06% to 98.08% of the triple subtotal's absolute mass. At $2^{28}$ another 97.65% of the surviving grouped mass cancels across distinct additive complements. The narrow typical-count subblock is empty at these sizes, and its geometry projection is recorded separately.
+
+There is also an exact filter. A triple-admitting squarefree endpoint with four prime factors has a complete admitted divisor bracket and contributes zero at fixed $n$. The potentially nonzero $\mu(n)=+1$ terms begin with six prime factors. The measured signs vary across targets, so the signed bound for incomplete brackets remains open. [Finite runs, exact filter, and reproducible files](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-codex-triple-complement-balance-2225z/README.md)
 
 ## Goldbach negative Type II weight on powers of two at 22:22 UTC
 
