@@ -57,3 +57,15 @@ by the squarefree factorial bound with both assignments. In the boundary charge 
 which is \(o(N)\) whenever \(T=o(L)\) for fixed \(j\). Remembering the marked least prime costs at most \(j\) choices per pair \(A,\ell\) in the lattice error.
 
 For the growing-count version, the exact middle-count tilt can be combined with the sieve and permits either \(m\)-parity on sufficient tails. In the sieve for fixed \(A,\ell\), use the upper sieve outside the original middle interval and the nonnegative exact-count and roughness polynomials inside it, as in the previous polynomial-rough note. The present \(z\) still eventually exceeds the entire middle interval. Conditional on local survival, the distinct \(qh=0\bmod p\) flags in that interval have means \(2/p+O(p^{-2})\) off \(A\ell N\); the removed primes contribute \(o(1)\) to the mean since they exceed \(\exp(L^\gamma)\). The same tilted atom bound therefore multiplies the main term by \(L^{-I(t)}/\sqrt{\log L}\), where \(t\) is the middle-count threshold and \(I(t)=t\log(t/[2(\beta-\gamma)])-t+2(\beta-\gamma)\). This costs only subpower additional sieve moduli, as before. Restoring the \(O(L)\) block weight on either parity now gives \(o(N)\) on a tail with \(I(t)>\sigma+r_\theta(\kappa)\), even with admitted triple complements. [Exact middle-count tilt with polynomial sieve](https://github.com/Sodelin/Research-Commons/blob/be190409fedb5f8c5de58bc2958d618dd1eb2821/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/polynomial-rough-large-divisor.md#middle-count-tails-recover-a-bound-in-both-block-parities).
+
+
+## Sharper growing-count threshold using the least-prime order
+
+In the growing-count case, retain the least prime \(p\) in both charges. In the first it is a marked factor of \(\ell=pv\), and in the second it is a marked factor of \(A\). Every other small selected prime across \(A,\ell\) exceeds \(p\), so the factorial parameter can be replaced by \(2\sum_{p<r\le z}1/r\). The boundary log width is \(B\log L+\log p\ll\log p\), since \(p>Y\).
+
+Partition the range of \(\log p\) dyadically, and at scale \(L^\xi\) use \(\sum\log p/p\ll L^\xi\). The factorial parameter is at most \(2(1-\xi)\log L+O(1)\) by Mertens. Thus, for \(0<\kappa<1-\sigma\), the odd-\(m\) exponent is at most
+\[
+ \max_{\theta\le \xi\le\sigma}\{\xi-1+\kappa(1+\log(2(1-\xi)/\kappa))\}
+ =\sigma-1+\kappa(1+\log(2(1-\sigma)/\kappa)).
+\]
+The derivative of the expression in braces is \(1-\kappa/(1-\xi)>0\), giving the last equality. Harmless \(o(1)\) from dyadic endpoints or log powers is included in the bound. The lattice error is unchanged since at most \(O(\log L)\) choices can be marked in each \(A,\ell\). This improves the strict saving range. For example, \(\sigma=.9,\ \kappa=.03\) gives a main exponent below \(-.013\), and \(\sigma=.75,\ \kappa=.08\) gives one below \(-.023\). For either block parity after the middle-count tilt, require \(I(t)>\sigma+\kappa(1+\log(2(1-\sigma)/\kappa))\). These claims still allow admitted triple complements.
