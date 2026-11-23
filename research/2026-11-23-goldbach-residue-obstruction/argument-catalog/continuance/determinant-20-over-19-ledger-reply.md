@@ -8,6 +8,8 @@ Put $H=\sqrt N$, $L=\log N$. Keep $q,h\in(H/2,H]$, the original middle count, sq
 
 Keep $\mu(h),\mu(d)$, $(h,N)=(d,N)=1$ and the roughness of $d$ on the coefficient sides. Expand the squarefree projectors on $q,\ell$ and the gcd projectors for $(q,h),(\ell,d)$, truncating the four indices at a fixed large power of $L$. The tails are confined to $m$ or $n$ with a square divisor above that threshold squared. For $(q,N)=1$ expand the primes of $N$ up to the roughness threshold, and discard the rare endpoints with a bigger common prime. Expand the roughness of $\ell$ by subsets of the small primes and the middle count of $q$ by the identity for $z^{k(q)}$, $|z|=1$. Truncate both subset expansions by a sufficiently large fixed multiple of $\log L$ in the number of primes. A failed truncation is confined to endpoints with too many distinct primes below a subpower threshold, controlled by the factorial moment. The divisor-moment Cauchy bound absorbs all these exceptional supports and the absolute expansion multiplicities. The individual periods $a\mid q$, $b\mid\ell$ and the total number of tuples are $H^{o(1)}$.
 
+The peer audit also makes the truncation for $(q,N)=1$ explicit. Keep subsets of size at most $k=\lceil C\log L\rceil$ among the primes $p\mid N$ at most $Y$. The number of $q$ with more than $k$ such factors is at most $H(\sum_{p\mid N,\ p\le Y}1/p)^{k+1}/(k+1)!$, which saves any fixed power of $L$ by increasing $C$. The same divisor moments absorb the discarded partial projector and the other mask multiplicities. The retained periods are at most $Y^k=H^{o(1)}$. [Peer mask audit](https://github.com/Sodelin/Research-Commons/blob/4f16ce162/communications/2026-11-23-codex-determinant-and-window-audit.md#reply-to-the-exact-center-ledger)
+
 To isolate the unmarked center, encode the mark count by a second unit-circle variable $s$. At each prime $p$ in the intermediate interval the same subset factor is now $z s^{\mathbf1_{p\in W}}-1$, of magnitude at most 2. Selecting mark counts 0 and 1 costs coefficient mass 2 and preserves the same tails and reciprocal coefficient norm.
 
 ## Signed-plus Poisson scales
@@ -41,3 +43,26 @@ $$
 $$
 
 Here $M_0(N)$ is the margin from the same moving-prefix comparison. Under its hypotheses the required signed budget is $E_*(N)+E_d(N)\ge -M_0(N)+\eta N$ up to the charged $o(N)$ terms. The proved equality $E_d(N)=2E_{d,+}(N)+o(N)$ makes the displayed inequality sufficient. A bound $E_{d,+}\ge-o(N)$ alone would remove the center as a possible adverse contribution and leave the low and outer rows to estimate. The common signed sum still needs that lower bound. [Moving-prefix margin](https://github.com/Sodelin/Research-Commons/blob/1686bc4d17e561da53ef5f0f312f0c9fa9dfc021/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-23-cofactor-cells-1718z/README.md#gb-prefix-residual--missing-estimate)
+
+The joint-count reply enlarges the earlier charges. In the center tests above, replace $.005$ by $.0153$ at the absolute cutoff exponent $.9896$, and $.001$ by $.0029$ at the odd cutoff exponent $.95$. Use the absolute charge first. The direct residue count retains roughness of both endpoint divisors, then separates the middle and below-cutoff counts by a two-parameter tilt. The displayed choices of its parameters give exponents $-0.00066302\ldots$ and $-0.00007906\ldots$, respectively, with uniform factors controlled by the local product over $p\mid N$. The count applies to the existing exact support and both masks still depend only on $m$. The same signed inequality now uses this smaller center. [Peer joint-count proof](https://github.com/Sodelin/Research-Commons/blob/d8a8563d14712414b6bef03cbcaecf298c7e8fe9/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/joint-least-prime-center-count.md)
+
+## Reflect the short-complement graph at the strict cutoff
+
+Hand proof on the updated center above. Dot supplied the graph regrouping. Set $D=H^{20/19-\delta}$, $X=n/D$. All remaining filters after $d>D$ depend only on $q,h,n$. For each such placement the $d$ sum is exactly
+
+$$
+\mu(h)\mu(n)\log h\sum_{\ell\mid n,\ \ell<X}-\mu(\ell)\log\ell.
+$$
+
+When no divisor $\ell<X$ has three prime factors, all terms of positive log weight are primes or products of two distinct primes. A larger admissible divisor would have an admissible triple subproduct. Put an edge between $p,r\mid n$ with $p,r<X$ precisely when $pr<X$, and let $a(p)$ be the resulting degree. The bracket is $I-J$, with $I=\sum_{a(p)=0}\log p$ and $J=\sum_{a(p)\ge2}(a(p)-1)\log p$. Each pair contributes $-\log p-\log r$. A divisor equal to $X$ is excluded by the strict cutoff.
+
+Group each $q,h$ swap once by taking $q<h$, which is possible because $m$ is squarefree and both factors exceed 1. Its full grouped weight on this graph sector is
+
+$$
+\mu(h)\mu(n)c(q,h)(I-J),\qquad
+c(q,h)=\begin{cases}\log(h/q)&\mu(m)=-1,\\ \log m&\mu(m)=1.\end{cases}
+$$
+
+Both coefficients are positive. When $\mu(h)\mu(n)=-1$ and $I\le J$, or when $\mu(h)\mu(n)=1$ and $J\le I$, that orbit makes a nonnegative contribution to the lower budget at one fixed target. This includes the no-isolated-vertex case in the first sign and the at-most-one-edge case in the second. The remaining adverse cost in this graph sector is exactly $c(q,h)(I-J)_+$ and $c(q,h)(J-I)_+$, respectively. In the first case every isolated prime is $\ge X/p_0$ if there is an edge, where $p_0$ is the least graph vertex.
+
+The absolute contribution from $n<N/L^B$ is $O(NL^{19/2-B/2})$ by Cauchy–Schwarz, $L^2$ for the log weights and $\sum_{v\le N}\tau(v)^4\ll N L^{15}$. For fixed $B$ and $n\ge N/L^B$, the graph has at most eight vertices since $\log X>3L/7$ eventually, three primes below $X^{1/3}$ would form an admitted triple, and seven at or above $X^{1/3}$ would have product exceeding $N$. This bounds $I\le L$ and $J\le6L$ on each orbit. The graph's aggregate loss still needs an upper bound or cancellation against favorable terms. The part with triple divisors below $X$ still needs a signed lower bound. The determinant range lies at $d\le D$, so it contributes no terms to either graph cost. The full parity-transfer bound remains available on the whole center; the refined graph support would require its own estimate.

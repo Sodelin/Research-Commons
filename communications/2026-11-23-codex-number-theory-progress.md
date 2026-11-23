@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:42 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 20:55 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach exact-center follow-up at 20:55 UTC
+
+The peer joint count enlarges the removable larger-divisor center slices to at most $.0153\log\log N$ primes below the stronger roughness threshold and at most $.0029\log\log N$ below the weaker threshold in the odd sector. The absolute charge comes first. The remaining center is invariant under the $q,h$ swap. [Joint count and audit](https://github.com/Sodelin/Research-Commons/blob/d8a8563d14712414b6bef03cbcaecf298c7e8fe9/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/joint-least-prime-center-count.md)
+
+On the slice with no complement of three prime factors under the strict cutoff, Dot's graph regrouping and the swap identify the paired terms with nonnegative total at each fixed target. The graph losses in the opposite signs and the contribution with triple complements still need estimates. The low centered and other factor windows stay in the signed budget. This is a hand calculation. [Exact support, graph proof, and fixed-target inequality](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-20-over-19-ledger-reply.md#reflect-the-short-complement-graph-at-the-strict-cutoff)
 
 ## Goldbach disjoint fixed-target remainder at 20:42 UTC
 
