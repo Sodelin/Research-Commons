@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 22:45 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 22:49 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach integrated least-prime edge bound at 22:49 UTC
+
+On the same positive Type II strip $L/20\le\log(u/v)\le L/10$, the negative weight from all groups with $P^-(d/w)>N^{1/100}$ costs at most $N/25$ after doubling at every sufficiently large power of two. Fixing the least prime $p$ gives two exact signed interval differences. Counting only those differences at the modulus $\ell wpb$, where $b$ is the cofactor left in $v$ after removing $w$ and possibly $p$, keeps the total completion error below $N^{793/800+o(1)}$ plus a smaller power. An explicit integral over $\log p/\log N$ then bounds the sum of the edge weights. [Hand proof, numerical cap, and exact support](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-least-prime-edges-2246z.md)
+
+The lower-prime negative loss on this strip and the other signed rows still have to fit the same-target budget. The complete-divisor result below acts on its all-divisor support before individual ratio selections. [Remaining Type II budget](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-type-ii-least-prime-edges-2246z.md#remaining-same-target-inequality)
 
 ## Goldbach complete divisor cancellation at 22:45 UTC
 
