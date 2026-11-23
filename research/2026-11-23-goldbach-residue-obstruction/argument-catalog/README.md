@@ -33,3 +33,7 @@ For an interval and a remainder class containing m eligible odds, the count is a
 ## Replay
 
 Run `python3 -B replay.py | diff -u REPLAY.txt -`. The finite checks support the constructions but do not replace the general arguments.
+
+## Follow-up checkpoint
+
+[Moving-prefix cofactor cells](2026-11-23-cofactor-cells-1718z/README.md) reproduces the $N=9602$ split, gives a pointwise bound for comparable-factor semiprimes in a specified modulus window, and records the twin-prime and pinned RH/GRH checks.
