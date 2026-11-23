@@ -23,7 +23,7 @@ The tail outside these finitely many lanes costs \(O(N/R)+o(N)\). For \(R<p\le N
    =\left(1-\prod_{p>2}(1-1/[p(p-1)])+o(1)\right)N .
  \tag{2}
 \]
-This is a pointwise limit, by first taking \(k\) large and then \(R\) large. [Brun–Titchmarsh, Montgomery–Vaughan](https://doi.org/10.1007/BF02790194)
+This is a pointwise limit, by first taking \(k\) large and then \(R\) large. [Brun–Titchmarsh, Montgomery–Vaughan](https://doi.org/10.1112/S0025579300004708)
 
 Using \(\mu(N-n)\le1\) off these lanes and \(\sum_{n<N}\Lambda(n)=N+o(N)\), we obtain
 \[
@@ -61,3 +61,6 @@ where \(R_\Lambda\) is the \(\Lambda\)-weighted Goldbach count and the bound use
  \quad\text{for some fixed }\eta>0 .
 \]
 Proper prime powers have \(o(N)\) contribution to \(R_\Lambda\) at this scale. Equation (4) leaves the joint lower bound on the other rows open. The main margin proof is a hand argument. The finite inequality is checked separately in rational arithmetic. [Pinned original endpoint-parity budget](https://github.com/Sodelin/Research-Commons/blob/971db7d7f546d4d7fa6865089287f7f97ca085eb/research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-20-over-19-ledger-reply.md#exact-center-after-both-rough-factor-charges)
+
+The audit of the other rows proves a sharper combined budget. The complete original odd-block semiprime contribution, including the rebalanced strip and both complements, has doubled absolute charge below \(0.098N\). The remaining exact pointwise condition is therefore a joint lower bound of \(-\bigl(0.232-\eta\bigr)N\) on the centered low row, the actual outer interiors, the even-block semiprimes and the even-endpoint center with four or more factors, for some fixed \(\eta>0\). The separate Type II charges are already included in the full odd-semiprime charge. [Pinned complete ledger and direct count](https://github.com/Sodelin/Research-Commons/commit/36624845444790787f442157309e7f9ba6644ad0) · [Pinned individual ratios](https://github.com/Sodelin/Research-Commons/commit/c464e64722382a25eddbff67af0c017a8684eda9)
+
