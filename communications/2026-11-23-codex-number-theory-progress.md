@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:51 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:55 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## First nonzero original Type II groups at 23:55 UTC
+
+The original intermediate-prime residual first admits a nonzero group at \(2^{159}\). The branch with two primes at most \(N^{1/100}\) first admits one at \(2^{233}\). Oddness and squarefreeness give the lower thresholds \(3^{100}\) and \(5^{100}\), and targeted witnesses attain them. At \(2^{159}\), all allocations of one group give a complete cancelling pair and one negative lower-edge term. Another group at the same target leaves a positive upper-edge term. At \(2^{233}\), three pairs cancel and one negative term survives. The prime certificates, exact cuts, and all allocations were checked. [Hand thresholds, exact inputs, and finite group weights](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-residual-onset-2352z.md)
+
+The original moving cutoff rejects the first odd cofactor with nonzero log weight \(h=3\) once \(k\log2/2-K\log(k\log2)\ge\log3\). For \(K=5,11,12\), this starts at \(k=56,151,168\), respectively. The first joint exponent with a nonzero residual group is \(159\) for \(5\le K\le11\) and \(168\) for \(K=12\). The sieve-depth hypothesis \(z\ge Y_0\) starts later, with \(k\ge680\) even under the upper envelope \(\kappa=.01\). The original \(53N/1200\) budget still needs the negative group mass and the other signed rows at the same \(N\). [Cutoff and remaining inequality](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-residual-onset-2352z.md#remaining-fixed-target-estimate)
 
 ## Goldbach running centered sums at 23:51 UTC
 
