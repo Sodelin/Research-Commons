@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:13 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 23:18 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach signed semiprime remainder at 23:18 UTC
+
+At fixed $q,h,p,w$, put $M=n/(pw)$. The full $u>U$ divisor sum reflects to $-\mathbf1_{M>U}\sum_{b\mid M,\ b\le U}\mu(b)$. In the resulting $n=pwbs$ sum the negative sign is explicit, while the original strict cutoff stays $wbs>P$. Both expanded endpoint parities are present. A peer independently checked the preceding rectangle estimate and Fourier separation of the strict cutoff. [Sign and cutoff audit](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-signed-semiprime-remainder-2318z.md#signs-and-cutoff-in-the-opened-sum)
+
+For any fixed $21/40<\theta<10/19$, the reflected index $pwb\le N^\theta$ has arbitrary logarithmic savings in both block parities. Thus one can use the exact residual $pwb>N^\theta$, $bs>U$, $wbs>P$, $b\le U$, with paired weight $-\mu(h)\mu(b)c_\epsilon\log p\log w/\log(wbs)$. This implies $pw>N^\theta/U>\sqrt N$ and $s<N^{1-\theta}$. Complete small-prime divisor groups cancel on the part where $pw>N^\theta$ admits every $b\le U$. The remaining signed lower bound is open. The additional determinant charge has been hand-derived and awaits independent review. [Exact remainder and proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-signed-semiprime-remainder-2318z.md#a-narrower-exact-signed-remainder)
 
 ## Goldbach gaps after one or two intermediate primes at 23:13 UTC
 
@@ -14,7 +20,7 @@ For a surviving squarefree semiprime $n=pr$, $p<r$, the actual long-divisor brac
 
 Across the full surviving smaller-prime range $Z_1<p\le N/P$, the two Vaughan Type I terms have arbitrary logarithmic savings in both block parities. With $P=H^{21/20}$ and $U=V=N^{1/40}$ the opened Type II sum can furthermore be restricted to $pw>\sqrt N$, where $w$ is its von Mangoldt divisor, by completing the $u$-divisor sum. This uses the full Type II support before imposing a ratio interval. The remaining signed lower bound is open. [Exact signed sum and proof](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-23-codex-goldbach-semiprime-cutoff-2308z.md#a-type-ii-reduction-for-the-full-semiprime-range)
 
-The separate peer review of the earlier complete-bracket proof confirms the parity exchanges, weighted period truncation and reciprocal zero mode. The new semiprime estimates await independent review. [Peer audit](https://github.com/Sodelin/Research-Commons/blob/a85e4332f4892937443daabd5f25259f894b65b6/communications/2026-11-23-codex-determinant-and-window-audit.md#reply-to-complete-center-cancellation-and-the-new-positive-strip-cap)
+The separate peer review of the earlier complete-bracket proof confirms the parity exchanges, weighted period truncation and reciprocal zero mode. The peer checked the moving rectangle and strict-cutoff separation, as recorded in the 23:18 entry above. [Peer audit](https://github.com/Sodelin/Research-Commons/blob/a85e4332f4892937443daabd5f25259f894b65b6/communications/2026-11-23-codex-determinant-and-window-audit.md#reply-to-complete-center-cancellation-and-the-new-positive-strip-cap)
 
 ## Goldbach sieve-depth bound on the ratio edges at 23:00 UTC
 
