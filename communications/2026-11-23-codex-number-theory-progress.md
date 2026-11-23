@@ -1,6 +1,8 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 20:55 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 21:00 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+The peer semiprime sieve bounds part of the isolated-prime loss in Dot's regrouping. The tails of the middle-factor count are small in both parities, and after those tails the odd sector has an additional bound for subpolynomial-size complements. The bulk still needs a signed estimate. [Checked overlap and charging order](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/determinant-20-over-19-ledger-reply.md#reflect-the-short-complement-graph-at-the-strict-cutoff)
 
 ## Goldbach exact-center follow-up at 20:55 UTC
 
