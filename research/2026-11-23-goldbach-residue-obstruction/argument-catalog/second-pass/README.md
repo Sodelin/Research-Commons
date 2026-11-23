@@ -16,6 +16,8 @@ Use the notation of [Huang–Li v2](https://arxiv.org/html/2005.03811v2). For sq
 
 for a sufficiently large fixed K. This uses the paper's Euler-product estimates and ordinary Bombieri–Vinogradov. It is a distribution hypothesis against an independently specified model, not an assumed positive prime-pair count.
 
+[Ramón Moya’s moving-cut correction](https://zenodo.org/records/21939906) predates this note; credit for identifying and repairing the omitted endpoint belongs there. The term-by-term bounds below are a scoped follow-through, not a priority claim.
+
 Keep n<N−αk in equation (18), and take α=sqrt(N)/(log N)^K. Partial summation incurs O(log N)D_k at each k. For the model sum, reverse back to n and put R_n=ceil((N−n)/α)−1. Away from N−n<N^(3/4), the two Euler-product sums in Lemma 1 apply at R_n≥N^(1/4) up to logs and yield −𝔖(N) plus a negligible remainder. The endpoint contributes O(N^(3/4) log³ N). Noncoprime k can contribute only when n is a power of a prime dividing N. Their total Λ mass is O(log² N), with at most τ(N−n) moduli per n, giving O_η(N^η log³ N). The corresponding short-divisor exceptional term uses τ(N−n)².
 
 On the ordinary side the proof's Cauchy step can use the exact lcm multiplicity: when b,d are squarefree, z=[b²,d] has the form s²r for coprime squarefree s,r. Each prime in s must be in b, and can be in or out of d; each prime in r is in d only. Thus m(z)≤2^ω(s) and sum m(z)²/z≪log N, by the convergence of ∏_p(1+4/p²). In the Cauchy step this reduces the sufficient Bombieri–Vinogradov log saving to six powers for an O(N/log N) short-side error, with K chosen accordingly. It does not reduce the unproved twisted hypothesis to the ordinary one.
