@@ -1,0 +1,19 @@
+# Three proof attacks on the signed Goldbach square-root block
+
+23 November 2026. Hand deductions from the existing factor-block and Fourier estimates, not Lean or a proof of Goldbach. Write H=√N, L=log N, and retain q,h∈(H/2,H], the strict cofactor cutoff, qh<N, (q,N)=1, squarefree qh, and the middle intermediate-prime count mask in the existing block. The target is S_N=Σ_{q,h} −μ(h)log(h)Λ(N−qh). Separate computations in the Codex packet are diagnostic.
+
+## 1. The periodic model and logarithmic major arcs are small even in row energy
+
+For a fixed admissible q, let A_q(ξ) be the Fourier sum of −μ(h)log h over the exact allowed h, using e(qhξ). The previously proved uniform prefix bound for μ(h) 1_{(h,q)=1} z^{k(h)}, |z|=1, gives sup_ξ |A_q(ξ)|≪_A H/L^A after exact count extraction, cutting the interval and partial summation. This applies before summing q. A periodic weight on n=N−qh with Fourier coefficient absolute sum bounded by a fixed power of L therefore gives row energy ≪_A H³/L^A. The same row bound applies to the part of Λ projected onto a symmetric union of logarithmic major arcs: the prime Fourier amplitude is O(N) and the arc measure is O(L^B/N) with fixed B. By Cauchy–Schwarz on the cross terms, subtracting either model changes full row energy by ≪_A H³/L^A; the trivial actual energy is O(H³L⁴). This conclusion does not independently estimate a separation-restricted cross term.
+
+## 2. The far-pair problem may be restricted to small common divisors
+
+For distinct h₁,h₂ the existing two-linear-form upper sieve bounds the weighted q-pair sum by O(H L² (1+log L)²), after a globally negligible exceptional prime-power and small-prime contribution. For T=L^(2+ε), the number of ordered pairs with gcd(h₁,h₂)>T is O(H²/T), by counting multiples of each d>T. Their absolute contribution is o(H³). The original near-separation and diagonal estimates are unchanged. For the remaining pairs write h₁=gu and h₂=gv, with coprime u,v. Squarefreeness gives μ(h₁)μ(h₂)=μ(u)μ(v), with no additional sign. The new sufficient estimate is a uniform signed o(H³) upper bound for the *far-apart, small-gcd* pairs with actual prime weights; an upper sieve bound on each sign class separately is not enough.
+
+## 3. Direct first moment: reflection and a complementary-factor expansion
+
+One can retain cancellation across q instead of squaring it away. Replace (q,N)=1 by (qh,N)=1 at cost O_ε(N^ε L³): exceptions with Λ(N−qh)>0 require N−qh to be a power of a prime dividing N, total Λ weight O(L²), with at most O_ε(N^ε) factorizations each. The resulting support is symmetric in q,h, since h>floor(H/2) is already forced by the block and the factor-count mask depends only on qh. Average the two orientations. For each ordered placement with m=qh the combined form of the summand is −Λ(N−m) μ(h)[log h+μ(m)log q]/2. Thus odd factor-count complements carry log(h/q), bounded by log 2 rather than log N. Even factor-count complements carry the common log m, times the signed divisor imbalance. This is an exact reduction, not a bound on that imbalance.
+
+An independent reorganization inserts Λ(n)=Σ_{d|n} μ(d)log(n/d). The portion d≤L^B is ≪_{A,B}N/L^A for fixed A,B: for fixed q,d the condition qh≡N mod d either has no solution or forces (q,d)=1 (since (q,N)=1), and gives one residue class of h. Expand its indicator as an additive average of absolute Fourier coefficient sum one; apply the same uniform prefix estimate with the exact middle-count cut, then use partial summation with log h log((N−qh)/d), whose size and variation cost O(L²). Sum q and the polylogarithmic d range. The signed large-d remainder is now on qh+dℓ=N with weights −μ(h)μ(d)log h log ℓ. This retains signs across moduli. No estimate for that remainder is asserted here.
+
+References: [project progress notes](../../../../communications/2026-11-23-codex-number-theory-progress.md), [uniform Möbius prefix input](https://doi.org/10.1093/qmath/os-8.1.313).
