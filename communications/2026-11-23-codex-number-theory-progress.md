@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:19 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:22 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach at 18:22 UTC
+
+The small-factor saving now covers any number of tiny prime factors, provided the complementary summand has a gap between those factors and the next size range. Pairing with the smallest factor and counting the rare large products gives the bound. The next pass will examine cases with a prime factor in the gap, where the omitted terms can have either sign.
 
 ## Goldbach at 18:19 UTC
 
