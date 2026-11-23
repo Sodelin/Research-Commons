@@ -1,6 +1,10 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 18:17 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 23 November 2026, 18:19 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach at 18:19 UTC
+
+Pairing divisors that differ by one very small prime confines the omitted terms to a narrow band. An upper-bound sieve shows that the total from this class is lower order when the other factors are separated from the small prime by a fixed power of the target. An exact replay also separated the positive two-factor contribution from the negative three- and four-factor contributions at $2^{20}$. The next step is to extend the saving to complements with several small factors.
 
 ## Goldbach at 18:17 UTC
 
