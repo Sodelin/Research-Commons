@@ -1,0 +1,37 @@
+# Four checks on what a Goldbach proof still needs
+
+These are scoped component results, not a solution to binary Goldbach. The integer statements in [FactorBoundary.lean](FactorBoundary.lean) were kernel-checked. The analytic and probabilistic arguments below are hand arguments, not Lean proofs. No priority claim or VibeMath submission.
+
+## 1. The exact boundary of the modular rejection
+
+The previous [assembly](../proof-assembly/README.md) proves that on T(k)=210k+192 a candidate with factor r=1,2,3 must have r=1. This cannot be extended to arbitrary fixed coefficients: 192=37+5·31, and T(k)=37+5(42k+31). Both the identity and primality in the first example kernel-check. Dirichlet's theorem separately gives infinitely many prime q=42k+31. For every fixed b>0, these candidates eventually satisfy 5≤q^b. This does not preclude a distinct genuine representation, such as 192=13+179.
+
+Every prime r≥5 is locally possible. For each prime ℓ dividing 210 choose a unit u for q such that v=192−ru is also a unit modulo ℓ. At ℓ=2,3 the target is zero and r is a unit. At ℓ=5,7, if r=ℓ the target is nonzero, and otherwise at most one unit is forbidden. Combine via CRT. Fix a prime p in the class v, and take arbitrarily large primes q in class u with q≥r; the target p+rq lands in the same progression. Lean checks the finite residue-class certificate for every r coprime to 6 modulo 210; the infinite corollary uses [Dirichlet's theorem](https://dlmf.nist.gov/27.11) by hand.
+
+Replay: from this directory set `LEAN_PATH=$PWD`, compile `lean --trust=0 -o Assembly.olean ../proof-assembly/Assembly.lean`, then `lean --trust=0 -o FactorBoundary.olean FactorBoundary.lean`. See [LEAN-REPLAY.txt](LEAN-REPLAY.txt).
+
+## 2. Actual prime counts by factor, averaged over targets
+
+For fixed even modulus M, class a, and positive integer r, count ordered odd-prime pairs p,q with q≥r, p+rq≤X and p+rq≡a mod M. Let L count units u mod M such that a−ru is also a unit. The count is
+
+    [L / (2r φ(M)²)] X² / log² X + o(X²/log² X).
+
+Proof: for each compatible pair of residues, [the prime number theorem in fixed progressions](https://kskedlaya.org/ant/chap-primes-in-ap.html) gives rescaled prime counting measures converging to Lebesgue measure divided by φ(M). The triangle p/X + r(q/X)≤1 has boundary of area zero and area 1/(2r), so rectangular approximation gives the limit. Primes dividing M and the q<r exclusion affect only finitely many slices of O(X/log X) each. CRT gives the local factor for ℓ^e||M as ℓ^(e−1) times: ℓ−1 if ℓ∤r and ℓ|a; ℓ−2 if ℓ∤r and ℓ∤a; 0 if ℓ|r and ℓ|a; ℓ−1 if ℓ|r and ℓ∤a.
+
+For a=192, M=210 the values of L for r=1,2,3,5,7 are 30,0,0,40,36 (also kernel-checked by finite enumeration). Thus the total number of r=5 witnesses is asymptotically 4/15 of the ordered prime-pair total on this progression. This is a comparison of **counts across targets**, not a probability or a guarantee for a specified N. The 2/3 cases are exactly impossible by the assembly, even beyond what the zero leading constants alone say.
+
+## 3. A precise parity-sensitive input to audit
+
+[Huang–Li v2](https://arxiv.org/html/2005.03811v2) study sums of Λ(n)μ(N−n) in progressions; their note after Corollary 1 already says the diagonal residue n≡N mod q is enough for the proof. This tracks a feature not supplied by the Dirichlet zero-location result. Corollary 1 uses ordinary distribution through N^θ(log N)^(12+ε) and a twisted level N^(1−θ), with fixed θ. The ordinary Bombieri–Vinogradov theorem handles the ordinary side at fixed θ<1/2, but it doesn't supply the twisted side.
+
+A source-replay check: when reorganizing the double sum in equation (18), the condition k<(N−n)/α must survive as n<N−αk. The text as displayed drops it. At N=6, α=2 the flattened formula includes an extra (log 2)² from n=4,k=1. This is an omitted cutoff in the written step, not a refutation of the conditional theorem. The repair to audit is to retain y_k=ceil(N−αk)−1 and do partial summation to that endpoint. The existing maximal-prefix hypothesis is of the right form, and the log weight costs O(log N) times the summed maximal-prefix discrepancy. The progression-average main term must then be evaluated with its moving cutoff; do not use the flattened sum as an identity.
+
+A useful separate unconditional observation: for even N not divisible by 3, the progression p≡N mod 9 has weighted prime mass (1/6+o(1))N by the fixed-modulus prime number theorem, and μ(N−p)=0 on it. Because μ≤1 elsewhere, the total shifted weighted sum is ≤(5/6+o(1))N. This supplies a gap in the modeled average on those classes; the missing proof obligation is to control the twisted discrepancy in actual progressions and finish the repaired comparison to prime-pair counts. This subclass does not include 192 mod 210, which is divisible by 3.
+
+## 4. A single infinite stress test of exception clustering
+
+Fix N₀≥64 divisible by 4, set N_k=N_(k−1)^4, and use odds x>N₀ with baseline b(x)=2/log x, zero otherwise. In each block (L,N]=(N_(k−1),N_k], leave [N−L,N] empty. In its middle, partition odds into reflection pairs {x,N−x}. Independently per pair, choose at most one endpoint, with the respective marginal probabilities b(x), b(N−x). The empty band blocks pairs that use earlier elements; the reflection rule blocks the remaining representations of N_k. Later elements are too large to affect this target.
+
+The total length of deleted bands met by [1,X] is O(X^(1/4)): meeting a band near N_j means N_j≤2X, and the band length is N_j^(1/4)+1. For a fixed bounded linear test supported in [1,X], independent centered block increments have variance bounded by sum of b(x) times the squared test coefficients. Bernstein, a union bound over O(X^4) interval–progression queries with q≤X and an X² Fourier mesh, and Borel–Cantelli give simultaneous concentration for all sufficiently large X almost surely. The Fourier derivative is O(X²), and the variance is O(X/log X), so the uniform centered Fourier error is O(sqrt X) even after adding the deleted bands. For any interval–progression query J the discrepancy from b is O(sqrt(B_J log X)+log X) plus the deleted baseline on J, where B_J is its total baseline mass.
+
+Moreover, eventually every other even target is represented. In the middle of one block the finite matching argument from the [catalog](../README.md) works after shifting x by L. For T=ceil(100 log³ N), it covers even t in [2L+T,2N−2L−T] other than N: eligible unordered candidates are at least T/4−1, and matching on reflection blocks keeps at least a third; each independent trial succeeds with probability at least (2/log N)². The total failure probabilities are summable over k. The seams are covered by cross-block pairs: at a seam near 2L, for t in [3L/2,5L/2] choose odd x in [L/4,L/3] and y=t−x. For late k, these lie below their reflection midpoints in the old and new middles respectively, so distinct x and y give independent trials. There are Ω(L) of them with success probabilities ≫1/log² L. Again the union of failure probabilities is summable, and these seam bands overlap neighboring covered ranges. Hence there are log₄(log X)+O(1) missing even targets up to X. This rules out a deduction of eventual coverage from those synthetic distribution inputs alone; it does not model all prime arithmetic or establish a limit on GRH. Related random-sumset graph methods: [Lazarev–Miller–O'Bryant](https://arxiv.org/abs/1109.4700).
