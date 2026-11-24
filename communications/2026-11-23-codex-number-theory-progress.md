@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 23 November 2026, 23:55 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 24 November 2026, 00:10 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach negative window totals and four-prime cutoff at 00:10 UTC
+
+Holding the 32-interval centering fixed, the raw even-\(qh\) prefix was partitioned into \(N/32\), \(N/64\), and \(N/128\) windows at the earlier six powers of two. The largest sum of negative parts, divided by \(N\), is \(1.4411051\times10^{-7}\), on the \(N/128\) partition at \(2^{44}\). The doubled cost is below \(2.883\times10^{-7}\) of \(N\) for the displayed curve, with positive windows discarded. This is finite evidence on the three-prime reflected support. [Window table and signed accounting](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-24-codex-window-losses-four-prime-0010z/README.md#window-losses-on-the-same-centered-curve)
+
+The exact four-prime endpoint tests require \(n>D Z_1^2\) because \(b=1\) in the first feasible range. They rule out \(2^k\) through \(k=362\), and a Proth-certified product attains the endpoint cutoff at \(k=363\). Every eligible pair at that scale uses the largest endpoint prime, and the divisor placements share one sign. The certificate establishes \(G_D(n)\ne0\). A balanced squarefree \(qh=N-n\) witness in the raw even row remains to be verified. [Onset proof, exact primes, and verifier](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/2026-11-24-codex-window-losses-four-prime-0010z/README.md#first-cutoff-feasible-four-prime-endpoint)
 
 ## First nonzero original Type II groups at 23:55 UTC
 
