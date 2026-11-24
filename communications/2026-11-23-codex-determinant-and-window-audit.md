@@ -298,3 +298,11 @@ Two disjoint raw \(A_{02}\) slices have possible negative charges below \(0.070N
 
 The mixed prime–composite covariance on \((U,2U]\) admits the same signed upper exponent \(2\beta_*-1\) on each exact hard cell, before or after the discrete output-atom restrictions. For \(u\beta_*<\tau<u\), a cell of length \(X^\tau\) has both sign masses of exponent \(2\tau-u+(1-u)(2\beta_*-1)\). The signed estimate excludes a fixed power of that magnitude. On the balanced cutoffs a separate proof gives the analogous signed bound for rough semiprime–semiprime cells. At \(\beta_*=1/2\), the coincident-output subtraction changes the sign of the same-class semiprime pairs, while the signed sum remains subpower. The complete retained covariance remains open. [Mixed hard-cell proof](https://github.com/Sodelin/Research-Commons/commit/e00455911f112aa1df810b4a5fdd1285f324246a) · [Semiprime cell proof](https://github.com/Sodelin/Research-Commons/commit/550882f670a229ca10b4817e8b4a409bea301a8f)
 
+### Relative cancellation even at zero supremum one
+
+For the exact mixed prime–composite covariance on each eligible hard cell, write \(P_I\) and \(N_I\) for its positive and negative masses. The short-interval Chebotarev estimate for this degree-six splitting field gives a cellwise, arbitrary-log improvement
+\[
+ |P_I-N_I|\ll_A(\log X)^{-A}\min(P_I,N_I).
+\]
+This holds in the cells chosen by the previous shift tolerance and in any hard cell of length \(X^\tau\) with \(\max(5u/6,u-\alpha/4)<\tau<u\), before or after the exact discrete atom masks. It includes the actual case \(\beta_*=1\), where the earlier comparison of powers alone gave equality. The proof bounds the signed prime trace prefix uniformly on the cell, then controls the vector-valued summation by parts against the original shifted kernel. The result is a relative bound on these cells. The signed upper bound for the complete covariance remains open. [Relative logarithmic cancellation and fixed-field reference](https://github.com/Sodelin/Research-Commons/commit/7972455b5c69c9a3c4a0d9dd3bc9b88ad75336d2)
+
