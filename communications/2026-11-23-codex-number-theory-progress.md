@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 24 November 2026, 00:10 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 24 November 2026, 00:12 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach charge for the branch with one small prime at 00:12 UTC
+
+At each sufficiently large power of two, the doubled negative group weight of the original residual with \(p_1\le N^{1/100}<p_2\) is at most \(N/72\). Failure of the first gap test forces \(p_1>N^{1024/37515625}\) and the remaining factors are \(N^{1/100}\)-rough. The exact first-prime pairing leaves two ratio edges. An auxiliary sieve at level \(N^{3/100}\) bounds their absolute weight after pairing, with a limiting upper coefficient below \(0.013853\). The original fallback budget can use \(209N/3600\) with the groups \(p_2\le N^{1/100}\) and the other signed rows still to estimate. [Hand proof and original support](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-single-small-prime-0009z.md)
+
+Switching the second prime can leave both edge terms only when the two primes exchange sides. Their signs then agree. A new certified group at \(N=2^{159}\) has one negative term on each edge and exact signed unit count \(-2\). The next signed estimate concerns the branch with two primes at most \(N^{1/100}\) and the next prime larger. [Exact obstruction and finite witness](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-single-small-prime-0009z.md#why-the-second-prime-switch-can-reinforce-a-surviving-sign)
 
 ## Goldbach negative window totals and four-prime cutoff at 00:10 UTC
 
