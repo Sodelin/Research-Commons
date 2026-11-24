@@ -27,12 +27,12 @@ The standard optimal coefficients have \(\lambda_1=1\), \(|\lambda_b|\le1\), and
 
 Uniformly in \(a\), one has \(G_a(D_a)\gg L^2/\kappa(a)\). Use primes \(r\le D_a^c\) for a small fixed \(c>0\) and first sum over their unrestricted squarefree products. The Euler product has order at least \(L^2/\kappa(a)\) by Mertens. In the normalized Euler measure a prime occurs with probability \(g(r)\), so the mean of the logarithm of the product is at most \(2\sum_{r\le D_a^c}\log r/r=O(c\log D_a)\). Markov's inequality keeps at least half the mass on products at most \(D_a\) for sufficiently small \(c\). The resulting two-form count is \(\ll N\kappa(a)/(aL^2)+D_a^2N^{o(1)}\).
 
-For \(a=up\) with both marks prime, the leading constant can be kept uniformly:
+When \(a\) has at most three prime factors, the leading constant can be kept uniformly:
 \[
 G_a(D_a)=\frac{(\log D_a)^2}{8C_2\kappa(a)}+O(\log D_a).
 \tag{2}
 \]
-To see this, factor the Dirichlet series for \(G_a\) as \(\zeta(1+w)^2\) times its corrected Euler product. At ordinary odd primes its leading corrected coefficient is \(O(r^{-2})\); at the at most two exceptions it is \(O(r^{-1})\). The log-squared absolute moment of the correcting Dirichlet coefficients is bounded uniformly, since \(\log^2(r)/r\) is bounded and there are at most two exceptions. The correcting factor at \(w=0\) is \(1/(4C_2\kappa(a))\). Convolution with \(\sum_{j\le X}\tau(j)/j=(\log X)^2/2+O(1+\log X)\) gives (2), including its uniform error. After the odd progression factor of one half, the two-form upper main term is \((4C_2+o(1))\kappa(a)N/(a\log^2 D_a)\).
+To see this, factor the Dirichlet series for \(G_a\) as \(\zeta(1+w)^2\) times its corrected Euler product. At ordinary odd primes its leading corrected coefficient is \(O(r^{-2})\); at the at most three exceptions it is \(O(r^{-1})\). The log-squared absolute moment of the correcting Dirichlet coefficients is bounded uniformly, since \(\log^2(r)/r\) is bounded and there are at most three exceptions. The correcting factor at \(w=0\) is \(1/(4C_2\kappa(a))\). Convolution with \(\sum_{j\le X}\tau(j)/j=(\log X)^2/2+O(1+\log X)\) gives (2), including its uniform error. After the odd progression factor of one half, the two-form upper main term is \((4C_2+o(1))\kappa(a)N/(a\log^2 D_a)\).
 
 ## Pointwise charges
 
@@ -56,4 +56,37 @@ The odd Euler product through 23 already gives \(C_2<2/3\). Set \(f_0=b^{-2}\), 
 =\frac{34026578240000}{491280211892583}+o(1)<0.070.
 \]
 
-These results remove some actual contributions on the genuine moving overlap-free support at every sufficiently large target. They leave endpoints without a prime factor \(v>H\) or without the other prime mark \(u\ge Q\), complete \(s=p\) groups with polynomial-sized \(p\) and smaller \(u\), and incomplete groups outside the favorable or sieve-controlled cases. These are hand arguments. Only the displayed rational constant was evaluated by exact arithmetic. No Lean verification or average over \(N\) is used.
+## Disjoint support with no second prime at least \(Q\)
+
+Now take odd squarefree endpoints \(m=av<N\), where \(v>H\) is prime and every prime of \(a\) lies in \([N^\sigma,Q)\), with \(\sigma=31/200\). Uniqueness of \(v\) and \(a<H\) give at most three prime factors in \(a\). This selection is disjoint from the earlier support containing a second prime at least \(Q\). The original group is
+\[
+\Lambda(N-av)\sum_{\substack{d\mid a\\ a/\alpha\le d\le a/Q}}\mu(d)\log(vd).
+\tag{4}
+\]
+If \(a\) has at most two prime factors, the only possible allowed divisor \(q\) is \(a\) itself, and its contribution is favorable when present. If \(a=rst\) is a product of three distinct primes, every pair product exceeds \(Q\) since \(2\sigma>1/4\). Each is also at most \(H/N^\sigma<\alpha\) for sufficiently large \(N\). The only allowed divisors \(d\) in (4) are therefore the three individual primes and, when \(a\le\alpha\), the divisor 1. The group is exactly
+\[
+-\Lambda(N-av)\begin{cases}
+2\log v+\log a,&a\le\alpha,\\
+3\log v+\log a,&\alpha<a<H.
+\end{cases}
+\tag{5}
+\]
+On the latter range the charge is \(o(N)\): the weight is \(O(L^2)\), and at fixed \(r,s\) the remaining prime \(t\in(\alpha/(rs),H/(rs))\) has reciprocal mass \(O((1+\log L)/L)\) on \(t\ge N^\sigma\). The two other prime reciprocal sums over their fixed positive log-exponent ranges are bounded. Apply the same two-form sieve with \(a=rst\) and \(\kappa(a)=1+o(1)\). Its floor errors sum as before, here with each triple counted once.
+
+For \(a\le\alpha\), the factor in (5) is at most \((2-3\sigma)L\) since \(av<N\) and \(a\ge N^{3\sigma}\). Also \(\log D_a\ge(249/1000+o(1))L\) uniformly. The normalized reciprocal prime sum over unordered triples \(a\le H\) is bounded asymptotically by \((1/6)\int (dx\,dy\,dz)/(xyz)\) over \(x,y,z\ge\sigma\), \(x+y+z\le1/2\). This uses the prime harmonic measure in a bounded log-exponent simplex. Its integral is at most \((1/2-3\sigma)^3/(6\sigma^3)\) before dividing by 6 for the unordered triples. It follows from (2) and \(4C_2<8/3\) that the absolute charge on this three-prime selection is at most
+\[
+\left[\frac{(8/3)(2-3\sigma)}{(249/1000)^2}
+\frac{(1/2-3\sigma)^3}{36\sigma^3}+o(1)\right]N
+=\left[\frac{1053010000}{49870938357}+o(1)\right]N<0.022N.
+\]
+The calculation applies unchanged to larger \(\sigma<1/6\), giving a charge under \(0.004N\) at \(\sigma=4/25\) on that narrower support.
+
+These results remove some actual contributions on the genuine moving overlap-free support at every sufficiently large target. They leave endpoints without a prime factor \(v>H\), other companion factors below the rough cut in (4), complete \(s=p\) groups with polynomial-sized \(p\) and smaller \(u\), and incomplete groups outside the favorable or sieve-controlled cases. These are hand arguments. Only the displayed rational constants were evaluated by exact arithmetic. No Lean verification or average over \(N\) is used.
+
+## Joint accounting with the existing powers-of-two ledger
+
+The two capped outer slices are disjoint. The first has a second prime \(u\ge Q\) and the second has none. Both are in the actual unmatched \(A_{02}\) row, outside the center. Thus their combined possible negative contribution is less than \(0.092N\) at every sufficiently large power of two. Remove just those two slices from the earlier residual \(R(N)\) and call the resulting signed sum \(R_{\rm rem}(N)\). Together with the existing disjoint \(0.098N\) and \(0.045N\) charges and the \(0.330N\) model floor, a sufficient lower bound on the smaller residual is
+\[
+ R_{\rm rem}(N)\ge -(0.095-\eta)N
+\]
+for some fixed \(\eta>0\) and every sufficiently large \(N=2^k\). This is a sufficient condition on the remaining rows, and its lower bound stays open. The separate adaptive Type I calculation applies to the whole unmatched row in a different expansion. It supplies no additional allocation in this raw partition. [Prior same-target budget](https://github.com/Sodelin/Research-Commons/commit/ccb8a60ee7c7a5a3c4b1c33ecf267b7ce8803ff9) · [Adaptive Type I calculation](https://github.com/Sodelin/Research-Commons/commit/eb8764f7be7658e10cba6b942ad94bbd97ed81bc)
