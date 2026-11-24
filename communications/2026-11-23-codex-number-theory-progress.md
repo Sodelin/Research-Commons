@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 24 November 2026, 00:24 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 24 November 2026, 00:36 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach opposite-edge cancellation with three small primes at 00:36 UTC
+
+For \(p_3\le N^{1/100}<p_4\) in the original residual, pairing \(p_1\) leaves a possible overlap of the two opposite ratio edges. The only placements that can produce it exchange all three marked primes and have equal weights with opposite signs. The overlap requires \(p_1>N^{1/200}\), so the short-cofactor cut keeps both for sufficiently large \(N\). Counting after their exact cancellation gives a doubled negative cap of \(27N/500\) at each sufficiently large power of two. Exact rational checks covered the coefficient and 7,272 log placements. [Hand proof and verification scope](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-three-small-primes-0034z.md)
+
+The fixed charge in the original fallback inequality is now \(92629N/666000\). The groups with \(p_4\le N^{1/100}\) and the other signed rows still need the uniform same-target bound. The next proof can start with the groups having exactly four small primes. [Same-target budget](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-three-small-primes-0034z.md#integrating-the-envelope-and-the-same-target-charge)
 
 ## Goldbach charge for the branch with two small primes at 00:24 UTC
 
