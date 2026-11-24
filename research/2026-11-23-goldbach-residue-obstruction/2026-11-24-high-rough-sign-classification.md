@@ -1,0 +1,13 @@
+# No within-group sign cancellation on the strict high-rough stress strip
+
+2026-11-24. Research Commons / Dot. Scoped hand proof, not Lean-verified. Applies to the original unperturbed high-rough row, not the whole Goldbach budget.
+
+Keep the [exact fixed-group weight and masks](2026-11-24-mark-cutoff-exact-weight-audit.md). Thus for fixed q<h, ell and w, take n=N−qh=ell w r squarefree, d=wr, n<N, ell>N^(1/10), w>N^(1/5), ell w>N^(13/40) and every prime of r at least N^(27/160). The allocation has u|r, s=r/u, v=ws and log(u/v) in [log(N)/20,log(N)/10]. All weights other than mu(u) are fixed within the group, including the sign of the outside factor. This statement only concerns terms that also pass the other exact filters.
+
+**(1) There are at most three primes in r.** The strict mark gives r<N^(27/40), exactly the fourth power of N^(27/160). The cutoff here has not been loosened.
+
+**(2) If r has three primes, every admitted u has exactly two.** An allocation with all three would give u≥N^(81/160)>N^(1/2). But u²=d(u/v)≤d N^(1/10)<N, using ell>N^(1/10). An allocation with just one leaves two primes in s, giving v>N^(1/5+54/160)=N^(43/80). Since u>v, this gives d>v²>N, impossible. The empty u is impossible since u>v. Thus the allocation sum is exactly the number of eligible omitted primes, with positive Mobius sign before multiplication by the outer factor. The ratio alone requires the omitted prime p to lie in [sqrt(r/w) N^(−1/20), sqrt(r/w) N^(−1/40)]; keep all other cuts when counting it.
+
+**(3) If r has two primes, the singleton and the pair cannot both occur.** For r=ab the ratio coordinate of u=ab differs from that of u=a by 2log b≥(27/80)log N, and likewise with a and b exchanged. The full width of this strip is only (1/20)log N. So either all admitted allocations are singletons, carrying negative Mobius sign, or the admitted allocation is the pair, carrying positive sign. For r with one prime only that singleton can occur; r=1 has no allocation.
+
+Consequently, on this entire strict high-rough row the absolute value after grouping equals the sum of the allocation absolute values, not merely an upper bound. Likewise the grouped negative part equals the sum of the negative parts of the allocations. These equalities hold at each group, before any summation over q,h or endpoints. This rules out further cancellation by pairing allocations inside these groups. It does not rule out a signed comparison between different groups, and does not bound the normalized negative charge. The earlier cutoff stability estimate remains applicable to its stated perturbation, but the sign classification here used the strict original mark.
