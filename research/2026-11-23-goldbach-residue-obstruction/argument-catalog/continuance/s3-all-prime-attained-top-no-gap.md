@@ -145,4 +145,16 @@ The difference from the unmasked diagonal \(\sum_p Q_p^2\) consists of the cross
 
 All close-pair corrections can be removed absolutely on the original gap: for a single divisor mask use \(O(X^{-1/2}\log X)\) times the other normalized envelope, and for a coincident atom use \(O(X^\epsilon/\max(h,k))\) per normalized pair. The intersections are smaller. Thus the signed mask comparison on the exact prime subsector costs a fixed lower power. This proves (2).
 
-In the nonattained case the same good-start analysis of (11) gives a normalized terminal \(L^2\) limit of zero, since there is no top frequency. It does not exclude an \(X^{2\beta-1-o(1)}\) signal there. These are hand estimates for a fixed factor. They are conditional on attainment for the positive conclusion and do not prove the desired upper bound or a new Lean result.
+## The scaled energy, with the original pair normalization
+
+Write \(\Phi_\beta(w)=\sum_{\Re\rho=\beta}m_\rho^2H_B(\rho)e^{i\Im\rho\,w}\), using the empty series if \(\beta\) is not attained. On good starts the exact retained covariance, with \(2\) times the sum over \(h<k\) as in the original normalization, satisfies
+\[
+ X^{1-2\beta}\mathcal C_{\rm pp}(Y,X)
+   =\frac{\log^2(b/a)}9
+        \int_0^\infty e^{-(2\beta-1)t}\Phi_\beta(V-t)^2\,dt
+        +o(1).
+\tag{13}
+\]
+Indeed the normalized \(L^2\) convergence in (11)–(12) holds uniformly on unit blocks throughout \(T\le v\le V\): its proof only requires \(v-bT\gg T\), available on every such block, and the same good-start bounds on \(B_T\). Both the normalized scalar and its limit have bounded \(L^2\) norms on those blocks. In the integrated difference of squares, Cauchy–Schwarz therefore costs \(o(1)\) per unit block. After normalization by \(X^{2\beta-1}\), the successive blocks at distance \(j\) from the right endpoint have weight \(O(e^{-(2\beta-1)j})\). Summing this geometric bound gives \(o(1)\) for the entire error. The same exponential weight and boundedness of \(\Phi_\beta\) extend the terminal integral to \(t=\infty\) with \(o(1)\) cost since \(V-T\to\infty\). The original companion and output-atom corrections stay smaller by fixed powers as above.
+
+If \(\beta\) is attained, the mean-square lower bound for \(\Phi_\beta\) on fixed intervals also bounds the right side of (13) below away from zero, proving \(\mathcal C_{\rm pp}(Y,X)\asymp X^{2\beta-1}\) on good starts. If it is not attained, (13) gives \(\mathcal C_{\rm pp}(Y,X)=o(X^{2\beta-1})\) there. This last statement leaves open an \(X^{2\beta-1-o(1)}\) signal. These are hand estimates for a fixed factor. They are conditional on attainment for the positive conclusion and do not prove the desired upper bound or a new Lean result.
