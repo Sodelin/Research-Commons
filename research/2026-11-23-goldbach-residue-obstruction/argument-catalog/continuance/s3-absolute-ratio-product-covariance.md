@@ -78,6 +78,37 @@ On dyadic blocks take \(M\) to be the larger of the two shift scales. Integrate 
 
 The \(d\)-weights chosen below both real kernel lines remain square summable, and the rough and squarefree lcm projections still cost subpower. Thus the factor \((U/R)^\lambda\) survives the exact ratio/product integral. On each excluded positive short gap with one companion at least \(R\), both companions are at least \(R/2\) for large \(X\). The individual envelopes give a total close-pair cost \(O_\varepsilon(H_0 X^{2\Delta+\varepsilon}R^{-2\Delta})\), smaller than the required saving \(\kappa_1\lambda\), since \(R=Y^{u+\kappa_1}\) and \(2\Delta=4\lambda\). This proves (2) after absorbing small real displacements and the close correction. The atom edits have their separate fixed-gap bound. The argument depends on using the entire signed inverse companion on the high side, so does not give a corresponding tail estimate after selecting only primes or only composites there.
 
+## A strict deletion for a small prime–companion product
+
+In the expansion with both discrete and continuous prime coordinates, one can further remove the exact sector in which either output product is at most \(Z=X^\xi\), for any fixed \(0<\xi<1\). This includes a cut \(p h\le Z\) for a discrete prime atom, and the corresponding cut \(t h\le Z\) for its continuous centering coordinate. On every exact companion ratio/product sector above, including the atom exclusions, the cost is
+\[
+ O_\varepsilon\bigl(X^{\beta_*-1+\varepsilon} Z^{\beta_*}\bigr)
+ =O_\varepsilon\bigl(X^{2\beta_*-1-\beta_*(1-\xi)+\varepsilon}\bigr).
+\tag{4}
+\]
+This is a fixed power saving even at the critical line.
+
+For the cut first leg, \(Z<Y\) for large \(X\), so \(K_B(th/x)=1-e^{-B}\) throughout the exact retained low-product region. The normalized first leg is therefore a sharp prefix of the signed product measure at height \(Z\), times \((1-e^{-B})x^{-1/2}\). Its Mellin series, with the same companion twist \(h^w\) and common-divisor lane \(d\), is
+\[
+ D_{{\rm sp},>P}(s)
+   \sum_{\substack{h\in I,\ d\mid h\\h\ {\rm admissible}}}
+                 \beta_U(h)h^{w-s}.
+\]
+The finite second factor obeys the subpower estimate with \(d^{-\sigma}\), \(\sigma>1/2\), on a fixed line just right of \(\beta_*\). This is the same sharp endpoint argument as for (3), but without smoothing in \(s\). For a prime-only companion it uses the same finite trace prefix and single-term estimate when \(d>1\). The first factor is the exact split-prime tail including its continuous reference, also subpower there.
+
+Truncated Perron can be applied to this signed measure with a polynomial height. For the atomic part, move the cutoff to \(\lfloor Z\rfloor+1/2\), which keeps the integers exactly as prescribed and gives inverse-polynomial distance to every jump. The continuous part has density at most \(O_\varepsilon(X^\varepsilon/d)\), since it is the sum over \(d\mid h\) of \(\beta_U(h)h^{w-1}\) times the fixed reference density with lower endpoint \(Ph\). The half-integer adjustment of its mass is therefore harmless. The truncated Perron remainder for this continuous part is bounded by integrating
+\(\min\{1,(T|\log(Z'/t)|)^{-1}\}(Z'/t)^{a_0}\)
+against the density, for any fixed \(a_0>1\) and \(Z'=\lfloor Z\rfloor+1/2\). Near \(Z'\) the integral costs \(O(Z'\log T/T)\), and away from \(Z'\) the power factor and the minimum give a polynomial bound divided by \(T\), since the support starts at \(t\ge2\). Thus \(T=X^C\) makes the remainder negligible. Shift to a fixed line just above \(\beta_*\) with \(1/s\) in the Perron denominator. The normalized cut first leg is
+\[
+ O_\varepsilon\!\left(
+ X^{-1/2+\varepsilon} Z^{\beta_*}
+ d^{-\sigma}(3+|\Im w|)^\varepsilon
+ \right).
+\]
+For an individual low-product atom \(p\), use the exact companion cutoff \(h\le Z/p\) in the same sharp prefix. It has the additional factor \(p^{-\sigma}\) by the same choice of real line. The \(d>1\) single prime term respects this estimate because it occurs only if \(pd\le Z\), and the arbitrary margin loss absorbs the critical-line difference.
+
+Now pair with the unrestricted opposite leg (3) in the ratio/product projection. The same gcd and atom lcm sums converge absolutely. This proves (4) before the short additive gap correction. On close pairs a nonzero low leg forces \(h\le Z/P\). Its actual normalized centered value is \(O_\varepsilon(X^{-1/2+\varepsilon}(Z/h)^{\beta_*})\) by the exact finite prime prefix on \(P<p\le Z/h\). The opposite leg has its usual individual bound. The sum over close pairs is smaller than (4) by the harmonic or power sum in \(h^{-2\beta_*+\varepsilon}\) and the subpower factor \(H_0\). A close pair with one low divisor mask costs at most \(O_\varepsilon(X^{\beta_*-1+\varepsilon}H_0 (Z/P)^{1-\beta_*+\varepsilon})\), which fits (4) since \(1-\beta_*\le\beta_*\). If the divisor mask is on the other leg, use the same individual low centered bound and the same estimate applies. Two masks cost \(O_\varepsilon(X^{-1+\varepsilon}H_0 Z)\), which fits (4) because \(Z^{1-\beta_*}\le X^{\beta_*}\). Coincident low-product atoms on a close pair cost \(O_\varepsilon(Z X^{-1+\varepsilon}/\max(h,k))\) by Chebyshev, still within (4) after summing. Thus (4) applies to the exact separated covariance. Combine the two low-leg deletions by inclusion–exclusion to keep the original signs.
+
 ## Why the same absolute projection does not handle a long additive gap
 
 A Mellin ratio or product projection yields multiplicatively separable twists with the integrable-up-to-logs factor \(1/w\). An exact translation gap \(k-h>D\), \(D>0\), gives a different kernel in the same variables. Scaling \(u=h/D\), \(v=k/D\), its double Mellin transform is
