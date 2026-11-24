@@ -71,4 +71,26 @@ For all \(j>8M\) use a direct Rankin bound. On the squarefree paired support \(j
 \]
 The last inequality follows from the divisor bound \(\sum_{h\le X}\tau(h)\ll X(1+\log X)\) and its partial-summation consequence \(\sum_{\alpha<q<N/\alpha}\tau(q)/q\ll L(1+M)\). Multiplying by \(L^2\) still gives \(o(N)\), since \(8\log 2>4\). This completes both moving cuts.
 
-These are hand estimates on actual paired weights at each target. The central and unmatched contributions, and the paired factor counts left inside the displayed windows, are not bounded by this argument. No numerical extrapolation or Lean verification is used.
+## Prime transfer on the factor counts that remain
+
+The following exact involution applies without a restriction on \(j\). For each odd squarefree endpoint \(m\), choose a prime \(p=p(m)\mid m\) invariant across the factorizations of \(m\), for example \(P^-(m)\). If \(p\mid q\), transfer it by replacing \((q,h)\) with \((q/p,ph)\), and reorder the two factors if needed. If \(p\mid h\) do the opposite. The paired bracket (1) is symmetric, so the change of order does not affect its value. For a transfer whose two factorizations remain on the paired outer support, their combined weight, in the notation \(p\mid q\), is exactly
+\[
+\Lambda(N-m)\big(\mu(h)-\mu(q)\big)\log p.
+\tag{7}
+\]
+In particular each such orbit vanishes for \(\mu(m)=+1\), with no assumptions on other small primes or their allocations. A transfer can fail only if the factor originally carrying \(p\) lies in \((\alpha,p\alpha]\) or if the new pair belongs to the central square. In the latter case, if the carrier was \(q\), then \(q/p>H/2\) and \(ph\le H\), so originally \(q>pH/2>H\) and \(h\le H/p<H/2\). Thus this failure comes solely from the wide \(A_{02}+A_{20}\) contribution. On odd parity (7) has magnitude \(2\Lambda(N-m)\log p\). This rewrites the odd weights but supplies no sign for the resulting sum on generic \(j\).
+
+## Incomplete allocations with small total small-prime product
+
+Fix \(0<\varepsilon<1/10\), put \(Y=N^\varepsilon\), and let \(s\) be the product of all prime factors of \(m\) at most \(Y\). On the full paired outer support, the signed total with \(s\le S_0\) is \(o(N)\) whenever \((1+\log S_0)^3=o(L)\). This statement includes incomplete small-prime allocations and allows the rough cores to be composite.
+
+Indeed any such pair determines two unordered coprime \(Y\)-rough cores \(u,v\) with \(m=suv\), each greater than \(\alpha/s>1\). At fixed \(m,u,v\), potential allocations are \((ub,v(s/b))\) for \(b\mid s\). The group is unique since the product of the small primes was prescribed and the cores of a given allocation are unique. If neither core lies in any interval \([B/s,B]\) for \(B\in\{\alpha,H/2,H\}\), all allocations are in the original paired outer support when any one is. Their total vanishes for \(\omega(s)\ge2\), by summing the two log-weighted Möbius brackets. For \(s=p\) prime, it is \((\mu(u)+\mu(v))\Lambda(N-m)\log p\), which vanishes on even parity. On odd parity the pair has at least one \(Y\)-rough original factor, so the two-form sieve of the preceding rough paired estimate bounds its contribution by \(O(N(1+M)^2/L)+o(N)\) over this whole support. If \(s=1\), both original factors are rough and the both-rough estimate gives \(O(N(1+M)/L)+o(N)\). These two already-proved rough estimates need be counted only once. [Rough paired sieve](https://github.com/Sodelin/Research-Commons/commit/0bcaccdd69d047590e171051120d6c801a4cd527)
+
+For a crossing group, say \(u\in[B/s,B]\), fix \(a=su\) and upper-sieve the \(Y\)-rough variable \(v\) and prime \(N-av\). Allowing either core to cross costs only a factor two. As \(\alpha\le a\le H S_0\), the level \(D_a=\lfloor N^{.499}/\sqrt a\rfloor\) has logarithm comparable to \(L\) and covers two sieve forms through a fixed positive power of \(N\). The same diagonal proof gives main bound \(O(N\kappa(a)/(a L^2))\). At fixed \(s,B\), the reciprocal mass of \(Y\)-rough \(u\in[B/s,B]\) is \(O((1+\log s)/L)\). To see this, cover by \(O(1+\log s)\) dyadic intervals with left endpoint at least \(N^{1/2-o(1)}\) and use the dimension-one upper sieve on each. Also \(\kappa(su)\le\kappa(s)\kappa(u)\) and \(\kappa(u)=1+o(1)\) uniformly on these rough cores. There are at most \(\tau(s)\) allocations per group, each of weight at most \(L^2\). Hence the crossing contribution in absolute value is
+\[
+ O\!\left(\frac{N}{L}\sum_{s\le S_0}\frac{\mu^2(s)\tau(s)\kappa(s)(1+\log s)}s\right)+o(N)
+ =O\!\left(\frac{N(1+\log S_0)^3}{L}\right)+o(N)=o(N).
+\]
+The middle inequality follows by the Euler bound \(\prod_{3\le p\le S_0}(1+2\kappa(p)/p)\ll(1+\log S_0)^2\). At this fixed power sieve the floors, including all allocations and log weights, are \(O(N^{.998+o(1)}\sum_{s,u}1/(su))=o(N)\). Proper prime powers and endpoints below the sieve primes are discarded with their actual endpoint multiplicity as before. Crossing boundaries were only enlarged for the positive upper count. Full cancellations use the exact original inclusion, including the strict \(h>\alpha\) and the exclusion of the central cell.
+
+These are hand estimates on actual paired weights at each target. The central and unmatched contributions, and the generic paired counts left after the listed selections and cancellations, are not bounded by these arguments. No numerical extrapolation or Lean verification is used.
