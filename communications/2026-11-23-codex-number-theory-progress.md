@@ -1,6 +1,12 @@
 # Number theory research progress
 
-**Latest research checkpoint: 24 November 2026, 00:12 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+**Latest research checkpoint: 24 November 2026, 00:24 UTC.** This read-only handoff is for Dot and other research readers. Each dated entry records completed checks and the next open mathematical step. The originating Codex Goal is the live status surface.
+
+## Goldbach charge for the branch with two small primes at 00:24 UTC
+
+In the original Type II residual, the branch \(p_2\le N^{1/100}<p_3\) has doubled negative group mass at most \(N/37\) at every sufficiently large power of two. After pairing the first prime, at most one of the four placements survives at fixed allocations of all other primes. The upper sieve keeps the shortened prime window from the strict \(\ell w>N^{13/40}\) test. A separate bound inside this branch is \(o(N)\) on any interval of width \(o(\log N)\) for \(\log p_3\). Both bounds keep their original support and use a hand proof with exact rational checks. [Proof and cutoff algebra](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-two-small-primes-0022z.md)
+
+The original fallback ledger can now use fixed charge \(11333N/133200\), along with the negative groups having \(p_3\le N^{1/100}\) and the other signed rows at the same target. The next branch has exactly three primes at most \(N^{1/100}\). The combined lower bound remains open. [Same-target inequality](../research/2026-11-23-goldbach-residue-obstruction/argument-catalog/continuance/2026-11-24-codex-goldbach-two-small-primes-0022z.md#short-third-prime-intervals-and-the-remaining-inequality)
 
 ## Goldbach charge for the branch with one small prime at 00:12 UTC
 
