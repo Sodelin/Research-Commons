@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT="packages/research/"
 SOURCES=("integration/lean-modules.json","vendor/accepted/MANIFEST.json")
 HASH=re.compile(r"[0-9a-f]{64}")
-REV=re.compile(r"[A-Za-z0-9_./-]+")
+REV=re.compile(r"[A-Za-z0-9_./-]+(?:~[0-9]{0,6})?")
 ENTRY_ROOT="research/proofbridge-lean"
 
 def git(repo,*args):
@@ -18,7 +18,7 @@ def git(repo,*args):
 def snapshot(repo,ref):
     if not REV.fullmatch(ref) or ref.startswith("-"):
         raise ValueError("invalid revision")
-    c=git(repo,"rev-parse","--verify",ref+"^{commit}").decode().strip()
+    c=git(repo,"rev-parse","--verify","--end-of-options",ref+"^{commit}").decode().strip()
     if not re.fullmatch("[0-9a-f]{40}",c):
         raise ValueError("invalid commit")
     def load(p):
