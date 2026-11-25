@@ -1,0 +1,87 @@
+{
+  "schema": "commons.proofbridge.handoff.v1",
+  "status": "kernel_checked",
+  "theorem_id": "commons.goldbach.integer_budget_187.v1",
+  "lean_name": "CommonsBudget187.certificate",
+  "source": {
+    "commit": "c205f5fdfcfd6eda3f345bbe59cc04c9e378e9a0",
+    "path": "research/2026-11-25-proofbridge-linear/goldbach-budget.json",
+    "sha256": "98e115ecaa9245a6662048c78a15db5929be523f97f9b18f7fd22dc7d0ffff3e"
+  },
+  "premise_ids": [
+    "model-margin",
+    "odd-semiprime-cap",
+    "odd-center-cap"
+  ],
+  "verification": {
+    "status": "kernel-checked-conditional",
+    "certificate_sha256": "98e115ecaa9245a6662048c78a15db5929be523f97f9b18f7fd22dc7d0ffff3e",
+    "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+    "lean_module_sha256": "b62757590dddd2afe4bbf53396e60e5c8ebc50e488df931101a8c610025ec696",
+    "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "smt": "not-run",
+    "exact_combination_bound": -187,
+    "variables": [
+      "margin",
+      "odd_charge",
+      "center_charge"
+    ],
+    "premises": [
+      {
+        "coeffs": [
+          -1,
+          0,
+          0
+        ],
+        "le": -330
+      },
+      {
+        "coeffs": [
+          0,
+          1,
+          0
+        ],
+        "le": 98
+      },
+      {
+        "coeffs": [
+          0,
+          0,
+          1
+        ],
+        "le": 45
+      }
+    ],
+    "conclusion": {
+      "coeffs": [
+        -1,
+        1,
+        1
+      ],
+      "le": -187
+    }
+  },
+  "unresolved": [
+    "analytic-premises-not-proved-here"
+  ],
+  "artifact": {
+    "lean_module": "Budget187",
+    "source_sha256": "15331e0b31f6dbbe6f0196c48f641b73ef02950b2e54c2c7c214bf90cb83c073",
+    "object_sha256": "ae1c59e32272f8d06898b054f91649d8257ef6a1c98aa3fd069eb23c67312741",
+    "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
+  },
+  "downstream": {
+    "module": "ConsumeBudget.lean",
+    "theorem": "positiveIntegerHeadroom",
+    "source_required_at_consumer": false,
+    "result": "kernel_checked_conditional",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  }
+}
