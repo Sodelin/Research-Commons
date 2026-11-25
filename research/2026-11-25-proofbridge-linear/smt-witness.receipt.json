@@ -1,0 +1,122 @@
+{
+  "schema": "commons.proofbridge.smt_witness.v1",
+  "goal_sha256": "4732cd3b8e89c9d1c21f85d434ef86561fcc6d74ff7506c35a115557309fe963",
+  "solver": "4.13.3.0",
+  "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+  "query_sha256": "1799d4ee1063dd604d6523896b09e64a766735649060744715b68fa7ae176070",
+  "solver_status": "sat",
+  "status": "kernel_checked_conditional",
+  "multipliers": [
+    1,
+    1,
+    1
+  ],
+  "certificate": {
+    "schema": "commons.linear-int.v1",
+    "variables": [
+      "margin",
+      "odd_charge",
+      "center_charge"
+    ],
+    "premises": [
+      {
+        "coeffs": [
+          -1,
+          0,
+          0
+        ],
+        "le": -330
+      },
+      {
+        "coeffs": [
+          0,
+          1,
+          0
+        ],
+        "le": 98
+      },
+      {
+        "coeffs": [
+          0,
+          0,
+          1
+        ],
+        "le": 45
+      }
+    ],
+    "target": {
+      "coeffs": [
+        -1,
+        1,
+        1
+      ],
+      "le": -187
+    },
+    "multipliers": [
+      1,
+      1,
+      1
+    ]
+  },
+  "verification": {
+    "status": "kernel-checked-conditional",
+    "certificate_sha256": "7d51b4acb44fad0d62acf2ded9aa34963b3bdb3d23eb7332a74f93d5b7cf19e0",
+    "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+    "lean_module_sha256": "b62757590dddd2afe4bbf53396e60e5c8ebc50e488df931101a8c610025ec696",
+    "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "smt": "not-run",
+    "exact_combination_bound": -187,
+    "variables": [
+      "margin",
+      "odd_charge",
+      "center_charge"
+    ],
+    "premises": [
+      {
+        "coeffs": [
+          -1,
+          0,
+          0
+        ],
+        "le": -330
+      },
+      {
+        "coeffs": [
+          0,
+          1,
+          0
+        ],
+        "le": 98
+      },
+      {
+        "coeffs": [
+          0,
+          0,
+          1
+        ],
+        "le": 45
+      }
+    ],
+    "conclusion": {
+      "coeffs": [
+        -1,
+        1,
+        1
+      ],
+      "le": -187
+    }
+  },
+  "negative_control": {
+    "multipliers": [
+      0,
+      1,
+      1
+    ],
+    "lean_exit": 1,
+    "expected_goal_failure": true
+  }
+}
