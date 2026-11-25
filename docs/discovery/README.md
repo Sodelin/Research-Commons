@@ -6,6 +6,8 @@ Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintaine
 
 ## Start here: current results and the CLI
 
+For exact certificate replay and separately scoped Lean checks, see the [ProofBridge discovery register](https://github.com/Sodelin/Research-Commons/blob/c205f5fdfcfd6eda3f345bbe59cc04c9e378e9a0/research/2026-11-25-proofbridge-linear/DISCOVERY.md). The pinned entries distinguish a checked finite component from a closed conjecture and include exact CLI query instructions. Use a refreshed full-result cache to search the new source bodies.
+
 Use the **full-result CLI** below to find current published proof sources, partial results, failed approaches, candidates and correction notes. The older **118-card view**, **334-body bundled source view** and **archive-path view** are separate, narrower snapshots. Installing or running one does not populate the full-result body cache.
 
 The executable tools are available in this repository. They require Git, Python3 and Node.js; the commands below were checked here with Git 2.52, Python 3.12 and Node 24. No npm installation, Lean compiler, background service or account connection is needed for these local searches. This does not mean the tools or cache are already installed on another device.
