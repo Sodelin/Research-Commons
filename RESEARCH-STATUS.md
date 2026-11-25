@@ -1,5 +1,7 @@
 # What research has actually been done?
 
+[Proof sources, batch intake and Lean inventory](docs/discovery/PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 ## Hand proofs are completed results — 23 October 2026
 
 Completed mathematics is labelled **PROVED (not Lean formalized)** when the full theorem lacks a Lean receipt. Independent review and implementation remain separate. Completed claim cards now distinguish their proof from separate downstream work. Reuse the [shared claim board](docs/CLAIM-BOARD.md) and [recovered G3 proof/source catalogue](research/2026-10-23-g3-proof-recovery/README.md); a missing formal check must not restart the hand proof.

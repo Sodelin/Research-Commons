@@ -1,5 +1,7 @@
 # Research Commons discovery reader
 
+[Proof sources, batch intake and Lean inventory](PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 A question-first product over the existing canonical claim register. Search by question, topic, disposition or origin; follow exact source and typed connections; copy a source-pinned agent reuse record. Completed hand mathematics stays completed when formalization is missing.
 
 Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintained by Dot and scientific owners. This reader preserves that source and adds navigation, search and exact owner-supplied evidence joins. It does not generate scientific answers or certify novelty.

@@ -1,5 +1,7 @@
 # Theorem intake CLI
 
+[Proof sources, batch intake and Lean inventory](PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 From a Commons checkout containing the pinned Git objects:
 
 ```sh

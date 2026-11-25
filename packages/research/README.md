@@ -1,5 +1,7 @@
 # Research Commons: portable Lean and Rust
 
+[Proof sources, batch intake and Lean inventory](../../docs/discovery/PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 ## Latest integration successor — 31 October 2026
 
 [Reviewed productive-pruning/fixed-S repair adoption](../../research/2026-10-31-population003-package-binding/README.md) now records **61 mapped IDs, 662 named declarations and 57 unbound IDs**. Its exact target/export and [aggregate/import-binding receipt](integration/productive-pruning-repair-aggregate-verification.json) pass using qualified coherent reuse. Strict coverage remains exit2/full116 incomplete, all118 canonical scientific statuses unchanged; no fresh whole1846-profile replay or native infinite pruning/repair algorithm is claimed. The earlier60/635/58 navigation note and historical48/520/70 ContextB baseline remain intact below. Use [current discovery commands and dated cache coverage](../../docs/discovery/README.md) and the [14:03 original-goal scope](../../research/2026-10-31-scope-reconciliation-1403z/CURRENT-SCOPE.md) for their respective purposes.

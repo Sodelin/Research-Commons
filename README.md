@@ -1,5 +1,7 @@
 # Research Commons
 
+[Proof sources, batch intake and Lean inventory](docs/discovery/PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 ## Programme and publication navigation — 27 October 2026
 
 **Programmes are ongoing inquiries; results and releases have finite acceptance criteria.** [Programme definitions and Get It Out](docs/PROGRAMMES-AND-DISSEMINATION.md) separate programme → bounded project → scoped claim/evidence → deliverable → dissemination. Completed results can be prepared for publication without finishing G3/G4 or the whole parent programme. The first publication-pipeline candidate is the existing all-level NANUQ theorem, not a new claim of external acceptance.

@@ -1,5 +1,7 @@
 # Start here
 
+[Proof sources, batch intake and Lean inventory](docs/discovery/PROOF-SOURCE-MAP.md) is the entry point for existing catalogs, formal evidence and the current import workflow.
+
 ## Number theory — 23 November 2026
 
 [Read the Goldbach, twin-prime and Riemann zeta progress checkpoint](communications/2026-11-23-codex-number-theory-progress.md). It lists the latest checked results and exact next questions for the three tracks.

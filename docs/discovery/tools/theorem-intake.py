@@ -4,7 +4,7 @@ from collections import Counter
 from pathlib import Path, PurePosixPath
 
 HEX = re.compile(r"[0-9a-f]{40}")
-KINDS = {"claim_board","obligations","hand_sections","incorporation","handoff","certificate_records"}
+KINDS = {"claim_board","obligations","hand_sections","incorporation","handoff","certificate_records","recovered_claims","recovered_files","preservation","binding_inventory","package_claims","exact_lean_bindings","reading_guide"}
 FIELDS = {"schema","sources"}
 CERT_SCHEMA = "commons.linear-int.v1"
 
@@ -80,6 +80,57 @@ def project(kind,raw,provenance):
             yield row(c["id"],"incorporation_record",r.get("original_obligation"),
                       r.get("status"),c.get("current_incorporation"),
                       c.get("counterpart_checks"),["obligations:"+c["id"]])
+    elif kind=="recovered_claims":
+        for c in o["entries"]:
+            yield row(c["key"],"recovered_scoped_claim",c["scope"],c["mathematical_status"],
+                      c["formal_status"],[{k:c[k] for k in
+                      ("file","companions","gap","independent_review","proof_authorship")}],
+                      queue="needs_statement_review")
+    elif kind=="recovered_files":
+        for c in o["files"]:
+            yield row(c["name"],"recovered_source_file",c["title"],None,None,
+                      [{k:c[k] for k in ("kind","public_sha256","public_git_blob_sha",
+                                         "new_independent_review","new_lean_execution")}],
+                      queue="source_only")
+    elif kind=="preservation":
+        for c in o["components"]:
+            yield row(c["public_root"],"preserved_packet",None,None,None,[c],
+                      queue="source_only")
+    elif kind=="binding_inventory":
+        for c in o["claims"]:
+            yield row(c["claim_id"],"historical_binding_inventory",c["exact_canonical_scope"],
+                      c["canonical_mathematical_status_unchanged"],
+                      c["canonical_completion_unchanged"].get("formal_verification"),
+                      [{"candidate_qualified_reuse":c["candidate_qualified_reuse"],
+                        "historical_package_lean_module":c["package_lean_module"],
+                        "missing_interface_or_join":c["missing_exact_interface_or_join"],
+                        "binding_adopted":c["binding_adopted"],"source_evidence":c["source_evidence"]}],
+                      queue="reuse_audit_not_a_batch_job")
+    elif kind=="package_claims":
+        for c in o["claims"]:
+            yield row(c["claim_id"],"package_binding_record",None,None,c["lean"].get("state"),
+                      [{"lean":c["lean"],"rust":c["rust"],"verification":c["verification"],
+                        "source_artifacts":c["source_artifacts"]}],c.get("dependencies"),
+                      queue="reuse_audit_not_a_batch_job")
+    elif kind=="exact_lean_bindings":
+        for c in o["bindings"]:
+            yield row(c["claim"],"named_lean_binding",c["conclusion"],None,None,[c],
+                      queue="reuse_audit_not_a_batch_job")
+    elif kind=="reading_guide":
+        tracked={q["path"]:q for q in o["sources"]}
+        for c in o["navigation"]:
+            q=tracked[c["source_path"]]
+            need(type(c["start_line"]) is int and type(c["end_line"]) is int and
+                 1<=c["start_line"]<=c["end_line"],"invalid reading span")
+            loc={**provenance,
+                 "declared_source_path":str(PurePosixPath(provenance["path"]).parent / q["path"]),
+                 "declared_source_sha256":q["sha256"],"start_line":c["start_line"],
+                 "end_line":c["end_line"],"scope":"guide_metadata_only"}
+            entry=row(c["id"],"editorial_proof_locator",c["title"],None,None,
+                      [{"evidence_scope":c["evidence_scope"],"source_evidence":q.get("evidence")}],
+                      c.get("related_claims"))
+            entry["provenance"]=loc
+            yield entry
     elif kind=="handoff":
         need(o["schema"]=="commons.proofbridge.handoff.v1","unknown handoff")
         verified=o["verification"]
