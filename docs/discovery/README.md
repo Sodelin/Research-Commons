@@ -6,6 +6,8 @@ Canonical data/attribution: Sodelin/Research-Commons docs/claims.json, maintaine
 
 ## Start here: current results and the CLI
 
+Use the [theorem intake CLI](THEOREM-INTAKE.md) for source-pinned theorem, proof-note and open-obligation records, their existing Lean evidence, and export/rejoin of ProofBridge checker batches.
+
 For exact certificate replay and separately scoped Lean checks, see the [ProofBridge discovery register](https://github.com/Sodelin/Research-Commons/blob/c205f5fdfcfd6eda3f345bbe59cc04c9e378e9a0/research/2026-11-25-proofbridge-linear/DISCOVERY.md). The pinned entries distinguish a checked finite component from a closed conjecture and include exact CLI query instructions. Use a refreshed full-result cache to search the new source bodies.
 
 Use the **full-result CLI** below to find current published proof sources, partial results, failed approaches, candidates and correction notes. The older **118-card view**, **334-body bundled source view** and **archive-path view** are separate, narrower snapshots. Installing or running one does not populate the full-result body cache.
