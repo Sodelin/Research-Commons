@@ -34,7 +34,7 @@ For the fully divisible case H in p^r Mat_2(Z_p), a perturbation of all entries 
 
 ## Exact replay
 
-Nine shifted residue enumerations, 41 exact tail comparisons in total. They test the crossover formula, not Galois data.
+Nine shifted residue enumerations, 39 exact tail comparisons in total. Reporting erratum: the [initial commit](https://github.com/Sodelin/Research-Commons/commit/f5d93fe9d85c9631064afca212082eab7e1f9feb) misstated the comparison count as 41; the code, result, and proof are unchanged. They test the crossover formula, not Galois data.
 
 ```js
 const cases=[[3,4,0],[3,4,1],[3,5,2],[3,4,3],[5,3,0],[5,3,1],[5,3,2],[7,2,0],[7,2,1]];const rows=[];
