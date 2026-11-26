@@ -1,0 +1,8 @@
+import TriangleRun
+import ObservationCertificate
+set_option pp.fullNames true in
+#check @ResearchCommons.TriangleRun.exact_component
+#print axioms ResearchCommons.TriangleRun.exact_component
+set_option pp.fullNames true in
+#check @ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity
+#print axioms ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity

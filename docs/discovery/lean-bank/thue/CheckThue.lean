@@ -1,0 +1,11 @@
+import ThueMorsePhaseAliasing
+import PrefixCount
+set_option pp.fullNames true in
+#check @ResearchCommons.ThueMorsePhaseAliasing.prefix_aliases_with_cofinal_separation
+#print axioms ResearchCommons.ThueMorsePhaseAliasing.prefix_aliases_with_cofinal_separation
+set_option pp.fullNames true in
+#check @ResearchCommons.ThueMorsePhaseAliasing.triple_dyadic_first_mismatch
+#print axioms ResearchCommons.ThueMorsePhaseAliasing.triple_dyadic_first_mismatch
+set_option pp.fullNames true in
+#check @ThueMorseReuse.zeroCount_exact
+#print axioms ThueMorseReuse.zeroCount_exact

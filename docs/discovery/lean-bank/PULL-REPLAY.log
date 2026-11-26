@@ -1,0 +1,39 @@
+Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+'ResearchCommons.TwoLiftTriangle.triangle_iff' depends on axioms: [propext, Quot.sound]
+
+'ResearchCommons.TriangleRun.triple_iff' depends on axioms: [propext, Quot.sound]
+'ResearchCommons.TriangleRun.at_iff_actual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.TriangleRun.late_component_iff' depends on axioms: [propext, Quot.sound]
+'ResearchCommons.TriangleRun.run_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.TriangleRun.run_vertices_exact' depends on axioms: [propext, Quot.sound]
+'ResearchCommons.TriangleRun.run_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.TriangleRun.exact_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchCommons.TriangleRun.one_gap_connects' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+'ResearchCommons.NanuqOmnibusFixture.same_obs_different_joint' does not depend on any axioms
+'ResearchCommons.NanuqOmnibusFixture.copy_uniform_counts_differ' does not depend on any axioms
+
+'ResearchCommons.ObservationCertificate.ambiguity' does not depend on any axioms
+'ResearchCommons.ObservationCertificate.finite_identified' does not depend on any axioms
+'ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity' does not depend on any axioms
+
+@ResearchCommons.TriangleRun.exact_component : ∀ {twist : Nat → Bool}
+  {keep : ResearchCommons.TwoLiftTriangle.Vertex → Prop} (lo m : Nat),
+  0 < lo →
+    (∀ (n : Nat), lo ≤ n → n ≤ lo + m → twist n = Bool.false) →
+      (∀ (n : Nat), 0 < n → lo ≤ n + 2 → n ≤ lo + m + 2 → n < lo ∨ lo + m < n → twist n = Bool.true) →
+        (∀ (v : ResearchCommons.TwoLiftTriangle.Vertex), lo ≤ v.fst → keep v) →
+          ∀ (b : Bool),
+            have vs := ResearchCommons.TriangleRun.runVertices lo (lo + m) b;
+            vs.Nodup ∧
+              vs.length = m + 1 + 2 ∧
+                ∀ (v : ResearchCommons.TwoLiftTriangle.Vertex),
+                  ResearchCommons.TriangleRun.Reach (ResearchCommons.TriangleRun.GraphTriangleEdge twist keep) (lo, b)
+                      v ↔
+                    v ∈ vs
+'ResearchCommons.TriangleRun.exact_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity : ¬ResearchCommons.ObservationCertificate.Identified
+    (fun c => c = ResearchCommons.NanuqOmnibusFixture.original ∨ c = ResearchCommons.NanuqOmnibusFixture.reduced)
+    ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.joint
+    (ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.original)
+'ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity' does not depend on any axioms

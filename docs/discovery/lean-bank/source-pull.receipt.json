@@ -1,0 +1,49 @@
+{
+  "schema": "commons.proofbridge.source-replay.v1",
+  "status": "fresh_kernel_consumer_pass",
+  "seconds": 2.148,
+  "sources": [
+    {
+      "repo": "Sodelin/Research-Commons",
+      "ref": "135abac97d5a73e32af97911e7b18ed87f450178",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/zero-run/TriangleRun.lean",
+      "stage": "TriangleRun.lean",
+      "blob": "fe6b73069c50f870308a3c145dbc2345cc8c9d32",
+      "sha256": "3fed26941932f457a4724d55c62b239ff890251e9c4cee362e7a2413ddcc341d"
+    },
+    {
+      "repo": "Sodelin/Research-Commons",
+      "ref": "2b21f9e88ed85df1df1141e71980f9e81a189c09",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/round3/TwoLiftTriangle.lean",
+      "stage": "TwoLiftTriangle.lean",
+      "blob": "b20a04ede8834c34dfc100cf0c11170074fbd548",
+      "sha256": "804822b169f54018958932283db8c04f575489cac49f86b404dd5987846ffe2f"
+    },
+    {
+      "repo": "Sodelin/Research-Commons",
+      "ref": "a38db281d7998a2948cd6496cb3d22ed5cf9c03d",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/NanuqOmnibusFixture.lean",
+      "stage": "NanuqOmnibusFixture.lean",
+      "blob": "36398bd7d6d4a7e14c59eec6b85898e87416695c",
+      "sha256": "dea911a2ed2a6cbddb4d71a85957fc843212280d8205c87dc81361f6e43f1565"
+    },
+    {
+      "repo": "Sodelin/Research-Commons",
+      "ref": "a38db281d7998a2948cd6496cb3d22ed5cf9c03d",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ObservationCertificate.lean",
+      "stage": "ObservationCertificate.lean",
+      "blob": "961ed5e4770d214c5ec7bf60cb22ab81f80cc3dd",
+      "sha256": "210aa571ba70f9fab5d0d85edb2ebb7f509d67220a0c2ed54dc453860805dfd6"
+    }
+  ],
+  "consumer": {
+    "ResearchCommons.TriangleRun.exact_component": {
+      "printed_type_sha256": "4fd24b4f61b0d9b73a414d26794af9611fe94a7be0da3213af6790b29e8f3041",
+      "printed_type": "@ResearchCommons.TriangleRun.exact_component : ∀ {twist : Nat → Bool}\n  {keep : ResearchCommons.TwoLiftTriangle.Vertex → Prop} (lo m : Nat),\n  0 < lo →\n    (∀ (n : Nat), lo ≤ n → n ≤ lo + m → twist n = Bool.false) →\n      (∀ (n : Nat), 0 < n → lo ≤ n + 2 → n ≤ lo + m + 2 → n < lo ∨ lo + m < n → twist n = Bool.true) →\n        (∀ (v : ResearchCommons.TwoLiftTriangle.Vertex), lo ≤ v.fst → keep v) →\n          ∀ (b : Bool),\n            have vs := ResearchCommons.TriangleRun.runVertices lo (lo + m) b;\n            vs.Nodup ∧\n              vs.length = m + 1 + 2 ∧\n                ∀ (v : ResearchCommons.TwoLiftTriangle.Vertex),\n                  ResearchCommons.TriangleRun.Reach (ResearchCommons.TriangleRun.GraphTriangleEdge twist keep) (lo, b)\n                      v ↔\n                    v ∈ vs"
+    },
+    "ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity": {
+      "printed_type_sha256": "26220aaf993cd84bc77a60354ac59384978b6bf4c16e332b42545e40f0cb984f",
+      "printed_type": "ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity : ¬ResearchCommons.ObservationCertificate.Identified\n    (fun c => c = ResearchCommons.NanuqOmnibusFixture.original ∨ c = ResearchCommons.NanuqOmnibusFixture.reduced)\n    ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.joint\n    (ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.original)"
+    }
+  }
+}
