@@ -1,0 +1,84 @@
+{
+  "schema": "proofbridge.finder.retained-degree.v1",
+  "premise": "An injection sends a finite source neighbor set into a target neighbor set with no more elements. Does it cover the target?",
+  "providers": [
+    {
+      "id": "public_web",
+      "status": "hit",
+      "result": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html"
+    },
+    {
+      "id": "github",
+      "status": "pinned_read",
+      "requests": 2,
+      "elapsed_ms_parallel": 350
+    },
+    {
+      "id": "loogle_json",
+      "status": "unavailable_via_current_search_adapter",
+      "has_provider_response": false
+    }
+  ],
+  "candidates": [
+    {
+      "declaration": "Finset.surjOn_of_injOn_of_card_le",
+      "role": "first applicable external result",
+      "status": "source_read_not_imported",
+      "repo": "leanprover-community/mathlib4",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Data/Finset/Card.lean",
+      "git_blob": "4e5dc19df677dc5a9aa4a46067990ce08624547d",
+      "line": 489,
+      "reason": "Finite-set analogue; Mathlib is outside the Lean-only worker closure."
+    },
+    {
+      "declaration": "AlexanderOmnibus.neighbor_lift_of_same_degree",
+      "role": "compatible reusable result",
+      "status": "freshly_recompiled",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "a38db281d7998a2948cd6496cb3d22ed5cf9c03d",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ComponentTransport.lean",
+      "git_blob": "4cb8920a452da1836866ac6d86cba0692fdae81a",
+      "sha256": "ef806109a89e5c3552af081519f69381d380c76c0d1807287c10488773323e7e"
+    },
+    {
+      "declaration": "SimpleGraph.Iso.reachable_iff",
+      "status": "reject_for_this_premise",
+      "reason": "Requires the actual graph isomorphism."
+    },
+    {
+      "declaration": "Finset.map_eq_of_subset",
+      "status": "reject_for_this_premise",
+      "reason": "An endomap on one finite set does not directly cover differently typed neighbor sets."
+    }
+  ],
+  "check": {
+    "status": "kernel_checked",
+    "lean_version": "4.33.1",
+    "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+    "lean_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "new_source": {
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ComponentDegreeBridge.lean",
+      "git_blob": "1e308e2ed331bc879d2d4908c8a0a02c7d9a4418",
+      "sha256": "443c670d4560938e7e0800da2ff3fae56ad325f50fe6746ca1f6861939ede021"
+    },
+    "declaration": "AlexanderOmnibus.transport_of_retained_degrees",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "wall_seconds": 1.496,
+    "steps": "Rebuild pinned source then compile consumer; no Mathlib execution or SMT.",
+    "negative_control": {
+      "declaration": "AlexanderOmnibus.unequal_degree_counterexample",
+      "status": "kernel_checked_counterexample",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "description": "A two-vertex path embeds into a three-vertex path but misses a neighbor of the image of one vertex."
+    }
+  },
+  "unresolved": "Supply concrete degree witnesses and retained-boundary identification in the full population proof."
+}
