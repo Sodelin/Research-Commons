@@ -1,0 +1,265 @@
+{
+  "schema": "commons.proofbridge.grow_linear.v1",
+  "source_sha256": "5ce20b0ae004ea65ce1365b315b097bf375b171bdbe3a6766544ef6eaac0f61e",
+  "original": {
+    "status": "kernel-checked-conditional",
+    "certificate_sha256": "5ce20b0ae004ea65ce1365b315b097bf375b171bdbe3a6766544ef6eaac0f61e",
+    "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+    "lean_module_sha256": "6cdf6cb58ae73791b3950e36076525a25f275de896ea87186c301f9ed9ef02b0",
+    "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "smt": "not-run",
+    "exact_combination_bound": 1,
+    "variables": [
+      "x",
+      "y"
+    ],
+    "premises": [
+      {
+        "coeffs": [
+          1,
+          0
+        ],
+        "le": 1
+      },
+      {
+        "coeffs": [
+          2,
+          1
+        ],
+        "le": 3
+      },
+      {
+        "coeffs": [
+          0,
+          -1
+        ],
+        "le": 0
+      }
+    ],
+    "conclusion": {
+      "coeffs": [
+        1,
+        0
+      ],
+      "le": 1
+    }
+  },
+  "retained_ids": [
+    "int-ineq:fe6bf946c67f45215b3aecb239a2f2fe99783b2a1646c2b696f8c09d9241a3c2",
+    "int-ineq:02b84c8902640eda749ed0c6a223e1bd616a7c572a33ffb7c7cd2fdb70ba36c9"
+  ],
+  "removed_ids": [
+    "int-ineq:418dcfbae478170fd88285ff5cea293e89e4f480a6cac49953580fee9662bcfc"
+  ],
+  "originally_nonzero_removed": [
+    "int-ineq:418dcfbae478170fd88285ff5cea293e89e4f480a6cac49953580fee9662bcfc"
+  ],
+  "stronger_checked": {
+    "schema": "commons.linear-int.rounded-witness.v1",
+    "status": "kernel-checked-conditional",
+    "source_sha256": "12086c1bdcb0a326719c7b2098218318ac1e28a226e417c12bf6982c615dc6c7",
+    "variables": [
+      "x",
+      "y"
+    ],
+    "premises": [
+      {
+        "coeffs": [
+          2,
+          1
+        ],
+        "le": 3
+      },
+      {
+        "coeffs": [
+          0,
+          -1
+        ],
+        "le": 0
+      }
+    ],
+    "multipliers": [
+      1,
+      1
+    ],
+    "scale": 2,
+    "target": {
+      "coeffs": [
+        1,
+        0
+      ],
+      "le": 1
+    },
+    "intermediate_target": {
+      "coeffs": [
+        2,
+        0
+      ],
+      "le": 3
+    },
+    "intermediate_certificate_sha256": "3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f",
+    "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "provider_axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "consumer_axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "files_sha256": {
+      "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.lean": "569064299a45dcaf54c871fd3f90aa5ed6de15a2f1343432754051cfd2bc9879",
+      "ReuseOriginal.lean": "73f28ad4d4f613ee35ae845eecf5db00a810d88201f38ff952bcce4e07316739",
+      "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.olean": "62dccb95fd38072e4745f99955bddbc2f649efa761a6735579b2255759b69706"
+    }
+  },
+  "attempts": [
+    {
+      "dropped_id": "int-ineq:418dcfbae478170fd88285ff5cea293e89e4f480a6cac49953580fee9662bcfc",
+      "retained_ids": [
+        "int-ineq:fe6bf946c67f45215b3aecb239a2f2fe99783b2a1646c2b696f8c09d9241a3c2",
+        "int-ineq:02b84c8902640eda749ed0c6a223e1bd616a7c572a33ffb7c7cd2fdb70ba36c9"
+      ],
+      "result": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "5fb1e91813e2aaaed29ed512d3d2ca66b1143721da66dd083bfebb229090016e",
+        "max_scale": 4,
+        "query_sha256": "78cc5e23810ad2926d215a4dec6074208f9ca834ec06f3b73a41df35754107bf",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "sat",
+        "status": "kernel_checked_conditional",
+        "candidate": {
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": 3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "schema": "commons.linear-int.v1",
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": 1
+          },
+          "variables": [
+            "x",
+            "y"
+          ],
+          "multipliers": [
+            1,
+            1
+          ]
+        },
+        "verification": {
+          "schema": "commons.linear-int.rounded-witness.v1",
+          "status": "kernel-checked-conditional",
+          "source_sha256": "12086c1bdcb0a326719c7b2098218318ac1e28a226e417c12bf6982c615dc6c7",
+          "variables": [
+            "x",
+            "y"
+          ],
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": 3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "multipliers": [
+            1,
+            1
+          ],
+          "scale": 2,
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": 1
+          },
+          "intermediate_target": {
+            "coeffs": [
+              2,
+              0
+            ],
+            "le": 3
+          },
+          "intermediate_certificate_sha256": "3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f",
+          "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+          "provider_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "consumer_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "files_sha256": {
+            "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.lean": "569064299a45dcaf54c871fd3f90aa5ed6de15a2f1343432754051cfd2bc9879",
+            "ReuseOriginal.lean": "73f28ad4d4f613ee35ae845eecf5db00a810d88201f38ff952bcce4e07316739",
+            "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.olean": "62dccb95fd38072e4745f99955bddbc2f649efa761a6735579b2255759b69706"
+          }
+        }
+      }
+    },
+    {
+      "dropped_id": "int-ineq:fe6bf946c67f45215b3aecb239a2f2fe99783b2a1646c2b696f8c09d9241a3c2",
+      "retained_ids": [
+        "int-ineq:02b84c8902640eda749ed0c6a223e1bd616a7c572a33ffb7c7cd2fdb70ba36c9"
+      ],
+      "result": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "62d0c2d0ed62fb30a3af5c56314eaa1c80f94462f3c5950d10dd0a1d7fe968f1",
+        "max_scale": 4,
+        "query_sha256": "457fb521b29ead1b9cf2e00c1061cba0b83b6be4fc67a737032fa47e6b5752f5",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      }
+    },
+    {
+      "dropped_id": "int-ineq:02b84c8902640eda749ed0c6a223e1bd616a7c572a33ffb7c7cd2fdb70ba36c9",
+      "retained_ids": [
+        "int-ineq:fe6bf946c67f45215b3aecb239a2f2fe99783b2a1646c2b696f8c09d9241a3c2"
+      ],
+      "result": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "a72026f16beffbd4cdf79a4bca2f71d9172f54701ca6ccc69456b80863e24ce3",
+        "max_scale": 4,
+        "query_sha256": "ee6d7b9971f2ce1af2189cb261a8e135b405de23775adff6737168a7ea7645e9",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      }
+    }
+  ],
+  "limitations": "greedy bounded search, not global logical minimality"
+}
