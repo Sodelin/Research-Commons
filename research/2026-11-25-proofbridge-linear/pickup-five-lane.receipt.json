@@ -1,0 +1,63 @@
+{
+  "schema": "commons.proofbridge.pickup_five_lane.v1",
+  "base_commit": "e45f49419771afad525f6e7354cabd1661ef23f9",
+  "typed_input": {
+    "dropped_count": 2,
+    "conditional_status": "kernel-checked-conditional",
+    "swapped_id_rejected": true
+  },
+  "lean_import": {
+    "conditional_status": "kernel-checked-conditional",
+    "controls": {
+      "wrong_ids": "rejected_before_build",
+      "weaker_provider_valid_axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "weaker_provider_consumer": "rejected_by_lean_type_mismatch"
+    }
+  },
+  "bounded_smt": {
+    "scale_positive": 2,
+    "scale_signed": 2,
+    "scale_one_budget": 1
+  },
+  "batch_pickup": {
+    "schema": "commons.proofbridge.pickup_smoke.v1",
+    "first_tick": {
+      "status": "partial",
+      "head": "3ad39f2d39f5ab91d3410dc5c9f1099884c17351",
+      "next_index": 1,
+      "count": 2,
+      "blocker": null
+    },
+    "completed_after_resume": true,
+    "statuses": [
+      "not_verified",
+      "verified_now"
+    ],
+    "tampered_receipt_preserved_cursor": true,
+    "same_revision_noop": true,
+    "docs_only_checked_count": 0,
+    "hosted_trigger_enabled": false
+  },
+  "discovery": {
+    "schema": "commons.proofbridge.rounded_discovery_smoke.v1",
+    "manifest_sha256": "4f681622605e1e5d818763a1f8ec232be0e7c82197fe010b88fdb71f6ce82e76",
+    "statuses": {
+      "budget": "kernel-checked-conditional",
+      "positive": "kernel-checked-conditional",
+      "signed": "kernel-checked-conditional",
+      "wrong": "not-verified"
+    },
+    "authored_status_unchanged": true,
+    "rejected": {
+      "scale": "rounded checker result scope or hash mismatch",
+      "source": "rounded checker result scope or hash mismatch",
+      "intermediate": "rounded checker result scope or hash mismatch",
+      "axioms": "rounded checker result scope or hash mismatch",
+      "result_kind": "wrong checker result schema; regenerate the Discovery projection"
+    },
+    "scope": "fixture Git pins and production checkout-equivalent scripts; no hosted trigger"
+  }
+}

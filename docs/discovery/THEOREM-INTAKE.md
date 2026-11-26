@@ -40,3 +40,5 @@ python3 docs/discovery/tools/theorem-intake.py --include-queue-at "$head" \
 ```
 
 The added `queue_delta` object in the export index lists additions, revisions, and retirements by stable ID. Revisions compare canonical certificate bytes and source paths, so documentation and JSON formatting alone do not create jobs. Removed and unchanged rows are not verified in this run and need not be deleted from historical evidence. No old receipt is used as proof. An empty job list is a valid no-op; don't make an empty manifest. On checker, generator, or compiler changes do a fresh bounded replay as appropriate; this is a source delta, not a dependency-aware build cache. No hosted wake or cursor advancement is installed by this command. [Cloud smoke receipt](../../research/2026-11-25-proofbridge-linear/queue-delta.receipt.json).
+
+The [local queue worker](../../research/2026-11-25-proofbridge-linear/QUEUE-PICKUP.md) automates the above staging and bounded replay on invocation. It holds a durable cursor across runs when its state directory is preserved; hosted wake wiring remains separate.

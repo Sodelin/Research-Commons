@@ -24,7 +24,7 @@ Tested: two different records were accepted as conditional theorems, with [prope
 1. **Typed authoring:** exact linear and one-rounding certificates; [stable theorem and premise handoff](ASSUMPTION-RELAY.md). Hand prose still needs a typed statement.
 2. **Kernel:** [checked import](import-reduced.receipt.json) of a reduced theorem into a second module, with an exact weaker-provider rejection. No trusted cache skip.
 3. **SMT:** [one-step rounding synthesis](ROUNDING.md) checked independently in Lean. Not a general SMT proof importer or Mathlib adapter.
-4. **Cloud batch:** [mixed resumable replay](BATCH.md) with immutable manifest, per-entry receipts and generated module hashes. Automatic pickup and the larger backlog trial are pending.
+4. **Cloud batch:** [mixed resumable replay](BATCH.md) with immutable manifest, per-entry receipts and generated module hashes. [Cursor-driven pickup](QUEUE-PICKUP.md) works in a local cloud fixture; hosted wake wiring and the larger backlog trial are pending.
 5. **Discovery:** [theorem intake](../../docs/discovery/THEOREM-INTAKE.md) exports both supported types and attaches [typed replay evidence](rounded-discovery.receipt.json) without changing authored conjecture status.
 
 ## Cloud-verified narrow SMT route
