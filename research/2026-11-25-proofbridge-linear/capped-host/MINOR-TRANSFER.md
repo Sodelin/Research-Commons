@@ -1,0 +1,7 @@
+# Grid minor transfer test
+
+The single-bag proof suggests a classical strengthening from adjacency embeddings to finite grid minors in the natural-order host. Each grid cell is represented by a finite nonempty connected branch set, disjoint from the other branch sets. A cross lifts to a connected union of branch sets and two lifted crosses share a branch set. Their actual bag intervals should therefore have a common index. Each vertex of that bag in a branch set maps back to one cell. Multiple bag vertices can map to the same cell.
+
+The final width step is [already Lean-checked](BranchBagProjection.lean): `filterMap` cannot enlarge the bag, and cross hitting permits repeated projected cells. This has standard core axioms only and tests a collision explicitly. The full branch-set connectivity and common-cut adapter have not been checked. This is classical [grid-cross reasoning](https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch12.pdf), not a novelty claim or a result about arbitrary shared replacement paths. It does not replace the original Alexander-001 assembly.
+
+For a future test of reuse rather than a compiler benchmark, give both a direct route and a reuse route the same precise held-out statement, source and budget. Separate authoring and repair time from clean replay, and compare exact kernel-checked outcomes. Keep the main pass on real dates and the capped grid construction.
