@@ -21,3 +21,7 @@ Python 3.14.7 and Lean 4.33.1. Manifest SHA-256 `745e0230acdb63f6cbc1ceb2008a68f
 - Accepted proofs retained exactly `propext` and `Quot.sound`. No aggregate proof claim or external SMT evidence.
 
 Next capacity test: select 20 representative supported and unsupported records from the proof register, keep their original statement pins and separate authoring time, check time, and unsupported reasons. This is not a claim that 20 records or a four-hour corpus pass have already been verified.
+
+## Direct cloud Lean and Discovery handoff
+
+Add `--lean /path/to/pinned/lean --discovery-jsonl` to the same `run` command. The runner checks the direct compiler pin before creating the output directory. The existing per-entry receipts remain the durable master; `out/discovery-results.jsonl` is a separate projection for `theorem-intake.py --checker-results` with the matching export index. Resume in a fresh run directory. A checker rejection or timeout does not become a theorem failure or a verification. If a crash interrupts the projection, retain authoritative per-entry receipts and rerun with the same immutable manifest instead of trusting a partial tail. [Cloud smoke receipt](cloud-batch.receipt.json) records a successful conditional proof and a rejected input rejoining their exact rows. This is not an automatic build-on-push service.

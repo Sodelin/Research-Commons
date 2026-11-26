@@ -74,7 +74,7 @@ def save_new_receipt(out, item):
     # The run owns a freshly created output directory; readers see only complete receipts.
     os.replace(stage, dest)
 
-def run(folder, manifest, pin, out, start, jobs, wall, per_job):
+def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=False):
     folder = folder.resolve(strict=True)
     entries = load(manifest, pin)
     need(0 <= start < len(entries) and 1 <= jobs <= 512 and
@@ -104,6 +104,16 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job):
             failures += 1
             item.update(status="not_verified", diagnostic=str(exc)[:1000])
         save_new_receipt(out, item)
+        if discovery_jsonl:
+            if item["status"] == "verified_now":
+                row={**item["proof"],"file":item["file"]}
+            else:
+                row={"file":item["file"],"status":"not-verified",
+                     "runner_status":item["status"],"diagnostic":item.get("diagnostic","")}
+            with (out/"discovery-results.jsonl").open("a",encoding="ascii") as log:
+                log.write(json.dumps(row,ensure_ascii=True)+"\n")
+                log.flush()
+                os.fsync(log.fileno())
         print(json.dumps(item), flush=True)
         index += 1
     print(json.dumps({"next_index": index, "entries": len(entries), "failures": failures,
@@ -125,11 +135,18 @@ def main():
     run_p.add_argument("--jobs",type=int,default=20)
     run_p.add_argument("--wall",type=int,default=120)
     run_p.add_argument("--per-job",type=int,default=30)
+    run_p.add_argument("--lean",type=Path,help="trusted pinned direct Lean executable")
+    run_p.add_argument("--discovery-jsonl",action="store_true")
     a=ap.parse_args()
     if a.op == "make":
         sys.stdout.buffer.write((json.dumps(make(a.folder,a.files),sort_keys=True,indent=2)+"\n").encode("ascii"))
         return 0
-    return run(a.folder,a.manifest,a.sha256,a.out,a.start,a.jobs,a.wall,a.per_job)
+    if a.lean is not None:
+        binary=a.lean.resolve(strict=True)
+        version=subprocess.check_output([str(binary),"--version"],text=True,timeout=10)
+        need(linear.COMMIT in version,"wrong Lean toolchain commit")
+        linear.LEAN[:]=[str(binary)]
+    return run(a.folder,a.manifest,a.sha256,a.out,a.start,a.jobs,a.wall,a.per_job,a.discovery_jsonl)
 
 if __name__ == "__main__":
     try:
