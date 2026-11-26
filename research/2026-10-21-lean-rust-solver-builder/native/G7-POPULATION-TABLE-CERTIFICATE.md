@@ -1,0 +1,208 @@
+# Finite native population-table certificate route
+
+SOURCE PROPOSAL. The complete imported context has NOT been elaborated. No
+selected type/axiom audit, successful checker computation or new native test
+is attributed to this proposal. It is outside the peer's776-module selection.
+The existing native population engine and original mathematical recurrence
+remain unchanged.
+
+## Existing exact recurrence reused
+
+Native source_population.rs at4e556c4a uses fuel=card(local Copy). At k live
+lineages its holding exponent is h=k*(k-1)/2; each ORDERED distinct pair has
+the lift
+
+    c*x^a -> c/(2*(h-a)) * (x^a-x^h).
+
+The two ordered grafts remain separate. The exact original
+EffectivePopulationCoefficients.coefficients has the same stay monomial,
+complete ordered Choice list, merger and liftExpr. Its coefficients_polynomial
+and actual_population_coefficients bind that recurrence to the original
+population law. The complete5277-character source df18fd3f was read and hashed;
+historical import/audit status remains unchanged.
+
+The existing kernelExpr_bound and merger_exponent_lt prove the descending
+exponent condition used by the native lift; that native branch is not licensed
+merely by mass1. These kernel definitions and bound use-sites were inspected,
+without claiming a fresh full-kernel audit. Existing native Copy<=4 bounds its
+holding exponent by6; this observation does not enlarge the provider profile.
+
+The first state relation is to the EXISTING encodeActual/merger constructor.
+Formal SourceForest.merge appends history and leaves dead record fields;
+native merge_unchecked clears dead snapshot fields and carries no history.
+The canonical encoder is therefore the appropriate relation. Match live
+membership, ancestor fibres, ordered graft, populations and original register,
+with actual SourceValid and co-location evidence. A native validator flag is
+not that proof.
+
+## Complete finite certificate check
+
+The proposed Table is a finite list of supplied ADMITTED Code/Expr pairs.
+Code values require their original source-validity proofs. The list need not
+be sorted or injective, and expressions may contain duplicate/zero monomials.
+
+1. collect sums every native entry for the same Code.
+2. checkExpr compares exact rational coefficient sums at the union of both
+   exponent supports. A foreign exponent or missing coefficient is checked.
+3. check compares each Code in the UNION of the original fuel-bounded merger
+   destinations and all supplied native destinations.
+4. Outside that union, the native coefficient is empty and the EXISTING
+   coefficients_zero_of_not_mem theorem supplies original coefficient zero.
+
+The proposed check_sound therefore concludes equality for EVERY admitted
+destination, with zero on omissions, without enumerating all Code states and
+without assuming a final polynomial equality. checked_actual_population
+composes it with the existing actual_population_coefficients for one original
+positive rate bank and every nonnegative duration. These are PROPOSED theorem
+proofs, not elaborated/selected-audit results.
+
+This certificate route can validate a particular table after exact input and
+literal encoding are bound. It still requires an actual native-to-literal
+snapshot/coefficient emitter and trusted kernel checking of the resulting
+exact source. Existing public native Context/Snapshot/Table fields suffice;
+no additional native transition engine or accessor is requested. Universal
+Rust/parser/executable refinement is not established by this proposal.
+
+## Join to the full source word
+
+PopulationSelectedSupport already restricts the original readout to literal
+merger support and proves entire polynomial equality, rather than requiring
+the full Code universe. EffectiveFullEpochCoefficients and the constructive
+panel joins already supply source-valid reassembly. Those complete existing
+source bodies were read; their draft/full-import status remains.
+
+Native source_epoch additionally needs its actual copy relabelling, disjoint
+panel restriction/join, edge-before-ancestral order and selected coefficient
+fibre relation. The proposed single-population certificate does not discharge
+those fields or prove a full epoch/word table. Complete prefix composition,
+closed transition substitution, separate natural initialization, actual raw
+calendar/completion and authorized readout remain separate steps.
+
+Original target/admission/action/PATH coverage, AST/game/relative-history
+selection, authenticated request/result and native object custody remain open.
+All new native/Cargo/Lake/CI/backend/model/control execution remains held by
+the actual UNBOUND first-writer/controller admission. No new source factory,
+worker, key/export, owner retry, local Git or held-job replay occurred.
+
+## Bounded native source exporter, still uncompiled
+
+native/g7_population_certificate.rs now renders the particular table candidate
+in RAM through prepare(context,entering,table,bindings,limits). Prepared borrows
+the exact Context, entering Snapshot and Table and retains the supplied named
+source/module/namespace binding. It is a SOURCE CANDIDATE, never a checked
+certificate or external-origin receipt. No invocation occurred.
+
+The exporter uses existing public fields and validators; it does not call or
+replace population_row. It preserves all native destination positions and
+rational monomials, including duplicate destinations. It checks univariate
+shape and canonical bounded rational data before formatting. It emits exact
+Fin values with bound proof targets, ordered grafts, canonical snapshot fields,
+the original register, taxon sample and all graph edge occurrences.
+
+The resulting source imports BOTH the proposed certificate module and the
+supplied original-source module. It requires actual root/edge-source/edge-target/
+taxon-array equality proofs, source-valid entering/destination Code proofs,
+co-location, the finite coefficient check and the resulting original
+population probability theorem. Decimal integers become exact rational
+literals. Empty Copy/edge function carriers use Fin.elim0 rather than modulo
+or an invented default element. The importer/name strings accept only bounded
+ASCII identifier segments and reject holes/Lean proof keywords.
+
+An ancestral population is the SAME original root and becomes Option.none;
+edge populations retain their exact edge index. Global observer labels remain
+in the captured Context; this internal population statement does not itself
+perform or certify a final observer relabelling. Hybrid registry/forcing,
+raw calendar/readout and target/action coverage remain separate joins.
+
+Inherited profile limits return UNKNOWN before invoking the old validator:
+32 vertices/edges/taxa/hybrids/full-bank coordinates and four local copies.
+Defaults also bound4096 destinations,65536 monomials,65536 rational bits and
+4MiB rendered UTF-8 source, with512-byte names. Arithmetic/output/allocation
+failures return UNKNOWN without a partial Prepared value. Intrinsically malformed
+dimensions, names, snapshots, coefficients or populations remain Invalid.
+No public RC1 operation, canonical profile or dispatch route is added.
+
+These are named construction counters and memory-only output, not process-wide
+resource enforcement or encrypted persistence. Actual compilation/imports,
+complete type/axiom checks and exact generated-source behavior have NOT been
+tested. The proof/exporter sources are not in the peer's776 selection. The
+actual original-owner native controller/recipient/sequence and transitive
+first writers must bind before any Cargo/Lean/native/CI execution. Imported
+context writers are part of that obligation; this module is not a bypass.
+
+After admission, extend the EXISTING population/provider verification group
+with empty Copy, four-copy ordered grafts, exact graph/sample mismatch,
+duplicate destinations, altered/omitted/foreign coefficients and render/bit/
+profile exhaustion. None of these staged checks was executed.
+
+## Exact full-epoch order and panel map retained
+
+The complete peer source review559dba6b and complete existing
+FullEpochSupport188177cf body were read and rehashed. Use fullRows_actual with
+the EXPLICIT native original edge-occurrence list followed by one ancestral
+none, plus ActiveIn. No equality with FinEnum.toList(Option E) is assumed.
+This concerns an individual physical epoch; global calendar phase order is
+unchanged and still needs its original relation.
+
+For panel composition retain RestrictedPanel.copies as the actual bijection
+from local Fin indices onto the WHOLE outer ancestor-closed panel. Its sample
+and every genealogy leaf must follow that map. Arbitrary global observer labels
+are a separate injection and cannot replace it. The new exporter certifies a
+local Context/Snapshot/Table candidate; it does not capture or prove that
+outer panel relation merely by retaining those primitive inputs.
+
+The existing SparseWordComposition.actual_followRows/evaluated_original_word
+route accepts total per-step evaluated fibres at one fixed physical bank,
+including closed transition gamma. It need not impose independent slot
+variables. The full epoch state/panel/key/representative correspondence must
+still be supplied before that route applies. No new pass or native execution
+is inferred from this source reuse.
+
+## Reused literal sparse-row composition and measured hosted bound
+
+The existing Lean owner's G7CertifiedPopulationRows.lean is now retained
+BYTE-EXACT as a SOURCE PROPOSAL. read_sparseRows commutes the actual Code-fibre
+sum with original embedExpr; checked_sparseRows_actual composes the supplied
+finite check with value_embedExpr at the SAME physical rates, duration and
+population coordinate. No desired final-law equality is assumed. Complete
+imports remain UNELABORATED, and no literal/emitter/control run or new theorem
+case is claimed. This does not establish native outer-panel/key/variable mapping.
+
+The peer measured the ORIGINAL certificate closure at92modules/643093B and
+its import-hoisted projection at635423B. Adding sparse rows needs121modules/
+893989B and an884200B projection, BEFORE proposals/audits. Both exceed the
+UNCHANGED hosted client's262144B source bound. The closure inventory's counts,
+byte sums, exact module hashes and import order were checked here against the
+retained graph; complete projection hashes/bodies retain attributed scope.
+No oversized request or silent omission was attempted. The exporter's4MiB
+standalone source bound is separate from that admitted service limit.
+
+A justified smaller projection, verified installed original imports or an
+actually admitted complete compiler context is still needed. A partial pure
+sublemma check could only accept its exact mathematical scope, not source
+validity, physical population law or whole import/object acceptance. The actual
+native writer/controller remains UNBOUND; source proposal presence is no permit.
+See evidence/G7-CERTIFIED-POPULATION-ROW-SOURCE-REVIEW.json.
+
+## Exact pure coefficient projection, prepared only
+
+PopulationCoefficientProjection.lean is a3023B virtual-document SOURCE
+projection. Its source map retains UTF-8 start/end ranges and hashes for the
+unchanged original Expr, exprPolynomial and exprPolynomial_cons declarations
+plus the proposal's coefficient/checkExpr and three proof declarations.
+Its four Mathlib imports occur in the original dependency inventory. Source
+scope was reviewed; the COMPLETE projected context is UNELABORATED.
+
+This reduces the context ONLY for checkExpr_sound: equality of two rational
+univariate polynomials after comparing summed coefficients at the union of
+their exponent supports. It does not select Table, collect, carrier, check,
+check_sound, source validity, original merger support, actual_population or
+the sparse physical row endpoint. No original physical theorem was replaced
+by an assumption. The same original namespace declarations mean this document
+must not be co-imported with their full modules.
+
+3023B fits the existing source ceiling before any appended audit; no actual
+submission, selected type/axiom check, new mathematical case or native object
+is claimed. The large full-context limits above remain unchanged. A future
+check could accept only this pure sublemma's exact scope; full table/law/native
+acceptance and the actual first-writer/controller stay separate.

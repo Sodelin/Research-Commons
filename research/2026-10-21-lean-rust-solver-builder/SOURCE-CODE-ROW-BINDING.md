@@ -1,0 +1,101 @@
+# Bind captured rows through the existing original source decoder
+
+This SOURCE interface review reuses G7OriginalAdmission/sourceOfValid,
+decodedIDs, decodedRegistry and decoded_parent_exact. It adds no Rust API,
+RootedBinary factory, grammar, compiler or proof suite. Exact original source
+hashes and the attributed Lean peer source review are in
+evidence/EXISTING-ORIGINAL-CODE-BINDING.json. No new execution is claimed.
+
+Form the literal Code (Fin n_taxa) (Fin h_hybrids) from the captured original
+EDGE/LEAF/HYBRID/root arrays, preserving every occurrence and record index.
+Supply the exact binary census count equalities and bounds, BinaryValid and
+RegistryValid for THAT Code. M0 stores incoming[0] as false/parent0 and
+incoming[1] as true/parent1. Reuse decoded_parent_exact rather than unfold the
+decoder's inverse choice. Cut-child, required planar/cofacial class, chart
+coverage and readout/history premises remain additional obligations.
+
+The existing encode function is a coverage/relabelling tool: its vertexNumbering
+and edgeNumbering use Fintype.equivFinOfCardEq. It does not itself establish
+that its chosen numbers match native integers. Construct the literal Code in
+the captured order, or retain an explicit relabelling proof.
+
+For N=sourceOfValid c hb, nv=vertexCount n_taxa h_hybrids,
+ne=edgeCount n_taxa h_hybrids and D=nv+ne+1+h_hybrids, the required ONE layout is:
+
+| Typed BankVar N input | Native Fin D value | Original meaning |
+| --- | --- | --- |
+| Sum.inl v | v.val | AGE:v |
+| Sum.inr (Sum.inl (some e)) | nv+e.val | RATE:e, inverse pair rate |
+| Sum.inr (Sum.inl none) | nv+ne | RATE:A, one ancestral inverse rate |
+| Sum.inr (Sum.inr hybrid) | nv+ne+1+((decodedIDs c hb hr).symm hybrid).val | COIN:original hybrid ID |
+
+In particular the native edge slots precede Option.none. An arbitrary Option/
+Fintype enumeration does not prove this order. The generic layout equivalence and all position/unique-ancestral facts now
+have attributed hosted checking in NativeOrderedBankLayout. The Code wrapper
+now has a complete admission-component hosted check; its pinned full import,
+captured-occurrence instance, reflected
+chronology/exposure/coin fields and exact ordered emission remain required. Existing compileCellList_toFinset then supplies the finite-set
+link; it does not prove a native compiler emitted that list. Preserve duplicates
+and original multiplier positions until their ordered checks have completed.
+
+The historical peer543-module graph/selection hashes and dependency order were
+independently recomputed: only NativeOrderedBankLayout and OriginalCodeBankLayout
+were added to the prior541 metadata; all previous module entries are unchanged.
+All4.50MB of module bodies were not independently retrieved here. This is source
+preparation, not import/object/master acceptance. Existing quiet outer refusal
+and writer hold remain in force.
+
+The subsequent source-only branch comparison is recorded in
+evidence/NATIVE-VALIDATOR-TO-CODE.json. Root/leaf/internal degrees, complete
+hybrid registration and original parent order match the intended Code fields.
+The least-stable test uses the finite contrapositive: for each nonroot blocked
+vertex, some original leaf remains reachable while excluding it. Kahn/DFS
+algorithm correctness, per-occurrence degree counts, exact captured Code and
+layout/emission correspondence are still unproved native-refinement obligations.
+No class/readout/parameter admission follows from native validation.
+
+The exact generic source and original-Code use-site are integrated
+byte-identically as lean/NativeOrderedBankLayout.lean and
+lean/OriginalCodeBankLayout.lean. Their scope/selected complete-type hashes/
+standard axioms and reconstructed submitted-source hash are retained in
+evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json. This closes the generic
+construction obligation in the hosted4.35 context, not the concrete
+captured-Code import/refinement or pinned4.33.1 acceptance. The historical543-module
+metadata added only these two modules to541. The subsequent545-module context
+retained all533 original native entries; only the owned Code wrapper changed
+from its previous545 snapshot, for4518041B total.
+
+The current Code wrapper9a8cb563 has attributed hosted checking together with
+the COMPLETE43-original-module admission closure (41 unchanged bodies, two
+explicit hosted API variants) and the generic layout. Six complete selected
+types/standard-axiom lists and the exact250412B virtual/submitted hashes were
+reviewed/reconstructed. See evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json.
+This closes the generic source-decoder/layout component use-site in that4.35
+context. It does not supply a particular captured Code, all original constraints,
+full pinned native imports/objects or the actual Rust emission equality. The
+pinned PMF/product originals remain unchanged; rejected/capture-limited attempts
+retain their REJECTED/UNVERIFIED dispositions.
+
+The aggregate theorem at peer111036f9 now derives exact ordered CHART decoding
+against compileCellList without assuming hemit or an emitted-matrix equality.
+Its primitive FieldReflection fields are explicit in the unchanged source and
+evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json. All original emitted
+coefficient lengths are proved before using decodeRows. The final toFinset
+result still requires complete membership of every original registry list.
+Only internal unit bookkeeping weights are erased. The first concrete gap is
+constructing those fields for the exact captured Code and reflected records;
+the native parser/validator/result origin and physical admission do not follow.
+The current546-module metadata adds ONLY the aggregate source to545, with all
+prior entries unchanged and4530839B total; the quiet outer refusal remains.
+
+The current checked OriginalCodeChartReflection constructor now builds
+FieldReflection FROM the supplied literal Code, real hb/hr proofs, named
+orders and typed records. OriginalCodeChartReceiver composes the EXISTING
+wire/physical-bank constructors. Nine complete selected types and exact
+89542B/139854B source/audit assemblies were reviewed at peerd2695058.
+The remaining use-site is captured source/chart equality to inputOfCode and
+the authenticated original result/checker association, rather than a new
+FieldReflection factory. The mathematical input still requires valid Code
+proofs and the named orders. Full physical class/readout/origin, parser/native
+refinement and pinned imports stay open. Current548 metadata/4543496B adds
+only these two proof modules to546; every previous entry is unchanged.

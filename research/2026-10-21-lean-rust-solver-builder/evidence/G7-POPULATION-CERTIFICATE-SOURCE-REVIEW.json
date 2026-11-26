@@ -1,0 +1,127 @@
+{
+  "schema": "G7_native_population_table_certificate_source_v1",
+  "status": "SOURCE_PROPOSAL;COMPLETE_IMPORT_CONTEXT_UNELABORATED",
+  "source": {
+    "path": "lean/proposals/NativePopulationTableCertificate.lean",
+    "utf8_bytes": 6083,
+    "sha256": "4a0b8b00f672d39fc74363246b2935876ebc92c9d1c46e46715e572b689a3be6"
+  },
+  "original_sources": [
+    {
+      "module": "G7EffectivePopulationCoefficients",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/df18fd3ffe02939b81fc062d48da60011a4724ae0d2cb9b9ea2e846e43b2e946.lean",
+      "utf8_bytes": 5345,
+      "sha256": "df18fd3ffe02939b81fc062d48da60011a4724ae0d2cb9b9ea2e846e43b2e946",
+      "git_blob": "4fb8ab6e6a63bd209696d84f397563c15334ed08",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    },
+    {
+      "module": "G7EffectiveCoefficientSupport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/48c2627f616a9eeb66879efe67f9a602c0781a5f613f05aa305912288bf1e756.lean",
+      "utf8_bytes": 4694,
+      "sha256": "48c2627f616a9eeb66879efe67f9a602c0781a5f613f05aa305912288bf1e756",
+      "git_blob": "3651c5e804b83e075ecdc6b39e8a24972e7b3a6b",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    },
+    {
+      "module": "G7PopulationSelectedSupport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a7a0c768a4ccedfbe0e6d8177e6e30d40bb70a52f6b8fec3e1aca2aa57f1305f.lean",
+      "utf8_bytes": 5276,
+      "sha256": "a7a0c768a4ccedfbe0e6d8177e6e30d40bb70a52f6b8fec3e1aca2aa57f1305f",
+      "git_blob": "8bab100195383f13b996856569c9c8c0780d3a36",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    },
+    {
+      "module": "G7EffectiveFullEpochCoefficients",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/85bed5b975ebb09a4042952aa486459d5cf422903d4356ac049d6d681b891994.lean",
+      "utf8_bytes": 19805,
+      "sha256": "85bed5b975ebb09a4042952aa486459d5cf422903d4356ac049d6d681b891994",
+      "git_blob": "e9b3d3bc3800870b1298b39fc247e1308b6a0996",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    },
+    {
+      "module": "G7ConstructivePanelJoin",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8de84fdb726681ca2ac17edf009b2412be71ee432bdbe34af1acdcfbb7429551.lean",
+      "utf8_bytes": 13712,
+      "sha256": "8de84fdb726681ca2ac17edf009b2412be71ee432bdbe34af1acdcfbb7429551",
+      "git_blob": "10bb34423d3fc0c3648b5d4d6b179069c5e07df7",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    },
+    {
+      "module": "G7EffectivePanelJoin",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/43c756b1ba2dfee57d27e57df52bd7078fc28bda19f774396845d47fe976f35c.lean",
+      "utf8_bytes": 4112,
+      "sha256": "43c756b1ba2dfee57d27e57df52bd7078fc28bda19f774396845d47fe976f35c",
+      "git_blob": "be3fd30cde74a9eef3a2ca01c633a71af4b1bed5",
+      "complete_body_read": true,
+      "historical_status_retained": true,
+      "new_kernel_check": false
+    }
+  ],
+  "additional_bounded_source_review": {
+    "kernel": {
+      "sha256": "b4434eb89aecfc007546908f404efc41cc0de809eb8497ed22c9e48a87e4dddf",
+      "scope": "liftTerm/liftExpr/kernelExpr, exponent-bound and actual population use-sites; not a new full analytic proof audit"
+    },
+    "forest": {
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "scope": "State/Valid/merge definition and preservation interface; not full inherited source audit"
+    },
+    "native": {
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "population_sha256": "6afebffe8bb727a1c92bd113d479f01f0b2877bbf527c79866247805bc21da7c",
+      "epoch_sha256": "c46a498ac2b5a0f3bc3ea246cc4f6d012ff58871292b8af84cfebe3d45b40354",
+      "scope": "re-read merger/canonical dead fields, exact coefficient recurrence, lift and selected panel accumulation; no Rust execution"
+    }
+  },
+  "proposed_checker": {
+    "exact_rational_coefficients": true,
+    "duplicate_native_entries_summed": true,
+    "union_of_reference_support_and_native_destinations": true,
+    "all_absent_destinations_zero_in_conclusion": true,
+    "full_Code_universe_enumerated_by_checker": false,
+    "reference_recurrence_reused": true,
+    "actual_native_data_to_typed_literal_bound": false
+  },
+  "proof_source_names": [
+    "polynomial_coefficient",
+    "coefficient_zero_of_absent",
+    "checkExpr_sound",
+    "collect_empty_of_absent",
+    "check_sound",
+    "checked_actual_population"
+  ],
+  "selected_complete_types_or_axioms_available": false,
+  "added_checked_case": false,
+  "peer_776_selection_changed": false,
+  "primitive_engine_replaced": false,
+  "new_native_API_or_writer": false,
+  "actual_execution": {
+    "Rust": false,
+    "Cargo": false,
+    "Lean": false,
+    "Lake": false,
+    "CI": false,
+    "QE": false,
+    "model": false,
+    "controls": false
+  },
+  "remaining": [
+    "complete-import elaboration and actual selected type/axiom verification of this proposal",
+    "exact request/graph/Copy/Code/co-location and native-to-literal coefficient binding",
+    "actual full epoch panel/fibre and immutable word/calendar/readout composition",
+    "two-sided original target/source/action/resource coverage",
+    "native AST/game/QE/history-relative selector/result origin",
+    "actual original-owner native encrypted first-writer/controller admission"
+  ]
+}

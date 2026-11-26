@@ -1,0 +1,35 @@
+{
+  "schema": "online_component_failure_correction_v1",
+  "run_id": 39671453994,
+  "run_url": "https://github.com/Sodelin/Research-Commons/actions/runs/39671453994",
+  "tested_commit": "edcf06455d691553a7a1316772463872f39975dc",
+  "artifact": {
+    "id": 12379852218,
+    "zip_sha256": "cb633fb747d7dbb8b77e7c4008ac00d592b976ebe9cdea7a3aad42514e9b5f2c",
+    "bytes": 2387
+  },
+  "readback": "Artifact ZIP downloaded into memory only; SHA256 verified; stdout/stderr read without local file persistence.",
+  "actual": {
+    "Rust_compiled": true,
+    "unit_groups_passed": 9,
+    "unit_groups_failed": 4,
+    "original_unit_groups_passed": 8,
+    "error": "attempt to subtract with overflow at src/support.rs:64",
+    "exit_code": 101,
+    "guard_stop": null,
+    "cgroup_kind": "v2_current_group",
+    "counter": "actual hosted service memory.current",
+    "parser_source_controls_passed": 13,
+    "native_differential_executed": false,
+    "Lean_emission_executed": false
+  },
+  "cause": "usize evaluates top-d.len() before +1. At the final long-division iteration top=d.len()-1, the intermediate subtraction underflows.",
+  "correction": {
+    "before": "let k = top-d.len()+1;",
+    "after": "let k = top+1-d.len();",
+    "scope": "One index expression; polynomial/certificate algorithm, schemas, bounds, original checker and expected fixtures unchanged.",
+    "old_source_sha256": "98ad0783f010ff53effef8201b7cc3a2fb58eae7cf4697911bbc332aa64f6713",
+    "new_source_sha256": "72bc227e8c7846f05fe1b15c4e174adb9bb943aab826d3f873a61f1c8e95f08a"
+  },
+  "status": "SOURCE_CORRECTED_PENDING_FRESH_ONLINE_TESTS"
+}

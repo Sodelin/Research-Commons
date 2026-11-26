@@ -1,0 +1,119 @@
+{
+  "schema": "auxiliary_native_acquisition_profile_candidate_v1",
+  "status": "ACTUALLY_EXECUTED_OBJECTS_AVAILABLE;CANONICAL_ADOPTION_NOT_SUPPLIED",
+  "role": "Auxiliary exact rational bank and r<=3 certificate acquisition, followed by the original independent certificate checker/emitter/runtime",
+  "source_commit": "41217af3de6af9d4a609aa9680ac9025e210a4c6",
+  "source_root": "research/2026-10-21-lean-rust-solver-builder",
+  "source_manifest": "SOURCE-MANIFEST.json",
+  "workflow": ".github/workflows/rust-support-proposal.yml",
+  "run_id": 39676750748,
+  "artifact": {
+    "id": 12382691850,
+    "bytes": 669932,
+    "sha256": "68963ed6ddcb092c8409296f876e286fecd4bc29e7a4831c6413ff200f9de1f0",
+    "expires_utc": "2026-11-20T21:12:17Z",
+    "per_object_manifest": "evidence/native-custody-39676750748/NATIVE-OBJECTS.json"
+  },
+  "native_objects": [
+    {
+      "archive_bytes_hash_and_ELF_verified": true,
+      "archive_mode": "0o644",
+      "archive_path": "rust-bank-result/native/common-bank-moments",
+      "bytes": 638656,
+      "canonical_profile_adopted": false,
+      "compiler": "official Rust1.90.0",
+      "format": "ELF64 little-endian x86_64",
+      "path": "native/common-bank-moments",
+      "sha256": "0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec",
+      "tested_host": "GitHub Ubuntu24.04 x86_64"
+    },
+    {
+      "archive_bytes_hash_and_ELF_verified": true,
+      "archive_mode": "0o644",
+      "archive_path": "rust-bank-result/native/common-support-proposer",
+      "bytes": 720808,
+      "canonical_profile_adopted": false,
+      "compiler": "official Rust1.90.0",
+      "format": "ELF64 little-endian x86_64",
+      "path": "native/common-support-proposer",
+      "sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+      "tested_host": "GitHub Ubuntu24.04 x86_64"
+    }
+  ],
+  "commands": {
+    "bank_encode": [
+      "python3",
+      "-E",
+      "-s",
+      "-B",
+      "bank_codec.py",
+      "encode",
+      "--repository",
+      "REPOSITORY"
+    ],
+    "bank_native": "common-bank-moments (bounded stdin/stdout; no argv)",
+    "bank_decode": [
+      "python3",
+      "-E",
+      "-s",
+      "-B",
+      "bank_codec.py",
+      "decode",
+      "--repository",
+      "REPOSITORY",
+      "--request",
+      "ORIGINAL_BANK.json",
+      "--emit",
+      "acquisition"
+    ],
+    "support_encode": [
+      "python3",
+      "-I",
+      "-B",
+      "codec.py",
+      "encode",
+      "--repository",
+      "REPOSITORY"
+    ],
+    "support_native": "common-support-proposer (bounded stdin/stdout; no argv)",
+    "support_decode": [
+      "python3",
+      "-I",
+      "-B",
+      "codec.py",
+      "decode",
+      "--repository",
+      "REPOSITORY",
+      "--request",
+      "ACQUISITION.json"
+    ],
+    "receiver": "literal original unified_research_solver_v1/check_certificate JSON to the unchanged runtime or research_solver_run request_json"
+  },
+  "contracts": {
+    "bank": "BANK-INTERFACE.md",
+    "support": "README.md; original common_sparse_certificate_v1 language",
+    "provenance": "Derived mathematical bank moments, not measured/physical admission",
+    "same_law_across_all_copy_levels": true
+  },
+  "resource_scope": "Actual new GitHub Ubuntu24.04 bounded workflow; original guard loop/limits; bank/support composition90wall60CPU512MiB; MCP observed2GiB/1CPU/128pids/network-none/readonly-source",
+  "runtime_adoption": {
+    "existing_CHECKERS_edited": false,
+    "existing_runtime_supports_raw_bank_schema": false,
+    "existing_runtime_supports_raw_support_acquisition_schema": false,
+    "these_two_facts": "Source-reviewed strict schema/task dispatch; no new rejection test claimed",
+    "old_approved_profiles_preserved": true,
+    "new_binary_as_canonical_checker": "Actual MCP/runtime authenticated UNKNOWN without execution",
+    "proposed_native_role": "auxiliary acquisition; do not silently substitute into old checker/generator receipt profiles"
+  },
+  "remaining": [
+    "Existing Lean owner: pinned4.33.1 standalone imports/Lake objects/full aggregate",
+    "Exact rational-to-real finite-law receiver and physical source/provider identity",
+    "Explicit source-reviewed practical API/profile integration retaining literal request and outcome authentication",
+    "Formal native refinement or retain compiler/OS/trusted exact-checker boundary",
+    "Original all-input G3/INDEPENDENT G4 and G6/G7 master work"
+  ],
+  "old_held_job_replayed": false,
+  "new_chat_or_subagent": false,
+  "model_test": false,
+  "local_Git_or_phone_project_artifacts": false
+}

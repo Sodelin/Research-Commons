@@ -1,0 +1,27 @@
+[package]
+name = "research-commons-parity-solver"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+description = "Exact shared-row affine solver and independently checked certificates"
+
+[lib]
+name = "parity_solver"
+path = "src/lib.rs"
+
+[[bin]]
+name = "parity-solver"
+path = "src/main.rs"
+
+[dependencies]
+num-bigint = "=0.4.6"
+num-rational = "=0.4.2"
+num-traits = "=0.2.19"
+num-integer = "=0.1.47"
+exact-interval-pilot = { path = "../../2026-10-08-cloud-rust-interval-root-0000z" }
+signed-nine-pair-receiver = { path = "../../2026-10-08-cloud-rust-signed-nine-0008z" }
+exact-count-certificate = { path = "../../2026-10-07-rust-count-pilot" }
+
+[profile.release]
+overflow-checks = true

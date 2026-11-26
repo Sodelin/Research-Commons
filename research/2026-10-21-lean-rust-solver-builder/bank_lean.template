@@ -1,0 +1,72 @@
+import CMRationalBank
+import @@CERTIFICATE_MODULE@@
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
+
+namespace @@NAMESPACE@@
+
+open scoped BigOperators
+open Astra.CommonMoment
+open Astra.CommonMoment.RationalBank
+
+def nodes : Finset ℚ := @@NODES@@
+
+def groupedWeight (q : ℚ) : ℚ :=
+  @@WEIGHT@@
+
+def rawMoment (n : ℕ) : ℚ :=
+  @@RAW_SUM@@
+
+theorem nodes_positive : ∀ q ∈ nodes, 0 < q := by
+  intro q hq
+  norm_num [nodes] at hq
+  rcases hq with @@CASES@@ <;> norm_num
+
+theorem nodes_le_one : ∀ q ∈ nodes, q ≤ 1 := by
+  intro q hq
+  norm_num [nodes] at hq
+  rcases hq with @@CASES@@ <;> norm_num
+
+theorem weights_positive : ∀ q ∈ nodes, 0 < groupedWeight q := by
+  intro q hq
+  norm_num [nodes] at hq
+  rcases hq with @@CASES@@ <;> norm_num [groupedWeight]
+
+theorem mass_one : (∑ q ∈ nodes, groupedWeight q) = 1 := by
+  norm_num [nodes, groupedWeight]
+
+/-- All original rows are retained in rawMoment, including exactly zero mass
+and distinct spellings of equal rationals. This is one all-exponent identity. -/
+theorem grouped_moment_raw (n : ℕ) :
+    (∑ q ∈ nodes, groupedWeight q * q^n) = rawMoment n := by
+  norm_num [nodes, groupedWeight, rawMoment] <;> ring
+
+noncomputable def law : FinitePositiveLaw :=
+  fromGroupedRationals nodes groupedWeight nodes_positive weights_positive mass_one
+
+theorem law_moment_raw (n : ℕ) :
+    moment law n = (rawMoment n : ℝ) := by
+  calc
+    moment law n = ((∑ q ∈ nodes, groupedWeight q * q^n : ℚ) : ℝ) :=
+      fromGroupedRationals_moment nodes groupedWeight nodes_positive weights_positive mass_one n
+    _ = (rawMoment n : ℝ) := by rw [grouped_moment_raw]
+
+theorem law_nodes_Ioc : ∀ x ∈ law.nodes, 0 < x ∧ x ≤ 1 := by
+  intro x hx
+  have h := fromGroupedRationals_survival_and_sparse_moments nodes groupedWeight
+    nodes_positive nodes_le_one weights_positive mass_one
+  exact ⟨law.node_pos x hx, h.1 x hx⟩
+
+@@SPARSE_MOMENTS@@
+
+/-- Literal roots for this supplied mathematical bank. The unchanged certificate
+also retains its separate conditional finite_supported_bank theorem. -/
+theorem bank_nodes_root : ∀ x ∈ law.nodes, @@CERTIFICATE_NAMESPACE@@.polynomial x = 0 := by
+  classical
+  intro x hx
+  change x ∈ nodes.image (fun q : ℚ => (q : ℝ)) at hx
+  obtain ⟨q,hq,rfl⟩ := Finset.mem_image.mp hx
+  norm_num [nodes] at hq
+  rcases hq with @@CASES@@ <;> norm_num [@@CERTIFICATE_NAMESPACE@@.polynomial]
+
+end @@NAMESPACE@@

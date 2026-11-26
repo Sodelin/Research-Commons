@@ -1,0 +1,64 @@
+{
+  "status": "PASS_ALL_FOCUSED_NATIVE_COMMANDS",
+  "workspace": "/dev/shm/rc-source-fit-native-20261010T221453.635194Z",
+  "plan_sha256": "6420fca60d8ff23232e39ce73fbe2d8ca10742f318818b44056d3ace954309ff",
+  "steps": [
+    {
+      "status": "PASS",
+      "name": "frontend-source-fit",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/toolchain/bin/cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--lib",
+        "source_fit"
+      ],
+      "cwd": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli",
+      "exit_code": 0,
+      "abort_reason": null,
+      "monitor_error": null,
+      "source_pins_stable": true,
+      "elapsed_seconds": 9.643591813997773,
+      "peak_nonreclaimable_bytes": 11426918400,
+      "peak_allocated_bytes": 112209920,
+      "stdout_sha256": "fa234c149f11a283f363b132f65ec06b11e689c595350618677c1baa5bb1c96a",
+      "stderr_sha256": "3eade742cc0d75e5f4e507c8cf81e0a976349a1b16ade5a162d62b86c6d65a40"
+    },
+    {
+      "status": "PASS",
+      "name": "source-fit-solver-build",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/toolchain/bin/cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--bin",
+        "source-fit-solver"
+      ],
+      "cwd": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli",
+      "exit_code": 0,
+      "abort_reason": null,
+      "monitor_error": null,
+      "source_pins_stable": true,
+      "elapsed_seconds": 1.0367374939960428,
+      "peak_nonreclaimable_bytes": 11452100608,
+      "peak_allocated_bytes": 120918016,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2d2dd0863c5a971ef692f8c8137c05d4786ef4110359b69db1d6c39e250f1e04"
+    }
+  ],
+  "target_allocated_bytes": 86237184,
+  "lean_or_old_native_targets_written": false,
+  "combined_native_allocated_bytes": 120922112,
+  "source_and_toolchain_pins_stable": true,
+  "private_binary": {
+    "path": "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+    "sha256": "443a1eb6d35154e827b3f0236ab6c5c458752fd6f5480463f390e74a99bd4f00",
+    "bytes": 4292856
+  }
+}
