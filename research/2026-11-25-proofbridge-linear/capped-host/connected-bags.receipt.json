@@ -1,0 +1,25 @@
+{
+  "schema": "commons.proofbridge.connected_actual_bags.v1",
+  "claim": "CB-ALEXANDER-001",
+  "status": "lean_checked_component",
+  "compiler": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "actual_bag_provider_commit": "fcbb9c14d88cbcc209ac88026461f040b330ab87",
+  "file_hashes": {
+    "CappedActualBags.lean": "895785b58c32f788d3cb3c972464e5af035bac7c31bce04698bae49473b9e423",
+    "CappedConnectedBags.lean": "d03c258c460336a30f60c269f978f05d85d0afa22fddde70c520018a8c0058d8",
+    "ConnectedBagConsumer.lean": "b8b2d2dbca31811619877e2d97ecab651fe1232db4b26e0203a272204d408d10",
+    "CappedConnectedBags.olean": "f9beb293098381b9a3496cda9e211a88e3b09b251acbb42c3386977d47cecfe2"
+  },
+  "axioms": [
+    "'ResearchCommons.CappedConnectedBags.connected_hits_convex' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ResearchCommons.CappedConnectedBags.connected_hit_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'disconnected_negative' depends on axioms: [propext, Quot.sound]"
+  ],
+  "negative_control": "actual bags of a k=0 model; disconnected {0,2} misses cut 1; not a k>=2 claim",
+  "remaining": [
+    "grid cross enumeration, adjacency-preserving map and actual cross walks/incidence",
+    "real-date transport",
+    "eligible grid padding and infinite-word preservation",
+    "full theorem assembly"
+  ]
+}
