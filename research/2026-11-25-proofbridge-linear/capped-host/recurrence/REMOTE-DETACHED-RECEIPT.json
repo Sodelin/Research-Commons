@@ -1,0 +1,39 @@
+{
+  "schema": "commons.proofbridge.recurrence-receipt.v1",
+  "job": "bounded-recurrence-pilot",
+  "contract_sha256": "d85ed4485178bfc88db1dea38235dd45b8988ac4f32536cf24f299a05c2a3e4e",
+  "source_commit": "014b07f4430a0174b7e4485fde2e1444d7ca9ea7",
+  "sources": [
+    {
+      "source_path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/SignatureDiagonal.lean",
+      "git_blob": "44c56506ef3de3111ae950bed74bf3ed62d41e48",
+      "sha256": "2f2755f0394bb2e5527666530c0e43823117ebc9051dc8fb43d40ea49b83a4f2",
+      "module_file": "SignatureDiagonal.lean",
+      "diagnostic_sha256": "ce98e3927b2844ce512c0b604062dc215c26d7bd54540363a60e5dd899386664"
+    },
+    {
+      "source_path": "research/2026-11-25-proofbridge-linear/capped-host/recurrence/ZeroRunGenerator.lean",
+      "git_blob": "0ba002c3b52a82d580fcb878708bd05cf78cd166",
+      "sha256": "986540f66776ea82d6d7af5a7e4e5c5b09b0d928b7dae26785b2625747892682",
+      "module_file": "ZeroRunGenerator.lean",
+      "diagnostic_sha256": "9b83ece0e3645bae2f0a9d4a66e7fb4b1b5a29b6c1a1c41e4ea7c799a40c0346"
+    }
+  ],
+  "commit_binding": "independent_contract_tree_binding",
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "lean_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "declaration": "AlexanderZeroRun.arbitrarily_late_run_iff",
+  "statement": "AlexanderZeroRun.arbitrarily_late_run_iff (A : Nat \u2192 Prop) (m : Nat) :\n  (\u2200 (bound : Nat), \u2203 s, bound \u2264 s \u2227 AlexanderZeroRun.IsRun A s (m + 1)) \u2194 A m",
+  "statement_sha256": "a2cd50f86a82eb6c78787cb7f99de634c469fdd1bd7c1de7da9bc7cf7a3ba8b0",
+  "signature_sha256": "96b49550546526407135f210ad6aaf988d65f1e40cd5891fe6da323009c502fd",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axiom_output": "'AlexanderZeroRun.arbitrarily_late_run_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "worker_sha256": "a516e02570fae2ecfcd4728e1e747715b7302d3fabbf08c355f17bf25b297335",
+  "fresh_checker_execution": true,
+  "disposition": "kernel_checked_at_contract_scope",
+  "wall_seconds": 3.657984
+}

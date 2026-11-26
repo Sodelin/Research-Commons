@@ -28,5 +28,15 @@ if provider_path.is_file():
         raise SystemExit("wrong approved provider Discovery readback")
     out["external_provider_smoke"]={"layer":layer,"repo":entries[0]["repo"],"commit":entries[0]["commit"],
         "path":entries[0]["path"],"git_blob":entries[0]["sha"],"evidence":"source_path_only"}
+catalog=json.loads(Path("docs/discovery/lean-bank/external/providers.json").read_text())
+if "lean4_init_std" in catalog:
+    report=json.loads(subprocess.check_output(["node","docs/discovery/tools/query.mjs","--lean-bank","Array BinSearch","--layer","external_source_only","--limit","200","--generated-index",str(a.index)],text=True,timeout=90))
+    rows=[x for x in report["results"] if x["repo"]=="leanprover/lean4"
+           and x["commit"]=="819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
+           and x["path"]=="src/Init/Data/Array/BinSearch.lean"]
+    if len(rows)!=1 or rows[0]["sha"]!="17d037bc1004a9b0ad3026bf64acc34fb6224528" or rows[0]["evidence"]!="source_path_only":
+        raise SystemExit("scaled provider snapshot search readback mismatch")
+    out["external_prefix_smoke"]={"repo":rows[0]["repo"],"commit":rows[0]["commit"],"path":rows[0]["path"],
+        "git_blob":rows[0]["sha"],"evidence":"source_path_only"}
 (a.index/"query-smoke.json").write_text(json.dumps(out,indent=2)+"\n")
 print(json.dumps(out))

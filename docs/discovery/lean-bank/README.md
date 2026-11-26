@@ -25,3 +25,5 @@ The battery reports separate statuses for indexing, catalog validation/tests, Le
 A full staged Lean pull/readback example is in [PULL.md](PULL.md), with status and exact types in the receipt. No private Drive-wide inventory or bulk external Lean execution was performed.
 
 **Backend coverage pass:** [listener, exact coverage gate, provider intake and evidence contracts](BACKEND.md).
+
+**Scale tests:** [broad metadata search, exact lookup, and one bounded proof-job registration](SOURCE-SCALE.md).

@@ -19,6 +19,8 @@ def rows(root, generated_override=None):
         files=pr.get("shards",[])
         if type(files) is not list: raise ValueError("invalid provider shards")
         layer=("external_manifest_entry" if pr["evidence"]=="provider_manifest_not_locally_replayed" else "external_source_only")
+        if "shard_sha256" in pr and set(pr["shard_sha256"])!=set(files):
+            raise ValueError("incomplete provider shard pins")
         for name in files:
             if not re.fullmatch(r"[a-zA-Z0-9_.-]+\.jsonl",name) or name in seen_shards:
                 raise ValueError("invalid or duplicate provider shard")
@@ -26,8 +28,10 @@ def rows(root, generated_override=None):
             body=(root/"external"/name).read_bytes()
             if "rows_sha256" in pr and (len(files)!=1 or hashlib.sha256(body).hexdigest()!=pr["rows_sha256"]):
                 raise ValueError("external snapshot hash mismatch")
+            if "shard_sha256" in pr and hashlib.sha256(body).hexdigest()!=pr["shard_sha256"][name]:
+                raise ValueError("external provider shard hash mismatch")
             for line in body.decode().splitlines():
-                yield layer, {**{k:v for k,v in pr.items() if k!="shards"},**json.loads(line)}
+                yield layer, {**{k:v for k,v in pr.items() if k not in ("shards","shard_sha256")},**json.loads(line)}
     generated=generated_override or (root.parent/"generated-source-index")
     manifest_path=generated/"receipt.json"
     if manifest_path.is_file():
