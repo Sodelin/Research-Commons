@@ -1,5 +1,5 @@
 """Federated read-only search across typed Commons rows and source-only corpora."""
-import argparse, json, re, sys
+import argparse, hashlib, json, re, sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
@@ -26,24 +26,45 @@ def rows(root):
             else:
                 sys.exit(f"unknown external shard {p.name}")
     generated=root.parent/"generated-source-index"
-    index=generated/"index.jsonl"
-    if index.is_file():
-        import hashlib
-        manifest=json.loads((generated/"receipt.json").read_text())
-        data=index.read_bytes()
-        if manifest.get("schema")!="commons.discovery.git-source-index.v1" or manifest.get("sha256")!=hashlib.sha256(data).hexdigest():
-            raise ValueError("invalid generated index receipt")
-        for line in data.decode().splitlines():
-            yield "commons_git_source",json.loads(line)
+    manifest_path=generated/"receipt.json"
+    if manifest_path.is_file():
+        manifest=json.loads(manifest_path.read_text())
+        for row in generated_rows(generated,manifest):
+            yield "commons_git_source",row
         checks=generated/"checks.json"
         if checks.is_file():
             report=json.loads(checks.read_text())
-            if report.get("index_sha256")!=manifest.get("sha256"):
+            if report.get("index_sha256")!=manifest.get("sha256") or report.get("source_commit")!=manifest.get("source_commit"):
                 raise ValueError("check receipt does not match generated index")
             yield "commons_worker_receipt",report
     for p in sorted((root/"legacy").glob("*.jsonl")):
         for line in p.read_text().splitlines():
             yield "commons_legacy_metadata", json.loads(line)
+
+def generated_rows(root,manifest):
+    if manifest.get("schema")=="commons.discovery.git-source-index.v1":
+        entries=[{"path":"index.jsonl","sha256":manifest["sha256"],"rows":manifest["rows"]}]
+    elif manifest.get("schema")=="commons.discovery.git-source-index.v2":
+        entries=manifest["shards"]
+        if [x["path"] for x in entries]!=[f"shards/{i:02x}.jsonl" for i in range(256)]:
+            raise ValueError("unexpected shard layout")
+    else:
+        raise ValueError("unknown generated index schema")
+    checksum=hashlib.sha256()
+    total=0
+    for entry in entries:
+        data=(root/entry["path"]).read_bytes()
+        if hashlib.sha256(data).hexdigest()!=entry["sha256"]:
+            raise ValueError("bad generated shard digest")
+        checksum.update(data)
+        lines=data.decode().splitlines()
+        if len(lines)!=entry["rows"]:
+            raise ValueError("bad generated shard count")
+        total+=len(lines)
+        for line in lines:
+            yield {**json.loads(line),"source_commit":manifest["source_commit"]}
+    if total!=manifest["rows"] or checksum.hexdigest()!=manifest["sha256"]:
+        raise ValueError("bad generated index aggregate")
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)

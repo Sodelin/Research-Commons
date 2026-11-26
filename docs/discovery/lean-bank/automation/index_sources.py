@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import subprocess
+from collections import defaultdict
 from pathlib import Path
 
 ROOTS = ("research", "packages/research", "lean", "docs/discovery/lean-bank")
@@ -83,11 +84,25 @@ def main():
     args=p.parse_args()
     rows=discover(args.root,args.commit)
     args.dest.mkdir(parents=True,exist_ok=True)
-    path=args.dest/"index.jsonl"
-    payload="".join(json.dumps(row,ensure_ascii=False,separators=(",",":"))+"\n" for row in rows)
-    path.write_text(payload,encoding="utf-8")
-    meta={"schema":"commons.discovery.git-source-index.v1","source_commit":args.commit,"rows":len(rows),
-          "sha256":hashlib.sha256(payload.encode()).hexdigest(),"evidence":"indexed_only"}
+    # Shard by path, not offsets. A new commit changes only affected buckets.
+    # The source commit is bound once by the manifest, not repeated in every row.
+    groups=defaultdict(list)
+    for row in rows:
+        key=hashlib.sha256(row["path"].encode()).hexdigest()[:2]
+        record={k:v for k,v in row.items() if k!="source_commit"}
+        groups[key].append(json.dumps(record,ensure_ascii=False,separators=(",",":"))+"\n")
+    (args.dest/"shards").mkdir(exist_ok=True)
+    digest=hashlib.sha256()
+    entries=[]
+    for i in range(256):
+        key=f"{i:02x}"
+        payload="".join(groups[key]).encode()
+        f=f"shards/{key}.jsonl"
+        (args.dest/f).write_bytes(payload)
+        digest.update(payload)
+        entries.append({"path":f,"rows":len(groups[key]),"sha256":hashlib.sha256(payload).hexdigest()})
+    meta={"schema":"commons.discovery.git-source-index.v2","source_commit":args.commit,"rows":len(rows),
+          "sha256":digest.hexdigest(),"evidence":"indexed_only","shards":entries}
     (args.dest/"receipt.json").write_text(json.dumps(meta,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(meta))
 if __name__=="__main__":

@@ -3,7 +3,7 @@
 Start with [question/theorem/artifact links](catalog.json), [what retrieval actually does](PULL.md), and the [two Thue–Morse extensions](THUE-MORSE.md). Three linked views, one set of stable IDs. Record whether a result is ours or an external provider, whether it resolves this exact question or a narrower component, and what actually verified it. Suggested dependencies never silently become proof dependencies.
 
 ```sh
-python docs/discovery/lean-bank/tools/search-bank.py "Thue Morse"
+node docs/discovery/tools/query.mjs --lean-bank "Thue Morse"
 python docs/discovery/lean-bank/tools/search-bank.py "exact component" --layer commons_git_source
 python docs/discovery/lean-bank/tools/catalog.py docs/discovery/lean-bank/catalog.json show problem.alexander.formal-assembly
 python docs/discovery/lean-bank/tools/catalog.py docs/discovery/lean-bank/catalog.json lock theorem.thue.phase-alias
@@ -18,7 +18,7 @@ python docs/discovery/lean-bank/tools/catalog.py docs/discovery/lean-bank/catalo
 
 ## GitHub to Discovery worker
 
-The workflow indexes committed research notes, Lean files, and receipt locators after a relevant push to main. It reads Git objects, never executes scanned proof texts or interprets instructions from them. The generated snapshot and battery receipt are placed in `docs/discovery/generated-source-index/`, and federated search reads them automatically. A pushed code file is then findable even if nobody wrote a catalog entry. Exact problem closure, labels and declaration-level attestations still require a verified typed record.
+The workflow indexes committed research notes, Lean files, and receipt locators after a relevant push to main. It reads Git objects, never executes scanned proof texts or interprets instructions from them. Path-stable SHA-256 shards keep unchanged source buckets reusable between pushes. The generated snapshot, battery receipt, and exact ordinary-CLI query smoke result are placed in `docs/discovery/generated-source-index/`, and federated search reads them automatically. A pushed code file is then findable even if nobody wrote a catalog entry. Exact problem closure, labels and declaration-level attestations still require a verified typed record.
 
 The battery reports separate statuses for indexing, catalog validation/tests, Lean, and SMT. Running a compatible installed Lean can replay the explicitly pinned regression; arbitrary new Lean source and arbitrary solver commands never execute automatically. A missing runner toolchain or missing registered proof job reports `not_run`, not verified or disproved. Its output records whether any supported check actually ran. Fast-forward publication is guarded against stale main and does not force push. GitHub's workflow job summary also shows the stage statuses.
 

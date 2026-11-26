@@ -33,6 +33,7 @@ jobs:
           python -m unittest discover -v -s docs/discovery/lean-bank/automation -p 'test_index_sources.py'
           python docs/discovery/lean-bank/automation/index_sources.py --commit "$GITHUB_SHA" --dest docs/discovery/generated-source-index
           python docs/discovery/lean-bank/automation/battery.py --index docs/discovery/generated-source-index >> "$GITHUB_STEP_SUMMARY"
+          python docs/discovery/lean-bank/automation/smoke_query.py --index docs/discovery/generated-source-index >> "$GITHUB_STEP_SUMMARY"
       - name: Publish only the generated Discovery index
         shell: bash
         run: |
@@ -42,7 +43,7 @@ jobs:
             echo "Superseded source commit; newer main run must own the index."
             exit 0
           fi
-          git add -- docs/discovery/generated-source-index/index.jsonl docs/discovery/generated-source-index/receipt.json docs/discovery/generated-source-index/checks.json
+          git add -- docs/discovery/generated-source-index/shards docs/discovery/generated-source-index/receipt.json docs/discovery/generated-source-index/checks.json docs/discovery/generated-source-index/query-smoke.json
           if git diff --cached --quiet; then exit 0; fi
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh Discovery Git source index'
           git push origin HEAD:refs/heads/main

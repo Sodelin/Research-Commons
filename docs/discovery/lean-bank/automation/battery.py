@@ -47,10 +47,12 @@ def main():
     p.add_argument("--lean",type=str,default=shutil.which("lean"))
     args=p.parse_args()
     root=args.root.resolve(); ix=args.index.resolve(); bank=root/BANK
-    data=(ix/"index.jsonl").read_bytes()
     manifest=json.loads((ix/"receipt.json").read_text())
-    h=hashlib.sha256(data).hexdigest()
-    if h!=manifest["sha256"] or len(data.splitlines())!=manifest["rows"]:
+    h=manifest["sha256"]
+    sys.path.insert(0,str(bank/"tools"))
+    from importlib import import_module
+    reader=import_module("search-bank")
+    if sum(1 for _ in reader.generated_rows(ix,manifest)) != manifest["rows"]:
         raise ValueError("index bytes do not match index receipt")
     versions={"source_commit":manifest["source_commit"],"index_sha256":h}
     steps={
