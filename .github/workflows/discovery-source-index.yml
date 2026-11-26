@@ -3,12 +3,8 @@ name: Discovery source index
 on:
   push:
     branches: [main]
-    paths:
-      - 'research/**'
-      - 'packages/research/**'
-      - 'lean/**'
-      - 'docs/discovery/lean-bank/**'
-      - '.github/workflows/discovery-source-index.yml'
+  schedule:
+    - cron: '23 11 * * *'
   workflow_dispatch:
 
 permissions:
@@ -16,7 +12,7 @@ permissions:
 
 concurrency:
   group: discovery-source-index-main
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   reindex:
@@ -28,22 +24,44 @@ jobs:
         with:
           ref: ${{ github.sha }}
           fetch-depth: 1
-      - name: Index the triggering Git tree
-        run: |
-          python -m unittest discover -v -s docs/discovery/lean-bank/automation -p 'test_index_sources.py'
-          python docs/discovery/lean-bank/automation/index_sources.py --commit "$GITHUB_SHA" --dest docs/discovery/generated-source-index
-          python docs/discovery/lean-bank/automation/battery.py --index docs/discovery/generated-source-index >> "$GITHUB_STEP_SUMMARY"
-          python docs/discovery/lean-bank/automation/smoke_query.py --index docs/discovery/generated-source-index >> "$GITHUB_STEP_SUMMARY"
-      - name: Publish only the generated Discovery index
+      - name: Index and reconcile the triggering Git tree
         shell: bash
         run: |
           set -euo pipefail
+          bank=docs/discovery/lean-bank
+          old=docs/discovery/generated-source-index
+          next="$RUNNER_TEMP/discovery-next"
+          python -m unittest discover -v -s "$bank/automation" -p 'test_*.py'
+          python -m unittest discover -v -s "$bank/providers" -p 'test_*.py'
+          python -m unittest discover -v -s "$bank/closure" -p 'test_*.py'
+          python -m unittest discover -v -s "$bank/jobs" -p 'test_*.py'
+          python "$bank/automation/index_sources.py" --commit "$GITHUB_SHA" --dest "$next" --reuse "$old"
+          # Coverage failure is visible in the job output and may never publish.
+          python "$bank/automation/reconcile_index.py" --commit "$GITHUB_SHA" --index "$next" --report "$next/coverage.json" | tee -a "$GITHUB_STEP_SUMMARY"
+          python "$bank/automation/battery.py" --index "$next" | tee -a "$GITHUB_STEP_SUMMARY"
+          refresh=()
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" || "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then refresh=(--refresh); fi
+          python "$bank/providers/fetch_public_metadata.py" --allowlist "$bank/providers/reference/approved.json" --prior "$old/provider-observation.json" --out "$next/provider-observation.json" "${refresh[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          python "$bank/automation/smoke_query.py" --index "$next" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Publish only the coverage-checked Discovery index
+        shell: bash
+        run: |
+          set -euo pipefail
+          next="$RUNNER_TEMP/discovery-next"
+          old=docs/discovery/generated-source-index
           latest="$(git ls-remote origin refs/heads/main | cut -f1)"
           if [[ "$latest" != "$GITHUB_SHA" ]]; then
-            echo "Superseded source commit; newer main run must own the index."
+            echo "::notice title=Discovery result superseded::Coverage ran for $GITHUB_SHA but no new index was published; main moved to $latest." | tee -a "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git add -- docs/discovery/generated-source-index/shards docs/discovery/generated-source-index/receipt.json docs/discovery/generated-source-index/checks.json docs/discovery/generated-source-index/query-smoke.json
+          if python docs/discovery/lean-bank/automation/publish_equivalent.py "$old" "$next"; then
+            echo "Source coverage and check dispositions unchanged; kept the published snapshot." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          mkdir -p "$old/shards"
+          cp "$next/shards/"*.jsonl "$old/shards/"
+          for f in receipt checks coverage query-smoke provider-observation; do cp "$next/$f.json" "$old/$f.json"; done
+          git add -- "$old/shards" "$old/receipt.json" "$old/checks.json" "$old/coverage.json" "$old/query-smoke.json" "$old/provider-observation.json"
           if git diff --cached --quiet; then exit 0; fi
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh Discovery Git source index'
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh coverage-checked Discovery Git source index'
           git push origin HEAD:refs/heads/main

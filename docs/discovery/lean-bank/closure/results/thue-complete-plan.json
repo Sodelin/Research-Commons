@@ -1,0 +1,193 @@
+{
+  "blocking_modules": [],
+  "compilability": "not_checked",
+  "cycles": [],
+  "dependency_first_source_order": [
+    "SamuelAlexanderResearch.BinaryAvoidance",
+    "SamuelAlexanderResearch.QuantitativeAvoidance",
+    "SamuelAlexanderResearch.ThueMorseBound",
+    "SamuelAlexanderResearch.ThueMorseBits",
+    "SamuelAlexanderResearch.SharpThueMorse",
+    "SamuelAlexanderResearch.SpeciesBridge",
+    "SamuelAlexanderResearch.BinaryPopulation",
+    "SamuelAlexanderResearch.FiniteEditStability",
+    "SamuelAlexanderResearch.FullHeight",
+    "Reuse",
+    "PrefixCount"
+  ],
+  "entries": {
+    "Init": {
+      "imports": [],
+      "module": "Init",
+      "status": "toolchain_dependency_unverified",
+      "toolchain": "lean-v4.33.1"
+    },
+    "PrefixCount": {
+      "imports": [
+        "Init",
+        "Reuse"
+      ],
+      "local_path": "PrefixCount.lean",
+      "module": "PrefixCount",
+      "sha256": "26b737bc20fc6c68d30218ea4fdd482cd79d1ded3c087080ef458a7408abc79b",
+      "status": "local_source_present"
+    },
+    "Reuse": {
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.FullHeight"
+      ],
+      "local_path": "Reuse.lean",
+      "module": "Reuse",
+      "sha256": "f14d6eed2e964c6e40fee9450d69585dcfec51aaa8046cf33a42191f0442ceba",
+      "status": "local_source_present"
+    },
+    "SamuelAlexanderResearch.BinaryAvoidance": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "3a8c2a6cf63144e3b15e4e6f48d17a4b889f1df5",
+      "imports": [
+        "Init",
+        "Std"
+      ],
+      "module": "SamuelAlexanderResearch.BinaryAvoidance",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/BinaryAvoidance.lean",
+      "sha256": "cec0b9d6229a50ec7c4cae25b121c31b6caf1af82ae595bce0f9a28c01c84f8a",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/BinaryAvoidance.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.BinaryPopulation": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "5ef2e27e88a72aa57376764ba062a00eee0e4e5f",
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.BinaryAvoidance",
+        "SamuelAlexanderResearch.SpeciesBridge"
+      ],
+      "module": "SamuelAlexanderResearch.BinaryPopulation",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/BinaryPopulation.lean",
+      "sha256": "87d7476e8b4c7532612763eb4ba9ea027bec1b377b2512946c37a68c7e7df667",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/BinaryPopulation.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.FiniteEditStability": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "3a934532f11e74223aae6c5f11e6d85a4e324275",
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.QuantitativeAvoidance",
+        "SamuelAlexanderResearch.SharpThueMorse",
+        "SamuelAlexanderResearch.BinaryPopulation"
+      ],
+      "module": "SamuelAlexanderResearch.FiniteEditStability",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/FiniteEditStability.lean",
+      "sha256": "dbcd4a3ea5f624f807d0fe7998a0d1a2d8be79ba23ac4946bf05137491f4d998",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FiniteEditStability.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.FullHeight": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "33aaaca1b414222a3a8975db0b48f7929c3fdcbd",
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.FiniteEditStability"
+      ],
+      "module": "SamuelAlexanderResearch.FullHeight",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/FullHeight.lean",
+      "sha256": "b120919c7861603401be5d88c29c184068c971cf7e98f8f2fc339312f224a464",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FullHeight.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.QuantitativeAvoidance": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "221981a13e4b8db48277af9cb1510a7b42c3376b",
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.BinaryAvoidance"
+      ],
+      "module": "SamuelAlexanderResearch.QuantitativeAvoidance",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/QuantitativeAvoidance.lean",
+      "sha256": "d7483dafa920f71e78eabf6199bd5a50862b8d6b6f8abb3a30f900f43bf71bae",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/QuantitativeAvoidance.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.SharpThueMorse": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "f8768d05f7f4ad812e4fe1b463d063fcc321e266",
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.ThueMorseBound",
+        "SamuelAlexanderResearch.ThueMorseBits",
+        "SamuelAlexanderResearch.BinaryAvoidance"
+      ],
+      "module": "SamuelAlexanderResearch.SharpThueMorse",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/SharpThueMorse.lean",
+      "sha256": "a2f29f779a19191630d118c5d851fa475e3d0151d55793a0867feab50d4ba0ee",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/SharpThueMorse.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.SpeciesBridge": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "dae736256c84844ad2291ab5e734619ef441e5a7",
+      "imports": [
+        "Init",
+        "Std"
+      ],
+      "module": "SamuelAlexanderResearch.SpeciesBridge",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/SpeciesBridge.lean",
+      "sha256": "0b4aff371434ba647a84b7871734f679f94cb49f170781f97e18a284178d0037",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/SpeciesBridge.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.ThueMorseBits": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "3941357d31bad940daf3d6132b92251c13474865",
+      "imports": [
+        "Init",
+        "Std"
+      ],
+      "module": "SamuelAlexanderResearch.ThueMorseBits",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/ThueMorseBits.lean",
+      "sha256": "923b159560e08a002f6644e22b0fe921771c0fbef089e1ad58399793163797d1",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/ThueMorseBits.lean",
+      "status": "pinned_source_present"
+    },
+    "SamuelAlexanderResearch.ThueMorseBound": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "679f2d902d228fb2abc559771516f848eb4a5859",
+      "imports": [
+        "Init",
+        "Std"
+      ],
+      "module": "SamuelAlexanderResearch.ThueMorseBound",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/ThueMorseBound.lean",
+      "sha256": "202498aabf53d1bbbddac8a02612ef077366fda34f90e53e59d286380048d0f9",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/ThueMorseBound.lean",
+      "status": "pinned_source_present"
+    },
+    "Std": {
+      "imports": [],
+      "module": "Std",
+      "status": "toolchain_dependency_unverified",
+      "toolchain": "lean-v4.33.1"
+    }
+  },
+  "fetch_requests": [],
+  "package_source_closure": "present",
+  "schema": "commons.lean-source-plan.v1",
+  "scope": "Explicit source-header imports; declared toolchain prefixes excluded and unresolved",
+  "targets": [
+    "PrefixCount"
+  ],
+  "toolchain": "lean-v4.33.1",
+  "toolchain_dependency_status": "not_checked",
+  "version": "thue-height-prefix-v1"
+}

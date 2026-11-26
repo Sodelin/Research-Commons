@@ -7,7 +7,10 @@
     "lean_toolchain": "leanprover/lean4:v4.34.1",
     "count": 225,
     "count_unit": "manifest declaration entries, not entire Lean proofs or distinct manuscripts",
-    "evidence": "provider_manifest_not_locally_replayed"
+    "evidence": "provider_manifest_not_locally_replayed",
+    "shards": [
+      "openai-math-index.jsonl"
+    ]
   },
   "formal_conjectures": {
     "repo": "google-deepmind/formal-conjectures",
@@ -15,7 +18,16 @@
     "lean_toolchain": "leanprover/lean4:v4.33.1",
     "count": 1901,
     "count_unit": "Lean file paths beneath FormalConjectures, not proof count",
-    "evidence": "source_path_only"
+    "evidence": "source_path_only",
+    "shards": [
+      "formal-conjectures-01.jsonl",
+      "formal-conjectures-02.jsonl",
+      "formal-conjectures-03.jsonl",
+      "formal-conjectures-04.jsonl",
+      "formal-conjectures-05.jsonl",
+      "formal-conjectures-06.jsonl",
+      "formal-conjectures-07.jsonl"
+    ]
   },
   "mathlib": {
     "repo": "leanprover-community/mathlib4",
@@ -23,5 +35,18 @@
     "lean_toolchain": "leanprover/lean4:v4.37.0-rc1",
     "evidence": "provider_locator_only",
     "build_rule": "Use pinned dependency required by the selected theorem; do not default to this version."
+  },
+  "lean4_core_selected": {
+    "commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+    "count": 4,
+    "count_unit": "selected Lean file paths, not theorem/declaration/build counts",
+    "evidence": "source_path_only",
+    "repo": "leanprover/lean4",
+    "scope": "explicit approved sample, not complete repository inventory",
+    "tree": "4399190c8231db0b73a116b1415e06a2591c0d57",
+    "shards": [
+      "lean4-core-selected.jsonl"
+    ],
+    "rows_sha256": "44e360c3dc8c940066e4e880990e1298df63ff1f8be342afcd306be85b034f53"
   }
 }

@@ -9,11 +9,13 @@ from pathlib import Path
 
 ROOTS = ("research", "packages/research", "lean", "docs/discovery/lean-bank")
 LIMIT = 1_000_000
+HINT_VERSION = 'line-hints.v1'
+LEGACY_HINT_SNAPSHOT = ('0cfd1b7a1fa2d5d544ceb9bd195e3b7dbfe565e3', '5eb5932eda63afa5c1f6523b58a78864a8268f44c9c8147146217630de92714b')
 DECL = re.compile(r"(?m)^\s*(?:noncomputable\s+)?(?:theorem|lemma|def|inductive|structure|abbrev)\s+([^\s:(<{\[]+)")
 HEADING = re.compile(r"(?m)^#\s+(.{1,180})$")
 
 def git(root, *args):
-    return subprocess.check_output(["git", "-C", str(root), *args])
+    return subprocess.check_output(["git","--no-replace-objects", "-C", str(root), *args])
 
 def kind(path):
     if path.endswith(".lean"):
@@ -24,7 +26,46 @@ def kind(path):
         return "receipt_locator"
     return None
 
-def discover(root, ref):
+def read_cache(root):
+    if root is None or not (root/"receipt.json").is_file():
+        return {}, "absent"
+    try:
+        manifest=json.loads((root/"receipt.json").read_text())
+        if manifest.get("schema")!="commons.discovery.git-source-index.v2":
+            return {}, "unsupported_previous_schema"
+        if (manifest.get("hint_version")!=HINT_VERSION and
+                (manifest.get("source_commit"),manifest.get("sha256"))!=LEGACY_HINT_SNAPSHOT):
+            return {}, "previous_hint_version"
+        files=manifest["shards"]
+        if [s["path"] for s in files]!=[f"shards/{i:02x}.jsonl" for i in range(256)]:
+            raise ValueError("unexpected shard list")
+        aggregate=hashlib.sha256(); result={}
+        for spec in files:
+            data=(root/spec["path"]).read_bytes()
+            if hashlib.sha256(data).hexdigest()!=spec["sha256"]:
+                raise ValueError("shard bytes changed")
+            records=data.splitlines()
+            if len(records)!=spec["rows"]:
+                raise ValueError("shard row count mismatch")
+            aggregate.update(data)
+            for raw in records:
+                r=json.loads(raw)
+                keys={"path","git_blob","kind","title","declaration_hints","evidence"}
+                if set(r)!=keys or r["evidence"]!="indexed_only" or r["path"] in result:
+                    raise ValueError("unreusable cache row")
+                if not isinstance(r["title"],str) or not isinstance(r["declaration_hints"],list) or not all(isinstance(x,str) for x in r["declaration_hints"]):
+                    raise ValueError("invalid cache text fields")
+                result[r["path"]]=r
+        if len(result)!=manifest["rows"] or aggregate.hexdigest()!=manifest["sha256"]:
+            raise ValueError("cache aggregate mismatch")
+        return result, "verified"
+    except (OSError,ValueError,TypeError,KeyError):
+        return {}, "rejected_rebuild"
+
+def discover(root, ref, cache=None, metrics=None):
+    cache={} if cache is None else cache
+    metrics={} if metrics is None else metrics
+    metrics.update({"reused_rows":0,"source_bodies_read":0})
     if not re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", ref):
         raise ValueError("an immutable full Git commit is required")
     actual = git(root, "rev-parse", "--verify", ref+"^{commit}").decode().strip()
@@ -38,14 +79,20 @@ def discover(root, ref):
             continue
         head,path = item.split(b"\t",1)
         mode,typ,blob = head.split()
-        path = path.decode("utf-8","replace")
+        path = path.decode("utf-8")
         category = kind(path)
         if mode in (b"100644",b"100755") and typ==b"blob" and category:
             selected.append((path,blob,category))
     rows=[]
-    owner=subprocess.Popen(["git","-C",str(root),"cat-file","--batch"],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+    owner=subprocess.Popen(["git","--no-replace-objects","-C",str(root),"cat-file","--batch"],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
     try:
         for path,blob,category in selected:
+            old=cache.get(path)
+            if old and old["git_blob"]==blob.decode() and old["kind"]==category:
+                rows.append({"source_commit":ref,**old})
+                metrics["reused_rows"]+=1
+                continue
+            metrics["source_bodies_read"]+=1
             owner.stdin.write(blob+b"\n")
             owner.stdin.flush()
             returned,typ,size=owner.stdout.readline().split()
@@ -81,8 +128,11 @@ def main():
     p.add_argument("--root",type=Path,default=Path.cwd())
     p.add_argument("--commit",required=True)
     p.add_argument("--dest",type=Path,required=True)
+    p.add_argument("--reuse",type=Path)
     args=p.parse_args()
-    rows=discover(args.root,args.commit)
+    cache,state=read_cache(args.reuse)
+    metrics={"prior_index":state}
+    rows=discover(args.root,args.commit,cache,metrics)
     args.dest.mkdir(parents=True,exist_ok=True)
     # Shard by path, not offsets. A new commit changes only affected buckets.
     # The source commit is bound once by the manifest, not repeated in every row.
@@ -102,7 +152,7 @@ def main():
         digest.update(payload)
         entries.append({"path":f,"rows":len(groups[key]),"sha256":hashlib.sha256(payload).hexdigest()})
     meta={"schema":"commons.discovery.git-source-index.v2","source_commit":args.commit,"rows":len(rows),
-          "sha256":digest.hexdigest(),"evidence":"indexed_only","shards":entries}
+          "sha256":digest.hexdigest(),"evidence":"indexed_only","shards":entries,"scan":metrics,"hint_version":HINT_VERSION}
     (args.dest/"receipt.json").write_text(json.dumps(meta,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(meta))
 if __name__=="__main__":

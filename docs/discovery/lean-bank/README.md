@@ -23,3 +23,5 @@ The workflow indexes committed research notes, Lean files, and receipt locators 
 The battery reports separate statuses for indexing, catalog validation/tests, Lean, and SMT. Running a compatible installed Lean can replay the explicitly pinned regression; arbitrary new Lean source and arbitrary solver commands never execute automatically. A missing runner toolchain or missing registered proof job reports `not_run`, not verified or disproved. Its output records whether any supported check actually ran. Fast-forward publication is guarded against stale main and does not force push. GitHub's workflow job summary also shows the stage statuses.
 
 A full staged Lean pull/readback example is in [PULL.md](PULL.md), with status and exact types in the receipt. No private Drive-wide inventory or bulk external Lean execution was performed.
+
+**Backend coverage pass:** [listener, exact coverage gate, provider intake and evidence contracts](BACKEND.md).

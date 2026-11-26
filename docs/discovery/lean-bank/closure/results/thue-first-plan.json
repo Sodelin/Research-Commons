@@ -1,0 +1,68 @@
+{
+  "blocking_modules": [
+    "SamuelAlexanderResearch.FullHeight"
+  ],
+  "compilability": "not_checked",
+  "cycles": [],
+  "dependency_first_source_order": [
+    "Reuse",
+    "PrefixCount"
+  ],
+  "entries": {
+    "Init": {
+      "imports": [],
+      "module": "Init",
+      "status": "toolchain_dependency_unverified",
+      "toolchain": "lean-v4.33.1"
+    },
+    "PrefixCount": {
+      "imports": [
+        "Init",
+        "Reuse"
+      ],
+      "local_path": "PrefixCount.lean",
+      "module": "PrefixCount",
+      "sha256": "26b737bc20fc6c68d30218ea4fdd482cd79d1ded3c087080ef458a7408abc79b",
+      "status": "local_source_present"
+    },
+    "Reuse": {
+      "imports": [
+        "Init",
+        "SamuelAlexanderResearch.FullHeight"
+      ],
+      "local_path": "Reuse.lean",
+      "module": "Reuse",
+      "sha256": "f14d6eed2e964c6e40fee9450d69585dcfec51aaa8046cf33a42191f0442ceba",
+      "status": "local_source_present"
+    },
+    "SamuelAlexanderResearch.FullHeight": {
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "expected_git_blob": "33aaaca1b414222a3a8975db0b48f7929c3fdcbd",
+      "imports": [],
+      "module": "SamuelAlexanderResearch.FullHeight",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "repo_path": "lean/SamuelAlexanderResearch/FullHeight.lean",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FullHeight.lean",
+      "status": "pending_source"
+    }
+  },
+  "fetch_requests": [
+    {
+      "expected_git_blob": "33aaaca1b414222a3a8975db0b48f7929c3fdcbd",
+      "module": "SamuelAlexanderResearch.FullHeight",
+      "path": "lean/SamuelAlexanderResearch/FullHeight.lean",
+      "ref": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "staging_path": "thue-height-prefix-v1/Sodelin/Work-on-Samuel-Alexander-Research-/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FullHeight.lean"
+    }
+  ],
+  "package_source_closure": "incomplete",
+  "schema": "commons.lean-source-plan.v1",
+  "scope": "Explicit source-header imports; declared toolchain prefixes excluded and unresolved",
+  "targets": [
+    "PrefixCount"
+  ],
+  "toolchain": "lean-v4.33.1",
+  "toolchain_dependency_status": "not_checked",
+  "version": "thue-height-prefix-v1"
+}
