@@ -1,0 +1,270 @@
+{
+  "schema": "commons.proofbridge.premise_handoff_smoke.v1",
+  "fixture_commit": "d930616586ebf4d8ec5ff5b8604a1fef13d5725e",
+  "fixture_path": "research/2026-11-25-proofbridge-linear/assumptions-fixture.json",
+  "producer": {
+    "schema": "commons.proofbridge.premise_handoff.v1",
+    "theorem_id": "goldbach.integer-budget-187",
+    "source_certificate_sha256": "11ee5daae50ecd0f02cf7ea846e8770b47976b8e6b54498a0662aa9351c8e3ff",
+    "target_id": "int-ineq:19086f699ca0d4c71f31eb7f95fdab269179d34d5823b4ee04a9b413df6bee71",
+    "original_premise_ids": [
+      "int-ineq:0d07805dec01bbb8b6ac934c3abb47ce56e8785d288b842023c8339a4a68780b",
+      "int-ineq:c8156e7f264db09c4855e4e1c54ec648c2a97a56b9c19ad641ccfe30e08ffbd9",
+      "int-ineq:7977090884d3a6109d063b853db721c3a8d441d755a43621e68b81d9ec563be0",
+      "int-ineq:54cf1bb1b5156ae240c5e25703dde3beeee6add8de5f6c1267379b044548ce71",
+      "int-ineq:04f09ade12c9e22de65cd523eb57d9738c4bd54fcbfacda826e311e78f9f8bcf"
+    ],
+    "retained_premise_ids": [
+      "int-ineq:0d07805dec01bbb8b6ac934c3abb47ce56e8785d288b842023c8339a4a68780b",
+      "int-ineq:c8156e7f264db09c4855e4e1c54ec648c2a97a56b9c19ad641ccfe30e08ffbd9",
+      "int-ineq:7977090884d3a6109d063b853db721c3a8d441d755a43621e68b81d9ec563be0"
+    ],
+    "dropped_premise_ids": [
+      "int-ineq:54cf1bb1b5156ae240c5e25703dde3beeee6add8de5f6c1267379b044548ce71",
+      "int-ineq:04f09ade12c9e22de65cd523eb57d9738c4bd54fcbfacda826e311e78f9f8bcf"
+    ],
+    "reduced_certificate": {
+      "schema": "commons.linear-int.v1",
+      "variables": [
+        "margin",
+        "odd_charge",
+        "center_charge"
+      ],
+      "premises": [
+        {
+          "coeffs": [
+            -1,
+            0,
+            0
+          ],
+          "le": -330
+        },
+        {
+          "coeffs": [
+            0,
+            1,
+            0
+          ],
+          "le": 98
+        },
+        {
+          "coeffs": [
+            0,
+            0,
+            1
+          ],
+          "le": 45
+        }
+      ],
+      "target": {
+        "coeffs": [
+          -1,
+          1,
+          1
+        ],
+        "le": -187
+      },
+      "multipliers": [
+        1,
+        1,
+        1
+      ]
+    },
+    "status": "checked_under_fewer_premises",
+    "original_replay": {
+      "status": "kernel-checked-conditional",
+      "certificate_sha256": "11ee5daae50ecd0f02cf7ea846e8770b47976b8e6b54498a0662aa9351c8e3ff",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "lean_module_sha256": "52f9ebf94fbc4c1c5176e0ca1461b36d37d82b6000fba16f19fc8ba188c59906",
+      "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "smt": "not-run",
+      "exact_combination_bound": -187,
+      "variables": [
+        "margin",
+        "odd_charge",
+        "center_charge"
+      ],
+      "premises": [
+        {
+          "coeffs": [
+            -1,
+            0,
+            0
+          ],
+          "le": -330
+        },
+        {
+          "coeffs": [
+            0,
+            1,
+            0
+          ],
+          "le": 98
+        },
+        {
+          "coeffs": [
+            0,
+            0,
+            1
+          ],
+          "le": 45
+        },
+        {
+          "coeffs": [
+            0,
+            -1,
+            0
+          ],
+          "le": 0
+        },
+        {
+          "coeffs": [
+            0,
+            0,
+            -1
+          ],
+          "le": 0
+        }
+      ],
+      "conclusion": {
+        "coeffs": [
+          -1,
+          1,
+          1
+        ],
+        "le": -187
+      }
+    },
+    "reduced_replay": {
+      "status": "kernel-checked-conditional",
+      "certificate_sha256": "e1a4b96c621e46681e09c2fc7403bf93cb6d4ee298fb7fc5bd00afa8a403342b",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "lean_module_sha256": "b62757590dddd2afe4bbf53396e60e5c8ebc50e488df931101a8c610025ec696",
+      "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "smt": "not-run",
+      "exact_combination_bound": -187,
+      "variables": [
+        "margin",
+        "odd_charge",
+        "center_charge"
+      ],
+      "premises": [
+        {
+          "coeffs": [
+            -1,
+            0,
+            0
+          ],
+          "le": -330
+        },
+        {
+          "coeffs": [
+            0,
+            1,
+            0
+          ],
+          "le": 98
+        },
+        {
+          "coeffs": [
+            0,
+            0,
+            1
+          ],
+          "le": 45
+        }
+      ],
+      "conclusion": {
+        "coeffs": [
+          -1,
+          1,
+          1
+        ],
+        "le": -187
+      }
+    }
+  },
+  "independent_consumer": {
+    "schema": "commons.proofbridge.premise_acceptance.v1",
+    "theorem_id": "goldbach.integer-budget-187",
+    "source_certificate_sha256": "11ee5daae50ecd0f02cf7ea846e8770b47976b8e6b54498a0662aa9351c8e3ff",
+    "target_id": "int-ineq:19086f699ca0d4c71f31eb7f95fdab269179d34d5823b4ee04a9b413df6bee71",
+    "premise_ids": [
+      "int-ineq:0d07805dec01bbb8b6ac934c3abb47ce56e8785d288b842023c8339a4a68780b",
+      "int-ineq:c8156e7f264db09c4855e4e1c54ec648c2a97a56b9c19ad641ccfe30e08ffbd9",
+      "int-ineq:7977090884d3a6109d063b853db721c3a8d441d755a43621e68b81d9ec563be0"
+    ],
+    "dropped_premise_ids": [
+      "int-ineq:54cf1bb1b5156ae240c5e25703dde3beeee6add8de5f6c1267379b044548ce71",
+      "int-ineq:04f09ade12c9e22de65cd523eb57d9738c4bd54fcbfacda826e311e78f9f8bcf"
+    ],
+    "replay": {
+      "status": "kernel-checked-conditional",
+      "certificate_sha256": "e1a4b96c621e46681e09c2fc7403bf93cb6d4ee298fb7fc5bd00afa8a403342b",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "lean_module_sha256": "b62757590dddd2afe4bbf53396e60e5c8ebc50e488df931101a8c610025ec696",
+      "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "smt": "not-run",
+      "exact_combination_bound": -187,
+      "variables": [
+        "margin",
+        "odd_charge",
+        "center_charge"
+      ],
+      "premises": [
+        {
+          "coeffs": [
+            -1,
+            0,
+            0
+          ],
+          "le": -330
+        },
+        {
+          "coeffs": [
+            0,
+            1,
+            0
+          ],
+          "le": 98
+        },
+        {
+          "coeffs": [
+            0,
+            0,
+            1
+          ],
+          "le": 45
+        }
+      ],
+      "conclusion": {
+        "coeffs": [
+          -1,
+          1,
+          1
+        ],
+        "le": -187
+      }
+    }
+  },
+  "reordering_preserves_ids": true,
+  "rejected_controls": {
+    "swapped_premise_id": "handoff statement or premise IDs mismatch",
+    "wrong_theorem_id": "handoff statement or premise IDs mismatch",
+    "wrong_source_sha256": "source certificate hash mismatch",
+    "strengthened_target": "handoff statement or premise IDs mismatch",
+    "duplicate_premise": "duplicate premise identities"
+  }
+}
