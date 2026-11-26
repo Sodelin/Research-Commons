@@ -1,0 +1,222 @@
+{
+  "schema": "online_memory_source_integration_verification_v1",
+  "action": "LEAN-E2E-ONLINE-MEMORY-REQUEST-r40",
+  "scope": "Actual caller-supplied proof-byte/request/result integration using the unchanged original hosted client. No new mathematical case, native emitter, compiler/controller or package/object admission.",
+  "preflight": "ONLINE-MEMORY-SOURCE-PREFLIGHT.json",
+  "implementation": {
+    "online_capture.py": {
+      "bytes": 17852,
+      "sha256": "d74fc0cce004cbc693757c324fec954bdbe6b6f35ff0155876b6dcbb03c4560c"
+    },
+    "check_online_memory.py": {
+      "bytes": 1150,
+      "sha256": "b73f4f6710b8d4cd669fa26d7e62475bf1741acdef85c8da72c73826bcd13b46"
+    },
+    "test_online_memory.py": {
+      "bytes": 11894,
+      "sha256": "dec0f98c6da9bbfccc22a0ed6ec579a42a772fc3b93ef4d3355b4dcfd0e1e9ef"
+    }
+  },
+  "unchanged_original_client": {
+    "online_lean_full_context.mjs": {
+      "bytes": 11100,
+      "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+    },
+    "online_lean_full_context_drain.mjs": {
+      "bytes": 529,
+      "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+    }
+  },
+  "input_profile": {
+    "valid_utf8_source_bytes_max": 1048576,
+    "audit_name_total_charged_characters_max": 65536,
+    "source_sha256_supplied_by_caller": true,
+    "source_in_child_argv": false,
+    "child_input": "/dev/stdin via existing subprocess PIPE",
+    "parent_deadline_seconds_max": 370,
+    "request_encrypted_and_read_back_before_child": true,
+    "plaintext_source_or_temp_file_created_by_launcher": false,
+    "original_record_ram_bound_bytes": 12582912,
+    "original_codec_envelope_bound_bytes": 900000,
+    "exhaustion": "UNVERIFIED with encrypted digest tombstone, never PASS or scientific NO"
+  },
+  "offline_regressions": {
+    "total_tests": 28,
+    "unchanged_existing_tests": 14,
+    "new_input_recovery_binding_tests": 14,
+    "all_passed": true,
+    "all_child_and_codec_calls_mocked": true,
+    "report_ciphertext_sha256": "8a8a3b2d4d6c42ab520859981395ba5c7c974d1eb90e854b5603c0a6f9384501",
+    "existing_test_sha256": "afd81d25cd0e594f1bf835abb7db1c4648aad429322364318bc70945bd6972b1"
+  },
+  "actual_controls": [
+    {
+      "case": "physical",
+      "source": "lean/scoped-context/CertifiedPopulationRows.lean",
+      "source_bytes": 108147,
+      "source_sha256": "5b83d95049900e2faa6127905bde20a4be9840cf975983c59ad5ce701b86f212",
+      "submitted_source_sha256": "4cd4ef8fb5d2574f2ae3e90d6ff02c42613c987b488b082b51065e896367eaee",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "request_ciphertext_sha256": "9f4617a77a33243fff6581f257a6bf2e8fc97157f35e4b2dd436fd3886504571",
+      "result_ciphertext_sha256": "4f8e57886cdb8896590b4957445a5992a4d9209c76ed870b9698cc81afff7d6e",
+      "encrypted_request_source_read_back_equal": true,
+      "result_link_to_request_verified": true,
+      "source_inventories_unchanged": true,
+      "versions": {
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+        "toolchain": "leanprover/lean4:v4.35.0"
+      },
+      "error_count": 0,
+      "warning_count": 5,
+      "audits": [
+        {
+          "clean": true,
+          "messages": [
+            "'GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr"
+        },
+        {
+          "clean": true,
+          "messages": [
+            "'Astra.CertifiedPopulationRows.read_sparseRows' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.CertifiedPopulationRows.read_sparseRows"
+        },
+        {
+          "clean": true,
+          "messages": [
+            "'Astra.CertifiedPopulationRows.checked_sparseRows_actual' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ],
+          "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual"
+        }
+      ],
+      "complete_printed_types": [
+        {
+          "messages": [
+            "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr.{u_2} {E : Type u_2} [DecidableEq.{u_2 + 1} E]\n  [Fintype.{u_2} E] [FinEnum.{u_2 + 1} E] (i : Option.{u_2} E) (p : GProgram.G7.SinglePopulationPolynomialKernel.Expr)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i p)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@Polynomial.eval\u2082.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing \u22ef)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t i)\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial p))"
+          ],
+          "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr",
+          "sha256": "1a5eb6741a6608c71b7fa9dd4193f3f4aee1da14bfe7fa802962443d768c71b7"
+        },
+        {
+          "messages": [
+            "Astra.CertifiedPopulationRows.read_sparseRows.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2} {Copy : Type u_3}\n  {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3}\n  {sample : Copy \u2192 X} (i : Option.{u_2} E)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 N\n      sample)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074 N\n      sample) :\n  @Eq.{u_2 + 1} (GProgram.G7.EffectiveFullEpochCoefficients.Sparse.{u_2} (Option.{u_2} E))\n    (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074\n        N sample)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074\n        N sample)\n      (fun a b =>\n        @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n          (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst\u271d\u2074)\n          (fun x =>\n            @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3 N\n              sample\n              (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst\u271d\u2074\n                (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3 N) x))\n          (fun a b =>\n            @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst\u271d\u00b3 inst\u271d\u2075 inst\u271d\u2074\n              inst\u271d inst\u271d\u2076 a b)\n          a b)\n      (@id.{(max (max u_3 u_2) u_1) + 1}\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n          inst\u271d\u2074 N sample))\n      (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 N\n        sample i rows)\n      d)\n    (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i\n      (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2075 inst\u271d\u2074 inst\u271d inst\u271d\u00b9\n        inst\u271d\u2076 inst\u271d\u00b2 N sample rows d))"
+          ],
+          "name": "Astra.CertifiedPopulationRows.read_sparseRows",
+          "sha256": "3613717e2ba53b6519567f831e160cabfe2199c0b413b0bdb16de98af3d22335"
+        },
+        {
+          "messages": [
+            "Astra.CertifiedPopulationRows.checked_sparseRows_actual.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy]\n  [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3)\n  {sample : Copy \u2192 X}\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074 N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2075 inst\u271d\u2074 inst\u271d inst\u271d\u00b9\n        inst\u271d\u2076 inst\u271d\u00b2 inst\u271d\u2077 inst\u271d\u2078 N sample (@Fintype.card.{u_3} Copy inst\u271d\u2076) s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074 N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n      inst\u271d\u2074 N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n          inst\u271d\u2074 N sample)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n          inst\u271d\u2074 N sample)\n        (fun a b =>\n          @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n            (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst\u271d\u2074)\n            (fun x =>\n              @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3 N\n                sample\n                (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst\u271d\u2074\n                  (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u00b3 N) x))\n            (fun a b =>\n              @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst\u271d\u00b3 inst\u271d\u2075 inst\u271d\u2074\n                inst\u271d inst\u271d\u2076 a b)\n            a b)\n        (@id.{(max (max u_3 u_2) u_1) + 1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n            inst\u271d\u2074 N sample))\n        (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2074 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2 N\n          sample i rows)\n        d)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n            inst\u271d\u2074 N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n          inst\u271d\u2074 N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d inst\u271d\u00b9 inst\u271d\u00b2\n            inst\u271d\u2074 N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst\u271d\u00b3 inst\u271d\u2075 inst\u271d\n          inst\u271d\u00b9 inst\u271d\u00b2 inst\u271d\u2074 inst\u271d\u2076 N sample r t s)\n        d).toReal"
+          ],
+          "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual",
+          "sha256": "1ea178a9d8f446bd6c2f0276657770f94da6328bd63d2617065093ad025e5d52"
+        }
+      ],
+      "started_utc": "2026-10-22T10:58:20.867Z",
+      "finished_utc": "2026-10-22T10:58:32.683Z",
+      "input_manifest_sha256": "31addf4fd3ad9048c8e5fdb06af736e463358da24c9a9756f07a28dcc8edae6d",
+      "required_tested_source_identities": {
+        "online_capture.py": {
+          "bytes": 17852,
+          "sha256": "d74fc0cce004cbc693757c324fec954bdbe6b6f35ff0155876b6dcbb03c4560c"
+        },
+        "check_online_memory.py": {
+          "bytes": 1150,
+          "sha256": "b73f4f6710b8d4cd669fa26d7e62475bf1741acdef85c8da72c73826bcd13b46"
+        },
+        "online_lean_full_context.mjs": {
+          "bytes": 11100,
+          "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+        },
+        "online_lean_full_context_drain.mjs": {
+          "bytes": 529,
+          "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+        }
+      }
+    },
+    {
+      "case": "reject-false",
+      "source": "lean/UnionCaptureRejectFalse.lean",
+      "source_bytes": 125,
+      "source_sha256": "5c01e8be286ff04b9870a584e7109647b034bf7d24acf88f2ddd93e683ff95ca",
+      "submitted_source_sha256": "30cc98885140c95f0ed0d933d65fcc9049556486823ba6927cd9a03f95d6ca32",
+      "status": "REJECTED_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 2,
+      "request_ciphertext_sha256": "2f786c616fc706cbaf30b9d0bb586c884d6cc614434a45baef2c1b487812a8ed",
+      "result_ciphertext_sha256": "04caa7ce271693e30fd563ceab70f5d82a1f8538d8174e37f2e53700cc880e14",
+      "encrypted_request_source_read_back_equal": true,
+      "result_link_to_request_verified": true,
+      "source_inventories_unchanged": true,
+      "versions": {
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+        "toolchain": "leanprover/lean4:v4.35.0"
+      },
+      "error_count": 1,
+      "warning_count": 0,
+      "audits": [
+        {
+          "clean": false,
+          "messages": [
+            "'Astra.UnionCaptureControls.false_proof' depends on axioms: [sorryAx]"
+          ],
+          "name": "Astra.UnionCaptureControls.false_proof"
+        }
+      ],
+      "complete_printed_types": [
+        {
+          "messages": [
+            "Astra.UnionCaptureControls.false_proof : False"
+          ],
+          "name": "Astra.UnionCaptureControls.false_proof",
+          "sha256": "244dc72940f46cd1687cd0d1441bf49ffd0108835476ee01b1628350a6766a99"
+        }
+      ],
+      "started_utc": "2026-10-22T10:59:59.141Z",
+      "finished_utc": "2026-10-22T11:00:08.181Z",
+      "input_manifest_sha256": "31addf4fd3ad9048c8e5fdb06af736e463358da24c9a9756f07a28dcc8edae6d",
+      "required_tested_source_identities": {
+        "online_capture.py": {
+          "bytes": 17852,
+          "sha256": "d74fc0cce004cbc693757c324fec954bdbe6b6f35ff0155876b6dcbb03c4560c"
+        },
+        "check_online_memory.py": {
+          "bytes": 1150,
+          "sha256": "b73f4f6710b8d4cd669fa26d7e62475bf1741acdef85c8da72c73826bcd13b46"
+        },
+        "online_lean_full_context.mjs": {
+          "bytes": 11100,
+          "sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
+        },
+        "online_lean_full_context_drain.mjs": {
+          "bytes": 529,
+          "sha256": "c58f078b88fa1b2beb5d7be7d3428057a4acad6a70dfcac8a6fc6b6b4ad01603"
+        }
+      }
+    }
+  ],
+  "actual_control_count": 2,
+  "new_mathematical_case_count": 0,
+  "unchanged_bounded_mathematical_cases": 35,
+  "input_inventory_archive": "hosted-history/SOURCE-FILES-memory-r40-input.json",
+  "input_inventory_sha256": "31addf4fd3ad9048c8e5fdb06af736e463358da24c9a9756f07a28dcc8edae6d",
+  "exact_encrypted_readback_review_ciphertext_sha256": "119092904d51c113e4b82ccb7dd01511e128f4951d91da299310a2d4826bf0a9",
+  "actual_timeout_or_oversize_claim": false,
+  "timeout_and_exhaustion_scope": "Mocked boundary controls; no actual oversized or timed-out hosted execution claimed.",
+  "unchanged_native_source_modules": 778,
+  "native_execution": false,
+  "object_artifact": false,
+  "full_package_audit": false,
+  "current_native_exporter_executed": false,
+  "remaining": [
+    "Current native exporter values/document/origin and actual emitted particular-table instance.",
+    "General native parser/Code/state/key/variable/panel/word correspondence and full source/target/action coverage.",
+    "Pinned full native imports/objects; original-owner Linux writer/controller/recipient/sequence/journal/transport/transitive hooks UNBOUND.",
+    "Original AST/game, relative-history QE/selector/CorrectRun/frontier and authenticated external result origin."
+  ],
+  "next_existing_source_action": "Compare the current778-source/23-owned-module selection with the retained complete original import/audit/object receipts; reuse completed roots and name only genuinely new current-context gaps before choosing a build. No native invocation or owner-route retry."
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "population_exporter_source_boundary_projection_v1",
+  "classification": "Verification of existing source/input/decider and emitted field-target compatibility; not native rendering or a new fixture.",
+  "checked_physical_base_sha256": "801504467b7bf1440bdf9ab4d9d052790724605541838223956e4367d2842d35",
+  "checked_physical_base_bytes": 99274,
+  "unchanged_base_is_literal_prefix": true,
+  "retained_exporter_sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c",
+  "retained_exporter_successor_commit": "4ac6aa8565ec8aa2bac1d5dc4b3d31af64e86859",
+  "taxa_target_edit": {
+    "original": "theorem taxa_exact : N.leaf = (fun i => ...)",
+    "corrected": "theorem taxa_exact : (N.leaf : Fin 2 → Fin 3) = (fun i => ...)",
+    "scope": "Explicit coercion to the original taxon function; no source, order or endpoint changes. Rust owner source is unchanged."
+  },
+  "original_modules": [
+    {
+      "module": "G7FiniteReachability",
+      "original_sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+      "selected_ranges": [
+        {
+          "start": "namespace GProgram.G7.FiniteReachability\n",
+          "end_exclusive": "#print axioms reached_iff",
+          "start_line": 10,
+          "end_line_exclusive": 101,
+          "bytes": 3526,
+          "sha256": "5bc450f97003ad068c070aa90b34d9e4028f2a1e0e2895fbb2c1a3133237325c"
+        }
+      ]
+    },
+    {
+      "module": "G7EffectiveSourceEnumeration",
+      "original_sha256": "6dabfdee6e47169a0135bc26523230213785338538c8179fc67d3cbc64cc3138",
+      "selected_ranges": [
+        {
+          "start": "namespace GProgram.G7.EffectiveSourceEnumeration\n",
+          "end_exclusive": "instance boolEnumeration ",
+          "start_line": 18,
+          "end_line_exclusive": 29,
+          "bytes": 515,
+          "sha256": "7c375f7375fdfdd8de5b201b86d37deeb5434b95754cf221a8a3cf58509a3a04"
+        },
+        {
+          "start": "instance wellLabelledDecidable ",
+          "end_exclusive": "abbrev AdmissibleTreeCode ",
+          "start_line": 42,
+          "end_line_exclusive": 50,
+          "bytes": 326,
+          "sha256": "3241fe2fbfc61b264a106903e2037a27d71aeb981e5867c0ad698e1049e4e3e8"
+        },
+        {
+          "start": "def forestValidDecidable ",
+          "end_exclusive": "/-- The original admitted snapshot subtype is enumerated,",
+          "start_line": 107,
+          "end_line_exclusive": 140,
+          "bytes": 1705,
+          "sha256": "52e0d0f43493e137739a28a33f428d2602803dd33cbcf1b2a0eb97e9ee89c72d"
+        }
+      ],
+      "only_prelude_edit": "Remove unused open of omitted SourceForestSilentPruning."
+    },
+    {
+      "module": "G6TwoTipChartFixture",
+      "original_sha256": "1afa303d7ee2f28fba18fa719139acbf701ac24e10b4f00365cb2c6e69193a19",
+      "selected_ranges": [
+        {
+          "start": "namespace UnifiedLean.G6.TwoTipChartFixture\n",
+          "end_exclusive": "theorem noHybrid ",
+          "start_line": 5,
+          "end_line_exclusive": 62,
+          "bytes": 1720,
+          "sha256": "f6ec7c5467932d814b02e250f3f5da6e288ba5409179a75674d4ddc1731c9d62"
+        }
+      ],
+      "only_prelude_edits": "Remove unused G5/NativeParentRouting opens; original source and proofs unchanged.",
+      "excluded": "Unused noHybrid command and unrelated native CHART fixture data."
+    },
+    {
+      "module": "G7OriginalPopulationFixture",
+      "original_sha256": "7544fc1cbe13a340a858ee17a73985881278957ed146ff7f27d5fc80618c52cc",
+      "selected_ranges": [
+        {
+          "start": "namespace UnifiedLean.G7.OriginalPopulationFixture\n",
+          "end_exclusive": "/-- A valid entering forest with a carried subtree",
+          "start_line": 17,
+          "end_line_exclusive": 75,
+          "bytes": 2075,
+          "sha256": "97c4304f671ecdc1f0e44c5237a873be5885f2682e9ba3f56f8171c349137e95"
+        }
+      ],
+      "excluded": "Coefficient producer, serializer, run/main and IO."
+    }
+  ],
+  "authored_use_site_sha256": "601176ade6287f3b95cfb8e279a37488d338d68545a7fc58ccc211ad14e23806",
+  "source_bytes": 110940,
+  "source_sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a",
+  "not_claimed": [
+    "Rust compilation/execution",
+    "Actual native table/capture",
+    "Rendered native proof document",
+    "Installed original imports/objects",
+    "Runtime proof/result origin",
+    "Full source/action coverage"
+  ],
+  "native_writer_controller": "UNBOUND"
+}

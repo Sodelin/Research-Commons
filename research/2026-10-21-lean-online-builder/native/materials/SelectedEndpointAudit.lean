@@ -1,0 +1,65 @@
+import P1FiniteThreshold
+import P5OrderedLambShift
+
+/- SOURCE-ONLY proposed combined material-component audit. UNELABORATED.
+No P1 or P5 master completion, native admission or full package acceptance. -/
+
+#check P1ScalarMoments.binomialMean_moments
+#print axioms P1ScalarMoments.binomialMean_moments
+
+#check P1ScalarMoments.quadratic_mean_variance
+#print axioms P1ScalarMoments.quadratic_mean_variance
+
+#check P1ScalarMoments.finite_binomial_quadratic_moments
+#print axioms P1ScalarMoments.finite_binomial_quadratic_moments
+
+#check P5OriginalGenerator.upper_triangle_section
+#print axioms P5OriginalGenerator.upper_triangle_section
+
+#check P5OriginalGenerator.lower_triangle_swap
+#print axioms P5OriginalGenerator.lower_triangle_swap
+
+#check P5OriginalGenerator.square_to_triangles
+#print axioms P5OriginalGenerator.square_to_triangles
+
+#check P5OriginalGenerator.bath_square_to_triangles
+#print axioms P5OriginalGenerator.bath_square_to_triangles
+
+#check P5OriginalGenerator.ordered_triangle_identity
+#print axioms P5OriginalGenerator.ordered_triangle_identity
+
+#check P1ScalarMoments.coordinate_statistics
+#print axioms P1ScalarMoments.coordinate_statistics
+
+#check P1ScalarMoments.bounded_scalar_variance
+#print axioms P1ScalarMoments.bounded_scalar_variance
+
+#check P1ScalarMoments.finite_product_quadratic_moments
+#print axioms P1ScalarMoments.finite_product_quadratic_moments
+
+#check P5OriginalGenerator.omega_unit_bound
+#print axioms P5OriginalGenerator.omega_unit_bound
+
+#check P5OriginalGenerator.omega_square_integrable
+#print axioms P5OriginalGenerator.omega_square_integrable
+
+#check P5OriginalGenerator.omega_square_to_triangles
+#print axioms P5OriginalGenerator.omega_square_to_triangles
+
+#check P1FiniteThreshold.weighted_bad_mass
+#print axioms P1FiniteThreshold.weighted_bad_mass
+
+#check P1FiniteThreshold.sample_budget_bounds
+#print axioms P1FiniteThreshold.sample_budget_bounds
+
+#check P1FiniteThreshold.finite_threshold_errors
+#print axioms P1FiniteThreshold.finite_threshold_errors
+
+#check P1FiniteThreshold.finite_product_threshold_errors
+#print axioms P1FiniteThreshold.finite_product_threshold_errors
+
+#check BoundedTriangleIntegral.bounded_triangle_integrable
+#print axioms BoundedTriangleIntegral.bounded_triangle_integrable
+
+#check P5OriginalGenerator.ordered_lamb_shift_identity
+#print axioms P5OriginalGenerator.ordered_lamb_shift_identity

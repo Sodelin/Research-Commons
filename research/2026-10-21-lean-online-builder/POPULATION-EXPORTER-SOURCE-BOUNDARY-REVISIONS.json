@@ -1,0 +1,239 @@
+{
+  "schema": "population_exporter_boundary_revisions_v1",
+  "revisions": [
+    {
+      "revision": "r0",
+      "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+      "source_bytes": 111123,
+      "source_sha256": "61b83135a1f840ae87e0429aec7bc5dfd034ec3ff0d068cfc373c8991ac67eef",
+      "submitted_source_sha256": "606c970f81c732abd2cd0a544eeb32443e614b2f41f74b471db6fa380d3513d6",
+      "global_error_diagnostics": [
+        {
+          "fullRange": {
+            "end": {
+              "character": 35,
+              "line": 2549
+            },
+            "start": {
+              "character": 22,
+              "line": 2549
+            }
+          },
+          "message": "Function expected at\n  Hybrid\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  source\n\nHint: The identifier `Hybrid` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.",
+          "range": {
+            "end": {
+              "character": 35,
+              "line": 2549
+            },
+            "start": {
+              "character": 22,
+              "line": 2549
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 67,
+              "line": 2641
+            },
+            "start": {
+              "character": 4,
+              "line": 2641
+            }
+          },
+          "message": "Type mismatch\n  fun i => if ?m.10 = 0 then ?m.17 else ?m.18\nhas type\n  (i : ?m.8) → ?m.19 i\nbut is expected to have type\n  Fin 2 ↪ Fin 3",
+          "range": {
+            "end": {
+              "character": 67,
+              "line": 2641
+            },
+            "start": {
+              "character": 4,
+              "line": 2641
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        },
+        {
+          "code": "lean.invalidField",
+          "fullRange": {
+            "end": {
+              "character": 22,
+              "line": 2641
+            },
+            "start": {
+              "character": 17,
+              "line": 2641
+            }
+          },
+          "message": "Invalid field notation: Type of\n  i\nis not known; cannot resolve field `val`\n\nHint: Consider replacing the field projection with a call to one of the following:\n  • `AddUnits.val`\n  • `Char.val`\n  • `DerivedWanted.val`\n  • `Fin.val`\n  • `Finset.val`\n  • `IntermediateField.val`\n  • `IterateAddAct.val`\n  • `IterateMulAct.val`\n  • `NonScalar.val`\n  • `PNat.val`\n  • `PreQuasiregular.val`\n  • `Subalgebra.val`\n  • `SubalgebraClass.val`\n  • `Subtype.val`\n  • `Units.val`\n  • `ZMod.val`\n  • `Array.Mem.val`\n  • `Lake.Hash.val`\n  • `Lean.ExprStructEq.val`\n  • `NumberField.RingOfIntegers.val`\n  • `OrderHom.Subtype.val`\n  • `ST.Out.val`\n  • `Valuation.IsUniformizer.val`\n  • `Valuation.Uniformizer.val`\n  • `Vector.Mem.val`\n  • `CategoryTheory.Functor.Elements.val`\n  • `Lean.Doc.Parser.val`\n  • `Lean.Doc.WithSyntax.val`\n  • `Lean.Elab.FieldInfo.val`\n  • `Lean.LLVM.AttributeIndex.val`\n  • `Lean.LLVM.CodegenFileType.val`\n  • `Lean.LLVM.DLLStorageClass.val`\n  • `Lean.LLVM.IntPredicate.val`\n  • `Lean.LLVM.Linkage.val`\n  • `Lean.LLVM.Visibility.val`\n  • `Lean.Language.DynamicSnapshot.val`\n  • `Lean.Language.SyntaxGuarded.val`\n  • `Lean.Meta.InstanceEntry.val`\n  • `Lean.Server.WithRpcRef.val`\n  • `Module.End.Eigenvalues.val`\n  • `Module.End.UnifEigenvalues.val`\n  • `Std.Time.Timestamp.val`\n  • `Std.Time.WallTime.val`\n  • `Batteries.BinomialHeap.Imp.FindMin.val`\n  • `Lean.Elab.ComputedFields.Context.val`\n  • `Lean.Elab.Term.LetRecToLift.val`\n  • `Lean.Elab.Term.NamedArg.val`\n  • `Lean.Meta.Match.Example.val`\n  • `Lean.Meta.Match.Pattern.val`\n  • `Lean.Meta.Sym.BitVecValue.val`\n  • `Lean.Meta.Sym.FinValue.val`\n  • `Lean.Meta.SynthInstance.Instance.val`\n  • `Mathlib.Tactic.Determinant.Cert.val`\n  • `Std.Time.Internal.UnitVal.val`\n  • `Lean.Compiler.LCNF.FixedParams.AbsValue.val`\n  • `Lean.Meta.Try.Collector.InductionCandidate.val`\n  • `Mathlib.Tactic.Ring.Common.Result.val`",
+          "range": {
+            "end": {
+              "character": 22,
+              "line": 2641
+            },
+            "start": {
+              "character": 17,
+              "line": 2641
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 46,
+              "line": 2641
+            },
+            "start": {
+              "character": 32,
+              "line": 2641
+            }
+          },
+          "message": "Invalid `⟨...⟩` notation: The expected type of this term could not be determined",
+          "range": {
+            "end": {
+              "character": 46,
+              "line": 2641
+            },
+            "start": {
+              "character": 32,
+              "line": 2641
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 66,
+              "line": 2641
+            },
+            "start": {
+              "character": 52,
+              "line": 2641
+            }
+          },
+          "message": "Invalid `⟨...⟩` notation: The expected type of this term could not be determined",
+          "range": {
+            "end": {
+              "character": 66,
+              "line": 2641
+            },
+            "start": {
+              "character": 52,
+              "line": 2641
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        }
+      ],
+      "warnings": [
+        {
+          "fullRange": {
+            "end": {
+              "character": 0,
+              "line": 12
+            },
+            "start": {
+              "character": 0,
+              "line": 12
+            }
+          },
+          "message": "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+          "range": {
+            "end": {
+              "character": 0,
+              "line": 12
+            },
+            "start": {
+              "character": 0,
+              "line": 12
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 0,
+              "line": 23
+            },
+            "start": {
+              "character": 0,
+              "line": 23
+            }
+          },
+          "message": "\n'Mathlib.Data.ENNReal.BigOperators' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.ENNReal.BigOperators\n",
+          "range": {
+            "end": {
+              "character": 0,
+              "line": 23
+            },
+            "start": {
+              "character": 0,
+              "line": 23
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 77,
+              "line": 1582
+            },
+            "start": {
+              "character": 27,
+              "line": 1582
+            }
+          },
+          "message": "`simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [population_roots N s i hs]\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+          "range": {
+            "end": {
+              "character": 77,
+              "line": 1582
+            },
+            "start": {
+              "character": 27,
+              "line": 1582
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        }
+      ],
+      "capture_ciphertext_sha256": "e2e782d9a12d16e4bf8ad2c748044817ecaa6ef8fc999d9a27460c9a30be5f65",
+      "normal_child_exit": 2,
+      "partial_clean_audits_do_not_pass_document": true,
+      "source_scope_error": "Unused noHybrid source command depends on omitted NativeParentRouting.Hybrid; remove the unused command from this projection. Original source is not accused of an import error.",
+      "actual_exporter_target_error": "N.leaf has embedding type; the generated taxa_exact RHS is a function. Explicit function coercion is needed.",
+      "started_utc": "2026-10-22T09:56:07.459Z",
+      "finished_utc": "2026-10-22T09:56:21.179Z"
+    },
+    {
+      "revision": "r1",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "source_bytes": 110940,
+      "source_sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a",
+      "submitted_source_sha256": "309480f47c38491d919aaaeaecbf36beea607a3575a711ccc4ab19a6eb209f71",
+      "capture_ciphertext_sha256": "bed9cec1b083d37ab8a7177b652fc65b9f6f60dce6a0d9d3f392afdd3b00d265",
+      "normal_child_exit": 0,
+      "complete_selected_types_and_axioms": true,
+      "only_changes_from_r0": [
+        "Explicit taxon-function coercion",
+        "Exclude the unused noHybrid command whose namespace was omitted by this projection."
+      ],
+      "original_rust_source_edited": false
+    }
+  ]
+}

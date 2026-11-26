@@ -1,0 +1,219 @@
+{
+  "revisions": [
+    {
+      "revision": "r0",
+      "status": "REJECTED",
+      "source_sha256": "9c34daf398fa53bc2dd85043cb260bb953ea719498ca786c7a4aea15da6a4222",
+      "source_bytes": 99255,
+      "submitted_sha256": "3b2d9bbb65ca98b5212d468ced39e497f0d4360de2cf150ad39846454f12b869",
+      "client_exit": 2,
+      "capture_complete": true,
+      "all_error_diagnostics": [
+        {
+          "code": "lean.synthInstanceFailed",
+          "fullRange": {
+            "end": {
+              "character": 38,
+              "line": 2330
+            },
+            "start": {
+              "character": 35,
+              "line": 2330
+            }
+          },
+          "message": "failed to synthesize instance of type class\n  LE Type\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.",
+          "range": {
+            "end": {
+              "character": 38,
+              "line": 2330
+            },
+            "start": {
+              "character": 35,
+              "line": 2330
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        },
+        {
+          "code": "lean.synthInstanceFailed",
+          "fullRange": {
+            "end": {
+              "character": 38,
+              "line": 2330
+            },
+            "start": {
+              "character": 37,
+              "line": 2330
+            }
+          },
+          "message": "failed to synthesize instance of type class\n  OfNat Type 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.",
+          "range": {
+            "end": {
+              "character": 38,
+              "line": 2330
+            },
+            "start": {
+              "character": 37,
+              "line": 2330
+            }
+          },
+          "severity": 1,
+          "source": "Lean 4"
+        }
+      ],
+      "all_warning_diagnostics": [
+        {
+          "fullRange": {
+            "end": {
+              "character": 0,
+              "line": 12
+            },
+            "start": {
+              "character": 0,
+              "line": 12
+            }
+          },
+          "message": "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+          "range": {
+            "end": {
+              "character": 0,
+              "line": 12
+            },
+            "start": {
+              "character": 0,
+              "line": 12
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 0,
+              "line": 23
+            },
+            "start": {
+              "character": 0,
+              "line": 23
+            }
+          },
+          "message": "\n'Mathlib.Data.ENNReal.BigOperators' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.ENNReal.BigOperators\n",
+          "range": {
+            "end": {
+              "character": 0,
+              "line": 23
+            },
+            "start": {
+              "character": 0,
+              "line": 23
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        },
+        {
+          "fullRange": {
+            "end": {
+              "character": 77,
+              "line": 1582
+            },
+            "start": {
+              "character": 27,
+              "line": 1582
+            }
+          },
+          "message": "`simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [population_roots N s i hs]\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+          "range": {
+            "end": {
+              "character": 77,
+              "line": 1582
+            },
+            "start": {
+              "character": 27,
+              "line": 1582
+            }
+          },
+          "severity": 2,
+          "source": "Lean 4"
+        }
+      ],
+      "selected_audit_rows": [
+        {
+          "name": "GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients",
+          "clean": true,
+          "messages": [
+            "'GProgram.G7.EffectivePopulationCoefficients.actual_population_coefficients' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem",
+          "clean": true,
+          "messages": [
+            "'GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.check_sound",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checked_actual_population",
+          "clean": false,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.checked_actual_population' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "versions_before": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "versions_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "started_utc": "2026-10-22T09:15:33.567Z",
+      "finished_utc": "2026-10-22T09:15:46.336Z",
+      "capture_stats": {
+        "received_bytes": 1762926,
+        "retained_bytes": 19830,
+        "received_messages": 1411,
+        "progress_messages": 1272,
+        "duplicate_diagnostics": 352,
+        "last_progress": {
+          "processing_ranges": 0,
+          "furthest_end_line": null,
+          "first_processing_ranges": []
+        },
+        "limits": {
+          "received_bytes": 33554432,
+          "retained_bytes": 4194304,
+          "frame_bytes": 4194304,
+          "retained_observations": 2048
+        },
+        "policy": "Union of every distinct diagnostic; cumulative duplicates coalesced; progress counted with latest state in RAM."
+      },
+      "capture_ciphertext_sha256": "440447c7a26999df65fcb83db7127e2cc198167b15e775070b7dd88486a33900",
+      "scope": "Complete scoped document rejected with two notation-scope errors at the unchanged caller NNReal time binder. Clean partial audits are not a pass. Original physical definitions/proofs are not rejected as a new mathematical claim."
+    },
+    {
+      "revision": "r1",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "source_sha256": "801504467b7bf1440bdf9ab4d9d052790724605541838223956e4367d2842d35",
+      "source_bytes": 99274,
+      "submitted_sha256": "c3c34c6bd5b327d4139c826db3bb92f7b754b54b75f4c3e252521cebee109c89",
+      "normal_child_exit": 0,
+      "complete_selected_types_and_axioms": true,
+      "capture_ciphertext_sha256": "4bcddfe771a37fe8a20ea5da2d890046128759f956c4538640044796f24d5102",
+      "only_source_change_from_rejected_r0": "Add open scoped NNReal before unchanged caller; exact19-byte diff verified.",
+      "scope": "Generic actual original single-population row with arbitrary finite admitted carriers, duplicate aggregation, zero on absence, Boolean check, actual CoLocated, same positive rates and nonnegative time. No Encoded-image premise or desired-row identity."
+    }
+  ]
+}

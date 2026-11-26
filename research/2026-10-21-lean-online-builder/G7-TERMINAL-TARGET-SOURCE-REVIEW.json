@@ -1,0 +1,56 @@
+{
+  "schema": "g7_guarded_terminal_target_source_review_v1",
+  "source_commit": "493f190de1ae3bdff86a98d4f5659defec391fc5",
+  "repository": "Sodelin/Research-Commons",
+  "root": "research/2026-10-21-lean-rust-solver-builder",
+  "sources": [
+    {
+      "path": "native/g7_exact_law_formula.rs",
+      "bytes": 64242,
+      "sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40",
+      "git_blob": "f3c9571aaaf216378dd62c4c7ca7a0ffab55f6c3"
+    },
+    {
+      "path": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+      "bytes": 5298,
+      "sha256": "dc38d77dd2cc9be2c9c51cb0231f2bcb4159daee6a1c61aaab5a27c25a13da78",
+      "git_blob": "22333bb04924f03c05be296bb566510786f47a6a"
+    },
+    {
+      "path": "native/G7-ASSERTION-QUERY-CONTRACT.md",
+      "bytes": 6036,
+      "sha256": "ce49013ac4f304f11da5ae81173b1842c0a51b13a81e8e812bfec5ea13572791",
+      "git_blob": "efa08a4df7adc5d94290352fc0044faa573ebde9"
+    }
+  ],
+  "actual_read_scope": {
+    "complete_contract_and_evidence_bodies": true,
+    "frontend": "Relevant complete declarations/regions: AssertionKind::IdentifiedTarget, guarded assertion builder, common-constant closure, retained per-model exclusions and reachable(history). Not a complete review of the 64242-byte AST frontend.",
+    "no_material_mismatch_in_inspected_scope": true
+  },
+  "aligned_semantics": [
+    "One source case and one bank fit the complete history.",
+    "Every different-target piece is excluded; same-target or equal-response points are not deduplicated.",
+    "Common constant tuples close through the original conditional_on_constants before target conjunction.",
+    "ConstantsWellDefined and exact LegalHistory guard each requested positive target clause; ReachableHistory is optional mathematical consistency, not physical origin.",
+    "Unreachable histories make all target clauses vacuous; FALSE is inconclusive.",
+    "Construction, AST and rendering exhaustion remain UNKNOWN."
+  ],
+  "checked_semantic_receiver": {
+    "path": "lean/G7FiniteTargetReceiver.lean",
+    "sha256": "8b62a562599b6cb7f4ecc64e9dc802ff150010f80463ec36356665d76e251357",
+    "scope": "Eleven hosted selected endpoint checks. Conditional case/bank semantics and existing two-sided Representation; not proof that Rust syntax denotes these predicates."
+  },
+  "remaining": [
+    "Native polynomial/AST/constants/free-history semantics.",
+    "Two-sided original source/target and complete legal action/resource representation.",
+    "Exact query/result and free-history binding; effective QE/relative-history selector and physical transcript origin.",
+    "Pinned imports/objects and actual original-owner encrypted native controller/transitive writers."
+  ],
+  "rust_execution": false,
+  "native_refinement_proved": false,
+  "backend_or_result_admitted": false,
+  "source_status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+  "private_review_encrypted_before_projection": true,
+  "encrypted_review_sha256": "4f35024b63f6c862e4ae262d86f04d5a73b307d7c739291be3bb26b436b290e2"
+}

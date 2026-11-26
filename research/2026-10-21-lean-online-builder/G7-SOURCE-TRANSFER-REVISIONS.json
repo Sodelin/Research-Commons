@@ -1,0 +1,26 @@
+{
+  "kind": "source_transfer_revision_dispositions",
+  "rejected": [
+    {
+      "source": "lean/rejected/G7ExactLawSourceTransfer-r0.lean",
+      "source_sha256": "5b62cd4bd2daa787dca8aa015cea4a3fede6205422dd99a46aee418375b905c3",
+      "virtual_source_sha256": "4c4b72639809605e7b37972ecd8f7c3b9e76e085353008c132b46d6fc7c48da3",
+      "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+      "unique_diagnostic_messages": [
+        "Unknown identifier `rep`",
+        "Unknown identifier `rep.target_eq`",
+        "Unknown identifier `rep.legal_iff`",
+        "Unknown identifier `rep.update_eq`",
+        "Type mismatch: After simplification, term\n  (ih ((a, y) :: h) (physical.update u a)).mp (hy y)\n has type\n  Winning symbolic n ((a, y) :: h) (Experiment.update.{u_1, u_3, u_4, u_5, u_6} physical u a)\nbut is expected to have type\n  Winning symbolic n ((a, y) :: h) (Experiment.update.{u_2, u_3, u_4, u_5, u_6} symbolic u a)",
+        "Type mismatch: After simplification, term\n  hy y\n has type\n  Winning symbolic n ((a, y) :: h) (Experiment.update.{u_2, u_3, u_4, u_5, u_6} symbolic u a)\nbut is expected to have type\n  Winning symbolic n ((a, y) :: h) (Experiment.update.{u_1, u_3, u_4, u_5, u_6} physical u a)",
+        "Type mismatch: After simplification, term\n  (ih y ((a, y) :: h) (physical.update u a)).mp (hy y)\n has type\n  Valid symbolic (next y) ((a, y) :: h) (Experiment.update.{u_1, u_3, u_4, u_5, u_6} physical u a)\nbut is expected to have type\n  Valid symbolic (next y) ((a, y) :: h) (Experiment.update.{u_2, u_3, u_4, u_5, u_6} symbolic u a)",
+        "Type mismatch: After simplification, term\n  hy y\n has type\n  Valid symbolic (next y) ((a, y) :: h) (Experiment.update.{u_2, u_3, u_4, u_5, u_6} symbolic u a)\nbut is expected to have type\n  Valid symbolic (next y) ((a, y) :: h) (Experiment.update.{u_1, u_3, u_4, u_5, u_6} physical u a)"
+      ],
+      "partial_clean_audits_do_not_imply_acceptance": true
+    }
+  ],
+  "accepted_source_sha256": "e8f713f2f123ec55f97168c92b724b01af5b0835bbe90cc6308e8749ea31423a",
+  "accepted_virtual_sha256": "2804232d7daea06e5c41e596ebb497c05c94d3b1ec9dbd7e8286f5fad24a90c4",
+  "only_proof_binding_change": "include rep; theorem obligations and game/source definitions unchanged",
+  "native_originals_changed": false
+}

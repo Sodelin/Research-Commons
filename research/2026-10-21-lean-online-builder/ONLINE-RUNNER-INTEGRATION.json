@@ -1,0 +1,437 @@
+{
+  "schema": "public-online-runner-integration.v1",
+  "scope": "Launcher integration against existing supported hosted cases. No new mathematical case, native build, model test or installed compiler/object acceptance.",
+  "helper": {
+    "path": "online_capture.py",
+    "bytes": 9902,
+    "sha256": "4661c642eddf3d39586b8cc2e76db8436cd32df11869e49a96c1a048e66189fc"
+  },
+  "offline_regressions": {
+    "path": "test_online_capture.py",
+    "sha256": "e089b9b6f85a322e3bcb3d0e46a621bd3a3cbb221ebd652ee4aa6ab1695064e8",
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "actual_child_or_codec_calls": false,
+    "original_report_encrypted_before_projection": true,
+    "encrypted_report_sha256": "6e59243db4bb12b0d0e06f748d795b4bb21d96a54cb3f6243bca1b6a9148bc8b",
+    "scope": "Timeout/exit/source-change/malformed-result/refused-record/packing/oversize/readback cases use mocks; actual service controls are separately identified below."
+  },
+  "actual_checks": [
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "e45f0e5b3f8ecfe88ab6dbd1bdc5e325d0abfea24fc666acbd7c23dfac9bfbdd",
+      "case": "g7-power-domain",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "564275f5e57d05009bd136acca6a11e6bf5e89b8a384680b226300f447db0580",
+      "source": "lean/G7FixedCalendarPowerDomain.lean",
+      "source_bytes": 3602,
+      "source_sha256": "b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892",
+      "submitted_source_sha256": "f317fdd8f247d23504cdc8dd3670b7bc758aed6d0265f569852ede815faa3491",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_pos",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.rate_pos' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_survival",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.rate_survival' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.positive_power_iff_exp",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.positive_power_iff_exp' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.slot_survival_mem",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.slot_survival_mem' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique",
+          "clean": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 0,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 83424,
+      "encrypted_capture_sha256": "0cbabe022a538b7c557dd685cab0bc88ad01bc47a831bc724a0216f697cab2ee",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T05:35:06.115Z"
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "e45f0e5b3f8ecfe88ab6dbd1bdc5e325d0abfea24fc666acbd7c23dfac9bfbdd",
+      "case": "reject-false",
+      "status": "REJECTED_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 2,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "564275f5e57d05009bd136acca6a11e6bf5e89b8a384680b226300f447db0580",
+      "source": "lean/UnionCaptureRejectFalse.lean",
+      "source_bytes": 125,
+      "source_sha256": "5c01e8be286ff04b9870a584e7109647b034bf7d24acf88f2ddd93e683ff95ca",
+      "submitted_source_sha256": "30cc98885140c95f0ed0d933d65fcc9049556486823ba6927cd9a03f95d6ca32",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.UnionCaptureControls.false_proof",
+          "clean": false,
+          "messages": [
+            "'Astra.UnionCaptureControls.false_proof' depends on axioms: [sorryAx]"
+          ]
+        }
+      ],
+      "error_count": 1,
+      "warning_count": 0,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 68510,
+      "encrypted_capture_sha256": "dffd6a540caa0646707be7c87a24f952e3b0cc8ddaab8e215431bd4f590d6af7",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T05:35:27.749Z"
+    },
+    {
+      "runner": "check_online.py",
+      "runner_sha256": "8eea8cf812a29872e0b6f00f03bb42049fc89f3d0675130f36347b7d2c89ba0b",
+      "case": "probe",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean.mjs",
+      "core": "online_lean.mjs",
+      "entry_sha256": "1357af8b3375ce59cb27f3aa66cf3c544fb214a4998c5a21e3c55f99feb3b17a",
+      "core_sha256": "1357af8b3375ce59cb27f3aa66cf3c544fb214a4998c5a21e3c55f99feb3b17a",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "564275f5e57d05009bd136acca6a11e6bf5e89b8a384680b226300f447db0580",
+      "source": "lean/OnlineTransportProbe.lean",
+      "source_bytes": 54,
+      "source_sha256": "d6e966709ff41111a62bb35e3e88325d442d00b8da88d3daad6592fa3909ed32",
+      "submitted_source_sha256": "de3b55f622c12f6d5c4e64176613d0346152259bf7e508f4be05dbdae08e6293",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "online_transport_probe",
+          "clean": true,
+          "messages": [
+            "'online_transport_probe' does not depend on any axioms"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 0,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 80466,
+      "encrypted_capture_sha256": "4fa3e1bae7f02cd0b76c53f554e36bcec9014396aa9c75d30b474a5e423a9c58",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T05:35:55.066Z"
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "7a690f93ab5fea7fa8308db03dadd09f074dfac931e93f4e9200374a27e41bfa",
+      "case": "g7-finite-target",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "24638bdedc32caaf2357afaa5de27ec551569c4209c79b65b8a6b07b03ae6f50",
+      "source": "lean/OnlineG7FiniteTargetReceiver.lean",
+      "source_bytes": 33027,
+      "source_sha256": "7db25d405e6bc344977bad2968ca18f245fbe76c0bf06396f002e9de35612844",
+      "submitted_source_sha256": "98912b2f3a047ef6bffe97ef3c6438ac82da8c7edeac140fa561d89945edac4e",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.G7FiniteTargetReceiver.consistent_piece",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.consistent_piece' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_target_unique",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_target_unique' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.unreachable_all_targets",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.unreachable_all_targets' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.empty_cases_unreachable",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.empty_cases_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_stop_identifies",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_stop_identifies' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 4,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 102909,
+      "encrypted_capture_sha256": "9dc97846fbb3fceac71c8bc356c1190f46b328017f0af825acdd019a99bc53b6",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:27:01.957Z",
+      "scope": "Actual new dispatch integration after adding the finite-target case. Same eleven endpoint checks; not an additional mathematical case. Prior launcher checks retain their exact historical driver hashes."
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "d00a669409a50d627c905bad175e798e0b75e4811f03783dc37bc01a6c5442ce",
+      "case": "population-coefficients",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "1943be736244bab52a65234706b4a32a7170a5f8d65387cf0a22e6f06c1d4c03",
+      "source": "lean/proposals/PopulationCoefficientProjection.lean",
+      "source_bytes": 3137,
+      "source_sha256": "ea3b6538a10be5ba470d372a30a70bc6e7f53b8b98880501c4d90f5b7bc3b15c",
+      "submitted_source_sha256": "edf359872c8adcb2c1990dbc8ed6759ebca503afa35fb7c2003b0a577addbef8",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.NativePopulationTableCertificate.polynomial_coefficient",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.polynomial_coefficient' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checkExpr_sound",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.checkExpr_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 3,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 80955,
+      "encrypted_capture_sha256": "d36e884f2e873e96e125d6f7df5b1c3982b0dc699d7239456514e84a04aeab93",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:39:06.161Z",
+      "scope": "Actual newly added dispatch integration of the same three pure coefficient endpoints. No additional mathematical case or full population law."
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "ba26db6df001e011963e569cc02676c3025a30a83f9e54cf4d758d1723477b16",
+      "case": "g7-trace-rows",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "71cdc13eaf5d2bd8e828d82bad3587e8bea0e5da399643015290372c2adab69e",
+      "source": "lean/proposals/G7SuccessfulTraceRows.lean",
+      "source_bytes": 4093,
+      "source_sha256": "744555a8ecd37e7f0c0e71e733b897d623d2fee16f1e9bb8a3620d9bd740cfbb",
+      "submitted_source_sha256": "46951f47b47abfc9be870b19e4f0ca0da8bd077dedbf21513996f3f44cd94763",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.G7SuccessfulTraceRows.fibre_bind",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.fibre_bind' depends on axioms: [propext]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.queried_bind_matrix",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.queried_bind_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7SuccessfulTraceRows.compressed_step",
+          "clean": true,
+          "messages": [
+            "'Astra.G7SuccessfulTraceRows.compressed_step' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 0,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 81492,
+      "encrypted_capture_sha256": "dce1e9cd665e8c3491e1c4b13921cf7304669f5b140f6ce6d43a545757d300c2",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:52:45.554Z",
+      "scope": "Actual new queried-row dispatch integration of the same three generic endpoints; no additional mathematical case or native refinement."
+    }
+  ],
+  "new_theorem_case_count": 0,
+  "existing_bounded_followon_case_count": 29,
+  "native_source_module_count": 776,
+  "native_execution": "HELD_BEFORE_FIRST_INVOCATION",
+  "actual_linux_writer_controller_binding": "UNBOUND",
+  "private_record_locators_published": false,
+  "additional_full_context_source_checks": [
+    {
+      "case": "scoped-population-certificate",
+      "verification": "SCOPED-POPULATION-CONTEXT-VERIFICATION.json",
+      "normal_child_exit": 0,
+      "source_inventory_unchanged": true,
+      "encrypted_readback_verified": true
+    },
+    {
+      "case": "population-exporter-source-boundary",
+      "verification": "POPULATION-EXPORTER-SOURCE-BOUNDARY-VERIFICATION.json",
+      "normal_child_exit": 0,
+      "source_inventory_unchanged": true,
+      "encrypted_readback_verified": true,
+      "scope": "Original source/decider and field-target compatibility only; original Rust uncompiled/unexecuted."
+    },
+    {
+      "case": "certified-population-rows",
+      "verification": "CERTIFIED-POPULATION-ROWS-VERIFICATION.json",
+      "normal_child_exit": 0,
+      "source_inventory_unchanged": true,
+      "encrypted_readback_verified": true,
+      "scope": "Unchanged existing sparse-row caller at exact physical context; no particular native table or word instance."
+    }
+  ],
+  "current_inventory": {
+    "bounded_hosted_verification_cases": 35,
+    "native_source_modules": 778,
+    "full_context_source_driver_sha256": "e6e20dd7425cc99dd64046527e328e8ccee5f598509e906cb5e9424df0153802",
+    "scope": "Historical mock/launcher records remain their exact dated scope; source compatibility adds no mathematical discovery."
+  },
+  "memory_input_follow_on": {
+    "verification": "ONLINE-MEMORY-SOURCE-VERIFICATION.json",
+    "tests": 28,
+    "unchanged_file_runner_regressions": 14,
+    "new_memory_regressions": 14,
+    "actual_changed_route_controls": 2,
+    "new_mathematical_cases": 0
+  }
+}
