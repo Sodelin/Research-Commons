@@ -1,0 +1,3 @@
+# Zero-run recurrence
+
+Lean checks `AlexanderZeroRun.arbitrarily_late_run_iff`: the switch schedule contains arbitrarily late maximal runs of length m+1 exactly for selected m. Every slot has two trailing ones; no unselected length occurs. The schedule uses an arbitrary predicate, not an effective oracle for all sets. This is the switch recurrence, not yet the full merged-root triangle signature or portfolio theorem. Import the pinned [SignatureDiagonal.lean](https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/SignatureDiagonal.lean) (Lean 4.33.1). The initial replay is separate from any automatic runner receipt.
