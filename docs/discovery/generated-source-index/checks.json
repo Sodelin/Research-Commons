@@ -1,0 +1,32 @@
+{
+  "schema": "commons.discovery.check-battery.v1",
+  "source_commit": "c28b562ff5b8f623201f786b548d369b104c51c0",
+  "index_sha256": "6884ae2b4e4b434e41a06548040159c4f9d55c2a0d1f068e1d3761cbccb71904",
+  "checks": {
+    "source_index": {
+      "status": "passed",
+      "scope": "inventory and Git provenance, not proof"
+    },
+    "catalog_contract": {
+      "status": "passed",
+      "exit_code": 0,
+      "output_sha256": "3a9c5955b9ee3ae07fe3f9ce987c9cc1d8c5b2088ea13f72e49f09ecb475f1f6",
+      "output_tail": "{\n  \"artifacts\": 17,\n  \"ok\": true,\n  \"problems\": 9,\n  \"theorems\": 9\n}\n"
+    },
+    "catalog_tests": {
+      "status": "passed",
+      "exit_code": 0,
+      "output_sha256": "b8390fdffae9d4824361138866ae2e6b17b86ed79d459d236af72e1a4ef1c19b",
+      "output_tail": "test_closed_cannot_be_only_partial (test_catalog.CatalogTests.test_closed_cannot_be_only_partial) ... ok\ntest_closed_math_can_be_source_only_but_not_attested (test_catalog.CatalogTests.test_closed_math_can_be_source_only_but_not_attested) ... ok\ntest_dangling_refs (test_catalog.CatalogTests.test_dangling_refs) ... ok\ntest_dependency_and_reverse_lookup (test_catalog.CatalogTests.test_dependency_and_reverse_lookup) ... ok\ntest_floating_ref_and_path_traversal_rejected (test_catalog.CatalogTests.test_floating_ref_and_path_traversal_rejected) ... ok\ntest_kernel_attestation_needs_pins_and_matches_statement (test_catalog.CatalogTests.test_kernel_attestation_needs_pins_and_matches_statement) ... ok\ntest_no_kernel_theorem_from_source (test_catalog.CatalogTests.test_no_kernel_theorem_from_source) ... ok\ntest_partial_keeps_problem_open (test_catalog.CatalogTests.test_partial_keeps_problem_open) ... ok\ntest_pinned_lock_resolution (test_catalog.CatalogTests.test_pinned_lock_resolution) ... ok\ntest_real_remote_report_distinct_from_locally_checked_declaration (test_catalog.CatalogTests.test_real_remote_report_distinct_from_locally_checked_declaration) ... ok\ntest_source_only_cannot_carry_receipt (test_catalog.CatalogTests.test_source_only_cannot_carry_receipt) ... ok\ntest_wrongly_promoting_exact_claim (test_catalog.CatalogTests.test_wrongly_promoting_exact_claim) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    "lean": {
+      "status": "not_run",
+      "reason": "compatible pinned Lean is not installed on this runner",
+      "scope": "the explicit lock-listed two-consumer regression, never arbitrary newly committed Lean code"
+    },
+    "smt": {
+      "status": "not_run",
+      "reason": "no registered SMT proof job for these sources; solver status is not a Lean proof"
+    }
+  }
+}
