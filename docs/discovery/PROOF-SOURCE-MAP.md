@@ -35,3 +35,7 @@ The [six-lane proof packet](../../research/2026-11-25-proofbridge-linear/capped-
 ## Grid-minor follow-on
 
 The [second round](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-LANE-ROUND-2.md) supplies two independently checked proofs of the same finite square-grid-minor obstruction for the balanced natural-order host. The [machine receipt](../../research/2026-11-25-proofbridge-linear/capped-host/grid-minor-receipt.json) names both exact endpoints. This is a graph-level transfer, not a claim about the countable-host-family problem or a new Mathlib Real replay.
+
+## Alexander follow-on: two-sheet avoiders and observation certificates
+
+[Round three](../../research/2026-11-25-proofbridge-linear/capped-host/round3/ROUND-3.md) gives two graph constructions with hand-proof status and individually Lean-checked parts, plus a kernel-checked conditional observation-fibre interface. The exact binary edge-labelled cap-two result is about countable same-cap portfolios; the finite quartet transfer is not solver integration. [Exact receipt](../../research/2026-11-25-proofbridge-linear/capped-host/round3/round3-receipt.json).
