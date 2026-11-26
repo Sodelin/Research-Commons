@@ -302,6 +302,27 @@
         "kind": "internal",
         "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/fixture/NANUQ-Paired-Fixture.md"
       }
+    },
+    {
+      "id": "theorem.alexander.recurrence",
+      "title": "Exact arbitrarily late zero-run recurrence",
+      "statement": "AlexanderZeroRun.arbitrarily_late_run_iff (A : Nat → Prop) (m : Nat) :\n  (∀ (bound : Nat), ∃ s, bound ≤ s ∧ AlexanderZeroRun.IsRun A s (m + 1)) ↔ A m",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.alexander.formal-assembly",
+          "relation": "partial"
+        }
+      ],
+      "artifacts": [
+        "artifact.alexander.recurrence"
+      ],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/014b07f4430a0174b7e4485fde2e1444d7ca9ea7/research/2026-11-25-proofbridge-linear/capped-host/recurrence/ZeroRunGenerator.lean"
+      }
     }
   ],
   "artifacts": [
@@ -609,6 +630,24 @@
       "provenance": {
         "kind": "internal",
         "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/Reuse.lean"
+      }
+    },
+    {
+      "id": "artifact.alexander.recurrence",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "014b07f4430a0174b7e4485fde2e1444d7ca9ea7",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/recurrence/ZeroRunGenerator.lean",
+      "declaration": "AlexanderZeroRun.arbitrarily_late_run_iff",
+      "sha256": "986540f66776ea82d6d7af5a7e4e5c5b09b0d928b7dae26785b2625747892682",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/main/research/2026-11-25-proofbridge-linear/capped-host/recurrence/pilot-result.receipt.json",
+        "lean_version": "4.33.1",
+        "statement_sha256": "40780a31ece8711207a36112431c1f531304b467adbf69bb82f1bf56406c4d66"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/014b07f4430a0174b7e4485fde2e1444d7ca9ea7/research/2026-11-25-proofbridge-linear/capped-host/recurrence/ZeroRunGenerator.lean"
       }
     }
   ]
