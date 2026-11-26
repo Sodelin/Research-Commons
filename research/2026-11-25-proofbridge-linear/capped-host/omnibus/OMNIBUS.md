@@ -1,0 +1,47 @@
+# The omnibus scroll: Alexander, NANUQ, and ProofBridge
+
+**Council decision:** build a shared checker for claims about what observations force. Keep the Alexander proof and the NANUQ counterexample as two tests of that idea, not as two versions of the same theorem. One shared contract is useful; one shared graph model is not justified.
+
+## What is now checked
+
+- **Alexander, original scope.** [Alexander §6](https://arxiv.org/pdf/1212.0186#page=9) asks about universal avoiders without fixing an embedding category. The [September result](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/1592b89731d10fc49019ff22cf2f93c7bc799118/research/open-questions/continuation-2026-09-29/embedding/TerminalCloneAvoiders.lean) already handles countable host families with unrestricted outgoing degree and exact labelwise incoming counts. The [round-three binary cap-two hand argument](../round3/BALANCED-BINARY-TWO-SHEET.md) is the different target: exactly three roots, two children at every source vertex, exact incoming-label counts at nonroots, and no countable same-cap portfolio under weak undirected adjacency. Do not mark the whole proof kernel-checked yet.
+- **Alexander, new council components.** [Component transport](lean/ComponentTransport.lean) now checks retained adjacency and lifts walks after deletion, using local neighborhood saturation. [The diagonal](lean/SignatureDiagonal.lean) checks the host-number, chronological-cutoff, retained-representative encoding and the diagonal mismatch. This replaces formal cardinality bookkeeping over arbitrary finite deletions. [The merged-root module](lean/MergedRoot.lean) now checks the actual adjacency, root set, exactly two distinct children per vertex, opposite-labelled parents at nonroots, strict chronology, and unchanged infinite-word language. Remaining: assemble the exact presented population and check recurring triangle-size coding and cofinite source-tail transport through to the final theorem.
+- **Fixed source colors.** [Lean proves](lean/LineGraphTriangleGuard.lean) that the directed line graph of a chronological graph has a triangle-free underlying graph, so it erases the invariant in the cap-two proof. [A different fixed-color grid lemma](lean/FixedColorExact.lean) gives one parent of each color in the old finite padding with a cap of two. That does not fix the root count, force exactly two children for every vertex, or establish the countable-host result. Stop trying to transport the triangle invariant through this conversion. A separate directed-embedding experiment may retain more information, but is a narrower category.
+- **Pinned NANUQ baseline.** The [existing five-label caterpillar](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/CONTIGUOUS-MULTICOPY-EXTENSION.md#6-the-full-tree-family-can-shrink-an-explicit-small-example) has three occurrences of (x). Keeping only the two extremes preserves all five distinct quartet-support sets, but removes a full displayed tree where two specified splits occur together. [The Lean fixture](lean/NanuqOmnibusFixture.lean) computes the four-point quartet supports and physical edge-cut splits; [a second module](lean/ObservationCertificate.lean) consumes the exact computed pair as a nonidentification witness. It also distinguishes distinct support from copy-uniform frequencies. Neither module imports production NANUQ or proves admission in an original network model.
+- **Harder NANUQ test.** [A second finite pair](fixture/NANUQ-Paired-Fixture.md) has the same contour and the same adjacent two-copy blocks, not just the same observations after dropping a copy. It agrees on every distinct quartet set, split union, and the corresponding raw support-derived distance matrix, but differs on whether two splits are displayed together. Exact integer/fraction Python replay passed; this pair is not Lean-verified or certified to come from original paired galled networks. Validate admission before broadening the conclusion. The claim is about the stated observation operator, not multilocus concordance factors or weighted distributions.
+
+## The checker design
+
+A request pins five things: **admission model, observation operator, exact observed value, target property, and requested scope**. Preserve original IDs and the distinction between an observation projection and a graph embedding. Record both the exact source revision and proof/checker dependencies. A match from a different model or with a different observation operator is not evidence for the current request.
+
+| Verdict | Evidence the checker must consume |
+|---|---|
+| Feasible | One admitted candidate with exactly the requested observation. |
+| Ambiguous | Two admitted candidates with the same observation and different target values. Does not mean infeasible. |
+| Identified | A matching witness plus a checked universal argument, or a finite coverage certificate excluding every differing target. Nonempty is mandatory. |
+| Empty | A checked argument excluding every admitted candidate; finite enumeration needs coverage, not an asserted flag. |
+| Unknown | Search failed, the model adapter is missing, or coverage has not been proved. Malformed evidence is rejected separately. |
+
+[Lean checks the generic ambiguity and nonempty identification rules](lean/ObservationCertificate.lean). [The JSON prototype](prototype/SCHEMA.md) exercises the machine boundary on all labeled simple undirected graphs with at most six vertices. It binds requests by SHA-256 and distinguishes checked finite enumeration from a witness or pair. Python replay is a separate evidence class. Prototype output does not become a Lean certificate without decoding and proving the exact request-to-theorem correspondence. Never admit bare solver status as proof.
+
+## Work order and stop rules
+ 
+See the [exact cap-two dependency DAG](ALEXANDER-DEPENDENCIES.md) for formal interfaces and the proposed zero-run lemma.
+
+1. **Start with the fixture, not the catalog.** Port the same-multiplicity paired pair into an executable admission checker for one explicit original network class. Preserve IDs, exact distinct quartet support, and the target of joint split occurrence. Pass if there are two admitted source lifts with the proved contrast. If one lift is impossible, keep the abstract result and record the exact violated condition; do not call the network-level question settled. If a change of observation operator separates the fixtures, record it as the first extra observation that works on this pair, not as a general characterization.
+2. **Finish the Alexander edge-labelled proof in dependency order.** Consume the checked merged-root graph; package the checked exact labelwise parents and establish finite chronological sublevels in the presented population contract; prove the zero-run component code above any finite coordinate cutoff; consume the checked component bridge and host-prefix diagonal. End with one exact final theorem and controls: a single separating switch merges triangle components, finitely many switches can leave two infinite tails, stretch two does not preserve triangles, degree mismatch breaks saturation. Only then mark the continuum or portfolio endpoint kernel-checked.
+3. **Keep fixed-source transfer independent.** To reopen it, find a cofinite invariant surviving weak adjacency in the fixed-source family and prove it distinguishes at least two explicit instances before attempting the diagonal. Do not require the line graph to preserve triangles; it cannot. The verified old finite-grid coloring remains useful in its original scope.
+4. **Admit only typed evidence to Discovery.** [Provenance gate](provenance/RECOMMENDATION.md): hash the exact source and pinned transitive import closure; clean-build the declaration; record its exact statement, permitted axioms and negative controls; then verify a downstream import on an actual request. Keep hand proof, checked component, exact replay, and whole theorem in separate records. Ingest the next module only if it discharges a named missing lemma or consumes a real certificate. No bulk import and no scheduler change.
+
+## The six council seats
+
+| Seat | Decision delivered |
+|---|---|
+| Cap-two proof structure | Make local neighbor saturation imply component isomorphism; enumerate host cutoffs and representatives, not arbitrary finite sets. |
+| Fixed-source structure | Exact one-parent-per-color in old grid; a fork/merge defeats the naive arc representative map. |
+| Observation fixture | Replay the pinned caterpillar; add a harder adjacent-pair example that holds multiplicities fixed. |
+| Adversarial audit | Accept the round-three hand scope; reject stretch, degree, root-budget, and observation quantifier leakage. |
+| Certificate engineering | Separate positive witness, negative coverage, ambiguity pair, and unknown in a bounded executable schema. |
+| Provenance | Fresh replay of the round-three source archive; refuse altered or unlisted proof source; attest per declaration. |
+
+**Replay:** first clean-build the [round-three packet](../round3/ROUND-3.md) with Lean 4.33.1, then run `bash replay.sh /path/to/lean /path/to/built-round-three`. [Council replay log](OMNIBUS-REPLAY.log). The provenance audit independently rebuilt the old round-three archive; that does not certify an end-to-end cap-two theorem.

@@ -39,3 +39,7 @@ The [second round](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-
 ## Alexander follow-on: two-sheet avoiders and observation certificates
 
 [Round three](../../research/2026-11-25-proofbridge-linear/capped-host/round3/ROUND-3.md) gives two graph constructions with hand-proof status and individually Lean-checked parts, plus a kernel-checked conditional observation-fibre interface. The exact binary edge-labelled cap-two result is about countable same-cap portfolios; the finite quartet transfer is not solver integration. [Exact receipt](../../research/2026-11-25-proofbridge-linear/capped-host/round3/round3-receipt.json).
+
+## Alexander–NANUQ certificate council
+
+[Omnibus design](../../research/2026-11-25-proofbridge-linear/capped-host/omnibus/OMNIBUS.md) indexes scoped merged-root, component and diagonal proofs; a kernel-checked finite quartet counterexample; and a bounded reference checker. Distinguish hand proof, checked components, exact Python replay and original-network admission. [Machine receipt](../../research/2026-11-25-proofbridge-linear/capped-host/omnibus/omnibus-receipt.json).

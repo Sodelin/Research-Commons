@@ -1,0 +1,29 @@
+{
+  "scope": "finite unrooted plane binary trees with adjacent singleton/doubleton occurrence blocks, not a network-lift claim",
+  "plane_tip_contour": ["a0", "a1", "b0", "b1", "c", "d", "e"],
+  "label_blocks": {"a":["a0","a1"],"b":["b0","b1"],"c":["c"],"d":["d"],"e":["e"]},
+  "unrooted_encoding": "suppress the outer degree-two root of each ordered Newick string",
+  "A": "( (a0,(((a1,b0),(b1,c)),d)), e );",
+  "B": "( (a0,(((a1,(b0,b1)),c),d)), e );",
+  "distinct_quartet_support": {
+    "abcd":["ab|cd","ad|bc"],
+    "abce":["ab|ce","ae|bc"],
+    "abde":["ab|de","ae|bd"],
+    "acde":["ac|de","ae|cd"],
+    "bcde":["bc|de"]
+  },
+  "full_tree_split_pair_A_only":["abc|de","ade|bc"],
+  "A_selection_splits": [
+    ["a0","b0",["ade|bc","ae|bcd"]],
+    ["a0","b1",["ade|bc","ae|bcd"]],
+    ["a1","b0",["abc|de","ab|cde"]],
+    ["a1","b1",["abc|de","ade|bc"]]
+  ],
+  "B_selection_splits": [
+    ["a0","b0",["ade|bc","ae|bcd"]],
+    ["a0","b1",["ade|bc","ae|bcd"]],
+    ["a1","b0",["abc|de","ab|cde"]],
+    ["a1","b1",["abc|de","ab|cde"]]
+  ],
+  "verification": "Independent exact integer shortest-path four-point checks for each quartet and every selection, plus each physical edge cut, passed; this file is not a Lean certificate."
+}
