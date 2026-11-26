@@ -211,11 +211,22 @@ def join_results(records, index_path, results_path):
             canonical=(json.dumps(r["certificate"],sort_keys=True,ensure_ascii=True)+"\n").encode("ascii")
             need(r["intake_status"]=="ready_for_checker" and r["provenance"]==j["provenance"]
                  and hashlib.sha256(canonical).hexdigest()==j["sha256"],"stale export")
+            need(q.get("schema")=="commons.proofbridge.discovery_result.v1",
+                 "wrong checker result schema; regenerate the Discovery projection")
+            need(q.get("certificate_sha256")==j["sha256"] and
+                 q.get("checker_sha256")=="8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+                 "checker result certificate or checker hash mismatch")
             status=q.get("status")
             need(status in {"kernel-checked-conditional","not-verified","deferred"},"unknown check result")
             if status=="kernel-checked-conditional":
-                need(q.get("certificate_sha256")==j["sha256"] and
-                     q.get("checker_sha256")=="8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5"
+                axioms=q.get("axioms")
+                need(type(q.get("lean")) is str and
+                     "commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6," in q["lean"]
+                     and type(axioms) is list and all(type(x) is str and
+                         x in {"propext","Quot.sound","Classical.choice"} for x in axioms)
+                     and type(q.get("lean_module_sha256")) is str
+                     and re.fullmatch(r"[0-9a-f]{64}",q["lean_module_sha256"])
+                     and q.get("variables")==r["certificate"]["variables"]
                      and q.get("premises")==r["statement"]["premises"]
                      and q.get("conclusion")==r["statement"]["conclusion"],
                      "checker result scope or hash mismatch")

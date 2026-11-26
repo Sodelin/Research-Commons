@@ -110,6 +110,8 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
             else:
                 row={"file":item["file"],"status":"not-verified",
                      "runner_status":item["status"],"diagnostic":item.get("diagnostic","")}
+            row.update(schema="commons.proofbridge.discovery_result.v1",
+                       certificate_sha256=item["input_sha256"], checker_sha256=PINNED_CHECKER)
             with (out/"discovery-results.jsonl").open("a",encoding="ascii") as log:
                 log.write(json.dumps(row,ensure_ascii=True)+"\n")
                 log.flush()
