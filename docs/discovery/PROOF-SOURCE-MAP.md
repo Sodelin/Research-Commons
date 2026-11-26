@@ -27,3 +27,7 @@ python docs/discovery/tools/theorem-intake.py --summary
 The inventory CLI reads the named-module manifest, the content-addressed retained-source manifest, and the tracked standalone directory without compiling or copying all sources. A Windows scratch test checked the two actual input manifest Git blobs against their Commons pins, listed **233 named module records and 1,614 retained source records**, then reported an added and later changed standalone file while 1,847 records remained unchanged. Retained source records are not additional distinct proven modules; aliases and historical scopes can overlap. No full package CI replay or live hosted cache refresh.
 
 Source deltas are not build-cache keys: an unchanged consumer can fail after a transitive import changes. Use a toolchain and transitive dependency identity, or compile affected consumers again. [Pinned cloud negative control](../../research/2026-11-25-proofbridge-linear/dependency-probe.receipt.json).
+
+## Alexander 001 whole claim replay
+
+The [six-lane proof packet](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-LANE-ROUND-1.md) gives the checked single-host theorem in the pinned population model, both edge-labelled and fixed-source-gender. It rules out injective undirected adjacency-only embeddings. The source-only recovery replay is independent of the live install. This is a scoped proof result, not a new answer to the countable-family or other broader variants. The concrete Mathlib Real wrapper remains a separate replay check.
