@@ -169,11 +169,15 @@ def project(kind,raw,provenance):
                       {"premises":core["premises"],"conclusion":core["target"]},
                       None,None,[],c.get("related_ids"),"ready_for_checker",typed)
 
-def tracked_records(repo, ref):
+def queue_revision(repo,ref):
     need(type(ref) is str and re.fullmatch(r"[A-Za-z0-9_./-]+",ref)
          and not ref.startswith("-"),"invalid queue revision")
     commit=git(repo,"rev-parse","--verify",ref+"^{commit}").decode().strip()
     need(HEX.fullmatch(commit),"invalid queue commit")
+    return commit
+
+def tracked_records(repo, ref):
+    commit=queue_revision(repo,ref)
     root="research/proofbridge-incoming"
     paths=git(repo,"ls-tree","-r","--name-only",commit,"--",root).decode().splitlines()
     need(len(paths)<=512,"too many queue files for one pass")
@@ -181,6 +185,35 @@ def tracked_records(repo, ref):
         if re.fullmatch(root+r"/[A-Za-z0-9_-]+\.json",p):
             blob=git(repo,"rev-parse","--verify",commit+":"+p).decode().strip()
             yield {"commit":commit,"path":p,"blob":blob,"kind":"certificate_records"}
+
+def queue_rows(repo, ref):
+    rows={}
+    for pin in tracked_records(repo,ref):
+        raw,provenance=source(repo,pin)
+        for row in project(pin["kind"],raw,provenance):
+            need(len(rows)<2048,"too many staged records for a delta pass")
+            need(row["id"] not in rows,"duplicate stable ID: "+row["id"])
+            rows[row["id"]]=row
+    return rows
+
+def queue_delta(repo, before, at):
+    base, head=queue_revision(repo,before),queue_revision(repo,at)
+    p=subprocess.run(["git","-C",str(repo),"merge-base","--is-ancestor",base,head],
+                     capture_output=True,timeout=20)
+    need(p.returncode==0,"queue delta base is not an available ancestor")
+    old,new=queue_rows(repo,base),queue_rows(repo,head)
+    def key(row):
+        return row["provenance"]["path"],hashlib.sha256(wire(row["certificate"])).hexdigest()
+    added=sorted(set(new)-set(old))
+    removed=sorted(set(old)-set(new))
+    changed=sorted(i for i in set(new)&set(old) if key(new[i])!=key(old[i]))
+    need(len(added)+len(changed)<=512,"delta exceeds one bounded batch")
+    sameness=len(new)-len(added)-len(changed)
+    return ([new[i] for i in sorted(added+changed)],
+            {"schema":"commons.proofbridge.queue_delta.v1","base_commit":base,"head_commit":head,
+             "added":added,"changed":changed,"removed":removed,"unchanged_count":sameness,
+             "unchanged_evidence_status":"not_replayed_this_delta"})
+
 
 def intake(repo, manifest, queue_ref=None):
     o=decode(manifest.read_bytes())
@@ -198,7 +231,7 @@ def intake(repo, manifest, queue_ref=None):
 def emit(o):
     sys.stdout.buffer.write((json.dumps(o,sort_keys=True,ensure_ascii=True)+"\n").encode("ascii"))
 
-def export_ready(rows, out):
+def export_ready(rows, out, delta=None):
     selected=[r for r in rows if r["intake_status"]=="ready_for_checker"]
     out.mkdir(exist_ok=False)
     inputs=out/"inputs"
@@ -213,6 +246,8 @@ def export_ready(rows, out):
                      "provenance":r["provenance"]})
     index={"schema":"commons.theorem_intake.checker_export.v1","jobs":jobs,
            "not_exported_count":len(rows)-len(jobs)}
+    if delta is not None:
+        index["queue_delta"]=delta
     (out/"index.json").write_bytes((json.dumps(index,indent=2,ensure_ascii=True)+"\n").encode("ascii"))
     emit(index)
 
@@ -294,6 +329,7 @@ def main():
     ap.add_argument("--repo",type=Path,default=default)
     ap.add_argument("--sources",type=Path,default=Path(__file__).with_name("catalog-sources.json"))
     ap.add_argument("--include-queue-at",metavar="REVISION")
+    ap.add_argument("--queue-delta-since",metavar="BASE_REVISION",help="export added and changed typed jobs only")
     ap.add_argument("--status")
     ap.add_argument("--kind")
     ap.add_argument("--math-status")
@@ -306,6 +342,14 @@ def main():
     ap.add_argument("--checker-results",type=Path)
     ap.add_argument("--export-index",type=Path)
     a=ap.parse_args()
+    if a.queue_delta_since is not None:
+        need(a.include_queue_at and a.export_ready and not any((
+            a.status,a.kind,a.math_status,a.formal_status,a.id,a.query,a.summary,
+            a.emit_certificate,a.checker_results,a.export_index)),
+            "queue delta requires unfiltered --include-queue-at and --export-ready")
+        rows,delta=queue_delta(a.repo,a.queue_delta_since,a.include_queue_at)
+        export_ready(rows,a.export_ready,delta)
+        return
     rs=intake(a.repo,a.sources,a.include_queue_at)
     need(bool(a.checker_results)==bool(a.export_index),"use both result and export-index paths")
     if a.checker_results:
