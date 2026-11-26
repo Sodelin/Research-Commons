@@ -1,0 +1,51 @@
+{
+  "schema": "proofbridge.finder.expansion-fixture.v1",
+  "seed": "Finset.surjOn_of_injOn_of_card_le",
+  "checks_passed": 5,
+  "fixture": "Audited metadata from retained-degree case, with synthetic boundary marker; no live network traversal.",
+  "limits": {
+    "max_depth": 2,
+    "max_candidate_pulls": 4,
+    "max_neighbors_per_node": 8
+  },
+  "result": {
+    "actions": [
+      {
+        "covers_hints": [
+          "saturation"
+        ],
+        "depth": 1,
+        "id": "AlexanderOmnibus.neighbor_lift_of_same_degree",
+        "relation": "analogue"
+      },
+      {
+        "covers_hints": [
+          "edge_reflection",
+          "walk_coverage"
+        ],
+        "depth": 2,
+        "id": "AlexanderOmnibus.transport_of_retained_degrees",
+        "relation": "used_by"
+      }
+    ],
+    "declined": [
+      [
+        "Finset.map_eq_of_subset",
+        "no_current_goal_gain"
+      ],
+      [
+        "Finset.surjOn_of_injOn_of_card_le",
+        "no_current_goal_gain"
+      ]
+    ],
+    "depth_frontier": [
+      "AlexanderOmnibus.transport_of_retained_degrees"
+    ],
+    "disposition": "metadata_only",
+    "edges_examined": 4,
+    "stop": "depth_budget",
+    "uncovered": [
+      "concrete_boundary"
+    ]
+  }
+}
