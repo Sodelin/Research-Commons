@@ -31,3 +31,7 @@ Source deltas are not build-cache keys: an unchanged consumer can fail after a t
 ## Alexander 001 whole claim replay
 
 The [six-lane proof packet](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-LANE-ROUND-1.md) gives the checked single-host theorem in the pinned population model, both edge-labelled and fixed-source-gender. It rules out injective undirected adjacency-only embeddings. The source-only recovery replay is independent of the live install. This is a scoped proof result, not a new answer to the countable-family or other broader variants. The concrete Mathlib Real wrapper remains a separate replay check.
+
+## Grid-minor follow-on
+
+The [second round](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-LANE-ROUND-2.md) supplies two independently checked proofs of the same finite square-grid-minor obstruction for the balanced natural-order host. The [machine receipt](../../research/2026-11-25-proofbridge-linear/capped-host/grid-minor-receipt.json) names both exact endpoints. This is a graph-level transfer, not a claim about the countable-host-family problem or a new Mathlib Real replay.

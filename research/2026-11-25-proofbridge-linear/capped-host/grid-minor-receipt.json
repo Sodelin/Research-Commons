@@ -1,0 +1,41 @@
+{
+  "schema": "commons.proofbridge.grid-minor.v1",
+  "status": "kernel_checked_both_routes",
+  "commons_base": "e77c3ad997ccfbd9fa10b9ff36c9a3181be8679e",
+  "companion": "e2502c82ab9a77c00543932f775a71e5374221f7",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "cold_wall_seconds": 19.699,
+  "scope": {
+    "host": "natural ordered InfiniteLabeledPopulation k k",
+    "grid": "finite nonempty connected pairwise disjoint branches with host-adjacent neighbors",
+    "excluded": "k * fullRootCount(p) + 1 < n",
+    "real_replay": false
+  },
+  "stable_contract": "ResearchCommons.GridMinorRouteParity.Contract",
+  "checked_endpoints": [
+    "ResearchCommons.GridMinorRouteParity.direct",
+    "ResearchCommons.GridMinorRouteParity.reuse"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": {
+    "CommonConnectedCut.lean": "98814a9e8c0d0791d22c3215650ffca4c4221b0faaec4ffa5e81593343f6292c",
+    "GridMinorCross.lean": "c57d5cca17acba0135f4ea4690cdc1bb7bcefca5896e824f02e6b617ef7ef718",
+    "GridMinorAssembly.lean": "b30837a2aa856554b7cd61b578072118bcd295e9d10ea75d480eaa730610d4f0",
+    "CappedMinorBranchCross.lean": "638a8a73623f89a23e13878c482f75ca1f2bef233e2b6cdc701a14c78b749a33",
+    "EfficiencyBranchWidth.lean": "305cc1560b5d8ac8443e1c343eb19ef769fc4f77b459df0ee7c0d8a7f82a614e",
+    "EfficiencyGridMinorEnd.lean": "f01d86c7052ba50fdb3f2bba340d5362cf54b55c3a5f645bf5d1063fbf1f1571",
+    "SeparateCrossCoordinates.lean": "4a5b95580a8949138b45b0251d19e975670ada65c1491701a2b2c40952825b03",
+    "GridMinorObstruction.lean": "08b34e2dbaf201ec6967484678b6e016a4047cc76de9be449a17a761fa305dfb",
+    "GridMinorRouteParity.lean": "74914ba39fc3404f12c90595f291cec843a8a94a7675da45355c9a6e8064975d",
+    "GridBranchUnionConsumer.lean": "3979cd92ef7d0352933416137c7ad386c119d64b754570dd08f3660d80431ab6",
+    "GridMinorControl.lean": "48cf8eb6c88a29dd17fa5cdd812f42bc528885de4ed46eded74db7d9d5fca6f5",
+    "ScopeCheck.lean": "b829832dce036307582fc9b42cd1339a3a4aa510722184486723c4ebb4ab1136",
+    "SingletonGridBranch.lean": "801c4a461469af8108b5771580a1f79e8ad56949f03492709c20fdc633091c64",
+    "SingletonGridRegression.lean": "307741fbf9a2106bbfd240cfd8a9bcaa66eb007a565eb0800724e81177537e9c",
+    "EfficiencySingletonRegression.lean": "7647f8ac28e7f0b1fbe9cf4ca3819f24f6d5b18269b9684dad080d5dc55da83d"
+  }
+}
