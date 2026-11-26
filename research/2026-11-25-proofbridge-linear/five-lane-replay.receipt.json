@@ -1,0 +1,61 @@
+{
+  "schema": "commons.proofbridge.five_lane_replay.v1",
+  "baseline_main": "7bea57d9ac174c704e029dcb4f217eb15c4e3163",
+  "lanes": [
+    {
+      "id": "typed_authoring",
+      "accepted": "kernel-checked-conditional",
+      "premises_retained": 3,
+      "premises_dropped": 2,
+      "swapped_premise_rejected": true
+    },
+    {
+      "id": "lean_import",
+      "accepted": "kernel-checked-conditional",
+      "provider_axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "control": "rejected_by_lean_type_mismatch"
+    },
+    {
+      "id": "smt",
+      "two_fresh_scale_two_replays": true,
+      "baseline_scale_one": true
+    },
+    {
+      "id": "batch",
+      "verified_count": 3,
+      "resumed_complete": true,
+      "rejected_false_input": true
+    },
+    {
+      "id": "discovery",
+      "evidence": {
+        "schema": "commons.proofbridge.rounded_discovery_smoke.v1",
+        "manifest_sha256": "4f681622605e1e5d818763a1f8ec232be0e7c82197fe010b88fdb71f6ce82e76",
+        "statuses": {
+          "budget": "kernel-checked-conditional",
+          "positive": "kernel-checked-conditional",
+          "signed": "kernel-checked-conditional",
+          "wrong": "not-verified"
+        },
+        "authored_status_unchanged": true,
+        "rejected": {
+          "scale": "rounded checker result scope or hash mismatch",
+          "source": "rounded checker result scope or hash mismatch",
+          "intermediate": "rounded checker result scope or hash mismatch",
+          "axioms": "rounded checker result scope or hash mismatch",
+          "result_kind": "wrong checker result schema; regenerate the Discovery projection"
+        },
+        "scope": "fixture Git pins and production checkout-equivalent scripts; no hosted trigger"
+      }
+    }
+  ],
+  "coverage": {
+    "automatic_trigger": false,
+    "general_prose_import": false,
+    "mathlib_verified": false,
+    "new_conjecture_result": false
+  }
+}

@@ -47,9 +47,9 @@ def smoke(lean):
         assert first[1]["proof"]["target"]["le"]==1 and second[0]["proof"]["target"]["le"]==-2
         assert second[1]["status"]=="not_verified" and "invalid linear combination" in second[1]["diagnostic"]
         assert opt_out[0]["status"]=="not_verified" and "requires --rounded" in opt_out[0]["diagnostic"]
-        assert first[-1]["rounded_omitted_from_discovery"]==1 and second[-1]["rounded_omitted_from_discovery"]==2
-        assert len((d/"first/discovery-results.jsonl").read_text().splitlines())==1
-        assert not (d/"second/discovery-results.jsonl").exists()
+        assert first[-1]["rounded_projected_to_discovery"]==1 and second[-1]["rounded_projected_to_discovery"]==2
+        assert len((d/"first/discovery-results.jsonl").read_text().splitlines())==2
+        assert len((d/"second/discovery-results.jsonl").read_text().splitlines())==2
         for name,row in [("first",first[1]),("second",second[0])]:
             mod=d/name/row["artifact_dir"]
             assert all(linear.sha((mod/f).read_bytes())==h for f,h in row["proof"]["files_sha256"].items())

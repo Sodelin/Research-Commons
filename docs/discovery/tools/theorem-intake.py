@@ -7,6 +7,21 @@ HEX = re.compile(r"[0-9a-f]{40}")
 KINDS = {"claim_board","obligations","hand_sections","incorporation","handoff","certificate_records","recovered_claims","recovered_files","preservation","binding_inventory","package_claims","exact_lean_bindings","reading_guide"}
 FIELDS = {"schema","sources"}
 CERT_SCHEMA = "commons.linear-int.v1"
+ROUND_SCHEMA = "commons.proofbridge.rounded_batch_input.v1"
+ROUND_RESULT = "commons.proofbridge.rounded_discovery_result.v1"
+DEFAULT_RESULT = "commons.proofbridge.discovery_result.v1"
+CHECKER_SHA = "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5"
+
+def wire(o):
+    return (json.dumps(o,sort_keys=True,ensure_ascii=True)+"\n").encode("ascii")
+
+def hex256(s):
+    return type(s) is str and re.fullmatch(r"[0-9a-f]{64}",s) is not None
+
+def safe_axioms(a):
+    return type(a) is list and all(type(x) is str and
+                x in {"propext","Quot.sound","Classical.choice"} for x in a)
+
 
 def need(ok,msg):
     if not ok:
@@ -142,9 +157,16 @@ def project(kind,raw,provenance):
         need(o["schema"]=="commons.proofbridge.certificate_records.v1","unknown record list")
         for c in o["records"]:
             typed=c["certificate"]
-            need(type(typed) is dict and typed.get("schema")==CERT_SCHEMA,"unsupported record schema")
+            need(type(typed) is dict,"unsupported record schema")
+            core=typed
+            if typed.get("schema")==ROUND_SCHEMA:
+                need(set(typed)=={"schema","scale","certificate"}
+                     and type(typed["scale"]) is int and 1<=typed["scale"]<=1000,
+                     "invalid rounded envelope")
+                core=typed["certificate"]
+            need(type(core) is dict and core.get("schema")==CERT_SCHEMA,"unsupported record schema")
             yield row(c["id"],"proposed_conditional_theorem",
-                      {"premises":typed["premises"],"conclusion":typed["target"]},
+                      {"premises":core["premises"],"conclusion":core["target"]},
                       None,None,[],c.get("related_ids"),"ready_for_checker",typed)
 
 def tracked_records(repo, ref):
@@ -185,7 +207,7 @@ def export_ready(rows, out):
     for r in selected:
         ident=r["id"]
         name=hashlib.sha256(ident.encode()).hexdigest()+".json"
-        raw=(json.dumps(r["certificate"],sort_keys=True,ensure_ascii=True)+"\n").encode("ascii")
+        raw=wire(r["certificate"])
         (inputs/name).write_bytes(raw)
         jobs.append({"id":ident,"file":name,"sha256":hashlib.sha256(raw).hexdigest(),
                      "provenance":r["provenance"]})
@@ -208,17 +230,21 @@ def join_results(records, index_path, results_path):
             seen.add(n)
             j=jobs[n]
             r=records[j["id"]]
-            canonical=(json.dumps(r["certificate"],sort_keys=True,ensure_ascii=True)+"\n").encode("ascii")
+            canonical=wire(r["certificate"])
             need(r["intake_status"]=="ready_for_checker" and r["provenance"]==j["provenance"]
                  and hashlib.sha256(canonical).hexdigest()==j["sha256"],"stale export")
-            need(q.get("schema")=="commons.proofbridge.discovery_result.v1",
+            wrapped=r["certificate"]
+            is_round=wrapped["schema"]==ROUND_SCHEMA
+            need(q.get("schema")==(ROUND_RESULT if is_round else DEFAULT_RESULT),
                  "wrong checker result schema; regenerate the Discovery projection")
             need(q.get("certificate_sha256")==j["sha256"] and
-                 q.get("checker_sha256")=="8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+                 q.get("checker_sha256")==CHECKER_SHA,
                  "checker result certificate or checker hash mismatch")
             status=q.get("status")
             need(status in {"kernel-checked-conditional","not-verified","deferred"},"unknown check result")
-            if status=="kernel-checked-conditional":
+            if status=="kernel-checked-conditional" and is_round:
+                check_round(wrapped,q)
+            elif status=="kernel-checked-conditional":
                 axioms=q.get("axioms")
                 need(type(q.get("lean")) is str and
                      "commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6," in q["lean"]
@@ -233,6 +259,34 @@ def join_results(records, index_path, results_path):
             r["imported_replay"]={"evidence_status":"provided_receipt_not_recompiled",
                                   "result":q}
             # Authored mathematical and formal status are intentionally untouched.
+
+def check_round(wrapped,q):
+    cert=wrapped["certificate"]
+    scale=wrapped["scale"]
+    target=cert["target"]
+    intermediate={"coeffs":[scale*x for x in target["coeffs"]],
+                  "le":scale*(target["le"]+1)-1}
+    def inner(o):
+        return (json.dumps(o,sort_keys=True,separators=(",",":"))+"\n").encode("ascii")
+    mid=hashlib.sha256(inner({**cert,"target":intermediate})).hexdigest()
+    name="PB_"+mid
+    files=q.get("files_sha256")
+    helpers=q.get("rounded_helper_sha256")
+    need(type(files) is dict and set(files)=={name+".lean",name+".olean","ReuseOriginal.lean"}
+         and all(hex256(x) for x in files.values())
+         and type(helpers) is dict and set(helpers)=={"assumption_relay.py","import_reduced.py",
+                                                    "premise_handoff.py","rounded_witness.py"}
+         and all(hex256(x) for x in helpers.values()),"rounded artifact or helper pins missing")
+    need(q.get("source_sha256")==hashlib.sha256(inner(cert)).hexdigest()
+         and q.get("intermediate_certificate_sha256")==mid
+         and type(q.get("lean")) is str
+         and "commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6," in q["lean"]
+         and safe_axioms(q.get("provider_axioms")) and safe_axioms(q.get("consumer_axioms"))
+         and wire({k:q.get(k) for k in ("variables","premises","multipliers","target","scale","intermediate_target")})==
+               wire({**{k:cert[k] for k in ("variables","premises","multipliers","target")},
+                     "scale":scale,"intermediate_target":intermediate}),
+         "rounded checker result scope or hash mismatch")
+
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)

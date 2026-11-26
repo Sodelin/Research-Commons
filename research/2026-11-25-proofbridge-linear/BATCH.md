@@ -38,7 +38,7 @@ An existing scaled SMT witness can be replayed without running Z3 again. Wrap th
 
 Place the envelope and any legacy certificates in the same input directory, make and pin the same v1 manifest, and add `--rounded --lean /path/to/pinned/lean` to `run`. Each rounded success records the outer input hash, the inner certificate and helper pins, and the generated Lean module hashes, in a fresh artifact directory. A retained artifact directory without a successful receipt is not a verified delivery. The rounded route uses three bounded Lean subprocesses, including its version check. Rejections and timeouts do not become theorem disproofs.
 
-Legacy Discovery projection is unchanged. Rounded entries are explicitly counted in `rounded_omitted_from_discovery` instead of mislabeling their receipts. Their authoritative per-entry JSON is available for future typed Discovery projection. No model or SMT invocation, automatic trigger, reusable-cache skip or remote worker deployment is added.
+Legacy Discovery projection is unchanged. With `--discovery-jsonl`, rounded inputs now emit a distinct versioned result schema, counted by `rounded_projected_to_discovery`. Discovery checks the exact scale, original target, intermediate, input and source scope; a supplied record is not a fresh replay. The per-entry receipt remains authoritative for the run. The original mixed-batch receipt predates the typed Discovery projection; see the [current joint replay](rounded-discovery.receipt.json). No model or SMT invocation, automatic trigger, reusable-cache skip or remote worker deployment is added.
 
 ```sh
 python3 test_mixed_batch.py /path/to/pinned/lean

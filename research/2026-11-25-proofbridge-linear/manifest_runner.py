@@ -7,6 +7,7 @@ SCHEMA = "commons.proofbridge.manifest.v1"
 PINNED_CHECKER = "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5"
 HEX = re.compile(r"[0-9a-f]{64}")
 ROUND_SCHEMA = "commons.proofbridge.rounded_batch_input.v1"
+ROUND_RESULT = "commons.proofbridge.rounded_discovery_result.v1"
 ROUND_HELPERS = {
     "assumption_relay.py":"3427f576c3bae3c6fef3c358e0b21b53a5b1bcbb7c9452a8cc5bc3facf0e42d1",
     "import_reduced.py":"999b7fa74ca16e6353b92a172c7986a9fc15d3d65a1a0b1abcf5dc433f483c1f",
@@ -101,7 +102,7 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
     stop = time.monotonic() + wall
     index = start
     failures = 0
-    omitted_rounded = 0
+    projected_rounded = 0
     while index < len(entries) and index < start + jobs:
         allowance = min(per_job, (stop-time.monotonic())/3)
         if allowance < 1:
@@ -136,16 +137,18 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
             failures += 1
             item.update(status="not_verified", diagnostic=str(exc)[:1000])
         save_new_receipt(out, item)
-        if discovery_jsonl and item.get("input_schema") == ROUND_SCHEMA:
-            omitted_rounded += 1
-        elif discovery_jsonl:
+        if discovery_jsonl:
+            is_round = item.get("input_schema") == ROUND_SCHEMA
+            projected_rounded += int(is_round)
             if item["status"] == "verified_now":
                 row={**item["proof"],"file":item["file"]}
             else:
                 row={"file":item["file"],"status":"not-verified",
                      "runner_status":item["status"],"diagnostic":item.get("diagnostic","")}
-            row.update(schema="commons.proofbridge.discovery_result.v1",
+            row.update(schema=ROUND_RESULT if is_round else "commons.proofbridge.discovery_result.v1",
                        certificate_sha256=item["input_sha256"], checker_sha256=PINNED_CHECKER)
+            if is_round and item["status"] == "verified_now":
+                row["rounded_helper_sha256"] = ROUND_HELPERS
             with (out/"discovery-results.jsonl").open("a",encoding="ascii") as log:
                 log.write(json.dumps(row,ensure_ascii=True)+"\n")
                 log.flush()
@@ -154,8 +157,8 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
         index += 1
     print(json.dumps({"next_index": index, "entries": len(entries), "failures": failures,
                       "complete": index == len(entries),
-                      **({"rounded_omitted_from_discovery":omitted_rounded}
-                         if omitted_rounded else {})}), flush=True)
+                      **({"rounded_projected_to_discovery":projected_rounded}
+                         if projected_rounded else {})}), flush=True)
     return int(failures > 0)
 
 def main():

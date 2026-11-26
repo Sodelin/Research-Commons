@@ -21,11 +21,11 @@ Tested: two different records were accepted as conditional theorems, with [prope
 
 ## Five workstreams
 
-1. **Authoring:** typed hand record to readable derivation, usable now for integer inequalities. Next: pin source statement and role, then rational coefficients and proof blocks. Preserve free-form discovery notes, but treat automatic extraction as a draft.
-2. **Kernel:** explicit weighted combination checked now. Next: separately prove equivalence at statement boundaries, then build reusable symbolic lemmas rather than expanding large generated files.
-3. **Mathlib and SMT:** confirmed interfaces and emitted SMT-LIB. Next: execute one compatible isolated external replay, preserve solver and toolchain pins, and demonstrate bad proof rejection.
-4. **Desktop batch:** bounded and manually resumable now. Next: signed or otherwise trusted immutable input manifest, content keys spanning dependency closure, interrupt-safe receipts and per-schema timing. Use deterministic checking before spending model tokens. On a 20-proof sample compare total cost per accepted scoped theorem and human interventions, not token count alone.
-5. **Discovery:** [scoped entries](DISCOVERY.md) in the existing body index inclusion path. Next: refresh the live cache from a pinned checkout and validate exact-path queries. Do not relabel open conjectures as closed or confuse standalone Lean with aggregate exports.
+1. **Typed authoring:** exact linear and one-rounding certificates; [stable theorem and premise handoff](ASSUMPTION-RELAY.md). Hand prose still needs a typed statement.
+2. **Kernel:** [checked import](import-reduced.receipt.json) of a reduced theorem into a second module, with an exact weaker-provider rejection. No trusted cache skip.
+3. **SMT:** [one-step rounding synthesis](ROUNDING.md) checked independently in Lean. Not a general SMT proof importer or Mathlib adapter.
+4. **Cloud batch:** [mixed resumable replay](BATCH.md) with immutable manifest, per-entry receipts and generated module hashes. Automatic pickup and the larger backlog trial are pending.
+5. **Discovery:** [theorem intake](../../docs/discovery/THEOREM-INTAKE.md) exports both supported types and attaches [typed replay evidence](rounded-discovery.receipt.json) without changing authored conjecture status.
 
 ## Cloud-verified narrow SMT route
 
