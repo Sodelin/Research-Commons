@@ -30,3 +30,5 @@ Tested: two different records were accepted as conditional theorems, with [prope
 ## Cloud-verified narrow SMT route
 
 `python3 smt_witness.py goldbach-budget.goal.json --lean /path/to/lean --z3-library /path/to/libz3.so --mutate` uses the [Z3 C API](https://z3prover.github.io/api/html/group__capi) to find nonnegative integer combination coefficients, then checks the actual coefficient witness in pinned Lean. See [success](smt-witness.receipt.json) and [no-witness](smt-no-witness.receipt.json). The goal record contains no coefficients. The 187 budget statement is conditional on its original supplied bounds; a changed witness failed Lean and the 188 target had no witness in this restricted system. No witness does not generally refute a theorem, and the code is not a general SMT-proof importer or a Mathlib route. Earlier notes above describe the pre-synthesis state.
+
+For the mixed batch handoff of prior SMT witnesses into fresh Lean modules see [Batch replay](BATCH.md#mixed-legacy-and-integer-rounding-replay) and [integer rounding](ROUNDING.md).

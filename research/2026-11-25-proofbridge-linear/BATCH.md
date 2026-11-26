@@ -27,3 +27,21 @@ Next capacity test: select 20 representative supported and unsupported records f
 Add `--lean /path/to/pinned/lean --discovery-jsonl` to the same `run` command. The runner checks the direct compiler pin before creating the output directory. The existing per-entry receipts remain the durable master; `out/discovery-results.jsonl` is a separate projection for `theorem-intake.py --checker-results` with the matching export index. Resume in a fresh run directory. A checker rejection or timeout does not become a theorem failure or a verification. If a crash interrupts the projection, retain authoritative per-entry receipts and rerun with the same immutable manifest instead of trusting a partial tail. [Cloud smoke receipt](cloud-batch.receipt.json) records a successful conditional proof and a rejected input rejoining their exact rows. This is not an automatic build-on-push service.
 
 Each projected row uses `commons.proofbridge.discovery_result.v1` and carries the certificate and checker SHA-256 even for a rejection or timeout. Discovery refuses stale failures at a reused filename and checks reported Lean commit, allowed axioms, variables, premises and conclusion on conditional passes. Regenerate projections created before this format; the per-entry evidence does not change. A matching projection is still a provided receipt, not an independent rerun or cryptographic attestation of the runner.
+
+## Mixed legacy and integer-rounding replay
+
+An existing scaled SMT witness can be replayed without running Z3 again. Wrap the prior receipt's `candidate` and `verification.scale` as:
+
+```json
+{"schema":"commons.proofbridge.rounded_batch_input.v1","scale":2,"certificate":{"schema":"commons.linear-int.v1","variables":["x","y"],"premises":[{"coeffs":[2,1],"le":3},{"coeffs":[0,-1],"le":0}],"target":{"coeffs":[1,0],"le":1},"multipliers":[1,1]}}
+```
+
+Place the envelope and any legacy certificates in the same input directory, make and pin the same v1 manifest, and add `--rounded --lean /path/to/pinned/lean` to `run`. Each rounded success records the outer input hash, the inner certificate and helper pins, and the generated Lean module hashes, in a fresh artifact directory. A retained artifact directory without a successful receipt is not a verified delivery. The rounded route uses three bounded Lean subprocesses, including its version check. Rejections and timeouts do not become theorem disproofs.
+
+Legacy Discovery projection is unchanged. Rounded entries are explicitly counted in `rounded_omitted_from_discovery` instead of mislabeling their receipts. Their authoritative per-entry JSON is available for future typed Discovery projection. No model or SMT invocation, automatic trigger, reusable-cache skip or remote worker deployment is added.
+
+```sh
+python3 test_mixed_batch.py /path/to/pinned/lean
+```
+
+[Cloud mixed replay](mixed-batch.receipt.json): one unchanged legacy certificate and two existing SMT witnesses pass across two resumable invocations. The stronger false bound and an opt-out rounded job are rejected; the generated module files were checked against the receipt hashes.

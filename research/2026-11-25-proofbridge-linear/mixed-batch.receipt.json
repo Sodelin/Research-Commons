@@ -1,0 +1,268 @@
+{
+  "schema": "commons.proofbridge.mixed_batch_smoke.v1",
+  "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+  "first": [
+    {
+      "index": 0,
+      "file": "00-legacy.json",
+      "input_sha256": "98e115ecaa9245a6662048c78a15db5929be523f97f9b18f7fd22dc7d0ffff3e",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+      "status": "verified_now",
+      "proof": {
+        "status": "kernel-checked-conditional",
+        "certificate_sha256": "98e115ecaa9245a6662048c78a15db5929be523f97f9b18f7fd22dc7d0ffff3e",
+        "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+        "lean_module_sha256": "b62757590dddd2afe4bbf53396e60e5c8ebc50e488df931101a8c610025ec696",
+        "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "smt": "not-run",
+        "exact_combination_bound": -187,
+        "variables": [
+          "margin",
+          "odd_charge",
+          "center_charge"
+        ],
+        "premises": [
+          {
+            "coeffs": [
+              -1,
+              0,
+              0
+            ],
+            "le": -330
+          },
+          {
+            "coeffs": [
+              0,
+              1,
+              0
+            ],
+            "le": 98
+          },
+          {
+            "coeffs": [
+              0,
+              0,
+              1
+            ],
+            "le": 45
+          }
+        ],
+        "conclusion": {
+          "coeffs": [
+            -1,
+            1,
+            1
+          ],
+          "le": -187
+        }
+      }
+    },
+    {
+      "index": 1,
+      "file": "01-positive.json",
+      "input_sha256": "9ae136c5eb6a277d8b4cbdf5c84aafcc5f9edb4dc70a70350fbf3e3d2d5dca5e",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+      "input_schema": "commons.proofbridge.rounded_batch_input.v1",
+      "rounded_helper_sha256": {
+        "assumption_relay.py": "3427f576c3bae3c6fef3c358e0b21b53a5b1bcbb7c9452a8cc5bc3facf0e42d1",
+        "import_reduced.py": "999b7fa74ca16e6353b92a172c7986a9fc15d3d65a1a0b1abcf5dc433f483c1f",
+        "premise_handoff.py": "b7f5630f3f0fdf1bbf2ed564f883234d861148d4fcc1e97e620f925a079e51b6",
+        "rounded_witness.py": "50e01df9491619035384eadf049d040563927bad726c775093a280259f45dbf2"
+      },
+      "artifact_dir": "module_0001",
+      "status": "verified_now",
+      "proof": {
+        "schema": "commons.linear-int.rounded-witness.v1",
+        "status": "kernel-checked-conditional",
+        "source_sha256": "e5937ce7850c446b3d4ba37e9d03e2420d3d9516d0e31a2aead42ee4de9cd2ca",
+        "variables": [
+          "x",
+          "y"
+        ],
+        "premises": [
+          {
+            "coeffs": [
+              2,
+              1
+            ],
+            "le": 3
+          },
+          {
+            "coeffs": [
+              0,
+              -1
+            ],
+            "le": 0
+          }
+        ],
+        "multipliers": [
+          1,
+          1
+        ],
+        "scale": 2,
+        "target": {
+          "coeffs": [
+            1,
+            0
+          ],
+          "le": 1
+        },
+        "intermediate_target": {
+          "coeffs": [
+            2,
+            0
+          ],
+          "le": 3
+        },
+        "intermediate_certificate_sha256": "3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f",
+        "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "provider_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "consumer_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "files_sha256": {
+          "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.lean": "569064299a45dcaf54c871fd3f90aa5ed6de15a2f1343432754051cfd2bc9879",
+          "ReuseOriginal.lean": "73f28ad4d4f613ee35ae845eecf5db00a810d88201f38ff952bcce4e07316739",
+          "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.olean": "62dccb95fd38072e4745f99955bddbc2f649efa761a6735579b2255759b69706"
+        }
+      }
+    },
+    {
+      "next_index": 2,
+      "entries": 4,
+      "failures": 0,
+      "complete": false,
+      "rounded_omitted_from_discovery": 1
+    }
+  ],
+  "resumed": [
+    {
+      "index": 2,
+      "file": "02-signed.json",
+      "input_sha256": "2e75b8762ca25f2370da97607450e9c105b68649b7c10545ef28f6aee01bf34a",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+      "input_schema": "commons.proofbridge.rounded_batch_input.v1",
+      "rounded_helper_sha256": {
+        "assumption_relay.py": "3427f576c3bae3c6fef3c358e0b21b53a5b1bcbb7c9452a8cc5bc3facf0e42d1",
+        "import_reduced.py": "999b7fa74ca16e6353b92a172c7986a9fc15d3d65a1a0b1abcf5dc433f483c1f",
+        "premise_handoff.py": "b7f5630f3f0fdf1bbf2ed564f883234d861148d4fcc1e97e620f925a079e51b6",
+        "rounded_witness.py": "50e01df9491619035384eadf049d040563927bad726c775093a280259f45dbf2"
+      },
+      "artifact_dir": "module_0002",
+      "status": "verified_now",
+      "proof": {
+        "schema": "commons.linear-int.rounded-witness.v1",
+        "status": "kernel-checked-conditional",
+        "source_sha256": "76b06262de6ff045f83d1c5a9163f5e89de7170881e48ff0d7edd7833c477809",
+        "variables": [
+          "x",
+          "y"
+        ],
+        "premises": [
+          {
+            "coeffs": [
+              2,
+              1
+            ],
+            "le": -3
+          },
+          {
+            "coeffs": [
+              0,
+              -1
+            ],
+            "le": 0
+          }
+        ],
+        "multipliers": [
+          1,
+          1
+        ],
+        "scale": 2,
+        "target": {
+          "coeffs": [
+            1,
+            0
+          ],
+          "le": -2
+        },
+        "intermediate_target": {
+          "coeffs": [
+            2,
+            0
+          ],
+          "le": -3
+        },
+        "intermediate_certificate_sha256": "359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f",
+        "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "provider_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "consumer_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "files_sha256": {
+          "PB_359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f.lean": "a7a9598593294d8530f4204ee0099bc1335edef541a313bfd6b26357c4006e59",
+          "ReuseOriginal.lean": "d48e57235d8704830c2a6a3b56cb1ed405e6fac46b8d7d20397ef2291d3e4994",
+          "PB_359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f.olean": "1dfa7e43b4befe0fe1ff8ee951212be00df81d8ea32bdbdf13ff764eebd8df79"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "file": "03-overclaim.json",
+      "input_sha256": "72f96beb13648a350a6295d32c87d73a3341a1450d9bc6fd2412d9dcf2f9f3d6",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+      "input_schema": "commons.proofbridge.rounded_batch_input.v1",
+      "rounded_helper_sha256": {
+        "assumption_relay.py": "3427f576c3bae3c6fef3c358e0b21b53a5b1bcbb7c9452a8cc5bc3facf0e42d1",
+        "import_reduced.py": "999b7fa74ca16e6353b92a172c7986a9fc15d3d65a1a0b1abcf5dc433f483c1f",
+        "premise_handoff.py": "b7f5630f3f0fdf1bbf2ed564f883234d861148d4fcc1e97e620f925a079e51b6",
+        "rounded_witness.py": "50e01df9491619035384eadf049d040563927bad726c775093a280259f45dbf2"
+      },
+      "status": "not_verified",
+      "diagnostic": "invalid linear combination"
+    },
+    {
+      "next_index": 4,
+      "entries": 4,
+      "failures": 1,
+      "complete": true,
+      "rounded_omitted_from_discovery": 2
+    }
+  ],
+  "rounded_opt_out": [
+    {
+      "index": 1,
+      "file": "01-positive.json",
+      "input_sha256": "9ae136c5eb6a277d8b4cbdf5c84aafcc5f9edb4dc70a70350fbf3e3d2d5dca5e",
+      "checker_sha256": "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5",
+      "manifest_sha256": "aeb216908e7aaba6baf3e3fcaf4e9e36c191b938646f550dee26e233270815b2",
+      "input_schema": "commons.proofbridge.rounded_batch_input.v1",
+      "status": "not_verified",
+      "diagnostic": "rounded batch input requires --rounded and --lean"
+    },
+    {
+      "next_index": 2,
+      "entries": 4,
+      "failures": 1,
+      "complete": false
+    }
+  ],
+  "artifact_hashes_rechecked": true,
+  "solver_used_during_replay": false
+}

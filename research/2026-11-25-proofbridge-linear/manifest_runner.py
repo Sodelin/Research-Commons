@@ -6,6 +6,13 @@ import linear
 SCHEMA = "commons.proofbridge.manifest.v1"
 PINNED_CHECKER = "8872348bfde6b6961e985e8bcfac1db320239e973b84cb79d3b36ec065ae7ee5"
 HEX = re.compile(r"[0-9a-f]{64}")
+ROUND_SCHEMA = "commons.proofbridge.rounded_batch_input.v1"
+ROUND_HELPERS = {
+    "assumption_relay.py":"3427f576c3bae3c6fef3c358e0b21b53a5b1bcbb7c9452a8cc5bc3facf0e42d1",
+    "import_reduced.py":"999b7fa74ca16e6353b92a172c7986a9fc15d3d65a1a0b1abcf5dc433f483c1f",
+    "premise_handoff.py":"b7f5630f3f0fdf1bbf2ed564f883234d861148d4fcc1e97e620f925a079e51b6",
+    "rounded_witness.py":"50e01df9491619035384eadf049d040563927bad726c775093a280259f45dbf2",
+}
 NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]{0,95}\.json")
 
 def need(condition, msg):
@@ -74,15 +81,27 @@ def save_new_receipt(out, item):
     # The run owns a freshly created output directory; readers see only complete receipts.
     os.replace(stage, dest)
 
-def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=False):
+def rounded_dependencies():
+    here = Path(__file__).resolve().parent
+    for name, h in ROUND_HELPERS.items():
+        need(digest((here/name).read_bytes()) == h, "unexpected rounded helper: "+name)
+    # Only locally installed, source-pinned helpers are executable.
+    import rounded_witness
+    return rounded_witness
+
+
+def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=False,
+        rounded_lean=None):
     folder = folder.resolve(strict=True)
     entries = load(manifest, pin)
     need(0 <= start < len(entries) and 1 <= jobs <= 512 and
          3 <= wall <= 14400 and 1 <= per_job <= 120, "bad run limits")
+    rounded = rounded_dependencies() if rounded_lean is not None else None
     out.mkdir(exist_ok=False)
     stop = time.monotonic() + wall
     index = start
     failures = 0
+    omitted_rounded = 0
     while index < len(entries) and index < start + jobs:
         allowance = min(per_job, (stop-time.monotonic())/3)
         if allowance < 1:
@@ -93,18 +112,33 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
         try:
             data = entry_bytes(folder, e["file"])
             need(digest(data) == e["sha256"], "input hash mismatch")
-            result = linear.checked(data, timeout=allowance)
-            need(result["checker_sha256"] == PINNED_CHECKER and
-                 result["certificate_sha256"] == e["sha256"], "checker receipt mismatch")
+            obj = json.loads(data,object_pairs_hook=linear.object_pairs)
+            if type(obj) is dict and obj.get("schema") == ROUND_SCHEMA:
+                item["input_schema"] = ROUND_SCHEMA
+                need(rounded is not None, "rounded batch input requires --rounded and --lean")
+                linear.fields(obj, ["schema","scale","certificate"])
+                body = rounded.assumption_relay.canonical(obj["certificate"])
+                item["rounded_helper_sha256"] = ROUND_HELPERS
+                stage = out / f"module_{index:04}"
+                result = rounded.checked(body, digest(body), obj["scale"], rounded_lean, stage,
+                                         timeout=min(allowance,per_job/3))
+                need(result["source_sha256"] == digest(body), "rounded receipt mismatch")
+                item["artifact_dir"] = stage.name
+            else:
+                result = linear.checked(data, timeout=allowance)
+                need(result["checker_sha256"] == PINNED_CHECKER and
+                     result["certificate_sha256"] == e["sha256"], "checker receipt mismatch")
             item.update(status="verified_now", proof=result)
         except subprocess.TimeoutExpired as exc:
             failures += 1
             item.update(status="timed_out", diagnostic=str(exc)[:1000])
-        except (OSError, ValueError, subprocess.SubprocessError) as exc:
+        except (OSError, TypeError, ValueError, subprocess.SubprocessError) as exc:
             failures += 1
             item.update(status="not_verified", diagnostic=str(exc)[:1000])
         save_new_receipt(out, item)
-        if discovery_jsonl:
+        if discovery_jsonl and item.get("input_schema") == ROUND_SCHEMA:
+            omitted_rounded += 1
+        elif discovery_jsonl:
             if item["status"] == "verified_now":
                 row={**item["proof"],"file":item["file"]}
             else:
@@ -119,7 +153,9 @@ def run(folder, manifest, pin, out, start, jobs, wall, per_job, discovery_jsonl=
         print(json.dumps(item), flush=True)
         index += 1
     print(json.dumps({"next_index": index, "entries": len(entries), "failures": failures,
-                      "complete": index == len(entries)}), flush=True)
+                      "complete": index == len(entries),
+                      **({"rounded_omitted_from_discovery":omitted_rounded}
+                         if omitted_rounded else {})}), flush=True)
     return int(failures > 0)
 
 def main():
@@ -139,16 +175,19 @@ def main():
     run_p.add_argument("--per-job",type=int,default=30)
     run_p.add_argument("--lean",type=Path,help="trusted pinned direct Lean executable")
     run_p.add_argument("--discovery-jsonl",action="store_true")
+    run_p.add_argument("--rounded",action="store_true",help="enable typed integer-rounding replay")
     a=ap.parse_args()
     if a.op == "make":
         sys.stdout.buffer.write((json.dumps(make(a.folder,a.files),sort_keys=True,indent=2)+"\n").encode("ascii"))
         return 0
+    need(not a.rounded or a.lean is not None, "--rounded requires --lean")
+    binary=None
     if a.lean is not None:
         binary=a.lean.resolve(strict=True)
         version=subprocess.check_output([str(binary),"--version"],text=True,timeout=10)
         need(linear.COMMIT in version,"wrong Lean toolchain commit")
         linear.LEAN[:]=[str(binary)]
-    return run(a.folder,a.manifest,a.sha256,a.out,a.start,a.jobs,a.wall,a.per_job,a.discovery_jsonl)
+    return run(a.folder,a.manifest,a.sha256,a.out,a.start,a.jobs,a.wall,a.per_job,a.discovery_jsonl,binary if a.rounded else None)
 
 if __name__ == "__main__":
     try:

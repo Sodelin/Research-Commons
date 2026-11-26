@@ -13,7 +13,7 @@ import premise_handoff
 RULE = "commons.linear-int.rounded-witness.v1"
 
 
-def checked(raw, pin, scale, lean, out):
+def checked(raw, pin, scale, lean, out, timeout=30):
     linear.require(type(scale) is int and 1 <= scale <= 1000, "invalid positive scale")
     linear.require(linear.sha(raw) == pin, "source certificate hash mismatch")
     original = linear.parse(raw)
@@ -27,7 +27,7 @@ def checked(raw, pin, scale, lean, out):
                    "unexpected checker bytes")
     lean = lean.resolve(strict=True)
     out = out.resolve()
-    version = importer.invoke(lean, out.parent, "--version")
+    version = importer.invoke(lean, out.parent, "--version", timeout=timeout)
     linear.require("commit " + linear.COMMIT + "," in version, "wrong Lean toolchain commit")
     module = "PB_" + linear.sha(mid_bytes)
     provider = importer.provider(module, intermediate)
@@ -43,8 +43,8 @@ def checked(raw, pin, scale, lean, out):
     out.mkdir(exist_ok=False)
     for name, content in files.items():
         (out/name).write_bytes(content.encode("ascii"))
-    provider_axioms = importer.axioms(importer.invoke(lean, out, "-o", module+".olean",module+".lean"))
-    consumer_axioms = importer.axioms(importer.invoke(lean, out,"ReuseOriginal.lean"))
+    provider_axioms = importer.axioms(importer.invoke(lean, out, "-o", module+".olean",module+".lean",timeout=timeout))
+    consumer_axioms = importer.axioms(importer.invoke(lean, out,"ReuseOriginal.lean",timeout=timeout))
     return {"schema":RULE,"status":"kernel-checked-conditional",
             "source_sha256":pin,"variables":original["variables"],"premises":original["premises"],
             "multipliers":original["multipliers"],"scale":scale,"target":target,

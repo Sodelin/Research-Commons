@@ -34,11 +34,11 @@ def consumer(module, original, kept_indices):
             "#print axioms reuseOriginal\n")
 
 
-def invoke(lean, directory, *args):
+def invoke(lean, directory, *args, timeout=30):
     env = {k:v for k,v in os.environ.items() if not k.startswith("LEAN_")}
     env["LEAN_PATH"] = str(directory)
     proc = subprocess.run([str(lean), *args], cwd=directory, env=env,
-                          text=True, capture_output=True, timeout=30)
+                          text=True, capture_output=True, timeout=timeout)
     linear.require(proc.returncode == 0, "Lean refused: " + (proc.stdout + proc.stderr)[:2000])
     return proc.stdout.strip()
 
