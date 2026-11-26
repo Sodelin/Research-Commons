@@ -29,3 +29,5 @@ A full staged Lean pull/readback example is in [PULL.md](PULL.md), with status a
 **Scale tests:** [broad metadata search, exact lookup, and one bounded proof-job registration](SOURCE-SCALE.md).
 
 **Finder design and held-out retest:** [Mathlib metadata, one selected file, and its unresolved import boundary](FINDER.md).
+
+**Open discovery routing:** [public premise lookup, exact pin, and compatibility grouping](OPEN-FINDER.md).

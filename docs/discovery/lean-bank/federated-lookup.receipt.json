@@ -1,0 +1,53 @@
+{
+  "schema": "commons.discovery.federated-premise-lookup.v1",
+  "goal": "Transport reachability in both directions after an isomorphism of retained induced graph components.",
+  "budget": {
+    "headless_only": true,
+    "max_federated_channels": 3,
+    "max_source_files": 1
+  },
+  "channels": [
+    {
+      "provider": "public_web_search",
+      "scope": "public web",
+      "outcome": "official Mathlib documentation found",
+      "role": "discovery",
+      "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/SimpleGraph/Connectivity/Connected.html"
+    },
+    {
+      "provider": "github_code",
+      "scope": "public Mathlib code",
+      "outcome": "four leads; search revision is newer than the user's known mathlib pin",
+      "role": "discovery",
+      "search_commit": "348837d3aa976624060d7c35c183fff587c5a24a"
+    },
+    {
+      "provider": "alphaXiv",
+      "scope": "public papers",
+      "outcome": "theorem retrieval method leads, not an exact graph lemma",
+      "role": "research_context",
+      "url": "https://arxiv.org/abs/2506.11085"
+    }
+  ],
+  "historical_context": {
+    "provider": "VibeMathed via public web",
+    "role": "published_claim_context_not_kernel",
+    "url": "https://vibemathed.com/problem/no-countable-universal-family-of-avoiding-populations-even-with-exact-parent-cou"
+  },
+  "selected": {
+    "repo": "leanprover-community/mathlib4",
+    "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/Combinatorics/SimpleGraph/Connectivity/Connected.lean",
+    "blob": "35f4e56f97f6260b0426323dc255d222a8e6078a",
+    "line": 140,
+    "declaration": "SimpleGraph.Iso.reachable_iff",
+    "status": "pinned_source_contains_candidate",
+    "lean_run": false,
+    "local_reuse": false,
+    "requires": "An actual graph isomorphism; an adjacency-preserving injection alone does not justify the reverse direction.",
+    "compiler": "Lean 4.33.1 declared at this release",
+    "resolved_imports": false,
+    "axiom_profile": null
+  },
+  "authorization": "Read-only public topic queries; no private draft, account action, batch execution or dependency installation."
+}
