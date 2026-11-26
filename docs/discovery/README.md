@@ -411,3 +411,8 @@ reader remain different delivery states. This is not every linked repository,
 all history, private source coverage or every unpublished manuscript. Continue
 the [shared contributor workflow](../../communications/2026-10-30-every-result-discoverable-2341z.md)
 for every new result and verify its exact body, not a related fuzzy hit count.
+
+
+## Linked questions, theorems, and Lean
+
+[Discovery Lean bank](lean-bank/README.md) ties questions to exact results, source pins and verified build receipts. It connects the recent Alexander zero-run result, NANUQ component and Thue–Morse extensions. The Git source worker indexes newly published folders; indexed source is not a proof verdict.

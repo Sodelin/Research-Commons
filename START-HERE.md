@@ -235,3 +235,8 @@ Commons is the primary shared workspace. The separate Zettelkasten is retired; [
 
 
 
+
+
+## Linked questions, theorems, and Lean
+
+[Discovery Lean bank](docs/discovery/lean-bank/README.md) ties questions to exact results, source pins and verified build receipts. It connects the recent Alexander zero-run result, NANUQ component and Thue–Morse extensions. The Git source worker indexes newly published folders; indexed source is not a proof verdict.

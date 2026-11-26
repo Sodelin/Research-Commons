@@ -1,0 +1,615 @@
+{
+  "schema": "proofbridge.catalog.v1",
+  "problems": [
+    {
+      "id": "problem.alexander.zero-run",
+      "title": "Alexander isolated zero-run exact component",
+      "statement": "@ResearchCommons.TriangleRun.exact_component : ∀ {twist : Nat → Bool}\n  {keep : ResearchCommons.TwoLiftTriangle.Vertex → Prop} (lo m : Nat),\n  0 < lo →\n    (∀ (n : Nat), lo ≤ n → n ≤ lo + m → twist n = Bool.false) →\n      (∀ (n : Nat), 0 < n → lo ≤ n + 2 → n ≤ lo + m + 2 → n < lo ∨ lo + m < n → twist n = Bool.true) →\n        (∀ (v : ResearchCommons.TwoLiftTriangle.Vertex), lo ≤ v.fst → keep v) →\n          ∀ (b : Bool),\n            have vs := ResearchCommons.TriangleRun.runVertices lo (lo + m) b;\n            vs.Nodup ∧\n              vs.length = m + 1 + 2 ∧\n                ∀ (v : ResearchCommons.TwoLiftTriangle.Vertex),\n                  ResearchCommons.TriangleRun.Reach (ResearchCommons.TriangleRun.GraphTriangleEdge twist keep) (lo, b)\n                      v ↔\n                    v ∈ vs",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/135abac97d5a73e32af97911e7b18ed87f450178/research/2026-11-25-proofbridge-linear/capped-host/zero-run/TriangleRun.lean"
+      }
+    },
+    {
+      "id": "problem.nanuq.caterpillar",
+      "title": "NANUQ caterpillar: same quartet support, different joint split",
+      "statement": "ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity : ¬ResearchCommons.ObservationCertificate.Identified\n    (fun c => c = ResearchCommons.NanuqOmnibusFixture.original ∨ c = ResearchCommons.NanuqOmnibusFixture.reduced)\n    ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.joint\n    (ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.original)",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ObservationCertificate.lean"
+      }
+    },
+    {
+      "id": "problem.thue.phase-alias",
+      "title": "Thue-Morse exact finite phase ambiguity",
+      "statement": "ResearchCommons.ThueMorsePhaseAliasing.prefix_aliases_with_cofinal_separation : ∀ (a len gap : Nat),\n  ∃ b,\n    a + gap < b ∧\n      (∀ (i : Nat), i < len → ThueMorseBits.t (i + a) = ThueMorseBits.t (i + b)) ∧\n        ∀ (N : Nat),\n          (∃ i, N ≤ i ∧ ThueMorseBits.t (i + a) = ThueMorseBits.t (i + b)) ∧\n            ∃ i, N ≤ i ∧ ThueMorseBits.t (i + a) ≠ ThueMorseBits.t (i + b)",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "problem.thue.first-mismatch",
+      "title": "Thue-Morse first mismatch for dyadic triple shift",
+      "statement": "ResearchCommons.ThueMorsePhaseAliasing.triple_dyadic_first_mismatch : ∀ (m : Nat),\n  (∀ (n : Nat), n < 2 * 2 ^ m → ThueMorseBits.t n = ThueMorseBits.t (n + 3 * 2 ^ m)) ∧\n    ThueMorseBits.t (2 * 2 ^ m) ≠ ThueMorseBits.t (2 * 2 ^ m + 3 * 2 ^ m)",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "problem.thue.zero-height",
+      "title": "Thue-Morse exact zero-height prefix count",
+      "statement": "ThueMorseReuse.zeroCount_exact : ∀ (n : Nat),\n  6 * ThueMorseReuse.zeroCount n =\n    2 * ↑(n + 1) + ThueMorseReuse.alternatingDigitValue (n + 1) - 3 * ThueMorseReuse.asInt (ThueMorseBits.t (n + 1))",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/PrefixCount.lean"
+      }
+    },
+    {
+      "id": "problem.alexander.binary-portfolio",
+      "title": "Alexander exact binary child-cap-two portfolio (edge-labelled)",
+      "statement": "For each non-eventually-periodic binary word, there is a continuum antichain of binary edge-labelled avoiders, each with exactly three roots and two children per vertex, precluding every countable portfolio of balanced binary cap-two hosts under weak undirected adjacency embeddings.",
+      "closure": "closed",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/2b21f9e88ed85df1df1141e71980f9e81a189c09/research/2026-11-25-proofbridge-linear/capped-host/round3/BALANCED-BINARY-TWO-SHEET.md"
+      }
+    },
+    {
+      "id": "problem.alexander.formal-assembly",
+      "title": "Lean end-to-end assembly of the binary cap-two portfolio result",
+      "statement": "Construct and verify in one pinned Lean endpoint the full recurrent signature and countable host diagonal in the presented population model.",
+      "closure": "open",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/2b21f9e88ed85df1df1141e71980f9e81a189c09/research/2026-11-25-proofbridge-linear/capped-host/round3/BALANCED-BINARY-TWO-SHEET.md"
+      }
+    },
+    {
+      "id": "problem.alexander.fixed-source-portfolio",
+      "title": "Fixed-source-color exact cap-two portfolio",
+      "statement": "Determine the analogous portfolio obstruction for fixed-source-color populations under weak undirected adjacency without assuming the directed line graph preserves triangles.",
+      "closure": "open",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/2b21f9e88ed85df1df1141e71980f9e81a189c09/research/2026-11-25-proofbridge-linear/capped-host/round3/BALANCED-BINARY-TWO-SHEET.md"
+      }
+    },
+    {
+      "id": "problem.nanuq.network-admission",
+      "title": "Lift the paired NANUQ counterexample to one original network class",
+      "statement": "Determine whether both same-multiplicity plane-tree fixtures arise under one explicit original network admission rule while retaining the same observation and differing joint split occurrence.",
+      "closure": "open",
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/fixture/NANUQ-Paired-Fixture.md"
+      }
+    }
+  ],
+  "theorems": [
+    {
+      "id": "theorem.alexander.zero-run",
+      "title": "Alexander isolated zero-run exact component",
+      "statement": "@ResearchCommons.TriangleRun.exact_component : ∀ {twist : Nat → Bool}\n  {keep : ResearchCommons.TwoLiftTriangle.Vertex → Prop} (lo m : Nat),\n  0 < lo →\n    (∀ (n : Nat), lo ≤ n → n ≤ lo + m → twist n = Bool.false) →\n      (∀ (n : Nat), 0 < n → lo ≤ n + 2 → n ≤ lo + m + 2 → n < lo ∨ lo + m < n → twist n = Bool.true) →\n        (∀ (v : ResearchCommons.TwoLiftTriangle.Vertex), lo ≤ v.fst → keep v) →\n          ∀ (b : Bool),\n            have vs := ResearchCommons.TriangleRun.runVertices lo (lo + m) b;\n            vs.Nodup ∧\n              vs.length = m + 1 + 2 ∧\n                ∀ (v : ResearchCommons.TwoLiftTriangle.Vertex),\n                  ResearchCommons.TriangleRun.Reach (ResearchCommons.TriangleRun.GraphTriangleEdge twist keep) (lo, b)\n                      v ↔\n                    v ∈ vs",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.alexander.zero-run",
+          "relation": "exact"
+        }
+      ],
+      "artifacts": [
+        "artifact.alexander.zero-run",
+        "artifact.alexander.triangle-source"
+      ],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/135abac97d5a73e32af97911e7b18ed87f450178/research/2026-11-25-proofbridge-linear/capped-host/zero-run/TriangleRun.lean"
+      }
+    },
+    {
+      "id": "theorem.nanuq.caterpillar",
+      "title": "NANUQ caterpillar: same quartet support, different joint split",
+      "statement": "ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity : ¬ResearchCommons.ObservationCertificate.Identified\n    (fun c => c = ResearchCommons.NanuqOmnibusFixture.original ∨ c = ResearchCommons.NanuqOmnibusFixture.reduced)\n    ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.joint\n    (ResearchCommons.NanuqOmnibusFixture.observable ResearchCommons.NanuqOmnibusFixture.original)",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.nanuq.caterpillar",
+          "relation": "exact"
+        }
+      ],
+      "artifacts": [
+        "artifact.nanuq.caterpillar",
+        "artifact.nanuq.caterpillar-source"
+      ],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ObservationCertificate.lean"
+      }
+    },
+    {
+      "id": "theorem.thue.phase-alias",
+      "title": "Thue-Morse exact finite phase ambiguity",
+      "statement": "ResearchCommons.ThueMorsePhaseAliasing.prefix_aliases_with_cofinal_separation : ∀ (a len gap : Nat),\n  ∃ b,\n    a + gap < b ∧\n      (∀ (i : Nat), i < len → ThueMorseBits.t (i + a) = ThueMorseBits.t (i + b)) ∧\n        ∀ (N : Nat),\n          (∃ i, N ≤ i ∧ ThueMorseBits.t (i + a) = ThueMorseBits.t (i + b)) ∧\n            ∃ i, N ≤ i ∧ ThueMorseBits.t (i + a) ≠ ThueMorseBits.t (i + b)",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.thue.phase-alias",
+          "relation": "exact"
+        }
+      ],
+      "artifacts": [
+        "artifact.thue.phase-alias"
+      ],
+      "uses": [
+        {
+          "id": "theorem.thue.bits",
+          "relation": "uses"
+        }
+      ],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "theorem.thue.first-mismatch",
+      "title": "Thue-Morse first mismatch for dyadic triple shift",
+      "statement": "ResearchCommons.ThueMorsePhaseAliasing.triple_dyadic_first_mismatch : ∀ (m : Nat),\n  (∀ (n : Nat), n < 2 * 2 ^ m → ThueMorseBits.t n = ThueMorseBits.t (n + 3 * 2 ^ m)) ∧\n    ThueMorseBits.t (2 * 2 ^ m) ≠ ThueMorseBits.t (2 * 2 ^ m + 3 * 2 ^ m)",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.thue.first-mismatch",
+          "relation": "exact"
+        }
+      ],
+      "artifacts": [
+        "artifact.thue.first-mismatch"
+      ],
+      "uses": [
+        {
+          "id": "theorem.thue.bits",
+          "relation": "uses"
+        }
+      ],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "theorem.thue.zero-height",
+      "title": "Thue-Morse exact zero-height prefix count",
+      "statement": "ThueMorseReuse.zeroCount_exact : ∀ (n : Nat),\n  6 * ThueMorseReuse.zeroCount n =\n    2 * ↑(n + 1) + ThueMorseReuse.alternatingDigitValue (n + 1) - 3 * ThueMorseReuse.asInt (ThueMorseBits.t (n + 1))",
+      "proof_status": "kernel_checked",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.thue.zero-height",
+          "relation": "exact"
+        }
+      ],
+      "artifacts": [
+        "artifact.thue.zero-height"
+      ],
+      "uses": [
+        {
+          "id": "theorem.thue.height-provider",
+          "relation": "uses"
+        }
+      ],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/PrefixCount.lean"
+      }
+    },
+    {
+      "id": "theorem.thue.bits",
+      "title": "Pinned Thue-Morse digit parity definition",
+      "statement": "ThueMorseBits.t is the binary digit-parity sequence used by the phase and height results.",
+      "proof_status": "checked_component",
+      "assumptions": [],
+      "problems": [],
+      "artifacts": [
+        "artifact.thue.provider.thuemorsebits"
+      ],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log"
+      }
+    },
+    {
+      "id": "theorem.thue.height-provider",
+      "title": "Pinned Thue-Morse genealogical height package",
+      "statement": "The published FullHeight provider computes phase-zero matching heights from the factorization, with the ladder and the required avoidance proofs pinned in its dependency closure.",
+      "proof_status": "checked_component",
+      "assumptions": [],
+      "problems": [],
+      "artifacts": [
+        "artifact.thue.provider.binaryavoidance",
+        "artifact.thue.provider.quantitativeavoidance",
+        "artifact.thue.provider.thuemorsebound",
+        "artifact.thue.provider.thuemorsebits",
+        "artifact.thue.provider.sharpthuemorse",
+        "artifact.thue.provider.speciesbridge",
+        "artifact.thue.provider.binarypopulation",
+        "artifact.thue.provider.finiteeditstability",
+        "artifact.thue.provider.fullheight",
+        "artifact.thue.reuse"
+      ],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log"
+      }
+    },
+    {
+      "id": "theorem.alexander.binary-portfolio",
+      "title": "Binary cap-two portfolio obstruction, complete hand proof",
+      "statement": "For each non-eventually-periodic binary word, there is a continuum antichain of binary edge-labelled avoiders, each with exactly three roots and two children per vertex, precluding every countable portfolio of balanced binary cap-two hosts under weak undirected adjacency embeddings.",
+      "proof_status": "hand_proof",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.alexander.binary-portfolio",
+          "relation": "exact"
+        },
+        {
+          "id": "problem.alexander.formal-assembly",
+          "relation": "partial"
+        }
+      ],
+      "artifacts": [],
+      "uses": [
+        {
+          "id": "theorem.alexander.zero-run",
+          "relation": "uses"
+        }
+      ],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/2b21f9e88ed85df1df1141e71980f9e81a189c09/research/2026-11-25-proofbridge-linear/capped-host/round3/BALANCED-BINARY-TWO-SHEET.md"
+      }
+    },
+    {
+      "id": "theorem.nanuq.paired-observation",
+      "title": "Abstract paired plane-tree counterexample",
+      "statement": "In the specified two plane-tree fixtures, all distinct quartet supports and their raw support-derived distances agree but the joint split pair abc|de and ade|bc occurs in only one.",
+      "proof_status": "checked_component",
+      "assumptions": [],
+      "problems": [
+        {
+          "id": "problem.nanuq.network-admission",
+          "relation": "related"
+        }
+      ],
+      "artifacts": [],
+      "uses": [],
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/fixture/NANUQ-Paired-Fixture.md"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.alexander.zero-run",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "135abac97d5a73e32af97911e7b18ed87f450178",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/zero-run/TriangleRun.lean",
+      "declaration": "ResearchCommons.TriangleRun.exact_component",
+      "sha256": "3fed26941932f457a4724d55c62b239ff890251e9c4cee362e7a2413ddcc341d",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/PULL-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": "4fd24b4f61b0d9b73a414d26794af9611fe94a7be0da3213af6790b29e8f3041"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/135abac97d5a73e32af97911e7b18ed87f450178/research/2026-11-25-proofbridge-linear/capped-host/zero-run/TriangleRun.lean"
+      }
+    },
+    {
+      "id": "artifact.alexander.triangle-source",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "2b21f9e88ed85df1df1141e71980f9e81a189c09",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/round3/TwoLiftTriangle.lean",
+      "declaration": "ResearchCommons.TwoLiftTriangle.triangle_iff",
+      "sha256": "804822b169f54018958932283db8c04f575489cac49f86b404dd5987846ffe2f",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/PULL-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/2b21f9e88ed85df1df1141e71980f9e81a189c09/research/2026-11-25-proofbridge-linear/capped-host/round3/TwoLiftTriangle.lean"
+      }
+    },
+    {
+      "id": "artifact.nanuq.caterpillar-source",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "a38db281d7998a2948cd6496cb3d22ed5cf9c03d",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/NanuqOmnibusFixture.lean",
+      "declaration": "ResearchCommons.NanuqOmnibusFixture.same_obs_different_joint",
+      "sha256": "dea911a2ed2a6cbddb4d71a85957fc843212280d8205c87dc81361f6e43f1565",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/PULL-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/NanuqOmnibusFixture.lean"
+      }
+    },
+    {
+      "id": "artifact.nanuq.caterpillar",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "a38db281d7998a2948cd6496cb3d22ed5cf9c03d",
+      "path": "research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ObservationCertificate.lean",
+      "declaration": "ResearchCommons.ObservationCertificate.checked_caterpillar_ambiguity",
+      "sha256": "210aa571ba70f9fab5d0d85edb2ebb7f509d67220a0c2ed54dc453860805dfd6",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/PULL-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": "26220aaf993cd84bc77a60354ac59384978b6bf4c16e332b42545e40f0cb984f"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/a38db281d7998a2948cd6496cb3d22ed5cf9c03d/research/2026-11-25-proofbridge-linear/capped-host/omnibus/lean/ObservationCertificate.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.phase-alias",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "75ab8140fa975ffcdc874f4e31678fac420d5829",
+      "path": "docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean",
+      "declaration": "ResearchCommons.ThueMorsePhaseAliasing.prefix_aliases_with_cofinal_separation",
+      "sha256": "de25188df73a020f5efc29cdfadc2421076eecc65ecffdde9ca4edce0c809267",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": "065ce4d5da512765f80439559fb936deebc5f733f088348d47afee17abc041d9"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.first-mismatch",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "75ab8140fa975ffcdc874f4e31678fac420d5829",
+      "path": "docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean",
+      "declaration": "ResearchCommons.ThueMorsePhaseAliasing.triple_dyadic_first_mismatch",
+      "sha256": "de25188df73a020f5efc29cdfadc2421076eecc65ecffdde9ca4edce0c809267",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": "c0861e607cb6e592bfbaeaac6cc0df1fd8eb9da28ebfe1598a7c1b8ce7f84547"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/ThueMorsePhaseAliasing.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.zero-height",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "75ab8140fa975ffcdc874f4e31678fac420d5829",
+      "path": "docs/discovery/lean-bank/thue/PrefixCount.lean",
+      "declaration": "ThueMorseReuse.zeroCount_exact",
+      "sha256": "26b737bc20fc6c68d30218ea4fdd482cd79d1ded3c087080ef458a7408abc79b",
+      "verification": {
+        "kind": "kernel_checked",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": "b8607447c674962429838d9677af0324032a61173d21ae8d163a7b78f72280f3"
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/PrefixCount.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.binaryavoidance",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/BinaryAvoidance.lean",
+      "declaration": null,
+      "sha256": "cec0b9d6229a50ec7c4cae25b121c31b6caf1af82ae595bce0f9a28c01c84f8a",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/BinaryAvoidance.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.quantitativeavoidance",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/QuantitativeAvoidance.lean",
+      "declaration": null,
+      "sha256": "d7483dafa920f71e78eabf6199bd5a50862b8d6b6f8abb3a30f900f43bf71bae",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/QuantitativeAvoidance.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.thuemorsebound",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/ThueMorseBound.lean",
+      "declaration": null,
+      "sha256": "202498aabf53d1bbbddac8a02612ef077366fda34f90e53e59d286380048d0f9",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/ThueMorseBound.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.thuemorsebits",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/ThueMorseBits.lean",
+      "declaration": "ThueMorseBits.t",
+      "sha256": "923b159560e08a002f6644e22b0fe921771c0fbef089e1ad58399793163797d1",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/ThueMorseBits.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.sharpthuemorse",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/SharpThueMorse.lean",
+      "declaration": null,
+      "sha256": "a2f29f779a19191630d118c5d851fa475e3d0151d55793a0867feab50d4ba0ee",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/SharpThueMorse.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.speciesbridge",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/SpeciesBridge.lean",
+      "declaration": null,
+      "sha256": "0b4aff371434ba647a84b7871734f679f94cb49f170781f97e18a284178d0037",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/SpeciesBridge.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.binarypopulation",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/BinaryPopulation.lean",
+      "declaration": null,
+      "sha256": "87d7476e8b4c7532612763eb4ba9ea027bec1b377b2512946c37a68c7e7df667",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/BinaryPopulation.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.finiteeditstability",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/FiniteEditStability.lean",
+      "declaration": null,
+      "sha256": "dbcd4a3ea5f624f807d0fe7998a0d1a2d8be79ba23ac4946bf05137491f4d998",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FiniteEditStability.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.provider.fullheight",
+      "repo": "Sodelin/Work-on-Samuel-Alexander-Research-",
+      "commit": "19544a4d7608c8cc0d5a1205605c0f38631ca05f",
+      "path": "lean/SamuelAlexanderResearch/FullHeight.lean",
+      "declaration": "FullHeight.height_from_factorization",
+      "sha256": "b120919c7861603401be5d88c29c184068c971cf7e98f8f2fc339312f224a464",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/19544a4d7608c8cc0d5a1205605c0f38631ca05f/lean/SamuelAlexanderResearch/FullHeight.lean"
+      }
+    },
+    {
+      "id": "artifact.thue.reuse",
+      "repo": "Sodelin/Research-Commons",
+      "commit": "75ab8140fa975ffcdc874f4e31678fac420d5829",
+      "path": "docs/discovery/lean-bank/thue/Reuse.lean",
+      "declaration": "ThueMorseReuse.height_zero_iff_descent",
+      "sha256": "f14d6eed2e964c6e40fee9450d69585dcfec51aaa8046cf33a42191f0442ceba",
+      "verification": {
+        "kind": "local_replay",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/COMBINED-REPLAY.log",
+        "lean_version": "4.33.1",
+        "statement_sha256": null
+      },
+      "provenance": {
+        "kind": "internal",
+        "reference": "https://github.com/Sodelin/Research-Commons/blob/75ab8140fa975ffcdc874f4e31678fac420d5829/docs/discovery/lean-bank/thue/Reuse.lean"
+      }
+    }
+  ]
+}

@@ -43,3 +43,8 @@ The [second round](../../research/2026-11-25-proofbridge-linear/capped-host/SIX-
 ## Alexander–NANUQ certificate council
 
 [Omnibus design](../../research/2026-11-25-proofbridge-linear/capped-host/omnibus/OMNIBUS.md) indexes scoped merged-root, component and diagonal proofs; a kernel-checked finite quartet counterexample; and a bounded reference checker. Distinguish hand proof, checked components, exact Python replay and original-network admission. [Machine receipt](../../research/2026-11-25-proofbridge-linear/capped-host/omnibus/omnibus-receipt.json).
+
+
+## Linked questions, theorems, and Lean
+
+[Discovery Lean bank](lean-bank/README.md) ties questions to exact results, source pins and verified build receipts. It connects the recent Alexander zero-run result, NANUQ component and Thue–Morse extensions. The Git source worker indexes newly published folders; indexed source is not a proof verdict.

@@ -1,0 +1,59 @@
+{
+  "artifacts": [
+    {
+      "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "declaration": "Research.NoMinor",
+      "id": "artifact.host.minor",
+      "path": "Lean/Minor.lean",
+      "provenance": {
+        "kind": "primary",
+        "reference": "demo fixture, not proof evidence"
+      },
+      "repo": "Owner/Repo",
+      "sha256": null,
+      "verification": {
+        "kind": "source_only",
+        "lean_version": null,
+        "reference": null,
+        "statement_sha256": null
+      }
+    }
+  ],
+  "problems": [
+    {
+      "closure": "open",
+      "id": "problem.alexander.001",
+      "provenance": {
+        "kind": "primary",
+        "reference": "demo fixture, not proof evidence"
+      },
+      "statement": "All eligible families satisfy P.",
+      "title": "Universal capped host"
+    }
+  ],
+  "schema": "proofbridge.catalog.v1",
+  "theorems": [
+    {
+      "artifacts": [
+        "artifact.host.minor"
+      ],
+      "assumptions": [
+        "vertices indexed in birth order"
+      ],
+      "id": "theorem.host.minor",
+      "problems": [
+        {
+          "id": "problem.alexander.001",
+          "relation": "partial"
+        }
+      ],
+      "proof_status": "hand_proof",
+      "provenance": {
+        "kind": "primary",
+        "reference": "demo fixture, not proof evidence"
+      },
+      "statement": "All balanced indexed hosts satisfy Q.",
+      "title": "Capped host grid minor bound"
+    }
+  ]
+}

@@ -1,4 +1,12 @@
 #!/usr/bin/env node
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+if (process.argv[2]==='--lean-bank') {
+  const script=fileURLToPath(new URL('../lean-bank/tools/search-bank.py',import.meta.url));
+  const r=spawnSync(process.env.PYTHON || 'python3', [script,...process.argv.slice(3)], {stdio:'inherit'});
+  if(r.error) throw r.error;
+  process.exit(r.status ?? 1);
+}
 import {readFile} from 'node:fs/promises';
 import {validate, search, reusePacket, STATUS, ORIGIN,sortClaims,validateRanking,compareRegisters,validateAssessments} from '../dist/model.mjs';
 import {searchSources,sourceExcerpt,searchArchive} from '../dist/source-search.mjs';

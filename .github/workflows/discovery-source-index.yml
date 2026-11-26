@@ -1,0 +1,48 @@
+name: Discovery source index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research/**'
+      - 'packages/research/**'
+      - 'lean/**'
+      - 'docs/discovery/lean-bank/**'
+      - '.github/workflows/discovery-source-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discovery-source-index-main
+  cancel-in-progress: true
+
+jobs:
+  reindex:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Index the triggering Git tree
+        run: |
+          python -m unittest discover -v -s docs/discovery/lean-bank/automation -p 'test_index_sources.py'
+          python docs/discovery/lean-bank/automation/index_sources.py --commit "$GITHUB_SHA" --dest docs/discovery/generated-source-index
+          python docs/discovery/lean-bank/automation/battery.py --index docs/discovery/generated-source-index >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish only the generated Discovery index
+        shell: bash
+        run: |
+          set -euo pipefail
+          latest="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if [[ "$latest" != "$GITHUB_SHA" ]]; then
+            echo "Superseded source commit; newer main run must own the index."
+            exit 0
+          fi
+          git add -- docs/discovery/generated-source-index/index.jsonl docs/discovery/generated-source-index/receipt.json docs/discovery/generated-source-index/checks.json
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh Discovery Git source index'
+          git push origin HEAD:refs/heads/main
