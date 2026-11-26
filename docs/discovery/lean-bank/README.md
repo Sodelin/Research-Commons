@@ -27,3 +27,5 @@ A full staged Lean pull/readback example is in [PULL.md](PULL.md), with status a
 **Backend coverage pass:** [listener, exact coverage gate, provider intake and evidence contracts](BACKEND.md).
 
 **Scale tests:** [broad metadata search, exact lookup, and one bounded proof-job registration](SOURCE-SCALE.md).
+
+**Finder design and held-out retest:** [Mathlib metadata, one selected file, and its unresolved import boundary](FINDER.md).

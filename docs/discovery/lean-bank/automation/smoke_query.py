@@ -38,5 +38,14 @@ if "lean4_init_std" in catalog:
         raise SystemExit("scaled provider snapshot search readback mismatch")
     out["external_prefix_smoke"]={"repo":rows[0]["repo"],"commit":rows[0]["commit"],"path":rows[0]["path"],
         "git_blob":rows[0]["sha"],"evidence":"source_path_only"}
+if "mathlib_combinatorics_numbertheory" in catalog:
+    report=json.loads(subprocess.check_output(["node","docs/discovery/tools/query.mjs","--lean-bank","SimpleGraph Connectivity Subgraph","--layer","external_source_only","--limit","200","--generated-index",str(a.index)],text=True,timeout=90))
+    rows=[x for x in report["results"] if x["repo"]=="leanprover-community/mathlib4"
+          and x["commit"]=="0df444a360eaa60ab8c11dca51a86af692955474"
+          and x["path"]=="Mathlib/Combinatorics/SimpleGraph/Connectivity/Subgraph.lean"]
+    if len(rows)!=1 or rows[0]["sha"]!="580506f2a193cf80ab180dae792de7cb9b5eb611" or rows[0]["evidence"]!="source_path_only":
+        raise SystemExit("Mathlib scoped-provider search readback mismatch")
+    out["mathlib_scope_smoke"]={"repo":rows[0]["repo"],"commit":rows[0]["commit"],"path":rows[0]["path"],
+        "git_blob":rows[0]["sha"],"evidence":"source_path_only"}
 (a.index/"query-smoke.json").write_text(json.dumps(out,indent=2)+"\n")
 print(json.dumps(out))
