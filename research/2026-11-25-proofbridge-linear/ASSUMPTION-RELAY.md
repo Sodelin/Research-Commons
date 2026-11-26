@@ -20,3 +20,13 @@ python3 premise_handoff.py consume "$id" "$pin" assumptions-fixture.json handoff
 ```
 
 The consumer reconstructs the expected retained and dropped IDs from the independently pinned source, refuses a changed target or ID, and replays the generated reduced proof in Lean. It grants no verification from the submitted producer receipts. Use `--lean /path/to/pinned/lean` before the operation with a trusted direct executable. [Replay and negative controls](premise-handoff.receipt.json) preserve the 187 target with three supplied budget bounds, removing only two added, unused assumptions. No global minimality or analytic Goldbach claim.
+
+## Reuse the reduced theorem in a separate Lean module
+
+`import_reduced.py` accepts the independently pinned certificate and an acceptance JSON (the `independent_consumer` field of the premise handoff receipt for this example). It rederives the allowed statement from the original and treats the submitted receipt as data, then generates the provider in a fresh directory, compiles its importable `.olean`, and type-checks a separate consumer deriving the original implication by applying that imported theorem. The consumer accepts the full original context but does not use the dropped assumptions. Only generated Lean files are built. It does not discover new certificates or compile arbitrary submitted Lean.
+
+```sh
+python3 test_import_reduced.py /path/to/pinned/lean
+```
+
+The [machine receipt](import-reduced.receipt.json) binds source, premise identities, generated files, compiled provider, Lean version and axiom reports. In the [generated source](import-demo/), the original theorem holds by importing the three-assumption theorem; another valid provider concluding only 186 fails when substituted. The artifact is compiler-specific and a fresh rebuild is the fallback; a binary hash alone is not a full toolchain dependency cache key. This does not prove any supplied assumption or any analytic Goldbach estimate.
