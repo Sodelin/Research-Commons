@@ -1,0 +1,393 @@
+{
+  "schema": "commons.proofbridge.smt_rounded_smoke.v1",
+  "cases": {
+    "positive": {
+      "unscaled": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "5fb1e91813e2aaaed29ed512d3d2ca66b1143721da66dd083bfebb229090016e",
+        "max_scale": 1,
+        "query_sha256": "aa00ce28a7b4dbd8b9534f049f7fa1c1fbd8547e10b1cd4fd34de684c35605ca",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      },
+      "exact": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "5fb1e91813e2aaaed29ed512d3d2ca66b1143721da66dd083bfebb229090016e",
+        "max_scale": 2,
+        "query_sha256": "89a3b0e96595b263ac570acb6481afbb600b963a26a3a913c31c3deba8db272a",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "sat",
+        "status": "kernel_checked_conditional",
+        "candidate": {
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": 3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "schema": "commons.linear-int.v1",
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": 1
+          },
+          "variables": [
+            "x",
+            "y"
+          ],
+          "multipliers": [
+            1,
+            1
+          ]
+        },
+        "verification": {
+          "schema": "commons.linear-int.rounded-witness.v1",
+          "status": "kernel-checked-conditional",
+          "source_sha256": "12086c1bdcb0a326719c7b2098218318ac1e28a226e417c12bf6982c615dc6c7",
+          "variables": [
+            "x",
+            "y"
+          ],
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": 3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "multipliers": [
+            1,
+            1
+          ],
+          "scale": 2,
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": 1
+          },
+          "intermediate_target": {
+            "coeffs": [
+              2,
+              0
+            ],
+            "le": 3
+          },
+          "intermediate_certificate_sha256": "3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f",
+          "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+          "provider_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "consumer_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "files_sha256": {
+            "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.lean": "569064299a45dcaf54c871fd3f90aa5ed6de15a2f1343432754051cfd2bc9879",
+            "ReuseOriginal.lean": "73f28ad4d4f613ee35ae845eecf5db00a810d88201f38ff952bcce4e07316739",
+            "PB_3f82c905ab0724a476f2ec2e7784bdd7c88a7f9d859581294d1df53bbb7d750f.olean": "62dccb95fd38072e4745f99955bddbc2f649efa761a6735579b2255759b69706"
+          }
+        }
+      },
+      "overclaim": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "b79acb34631363343e5bcc7b5535d0741223e99bcbdc28a74f824945726d5e7a",
+        "max_scale": 8,
+        "query_sha256": "4c0a4b585ed400a67ffa5292ab851617fd1dfb3eb5c1c7d375da7d8f827b355f",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      },
+      "counterexample": [
+        1,
+        0
+      ]
+    },
+    "signed": {
+      "unscaled": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "8b8f8d3604bf9024fdbe0afed14f93bf3f465c144f0849def5544727124a5d84",
+        "max_scale": 1,
+        "query_sha256": "74d709ad056df7858cf8c2ce82dee92f3bf6977a488276a7613e66bd2dccb4a6",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      },
+      "exact": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "8b8f8d3604bf9024fdbe0afed14f93bf3f465c144f0849def5544727124a5d84",
+        "max_scale": 2,
+        "query_sha256": "a67a954f513d784f8bc84e3faebec3b0c5ea431b4c6cd9890724bbefebba6ecd",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "sat",
+        "status": "kernel_checked_conditional",
+        "candidate": {
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": -3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "schema": "commons.linear-int.v1",
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": -2
+          },
+          "variables": [
+            "x",
+            "y"
+          ],
+          "multipliers": [
+            1,
+            1
+          ]
+        },
+        "verification": {
+          "schema": "commons.linear-int.rounded-witness.v1",
+          "status": "kernel-checked-conditional",
+          "source_sha256": "9426c130b967253a41af9bd5ed4b901dc93016cdb17d363c45e765ef1c3b3877",
+          "variables": [
+            "x",
+            "y"
+          ],
+          "premises": [
+            {
+              "coeffs": [
+                2,
+                1
+              ],
+              "le": -3
+            },
+            {
+              "coeffs": [
+                0,
+                -1
+              ],
+              "le": 0
+            }
+          ],
+          "multipliers": [
+            1,
+            1
+          ],
+          "scale": 2,
+          "target": {
+            "coeffs": [
+              1,
+              0
+            ],
+            "le": -2
+          },
+          "intermediate_target": {
+            "coeffs": [
+              2,
+              0
+            ],
+            "le": -3
+          },
+          "intermediate_certificate_sha256": "359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f",
+          "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+          "provider_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "consumer_axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "files_sha256": {
+            "PB_359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f.lean": "a7a9598593294d8530f4204ee0099bc1335edef541a313bfd6b26357c4006e59",
+            "ReuseOriginal.lean": "d48e57235d8704830c2a6a3b56cb1ed405e6fac46b8d7d20397ef2291d3e4994",
+            "PB_359b7367fcf8650894a9a0f78049a30194a7f9d82503a8b9084e821f3ece066f.olean": "1dfa7e43b4befe0fe1ff8ee951212be00df81d8ea32bdbdf13ff764eebd8df79"
+          }
+        }
+      },
+      "overclaim": {
+        "schema": "commons.proofbridge.smt_rounded.v1",
+        "goal_sha256": "961ea84866c601f9d604633ff0228cc0ec1d45e73e330cd433fd4831e2dee1ed",
+        "max_scale": 8,
+        "query_sha256": "0fe95e3ec9f0c7ebdb17b5eada3628f4f3ba59fc79b77914a239c53abbd337ee",
+        "solver": "4.13.3.0",
+        "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+        "solver_status": "unsat",
+        "status": "no_bounded_witness"
+      },
+      "counterexample": [
+        -2,
+        0
+      ]
+    },
+    "goldbach_scale_one": {
+      "schema": "commons.proofbridge.smt_rounded.v1",
+      "goal_sha256": "4732cd3b8e89c9d1c21f85d434ef86561fcc6d74ff7506c35a115557309fe963",
+      "max_scale": 1,
+      "query_sha256": "84383dde369e7032b2e3a0352c88bdae9028a2d6521c2d70b4a0e8c97caf9061",
+      "solver": "4.13.3.0",
+      "solver_library_sha256": "7accc397d4ac387468b09489bdaff9d82bfac4ca6a7e339b8fbb2167edf9c1c0",
+      "solver_status": "sat",
+      "status": "kernel_checked_conditional",
+      "candidate": {
+        "schema": "commons.linear-int.v1",
+        "variables": [
+          "margin",
+          "odd_charge",
+          "center_charge"
+        ],
+        "premises": [
+          {
+            "coeffs": [
+              -1,
+              0,
+              0
+            ],
+            "le": -330
+          },
+          {
+            "coeffs": [
+              0,
+              1,
+              0
+            ],
+            "le": 98
+          },
+          {
+            "coeffs": [
+              0,
+              0,
+              1
+            ],
+            "le": 45
+          }
+        ],
+        "target": {
+          "coeffs": [
+            -1,
+            1,
+            1
+          ],
+          "le": -187
+        },
+        "multipliers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "verification": {
+        "schema": "commons.linear-int.rounded-witness.v1",
+        "status": "kernel-checked-conditional",
+        "source_sha256": "7d51b4acb44fad0d62acf2ded9aa34963b3bdb3d23eb7332a74f93d5b7cf19e0",
+        "variables": [
+          "margin",
+          "odd_charge",
+          "center_charge"
+        ],
+        "premises": [
+          {
+            "coeffs": [
+              -1,
+              0,
+              0
+            ],
+            "le": -330
+          },
+          {
+            "coeffs": [
+              0,
+              1,
+              0
+            ],
+            "le": 98
+          },
+          {
+            "coeffs": [
+              0,
+              0,
+              1
+            ],
+            "le": 45
+          }
+        ],
+        "multipliers": [
+          1,
+          1,
+          1
+        ],
+        "scale": 1,
+        "target": {
+          "coeffs": [
+            -1,
+            1,
+            1
+          ],
+          "le": -187
+        },
+        "intermediate_target": {
+          "coeffs": [
+            -1,
+            1,
+            1
+          ],
+          "le": -187
+        },
+        "intermediate_certificate_sha256": "e1a4b96c621e46681e09c2fc7403bf93cb6d4ee298fb7fc5bd00afa8a403342b",
+        "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "provider_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "consumer_axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "files_sha256": {
+          "PB_e1a4b96c621e46681e09c2fc7403bf93cb6d4ee298fb7fc5bd00afa8a403342b.lean": "e2819c26681f68a75454c4f932954706c2f78ca454dcbb270684c8d38d8738cd",
+          "ReuseOriginal.lean": "6eb2a2817198d33d9e6a5bd10793a74d8daecf2187753d4a317721e7a6e7b631",
+          "PB_e1a4b96c621e46681e09c2fc7403bf93cb6d4ee298fb7fc5bd00afa8a403342b.olean": "128820cd8232ae5ee2252050902de5ad76fbcebbb118e60f572f9bad604984e8"
+        }
+      }
+    }
+  }
+}
